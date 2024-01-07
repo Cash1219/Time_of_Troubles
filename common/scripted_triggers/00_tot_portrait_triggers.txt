@@ -1,0 +1,24 @@
+﻿is_tot_historial_character = {
+	OR = {
+		has_trait = tot_Fate_Jeanne_trait
+	}
+}
+no_portrait_trigger = {
+	OR = {
+		show_anime_trigger = yes
+	}
+}
+
+show_anime_trigger = {
+	OR = {
+		AND = {
+			exists = scope:character
+			scope:character = {
+				has_trait = tot_Fate_Jeanne_trait
+			}
+		}
+	}
+}
+portrait_locked_trigger = {
+	is_tot_historial_character = yes
+}

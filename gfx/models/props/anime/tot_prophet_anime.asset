@@ -1,0 +1,17 @@
+﻿pdxmesh = {
+	name = "tot_prophet_Fate_Jeanne_mesh"
+	file = "hm_prophet.mesh"
+	scale = 1.5
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "tot_prophet_Fate_Jeanne_diffuse.dds"
+		texture_specular = "tot_prophet_Fate_Jeanne_diffuse.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "tot_prophet_Fate_Jeanne_entity"
+	pdxmesh = "tot_prophet_Fate_Jeanne_mesh"
+}
