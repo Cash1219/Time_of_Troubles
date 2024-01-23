@@ -1,0 +1,50 @@
+ideology_religious_heroism = { 
+	icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_traditionalist.dds"
+	
+	character_ideology = yes
+
+
+	lawgroup_church_and_state = {
+		law_state_religion = strongly_approve
+		law_freedom_of_conscience = neutral
+		law_total_separation = strongly_disapprove
+		law_state_atheism = strongly_disapprove
+	}
+	lawgroup_army_model = {
+		law_national_militia = approve
+		law_professional_army = neutral
+		law_peasant_levies = strongly_disapprove
+		law_mass_conscription = strongly_approve
+	}
+	leader_weight = {
+		value = 0
+	}
+}
+ideology_ranger = { 
+	icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_traditionalist.dds"
+	
+	character_ideology = yes
+
+
+	lawgroup_colonization = {		
+		law_no_colonial_affairs = strongly_disapprove
+		law_colonial_resettlement = strongly_approve
+		law_colonial_exploitation = neutral
+		law_frontier_colonization = approve
+	}
+	lawgroup_citizenship = {
+		law_ethnostate = strongly_disapprove
+		law_national_supremacy = strongly_disapprove
+		law_racial_segregation = disapprove
+		law_cultural_exclusion = approve
+		law_multicultural = strongly_approve	
+	}
+	lawgroup_migration = {
+		law_migration_controls = disapprove
+		law_closed_borders = strongly_disapprove
+		law_no_migration_controls = strongly_approve	
+	}
+	leader_weight = {
+		value = 0
+	}
+}

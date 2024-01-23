@@ -1,10 +1,10 @@
-﻿hm_portrait = {
+﻿tot_portrait = {
 	usage = game
 	just_Fate_Jeanne = {
 		dna_modifiers = {
 			accessory = {
 				mode = replace
-				gene = hmprops_1
+				gene = totprops_1
 				template = tot_prophet_Fate_Jeanne
 				value = 0.5
 			}
@@ -14,7 +14,283 @@
 			modifier = {
 				add = 10000
 				no_portrait_trigger = yes
-				portrait_locked_trigger = no
+				exists = scope:character
+				scope:character = {
+					has_trait = tot_Fate_Jeanne_trait
+				}
+			}
+		}
+	}
+	just_Fate_Charlemagne = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = totprops_1
+				template = tot_prophet_Fate_Charlemagne
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 10000
+				no_portrait_trigger = yes
+				exists = scope:character
+				scope:character = {
+					has_trait = tot_Fate_Charlemagne_trait
+				}
+			}
+		}
+	}
+	just_Fate_Marie = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = totprops_1
+				template = tot_prophet_Fate_Marie
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 10000
+				no_portrait_trigger = yes
+				exists = scope:character
+				scope:character = {
+					has_trait = tot_Fate_Marie_trait
+				}
+			}
+		}
+	}
+	just_Fate_Corday = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = totprops_1
+				template = tot_prophet_Fate_Corday
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 10000
+				no_portrait_trigger = yes
+				exists = scope:character
+				scope:character = {
+					has_trait = tot_Fate_Corday_trait
+				}
+			}
+		}
+	}
+	just_Fate_Martha = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = totprops_1
+				template = tot_prophet_Fate_Martha
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 10000
+				no_portrait_trigger = yes
+				exists = scope:character
+				scope:character = {
+					has_trait = tot_Fate_Marth_trait
+				}
+			}
+		}
+	}
+	just_Fate_Dumas = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = totprops_1
+				template = tot_prophet_Fate_Dumas
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 10000
+				no_portrait_trigger = yes
+				exists = scope:character
+				scope:character = {
+					has_trait = tot_Fate_Dumas_trait
+				}
+			}
+		}
+	}
+	just_Fate_Deon = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = totprops_1
+				template = tot_prophet_Fate_Deon
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 10000
+				no_portrait_trigger = yes
+				exists = scope:character
+				scope:character = {
+					has_trait = tot_Fate_Deon_trait
+				}
+			}
+		}
+	}
+	just_Fate_Napoleon = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = totprops_1
+				template = tot_prophet_Fate_Napoleon
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 10000
+				no_portrait_trigger = yes
+				exists = scope:character
+				scope:character = {
+					has_trait = tot_Fate_Napoleon_trait
+				}
+			}
+		}
+	}
+	just_Fate_Astolfo = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = totprops_1
+				template = tot_prophet_Fate_Astolfo
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 10000
+				no_portrait_trigger = yes
+				exists = scope:character
+				scope:character = {
+					has_trait = tot_Fate_Astolfo_trait
+				}
+			}
+		}
+	}
+	just_Fate_Bradamante = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = totprops_1
+				template = tot_prophet_Fate_Bradamante
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 10000
+				no_portrait_trigger = yes
+				exists = scope:character
+				scope:character = {
+					has_trait = tot_Fate_Bradamante_trait
+				}
+			}
+		}
+	}
+	just_Fate_Gilles = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = totprops_1
+				template = tot_prophet_Fate_Gilles
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 10000
+				no_portrait_trigger = yes
+				exists = scope:character
+				scope:character = {
+					has_trait = tot_Fate_Gilles_trait
+				}
+			}
+		}
+	}
+	just_Fate_Harwey = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = totprops_1
+				template = tot_prophet_Fate_Harwey
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 10000
+				no_portrait_trigger = yes
+				exists = scope:character
+				scope:character = {
+					has_trait = tot_Fate_Harwey_trait
+				}
+			}
+		}
+	}
+	just_Fate_Sanso = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = totprops_1
+				template = tot_prophet_Fate_Sanso
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 10000
+				no_portrait_trigger = yes
+				exists = scope:character
+				scope:character = {
+					has_trait = tot_Fate_Sanso_trait
+				}
+			}
+		}
+	}
+	just_Tearmoon_Mia = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = totprops_1
+				template = tot_prophet_Tearmoon_Mia
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 10000
+				no_portrait_trigger = yes
+				exists = scope:character
+				scope:character = {
+					has_trait = tot_Tearmoon_Mia_trait
+				}
 			}
 		}
 	}

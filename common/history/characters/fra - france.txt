@@ -1,93 +1,239 @@
 ﻿CHARACTERS = {
 	c:FRA = {
 		create_character = {
-			first_name = "Jeanne"
+			first_name = "Jeanne" #贞德
 			last_name = "dArc"
-			ruler = yes
-			birth_date = 1815.6.1
+			birth_date = 1816.1.1
 			female = yes
 			historical = yes
-			#is_general = yes
+			is_general = yes
+			ig_leader = yes
 			culture = cu:french
 			religion = rel:catholic
-			#interest_group = ig_devout
-			interest_group = ig_landowners
-			ideology = ideology_legitimist
+			interest_group = ig_devout #教士
+			ideology = ideology_religious_heroism #宗教英雄主义
 			traits = {
-				innovative
+				charismatic
 				brave
+				experienced_artillery_commander
+				celebrity_commander
 				tot_Fate_Jeanne_trait
 			}
 		}
-		#create_character = { # King Louis-Philippe d'Orléans
-		#	template = FRA_louis_philippe
-		#}
-		create_character = { # Heir, Prince Ferdinand-Philippe
-			template = FRA_ferdinand_philippe
-		}
-
-		## Interest Group leaders ##
-
 		create_character = {
-			template = FRA_victor_de_broglie
-		}
+        			first_name = "Charlemagne" #查理曼
+        			last_name = "Carolingian"
+        			birth_date = 1816.1.1
+        			historical = yes
+        			is_general = yes
+        			culture = cu:french
+        			religion = rel:catholic
+        			interest_group = ig_landowners #地主
+        			ideology = ideology_pacifist #和平主义
+        			traits = {
+        				romantic
+						imposing
+        				tot_Fate_Charlemagne_trait
+        			}
+        }
 		create_character = {
-			template = FRA_adolphe_thiers
-		}
+        			first_name = "Marie" #玛丽
+        			last_name = "Antoinette"
+        			birth_date = 1816.1.1
+					female = yes
+        			historical = yes
+					ruler = yes
+					ig_leader = yes
+        			culture = cu:french
+        			religion = rel:catholic
+        			interest_group = ig_landowners #地主
+        			ideology = ideology_humanitarian_royalist #开明君主主义者
+        			traits = {
+        				romantic
+						imposing
+        				tot_Fate_Marie_trait
+        			}
+        }
 		create_character = {
-			template = FRA_jacques_lafitte
-		}
+        			first_name = "Corday" #科黛
+        			last_name = "Charlotte"
+        			birth_date = 1816.1.1
+					female = yes
+        			historical = yes
+        			is_general = yes
+					ig_leader = yes
+        			culture = cu:french
+        			religion = rel:catholic
+        			interest_group = ig_intelligentsia #知识分子
+        			ideology = ideology_liberal_leader #民主主义者
+        			traits = {
+        				romantic
+						imposing
+        				tot_Fate_Corday_trait
+        			}
+        }
 		create_character = {
-			template = FRA_jean-francois_mocquard
-		}
+        			first_name = "Martha" #玛尔达
+        			last_name = "VirginMary"
+        			birth_date = 1816.1.1
+					female = yes
+        			historical = yes
+        			is_general = yes
+        			culture = cu:french
+        			religion = rel:catholic
+        			interest_group = ig_devout #知识分子
+        			ideology = ideology_religious_heroism #宗教英雄主义
+        			traits = {
+        				romantic
+						imposing
+        				tot_Fate_Martha_trait
+        			}
+        }
 		create_character = {
-			template = FRA_francois-rene_de_chateaubriand
-		}
+        			first_name = "Dumas" #大仲马
+        			last_name = "Alexandre"
+        			birth_date = 1816.1.1
+        			historical = yes
+        			culture = cu:french
+        			religion = rel:catholic
+        			interest_group = ig_intelligentsia #知识分子
+        			ideology = ideology_republican_leader #共和主义
+        			traits = {
+        				romantic
+						imposing
+        				tot_Fate_Dumas_trait
+        			}
+        }
 		create_character = {
-			template = FRA_jean-de-dieu_soult
-		}
-		create_character = { 
-			# Mathieu de la Drôme
-			# Loose fit, farmer's son, (and not really a politican in 1836), but french farmers would flock to the Radical Socialists (Montagnards) in the 1849, mostly because of tax pledges.
-
-			template = FRA_mathieu_de_la_drome
-		}
+        			first_name = "Deon" #迪昂
+        			last_name = "de_Beaumont"
+        			birth_date = 1816.1.1
+					female = yes
+        			historical = yes
+        			is_general = yes
+        			culture = cu:french
+        			religion = rel:catholic
+        			interest_group = ig_intelligentsia #知识分子
+        			ideology = ideology_royalist #保皇主义
+        			traits = {
+        				romantic
+						imposing
+        				tot_Fate_Deon_trait
+        			}
+        }
 		create_character = {
-			template = FRA_charles_fourier
-		}
-
-		## end of Interest Group leaders ##
-
-		## Commanders ##
-
-		create_character = { # Known for supressing riots and winning a duel
-			template = FRA_thomas_bugeaud
-			hq = region_rhine
-			commander_rank = commander_rank_3
-		}
-	#	create_character = {
-	#		template = FRA_bertrand_clauzel
-	#		hq = region_north_africa
-	#	}
+        			first_name = "Napoleon" #拿破仑
+        			last_name = "Bonaparte"
+        			birth_date = 1816.1.1
+        			historical = yes
+        			is_general = yes
+					ig_leader = yes
+        			culture = cu:french
+        			religion = rel:catholic
+        			interest_group = ig_armed_forces #军队
+        			ideology = ideology_bonapartist #波拿巴派
+        			traits = {
+        				romantic
+						imposing
+        				tot_Fate_Napoleon_trait
+        			}
+        }
 		create_character = {
-			template = FRA_guy-victor_duperre
-			hq = region_france
-			commander_rank = commander_rank_3
-		}
-	#	create_character = {
-	#		template = FRA_charles_baudin
-	#		hq = region_occitania
-	#		commander_rank = commander_rank_3
-	#	}
-	#	create_character = {
-	#		template = FRA_honore-charles_reille
-	#		hq = region_occitania
-	#		commander_rank = commander_rank_5
-	#	}
-	#	create_character = {
-	#		template = FRA_guillaume_dode_de_la_brunerie
-	#		hq = region_france
-	#		commander_rank = commander_rank_3
-	#	}
+        			first_name = "Astolfo" #阿斯托尔福
+        			last_name = "Rider"
+        			birth_date = 1816.1.1
+        			historical = yes
+        			is_general = yes
+        			culture = cu:french
+        			religion = rel:catholic
+        			interest_group = ig_armed_forces #军队
+        			ideology = ideology_ranger #游侠
+        			traits = {
+        				romantic
+						imposing
+        				tot_Fate_Astolfo_trait
+        			}
+        }
+		create_character = {
+        			first_name = "Bradamante" #布拉达曼特
+        			last_name = "Rider"
+        			birth_date = 1816.1.1
+					female = yes
+        			historical = yes
+        			is_general = yes
+        			culture = cu:french
+        			religion = rel:catholic
+        			interest_group = ig_armed_forces #军队
+        			ideology = ideology_moderate #温和主义
+        			traits = {
+        				romantic
+						imposing
+        				tot_Fate_Bradamante_trait
+        			}
+        }
+		create_character = {
+        			first_name = "Gilles" #吉尔德雷
+        			last_name = "de_Rais"
+        			birth_date = 1816.1.1
+        			historical = yes
+        			is_general = yes
+        			culture = cu:french
+        			religion = rel:catholic
+        			interest_group = ig_armed_forces #军队
+        			ideology = ideology_slaver #蓄奴主义者
+        			traits = {
+        				romantic
+						imposing
+        				tot_Fate_Gilles_trait
+        			}
+        }
+		create_character = {
+        			first_name = "Harwey" #哈维
+        			last_name = "Leonardo_Bistario"
+        			birth_date = 1816.1.1
+        			historical = yes
+					ig_leader = yes
+        			culture = cu:french
+        			religion = rel:catholic
+        			interest_group = ig_industrialists #实业家
+        			ideology = ideology_humanitarian_royalist #开明君主主义者
+        			traits = {
+        				romantic
+						imposing
+        				tot_Fate_Harwey_trait
+        			}
+        }
+		create_character = {
+        			first_name = "Sanso" #桑松
+        			last_name = "Charles_Henri"
+        			birth_date = 1816.1.1
+        			historical = yes
+					ig_leader = yes
+        			culture = cu:french
+        			religion = rel:catholic
+        			interest_group = ig_petty_bourgeoisie #小市民
+        			ideology = ideology_royalist #保皇主义
+        			traits = {
+        				romantic
+						imposing
+        				tot_Fate_Sanso_trait
+        			}
+        }
+		create_character = {
+        			first_name = "Mia" #米娅
+        			last_name = "Luna_Tearmoon"
+        			birth_date = 1816.1.1
+					female = yes
+        			historical = yes
+        			culture = cu:french
+        			religion = rel:catholic
+        			interest_group = ig_landowners #地主
+        			ideology = ideology_humanitarian_royalist #开明君主主义者
+        			traits = {
+        				romantic
+						imposing
+        				tot_Tearmoon_Mia_trait
+        			}
+        }
 	}
 }
