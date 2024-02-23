@@ -1,4 +1,4 @@
-ideology_religious_heroism = { 
+﻿ideology_religious_heroism = { 
 	icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_traditionalist.dds"
 	
 	character_ideology = yes
@@ -48,3 +48,68 @@ ideology_ranger = {
 		value = 0
 	}
 }
+ideology_antisocial = {
+	icon = gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_traditionalist.dds
+
+	character_ideology = yes
+
+	lawgroup_childrens_rights = {
+		law_child_labor_allowed = strongly_approve
+		law_restricted_child_labor = neutral
+		law_compulsory_primary_school = strongly_disapprove
+	}
+	lawgroup_citizenship = {
+		law_multicultural = strongly_disapprove
+		law_cultural_exclusion = disapprove
+		law_racial_segregation = neutral
+		law_national_supremacy = approve
+		law_ethnostate = strongly_approve
+	}
+	lawgroup_labor_rights = {
+		law_no_workers_rights = strongly_approve
+		law_regulatory_bodies = disapprove
+		law_worker_protections = strongly_disapprove
+	}
+	lawgroup_health_system = {
+		law_public_health_insurance = strongly_disapprove
+		law_private_health_insurance = disapprove
+		law_charitable_health_system = neutral
+		law_no_health_system = strongly_approve
+	}
+	lawgroup_land_reform = {
+		law_serfdom = strongly_approve
+		law_tenant_farmers = neutral
+		law_homesteading = strongly_disapprove
+		law_commercialized_agriculture = strongly_disapprove
+		law_collectivized_agriculture = strongly_disapprove
+	}
+	lawgroup_rights_of_women = {
+		law_no_womens_rights = strongly_approve
+		law_women_own_property = neutral
+		law_women_in_the_workplace = disapprove
+		law_womens_suffrage = strongly_disapprove
+	}
+	lawgroup_slavery = {
+		law_slave_trade = strongly_approve
+		law_debt_slavery = neutral
+		law_legacy_slavery = approve
+		law_slavery_banned = strongly_disapprove
+	}
+	lawgroup_church_and_state = {
+		law_public_schools = strongly_disapprove
+		law_private_schools = disapprove
+		law_religious_schools = neutral
+		law_no_schools = strongly_approve
+	}
+	lawgroup_welfare = {
+		law_no_social_security = strongly_approve
+		law_poor_laws = neutral
+		law_wage_subsidies = disapprove
+		law_old_age_pension = strongly_disapprove
+	}
+	lawgroup_free_speech = {
+		law_protected_speech = strongly_disapprove
+		law_right_of_assembly = strongly_disapprove
+		law_censorship = approve
+		law_outlawed_dissent = strongly_approve
+	}

@@ -10,7 +10,7 @@
 			ig_leader = yes
 			culture = cu:french
 			religion = rel:catholic
-			interest_group = ig_devout #教士
+			interest_group = ig_rural_folk #农民
 			ideology = ideology_religious_heroism #宗教英雄主义
 			traits = {
 				charismatic
@@ -26,6 +26,7 @@
         			birth_date = 1816.1.1
         			historical = yes
         			is_general = yes
+					ig_leader = yes
         			culture = cu:french
         			religion = rel:catholic
         			interest_group = ig_landowners #地主
@@ -43,7 +44,6 @@
 					female = yes
         			historical = yes
 					ruler = yes
-					ig_leader = yes
         			culture = cu:french
         			religion = rel:catholic
         			interest_group = ig_landowners #地主
@@ -52,6 +52,24 @@
         				romantic
 						imposing
         				tot_Fate_Marie_trait
+        			}
+        }
+		create_character = {
+        			first_name = "Mia" #米娅
+        			last_name = "Luna_Tearmoon"
+        			birth_date = 1816.1.1
+					female = yes
+        			historical = yes
+					heir = yes
+					is_general = yes
+        			culture = cu:french
+        			religion = rel:catholic
+        			interest_group = ig_landowners #地主
+        			ideology = ideology_humanitarian_royalist #开明君主主义者
+        			traits = {
+        				romantic
+						imposing
+        				tot_Tearmoon_Mia_trait
         			}
         }
 		create_character = {
@@ -81,7 +99,7 @@
         			is_general = yes
         			culture = cu:french
         			religion = rel:catholic
-        			interest_group = ig_devout #知识分子
+        			interest_group = ig_devout #教士
         			ideology = ideology_religious_heroism #宗教英雄主义
         			traits = {
         				romantic
@@ -95,6 +113,7 @@
         			birth_date = 1816.1.1
         			historical = yes
         			culture = cu:french
+					is_agitator = yes 
         			religion = rel:catholic
         			interest_group = ig_intelligentsia #知识分子
         			ideology = ideology_republican_leader #共和主义
@@ -219,21 +238,6 @@
         				tot_Fate_Sanso_trait
         			}
         }
-		create_character = {
-        			first_name = "Mia" #米娅
-        			last_name = "Luna_Tearmoon"
-        			birth_date = 1816.1.1
-					female = yes
-        			historical = yes
-        			culture = cu:french
-        			religion = rel:catholic
-        			interest_group = ig_landowners #地主
-        			ideology = ideology_humanitarian_royalist #开明君主主义者
-        			traits = {
-        				romantic
-						imposing
-        				tot_Tearmoon_Mia_trait
-        			}
-        }
+		
 	}
 }
