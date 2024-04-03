@@ -1,5 +1,5 @@
 ﻿COUNTRIES = {
-	c:PTC = {
+	c:PTC ?= {
 		set_next_election_date = 1836.3.1
 		
 		effect_starting_technology_tier_1_tech = yes
@@ -12,25 +12,28 @@
 		set_tariffs_import_priority = g:engines
 		
 		# Laws
-		activate_law = law_type:law_monarchy
+		activate_law = law_type:law_presidential_republic
 		activate_law = law_type:law_wealth_voting
-		activate_law = law_type:law_freedom_of_conscience
+		activate_law = law_type:law_total_separation
 		activate_law = law_type:law_women_own_property
 		activate_law = law_type:law_per_capita_based_taxation
-		activate_law = law_type:law_appointed_bureaucrats
+		activate_law = law_type:law_elected_bureaucrats
 		activate_law = law_type:law_cultural_exclusion
-		activate_law = law_type:law_protectionism
-		activate_law = law_type:law_interventionism
-		activate_law = law_type:law_religious_schools
+		activate_law = law_type:law_free_trade
+		activate_law = law_type:law_laissez_faire
+		activate_law = law_type:law_private_schools
 		activate_law = law_type:law_per_capita_based_taxation
 		activate_law = law_type:law_colonial_resettlement
 		activate_law = law_type:law_dedicated_police
-		activate_law = law_type:law_professional_army
+		activate_law = law_type:law_national_militia
 		activate_law = law_type:law_poor_laws
-		activate_law = law_type:law_censorship # The July Monarchy was already backtracking on promises made in 1830
+		activate_law = law_type:law_right_of_assembly 
 		activate_law = law_type:law_national_guard
-		activate_law = law_type:law_tenant_farmers
-
+		activate_law = law_type:law_commercialized_agriculture
+		activate_law = law_type:law_private_health_insurance
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_slavery_banned
 			
 		set_institution_investment_level = {
 			institution = institution_schools
