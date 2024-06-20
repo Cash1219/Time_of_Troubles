@@ -1,0 +1,143 @@
+﻿# Social democrats extremely attracted to this ideology
+# Attracts weak leftists and liberals
+# Available for Trade Unions pre-Socialism
+
+spirit_save_party = { #精灵拯救党
+	color = { 241 24 138 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = spirit_save_party
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/social_democrats.dds"
+	}
+	# THIS IS RUN ONLY ONCE AT GAME START
+	valid_for_country = {
+		this = c:BSC
+	}
+	available_for_interest_group = {
+		OR = {
+			is_interest_group_type = ig_industrialists
+			is_interest_group_type = ig_armed_forces
+			is_interest_group_type = ig_intelligentsia
+		}
+	}
+	
+	# Root - IG considering joining
+	# scope:number - the number of IGs that would join this party before the root IG
+	join_weight = {
+		value = {
+			value = 1000
+			desc = "base_value"
+		}
+	}
+}
+spirit_yuri_party = { #百合党
+	color = { 50 60 198 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = spirit_yuri_party
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/fascists.dds"
+	}
+	# THIS IS RUN ONLY ONCE AT GAME START
+	valid_for_country = {
+		this = c:BSC
+	}
+	available_for_interest_group = {
+		leader = {
+			has_ideology = ideology:ideology_feminist
+		}
+	}
+	
+	# Root - IG considering joining
+	# scope:number - the number of IGs that would join this party before the root IG
+	join_weight = {
+		value = {
+			value = 1000
+			desc = "base_value"
+		}
+	}
+}
+spirit_paceful_party = { #精灵和平党
+	color = { 64 173 59 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = spirit_paceful_party
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/agrarians.dds"
+	}
+	# THIS IS RUN ONLY ONCE AT GAME START
+	valid_for_country = {
+		this = c:BSC
+	}
+	available_for_interest_group = {
+		leader = {
+			OR = {
+				has_ideology = ideology:ideology_pacifist
+				has_ideology = ideology:ideology_moderate
+			}
+		}
+	}
+	
+	# Root - IG considering joining
+	# scope:number - the number of IGs that would join this party before the root IG
+	join_weight = {
+		value = {
+			value = 1000
+			desc = "base_value"
+		}
+	}
+}
+spirit_hegemonic_party = { #精灵霸权党
+	color = { 108 64 179 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = spirit_hegemonic_party
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/conservatism.dds"
+	}
+	# THIS IS RUN ONLY ONCE AT GAME START
+	valid_for_country = {
+		this = c:BSC
+	}
+	available_for_interest_group = {
+		is_interest_group_type = ig_landowners
+	}
+	
+	# Root - IG considering joining
+	# scope:number - the number of IGs that would join this party before the root IG
+	join_weight = {
+		value = {
+			value = 1000
+			desc = "base_value"
+		}
+	}
+}

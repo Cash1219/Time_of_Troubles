@@ -1,0 +1,29 @@
+﻿combat_unit_type_sprirt_guard = {
+    group = combat_unit_group_infantry
+
+    upkeep_modifier = {
+        goods_input_small_arms_add = 1
+    }
+	
+    can_build_conscript = {
+         has_law = law_type:law_bsc_am
+    }
+
+    battle_modifier = {
+        unit_offense_add = 25
+        unit_defense_add = 25
+        unit_morale_loss_add = 10
+    }
+
+	unlocking_technologies = { line_infantry }
+
+   
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/combat_unit_type_sprirt_guard.dds"
+    }
+
+	upgrades = {	
+		
+	}
+}
+

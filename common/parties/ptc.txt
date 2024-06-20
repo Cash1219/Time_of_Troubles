@@ -1,0 +1,39 @@
+﻿# Social democrats extremely attracted to this ideology
+# Attracts weak leftists and liberals
+# Available for Trade Unions pre-Socialism
+
+traveler_brave_party = { #勇者党
+	color = { 241 24 138 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = traveler_brave_party
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/social_democrats.dds"
+	}
+	# THIS IS RUN ONLY ONCE AT GAME START
+	valid_for_country = {
+		this = c:PTC
+	}
+	available_for_interest_group = {
+		OR = {
+			is_interest_group_type = ig_armed_forces
+			is_interest_group_type = ig_intelligentsia
+		}
+	}
+	
+	# Root - IG considering joining
+	# scope:number - the number of IGs that would join this party before the root IG
+	join_weight = {
+		value = {
+			value = 1000
+			desc = "base_value"
+		}
+	}
+}

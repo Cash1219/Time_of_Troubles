@@ -1,11 +1,25 @@
-﻿BEC = {
+﻿BSC = {
 	pattern = "pattern_solid.tga"
-	color1 = "burgundy_burgundy"
-	color2 = "burgundy_burgundy"
-
+	color1 = "purple"
 	colored_emblem = {
-		texture = "ce_cross_burgundy.dds"
-		color1 = "white"
+		texture = "ce_tricolor_vertical.dds"	
+		color1 = "red"
 		color2 = "white"
-	}	
+	}
+	textured_emblem = {
+		texture = "tot_te_Fraxinus.dds"
+		
+	}
+}
+PTC = {
+	pattern = "pattern_solid.tga"
+		color1 = "red"
+	colored_emblem = {
+		texture = "ce_laurel_circled.dds"	
+		color1 = "pink"
+	}
+	textured_emblem = {
+		texture = "tot_te_witch_shadow.dds"
+		instance = { scale = { 0.70 0.70 } position = { 0.5 0.5 } }
+	}
 }

@@ -1,0 +1,22 @@
+﻿namespace = bsc
+
+bsc.1 = { #dem的威胁
+	type = country_event
+	placement = root
+	title = bsc.1.t
+	desc = bsc.1.d
+	flavor = bsc.1.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	option = {
+		name = bsc.1.a
+		add_journal_entry = {
+			type = je_the_suppressed_dem
+		}
+		add_journal_entry = {
+			type = je_food_crisis
+		}
+	}
+}

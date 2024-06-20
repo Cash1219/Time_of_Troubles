@@ -1,0 +1,90 @@
+﻿COUNTRIES = {
+	c:BSC ?= {
+		effect_starting_technology_tier_3_tech = yes
+		add_technology_researched = napoleonic_warfare
+		set_tax_level = medium
+		
+		# Laws
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_freedom_of_conscience
+		activate_law = law_type:law_women_own_property
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_appointed_bureaucrats
+		activate_law = law_type:law_cultural_exclusion
+		activate_law = law_type:law_protectionism
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_dedicated_police
+		activate_law = law_type:law_poor_laws
+		activate_law = law_type:law_censorship 
+		activate_law = law_type:law_national_guard
+		activate_law = law_type:law_tenant_farmers
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_slavery_banned
+		#tot
+		activate_law = law_type:law_bsc_dop
+		activate_law = law_type:law_bsc_am
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 1
+		}
+
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 1
+		}
+		ig:ig_industrialists = { 
+			add_ruling_interest_group = yes
+			set_interest_group_name = ig_bsc_ratatoskr
+		}
+		ig:ig_armed_forces = {
+			add_ruling_interest_group = yes
+			set_interest_group_name = ig_bsc_spirit_army
+		}
+		ig:ig_intelligentsia = {
+			add_ruling_interest_group = yes
+			set_interest_group_name = ig_bsc_ratatoskr_cabinet
+		}
+		ig:ig_landowners = { 
+			set_ig_suppression = yes
+			set_interest_group_name = ig_bsc_DEM
+		}
+		ig:ig_petty_bourgeoisie = { 
+			set_interest_group_name = ig_bsc_idol
+		}
+		ig:ig_rural_folk = {
+			set_interest_group_name = ig_bsc_puppet
+		}
+		ig:ig_devout = { 
+			set_interest_group_name = ig_bsc_spirit_publisher
+		}
+		
+		add_modifier = {
+				name = modifier_suppressed_dem
+				years = 10
+				is_decaying = yes
+		}
+		py:spirit_save_party = {
+			add_ig_to_party = ig:ig_industrialists
+			add_ig_to_party = ig:ig_armed_forces
+			add_ig_to_party = ig:ig_intelligentsia
+		}
+		py:spirit_paceful_party = {
+			add_ig_to_party = ig:ig_rural_folk
+			add_ig_to_party = ig:ig_devout
+		}
+		py:spirit_yuri_party = {
+			add_ig_to_party = ig:ig_petty_bourgeoisie
+		}
+		py:spirit_hegemonic_party = {
+			add_ig_to_party = ig:spirit_hegemonic_party
+		}
+		trigger_event = {
+			id = bsc.1
+		}
+	}
+}

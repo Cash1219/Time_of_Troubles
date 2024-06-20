@@ -1,0 +1,343 @@
+﻿#魔法学院 教学范围
+pm_magic_university_teaching_scope_1 = {
+	texture = "gfx/interface/icons/production_method_icons/scholastic_education.dds"
+	unlocking_technologies = {
+		magic_examination
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			monthly_magic_search_point_add = 2
+			goods_input_magic_mineral_add = 5
+		}	
+	
+		level_scaled = {
+			building_employment_clerks_add = 1500
+			building_employment_laborers_add = 1500
+		}
+	}
+	
+	state_modifiers = {
+		workforce_scaled = { 
+			state_pop_qualifications_mult = 0.1
+		}	
+	}	
+}
+
+pm_magic_university_teaching_scope_2 = {
+	texture = "gfx/interface/icons/production_method_icons/philosophy_dept.dds"
+	
+	unlocking_technologies = {
+		magic_cultivation
+	}
+	
+	country_modifiers = {
+		workforce_scaled = { 
+			monthly_magic_search_point_add = 3
+		}
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_magic_mineral_add = 10
+		}
+		
+		level_scaled = {
+			building_employment_clerks_add = 1750
+			building_employment_laborers_add = 1250
+		}					
+	}
+	
+	state_modifiers = {
+		workforce_scaled = { 
+			state_pop_qualifications_mult = 0.15
+		}	
+	}			
+}
+
+pm_magic_university_teaching_scope_3 = {
+	texture = "gfx/interface/icons/production_method_icons/analytical_philosophy_department.dds"
+	
+	unlocking_technologies = {
+		magic_license
+	}
+	country_modifiers = {
+		workforce_scaled = { 
+			monthly_magic_search_point_add = 4
+		}
+	}
+	
+	building_modifiers = {
+		workforce_scaled = { 
+			goods_input_magic_mineral_add = 15
+		}
+		
+		level_scaled = {
+			building_employment_clerks_add = 2000
+			building_employment_laborers_add = 1000
+		}					
+	}
+	
+	state_modifiers = {
+		workforce_scaled = { 
+			state_pop_qualifications_mult = 0.2
+		}	
+	}			
+}
+pm_magic_university_teaching_scope_4 = {
+	texture = "gfx/interface/icons/production_method_icons/analytical_philosophy_department.dds"
+	
+	unlocking_technologies = {
+		magic_association
+	}
+	country_modifiers = {
+		workforce_scaled = { 
+			monthly_magic_search_point_add = 5
+		}
+	}
+	
+	building_modifiers = {
+		workforce_scaled = { 
+			goods_input_magic_mineral_add = 15
+		}
+		
+		level_scaled = {
+			building_employment_clerks_add = 3000
+		}					
+	}
+	
+	state_modifiers = {
+		workforce_scaled = { 
+			state_pop_qualifications_mult = 0.2
+		}	
+	}			
+}
+#魔法学院 教导者
+pm_magic_university_teacher_1 = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_academics.dds"
+	
+	building_modifiers = {
+		level_scaled = {
+			building_employment_academics_add = 2000
+		}
+	}			
+}
+
+pm_magic_university_teacher_2 = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_clergy.dds"
+	
+	
+	building_modifiers = {
+		level_scaled = {
+			building_employment_supernatural_add = 1000
+		}
+	}			
+}		
+pm_magic_university_teacher_3 = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_clergy.dds"
+	
+	disallowing_laws = {
+		law_total_separation
+		law_state_atheism
+	}	
+	
+	building_modifiers = {
+		level_scaled = {
+			building_employment_academics_add = 1000
+			building_employment_supernatural_add = 200
+			building_employment_mage_add = 10
+		}
+		
+	}			
+}		
+pm_magic_university_teacher_4 = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_clergy.dds"
+	
+	
+	building_modifiers = {
+		level_scaled = {
+			building_employment_mage_add = 50
+		}
+	}			
+}		
+#魔法矿产 勘探方式
+pm_magic_mineral_mining_exploring_1 = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_clergy.dds"
+	
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 5
+			
+			# output goods
+			goods_output_magic_mineral_add = 25
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 4500
+		}
+	}		
+}		
+pm_magic_mineral_mining_exploring_2 = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_clergy.dds"
+	
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 5
+			
+			# output goods
+			goods_output_coal_add = 25
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 4500
+		}
+	}
+}		
+pm_magic_mineral_mining_exploring_3 = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_clergy.dds"
+	
+	
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 5
+			
+			# output goods
+			goods_output_coal_add = 25
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 4500
+		}
+	}		
+}		
+pm_magic_mineral_mining_exploring_4 = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_clergy.dds"
+	
+	
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 5
+			
+			# output goods
+			goods_output_coal_add = 25
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 4500
+		}
+	}		
+}		
+#魔法矿产 采集方式
+pm_magic_mineral_mining_collection_1 = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_clergy.dds"
+	
+		
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 5
+			
+			# output goods
+			goods_output_coal_add = 25
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 4500
+		}
+	}
+}		
+pm_magic_mineral_mining_collection_2 = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_clergy.dds"
+	
+	
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 5
+			
+			# output goods
+			goods_output_coal_add = 25
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 4500
+		}
+	}			
+}		
+pm_magic_mineral_mining_collection_3 = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_clergy.dds"
+	
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 5
+			
+			# output goods
+			goods_output_coal_add = 25
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 4500
+		}
+	}		
+}		
+pm_magic_mineral_mining_collection_4 = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_clergy.dds"
+	
+	disallowing_laws = {
+		law_total_separation
+		law_state_atheism
+	}	
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 5
+			
+			# output goods
+			goods_output_coal_add = 25
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 4500
+		}
+	}		
+}		
+#魔法武装 组织形式
+pm_no_magic_organization = {
+	texture = "gfx/interface/icons/production_method_icons/no_specialists.dds"
+	is_default = yes
+	building_modifiers = {
+		level_scaled = {
+			building_training_rate_add = -2
+		}
+	}
+}
+
+pm_magic_training = {
+	texture = "gfx/interface/icons/production_method_icons/cavalry.dds"
+	
+	building_modifiers = {
+		
+		level_scaled = {
+			building_employment_supernatural_add = 200
+			building_employment_soldiers_add = -200
+			building_training_rate_add = 5
+		}
+		unscaled = {
+			unit_offense_add = 5
+			unit_defense_add = 5
+		}
+	}
+}

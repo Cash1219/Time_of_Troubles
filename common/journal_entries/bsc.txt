@@ -1,0 +1,106 @@
+﻿# triggered by on_law_enactment_started
+je_the_suppressed_dem = { #打压DEM社
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	scripted_button = bsc_contact_origami #联系折纸
+	scripted_button = bsc_proactive_attack #主动进攻
+	scripted_button = bsc_armed_spacecraft #武装战舰
+	scripted_button = bsc_economic_repression #经济压制
+	group = je_group_bsc
+	immediate = {
+		set_variable = { name = bsc_dem_power value = 0 }
+		set_variable = { name = bsc_contact_origami_var value = 0 }
+		set_variable = { name = bsc_dem_power value = 50 }
+	}
+	on_monthly_pulse = {
+		effect = {
+			set_variable = { name = bsc_dem_power_next value = 0 }
+			if = {
+				limit = {
+					var:bsc_dem_power <= 100
+				}
+				change_variable = {
+					name = bsc_dem_power_next
+					add = 1
+				}
+			}
+			if = {
+				limit = {
+					ig:ig_landowners = {
+						is_being_suppressed = yes
+					}
+				}
+				change_variable = {
+					name = bsc_dem_power_next
+					add = -0.5
+				}
+			}
+			if = {
+				limit = {
+					has_modifier = modifier_suppressed_dem
+				}
+				change_variable = {
+					name = bsc_dem_power_next
+					add = -0.5
+				}
+			}
+			change_variable = { name = bsc_dem_power add = var:bsc_dem_power_next }
+		}
+	}
+
+	complete = {
+		var:bsc_dem_power < 1
+	}
+
+	on_complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+	}
+	
+	invalid = {
+
+	}
+	fail = {
+		var:bsc_dem_power > 99
+	}
+
+	current_value = {
+		value = var:bsc_dem_power
+	}
+
+
+	should_be_pinned_by_default = yes
+	progressbar = yes
+
+	weight = 100
+}
+je_food_crisis = {
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	scripted_button = bsc_agricultural_subsidies #农业补贴
+	scripted_button = bsc_food_plan #食品计划
+	scripted_button = bsc_compulsory_cultivation #强制耕种
+	scripted_button = bsc_special_fertilizer #特制化肥
+	group = je_group_bsc
+
+	complete = {
+		market_capital.market = {
+				mg:grain = {
+					market_goods_cheaper > 0.4
+				}
+			}
+		root.average_sol > 10
+	}
+
+	on_complete = {
+		
+	}
+	
+	invalid = {
+
+	}
+	fail = {
+	}
+
+
+	weight = 100
+}
