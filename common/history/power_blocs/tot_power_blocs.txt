@@ -1,0 +1,42 @@
+﻿POWER_BLOCS = {
+	c:GBR = {
+		create_power_bloc = {
+			name = CROWN_ALLIANCE
+			map_color = hsv{ 0.99  0.7  0.9 }
+
+			founding_date = 1816.10.17
+			identity = identity_ideological_union
+			principle = principle_ideological_truth_1
+			member = c:FRA
+			member = c:NER
+		}
+		
+	}
+	c:YUS = {
+		create_power_bloc = {
+			name = ADVENTURE_ASSOCIATION
+			map_color = hsv{ 0.99  0.7  0.9 }
+
+			founding_date = 1816.10.17
+			identity = identity_trade_league
+			principle = principle_external_trade_1
+
+			member = c:PTC
+		}
+		
+	}
+	c:MME = {
+		create_power_bloc = {
+			name = BAND_COMMUNITY
+			map_color = hsv{ 0.99  0.7  0.9 }
+
+			founding_date = 1816.10.17
+			identity = identity_trade_league
+			principle = principle_external_trade_1
+
+			member = c:HTT
+			member = c:BTR
+		}
+		
+	}
+}
