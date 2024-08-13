@@ -1,12 +1,11 @@
 ﻿COUNTRIES = {
 	c:BSC ?= {
-		effect_starting_technology_tier_3_tech = yes
-		add_technology_researched = napoleonic_warfare
+		effect_starting_technology_tier_2_tech = yes
 		set_tax_level = medium
 		
 		# Laws
 		activate_law = law_type:law_presidential_republic
-		activate_law = law_type:law_freedom_of_conscience
+		activate_law = law_type:law_total_separation
 		activate_law = law_type:law_women_own_property
 		activate_law = law_type:law_per_capita_based_taxation
 		activate_law = law_type:law_appointed_bureaucrats
@@ -80,8 +79,8 @@
 		py:spirit_yuri_party = {
 			add_ig_to_party = ig:ig_petty_bourgeoisie
 		}
-		py:spirit_hegemonic_party = {
-			add_ig_to_party = ig:spirit_hegemonic_party
+		py:land = {
+			add_ig_to_party = ig:ig_landowners
 		}
 		trigger_event = {
 			id = bsc.1

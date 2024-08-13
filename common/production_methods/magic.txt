@@ -314,30 +314,84 @@ pm_magic_mineral_mining_collection_4 = {
 		}
 	}		
 }		
-#魔法武装 组织形式
-pm_no_magic_organization = {
-	texture = "gfx/interface/icons/production_method_icons/no_specialists.dds"
-	is_default = yes
-	building_modifiers = {
-		level_scaled = {
-			building_training_rate_add = -2
-		}
+#魔力栽培
+pmg_agriculture_farm_magicalization_1 = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_clergy.dds"
+	
+	unlocking_technologies = {
+		magic_plant_growth
 	}
-}
-
-pm_magic_training = {
-	texture = "gfx/interface/icons/production_method_icons/cavalry.dds"
 	
 	building_modifiers = {
-		
+		workforce_scaled = {
+			goods_input_magic_energy_add = 5
+		}
 		level_scaled = {
-			building_employment_supernatural_add = 200
-			building_employment_soldiers_add = -200
-			building_training_rate_add = 5
+			building_employment_supernatural_add = 25
 		}
 		unscaled = {
-			unit_offense_add = 5
-			unit_defense_add = 5
+			building_goods_input_mult = -0.05
+			building_throughput_add = 0.05
 		}
+	}		
+}
+pmg_agriculture_farm_magicalization_2 = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_clergy.dds"
+	
+	unlocking_technologies = {
+		magic_plant_growth
 	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_magic_energy_add = 10
+		}
+		level_scaled = {
+			building_employment_supernatural_add = 50
+		}
+		unscaled = {
+			building_goods_input_mult = -0.1
+			building_throughput_add = 0.1
+		}
+	}		
+}
+pmg_agriculture_farm_magicalization_3 = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_clergy.dds"
+	
+	unlocking_technologies = {
+		magic_plant_growth
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_magic_energy_add = 15
+		}
+		level_scaled = {
+			building_employment_supernatural_add = 75
+		}
+		unscaled = {
+			building_goods_input_mult = -0.15
+			building_throughput_add = 0.15
+		}
+	}		
+}
+pmg_agriculture_farm_magicalization_4 = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_clergy.dds"
+	
+	unlocking_technologies = {
+		magic_plant_growth
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_magic_energy_add = 20
+		}
+		level_scaled = {
+			building_employment_supernatural_add = 100
+		}
+		unscaled = {
+			building_goods_input_mult = -0.2
+			building_throughput_add = 0.2
+		}
+	}		
 }

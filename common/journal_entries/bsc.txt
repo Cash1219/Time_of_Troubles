@@ -7,9 +7,11 @@ je_the_suppressed_dem = { #打压DEM社
 	scripted_button = bsc_economic_repression #经济压制
 	group = je_group_bsc
 	immediate = {
-		set_variable = { name = bsc_dem_power value = 0 }
 		set_variable = { name = bsc_contact_origami_var value = 0 }
-		set_variable = { name = bsc_dem_power value = 50 }
+		change_variable = {
+				name = bsc_dem_power
+				add = 500
+			}
 	}
 	on_monthly_pulse = {
 		effect = {
@@ -60,17 +62,21 @@ je_the_suppressed_dem = { #打压DEM社
 	invalid = {
 
 	}
+	goal_add_value = {
+		add = 1000
+	}
 	fail = {
 		var:bsc_dem_power > 99
 	}
 
 	current_value = {
-		value = var:bsc_dem_power
+		value = root.var:bsc_dem_power
 	}
 
 
+	can_revolution_inherit = yes
+	transferable = yes
 	should_be_pinned_by_default = yes
-	progressbar = yes
 
 	weight = 100
 }

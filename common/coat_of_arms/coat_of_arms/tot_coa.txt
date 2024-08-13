@@ -1,4 +1,6 @@
-﻿BSC = {
+﻿@canton_scale_cross_x = @[ ( 333 / 768 ) + 0.001 ]
+@canton_scale_cross_y = @[ ( 205 / 512 ) + 0.001 ]
+BSC = {
 	pattern = "pattern_solid.tga"
 	color1 = "purple"
 	colored_emblem = {
@@ -8,12 +10,11 @@
 	}
 	textured_emblem = {
 		texture = "tot_te_Fraxinus.dds"
-		
 	}
 }
 PTC = {
 	pattern = "pattern_solid.tga"
-		color1 = "red"
+	color1 = "red"
 	colored_emblem = {
 		texture = "ce_laurel_circled.dds"	
 		color1 = "pink"
@@ -21,5 +22,154 @@ PTC = {
 	textured_emblem = {
 		texture = "tot_te_witch_shadow.dds"
 		instance = { scale = { 0.70 0.70 } position = { 0.5 0.5 } }
+	}
+}
+HBE = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+
+	textured_emblem = {
+		texture = "tot_te_HBE.dds"
+	}
+}
+MME = {
+	pattern = "pattern_vertical_split_01.tga"
+	color1 = "amami_haruka_color"
+	color2 = "kosaka_honoka_color"
+	color3 = "white"
+	color4 = "green"
+
+	colored_emblem = {
+		texture = "ce_tricolor_horizontal.dds"
+		color1 = color3
+		color2 = amami_haruka_color
+
+		mask = { 1 }
+	}
+
+	colored_emblem = {
+		texture = "ce_tricolor_horizontal.dds"
+		color1 = color3
+		color2 = kosaka_honoka_color
+
+		mask = { 2 }
+	}
+	#textured_emblem = {
+	#	texture = "tot_te_ims_logo.dds"
+	#	instance = { scale = { 0.4 0.22 } position = { 0.25 0.85 } }
+	#}
+	#textured_emblem = {
+	#	texture = "tot_te_ll_logo.dds"
+	#	instance = { scale = { 0.2 0.22 } position = { 0.65 0.8 } }
+	#}
+	
+}
+YUS = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "blue"
+		color2 = "blue"
+		instance = { scale = { 1.0 0.18 } position = { 0.5 0.09 } }	
+		instance = { scale = { 1.0 0.18 } position = { 0.5 0.91 } }			
+	}
+
+
+	colored_emblem = {
+		texture = "ce_crossed_scimitars.dds"
+		color1 = "black"
+		color2 = "black"
+		instance = { scale = { 1.0 0.5 } position = { 0.25 0.5 } rotation = 180 }	
+	}
+	
+}
+NER = {
+	pattern = "pattern_solid.tga"
+	color1 = "red"
+	color2 = "yellow"
+
+	colored_emblem = {
+		texture = "ce_cross_england.dds"
+		color1 = color2
+		color2 = color2
+	}
+	colored_emblem = {
+		texture = "ce_letter_beta.dds"
+		color1 = color2
+		color2 = color2
+		instance = { position = { @[canton_scale_cross_x/2] @[canton_scale_cross_y/2] } scale = { @[-1/5*2] @[1/5*2] } } # top left
+        instance = { position = { @[1-(canton_scale_cross_x/2)] @[canton_scale_cross_y/2] } scale = { @[1/5*2] @[1/5*2] } } # top right
+        instance = { position = { @[canton_scale_cross_x/2] @[1-(canton_scale_cross_y/2)] } scale = { @[-1/5*2] @[1/5*2] } } # bottom left
+        instance = { position = { @[1-(canton_scale_cross_x/2)] @[1-(canton_scale_cross_y/2)] } scale = { @[1/5*2] @[1/5*2] } } # bottom right
+	}
+	
+}
+HTT = {
+	pattern = "pattern_solid.tga"
+	color1 = "red"
+	color2 = "yellow"
+
+	pattern = "pattern_solid.tga"
+	color1 = "red"
+	
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "kotobuki_tsumugi_color"
+		instance = { scale = { 0.2 2.0 } position = { 0.1 0.1 } }			
+	}	
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "nakano_azusa_color"
+		instance = { scale = { 0.2 2.0 } position = { 0.3 0.1 } }			
+	}	
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "hirasawa_yui_color"
+		instance = { scale = { 0.2 2.0 } position = { 0.5 0.1 } }			
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "akiyama_mio_color"
+		instance = { scale = { 0.2 2.0 } position = { 0.7 0.1 } }			
+	}
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "tainaka_ritsu_color"
+		instance = { scale = { 0.2 2.0 } position = { 0.9 0.1 } }			
+	}
+	textured_emblem = {
+		texture = "tot_te_HTT.dds"
+		instance = { scale = { 0.75 0.75 } position = { 0.5 0.5 } }
+	}
+}
+BTR = {
+	pattern = "pattern_solid.tga"
+	color1 = "black"
+	color2 = "yellow"
+	textured_emblem = {
+		texture = "tot_te_kessoku_banndo.dds"
+		instance = { scale = { 0.75 0.75 } position = { 0.5 0.5 } }
+	}
+	
+	
+}
+MHS = {
+	pattern = "pattern_solid.tga"
+	color1 = "pink"
+
+	
+	colored_emblem = {
+		texture = "ce_pall_fimbriated.dds"
+		color1 = "red"
+		color2 = "yellow"
+		color3 = "blue"
+		instance = { scale = { -0.5 1 } position = { 0.25 0.5 } }
+		instance = { scale = { 0.5 1 } position = { 0.75 0.5 } }
+	}
+	textured_emblem = {
+		texture = "tot_te_soul_gem.dds"
+		instance = { scale = { 0.4 0.6 } position = { 0.5 0.5 } }
 	}
 }

@@ -1,5 +1,37 @@
 ﻿#生产
-magic_plant_growth = {
+magic_plant_growth = { #魔力栽培
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = production
+	can_research = no
+	modifier = {
+		building_group_bg_agriculture_throughput_add = 0.1
+	}
+	unlocking_technologies = {
+		magic_energy_generation
+	}
+	ai_weight = {
+		value = 3 
+	}
+}
+
+magic_automatic_machines = { #魔法自动化
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = production
+	can_research = no
+	unlocking_technologies = {
+		magic_energy_generation
+	}
+	modifier = {
+		building_group_bg_agriculture_throughput_add = 0.1
+	}
+	
+	ai_weight = {
+		value = 3 
+	}
+}
+magic_energy_generation = { #能源生成
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
 	category = production
@@ -13,7 +45,7 @@ magic_plant_growth = {
 		value = 3 
 	}
 }
-magic_automatic_machines = {
+magic_military_industry = { #魔导器
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
 	category = production
@@ -27,7 +59,7 @@ magic_automatic_machines = {
 		value = 3 
 	}
 }
-magic_energy_generation = {
+magic_transforming_nature = { #改造大自然
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
 	category = production
@@ -41,8 +73,51 @@ magic_energy_generation = {
 		value = 3 
 	}
 }
+magic_teleportation_magic = { #传送魔法
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = production
+	can_research = no
+	modifier = {
+		
+		market_land_trade_capacity_add = 50
+	}
+	
+	ai_weight = {
+		value = 3 
+	}
+}
+magic_transmission = { #魔力传导
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = production
+	can_research = no
+	modifier = {
+		
+		market_land_trade_capacity_add = 50
+	}
+	
+	ai_weight = {
+		value = 3 
+	}
+}
+magic_storage_space = { #仓储空间
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = production
+	can_research = no
+	modifier = {
+		
+		market_land_trade_capacity_add = 50
+	}
+	
+	ai_weight = {
+		value = 3 
+	}
+}
+
 #社科
-magic_examination = {
+magic_examination = { #魔法考试
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
 	category = society
@@ -56,7 +131,7 @@ magic_examination = {
 		value = 3 
 	}
 }
-magic_cultivation = {
+magic_cultivation = { #培养超能力者
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
 	category = society
@@ -70,7 +145,7 @@ magic_cultivation = {
 		value = 3 
 	}
 }
-magic_license = {
+magic_license = { #施法许可证
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
 	category = society
@@ -84,7 +159,8 @@ magic_license = {
 		value = 3 
 	}
 }
-magic_license = {
+
+magic_association = { #魔法协会
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
 	category = society
@@ -98,7 +174,7 @@ magic_license = {
 		value = 3 
 	}
 }
-magic_association = {
+magic_moderate_posture = { #节制意识
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
 	category = society
@@ -112,7 +188,7 @@ magic_association = {
 		value = 3 
 	}
 }
-magic_limitation_conventionn = {
+magic_publication = { #魔法书籍出版
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
 	category = society
@@ -126,10 +202,137 @@ magic_limitation_conventionn = {
 		value = 3 
 	}
 }
-magic_publication = {
+magic_magic_record = { #魔法记录
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
 	category = society
+	can_research = no
+	modifier = {
+		
+		market_land_trade_capacity_add = 50
+	}
+	
+	ai_weight = {
+		value = 3 
+	}
+}
+magic_apocalyptic_divination = { #启示占卜
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = society
+	can_research = no
+	modifier = {
+		
+		market_land_trade_capacity_add = 50
+	}
+	
+	ai_weight = {
+		value = 3 
+	}
+}
+#军事
+magic_inject_magic = { #注入魔法
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = military
+	can_research = no
+	modifier = {
+		
+		market_land_trade_capacity_add = 50
+	}
+	
+	ai_weight = {
+		value = 3 
+	}
+}
+magic_battlefield_transformation = { #战场改造
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = military
+	can_research = no
+	modifier = {
+		
+		market_land_trade_capacity_add = 50
+	}
+	
+	ai_weight = {
+		value = 3 
+	}
+}
+magic_first_aid = { #急救
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = military
+	can_research = no
+	modifier = {
+		
+		market_land_trade_capacity_add = 50
+	}
+	
+	ai_weight = {
+		value = 3 
+	}
+}
+magic_destructive_magic = { #毁灭性魔法
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = military
+	can_research = no
+	modifier = {
+		
+		market_land_trade_capacity_add = 50
+	}
+	
+	ai_weight = {
+		value = 3 
+	}
+}
+magic_mind_control = { #精神控制
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = military
+	can_research = no
+	modifier = {
+		
+		market_land_trade_capacity_add = 50
+	}
+	
+	ai_weight = {
+		value = 3 
+	}
+}
+magic_call = { #召唤魔法
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = military
+	can_research = no
+	modifier = {
+		
+		market_land_trade_capacity_add = 50
+	}
+	
+	ai_weight = {
+		value = 3 
+	}
+}
+magic_suppression = { #反制法术
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = military
+	can_research = no
+	modifier = {
+		
+		market_land_trade_capacity_add = 50
+	}
+	
+	ai_weight = {
+		value = 3 
+	}
+}
+magic_blessing = { #祝福
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = military
 	can_research = no
 	modifier = {
 		
