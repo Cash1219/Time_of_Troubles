@@ -1,0 +1,82 @@
+﻿
+building_magic_mineral_mining = {
+	building_group = bg_magic_mineral_mining
+	texture = "gfx/interface/icons/building_icons/iron_mine.dds"
+
+	required_construction = construction_cost_medium
+
+	unlocking_technologies = {
+		magic_stone_foundation
+	}
+
+	production_method_groups = {
+		pmg_mining_equipment_building_magic_mine
+		pmg_magic_mineral_mining_collection
+		pmg_steam_automation_building_coal_mine
+		pmg_train_automation_building_coal_mine
+		pmg_magic_fire
+		pmg_magic_call_use 
+
+	}
+	ownership_type = self
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_mining.dds"
+
+}
+
+
+
+building_magic_power = {
+	building_group = bg_magic_light_industry
+	texture = "gfx/interface/icons/building_icons/building_magic_power.dds"
+	required_construction = 400
+	unlocking_technologies = {
+		magic_tools_producion_1
+	}
+	production_method_groups = {
+		pmg_magic_power
+		pmg_soul_product
+		pmg_magic_tools_use 
+		pmg_magic_call_use 
+	}
+	ownership_type = self
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_mining.dds"
+
+}
+
+building_alchemy = {
+	building_group = bg_magic_heavy_industry
+	texture = "gfx/interface/icons/building_icons/building_alchemy.dds"
+	required_construction = 800
+	unlocking_technologies = {
+		magic_paper_product
+	}
+	production_method_groups = {
+		pmg_magic_tool
+		pmg_magic_steel
+		pmg_magic_tools_use
+		pmg_magic_call_use
+	}
+	ownership_type = self
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_mining.dds"
+
+}
+
+building_magic_call ={
+	building_group = bg_magic_light_industry
+	texture = "gfx/interface/icons/building_icons/building_magic_call.dds"
+	required_construction = 400
+	unlocking_technologies = {
+		magic_call_animals
+
+	}
+	production_method_groups = {
+		pmg_magic_call
+		pmg_magic_tools_use 
+		pmg_magic_call_use 
+
+	}
+	ownership_type = self
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_mining.dds"
+
+}
+

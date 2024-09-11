@@ -1,0 +1,182 @@
+﻿#魔力
+magic_start_power = {
+    era = era_1
+    texture = "gfx/interface/icons/invention_icons/magic_energy.dds"
+    category = production
+    modifier = {
+        
+    }
+    ai_weight = {
+        value = 1
+}
+}
+#法术卷轴
+magic_paper_product = {
+    era =era_1
+    texture = "gfx/interface/icons/invention_icons/magic_paper_product.dds"
+    category = production
+    unlocking_technologies = {
+    magic_start_power
+    }
+    modifier = {
+        
+    }
+    ai_weight = {
+        value = 1
+    }
+}
+#魔矿勘探
+magic_stone_foundation = {
+    era = era_1
+    texture = "gfx/interface/icons/invention_icons/shaft_mining.dds"
+    category = production
+    unlocking_technologies = {
+        magic_start_power
+    }
+    modifier = {
+        
+    }
+    ai_weight = {
+        value = 1
+    }
+}
+#符文篆刻
+magic_tools_producion_1 = {
+    era = era_1
+    texture = "gfx/interface/icons/invention_icons/magic_tools_producion_1.dds"
+    category = production
+    unlocking_technologies = {
+        magic_alchemy
+        magic_paper_product
+    }
+    ai_weight = {
+        value = 1
+    }
+}
+#使魔召唤
+magic_call_animals = {
+    era= era_1
+    texture = "gfx/interface/icons/invention_icons/magic_call_animals.dds"
+    category = production
+    unlocking_technologies = {
+        magic_alchemy
+        magic_paper_product
+    }
+
+    ai_weight = {
+        value = 1
+    }
+}
+#炼金术
+magic_alchemy = {
+    era = era_1
+    texture = "gfx/interface/icons/invention_icons/magic_alchemy.dds"
+    category = production
+    unlocking_technologies = {
+        magic_start_power
+    }
+    modifier = {
+        
+    }
+    ai_weight = {
+        value = 1
+    }
+}
+#魔素燃烧
+magic_fire = {
+    era = era_1
+    texture = "gfx/interface/icons/invention_icons/magic_fire.dds"
+    category = production
+    unlocking_technologies = {
+        magic_stone_foundation
+    }
+    ai_weight = {
+        value = 1
+    }
+}
+#魔钢
+magic_steel = {
+    era = era_2
+    texture = "gfx/interface/icons/invention_icons/magic_steel.dds"
+    category = production
+    unlocking_technologies = {
+        magic_tools_producion_1
+        magic_alchemy
+        steelworking
+    }
+    modifier = {
+        
+    }
+    ai_weight = {
+        value = 1
+    }
+}
+#职业傀儡
+magic_technical_puppet = {
+    era = era_2
+    texture = "gfx/interface/icons/invention_icons/magic_technical_puppet.dds"
+    category = production
+    unlocking_technologies = {
+        magic_steel
+        magic_alchemy
+        magic_tools_producion_1
+    }
+    ai_weight = {
+        value = 1
+    }
+}
+#正式魔导器
+magic_tools_production_2 = {
+    era = era_2
+    texture = "gfx/interface/icons/invention_icons/magic_tools_production_2.dds"
+    category = production
+    unlocking_technologies = {
+        magic_tools_producion_1
+        magic_steel
+        mechanical_tools
+    }
+    ai_weight = {
+        value = 1
+    }
+}
+#人工奥术结晶
+magic_save = {
+    era = era_2
+     texture = "gfx/interface/icons/invention_icons/magic_save.dds"
+    category = production
+    unlocking_technologies = {
+        magic_alchemy
+        magic_paper_product
+        magic_steel
+    }
+    ai_weight = {
+        value = 1
+    }
+}
+#魔力栽培
+magic_seed = {
+    era = era_1
+    texture = "gfx/interface/icons/invention_icons/magic_seed.dds"
+    category = production
+    unlocking_technologies = {
+        magic_paper_product
+    }
+    ai_weight = {
+        value = 1
+    }
+}
+#蓝图建造
+magic_blue_print = {
+    era =era_2
+    texture = "gfx/interface/icons/invention_icons/magic_blue_print.dds"
+    category = production
+    unlocking_technologies = {
+        magic_paper_product
+    }
+    modifier = {
+        building_construction_sector_throughput_add = 0.10
+    }
+    ai_weight = {
+        value = 1
+    }
+}
