@@ -1,0 +1,62 @@
+﻿#生产
+magic_production_theory_2 = { #生产理论2
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = production
+	
+	modifier = {
+		
+	}
+	unlocking_technologies = {
+		magic_production_theory_1
+	} 
+	ai_weight = {
+		value = 0
+	}
+}
+magic_energy_generation = { #能源生成
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = production
+	
+	modifier = {
+		
+	}
+	unlocking_technologies = {
+		magic_production_theory_2
+		#atmospheric_engine
+	} 
+	ai_weight = {
+		value = 0
+	}
+}
+magic_transmission = { #魔力传输
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = production
+	
+	modifier = {
+		
+	}
+	unlocking_technologies = {
+		magic_production_theory_2
+		#railways
+	} 
+	ai_weight = {
+		value = 0
+	}
+}
+magic_transforming_nature = { #改造大自然
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = production
+	
+	modifier = {
+		magic_production_theory_2
+		#mechanized_workshops
+	}
+	
+	ai_weight = {
+		value = 0
+	}
+}

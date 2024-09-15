@@ -1,6 +1,6 @@
 ﻿POPS = {
 	s:STATE_LOMBARDY = {
-		region_state:MME = {
+		region_state:NER = {
 			create_pop = {
 				culture = north_italian
 				size = 2376996
@@ -13,7 +13,7 @@
 		}
 	}
 	s:STATE_PIEDMONT = {
-		region_state:SAR = {
+		region_state:NER = {
 			create_pop = {
 				culture = north_italian
 				size = 2367188
@@ -30,7 +30,7 @@
 		}
 	}
 	s:STATE_SARDINIA = {
-		region_state:SAR = {
+		region_state:NER = {
 			create_pop = {
 				culture = south_italian
 				size = 524084
@@ -79,7 +79,7 @@
 		}
 	}
 	s:STATE_CAMPANIA = {
-		region_state:NER = {
+		region_state:NBL = {
 			create_pop = {
 				culture = south_italian
 				size = 2557396
@@ -87,7 +87,7 @@
 		}
 	}
 	s:STATE_CALABRIA = {
-		region_state:NER = {
+		region_state:NBL = {
 			create_pop = {
 				culture = south_italian
 				size = 882848
@@ -95,7 +95,7 @@
 		}
 	}
 	s:STATE_APULIA = {
-		region_state:NER = {
+		region_state:NBL = {
 			create_pop = {
 				culture = south_italian
 				size = 1284392
@@ -103,7 +103,7 @@
 		}
 	}
 	s:STATE_ABRUZZO = {
-		region_state:NER = {
+		region_state:NBL = {
 			create_pop = {
 				culture = south_italian
 				size = 660448
@@ -111,7 +111,7 @@
 		}
 	}
 	s:STATE_SAVOY = {
-		region_state:SAR = {
+		region_state:NER = {
 			create_pop = {
 				culture = french
 				size = 92032
@@ -127,19 +127,19 @@
 		}
 	}
 	s:STATE_EMILIA = {
-		region_state:PAR = {
+		region_state:NER = {
 			create_pop = {
 				culture = north_italian
 				size = 472004
 			}
 		}
-		region_state:LUC = {
+		region_state:NER = {
 			create_pop = {
 				culture = north_italian
 				size = 108408
 			}
 		}
-		region_state:MOD = {
+		region_state:NER = {
 			create_pop = {
 				culture = north_italian
 				size = 648400
@@ -147,7 +147,7 @@
 		}
 	}
 	s:STATE_TUSCANY = {
-		region_state:TUS = {
+		region_state:NER = {
 			create_pop = {
 				culture = north_italian
 				size = 1625400
@@ -181,7 +181,7 @@
 		}
 	}
 	s:STATE_VENETIA = {
-		region_state:MME = {
+		region_state:GDE = {
 			create_pop = {
 				culture = north_italian
 				size = 1855196
@@ -194,7 +194,7 @@
 		}
 	}
 	s:STATE_SICILY = {
-		region_state:NER = {
+		region_state:NBL = {
 			create_pop = {
 				culture = south_italian
 				size = 1647596
@@ -425,7 +425,7 @@
 		}
 	}
 	s:STATE_EASTERN_THRACE = {
-		region_state:NER = {
+		region_state:HTT = {
 			create_pop = {
 				culture = turkish
 				size = 832996
@@ -509,7 +509,7 @@
 		}
 	}
 	s:STATE_ALBANIA = {
-		region_state:MHS = {
+		region_state:BG2 = {
 			create_pop = {
 				culture = albanian
 				size = 1004808
@@ -531,7 +531,7 @@
 		}
 	}
 	s:STATE_BOSNIA = {
-		region_state:MHS = {
+		region_state:BG1 = {
 			create_pop = {
 				culture = bosniak
 				size = 304908
@@ -592,7 +592,7 @@
 		}
 	}
 	s:STATE_SLOVENIA = {
-		region_state:MME = {
+		region_state:GDE = {
 			create_pop = {
 				culture = slovene
 				size = 464400
@@ -604,7 +604,7 @@
 		}
 	}
 	s:STATE_DALMATIA = {
-		region_state:MME = {
+		region_state:BG1 = {
 			create_pop = {
 				culture = croat
 				size = 297796
@@ -620,7 +620,7 @@
 		}
 	}
 	s:STATE_CROATIA = {
-		region_state:MME = {
+		region_state:BG1 = {
 			create_pop = {
 				culture = croat
 				size = 563592
@@ -645,7 +645,7 @@
 		}
 	}
 	s:STATE_SLAVONIA = {
-		region_state:MME = {
+		region_state:BG1 = {
 			create_pop = {
 				culture = croat
 				size = 282048
@@ -665,7 +665,7 @@
 		}
 	}
 	s:STATE_ISTRIA = {
-		region_state:MME = {
+		region_state:GDE = {
 			create_pop = {
 				culture = north_italian
 				size = 197800
@@ -689,7 +689,7 @@
 		}
 	}
 	s:STATE_MONTENEGRO = {
-		region_state:MHS = {
+		region_state:BG2 = {
 			create_pop = {
 				culture = bosniak
 				size = 43196
@@ -703,7 +703,7 @@
 				size = 43800
 			}
 		}
-		region_state:MHS = {
+		region_state:BG2 = {
 			create_pop = {
 				culture = serb
 				size = 34396
@@ -714,7 +714,7 @@
 			}			
 		}
 		# Cattaro Region, downscaled version of 1880 census, with inflated Italian numbers, and decreased German ones
-		region_state:MME = {
+		region_state:GDE = {
 			create_pop = {
 				culture = serb
 				size = 15662
@@ -770,7 +770,7 @@
 		}
 	}
 	s:STATE_CRETE = {
-		region_state:MHS = {
+		region_state:BG3 = {
 			create_pop = {
 				culture = turkish
 				size = 59992
@@ -782,7 +782,7 @@
 		}
 	}
 	s:STATE_WEST_AEGEAN_ISLANDS = {
-		region_state:MHS = {
+		region_state:BG3 = {
 			create_pop = {
 				culture = greek
 				size = 80404
@@ -807,7 +807,7 @@
 		}
 	}
 	s:STATE_ATTICA = {
-		region_state:MHS = {
+		region_state:BG3 = {
 			create_pop = {
 				culture = greek
 				size = 637592
@@ -815,7 +815,7 @@
 		}
 	}
 	s:STATE_THESSALIA = {
-		region_state:MHS = {
+		region_state:BG3 = {
 			create_pop = {
 				culture = turkish
 				size = 76208
@@ -864,7 +864,7 @@
 		}
 	}
 	s:STATE_MACEDONIA = {
-		region_state:MHS = {
+		region_state:BG4 = {
 			create_pop = {
 				culture = turkish
 				size = 84000
@@ -894,7 +894,7 @@
 		}
 	}
 	s:STATE_WESTERN_THRACE = {
-		region_state:MHS = {
+		region_state:BG4 = {
 			create_pop = {
 				culture = turkish
 				size = 274808
@@ -921,7 +921,7 @@
 		}
 	}
 	s:STATE_IONIAN_ISLANDS = {
-		region_state:MHS = {
+		region_state:BG3 = {
 			create_pop = {
 				culture = greek
 				size = 186404
@@ -937,7 +937,7 @@
 		}
 	}
 	s:STATE_PELOPONNESE = {
-		region_state:NER = {
+		region_state:BG3 = {
 			create_pop = {
 				culture = greek
 				size = 221996

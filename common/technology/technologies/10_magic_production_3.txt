@@ -1,0 +1,52 @@
+﻿#生产
+magic_production_theory_3 = { #生产理论3
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = production
+	
+	modifier = {
+		
+	}
+	unlocking_technologies = {
+		magic_production_theory_2
+	} 
+	ai_weight = {
+		value = 0
+	}
+}
+magic_teleportation_magic = { #传送魔法
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = production
+	
+	modifier = {
+	
+	}
+	unlocking_technologies = {
+		magic_production_theory_3
+		#electrical_generation
+	} 
+	
+	
+	ai_weight = {
+		value = 0
+	}
+}
+
+magic_storage_space = { #仓储空间
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = production
+	
+	modifier = {
+		
+		
+	}
+	unlocking_technologies = {
+		magic_production_theory_3
+		#electrical_generation
+	} 
+	ai_weight = {
+		value = 0
+	}
+}

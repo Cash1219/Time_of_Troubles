@@ -1,0 +1,16 @@
+﻿	mana_reserves_loc = {
+		type = country
+
+		text = {
+			trigger = {
+				normalized_mana_surplus >= 1
+			}
+			localization_key = mana_EXCESS_EFFECT_HEADER 
+		}
+		text = {
+			trigger = {
+				normalized_mana_deficit < 0
+			}
+			localization_key = mana_DEFICIT_EFFECT_HEADER 
+		}
+	}

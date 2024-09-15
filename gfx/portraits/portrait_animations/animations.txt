@@ -6,10 +6,6 @@ idle = {
 	male = {
 		default = { head = "idle_entry" torso = "idle_entry" }
 
-		###################################
-		# POP Animations  #
-		###################################
-
 		no_portrait = {
 			animation = { head = "none" torso = "none" }
 
@@ -23,6 +19,71 @@ idle = {
 				}
 			}
 		}		
+
+		smoker_character_idle = {
+			animation = { head = "idle_entry" torso = "idle_entry" }
+
+	        weight = {
+	            base = 0
+	            modifier = {
+	                add = 90000
+
+	                has_dlc_feature = ep1_cosmetics
+
+	                scope:character ?= {
+	                    age >= define:NCharacters|ADULT_AGE # always refer to the Defines entry rather than set an arbitrary figure, just to keep things consistent
+
+	                    OR = {
+		                    has_trait = grifter
+		                    has_trait = expensive_tastes
+		                    has_trait = hedonist
+		                }
+	                }
+	            }
+	        }
+
+			portrait_modifier = { animations_props = smoking_attachment }
+		}
+
+		###################################
+		# POP Animations  #
+		###################################
+
+		hatacademic_pop_idle = {
+			animation = { head = "idle_head_pop_hatacademic" torso = "idle_body_hatacademic" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 200
+
+				    exists = scope:pop
+				    scope:pop = {
+						is_pop_type = academics
+					}
+					struggling_pop_trigger = no
+				}
+			}							
+		}
+
+		hatacademic_pop_idle_struggle = {
+			animation = { head = "idle_head_struggle_pop_hatacademic" torso = "idle_body_struggle_hatacademic" }
+
+			weight = {
+				base = 0
+
+				modifier = {
+					add = 200
+					
+				    exists = scope:pop
+				    scope:pop = {
+						is_pop_type = academics
+					}
+					struggling_pop_trigger = yes
+				}
+			}
+		}
 
 		basket_pop_idle = {
 			animation = { head = "idle_head_pop_basket" torso = "idle_body_basket" }
@@ -326,22 +387,6 @@ idle = {
 				}
 			}																
 		}		
-	
-
-		hatacademic_pop_idle = {
-			animation = { head = "idle_head_pop_hatacademic" torso = "idle_body_hatacademic" }
-
-			weight = {
-				base = 0
-
-				modifier = {
-					add = 100
-					upper_clothes_pop_trigger = yes
-					european_clothes_pop_trigger = yes
-					struggling_pop_trigger = no
-				}
-			}							
-		}
 				
 		hatmonocle_pop_idle = {
 			animation = { head = "idle_head_pop_hatmonocle" torso = "idle_body_hatmonocle" }
@@ -496,7 +541,7 @@ idle = {
 
 				modifier = {
 					add = 100
-					aristocrats_clothes_pop_trigger = yes
+					upper_clothes_pop_trigger = yes
 					struggling_pop_trigger = yes
 				}
 			}
@@ -653,21 +698,6 @@ idle = {
 				}
 			}
 		}						
-		
-		hatacademic_pop_idle_struggle = {
-			animation = { head = "idle_head_struggle_pop_hatacademic" torso = "idle_body_struggle_hatacademic" }
-
-			weight = {
-				base = 0
-
-				modifier = {
-					add = 150
-					upper_clothes_pop_trigger = yes
-					european_clothes_pop_trigger = yes
-					struggling_pop_trigger = yes
-				}
-			}
-		}
 		
 		hatmonocle_pop_idle_struggle = {
 			animation = { head = "idle_head_struggle_pop_hatmonocle" torso = "idle_body_struggle_hatmonocle" }
@@ -1052,6 +1082,16 @@ idle = {
 	}
 	
 	girl = boy
+
+	adolescent_boy = {
+        default = { head = "idle_entry" torso = "idle_entry" }
+    }
+
+    adolescent_girl = {
+        default = { head = "idle_entry" torso = "idle_entry" }
+    }
+
+    infant = adolescent_girl
 }
 
 ### COMMANDER VS LEFT
@@ -1136,6 +1176,16 @@ commander_vs_left = {
 		}	
 	}
 	girl = boy
+
+	adolescent_boy = {
+        default = { head = "idle_entry" torso = "idle_entry" }
+    }
+
+    adolescent_girl = {
+        default = { head = "idle_entry" torso = "idle_entry" }
+    }
+
+    infant = adolescent_girl
 }
 
 ### COMMANDER VS RIGHT
@@ -1219,4 +1269,14 @@ commander_vs_right = {
 		}	
 	}
 	girl = boy
+
+	adolescent_boy = {
+        default = { head = "idle_entry" torso = "idle_entry" }
+    }
+
+    adolescent_girl = {
+        default = { head = "idle_entry" torso = "idle_entry" }
+    }
+
+    infant = adolescent_girl
 }

@@ -1,6 +1,6 @@
 ﻿@canton_scale_cross_x = @[ ( 333 / 768 ) + 0.001 ]
 @canton_scale_cross_y = @[ ( 205 / 512 ) + 0.001 ]
-BSC = {
+DAL = {
 	pattern = "pattern_solid.tga"
 	color1 = "purple"
 	colored_emblem = {
@@ -32,7 +32,7 @@ HBE = {
 		texture = "tot_te_HBE.dds"
 	}
 }
-MME = {
+GDE = {
 	pattern = "pattern_vertical_split_01.tga"
 	color1 = "amami_haruka_color"
 	color2 = "kosaka_honoka_color"
@@ -43,7 +43,6 @@ MME = {
 		texture = "ce_tricolor_horizontal.dds"
 		color1 = color3
 		color2 = amami_haruka_color
-
 		mask = { 1 }
 	}
 
@@ -85,26 +84,60 @@ YUS = {
 	}
 	
 }
+#NER = {
+#	pattern = "pattern_solid.tga"
+#	color1 = "red"
+#	color2 = "yellow"
+#
+#	colored_emblem = {
+#		texture = "ce_cross_england.dds"
+#		color1 = color2
+#		color2 = color2
+#	}
+#	colored_emblem = {
+#		texture = "ce_letter_beta.dds"
+#		color1 = color2
+#		color2 = color2
+#		instance = { position = { @[canton_scale_cross_x/2] @[canton_scale_cross_y/2] } scale = { @[-1/5*2] @[1/5*2] } } # top left
+#        instance = { position = { @[1-(canton_scale_cross_x/2)] @[canton_scale_cross_y/2] } scale = { @[1/5*2] @[1/5*2] } } # top right
+#        instance = { position = { @[canton_scale_cross_x/2] @[1-(canton_scale_cross_y/2)] } scale = { @[-1/5*2] @[1/5*2] } } # bottom left
+#        instance = { position = { @[1-(canton_scale_cross_x/2)] @[1-(canton_scale_cross_y/2)] } scale = { @[1/5*2] @[1/5*2] } } # bottom right
+#	}
+#	
+#}
 NER = {
 	pattern = "pattern_solid.tga"
 	color1 = "red"
-	color2 = "yellow"
-
 	colored_emblem = {
-		texture = "ce_cross_england.dds"
-		color1 = color2
-		color2 = color2
+		texture = "ce_wreath.dds"	
+		color1 = "yellow"
+		instance = { scale = { 0.9 0.9 } position = { 0.5 0.4 } }	
 	}
 	colored_emblem = {
-		texture = "ce_letter_beta.dds"
-		color1 = color2
-		color2 = color2
-		instance = { position = { @[canton_scale_cross_x/2] @[canton_scale_cross_y/2] } scale = { @[-1/5*2] @[1/5*2] } } # top left
-        instance = { position = { @[1-(canton_scale_cross_x/2)] @[canton_scale_cross_y/2] } scale = { @[1/5*2] @[1/5*2] } } # top right
-        instance = { position = { @[canton_scale_cross_x/2] @[1-(canton_scale_cross_y/2)] } scale = { @[-1/5*2] @[1/5*2] } } # bottom left
-        instance = { position = { @[1-(canton_scale_cross_x/2)] @[1-(canton_scale_cross_y/2)] } scale = { @[1/5*2] @[1/5*2] } } # bottom right
+		texture = "ce_eagle_italy_fascist.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.75 0.75 } position = { 0.49 0.5 } }
+	}	
+	colored_emblem = {
+		texture = "ce_letter_s.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.25 0.25 } position = { 0.39 0.85 } }
 	}
-	
+	colored_emblem = {
+		texture = "ce_letter_p.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.25 0.25 } position = { 0.46 0.85 } }
+	}
+	colored_emblem = {
+		texture = "ce_letter_q.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.23 0.23 } position = { 0.53 0.85 } }
+	}
+	colored_emblem = {
+		texture = "ce_letter_r.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.22 0.22 } position = { 0.6 0.85 } }
+	}
 }
 HTT = {
 	pattern = "pattern_solid.tga"

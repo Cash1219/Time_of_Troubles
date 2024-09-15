@@ -1,5 +1,5 @@
 ﻿COUNTRIES = {
-	c:BSC ?= {
+	c:DAL ?= {
 		effect_starting_technology_tier_2_tech = yes
 		set_tax_level = medium
 		
@@ -25,8 +25,8 @@
 		activate_law = law_type:law_no_migration_controls
 		activate_law = law_type:law_slavery_banned
 		#tot
-		activate_law = law_type:law_bsc_dop
-		activate_law = law_type:law_bsc_am
+		activate_law = law_type:law_dal_dop
+		activate_law = law_type:law_dal_am
 		set_institution_investment_level = {
 			institution = institution_schools
 			level = 1
@@ -38,28 +38,28 @@
 		}
 		ig:ig_industrialists = { 
 			add_ruling_interest_group = yes
-			set_interest_group_name = ig_bsc_ratatoskr
+			set_interest_group_name = ig_dal_ratatoskr
 		}
 		ig:ig_armed_forces = {
 			add_ruling_interest_group = yes
-			set_interest_group_name = ig_bsc_spirit_army
+			set_interest_group_name = ig_dal_spirit_army
 		}
 		ig:ig_intelligentsia = {
 			add_ruling_interest_group = yes
-			set_interest_group_name = ig_bsc_ratatoskr_cabinet
+			set_interest_group_name = ig_dal_ratatoskr_cabinet
 		}
 		ig:ig_landowners = { 
 			set_ig_suppression = yes
-			set_interest_group_name = ig_bsc_DEM
+			set_interest_group_name = ig_dal_DEM
 		}
 		ig:ig_petty_bourgeoisie = { 
-			set_interest_group_name = ig_bsc_idol
+			set_interest_group_name = ig_dal_idol
 		}
 		ig:ig_rural_folk = {
-			set_interest_group_name = ig_bsc_puppet
+			set_interest_group_name = ig_dal_puppet
 		}
 		ig:ig_devout = { 
-			set_interest_group_name = ig_bsc_spirit_publisher
+			set_interest_group_name = ig_dal_spirit_publisher
 		}
 		
 		add_modifier = {
@@ -83,7 +83,7 @@
 			add_ig_to_party = ig:ig_landowners
 		}
 		trigger_event = {
-			id = bsc.1
+			id = dal.1
 		}
 	}
 }
