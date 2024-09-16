@@ -139,14 +139,27 @@ magic_tools_production_2 = {
         value = 1
     }
 }
-#人工奥术结晶
+#魔力再结晶
 magic_save = {
     era = era_2
      texture = "gfx/interface/icons/invention_icons/magic_save.dds"
     category = production
     unlocking_technologies = {
-        magic_alchemy
         magic_paper_product
+        magic_tools_producion_1
+    }
+    ai_weight = {
+        value = 1
+    }
+}
+#人工奥术结晶
+magic_save_2 = {
+    era = era_2
+     texture = "gfx/interface/icons/invention_icons/magic_save.dds"
+    category = production
+    unlocking_technologies = {
+        magic_alchemy
+        magic_save
         magic_steel
     }
     ai_weight = {
@@ -165,6 +178,7 @@ magic_seed = {
         value = 1
     }
 }
+
 #蓝图建造
 magic_blue_print = {
     era =era_2
