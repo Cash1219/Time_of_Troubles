@@ -469,7 +469,7 @@ types topbar_components
 										}
 									}
 								}
-								### mana RESERVES
+								### mana
 								button = {
 									name = "tutorial_highlight_mana"
 									using = glow_button
@@ -486,14 +486,14 @@ types topbar_components
 										size = { 32 32 }
 										position = { 0 2 }
 										name = mana_power_icon
-										texture = "gfx/interface/icons/topbar/mana_power_icon.dds"
+										texture = "gfx/interface/icons/topbar/mana_icon.dds"
 										parentanchor = vcenter
 									}
 									
 									textbox = {
 										position = { 35 -3 }
 										name = capital_value
-										raw_text = "#bold [AccessPlayer.MakeScope.ScriptValue('mana_reserves_total')|=+D]#!"
+										raw_text = "#bold [AccessPlayer.MakeScope.ScriptValue('mana')|=+D]#!"
 										align = left|nobaseline
 										using = fontsize_large
 										autoresize = yes

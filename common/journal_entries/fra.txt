@@ -1,0 +1,146 @@
+﻿je_fra_queen_pk = { #女皇对决
+	icon = "gfx/interface/progressbar/queen_pk_icon.dds"
+	group = je_group_historical_content
+	scripted_progress_bar = je_fra_queen_pk_progress_bar
+	should_be_pinned_by_default = yes
+	timeout = 7300
+	group = je_group_fra
+	
+	possible = {
+		has_law = law_type:law_monarchy 
+	}
+	fail = {
+		NOT = {
+			has_law = law_type:law_monarchy 
+		}
+	}
+	
+	complete = {
+		custom_tooltip = {
+			text = je_fra_queen_pk_end_tooltip
+			OR = {
+				var:je_fra_queen_pk_mary_advantage > 2000
+				var:je_fra_queen_pk_mia_advantage > 2000
+				var:je_fra_queen_pk_republican_discontent > 2000
+			}
+		}
+	}
+
+	on_complete = {
+		
+	}
+
+	weight = 1000
+	transferable = yes
+}
+je_fra_queen_pk_food = { #粮食对决
+	should_be_pinned_by_default = yes
+	group = je_group_fra
+	icon = "gfx/interface/progressbar/queen_pk_icon.dds"
+	scripted_button = je_fra_queen_pk_food_mary_plan #玛丽的蛋糕
+	scripted_button = je_fra_queen_pk_food_mia_plan #米娅的屯粮
+	scripted_button = je_fra_queen_pk_food_introducing_cake_technology #邀请蛋糕专家
+	scripted_button = je_fra_queen_pk_food_control_grain_prices #控制粮价
+	scripted_button = je_fra_queen_pk_food_agricultural_products #投资农副
+	scripted_button = je_fra_queen_pk_food_ensure_the_supply_chain #确保供应
+	modifiers_while_active = {
+		modifier_fra_high_grain_prices
+	}
+	possible = {
+		has_journal_entry = je_fra_queen_pk
+	}
+	complete = {
+		has_variable = je_fra_queen_pk_food_end
+	}
+	on_complete = {
+		
+	}
+}
+
+je_fra_queen_pk_finance = { #财政对决
+	should_be_pinned_by_default = yes
+	icon = "gfx/interface/progressbar/queen_pk_icon.dds"
+	scripted_button = je_fra_queen_pk_finance_mary_plan #玛丽的募资计划
+	scripted_button = je_fra_queen_pk_finance_mia_plan #米娅的节流计划
+	scripted_button = je_fra_queen_pk_finance_new_minister #新财政大臣
+	scripted_button = je_fra_queen_pk_finance_call_donations #号召捐款
+	scripted_button = je_fra_queen_pk_finance_frugality_style #勤俭作风
+	scripted_button = je_fra_queen_pk_finance_force_tax #强制加税
+	modifiers_while_active = {
+		modifier_fra_extravagant_lifestyle
+	}
+	possible = {
+		has_journal_entry = je_fra_queen_pk
+	}
+	group = je_group_fra
+	complete = {
+		
+	}
+
+	invalid = {
+		
+	}
+
+	on_invalid = {
+		
+	}
+
+	fail = {
+		
+	}
+	
+	on_fail = {
+		
+	}
+
+    on_weekly_pulse = {
+        
+    }
+
+	on_monthly_pulse = {
+		
+	}
+
+	on_complete = {
+		
+	}
+
+	weight = 1000
+	transferable = yes
+}
+je_fra_shadow_guillotine = { #断头台的阴影
+	icon = "gfx/interface/progressbar/queen_pk_icon.dds"
+	group = je_group_fra
+	immediate = {
+		set_variable = { name = je_fra_queen_pk_republican_discontent value = 0 }
+	}
+
+	complete = {
+		
+	}
+
+	on_complete = {
+		
+	}
+	
+	invalid = {
+
+	}
+	goal_add_value = {
+		add = 1000
+	}
+	fail = {
+		var:je_fra_queen_pk_republican_discontent_next > 2000
+	}
+
+	current_value = {
+		value = root.var:je_fra_queen_pk_republican_discontent_next
+	}
+
+
+	can_revolution_inherit = no
+	transferable = yes
+	should_be_pinned_by_default = yes
+
+	weight = 100
+}

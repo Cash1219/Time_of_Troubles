@@ -1,0 +1,30 @@
+﻿pk_mary_advantage_no_less_than = {
+	trigger_if = {
+		limit = {
+			NOT = {
+				exists = scope:country
+			}
+		}
+		save_temporary_scope_as = country
+	}
+	custom_description = {
+		text = pk_mary_advantage_no_less_than
+		value = $VALUE$
+		var:je_fra_queen_pk_mary_advantage >= $VALUE$
+	}
+}
+pk_mia_advantage_no_less_than = {
+	trigger_if = {
+		limit = {
+			NOT = {
+				exists = scope:country
+			}
+		}
+		save_temporary_scope_as = country
+	}
+	custom_description = {
+		text = pk_mia_advantage_no_less_than
+		value = $VALUE$
+		var:je_fra_queen_pk_mia_advantage >= $VALUE$
+	}
+}

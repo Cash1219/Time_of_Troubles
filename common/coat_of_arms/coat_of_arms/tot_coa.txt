@@ -1,5 +1,20 @@
 ﻿@canton_scale_cross_x = @[ ( 333 / 768 ) + 0.001 ]
 @canton_scale_cross_y = @[ ( 205 / 512 ) + 0.001 ]
+FRA_tearmoon = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+
+	colored_emblem = {
+		texture = "ce_border_checkered.dds"
+		color1 = "blue_light"
+		color2 = "blue_light"
+	}
+	
+	textured_emblem = {
+		texture = "tot_te_tearmoon.dds"
+		instance = { scale = { 0.7 0.7 } position = { 0.5 0.5 } }
+	}
+}
 DAL = {
 	pattern = "pattern_solid.tga"
 	color1 = "purple"

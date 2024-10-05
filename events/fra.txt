@@ -1,0 +1,233 @@
+﻿namespace = fra
+
+fra.1 = { #女皇对决
+	type = country_event
+	placement = root
+	title = fra.1.t
+	desc = fra.1.d
+	flavor = fra.1.f
+
+	duration = 3
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+
+	option = {
+		name = fra.1.a
+		add_modifier = {
+			name = modifier_fra_tearmoon_compromise
+			years = 20
+		}
+		add_journal_entry = {
+			type = je_fra_queen_pk
+		}
+		add_journal_entry = {
+			type = je_fra_queen_pk_food
+		}
+		add_journal_entry = {
+			type = je_fra_queen_pk_finance
+		}
+		add_journal_entry = {
+			type = je_fra_shadow_guillotine
+		}
+	}
+}
+fra.2 = { #面粉暴动
+	type = country_event
+	placement = root
+	title = fra.2.t
+	desc = fra.2.d
+	flavor = fra.2.f
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	trigger = {
+		country = c:FRA
+		OR = {
+			mg:grain = {
+				market_goods_cheaper > 0.3
+			}
+			root.average_sol < 10
+		}
+		NOT = {
+			has_variable = event_fra_2_var
+		}
+	}
+	immediate = {
+		set_variable = event_fra_2_var
+		random_scope_building = {
+			limit = {
+				is_building_group = bg_wheat_farms 
+				NOT = {
+					has_modifier = modifier_fra_flour_war
+				}
+			}
+			add_modifier = {
+				name = modifier_fra_flour_war
+				months = 12
+			}
+		}
+	}
+	option = {
+		name = fra.2.a #救
+		add_treasury = {
+			value = gdp
+			multiply = -0.05
+		}
+		add_modifier = {
+			name = modifier_fra_emergency_supply
+			years = 10
+		}
+	}
+	option = {
+		name = fra.2.b #演
+		add_modifier = {
+			name = modifier_fra_pretend_conceal
+			years = 10
+		}
+		add_radicals = {
+			value = medium_radicals
+			strata = poor
+		}
+	}
+	option = {
+		name = fra.2.c #摆
+		add_radicals = {
+			value = large_radicals
+			strata = poor
+		}
+	}
+}
+fra.3 = { #黄月番茄
+	type = country_event
+	placement = root
+	title = fra.3.t
+	desc = fra.3.d
+	flavor = fra.3.f
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	trigger = {
+		country = c:FRA
+		owns_entire_state_region = STATE_ILE_DE_FRANCE
+		s:STATE_ILE_DE_FRANCE = {
+			free_arable_land > 5
+		}
+	}
+	
+	option = {
+		name = fra.3.a #推广
+		random_scope_state = {
+			limit = {
+				state_region = s:STATE_ILE_DE_FRANCE
+			}
+			create_building={
+				building="building_wheat_farm"
+				level=5
+				reserves=1
+			}
+			add_modifier = {
+				name = modifier_fra_redmoon_tomato
+				years = -1
+			}
+		}
+
+		
+	}
+	option = {
+		name = fra.3.b #不推广
+		
+	}
+}
+fra.4 = { #巧克力蛋糕
+	type = country_event
+	placement = root
+	title = fra.4.t
+	desc = fra.4.d
+	flavor = fra.4.f
+
+	duration = 3
+	trigger = {
+		country = c:FRA
+		
+	}
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	trigger = {
+		add_technology_progress = { progress = 2000 technology = baking_powder }
+	}
+	
+	option = {
+		name = fra.4.a #推广
+		
+		
+		
+	}
+}
+fra.5 = { #人人有蛋糕
+	type = country_event
+	placement = root
+	title = fra.5.t
+	desc = fra.5.d
+	flavor = fra.5.f
+
+	duration = 3
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	trigger = {
+		
+	}
+	
+	option = {
+		name = fra.5.a 
+		
+	}
+}
+fra.6 = { #人人有面包
+	type = country_event
+	placement = root
+	title = fra.6.t
+	desc = fra.6.d
+	flavor = fra.6.f
+
+	duration = 3
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	trigger = {
+		
+	}
+	
+	option = {
+		name = fra.6.a 	
+		
+	}
+}

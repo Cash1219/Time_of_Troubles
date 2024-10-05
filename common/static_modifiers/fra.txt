@@ -1,0 +1,63 @@
+﻿#日志
+modifier_fra_high_grain_prices = { #粮价高昂
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	state_radicals_from_sol_change_mult = 0.25
+	goods_output_grain_mult = -0.2
+}
+modifier_fra_cake_expert = { #蛋糕专家
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_tax_income_add = -10000
+	goods_output_groceries_mult = 0.1
+}
+modifier_fra_speculation_crime = { #投机罪
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	goods_output_grain_mult = 0.1
+	interest_group_ig_petty_bourgeoisie_approval_add = -2
+	interest_group_ig_industrialists_approval_add = -2
+}
+modifier_fra_sideline_fund = { #农副业基金
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_tax_income_add = -10000
+	goods_output_meat_mult = 0.05
+	goods_output_sugar_mult = 0.05
+	goods_output_fruit_mult = 0.05
+}
+modifier_fra_supply_chain = { #确保供应链
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	goods_output_engines_mult = -0.2
+	goods_output_grain_add = 500
+	country_authority_add = -100
+}
+modifier_fra_extravagant_lifestyle = { #奢靡成风
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	state_tax_waste_add = 0.2
+	state_tax_collection_mult = -0.2
+}
+#事件
+modifier_fra_tearmoon_compromise = { #新月协议
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_aristocrats_voting_power_add = -25
+	country_voting_power_from_literacy_add = 20
+	country_legitimacy_headofstate_add = 10
+	country_legitimacy_ideological_incoherence_mult = -0.1
+}
+modifier_fra_flour_war = { #面粉暴动
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	building_cash_reserves_mult = -0.5
+	building_throughput_add = -0.5
+	state_standard_of_living_add = -2
+}
+modifier_fra_emergency_supply = { #紧急供应
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	state_poor_standard_of_living_add = 2
+	goods_output_grain_mult = 0.2
+}
+modifier_fra_pretend_conceal = { #惺惺作态
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	state_rich_standard_of_living_add = -1
+	state_poor_standard_of_living_add = 1
+}
+modifier_fra_redmoon_tomato = { #推广红月番茄
+	country_tax_income_add = -10000
+	goods_output_grain_mult = 0.2
+}

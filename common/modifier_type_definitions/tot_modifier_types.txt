@@ -1,5 +1,37 @@
-﻿#月度魔法研究点数
-country_magic_reserves_total_add = {
+﻿#原版拓展
+goods_output_grain_mult={
+	decimals=1
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+goods_output_groceries_mult={
+	decimals=1
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+goods_output_meat_mult={
+	decimals=1
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+goods_input_engines_add={
+	decimals=1
+	color=bad
+	game_data={
+		ai_value=0
+	}
+}
+#魔力
+country_mana_neg_add = {
 	color=good
 	percent = no
 	decimals=0
@@ -8,8 +40,33 @@ country_magic_reserves_total_add = {
 	}
 }
 
-country_magic_reserves_total_subtract = {
+country_mana_gen_mult = {
+	color=good
+	percent = yes
+	decimals=0
+	game_data={
+		ai_value=0
+	}
+}
+country_mana_pos_add = {
+	color=good
+	percent = no
+	decimals=0
+	game_data={
+		ai_value=0
+	}
+}
+country_mana_cost_mult = {
 	color=bad
+	percent = yes
+	decimals=0
+	game_data={
+		ai_value=0
+	}
+}
+
+country_mana_upkeep = {
+	color=good
 	percent = no
 	decimals=0
 	game_data={

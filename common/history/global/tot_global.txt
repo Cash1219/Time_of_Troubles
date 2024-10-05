@@ -1,12 +1,16 @@
 ﻿GLOBAL = {
-	every_country = {
-		limit = {
-			NOT = {
-				is_country_type = decentralized
+	c:FRA = {
+		random_scope_character = {
+			limit = {
+				has_trait = tot_Fate_Marie_trait
 			}
+			save_scope_as = fate_marie_scope
 		}
-		add_journal_entry = {
-			type = je_magic_research
+		random_scope_character = {
+			limit = {
+				has_trait = tot_Tearmoon_Mia_trait
+			}
+			save_scope_as = tearmoon_mia_scope
 		}
 	}
 }

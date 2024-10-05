@@ -1,0 +1,69 @@
+﻿mana = {
+	add = mana_generation
+	add = mana_upkeep
+	add = mana_usage
+}
+
+mana_multiplier = {
+	value = 1
+	add = modifier:country_mana_gen_mult
+	add = modifier:country_mana_cost_mult
+}
+
+magic_mana_costs = {
+	value = var:num_mana
+	multiply = -200
+  }
+
+mana_generation = {
+	value = modifier:country_mana_pos_add
+	multiply = {
+		value = 1
+		add = modifier:country_mana_gen_mult
+	}
+}
+
+mana_usage = {
+	value = modifier:country_mana_neg_add
+	multiply = {
+		value = 1
+		add = modifier:country_mana_cost_mult
+	}
+}
+
+mana_upkeep = {
+	value = modifier:country_mana_upkeep
+	multiply = {
+		value = 1
+		add = modifier:country_mana_cost_mult
+	}
+}
+
+total_mana_usage = {
+	value = mana_upkeep
+	add = mana_usage 
+}
+
+normalized_magic_surplus = {
+	value = mana
+
+	divide = 1000
+	min = -1
+	max = 1
+  }
+
+  normalized_magic_deficit = {
+	value = mana
+
+	divide = 1000
+	min = -1
+	max = 0
+  }
+
+  normalized_mana = {
+	value = mana
+
+	divide = 1000
+	min = -1
+	max = 1
+  }

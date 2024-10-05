@@ -1,0 +1,237 @@
+﻿je_fra_queen_pk_food_mary_plan = { #完成玛丽的目标
+	name = je_fra_queen_pk_food_mary_plan
+	desc = je_fra_queen_pk_food_mary_plan_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		#market_capital.market = {
+		#	mg:groceries = {
+		#		market_goods_cheaper > 0.3
+		#	}
+		#}
+	}
+
+	effect = {
+		add_fra_pk_advantage_small = yes
+		trigger_event = { id = fra.5 }
+		set_variable = { name = je_fra_queen_pk_food_end }
+	}
+}
+je_fra_queen_pk_food_mia_plan = { #完成米娅的目标
+	name = je_fra_queen_pk_food_mia_plan
+	desc = je_fra_queen_pk_food_mia_plan_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		market_capital.market = {
+			mg:grain = {
+				market_goods_cheaper > 0.3
+			}
+		}
+	}
+
+	effect = {
+		reduce_fra_pk_advantage_small = yes
+		trigger_event = { id = fra.6 }
+		set_variable = { name = je_fra_queen_pk_food_end }
+	}
+}
+je_fra_queen_pk_food_introducing_cake_technology = { #引进蛋糕技术
+	name = je_fra_queen_pk_food_introducing_cake_technology
+	desc = je_fra_queen_pk_food_introducing_cake_technology_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		NOT = {
+			has_modifier = modifier_fra_cake_expert
+		}
+	}
+
+	effect = {
+		add_modifier = {
+			name = modifier_fra_cake_expert
+			years = -1
+		}
+		add_technology_progress = { progress = 2000 technology = fractional_distillation }
+	}
+}
+je_fra_queen_pk_food_control_grain_prices = { #控制粮价
+	name = je_fra_queen_pk_food_control_grain_prices
+	desc = je_fra_queen_pk_food_control_grain_prices_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		NOT = {
+			has_modifier = modifier_fra_speculation_crime
+		}
+	}
+
+	effect = {
+		add_modifier = {
+			name = modifier_fra_speculation_crime
+			years = -1
+		}
+	
+	}
+}
+je_fra_queen_pk_food_agricultural_products = { #增加农副产物
+	name = je_fra_queen_pk_food_agricultural_products
+	desc = je_fra_queen_pk_food_agricultural_products_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		NOT = {
+			has_modifier = modifier_fra_sideline_fund
+		}
+	}
+
+	effect = {
+		add_modifier = {
+			name = modifier_fra_sideline_fund
+			years = -1
+		}
+	}
+}
+je_fra_queen_pk_food_ensure_the_supply_chain = { #确保供应链
+	name = je_fra_queen_pk_food_ensure_the_supply_chain
+	desc = je_fra_queen_pk_food_ensure_the_supply_chain_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		NOT = {
+			has_modifier = modifier_fra_supply_chain
+		}
+		market_capital.market = {
+			mg:engines = {
+				market_goods_production > 200
+			}
+			mg:grain = {
+				market_goods_production > 1000
+			}
+		}
+	}
+
+	effect = {
+		add_modifier = {
+			name = modifier_fra_supply_chain
+			years = -1
+		}
+	}
+}
+je_fra_queen_pk_finance_mary_plan = { #玛丽的开源
+	name = je_fra_queen_pk_finance_mary_plan
+	desc = je_fra_queen_pk_finance_mary_plan_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		
+	}
+
+	effect = {
+		add_modifier = {
+			name = modifier_fra_supply_chain
+			years = -1
+		}
+	}
+}
+je_fra_queen_pk_finance_mia_plan = { #米娅的节流计划
+	name = je_fra_queen_pk_finance_mia_plan
+	desc = je_fra_queen_pk_finance_mia_plan_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		
+	}
+
+	effect = {
+		add_modifier = {
+			name = modifier_fra_supply_chain
+			years = -1
+		}
+	}
+}
+je_fra_queen_pk_finance_new_minister = { #提拔新财政大臣
+	name = je_fra_queen_pk_finance_new_minister
+	desc = je_fra_queen_pk_finance_new_minister_DESC
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		
+	}
+
+	effect = {
+		
+	}
+}
