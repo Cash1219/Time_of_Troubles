@@ -12,11 +12,11 @@
 	}
 
 	possible = {
-		#market_capital.market = {
-		#	mg:groceries = {
-		#		market_goods_cheaper > 0.3
-		#	}
-		#}
+		market_capital.market = {
+			mg:groceries = {
+				market_goods_cheaper > 0.3
+			}
+		}
 	}
 
 	effect = {
@@ -132,7 +132,7 @@ je_fra_queen_pk_food_agricultural_products = { #增加农副产物
 		}
 	}
 }
-je_fra_queen_pk_food_ensure_the_supply_chain = { #确保供应链
+je_fra_queen_pk_food_ensure_the_supply_chain = { #建设粮仓
 	name = je_fra_queen_pk_food_ensure_the_supply_chain
 	desc = je_fra_queen_pk_food_ensure_the_supply_chain_desc
 
@@ -149,24 +149,15 @@ je_fra_queen_pk_food_ensure_the_supply_chain = { #确保供应链
 		NOT = {
 			has_modifier = modifier_fra_supply_chain
 		}
-		market_capital.market = {
-			mg:engines = {
-				market_goods_production > 200
-			}
-			mg:grain = {
-				market_goods_production > 1000
-			}
-		}
+		
+
 	}
 
 	effect = {
-		add_modifier = {
-			name = modifier_fra_supply_chain
-			years = -1
-		}
+		
 	}
 }
-je_fra_queen_pk_finance_mary_plan = { #玛丽的开源
+je_fra_queen_pk_finance_mary_plan = { #玛丽的开源计划
 	name = je_fra_queen_pk_finance_mary_plan
 	desc = je_fra_queen_pk_finance_mary_plan_desc
 
@@ -180,14 +171,15 @@ je_fra_queen_pk_finance_mary_plan = { #玛丽的开源
 	}
 
 	possible = {
-		
+		gdp > 35000000
+		NOT = {
+			has_modifier = declared_bankruptcy
+		}
+		taking_loans = no
 	}
 
 	effect = {
-		add_modifier = {
-			name = modifier_fra_supply_chain
-			years = -1
-		}
+		add_fra_pk_advantage_small = yes
 	}
 }
 je_fra_queen_pk_finance_mia_plan = { #米娅的节流计划
@@ -203,20 +195,22 @@ je_fra_queen_pk_finance_mia_plan = { #米娅的节流计划
 		base = 0
 	}
 
-	possible = {
-		
+	possible = {			
+		weekly_net_fixed_income > 50000
+		scaled_gold_reserves > 0.5
+		NOT = {
+			has_modifier = declared_bankruptcy
+		}
+		taking_loans = no
 	}
 
 	effect = {
-		add_modifier = {
-			name = modifier_fra_supply_chain
-			years = -1
-		}
+		reduce_fra_pk_advantage_small = yes
 	}
 }
 je_fra_queen_pk_finance_new_minister = { #提拔新财政大臣
 	name = je_fra_queen_pk_finance_new_minister
-	desc = je_fra_queen_pk_finance_new_minister_DESC
+	desc = je_fra_queen_pk_finance_new_minister_desc
 
 	visible = { 
 		always = yes
@@ -229,6 +223,204 @@ je_fra_queen_pk_finance_new_minister = { #提拔新财政大臣
 
 	possible = {
 		
+	}
+
+	effect = {
+		trigger_event = { id = fra.7 }
+	}
+}
+je_fra_queen_pk_finance_sell_asset = { #变卖财产
+	name = je_fra_queen_pk_finance_sell_asset
+	desc = je_fra_queen_pk_finance_sell_asset_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		
+	}
+
+	effect = {
+		trigger_event = { id = fra.9 }
+	}
+}
+je_fra_queen_pk_finance_compulsory_taxation = { #强制征税
+	name = je_fra_queen_pk_finance_compulsory_taxation
+	desc = je_fra_queen_pk_finance_compulsory_taxation_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		
+	}
+
+	effect = {
+		trigger_event = { id = fra.10 }
+	}
+}
+je_fra_queen_pk_finance_afternoon_tea_supplier = { #茶点供应商
+	name = je_fra_queen_pk_finance_afternoon_tea_supplier
+	desc = je_fra_queen_pk_finance_afternoon_tea_supplier_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		
+	}
+
+	effect = {
+		trigger_event = { id = fra.8 }
+	}
+}
+je_fra_queen_pk_education_mary_plan = { #玛丽的艺术计划
+	name = je_fra_queen_pk_education_mary_plan
+	desc = je_fra_queen_pk_education_mary_plan_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = je_fra_queen_pk_education_mary_plan_tt
+			always = no
+		}
+	}
+
+	effect = {
+	
+	}
+}
+je_fra_queen_pk_education_mia_plan = { #米娅的文学计划
+	name = je_fra_queen_pk_education_mia_plan
+	desc = je_fra_queen_pk_education_mia_plan_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = je_fra_queen_pk_education_mia_plan_tt
+			always = no
+		}
+	}
+
+	effect = {
+		
+	}
+}
+je_fra_queen_pk_education_inviting_artists = { #邀请艺术家
+	name = je_fra_queen_pk_education_inviting_artists
+	desc = je_fra_queen_pk_education_inviting_artists_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		always = yes
+	}
+
+	effect = {
+		change_variable = {
+			name = je_fra_queen_pk_education_creation_progress
+			add = 500
+		}
+	}
+}
+je_fra_queen_pk_education_foreign_exchange = { #外国交流
+	name = je_fra_queen_pk_education_foreign_exchange
+	desc = je_fra_queen_pk_education_foreign_exchange_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		always = yes
+	}
+
+	effect = {
+		
+	}
+}
+je_fra_queen_pk_education_expand_academy = { #拓展法兰西科学院
+	name = je_fra_queen_pk_education_expand_academy
+	desc = je_fra_queen_pk_education_expand_academy_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		always = yes
+	}
+
+	effect = {
+		
+	}
+}
+je_fra_queen_pk_education_standard_requirements = { #通过费里法案
+	name = je_fra_queen_pk_education_standard_requirements
+	desc = je_fra_queen_pk_education_standard_requirements_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		has_law = law_compulsory_primary_school
 	}
 
 	effect = {

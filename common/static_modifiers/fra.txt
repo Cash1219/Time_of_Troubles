@@ -22,17 +22,21 @@ modifier_fra_sideline_fund = { #农副业基金
 	goods_output_sugar_mult = 0.05
 	goods_output_fruit_mult = 0.05
 }
-modifier_fra_supply_chain = { #确保供应链
+modifier_fra_supply_chain = { #建设粮仓
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-	goods_output_engines_mult = -0.2
-	goods_output_grain_add = 500
-	country_authority_add = -100
+	goods_output_grain_mult = 0.1
 }
 modifier_fra_extravagant_lifestyle = { #奢靡成风
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
 	state_tax_waste_add = 0.2
 	state_tax_collection_mult = -0.2
 }
+modifier_fra_guizot_law = { #基佐法案
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_institution_schools_max_investment_add = 1
+}
+
+
 #事件
 modifier_fra_tearmoon_compromise = { #新月协议
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
@@ -43,8 +47,7 @@ modifier_fra_tearmoon_compromise = { #新月协议
 }
 modifier_fra_flour_war = { #面粉暴动
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
-	building_cash_reserves_mult = -0.5
-	building_throughput_add = -0.5
+	building_wheat_farm_throughput_add = -0.2
 	state_standard_of_living_add = -2
 }
 modifier_fra_emergency_supply = { #紧急供应
@@ -58,6 +61,64 @@ modifier_fra_pretend_conceal = { #惺惺作态
 	state_poor_standard_of_living_add = 1
 }
 modifier_fra_redmoon_tomato = { #推广红月番茄
-	country_tax_income_add = -10000
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
 	goods_output_grain_mult = 0.2
+}
+modifier_fra_sell_land = { #卖贵族地产
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	interest_group_ig_landowners_approval_add = -3
+}
+modifier_fra_consumption_tax = { #消费税
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_consumption_tax_cost_mult = -0.25
+	tax_consumption_add = 0.15
+	
+}
+modifier_fra_mercantilism = { #黎塞留重商主义
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	interest_group_ig_industrialists_approval_add = -2
+	country_company_throughput_bonus_add = 0.1
+	country_company_construction_efficiency_bonus_add = 0.1
+	country_trade_route_competitiveness_mult = 0.1
+	country_trade_route_quantity_mult = 0.1
+	country_trade_route_cost_mult = -0.1
+}
+modifier_fra_tax_reform = { #路德维希税改
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	state_radicals_from_sol_change_mult = 0.2
+	state_tax_waste_add = -0.1
+	state_tax_collection_mult = 0.1
+}
+modifier_fra_laissez_faire = { #哈维自由放任
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_max_companies_add = 1
+	state_shopkeepers_investment_pool_efficiency_mult = 0.1	
+	state_capitalists_investment_pool_efficiency_mult = 0.1
+}
+modifier_fra_consumption_tax = { #消费税
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_consumption_tax_cost_mult = -0.33
+	country_bureaucracy_mult = -0.05
+}
+modifier_fra_dividends_tax = { #遗产
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	tax_dividends_add = 0.1
+	interest_group_ig_landowners_approval_add = -2
+}
+modifier_fra_per_capita_tax = { #人均税
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	tax_per_capita_add = 0.2
+	tax_land_add = 0.1
+	state_radicals_from_sol_change_mult = 0.2
+}
+modifier_fra_food_pk_mary_win = { #玛丽的蛋糕帝国
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	goods_output_groceries_mult = 0.1
+	state_loyalists_from_sol_change_mult = 0.2
+	
+}
+modifier_fra_food_pk_mia_win = { #米娅的面包帝国
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	goods_output_grain_mult = 0.1
+	state_loyalists_from_sol_change_mult = 0.2
 }

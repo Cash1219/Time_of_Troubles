@@ -1,4 +1,39 @@
 ﻿namespace = fra
+fra.99 = { #隐藏事件
+	type = country_event
+	placement = root
+	title = fra.99.t
+	desc = fra.99.d
+	hidden = yes
+	duration = 3
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+	immediate = {
+		random_scope_character = {
+			limit = {
+				has_trait = tot_Fate_Marie_trait
+			}
+			set_variable = fate_marie_scope
+		}
+		random_scope_character = {
+			limit = {
+				has_trait = tot_Tearmoon_Mia_trait
+			}
+			set_variable = tearmoon_mia_scope
+		}
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+
+	option = {
+		name = fra.99.a
+		trigger_event = { id = fra.1 }
+		
+	}
+}
 
 fra.1 = { #女皇对决
 	type = country_event
@@ -11,7 +46,20 @@ fra.1 = { #女皇对决
 	event_image = {
 		video = "unspecific_factory_closed"
 	}
-
+	immediate = {
+		random_scope_character = {
+			limit = {
+				has_variable = fate_marie_scope
+			}
+			save_scope_as = fate_marie_scope
+		}
+		random_scope_character = {
+			limit = {
+				has_variable = tearmoon_mia_scope
+			}
+			save_scope_as = tearmoon_mia_scope
+		}
+	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
@@ -33,8 +81,24 @@ fra.1 = { #女皇对决
 			type = je_fra_queen_pk_finance
 		}
 		add_journal_entry = {
-			type = je_fra_shadow_guillotine
+			type = je_fra_queen_pk_education
 		}
+		add_journal_entry = {
+			type = je_fra_queen_pk_distribution
+		}
+		#add_journal_entry = {
+		#	type = je_fra_queen_pk_culture
+		#}
+		#add_journal_entry = {
+		#	type = je_fra_queen_pk_court
+		#}
+		#add_journal_entry = {
+		#	type = je_fra_queen_pk_military
+		#}
+		#add_journal_entry = {
+		#	type = je_fra_shadow_guillotine
+		#}
+		
 	}
 }
 fra.2 = { #面粉暴动
@@ -54,9 +118,10 @@ fra.2 = { #面粉暴动
 	
 	trigger = {
 		country = c:FRA
+		owns_entire_state_region = STATE_ILE_DE_FRANCE
 		OR = {
 			mg:grain = {
-				market_goods_cheaper > 0.3
+				market_goods_pricier > 0.3
 			}
 			root.average_sol < 10
 		}
@@ -65,8 +130,26 @@ fra.2 = { #面粉暴动
 		}
 	}
 	immediate = {
+		random_scope_state = {
+			limit = {
+				state_region = s:STATE_ILE_DE_FRANCE
+			}
+			save_scope_as = paris_scope		
+		}
 		set_variable = event_fra_2_var
-		random_scope_building = {
+		
+	}
+	option = {
+		name = fra.2.a #救
+		add_treasury = {
+			value = gdp
+			multiply = -0.05
+		}
+		add_modifier = {
+			name = modifier_fra_emergency_supply
+			years = 10
+		}
+		scope:paris_scope = {
 			limit = {
 				is_building_group = bg_wheat_farms 
 				NOT = {
@@ -80,17 +163,6 @@ fra.2 = { #面粉暴动
 		}
 	}
 	option = {
-		name = fra.2.a #救
-		add_treasury = {
-			value = gdp
-			multiply = -0.05
-		}
-		add_modifier = {
-			name = modifier_fra_emergency_supply
-			years = 10
-		}
-	}
-	option = {
 		name = fra.2.b #演
 		add_modifier = {
 			name = modifier_fra_pretend_conceal
@@ -100,12 +172,36 @@ fra.2 = { #面粉暴动
 			value = medium_radicals
 			strata = poor
 		}
+		scope:paris_scope = {
+			limit = {
+				is_building_group = bg_wheat_farms 
+				NOT = {
+					has_modifier = modifier_fra_flour_war
+				}
+			}
+			add_modifier = {
+				name = modifier_fra_flour_war
+				months = 12
+			}
+		}
 	}
 	option = {
 		name = fra.2.c #摆
 		add_radicals = {
 			value = large_radicals
 			strata = poor
+		}
+		scope:paris_scope = {
+			limit = {
+				is_building_group = bg_wheat_farms 
+				NOT = {
+					has_modifier = modifier_fra_flour_war
+				}
+			}
+			add_modifier = {
+				name = modifier_fra_flour_war
+				months = 12
+			}
 		}
 	}
 }
@@ -123,26 +219,46 @@ fra.3 = { #黄月番茄
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
-	
+	immediate = {
+		random_scope_state = {
+			limit = {
+				state_region = s:STATE_ILE_DE_FRANCE
+			}
+			save_scope_as = paris_scope		
+		}
+		set_variable = event_fra_3_var
+		
+	}
 	trigger = {
 		country = c:FRA
 		owns_entire_state_region = STATE_ILE_DE_FRANCE
-		s:STATE_ILE_DE_FRANCE = {
-			free_arable_land > 5
+		NOT = {
+			has_variable = event_fra_3_var
 		}
 	}
 	
 	option = {
 		name = fra.3.a #推广
-		random_scope_state = {
+		add_treasury = {
+			value = gdp
+			multiply = -0.02
+		}
+		if = {
 			limit = {
-				state_region = s:STATE_ILE_DE_FRANCE
+				modifier:country_disable_investment_pool_bool = no
+				scope:paris_scope = {
+					free_arable_land > 5
+				}
 			}
-			create_building={
-				building="building_wheat_farm"
-				level=5
-				reserves=1
+			scope:paris_scope = {
+			start_privately_funded_building_construction = building_wheat_farm
+			start_privately_funded_building_construction = building_wheat_farm
+			start_privately_funded_building_construction = building_wheat_farm
+			start_privately_funded_building_construction = building_wheat_farm
+			start_privately_funded_building_construction = building_wheat_farm
 			}
+		}
+		scope:paris_scope = {
 			add_modifier = {
 				name = modifier_fra_redmoon_tomato
 				years = -1
@@ -166,7 +282,7 @@ fra.4 = { #巧克力蛋糕
 	duration = 3
 	trigger = {
 		country = c:FRA
-		
+		has_modifier = modifier_fra_cake_expert
 	}
 	event_image = {
 		video = "unspecific_factory_closed"
@@ -174,14 +290,16 @@ fra.4 = { #巧克力蛋糕
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
 	
-	trigger = {
-		add_technology_progress = { progress = 2000 technology = baking_powder }
-	}
-	
 	option = {
 		name = fra.4.a #推广
-		
-		
+		add_treasury = {
+			value = gdp
+			multiply = -0.02
+		}
+		add_technology_progress = { progress = 2000 technology = baking_powder }
+	}
+	option = {
+		name = fra.4.b #不推广
 		
 	}
 }
@@ -199,13 +317,14 @@ fra.5 = { #人人有蛋糕
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
 	
-	trigger = {
-		
-	}
 	
 	option = {
 		name = fra.5.a 
-		
+		add_modifier = {
+			name = "modifier_fra_food_pk_mary_win"
+			years = -1
+		}
+		add_cultural_obsession = groceries
 	}
 }
 fra.6 = { #人人有面包
@@ -222,12 +341,318 @@ fra.6 = { #人人有面包
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
 	
+	option = {
+		name = fra.6.a 	
+		add_modifier = {
+			name = "modifier_fra_food_pk_mia_win"
+			years = -1
+		}
+		add_cultural_obsession = grain
+	}
+}
+fra.7 = { #新财政大臣
+	type = country_event
+	placement = root
+	title = fra.7.t
+	desc = fra.7.d
+	flavor = fra.7.f
+
+	duration = 3
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
 	trigger = {
 		
 	}
 	
 	option = {
-		name = fra.6.a 	
+		name = fra.7.a 	#黎塞留
+		create_character = {
+			template = fra_richelieu_template
+			traits = {
+				tot_fra_minister 
+				tot_Azurlane_Richelieu_trait
+			}
+		}
+		add_modifier = {
+			name = modifier_fra_mercantilism
+			years = -1
+		}
+	}
+	option = {
+		name = fra.7.b 	#路德维希
+		create_character = {
+			template = fra_ludwig_template
+			traits = {
+				tot_fra_minister 
+				tot_Tearmonn_Ludwig_trait
+			}
+		}
+		add_modifier = {
+			name = modifier_fra_tax_reform
+			years = -1
+		}
+	}
+	option = {
+		name = fra.7.c 	#雷欧纳多
+		create_character = {
+			template = fra_harwey_template
+			traits = {
+				tot_fra_minister 
+				tot_Fate_Harwey_trait
+			}
+		}
+		add_modifier = {
+			name = modifier_fra_laissez_faire
+			years = -1
+		}
+	}
+}
+fra.8 = { #甜点供应商
+	type = country_event
+	placement = root
+	title = fra.8.t
+	desc = fra.8.d
+	flavor = fra.8.f
+
+	duration = 3
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	
+	option = {
+		name = fra.8.a 	#星巴克
+		create_character = {
+			template = fra_kanna_template
+		}
+		
+	}
+	option = {
+		name = fra.8.b 	#兔屋
+		create_character = {
+			template = fra_chino_template
+		}
+		create_character = {
+			template = fra_maika_template
+		}
+	}
+	option = {
+		name = fra.8.c 	#莉可丽丝
+		create_character = {
+			template = fra_chisato_template
+		}
+	}
+}
+fra.9 = { #卖财产
+	type = country_event
+	placement = root
+	title = fra.9.t
+	desc = fra.9.d
+	flavor = fra.9.f
+
+	duration = 3
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	immediate = {
+		random_scope_character = {
+			limit = {
+				has_variable = fate_marie_scope
+			}
+			save_scope_as = fate_marie_scope
+		}
+		random_scope_character = {
+			limit = {
+				has_variable = tearmoon_mia_scope
+			}
+			save_scope_as = tearmoon_mia_scope
+		}
+	}
+	
+	option = {
+		name = fra.9.a 	#玛丽
+		trigger = {
+			scope:fate_marie_scope = {
+				is_character_alive = yes
+				has_trait = tot_diamond_necklace_trait
+			}
+		}
+		scope:fate_marie_scope = {
+			remove_trait = tot_diamond_necklace_trait
+		}
+		add_treasury = 100000
+	}
+	option = {
+		name = fra.9.b 	#米娅
+		trigger = {
+			scope:tearmoon_mia_scope = {
+				is_character_alive = yes
+				has_trait = tot_gemstone_hairpin_trait
+			}
+		}
+		scope:tearmoon_mia_scope = {
+			remove_trait = tot_gemstone_hairpin_trait
+		}
+		add_treasury = 100000
+	}
+	option = {
+		name = fra.9.c 	#地产
+		trigger = {
+			NOT = {
+				has_modifier = modifier_fra_sell_land
+			}
+		}
+		add_modifier = {
+			name = modifier_fra_sell_land
+			years = 20
+		}
+		add_treasury = 100000
+	}
+}
+fra.10 = { #强征
+	type = country_event
+	placement = root
+	title = fra.10.t
+	desc = fra.10.d
+	flavor = fra.10.f
+
+	duration = 3
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	trigger = {
+		
+	}
+	
+	option = {
+		name = fra.10.a 	#消费
+		trigger = {
+			NOT = {
+				has_modifier = modifier_fra_consumption_tax
+			}
+		}
+		add_modifier = {
+			name = modifier_fra_consumption_tax
+			years = 30
+		}
+	}
+	option = {
+		name = fra.10.b 	#分红
+		trigger = {
+			NOT = {
+				has_modifier = modifier_fra_dividends_tax
+			}
+		}
+		add_modifier = {
+			name = modifier_fra_dividends_tax
+			years = 30
+		}
+	}
+	option = {
+		name = fra.10.c 	#人均
+		trigger = {
+			NOT = {
+				has_modifier = modifier_fra_per_capita_tax
+			}
+		}
+		add_modifier = {
+			name = modifier_fra_per_capita_tax
+			years = 30
+		}
+	}
+}
+fra.11 = { #
+	type = country_event
+	placement = root
+	title = fra.11.t
+	desc = fra.11.d
+	flavor = fra.11.f
+
+	duration = 3
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	option = {
+		name = fra.11.a 	
+		
+	}
+	option = {
+		name = fra.11.b 	
+		
+	}
+	option = {
+		name = fra.11.c 	
+		
+	}
+}
+fra.12 = { #指定艺术家
+	type = country_event
+	placement = root
+	title = fra.12.t
+	desc = fra.12.d
+	flavor = fra.12.f
+
+	duration = 3
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	option = {
+		name = fra.12.a #莫扎特
+		
+	}
+	option = {
+		name = fra.12.b #艾莉丝•理特斯坦	
+		
+	}
+	option = {
+		name = fra.12.c #大仲马
+		
+	}
+	option = {
+		name = fra.12.e #宇佐美瑞希
+		
+	}
+}
+fra.13 = { #产出创作
+	type = country_event
+	placement = root
+	title = fra.13.t
+	desc = fra.13.d
+	flavor = fra.13.f
+
+	duration = 3
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+	immediate = {
+		
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	option = {
+		name = fra.13.a 	
+		
+	}
+	option = {
+		name = fra.13.b 	
 		
 	}
 }

@@ -1,0 +1,44 @@
+je_fra_queen_pk_education_creation_price_change = {
+	value = 0
+	if = {
+		limit = {
+			market.mg:fine_art = {
+				market_goods_cheaper >= 0
+			}
+		}
+		value = market.mg:fine_art.market_goods_cheaper
+		multiply = 4
+	}
+	if = {
+		limit = {
+			market.mg:fine_art = {
+				market_goods_pricier > 0
+			}
+		}
+		value = market.mg:fine_art.market_goods_pricier
+		multiply = -4
+	}
+
+	max = 100
+}
+
+je_fra_queen_pk_education_creation_price_data = {
+	value = 0
+	if = {
+		limit = {
+			market.mg:fine_art = {
+				market_goods_cheaper >= 0
+			}
+		}
+		value = market.mg:fine_art.market_goods_cheaper
+		multiply = -1
+	}
+	if = {
+		limit = {
+			market.mg:fine_art = {
+				market_goods_pricier > 0
+			}
+		}
+		value = market.mg:fine_art.market_goods_pricier
+	}
+}

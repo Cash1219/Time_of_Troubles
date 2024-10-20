@@ -18,11 +18,12 @@
 	complete = {
 		custom_tooltip = {
 			text = je_fra_queen_pk_end_tooltip
-			OR = {
-				var:je_fra_queen_pk_mary_advantage > 2000
-				var:je_fra_queen_pk_mia_advantage > 2000
-				var:je_fra_queen_pk_republican_discontent > 2000
-			}
+			#OR = {
+			#	var:je_fra_queen_pk_mary_advantage > 2000
+			#	var:je_fra_queen_pk_mia_advantage > 2000
+			#	var:je_fra_queen_pk_republican_discontent > 2000
+			#}
+			always = no
 		}
 	}
 
@@ -50,63 +51,157 @@ je_fra_queen_pk_food = { #粮食对决
 		has_journal_entry = je_fra_queen_pk
 	}
 	complete = {
-		has_variable = je_fra_queen_pk_food_end
+		
 	}
 	on_complete = {
 		
 	}
 }
-
 je_fra_queen_pk_finance = { #财政对决
 	should_be_pinned_by_default = yes
 	icon = "gfx/interface/progressbar/queen_pk_icon.dds"
 	scripted_button = je_fra_queen_pk_finance_mary_plan #玛丽的募资计划
 	scripted_button = je_fra_queen_pk_finance_mia_plan #米娅的节流计划
 	scripted_button = je_fra_queen_pk_finance_new_minister #新财政大臣
-	scripted_button = je_fra_queen_pk_finance_call_donations #号召捐款
-	scripted_button = je_fra_queen_pk_finance_frugality_style #勤俭作风
-	scripted_button = je_fra_queen_pk_finance_force_tax #强制加税
+	scripted_button = je_fra_queen_pk_finance_sell_asset #变卖财产
+	scripted_button = je_fra_queen_pk_finance_compulsory_taxation #强制通过税法
+	scripted_button = je_fra_queen_pk_finance_afternoon_tea_supplier #茶点供应商
 	modifiers_while_active = {
 		modifier_fra_extravagant_lifestyle
 	}
 	possible = {
 		has_journal_entry = je_fra_queen_pk
 	}
-	group = je_group_fra
 	complete = {
 		
 	}
-
-	invalid = {
-		
-	}
-
-	on_invalid = {
-		
-	}
-
-	fail = {
-		
-	}
-	
-	on_fail = {
-		
-	}
-
-    on_weekly_pulse = {
-        
-    }
-
-	on_monthly_pulse = {
-		
-	}
-
 	on_complete = {
 		
 	}
-
+	
 	weight = 1000
 	transferable = yes
+}
+je_fra_queen_pk_education = { #教育对决
+	should_be_pinned_by_default = yes
+	icon = "gfx/interface/progressbar/queen_pk_icon.dds"
+	scripted_button = je_fra_queen_pk_education_mary_plan #玛丽的艺术计划
+	scripted_button = je_fra_queen_pk_education_mia_plan #米娅的文学计划
+	scripted_button = je_fra_queen_pk_education_inviting_artists #邀请艺术家
+	scripted_button = je_fra_queen_pk_education_foreign_exchange #外国交流
+	scripted_button = je_fra_queen_pk_education_expand_academy #拓展法兰西科学院
+	scripted_button = je_fra_queen_pk_education_standard_requirements #通过费里法案
+	modifiers_while_active = {
+		modifier_fra_guizot_law
+	}
+	immediate = {
+		set_variable = {
+			name = je_fra_queen_pk_education_creation_progress
+			value = 0
+		}
+		set_variable = {
+			name = je_fra_exhibition_popularity
+			value = 0
+		}
+		set_variable = {
+			name = je_fra_sales_volume
+			value = 0
+		}
+	}
+	possible = {
+		has_journal_entry = je_fra_queen_pk
+	}
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_fra_no_creation_desc
+				trigger = { NOT = { has_variable = je_fra_poor_prince } }
+			}
+			triggered_desc = {
+				desc = je_fra_poor_prince_desc
+				trigger = { has_variable = je_fra_poor_prince }
+			}
+			
+		}
+		first_valid = {
+			triggered_desc = {
+				desc = je_fra_exhibition_popularity_desc
+				trigger = { always = yes }
+			}
+			
+		}
+		first_valid = {
+			triggered_desc = {
+				desc = je_fra_sales_volume_desc
+				trigger = { always = yes }
+			}
+		}
+	}
+	complete = {
+		
+	}
+	on_complete = {
+		
+	}
+	goal_add_value = {
+		add = 1000
+	}
+	on_weekly_pulse = {
+		effect = {
+			je_fra_queen_pk_education_creation_effect = yes
+		}
+	}
+	current_value = {
+		value = var:je_fra_queen_pk_education_creation_progress
+		
+	}
+	progressbar = yes
+	weight = 1000
+	transferable = yes
+}
+je_fra_queen_pk_medical = { #医疗对决
+	should_be_pinned_by_default = yes
+	icon = "gfx/interface/progressbar/queen_pk_icon.dds"
+	scripted_button = je_fra_queen_pk_medical_mary_plan #玛丽的卫生计划
+	scripted_button = je_fra_queen_pk_medical_mia_plan #米娅的医疗计划
+	scripted_button = je_fra_queen_pk_medical_control_infectious_diseases #控制传染病
+	scripted_button = je_fra_queen_pk_medical_increase_hospitals #增设医院
+	scripted_button = je_fra_queen_pk_medical_increase_toilet_revolution #厕所革命
+	scripted_button = je_fra_queen_pk_medical_increase_sewer #修缮下水道
+	modifiers_while_active = {
+		modifier_fra_cholera_pandemic
+	}
+	possible = {
+		has_journal_entry = je_fra_queen_pk
+	}
+	complete = {
+		has_variable = je_fra_queen_pk_food_end
+	}
+	on_complete = {
+		
+	}
+}
+je_fra_queen_pk_distribution = { #分配对决
+	should_be_pinned_by_default = yes
+	icon = "gfx/interface/progressbar/queen_pk_icon.dds"
+	scripted_button = je_fra_queen_pk_distribution_mary_plan #玛丽的资助计划
+	scripted_button = je_fra_queen_pk_distribution_mia_plan #米娅的清贫计划
+	scripted_button = je_fra_queen_pk_distribution_call_donations #号召捐款
+	scripted_button = je_fra_queen_pk_distribution_slum_clearance #清理贫民窟
+	scripted_button = je_fra_queen_pk_distribution_investigate_corruption #严查腐败
+	scripted_button = je_fra_queen_pk_distribution_technician_cultivation #技工培育
+	modifiers_while_active = {
+		modifier_fra_les_miserables
+	}
+	possible = {
+		has_journal_entry = je_fra_queen_pk
+	}
+	complete = {
+		has_variable = je_fra_queen_pk_food_end
+	}
+	on_complete = {
+		
+	}
 }
 je_fra_shadow_guillotine = { #断头台的阴影
 	icon = "gfx/interface/progressbar/queen_pk_icon.dds"
@@ -130,11 +225,11 @@ je_fra_shadow_guillotine = { #断头台的阴影
 		add = 1000
 	}
 	fail = {
-		var:je_fra_queen_pk_republican_discontent_next > 2000
+		var:je_fra_queen_pk_republican_discontent > 2000
 	}
 
 	current_value = {
-		value = root.var:je_fra_queen_pk_republican_discontent_next
+		value = root.var:je_fra_queen_pk_republican_discontent
 	}
 
 

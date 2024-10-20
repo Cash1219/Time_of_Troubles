@@ -42,3 +42,189 @@ reduce_fra_pk_advantage_medium = {
 		}
 	}
 }
+je_fra_queen_pk_education_creation_effect = {
+	set_variable = {
+		name = je_fra_queen_pk_education_creation_change
+		value = 0
+	}
+	if = {
+		limit = {
+			institution_investment_level = {
+                institution = institution_schools
+                value = 1
+            }
+		}
+		change_variable = {
+			name = je_fra_queen_pk_education_creation_change
+			add = 1
+		}
+	}
+	if = {
+		limit = {
+			institution_investment_level = {
+                institution = institution_schools
+                value = 2
+            }
+		}
+		change_variable = {
+			name = je_fra_queen_pk_education_creation_change
+			add = 2
+		}
+	}
+	if = {
+		limit = {
+			institution_investment_level = {
+                institution = institution_schools
+                value = 3
+            }
+		}
+		change_variable = {
+			name = je_fra_queen_pk_education_creation_change
+			add = 3
+		}
+	}
+	if = {
+		limit = {
+			institution_investment_level = {
+                institution = institution_schools
+                value = 4
+            }
+		}
+		change_variable = {
+			name = je_fra_queen_pk_education_creation_change
+			add = 4
+		}
+	}
+	if = {
+		limit = {
+			institution_investment_level = {
+                institution = institution_schools
+                value = 5
+            }
+		}
+		change_variable = {
+			name = je_fra_queen_pk_education_creation_change
+			add = 5
+		}
+	}
+	if = {
+		limit = {
+			has_law = law_outlawed_dissent
+		}
+		change_variable = {
+			name = je_fra_queen_pk_education_creation_change
+			add = -3
+		}
+	}
+	if = {
+		limit = {
+			has_law = law_censorship
+		}
+		change_variable = {
+			name = je_fra_queen_pk_education_creation_change
+			add = -1
+		}
+	}
+	if = {
+		limit = {
+			has_law = law_right_of_assembly
+		}
+		change_variable = {
+			name = je_fra_queen_pk_education_creation_change
+			add = 1
+		}
+	}
+	if = {
+		limit = {
+			has_law = law_protected_speech
+		}
+		change_variable = {
+			name = je_fra_queen_pk_education_creation_change
+			add = 3
+		}
+	}
+	change_variable = {
+		name = je_fra_queen_pk_education_creation_change
+		add = je_fra_queen_pk_education_creation_price_change
+	}
+	change_variable = {
+		name = je_fra_queen_pk_education_creation_progress
+		add = je_fra_queen_pk_education_creation_change
+	}
+	if = {
+		limit = {
+			var:je_fra_queen_pk_education_creation_progress >= 1000
+		}
+		change_variable = {
+			name = je_fra_queen_pk_education_creation_progress
+			add = -1000
+		}
+		random_list = {
+			1 = {
+				trigger = {
+					NOT = {
+						has_variable = je_fra_poor_prince
+					}
+				}
+				set_variable = je_fra_poor_prince
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						has_variable = je_fra_mia_biography
+					}
+				}
+				set_variable = je_fra_mia_biography
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						has_variable = je_fra_can_giant
+					}
+				}
+				set_variable = je_fra_can_giant
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						has_variable = je_fra_art_club
+					}
+				}
+				set_variable = je_fra_art_club
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						has_variable = je_fra_alla_turca
+					}
+				}
+				set_variable = je_fra_alla_turca
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						has_variable = je_fra_serenade
+					}
+				}
+				set_variable = je_fra_serenade
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						has_variable = je_fra_monte_cristo
+					}
+				}
+				set_variable = je_fra_monte_cristo
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						has_variable = je_fra_queen_necklace 
+					}
+				}
+				set_variable = je_fra_queen_necklace
+			}
+	}
+	}
+	
+}

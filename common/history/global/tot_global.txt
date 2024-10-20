@@ -1,16 +1,8 @@
 ﻿GLOBAL = {
 	c:FRA = {
-		random_scope_character = {
-			limit = {
-				has_trait = tot_Fate_Marie_trait
-			}
-			save_scope_as = fate_marie_scope
-		}
-		random_scope_character = {
-			limit = {
-				has_trait = tot_Tearmoon_Mia_trait
-			}
-			save_scope_as = tearmoon_mia_scope
+		add_treasury = {
+			value = gold_reserves_limit
+			multiply = -0.5
 		}
 	}
 }
