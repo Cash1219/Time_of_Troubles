@@ -3,6 +3,7 @@ modifier_fra_high_grain_prices = { #粮价高昂
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
 	state_radicals_from_sol_change_mult = 0.25
 	goods_output_grain_mult = -0.2
+	
 }
 modifier_fra_cake_expert = { #蛋糕专家
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
@@ -35,6 +36,11 @@ modifier_fra_guizot_law = { #基佐法案
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
 	country_institution_schools_max_investment_add = 1
 }
+modifier_fra_les_miserables = { #悲惨世界
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	state_poor_standard_of_living_add = -2
+	state_radicals_from_sol_change_mult = 0.25
+}
 
 
 #事件
@@ -44,6 +50,7 @@ modifier_fra_tearmoon_compromise = { #新月协议
 	country_voting_power_from_literacy_add = 20
 	country_legitimacy_headofstate_add = 10
 	country_legitimacy_ideological_incoherence_mult = -0.1
+	
 }
 modifier_fra_flour_war = { #面粉暴动
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
@@ -67,12 +74,6 @@ modifier_fra_redmoon_tomato = { #推广红月番茄
 modifier_fra_sell_land = { #卖贵族地产
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
 	interest_group_ig_landowners_approval_add = -3
-}
-modifier_fra_consumption_tax = { #消费税
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-	country_consumption_tax_cost_mult = -0.25
-	tax_consumption_add = 0.15
-	
 }
 modifier_fra_mercantilism = { #黎塞留重商主义
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
@@ -109,7 +110,8 @@ modifier_fra_per_capita_tax = { #人均税
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
 	tax_per_capita_add = 0.2
 	tax_land_add = 0.1
-	state_radicals_from_sol_change_mult = 0.2
+	state_radicals_from_sol_change_mult = 0.25
+	country_legitimacy_base_add = -5
 }
 modifier_fra_food_pk_mary_win = { #玛丽的蛋糕帝国
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
@@ -121,4 +123,41 @@ modifier_fra_food_pk_mia_win = { #米娅的面包帝国
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
 	goods_output_grain_mult = 0.1
 	state_loyalists_from_sol_change_mult = 0.2
+}
+modifier_fra_sugoi_cost = { #展会操纵
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_tax_income_add = -5000
+	country_bureaucracy_add = -200
+}
+modifier_fra_club_cost = { #放宽结社自由
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_authority_add = -100
+	country_legitimacy_base_add = -5
+}
+modifier_fra_ad_cost_1 = { #官方广告
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_influence_mult = -100
+	interest_group_ig_landowners_approval_add = -1
+}
+modifier_fra_ad_cost_2 = { #商业广告
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_tax_income_add = -100000
+}
+modifier_fra_inspiration_1 = { #宫廷
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_loyalists_from_legitimacy_mult = 0.02
+}
+modifier_fra_inspiration_2 = { #校园
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_weekly_innovation_max_add = 5
+	country_weekly_innovation_add = 5
+}
+modifier_fra_inspiration_3 = { #乡间
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	state_poor_expected_sol = 1
+	state_poor_standard_of_living_add = 1
+}
+modifier_fra_assist_creation = { #协助创作
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	character_popularity_add = 25
 }

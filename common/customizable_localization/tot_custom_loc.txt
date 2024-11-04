@@ -55,3 +55,212 @@
 			localization_key = ICON_CROSS
 		}
 	}
+	has_magic_sorcerer = {
+		type = country
+		random_valid = no
+
+		text = {
+			trigger = {
+				religion = {
+					has_discrimination_trait = sorcerer_domain
+				}
+			}
+			localization_key = custom_loc_sorcerer_heading
+		}
+
+		text = {
+			trigger = {
+				religion = {
+					NOT = { has_discrimination_trait = sorcerer_domain }
+				}
+			}
+			localization_key = custom_loc_sorcerer_heading_not
+		}
+	}
+	has_magic_cleric = {
+		type = country
+		random_valid = no
+
+		text = {
+			trigger = {
+				religion = {
+					has_discrimination_trait = cleric_domain
+				}
+			}
+			localization_key = custom_loc_cleric_heading
+		}
+
+		text = {
+			trigger = {
+				religion = {
+					NOT = { has_discrimination_trait = cleric_domain }
+				}
+			}
+			localization_key = custom_loc_cleric_heading_not
+		}
+	}
+	fra_current_creation = {
+		type = country
+		
+		text = {
+			trigger = {
+				has_variable = je_fra_poor_prince
+			}
+			localization_key = je_fra_poor_prince_desc
+		}
+		text = {
+			trigger = {
+				has_variable = je_fra_mia_biography
+			}
+			localization_key = je_fra_mia_biography_desc
+		}
+		text = {
+			trigger = {
+				has_variable = je_fra_can_giant
+			}
+			localization_key = je_fra_can_giant_desc
+		}
+		text = {
+			trigger = {
+				has_variable = je_fra_art_club
+			}
+			localization_key = je_fra_art_club_desc
+		}
+		text = {
+			trigger = {
+				has_variable = je_fra_alla_turca
+			}
+			localization_key = je_fra_alla_turca_desc
+		}
+		text = {
+			trigger = {
+				has_variable = je_fra_serenade
+			}
+			localization_key = je_fra_serenade_desc
+		}
+		text = {
+			trigger = {
+				has_variable = je_fra_monte_cristo
+			}
+			localization_key = je_fra_monte_cristo_desc
+		}
+		text = {
+			trigger = {
+				has_variable = je_fra_queen_necklace
+			}
+			localization_key = je_fra_queen_necklace_desc
+		}
+		text = {
+			trigger = {
+				has_variable = je_fra_daisuki
+			}
+			localization_key = je_fra_daisuki_desc
+		}
+		text = {
+			trigger = {
+				has_variable = je_fra_without_you
+			}
+			localization_key = je_fra_without_you_desc
+		}
+		text = {
+			trigger = {
+				has_variable = je_fra_peco
+			}
+			localization_key = je_fra_peco_desc
+		}
+		text = {
+			trigger = {
+				has_variable = je_fra_elf_story
+			}
+			localization_key = je_fra_elf_story_desc
+		}
+		text = {
+			localization_key = fra_no_creation
+		}
+	}
+	je_fra_sales_volume_level = {
+		type = country
+		text = {
+			trigger = {
+				var:je_fra_sales_volume = 0
+			}
+			localization_key = je_fra_sales_volume_level_0
+		}
+		text = {
+			trigger = {
+				var:je_fra_sales_volume > 0
+				var:je_fra_sales_volume < 3
+			}
+			localization_key = je_fra_sales_volume_level_1
+		}
+		text = {
+			trigger = {
+				var:je_fra_sales_volume > 2
+				var:je_fra_sales_volume < 5
+			}
+			localization_key = je_fra_sales_volume_level_2
+		}
+		text = {
+			trigger = {
+				var:je_fra_sales_volume > 4
+				var:je_fra_sales_volume < 7
+			}
+			localization_key = je_fra_sales_volume_level_3
+		}
+		text = {
+			trigger = {
+				var:je_fra_sales_volume > 6
+				var:je_fra_sales_volume < 9
+			}
+			localization_key = je_fra_sales_volume_level_4
+		}
+		text = {
+			trigger = {
+				var:je_fra_sales_volume > 9
+			}
+			localization_key = je_fra_sales_volume_level_5
+		}
+	}
+	je_fra_exhibition_popularity_level = {
+		type = country
+		text = {
+			trigger = {
+				var:je_fra_exhibition_popularity = 0
+			}
+			localization_key = je_fra_exhibition_popularity_level_0
+		}
+		text = {
+			trigger = {
+				var:je_fra_exhibition_popularity > 0
+				var:je_fra_exhibition_popularity < 3
+			}
+			localization_key = je_fra_exhibition_popularity_level_1
+		}
+		text = {
+			trigger = {
+				var:je_fra_exhibition_popularity > 2
+				var:je_fra_exhibition_popularity < 5
+			}
+			localization_key = je_fra_exhibition_popularity_level_2
+		}
+		text = {
+			trigger = {
+				var:je_fra_exhibition_popularity > 4
+				var:je_fra_exhibition_popularity < 7
+			}
+			localization_key = je_fra_exhibition_popularity_level_3
+		}
+		text = {
+			trigger = {
+				var:je_fra_exhibition_popularity > 6
+				var:je_fra_exhibition_popularity < 9
+			}
+			localization_key = je_fra_exhibition_popularity_level_4
+		}
+		text = {
+			trigger = {
+				var:je_fra_exhibition_popularity > 9
+			}
+			localization_key = je_fra_exhibition_popularity_level_5
+		}
+	}

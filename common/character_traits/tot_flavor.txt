@@ -58,7 +58,6 @@ tot_fra_minister = { #法兰西财政部长
 	possible = { always = no }
 	character_modifier = {
 		character_popularity_add = 25
-		
 	}
 
 	command_modifier = {
@@ -66,7 +65,9 @@ tot_fra_minister = { #法兰西财政部长
 	}
 
 	country_modifier = {
-		
+		interest_group_pol_str_mult = 0.15
+		country_bureaucracy_mult = 0.05
+		country_production_tech_research_speed_mult = 0.1
 	}
 
 	possible = {
@@ -74,7 +75,32 @@ tot_fra_minister = { #法兰西财政部长
 	}
 
 	interest_group_modifier = {
-		interest_group_pol_str_mult = 0.25
-		interest_group_approval_add = 1
+		interest_group_pol_str_mult = 0.15
+		interest_group_approval_add = 2
+	}
+
+}
+tot_fra_creative_experience = { #创作经验
+	type = personality
+	texture = "gfx/interface/icons/character_trait_icons/direct.dds"
+	possible = { always = no }
+	character_modifier = {
+		character_popularity_add = 25
+	}
+
+	command_modifier = {
+	
+	}
+
+	country_modifier = {
+		country_society_tech_research_speed_mult = 0.1
+	}
+
+	possible = {
+		always = no
+	}
+
+	interest_group_modifier = {
+		interest_group_pol_str_mult = 0.1
 	}
 }

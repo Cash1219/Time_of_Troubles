@@ -95,9 +95,9 @@
 				tot_Lycoris_Chisato_trait
 			}
 		}
-		create_character = {
+		fra_mozart_template = {
 			historical = yes
-			first_name = "Wolfgang Amadeus"
+			first_name = "Wolfgang_Amadeus"
 			last_name = "Mozart"
 			birth_date = 1816.1.1 
 			ig_leader = yes
@@ -109,7 +109,7 @@
 				tot_Fate_Mozart_trait
 			}
 		}
-		create_character = {
+		fra_alice_template = {
 			historical = yes
 			first_name = "Alice"
 			last_name = "Ritostan"
@@ -123,7 +123,7 @@
 				tot_Tearmoon_Alice_trait
 			}
 		}
-		create_character = {
+		fra_mizuki_template = {
 			historical = yes
 			first_name = "Usami"
 			last_name = "Mizuki"
@@ -138,3 +138,19 @@
 				tot_ArtClub_Mizuki_trait
 			}
 		}
+		fra_dumas_template = {
+        	first_name = "Dumas" 
+       		last_name = "Alexandre"
+      		birth_date = 1816.1.1
+        	historical = yes
+       		culture = cu:french
+			is_agitator = yes 
+        	religion = rel:catholic
+       		interest_group = ig_intelligentsia #知识分子
+   			ideology = ideology_republican_leader #共和主义
+        	traits = {
+        		romantic
+				imposing
+        		tot_Fate_Dumas_trait
+   			}
+        }

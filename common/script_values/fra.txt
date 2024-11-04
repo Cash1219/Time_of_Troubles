@@ -1,3 +1,76 @@
+﻿je_fra_queen_pk_education_creation_change = {
+	value = 5
+	if = {
+		limit = {
+			institution_investment_level = {
+                institution = institution_schools
+                value = 1
+            }
+		}
+		add = 2
+	}
+	if = {
+		limit = {
+			institution_investment_level = {
+                institution = institution_schools
+                value = 2
+            }
+		}
+		add = 4
+	}
+	if = {
+		limit = {
+			institution_investment_level = {
+                institution = institution_schools
+                value = 3
+            }
+		}
+		add = 6
+	}
+	if = {
+		limit = {
+			institution_investment_level = {
+                institution = institution_schools
+                value = 4
+            }
+		}
+		add = 8
+	}
+	if = {
+		limit = {
+			institution_investment_level = {
+                institution = institution_schools
+                value = 5
+            }
+		}
+		add = 10
+	}
+	if = {
+		limit = {
+			has_law = law_type:law_outlawed_dissent
+		}
+		add = -5
+	}
+	if = {
+		limit = {
+			has_law = law_type:law_censorship
+		}
+		add = -3
+	}
+	if = {
+		limit = {
+			has_law = law_type:law_right_of_assembly
+		}
+		add = 3
+	}
+	if = {
+		limit = {
+			has_law = law_type:law_protected_speech
+		}
+		add = 5
+	}
+	add = je_fra_queen_pk_education_creation_price_change
+}
 je_fra_queen_pk_education_creation_price_change = {
 	value = 0
 	if = {
@@ -7,7 +80,7 @@ je_fra_queen_pk_education_creation_price_change = {
 			}
 		}
 		value = market.mg:fine_art.market_goods_cheaper
-		multiply = 4
+		multiply = 10
 	}
 	if = {
 		limit = {
@@ -16,7 +89,7 @@ je_fra_queen_pk_education_creation_price_change = {
 			}
 		}
 		value = market.mg:fine_art.market_goods_pricier
-		multiply = -4
+		multiply = -10
 	}
 
 	max = 100

@@ -12,12 +12,7 @@
 reduce_fra_pk_advantage_small = {
 	custom_description = {
 		text = reduce_fra_pk_advantage_small
-		je:je_fra_queen_pk = {
-			add_progress = {
-				value = -100
-				name = je_fra_queen_pk_progress_bar
-			}
-		}
+		z
 	}
 }
 add_fra_pk_advantage_medium = {
@@ -42,123 +37,21 @@ reduce_fra_pk_advantage_medium = {
 		}
 	}
 }
+
 je_fra_queen_pk_education_creation_effect = {
-	set_variable = {
-		name = je_fra_queen_pk_education_creation_change
-		value = 0
-	}
-	if = {
-		limit = {
-			institution_investment_level = {
-                institution = institution_schools
-                value = 1
-            }
-		}
-		change_variable = {
-			name = je_fra_queen_pk_education_creation_change
-			add = 1
-		}
-	}
-	if = {
-		limit = {
-			institution_investment_level = {
-                institution = institution_schools
-                value = 2
-            }
-		}
-		change_variable = {
-			name = je_fra_queen_pk_education_creation_change
-			add = 2
-		}
-	}
-	if = {
-		limit = {
-			institution_investment_level = {
-                institution = institution_schools
-                value = 3
-            }
-		}
-		change_variable = {
-			name = je_fra_queen_pk_education_creation_change
-			add = 3
-		}
-	}
-	if = {
-		limit = {
-			institution_investment_level = {
-                institution = institution_schools
-                value = 4
-            }
-		}
-		change_variable = {
-			name = je_fra_queen_pk_education_creation_change
-			add = 4
-		}
-	}
-	if = {
-		limit = {
-			institution_investment_level = {
-                institution = institution_schools
-                value = 5
-            }
-		}
-		change_variable = {
-			name = je_fra_queen_pk_education_creation_change
-			add = 5
-		}
-	}
-	if = {
-		limit = {
-			has_law = law_outlawed_dissent
-		}
-		change_variable = {
-			name = je_fra_queen_pk_education_creation_change
-			add = -3
-		}
-	}
-	if = {
-		limit = {
-			has_law = law_censorship
-		}
-		change_variable = {
-			name = je_fra_queen_pk_education_creation_change
-			add = -1
-		}
-	}
-	if = {
-		limit = {
-			has_law = law_right_of_assembly
-		}
-		change_variable = {
-			name = je_fra_queen_pk_education_creation_change
-			add = 1
-		}
-	}
-	if = {
-		limit = {
-			has_law = law_protected_speech
-		}
-		change_variable = {
-			name = je_fra_queen_pk_education_creation_change
-			add = 3
-		}
-	}
-	change_variable = {
-		name = je_fra_queen_pk_education_creation_change
-		add = je_fra_queen_pk_education_creation_price_change
-	}
-	change_variable = {
-		name = je_fra_queen_pk_education_creation_progress
-		add = je_fra_queen_pk_education_creation_change
-	}
+	
 	if = {
 		limit = {
 			var:je_fra_queen_pk_education_creation_progress >= 1000
+			NOT = {
+				has_variable = je_fra_has_creation
+			}
 		}
 		change_variable = {
 			name = je_fra_queen_pk_education_creation_progress
 			add = -1000
 		}
+		set_variable = je_fra_has_creation
 		random_list = {
 			1 = {
 				trigger = {
@@ -167,6 +60,7 @@ je_fra_queen_pk_education_creation_effect = {
 					}
 				}
 				set_variable = je_fra_poor_prince
+				set_variable = je_fra_poor_prince_complete
 			}
 			1 = {
 				trigger = {
@@ -175,6 +69,7 @@ je_fra_queen_pk_education_creation_effect = {
 					}
 				}
 				set_variable = je_fra_mia_biography
+				set_variable = je_fra_mia_biography_complete
 			}
 			1 = {
 				trigger = {
@@ -183,6 +78,7 @@ je_fra_queen_pk_education_creation_effect = {
 					}
 				}
 				set_variable = je_fra_can_giant
+				set_variable = je_fra_can_giant_complete
 			}
 			1 = {
 				trigger = {
@@ -191,6 +87,7 @@ je_fra_queen_pk_education_creation_effect = {
 					}
 				}
 				set_variable = je_fra_art_club
+				set_variable = je_fra_art_club_complete
 			}
 			1 = {
 				trigger = {
@@ -199,6 +96,7 @@ je_fra_queen_pk_education_creation_effect = {
 					}
 				}
 				set_variable = je_fra_alla_turca
+				set_variable = je_fra_alla_turca_complete
 			}
 			1 = {
 				trigger = {
@@ -207,6 +105,7 @@ je_fra_queen_pk_education_creation_effect = {
 					}
 				}
 				set_variable = je_fra_serenade
+				set_variable = je_fra_serenade_complete
 			}
 			1 = {
 				trigger = {
@@ -215,6 +114,7 @@ je_fra_queen_pk_education_creation_effect = {
 					}
 				}
 				set_variable = je_fra_monte_cristo
+				set_variable = je_fra_monte_cristo_complete
 			}
 			1 = {
 				trigger = {
@@ -223,8 +123,94 @@ je_fra_queen_pk_education_creation_effect = {
 					}
 				}
 				set_variable = je_fra_queen_necklace
+				set_variable = je_fra_queen_necklace_complete
 			}
-	}
+			1 = {
+				trigger = {
+					NOT = {
+						has_variable = je_fra_daisuki 
+					}
+				}
+				set_variable = je_fra_daisuki
+				set_variable = je_fra_daisuki_complete
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						has_variable = je_fra_without_you 
+					}
+				}
+				set_variable = je_fra_without_you
+				set_variable = je_fra_without_you_complete
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						has_variable = je_fra_peco 
+					}
+				}
+				set_variable = je_fra_peco
+				set_variable = je_fra_peco_complete
+			}
+			1 = {
+				trigger = {
+					NOT = {
+						has_variable = je_fra_elf_story 
+					}
+				}
+				set_variable = je_fra_elf_story
+				set_variable = je_fra_elf_story_complete
+			}
+		}
+		trigger_event = { id = fra.12 }
 	}
 	
+}
+add_small_exhibition_popularity = {
+	custom_description = {
+		text = add_small_exhibition_popularity
+		change_variable = {
+			name = je_fra_exhibition_popularity
+			add = 1
+		}
+	}
+}
+add_medium_exhibition_popularity = {
+	custom_description = {
+		text = add_medium_exhibition_popularity
+		change_variable = {
+			name = je_fra_exhibition_popularity
+			add = 2
+		}
+	}
+}
+add_small_sales_volume = {
+	custom_description = {
+		text = add_small_sales_volume
+		change_variable = {
+			name = je_fra_sales_volume
+			add = 1
+		}
+	}
+}
+add_medium_sales_volume = {
+	custom_description = {
+		text = add_medium_sales_volume
+		change_variable = {
+			name = je_fra_sales_volume
+			add = 2
+		}
+	}
+}
+fra_change_creation_progress = {
+	custom_description = {
+		text = fra_change_creation_progress
+		value = $VALUE$
+		je:je_fra_queen_pk_education = {
+			add_progress = {
+				value = $VALUE$
+				name = je_fra_queen_pk_progress_bar
+			}
+		}
+	}
 }

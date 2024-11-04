@@ -108,3 +108,25 @@ fra_company_brest_shipyard = {
 		unit_navy_defense_mult = 0.05
 	}	
 }
+fra_company_literary_society = { #第二文社
+	icon = "gfx/interface/icons/company_icons/fra_company_stile_cafe.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+	
+	flavored_company = yes
+
+	building_types = {  
+		building_shipyards
+		building_military_shipyards
+	}
+
+	possible = { 
+		c:FRA ?= this
+	}
+	ai_weight = {
+		value = 3 
+	}
+	prosperity_modifier = {
+		unit_navy_offense_mult = 0.05
+		unit_navy_defense_mult = 0.05
+	}	
+}

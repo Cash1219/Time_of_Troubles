@@ -2,6 +2,7 @@
 	add = mana_generation
 	add = mana_upkeep
 	add = mana_usage
+	value = 100
 }
 
 mana_multiplier = {
@@ -52,7 +53,7 @@ normalized_magic_surplus = {
 	max = 1
   }
 
-  normalized_magic_deficit = {
+normalized_magic_deficit = {
 	value = mana
 
 	divide = 1000
@@ -60,10 +61,13 @@ normalized_magic_surplus = {
 	max = 0
   }
 
-  normalized_mana = {
+normalized_mana = {
 	value = mana
 
 	divide = 1000
 	min = -1
 	max = 1
-  }
+}
+num_magic_active = {
+	value = var:num_magic
+}

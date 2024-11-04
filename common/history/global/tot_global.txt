@@ -5,4 +5,17 @@
 			multiply = -0.5
 		}
 	}
+	
+	every_country = {
+		calculate_magics = yes
+		if = {
+			limit = {
+				NOT = { has_variable = num_magic }
+			}
+			set_variable = {
+				name = num_magic
+				value = 0
+			}
+		}
+	}
 }

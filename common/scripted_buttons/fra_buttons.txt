@@ -222,10 +222,27 @@ je_fra_queen_pk_finance_new_minister = { #提拔新财政大臣
 	}
 
 	possible = {
-		
+		custom_tooltip = {
+			text = je_fra_queen_pk_finance_new_minister_tt
+			NOT = {
+				has_variable = set_variable
+			}
+			scope:azurlane_richelieu_scope = {
+				is_character_alive = no
+			}
+			scope:tearmonn_ludwig_scope = {
+				is_character_alive = no
+			}
+			scope:fra_harwey_template = {
+				is_character_alive = no
+			}
+		}
 	}
 
 	effect = {
+		remove_modifier = modifier_fra_mercantilism
+		remove_modifier = modifier_fra_tax_reform
+		remove_modifier = modifier_fra_laissez_faire
 		trigger_event = { id = fra.7 }
 	}
 }
@@ -358,10 +375,8 @@ je_fra_queen_pk_education_inviting_artists = { #邀请艺术家
 	}
 
 	effect = {
-		change_variable = {
-			name = je_fra_queen_pk_education_creation_progress
-			add = 500
-		}
+		trigger_event = { id = fra.11 }
+		
 	}
 }
 je_fra_queen_pk_education_foreign_exchange = { #外国交流
@@ -382,7 +397,10 @@ je_fra_queen_pk_education_foreign_exchange = { #外国交流
 	}
 
 	effect = {
-		
+		change_variable = {
+			name = je_fra_queen_pk_education_creation_progress
+			add = 1000
+		}
 	}
 }
 je_fra_queen_pk_education_expand_academy = { #拓展法兰西科学院
@@ -420,7 +438,7 @@ je_fra_queen_pk_education_standard_requirements = { #通过费里法案
 	}
 
 	possible = {
-		has_law = law_compulsory_primary_school
+		has_law = law_type:law_compulsory_primary_school
 	}
 
 	effect = {

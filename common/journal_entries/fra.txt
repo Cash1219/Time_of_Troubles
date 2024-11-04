@@ -114,14 +114,9 @@ je_fra_queen_pk_education = { #教育对决
 	status_desc = {
 		first_valid = {
 			triggered_desc = {
-				desc = je_fra_no_creation_desc
-				trigger = { NOT = { has_variable = je_fra_poor_prince } }
+				desc = fra_current_creation
+				
 			}
-			triggered_desc = {
-				desc = je_fra_poor_prince_desc
-				trigger = { has_variable = je_fra_poor_prince }
-			}
-			
 		}
 		first_valid = {
 			triggered_desc = {
@@ -148,7 +143,21 @@ je_fra_queen_pk_education = { #教育对决
 	}
 	on_weekly_pulse = {
 		effect = {
+			change_variable = {
+				name = je_fra_queen_pk_education_creation_progress
+				add = je_fra_queen_pk_education_creation_change
+			}
 			je_fra_queen_pk_education_creation_effect = yes
+		}
+	}
+	on_monthly_pulse = {
+		random_events = {
+			100 = 0
+			10 = fra.13 #展会：这个作品真厉害！
+			10 = fra.14 #社团：组建社团 第二文社，美术社，皇家文学会
+			10 = fra.15 #宣传：官方站台，商店广告，学界支持
+			10 = fra.16 #调研：到皇室/校园/乡间取材
+			10 = fra.17 #校对，润色，定稿
 		}
 	}
 	current_value = {
