@@ -1,0 +1,92 @@
+window = {
+	name = "magic_tech_window"
+	parentanchor = center
+	position = { 0% 0% }
+	size = { 1500 800 }
+	layer = windows_layer
+	filter_mouse = all
+	allow_outside = yes
+	alwaystransparent = no
+	
+	using = Window_Background
+	using = Window_Decoration
+	using = magic_tech_panel_visibility
+	
+	movable = yes
+	visible = "[GetVariableSystem.Exists('magic_tech_visible')]"
+    
+    datacontext = "[GetVariableSystem]"
+	datacontext = "[GetPlayer]"
+	
+	state = {
+		name = _show
+		using = Animation_FadeIn_Quick
+	}
+	
+	state = {
+		name = _hide
+		using = Animation_FadeOut_Quick
+	}
+
+	vbox = {
+		restrictparent_min = yes
+		using = Window_Margins
+		
+		header_pattern = {
+			layoutpolicy_horizontal = expanding
+
+
+			blockoverride "header_text"
+			{
+				text = "MAGIC_TECH" # 魔法科技
+			}
+
+			blockoverride "button_close"
+			{
+				onclick = "[GetVariableSystem.Toggle('magic_tech_visible')]" 
+			}
+		}
+			
+		hbox = {
+			layoutpolicy_horizontal = expanding
+			button_tab = {
+				layoutpolicy_horizontal = expanding
+				text = "MAGIC_TECH_RESEARCH" # 
+
+				onclick = "[GetVariableSystem.Set( 'magic_tech_tabs', 'magic_tech_research' )]"
+				down = "[GetVariableSystem.HasValue( 'magic_tech_tabs', 'magic_tech_research' )]"
+			}
+		}
+		scrollbox = {
+			name = "characters_scroll_area"
+			layoutpolicy_vertical = expanding
+			layoutpolicy_horizontal = expanding
+
+			blockoverride "scrollbox_content" {
+				
+				hbox = {
+					visible = "[GetVariableSystem.HasValue( 'magic_tech_tabs', 'magic_tech_research' )]"
+					layoutpolicy_horizontal = expanding
+					spacing = 5
+					hbox = {
+						spacing = 5
+						
+						
+
+						divider_clean = {
+							layoutpolicy_horizontal = expanding
+						}
+						
+						
+					}
+					
+				}
+			}
+		}
+
+	}
+}
+
+
+
+

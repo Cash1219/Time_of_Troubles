@@ -1,0 +1,29 @@
+﻿cast_magic_id_sorcerer_is_valid = {
+    religion = {
+        has_discrimination_trait = sorcerer_domain
+    }
+    NOT = { 
+        has_modifier = country_magic_card_cooldown
+    }
+    root = {
+        custom_tooltip = {
+            text = has_reserves_tt
+            root.mana >= mana_cost
+        }
+    }
+}
+
+cast_cleric_id_cleric_is_valid = {
+    religion = {
+        has_discrimination_trait = cleric_domain
+    }
+    NOT = { 
+        has_modifier = country_magic_card_cooldown
+    }
+    root = {
+        custom_tooltip = {
+            text = has_reserves_tt
+            root.mana >= mana_cost
+        }
+    }
+}

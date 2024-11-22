@@ -1,10 +1,8 @@
 ﻿COUNTRIES = {
-	c:FRA = {
+	c:FRA ?= {
 		set_next_election_date = 1836.3.1
-		#effect_has_custom_journals = yes
-		#effect_has_flavored_interest_groups = yes
-		#effect_starting_technology_tier_1_tech = yes
-		effect_set_update_status_new = yes
+		effect_starting_technology_tier_1_tech = yes
+		
 		set_tax_level = medium
 		
 		# Laws
@@ -55,12 +53,10 @@
 		company:company_dmc = {
 			set_company_establishment_date = 1746.1.1
 			set_company_state_region = s:STATE_ALSACE_LORRAINE
-		
+		}
 		trigger_event = {
 			id = fra.1
 			popup = yes
 			#id = character_events.3
 		}
-		
-	}
 }

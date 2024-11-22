@@ -1,0 +1,44 @@
+widget = {
+    layer = top
+    
+    name = religion_icon_button
+    position = { 90 880 }
+    size = { 80 80 }
+    alpha = 0.7
+    using = Animation_ShowHide_Quick
+    
+
+    sidepanel_button_small = {
+            tooltip = "RELIGION_ICON_TEXT_MENU_BUTTON"
+            onclick = "[GetVariableSystem.Toggle('religion_icon_visible')]"
+			visible = "[Not(InformationPanelBar.IsAnyPanelOpen())]"
+            using = maplens_generic_sound
+          
+        name = "religion_icon_shortcut_button"
+        size = { 45 45 }
+        alpha = 0.6
+        blockoverride "icon" {
+            texture = "gfx/interface/icons/religion_icons/catholic.dds"
+			alpha = 2.0
+                }
+                
+
+            blockoverride "icon_size" {
+                    size = { 40 40 }
+                }
+        
+        state = {
+            name = _mouse_enter
+            alpha = 1
+            duration = 0.7
+            using = Animation_Curve_Default
+        }
+
+        state = {
+            name = _mouse_leave
+            alpha = 0.7
+            duration = 0.2
+            using = Animation_Curve_Default
+        }
+    }
+}

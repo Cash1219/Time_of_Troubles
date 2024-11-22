@@ -1,0 +1,389 @@
+window = {
+	name = "religion_icon_window"
+	parentanchor = center
+	position = { 0% 0% }
+	size = { 1500 800 }
+	layer = windows_layer
+	filter_mouse = all
+	allow_outside = yes
+	alwaystransparent = no
+	
+	using = Window_Background
+	using = Window_Decoration
+	#using = religion_icon_panel_visibility
+	
+	movable = yes
+	visible = "[GetVariableSystem.Exists('religion_icon_visible')]"
+    
+    datacontext = "[GetVariableSystem]"
+	datacontext = "[GetPlayer]"
+	
+	state = {
+		name = _show
+		using = Animation_FadeIn_Quick
+	}
+	
+	state = {
+		name = _hide
+		using = Animation_FadeOut_Quick
+	}
+
+	vbox = {
+		restrictparent_min = yes
+		using = Window_Margins
+		
+		header_pattern = {
+			layoutpolicy_horizontal = expanding
+
+
+			blockoverride "header_text"
+			{
+				text = "RELIGION_ICON" # 宗教
+			}
+
+			blockoverride "button_close"
+			{
+				onclick = "[GetVariableSystem.Toggle('religion_icon_visible')]" 
+			}
+		}
+	
+			
+		hbox = {
+			layoutpolicy_horizontal = expanding
+			button_tab = {
+				layoutpolicy_horizontal = expanding
+				text = "RELIGION_CHOOSE_ICON" # 圣像
+
+				onclick = "[GetVariableSystem.Set( 'religion_icon_tabs', 'choose_icon' )]"
+				down = "[GetVariableSystem.HasValue( 'religion_icon_tabs', 'choose_icon' ) ]"
+			}
+			button_tab = {
+				layoutpolicy_horizontal = expanding
+				text = "RELIGION_REFORM_ICON" # 宗教改革
+
+				onclick = "[GetVariableSystem.Set( 'religion_icon_tabs', 'reform_icon' )]"
+				down = "[GetVariableSystem.HasValue( 'religion_icon_tabs', 'reform_icon' ) ]"
+			}
+		}
+		
+		scrollbox = {
+			name = "characters_scroll_area"
+			layoutpolicy_vertical = expanding
+			layoutpolicy_horizontal = expanding
+
+			blockoverride "scrollbox_content" {
+				text_single = {
+							text = "RELIGION_ICON_1" # 先驱者
+							visible = "[And(GetVariableSystem.HasValue( 'religion_icon_tabs', 'choose_icon' ) ,GetScriptedGui('religion_icon_pioneer').IsShown( GuiScope.End ))]"
+							
+						}
+				hbox = {
+					visible = "[GetVariableSystem.HasValue( 'religion_icon_tabs', 'choose_icon' ) ]"
+					layoutpolicy_horizontal = expanding
+					spacing = 5
+					hbox = {
+						spacing = 5
+						
+						
+
+						divider_clean = {
+							layoutpolicy_horizontal = expanding
+						}
+						
+						button_icon_square_action = {
+							name = "religion_icon_sakura" #木之本樱
+							visible = "[GetScriptedGui('religion_icon_sakura').IsShown( GuiScope.End )]"
+							onclick = "[GetScriptedGui('religion_icon_sakura').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/religion_icons/religion_icon_sakura.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+							}
+						}
+						
+						button_icon_square_action = {
+							name = "religion_icon_nanoha" #高町奈叶
+							visible = "[GetScriptedGui('religion_icon_nanoha').IsShown( GuiScope.End )]"
+							onclick = "[GetScriptedGui('religion_icon_nanoha').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_NANOHA_TOOLTIP" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/religion_icons/religion_icon_nanoha.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+							}
+							
+						}
+						
+						button_icon_square_action = {
+							name = "religion_icon_madoka" #鹿目圆
+							visible = "[GetScriptedGui('religion_icon_madoka').IsShown( GuiScope.End )]"
+							onclick = "[GetScriptedGui('religion_icon_madoka').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_MADOKA_TOOLTIP" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/religion_icons/religion_icon_madoka.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+							}
+						}
+						button_icon_square_action = {
+							name = "religion_icon_shario" #夏莉欧
+							visible = "[GetScriptedGui('religion_icon_shario').IsShown( GuiScope.End )]"
+							onclick = "[GetScriptedGui('religion_icon_shario').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_MADOKA_TOOLTIP" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/religion_icons/religion_icon_shario.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+							}
+						}
+					}
+					
+				}
+				text_single = {
+							text = "RELIGION_ICON_2" # 魔神崇拜
+							visible = "[And(GetVariableSystem.HasValue( 'religion_icon_tabs', 'choose_icon' ) ,GetScriptedGui('religion_icon_demon_god').IsShown( GuiScope.End ))]"
+						}
+				hbox = {
+					
+					visible = "[GetVariableSystem.HasValue( 'religion_icon_tabs', 'choose_icon' ) ]"
+					layoutpolicy_horizontal = expanding
+					spacing = 5
+					hbox = {
+						spacing = 5
+						
+						
+
+						divider_clean = {
+							layoutpolicy_horizontal = expanding
+						}
+						
+						button_icon_square_action = {
+							name = "religion_icon_qb" #丘比
+							visible = "[GetScriptedGui('religion_icon_qb').IsShown( GuiScope.End )]"
+							onclick = "[GetScriptedGui('religion_icon_qb').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
+							using = tooltip_ne
+							size = { 2 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/religion_icons/religion_icon_qb.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+							}
+						}
+						button_icon_square_action = {
+							name = "religion_icon_mori" #丹生谷森夏
+							visible = "[GetScriptedGui('religion_icon_mori').IsShown( GuiScope.End )]"
+							onclick = "[GetScriptedGui('religion_icon_mori').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/religion_icons/religion_icon_mori.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+							}
+						}
+						button_icon_square_action = {
+							name = "religion_icon_nyaruko" #奈亚子
+							visible = "[GetScriptedGui('religion_icon_nyaruko').IsShown( GuiScope.End )]"
+							onclick = "[GetScriptedGui('religion_icon_nyaruko').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/religion_icons/religion_icon_nyaruko.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+							}
+						}
+						button_icon_square_action = {
+							name = "religion_icon_jashinchan" #邪神酱
+							visible = "[GetScriptedGui('religion_icon_jashinchan').IsShown( GuiScope.End )]"
+							onclick = "[GetScriptedGui('religion_icon_jashinchan').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/religion_icons/religion_icon_jashinchan.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+							}
+						}
+						button_icon_square_action = {
+							name = "religion_icon_yuko" #吉田优子
+							visible = "[GetScriptedGui('religion_icon_yuko').IsShown( GuiScope.End )]"
+							onclick = "[GetScriptedGui('religion_icon_yuko').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/religion_icons/religion_icon_yuko.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+							}
+						}
+						button_icon_square_action = {
+							name = "religion_icon_utena" #柊舞缇娜
+							visible = "[GetScriptedGui('religion_icon_utena').IsShown( GuiScope.End )]"
+							onclick = "[GetScriptedGui(religion_icon_utena).Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/religion_icons/religion_icon_utena.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+							}
+						}
+					}
+				}
+					text_single = {
+							text = "RELIGION_ICON_3" # 法兰西圣女
+							visible = "[And(GetVariableSystem.HasValue( 'religion_icon_tabs', 'choose_icon' ) ,GetScriptedGui('religion_icon_france_goddess').IsShown( GuiScope.End ))]"
+						}
+				hbox = {
+				
+					visible = "[GetVariableSystem.HasValue( 'religion_icon_tabs', 'choose_icon' ) ]"
+					layoutpolicy_horizontal = expanding
+					spacing = 5
+					hbox = {
+						spacing = 5
+						
+						
+
+						divider_clean = {
+							layoutpolicy_horizontal = expanding
+						}
+						
+						button_icon_square_action = {
+							name = "religion_icon_joan" #贞德
+							visible = "[GetScriptedGui('religion_icon_joan').IsShown( GuiScope.End )]"
+							onclick = "[GetScriptedGui('religion_icon_joan').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/religion_icons/religion_icon_joan.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+							}
+						}
+						button_icon_square_action = {
+							name = "religion_icon_martha" #玛尔达
+							visible = "[GetScriptedGui('religion_icon_martha').IsShown( GuiScope.End )]"
+							onclick = "[GetScriptedGui('religion_icon_martha').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/religion_icons/religion_icon_martha.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+							}
+						}
+						button_icon_square_action = {
+							name = "religion_icon_rafina" #拉菲娜
+							visible = "[GetScriptedGui('religion_icon_rafina').IsShown( GuiScope.End )]"
+							onclick = "[GetScriptedGui('religion_icon_rafina').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/religion_icons/religion_icon_rafina.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+							}
+						}
+						button_icon_square_action = {
+							name = "religion_icon_aqua" #阿库娅
+							visible = "[GetScriptedGui('religion_icon_aqua').IsShown( GuiScope.End )]"
+							onclick = "[GetScriptedGui('religion_icon_aqua').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/religion_icons/religion_icon_aqua.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+							}
+						}
+						button_icon_square_action = {
+							name = "religion_icon_furina" #芙宁娜
+							visible = "[GetScriptedGui('religion_icon_furina').IsShown( GuiScope.End )]"
+							onclick = "[GetScriptedGui('religion_icon_furina').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/religion_icons/religion_icon_furina.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+							}
+						}
+					}
+				}
+			}
+				
+			
+			
+		}
+	}
+}
+
+
+
+

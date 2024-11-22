@@ -1,0 +1,52 @@
+﻿je_magic_research = {
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	group = je_group_global
+
+	immediate = {
+		hidden_effect = {
+			set_variable = {
+				name = magic_search_point
+				value = 0
+			}
+		}
+	}
+
+	complete = {
+       always = no
+	}
+
+	on_complete = {
+		
+	}
+
+	on_monthly_pulse = {
+		effect = {
+            change_variable = {
+                name = magic_search_point
+                #add = magic_search_point_add_effect
+				add = 2
+			}
+		}
+	}
+	
+	status_desc = {
+		desc = je_magic_research_status
+	}
+
+	current_value = {
+		value = var:magic_search_point
+	}
+
+	goal_add_value = {
+		value = 6000
+	}
+	invalid = {
+		always = no
+	}
+
+	weight = 5000
+
+	should_be_pinned_by_default = yes
+	progressbar = yes
+}

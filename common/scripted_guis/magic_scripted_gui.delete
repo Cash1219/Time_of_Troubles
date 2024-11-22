@@ -1,0 +1,84 @@
+﻿cast_magic_id_sorcerer_button_effect = {
+	saved_scopes = { magic_id_sorcerer }
+	effect = {
+		add_modifier = {
+			name = country_magic_card_cooldown
+			years = 12
+		}
+		
+		pick_magic_id_sorcerer = yes
+		get_cost = yes
+	}
+	ai_is_valid = {
+		cast_magic_id_sorcerer_is_valid = yes
+	}
+	ai_chance = {
+		base = 100
+	}
+	is_valid = {
+		cast_magic_id_sorcerer_is_valid = yes
+	
+}
+}
+cast_cleric_id_cleric_button_effect = {
+	saved_scopes = { cleric_id_cleric }
+	effect = {
+		add_modifier = {
+			name = country_cleric_card_cooldown
+			years = 12
+		}
+		
+		pick_cleric_id_cleric = yes
+		get_cost = yes
+	}
+	ai_is_valid = {
+		cast_cleric_id_cleric_is_valid = yes
+	}
+	ai_chance = {
+		base = 100
+	}
+	is_valid = {
+		cast_cleric_id_cleric_is_valid = yes
+	}
+}
+
+is_magic_id_sorcerer_active = {
+    saved_scopes = { magic_id_sorcerer }
+    is_valid = {
+        is_target_in_variable_list = {
+            name = active_magic_id_sorcerer_list
+            target = scope:magic_id_sorcerer
+        }
+    }
+}
+is_magic_id_cleric_active = {
+    saved_scopes = { magic_id_cleric }
+    is_valid = {
+        is_target_in_variable_list = {
+            name = active_magic_id_cleric_list
+            target = scope:magic_id_cleric
+        }
+    }
+}
+dispel_magic_sorcerer_button_effect = {
+	saved_scopes = { magic_id_sorcerer }
+	effect = {
+		pick_dispel_magic_sorcerer = yes
+	}
+	is_valid = {
+		NOT = { 
+			has_modifier = country_magic_card_cooldown
+		}
+	}
+}
+dispel_magic_cleric_button_effect = {
+	saved_scopes = { magic_id_cleric }
+	effect = {
+		pick_dispel_magic_cleric = yes
+	}
+	is_valid = {
+		NOT = { 
+			has_modifier = country_magic_card_cooldown
+		}
+	}
+}
