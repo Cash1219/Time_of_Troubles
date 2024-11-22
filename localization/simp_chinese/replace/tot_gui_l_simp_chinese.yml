@@ -1,5 +1,5 @@
 ﻿l_simp_chinese:
- HAS_NARRATIVE: "#bold 剧情内容#!\n[Country.GetCustom('has_journals_loc')]"
+ HAS_NARRATIVE: "[Country.GetCustom('country_content_desc')]"
  HAS_FLAVORED_INTEREST_GROUPS: "#bold 利益集团#!\n[Country.GetCustom('has_flavored_interest_groups_loc')]"
  HAS_MAJOR_FORMABLE: "#bold 主要可成立国家#!\n[Country.GetCustom('has_major_formable_loc')]"
  CUSTOM_CONTENT: "独特内容"
@@ -9,3 +9,29 @@
  dlc_t01: "拿破仑的遗产"
  dlc_t01_desc: "拿破仑战争为欧罗巴带来了新的秩序，民族主义的兴起，专制帝国的衰落，政治的生态平衡被打破...欧洲格局焕然一新，而法兰西也处在变革之风中。扮演法兰西的开明女皇，给法兰西带来英明治世吧。\n主要内容\n#bold 欧洲与地中海沿岸国家地图和基本设定 #! \n#bold 法兰西的独特内容 #! \n更新于2024年O月O日"
  Napoleon_Legacy: "拿破仑的遗产"
+ FRA_CONTENT_DESC: "角色 #G 大量#!\n 开明君主制 #G 路线#!"
+ GBR_CONTENT_DESC: "角色 #yellow 基础#!\n 无 #R 路线#!"
+ NER_CONTENT_DESC: "角色 #yellow 基础#!\n 无 #R 路线#!"
+ PRU_CONTENT_DESC: "即将到来：\n角色 #G 魔法少女小圆#!\n 魔法少女斗争 #G 路线#!"
+ NO_CONTENT_DESC: "无独特内容"
+ UPDATE_STATUS: "[Country.GetCustom('update_status')]"
+ UPDATE_STATUS_NEW: "@update_status_new!"
+ UPDATE_STATUS_NON: "@update_status_non!"
+ UPDATE_STATUS_ING: "@update_status_ing!"
+ #宗教
+ RELIGION_ICON_TEXT_MENU_BUTTON: "#bold 尊者崇拜 #! \n在本界面可以选择国家崇拜的宗教尊者。她们将提供一些不同的效果。你可以崇拜的尊者数量主要来源于宗教法律。"
+ RELIGION_ICON: "#bold 尊者崇拜 #!"
+ RELIGION_ICON_1: "先驱者"
+ RELIGION_CHOOSE_ICON: "选择圣像"
+ RELIGION_REFORM_ICON: "宗教改革"
+ RELIGION_ICON_SAKURA_TOOLTIP: "木之本樱"
+ RELIGION_ICON_NANOHA_TOOLTIP: "高町奈叶"
+ RELIGION_ICON_MADOKA_TOOLTIP: "鹿目圆"
+ RELIGION_ICON_2: "魔神崇拜"
+ RELIGION_ICON_3: "圣女崇拜"
+ 
+ #羁绊
+ KIZUNA_TEXT_MENU_BUTTON: "#bold 羁绊 #! \n在本界面可以查看角色之间羁绊和效果。本界面会计算所有在执政团里的角色，并根据规则提供一些效果。羁绊的主要作用是弥合一些原作融洽但是因为V3本身机制原因无法友好组党的角色，才不是作者云顶之奕玩多了突发奇想的设计。"
+ KIZUNA: "羁绊"
+ KIZUNA_BUFF: "#bold 羁绊效果 #!"
+ 

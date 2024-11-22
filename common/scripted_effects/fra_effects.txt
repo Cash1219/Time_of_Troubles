@@ -12,7 +12,12 @@
 reduce_fra_pk_advantage_small = {
 	custom_description = {
 		text = reduce_fra_pk_advantage_small
-		z
+		je:je_fra_queen_pk = {
+			add_progress = {
+				value = -100
+				name = je_fra_queen_pk_progress_bar
+			}
+		}
 	}
 }
 add_fra_pk_advantage_medium = {

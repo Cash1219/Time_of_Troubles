@@ -398,7 +398,7 @@ types objective_types
 												visible = [ObjectiveType.HasRecommendedGameRules]
 												layoutpolicy_horizontal = expanding
 												layoutpolicy_vertical = expanding
-												text = "OBJECTIVE_TYPE_RECOGDENDED_GAME_RULE_DESC"
+												text = "OBJECTIVE_TYPE_RECOMMENDED_GAME_RULE_DESC"
 
 												align = bottom|nobaseline
 												using = fontsize_xl
@@ -414,7 +414,7 @@ types objective_types
 												item = {
 													text_single = {
 														layoutpolicy_horizontal = expanding
-														text = "OBJECTIVE_TYPE_RECOGDENDED_GAME_RULE_ITEM_TEXT"
+														text = "OBJECTIVE_TYPE_RECOMMENDED_GAME_RULE_ITEM_TEXT"
 														tooltip = "[GameRuleSetting.GetDescription]"
 													}
 												}
@@ -426,7 +426,7 @@ types objective_types
 						}
 					}
 				
-					### RECOGDENDED COUNTRIES
+					### RECOMMENDED COUNTRIES
 					widget = {
 						visible = "[GameSetup.HasSelectedObjective]"
 						size = { 1300 0 }

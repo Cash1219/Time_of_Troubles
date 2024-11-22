@@ -925,31 +925,263 @@ fra.18 = { #修订
 	
 	option = {
 		name = fra.18.a	#维也纳
-		scope:fra_18_helper = {
-			add_trait = tot_fra_creative_experience
+		trigger_event = {
+			id = fra.19
 		}
-		add_small_exhibition_popularity = yes
-		add_small_sales_volume = yes
 	}
 	option = {
 		name = fra.18.b #罗马
-		change_variable = {
-			name = je_fra_queen_pk_education_creation_progress
-			add = 200
+		trigger_event = {
+			id = fra.20
 		}
 	}
 	option = {
 		name = fra.18.c #伦敦
-		change_variable = {
-			name = je_fra_queen_pk_education_creation_progress
-			add = 200
+		trigger_event = {
+			id = fra.21
 		}
 	}
 	option = {
 		name = fra.18.d #莫斯科
-		change_variable = {
-			name = je_fra_queen_pk_education_creation_progress
-			add = 200
+		trigger_event = {
+			id = fra.22
+		}
+	}
+}
+fra.19 = { 
+	type = country_event
+	placement = root
+	title = fra.19.t
+	desc = fra.19.d
+	flavor = fra.19.f
+
+	duration = 3
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	immediate = {
+		every_scope_state = {
+			limit = {
+				state_region = s:STATE_AUSTRIA
+			}
+			save_scope_as = cultural_travel_scope			
+		}
+	}
+	option = {
+		name = fra.19.a 	
+		scope:cultural_travel_scope = {
+			owner = {
+				save_scope_as = target_country
+			}
+		}
+		scope:target_country = {
+			trigger_event = fra.30
+		}
+	}
+}
+fra.20 = { 
+	type = country_event
+	placement = root
+	title = fra.20.t
+	desc = fra.20.d
+	flavor = fra.20.f
+
+	duration = 3
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	option = {
+		name = fra.20.a 	
+		
+	}
+}
+fra.21 = { 
+	type = country_event
+	placement = root
+	title = fra.21.t
+	desc = fra.21.d
+	flavor = fra.21.f
+
+	duration = 3
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	option = {
+		name = fra.21.a 	
+		
+	}
+}
+fra.22 = { 
+	type = country_event
+	placement = root
+	title = fra.22.t
+	desc = fra.22.d
+	flavor = fra.22.f
+
+	duration = 3
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	option = {
+		name = fra.22.a 	
+		
+	}
+}
+fra.31 = { #女仆
+	type = country_event
+	placement = root
+	title = fra.31.t
+	desc = fra.31.d
+	flavor = fra.31.f
+
+	duration = 3
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	option = {
+		name = fra.31.a #拉姆&蕾姆	
+		create_character = {
+			template = fra_rem_template
+			traits = { 
+				tot_Re0_Rem_trait
+			}
+		}
+		create_character = {
+			template = fra_ram_template
+			traits = { 
+				tot_Re0_Ram_trait
+			}
+		}
+	}
+	option = {
+		name = fra.31.b #安妮·里特斯坦&里奥菈·鲁鲁
+		create_character = {
+			template = fra_anne_template
+			traits = { 
+				tot_Tearmoon_Anne_trait
+			}
+		}
+		create_character = {
+			template = fra_riora_template
+			traits = { 
+				tot_Tearmoon_Ruru_trait
+			}
+		}
+	}
+	option = {
+		name = fra.31.c #托尔&才川乔吉
+		create_character = {
+			template = fra_toru_template
+			traits = { 
+				tot_Dragon_Toru_trait
+			}
+		}
+		create_character = {
+			template = fra_sanae_template
+			traits = { 
+				tot_Dragon_Sanae_trait
+			}
+		}
+	}
+	option = {
+		name = fra.31.e #井之上泷奈&胡桃
+		create_character = {
+			template = fra_takina_template
+			traits = { 
+				tot_Lycoris_Takina_trait
+			}
+		}
+		create_character = {
+			template = fra_kurumi_template
+			traits = { 
+				tot_Lycoris_Kurumi_trait
+			}
+		}
+	}
+	option = {
+		name = fra.31.g #保登心爱&桐间纱路
+		create_character = {
+			template = fra_kokoa_template
+			traits = { 
+				tot_Kirara_Kokoa_trait
+			}
+		}
+		create_character = {
+			template = fra_sharo_template
+			traits = { 
+				tot_Kirara_Sharo_trait
+			}
+		}
+	}
+	option = {
+		name = fra.31.h #四季夏目&汐山凉音
+		create_character = {
+			template = fra_natsume_template
+			traits = { 
+				tot_Yuzu_Natsume_trait
+			}
+		}
+		create_character = {
+			template = fra_suzune_character
+			traits = { 
+				tot_Yuzu_Suzune_trait
+			}
+		}
+	}
+	option = {
+		name = fra.31.i #神乐mea&凑阿库娅
+		create_character = {
+			template = fra_mea_template
+			traits = { 
+				tot_Vtb_Mea_trait
+			}
+		}
+		create_character = {
+			template = fra_aqua_template
+			traits = { 
+				tot_Vtb_Aqua_trait
+			}
+		}
+	}
+	option = {
+		name = fra.31.j #芙流丝&弗燃梅&蔼儿地&露风缇
+		create_character = {
+			template = fra_erde_template
+			traits = { 
+				tot_Yugioh_Erde_trait
+			}
+		}
+		create_character = {
+			template = fra_fluss_template
+			traits = { 
+				tot_Yugioh_Fluss_trait
+			}
+		}
+		create_character = {
+			template = fra_flamme_template
+			traits = { 
+				tot_Yugioh_Flamme_trait
+			}
+		}
+		create_character = {
+			template = fra_luft_template
+			traits = { 
+				tot_Yugioh_Luft_trait
+			}
 		}
 	}
 }

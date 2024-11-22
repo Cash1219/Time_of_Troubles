@@ -65,7 +65,6 @@ template multiplayer_lobby_selected_country_info {
 							autoresize = yes
 
 						}
-						
 						textbox = {
 							size = { 370 20 }
 							elide = right
@@ -159,30 +158,33 @@ template multiplayer_lobby_selected_country_info {
 					minimumsize = { @lobby_panel_info_width -1 }
 					maximumsize = { @lobby_panel_info_width -1 }
 					spacing = 10
-
+					update_status = {}
 					default_header = {
+						
 						using = default_list_position
 						blockoverride "text" {
 							text = "CUSTOM_CONTENT"
 						}
 					}
-
+					
 					flowcontainer = {
 						spacing = 10
 						direction = horizontal
 						parentanchor = hcenter
+						
+						
+					
+						has_custom_content_narrative = { }
+						
+				
+						#has_custom_interest_groups = {}
 
-						has_custom_content_narrative = {}
+						#vertical_divider = {}
 
-						vertical_divider = {}
-
-						has_custom_interest_groups = {}
-
-						vertical_divider = {}
-
-						has_major_formable = {}
+						#has_major_formable = {}
+						
 					}
-
+					
 					divider_clean = {}
 
 
@@ -217,7 +219,6 @@ template multiplayer_lobby_selected_country_info {
 							spacing = 10
 							direction = vertical
 							
-
 							country_government_info = {}
 							country_religion_info = {}
 							country_culture_info = {

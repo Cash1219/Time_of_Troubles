@@ -14,17 +14,54 @@
 			localization_key = MANA_DEFICIT_EFFECT_HEADER 
 		}
 	}
-	has_journals_loc = {
+	country_content_desc = {
 		type = country
 
 		text = {
 			trigger = {
-				has_variable = has_custom_journals_var
+				c:FRA = ROOT
 			}
-			localization_key = ICON_CHECK
+			localization_key = FRA_CONTENT_DESC
 		}
 		text = {
-			localization_key = ICON_CROSS
+			trigger = {
+				c:GBR = ROOT
+			}
+			localization_key = GBR_CONTENT_DESC
+		}
+		text = {
+			trigger = {
+				c:ITA = ROOT
+			}
+			localization_key = ITA_CONTENT_DESC
+		}
+		text = {
+			trigger = {
+				c:PRU = ROOT
+			}
+			localization_key = PRU_CONTENT_DESC
+		}
+		text = {
+			localization_key = NO_CONTENT_DESC
+		}
+	}
+	update_status = {
+		type = country
+
+		text = {
+			trigger = {
+				c:FRA = ROOT
+			}
+			localization_key = UPDATE_STATUS_NEW
+		}
+		text = {
+			trigger = {
+				c:PRU = ROOT
+			}
+			localization_key = UPDATE_STATUS_ING
+		}
+		text = {
+			localization_key = UPDATE_STATUS_NON
 		}
 	}
 

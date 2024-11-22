@@ -357,17 +357,6 @@
 				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled"  }
 			}
 			create_building={
-				building="building_barracks"
-				add_ownership={
-					country={
-						country="c:HAI"
-						levels=4
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_no_organization" }
-			}
-			create_building={
 				building="building_port"
 				add_ownership={
 					country={
@@ -446,13 +435,13 @@
 		}
 	}
 	s:STATE_PUERTO_RICO={
-		region_state:YUS={
+		region_state:SPA={
 			create_building={
 				building="building_coffee_plantation"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:YUS"
+						country="c:SPA"
 						levels=2
 						region="STATE_PUERTO_RICO"
 					}
@@ -465,7 +454,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:YUS"
+						country="c:SPA"
 						levels=1
 						region="STATE_PUERTO_RICO"
 					}
@@ -478,7 +467,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:YUS"
+						country="c:SPA"
 						levels=3
 						region="STATE_PUERTO_RICO"
 					}
@@ -491,7 +480,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:YUS"
+						country="c:SPA"
 						levels=3
 						region="STATE_PUERTO_RICO"
 					}
@@ -503,7 +492,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:YUS"
+						country="c:SPA"
 						levels=1
 					}
 				}
@@ -752,7 +741,7 @@
 					}
 					building={
 						type="building_manor_house"
-						country="c:YUS"
+						country="c:SPA"
 						levels=2
 						region="STATE_TOLEDO"
 					}
@@ -771,7 +760,7 @@
 					}
 					building={
 						type="building_manor_house"
-						country="c:YUS"
+						country="c:SPA"
 						levels=3
 						region="STATE_TOLEDO"
 					}
@@ -790,7 +779,7 @@
 					}
 					building={
 						type="building_manor_house"
-						country="c:YUS"
+						country="c:SPA"
 						levels=5
 						region="STATE_TOLEDO"
 					}

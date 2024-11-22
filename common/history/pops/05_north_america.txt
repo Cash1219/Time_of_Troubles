@@ -4,7 +4,7 @@
 		# + Fairfax County, VA. Total pop in 1830 was 9204, 5203 free/4001 slaves
 		# + Montgomery Co, Prince George's Co, Charles co, St. Mary's Co and Calvert Co in MD- 80418 total, 42176 free/38242 slaves
 		# Number of actual pops adjusted from historical research to better fit the buildings
-		region_state:DAL = { 
+		region_state:USA = { 
 			create_pop = {
 				culture = yankee
 				size = 27544
@@ -21,7 +21,7 @@
 		}
 	}
 	s:STATE_LOUISIANA = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = cajun
 				religion = catholic
@@ -54,7 +54,7 @@
 		}
 	}
 	s:STATE_NEW_YORK = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = yankee
 				size = 2135000
@@ -84,7 +84,7 @@
 		}
 	}
 	s:STATE_VIRGINIA = { # population of VA proper minus Fairfax County, which had its population figures added to DC to inflate the pop count there
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = dixie
 				size = 423597
@@ -106,14 +106,19 @@
 		}
 	}
 	s:STATE_ALASKA = {
-		region_state:RUS = {
+		region_state:ALK = {
 			create_pop = {
 				culture = athabaskan
-				size = 12780
+				size = 7780
+			}
+			create_pop = {
+				culture = athabaskan
+				size = 3280
+				religion = orthodox
 			}
 			create_pop = {
 				culture = russian
-				size = 192
+				size = 1000
 			}
 			create_pop = {
 				culture = inuit
@@ -123,11 +128,11 @@
 		region_state:ATB = {
 			create_pop = {
 				culture = athabaskan
-				size = 7000
+				size = 28000
 			}
 			create_pop = {
 				culture = inuit
-				size = 3000
+				size = 16000
 			}
 		}
 	}
@@ -222,7 +227,7 @@
 				size = 4000
 			}
 		}
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = siouan
 				size = 1200
@@ -234,7 +239,7 @@
 		}
 	}
 	s:STATE_WYOMING = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = siouan
 				size = 8000
@@ -261,7 +266,8 @@
 		region_state:SLS = {
 			create_pop = {
 				culture = salish
-				size = 1300
+				#size = 1300 #historical increased for gameplay
+				size = 5600 
 			}
 		}
 		region_state:ABS = {
@@ -272,7 +278,7 @@
 		}
 	}
 	s:STATE_MONTANA = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = siouan
 				size = 5000
@@ -303,12 +309,13 @@
 		region_state:SLS = {
 			create_pop = {
 				culture = salish
-				size = 5500
+				#size = 5500 # historical increased for gameplay
+				size = 8600
 			}
 		}
 	}
 	s:STATE_NORTH_DAKOTA = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = siouan
 				size = 6000
@@ -333,7 +340,7 @@
 				size = 34000
 			}
 		}
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = siouan
 				size = 4000
@@ -342,7 +349,7 @@
 		# DKT has 12000
 	}
 	s:STATE_NEBRASKA = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = siouan
 				size = 4000
@@ -366,7 +373,7 @@
 		}
 	}
 	s:STATE_KANSAS = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = siouan
 				size = 12000
@@ -413,7 +420,7 @@
 		}
 	}
 	s:STATE_ARKANSAS = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = cajun
 				religion = catholic
@@ -439,7 +446,7 @@
 		}
 	}
 	s:STATE_MISSOURI = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = cajun
 				religion = catholic
@@ -478,7 +485,7 @@
 		}
 	}
 	s:STATE_IOWA = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = algonquian
 				size = 12000
@@ -494,7 +501,7 @@
 		}
 	}
 	s:STATE_MINNESOTA = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = algonquian
 				size = 16000
@@ -508,7 +515,7 @@
 		}
 	}
 	s:STATE_WISCONSIN = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = algonquian
 				size = 8000
@@ -520,7 +527,7 @@
 		}
 	}
 	s:STATE_INDIANA = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = yankee
 				size = 631504
@@ -540,7 +547,7 @@
 		}
 	}
 	s:STATE_MICHIGAN = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = yankee
 				size = 123996
@@ -565,7 +572,7 @@
 		}
 	}
 	s:STATE_OHIO = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = yankee
 				size = 1092200
@@ -585,7 +592,7 @@
 		}
 	}
 	s:STATE_KENTUCKY = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = dixie
 				size = 239988
@@ -610,7 +617,7 @@
 		}
 	}
 	s:STATE_TENNESSEE = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = dixie
 				size = 369604
@@ -643,7 +650,7 @@
 		}
 	}
 	s:STATE_MISSISSIPPI = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = dixie
 				size = 172804
@@ -660,7 +667,7 @@
 		}
 	}
 	s:STATE_ALABAMA = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = dixie
 				size = 329008
@@ -690,7 +697,7 @@
 		}
 	}
 	s:STATE_FLORIDA = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = dixie
 				size = 47996
@@ -712,12 +719,13 @@
 		region_state:SML = {
 			create_pop = {
 				culture = muskogean
-				size = 5000
+				#size = 5000 # historical increased for gameplay
+				size = 10000
 			}
 		}
 	}
 	s:STATE_GEORGIA = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = dixie
 				size = 329836
@@ -743,7 +751,7 @@
 		}
 	}
 	s:STATE_WEST_VIRGINIA = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = dixie
 				size = 160916
@@ -765,7 +773,7 @@
 		}
 	}
 	s:STATE_MARYLAND = { # Actually Maryland + Delaware
-		region_state:DAL = {
+		region_state:USA = {
 			# Maryland: (1830, 447040) (1840, 470019), so 1835 est. 458530
 			# Delaware: (1830, 76748)  (1840, 78085),  so 1835 est. 77417
 			# minus 42176 free/38242 slaves that have been ceded to DC to inflate its pop figure
@@ -791,7 +799,7 @@
 	}
 
 	s:STATE_DELAWARE = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = dixie
 				size = 77000
@@ -811,7 +819,7 @@
 	}
 
 	s:STATE_PENNSYLVANIA = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = yankee
 				size = 1250496
@@ -837,7 +845,7 @@
 		}
 	}
 	s:STATE_NEW_JERSEY = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = yankee
 				size = 303200
@@ -854,7 +862,7 @@
 		}
 	}
 	s:STATE_ILLINOIS = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = yankee
 				size = 452400
@@ -866,7 +874,7 @@
 		}
 	}
 	s:STATE_RHODE_ISLAND = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = yankee
 				size = 104820
@@ -874,7 +882,7 @@
 		}
 	}
 	s:STATE_CONNECTICUT = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = yankee
 				size = 199228
@@ -882,7 +890,7 @@
 		}
 	}
 	s:STATE_MASSACHUSETTS = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = yankee
 				size = 754484
@@ -903,7 +911,7 @@
 		}
 	}
 	s:STATE_NEW_HAMPSHIRE = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = yankee
 				size = 223300
@@ -920,7 +928,7 @@
 		}
 	}
 	s:STATE_VERMONT = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = yankee
 				size = 282848
@@ -928,7 +936,7 @@
 		}
 	}
 	s:STATE_MAINE = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = anglo_canadian
 				size = 16000
@@ -940,7 +948,7 @@
 		}
 	}
 	s:STATE_NORTH_CAROLINA = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = dixie
 				size = 492500
@@ -985,7 +993,7 @@
 		}
 	}
 	s:STATE_SOUTH_CAROLINA = {
-		region_state:DAL = {
+		region_state:USA = {
 			create_pop = {
 				culture = dixie
 				size = 253836

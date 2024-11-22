@@ -1,27 +1,27 @@
 ﻿# triggered by on_law_enactment_started
 je_the_suppressed_dem = { #打压DEM社
 	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
-	scripted_button = dal_contact_origami #联系折纸
-	scripted_button = dal_proactive_attack #主动进攻
-	scripted_button = dal_armed_spacecraft #武装战舰
-	scripted_button = dal_economic_repression #经济压制
-	group = je_group_dal
+	scripted_button = USA_contact_origami #联系折纸
+	scripted_button = USA_proactive_attack #主动进攻
+	scripted_button = USA_armed_spacecraft #武装战舰
+	scripted_button = USA_economic_repression #经济压制
+	group = je_group_USA
 	immediate = {
-		set_variable = { name = dal_contact_origami_var value = 0 }
+		set_variable = { name = USA_contact_origami_var value = 0 }
 		change_variable = {
-				name = dal_dem_power
+				name = USA_dem_power
 				add = 500
 			}
 	}
 	on_monthly_pulse = {
 		effect = {
-			set_variable = { name = dal_dem_power_next value = 0 }
+			set_variable = { name = USA_dem_power_next value = 0 }
 			if = {
 				limit = {
-					var:dal_dem_power <= 100
+					var:USA_dem_power <= 100
 				}
 				change_variable = {
-					name = dal_dem_power_next
+					name = USA_dem_power_next
 					add = 1
 				}
 			}
@@ -32,7 +32,7 @@ je_the_suppressed_dem = { #打压DEM社
 					}
 				}
 				change_variable = {
-					name = dal_dem_power_next
+					name = USA_dem_power_next
 					add = -0.5
 				}
 			}
@@ -41,16 +41,16 @@ je_the_suppressed_dem = { #打压DEM社
 					has_modifier = modifier_suppressed_dem
 				}
 				change_variable = {
-					name = dal_dem_power_next
+					name = USA_dem_power_next
 					add = -0.5
 				}
 			}
-			change_variable = { name = dal_dem_power add = var:dal_dem_power_next }
+			change_variable = { name = USA_dem_power add = var:USA_dem_power_next }
 		}
 	}
 
 	complete = {
-		var:dal_dem_power < 1
+		var:USA_dem_power < 1
 	}
 
 	on_complete = {
@@ -66,11 +66,11 @@ je_the_suppressed_dem = { #打压DEM社
 		add = 1000
 	}
 	fail = {
-		var:dal_dem_power > 99
+		var:USA_dem_power > 99
 	}
 
 	current_value = {
-		value = root.var:dal_dem_power
+		value = root.var:USA_dem_power
 	}
 
 
@@ -82,11 +82,11 @@ je_the_suppressed_dem = { #打压DEM社
 }
 je_food_crisis = {
 	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
-	scripted_button = dal_agricultural_subsidies #农业补贴
-	scripted_button = dal_food_plan #食品计划
-	scripted_button = dal_compulsory_cultivation #强制耕种
-	scripted_button = dal_special_fertilizer #特制化肥
-	group = je_group_dal
+	scripted_button = USA_agricultural_subsidies #农业补贴
+	scripted_button = USA_food_plan #食品计划
+	scripted_button = USA_compulsory_cultivation #强制耕种
+	scripted_button = USA_special_fertilizer #特制化肥
+	group = je_group_USA
 
 	complete = {
 		market_capital.market = {
