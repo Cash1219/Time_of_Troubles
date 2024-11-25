@@ -226,7 +226,43 @@ PAP = {
 	color1 = "pink"
 	color2 = "white"
 	textured_emblem = {
-		texture = "tot_te_Catholic.dds"
+		texture = "tot_te_catholic.dds"
 		instance = { scale = { 0.7 0.7 } position = { 0.5 0.5 } }
+	}		
+}
+TUR = {
+	pattern = "pattern_solid.tga"
+	color1 = "red"
+	
+	colored_emblem = {
+		texture = "ce_crescent.dds"
+		color1 = "white"
+		color2 = "white"
+		instance = { scale = { 0.66 0.66 } position = { 0.32 0.5 } }	
+	}	
+}
+
+ROM = {	
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+
+	colored_emblem = {
+		texture = "ce_tricolor_vertical.dds"
+		color1 = "yellow"
+		color2 = "red"
+	}
+	textured_emblem = {
+		texture = "tot_te_gbc.dds"
+		instance = { scale = { 0.7 0.7 } position = { 0.5 0.5 } }
+	}
+}
+VEN = { # Venice
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	
+	
+	textured_emblem = {
+		texture = "tot_te_mygo.dds"
+		instance = { scale = { 0.8 0.8 } position = { 0.50 0.52 } }
 	}		
 }
