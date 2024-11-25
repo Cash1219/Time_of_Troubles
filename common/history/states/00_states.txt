@@ -201,7 +201,7 @@ STATES = {
 	}
 	s:STATE_VENETIA = {
 		create_state = {
-			country = c:AUS
+			country = c:VEN
 			owned_provinces = { xB001A0 x3083C8 x3080A0 x8EEB7A xB080A0 x5141E0 x605424 x6984B4 x554866 xC02A3F }
 		}
 		
@@ -1166,19 +1166,15 @@ STATES = {
 	}
 	s:STATE_MOLDAVIA = {
 		create_state = {
-			country = c:AUS
-			owned_provinces = { x31A0A0 x7E6263 xFFCCDA x00A7F4 x067DF0 }
-		}
-		create_state = {
-			country = c:MOL
-			owned_provinces = { x734EFF xF40045 x0983EE x0D8A56 xFF2F40 x30E0A0 x3CE97E xB0A0E0 x556DE7 xEF2060 x56839F x80D8F3 x35CE84 x946A66 }
+			country = c:ROM
+			owned_provinces = { x734EFF xF40045 x0983EE x0D8A56 xFF2F40 x30E0A0 x3CE97E xB0A0E0 x556DE7 xEF2060 x56839F x80D8F3 x35CE84 x946A66 x31A0A0 x7E6263 xFFCCDA x00A7F4 x067DF0 }
 		}
 		
 		add_homeland = cu:romanian
 	}
 	s:STATE_WALLACHIA = {
 		create_state = {
-			country = c:WAL
+			country = c:ROM
 			owned_provinces = { x016C07 xD28965 xE02121 xF76B20 xECC1DC x743F1C xF6E6E3 x51E021 xB0E020 x81C7F3 xF9AA0F xC6AC43 xD11E19 xEF53AF x020F11 x9E90C5 x31E021 x019D5F x2613E8 xAB774D x582A74 xE0A321 x2164E0 x690E91 }
 		}
 		
@@ -1764,16 +1760,9 @@ STATES = {
 	s:STATE_EMILIA = {
 		create_state = {
 			country = c:ITA
-			owned_provinces = { x0B3B43 x700120 }
+			owned_provinces = { x0B3B43 x700120 xF080A0 xEF0021 xF08021 }
 		}
-		create_state = {
-			country = c:ITA
-			owned_provinces = { xF080A0 }
-		}
-		create_state = {
-			country = c:ITA
-			owned_provinces = { xEF0021 xF08021 }
-		}
+		
 		
 		add_homeland = cu:north_italian
 	}
@@ -5800,7 +5789,7 @@ STATES = {
 	}
 	s:STATE_NORTHERN_SERBIA = {
 		create_state = {
-			country = c:SER
+			country = c:YUG
 			owned_provinces = { x4D115A xF9E78E x10A060 x4B1F45 xEDBA20 x3B6092 x74F1F4 x9061A0 x40AF95 x90A061 }
 		}
 		
@@ -5808,14 +5797,13 @@ STATES = {
 	}
 	s:STATE_SOUTHERN_SERBIA = {
 		create_state = {
-			country = c:TUR
+			country = c:YUG
 			owned_provinces = { xA5D3A9 x9DFFAF x334B53 xD021E0 x18B761 x4773E6 xB852BB xD02161 x45E06A x62A730 xAC083C }
 		}
 		
 		add_homeland = cu:serb
 		add_homeland = cu:turkish
 		add_homeland = cu:albanian
-		add_claim = c:SER
 	}
 	s:STATE_HUDAVENDIGAR = {
 		create_state = {
@@ -7352,7 +7340,7 @@ STATES = {
 	}
 	s:STATE_LOMBARDY = {
 		create_state = {
-			country = c:AUS
+			country = c:ITA
 			owned_provinces = { x3F1E38 xD04060 x9AC196 x867A90 xA40CE9 x50C060 x70B8A9 x4713EE }
 		}
 		
@@ -7494,19 +7482,15 @@ STATES = {
 	}
 	s:STATE_RHINELAND = {
 		create_state = {
-			country = c:PRU
-			owned_provinces = { xD080A0 x904020 xC1B963 x5D7A68 }
+			country = c:RHE
+			owned_provinces = { xD080A0 x904020 xC1B963 x5D7A68 x11C021 x707505 }
 		}
-		create_state = {
-			country = c:BAV
-			owned_provinces = { x11C021 x707505 }
-		}		
 		
 		add_homeland = cu:north_german
 	}
 	s:STATE_NORTH_RHINE = {
 		create_state = {
-			country = c:PRU
+			country = c:RHE
 			owned_provinces = { x9F4072 x8001E0 x834B66 x518021 x29CCD6 x486F6A }
 		}
 		

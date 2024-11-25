@@ -47,37 +47,37 @@ HBE = {
 		texture = "tot_te_HBE.dds"
 	}
 }
-AUS = {
-	pattern = "pattern_vertical_split_01.tga"
-	color1 = "amami_haruka_color"
-	color2 = "kosaka_honoka_color"
-	color3 = "white"
-	color4 = "green"
-
-	colored_emblem = {
-		texture = "ce_tricolor_horizontal.dds"
-		color1 = color3
-		color2 = amami_haruka_color
-		mask = { 1 }
-	}
-
-	colored_emblem = {
-		texture = "ce_tricolor_horizontal.dds"
-		color1 = color3
-		color2 = kosaka_honoka_color
-
-		mask = { 2 }
-	}
-	#textured_emblem = {
-	#	texture = "tot_te_ims_logo.dds"
-	#	instance = { scale = { 0.4 0.22 } position = { 0.25 0.85 } }
-	#}
-	#textured_emblem = {
-	#	texture = "tot_te_ll_logo.dds"
-	#	instance = { scale = { 0.2 0.22 } position = { 0.65 0.8 } }
-	#}
-	
-}
+#AUS = {
+#	pattern = "pattern_vertical_split_01.tga"
+#	color1 = "amami_haruka_color"
+#	color2 = "kosaka_honoka_color"
+#	color3 = "white"
+#	color4 = "green"
+#
+#	colored_emblem = {
+#		texture = "ce_tricolor_horizontal.dds"
+#		color1 = color3
+#		color2 = amami_haruka_color
+#		mask = { 1 }
+#	}
+#
+#	colored_emblem = {
+#		texture = "ce_tricolor_horizontal.dds"
+#		color1 = color3
+#		color2 = kosaka_honoka_color
+#
+#		mask = { 2 }
+#	}
+#	#textured_emblem = {
+#	#	texture = "tot_te_ims_logo.dds"
+#	#	instance = { scale = { 0.4 0.22 } position = { 0.25 0.85 } }
+#	#}
+#	#textured_emblem = {
+#	#	texture = "tot_te_ll_logo.dds"
+#	#	instance = { scale = { 0.2 0.22 } position = { 0.65 0.8 } }
+#	#}
+#	
+#}
 SPA = {
 	pattern = "pattern_solid.tga"
 	color1 = "white"
@@ -154,7 +154,7 @@ ITA = {
 		instance = { scale = { 0.22 0.22 } position = { 0.6 0.85 } }
 	}
 }
-HTT = {
+GRE = {
 	pattern = "pattern_solid.tga"
 	color1 = "red"
 	color2 = "yellow"
@@ -192,7 +192,7 @@ HTT = {
 		instance = { scale = { 0.75 0.75 } position = { 0.5 0.5 } }
 	}
 }
-BTR = {
+YUG = {
 	pattern = "pattern_solid.tga"
 	color1 = "black"
 	color2 = "yellow"
@@ -203,7 +203,7 @@ BTR = {
 	
 	
 }
-MHS = {
+PRU = {
 	pattern = "pattern_solid.tga"
 	color1 = "pink"
 
@@ -220,4 +220,13 @@ MHS = {
 		texture = "tot_te_soul_gem.dds"
 		instance = { scale = { 0.4 0.6 } position = { 0.5 0.5 } }
 	}
+}
+PAP = {
+	pattern = "pattern_vertical_split_01.tga"
+	color1 = "pink"
+	color2 = "white"
+	textured_emblem = {
+		texture = "tot_te_Catholic.dds"
+		instance = { scale = { 0.7 0.7 } position = { 0.5 0.5 } }
+	}		
 }

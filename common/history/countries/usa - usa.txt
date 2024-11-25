@@ -1,0 +1,70 @@
+﻿COUNTRIES = {
+	c:USA ?= {
+		effect_starting_technology_tier_2_tech = yes
+		set_tax_level = medium
+		
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 1
+		}
+
+		set_institution_investment_level = {
+			institution = institution_police
+			level = 1
+		}
+		ig:ig_industrialists = { 
+			add_ruling_interest_group = yes
+			set_interest_group_name = ig_usa_ratatoskr
+		}
+		ig:ig_armed_forces = {
+			add_ruling_interest_group = yes
+			set_interest_group_name = ig_usa_spirit_army
+		}
+		ig:ig_intelligentsia = {
+			add_ruling_interest_group = yes
+			set_interest_group_name = ig_usa_ratatoskr_cabinet
+		}
+		ig:ig_landowners = { 
+			set_interest_group_name = ig_usa_DEM
+		}
+		ig:ig_petty_bourgeoisie = { 
+			set_interest_group_name = ig_usa_idol
+		}
+		ig:ig_rural_folk = {
+			set_interest_group_name = ig_usa_puppet
+		}
+		ig:ig_devout = { 
+			set_interest_group_name = ig_usa_spirit_publisher
+		}
+		
+		add_modifier = {
+				name = modifier_suppressed_dem
+				years = 10
+				is_decaying = yes
+		}
+		py:spirit_save_party ?= {
+			add_ig_to_party = ig:ig_industrialists
+			add_ig_to_party = ig:ig_armed_forces
+			add_ig_to_party = ig:ig_intelligentsia
+		}
+		py:spirit_paceful_party ?= {
+			add_ig_to_party = ig:ig_rural_folk
+			add_ig_to_party = ig:ig_devout
+		}
+		py:spirit_yuri_party ?= {
+			add_ig_to_party = ig:ig_petty_bourgeoisie
+		}
+		py:spirit_hegemonic_party ?= {
+			add_ig_to_party = ig:ig_landowners
+		}
+		#trigger_event = {
+		#	id = USA.1
+		#}
+		add_company = company_type:company_william_cramp
+		company:company_william_cramp = {
+			set_company_establishment_date = 1830.1.1
+			set_company_state_region = s:STATE_PENNSYLVANIA
+		}
+	}
+}

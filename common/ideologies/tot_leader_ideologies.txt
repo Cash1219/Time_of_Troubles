@@ -16,7 +16,7 @@
 		law_peasant_levies = strongly_disapprove
 		law_mass_conscription = strongly_approve
 	}
-	leader_weight = {
+	interest_group_leader_weight = {
 		value = 0
 	}
 }
@@ -44,7 +44,7 @@ ideology_ranger = {
 		law_closed_borders = strongly_disapprove
 		law_no_migration_controls = strongly_approve	
 	}
-	leader_weight = {
+	interest_group_leader_weight = {
 		value = 0
 	}
 }
@@ -113,6 +113,9 @@ ideology_antisocial = {
 		law_censorship = approve
 		law_outlawed_dissent = strongly_approve
 	}
+	interest_group_leader_weight = {
+		value = 0
+	}
 }
 ideology_tax_reformer = {
 	icon = gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_traditionalist.dds
@@ -139,5 +142,8 @@ ideology_tax_reformer = {
 		law_laissez_faire = disapprove
 		law_traditionalism = disapprove
 		law_industry_banned = strongly_disapprove
+	}
+	interest_group_leader_weight = {
+		value = 0
 	}
 }

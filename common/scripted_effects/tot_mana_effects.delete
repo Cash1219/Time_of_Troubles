@@ -1,0 +1,467 @@
+﻿get_cost = {
+	hidden_effect = {
+		if = {
+			limit = {
+				NOT = { has_variable = num_magic }
+			}
+			set_variable = {
+				name = num_magic
+				value = 0
+			}
+		}
+		
+		change_variable = {
+			name = num_magic
+			add = 1
+		}
+	
+		if = {
+			limit = {
+				has_modifier = country_magic_card_upkeep
+			}
+			remove_modifier = country_magic_card_upkeep
+		}
+	
+		add_modifier = {
+			name = country_magic_card_upkeep
+			multiplier = var:num_magic
+		}
+	}
+}
+calculate_magics = {
+	# Clear entity-specific active lists
+	clear_variable_list = active_magic_id_all_list
+	clear_variable_list = active_magic_id_sorcerer_list
+	clear_variable_list = active_magic_id_cleric_list
+	calculate_magics_sorcerer = yes
+	calculate_magics_cleric = yes
+}
+# sorcerer
+calculate_magics_sorcerer = {
+	clear_variable_list = available_magic_id_sorcerer_list
+	if = {
+		limit = {
+			has_modifier = country_magic_sorcerer_1
+		}
+		add_to_variable_list = { name = active_magic_id_sorcerer_list target = 1 }
+		add_to_variable_list = { name = active_magic_id_all_list target = 1 }
+	}
+	else = {
+		add_to_variable_list = { name = available_magic_id_sorcerer_list target = 1 }
+	}
+
+	if = {
+		limit = {
+			has_modifier = country_magic_sorcerer_2
+		}
+		add_to_variable_list = { name = active_magic_id_sorcerer_list target = 2 }
+		add_to_variable_list = { name = active_magic_id_all_list target = 2 }
+	}
+	else = {
+		add_to_variable_list = { name = available_magic_id_sorcerer_list target = 2 }
+	}
+
+	if = {
+		limit = {
+			has_modifier = country_magic_sorcerer_3 
+		}
+		add_to_variable_list = { name = active_magic_id_sorcerer_list target = 3 }
+		add_to_variable_list = { name = active_magic_id_all_list target = 3 }
+	}
+	else = {
+		add_to_variable_list = { name = available_magic_id_sorcerer_list target = 3 }
+	}
+
+	if = {
+		limit = {
+			has_modifier = country_magic_sorcerer_4
+		}
+		add_to_variable_list = { name = active_magic_id_sorcerer_list target = 4 }
+		add_to_variable_list = { name = active_magic_id_all_list target = 4 }
+	}
+	else = {
+		add_to_variable_list = { name = available_magic_id_sorcerer_list target = 4 }
+	}
+
+	if = {
+		limit = {
+			has_modifier = country_magic_sorcerer_5
+		}
+		add_to_variable_list = { name = active_magic_id_sorcerer_list target = 5 }
+		add_to_variable_list = { name = active_magic_id_all_list target = 5 }
+	}
+	else = {
+		add_to_variable_list = { name = available_magic_id_sorcerer_list target = 5 }
+	}
+}
+# cleric
+calculate_magics_cleric = {
+	clear_variable_list = available_magic_id_cleric_list
+	if = {
+		limit = {
+			has_modifier = country_magic_cleric_1
+		}
+		add_to_variable_list = { name = active_magic_id_cleric_list target = 1 }
+		add_to_variable_list = { name = active_magic_id_all_list target = 1 }
+	}
+	else = {
+		add_to_variable_list = { name = available_magic_id_cleric_list target = 1 }
+	}
+
+	if = {
+		limit = {
+			has_modifier = country_magic_cleric_2
+		}
+		add_to_variable_list = { name = active_magic_id_cleric_list target = 2 }
+		add_to_variable_list = { name = active_magic_id_all_list target = 2 }
+	}
+	else = {
+		add_to_variable_list = { name = available_magic_id_cleric_list target = 2 }
+	}
+
+	if = {
+		limit = {
+			has_modifier = country_magic_cleric_3 
+		}
+		add_to_variable_list = { name = active_magic_id_cleric_list target = 3 }
+		add_to_variable_list = { name = active_magic_id_all_list target = 3 }
+	}
+	else = {
+		add_to_variable_list = { name = available_magic_id_cleric_list target = 3 }
+	}
+
+	if = {
+		limit = {
+			has_modifier = country_magic_cleric_4
+		}
+		add_to_variable_list = { name = active_magic_id_cleric_list target = 4 }
+		add_to_variable_list = { name = active_magic_id_all_list target = 4 }
+	}
+	else = {
+		add_to_variable_list = { name = available_magic_id_cleric_list target = 4 }
+	}
+
+	if = {
+		limit = {
+			has_modifier = country_magic_cleric_5
+		}
+		add_to_variable_list = { name = active_magic_id_cleric_list target = 5 }
+		add_to_variable_list = { name = active_magic_id_all_list target = 5 }
+	}
+	else = {
+		add_to_variable_list = { name = available_magic_id_cleric_list target = 5 }
+	}
+}
+pick_magic_id_sorcerer = {
+	if = {
+		limit = {
+			exists = scope:magic_id
+		}
+		if = { 
+			limit = {
+				scope:magic_id = 1
+			} 
+			magic_sorcerer_1 = yes
+		}
+		else_if = {
+			limit = {
+				scope:magic_id = 2
+		   } 
+		   magic_sorcerer_2 = yes
+		}
+		else_if = {
+			limit = {
+				scope:magic_id = 3
+		   } 
+		   magic_sorcerer_3 = yes
+		}
+		else_if = {
+			limit = {
+				scope:magic_id = 4
+		   } 
+		   magic_sorcerer_4 = yes
+		}
+		else_if = {
+			limit = {
+				scope:magic_id = 5
+		   } 
+		   magic_sorcerer_5 = yes
+		}
+	}
+	else_if = {
+		limit = {
+			exists = scope:magic_id_sorcerer
+		}
+		if = { 
+			limit = {
+				scope:magic_id_sorcerer = 1
+			} 
+			magic_sorcerer_1 = yes
+		}
+		else_if = {
+			limit = {
+				scope:magic_id_sorcerer = 2
+		   } 
+		   magic_sorcerer_2 = yes
+		}
+		else_if = {
+			limit = {
+				scope:magic_id_sorcerer = 3
+		   } 
+		   magic_sorcerer_3 = yes
+		}
+		else_if = {
+			limit = {
+				scope:magic_id_sorcerer = 4
+		   } 
+		   magic_sorcerer_4 = yes
+		}
+		else_if = {
+			limit = {
+				scope:magic_id_sorcerer = 5
+		   } 
+		   magic_sorcerer_5 = yes
+		}
+	}
+	calculate_magics_sorcerer = yes
+}
+pick_magic_id_cleric = {
+	if = {
+		limit = {
+			exists = scope:magic_id
+		}
+		if = { 
+			limit = {
+				scope:magic_id = 1
+			} 
+			magic_cleric_1 = yes
+		}
+		else_if = {
+			limit = {
+				scope:magic_id = 2
+		   } 
+		   magic_cleric_2 = yes
+		}
+		else_if = {
+			limit = {
+				scope:magic_id = 3
+		   } 
+		   magic_cleric_3 = yes
+		}
+		else_if = {
+			limit = {
+				scope:magic_id = 4
+		   } 
+		   magic_cleric_4 = yes
+		}
+		else_if = {
+			limit = {
+				scope:magic_id = 5
+		   } 
+		   magic_cleric_5 = yes
+		}
+	}
+	else_if = {
+		limit = {
+			exists = scope:magic_id_cleric
+		}
+		if = { 
+			limit = {
+				scope:magic_id_cleric = 1
+			} 
+			magic_cleric_1 = yes
+		}
+		else_if = {
+			limit = {
+				scope:magic_id_cleric = 2
+		   } 
+		   magic_cleric_2 = yes
+		}
+		else_if = {
+			limit = {
+				scope:magic_id_cleric = 3
+		   } 
+		   magic_cleric_3 = yes
+		}
+		else_if = {
+			limit = {
+				scope:magic_id_cleric = 4
+		   } 
+		   magic_cleric_4 = yes
+		}
+		else_if = {
+			limit = {
+				scope:magic_id_cleric = 5
+		   } 
+		   magic_cleric_5 = yes
+		}
+	}
+	calculate_magics_cleric = yes
+}
+calculate_magics_sorcerer = {
+	clear_variable_list = available_magic_id_sorcerer_list
+	if = {
+		limit = {
+			has_modifier = country_magic_sorcerer_1
+		}
+		add_to_variable_list = { name = active_magic_id_sorcerer_list target = 1 }
+		add_to_variable_list = { name = active_magic_id_all_list target = 1 }
+	}
+	else = {
+		add_to_variable_list = { name = available_magic_id_sorcerer_list target = 1 }
+	}
+
+	if = {
+		limit = {
+			has_modifier = country_magic_sorcerer_2
+		}
+		add_to_variable_list = { name = active_magic_id_sorcerer_list target = 2 }
+		add_to_variable_list = { name = active_magic_id_all_list target = 2 }
+	}
+	else = {
+		add_to_variable_list = { name = available_magic_id_sorcerer_list target = 2 }
+	}
+
+	if = {
+		limit = {
+			has_modifier = country_magic_sorcerer_3 
+		}
+		add_to_variable_list = { name = active_magic_id_sorcerer_list target = 3 }
+		add_to_variable_list = { name = active_magic_id_all_list target = 3 }
+	}
+	else = {
+		add_to_variable_list = { name = available_magic_id_sorcerer_list target = 3 }
+	}
+
+	if = {
+		limit = {
+			has_modifier = country_magic_sorcerer_4
+		}
+		add_to_variable_list = { name = active_magic_id_sorcerer_list target = 4 }
+		add_to_variable_list = { name = active_magic_id_all_list target = 4 }
+	}
+	else = {
+		add_to_variable_list = { name = available_magic_id_sorcerer_list target = 4 }
+	}
+
+	if = {
+		limit = {
+			has_modifier = country_magic_sorcerer_5
+		}
+		add_to_variable_list = { name = active_magic_id_sorcerer_list target = 5 }
+		add_to_variable_list = { name = active_magic_id_all_list target = 5 }
+	}
+	else = {
+		add_to_variable_list = { name = available_magic_id_sorcerer_list target = 5 }
+	}
+}
+calculate_magics_cleric = {
+	clear_variable_list = available_magic_id_cleric_list
+	if = {
+		limit = {
+			has_modifier = country_magic_cleric_1
+		}
+		add_to_variable_list = { name = active_magic_id_cleric_list target = 1 }
+		add_to_variable_list = { name = active_magic_id_all_list target = 1 }
+	}
+	else = {
+		add_to_variable_list = { name = available_magic_id_cleric_list target = 1 }
+	}
+
+	if = {
+		limit = {
+			has_modifier = country_magic_cleric_2
+		}
+		add_to_variable_list = { name = active_magic_id_cleric_list target = 2 }
+		add_to_variable_list = { name = active_magic_id_all_list target = 2 }
+	}
+	else = {
+		add_to_variable_list = { name = available_magic_id_cleric_list target = 2 }
+	}
+
+	if = {
+		limit = {
+			has_modifier = country_magic_cleric_3 
+		}
+		add_to_variable_list = { name = active_magic_id_cleric_list target = 3 }
+		add_to_variable_list = { name = active_magic_id_all_list target = 3 }
+	}
+	else = {
+		add_to_variable_list = { name = available_magic_id_cleric_list target = 3 }
+	}
+
+	if = {
+		limit = {
+			has_modifier = country_magic_cleric_4
+		}
+		add_to_variable_list = { name = active_magic_id_cleric_list target = 4 }
+		add_to_variable_list = { name = active_magic_id_all_list target = 4 }
+	}
+	else = {
+		add_to_variable_list = { name = available_magic_id_cleric_list target = 4 }
+	}
+
+	if = {
+		limit = {
+			has_modifier = country_magic_cleric_5
+		}
+		add_to_variable_list = { name = active_magic_id_cleric_list target = 5 }
+		add_to_variable_list = { name = active_magic_id_all_list target = 5 }
+	}
+	else = {
+		add_to_variable_list = { name = available_magic_id_cleric_list target = 5 }
+	}
+}
+# 
+
+
+magic_sorcerer_1 = {
+    add_modifier = {
+        name = country_magic_sorcerer_1
+    }
+}
+magic_sorcerer_2 = {
+    add_modifier = {
+        name = country_magic_sorcerer_2
+    }
+}
+magic_sorcerer_3 = {
+    add_modifier = {
+        name = country_magic_sorcerer_3
+    }
+}
+magic_sorcerer_4 = {
+    add_modifier = {
+        name = country_magic_sorcerer_4
+    }
+}
+magic_sorcerer_5 = {
+    add_modifier = {
+        name = country_magic_sorcerer_5
+    }
+}
+magic_cleric_1 = {
+    add_modifier = {
+        name = country_magic_cleric_1
+    }
+}
+magic_cleric_2 = {
+    add_modifier = {
+        name = country_magic_cleric_2
+    }
+}
+magic_cleric_3 = {
+    add_modifier = {
+        name = country_magic_cleric_3
+    }
+}
+magic_cleric_4 = {
+    add_modifier = {
+        name = country_magic_cleric_4
+    }
+}
+magic_cleric_5 = {
+    add_modifier = {
+        name = country_magic_cleric_5
+    }
+}
