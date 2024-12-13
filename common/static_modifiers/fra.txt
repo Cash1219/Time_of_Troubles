@@ -1,4 +1,12 @@
 ﻿#日志
+#modifier_fra_mary_authority = { #玛丽权威
+#	country_authority_mult = 0.2
+#	country_bureaucracy_mult = 0.2
+#}
+#modifier_fra_mia_authority = { #米娅权威
+#	country_law_enactment_time_mult = -0.1
+#	country_law_enactment_success_add = 0.1
+#}
 modifier_fra_high_grain_prices = { #粮价高昂
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
 	state_radicals_from_sol_change_mult = 0.25
@@ -15,6 +23,8 @@ modifier_fra_speculation_crime = { #投机罪
 	goods_output_grain_mult = 0.1
 	interest_group_ig_petty_bourgeoisie_approval_add = -2
 	interest_group_ig_industrialists_approval_add = -2
+	
+	
 }
 modifier_fra_sideline_fund = { #农副业基金
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
@@ -29,8 +39,8 @@ modifier_fra_supply_chain = { #建设粮仓
 }
 modifier_fra_extravagant_lifestyle = { #奢靡成风
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
-	state_tax_waste_add = 0.2
-	state_tax_collection_mult = -0.2
+	state_tax_waste_add = 0.1
+	state_tax_collection_mult = -0.1
 }
 modifier_fra_guizot_law = { #基佐法案
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
@@ -61,6 +71,7 @@ modifier_fra_emergency_supply = { #紧急供应
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
 	state_poor_standard_of_living_add = 2
 	goods_output_grain_mult = 0.2
+	state_harvest_condition_grain_speculator_impact_mult = -0.5
 }
 modifier_fra_pretend_conceal = { #惺惺作态
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
@@ -160,4 +171,45 @@ modifier_fra_inspiration_3 = { #乡间
 modifier_fra_assist_creation = { #协助创作
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
 	character_popularity_add = 25
+}
+modifier_fra_court_life_2 = { #繁复的宫廷生活2
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	state_tax_waste_add = -0.05
+	interest_group_ig_landowners_approval_add = -1
+	country_prestige_mult = 0.05
+}
+modifier_fra_court_life_3 = { #繁复的宫廷生活3
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	interest_group_ig_landowners_pol_str_mult = -0.1
+}
+#宗教
+religion_icon_joan_modifier = { #贞德
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	interest_group_ig_devout_pol_str_mult = 0.2
+	unit_morale_loss_mult = -0.1
+}
+religion_icon_martha_modifier = { #玛尔达
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	interest_group_ig_devout_pol_str_mult = 0.2
+	unit_morale_loss_mult = -0.1
+}
+religion_icon_rafina_modifier = { #拉菲娜
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	interest_group_ig_devout_pol_str_mult = 0.2
+	unit_morale_loss_mult = -0.1
+}
+religion_icon_aqua_modifier = { #阿库娅
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	interest_group_ig_devout_pol_str_mult = 0.2
+	unit_morale_loss_mult = -0.1
+}
+religion_icon_furina_modifier = { #芙宁娜
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	interest_group_ig_devout_pol_str_mult = 0.2
+	unit_morale_loss_mult = -0.1
+}
+religion_icon_sharon_modifier = { #莎朗
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	interest_group_ig_devout_pol_str_mult = 0.2
+	unit_morale_loss_mult = -0.1
 }

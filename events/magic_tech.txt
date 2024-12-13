@@ -1,0 +1,212 @@
+﻿namespace = magic_tech
+
+magic_tech.1 = { #生产科技抽取
+	type = country_event
+	placement = root
+	title = magic_tech.1.t
+	desc = magic_tech.1.d
+	duration = 3
+	#hidden = yes
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/misc/1Character_Banner"
+	
+	option = {
+		name = magic_tech.1.a
+		random_list = {
+			100 = {
+				trigger = {
+					NOT = {
+						has_variable = magic_tech_production_tech_4_complete
+					}
+				}
+				#modifier = {
+				#	if = {
+				#		limit = {
+				#			xxx #出现概率增加
+				#	}
+				#	add = 25
+				#	}
+				#}
+				set_variable = magic_tech_production_tech_4_var
+				set_variable = {
+					name = magic_tech_production_tech_4_cost
+					value = 10000
+				}
+				
+				
+			}
+			100 = {
+				trigger = {
+					NOT = {
+						has_variable = magic_tech_production_tech_5_complete
+					}
+				}
+				
+				set_variable = magic_tech_production_tech_5_var
+				set_variable = {
+					name = magic_tech_production_tech_5_cost
+					value = 10000
+				}
+				
+			}
+			100 = {
+				trigger = {
+					NOT = {
+						has_variable = magic_tech_production_tech_6_complete
+					}
+				}
+				
+				set_variable = magic_tech_production_tech_6_var
+				set_variable = {
+					name = magic_tech_production_tech_6_cost
+					value = 10000
+				}
+				
+			}
+		}
+	}
+}
+magic_tech.2 = { #生产科技抽取
+	type = country_event
+	placement = root
+	title = magic_tech.2.t
+	desc = magic_tech.2.d
+	duration = 3
+	#hidden = yes
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/misc/1Character_Banner"
+	
+	option = {
+		name = magic_tech.2.a
+		random_list = {
+			100 = {
+				trigger = {
+					NOT = {
+						has_variable = magic_tech_military_tech_4_complete
+					}
+				}
+				#modifier = {
+				#	if = {
+				#		limit = {
+				#			xxx #出现概率增加
+				#	}
+				#	add = 25
+				#	}
+				#}
+				set_variable = magic_tech_military_tech_4_var
+				set_variable = {
+					name = magic_tech_military_tech_4_cost
+					value = 10000
+				}
+				
+				
+			}
+			100 = {
+				trigger = {
+					NOT = {
+						has_variable = magic_tech_military_tech_5_complete
+					}
+				}
+				
+				set_variable = magic_tech_military_tech_5_var
+				set_variable = {
+					name = magic_tech_military_tech_5_cost
+					value = 10000
+				}
+				
+			}
+			100 = {
+				trigger = {
+					NOT = {
+						has_variable = magic_tech_military_tech_6_complete
+					}
+				}
+				
+				set_variable = magic_tech_military_tech_6_var
+				set_variable = {
+					name = magic_tech_military_tech_6_cost
+					value = 10000
+				}
+				
+			}
+		}
+	}
+}
+magic_tech.3 = { #生产科技抽取
+	type = country_event
+	placement = root
+	title = magic_tech.3.t
+	desc = magic_tech.3.d
+	duration = 3
+	#hidden = yes
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/misc/1Character_Banner"
+	
+	option = {
+		name = magic_tech.3.a
+		random_list = {
+			100 = {
+				trigger = {
+					NOT = {
+						has_variable = magic_tech_society_tech_4_complete
+					}
+				}
+				#modifier = {
+				#	if = {
+				#		limit = {
+				#			xxx #出现概率增加
+				#	}
+				#	add = 25
+				#	}
+				#}
+				set_variable = magic_tech_society_tech_4_var
+				set_variable = {
+					name = magic_tech_society_tech_4_cost
+					value = 10000
+				}
+				
+				
+			}
+			100 = {
+				trigger = {
+					NOT = {
+						has_variable = magic_tech_society_tech_5_complete
+					}
+				}
+				
+				set_variable = magic_tech_society_tech_5_var
+				set_variable = {
+					name = magic_tech_society_tech_5_cost
+					value = 10000
+				}
+				
+			}
+			100 = {
+				trigger = {
+					NOT = {
+						has_variable = magic_tech_society_tech_6_complete
+					}
+				}
+				
+				set_variable = magic_tech_society_tech_6_var
+				set_variable = {
+					name = magic_tech_society_tech_6_cost
+					value = 10000
+				}
+				
+			}
+		}
+	}
+}

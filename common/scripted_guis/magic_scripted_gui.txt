@@ -1,0 +1,405 @@
+﻿magic_tech_production_tab = {
+	
+	effect = {
+		
+	}
+	is_shown = {
+        always = yes
+    } 		
+    
+	is_valid = {
+		
+	}
+}
+magic_tech_military_tech_1 = {
+	
+	effect = {
+		
+	}
+	is_shown = {
+        always = yes
+    } 		
+    
+	is_valid = {
+		
+	}
+}
+magic_tech_society_tab = {
+	
+	effect = {
+		
+	}
+	is_shown = {
+        always = yes
+    } 		
+    
+	is_valid = {
+		
+	}
+}
+magic_tech_production_tech_1 = {
+	
+	effect = {
+		add_modifier = magic_tech_production_tech_1_modifier
+		set_variable = magic_tech_production_tech_1_complete
+		change_variable = {
+			name = magic_tech_research_reserve
+			add = var；magic_tech_production_tech_1_cost
+		}
+	}
+	is_shown = {
+		NOT = { has_variable = magic_tech_production_tech_1_complete }
+        has_variable = magic_tech_production_tech_1_var
+		NOT = {
+			has_modifier = magic_tech_production_tech_1_modifier
+		}
+    } 		
+    
+	is_valid = {
+		var:magic_tech_research_reserve > var:magic_tech_production_tech_1_cost
+	}
+}
+magic_tech_production_tech_2 = {
+	effect = {
+		add_modifier = magic_tech_production_tech_2_modifier
+		set_variable = magic_tech_production_tech_2_complete
+		change_variable = {
+			name = magic_tech_research_reserve
+			add = var；magic_tech_production_tech_2_cost
+		}
+	}
+	is_shown = {
+        has_variable = magic_tech_production_tech_2_var
+		NOT = {
+			has_modifier = magic_tech_production_tech_2_modifier
+		}
+    } 		
+    
+	is_valid = {
+		var:magic_tech_research_reserve > var:magic_tech_production_tech_2_cost
+	}
+}
+magic_tech_production_tech_3 = {
+	effect = {
+		add_modifier = magic_tech_production_tech_3_modifier
+		set_variable = magic_tech_production_tech_3_complete
+		change_variable = {
+			name = magic_tech_research_reserve
+			add = var；magic_tech_production_tech_3_cost
+		}
+	}
+	is_shown = {
+        has_variable = magic_tech_production_tech_3_var
+		NOT = {
+			has_modifier = magic_tech_production_tech_3_modifier
+		}
+    } 		
+    
+	is_valid = {
+		var:magic_tech_research_reserve > var:magic_tech_production_tech_3_cost
+	}
+}
+magic_tech_production_tech_4 = {
+	effect = {
+		add_modifier = magic_tech_production_tech_4_modifier
+		set_variable = magic_tech_production_tech_4_complete
+		change_variable = {
+			name = magic_tech_research_reserve
+			add = var；magic_tech_production_tech_4_cost
+		}
+	}
+	is_shown = {
+        has_variable = magic_tech_production_tech_4_var
+		NOT = {
+			has_modifier = magic_tech_production_tech_4_modifier
+		}
+    } 		
+    
+	is_valid = {
+		var:magic_tech_research_reserve > var:magic_tech_production_tech_4_cost
+	}
+}
+magic_tech_production_tech_5 = {
+	effect = {
+		add_modifier = magic_tech_production_tech_5_modifier
+		set_variable = magic_tech_production_tech_5_complete
+		change_variable = {
+			name = magic_tech_research_reserve
+			add = var；magic_tech_production_tech_5_cost
+		}
+	}
+	is_shown = {
+        has_variable = magic_tech_production_tech_5_var
+		NOT = {
+			has_modifier = magic_tech_production_tech_5_modifier
+		}
+    } 		
+    
+	is_valid = {
+		var:magic_tech_research_reserve > var:magic_tech_production_tech_5_cost
+	}
+}
+magic_tech_production_tech_6 = {
+	effect = {
+		add_modifier = magic_tech_production_tech_6_modifier
+		set_variable = magic_tech_production_tech_6_complete
+		change_variable = {
+			name = magic_tech_research_reserve
+			add = var；magic_tech_production_tech_6_cost
+		}
+	}
+	is_shown = {
+        has_variable = magic_tech_production_tech_6_var
+		NOT = {
+			has_modifier = magic_tech_production_tech_6_modifier
+		}
+    } 		
+    
+	is_valid = {
+		var:magic_tech_research_reserve > var:magic_tech_production_tech_6_cost
+	}
+}
+magic_tech_military_tech_1 = {
+	
+	effect = {
+		add_modifier = magic_tech_military_tech_1_modifier
+		set_variable = magic_tech_military_tech_1_complete
+		change_variable = {
+			name = magic_tech_research_reserve
+			add = var；magic_tech_military_tech_1_cost
+		}
+	}
+	is_shown = {
+		NOT = { has_variable = magic_tech_military_tech_1_complete }
+        has_variable = magic_tech_military_tech_1_var
+		NOT = {
+			has_modifier = magic_tech_military_tech_1_modifier
+		}
+    } 		
+    
+	is_valid = {
+		var:magic_tech_research_reserve > var:magic_tech_military_tech_1_cost
+	}
+}
+magic_tech_military_tech_2 = {
+	effect = {
+		add_modifier = magic_tech_military_tech_2_modifier
+		set_variable = magic_tech_military_tech_2_complete
+		change_variable = {
+			name = magic_tech_research_reserve
+			add = var；magic_tech_military_tech_2_cost
+		}
+	}
+	is_shown = {
+        has_variable = magic_tech_military_tech_2_var
+		NOT = {
+			has_modifier = magic_tech_military_tech_2_modifier
+		}
+    } 		
+    
+	is_valid = {
+		var:magic_tech_research_reserve > var:magic_tech_military_tech_2_cost
+	}
+}
+magic_tech_military_tech_3 = {
+	effect = {
+		add_modifier = magic_tech_military_tech_3_modifier
+		set_variable = magic_tech_military_tech_3_complete
+		change_variable = {
+			name = magic_tech_research_reserve
+			add = var；magic_tech_military_tech_3_cost
+		}
+	}
+	is_shown = {
+        has_variable = magic_tech_military_tech_3_var
+		NOT = {
+			has_modifier = magic_tech_military_tech_3_modifier
+		}
+    } 		
+    
+	is_valid = {
+		var:magic_tech_research_reserve > var:magic_tech_military_tech_3_cost
+	}
+}
+magic_tech_military_tech_4 = {
+	effect = {
+		add_modifier = magic_tech_military_tech_4_modifier
+		set_variable = magic_tech_military_tech_4_complete
+		change_variable = {
+			name = magic_tech_research_reserve
+			add = var；magic_tech_military_tech_4_cost
+		}
+	}
+	is_shown = {
+        has_variable = magic_tech_military_tech_4_var
+		NOT = {
+			has_modifier = magic_tech_military_tech_4_modifier
+		}
+    } 		
+    
+	is_valid = {
+		var:magic_tech_research_reserve > var:magic_tech_military_tech_4_cost
+	}
+}
+magic_tech_military_tech_5 = {
+	effect = {
+		add_modifier = magic_tech_military_tech_5_modifier
+		set_variable = magic_tech_military_tech_5_complete
+		change_variable = {
+			name = magic_tech_research_reserve
+			add = var；magic_tech_military_tech_5_cost
+		}
+	}
+	is_shown = {
+        has_variable = magic_tech_military_tech_5_var
+		NOT = {
+			has_modifier = magic_tech_military_tech_5_modifier
+		}
+    } 		
+    
+	is_valid = {
+		var:magic_tech_research_reserve > var:magic_tech_military_tech_5_cost
+	}
+}
+magic_tech_military_tech_6 = {
+	effect = {
+		add_modifier = magic_tech_military_tech_6_modifier
+		set_variable = magic_tech_military_tech_6_complete
+		change_variable = {
+			name = magic_tech_research_reserve
+			add = var；magic_tech_military_tech_6_cost
+		}
+	}
+	is_shown = {
+        has_variable = magic_tech_military_tech_6_var
+		NOT = {
+			has_modifier = magic_tech_military_tech_6_modifier
+		}
+    } 		
+    
+	is_valid = {
+		var:magic_tech_research_reserve > var:magic_tech_military_tech_6_cost
+	}
+}
+magic_tech_society_tech_1 = {
+	
+	effect = {
+		add_modifier = magic_tech_society_tech_1_modifier
+		set_variable = magic_tech_society_tech_1_complete
+		change_variable = {
+			name = magic_tech_research_reserve
+			add = var；magic_tech_society_tech_1_cost
+		}
+	}
+	is_shown = {
+		NOT = { has_variable = magic_tech_society_tech_1_complete }
+        has_variable = magic_tech_society_tech_1_var
+		NOT = {
+			has_modifier = magic_tech_society_tech_1_modifier
+		}
+    } 		
+    
+	is_valid = {
+		var:magic_tech_research_reserve > var:magic_tech_society_tech_1_cost
+	}
+}
+magic_tech_society_tech_2 = {
+	effect = {
+		add_modifier = magic_tech_society_tech_2_modifier
+		set_variable = magic_tech_society_tech_2_complete
+		change_variable = {
+			name = magic_tech_research_reserve
+			add = var；magic_tech_society_tech_2_cost
+		}
+	}
+	is_shown = {
+        has_variable = magic_tech_society_tech_2_var
+		NOT = {
+			has_modifier = magic_tech_society_tech_2_modifier
+		}
+    } 		
+    
+	is_valid = {
+		var:magic_tech_research_reserve > var:magic_tech_society_tech_2_cost
+	}
+}
+magic_tech_society_tech_3 = {
+	effect = {
+		add_modifier = magic_tech_society_tech_3_modifier
+		set_variable = magic_tech_society_tech_3_complete
+		change_variable = {
+			name = magic_tech_research_reserve
+			add = var；magic_tech_society_tech_3_cost
+		}
+	}
+	is_shown = {
+        has_variable = magic_tech_society_tech_3_var
+		NOT = {
+			has_modifier = magic_tech_society_tech_3_modifier
+		}
+    } 		
+    
+	is_valid = {
+		var:magic_tech_research_reserve > var:magic_tech_society_tech_3_cost
+	}
+}
+magic_tech_society_tech_4 = {
+	effect = {
+		add_modifier = magic_tech_society_tech_4_modifier
+		set_variable = magic_tech_society_tech_4_complete
+		change_variable = {
+			name = magic_tech_research_reserve
+			add = var；magic_tech_society_tech_4_cost
+		}
+	}
+	is_shown = {
+        has_variable = magic_tech_society_tech_4_var
+		NOT = {
+			has_modifier = magic_tech_society_tech_4_modifier
+		}
+    } 		
+    
+	is_valid = {
+		var:magic_tech_research_reserve > var:magic_tech_society_tech_4_cost
+	}
+}
+magic_tech_society_tech_5 = {
+	effect = {
+		add_modifier = magic_tech_society_tech_5_modifier
+		set_variable = magic_tech_society_tech_5_complete
+		change_variable = {
+			name = magic_tech_research_reserve
+			add = var；magic_tech_society_tech_5_cost
+		}
+	}
+	is_shown = {
+        has_variable = magic_tech_society_tech_5_var
+		NOT = {
+			has_modifier = magic_tech_society_tech_5_modifier
+		}
+    } 		
+    
+	is_valid = {
+		var:magic_tech_research_reserve > var:magic_tech_society_tech_5_cost
+	}
+}
+magic_tech_society_tech_6 = {
+	effect = {
+		add_modifier = magic_tech_society_tech_6_modifier
+		set_variable = magic_tech_society_tech_6_complete
+		change_variable = {
+			name = magic_tech_research_reserve
+			add = var；magic_tech_society_tech_6_cost
+		}
+	}
+	is_shown = {
+        has_variable = magic_tech_society_tech_6_var
+		NOT = {
+			has_modifier = magic_tech_society_tech_6_modifier
+		}
+    } 		
+    
+	is_valid = {
+		var:magic_tech_research_reserve > var:magic_tech_military_tech_6_cost
+	}
+}

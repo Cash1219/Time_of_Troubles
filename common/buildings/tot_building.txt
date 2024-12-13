@@ -1,0 +1,27 @@
+﻿building_barn = {
+	expandable = no
+	ownership_type = no_ownership
+	building_group = bg_private_infrastructure	
+	city_type = city
+	levels_per_mesh = 1
+	potential = {
+		owner = c:FRA
+	}
+	unique = yes
+
+	production_method_groups = {
+		pmg_base_building_barn #粮仓容量
+		pmg_distribution_building_barn #分配方式
+		pmg_manage_building_barn #管理方式
+	}
+
+	icon = "gfx/interface/icons/building_icons/building_barn.dds"
+
+	required_construction = construction_cost_medium
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_monuments.dds"
+
+	ai_value = {
+		value = 1000
+	}
+}

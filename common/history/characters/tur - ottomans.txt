@@ -1,0 +1,86 @@
+﻿# NOTE: "Pasha" is a title, not a name. However, due to some Ottoman Turkish names lacking a last name, it is used in place of one
+
+CHARACTERS = {
+	c:TUR ?= {
+			create_character = {
+				historical = yes
+				first_name = "Togawa"
+				last_name = "Sakiko"
+				birth_date = 1816.1.1 
+				female = yes
+				ruler = yes
+				ig_leader = yes
+				ideology = ideology_reformer
+				interest_group = ig_landowners
+				religion = rel:catholic
+				culture = cu:south_german
+				traits = {
+					tot_Bang_Sakiko_trait
+					direct
+				}
+		}
+			create_character = {
+				historical = yes
+				first_name = "Wakaba"
+				last_name = "Mutsumi"
+				birth_date = 1816.1.1 
+				female = yes
+				ig_leader = yes
+				ideology = ideology_moderate
+				interest_group = ig_rural_folk
+				religion = rel:catholic
+				culture = cu:south_german
+				traits = {
+					tot_Bang_Mutsumi_trait
+					direct
+				}
+			}
+			create_character = {
+				historical = yes
+				first_name = "Yahata"
+				last_name = "Umiri"
+				birth_date = 1816.1.1 
+				female = yes
+				ig_leader = yes
+				ideology = ideology_jingoist_leader
+				interest_group = ig_armed_forces
+				religion = rel:catholic
+				culture = cu:south_german
+				traits = {
+					tot_Bang_Umiri_trait
+					direct
+				}
+		}
+		create_character = {
+			historical = yes
+			first_name = "Misumi"
+			last_name = "Uika"
+			birth_date = 1816.1.1 
+			female = yes
+			ig_leader = yes
+			ideology = ideology_traditionalist
+			interest_group = ig_intelligentsia
+			religion = rel:catholic
+			culture = cu:south_german
+			traits = {
+				tot_Bang_Uika_trait
+				direct
+			}
+		}
+		create_character = {
+			historical = yes
+			first_name = "Yutenji"
+			last_name = "Nyamu"
+			birth_date = 1816.1.1 
+			female = yes
+			ig_leader = yes
+			ideology = ideology_moderate
+			interest_group = ig_petty_bourgeoisie
+			religion = rel:catholic
+			culture = cu:serb
+			traits = {
+				tot_Bang_Nyamu_trait
+			}
+		}
+	}
+}

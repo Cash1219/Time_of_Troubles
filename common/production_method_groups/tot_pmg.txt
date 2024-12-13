@@ -1,0 +1,31 @@
+﻿#粮仓
+pmg_base_building_barn = { #基础设施
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+
+	production_methods = { 
+		pm_wooden_barn #传统木制粮仓 +50谷物 +20肉 +雇佣农民，劳工
+		pm_iron_barn #铁制公共仓库 +75谷物 +30肉 +雇佣农民
+		pm_stell_barn #钢框架仓库 +125谷物 +50肉 +雇佣农民
+	}
+}
+pmg_manage_building_barn = { #管理方式
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_shopkeeper_barn #私人所有 +10%农业产量 +雇佣店主，资本家
+		pm_noble_barn #贵族庄园  -25%农业占用基础设施，-5%自给农消费 +雇佣贵族，教士
+		pm_bureaucrat_barn #官僚监管 -25%投机效果 +5%粮食安全 +雇佣官僚，职员
+	}
+}
+pmg_distribution_building_barn = { #主要作用
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_market_barn #控制市场 #-25%投机效果
+		pm_relief_barn #赈灾救济 #+5%粮食安全
+		pm_transport_barn #运粮站点 #-25%农业占用基础设施，+5%农业产量
+	}
+}

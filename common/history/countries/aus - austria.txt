@@ -33,16 +33,83 @@
 		
 		# Geheime Staatskonferenz
 		ig:ig_landowners = {
+			remove_ideology = ideology_paternalistic
+			remove_ideology = ideology_stratocratic
+			remove_ideology = ideology_patriarchal
+			add_ideology = ideology_diva #公主陛下
+			add_ideology = ideology_enterprise_network #企业人脉
+			add_ideology = ideology_second_creation #鼓励创作
+			set_interest_group_name = ig_landowners_aus
 			add_ruling_interest_group = yes
-			add_ideology = ideology_austrian_hegemony
-			set_interest_group_name = austrian_aristocracy
 		}
 		ig:ig_armed_forces = {
-			add_ruling_interest_group = yes
+			remove_ideology = ideology_jingoist
+			remove_ideology = ideology_loyalist
+			remove_ideology = ideology_patriotic
+			add_ideology = ideology_starlight #命运的舞台
+			add_ideology = ideology_revue #决斗传统
+			add_ideology = ideology_second_creation #鼓励创作
+			###上为舞台少女设定，下为骑士团设定
+			#add_ideology = ideology_fans_knight #狂热粉丝
+			#add_ideology = ideology_control_group #圈子管控
+			#add_ideology = ideology_fan_economy #粉丝经济
+			set_interest_group_name = ig_armed_forces_aus
 		}
 		ig:ig_intelligentsia = {
-			add_ruling_interest_group = yes
+			remove_ideology = ideology_liberal
+			remove_ideology = ideology_anti_clerical
+			remove_ideology = ideology_republican
+			remove_ideology = ideology_anti_slavery
+			add_ideology = ideology_school_idol #学生会体制
+			add_ideology = ideology_save_school #复校梦
+			add_ideology = ideology_fan_economy #粉丝经济
+			set_interest_group_name = ig_intelligentsia_aus
 		}
-
+		ig:ig_devout = {
+			remove_ideology = ideology_pious
+			remove_ideology = ideology_moralist
+			remove_ideology = ideology_patriarchal
+			add_ideology = ideology_tradition_idol #武道馆目标
+			add_ideology = ideology_enterprise_network #企业人脉
+			add_ideology = ideology_fan_economy #粉丝经济
+			set_interest_group_name = ig_devout_aus
+		}
+		ig:ig_industrialists = {
+			remove_ideology = ideology_plutocratic
+			remove_ideology = ideology_laissez_faire
+			remove_ideology = ideology_individualist
+			add_ideology = ideology_plutocrat_idol #偶像产业化
+			add_ideology = ideology_enterprise_network #企业人脉
+			add_ideology = ideology_control_group #圈子管控
+			set_interest_group_name = ig_industrialists_aus
+		}
+		ig:ig_petty_bourgeoisie = {
+			remove_ideology = ideology_reactionary
+			remove_ideology = ideology_meritocratic
+			remove_ideology = ideology_patriotic
+			add_ideology = ideology_band #自由乐队
+			add_ideology = ideology_fan_economy #粉丝经济
+			add_ideology = ideology_revue #决斗传统
+			set_interest_group_name = ig_petty_bourgeoisie_aus
+		}
+		ig:ig_rural_folk = {
+			#remove_ideology = ideology_agrarian
+			#remove_ideology = ideology_particularist
+			#remove_ideology = ideology_isolationist
+			#add_ideology = ideology_spectators #旁观者
+			#add_ideology = ideology_speculation_economy #倒卖经济
+			#add_ideology = 
+			set_interest_group_name = ig_rural_folk_aus
+		}
+		ig:ig_trade_unions = {
+			remove_ideology = ideology_proletarian
+			remove_ideology = ideology_egalitarian
+			remove_ideology = ideology_populist
+			remove_ideology = ideology_anti_slavery
+			#add_ideology = ideology_producer #staff精神
+			add_ideology = ideology_second_creation #鼓励创作
+			add_ideology = ideology_enterprise_network #企业人脉
+			set_interest_group_name = ig_trade_unions_aus
+		}
 	}
 }

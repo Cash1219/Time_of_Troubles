@@ -1,4 +1,129 @@
-﻿mana = {
+﻿max_religion_icon_slot_value = { #最大崇拜槽
+	value = 1
+	add = modifier:max_religion_icon_slot
+
+}
+active_religion_icon_slot_value = { #已激活的崇拜槽
+	value = 0
+	if = {
+		limit = {
+			has_modifier = religion_icon_joan_modifier
+		}
+		add = 1
+	}
+}
+magic_tech_research_bonus_production_tech_cost = { #33%的生产科技加成给予魔法研究加速
+	value = 0.33
+	multiply = modifier:country_production_tech_research_speed_mult
+}
+magic_tech_research_bonus_military_tech_cost = { #33%的军事科技加成给予魔法研究加速
+	value = 0.33
+	multiply = modifier:country_military_tech_research_speed_mult
+}
+magic_tech_research_bonus_society_tech_cost = { #33%的社会科技加成给予魔法研究加速
+	value = 0.33
+	multiply = modifier:country_society_tech_research_speed_mult
+}
+magic_tech_research_bonus = { 
+	value = 1
+	add = modifier:country_tech_research_speed_mult
+	add = magic_tech_research_bonus_production_tech_cost #100%的全科技加成给予魔法研究加速。另外转化上面三个
+	add = magic_tech_research_bonus_military_tech_cost
+	add = magic_tech_research_bonus_society_tech_cost
+}
+magic_tech_research_point = { #最终的每月魔法科技研究点数
+	value = 10000
+	add = modifier:country_weekly_innovation_add
+	multiply = magic_tech_research_bonus
+}
+magic_tech_research_reserve_value = { #魔法储备
+	value = var:magic_tech_research_reserve
+}
+max_magic_research_slot_value = {
+	value = 3
+	add = modifier:max_magic_research_slot
+}
+num_magic_military_tech_research_slot = { #现存魔法科研选项数量
+	value = 0
+	add = modifier:max_magic_research_slot
+	if = {
+		limit = {
+			has_variable = magic_tech_military_tech_1_var
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_variable = magic_tech_military_tech_2_var
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_variable = magic_tech_military_tech_3_var
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_variable = magic_tech_military_tech_4_var
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_variable = magic_tech_military_tech_5_var
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_variable = magic_tech_military_tech_6_var
+		}
+		add = 1
+	}
+}
+num_magic_society_tech_research_slot = { #现存魔法科研选项数量
+	value = 0
+	add = modifier:max_magic_research_slot
+	if = {
+		limit = {
+			has_variable = magic_tech_society_tech_1_var
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_variable = magic_tech_society_tech_2_var
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_variable = magic_tech_society_tech_3_var
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_variable = magic_tech_society_tech_4_var
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_variable = magic_tech_society_tech_5_var
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_variable = magic_tech_society_tech_6_var
+		}
+		add = 1
+	}
+}
+mana = {
 	add = mana_generation
 	add = mana_upkeep
 	add = mana_usage

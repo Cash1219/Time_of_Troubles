@@ -3,7 +3,9 @@
 		
 	}
 	is_shown = {
-        always = yes
+        religion = {
+			has_discrimination_trait = christian
+		}
     } 		
     
 	is_valid = {
@@ -15,7 +17,9 @@ religion_icon_sakura = {
 		
 	}
 	is_shown = {
-        always = yes
+        religion = {
+			has_discrimination_trait = christian
+		}
     } 		
     
 	is_valid = {
@@ -27,7 +31,9 @@ religion_icon_nanoha = {
 		
 	}
 	is_shown = {
-        always = yes
+        religion = {
+			has_discrimination_trait = christian
+		}
     } 		
     
 	is_valid = {
@@ -39,10 +45,46 @@ religion_icon_madoka = {
 		
 	}
 	is_shown = {
+        religion = {
+			has_discrimination_trait = christian
+		}
+    } 		
+    
+	is_valid = {
+		
+	}
+}
+religion_icon_france_goddess = {
+	effect = {
+		
+	}
+	is_shown = {
         always = yes
     } 		
     
 	is_valid = {
 		
+	}
+}
+religion_icon_joan = {
+	effect = {
+		add_modifier = {
+			name = religion_icon_joan_modifier
+			months = 12
+		}
+	}
+	is_shown = {
+		religion = {
+			has_discrimination_trait = christian
+		}
+		
+    } 		
+    
+	is_valid = {
+		
+		NOT = {
+			has_modifier = religion_icon_joan_modifier
+		}
+		max_religion_icon_slot_value > active_religion_icon_slot_value
 	}
 }

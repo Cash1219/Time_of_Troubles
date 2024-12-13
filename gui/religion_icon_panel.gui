@@ -74,7 +74,7 @@ window = {
 			blockoverride "scrollbox_content" {
 				text_single = {
 							text = "RELIGION_ICON_1" # 先驱者
-							visible = "[And(GetVariableSystem.HasValue( 'religion_icon_tabs', 'choose_icon' ) ,GetScriptedGui('religion_icon_pioneer').IsShown( GuiScope.End ))]"
+							visible = "[And(GetVariableSystem.HasValue( 'religion_icon_tabs', 'choose_icon' ) ,GetScriptedGui('religion_icon_pioneer').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
 							
 						}
 				hbox = {
@@ -92,7 +92,7 @@ window = {
 						
 						button_icon_square_action = {
 							name = "religion_icon_sakura" #木之本樱
-							visible = "[GetScriptedGui('religion_icon_sakura').IsShown( GuiScope.End )]"
+							visible = "[GetScriptedGui('religion_icon_sakura').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							onclick = "[GetScriptedGui('religion_icon_sakura').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
 							using = tooltip_ne
@@ -109,7 +109,7 @@ window = {
 						
 						button_icon_square_action = {
 							name = "religion_icon_nanoha" #高町奈叶
-							visible = "[GetScriptedGui('religion_icon_nanoha').IsShown( GuiScope.End )]"
+							visible = "[GetScriptedGui('religion_icon_nanoha').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							onclick = "[GetScriptedGui('religion_icon_nanoha').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							tooltip = "RELIGION_ICON_NANOHA_TOOLTIP" 
 							using = tooltip_ne
@@ -127,7 +127,7 @@ window = {
 						
 						button_icon_square_action = {
 							name = "religion_icon_madoka" #鹿目圆
-							visible = "[GetScriptedGui('religion_icon_madoka').IsShown( GuiScope.End )]"
+							visible = "[GetScriptedGui('religion_icon_madoka').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							onclick = "[GetScriptedGui('religion_icon_madoka').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							tooltip = "RELIGION_ICON_MADOKA_TOOLTIP" 
 							using = tooltip_ne
@@ -143,7 +143,7 @@ window = {
 						}
 						button_icon_square_action = {
 							name = "religion_icon_shario" #夏莉欧
-							visible = "[GetScriptedGui('religion_icon_sakura').IsShown( GuiScope.End )]"
+							visible = "[GetScriptedGui('religion_icon_sakura').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							onclick = "[GetScriptedGui('religion_icon_sakura').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							tooltip = "RELIGION_ICON_MADOKA_TOOLTIP" 
 							using = tooltip_ne
@@ -162,7 +162,7 @@ window = {
 				}
 				text_single = {
 							text = "RELIGION_ICON_2" # 魔神崇拜
-							visible = "[And(GetVariableSystem.HasValue( 'religion_icon_tabs', 'choose_icon' ) ,GetScriptedGui('religion_icon_demon_god').IsShown( GuiScope.End ))]"
+							visible = "[And(GetVariableSystem.HasValue( 'religion_icon_tabs', 'choose_icon' ) ,GetScriptedGui('religion_icon_demon_god').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
 						}
 				hbox = {
 					
@@ -180,11 +180,11 @@ window = {
 						
 						button_icon_square_action = {
 							name = "religion_icon_qb" #丘比
-							visible = "[GetScriptedGui('religion_icon_sakura').IsShown( GuiScope.End )]"
+							visible = "[GetScriptedGui('religion_icon_sakura').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							onclick = "[GetScriptedGui('religion_icon_sakura').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
 							using = tooltip_ne
-							size = { 2 150 }
+							size = { 150 150 }
 							
 							blockoverride "icon" {
 								texture = "gfx/interface/icons/religion_icons/religion_icon_sakura.dds"
@@ -196,7 +196,7 @@ window = {
 						}
 						button_icon_square_action = {
 							name = "religion_icon_mori" #丹生谷森夏
-							visible = "[GetScriptedGui('religion_icon_sakura').IsShown( GuiScope.End )]"
+							visible = "[GetScriptedGui('religion_icon_sakura').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							onclick = "[GetScriptedGui('religion_icon_sakura').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
 							using = tooltip_ne
@@ -212,7 +212,7 @@ window = {
 						}
 						button_icon_square_action = {
 							name = "religion_icon_nyaruko" #奈亚子
-							visible = "[GetScriptedGui('religion_icon_sakura').IsShown( GuiScope.End )]"
+							visible = "[GetScriptedGui('religion_icon_sakura').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							onclick = "[GetScriptedGui('religion_icon_sakura').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
 							using = tooltip_ne
@@ -228,7 +228,7 @@ window = {
 						}
 						button_icon_square_action = {
 							name = "religion_icon_jashinchan" #邪神酱
-							visible = "[GetScriptedGui('religion_icon_sakura').IsShown( GuiScope.End )]"
+							visible = "[GetScriptedGui('religion_icon_sakura').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							onclick = "[GetScriptedGui('religion_icon_sakura').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
 							using = tooltip_ne
@@ -244,7 +244,7 @@ window = {
 						}
 						button_icon_square_action = {
 							name = "religion_icon_yuko" #吉田优子
-							visible = "[GetScriptedGui('religion_icon_sakura').IsShown( GuiScope.End )]"
+							visible = "[GetScriptedGui('religion_icon_sakura').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							onclick = "[GetScriptedGui('religion_icon_sakura').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
 							using = tooltip_ne
@@ -260,7 +260,7 @@ window = {
 						}
 						button_icon_square_action = {
 							name = "religion_icon_utena" #柊舞缇娜
-							visible = "[GetScriptedGui('religion_icon_sakura').IsShown( GuiScope.End )]"
+							visible = "[GetScriptedGui('religion_icon_sakura').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							onclick = "[GetScriptedGui(religion_icon_sakura).Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
 							using = tooltip_ne
@@ -278,7 +278,7 @@ window = {
 				}
 					text_single = {
 							text = "RELIGION_ICON_3" # 法兰西圣女
-							visible = "[And(GetVariableSystem.HasValue( 'religion_icon_tabs', 'choose_icon' ) ,GetScriptedGui('religion_icon_france_goddess').IsShown( GuiScope.End ))]"
+							visible = "[And(GetVariableSystem.HasValue( 'religion_icon_tabs', 'choose_icon' ) ,GetScriptedGui('religion_icon_france_goddess').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
 						}
 				hbox = {
 				
@@ -296,46 +296,49 @@ window = {
 						
 						button_icon_square_action = {
 							name = "religion_icon_joan" #贞德
-							visible = "[GetScriptedGui('religion_icon_sakura').IsShown( GuiScope.End )]"
-							onclick = "[GetScriptedGui('religion_icon_sakura').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
+							visible = "[GetScriptedGui('religion_icon_joan').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							onclick = "[GetScriptedGui('religion_icon_joan').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_JOAN_TT" 
 							using = tooltip_ne
 							size = { 150 150 }
-							
 							blockoverride "icon" {
-								texture = "gfx/interface/icons/religion_icons/religion_icon_sakura.dds"
+								texture = "gfx/models/props/anime/tot_prophet_Fate_Jeanne_diffuse.dds"
+								
+							}
+							blockoverride "icon_size" {
+			
+								position = { 10 10 }
+								size = { 120% 120% }
 							}
 							
-							blockoverride "icon_size" {
-								size = { 65% 65% }
-							}
 						}
 						button_icon_square_action = {
 							name = "religion_icon_martha" #玛尔达
-							visible = "[GetScriptedGui('religion_icon_sakura').IsShown( GuiScope.End )]"
-							onclick = "[GetScriptedGui('religion_icon_sakura').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
+							visible = "[GetScriptedGui('religion_icon_martha').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							onclick = "[GetScriptedGui('religion_icon_martha').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_MARTHA_TT" 
 							using = tooltip_ne
 							size = { 150 150 }
 							
 							blockoverride "icon" {
-								texture = "gfx/interface/icons/religion_icons/religion_icon_sakura.dds"
-							}
+								texture = "gfx/models/props/anime/tot_prophet_Fate_Martha_diffuse.dds"
 							
+							}
 							blockoverride "icon_size" {
-								size = { 65% 65% }
+								size = { 120% 120% }
+								
 							}
 						}
 						button_icon_square_action = {
 							name = "religion_icon_rafina" #拉菲娜
-							visible = "[GetScriptedGui('religion_icon_sakura').IsShown( GuiScope.End )]"
-							onclick = "[GetScriptedGui('religion_icon_sakura').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
+							visible = "[GetScriptedGui('religion_icon_rafina').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							onclick = "[GetScriptedGui('religion_icon_rafina').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_RAFINA_TT" 
 							using = tooltip_ne
 							size = { 150 150 }
 							
 							blockoverride "icon" {
-								texture = "gfx/interface/icons/religion_icons/religion_icon_sakura.dds"
+								texture = "gfx/interface/icons/religion_icons/religion_icon_rafina.dds"
 							}
 							
 							blockoverride "icon_size" {
@@ -344,14 +347,14 @@ window = {
 						}
 						button_icon_square_action = {
 							name = "religion_icon_aqua" #阿库娅
-							visible = "[GetScriptedGui('religion_icon_sakura').IsShown( GuiScope.End )]"
-							onclick = "[GetScriptedGui('religion_icon_sakura').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
+							visible = "[GetScriptedGui('religion_icon_aqua').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							onclick = "[GetScriptedGui('religion_icon_aqua').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_AQUA_TT" 
 							using = tooltip_ne
 							size = { 150 150 }
 							
 							blockoverride "icon" {
-								texture = "gfx/interface/icons/religion_icons/religion_icon_sakura.dds"
+								texture = "gfx/interface/icons/religion_icons/religion_icon_aqua.dds"
 							}
 							
 							blockoverride "icon_size" {
@@ -360,14 +363,30 @@ window = {
 						}
 						button_icon_square_action = {
 							name = "religion_icon_furina" #芙宁娜
-							visible = "[GetScriptedGui('religion_icon_sakura').IsShown( GuiScope.End )]"
-							onclick = "[GetScriptedGui('religion_icon_sakura').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
+							visible = "[GetScriptedGui('religion_icon_furina').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							onclick = "[GetScriptedGui('religion_icon_furina').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_FURINA_TT" 
 							using = tooltip_ne
 							size = { 150 150 }
 							
 							blockoverride "icon" {
-								texture = "gfx/interface/icons/religion_icons/religion_icon_sakura.dds"
+								texture = "gfx/interface/icons/religion_icons/religion_icon_furina.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+							}
+						}
+						button_icon_square_action = {
+							name = "religion_icon_sharon" #莎朗
+							visible = "[GetScriptedGui('religion_icon_sharon').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							onclick = "[GetScriptedGui('religion_icon_sharon').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_SHARON_TT" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/religion_icons/religion_icon_sharon.dds"
 							}
 							
 							blockoverride "icon_size" {

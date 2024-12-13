@@ -25,17 +25,7 @@ je_the_suppressed_dem = { #打压DEM社
 					add = 1
 				}
 			}
-			if = {
-				limit = {
-					ig:ig_landowners = {
-						is_being_suppressed = yes
-					}
-				}
-				change_variable = {
-					name = USA_dem_power_next
-					add = -0.5
-				}
-			}
+			
 			if = {
 				limit = {
 					has_modifier = modifier_suppressed_dem

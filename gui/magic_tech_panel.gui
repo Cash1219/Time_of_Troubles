@@ -57,11 +57,57 @@ window = {
 				down = "[GetVariableSystem.HasValue( 'magic_tech_tabs', 'magic_tech_research' )]"
 			}
 		}
+		hbox = {
+                        name = "progressbars"
+                        visible = "[GetVariableSystem.HasValue( 'magic_tech_tabs', 'magic_tech_research' )]"
+                        layoutpolicy_horizontal = expanding
+
+                        ui_guide_component_area = {
+                            blockoverride "component_name" {
+                                raw_text = "magic_tech_research_text"
+								tooltip = "magic_tech_research_text_tt" 
+                            }
+                            blockoverride "component_name_type" {
+								textbox = {
+										text = "magic_tech_research_point_tt"
+										autoresize = yes
+										align = nobaseline
+										parentanchor = vcenter
+										margin_left = 20
+										using = fontsize_large
+								}
+                            }
+
+                            blockoverride "component_area" {
+                                default_progressbar_horizontal = {
+                                    size = { 300 30 }
+                                    blockoverride "values" {
+										tooltip = "magic_tech_research_text"
+										max = 10000
+                                        value = "[GetPlayer.MakeScope.ScriptValue('magic_tech_research_reserve_value')|+2]"
+                                    }
+									textbox = {
+										text = "magic_tech_research_reserve_value_text"
+										autoresize = yes
+										align = nobaseline
+										parentanchor = vcenter
+										margin_left = 20
+										using = fontsize_large
+								}
+								}
+                            }
+
+                            blockoverride "component_desc" {
+                                raw_text = "magic_tech_research_point_desc"
+                            }
+							
+                        }
+                    }
 		scrollbox = {
 			name = "characters_scroll_area"
 			layoutpolicy_vertical = expanding
 			layoutpolicy_horizontal = expanding
-
+		
 			blockoverride "scrollbox_content" {
 				
 				hbox = {
@@ -77,6 +123,411 @@ window = {
 							layoutpolicy_horizontal = expanding
 						}
 						
+						
+					}
+					
+				}
+				text_single = {
+							text = "magic_tech_production_tab" # 生产
+							visible = "[And(GetVariableSystem.HasValue( 'magic_tech_tabs', 'magic_tech_research' ) ,GetScriptedGui('magic_tech_production_tab').IsShown( GuiScope.End ))]"
+							
+						}
+				hbox = {
+					visible = "[GetVariableSystem.HasValue( 'magic_tech_tabs', 'magic_tech_research' ) ]"
+					layoutpolicy_horizontal = expanding
+					spacing = 5
+					hbox = {
+						spacing = 5
+						
+						
+
+						divider_clean = {
+							layoutpolicy_horizontal = expanding
+						}	
+						button_icon_square_action = {
+							name = "magic_tech_production_tech_1" #科技1
+							datacontext = "[GetScriptedGui('magic_tech_production_tech_1')]"
+							visible = "[GetScriptedGui('magic_tech_production_tech_1').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #科技可见条件 参照common/scripted_guis
+							onclick = "[GetScriptedGui('magic_tech_production_tech_1').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #点击后发生的事件 参照common/scripted_guis
+							tooltip = "magic_tech_production_tech_1_tt" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/invention_icons/academia.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+								
+							}
+							
+						}
+						button_icon_square_action = {
+							name = "magic_tech_production_tech_2" #科技2
+							datacontext = "[GetScriptedGui('magic_tech_production_tech_2')]"
+							visible = "[GetScriptedGui('magic_tech_production_tech_2').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #科技可见条件 参照common/scripted_guis
+							onclick = "[GetScriptedGui('magic_tech_production_tech_2').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #点击后发生的事件 参照common/scripted_guis
+							tooltip = "magic_tech_production_tech_2_tt" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/invention_icons/academia.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+								
+							}
+							
+						}
+						button_icon_square_action = {
+							name = "magic_tech_production_tech_3" #科技3
+							datacontext = "[GetScriptedGui('magic_tech_production_tech_3')]"
+							visible = "[GetScriptedGui('magic_tech_production_tech_3').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #科技可见条件 参照common/scripted_guis
+							onclick = "[GetScriptedGui('magic_tech_production_tech_3').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #点击后发生的事件 参照common/scripted_guis
+							tooltip = "magic_tech_production_tech_3_tt" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/invention_icons/academia.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+								
+							}
+							
+						}
+						button_icon_square_action = {
+							name = "magic_tech_production_tech_4" #科技4
+							datacontext = "[GetScriptedGui('magic_tech_production_tech_4')]"
+							visible = "[GetScriptedGui('magic_tech_production_tech_4').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #科技可见条件 参照common/scripted_guis
+							onclick = "[GetScriptedGui('magic_tech_production_tech_4').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #点击后发生的事件 参照common/scripted_guis
+							magic_tech_production_tech_4_tt
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/invention_icons/academia.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+								
+							}
+							
+						}
+						button_icon_square_action = {
+							name = "magic_tech_production_tech_5" #科技5
+							datacontext = "[GetScriptedGui('magic_tech_production_tech_5')]"
+							visible = "[GetScriptedGui('magic_tech_production_tech_5').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #科技可见条件 参照common/scripted_guis
+							onclick = "[GetScriptedGui('magic_tech_production_tech_5').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #点击后发生的事件 参照common/scripted_guis
+							tooltip = "magic_tech_production_tech_5_tt" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/invention_icons/academia.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+								
+							}
+							
+						}
+						button_icon_square_action = {
+							name = "magic_tech_production_tech_6" #科技6
+							datacontext = "[GetScriptedGui('magic_tech_production_tech_6')]"
+							visible = "[GetScriptedGui('magic_tech_production_tech_6').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #科技可见条件 参照common/scripted_guis
+							onclick = "[GetScriptedGui('magic_tech_production_tech_6').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #点击后发生的事件 参照common/scripted_guis
+							tooltip = "magic_tech_production_tech_6_tt" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/invention_icons/academia.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+								
+							}
+							
+						}
+						
+					}
+					
+				}
+				text_single = {
+							text = "magic_tech_military_tab" # 军事
+							visible = "[And(GetVariableSystem.HasValue( 'magic_tech_tabs', 'magic_tech_research' ) ,GetScriptedGui('magic_tech_military_tab').IsShown( GuiScope.End ))]"
+							
+						}
+				hbox = {
+					visible = "[GetVariableSystem.HasValue( 'magic_tech_tabs', 'magic_tech_research' ) ]"
+					layoutpolicy_horizontal = expanding
+					spacing = 5
+					hbox = {
+						spacing = 5
+						
+						
+
+						divider_clean = {
+							layoutpolicy_horizontal = expanding
+						}	
+						button_icon_square_action = {
+							name = "magic_tech_military_tech_1" #科技1
+							datacontext = "[GetScriptedGui('magic_tech_military_tech_1')]"
+							visible = "[GetScriptedGui('magic_tech_military_tech_1').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #科技可见条件 参照common/scripted_guis
+							onclick = "[GetScriptedGui('magic_tech_military_tech_1').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #点击后发生的事件 参照common/scripted_guis
+							tooltip = "magic_tech_military_tech_1_tt" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/invention_icons/academia.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+								
+							}
+							
+						}
+						button_icon_square_action = {
+							name = "magic_tech_military_tech_2" #科技2
+							datacontext = "[GetScriptedGui('magic_tech_military_tech_2')]"
+							visible = "[GetScriptedGui('magic_tech_military_tech_2').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #科技可见条件 参照common/scripted_guis
+							onclick = "[GetScriptedGui('magic_tech_military_tech_2').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #点击后发生的事件 参照common/scripted_guis
+							tooltip = "magic_tech_military_tech_2_tt" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/invention_icons/academia.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+								
+							}
+							
+						}
+						button_icon_square_action = {
+							name = "magic_tech_military_tech_3" #科技3
+							datacontext = "[GetScriptedGui('magic_tech_military_tech_3')]"
+							visible = "[GetScriptedGui('magic_tech_military_tech_3').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #科技可见条件 参照common/scripted_guis
+							onclick = "[GetScriptedGui('magic_tech_military_tech_3').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #点击后发生的事件 参照common/scripted_guis
+							tooltip = "magic_tech_military_tech_3_tt" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/invention_icons/academia.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+								
+							}
+							
+						}
+						button_icon_square_action = {
+							name = "magic_tech_military_tech_4" #科技4
+							datacontext = "[GetScriptedGui('magic_tech_military_tech_4')]"
+							visible = "[GetScriptedGui('magic_tech_military_tech_4').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #科技可见条件 参照common/scripted_guis
+							onclick = "[GetScriptedGui('magic_tech_military_tech_4').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #点击后发生的事件 参照common/scripted_guis
+							magic_tech_military_tech_4_tt
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/invention_icons/academia.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+								
+							}
+							
+						}
+						button_icon_square_action = {
+							name = "magic_tech_military_tech_5" #科技5
+							datacontext = "[GetScriptedGui('magic_tech_military_tech_5')]"
+							visible = "[GetScriptedGui('magic_tech_military_tech_5').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #科技可见条件 参照common/scripted_guis
+							onclick = "[GetScriptedGui('magic_tech_military_tech_5').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #点击后发生的事件 参照common/scripted_guis
+							tooltip = "magic_tech_military_tech_5_tt" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/invention_icons/academia.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+								
+							}
+							
+						}
+						button_icon_square_action = {
+							name = "magic_tech_military_tech_6" #科技6
+							datacontext = "[GetScriptedGui('magic_tech_military_tech_6')]"
+							visible = "[GetScriptedGui('magic_tech_military_tech_6').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #科技可见条件 参照common/scripted_guis
+							onclick = "[GetScriptedGui('magic_tech_military_tech_6').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #点击后发生的事件 参照common/scripted_guis
+							tooltip = "magic_tech_military_tech_6_tt" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/invention_icons/academia.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+								
+							}
+							
+						}
+						
+					}
+					
+				}
+				text_single = {
+							text = "magic_tech_military_tab" # 军事
+							visible = "[And(GetVariableSystem.HasValue( 'magic_tech_tabs', 'magic_tech_research' ) ,GetScriptedGui('magic_tech_military_tab').IsShown( GuiScope.End ))]"
+							
+						}
+				hbox = {
+					visible = "[GetVariableSystem.HasValue( 'magic_tech_tabs', 'magic_tech_research' ) ]"
+					layoutpolicy_horizontal = expanding
+					spacing = 5
+					hbox = {
+						spacing = 5
+						
+						
+
+						divider_clean = {
+							layoutpolicy_horizontal = expanding
+						}	
+						button_icon_square_action = {
+							name = "magic_tech_society_tech_1" #科技1
+							datacontext = "[GetScriptedGui('magic_tech_society_tech_1')]"
+							visible = "[GetScriptedGui('magic_tech_society_tech_1').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #科技可见条件 参照common/scripted_guis
+							onclick = "[GetScriptedGui('magic_tech_society_tech_1').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #点击后发生的事件 参照common/scripted_guis
+							tooltip = "magic_tech_society_tech_1_tt" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/invention_icons/academia.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+								
+							}
+							
+						}
+						button_icon_square_action = {
+							name = "magic_tech_society_tech_2" #科技2
+							datacontext = "[GetScriptedGui('magic_tech_society_tech_2')]"
+							visible = "[GetScriptedGui('magic_tech_society_tech_2').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #科技可见条件 参照common/scripted_guis
+							onclick = "[GetScriptedGui('magic_tech_society_tech_2').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #点击后发生的事件 参照common/scripted_guis
+							tooltip = "magic_tech_society_tech_2_tt" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/invention_icons/academia.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+								
+							}
+							
+						}
+						button_icon_square_action = {
+							name = "magic_tech_society_tech_3" #科技3
+							datacontext = "[GetScriptedGui('magic_tech_society_tech_3')]"
+							visible = "[GetScriptedGui('magic_tech_society_tech_3').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #科技可见条件 参照common/scripted_guis
+							onclick = "[GetScriptedGui('magic_tech_society_tech_3').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #点击后发生的事件 参照common/scripted_guis
+							tooltip = "magic_tech_society_tech_3_tt" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/invention_icons/academia.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+								
+							}
+							
+						}
+						button_icon_square_action = {
+							name = "magic_tech_society_tech_4" #科技4
+							datacontext = "[GetScriptedGui('magic_tech_society_tech_4')]"
+							visible = "[GetScriptedGui('magic_tech_society_tech_4').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #科技可见条件 参照common/scripted_guis
+							onclick = "[GetScriptedGui('magic_tech_society_tech_4').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #点击后发生的事件 参照common/scripted_guis
+							magic_tech_society_tech_4_tt
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/invention_icons/academia.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+								
+							}
+							
+						}
+						button_icon_square_action = {
+							name = "magic_tech_society_tech_5" #科技5
+							datacontext = "[GetScriptedGui('magic_tech_society_tech_5')]"
+							visible = "[GetScriptedGui('magic_tech_society_tech_5').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #科技可见条件 参照common/scripted_guis
+							onclick = "[GetScriptedGui('magic_tech_society_tech_5').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #点击后发生的事件 参照common/scripted_guis
+							tooltip = "magic_tech_society_tech_5_tt" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/invention_icons/academia.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+								
+							}
+							
+						}
+						button_icon_square_action = {
+							name = "magic_tech_society_tech_6" #科技6
+							datacontext = "[GetScriptedGui('magic_tech_society_tech_6')]"
+							visible = "[GetScriptedGui('magic_tech_society_tech_6').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #科技可见条件 参照common/scripted_guis
+							onclick = "[GetScriptedGui('magic_tech_society_tech_6').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" #点击后发生的事件 参照common/scripted_guis
+							tooltip = "magic_tech_society_tech_6_tt" 
+							using = tooltip_ne
+							size = { 150 150 }
+							
+							blockoverride "icon" {
+								texture = "gfx/interface/icons/invention_icons/academia.dds"
+							}
+							
+							blockoverride "icon_size" {
+								size = { 65% 65% }
+								
+							}
+							
+						}
 						
 					}
 					

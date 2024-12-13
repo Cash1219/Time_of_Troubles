@@ -1,0 +1,134 @@
+﻿pm_wooden_barn = { #木粮仓
+	texture = "gfx/interface/icons/production_method_icons/wooden_buildings.dds"
+	
+	is_default = yes
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_grain_add = 50
+			goods_output_meat_add  = 20
+			country_bureaucracy_add = -20
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 4000
+			building_employment_farmers_add = 1000
+		}
+	}
+}
+pm_iron_barn = { #铁粮仓
+	texture = "gfx/interface/icons/production_method_icons/iron_frame_buildings.dds"
+	unlocking_technologies = {
+		urban_planning
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_grain_add = 75
+			goods_output_meat_add  = 30
+			country_bureaucracy_add = -30
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 3500
+			building_employment_farmers_add = 1500
+		}
+	}
+}
+pm_stell_barn = { #钢粮仓
+	texture = "gfx/interface/icons/production_method_icons/steel_frame_buildings.dds"
+	unlocking_technologies = {
+		steel_frame_buildings
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_grain_add = 125
+			goods_output_meat_add  = 50
+			country_bureaucracy_add = -50
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 3000
+			building_employment_farmers_add = 2000
+		}
+	}
+}
+
+pm_shopkeeper_barn = { #私有化
+	texture = "gfx/interface/icons/production_method_icons/privately_owned.dds"
+	
+
+	state_modifiers = {
+		workforce_scaled = {
+			building_group_bg_agriculture_throughput_add = 0.1
+		}	
+	}
+	level_scaled = {
+		building_employment_capitalists_add = 50
+		building_employment_shopkeepers_add = 100
+	}
+}
+pm_noble_barn = { #庄园和教堂
+	texture = "gfx/interface/icons/production_method_icons/ownership_aristocrats.dds"
+	
+	is_default = yes
+
+	state_modifiers = {
+		workforce_scaled = {
+			building_group_bg_agriculture_infrastructure_usage_mult = -0.25
+			state_peasants_consumption_multiplier_add = -0.05
+		}	
+	}
+	level_scaled = {
+		building_employment_clergymen_add = 50
+		building_employment_aristocrats_add = 100
+	}
+}
+pm_bureaucrat_barn = { #官方管理
+	texture = "gfx/interface/icons/production_method_icons/ownership_bureacrats.dds"
+	
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_harvest_condition_grain_speculator_impact_mult = -0.25
+			state_food_security_add = 0.05
+		}	
+	}
+	level_scaled = {
+		building_employment_bureaucrats_add = 50
+		building_employment_clerks_add = 100
+	}
+}
+pm_market_barn = { #控制粮食价格
+	texture = "gfx/interface/icons/production_method_icons/steel_frame_buildings.dds"
+	
+	is_default = yes
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_harvest_condition_grain_speculator_impact_mult = -0.25
+		}	
+	}
+}
+pm_relief_barn = { #救济
+	texture = "gfx/interface/icons/production_method_icons/steel_frame_buildings.dds"
+	
+	is_default = yes
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_food_security_add = 0.05
+		}	
+	}
+}
+pm_transport_barn = { #运粮
+	texture = "gfx/interface/icons/production_method_icons/steel_frame_buildings.dds"
+	
+	is_default = yes
+
+	state_modifiers = {
+		workforce_scaled = {
+			building_group_bg_agriculture_infrastructure_usage_mult = -0.25
+			building_group_bg_agriculture_throughput_add = 0.05
+		}	
+	}
+}

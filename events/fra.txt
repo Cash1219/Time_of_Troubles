@@ -16,12 +16,14 @@ fra.1 = { #女皇对决
 				has_trait = tot_Fate_Marie_trait
 			}
 			save_scope_as = fate_marie_scope
+			set_variable = fate_marie_var
 		}
 		every_scope_character = {
 			limit = {
 				has_trait = tot_Tearmoon_Mia_trait
 			}
 			save_scope_as = tearmoon_mia_scope
+			set_variable = tearmoon_mia_var
 		}
 	}
 	gui_window = event_window_2char
@@ -68,7 +70,9 @@ fra.1 = { #女皇对决
 		#add_journal_entry = {
 		#	type = je_fra_shadow_guillotine
 		#}
-		
+		trigger_event = {
+			id = fra.2
+		}
 	}
 }
 fra.2 = { #面粉暴动
@@ -141,10 +145,10 @@ fra.2 = { #面粉暴动
 		name = fra.2.b #演
 		add_modifier = {
 			name = modifier_fra_pretend_conceal
-			years = 10
+			years = 1
 		}
 		add_radicals = {
-			value = medium_radicals
+			value = 0.05
 			strata = poor
 		}
 		scope:paris_scope = {
@@ -163,7 +167,7 @@ fra.2 = { #面粉暴动
 	option = {
 		name = fra.2.c #摆
 		add_radicals = {
-			value = large_radicals
+			value = 0.1
 			strata = poor
 		}
 		scope:paris_scope = {
@@ -291,7 +295,11 @@ fra.5 = { #人人有蛋糕
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
-	
+	immediate = {
+		cu:france = {
+			save_scope_as = france_culture_scope
+		}
+	}
 	
 	option = {
 		name = fra.5.a 
@@ -299,7 +307,7 @@ fra.5 = { #人人有蛋糕
 			name = "modifier_fra_food_pk_mary_win"
 			years = -1
 		}
-		cu:france = {
+		scope:france_culture_scope = {
 			add_cultural_obsession = groceries
 		}
 	}
@@ -317,14 +325,18 @@ fra.6 = { #人人有面包
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
-	
+	immediate = {
+		cu:france = {
+			save_scope_as = france_culture_scope
+		}
+	}
 	option = {
 		name = fra.6.a 	
 		add_modifier = {
 			name = "modifier_fra_food_pk_mia_win"
 			years = -1
 		}
-		cu:france = {
+		scope:france_culture_scope = {
 			add_cultural_obsession = grain
 		}
 		
@@ -344,7 +356,7 @@ fra.7 = { #新财政大臣
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
 	immediate = {
-		set_variable = { name = fra_7_var days = 3650 }
+		set_variable = { name = fra_7_var days = 1825 }
 	}
 	
 	option = {
@@ -454,13 +466,13 @@ fra.9 = { #卖财产
 	immediate = {
 		random_scope_character = {
 			limit = {
-				has_variable = fate_marie_scope
+				has_variable = fate_marie_var
 			}
 			save_scope_as = fate_marie_scope
 		}
 		random_scope_character = {
 			limit = {
-				has_variable = tearmoon_mia_scope
+				has_variable = tearmoon_mia_var
 			}
 			save_scope_as = tearmoon_mia_scope
 		}
@@ -595,6 +607,14 @@ fra.11 = { #指定艺术家
 	}
 	option = {
 		name = fra.11.e #宇佐美瑞希
+		
+	}
+	option = {
+		name = fra.11.g #凉风青叶
+		
+	}
+	option = {
+		name = fra.11.h #假屋和奏
 		
 	}
 }
@@ -852,8 +872,26 @@ fra.17 = { #修订
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 	
 	
+	trigger = {
+		NOT = {
+			has_variable = fra_18_var
+		}
+		any_scope_character = {
+			is_busy = no
+			age >= 18
+		}
+		has_variable = je_fra_has_creation
+	}
+	
 	immediate = {
 		set_variable = fra_18_var
+		random_scope_character = {
+			limit = {
+				is_busy = no
+				age >= 18
+			}
+			save_scope_as = fra_18_helper
+		}
 	}
 	duration = 3
 	event_image = {
@@ -880,7 +918,7 @@ fra.17 = { #修订
 	}
 
 }
-fra.18 = { #修订
+fra.18 = { #
 	type = country_event
 	placement = root
 	title = fra.18.t
@@ -893,28 +931,6 @@ fra.18 = { #修订
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	on_opened_soundeffect = "event:/SFX/Events/misc/1Character_Banner"
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
-	trigger = {
-		NOT = {
-			has_variable = fra_18_var
-		}
-		any_scope_character = {
-			is_busy = no
-			age >= 18
-			count >= 1
-		}
-		has_variable = je_fra_has_creation
-	}
-	
-	immediate = {
-		set_variable = fra_18_var
-		random_scope_character = {
-			limit = {
-				is_busy = no
-				age >= 18
-			}
-			save_scope_as = fra_18_helper
-		}
-	}
 	duration = 3
 	event_image = {
 		video = "unspecific_factory_closed"
@@ -1036,6 +1052,50 @@ fra.22 = {
 	option = {
 		name = fra.22.a 	
 		
+	}
+}
+fra.23 = { 
+	type = country_event
+	placement = root
+	title = fra.23.t
+	desc = fra.23.d
+	flavor = fra.23.f
+
+	duration = 3
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	option = {
+		name = fra.23.a 	
+		add_radicals = {
+			pop_type = aristocrats 
+			value = 0.05
+		}
+	}
+	option = {
+		name = fra.23.b 	
+		add_loyalists = {
+        	pop_type = aristocrats
+        	value = 0.05
+        }
+		add_modifier = {
+			name = modifier_fra_court_life_2
+			years = 10
+		}
+	}
+	option = {
+		name = fra.23.c 	
+		add_radicals = {
+			pop_type = aristocrats 
+			value = 0.1
+		}
+		add_modifier = {
+			name = modifier_fra_court_life_3
+			years = 10
+		}
 	}
 }
 fra.31 = { #女仆

@@ -146,10 +146,15 @@ je_fra_queen_pk_food_ensure_the_supply_chain = { #建设粮仓
 	}
 
 	possible = {
-		NOT = {
-			has_modifier = modifier_fra_supply_chain
+		any_scope_state = {
+			filter = {
+				state_region = {
+					is_homeland = cu:french
+				}
+			}
+			has_building = building_barn
+			percent = 0.7
 		}
-		
 
 	}
 
@@ -225,8 +230,9 @@ je_fra_queen_pk_finance_new_minister = { #提拔新财政大臣
 		custom_tooltip = {
 			text = je_fra_queen_pk_finance_new_minister_tt
 			NOT = {
-				has_variable = set_variable
+				has_variable = fra_7_var
 			}
+			
 			scope:azurlane_richelieu_scope = {
 				is_character_alive = no
 			}

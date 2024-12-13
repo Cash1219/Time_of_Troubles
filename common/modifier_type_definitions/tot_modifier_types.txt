@@ -30,7 +30,59 @@ goods_input_engines_add={
 		ai_value=0
 	}
 }
+#灾害
+
+state_harvest_condition_grain_speculator_impact_mult = { #投机粮商
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+#宗教
+max_religion_icon_slot = { #最大崇拜槽位
+	color=good
+	percent=yes
+	percent = no
+	decimals = 0
+	game_data={
+		ai_value=0
+	}
+}
 #魔力
+max_magic_research_slot = { #最大魔法科技槽位
+	color=good
+	percent = no
+	decimals=0
+	game_data={
+		ai_value=0
+	}
+}
+max_magic_production_research_slot = { #最大生产魔法科技槽位
+	color=good
+	percent = no
+	decimals=0
+	game_data={
+		ai_value=0
+	}
+}
+max_magic_military_research_slot = { #最大军事魔法科技槽位
+	color=good
+	percent = no
+	decimals=0
+	game_data={
+		ai_value=0
+	}
+}
+max_magic_society_research_slot = { #最大社会魔法科技槽位
+	color=good
+	percent = no
+	decimals=0
+	game_data={
+		ai_value=0
+	}
+}
 country_mana_neg_add = {
 	color=good
 	percent = no

@@ -215,9 +215,41 @@
  magic_blessing_desc: "提供增益赐福，显著提高士兵的综合能力。"
  modifier_monthly_magic_search_point_add: "月度魔法研究点数"
  modifier_monthly_magic_search_point_add_desc: "月度魔法研究点数"
+ #新科技测试
+ magic_tech_research_tech_1: "魔法生产科技1"
+ magic_tech_research_tech_2: "魔法生产科技2"
+ magic_tech_research_tech_3: "魔法生产科技3"
+ magic_tech.1.t: "魔法科技抽取"
+ magic_tech.1.d: ""
+ #科研gui
  MAGIC_TECH_TEXT_MENU_BUTTON: "#bold 魔法科技研究 #! \n在本界面可以进行魔法科技的研究，研究点数每月增长，魔法科技会提供一些效果。"
  MAGIC_TECH: "魔法科学"
  MAGIC_TECH_RESEARCH: "魔法科技研究"
+ magic_tech_research_text: "魔法科研点数增长
+ magic_tech_research_text_tt: "这是你累计的魔法科研点数，计算公式为（创新力+魔法大学产出）x（科技研究速度加成+魔法研究速度加成）。"
+ magic_tech_research_reserve_text: "[GetPlayer.MakeScope.ScriptValue('magic_tech_research_reserve_value')|+2]"
+ magic_tech_production_tab: "生产科技"
+ magic_tech_research_reserve_value_text: "魔法研究点数存储：[GetPlayer.MakeScope.ScriptValue('magic_tech_research_reserve_value')|+2]"
+ magic_tech_research_point_tt: "[GetPlayer.MakeScope.ScriptValue('magic_tech_research_point')|+2]"
+ magic_tech_research_point_desc: "你的魔法科研点数将会每周增长一次，计算公式为（创新力+魔法大学产出）x（科技研究速度加成+魔法研究速度加成）注：三种科技的对应加成效果只有三分之一。\n每当满足研究花费时你可从下列 [GetPlayer.MakeScope.ScriptValue('max_magic_research_slot_value')|+0] 个可选魔法科技进行研究。研究一项魔法科技将为你带来永久提升。\n可选魔法科技可根据修正提升，每个月将会刷新可选魔法科技。"
+ magic_tech_production_tech_1_tt: "魔法科技1\n效果：#bold +10% $ig_variant_landowners$[concept_political_strength]\n花费：#variable [GetPlayer.MakeScope.Var('magic_tech_production_tech_1_cost').GetValue|0]#!"
+ magic_tech_production_tech_2_tt: "魔法科技2\n效果：#bold +10% $ig_variant_landowners$[concept_political_strength]\n花费：#variable [GetPlayer.MakeScope.Var('magic_tech_production_tech_2_cost').GetValue|0]#!"
+ magic_tech_production_tech_3_tt: "魔法科技3\n效果：#bold +10% $ig_variant_landowners$[concept_political_strength]\n花费：#variable [GetPlayer.MakeScope.Var('magic_tech_production_tech_3_cost').GetValue|0]#!"
+ magic_tech_production_tech_4_tt: "魔法科技4\n效果：#bold +10% $ig_variant_landowners$[concept_political_strength]\n花费：#variable [GetPlayer.MakeScope.Var('magic_tech_production_tech_4_cost').GetValue|0]#!"
+ magic_tech_production_tech_5_tt: "魔法科技5\n效果：#bold +10% $ig_variant_landowners$[concept_political_strength]\n花费：#variable [GetPlayer.MakeScope.Var('magic_tech_production_tech_5_cost').GetValue|0]#!"
+ magic_tech_production_tech_6_tt: "魔法科技6\n效果：#bold +10% $ig_variant_landowners$[concept_political_strength]\n花费：#variable [GetPlayer.MakeScope.Var('magic_tech_production_tech_6_cost').GetValue|0]#!"
+ magic_tech_military_tech_1_tt: "魔法科技1\n效果：#bold +10% $ig_variant_landowners$[concept_political_strength]\n花费：#variable [GetPlayer.MakeScope.Var('magic_tech_military_tech_1_cost').GetValue|0]#!"
+ magic_tech_military_tech_2_tt: "魔法科技2\n效果：#bold +10% $ig_variant_landowners$[concept_political_strength]\n花费：#variable [GetPlayer.MakeScope.Var('magic_tech_military_tech_2_cost').GetValue|0]#!"
+ magic_tech_military_tech_3_tt: "魔法科技3\n效果：#bold +10% $ig_variant_landowners$[concept_political_strength]\n花费：#variable [GetPlayer.MakeScope.Var('magic_tech_military_tech_3_cost').GetValue|0]#!"
+ magic_tech_military_tech_4_tt: "魔法科技4\n效果：#bold +10% $ig_variant_landowners$[concept_political_strength]\n花费：#variable [GetPlayer.MakeScope.Var('magic_tech_military_tech_4_cost').GetValue|0]#!"
+ magic_tech_military_tech_5_tt: "魔法科技5\n效果：#bold +10% $ig_variant_landowners$[concept_political_strength]\n花费：#variable [GetPlayer.MakeScope.Var('magic_tech_military_tech_5_cost').GetValue|0]#!"
+ magic_tech_military_tech_6_tt: "魔法科技6\n效果：#bold +10% $ig_variant_landowners$[concept_political_strength]\n花费：#variable [GetPlayer.MakeScope.Var('magic_tech_military_tech_6_cost').GetValue|0]#!"
+ magic_tech_society_tech_1_tt: "魔法科技1\n效果：#bold +10% $ig_variant_landowners$[concept_political_strength]\n花费：#variable [GetPlayer.MakeScope.Var('magic_tech_society_tech_1_cost').GetValue|0]#!"
+ magic_tech_society_tech_2_tt: "魔法科技2\n效果：#bold +10% $ig_variant_landowners$[concept_political_strength]\n花费：#variable [GetPlayer.MakeScope.Var('magic_tech_society_tech_2_cost').GetValue|0]#!"
+ magic_tech_society_tech_3_tt: "魔法科技3\n效果：#bold +10% $ig_variant_landowners$[concept_political_strength]\n花费：#variable [GetPlayer.MakeScope.Var('magic_tech_society_tech_3_cost').GetValue|0]#!"
+ magic_tech_society_tech_4_tt: "魔法科技4\n效果：#bold +10% $ig_variant_landowners$[concept_political_strength]\n花费：#variable [GetPlayer.MakeScope.Var('magic_tech_society_tech_4_cost').GetValue|0]#!"
+ magic_tech_society_tech_5_tt: "魔法科技5\n效果：#bold +10% $ig_variant_landowners$[concept_political_strength]\n花费：#variable [GetPlayer.MakeScope.Var('magic_tech_society_tech_5_cost').GetValue|0]#!"
+ magic_tech_society_tech_6_tt: "魔法科技6\n效果：#bold +10% $ig_variant_landowners$[concept_political_strength]\n花费：#variable [GetPlayer.MakeScope.Var('magic_tech_society_tech_6_cost').GetValue|0]#!"
  #日志
  je_magic_research: "魔法研究进度"
  je_magic_research_status: "这是目前的魔法科学研究进度"
@@ -226,5 +258,6 @@
  #文化
  sorcerer_domain: "术士传承"
  cleric_domain: "教士传承"
+ knight_domain: "骑士传承"
  
 
