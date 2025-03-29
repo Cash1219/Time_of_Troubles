@@ -8,28 +8,28 @@ fra.1 = { #女皇对决
 
 	duration = 3
 	event_image = {
-		video = "unspecific_factory_closed"
+		texture = "gfx/event_pictures/fra_mari_queen.dds"
 	}
-	immediate = {
-		every_scope_character = {
-			limit = {
-				has_trait = tot_Fate_Marie_trait
-			}
-			save_scope_as = fate_marie_scope
-			set_variable = fate_marie_var
-		}
-		every_scope_character = {
-			limit = {
-				has_trait = tot_Tearmoon_Mia_trait
-			}
-			save_scope_as = tearmoon_mia_scope
-			set_variable = tearmoon_mia_var
-		}
-	}
-	gui_window = event_window_2char
+	#immediate = {
+	#	random_scope_character = {
+	#		limit = {
+	#			has_trait = tot_Fate_Marie_trait
+	#		}
+	#		save_scope_as = fate_marie_scope
+	#		set_variable = fate_marie_var
+	#	}
+	#	random_scope_character = {
+	#		limit = {
+	#			has_trait = tot_Tearmoon_Mia_trait
+	#		}
+	#		save_scope_as = tearmoon_mia_scope
+	#		set_variable = tearmoon_mia_var
+	#	}
+	#}
+	#gui_window = event_window_2char
 
-	left_icon = scope:fate_marie_scope
-	right_icon = scope:tearmoon_mia_scope
+	#left_icon = scope:fate_marie_scope
+	#right_icon = scope:tearmoon_mia_scope
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	on_opened_soundeffect = "event:/SFX/Events/misc/2Characters"
@@ -61,18 +61,16 @@ fra.1 = { #女皇对决
 		#add_journal_entry = {
 		#	type = je_fra_queen_pk_culture
 		#}
-		#add_journal_entry = {
-		#	type = je_fra_queen_pk_court
-		#}
+		add_journal_entry = {
+			type = je_fra_queen_pk_court
+		}
 		#add_journal_entry = {
 		#	type = je_fra_queen_pk_military
 		#}
 		#add_journal_entry = {
 		#	type = je_fra_shadow_guillotine
 		#}
-		trigger_event = {
-			id = fra.2
-		}
+		
 	}
 }
 fra.2 = { #面粉暴动
@@ -85,7 +83,7 @@ fra.2 = { #面粉暴动
 	duration = 3
 
 	event_image = {
-		video = "unspecific_factory_closed"
+		texture = "gfx/event_pictures/revolution_1.dds"
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
@@ -194,7 +192,7 @@ fra.3 = { #黄月番茄
 	duration = 3
 
 	event_image = {
-		video = "unspecific_factory_closed"
+		texture = "gfx/event_pictures/yellow_tomato.dds"
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
@@ -264,7 +262,7 @@ fra.4 = { #巧克力蛋糕
 		has_modifier = modifier_fra_cake_expert
 	}
 	event_image = {
-		video = "unspecific_factory_closed"
+		texture = "gfx/event_pictures/mari_cake.dds"
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
@@ -291,7 +289,7 @@ fra.5 = { #人人有蛋糕
 
 	duration = 3
 	event_image = {
-		video = "unspecific_factory_closed"
+		texture = "gfx/event_pictures/food_pk_mary.dds"
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
@@ -303,13 +301,28 @@ fra.5 = { #人人有蛋糕
 	
 	option = {
 		name = fra.5.a 
-		add_modifier = {
-			name = "modifier_fra_food_pk_mary_win"
-			years = -1
+		if = {
+			limit = {
+				NOT = {
+					has_variable = je_fra_queen_pk_food_mia_win
+				}
+			}
+			add_modifier = {
+				name = "modifier_fra_food_pk_mary_win"
+				years = -1
+			}
+			scope:france_culture_scope = {
+				add_cultural_obsession = groceries
+			}
 		}
-		scope:france_culture_scope = {
-			add_cultural_obsession = groceries
+		else = {
+			add_modifier = {
+				name = "modifier_fra_food_pk_mary_win"
+				years = 20
+			}
+			custom_tooltip = mary_reduction_effect
 		}
+		
 	}
 }
 fra.6 = { #人人有面包
@@ -321,7 +334,7 @@ fra.6 = { #人人有面包
 
 	duration = 3
 	event_image = {
-		video = "unspecific_factory_closed"
+		texture = "gfx/event_pictures/food_pk_mia.dds"
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
@@ -332,12 +345,26 @@ fra.6 = { #人人有面包
 	}
 	option = {
 		name = fra.6.a 	
-		add_modifier = {
-			name = "modifier_fra_food_pk_mia_win"
-			years = -1
+		if = {
+			limit = {
+				NOT = {
+					has_variable = je_fra_queen_pk_food_mia_win
+				}
+			}
+			add_modifier = {
+				name = "modifier_fra_food_pk_mia_win"
+				years = -1
+			}
+			scope:france_culture_scope = {
+				add_cultural_obsession = grain
+			}
 		}
-		scope:france_culture_scope = {
-			add_cultural_obsession = grain
+		else = {
+			add_modifier = {
+				name = "modifier_fra_food_pk_mia_win"
+				years = 20
+			}
+			custom_tooltip = mia_reduction_effect
 		}
 		
 	}
@@ -351,7 +378,7 @@ fra.7 = { #新财政大臣
 
 	duration = 3
 	event_image = {
-		video = "unspecific_factory_closed"
+		texture = "gfx/event_pictures/fra_union_1.dds"
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
@@ -361,6 +388,11 @@ fra.7 = { #新财政大臣
 	
 	option = {
 		name = fra.7.a 	#黎塞留
+		trigger = {
+			NOT = {
+				has_variable = fra_7_var_1
+			}
+		}
 		create_character = {
 			template = fra_richelieu_template
 			traits = {
@@ -374,11 +406,17 @@ fra.7 = { #新财政大臣
 		
 		add_modifier = {
 			name = modifier_fra_mercantilism
-			years = -1
+			years = 20
 		}
+		set_variable = fra_7_var_1
 	}
 	option = {
 		name = fra.7.b 	#路德维希
+		trigger = {
+			NOT = {
+				has_variable = fra_7_var_2
+			}
+		}
 		create_character = {
 			template = fra_ludwig_template
 			traits = {
@@ -391,11 +429,17 @@ fra.7 = { #新财政大臣
 		}
 		add_modifier = {
 			name = modifier_fra_tax_reform
-			years = -1
+			years = 20
 		}
+		set_variable = fra_7_var_2
 	}
 	option = {
 		name = fra.7.c 	#雷欧纳多
+		trigger = {
+			NOT = {
+				has_variable = fra_7_var_3
+			}
+		}
 		create_character = {
 			template = fra_harwey_template
 			traits = {
@@ -408,8 +452,9 @@ fra.7 = { #新财政大臣
 		}
 		add_modifier = {
 			name = modifier_fra_laissez_faire
-			years = -1
+			years = 20
 		}
+		set_variable = fra_7_var_3
 	}
 }
 fra.8 = { #甜点供应商
@@ -421,7 +466,7 @@ fra.8 = { #甜点供应商
 
 	duration = 3
 	event_image = {
-		video = "unspecific_factory_closed"
+		texture = "gfx/event_pictures/coffee_shop.dds"
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
@@ -432,7 +477,11 @@ fra.8 = { #甜点供应商
 		create_character = {
 			template = fra_kanna_template
 		}
-		
+		create_character = {
+			template = fra_nene_template
+		}
+		add_company = company_type:fra_company_stella_cafe
+		add_company = company_type:fra_company_black_cat_cafe
 	}
 	option = {
 		name = fra.8.b 	#兔屋
@@ -442,12 +491,19 @@ fra.8 = { #甜点供应商
 		create_character = {
 			template = fra_maika_template
 		}
+		add_company = company_type:fra_company_rabbit_house
+		add_company = company_type:fra_company_stile_cafe
 	}
 	option = {
 		name = fra.8.c 	#莉可丽丝
 		create_character = {
 			template = fra_chisato_template
 		}
+		create_character = {
+			template = fra_kisara_template
+		}
+		add_company = company_type:fra_company_lycoreco_cafe
+		add_company = company_type:fra_company_rabbit_house
 	}
 }
 fra.9 = { #卖财产
@@ -459,20 +515,20 @@ fra.9 = { #卖财产
 
 	duration = 3
 	event_image = {
-		video = "unspecific_factory_closed"
+		texture = "gfx/event_pictures/poor_1.dds"
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
 	immediate = {
 		random_scope_character = {
 			limit = {
-				has_variable = fate_marie_var
+				has_trait = tot_diamond_necklace_trait
 			}
 			save_scope_as = fate_marie_scope
 		}
 		random_scope_character = {
 			limit = {
-				has_variable = tearmoon_mia_var
+				has_trait = tot_gemstone_hairpin_trait
 			}
 			save_scope_as = tearmoon_mia_scope
 		}
@@ -527,7 +583,7 @@ fra.10 = { #强征
 
 	duration = 3
 	event_image = {
-		video = "unspecific_factory_closed"
+		texture = "gfx/event_pictures/poor_2.dds"
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
@@ -540,37 +596,44 @@ fra.10 = { #强征
 		name = fra.10.a 	#消费
 		trigger = {
 			NOT = {
-				has_modifier = modifier_fra_consumption_tax
+				has_variable = fra_10_var_1
 			}
 		}
 		add_modifier = {
 			name = modifier_fra_consumption_tax
 			years = 30
 		}
+		set_variable = fra_10_var_1
 	}
 	option = {
 		name = fra.10.b 	#分红
 		trigger = {
 			NOT = {
-				has_modifier = modifier_fra_dividends_tax
+				has_variable = fra_10_var_2
 			}
 		}
 		add_modifier = {
 			name = modifier_fra_dividends_tax
 			years = 30
 		}
+		set_variable = fra_10_var_2
 	}
 	option = {
 		name = fra.10.c 	#人均
 		trigger = {
 			NOT = {
-				has_modifier = modifier_fra_per_capita_tax
+				has_variable = fra_10_var_3
 			}
 		}
 		add_modifier = {
 			name = modifier_fra_per_capita_tax
 			years = 30
 		}
+		set_variable = fra_10_var_3
+	}
+	option = {
+		name = fra.10.e 	#取消
+	
 	}
 }
 fra.11 = { #指定艺术家
@@ -582,7 +645,7 @@ fra.11 = { #指定艺术家
 
 	duration = 3
 	event_image = {
-		video = "unspecific_factory_closed"
+		texture = "gfx/event_pictures/fra_union_1.dds"
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
@@ -592,30 +655,55 @@ fra.11 = { #指定艺术家
 		create_character = {
 			template = fra_mozart_template
 			on_created = {
-				set_variable = fra_mozart_template
+				set_variable = fra_mozart_scope
 			}
 		}
 		
 	}
 	option = {
 		name = fra.11.b #艾莉丝•理特斯坦	
-		
+		create_character = {
+			template = fra_alice_template
+			on_created = {
+				set_variable = fra_alice_scope
+			}
+		}
 	}
 	option = {
 		name = fra.11.c #大仲马
-		
+		create_character = {
+			template = fra_dumas_template
+			on_created = {
+				set_variable = fra_dumas_template
+			}
+		}
 	}
 	option = {
 		name = fra.11.e #宇佐美瑞希
-		
+		create_character = {
+			template = fra_mizuki_template
+			on_created = {
+				set_variable = fra_mizuki_template
+			}
+		}
 	}
 	option = {
 		name = fra.11.g #凉风青叶
-		
+		create_character = {
+			template = fra_aoba_template
+			on_created = {
+				set_variable = fra_aoba_scope
+			}
+		}
 	}
 	option = {
 		name = fra.11.h #假屋和奏
-		
+		create_character = {
+			template = fra_wakana_template
+			on_created = {
+				set_variable = fra_wakana_scope
+			}
+		}
 	}
 }
 fra.12 = { #创作方针
@@ -625,7 +713,7 @@ fra.12 = { #创作方针
 	desc = fra.12.d
 	duration = 3
 	event_image = {
-		video = "unspecific_factory_closed"
+		texture = "gfx/event_pictures/mari_cake.dds"
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
@@ -652,12 +740,10 @@ fra.13 = { #这部作品真厉害
 	desc = fra.13.d
 	duration = 3
 	event_image = {
-		video = "unspecific_factory_closed"
+		texture = "gfx/event_pictures/mari_cake.dds"
 	}
+	cooldown = { months = 12 }
 	trigger = {
-		NOT = {
-			has_variable = has_variable = fra_13_var
-		}
 		has_variable = je_fra_has_creation
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -705,17 +791,12 @@ fra.14 = { #结社自由
 	title = fra.14.t
 	desc = fra.14.d
 	trigger = {
-		NOT = {
-			has_variable = has_variable = fra_14_var
-		}
 		has_variable = je_fra_has_creation
 	}
-	immediate = {
-		set_variable = fra_14_var
-	}
+	cooldown = { months = 24 }
 	duration = 3
 	event_image = {
-		video = "unspecific_factory_closed"
+		texture = "gfx/event_pictures/mari_cake.dds"
 	}
 	trigger = {
 		has_variable = fra_14_var
@@ -757,20 +838,12 @@ fra.15 = { #广告宣传
 	title = fra.15.t
 	desc = fra.15.d
 	trigger = {
-		NOT = {
-			has_variable = has_variable = fra_15_var
-		}
 		has_variable = je_fra_has_creation
 	}
-	immediate = {
-		set_variable = fra_15_var
-	}
+	cooldown = { months = 12 }
 	duration = 3
 	event_image = {
-		video = "unspecific_factory_closed"
-	}
-	trigger = {
-		has_variable = fra_15_var
+		texture = "gfx/event_pictures/mari_cake.dds"
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
@@ -810,17 +883,12 @@ fra.16 = { #灵感发散
 	desc = fra.16.d
 	duration = 3
 	event_image = {
-		video = "unspecific_factory_closed"
+		texture = "gfx/event_pictures/mari_cake.dds"
 	}
 	trigger = {
-		NOT = {
-			has_variable = has_variable = fra_16_var
-		}
 		has_variable = je_fra_has_creation
 	}
-	immediate = {
-		set_variable = fra_16_var
-	}
+	cooldown = { months = 12 }
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
 	
@@ -862,40 +930,36 @@ fra.17 = { #修订
 	placement = root
 	title = fra.17.t
 	desc = fra.17.d
-	flavor = fra.17.f
 	gui_window = event_window_1char_tabloid
-
 	left_icon = scope:fra_17_helper
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	on_opened_soundeffect = "event:/SFX/Events/misc/1Character_Banner"
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 	
 	
 	trigger = {
-		NOT = {
-			has_variable = fra_18_var
-		}
 		any_scope_character = {
 			is_busy = no
-			age >= 18
+			age >= 12
+			NOT = {
+				has_trait = tot_fra_creative_experience
+			}
 		}
 		has_variable = je_fra_has_creation
 	}
-	
+	cooldown = { months = 24 }
 	immediate = {
-		set_variable = fra_18_var
 		random_scope_character = {
 			limit = {
 				is_busy = no
-				age >= 18
+				age >= 12
 			}
-			save_scope_as = fra_18_helper
+			save_scope_as = fra_17_helper
 		}
 	}
 	duration = 3
 	event_image = {
-		video = "unspecific_factory_closed"
+		texture = "gfx/event_pictures/mari_cake.dds"
 	}
 	
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
@@ -918,25 +982,18 @@ fra.17 = { #修订
 	}
 
 }
-fra.18 = { #
+fra.18 = { #文化交流
 	type = country_event
 	placement = root
 	title = fra.18.t
-	desc = fra.18.d
-	flavor = fra.18.f
-	gui_window = event_window_1char_tabloid
-
-	left_icon = scope:fra_18_helper
-
+	desc = fra.18.d	
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	on_opened_soundeffect = "event:/SFX/Events/misc/1Character_Banner"
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 	duration = 3
 	event_image = {
-		video = "unspecific_factory_closed"
+		texture = "gfx/event_pictures/mari_cake.dds"
 	}
-	
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
 	
 	option = {
@@ -958,7 +1015,7 @@ fra.18 = { #
 		}
 	}
 	option = {
-		name = fra.18.d #莫斯科
+		name = fra.18.e #莫斯科
 		trigger_event = {
 			id = fra.22
 		}
@@ -969,11 +1026,11 @@ fra.19 = {
 	placement = root
 	title = fra.19.t
 	desc = fra.19.d
-	flavor = fra.19.f
+	
 
 	duration = 3
 	event_image = {
-		video = "unspecific_factory_closed"
+		texture = "gfx/event_pictures/mari_cake.dds"
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
@@ -1002,11 +1059,11 @@ fra.20 = {
 	placement = root
 	title = fra.20.t
 	desc = fra.20.d
-	flavor = fra.20.f
+	
 
 	duration = 3
 	event_image = {
-		video = "unspecific_factory_closed"
+		texture = "gfx/event_pictures/mari_cake.dds"
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
@@ -1021,11 +1078,11 @@ fra.21 = {
 	placement = root
 	title = fra.21.t
 	desc = fra.21.d
-	flavor = fra.21.f
+	
 
 	duration = 3
 	event_image = {
-		video = "unspecific_factory_closed"
+		texture = "gfx/event_pictures/mari_cake.dds"
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
@@ -1040,11 +1097,10 @@ fra.22 = {
 	placement = root
 	title = fra.22.t
 	desc = fra.22.d
-	flavor = fra.22.f
-
+	
 	duration = 3
 	event_image = {
-		video = "unspecific_factory_closed"
+		texture = "gfx/event_pictures/mari_cake.dds"
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
@@ -1059,11 +1115,11 @@ fra.23 = {
 	placement = root
 	title = fra.23.t
 	desc = fra.23.d
-	flavor = fra.23.f
+	
 
 	duration = 3
 	event_image = {
-		video = "unspecific_factory_closed"
+		texture = "gfx/event_pictures/mari_cake.dds"
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
@@ -1098,6 +1154,178 @@ fra.23 = {
 		}
 	}
 }
+fra.24 = { 
+	type = country_event
+	placement = root
+	title = fra.23.t
+	desc = fra.23.d
+	
+
+	duration = 3
+	event_image = {
+		texture = "gfx/event_pictures/mari_cake.dds"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	immediate = {
+		cu:france = {
+			save_scope_as = france_culture_scope
+		}
+	}
+	option = {
+		name = fra.6.a 	
+		add_modifier = {
+			name = "modifier_fra_coffee_fashion"
+			years = 3650
+		}
+		scope:france_culture_scope = {
+			add_cultural_obsession = coffee
+		}
+		
+	}
+
+}
+fra.25 = { 
+	type = country_event
+	placement = root
+	title = fra.25.t
+	desc = fra.25.d
+	duration = 3
+	event_image = {
+		texture = "gfx/event_pictures/mari_cake.dds"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	option = {
+		name = fra.25.a 	
+		add_modifier = {
+			name = "modifier_fra_colonial_supply"
+			years = 3650
+		}
+	}
+}
+fra.26 = { #todo
+	type = country_event
+	placement = root
+	title = fra.26.t
+	desc = fra.26.d
+	duration = 3
+	flavor = fra.26.f
+	event_image = {
+		texture = "gfx/event_pictures/mari_cake.dds"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	option = {
+		name = fra.26.a 	
+		
+	}
+	option = {
+		name = fra.26.b	
+		
+	}
+	option = {
+		name = fra.26.c 	
+		
+	}
+	option = {
+		name = fra.26.e 	
+		
+	}
+}
+fra.27 = { #todo
+	type = country_event
+	placement = root
+	title = fra.27.t
+	desc = fra.27.d
+	duration = 3
+	flavor = fra.27.f
+	event_image = {
+		texture = "gfx/event_pictures/mari_cake.dds"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	option = {
+		name = fra.27.a 	
+		
+	}
+	option = {
+		name = fra.27.b	
+		
+	}
+	option = {
+		name = fra.27.c 	
+		
+	}
+	
+}
+fra.28 = { #里昂运动
+	type = country_event
+	placement = root
+	title = fra.28.t
+	desc = fra.28.d
+	duration = 3
+	flavor = fra.28.f
+	event_image = {
+		texture = "gfx/event_pictures/mari_cake.dds"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	immediate = {
+		create_political_movement = { type = movement_labor }
+	}
+	option = {
+		name = fra.28.a 	#无视
+		create_political_movement = { type = movement_labor }
+		random_political_movement = {
+			limit = {
+				is_political_movement_type = movement_labor
+			}
+			add_modifier = {
+				name = modifier_fra_ignoring_labor
+				years = 50
+				is_decaying = yes
+			}
+		}
+		add_technology_progress = { progress = 5000 technology = labor_movement }
+		
+	}
+	option = {
+		name = fra.28.b	#反对
+		create_political_movement = { type = movement_labor }
+		random_political_movement = {
+			limit = {
+				is_political_movement_type = movement_labor
+			}
+			add_modifier = {
+				name = modifier_fra_monitor_labor
+				years = 50
+				is_decaying = yes
+			}
+		}
+		add_technology_progress = { progress = 5000 technology = labor_movement }
+	}
+	option = {
+		name = fra.28.c #改革
+		create_political_movement = { type = movement_labor }
+		random_political_movement = {
+			limit = {
+				is_political_movement_type = movement_labor
+			}
+			add_modifier = {
+				name = modifier_fra_commitment_labor
+				years = 50
+				is_decaying = yes
+			}
+		}
+		add_technology_progress = { progress = 5000 technology = labor_movement }
+	}
+	
+}
 fra.31 = { #女仆
 	type = country_event
 	placement = root
@@ -1107,7 +1335,7 @@ fra.31 = { #女仆
 
 	duration = 3
 	event_image = {
-		video = "unspecific_factory_closed"
+		texture = "gfx/event_pictures/mari_cake.dds"
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
@@ -1243,5 +1471,91 @@ fra.31 = { #女仆
 				tot_Yugioh_Luft_trait
 			}
 		}
+	}
+}
+fra.33 = { #满溢的财富
+	type = country_event
+	placement = root
+	title = fra.33.t
+	desc = fra.33.d
+	flavor = fra.33.f
+
+	duration = 3
+	event_image = {
+		texture = "gfx/event_pictures/mari_cake.dds"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	immediate = {
+		cu:france = {
+			save_scope_as = france_culture_scope
+		}
+	}
+	
+	option = {
+		name = fra.33.a 
+		if = {
+			limit = {
+				NOT = {
+					has_variable = je_fra_queen_pk_finance_mary_win
+				}
+			}
+			add_modifier = {
+				name = "modifier_fra_finance_pk_mary_win"
+				years = -1
+			}
+			
+		}
+		else = {
+			add_modifier = {
+				name = "modifier_fra_finance_pk_mary_win"
+				years = 20
+			}
+			custom_tooltip = mary_reduction_effect
+		}
+		
+	}
+}
+fra.34 = { #华丽的账目
+	type = country_event
+	placement = root
+	title = fra.34.t
+	desc = fra.34.d
+	flavor = fra.34.f
+
+	duration = 3
+	event_image = {
+		texture = "gfx/event_pictures/mari_cake.dds"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	immediate = {
+		cu:france = {
+			save_scope_as = france_culture_scope
+		}
+	}
+	
+	option = {
+		name = fra.34.a 
+		if = {
+			limit = {
+				NOT = {
+					has_variable = je_fra_queen_pk_finance_mia_win
+				}
+			}
+			add_modifier = {
+				name = "modifier_fra_finance_pk_mary_win"
+				years = -1
+			}
+			
+		}
+		else = {
+			add_modifier = {
+				name = "modifier_fra_finance_pk_mary_win"
+				years = 20
+			}
+			custom_tooltip = mary_reduction_effect
+		}
+		
 	}
 }

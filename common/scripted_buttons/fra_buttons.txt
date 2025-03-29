@@ -17,12 +17,15 @@
 				market_goods_cheaper > 0.3
 			}
 		}
+		NOT = {
+			has_variable = je_fra_queen_pk_food_mary_win
+		}
 	}
 
 	effect = {
 		add_fra_pk_advantage_small = yes
 		trigger_event = { id = fra.5 }
-		set_variable = { name = je_fra_queen_pk_food_end }
+		set_variable = { name = je_fra_queen_pk_food_mary_win }
 	}
 }
 je_fra_queen_pk_food_mia_plan = { #完成米娅的目标
@@ -44,12 +47,15 @@ je_fra_queen_pk_food_mia_plan = { #完成米娅的目标
 				market_goods_cheaper > 0.3
 			}
 		}
+		NOT = {
+			has_variable = je_fra_queen_pk_food_mia_win
+		}
 	}
 
 	effect = {
 		reduce_fra_pk_advantage_small = yes
 		trigger_event = { id = fra.6 }
-		set_variable = { name = je_fra_queen_pk_food_end }
+		set_variable = { name = je_fra_queen_pk_food_mia_win }
 	}
 }
 je_fra_queen_pk_food_introducing_cake_technology = { #引进蛋糕技术
@@ -68,6 +74,10 @@ je_fra_queen_pk_food_introducing_cake_technology = { #引进蛋糕技术
 	possible = {
 		NOT = {
 			has_modifier = modifier_fra_cake_expert
+		}
+		add_treasury = {
+			value = gdp
+			multiply = -0.02
 		}
 	}
 
@@ -93,8 +103,9 @@ je_fra_queen_pk_food_control_grain_prices = { #控制粮价
 	}
 
 	possible = {
-		NOT = {
-			has_modifier = modifier_fra_speculation_crime
+		institution_investment_level = {
+			institution = institution_anti_speculation
+			value >= 3
 		}
 	}
 
@@ -155,7 +166,6 @@ je_fra_queen_pk_food_ensure_the_supply_chain = { #建设粮仓
 			has_building = building_barn
 			percent = 0.7
 		}
-
 	}
 
 	effect = {
@@ -181,10 +191,15 @@ je_fra_queen_pk_finance_mary_plan = { #玛丽的开源计划
 			has_modifier = declared_bankruptcy
 		}
 		taking_loans = no
+		NOT = {
+			has_variable = je_fra_queen_pk_finance_mary_win
+		}
 	}
 
 	effect = {
 		add_fra_pk_advantage_small = yes
+		trigger_event = { id = fra.33 }
+		set_variable = { name = je_fra_queen_pk_finance_mary_win }
 	}
 }
 je_fra_queen_pk_finance_mia_plan = { #米娅的节流计划
@@ -207,10 +222,15 @@ je_fra_queen_pk_finance_mia_plan = { #米娅的节流计划
 			has_modifier = declared_bankruptcy
 		}
 		taking_loans = no
+		NOT = {
+			has_variable = je_fra_queen_pk_finance_mia_win
+		}
 	}
 
 	effect = {
 		reduce_fra_pk_advantage_small = yes
+		trigger_event = { id = fra.34 }
+		set_variable = { name = je_fra_queen_pk_finance_mia_win }
 	}
 }
 je_fra_queen_pk_finance_new_minister = { #提拔新财政大臣
@@ -220,7 +240,6 @@ je_fra_queen_pk_finance_new_minister = { #提拔新财政大臣
 	visible = { 
 		always = yes
 	}
-	
 
 	ai_chance = {
 		base = 0
@@ -228,19 +247,22 @@ je_fra_queen_pk_finance_new_minister = { #提拔新财政大臣
 
 	possible = {
 		custom_tooltip = {
-			text = je_fra_queen_pk_finance_new_minister_tt
-			NOT = {
-				has_variable = fra_7_var
+			text = je_fra_queen_pk_finance_sell_asset_trigger
+			NOR = {
+				any_scope_character = {
+					has_variable = azurlane_richelieu_scope
+				}
+				any_scope_character = {
+					has_variable = tearmonn_ludwig_scope
+				}
+				any_scope_character = {
+					has_variable = fate_harwey_scope
+				}
 			}
-			
-			scope:azurlane_richelieu_scope = {
-				is_character_alive = no
-			}
-			scope:tearmonn_ludwig_scope = {
-				is_character_alive = no
-			}
-			scope:fra_harwey_template = {
-				is_character_alive = no
+			NAND = {
+				has_variable = fra_7_var_1
+				has_variable = fra_7_var_2
+				has_variable = fra_7_var_3
 			}
 		}
 	}
@@ -266,6 +288,17 @@ je_fra_queen_pk_finance_sell_asset = { #变卖财产
 	}
 
 	possible = {
+		OR = {
+			any_scope_character = {
+				has_trait = tot_diamond_necklace_trait
+			}
+			any_scope_character = {
+				has_trait = tot_gemstone_hairpin_trait
+			}
+			NOT = {
+				has_modifier = modifier_fra_sell_land
+			}
+		}
 		
 	}
 
@@ -287,7 +320,14 @@ je_fra_queen_pk_finance_compulsory_taxation = { #强制征税
 	}
 
 	possible = {
-		
+		custom_tooltip = {
+			text = je_fra_queen_pk_finance_compulsory_taxation_trigger
+			NAND = {
+				has_variable = fra_10_var_1
+				has_variable = fra_10_var_2
+				has_variable = fra_10_var_3
+			}
+		}
 	}
 
 	effect = {
@@ -403,6 +443,7 @@ je_fra_queen_pk_education_foreign_exchange = { #外国交流
 	}
 
 	effect = {
+		trigger_event = { id = fra.18 }
 		change_variable = {
 			name = je_fra_queen_pk_education_creation_progress
 			add = 1000
@@ -444,10 +485,159 @@ je_fra_queen_pk_education_standard_requirements = { #通过费里法案
 	}
 
 	possible = {
-		has_law = law_type:law_compulsory_primary_school
+		
 	}
 
 	effect = {
 		
+	}
+}
+je_fra_queen_pk_distribution_mary_plan = { #玛丽的资助法案
+	name = je_fra_queen_pk_distribution_mary_plan
+	desc = je_fra_queen_pk_distribution_mary_plan_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		
+	}
+
+	effect = {
+		
+	}
+}
+je_fra_queen_pk_distribution_mia_plan = { #米娅的清贫计划
+	name = je_fra_queen_pk_distribution_mia_plan
+	desc = je_fra_queen_pk_distribution_mia_plan_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		
+	}
+
+	effect = {
+		
+	}
+}
+je_fra_queen_pk_distribution_call_donations = { #号召捐款
+	name = je_fra_queen_pk_distribution_call_donations
+	desc = je_fra_queen_pk_distribution_call_donations_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		
+	}
+
+	effect = {
+		
+	}
+}
+je_fra_queen_pk_distribution_slum_clearance = { #清理贫民窟
+	name = je_fra_queen_pk_distribution_mia_plan
+	desc = je_fra_queen_pk_distribution_mia_plan_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		
+	}
+
+	effect = {
+		
+	}
+}
+je_fra_queen_pk_distribution_investigate_corruption = { #严查腐败
+	name = je_fra_queen_pk_distribution_investigate_corruption
+	desc = je_fra_queen_pk_distribution_investigate_corruption_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		
+	}
+
+	effect = {
+		
+	}
+}
+je_fra_queen_pk_distribution_labor_law = { #劳工权利
+	name = je_fra_queen_pk_distribution_labor_law
+	desc = je_fra_queen_pk_distribution_labor_law_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		
+	}
+
+	effect = {
+		
+	}
+}
+je_fra_queen_pk_court_maid = { #任命女仆长
+	name = je_fra_queen_pk_court_maid
+	desc = je_fra_queen_pk_court_maid_desc
+
+	visible = { 
+		always = yes
+	}
+	
+
+	ai_chance = {
+		base = 0
+	}
+
+	possible = {
+		
+	}
+
+	effect = {
+		trigger_event = {
+			id = fra.31
+		}
 	}
 }

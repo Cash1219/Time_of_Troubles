@@ -79,20 +79,20 @@ je_fra_queen_pk_education_creation_effect = {
 			1 = {
 				trigger = {
 					NOT = {
-						has_variable = je_fra_can_giant
+						has_variable = je_fra_heart_palette
 					}
 				}
-				set_variable = je_fra_can_giant
-				set_variable = je_fra_can_giant_complete
+				set_variable = je_fra_heart_palette
+				set_variable = je_fra_heart_palette_complete
 			}
 			1 = {
 				trigger = {
 					NOT = {
-						has_variable = je_fra_art_club
+						has_variable = je_fra_magical_ribbon
 					}
 				}
-				set_variable = je_fra_art_club
-				set_variable = je_fra_art_club_complete
+				set_variable = je_fra_magical_ribbon
+				set_variable = je_fra_magical_ribbon_complete
 			}
 			1 = {
 				trigger = {
@@ -176,7 +176,7 @@ add_small_exhibition_popularity = {
 		text = add_small_exhibition_popularity
 		change_variable = {
 			name = je_fra_exhibition_popularity
-			add = 1
+			add = 5
 		}
 	}
 }
@@ -185,7 +185,7 @@ add_medium_exhibition_popularity = {
 		text = add_medium_exhibition_popularity
 		change_variable = {
 			name = je_fra_exhibition_popularity
-			add = 2
+			add = 10
 		}
 	}
 }
@@ -194,7 +194,7 @@ add_small_sales_volume = {
 		text = add_small_sales_volume
 		change_variable = {
 			name = je_fra_sales_volume
-			add = 1
+			add = 5
 		}
 	}
 }
@@ -203,7 +203,7 @@ add_medium_sales_volume = {
 		text = add_medium_sales_volume
 		change_variable = {
 			name = je_fra_sales_volume
-			add = 2
+			add = 10
 		}
 	}
 }

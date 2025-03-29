@@ -25,3 +25,50 @@
 		value = 1000
 	}
 }
+building_coffe_shop = {
+	building_group = bg_light_industry
+	icon = "gfx/interface/icons/building_icons/food_industry.dds"
+	city_type = city
+	levels_per_mesh = 5
+	
+	ai_nationalization_desire = -0.25 # AI is generally fine with privatizing consumer goods industries
+	
+	unlocking_technologies = {
+		manufacturies
+	}
+
+	production_method_groups = {
+		pmg_coffe_shop_1 #主要饮品
+		pmg_coffe_shop_2 #次要饮品
+		pmg_coffe_shop_3 #主要食物
+		pmg_coffe_shop_4 #次要食物
+		pmg_coffe_shop_5 #主要服务
+		pmg_coffe_shop_6 #次要服务
+	}
+
+	required_construction = construction_cost_high
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_light_industry.dds"
+}
+building_divination_house = {
+	building_group = bg_light_industry
+	icon = "gfx/interface/icons/building_icons/food_industry.dds"
+	city_type = city
+	levels_per_mesh = 5
+	
+	ai_nationalization_desire = -0.25 # AI is generally fine with privatizing consumer goods industries
+	
+	unlocking_technologies = {
+		manufacturies
+	}
+
+	production_method_groups = {
+		
+	}
+
+	required_construction = construction_cost_high
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_light_industry.dds"
+}

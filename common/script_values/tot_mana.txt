@@ -11,6 +11,12 @@ active_religion_icon_slot_value = { #已激活的崇拜槽
 		}
 		add = 1
 	}
+	if = {
+		limit = {
+			has_modifier = religion_icon_martha_modifier
+		}
+		add = 1
+	}
 }
 magic_tech_research_bonus_production_tech_cost = { #33%的生产科技加成给予魔法研究加速
 	value = 0.33

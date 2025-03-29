@@ -59,7 +59,9 @@ religion_icon_france_goddess = {
 		
 	}
 	is_shown = {
-        always = yes
+        religion = {
+			has_discrimination_trait = goddess_worship_icon
+		}
     } 		
     
 	is_valid = {
@@ -68,14 +70,24 @@ religion_icon_france_goddess = {
 }
 religion_icon_joan = {
 	effect = {
-		add_modifier = {
+		if = {
+			limit = {
+				has_modifier = religion_icon_joan_modifier
+			}
+			
+			custom_tooltip = religion_icon_joan_has_modifier
+		}
+		else = {
+			add_modifier = {
 			name = religion_icon_joan_modifier
 			months = 12
+			}
+			custom_tooltip = religion_icon_joan_no_modifier
 		}
 	}
 	is_shown = {
 		religion = {
-			has_discrimination_trait = christian
+			has_discrimination_trait = goddess_worship_icon
 		}
 		
     } 		
@@ -84,6 +96,38 @@ religion_icon_joan = {
 		
 		NOT = {
 			has_modifier = religion_icon_joan_modifier
+		}
+		max_religion_icon_slot_value > active_religion_icon_slot_value
+	}
+}
+religion_icon_martha = {
+	effect = {
+		if = {
+			limit = {
+				has_modifier = religion_icon_martha_modifier
+			}
+			
+			custom_tooltip = religion_icon_martha_has_modifier
+		}
+		else = {
+			add_modifier = {
+			name = religion_icon_martha_modifier
+			months = 12
+			}
+			custom_tooltip = religion_icon_martha_no_modifier
+		}
+	}
+	is_shown = {
+		religion = {
+			has_discrimination_trait = goddess_worship_icon
+		}
+		
+    } 		
+    
+	is_valid = {
+		
+		NOT = {
+			has_modifier = religion_icon_martha_modifier
 		}
 		max_religion_icon_slot_value > active_religion_icon_slot_value
 	}

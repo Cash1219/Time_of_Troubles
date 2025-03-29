@@ -2689,4 +2689,67 @@
 		}
 	}
 	
+	just_Kirara_Aoba = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = totprops_1
+				template = tot_prophet_Kirara_Aoba
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 10000
+				no_portrait_trigger = yes
+				exists = scope:character
+				scope:character = {
+			has_trait = tot_Kirara_Aoba_trait
+				}
+			}
+		}
+	}
+	just_Yuzu_Nene = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = totprops_1
+				template = tot_prophet_Yuzu_Nene
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 10000
+				no_portrait_trigger = yes
+				exists = scope:character
+				scope:character = {
+			has_trait = tot_Yuzu_Nene_trait
+				}
+			}
+		}
+	}
+	just_Yuzu_Wakana = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = totprops_1
+				template = tot_prophet_Yuzu_Wakana
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 10000
+				no_portrait_trigger = yes
+				exists = scope:character
+				scope:character = {
+			has_trait = tot_Yuzu_Wakana_trait
+				}
+			}
+		}
+	}
 }

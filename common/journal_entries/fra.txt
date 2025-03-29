@@ -132,6 +132,12 @@ je_fra_queen_pk_education = { #教育对决
 				trigger = { always = yes }
 			}
 		}
+		first_valid = {
+			triggered_desc = {
+				desc = je_fra_creation_expect_effect_desc
+				trigger = { always = yes }
+			}
+		}
 	}
 	complete = {
 		
@@ -185,7 +191,7 @@ je_fra_queen_pk_medical = { #医疗对决
 		has_journal_entry = je_fra_queen_pk
 	}
 	complete = {
-		has_variable = je_fra_queen_pk_food_end
+		
 	}
 	on_complete = {
 		
@@ -199,7 +205,7 @@ je_fra_queen_pk_distribution = { #分配对决
 	scripted_button = je_fra_queen_pk_distribution_call_donations #号召捐款
 	scripted_button = je_fra_queen_pk_distribution_slum_clearance #清理贫民窟
 	scripted_button = je_fra_queen_pk_distribution_investigate_corruption #严查腐败
-	scripted_button = je_fra_queen_pk_distribution_technician_cultivation #技工培育
+	scripted_button = je_fra_queen_pk_distribution_labor_law #劳工权利
 	modifiers_while_active = {
 		modifier_fra_les_miserables
 	}
@@ -207,7 +213,57 @@ je_fra_queen_pk_distribution = { #分配对决
 		has_journal_entry = je_fra_queen_pk
 	}
 	complete = {
-		has_variable = je_fra_queen_pk_food_end
+		
+	}
+	on_complete = {
+		
+	}
+}
+je_fra_queen_pk_court = { #宫廷革新
+	should_be_pinned_by_default = yes
+	icon = "gfx/interface/progressbar/queen_pk_icon.dds"
+	scripted_button = je_fra_queen_pk_court_mary_plan #玛丽的改造计划
+	scripted_button = je_fra_queen_pk_court_mia_plan #米娅的解放计划
+	scripted_button = je_fra_queen_pk_court_maid #任命女仆长
+	scripted_button = je_fra_queen_pk_court_modern_dress #支持新礼服
+	scripted_button = je_fra_queen_pk_court_modern_dress #禁止束腰
+	scripted_button = je_fra_queen_pk_court_round_table #圆桌晚宴
+	modifiers_while_active = {
+		modifier_fra_les_miserables
+	}
+	possible = {
+		has_journal_entry = je_fra_queen_pk
+	}
+	complete = {
+		
+	}
+	on_complete = {
+		
+	}
+}
+je_fra_godess_election = { #圣女大选
+	should_be_pinned_by_default = yes
+	icon = "gfx/interface/progressbar/queen_pk_icon.dds"
+	
+	possible = {
+		
+	}
+	complete = {
+	
+	}
+	on_complete = {
+		
+	}
+}
+je_fra_coffee_politics = { #咖啡政治
+	should_be_pinned_by_default = yes
+	icon = "gfx/interface/progressbar/queen_pk_icon.dds"
+	
+	possible = {
+		
+	}
+	complete = {
+	
 	}
 	on_complete = {
 		

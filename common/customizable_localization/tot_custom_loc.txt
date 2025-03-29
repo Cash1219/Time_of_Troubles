@@ -145,7 +145,6 @@
 	}
 	fra_current_creation = {
 		type = country
-		
 		text = {
 			trigger = {
 				has_variable = je_fra_poor_prince
@@ -160,15 +159,15 @@
 		}
 		text = {
 			trigger = {
-				has_variable = je_fra_can_giant
+				has_variable = je_fra_heart_palette
 			}
-			localization_key = je_fra_can_giant_desc
+			localization_key = je_fra_heart_palette_desc
 		}
 		text = {
 			trigger = {
-				has_variable = je_fra_art_club
+				has_variable = je_fra_magical_ribbon
 			}
-			localization_key = je_fra_art_club_desc
+			localization_key = je_fra_magical_ribbon_desc
 		}
 		text = {
 			trigger = {
@@ -306,5 +305,83 @@
 				var:je_fra_exhibition_popularity > 9
 			}
 			localization_key = je_fra_exhibition_popularity_level_5
+		}
+	}
+	je_fra_creation_expect_effect_desc = {
+		type = country
+		text = {
+			trigger = {
+				has_variable = je_fra_poor_prince
+			}
+			localization_key = je_fra_poor_prince_modifier
+		}
+		text = {
+			trigger = {
+				has_variable = je_fra_mia_biography
+			}
+			localization_key = je_fra_mia_biography_modifier
+		}
+		text = {
+			trigger = {
+				has_variable = je_fra_heart_palette
+			}
+			localization_key = je_fra_heart_palette_modifier
+		}
+		text = {
+			trigger = {
+				has_variable = je_fra_magical_ribbon
+			}
+			localization_key = je_fra_magical_ribbon_modifier
+		}
+		text = {
+			trigger = {
+				has_variable = je_fra_alla_turca
+			}
+			localization_key = je_fra_alla_turca_modifier
+		}
+		text = {
+			trigger = {
+				has_variable = je_fra_serenade
+			}
+			localization_key = je_fra_serenade_modifier
+		}
+		text = {
+			trigger = {
+				has_variable = je_fra_monte_cristo
+			}
+			localization_key = je_fra_monte_cristo_modifier
+		}
+		text = {
+			trigger = {
+				has_variable = je_fra_queen_necklace
+			}
+			localization_key = je_fra_queen_necklace_modifier
+		}
+		text = {
+			trigger = {
+				has_variable = je_fra_daisuki
+			}
+			localization_key = je_fra_daisuki_modifier
+		}
+		text = {
+			trigger = {
+				has_variable = je_fra_without_you
+			}
+			localization_key = je_fra_without_you_modifier
+		}
+		text = {
+			trigger = {
+				has_variable = je_fra_peco
+			}
+			localization_key = je_fra_peco_modifier
+		}
+		text = {
+			trigger = {
+				has_variable = je_fra_elf_story
+			}
+			localization_key = je_fra_elf_story_modifier
+		}
+		text = {
+			localization_key = fra_no_creation
 		}
 	}

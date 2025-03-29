@@ -20,6 +20,28 @@
 		state_radicals_from_sol_change_mult = -0.05
 	}	
 }
+fra_company_black_cat = {
+	icon = "gfx/interface/icons/company_icons/fra_company_black_cat.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+	
+	flavored_company = yes
+
+	building_types = {  
+		building_coffee_plantation
+		building_tea_plantation
+		building_sugar_plantation
+	}
+
+	possible = { 
+		c:FRA ?= this
+	}
+	ai_weight = {
+		value = 3 
+	}
+	prosperity_modifier = {
+		state_radicals_from_sol_change_mult = -0.05
+	}	
+}
 fra_company_rabbit_house = {
 	icon = "gfx/interface/icons/company_icons/fra_company_rabbit_house.dds"
 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
@@ -86,15 +108,16 @@ fra_company_stile_cafe = {
 		state_radicals_from_sol_change_mult = -0.05
 	}	
 }
-fra_company_brest_shipyard = {
-	icon = "gfx/interface/icons/company_icons/fra_company_stile_cafe.dds"
+fra_company_black_cat_cafe = {
+	icon = "gfx/interface/icons/company_icons/fra_company_black_cat_cafe.dds"
 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
 	
 	flavored_company = yes
 
 	building_types = {  
-		building_shipyards
-		building_military_shipyards
+		building_coffee_plantation
+		building_tea_plantation
+		building_sugar_plantation
 	}
 
 	possible = { 
@@ -104,12 +127,11 @@ fra_company_brest_shipyard = {
 		value = 3 
 	}
 	prosperity_modifier = {
-		unit_navy_offense_mult = 0.05
-		unit_navy_defense_mult = 0.05
+		state_radicals_from_sol_change_mult = -0.05
 	}	
 }
-fra_company_literary_society = { #第二文社
-	icon = "gfx/interface/icons/company_icons/fra_company_stile_cafe.dds"
+fra_company_aaa_defender = { 
+	icon = "gfx/interface/icons/company_icons/fra_company_aaa_defender.dds"
 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
 	
 	flavored_company = yes
@@ -121,6 +143,30 @@ fra_company_literary_society = { #第二文社
 
 	possible = { 
 		c:FRA ?= this
+		
+	}
+	ai_weight = {
+		value = 3 
+	}
+	prosperity_modifier = {
+		unit_navy_offense_mult = 0.05
+		unit_navy_defense_mult = 0.05
+	}	
+}
+fra_company_eagle_jump = { 
+	icon = "gfx/interface/icons/company_icons/fra_company_eagle_jump.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+	
+	flavored_company = yes
+
+	building_types = {  
+		building_shipyards
+		building_military_shipyards
+	}
+
+	possible = { 
+		c:FRA ?= this
+		
 	}
 	ai_weight = {
 		value = 3 
