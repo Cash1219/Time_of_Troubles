@@ -109,12 +109,6 @@ fra.2 = { #面粉暴动
 			save_scope_as = paris_scope		
 		}
 		set_variable = event_fra_2_var
-		scope:university_benefactor.interest_group = {
-			add_modifier = {
-				name = modifier_university_built
-				months = normal_modifier_time
-			}
-		}
 	}
 	option = {
 		name = fra.2.a #救
@@ -228,11 +222,11 @@ fra.3 = { #黄月番茄
 				}
 			}
 			scope:paris_scope = {
-			start_privately_funded_building_construction = building_wheat_farm
-			start_privately_funded_building_construction = building_wheat_farm
-			start_privately_funded_building_construction = building_wheat_farm
-			start_privately_funded_building_construction = building_wheat_farm
-			start_privately_funded_building_construction = building_wheat_farm
+				start_privately_funded_building_construction = building_wheat_farm
+				start_privately_funded_building_construction = building_wheat_farm
+				start_privately_funded_building_construction = building_wheat_farm
+				start_privately_funded_building_construction = building_wheat_farm
+				start_privately_funded_building_construction = building_wheat_farm
 			}
 		}
 		scope:paris_scope = {
@@ -991,6 +985,9 @@ fra.18 = { #文化交流
 	on_opened_soundeffect = "event:/SFX/Events/misc/1Character_Banner"
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 	duration = 3
+	immediate = {
+		set_variable = { name = fra_18_var days = 1825 }
+	}
 	event_image = {
 		texture = "gfx/event_pictures/mari_cake.dds"
 	}
@@ -998,26 +995,54 @@ fra.18 = { #文化交流
 	
 	option = {
 		name = fra.18.a	#维也纳
-		trigger_event = {
-			id = fra.19
+		if = {
+			limit = {
+				NOT = {
+					has_variable = fra_18_var_1
+				}
+			}
+			trigger_event = {
+				id = fra.19
+			}
 		}
 	}
 	option = {
 		name = fra.18.b #罗马
-		trigger_event = {
-			id = fra.20
+		if = {
+			limit = {
+				NOT = {
+					has_variable = fra_18_var_2
+				}
+			}
+			trigger_event = {
+				id = fra.20
+			}
 		}
 	}
 	option = {
 		name = fra.18.c #伦敦
-		trigger_event = {
-			id = fra.21
+		if = {
+			limit = {
+				NOT = {
+					has_variable = fra_18_var_3
+				}
+			}
+			trigger_event = {
+				id = fra.21
+			}
 		}
 	}
 	option = {
 		name = fra.18.e #莫斯科
-		trigger_event = {
-			id = fra.22
+		if = {
+			limit = {
+				NOT = {
+					has_variable = fra_18_var_4
+				}
+			}
+			trigger_event = {
+				id = fra.22
+			}
 		}
 	}
 }
@@ -1035,24 +1060,19 @@ fra.19 = {
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
 	immediate = {
-		every_scope_state = {
-			limit = {
-				state_region = s:STATE_AUSTRIA
-			}
-			save_scope_as = cultural_travel_scope			
+		set_variable = fra_19_var
+		change_variable = {
+			name = je_fra_queen_pk_education_creation_progress
+			add = 100
 		}
 	}
 	option = {
 		name = fra.19.a 	
-		scope:cultural_travel_scope = {
-			owner = {
-				save_scope_as = target_country
+			add_modifier = {
+				name = modifier_fra_19
+				months = 12
 			}
 		}
-		scope:target_country = {
-			trigger_event = fra.30
-		}
-	}
 }
 fra.20 = { 
 	type = country_event
@@ -1067,11 +1087,20 @@ fra.20 = {
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
-	
+	immediate = {
+		set_variable = fra_20_var
+		change_variable = {
+			name = je_fra_queen_pk_education_creation_progress
+			add = 100
+		}
+	}
 	option = {
 		name = fra.20.a 	
-		
-	}
+			add_modifier = {
+				name = modifier_fra_20
+				months = 12
+			}
+		}
 }
 fra.21 = { 
 	type = country_event
@@ -1086,11 +1115,20 @@ fra.21 = {
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
-	
+	immediate = {
+		set_variable = fra_21_var
+		change_variable = {
+			name = je_fra_queen_pk_education_creation_progress
+			add = 100
+		}
+	}
 	option = {
 		name = fra.21.a 	
-		
-	}
+			add_modifier = {
+				name = modifier_fra_21
+				months = 12
+			}
+		}
 }
 fra.22 = { 
 	type = country_event
@@ -1098,17 +1136,27 @@ fra.22 = {
 	title = fra.22.t
 	desc = fra.22.d
 	
+
 	duration = 3
 	event_image = {
 		texture = "gfx/event_pictures/mari_cake.dds"
 	}
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
-	
+	immediate = {
+		set_variable = fra_22_var
+		change_variable = {
+			name = je_fra_queen_pk_education_creation_progress
+			add = 100
+		}
+	}
 	option = {
 		name = fra.22.a 	
-		
-	}
+			add_modifier = {
+				name = modifier_fra_22
+				months = 12
+			}
+		}
 }
 fra.23 = { 
 	type = country_event
@@ -1174,7 +1222,7 @@ fra.24 = {
 		}
 	}
 	option = {
-		name = fra.6.a 	
+		name = fra.24.a 	
 		add_modifier = {
 			name = "modifier_fra_coffee_fashion"
 			years = 3650
@@ -1558,4 +1606,31 @@ fra.34 = { #华丽的账目
 		}
 		
 	}
+}
+fra.35 = { #
+	type = country_event
+	placement = root
+	title = fra.35.t
+	desc = fra.35.d
+	duration = 3
+	flavor = fra.35.f
+	event_image = {
+		texture = "gfx/event_pictures/mari_cake.dds"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	option = {
+		name = fra.35.a 	
+		
+	}
+	option = {
+		name = fra.35.b	
+		
+	}
+	option = {
+		name = fra.35.c 	
+		
+	}
+	
 }

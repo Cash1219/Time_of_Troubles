@@ -1,246 +1,142 @@
 ﻿CHARACTERS = {
 	c:GBR ?= {
+				
 		create_character = {
 			historical = yes
-			first_name = "El_Melloi_Archibald"
-			last_name = "Kayneth"
+			first_name = "Cartelet"
+			last_name = "Alice"
 			birth_date = 1816.1.1 
-			ig_leader = yes
-			is_general = yes
-			ideology = ideology_traditionalist
-			interest_group = ig_landowners
-			religion = rel:protestant
+			female = yes
+			ruler = yes
+			ideology = ideology_moderate
+			interest_group = ig_industrialists
+			religion = rel:kindo
 			culture = cu:british
 			traits = {
-				tot_Fate_Kayneth_trait
-				arrogant
-				ambitious
-				wrathful
-				imperious
-				experienced_political_operator
-				erudite
+				tot_Kinmosa_Alice_trait
 			}
 		}
 		create_character = {
 			historical = yes
-			first_name = "Kotomine"
-			last_name = "Kirei"
+			first_name = "Oomiya"
+			last_name = "Shinobu"
 			birth_date = 1816.1.1 
+			female = yes
 			ig_leader = yes
-			is_general = yes
-			ideology = ideology_antisocial
+			ideology = ideology_moderate
 			interest_group = ig_devout
-			religion = rel:protestant
+			religion = rel:kindo
 			culture = cu:british
 			traits = {
-				tot_Fate_Kirei_trait
-				experienced_diplomat
-				experienced_political_operator
-				erudite
-				pillager
-				firebrand
-				pious
+				tot_Kinmosa_Shinobu_trait
 			}
 		}
 		create_character = {
 			historical = yes
-			first_name = "Grand_Caster"
-			last_name = "Merlin"
+			first_name = "Kujou"
+			last_name = "Karen"
 			birth_date = 1816.1.1 
-			ig_leader = yes
-			is_general = yes
-			ideology = ideology_royalist
-			interest_group = ig_intelligentsia
-			religion = rel:protestant
-			culture = cu:welsh
-			traits = {
-				tot_Fate_Merlin_trait
-				master_bureaucrat
-				experienced_political_operator
-				erudite
-			}
-		}
-		create_character = {
-			historical = yes
-			first_name = "Bedivere"
-			last_name = "Knight"
-			birth_date = 1816.1.1 
-			ig_leader = yes
-			is_general = yes
 			female = yes
-			ideology = ideology_royalist
+			heir = yes
+			ideology = ideology_moderate
 			interest_group = ig_armed_forces
-			religion = rel:protestant
-			culture = cu:welsh
-			traits = {
-				tot_Fate_Bedivere_trait
-				experienced_offensive_planner
-				resupply_commander
-				popular_commander
-				wounded
-				meticulous
-			}
-		}
-		create_character = {
-			historical = yes
-			first_name = "Tohsaka"
-			last_name = "Tokiomi"
-			birth_date = 1816.1.1 
-			ig_leader = yes
-			is_general = yes
-			interest_group = ideology
-			interest_group = ig_industrialists
-			religion = rel:protestant
+			religion = rel:kindo
 			culture = cu:british
 			traits = {
-				tot_Fate_Tokiomi_trait
-				erudite
-				persistent
-				cautious
-				ambitious
-				innovative
-				expensive_tastes
-				engineer
+				tot_Kinmosa_Karen_trait
 			}
 		}
 		create_character = {
 			historical = yes
-			first_name = "Tohsaka"
-			last_name = "Rin"
+			first_name = "Komichi"
+			last_name = "Ayaya"
 			birth_date = 1816.1.1 
 			female = yes
 			ig_leader = yes
-			ideology = ideology_reformer
-			interest_group = ig_industrialists
-			religion = rel:protestant
+			ideology = ideology_moderate
+			interest_group = ig_intelligentsia
+			religion = rel:kindo
 			culture = cu:british
 			traits = {
-				tot_Fate_Rin_trait
-				reckless
-				imperious
-				expensive_tastes
+				tot_Kinmosa_Ayaya_trait
 			}
 		}
 		create_character = {
 			historical = yes
-			first_name = "Edelfelt"
-			last_name = "Luviagelita"
+			first_name = "Inokuma"
+			last_name = "Youko"
+			birth_date = 1816.1.1 
+			female = yes
+			ig_leader = yes
+			ideology = ideology_moderate
+			interest_group = ig_armed_forces
+			religion = rel:kindo
+			culture = cu:british
+			traits = {
+				tot_Kinmosa_Youko_trait
+			}
+		}
+		create_character = {
+			historical = yes
+			first_name = "Matsubara"
+			last_name = "Honoka"
 			birth_date = 1816.1.1 
 			female = yes
 			ig_leader = yes
 			ideology = ideology_moderate
 			interest_group = ig_petty_bourgeoisie
-			religion = rel:protestant
-			culture = cu:finnish
-			traits = {
-				tot_Fate_Luviagelita_trait
-				reckless
-				imperious
-				expensive_tastes
-				direct
-				arrogant
-				experienced_offensive_planner
-			}
-		}
-		create_character = {
-			historical = yes
-			first_name = "Shirou"
-			last_name = "Emiya"
-			birth_date = 1816.1.1 
-			ig_leader = yes
-			ideology = ideology_humanitarian
-			interest_group = ig_trade_unions
-			religion = rel:protestant
+			religion = rel:kindo
 			culture = cu:british
 			traits = {
-				tot_Fate_Shirou_trait
-				persistent
-				ambitious
-				brave
-				inspirational_orator
-				trench_rat
-				firebrand
+				tot_Kinmosa_Honoka_trait
 			}
 		}
 		create_character = {
 			historical = yes
-			first_name = "Archer"
-			last_name = "Emiya"
+			first_name = "NaN"
+			last_name = "Kobayashi"
 			birth_date = 1816.1.1 
+			female = yes
 			ig_leader = yes
-			is_general = yes
+			ideology = ideology_moderate
+			interest_group = ig_industrialists
+			religion = rel:kindo
+			culture = cu:british
+			traits = {
+				tot_Dragon_Kobayashi_trait
+			}
+		}
+		create_character = {
+			historical = yes
+			first_name = "Kamui"
+			last_name = "Kanna"
+			birth_date = 1816.1.1 
+			female = yes
+			ig_leader = yes
+			ideology = ideology_moderate
+			interest_group = ig_rural_folk
+			religion = rel:kindo
+			culture = cu:british
+			traits = {
+				tot_Dragon_Kanna_trait
+			}
+		}
+		create_character = {
+			historical = yes
+			first_name = "Joui"
+			last_name = "Eruma"
+			birth_date = 1816.1.1 
+			female = yes
+			ig_leader = yes
 			ideology = ideology_moderate
 			interest_group = ig_trade_unions
-			religion = rel:protestant
+			religion = rel:kindo
 			culture = cu:british
 			traits = {
-				tot_Fate_Red_trait
-				cautious
-				bigoted
-				imperious
-				meticulous
-				resupply_commander
-				experienced_defensive_strategist
-				scarred
+				tot_Dragon_Eruma_trait
 			}
 		}
-		create_character = {
-			historical = yes
-			first_name = "Velvet"
-			last_name = "Waver"
-			birth_date = 1816.1.1 
-			ig_leader = yes
-			ideology = ideology_radical
-			interest_group = ig_rural_folk
-			religion = rel:protestant
-			culture = cu:british
-			traits = {
-				tot_Fate_Waver_trait
-				persistent
-				reserved
-				innovative
-				erudite
-			}
-		}
-		create_character = {
-			historical = yes
-			first_name = "Pendragon"
-			last_name = "Altria"
-			birth_date = 1816.1.1 
-			female = yes
-			ruler = yes
-			ideology = ideology_traditionalist
-			interest_group = ig_landowners
-			religion = rel:protestant
-			culture = cu:british
-			traits = {
-				tot_Fate_Altria_trait
-				persistent
-				ambitious
-				charismatic
-				brave
-				expert_offensive_planner
-				expert_political_operator
-			}
-		}
-		create_character = {
-			historical = yes
-			first_name = "Pendragon"
-			last_name = "Mordred"
-			birth_date = 1816.1.1 
-			female = yes
-			is_general = yes
-			heir = yes
-			ideology = ideology_traditionalist
-			interest_group = ig_landowners
-			religion = rel:protestant
-			culture = cu:british
-			traits = {
-				tot_Fate_Mordred_trait
-				persistent
-				direct
-				basic_offensive_planner
-			}
-		}
+
+		
 	}
 }
