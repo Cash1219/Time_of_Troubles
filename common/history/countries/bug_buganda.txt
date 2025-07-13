@@ -1,0 +1,58 @@
+﻿COUNTRIES = {
+	c:BUG ?= {
+		effect_starting_technology_tier_2_tech = yes
+		add_technology_researched = mechanical_tools
+		add_technology_researched = atmospheric_engine
+		add_technology_researched = railways
+		add_technology_researched = corporate_charters
+
+		effect_starting_politics_traditional = yes
+		
+		#法律修改
+		activate_law = law_type:law_ailicelove
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_slavery_banned
+		activate_law = law_appointed_bureaucrats
+		activate_law = law_colonial_resettlement
+
+		#利益集团修改
+		ig:ig_landowners = {
+			set_interest_group_name = ig_bug_landowners
+			remove_ideology = ideology_paternalistic
+			remove_ideology =ideology_stratocratic
+			remove_ideology =ideology_patriarchal
+			add_ideology = ideology_ba_adminaster
+			add_ideology = ideology_ba_likenone
+			set_ig_trait = ig_trait:ig_bug_landwonerstraits_10
+			set_ig_trait = ig_trait:ig_bug_landwonerstraits_5
+			set_ig_trait = ig_trait:ig_bug_landwonerstraits_0
+			remove_trait = ig_trait:ig_trait_noblesse_oblige
+			remove_trait = ig_trait:ig_trait_family_ties
+			remove_trait = ig_trait:ig_trait_noble_privileges
+		}
+		#绿手
+		ig:ig_devout = {
+			set_interest_group_name = ig_bug_devout
+		}
+		#军队
+		ig:ig_armed_forces = {
+			set_interest_group_name = ig_bug_armed_forces
+		}
+		#实业家
+		ig:ig_industrialists = {
+			set_interest_group_name = ig_bug_industrialists
+		}
+		#农民
+		ig:ig_rural_folk = {
+			set_interest_group_name = ig_bug_rural_folk
+		}
+		#小市民
+		ig:ig_petty_bourgeoisie = {
+			set_interest_group_name = ig_bug_petty_bourgeoisie
+		}
+		ig:ig_intelligentsia = {
+			set_interest_group_name = ig_bug_intelligentsia
+		}
+		
+}
+}

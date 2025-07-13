@@ -1,0 +1,28 @@
+#地主
+ig_bug_landwonerstraits_10 = {
+	icon = "gfx/interface/icons/ig_trait_icons/noblesse_oblige.dds"
+	min_approval = loyal
+
+	modifier = {
+		country_tech_research_speed_mult = 0.05
+	}
+}
+
+ig_bug_landwonerstraits_5= {
+	icon = "gfx/interface/icons/ig_trait_icons/family_ties.dds"
+	min_approval = happy
+
+	modifier = {
+		state_construction_mult = 0.05
+	}
+}
+
+ig_bug_landwonerstraits_0 = {
+	icon = "gfx/interface/icons/ig_trait_icons/noble_privileges.dds"
+	max_approval = unhappy
+
+	modifier = {
+		country_authority_add = -100
+	}
+}
+

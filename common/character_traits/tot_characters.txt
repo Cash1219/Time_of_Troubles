@@ -2327,3 +2327,16 @@ tot_Mhs_Satone_trait = {
 	weight = 1
 	value = 1
 }
+tot_ba_alice_trait = {
+	type = personality
+	texture = "gfx/interface/icons/character_trait_icons/direct.dds"
+	possible = { always = no }
+
+	character_modifier = {
+		character_popularity_add = 25
+		character_health_add = 0.2
+	}
+
+	weight = 1
+	value = 1
+}
