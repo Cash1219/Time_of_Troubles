@@ -154,7 +154,7 @@ ITA = {
 		instance = { scale = { 0.22 0.22 } position = { 0.6 0.85 } }
 	}
 }
-GRE = {
+BYZ = {
 	pattern = "pattern_solid.tga"
 	color1 = "red"
 	color2 = "yellow"
@@ -192,7 +192,7 @@ GRE = {
 		instance = { scale = { 0.75 0.75 } position = { 0.5 0.5 } }
 	}
 }
-YUG = {
+UKR = {
 	pattern = "pattern_solid.tga"
 	color1 = "black"
 	color2 = "yellow"
@@ -201,6 +201,22 @@ YUG = {
 		instance = { scale = { 0.75 0.75 } position = { 0.5 0.5 } }
 	}
 	
+	
+}
+PRU_absolute_monarchy = {
+	# Late 19th c. with stripes and changes to the eagle (scepter-sword, monogram, bone links)
+	# Starting flag although PRU is the historical one (more convenient and still fits the gov type)
+	
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+
+	colored_emblem = {
+		texture = "ce_solid.dds"
+		color1 = "black"
+		color2 = "black"
+		instance = { scale = { 1.0 0.18 } position = { 0.5 0.09 } }	
+		instance = { scale = { 1.0 0.18 } position = { 0.5 0.91 } }			
+	}
 	
 }
 PRU = {
@@ -223,12 +239,17 @@ PRU = {
 }
 PAP = {
 	pattern = "pattern_vertical_split_01.tga"
+	color1 = "red"
+	color2 = "yellow"
+}
+PAP_theocracy = {
+	pattern = "pattern_vertical_split_01.tga"
 	color1 = "pink"
 	color2 = "white"
-	textured_emblem = {
-		texture = "tot_te_catholic.dds"
-		instance = { scale = { 0.7 0.7 } position = { 0.5 0.5 } }
-	}		
+	#textured_emblem = {
+	#	texture = "tot_te_catholic.dds"
+	#	instance = { scale = { 0.7 0.7 } position = { 0.5 0.5 } }
+	#}		
 }
 TUR = {
 	pattern = "pattern_solid.tga"

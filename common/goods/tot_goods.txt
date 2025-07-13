@@ -1,14 +1,62 @@
-﻿magic_mineral = {
-	texture = "gfx/interface/icons/goods_icons/magic_mineral.dds"
-	cost = 40
-	category = industrial
-	
-	prestige_factor = 5
+﻿#magic_mineral = {
+#	texture = "gfx/interface/icons/goods_icons/magic_mineral.dds"
+#	cost = 40
+#	category = industrial
+#	
+#	prestige_factor = 5
+#}
+#magic_energy = {
+#	texture = "gfx/interface/icons/goods_icons/electricity.dds"
+#	cost = 30
+#	category = staple
+#	consumption_tax_cost = 200
+#	prestige_factor = 5
+#}
+
+###########
+#  奢侈品  #
+###########
+luxury_foods = {
+	texture = "gfx/interface/icons/goods_icons/luxury_clothes.dds"
+	cost = 60
+	category = luxury
+
+	obsession_chance = 1.0
+	prestige_factor = 8
+	convoy_cost_multiplier = 0.75
+	traded_quantity = 4 # 240
 }
-magic_energy = {
-	texture = "gfx/interface/icons/goods_icons/electricity.dds"
-	cost = 30
-	category = staple
-	consumption_tax_cost = 200
-	prestige_factor = 5
+###########
+#  基本品  #
+###########
+seishun = {
+	texture = "gfx/interface/icons/goods_icons/seishun.dds"
+	cost = 50
+	category = luxury
+
+	obsession_chance = 10.0
+	prestige_factor = 2
+	convoy_cost_multiplier = 0.75
+	traded_quantity = 5 # 250
 }
+#elgar_instruments = {
+#	texture = "gfx/interface/icons/goods_icons/elgar_instruments.dds"
+#	cost = 40
+#	category = staple
+#	
+#	prestige_factor = 5
+#	
+#	traded_quantity = 5
+#}
+#
+# Orchestral music
+#
+#elgar_music = {
+#	texture = "gfx/interface/icons/goods_icons/elgar_music.dds"
+#	cost = 80
+#	category = luxury
+#
+#	tradeable = no
+#	
+#	prestige_factor = 10
+#}

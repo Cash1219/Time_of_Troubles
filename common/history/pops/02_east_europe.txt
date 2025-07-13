@@ -130,7 +130,7 @@
 		}
 	}
 	s:STATE_ROSTOV = {
-		region_state:RUS = {
+		region_state:UMA = {
 			create_pop = {
 				culture = russian
 				size = 427520
@@ -279,45 +279,27 @@
 		}
 	}
 	s:STATE_WEST_GALICIA = {
-		region_state:AUS = {
+		region_state:POL = {
 			create_pop = {
 				culture = polish
-				size = 1740004
+				size = 1912400 #1740004 + 172396
 			}
 			create_pop = {
 				culture = south_german
-				size = 28000
+				size = 32000 #28000 + 4000
 			}
 			create_pop = {
 				culture = ukrainian
-				size = 152000
+				size = 168000 #152000+16000
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 136000
-			}
-		}
-		region_state:KRA = {
-			create_pop = {
-				culture = polish
-				size = 172396
-			}
-			create_pop = {
-				culture = south_german
-				size = 4000
-			}
-			create_pop = {
-				culture = ashkenazi
-				size = 32004
-			}
-			create_pop = {
-				culture = ukrainian
-				size = 16000
+				size = 168004 #136000 + 32004
 			}
 		}
 	}
 	s:STATE_EAST_GALICIA = {
-		region_state:AUS = {
+		region_state:POL = {
 			create_pop = {
 				culture = polish
 				size = 832800
@@ -337,7 +319,7 @@
 		}
 	}
 	s:STATE_CENTRAL_HUNGARY = {
-		region_state:AUS = {
+		region_state:HUN = {
 			create_pop = {
 				culture = hungarian
 				size = 989200
@@ -363,7 +345,7 @@
 		}
 	}
 	s:STATE_BEKES = {
-		region_state:AUS = {
+		region_state:HUN = {
 			create_pop = {
 				culture = hungarian
 				size = 189292
@@ -401,7 +383,7 @@
 		}
 	}
 	s:STATE_TRANSDANUBIA = {
-		region_state:AUS = {
+		region_state:HUN = {
 			create_pop = {
 				culture = hungarian
 				size = 1375796
@@ -440,7 +422,7 @@
 		}
 	}
 	s:STATE_DELVIDEK = {
-		region_state:AUS = {
+		region_state:HUN = {
 			create_pop = {
 				culture = south_german
 				size = 197200
@@ -468,7 +450,7 @@
 		}
 	}
 	s:STATE_BANAT = {
-		region_state:AUS = {
+		region_state:HUN = {
 			create_pop = {
 				culture = south_german
 				size = 312640
@@ -506,7 +488,7 @@
 		}
 	}
 	s:STATE_WEST_SLOVAKIA = {
-		region_state:AUS = {
+		region_state:HUN = {
 			create_pop = {
 				culture = hungarian
 				size = 237000
@@ -539,7 +521,7 @@
 		}
 	}
 	s:STATE_EAST_SLOVAKIA = {
-		region_state:AUS = {
+		region_state:HUN = {
 			create_pop = {
 				culture = hungarian
 				size = 150848
@@ -576,7 +558,7 @@
 		}
 	}
 	s:STATE_SOUTHERN_TRANSYLVANIA = {
-		region_state:AUS = {
+		region_state:ROM = {
 			create_pop = {
 				culture = hungarian
 				religion = protestant
@@ -590,7 +572,7 @@
 			create_pop = {
 				culture = hungarian
 				size = 45003
-			} 
+			}
 			create_pop = {
 				culture = szekely
 				size = 15001
@@ -614,7 +596,7 @@
 		}
 	}
 	s:STATE_NORTHERN_TRANSYLVANIA = {
-		region_state:AUS = {
+		region_state:ROM = {
 			create_pop = {
 				culture = hungarian
 				religion = protestant

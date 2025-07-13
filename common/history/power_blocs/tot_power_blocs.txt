@@ -22,7 +22,7 @@
 	c:FRA = {
 		create_power_bloc = {
 			name = CROWN_ALLIANCE
-			map_color = hsv{ 0.99  0.7  0.9 }
+			map_color = { 20 50 210 }
 
 			founding_date = 1816.10.17
 			identity = identity_ideological_union
@@ -37,9 +37,9 @@
 	c:SPA = {
 		create_power_bloc = {
 			name = ADVENTURE_ASSOCIATION
-			map_color = { 170 206 162 }
+			map_color = { 38  97  83 }
 
-			founding_date = 1816.10.17
+			founding_date = 1444.11.11
 			identity = identity_trade_league
 			principle = principle_external_trade_1
 
@@ -47,24 +47,45 @@
 		}
 		
 	}
-	c:AUS = {
+	c:VEN = {
 		create_power_bloc = {
 			name = BAND_COMMUNITY
 
 			map_color = { 219 211 157 }
 
-			founding_date = 1815.6.9 # Final agreement of the 1814 Congress of Vienna
+			founding_date = 1444.1.1
 			identity = identity_ideological_union
 			principle = principle_creative_legislature_1
 
 
 			# Habsburg leaders in Italy and Italian states held up by direct Austrian intervention
-			member = c:TUR
-			member = c:GRE
-			member = c:ROM
-			member = c:YUG
-			member = c:VEN
+			member = c:AUS
+			member = c:HUN
+			member = c:BOH
+			member = c:SER
+			member = c:POL
 			
+		}
+		
+
+			
+	}
+	c:BYZ = {
+		create_power_bloc = {
+			name = HOLY_EMPIRE
+
+			map_color = { 219 211 157 }
+
+			founding_date = 1200.1.1
+			identity = identity_sovereign_empire
+			principle = principle_vassalization_1
+
+
+			# Habsburg leaders in Italy and Italian states held up by direct Austrian intervention
+			member = c:ROM
+			member = c:UKR
+			member = c:GRE
+			member = c:TUR
 		}
 		if = {
 			limit = {
@@ -76,7 +97,86 @@
 		}
 
 			
+	}
+	c:SWE = {
+		create_power_bloc = {
+			name = NORDIC_COMMUNITY
+			map_color = { 87  130  199 }
+
+			founding_date = 1444.11.11
+			identity = identity_sovereign_empire
+			principle = principle_vassalization_1
+
+
+			# Habsburg leaders in Italy and Italian states held up by direct Austrian intervention
+			member = c:NOR
+			member = c:FIN
+			member = c:BUG
 		}
+		if = {
+			limit = {
+				has_dlc_feature = power_bloc_features
+			}
+			power_bloc = {
+				add_principle = principle_defensive_cooperation_1
+			}
+		}
+
+			
+	}
+	c:UMA = {
+		create_power_bloc = {
+			name = VARANGIANS_TATARS
+			map_color = { 87  130  199 }
+
+			founding_date = 1444.11.11
+			identity = identity_sovereign_empire
+			principle = principle_vassalization_1
+
+
+			# Habsburg leaders in Italy and Italian states held up by direct Austrian intervention
+			member = c:KAZ
+			member = c:GOD
+			member = c:UZH
+		}
+		if = {
+			limit = {
+				has_dlc_feature = power_bloc_features
+			}
+			power_bloc = {
+				add_principle = principle_defensive_cooperation_1
+			}
+		}
+
+			
+	}
+	c:PAL = {
+		create_power_bloc = {
+			name = EL_ALAMEIN_UNION
+			map_color = { 87  130  199 }
+
+			founding_date = 1444.11.11
+			identity = identity_sovereign_empire
+			principle = principle_vassalization_1
+
+
+			# Habsburg leaders in Italy and Italian states held up by direct Austrian intervention
+			member = c:SYR
+			member = c:MOR
+			member = c:TUN
+		
+		}
+		if = {
+			limit = {
+				has_dlc_feature = power_bloc_features
+			}
+			power_bloc = {
+				add_principle = principle_defensive_cooperation_1
+			}
+		}
+
+			
+	}
 	c:PRU = {
 		create_power_bloc = {
 			name =  ZOLLVEREIN

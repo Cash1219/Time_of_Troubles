@@ -1,48 +1,12 @@
 ﻿BUILDINGS={
 	s:STATE_MAZOVIA={
-		region_state:RUS={
-			create_building={
-				building="building_furniture_manufacturies"
-				add_ownership={
-					building={
-						type="building_furniture_manufacturies"
-						country="c:RUS"
-						levels=1
-						region="STATE_MAZOVIA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_handcrafted_furniture"  "pm_automation_disabled" "pm_luxury_furniture" }
-			}
-			create_building={
-				building="building_paper_mills"
-				add_ownership={
-					building={
-						type="building_paper_mills"
-						country="c:RUS"
-						levels=1
-						region="STATE_MAZOVIA"
-					}
-					building={
-						type="building_financial_district"
-						country="c:RUS"
-						levels=1
-						region="STATE_MAZOVIA"
-					}
-					country={
-						country="c:RUS"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled"  }
-			}
+		region_state:POL={
 			create_building={
 				building="building_rye_farm"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:RUS"
+						country="c:POL"
 						levels=2
 						region="STATE_MAZOVIA"
 					}
@@ -51,24 +15,11 @@
 				activate_production_methods={ "pm_simple_farming" "pm_potatoes" "pm_tools_disabled"  }
 			}
 			create_building={
-				building="building_tooling_workshops"
-				add_ownership={
-					building={
-						type="building_tooling_workshops"
-						country="c:RUS"
-						levels=1
-						region="STATE_MAZOVIA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_crude_tools" "pm_automation_disabled"  }
-			}
-			create_building={
 				building="building_logging_camp"
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:RUS"
+						country="c:POL"
 						levels=3
 						region="STATE_MAZOVIA"
 					}
@@ -78,19 +29,19 @@
 		}
 	}
 	s:STATE_BREST={
-		region_state:RUS={
+		region_state:POL={
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
 					building={
 						type="building_logging_camp"
-						country="c:RUS"
+						country="c:POL"
 						levels=4
 						region="STATE_BREST"
 					}
 					building={
 						type="building_financial_district"
-						country="c:RUS"
+						country="c:POL"
 						levels=1
 						region="STATE_BREST"
 					}
@@ -101,6 +52,19 @@
 	}
 	s:STATE_SILESIA={
 		region_state:PRU={
+			create_building={
+				building="building_trade_center"
+				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:PRU"
+						levels=1
+						region="STATE_SILESIA"
+					}
+				}
+				reserves=1
+			}
 			create_building={
 				building="building_textile_mills"
 				add_ownership={
@@ -221,13 +185,13 @@
 		}
 	}
 	s:STATE_GREATER_POLAND={
-		region_state:RUS={
+		region_state:POL={
 			create_building={
 				building="building_textile_mills"
 				add_ownership={
 					building={
 						type="building_textile_mills"
-						country="c:RUS"
+						country="c:POL"
 						levels=1
 						region="STATE_GREATER_POLAND"
 					}
@@ -236,11 +200,73 @@
 				activate_production_methods={ "pm_handsewn_clothes"  "pm_traditional_looms" "pm_craftsman_sewing" }
 			}
 			create_building={
+				building="building_trade_center"
+				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:POL"
+						levels=1
+						region="STATE_GREATER_POLAND"
+					}
+				}
+				reserves=1
+			}
+			create_building={
+				building="building_furniture_manufacturies"
+				add_ownership={
+					building={
+						type="building_furniture_manufacturies"
+						country="c:POL"
+						levels=1
+						region="STATE_GREATER_POLAND"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_handcrafted_furniture"  "pm_automation_disabled" "pm_luxury_furniture" }
+			}
+			create_building={
+				building="building_paper_mills"
+				add_ownership={
+					building={
+						type="building_paper_mills"
+						country="c:POL"
+						levels=1
+						region="STATE_GREATER_POLAND"
+					}
+					building={
+						type="building_financial_district"
+						country="c:POL"
+						levels=1
+						region="STATE_GREATER_POLAND"
+					}
+					country={
+						country="c:POL"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled"  }
+			}
+			create_building={
+				building="building_tooling_workshops"
+				add_ownership={
+					building={
+						type="building_tooling_workshops"
+						country="c:POL"
+						levels=1
+						region="STATE_GREATER_POLAND"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_crude_tools" "pm_automation_disabled"  }
+			}
+			create_building={
 				building="building_rye_farm"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:RUS"
+						country="c:POL"
 						levels=3
 						region="STATE_GREATER_POLAND"
 					}
@@ -251,12 +277,12 @@
 		}
 	}
 	s:STATE_LESSER_POLAND={
-		region_state:RUS={
+		region_state:POL={
 			create_building={
 				building="building_paper_mills"
 				add_ownership={
 					country={
-						country="c:RUS"
+						country="c:POL"
 						levels=1
 					}
 				}
@@ -268,7 +294,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:RUS"
+						country="c:POL"
 						levels=3
 						region="STATE_LESSER_POLAND"
 					}
@@ -281,7 +307,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:RUS"
+						country="c:POL"
 						levels=1
 						region="STATE_LESSER_POLAND"
 					}
@@ -293,6 +319,19 @@
 	}
 	s:STATE_WEST_PRUSSIA={
 		region_state:PRU={
+			create_building={
+				building="building_trade_center"
+				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:PRU"
+						levels=3
+						region="STATE_WEST_PRUSSIA"
+					}
+				}
+				reserves=1
+			}
 			create_building={
 				building="building_fishing_wharf"
 				add_ownership={
@@ -334,6 +373,19 @@
 	}
 	s:STATE_EAST_PRUSSIA={
 		region_state:PRU={
+			create_building={
+				building="building_trade_center"
+				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:PRU"
+						levels=2
+						region="STATE_EAST_PRUSSIA"
+					}
+				}
+				reserves=1
+			}
 			create_building={
 				building="building_textile_mills"
 				add_ownership={
@@ -431,12 +483,12 @@
 		}
 	}
 	s:STATE_WEST_GALICIA={
-		region_state:AUS={
+		region_state:POL={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:AUS"
+						country="c:POL"
 						levels=5
 					}
 				}
@@ -470,12 +522,25 @@
 				activate_production_methods={ "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated"  }
 			}
 		}
-		region_state:KRA={
+		region_state:POL={
+			create_building={
+				building="building_trade_center"
+				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:POL"
+						levels=1
+						region="STATE_WEST_GALICIA"
+					}
+				}
+				reserves=1
+			}
 			create_building={
 				building="building_university"
 				add_ownership={
 					country={
-						country="c:KRA"
+						country="c:POL"
 						levels=1
 					}
 				}
@@ -487,7 +552,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:KRA"
+						country="c:POL"
 						levels=2
 						region="STATE_WEST_GALICIA"
 					}
@@ -500,7 +565,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:KRA"
+						country="c:POL"
 						levels=1
 						region="STATE_WEST_GALICIA"
 					}
@@ -511,12 +576,12 @@
 		}
 	}
 	s:STATE_EAST_GALICIA={
-		region_state:AUS={
+		region_state:POL={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:AUS"
+						country="c:POL"
 						levels=3
 					}
 				}
@@ -552,12 +617,12 @@
 		}
 	}
 	s:STATE_CENTRAL_HUNGARY={
-		region_state:AUS={
+		region_state:HUN={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:AUS"
+						country="c:HUN"
 						levels=5
 					}
 				}
@@ -568,7 +633,7 @@
 				building="building_construction_sector"
 				add_ownership={
 					country={
-						country="c:AUS"
+						country="c:HUN"
 						levels=1
 					}
 				}
@@ -580,13 +645,13 @@
 				add_ownership={
 					building={
 						type="building_iron_mine"
-						country="c:AUS"
+						country="c:HUN"
 						levels=1
 						region="STATE_CENTRAL_HUNGARY"
 					}
 					building={
 						type="building_financial_district"
-						country="c:AUS"
+						country="c:HUN"
 						levels=1
 						region="STATE_CENTRAL_HUNGARY"
 					}
@@ -599,7 +664,7 @@
 				add_ownership={
 					building={
 						type="building_food_industry"
-						country="c:AUS"
+						country="c:HUN"
 						levels=2
 						region="STATE_CENTRAL_HUNGARY"
 					}
@@ -612,7 +677,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:AUS"
+						country="c:HUN"
 						levels=2
 						region="STATE_CENTRAL_HUNGARY"
 					}
@@ -631,7 +696,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:AUS"
+						country="c:HUN"
 						levels=3
 						region="STATE_CENTRAL_HUNGARY"
 					}
@@ -650,7 +715,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:AUS"
+						country="c:HUN"
 						levels=3
 						region="STATE_CENTRAL_HUNGARY"
 					}
@@ -661,13 +726,13 @@
 		}
 	}
 	s:STATE_BEKES={
-		region_state:AUS={
+		region_state:HUN={
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:AUS"
+						country="c:HUN"
 						levels=2
 						region="STATE_AUSTRIA"
 					}
@@ -680,7 +745,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:AUS"
+						country="c:HUN"
 						levels=2
 						region="STATE_AUSTRIA"
 					}
@@ -691,13 +756,26 @@
 		}
 	}
 	s:STATE_TRANSDANUBIA={
-		region_state:AUS={
+		region_state:HUN={
+			create_building={
+				building="building_trade_center"
+				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:HUN"
+						levels=3
+						region="STATE_TRANSDANUBIA"
+					}
+				}
+				reserves=1
+			}
 			create_building={
 				building="building_food_industry"
 				add_ownership={
 					building={
 						type="building_food_industry"
-						country="c:AUS"
+						country="c:HUN"
 						levels=2
 						region="STATE_TRANSDANUBIA"
 					}
@@ -723,7 +801,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:AUS"
+						country="c:HUN"
 						levels=1
 						region="STATE_TRANSDANUBIA"
 					}
@@ -736,7 +814,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:AUS"
+						country="c:HUN"
 						levels=1
 						region="STATE_TRANSDANUBIA"
 					}
@@ -753,7 +831,7 @@
 		}
 	}
 	s:STATE_DELVIDEK={
-		region_state:AUS={
+		region_state:HUN={
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -772,7 +850,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:AUS"
+						country="c:HUN"
 						levels=3
 						region="STATE_DELVIDEK"
 					}
@@ -783,7 +861,7 @@
 		}
 	}
 	s:STATE_BANAT={
-		region_state:AUS={
+		region_state:HUN={
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -802,7 +880,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:AUS"
+						country="c:HUN"
 						levels=1
 						region="STATE_BANAT"
 					}
@@ -819,12 +897,12 @@
 		}
 	}
 	s:STATE_WEST_SLOVAKIA={
-		region_state:AUS={
+		region_state:HUN={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:AUS"
+						country="c:HUN"
 						levels=3
 					}
 				}
@@ -836,7 +914,7 @@
 				add_ownership={
 					building={
 						type="building_furniture_manufacturies"
-						country="c:AUS"
+						country="c:HUN"
 						levels=1
 						region="STATE_WEST_SLOVAKIA"
 					}
@@ -898,7 +976,7 @@
 				add_ownership={
 					building={
 						type="building_logging_camp"
-						country="c:AUS"
+						country="c:HUN"
 						levels=3
 						region="STATE_EAST_SLOVAKIA"
 					}
@@ -909,7 +987,7 @@
 		}
 	}
 	s:STATE_SOUTHERN_TRANSYLVANIA={
-		region_state:AUS={
+		region_state:ROM={
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -941,7 +1019,7 @@
 				add_ownership={
 					building={
 						type="building_logging_camp"
-						country="c:AUS"
+						country="c:ROM"
 						levels=3
 						region="STATE_SOUTHERN_TRANSYLVANIA"
 					}
@@ -960,7 +1038,7 @@
 				add_ownership={
 					building={
 						type="building_iron_mine"
-						country="c:AUS"
+						country="c:ROM"
 						levels=1
 						region="STATE_SOUTHERN_TRANSYLVANIA"
 					}
@@ -977,12 +1055,12 @@
 		}
 	}
 	s:STATE_NORTHERN_TRANSYLVANIA={
-		region_state:AUS={
+		region_state:ROM={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:AUS"
+						country="c:ROM"
 						levels=2
 					}
 				}
@@ -1007,7 +1085,7 @@
 				add_ownership={
 					building={
 						type="building_logging_camp"
-						country="c:AUS"
+						country="c:ROM"
 						levels=1
 						region="STATE_NORTHERN_TRANSYLVANIA"
 					}
@@ -1050,7 +1128,7 @@
 		}
 	}
 	s:STATE_MOLDAVIA={
-		region_state:MOL={
+		region_state:ROM={
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -1297,13 +1375,13 @@
 		}
 	}
 	s:STATE_BESSARABIA={
-		region_state:RUS={
+		region_state:UKR={
 			create_building={
 				building="building_fishing_wharf"
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:RUS"
+						country="c:UKR"
 						levels=1
 						region="STATE_BESSARABIA"
 					}

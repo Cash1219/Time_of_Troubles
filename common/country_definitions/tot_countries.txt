@@ -12,14 +12,14 @@ POR = { #旅者共和国
 	color = { 28 82 148 }
 	
 	country_type = recognized
-
+	
 	tier = kingdom
 	
 	cultures = { portuguese }
 	capital = STATE_ESTREMADURA
 }
-AUS = { #金色帝国
-	color = { 57  197  187 }
+AUS = { #奥地利帝国
+	color = { 211  220  240 }
 
 	country_type = recognized
 
@@ -27,6 +27,26 @@ AUS = { #金色帝国
 	
 	cultures = { south_german }
 	capital = STATE_AUSTRIA
+}
+BOH = { #波西米亚
+	color = { 161 139 40 }
+
+	country_type = recognized
+
+	tier = principality
+	
+	cultures = { czech }
+	capital = STATE_BOHEMIA
+}
+HUN = { #匈牙利
+	color = { 152  85  92 }
+
+	country_type = recognized
+
+	tier = kingdom
+	
+	cultures = { hungarian }
+	capital = STATE_CENTRAL_HUNGARY
 }
 SPA = { #勇者共和国
 	color = hsv360{ 38  97  83 }
@@ -55,10 +75,10 @@ PRU = { #魔法少女联邦
 
 	tier = kingdom
 	
-	cultures = { turkish }
-	capital = STATE_BULGARIA
+	cultures = { north_german }
+	capital = STATE_BRANDENBURG
 }
-TUR = { #姆基卡
+TUR = { #土耳其 - 母鸡卡苏丹国
 	color = { 160  16  75 }
 	
 	country_type = recognized
@@ -69,7 +89,7 @@ TUR = { #姆基卡
 	capital = STATE_EASTERN_THRACE
 }
 
-ROM = { #哭泣少女乐队
+ROM = { #罗马尼亚 - 哭泣少女乐队
 	color = { 217  14  44 }
 	
 	country_type = recognized
@@ -79,32 +99,32 @@ ROM = { #哭泣少女乐队
 	capital = STATE_WALLACHIA
 	cultures = { romanian }
 }
-VEN = { #MYGO
-	color = { 180 12 1 }
+VEN = { #威尼斯 -邦多利本家
+	color = { 54 167 156 }
 	
 	country_type = recognized
 
 	tier = principality
-	
+	religion = kabuki #tot mod 歌舞战姬
 	cultures = { north_italian }
 	capital = STATE_VENETIA
 }
-YUG = { #孤独摇滚
-	color = { 255 105 180 }
-	
+UKR = { #乌克兰
+	color = { 62 90 240 }
+
 	country_type = recognized
 
-	tier = empire
-	
-	capital = STATE_NORTHERN_SERBIA 
-	cultures = { serb croat slovene bosniak }
+	tier = kingdom
+
+	cultures = { ukrainian }
+	capital = STATE_KIEV
 }
 SYR = { #叙利亚
 	color = { 241 245 240 }
 	country_type = unrecognized
 	tier = principality
 	cultures = { mashriqi }
-	religion = sunni
+	
 	capital = STATE_SYRIA
 }
 PAL = { #巴勒斯坦
@@ -115,7 +135,7 @@ PAL = { #巴勒斯坦
 	tier = principality
 	
 	cultures = { mashriqi }
-	religion = sunni
+	
 	capital = STATE_PALESTINE
 }
 PAP = { #教宗国
@@ -146,6 +166,83 @@ GBR = { #大不列颠
 	tier = empire	
 	
 	cultures = { british scottish }
-	religion = kindo
+	
+	capital = STATE_HOME_COUNTIES
+}
+BYZ = { #东罗马帝国
+	color = { 147  82  173 }
+
+	valid_as_home_country_for_separatists = { always = no } # root = country to separate from
+
+	country_type = recognized
+
+	tier = empire
+
+	cultures = { greek }
+	capital = STATE_EASTERN_THRACE
+}
+RHD = { #罗德岛
+	color = hsv{ 0.99  0.7  0.9 }
+
+	country_type = recognized
+
+	tier = empire	
+	
+	cultures = { british scottish }
+	
+	capital = STATE_HOME_COUNTIES
+}
+UMA = { #赛马娘 克里木
+	hsv360 = { 1 95 35 }
+
+	country_type = recognized
+
+	tier = empire	
+	
+	cultures = { british scottish }
+	
+	capital = STATE_HOME_COUNTIES
+}
+GOD = { #爱丽丝国 金帐
+	color = hsv360 = { 27 52 94 }
+	country_type = recognized
+
+	tier = empire	
+	
+	cultures = { british scottish }
+	
+	capital = STATE_HOME_COUNTIES
+}
+KAZ = { #火山国 喀山
+	color = hsv{ 0.99  0.7  0.9 }
+
+	country_type = recognized
+
+	tier = empire	
+	
+	cultures = { british scottish }
+	
+	capital = STATE_HOME_COUNTIES
+}
+TRA = { #堡垒国 特拉比松
+	color = hsv360{	200	50 60 }
+
+	country_type = recognized
+
+	tier = empire	
+	
+	cultures = { british scottish }
+	
+	capital = STATE_HOME_COUNTIES
+}
+UZH = { #火山国 喀山
+	color = { 166  72  57 }
+
+	country_type = recognized
+
+	tier = empire	
+	
+	cultures = { british scottish }
+	
 	capital = STATE_HOME_COUNTIES
 }

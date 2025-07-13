@@ -639,9 +639,11 @@
  
  #公司
  fra_company_stella_cafe: "星光咖啡馆"
+ fra_company_black_cat_cafe: "黑猫咖啡厅"
  fra_company_rabbit_house: "兔屋"
  fra_company_lycoreco_cafe: "LycoReco"
  fra_company_stile_cafe: "Stile"
+ 
  
  #建筑
  building_barn: "粮仓"
@@ -668,24 +670,4 @@
  state_harvest_condition_grain_speculator_impact_mult: "[GetHarvestConditionType('grain_speculator').GetName][concept_harvest_condition]影响"
  state_harvest_condition_grain_speculator_impact_mult_desc: "提高或降低粮食商人投机的影响"
  
- #宗教
- goddess_worship: "圣女崇拜"
- goddess_worship_desc: "法兰西最初跟随罗马的贤者传说，信奉圣三一的教义。而在法兰西当地出现了为民斩龙的圣女玛尔达后，法兰西人掀起了崇拜本地圣女的热潮。在贞德因为保卫法兰西有功被追封圣女后更甚，对圣女的敬仰被写入法律，传统三圣贤的教堂无人问津，“为法兰西人民的自由而战才是圣女”的这种说法深入人心。迫于法兰西的强势，罗马方面即使认为这是异端邪说也无可奈何，只能表示谴责。"
- catholic: "圣三一教"
- protestant: "魔神崇拜"
- christian: "贤者起源"
- goddess_worship_icon: "圣女起源"
- RELIGION_ICON_JOAN_TT: "贞德\n保卫法兰西民族独立挺身而出的圣女，她挥舞着冲锋旗帜，带领法国人民保家卫国。\n[GetScriptedGui('religion_icon_joan').IsValidTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)] \n [GetScriptedGui('religion_icon_joan').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
- religion_icon_joan_modifier: "崇拜贞德"
- religion_icon_joan_has_modifier: "已经崇拜贞德了，不能再崇拜了"
- religion_icon_joan_no_modifier: "还未崇拜贞德，可以崇拜"
- RELIGION_ICON_MARTHA_TT: "玛尔达\n初代法兰西圣女，曾为民屠龙而被封圣，掀起了法兰西圣女崇拜的热潮。[GetScriptedGui('religion_icon_martha').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
- religion_icon_martha_modifier: "崇拜玛尔达"
- religion_icon_martha_has_modifier: "已经崇拜贞德了，不能再崇拜了"
- religion_icon_martha_no_modifier: "还未崇拜贞德，可以崇拜"
- RELIGION_ICON_RAFINA_TT: "拉菲娜\n贵族出身的圣女，因宽宏慈爱和一视同仁的性格而被民众爱戴。[GetScriptedGui('religion_icon_rafina').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
- religion_icon_rafina_modifier: "崇拜拉菲娜"
- RELIGION_ICON_AQUA_TT: "阿库娅\n在法兰西大饥荒时带来水源缓解干旱的水之女神，她可以招来不稳定的降雨和洪水。[GetScriptedGui('religion_icon_aqua').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
- religion_icon_aqua_modifier: "崇拜阿库娅"
- RELIGION_ICON_FURINA_TT: "芙宁娜\n与阿库娅对立的另一位水之女神，她可以控制水势的增长，防止洪灾，反而和阿库娅形成互补。[GetScriptedGui('religion_icon_furina').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
- religion_icon_furina_modifier: "崇拜芙宁娜"
+ 

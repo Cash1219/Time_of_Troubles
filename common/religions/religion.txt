@@ -1,25 +1,30 @@
-﻿# If you add religions, and use those tags, do not change them without changing everywhere they are used.
-
-catholic = {
+﻿# christian → 贤者传说
+catholic = { #圣三一教
 	texture = "gfx/interface/icons/religion_icons/catholic.dds"
 	traits = {
-		christian sorcerer_domain cleric_domain
+		religion_tarit_kenja #贤者
+		religion_tarit_hiden #秘传
+		religion_tarit_senkyou #布道
 	}
 	color = { 0.8 0.55 0.2 }
 }
 
-protestant = {
+protestant = { #神圣契约
 	texture = "gfx/interface/icons/religion_icons/protestant.dds"
 	traits = {
-		christian
+		religion_tarit_kenja #贤者
+		religion_tarit_hiden #秘传
+		religion_tarit_boukun #暴君
 	}
 	color = { 0.2 0.3 0.55 }
 }
 
-orthodox = {
+orthodox = { #生徒会议
 	texture = "gfx/interface/icons/religion_icons/orthodox.dds"
 	traits = {
-		christian
+		religion_tarit_gakuen #学园
+		religion_tarit_jinbun #人文
+		religion_tarit_choutei #调停
 	}
 	color = { 0.45 0.25 0.5 }
 }
@@ -32,10 +37,12 @@ oriental_orthodox = {
 	color = { 0.1 0.5 0.6 }
 }
 
-sunni = {
+sunni = { #心声之形
 	texture = "gfx/interface/icons/religion_icons/sunni.dds"
 	traits = {
-		muslim
+		religion_tarit_idol #偶像
+		religion_tarit_utagoe #歌声
+		religion_tarit_heiwa #和平
 	}
 	color = { 0.1 0.5 0.3 }
 	
@@ -110,10 +117,12 @@ hindu = {
 	}
 }
 
-shinto = {
+shinto = { #幻想神道
 	texture = "gfx/interface/icons/religion_icons/shinto.dds"
 	traits = {
-		eastern
+		religion_tarit_kenja #贤者
+		religion_tarit_hiden #秘传
+		religion_tarit_senkyou #布道
 	}
 	color = { 0.4 0.1 0.2 }
 }

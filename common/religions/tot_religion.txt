@@ -1,18 +1,48 @@
 ﻿# If you add religions, and use those tags, do not change them without changing everywhere they are used.
 
-goddess_worship = { #法兰西女神崇拜
-	texture = "gfx/interface/icons/religion_icons/goddess_worship.dds"
+megami = { #圣女崇拜
+	texture = "gfx/interface/icons/religion_icons/megami.dds"
 	traits = {
-		christian goddess_worship_icon
-		#sorcerer_domain cleric_domain knight_domain
+		religion_tarit_kenja #贤者
+		religion_tarit_jinbun #人文
+		religion_tarit_senkyou #布道
 	}
 	color = { 0.8 0.55 0.2 }
 }
-kindo = { #不列颠黄金精神
-	texture = "gfx/interface/icons/religion_icons/goddess_worship.dds"
+kindo = { #黄金精神
+	texture = "gfx/interface/icons/religion_icons/kindo.dds"
 	traits = {
-		christian goddess_worship_icon
-		#sorcerer_domain cleric_domain knight_domain
+		religion_tarit_kenja #贤者
+		religion_tarit_jinbun #人文
+		religion_tarit_choutei #调停
+		
+	}
+	color = { 0.08 0.1 0.86 }
+}
+kabuki = { #歌舞战姬
+	texture = "gfx/interface/icons/religion_icons/kabuki.dds"
+	traits = {
+		religion_tarit_idol #偶像
+		religion_tarit_utagoe #歌声
+		religion_tarit_choutei #调停
+	}
+	color = { 0.8 0.55 0.2 }
+}
+sange = { #散华重樱
+	texture = "gfx/interface/icons/religion_icons/sange.dds"
+	traits = {
+		religion_tarit_gakuen #学园
+		religion_tarit_jinbun #人文
+		religion_tarit_boukun #暴君
+	}
+	color = { 0.8 0.55 0.2 }
+}
+tabi = { #旅者文化
+	texture = "gfx/interface/icons/religion_icons/sange.dds"
+	traits = {
+		religion_tarit_gakuen #贤者
+		religion_tarit_jinbun #人文
+		religion_tarit_senkyou #布道
 	}
 	color = { 0.8 0.55 0.2 }
 }

@@ -1,0 +1,82 @@
+﻿#喫茶店
+pmg_kissaten_coffee = { #咖啡
+	texture = "gfx/interface/icons/generic_icons/pmg_kissaten_coffee.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_kissaten_coffee_null # 无
+		pm_kissaten_coffee_coffee #标准咖啡 投入咖啡 产出高档饮品
+		pm_kissaten_coffee_mocha #+摩卡 投入额外咖啡，糖类 产出高档饮品
+		pm_kissaten_coffee_latte #+拿铁 投入额外咖啡，糖类 产出高档饮品
+	}
+}
+pmg_kissaten_tea = { #茶饮
+	texture = "gfx/interface/icons/generic_icons/pmg_kissaten_tea.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_kissaten_tea_null #无
+		pm_kissaten_tea_milk #标准牛奶 投入糖类 产出高档饮品
+		pm_kissaten_tea_cocoa #+热可可 投入额外糖类 产出高档饮品
+		pm_kissaten_tea_black_tea #+红茶 投入额外茶叶 产出高档饮品
+	}
+}
+#pmg_kissaten_tokuin = { #特饮
+#	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+#	ai_selection = most_productive
+#
+#	production_methods = {
+#		pm_kissaten_tokuin_null #无
+#		pm_kissaten_tokuin_hachimi #蜂蜜 投入糖类 产出高档食品
+#		pm_kissaten_tokuin_soup #汤 投入谷物 产出高档食品
+#		pm_kissaten_tokuin_wine #酒 投入葡萄酒，烈酒，产出高档食品
+#	}
+#}
+pmg_kissaten_sweet = { #甜点
+	texture = "gfx/interface/icons/generic_icons/pmg_kissaten_sweet.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_kissaten_sweet_null #无
+		pm_kissaten_sweet_biscuit #司康和曲奇（传统饼干） 投入谷物，糖类 产出高档食品
+		pm_kissaten_sweet_pancake #薄饼 投入额外谷物，水果，糖类 产出高档食品
+		pm_kissaten_sweet_cake #蛋糕 投入额外谷物，水果，糖类 产出高档食品
+		pm_kissaten_sweet_pie #苹果派 投入额外谷物，水果，糖类 产出高档食品
+	}
+}
+
+pmg_kissaten_food = { #食品
+	texture = "gfx/interface/icons/generic_icons/pmg_kissaten_food.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_kissaten_food_null #无
+		pm_kissaten_food_sandwich #三明治 投入谷物，肉类 产出高档食品
+		pm_kissaten_food_pasta #意大利面 投入谷物，肉类 产出高档食品
+		pm_kissaten_food_omuraisu #蛋包饭 投入谷物，肉类 产出高档食品
+		pm_kissaten_food_takoyaki #章鱼烧 投入谷物，鱼类 产出高档食品
+	}
+}
+pmg_kissaten_server = { #服务
+	texture = "gfx/interface/icons/generic_icons/pmg_kissaten_server.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_kissaten_server_null #无
+		pm_kissaten_server_waitress #一般受付 +劳工
+		pm_kissaten_server_maid #女仆装束 -劳工 +职员
+		pm_kissaten_server_fuwafuwa #仪式服务 -劳工 +职员
+	}
+}
+pmg_kissaten_tool = { #工具
+	texture = "gfx/interface/icons/generic_icons/pmg_kissaten_tool.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		#pm_kissaten_server_null #无
+		pm_kissaten_server_table #提供桌椅 投入高档家具，工具
+		pm_kissaten_server_porcelain #瓷铁餐具套装 投入瓷器，铁
+		pm_kissaten_server_watertube_boiler #水管锅炉 +煤 +铁
+		pm_kissaten_server_flash_freezing #冷藏设备 +发动机 +电力
+	}
+}

@@ -1,0 +1,64 @@
+﻿l_simp_chinese:
+ #宗教id
+ #megami_desc: "法兰西最初跟随罗马的贤者传说，信奉圣三一的教义。而在法兰西当地出现了为民斩龙的圣女玛尔达后，法兰西人掀起了崇拜本地圣女的热潮。在贞德因为保卫法兰西有功被追封圣女后更甚，对圣女的敬仰被写入法律，传统三圣贤的教堂无人问津，“为法兰西人民的自由而战才是圣女”的这种说法深入人心。迫于法兰西的强势，罗马方面即使认为这是异端邪说也无可奈何，只能表示谴责。"
+ 
+ catholic: "圣三一教" #贤者+秘传+布道
+ shinto: "幻想神道" #贤者+秘传+布道
+ protestant: "神圣契约" #贤者+秘传+暴君
+ megami: "圣女崇拜" #贤者+人文+布道
+ orthodox: "生徒会议" #学园+人文+调停
+ kabuki: "歌舞战姬" #偶像+歌声+调停
+ kindo: "黄金精神" #贤者+人文+调停
+ sange: "散华重樱" #学园+人文+暴君
+ sunni: "心声之形" #偶像+歌声+和平
+ tabi: "旅行文化" #贤者+人文+布道
+ 
+ 
+ devil: "恶魔崇敬" #偶像+秘传+暴君
+ kazan: "火山学社" #学园+人文+布道
+ astrology: "占星学社" #学园+人文+调停
+ alice: "爱丽丝崇拜" #贤者+秘传+布道
+ nightingale: "救护学社" #学园+人文+和平
+ pastoral: "牧灵之子" #学园+人文+暴君
+ shisukon: "圣火仪式" #偶像+秘传+布道
+ 
+ #文化
+ #瓦兰塔尔
+ 
+ 
+ #教义信条（传承）
+ #核心（政治）
+ religion_tarit_kenja: "贤者传说" #贤者
+ religion_tarit_gakuen: "学园制度" #学园
+ religion_tarit_idol: "偶像崇拜" #偶像
+ 
+ 
+ #法术态度
+ religion_tarit_hiden: "秘传法术" #秘传
+ religion_tarit_jinbun: "文艺复兴" #人文
+ religion_tarit_utagoe: "歌声施法" #歌声
+ 
+ 
+ 
+ #外交态势
+ religion_tarit_senkyou: "布道宣教" #布道
+ religion_tarit_boukun: "以炮会友" #暴君
+ religion_tarit_choutei: "调解仲裁" #调停
+ religion_tarit_heiwa: "和平主义" #和平
+ 
+ 
+ #圣像崇拜
+ RELIGION_ICON_JOAN_TT: "贞德\n保卫法兰西民族独立挺身而出的圣女，她挥舞着冲锋旗帜，带领法国人民保家卫国。\n[GetScriptedGui('religion_icon_joan').IsValidTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)] \n [GetScriptedGui('religion_icon_joan').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+ religion_icon_joan_modifier: "崇拜贞德"
+ religion_icon_joan_has_modifier: "已经崇拜贞德了，不能再崇拜了"
+ religion_icon_joan_no_modifier: "还未崇拜贞德，可以崇拜"
+ RELIGION_ICON_MARTHA_TT: "玛尔达\n初代法兰西圣女，曾为民屠龙而被封圣，掀起了法兰西圣女崇拜的热潮。[GetScriptedGui('religion_icon_martha').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+ religion_icon_martha_modifier: "崇拜玛尔达"
+ religion_icon_martha_has_modifier: "已经崇拜贞德了，不能再崇拜了"
+ religion_icon_martha_no_modifier: "还未崇拜贞德，可以崇拜"
+ RELIGION_ICON_RAFINA_TT: "拉菲娜\n贵族出身的圣女，因宽宏慈爱和一视同仁的性格而被民众爱戴。[GetScriptedGui('religion_icon_rafina').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+ religion_icon_rafina_modifier: "崇拜拉菲娜"
+ RELIGION_ICON_AQUA_TT: "阿库娅\n在法兰西大饥荒时带来水源缓解干旱的水之女神，她可以招来不稳定的降雨和洪水。[GetScriptedGui('religion_icon_aqua').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+ religion_icon_aqua_modifier: "崇拜阿库娅"
+ RELIGION_ICON_FURINA_TT: "芙宁娜\n与阿库娅对立的另一位水之女神，她可以控制水势的增长，防止洪灾，反而和阿库娅形成互补。[GetScriptedGui('religion_icon_furina').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+ religion_icon_furina_modifier: "崇拜芙宁娜"

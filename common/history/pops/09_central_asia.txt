@@ -1,6 +1,6 @@
 ﻿POPS = {
-	s:STATE_DAGESTAN = { 
-		region_state:RUS = {
+	s:STATE_DAGESTAN = {
+		region_state:GOD = {
 			create_pop = {
 				culture = north_caucasian
 				size = 56100
@@ -12,7 +12,7 @@
 			create_pop = {
 				culture = north_caucasian
 				religion = orthodox
-				size = 42200
+				size = 240200 #42200 +198000
 			}
 			create_pop = {
 				culture = armenian
@@ -34,19 +34,13 @@
 				culture = persian
 				size = 4454
 			}
-		}
-		region_state:CHC = {
-			create_pop = {
-				culture = north_caucasian
-				size = 198000
-			}
 			create_pop = {
 				culture = chechen
 				size = 6309
 			}
 		}
 	}
-	s:STATE_KUBAN = { 
+	s:STATE_KUBAN = {
 		region_state:RUS = {
 			create_pop = {
 				culture = circassian
@@ -84,8 +78,8 @@
 			}
 		}
 	}
-	s:STATE_ARMENIA = { 
-		region_state:RUS = {
+	s:STATE_ARMENIA = {
+		region_state:GEO = {
 			create_pop = {
 				culture = armenian
 				size = 135345
@@ -122,7 +116,7 @@
 		}
 	}
 	s:STATE_AZERBAIJAN = { #Baku - and DONE
-		region_state:RUS = {
+		region_state:GEO = {
 			create_pop = {
 				culture = azerbaijani
 				size = 90245
@@ -159,7 +153,7 @@
 		}
 	}
 	s:STATE_GREATER_CAUCASUS = { #Tbilsi - and DONE
-		region_state:RUS = {
+		region_state:GEO = {
 			create_pop = {
 				culture = georgian
 				size = 832950
@@ -208,8 +202,8 @@
 			}
 		}
 	}
-	s:STATE_SAMARA = { 
-		region_state:RUS = {
+	s:STATE_SAMARA = {
+		region_state:KAZ = {
 			create_pop = {
 				culture = russian
 				size = 1170657
@@ -259,8 +253,8 @@
 			}
 		}
 	}
-	s:STATE_KAZAN = { 
-		region_state:RUS = {
+	s:STATE_KAZAN = {
+		region_state:KAZ = {
 			create_pop = {
 				culture = tatar
 				size = 458719
@@ -293,7 +287,7 @@
 		}
 	}
 	s:STATE_TARTARIA = { #Saratov - and DONE
-		region_state:RUS = {
+		region_state:KAZ = {
 			create_pop = {
 				culture = russian
 				size = 909377
@@ -325,8 +319,8 @@
 			}
 		}
 	}
-	s:STATE_ASTRAKHAN = { 
-		region_state:RUS = {
+	s:STATE_ASTRAKHAN = {
+		region_state:GOD = {
 			create_pop = {
 				culture = russian
 				size = 163230
@@ -358,7 +352,7 @@
 			}
 		}
 	}
-	s:STATE_URALSK = { 
+	s:STATE_URALSK = {
 		region_state:RUS = {
 			create_pop = {
 				culture = kazak
@@ -404,7 +398,7 @@
 			}
 		}
 	}
-	s:STATE_AKTOBE = { 
+	s:STATE_AKTOBE = {
 		region_state:KZH = {
 			create_pop = {
 				culture = kazak
@@ -416,7 +410,7 @@
 			}
 		}
 	}
-	s:STATE_SEMIRECHE = { 
+	s:STATE_SEMIRECHE = {
 		region_state:OZH = {
 			create_pop = {
 				culture = russian
@@ -432,7 +426,7 @@
 			}
 		}
 	}
-	s:STATE_AKMOLINSK = { 
+	s:STATE_AKMOLINSK = {
 		region_state:OZH = {
 			create_pop = {
 				culture = kazak
@@ -466,7 +460,7 @@
 			}
 		}
 	}
-	s:STATE_JETISY = { 
+	s:STATE_JETISY = {
 		region_state:CHI = {
 			create_pop = {
 				culture = kazak
@@ -1128,7 +1122,7 @@
 			}
 		}
 	}
-	
+
 	s:STATE_NORTHERN_BALUCHISTAN = {
 		region_state:KAN = {
 			create_pop = {

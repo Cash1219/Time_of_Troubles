@@ -3,35 +3,15 @@
 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
 	
 	flavored_company = yes
-
-	building_types = {  
-		building_coffee_plantation
-		building_tea_plantation
-		building_sugar_plantation
-	}
-
-	possible = { 
-		c:FRA ?= this
-	}
-	ai_weight = {
-		value = 3 
-	}
-	prosperity_modifier = {
-		state_radicals_from_sol_change_mult = -0.05
-	}	
-}
-fra_company_black_cat = {
-	icon = "gfx/interface/icons/company_icons/fra_company_black_cat.dds"
-	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
 	
-	flavored_company = yes
-
 	building_types = {  
 		building_coffee_plantation
 		building_tea_plantation
 		building_sugar_plantation
 	}
-
+	extension_building_types = {
+		building_silk_plantation
+	}
 	possible = { 
 		c:FRA ?= this
 	}
@@ -53,7 +33,9 @@ fra_company_rabbit_house = {
 		building_tea_plantation
 		building_sugar_plantation
 	}
-
+	extension_building_types = {
+		building_silk_plantation
+	}
 	possible = { 
 		c:FRA ?= this
 	}
@@ -75,7 +57,9 @@ fra_company_lycoreco_cafe = {
 		building_tea_plantation
 		building_sugar_plantation
 	}
-
+	extension_building_types = {
+		building_silk_plantation
+	}
 	possible = { 
 		c:FRA ?= this
 	}
@@ -97,7 +81,9 @@ fra_company_stile_cafe = {
 		building_tea_plantation
 		building_sugar_plantation
 	}
-
+	extension_building_types = {
+		building_silk_plantation
+	}
 	possible = { 
 		c:FRA ?= this
 	}
@@ -119,7 +105,9 @@ fra_company_black_cat_cafe = {
 		building_tea_plantation
 		building_sugar_plantation
 	}
-
+	extension_building_types = {
+		building_silk_plantation
+	}
 	possible = { 
 		c:FRA ?= this
 	}
@@ -140,7 +128,9 @@ fra_company_aaa_defender = {
 		building_shipyards
 		building_military_shipyards
 	}
-
+	extension_building_types = {
+		building_silk_plantation
+	}
 	possible = { 
 		c:FRA ?= this
 		
@@ -163,7 +153,9 @@ fra_company_eagle_jump = {
 		building_shipyards
 		building_military_shipyards
 	}
-
+	extension_building_types = {
+		building_silk_plantation
+	}
 	possible = { 
 		c:FRA ?= this
 		

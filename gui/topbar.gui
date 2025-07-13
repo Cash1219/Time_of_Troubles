@@ -17,7 +17,6 @@ types topbar_components
 
 		flowcontainer = {
 			visible = "[GetMetaPlayer.GetPlayedOrObservedCountry.IsValid]"
-			spacing = 6
 
 			block "animation" {
 				position = { 0 0 }
@@ -231,13 +230,14 @@ types topbar_components
 	type topbar = widget {
 		widget = {
 			name = "topbar"
+			max_update_rate = 60
 			using = hud_visibility
 			datacontext = "[AccessMetaPlayer.AccessPlayedOrObservedCountry]"
 			using = clickthrough_blocker
 			size = { 805 80 }
 			allow_outside = yes
 			resizeparent = yes
-			max_update_rate = 60
+
 			
 			#alpha = 0
 			#position = { 0 -100 }
@@ -522,7 +522,8 @@ types topbar_components
 									size = { 100 40 }
 									tooltip = "CONVOY_TOPBAR_TOOLTIP"
 									using = tooltip_below
-									onclick = "[InformationPanelBar.OpenMarketPanelTab(AccessPlayer.AccessFirstMarket, 'trade_routes')]"
+									onclick = "[InformationPanelBar.OpenMarketPanel(AccessPlayer.AccessFirstMarket.Self)]"
+									
 									onclick = "[GetVariableSystem.Clear('show_mana')]"
 									enabled = "[GetMetaPlayer.GetPlayedOrObservedCountry.IsValid]"
 									alpha = "[TransparentIfZero(GetPlayer.GetSupplyNetworkStrength)]"
@@ -536,7 +537,7 @@ types topbar_components
 										icon = {
 											parentanchor = center
 											size = { 28 28 }
-											texture = "gfx/interface/icons/generic_icons/convoys.dds"
+											texture = "gfx/interface/icons/topbar/convoys.dds"
 										}
 										
 									}

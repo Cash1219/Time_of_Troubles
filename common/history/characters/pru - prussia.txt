@@ -8,7 +8,7 @@
 			ig_leader = yes
 			ideology = ideology_slaver
 			interest_group = ig_landowners
-			religion = rel:catholic
+			religion = rel:protestant
 			culture = cu:bulgarian
 			traits = {
 				tot_Mhs_QB_trait
@@ -24,7 +24,7 @@
 			ig_leader = yes
 			ideology = ideology_theocrat
 			interest_group = ig_devout
-			religion = rel:catholic
+			religion = rel:protestant
 			culture = cu:bulgarian
 			traits = {
 				tot_Mhs_Kyouko_trait
@@ -37,10 +37,10 @@
 			last_name = "Mami"
 			birth_date = 1816.1.1 
 			female = yes
-			ig_leader = yes
+			ruler = yes
 			ideology = ideology_moderate
-			interest_group = ig_intelligentsia
-			religion = rel:catholic
+			interest_group = ig_devout
+			religion = rel:protestant
 			culture = cu:serb
 			traits = {
 				tot_Mhs_Mami_trait
@@ -57,7 +57,7 @@
 			ig_leader = yes
 			ideology = ideology_abolitionist
 			interest_group = ig_trade_unions
-			religion = rel:catholic
+			religion = rel:protestant
 			culture = cu:serb
 			traits = {
 				tot_Mhs_Madoka_trait
@@ -73,11 +73,71 @@
 			ig_leader = yes
 			ideology = ideology_liberal_leader
 			interest_group = ig_rural_folk
-			religion = rel:catholic
+			religion = rel:protestant
 			culture = cu:serb
 			traits = {
 				tot_Mhs_Sayaka_trait
 				direct
+			}
+		}
+		create_character = {
+			historical = yes
+			first_name = "Akemi"
+			last_name = "Homura"
+			birth_date = 1816.1.1 
+			female = yes
+			ig_leader = yes
+			ideology = ideology_abolitionist
+			interest_group = ig_intelligentsia
+			religion = rel:protestant
+			culture = cu:north_german
+			traits = {
+				tot_Mhs_Homura_trait
+			}
+		}
+		create_character = {
+			historical = yes
+			first_name = "Takamachi"
+			last_name = "Nanoha"
+			birth_date = 1816.1.1 
+			female = yes
+			heir = yes
+			ideology = ideology_moderate
+			interest_group = ig_devout
+			religion = rel:protestant
+			culture = cu:north_german
+			traits = {
+				tot_Mhs_Nanoha_trait
+			}
+		}
+		create_character = {
+			historical = yes
+			first_name = "Testarossa_Harlaown"
+			last_name = "Fate"
+			birth_date = 1816.1.1 
+			female = yes
+			ig_leader = yes
+			ideology = ideology_authoritarian
+			interest_group = ig_armed_forces
+			religion = rel:protestant
+			culture = cu:north_german
+			traits = {
+				tot_Mhs_Fate_trait
+			}
+		}
+		create_character = {
+			historical = yes
+			first_name = "Yagami"
+			last_name = "Hayate"
+			birth_date = 1816.1.1 
+			female = yes
+			ig_leader = yes
+			ideology = ideology_authoritarian
+			interest_group = ig_industrialists
+			religion = rel:protestant
+			culture = cu:north_german
+			traits = {
+				tot_Mhs_Hayate_trait
 			}
 		}
 }

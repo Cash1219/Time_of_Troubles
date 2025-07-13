@@ -41,6 +41,19 @@
 				activate_production_methods={ "pm_simple_organization" "pm_religious_bureaucrats" "pm_professional_bureaucrats" }
 			}
 			create_building={
+				building="building_trade_center"
+				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+				add_ownership={
+					building={
+						type="building_trade_center"
+						country="c:OMA"
+						levels=1
+						region="STATE_OMAN"
+					}
+				}
+				reserves=1
+			}			
+			create_building={
 				building="building_shipyards"
 				add_ownership={
 					building={
@@ -302,13 +315,13 @@
 		}
 	}
 	s:STATE_CYPRUS={
-		region_state:TUR={
+		region_state:CYP={
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:TUR"
+						country="c:CYP"
 						levels=1
 						region="STATE_CYPRUS"
 					}
@@ -321,7 +334,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:TUR"
+						country="c:CYP"
 						levels=1
 						region="STATE_CYPRUS"
 					}
@@ -333,7 +346,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:TUR"
+						country="c:CYP"
 						levels=1
 					}
 				}
@@ -448,6 +461,19 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_hereditary_bureaucrats" "pm_religious_bureaucrats" }
+			}
+			create_building={
+				building="building_trade_center"
+				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+				add_ownership={
+					building={
+						type="building_trade_center"
+						country="c:SYR"
+						levels=1
+						region="STATE_SYRIA"
+					}
+				}
+				reserves=1
 			}
 			create_building={
 				building="building_glassworks"
@@ -571,13 +597,13 @@
 		}
 	}
 	s:STATE_BAGHDAD={
-		region_state:TUR={
+		region_state:IRQ={
 			create_building={
 				building="building_textile_mills"
 				add_ownership={
 					building={
 						type="building_textile_mills"
-						country="c:TUR"
+						country="c:IRQ"
 						levels=1
 						region="STATE_BAGHDAD"
 					}
@@ -590,7 +616,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:TUR"
+						country="c:IRQ"
 						levels=2
 						region="STATE_BAGHDAD"
 					}
@@ -614,13 +640,13 @@
 		}
 	}
 	s:STATE_MOSUL={
-		region_state:TUR={
+		region_state:KUR={
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:TUR"
+						country="c:KUR"
 						levels=1
 						region="STATE_MOSUL"
 					}
@@ -631,13 +657,13 @@
 		}
 	}
 	s:STATE_DEIR_EZ_ZOR={
-		region_state:TUR={
+		region_state:KUR={
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:TUR"
+						country="c:KUR"
 						levels=1
 						region="STATE_DEIR_EZ_ZOR"
 					}
@@ -648,13 +674,26 @@
 		}
 	}
 	s:STATE_BASRA={
-		region_state:TUR={
+		region_state:IRQ={
+			create_building={
+				building="building_trade_center"
+				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+				add_ownership={
+					building={
+						type="building_trade_center"
+						country="c:IRQ"
+						levels=1
+						region="STATE_BASRA"
+					}
+				}
+				reserves=1
+			}
 			create_building={
 				building="building_fishing_wharf"
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:TUR"
+						country="c:IRQ"
 						levels=1
 						region="STATE_BASRA"
 					}
@@ -667,7 +706,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:TUR"
+						country="c:IRQ"
 						levels=1
 						region="STATE_BASRA"
 					}
@@ -680,7 +719,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:TUR"
+						country="c:IRQ"
 						levels=1
 						region="STATE_BASRA"
 					}
@@ -692,7 +731,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:TUR"
+						country="c:IRQ"
 						levels=1
 					}
 				}
@@ -835,6 +874,19 @@
 			}
 		}
 		region_state:OMA={
+			create_building={
+				building="building_trade_center"
+				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+				add_ownership={
+					building={
+						type="building_trade_center"
+						country="c:OMA"
+						levels=1
+						region="STATE_LARISTAN"
+					}
+				}
+				reserves=1
+			}
 			create_building={
 				building="building_fishing_wharf"
 				add_ownership={
@@ -1430,6 +1482,19 @@
 	s:STATE_AYDIN={
 		region_state:TUR={
 			create_building={
+				building="building_trade_center"
+				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+				add_ownership={
+					building={
+						type="building_trade_center"
+						country="c:TUR"
+						levels=1
+						region="STATE_AYDIN"
+					}
+				}
+				reserves=1
+			}
+			create_building={
 				building="building_textile_mills"
 				add_ownership={
 					building={
@@ -1633,13 +1698,13 @@
 		}
 	}
 	s:STATE_DIYARBAKIR={
-		region_state:TUR={
+		region_state:KUR={
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:TUR"
+						country="c:KUR"
 						levels=1
 						region="STATE_DIYARBAKIR"
 					}
@@ -1652,7 +1717,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:TUR"
+						country="c:KUR"
 						levels=2
 						region="STATE_DIYARBAKIR"
 					}
@@ -1665,7 +1730,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:TUR"
+						country="c:KUR"
 						levels=2
 						region="STATE_DIYARBAKIR"
 					}
@@ -1676,13 +1741,13 @@
 		}
 	}
 	s:STATE_ADANA={
-		region_state:EGY={
+		region_state:TUR={
 			create_building={
 				building="building_cotton_plantation"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:EGY"
+						country="c:TUR"
 						levels=1
 						region="STATE_ADANA"
 					}
@@ -1695,7 +1760,7 @@
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:EGY"
+						country="c:TUR"
 						levels=2
 						region="STATE_ADANA"
 					}
@@ -1708,7 +1773,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:EGY"
+						country="c:TUR"
 						levels=1
 						region="STATE_ADANA"
 					}
@@ -1721,7 +1786,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:EGY"
+						country="c:TUR"
 						levels=1
 						region="STATE_ADANA"
 					}
@@ -1733,7 +1798,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:EGY"
+						country="c:TUR"
 						levels=1
 					}
 				}
@@ -1745,13 +1810,13 @@
 		}
 	}
 	s:STATE_TRABZON={
-		region_state:TUR={
+		region_state:TRA={
 			create_building={
 				building="building_fishing_wharf"
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:TUR"
+						country="c:TRA"
 						levels=2
 						region="STATE_TRABZON"
 					}
@@ -1764,7 +1829,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:TUR"
+						country="c:TRA"
 						levels=1
 						region="STATE_TRABZON"
 					}
@@ -1777,7 +1842,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:TUR"
+						country="c:TRA"
 						levels=3
 						region="STATE_TRABZON"
 					}
@@ -1802,7 +1867,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:TUR"
+						country="c:TRA"
 						levels=1
 					}
 				}
@@ -1812,13 +1877,13 @@
 		}
 	}
 	s:STATE_ERZURUM={
-		region_state:TUR={
+		region_state:KUR={
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
 					building={
 						type="building_logging_camp"
-						country="c:TUR"
+						country="c:KUR"
 						levels=2
 						region="STATE_ERZURUM"
 					}
@@ -1831,7 +1896,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:TUR"
+						country="c:KUR"
 						levels=1
 						region="STATE_ERZURUM"
 					}
@@ -1844,7 +1909,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:TUR"
+						country="c:KUR"
 						levels=1
 						region="STATE_ERZURUM"
 					}
@@ -1922,13 +1987,13 @@
 		}
 	}
 	s:STATE_KARS={
-		region_state:TUR={
+		region_state:GEO={
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:TUR"
+						country="c:GEO"
 						levels=1
 						region="STATE_KARS"
 					}
@@ -1941,7 +2006,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:TUR"
+						country="c:GEO"
 						levels=1
 						region="STATE_KARS"
 					}
@@ -1954,7 +2019,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:TUR"
+						country="c:GEO"
 						levels=1
 						region="STATE_KARS"
 					}
@@ -1962,8 +2027,6 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled"  }
 			}
-		}
-		region_state:RUS={
 		}
 	}
 }
