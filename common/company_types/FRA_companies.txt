@@ -1,16 +1,41 @@
-﻿fra_company_stella_cafe = {
+﻿fra_company_louisiana_crown = { #露易丝安娜王冠领地
+	icon = "gfx/interface/icons/company_icons/fra_company_louisiana_crown.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+	
+	flavored_company = yes
+	preferred_headquarters = { STATE_LOUISIANA }
+	building_types = {  
+		building_cotton_plantation
+		building_sugar_plantation
+	}
+	extension_building_types = {
+		building_wheat_farm
+	}
+	possible = { 
+		c:FRA ?= this
+	}
+	ai_weight = {
+		value = 3 
+	}
+	prosperity_modifier = {
+		state_radicals_from_sol_change_mult = -0.05
+	}	
+}
+fra_company_stella_cafe = {
 	icon = "gfx/interface/icons/company_icons/fra_company_stella_cafe.dds"
 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
 	
 	flavored_company = yes
 	
 	building_types = {  
-		building_coffee_plantation
-		building_tea_plantation
-		building_sugar_plantation
+		building_banana_plantation
+		building_kissaten
 	}
 	extension_building_types = {
-		building_silk_plantation
+		building_tea_plantation
+		building_sugar_plantation
+		building_coffee_plantation
+		building_arms_industry
 	}
 	possible = { 
 		c:FRA ?= this
@@ -30,11 +55,13 @@ fra_company_rabbit_house = {
 
 	building_types = {  
 		building_coffee_plantation
-		building_tea_plantation
-		building_sugar_plantation
+		building_kissaten
 	}
 	extension_building_types = {
-		building_silk_plantation
+		building_tea_plantation
+		building_sugar_plantation
+		building_banana_plantation
+		building_arms_industry
 	}
 	possible = { 
 		c:FRA ?= this
@@ -53,12 +80,14 @@ fra_company_lycoreco_cafe = {
 	flavored_company = yes
 
 	building_types = {  
-		building_coffee_plantation
-		building_tea_plantation
-		building_sugar_plantation
+		building_arms_industry
+		building_kissaten
 	}
 	extension_building_types = {
-		building_silk_plantation
+		building_tea_plantation
+		building_sugar_plantation
+		building_banana_plantation
+		building_coffee_plantation
 	}
 	possible = { 
 		c:FRA ?= this

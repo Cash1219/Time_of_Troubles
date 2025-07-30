@@ -17,7 +17,17 @@
 #  奢侈品  #
 ###########
 luxury_foods = {
-	texture = "gfx/interface/icons/goods_icons/luxury_clothes.dds"
+	texture = "gfx/interface/icons/goods_icons/luxury_foods.dds"
+	cost = 60
+	category = luxury
+
+	obsession_chance = 1.0
+	prestige_factor = 8
+	convoy_cost_multiplier = 0.75
+	traded_quantity = 4 # 240
+}
+luxury_drinks = {
+	texture = "gfx/interface/icons/goods_icons/luxury_drinks.dds"
 	cost = 60
 	category = luxury
 

@@ -1,4 +1,44 @@
 ﻿#原版拓展
+goods_input_coffee_add={
+	decimals=1
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+goods_iuput_luxury_foods_add={
+	decimals=1
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+goods_output_luxury_foods_add={
+	decimals=1
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+goods_iuput_luxury_drinks_add={
+	decimals=1
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+goods_output_luxury_drinks_add={
+	decimals=1
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
 goods_output_grain_mult={
 	decimals=1
 	color=good
@@ -30,6 +70,13 @@ goods_input_engines_add={
 		ai_value=0
 	}
 }
+goods_input_tea_add={
+	decimals=1
+	color=bad
+	game_data={
+		ai_value=0
+	}
+}
 #法律
 country_institution_cost_institution_anti_speculation_mult={
 	decimals=0
@@ -45,6 +92,14 @@ state_harvest_condition_grain_speculator_impact_mult = { #投机粮商
 	decimals=0
 	color=bad
 	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+#建筑
+state_building_building_circle_max_level_add = {
+	decimals=0
+	color=good
 	game_data={
 		ai_value=0
 	}
@@ -195,3 +250,4 @@ country_supernatural_voting_power_add = {
 		ai_value=0
 	}
 }
+

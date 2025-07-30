@@ -105,7 +105,7 @@ VEN = { #威尼斯 -邦多利本家
 	country_type = recognized
 
 	tier = principality
-	religion = kabuki #tot mod 歌舞战姬
+	religion = starbeat #tot mod 歌舞战姬
 	cultures = { north_italian }
 	capital = STATE_VENETIA
 }
@@ -193,7 +193,7 @@ RHD = { #罗德岛
 	capital = STATE_HOME_COUNTIES
 }
 UMA = { #赛马娘 克里木
-	hsv360 = { 1 95 35 }
+	color = hsv360{ 1 95 35 }
 
 	country_type = recognized
 
@@ -235,7 +235,7 @@ TRA = { #堡垒国 特拉比松
 	
 	capital = STATE_HOME_COUNTIES
 }
-UZH = { #火山国 喀山
+OZH = { #红海汗国
 	color = { 166  72  57 }
 
 	country_type = recognized
@@ -245,4 +245,35 @@ UZH = { #火山国 喀山
 	cultures = { british scottish }
 	
 	capital = STATE_HOME_COUNTIES
+}
+LOU = { #露易丝安娜
+	color = { 53 52 144 }
+
+	country_type = colonial
+
+	tier = principality
+
+	cultures = { cajun afro_antillean }
+	capital = STATE_LOUISIANA
+}
+ALS = { #斯特拉斯堡
+	color = { 166  72  57 }
+
+	country_type = colonial
+
+	tier = empire	
+	
+	cultures = { british scottish }
+	
+	capital = STATE_HOME_COUNTIES
+}
+HAI = { #海地
+	color = { 139  179  207 }
+
+	country_type = colonial
+
+	tier = principality
+
+	cultures = { afro_antillean }
+	capital = STATE_HAITI
 }

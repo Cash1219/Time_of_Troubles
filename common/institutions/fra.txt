@@ -1,8 +1,16 @@
-﻿institution_anti_speculation = { 
-	icon = "gfx/interface/icons/institution_icons/colonization.dds"
+﻿institution_anti_speculation = { #反投机法
+	icon = "gfx/interface/icons/institution_icons/anti_speculation.dds"
 	background_texture = "gfx/interface/illustrations/institutions/colonization.dds"
 	modifier = {
 		state_food_security_add = 0.02
 		state_harvest_condition_grain_speculator_impact_mult = -0.1
+	}
+}
+institution_company_law = { #公司法
+	icon = "gfx/interface/icons/institution_icons/company_law.dds"
+	background_texture = "gfx/interface/illustrations/institutions/colonization.dds"
+	modifier = {
+		country_free_charters_add = 1
+		country_max_companies_add = 1
 	}
 }
