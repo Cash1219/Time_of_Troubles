@@ -629,7 +629,7 @@
 				add_ownership={
 					country={
 						country="c:RUS"
-						levels=3
+						levels=4
 					}
 				}
 				reserves=1
@@ -977,12 +977,12 @@
 					building={
 						type="building_manor_house"
 						country="c:RUS"
-						levels=4
+						levels=8
 						region="STATE_ORYOL"
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_simple_farming"  "pm_tools_disabled" "pm_potatoes" }
+				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_sugar_beets" }
 			}
 			create_building={
 				building="building_logging_camp"
@@ -1264,7 +1264,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_simple_farming" "pm_potatoes" "pm_tools_disabled"  }
+				activate_production_methods={ "pm_simple_farming" "pm_sugar_beets" "pm_tools_disabled"  }
 			}
 			create_building={
 				building="building_logging_camp"
@@ -1802,9 +1802,9 @@
 	s:STATE_SYRDARYA={
 		region_state:OZH={
 		}
-		region_state:OZH={
+		region_state:KZH={
 		}
-		region_state:OZH={
+		region_state:UZH={
 		}
 	}
 	s:STATE_AKTOBE={

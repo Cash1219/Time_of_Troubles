@@ -623,7 +623,6 @@ types country_panel_types
 							size = { 50 50 }
 							parentanchor = right|vcenter
 
-							blockoverride "datacontext " {}
 
 							blockoverride "rank_text" {
 								raw_text = "#BOLD [Country.GetCountryScorePositionDesc]"
@@ -1017,7 +1016,7 @@ types country_panel_types
 						text = "COUNTRY_RELIGIONS_ONE_LINE"
 					}
 					blockoverride "stats_value" {
-						raw_text = "#v [Country.GetStateReligion.GetName]#!"
+						raw_text = "#v [Country.GetStateReligion.GetNameNoIcon]#!"
 					}
 				}
 
@@ -1593,7 +1592,9 @@ types diplomatic
 			rank_badge = {
 				size = { 45 45 }
 				position = { 0 10 }
+				block "overlord_datacontext" {
 				datacontext = "[AccessPlayer.AccessOverlord]"
+				}
 
 				blockoverride "font_size_under_100_rank" {
 					using = fontsize_medium
@@ -2472,6 +2473,7 @@ types country_panel_treaties_types
 						item = {
 							flowcontainer = {
 								datamodel = "[Treaty.GetMutualAgreements]"
+								alpha = "[TransparentIfTrue(Treaty.IsFrozenForBothCountries)]"
 
 								item = {
 									article_icon_all_items = {
@@ -2768,7 +2770,7 @@ types country_panel_treaties_types
 				margin = { 0 10 }
 				margin_left = 10
 				datacontext = "[Treaty.GetLeftCountry]"
-				alpha = "[TransparentIfTrue(NotZero(GetDataModelSize(Treaty.GetNonFulfilledArticlesFromSource(Treaty.GetOtherCountry(Country.Self).Self))))]"
+				alpha = "[TransparentIfTrue(Treaty.IsFrozenFor(Country.Self))]"
 
 				dynamicgridbox = {
 					flipdirection = yes
@@ -2790,76 +2792,84 @@ types country_panel_treaties_types
 				margin = { 0 10 }
 				spacing = 10
 				
+				flowcontainer = {
+					parentanchor = vcenter
+					direction = vertical
+					datacontext = "[Treaty.GetLeftCountry]"
 				widget = {
-					visible = "[Treaty.GetLeftCountry.IsPlayer]"
+						visible = "[And(Treaty.GetLeftCountry.IsPlayer, Not(Or(And(Treaty.DoesOweObligation(Country.Self), Treaty.AreObligationsEffectuated), And(Treaty.DoesOweObligation(Country.Self), Not(Treaty.AreObligationsEffectuated)))))]"
 					parentanchor = vcenter
 					size = { 20 20 }
 				}
 
 				widget = {
-					visible = "[Not(Treaty.GetLeftCountry.IsPlayer)]"
+						visible = "[Not(Country.IsPlayer)]"
 					size = { 20 20 }
-					parentanchor = vcenter
-					tooltip = "[Treaty.GetAcceptanceBreakdown(Treaty.GetLeftCountry.Self)]"
+						tooltip = "[Treaty.GetAcceptanceBreakdown(Country.Self)]"
 
 					icon = {
-						visible = "[LessThan_int32(Treaty.GetAcceptance(Treaty.GetLeftCountry.Self), '(int32)0')]"
+							visible = "[LessThan_int32(Treaty.GetAcceptance(Country.Self), '(int32)0')]"
 						parentanchor = center
 						size = { 20 20 }
 						texture = "gfx/interface/icons/generic_icons/disapproval_icon.dds"
-						position = { -5 0 }
+							position = { 5 0 }
 					}
 
 					icon = {
-						visible = "[EqualTo_int32(Treaty.GetAcceptance(Treaty.GetLeftCountry.Self), '(int32)0')]"
+							visible = "[EqualTo_int32(Treaty.GetAcceptance(Country.Self), '(int32)0')]"
 						parentanchor = center
 						size = { 20 20 }
 						texture = "gfx/interface/icons/generic_icons/undecided_icon.dds"
-						position = { -5 0 }
+							position = { 5 0 }
 					}
 
 					icon = {
-						visible = "[GreaterThan_int32(Treaty.GetAcceptance(Treaty.GetLeftCountry.Self), '(int32)0')]"
+							visible = "[GreaterThan_int32(Treaty.GetAcceptance(Country.Self), '(int32)0')]"
 						parentanchor = center
 						size = { 20 20 }
 						texture = "gfx/interface/icons/generic_icons/approval_icon.dds"
-						position = { -5 0 }
+							position = { 5 0 }
 					}
 				}				
 
-				### LEFT COUNTRY FLAG
-				flowcontainer = {
-					margin_top = 5
-
-					small_flag = {
-						datacontext = "[Treaty.GetLeftCountry]"
+					widget = {
+						visible = "[Or(And(Treaty.DoesOweObligation(Country.Self), Treaty.AreObligationsEffectuated), And(Treaty.DoesOweObligation(Country.Self), Not(Treaty.AreObligationsEffectuated)))]"
+						size = { 20 20 }
 
 						icon = {
 							visible = "[And(Treaty.DoesOweObligation(Country.Self), Treaty.AreObligationsEffectuated)]"
-							parentanchor = bottom|right
-							size = { 32 32 }
-							position = { 10 10 }
+							parentanchor = center
+							size = { 20 20 }
+							position = { 5 0 }
 							using = tooltip_se
 							tooltip = "TREATY_COUNTRY_HAS_OWED_OBLIGATION_WITH_EXPLANATION"
-							texture = "gfx/interface/icons/generic_icons/obligation_flipped.dds"
+							texture = "gfx/interface/icons/generic_icons/obligation.dds"
 						}
 
 						icon = {
 							visible = "[And(Treaty.DoesOweObligation(Country.Self), Not(Treaty.AreObligationsEffectuated))]"
-							parentanchor = bottom|right
-							size = { 32 32 }
-							position = { 10 10 }
+							parentanchor = center
+							size = { 20 20 }
+							position = { 5 0 }
 							using = tooltip_se
 							tooltip = "TREATY_COUNTRY_WILL_OWE_OBLIGATION_WITH_EXPLANATION"
-							texture = "gfx/interface/icons/generic_icons/obligation_flipped.dds"
+							texture = "gfx/interface/icons/generic_icons/obligation.dds"
 						}
 					}
 				}
 
+				### LEFT COUNTRY FLAG
+				flowcontainer = {
+					margin_top = 5
+					small_flag = {
+						datacontext = "[Treaty.GetLeftCountry]"
+					}
+				}
 				### MUTUAL AGREEMENTS
 				dynamicgridbox = {
 					datacontext = "[Treaty.GetLeftCountry]"
 					datamodel = "[Treaty.GetMutualAgreements]"
+					alpha = "[TransparentIfTrue(Treaty.IsFrozenForBothCountries)]"
 
 					item = {
 						article_icon_all_items = {}
@@ -2873,42 +2883,28 @@ types country_panel_treaties_types
 					small_flag = {
 						datacontext = "[Treaty.GetRightCountry]"
 
-						icon = {
-							visible = "[And(Treaty.DoesOweObligation(Country.Self), Treaty.AreObligationsEffectuated)]"
-							parentanchor = bottom
-							size = { 32 32 }
-							position = { -10 10 }
-							using = tooltip_se
-							tooltip = "TREATY_COUNTRY_HAS_OWED_OBLIGATION_WITH_EXPLANATION"
-							texture = "gfx/interface/icons/generic_icons/obligation_flipped.dds"
 						}
 
-						icon = {
-							visible = "[And(Treaty.DoesOweObligation(Country.Self), Not(Treaty.AreObligationsEffectuated))]"
-							parentanchor = bottom
-							size = { 32 32 }
-							position = { -10 10 }
-							using = tooltip_se
-							tooltip = "TREATY_COUNTRY_WILL_OWE_OBLIGATION_WITH_EXPLANATION"
-							texture = "gfx/interface/icons/generic_icons/obligation_flipped.dds"
 						}
-					}
-				}
+
+				flowcontainer = {
+					parentanchor = vcenter
+					direction = vertical
+					datacontext = "[Treaty.GetRightCountry]"
 				
 				widget = {
-					visible = "[Treaty.GetRightCountry.IsPlayer]"
+						visible = "[And(Treaty.GetRightCountry.IsPlayer, Not(Or(And(Treaty.DoesOweObligation(Country.Self), Treaty.AreObligationsEffectuated), And(Treaty.DoesOweObligation(Country.Self), Not(Treaty.AreObligationsEffectuated)))))]"
 					parentanchor = vcenter
 					size = { 20 20 }
 				}
 
 				widget = {
-					visible = "[Not(Treaty.GetRightCountry.IsPlayer)]"
+						visible = "[Not(Country.IsPlayer)]"
 					size = { 20 20 }
-					parentanchor = vcenter
-					tooltip = "[Treaty.GetAcceptanceBreakdown(Treaty.GetRightCountry.Self)]"
+						tooltip = "[Treaty.GetAcceptanceBreakdown(Country.Self)]"
 
 					icon = {
-						visible = "[LessThan_int32(Treaty.GetAcceptance(Treaty.GetRightCountry.Self), '(int32)0')]"
+							visible = "[LessThan_int32(Treaty.GetAcceptance(Country.Self), '(int32)0')]"
 						parentanchor = center
 						size = { 20 20 }
 						texture = "gfx/interface/icons/generic_icons/disapproval_icon.dds"
@@ -2916,7 +2912,7 @@ types country_panel_treaties_types
 					}
 
 					icon = {
-						visible = "[EqualTo_int32(Treaty.GetAcceptance(Treaty.GetRightCountry.Self), '(int32)0')]"
+							visible = "[EqualTo_int32(Treaty.GetAcceptance(Country.Self), '(int32)0')]"
 						parentanchor = center
 						size = { 20 20 }
 						texture = "gfx/interface/icons/generic_icons/undecided_icon.dds"
@@ -2924,11 +2920,34 @@ types country_panel_treaties_types
 					}
 
 					icon = {
-						visible = "[GreaterThan_int32(Treaty.GetAcceptance(Treaty.GetRightCountry.Self), '(int32)0')]"
+							visible = "[GreaterThan_int32(Treaty.GetAcceptance(Country.Self), '(int32)0')]"
 						parentanchor = center
 						size = { 20 20 }
 						texture = "gfx/interface/icons/generic_icons/approval_icon.dds"
 						position = { -5 0 }
+						}
+					}
+					widget = {
+						visible = "[Or(And(Treaty.DoesOweObligation(Country.Self), Treaty.AreObligationsEffectuated), And(Treaty.DoesOweObligation(Country.Self), Not(Treaty.AreObligationsEffectuated)))]"
+						size = { 20 20 }
+						icon = {
+							visible = "[And(Treaty.DoesOweObligation(Country.Self), Treaty.AreObligationsEffectuated)]"
+							parentanchor = center
+							size = { 20 20 }
+							position = { -5 0 }
+							using = tooltip_se
+							tooltip = "TREATY_COUNTRY_HAS_OWED_OBLIGATION_WITH_EXPLANATION"
+							texture = "gfx/interface/icons/generic_icons/obligation_flipped.dds"
+						}
+						icon = {
+							visible = "[And(Treaty.DoesOweObligation(Country.Self), Not(Treaty.AreObligationsEffectuated))]"
+							parentanchor = center
+							size = { 20 20 }
+							position = { -5 0 }
+							using = tooltip_se
+							tooltip = "TREATY_COUNTRY_WILL_OWE_OBLIGATION_WITH_EXPLANATION"
+							texture = "gfx/interface/icons/generic_icons/obligation_flipped.dds"
+						}
 					}
 				}				
 			}
@@ -2939,7 +2958,7 @@ types country_panel_treaties_types
 				margin = { 0 10 }
 				margin_right = 10
 				datacontext = "[Treaty.GetRightCountry]"
-				alpha = "[TransparentIfTrue(NotZero(GetDataModelSize(Treaty.GetNonFulfilledArticlesFromSource(Treaty.GetOtherCountry(Country.Self).Self))))]"
+				alpha = "[TransparentIfTrue(Treaty.IsFrozenFor(Country.Self))]"
 
 				dynamicgridbox = {
 					layoutanchor = topright
@@ -3979,7 +3998,6 @@ types war_panel
 		using = default_button
 		size = { @panel_width 50 }
 		tooltip = "[DiplomaticPlayType.GetStartTooltipCountry(GetPlayer,Country.Self)]"
-		enabled = "[IsValid(DiplomaticPlayType.GetStartCommandCountry(GetPlayer,Country.Self))]"
 		onclick = "[DiplomaticPlayType.ShowConfirmationCountry(Country.Self)]"
 		onmousehierarchyenter = "[AccessHighlightManager.HighlightCountry(Country.Self)]"
 		onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
@@ -4093,24 +4111,7 @@ types country_info
 				margin_right = 10
 			}
 		}
-	}
 
-	type has_custom_content_narrative = textbox {
-		fontsize = 16
-		autoresize = yes
-		multiline = yes
-		maximumsize = { 420 -1 }
-		text = "HAS_NARRATIVE"
-		align = nobaseline|center
-	}
-	type update_status = textbox {
-		fontsize = 16
-		autoresize = yes
-		multiline = yes
-		maximumsize = { 420 -1 }
-		text = "UPDATE_STATUS"
-		align = nobaseline|center
-	}
 
 	type has_custom_interest_groups = textbox {
 		fontsize = 16

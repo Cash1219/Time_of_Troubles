@@ -25,13 +25,13 @@
 			country = c:NOR
 			type = dominion
 		}
-		create_diplomatic_pact = {
+		create_diplomatic_pact = { #TOT MOD
 			country = c:DEI
 			type = dominion
 		}
 	}
 	c:RUS ?= {
-		#create_diplomatic_pact = { TOT MOD
+		#create_diplomatic_pact = { #TOT MOD
 		#	country = c:FIN
 		#	type = personal_union
 		#}
@@ -204,7 +204,7 @@
 	c:DAI ?= {
 		create_diplomatic_pact = {
 			country = c:CAM
-			type = tributary
+			type = vassal
 		}
 	}
 	c:SIA ?= {
@@ -597,6 +597,15 @@
 
 	c:EGY = {
 		add_liberty_desire = 45
+	}
+	c:CAM ?= {
+		add_liberty_desire = 20
+	}
+	c:NPU = {
+		add_liberty_desire = 30
+	}
+	c:IQU = {
+		add_liberty_desire = -10
 	}
 
 	c:BIC ?= {
