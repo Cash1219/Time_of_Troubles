@@ -277,55 +277,67 @@ ROM = {
 		instance = { scale = { 0.7 0.7 } position = { 0.5 0.5 } }
 	}
 }
-VEN = { # Venice
+VEN = {
 	pattern = "pattern_solid.tga"
-	color1 = "white"
+	color1 = "black"
+	color2 = "yellow"
+	textured_emblem = {
+		texture = "tot_te_bang.dds"
+		
+	}
 	
 	
-	textured_emblem = {
-		texture = "tot_te_bang_union.dds"
-	}
-	textured_emblem = {
-		texture = "tot_te_bang_pppp.dds"
-		instance = { scale = { 0.1 0.1 } position = { 0.22 0.1 } }
-	}
-	textured_emblem = {
-		texture = "tot_te_bang_ag.dds"
-		instance = { scale = { 0.1 0.1 } position = { 0.33 0.1 } }
-	}
-	textured_emblem = {
-		texture = "tot_te_bang_pp.dds"
-		instance = { scale = { 0.1 0.1 } position = { 0.42 0.15 } }
-	}
-	textured_emblem = {
-		texture = "tot_te_bang_ros.dds"
-		instance = { scale = { 0.1 0.1 } position = { 0.46 0.26 } }
-	}
-	textured_emblem = {
-		texture = "tot_te_bang_hhw.dds"
-		instance = { scale = { 0.1 0.1 } position = { 0.42 0.36 } }
-	}
-	textured_emblem = {
-		texture = "tot_te_bang_mof.dds"
-		instance = { scale = { 0.11 0.11 } position = { 0.35 0.46 } }
-	}
-	textured_emblem = {
-		texture = "tot_te_bang_ras.dds"
-		instance = { scale = { 0.1 0.1 } position = { 0.24 0.46 } }
-	}
-	textured_emblem = {
-		texture = "tot_te_bang_mygo.dds"
-		instance = { scale = { 0.11 0.11 } position = { 0.14 0.38 } }
-	}
-	textured_emblem = {
-		texture = "tot_te_bang_mujica.dds"
-		instance = { scale = { 0.11 0.11 } position = { 0.08 0.26 } }
-	}
-	textured_emblem = {
-		texture = "tot_te_bang_mxd.dds"
-		instance = { scale = { 0.11 0.11 } position = { 0.1 0.15 } }
-	}
 }
+
+#VEN = { # Venice 废案之神秘条纹旗
+#	pattern = "pattern_solid.tga"
+#	color1 = "white"
+#	
+#	
+#	textured_emblem = {
+#		texture = "tot_te_bang_union.dds"
+#	}
+#	textured_emblem = {
+#		texture = "tot_te_bang_pppp.dds"
+#		instance = { scale = { 0.1 0.1 } position = { 0.22 0.1 } }
+#	}
+#	textured_emblem = {
+#		texture = "tot_te_bang_ag.dds"
+#		instance = { scale = { 0.1 0.1 } position = { 0.33 0.1 } }
+#	}
+#	textured_emblem = {
+#		texture = "tot_te_bang_pp.dds"
+#		instance = { scale = { 0.1 0.1 } position = { 0.42 0.15 } }
+#	}
+#	textured_emblem = {
+#		texture = "tot_te_bang_ros.dds"
+#		instance = { scale = { 0.1 0.1 } position = { 0.46 0.26 } }
+#	}
+#	textured_emblem = {
+#		texture = "tot_te_bang_hhw.dds"
+#		instance = { scale = { 0.1 0.1 } position = { 0.42 0.36 } }
+#	}
+#	textured_emblem = {
+#		texture = "tot_te_bang_mof.dds"
+#		instance = { scale = { 0.11 0.11 } position = { 0.35 0.46 } }
+#	}
+#	textured_emblem = {
+#		texture = "tot_te_bang_ras.dds"
+#		instance = { scale = { 0.1 0.1 } position = { 0.24 0.46 } }
+#	}
+#	textured_emblem = {
+#		texture = "tot_te_bang_mygo.dds"
+#		instance = { scale = { 0.11 0.11 } position = { 0.14 0.38 } }
+#	}
+#	textured_emblem = {
+#		texture = "tot_te_bang_mujica.dds"
+#		instance = { scale = { 0.11 0.11 } position = { 0.08 0.26 } }
+#	}
+#	textured_emblem = {
+#		texture = "tot_te_bang_mxd.dds"
+#		instance = { scale = { 0.11 0.11 } position = { 0.1 0.15 } }
+#	}
+#}
 GRE = { 
 	pattern = "pattern_solid.tga"
 	color1 = "blue"

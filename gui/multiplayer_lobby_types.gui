@@ -93,7 +93,6 @@ template multiplayer_lobby_selected_country_info {
 						size = { 65 65 }
 						position = { 10 75 }
 						
-						blockoverride "datacontext " {}
 						
 						blockoverride "rank_text" {
 							raw_text = "#BOLD [Country.GetCountryScorePositionDesc]"
@@ -158,7 +157,7 @@ template multiplayer_lobby_selected_country_info {
 					minimumsize = { @lobby_panel_info_width -1 }
 					maximumsize = { @lobby_panel_info_width -1 }
 					spacing = 10
-					update_status = {}
+
 					default_header = {
 						
 						using = default_list_position
@@ -174,8 +173,9 @@ template multiplayer_lobby_selected_country_info {
 						
 						
 					
-						has_custom_content_narrative = { }
+						has_custom_content_narrative = {}
 						
+						vertical_divider = {}
 				
 						#has_custom_interest_groups = {}
 

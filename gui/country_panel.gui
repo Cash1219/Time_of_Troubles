@@ -908,12 +908,31 @@ types country_panel_types
 						text = "COUNTRY_GDP_ONE_LINE"
 					}
 					blockoverride "stats_value" {
-						raw_text = "@money![Country.GetGDP|Dv]"
+						raw_text = "DOMESTIC_COUNTRY_GDP"
 					}
 
 					blockoverride "stats_rank" {
 						text = "[Country.GetGDPRanking]"
 					}
+				}
+				#GDP Ownership
+				country_stats_entry = {
+					onmousehierarchyenter = "[SetTempMapModeByKey('mm_gdp_ownership_ratio')]"
+					onmousehierarchyleave = "[RemoveTempMapMode]"
+					alwaystransparent = no
+					blockoverride "stats_tooltip" {
+						tooltip = "COUNTRY_GDP_OWNERSHIP_TOOLTIP"
+					}
+					blockoverride "information_icon" {
+						texture = "gfx/interface/buttons/button_icons/foreign_invest.dds"
+					}
+					blockoverride "stats_label" {
+						text = "[concept_gdp_ownership]"
+					}
+					blockoverride "stats_value" {
+						raw_text = "COUNTRY_ALL_OWNERSHIP"
+					}
+					blockoverride "stats_rank" {}
 				}
 
 				##POPULATION
@@ -4112,6 +4131,14 @@ types country_info
 			}
 		}
 
+	type has_custom_content_narrative = textbox {
+		fontsize = 16
+		autoresize = yes
+		multiline = yes
+		maximumsize = { 420 -1 }
+		text = "HAS_NARRATIVE"
+		align = nobaseline|center
+	}
 
 	type has_custom_interest_groups = textbox {
 		fontsize = 16
