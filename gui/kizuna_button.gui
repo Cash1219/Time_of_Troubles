@@ -1,8 +1,8 @@
 widget = {
     layer = top
-    
+	 visible = "[GetMetaPlayer.GetPlayedOrObservedCountry.IsValid]"
     name = kizuna_button
-    position = { 140 880 }
+    position = { -10 880 }
     size = { 80 80 }
     alpha = 0.7
     using = Animation_ShowHide_Quick
@@ -13,7 +13,7 @@ widget = {
             onclick = "[GetVariableSystem.Toggle('kizuna_visible')]"
 			visible = "[Not(InformationPanelBar.IsAnyPanelOpen())]"
             using = maplens_generic_sound
-          
+            #input_action = go_to_details
         name = "kizuna_shortcut_button"
         size = { 45 45 }
         alpha = 0.6

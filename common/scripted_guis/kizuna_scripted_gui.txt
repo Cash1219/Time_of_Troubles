@@ -1,0 +1,117 @@
+﻿kon_kizuna_list = {
+	effect = {
+		
+	}
+	is_shown = {
+		any_scope_character = {
+			OR = {
+				has_trait = tot_Kon_Yui_trait
+				has_trait = tot_Kon_Mio_trait
+				has_trait = tot_Kon_Tsumugi_trait
+				has_trait = tot_Kon_Ritsu_trait
+				has_trait = tot_Kon_Azusa_trait
+			}
+		}
+    } 		
+    
+	is_valid = {
+		#has_modifier = magic_tech_production_tech_1_modifier
+	}
+}
+kon_kizuna_number = {
+	effect = {
+		add_modifier = {
+			name = demo_1_modifier
+			months = 1
+			is_decaying = yes
+		}
+	}
+	is_shown = {
+		calc_true_if = {
+			amount = 2
+			any_scope_character = {
+				OR = {
+					has_trait = tot_Kon_Yui_trait
+					has_trait = tot_Kon_Mio_trait
+					has_trait = tot_Kon_Tsumugi_trait
+					has_trait = tot_Kon_Ritsu_trait
+					has_trait = tot_Kon_Azusa_trait
+				}
+			}
+		}
+    } 		
+    
+	is_valid = {
+		has_modifier = magic_tech_production_tech_1_modifier
+	}
+}
+kon_kizuna_yui = {
+	effect = {
+		
+	}
+	is_shown = {
+       any_scope_character = {
+			has_trait = tot_Kon_Yui_trait
+		}
+    } 		
+    
+	is_valid = {
+		
+	}
+}
+kon_kizuna_mio = {
+	effect = {
+		
+	}
+	is_shown = {
+       any_scope_character = {
+			has_trait = tot_Kon_Mio_trait
+		}
+    } 		
+    
+	is_valid = {
+		
+	}
+}
+kon_kizuna_tsumugi = {
+	effect = {
+		
+	}
+	is_shown = {
+       any_scope_character = {
+			has_trait = tot_Kon_Tsumugi_trait
+		}
+    } 		
+    
+	is_valid = {
+		
+	}
+}
+kon_kizuna_ritsu = {
+	effect = {
+		
+	}
+	is_shown = {
+       any_scope_character = {
+			has_trait = tot_Kon_Ritsu_trait
+		}
+    } 		
+    
+	is_valid = {
+		
+	}
+}
+kon_kizuna_azusa = {
+	effect = {
+		
+	}
+	is_shown = {
+       any_scope_character = {
+			has_trait = tot_Kon_Azusa_trait
+		}
+    } 		
+    
+	is_valid = {
+		
+	}
+}

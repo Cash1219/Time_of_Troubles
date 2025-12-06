@@ -2,7 +2,7 @@ window = {
 	name = "kizuna_window"
 	parentanchor = center
 	position = { 0% 0% }
-	size = { 1500 800 }
+	size = { 1800 800 }
 	layer = windows_layer
 	filter_mouse = all
 	allow_outside = yes
@@ -29,6 +29,7 @@ window = {
 	}
 
 	vbox = {
+	
 		restrictparent_min = yes
 		using = Window_Margins
 		
@@ -38,7 +39,7 @@ window = {
 
 			blockoverride "header_text"
 			{
-				text = "KIZUNA" # 宗教
+				text = "KIZUNA" # 羁绊
 			}
 
 			blockoverride "button_close"
@@ -62,27 +63,130 @@ window = {
 			name = "characters_scroll_area"
 			layoutpolicy_vertical = expanding
 			layoutpolicy_horizontal = expanding
-
+			
 			blockoverride "scrollbox_content" {
+				default_header_clean = {
+					name = "kon_kizuna_list" #樱高轻音部
+					visible = "[GetScriptedGui('kon_kizuna_list').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					using = tooltip_ne
+					size = { 1000 50 }
+					blockoverride "text" {
+						parentanchor = middle
+						raw_text = "樱高轻音部"
+						autoresize = yes
+						multiline = yes
+						using = fontsize_xl
+						default_format = "#medium" 
+					}
+							
+				}
 				
 				hbox = {
-					visible = "[GetVariableSystem.HasValue( 'kizuna_tabs', 'kizuna_buff' )]"
+					visible = "[GetScriptedGui('kon_kizuna_list').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 					layoutpolicy_horizontal = expanding
-					spacing = 5
+					spacing = 10
+					
 					hbox = {
-						spacing = 5
-						
-						
-
+					
+						spacing = 10
 						divider_clean = {
 							layoutpolicy_horizontal = expanding
 						}
 						
-						
+						button_icon_round_map_interaction = {
+							name = "kon_kizuna_yui" #平泽唯
+							visible = "[GetScriptedGui('kon_kizuna_yui').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "平泽唯" 
+							
+							using = tooltip_ne
+							size = { 180 180 }
+							
+							
+							blockoverride "icon" {
+								texture = "gfx/models/props/anime/tot_prophet_Kon_Yui_diffuse.dds"
+								
+							}
+							blockoverride "icon_position" {
+								position = { -20 10 }
+								
+							}
+							blockoverride "icon_size" {
+								size = { 120% 120% }
+								
+							}
+						}
+						button_icon_round_map_interaction = {
+							name = "kon_kizuna_mio" #秋山澪
+							visible = "[GetScriptedGui('kon_kizuna_mio').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
+							using = tooltip_ne
+							size = { 180 180 }
+							
+							blockoverride "icon" {
+								texture = "gfx/models/props/anime/tot_prophet_Kon_mio_diffuse.dds"
+								
+							}
+							
+							blockoverride "icon_size" {
+								size = { 120% 120% }
+							}
+						}
+						button_icon_round_map_interaction = {
+							name = "kon_kizuna_ritsu" #田井中律
+							visible = "[GetScriptedGui('kon_kizuna_ritsu').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
+							using = tooltip_ne
+							size = { 180 180 }
+							
+							blockoverride "icon" {
+								texture = "gfx/models/props/anime/tot_prophet_Kon_ritsu_diffuse.dds"
+								
+							}
+							
+							blockoverride "icon_size" {
+								size = { 120% 120% }
+								
+							}
+						}
+						button_icon_round_map_interaction = {
+							name = "kon_kizuna_tsumugi" #琴吹紬
+							visible = "[GetScriptedGui('kon_kizuna_tsumugi').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
+							using = tooltip_ne
+							size = { 180 180 }
+							
+							blockoverride "icon" {
+								texture = "gfx/models/props/anime/tot_prophet_Kon_tsumugi_diffuse.dds"
+								
+							}
+							
+							blockoverride "icon_size" {
+								size = { 120% 120% }
+								
+							}
+						}
+						button_icon_round_map_interaction = {
+							name = "kon_kizuna_azusa" #中野梓
+							visible = "[GetScriptedGui('kon_kizuna_azusa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
+							using = tooltip_ne
+							size = { 180 180 }
+							
+							blockoverride "icon" {
+								texture = "gfx/models/props/anime/tot_prophet_Kon_azusa_diffuse.dds"
+								
+							}
+							
+							blockoverride "icon_size" {
+								size = { 120% 120% }
+								
+							}
+						}
 					}
 					
 				}
-			}
+				
+			}		
 		}
 }
 
