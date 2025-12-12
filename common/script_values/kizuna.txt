@@ -1,0 +1,79 @@
+﻿kon_kizuna_number = {
+	value = 0
+	add = kon_kizuna_yui
+	add = kon_kizuna_ritsu
+	add = kon_kizuna_mio
+	add = kon_kizuna_mutsugi
+	add = kon_kizuna_azusa
+}
+
+kon_kizuna_yui = {
+	value = 0
+	if = {
+		limit = {
+			any_interest_group = {
+				is_in_government = yes
+				leader = {
+					has_trait = tot_Kon_Yui_trait
+				}
+			}
+		}
+		add = 1
+	}
+}
+kon_kizuna_ritsu = {
+	value = 0
+	if = {
+		limit = {
+			any_interest_group = {
+				is_in_government = yes
+				leader = {
+					has_trait = tot_Kon_Ritsu_trait
+				}
+			}
+		}
+		add = 1
+	}
+}
+kon_kizuna_mio = {
+	value = 0
+	if = {
+		limit = {
+			any_interest_group = {
+				is_in_government = yes
+				leader = {
+					has_trait = tot_Kon_Mio_trait
+				}
+			}
+		}
+		add = 1
+	}
+}
+kon_kizuna_mutsugi = {
+	value = 0
+	if = {
+		limit = {
+			any_interest_group = {
+				is_in_government = yes
+				leader = {
+					has_trait = tot_Kon_Tsumugi_trait
+				}
+			}
+		}
+		add = 1
+	}
+}
+kon_kizuna_azusa = {
+	value = 0
+	if = {
+		limit = {
+			any_interest_group = {
+				is_in_government = yes
+				leader = {
+					has_trait = tot_Kon_Azusa_trait
+				}
+			}
+		}
+		add = 1
+	}
+}

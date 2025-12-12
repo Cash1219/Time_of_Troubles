@@ -65,22 +65,50 @@ window = {
 			layoutpolicy_horizontal = expanding
 			
 			blockoverride "scrollbox_content" {
+				
 				default_header_clean = {
-					name = "kon_kizuna_list" #樱高轻音部
+					name = "kon_kizuna_number" #樱高轻音部计数
 					visible = "[GetScriptedGui('kon_kizuna_list').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 					using = tooltip_ne
 					size = { 1000 50 }
+					
 					blockoverride "text" {
 						parentanchor = middle
-						raw_text = "樱高轻音部"
+						icon = {
+								texture = "gfx/interface/icons/religion_icons/starbeat.dds"
+								size = { 50 50 }
+								position = { -50 -10 }
+							}
+						raw_text = "樱高轻音部 [AccessPlayer.MakeScope.ScriptValue('kon_kizuna_number')|=+D]"
 						autoresize = yes
 						multiline = yes
 						using = fontsize_xl
-						default_format = "#medium" 
+						default_format = "#medium"
+						
+					}
+					state = { #移除修正
+						name = _remove
+						trigger_when = "[Not(GetScriptedGui('kon_kizuna_list').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+						on_start = "[GetScriptedGui('kon_kizuna_list').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					}				
+				}
+				default_header_clean = {
+					name = "kon_kizuna_modifier" #樱高轻音部修正
+					visible = "[GetScriptedGui(kon_kizuna_list).IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					using = tooltip_ne
+					size = { 1000 200 }
+					
+					blockoverride "text" {
+						parentanchor = middle
+						raw_text = "kon_kizuna_modifier_text"
+						autoresize = yes
+						multiline = yes
+						using = fontsize_xl
+						default_format = "#medium"
+						
 					}
 							
 				}
-				
 				hbox = {
 					visible = "[GetScriptedGui('kon_kizuna_list').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 					layoutpolicy_horizontal = expanding
@@ -93,93 +121,177 @@ window = {
 							layoutpolicy_horizontal = expanding
 						}
 						
-						button_icon_round_map_interaction = {
-							name = "kon_kizuna_yui" #平泽唯
-							visible = "[GetScriptedGui('kon_kizuna_yui').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-							tooltip = "平泽唯" 
+						widget = {
+							background = {
+								texture = "gfx/interface/icons/gui/kizuna_bg_inactive.dds"
+							}
 							
-							using = tooltip_ne
+							name = "kon_kizuna_yui_inactive" #平泽唯未激活
+							visible = "[And(GetScriptedGui('kon_kizuna_list').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End),Not(GetScriptedGui('kon_kizuna_yui').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
+							tooltip = "平泽唯"
 							size = { 180 180 }
-							
-							
-							blockoverride "icon" {
+							icon = {
 								texture = "gfx/models/props/anime/tot_prophet_Kon_Yui_diffuse.dds"
-								
+								position = { 10 30 }
+								size = { 90% 90% }
+								alpha = 0.5
 							}
-							blockoverride "icon_position" {
-								position = { -20 10 }
-								
-							}
-							blockoverride "icon_size" {
-								size = { 120% 120% }
-								
-							}
+							
 						}
-						button_icon_round_map_interaction = {
-							name = "kon_kizuna_mio" #秋山澪
-							visible = "[GetScriptedGui('kon_kizuna_mio').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
-							using = tooltip_ne
+						widget = {
+							background = {
+								texture = "gfx/interface/icons/gui/kizuna_bg_activated.dds"
+							}
+							name = "kon_kizuna_yui_activated" #平泽唯激活
+							visible = "[GetScriptedGui('kon_kizuna_yui').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "平泽唯"
 							size = { 180 180 }
-							
-							blockoverride "icon" {
-								texture = "gfx/models/props/anime/tot_prophet_Kon_mio_diffuse.dds"
+							icon = {
+								texture = "gfx/models/props/anime/tot_prophet_Kon_Yui_diffuse.dds"
+								position = { 10 30 }
+								size = { 90% 90% }
 								
 							}
-							
-							blockoverride "icon_size" {
-								size = { 120% 120% }
+							state = { #添加修正
+								name = _modifier
+								trigger_when = "[GetScriptedGui('kon_kizuna_yui').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								on_start = "[GetScriptedGui('kon_kizuna_yui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							}
 						}
-						button_icon_round_map_interaction = {
-							name = "kon_kizuna_ritsu" #田井中律
+						widget = {
+							background = {
+								texture = "gfx/interface/icons/gui/kizuna_bg_inactive.dds"
+							}
+							name = "kon_kizuna_ritsu_inactive" #田井中律未激活
+							visible = "[And(GetScriptedGui('kon_kizuna_list').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End),Not(GetScriptedGui('kon_kizuna_ritsu').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
+							tooltip = "田井中律"
+							size = { 180 180 }
+							icon = {
+								texture = "gfx/models/props/anime/tot_prophet_Kon_Ritsu_diffuse.dds"
+								position = { 10 30 }
+								size = { 90% 90% }
+							}
+							
+						}
+						widget = {
+							background = {
+								texture = "gfx/interface/icons/gui/kizuna_bg_activated.dds"
+							}
+							name = "kon_kizuna_ritsu_activated" #田井中律激活
 							visible = "[GetScriptedGui('kon_kizuna_ritsu').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
-							using = tooltip_ne
+							tooltip = "田井中律"
 							size = { 180 180 }
-							
-							blockoverride "icon" {
-								texture = "gfx/models/props/anime/tot_prophet_Kon_ritsu_diffuse.dds"
-								
+							icon = {
+								texture = "gfx/models/props/anime/tot_prophet_Kon_Ritsu_diffuse.dds"
+								position = { 10 30 }
+								size = { 90% 90% }
 							}
-							
-							blockoverride "icon_size" {
-								size = { 120% 120% }
-								
+							state = { #添加修正
+								name = _modifier
+								trigger_when = "[Not(GetScriptedGui('kon_kizuna_ritsu').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+								on_start = "[GetScriptedGui('kon_kizuna_ritsu').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							}
 						}
-						button_icon_round_map_interaction = {
-							name = "kon_kizuna_tsumugi" #琴吹紬
+						widget = {
+							background = {
+								texture = "gfx/interface/icons/gui/kizuna_bg_inactive.dds"
+							}
+							name = "kon_kizuna_mio_inactive" #秋山澪未激活
+							visible = "[And(GetScriptedGui('kon_kizuna_list').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End),Not(GetScriptedGui('kon_kizuna_mio').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
+							tooltip = "秋山澪"
+							size = { 180 180 }
+							icon = {
+								texture = "gfx/models/props/anime/tot_prophet_Kon_Mio_diffuse.dds"
+								position = { 10 30 }
+								size = { 90% 90% }
+							}
+							
+						}
+						widget = {
+							background = {
+								texture = "gfx/interface/icons/gui/kizuna_bg_activated.dds"
+							}
+							name = "kon_kizuna_mio_activated" #秋山澪激活
+							visible = "[GetScriptedGui('kon_kizuna_mio').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "秋山澪"
+							size = { 180 180 }
+							icon = {
+								texture = "gfx/models/props/anime/tot_prophet_Kon_Mio_diffuse.dds"
+								position = { 10 30 }
+								size = { 90% 90% }
+							}
+							state = { #添加修正
+								name = _modifier
+								trigger_when = "[Not(GetScriptedGui('kon_kizuna_mio').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+								on_start = "[GetScriptedGui('kon_kizuna_mio').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							}
+						}
+						widget = {
+							background = {
+								texture = "gfx/interface/icons/gui/kizuna_bg_inactive.dds"
+							}
+							name = "kon_kizuna_tsumugi_inactive" #琴吹紬未激活
+							visible = "[And(GetScriptedGui('kon_kizuna_list').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End),Not(GetScriptedGui('kon_kizuna_tsumugi').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
+							tooltip = "琴吹紬"
+							size = { 180 180 }
+							icon = {
+								texture = "gfx/models/props/anime/tot_prophet_Kon_Tsumugi_diffuse.dds"
+								position = { 10 30 }
+								size = { 90% 90% }
+							}
+							
+						}
+						widget = {
+							background = {
+								texture = "gfx/interface/icons/gui/kizuna_bg_activated.dds"
+							}
+							name = "kon_kizuna_tsumugi_activated" #琴吹紬激活
 							visible = "[GetScriptedGui('kon_kizuna_tsumugi').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
-							using = tooltip_ne
+							tooltip = "琴吹紬"
 							size = { 180 180 }
-							
-							blockoverride "icon" {
-								texture = "gfx/models/props/anime/tot_prophet_Kon_tsumugi_diffuse.dds"
-								
+							icon = {
+								texture = "gfx/models/props/anime/tot_prophet_Kon_Tsumugi_diffuse.dds"
+								position = { 10 30 }
+								size = { 90% 90% }
 							}
-							
-							blockoverride "icon_size" {
-								size = { 120% 120% }
-								
+							state = { #添加修正
+								name = _modifier
+								trigger_when = "[Not(GetScriptedGui('kon_kizuna_tsumugi').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+								on_start = "[GetScriptedGui('kon_kizuna_tsumugi').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							}
 						}
-						button_icon_round_map_interaction = {
-							name = "kon_kizuna_azusa" #中野梓
-							visible = "[GetScriptedGui('kon_kizuna_azusa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
-							using = tooltip_ne
+						widget = {
+							background = {
+								texture = "gfx/interface/icons/gui/kizuna_bg_inactive.dds"
+							}
+							name = "kon_kizuna_azusa_inactive" #中野梓未激活
+							visible = "[And(GetScriptedGui('kon_kizuna_list').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End),Not(GetScriptedGui('kon_kizuna_azusa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
+							tooltip = "中野梓"
 							size = { 180 180 }
-							
-							blockoverride "icon" {
-								texture = "gfx/models/props/anime/tot_prophet_Kon_azusa_diffuse.dds"
-								
+							icon = {
+								texture = "gfx/models/props/anime/tot_prophet_Kon_Azusa_diffuse.dds"
+								position = { 10 30 }
+								size = { 90% 90% }
 							}
 							
-							blockoverride "icon_size" {
-								size = { 120% 120% }
-								
+						}
+						widget = {
+							background = {
+								texture = "gfx/interface/icons/gui/kizuna_bg_activated.dds"
+							}
+							name = "kon_kizuna_azusa_activated" #中野梓激活
+							visible = "[GetScriptedGui('kon_kizuna_azusa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "中野梓"
+							size = { 180 180 }
+							icon = {
+								texture = "gfx/models/props/anime/tot_prophet_Kon_Azusa_diffuse.dds"
+								position = { 10 30 }
+								size = { 90% 90% }
+							}
+							state = { #添加修正
+								name = _modifier
+								trigger_when = "[Not(GetScriptedGui('kon_kizuna_azusa').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+								on_start = "[GetScriptedGui('kon_kizuna_azusa').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							}
 						}
 					}

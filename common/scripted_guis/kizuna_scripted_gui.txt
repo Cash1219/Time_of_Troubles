@@ -1,6 +1,16 @@
 ﻿kon_kizuna_list = {
 	effect = {
-		
+		if = {
+			limit = {
+				var:kon_kizuna_number < 2
+				remove_modifier = kizuna_common_modifier_1
+				remove_modifier = kizuna_common_modifier_2
+				remove_modifier = kizuna_common_modifier_3
+				remove_modifier = kizuna_common_modifier_4
+				remove_modifier = kizuna_common_modifier_5
+				remove_modifier = kizuna_common_modifier_6
+			}
+		}
 	}
 	is_shown = {
 		any_scope_character = {
@@ -15,45 +25,41 @@
     } 		
     
 	is_valid = {
-		#has_modifier = magic_tech_production_tech_1_modifier
+		
 	}
 }
 kon_kizuna_number = {
 	effect = {
-		add_modifier = {
-			name = demo_1_modifier
-			months = 1
-			is_decaying = yes
-		}
+		add_kon_kizuna_modifier = yes
 	}
 	is_shown = {
-		calc_true_if = {
-			amount = 2
-			any_scope_character = {
-				OR = {
-					has_trait = tot_Kon_Yui_trait
-					has_trait = tot_Kon_Mio_trait
-					has_trait = tot_Kon_Tsumugi_trait
-					has_trait = tot_Kon_Ritsu_trait
-					has_trait = tot_Kon_Azusa_trait
-				}
+		any_scope_character = {
+			OR = {
+				has_trait = tot_Kon_Yui_trait
+				has_trait = tot_Kon_Mio_trait
+				has_trait = tot_Kon_Tsumugi_trait
+				has_trait = tot_Kon_Ritsu_trait
+				has_trait = tot_Kon_Azusa_trait
 			}
 		}
     } 		
     
 	is_valid = {
-		has_modifier = magic_tech_production_tech_1_modifier
+		
 	}
 }
 kon_kizuna_yui = {
 	effect = {
-		
+		add_kon_kizuna_modifier = yes
 	}
 	is_shown = {
-       any_scope_character = {
-			has_trait = tot_Kon_Yui_trait
+		any_interest_group = {
+			is_in_government = yes
+			leader = {
+				has_trait = tot_Kon_Yui_trait
+			}
 		}
-    } 		
+    }		
     
 	is_valid = {
 		
@@ -61,11 +67,14 @@ kon_kizuna_yui = {
 }
 kon_kizuna_mio = {
 	effect = {
-		
+		add_kon_kizuna_modifier = yes
 	}
 	is_shown = {
-       any_scope_character = {
-			has_trait = tot_Kon_Mio_trait
+       any_interest_group = {
+			is_in_government = yes
+			leader = {
+				has_trait = tot_Kon_Mio_trait
+			}
 		}
     } 		
     
@@ -75,11 +84,14 @@ kon_kizuna_mio = {
 }
 kon_kizuna_tsumugi = {
 	effect = {
-		
+		add_kon_kizuna_modifier = yes
 	}
 	is_shown = {
-       any_scope_character = {
-			has_trait = tot_Kon_Tsumugi_trait
+       any_interest_group = {
+			is_in_government = yes
+			leader = {
+				has_trait = tot_Kon_Tsumugi_trait
+			}
 		}
     } 		
     
@@ -89,11 +101,14 @@ kon_kizuna_tsumugi = {
 }
 kon_kizuna_ritsu = {
 	effect = {
-		
+		add_kon_kizuna_modifier = yes
 	}
 	is_shown = {
-       any_scope_character = {
-			has_trait = tot_Kon_Ritsu_trait
+		any_interest_group = {
+			is_in_government = yes
+			leader = {
+				has_trait = tot_Kon_Ritsu_trait
+			}
 		}
     } 		
     
@@ -103,11 +118,14 @@ kon_kizuna_ritsu = {
 }
 kon_kizuna_azusa = {
 	effect = {
-		
+		add_kon_kizuna_modifier = yes
 	}
 	is_shown = {
-       any_scope_character = {
-			has_trait = tot_Kon_Azusa_trait
+       any_interest_group = {
+			is_in_government = yes
+			leader = {
+				has_trait = tot_Kon_Azusa_trait
+			}
 		}
     } 		
     

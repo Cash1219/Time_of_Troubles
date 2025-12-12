@@ -1,0 +1,21 @@
+﻿balance_ideology = {
+	is_shown = {
+		
+	}
+
+	possible = {
+		
+	}
+
+	when_taken = {
+		add_modifier = {
+			name = "balance_ideology"
+			months = 2
+		}
+		activate_law = law_type:law_universal_suffrage
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
