@@ -1,4 +1,4 @@
-﻿USA = { #精灵之国
+﻿USA = { #美国
 	color = { 66  94  193 }
 	
 	country_type = recognized
@@ -8,16 +8,16 @@
 	cultures = { yankee dixie }
 	capital = STATE_DISTRICT_OF_COLUMBIA
 }
-POR = { #旅者共和国
-	color = { 28 82 148 }
-	
-	country_type = recognized
-	
-	tier = kingdom
-	
-	cultures = { portuguese }
-	capital = STATE_ESTREMADURA
-}
+#POR = { #旅者国
+#	color = { 28 82 148 }
+#	
+#	country_type = recognized
+#	
+#	tier = kingdom
+#	
+#	cultures = { portuguese }
+#	capital = STATE_ESTREMADURA
+#}
 AUS = { #奥地利帝国
 	color = { 211  220  240 }
 
@@ -48,7 +48,17 @@ HUN = { #匈牙利
 	cultures = { hungarian }
 	capital = STATE_CENTRAL_HUNGARY
 }
-SPA = { #勇者共和国
+#SPA = { #勇者共和国
+#	color = hsv360{ 38  97  83 }
+#	
+#	country_type = recognized
+#
+#	tier = kingdom
+#	
+#	cultures = { spanish }
+#	capital = STATE_TOLEDO
+#}
+SKD = { #斯卡蒂利亚
 	color = hsv360{ 38  97  83 }
 	
 	country_type = recognized
@@ -58,7 +68,27 @@ SPA = { #勇者共和国
 	cultures = { spanish }
 	capital = STATE_TOLEDO
 }
-ITA = { #罗马帝国
+GNC = { #加纳利西亚
+	color = hsv360{ 38  97  83 }
+	
+	country_type = recognized
+
+	tier = kingdom
+	
+	cultures = { galician }
+	capital = STATE_GALICIA
+}
+ADL = { #安达卢西亚
+	color = hsv360{ 38  97  83 }
+	
+	country_type = recognized
+
+	tier = kingdom
+	
+	cultures = { spanish }
+	capital = STATE_LOWER_ANDALUSIA_spanish
+}
+ITA = { #意大利
 	color = hsv360{ 357  90  87 }
 
 	country_type = recognized
@@ -66,7 +96,7 @@ ITA = { #罗马帝国
 	tier = empire
 
 	cultures = { north_italian south_italian }
-	capital = STATE_LAZIO
+	capital = STATE_PIEDMONT
 }
 PRU = { #魔法少女联邦
 	color = hsv360{ 320  43  88 }
@@ -86,7 +116,7 @@ TUR = { #土耳其 - 母鸡卡苏丹国
 	tier = empire
 	
 	cultures = { turkish }
-	capital = STATE_EASTERN_THRACE
+	capital = STATE_ANKARA
 }
 
 ROM = { #罗马尼亚 - 哭泣少女乐队
@@ -204,7 +234,7 @@ UMA = { #赛马娘 克里木
 	capital = STATE_CRIMEA
 }
 GOD = { #金色汗国 金帐
-	color = hsv360 = { 27 52 94 }
+	color = { 27 52 94 }
 	country_type = recognized
 
 	tier = kingdom	
@@ -244,7 +274,7 @@ OZH = { #红海汗国
 	
 	cultures = { tatar }
 	
-	capital = STATE_HOME_COUNTIES
+	capital = STATE_URALSK
 }
 LOU = { #露易丝安娜
 	color = { 53 52 144 }
@@ -276,4 +306,71 @@ HAI = { #海地
 
 	cultures = { afro_antillean }
 	capital = STATE_HAITI
+}
+DAL = { #精灵
+	color = { 356 50 89 }
+
+	country_type = recognized
+
+	tier = empire	
+	
+	cultures = { panjabi }
+	
+	capital = STATE_PUNJAB
+}
+
+NEP = { #紫耀之都
+	color = { 255 119 255 }
+
+	country_type = recognized
+
+	tier = empire	
+	
+	cultures = { hindustani }
+	
+	capital = STATE_DELHI
+}
+ELZ = { #艾尔奇亚
+	color = { 255 255 255 }
+
+	country_type = recognized
+
+	tier = empire	
+	
+	cultures = { gujarati }
+	
+	capital = STATE_GUJARAT
+}
+OVL = { #安兹乌尔恭
+	color = { 0 0 0 }
+
+	country_type = recognized
+
+	tier = empire	
+	
+	cultures = { kannada }
+	
+	capital = STATE_MADRAS
+}
+CIN = { #中印度
+	color = { 139  179  207 }
+
+	country_type = recognized
+
+	tier = empire	
+	
+	cultures = { kannada }
+	
+	capital = STATE_MADRAS
+}
+ACC = { #学园都市
+	color = hsv{ 0.99  0.7  0.9 }
+
+	country_type = recognized
+
+	tier = empire	
+	
+	cultures = { british scottish }
+	
+	capital = STATE_HOME_COUNTIES
 }

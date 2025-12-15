@@ -269,7 +269,7 @@ grant_command_to_agitator = {
 				owner ?= {
 					any_scope_war = {
 						any_scope_front = {
-							is_vulnerable_front = root
+							is_vulnerable_front = root.owner
 						}
 					}
 				}
@@ -290,7 +290,8 @@ marry_ruler_or_heir = {
 			is_heir = yes
 		}
 		scope:actor ?= {
-			has_law_or_variant = law_type:law_monarchy
+			has_law = law_type:law_monarchy
+			has_gov_regency = no
 			religion = {
 				has_discrimination_trait = heritage_christian
 			}
@@ -304,7 +305,7 @@ marry_ruler_or_heir = {
 		any_country = {
 			NOT = { THIS = scope:actor }
 			NOT = { is_subject_type = subject_type_personal_union }
-			has_law_or_variant = law_type:law_monarchy
+			has_law = law_type:law_monarchy
 			religion = scope:actor.religion
 			ruler = {
 				age > 36
@@ -338,7 +339,8 @@ abdicate_monarch = {
 		owner ?= scope:actor
 		is_ruler = yes
 		owner ?= {
-			has_law_or_variant = law_type:law_monarchy
+			has_law = law_type:law_monarchy
+			has_gov_regency = no
 		}
 		exists = owner.heir
 		is_immortal = no
@@ -347,7 +349,7 @@ abdicate_monarch = {
 	possible = {
 		OR = {
 			interest_group ?= {
-				is_marginal = yes
+				ig_counts_as_marginal = yes
 			}
 			popularity <= -50
 			has_trait = psychological_affliction
@@ -400,7 +402,7 @@ abdicate_monarch = {
 			limit = {
 				NOT = {
 					owner ?= {
-						any_interest_group = {
+						any_political_movement = {
 							is_revolutionary = yes
 						}
 					}
@@ -450,7 +452,7 @@ abdicate_monarch = {
 		if = {
 			limit = {
 				interest_group ?= {
-					is_marginal = yes
+					ig_counts_as_marginal = yes
 				}
 			}
 			add = 25
@@ -527,7 +529,7 @@ exile_character = {
 			interest_group ?= {
 				is_in_government = no
 				is_insurrectionary = no
-				is_marginal = no
+				ig_counts_as_marginal = no
 			}
 		}
 		custom_tooltip = {
@@ -567,6 +569,28 @@ exile_character = {
 				}
 			}
 		}
+		custom_tooltip = {
+			text = pending_coup_event_tt
+			NOT = {
+				owner = {
+					has_variable = coup_event_active
+				}
+			}
+		}
+		trigger_if = {
+			limit = {
+				OR = {
+					has_dlc_feature = voice_of_the_people_content
+					has_dlc_feature = ip4_content
+				}
+			}
+			custom_tooltip = {
+				text = doing_coup_for_player_tt
+				NOT = {
+					has_variable = commander_doing_coup_on_player_behalf
+				}
+			}
+		}
 	}
 
 	effect = {
@@ -579,6 +603,21 @@ exile_character = {
 		owner ?= {
 			save_scope_as = exiling_country_scope
 		}
+		if = {
+			limit = {
+				owner = {
+					has_journal_entry = je_ip4_coup
+				}
+				root = {
+					has_variable = golpista_var
+				}
+			}
+			owner = {
+				set_variable = exile_golpista_var
+				character_execute_immediate_coup = yes
+			}
+		}
+		else = {
 		if = {
 			limit = {
 				has_role = politician
@@ -611,9 +650,8 @@ exile_character = {
 				owner ?= {
 					custom_tooltip = {
 						text = lose_large_caudillo_points
-						change_variable = {
-							name = caudillo_var
-							add = -200
+							je:je_caudillo ?= {
+								add_progress = { value = -200 name = je_caudillo_progress_bar }
 						}
 					}
 				}
@@ -622,9 +660,8 @@ exile_character = {
 				owner ?= {
 					custom_tooltip = {
 						text = lose_caudillo_points
-						change_variable = {
-							name = caudillo_var
-							add = -100
+							je:je_caudillo ?= {
+								add_progress = { value = -100 name = je_caudillo_progress_bar }
 						}
 					}
 				}
@@ -759,6 +796,7 @@ exile_character = {
 			text = exile_dissident_tt
 			exile_character_with_martyrdom = yes
 		}
+	}
 	}
 
 	cooldown = { days = normal_modifier_time }
@@ -950,9 +988,7 @@ invite_exile = {
 			OR = {
 				custom_tooltip = {
 					text = invite_exile_state_religion_tt
-					scope:actor ?= {
-						has_law = law_type:law_state_religion # Millet System should just rely on average acceptance
-					}
+					religion = scope:actor.religion
 				}
 				custom_tooltip = {
 					text = invite_exile_no_state_religion_tt
@@ -1078,7 +1114,7 @@ invite_exile = {
 		if = {
 			limit = {
 				culture = {
-					is_primary_culture_of = root
+					is_primary_culture_of = root.owner
 				}
 			}
 			add = 50
@@ -1141,9 +1177,54 @@ retire_commander = {
 		}
 		commander_is_available = yes
 		years_of_service >= 1
+		custom_tooltip = {
+			text = pending_coup_event_tt
+			NOT = {
+				owner = {
+					has_variable = coup_event_active
+				}
+			}
+		}
+		custom_tooltip = {
+			text = pending_coup_event_tt
+			NOT = {
+				owner = {
+					has_variable = coup_event_active
+				}
+			}
+		}
+		trigger_if = {
+			limit = {
+				OR = {
+					has_dlc_feature = voice_of_the_people_content
+					has_dlc_feature = ip4_content
+				}
+			}
+			custom_tooltip = {
+				text = doing_coup_for_player_tt
+				NOT = {
+					has_variable = commander_doing_coup_on_player_behalf
+				}
+			}
+		}
 	}
 
 	effect = {
+		if = {
+			limit = {
+				owner = {
+					has_journal_entry = je_ip4_coup
+				}
+				root = {
+					has_variable = golpista_var
+				}
+			}
+			owner = {
+				set_variable = retire_golpista_var
+				character_execute_immediate_coup = yes
+			}
+		}
+		else = {
 		hidden_effect = {
 			if = {
 				limit = {
@@ -1172,6 +1253,7 @@ retire_commander = {
 				}
 				years = 5
 				is_decaying = yes
+				}
 			}
 		}
 	}
@@ -1275,7 +1357,7 @@ retire_commander = {
 				owner ?= {
 					any_scope_war = {
 						any_scope_front = {
-							is_vulnerable_front = root
+							is_vulnerable_front = root.owner
 						}
 					}
 				}

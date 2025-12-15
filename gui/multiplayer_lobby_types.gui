@@ -110,6 +110,25 @@ template multiplayer_lobby_selected_country_info {
 						parentanchor = right
 						position = { -20 0 }
 						blockoverride "show_hat" {}
+
+						button_icon_other = {
+							size = { 40 40 }
+							parentanchor = right
+							enabled = "[Not(GameIsMultiplayer)]"
+							datacontext = "[AccessGameRules]"
+							datacontext = "[JominiGameRules.AccessNamedGameRule( 'ruler_selector' )]"
+							datacontext = "[GuiGameRule.GetRule]"
+							datacontext = "[GuiGameRule.GetSetting]"
+							visible = "[GameRuleSetting.HasFlag( 'give_ruler_selector' )]"
+							tooltip = SELECTION_RULER_TOOLTIP
+							onclick = "[PopupManager.ShowRulerSelectionPopup(Character.GetCountry)]"
+						}
+
+						#button_icon_edit = {
+						#	size = { 40 40 }
+						#	tooltip = CUSTOMIZE_RULER_TOOLTIP
+						#	# onclick = PRCAL-39478
+						#}
 					}
 					
 					### ARMY / NAVY

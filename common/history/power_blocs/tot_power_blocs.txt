@@ -1,5 +1,5 @@
 ﻿POWER_BLOCS = {
-	c:GBR = {
+	c:GBR ?= {
 		create_power_bloc = {
 			name = BRITISH_EMPIRE
 			map_color = hsv{ 0.99  0.7  0.9 }
@@ -19,7 +19,7 @@
 			}
 		}
 	}
-	c:FRA = {
+	c:FRA ?= {
 		create_power_bloc = {
 			name = CROWN_ALLIANCE
 			map_color = { 20 50 210 }
@@ -34,7 +34,7 @@
 		}
 		
 	}
-	c:SPA = {
+	c:SKD ?= {
 		create_power_bloc = {
 			name = ADVENTURE_ASSOCIATION
 			map_color = { 38  97  83 }
@@ -43,11 +43,11 @@
 			identity = identity_trade_league
 			principle = principle_external_trade_1
 
-			member = c:POR
+			member = c:GNC
 		}
 		
 	}
-	c:VEN = {
+	c:VEN ?= {
 		create_power_bloc = {
 			name = BAND_COMMUNITY
 
@@ -70,7 +70,7 @@
 
 			
 	}
-	c:BYZ = {
+	c:BYZ ?= {
 		create_power_bloc = {
 			name = HOLY_EMPIRE
 
@@ -98,7 +98,7 @@
 
 			
 	}
-	c:SWE = {
+	c:SWE ?= {
 		create_power_bloc = {
 			name = NORDIC_COMMUNITY
 			map_color = { 87  130  199 }
@@ -124,7 +124,7 @@
 
 			
 	}
-	c:UMA = {
+	c:UMA ?= {
 		create_power_bloc = {
 			name = VARANGIANS_TATARS
 			map_color = { 87  130  199 }
@@ -150,7 +150,7 @@
 
 			
 	}
-	c:PAL = {
+	c:PAL ?= {
 		create_power_bloc = {
 			name = EL_ALAMEIN_UNION
 			map_color = { 87  130  199 }
@@ -177,7 +177,7 @@
 
 			
 	}
-	c:PRU = {
+	c:PRU ?= {
 		create_power_bloc = {
 			name =  ZOLLVEREIN
 
@@ -188,9 +188,12 @@
 			principle = principle_internal_trade_1
 			
 			member = c:LUB # After 1836, but member for gameplay balance reasons
+			member = c:HAM # After 1836, but member for gameplay balance reasons
+			member = c:BRE # After 1836, but member for gameplay balance reasons
 			member = c:BRA # After 1836, but member for gameplay balance reasons
 			member = c:SCM # After 1836, but member for gameplay balance reasons
 			member = c:MST # After 1836, but member for gameplay balance reasons
+			member = c:OLD # After 1836, but member for gameplay balance reasons
 			member = c:HES # 1834
 			member = c:BAV # 1834
 			member = c:WUR # 1834
