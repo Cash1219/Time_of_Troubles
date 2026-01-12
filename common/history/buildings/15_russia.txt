@@ -804,7 +804,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:POL"
+						country="c:RUS"
 						levels=4
 						region="STATE_INGRIA"
 					}
@@ -890,7 +890,7 @@
 					}
 					building={
 						type="building_manor_house"
-						country="c:UKR"
+						country="c:RUS"
 						levels=8
 						region="STATE_INGRIA"
 					}
@@ -1337,7 +1337,7 @@
 					}
 					building={
 						type="building_financial_district"
-						country="c:UKR"
+						country="c:RUS"
 						levels=1
 						region="STATE_MOSCOW"
 					}
@@ -1349,7 +1349,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:RUS"
+						country="c:UKR"
 						levels=1
 						region="STATE_CHERSON"
 					}
@@ -1543,7 +1543,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:RUS"
+						country="c:UMA"
 						levels=1
 						region="STATE_ROSTOV"
 					}
@@ -1722,8 +1722,6 @@
 		}
 	}
 	s:STATE_URALSK={
-		region_state:RUS={
-		}
 		region_state:OZH={
 			create_building={
 				building="building_barrack"
@@ -1841,10 +1839,6 @@
 	s:STATE_SYRDARYA={
 		region_state:OZH={
 		}
-		region_state:KZH={
-		}
-		region_state:UZH={
-		}
 	}
 	s:STATE_AKTOBE={
 		region_state:OZH={
@@ -1855,36 +1849,20 @@
 		}
 	}
 	s:STATE_NORTH_CAUCASUS={
-		region_state:RUS={
-		}
-		region_state:CHC={
+		
+		region_state:GOD={
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:CHC"
+						country="c:GOD"
 						levels=2
 						region="STATE_NORTH_CAUCASUS"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_farming"  "pm_tools_disabled" "pm_no_secondary" }
-			}
-		}
-		region_state:CIR = {
-			create_building={
-				building="building_logging_camp"
-				add_ownership={
-					building={
-						type="building_logging_camp"
-						country="c:CIR"
-						levels=1
-						region="STATE_NORTH_CAUCASUS"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_simple_forestry" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts"  }
 			}
 		}
 	}
