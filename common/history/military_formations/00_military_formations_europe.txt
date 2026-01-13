@@ -495,11 +495,7 @@
 
 			# Hungarian Line Regiments
 
-			combat_unit = { # IR 2, IR 31, IR 33,
-				type = unit_type:combat_unit_type_line_infantry
-				state_region = s:STATE_SLOVAKIA
-				count = 6
-			}
+			
 			combat_unit = { # IR 19, IR 48, IR 52
 				type = unit_type:combat_unit_type_line_infantry
 				state_region = s:STATE_TRANSDANUBIA
@@ -537,11 +533,7 @@
 				state_region = s:STATE_CENTRAL_HUNGARY
 				count = 3
 			}
-			combat_unit = { # 8. Hussar, 9. Hussar, 10. Hussar
-				type = unit_type:combat_unit_type_hussars
-				state_region = s:STATE_SLOVAKIA
-				count = 3
-			}
+		
 
 			# Artillery
 
@@ -3056,31 +3048,7 @@
 		}
 	}
 
-	c:SER ?= {
-		create_military_formation = {
-			type = army
-			hq_region = sr:region_balkans
-			name = Vojska_Kneevine_Srbije
-
-			combat_unit = {
-				type = unit_type:combat_unit_type_line_infantry
-				state_region = s:STATE_WESTERN_SERBIA
-				count = 2
-			}
-
-			combat_unit = {
-				type = unit_type:combat_unit_type_hussars
-				state_region = s:STATE_WESTERN_SERBIA
-				count = 1
-			}
-
-			combat_unit = {
-				type = unit_type:combat_unit_type_cannon_artillery
-				state_region = s:STATE_WESTERN_SERBIA
-				count = 1
-			}
-		}
-	}
+	
 
 	c:WAL ?= {
 		create_military_formation = {
@@ -3102,19 +3070,7 @@
 		}
 	}
 
-	c:MON ?= {
-		create_military_formation = {
-			type = army
-			hq_region = sr:region_balkans
-			name = Montengrin_Raiders
-
-			combat_unit = {
-				type = unit_type:combat_unit_type_line_infantry
-				state_region = s:STATE_MONTENEGRO
-				count = 7
-			}
-		}
-	}
+	
 
 	c:MOL ?= {
 		create_military_formation = {
