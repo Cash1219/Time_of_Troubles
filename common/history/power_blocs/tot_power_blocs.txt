@@ -85,7 +85,31 @@
 			member = c:UKR
 			member = c:GRE
 			member = c:TUR
-			member = c:VEN
+			
+		}
+		if = {
+			limit = {
+				has_dlc_feature = power_bloc_features
+			}
+			power_bloc = {
+				add_principle = principle_defensive_cooperation_1
+			}
+		}
+
+			
+	}
+	c:VEN ?= {
+		create_power_bloc = {
+			name = GIRLSBANDPARTY
+
+			map_color = { 219 211 157 }
+
+			founding_date = 1200.1.1
+			identity = identity_sovereign_empire
+			principle = principle_vassalization_1
+		
+			member = c:USA
+			member = c:HAR
 		}
 		if = {
 			limit = {

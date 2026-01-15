@@ -2,6 +2,21 @@
 	c:JAP ?= {
 		create_character = {
 			historical = yes
+			first_name = "Yakumo"
+			last_name = "Yukari"
+			birth_date = 1816.1.1 
+			female = yes
+			ig_leader = yes
+			ideology = ideology_traditionalist
+			interest_group = ig_landowners
+			religion = rel:shinto
+			culture = cu:japanese
+			traits = {
+				tot_Tohou_Yukari_trait
+			}
+		}
+		create_character = {
+			historical = yes
 			first_name = "Mokou"
 			last_name = "Fujiwara"
 			birth_date = 1816.1.1 
@@ -45,9 +60,9 @@
 			historical = yes
 			first_name = "Kaguya"
 			last_name = "Houraisan"
+			ruler = yes
 			birth_date = 1816.1.1 
 			female = yes
-			ig_leader = yes
 			interest_group = ig_landowners
 			religion = rel:shinto
 			traits = {
