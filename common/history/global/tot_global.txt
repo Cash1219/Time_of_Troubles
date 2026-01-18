@@ -6,22 +6,22 @@
 		}
 	}
 	
-	every_country = {
-		set_variable = magic_tech_production_tech_1_var
-		set_variable = magic_tech_production_tech_2_var
-		set_variable = magic_tech_production_tech_3_var
-		if = {
-			limit = {
-				NOT = { has_variable = num_magic }
-			}
-			set_variable = {
-				name = num_magic
-				value = 0
-			}
-			
-			add_journal_entry = {
-				type = je_magic_research
-			}
-		}
-	}
+	#every_country = {
+	#	set_variable = magic_tech_production_tech_1_var
+#		set_variable = magic_tech_production_tech_2_var
+#		set_variable = magic_tech_production_tech_3_var
+#		if = {
+#			limit = {
+#				NOT = { has_variable = num_magic }
+#			}
+#			set_variable = {
+#				name = num_magic
+#				value = 0
+#			}
+#			
+#			add_journal_entry = {
+#				type = je_magic_research
+#			}
+#		}
+#	}
 }
