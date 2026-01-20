@@ -1,0 +1,12 @@
+textured_emblem_texture_lists = {
+	coa_charge = {
+		special_selection = {
+				trigger = {
+					exists = scope:target
+					scope:target ?= {
+					owns_entire_state_region = STATE_CENTRAL_HUNGARY
+				}
+			}
+			100 = "tot_te_ll_logo.dds"
+		}
+}

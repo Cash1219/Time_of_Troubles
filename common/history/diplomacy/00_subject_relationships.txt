@@ -8,6 +8,24 @@
 			country = c:PHI
 			type = colony
 		}
+		create_diplomatic_pact = {
+			country = c:ADL
+			type = dominion
+		}
+		create_diplomatic_pact = {
+			country = c:GNC
+			type = dominion
+		}
+	}
+	c:MUS ?= {
+		create_diplomatic_pact = {
+			country = c:AQO
+			type = idol_group
+		}
+		create_diplomatic_pact = {
+			country = c:NJS
+			type = idol_group
+		}
 	}
 	c:NET ?= {
 		create_diplomatic_pact = {
@@ -241,7 +259,7 @@
 			type = protectorate
 		}
 		create_diplomatic_pact = {
-			country = c:GRE
+			country = c:MYG
 			type = protectorate
 		}
 	}
@@ -255,7 +273,7 @@
 	#		type = protectorate
 	#	}
 	#	create_diplomatic_pact = {
-	#		country = c:SER
+	#		country = c:AQO
 	#		type = protectorate
 	#	}
 	#	create_diplomatic_pact = {
@@ -583,7 +601,7 @@
 		add_liberty_desire = 10
 	}
 
-	c:SER = {
+	c:AQO = {
 		add_liberty_desire = 20
 	}
 
