@@ -1,0 +1,82 @@
+#经典炼金学
+tot_tradition_magic = {
+    era = era_1
+    texture = "gfx/interface/icons/invention_icons/tot_tradition_magic.dds"
+    category = production
+    unlocking_technologies = {
+    }
+    modifier = {
+    }
+    ai_weight = {
+        value = 2
+    }
+}
+#符文篆刻
+tot_magic_stone = {
+    era = era_1
+    texture = "gfx/interface/icons/invention_icons/magic_paper_product.dds"
+	category = production
+    unlocking_technologies = {
+        tot_tradition_magic
+ 		shaft_mining 
+    }
+    modifier = {
+    }
+    ai_weight = {
+        value = 2
+    }
+}
+
+tot_magic_steel = {
+    era = era_2
+    texture = "gfx/interface/icons/invention_icons/tot_magic_steel.dds"
+    category = production
+    unlocking_technologies = {
+        tot_magic_stone
+        steelworking
+    }
+    modifier = {
+        
+    }
+    ai_weight = {
+     value = 2   
+    }
+
+}
+
+tot_magictools  = {
+    era = era_3
+    texture = "gfx/interface/icons/invention_icons/tot_magictools.dds"
+    category = production
+    unlocking_technologies = {
+        tot_magic_power
+    }
+    ai_weight = {
+        value = 2
+    }
+}
+
+tot_magic_power = {
+    era = era_2
+    texture = "gfx/interface/icons/invention_icons/tot_magic_power.dds"
+    category = production
+    unlocking_technologies = {
+       tot_magic_steel
+    }
+    ai_weight = {
+        value = 2
+    }
+}
+
+tot_mass_magic = {
+    era = era_3
+    texture = "gfx/interface/icons/invention_icons/tot_magictools.dds"
+    category = production
+    unlocking_technologies = {
+        tot_magictools
+        
+    }  
+    ai_weight = {
+        value = 2
+    }
+}
