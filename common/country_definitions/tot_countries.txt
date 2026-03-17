@@ -202,12 +202,23 @@ BYZ = { #东罗马帝国
 	cultures = { greek }
 	capital = STATE_EASTERN_THRACE
 }
-RHD = { #罗德岛
-	color = hsv{ 0.99  0.7  0.9 }
+ORHD = { #旧罗德岛
+	color = { 122  180  210 }
 
 	country_type = recognized
 
 	tier = principality	
+	
+	cultures = { greek }
+	
+	capital = STATE_EAST_AEGEAN_ISLANDS
+}
+NRHD = { #新罗德岛
+	color = { 66  94  193 }
+
+	country_type = recognized
+
+	tier = empire	
 	
 	cultures = { greek }
 	
@@ -430,7 +441,7 @@ NJS = { #虹团
 	
 	capital = STATE_HOME_COUNTIES
 }
-MYG = { #
+MYG = { #MYGO
 	color = { 160  16  75 }
 	
 	country_type = recognized
@@ -449,4 +460,80 @@ YUZ = { #柚子社
 	
 	cultures = { turkish }
 	capital = STATE_ANKARA
+}
+VAIV = { #四号谷地
+	color = hsv360{ 38  97  83 }
+
+	country_type = recognized
+
+	tier = empire	
+	
+	cultures = { greek }
+	
+	capital = STATE_RHODE_ISLAND
+}
+WULN = { #武陵
+	color = { 125  171  84 }
+
+	country_type = recognized
+
+	tier = empire	
+	
+	cultures = { greek }
+	
+	capital = STATE_RHODE_ISLAND
+}
+TGCC = { #环塔商会
+	color = { 111  220  240 }
+
+	country_type = recognized
+
+	tier = empire	
+	
+	cultures = { greek }
+	
+	capital = STATE_RHODE_ISLAND
+}
+TRIG = { #圣三一学园
+	color = hsv360{ 38  97  83 }
+
+	country_type = recognized
+
+	tier = empire	
+	
+	cultures = { greek }
+	
+	capital = STATE_RHODE_ISLAND
+}
+NAVL = { #新阿瓦隆
+	color = hsv{ 0.99  0.7  0.9 }
+
+	country_type = recognized
+
+	tier = empire	
+	
+	cultures = { greek }
+	
+	capital = STATE_RHODE_ISLAND
+}
+HBPO = { #哈德逊湾港区
+	color = { 211  155  240 }
+	country_type = recognized
+
+	tier = empire	
+	
+	cultures = { greek }
+	
+	capital = STATE_RHODE_ISLAND
+}
+CTCH = { #超天酱
+	color = { 211  220  240 }
+
+	country_type = recognized
+
+	tier = empire	
+	
+	cultures = { greek }
+	
+	capital = STATE_RHODE_ISLAND
 }

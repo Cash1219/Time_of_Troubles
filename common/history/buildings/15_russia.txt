@@ -1634,12 +1634,12 @@
 		}
 	}
 	s:STATE_KAZAN={
-		region_state:KAZ={
+		region_state:GOD={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:KAZ"
+						country="c:GOD"
 						levels=1
 					}
 				}
@@ -1650,7 +1650,7 @@
 				building="building_arms_industry"
 				add_ownership={
 					country={
-						country="c:KAZ"
+						country="c:GOD"
 						levels=3
 					}
 				}
@@ -1667,7 +1667,7 @@
 						region="STATE_MOSCOW"
 					}
 					country={
-						country="c:KAZ"
+						country="c:UMA"
 						levels=1
 					}
 				}
@@ -1679,7 +1679,7 @@
 				add_ownership={
 					building={
 						type="building_food_industry"
-						country="c:KAZ"
+						country="c:GOD"
 						levels=3
 						region="STATE_KAZAN"
 					}
@@ -1692,7 +1692,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:KAZ"
+						country="c:GOD"
 						levels=2
 						region="STATE_KAZAN"
 					}
@@ -1705,7 +1705,7 @@
 				add_ownership={
 					building={
 						type="building_logging_camp"
-						country="c:KAZ"
+						country="c:GOD"
 						levels=4
 						region="STATE_KAZAN"
 					}
@@ -1845,18 +1845,18 @@
 		}
 	}
 	s:STATE_KALMYKIA={
-		region_state:GOD={
+		region_state:UMA={
 		}
 	}
 	s:STATE_NORTH_CAUCASUS={
 		
-		region_state:GOD={
+		region_state:UMA={
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:GOD"
+						country="c:UMA"
 						levels=2
 						region="STATE_NORTH_CAUCASUS"
 					}
@@ -2251,7 +2251,7 @@
 		}
 	}
 	s:STATE_STAVROPOL={
-		region_state:GOD={
+		region_state:UMA={
 		}
 	}
 	s:STATE_CHUVASHIA={

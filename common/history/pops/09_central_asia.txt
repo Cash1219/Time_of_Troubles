@@ -1,9 +1,9 @@
 ﻿POPS = {
 	s:STATE_DAGESTAN = {
-		region_state:GOD = {
+		region_state:UMA = {
 			create_pop = {
 				culture = north_caucasian
-				size = 56100
+				size = 254100#56100+198000
 			}
 			create_pop = {
 				culture = sephardic
@@ -34,27 +34,22 @@
 				culture = persian
 				size = 4454
 			}
-		}
-		region_state:CHC = {
-			create_pop = {
-				culture = north_caucasian
-				size = 198000
-			}
 			create_pop = {
 				culture = chechen
 				size = 6309
 			}
 		}
+		
 	}
 	s:STATE_KUBAN = {
-		region_state:RUS = {
+		region_state:UMA = {
 			create_pop = {
 				culture = circassian
-				size = 149000
+				size = 689000 #149000+540000
 			}
 			create_pop = {
 				culture = north_caucasian
-				size = 22000
+				size = 72000 #22000+50000
 			}
 			create_pop = {
 				culture = greek
@@ -73,16 +68,7 @@
 				size = 9600
 			}
 		}
-		region_state:CIR = {
-			create_pop = {
-				culture = circassian
-				size = 540000
-			}
-			create_pop = {
-				culture = north_caucasian
-				size = 50000
-			}
-		}
+		
 	}
 	s:STATE_ARMENIA = {
 		region_state:GEO = {
@@ -209,7 +195,7 @@
 		}
 	}
 	s:STATE_SAMARA = {
-		region_state:KAZ = {
+		region_state:GOD = {
 			create_pop = {
 				culture = russian
 				size = 1170657
@@ -260,7 +246,7 @@
 		}
 	}
 	s:STATE_KAZAN = {
-		region_state:KAZ = {
+		region_state:GOD = {
 			create_pop = {
 				culture = tatar
 				size = 458719
@@ -293,7 +279,7 @@
 		}
 	}
 	s:STATE_TARTARIA = { #Saratov - and DONE
-		region_state:KAZ = {
+		region_state:GOD = {
 			create_pop = {
 				culture = russian
 				size = 909377
@@ -327,7 +313,7 @@
 		}
 	}
 	s:STATE_ASTRAKHAN = {
-		region_state:GOD = {
+		region_state:UMA = {
 			create_pop = {
 				culture = russian
 				size = 163230
@@ -361,33 +347,18 @@
 		}
 	}
 	s:STATE_URALSK = {
-		region_state:RUS = {
-			create_pop = {
-				culture = kazak
-				size = 61200
-			}
-			create_pop = {
-				culture = russian
-				size = 32112
-			}
-			create_pop = {
-				culture = tatar
-				size = 4260
-			}
-		}
-
 		region_state:OZH = {
 			create_pop = {
 				culture = kazak
-				size = 115489
+				size = 176689 # 61200+115489
 			}
 			create_pop = {
 				culture = russian
-				size = 10990
+				size = 43102 # 32112+10990
 			}
 			create_pop = {
 				culture = tatar
-				size = 1400
+				size = 5660 # 4260+1400
 			}
 		}
 
@@ -855,7 +826,7 @@
 		}
 	}
 	s:STATE_PASHTUNISTAN = {
-		region_state:PAN = {
+		region_state:DAL = {
 			# pashtun (no religion, no pop_type)
 			create_pop = {
 				culture = pashtun
@@ -914,7 +885,7 @@
 		}
 	}
 	s:STATE_KANDAHAR = {
-		region_state:KAB = {
+		region_state:KAN = {
 			create_pop = {
 				culture = tajik
 				size = 70172
@@ -1295,70 +1266,28 @@
 	}
 
 	s:STATE_BALUCHISTAN = {
-		region_state:MAK = {
+		region_state:DAL = {
 			create_pop = {
 				culture = baluchi
-				size = 440296
+				size = 986888 # 440296+512392+4100+28100+3185
 			}
 			create_pop = {
 				pop_type = slaves
 				culture = lacustrine_bantu
-				size = 14800
+				size = 36400 # 14800+21000+300+300
 			}
 			create_pop = {
 				pop_type = slaves
 				culture = baluchi
-				size = 7000
-			}
-		}
-		region_state:KAL = {
-			create_pop = {
-				culture = baluchi
-				size = 512392
+				size = 17000 # 7000+10000
 			}
 			create_pop = {
 				culture = pashtun
 				size = 34000
 			}
 			create_pop = {
-				pop_type = slaves
-				culture = lacustrine_bantu
-				size = 21000
-			}
-			create_pop = {
-				pop_type = slaves
-				culture = baluchi
-				size = 10000
-			}
-		}
-		region_state:OMA = {
-			create_pop = {
-				culture = baluchi
-				size = 4100
-			}
-			create_pop = {
-				pop_type = slaves
-				culture = lacustrine_bantu
-				size = 300
-			}
-			create_pop = {
 				culture = bedouin
 				size = 160
-			}
-		}
-		region_state:KAN = {
-			create_pop = {
-				culture = baluchi
-				size = 28100
-			}
-			create_pop = {
-				culture = baluchi # Brahui
-				size = 3185
-			}
-			create_pop = {
-				pop_type = slaves
-				culture = lacustrine_bantu
-				size = 300
 			}
 		}
 	}
@@ -1393,7 +1322,7 @@
 		}
 	}
 	s:STATE_HIMALAYAS = {
-		region_state:NEP = {
+		region_state:CTCH = {
 			create_pop = {
 				culture = nepali
 				size = 2786418

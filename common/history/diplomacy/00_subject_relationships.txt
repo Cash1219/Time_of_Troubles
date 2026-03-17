@@ -27,7 +27,7 @@
 			type = idol_group
 		}
 	}
-	c:NET ?= {
+	c:BEL ?= {
 		create_diplomatic_pact = {
 			country = c:LUX
 			type = personal_union
@@ -39,14 +39,22 @@
 		
 	}
 	c:SWE ?= {
-		create_diplomatic_pact = {
-			country = c:NOR
-			type = dominion
-		}
+		
 		create_diplomatic_pact = { #TOT MOD
 			country = c:DEI
 			type = dominion
 		}
+		#create_diplomatic_pact = {
+		#	country = c:HBPO
+		#	type = chartered_company
+		#}
+		
+	}
+	c:NOR ?= {
+		#create_diplomatic_pact = {
+		#	country = c:TRIG
+		#	type = colony
+		#}
 	}
 	c:RUS ?= {
 		#create_diplomatic_pact = { #TOT MOD
@@ -110,7 +118,7 @@
 			type = puppet
 		}
 	}
-	c:USA ?= {
+	c:NRHD ?= {
 		create_diplomatic_pact = {
 			country = c:SEQ
 			type = puppet
@@ -137,45 +145,18 @@
 			country = c:SIL
 			type = puppet
 		}
-		create_diplomatic_pact = {
-			country = c:ORG
-			type = colony
-		}
-		create_diplomatic_pact = {
-			country = c:HAN
-			type = personal_union
-		}
+		
+		
 		create_diplomatic_pact = {
 			country = c:SAF
 			type = colony
 		}
 
-		### OH CANADA ###
-		# Province of Upper Canada
 		create_diplomatic_pact = {
-			country = c:ONT
+			country = c:NAVL
 			type = colony
 		}
-		# Province of Lower Canada
-		create_diplomatic_pact = {
-			country = c:QUE
-			type = colony
-		}
-		# New Brunswick
-		create_diplomatic_pact = {
-			country = c:NBS
-			type = colony
-		}
-		# Nova Scotia
-		create_diplomatic_pact = {
-			country = c:NVS
-			type = colony
-		}
-		# Hudson Bay Company has a weird autonomous charter
-		create_diplomatic_pact = {
-			country = c:HBC
-			type = chartered_company
-		}
+		
 
 		### AUSTRALIA ###
 		# Colony of New South Wales
@@ -540,12 +521,12 @@
 		}
 	}
 
-	c:KAL = {
-		create_diplomatic_pact = {
-			country = c:MAK
-			type = vassal
-		}
-	}
+	#c:KAL = {
+	#	create_diplomatic_pact = {
+	#		country = c:MAK
+	#		type = vassal
+	#	}
+	#}
 
 
 	# Starting liberty desire
@@ -581,9 +562,9 @@
 		add_liberty_desire = 10
 	}
 
-	c:FIN = {
-		add_liberty_desire = 10
-	}
+	#c:FIN = {
+	#	add_liberty_desire = 10
+	#}
 
 	c:OZH = {
 		add_liberty_desire = 10
@@ -601,9 +582,9 @@
 		add_liberty_desire = 10
 	}
 
-	c:AQO = {
-		add_liberty_desire = 20
-	}
+	#c:AQO = {
+	#	add_liberty_desire = 20
+	#}
 
 	c:MOL = {
 		add_liberty_desire = 20
