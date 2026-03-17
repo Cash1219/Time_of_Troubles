@@ -1,0 +1,381 @@
+#不启动
+pm_magic_seed_0= {
+    texture = "gfx/interface/icons/production_method_icons/pm_magic_seed_0.dds"
+}
+#咖啡
+pm_magic_seed_1_coffee = {
+    texture = "gfx/interface/icons/production_method_icons/pm_magic_seed_1.dds"
+    unlocking_technologies = {
+     tot_magic_power 
+
+    }
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_magic_energy_add = 3
+            goods_output_coffee_add = 10
+        }
+        unscaled = {
+            building_goods_input_mult = -0.1
+            building_throughput_add = 0.1
+        }
+    }
+}
+
+pm_magic_seed_2_coffee = {
+    texture = "gfx/interface/icons/production_method_icons/pm_magic_seed_1.dds"
+    unlocking_technologies = {
+        tot_mass_magic
+    }
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_magic_energy_add = 3
+            goods_input_magic_tools_add = 3
+            goods_output_coffee_add = 20
+        }
+        unscaled = {
+            building_goods_input_mult = -0.1
+            building_throughput_add = 0.1
+        }
+    }
+}
+#棉花
+pm_magic_seed_1_cotton = {
+    texture = "gfx/interface/icons/production_method_icons/pm_magic_seed_1.dds"
+    unlocking_technologies = {
+        tot_magic_power 
+        
+    }
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_magic_energy_add = 3
+            goods_output_fabric_add = 10
+        }
+        unscaled = {
+            building_goods_input_mult = -0.1
+            building_throughput_add = 0.1
+        }
+    }
+}
+
+pm_magic_seed_2_cotton = {
+    texture = "gfx/interface/icons/production_method_icons/pm_magic_seed_1.dds"
+    unlocking_technologies = {
+        tot_mass_magic
+    }
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_magic_energy_add = 3
+            goods_input_magic_tools_add = 3
+            goods_output_fabric_add = 20
+        }
+        unscaled = {
+            building_goods_input_mult = -0.1
+            building_throughput_add = 0.1
+        }
+    }
+}
+#染料
+pm_magic_seed_1_dye = {
+    texture = "gfx/interface/icons/production_method_icons/pm_magic_seed_1.dds"
+    unlocking_technologies = {
+        tot_magic_power 
+    }
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_magic_energy_add = 3
+            goods_output_dye_add = 10
+        }
+        unscaled = {
+            building_goods_input_mult = -0.1
+            building_throughput_add = 0.1
+        }
+    }
+}
+
+pm_magic_seed_2_dye = {
+    texture = "gfx/interface/icons/production_method_icons/pm_magic_seed_1.dds"
+    unlocking_technologies = {
+        tot_mass_magic
+    }
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_magic_energy_add = 3
+            goods_input_magic_tools_add = 3
+            goods_output_dye_add = 20
+        }
+        unscaled = {
+            building_goods_input_mult = -0.1
+            building_throughput_add = 0.1
+        }
+    }
+}
+#鸦片
+pm_magic_seed_1_opium = {
+    texture = "gfx/interface/icons/production_method_icons/pm_magic_seed_1.dds"
+    unlocking_technologies = {
+         tot_magic_power 
+    }
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_magic_energy_add = 3
+            goods_output_opium_add = 10
+        }
+        unscaled = {
+            building_goods_input_mult = -0.1
+            building_throughput_add = 0.1
+        }
+    }
+}
+
+pm_magic_seed_2_opium = {
+    texture = "gfx/interface/icons/production_method_icons/pm_magic_seed_1.dds"
+    unlocking_technologies = {
+        tot_mass_magic
+    }
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_magic_energy_add = 3
+            goods_input_magic_tools_add = 3
+            goods_output_opium_add = 20
+        }
+        unscaled = {
+            building_goods_input_mult = -0.1
+            building_throughput_add = 0.1
+        }
+    }
+}
+#茶
+pm_magic_seed_1_tea = {
+    texture = "gfx/interface/icons/production_method_icons/pm_magic_seed_1.dds"
+    unlocking_technologies = {
+         tot_magic_power 
+    }
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_magic_energy_add = 3
+            goods_output_tea_add = 10
+        }
+        unscaled = {
+            building_goods_input_mult = -0.1
+            building_throughput_add = 0.1
+        }
+    }
+}
+
+pm_magic_seed_2_tea = {
+    texture = "gfx/interface/icons/production_method_icons/pm_magic_seed_1.dds"
+    unlocking_technologies = {
+        tot_mass_magic
+    }
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_magic_energy_add = 3
+            goods_input_magic_tools_add = 3
+            goods_output_tea_add = 20
+        }
+        unscaled = {
+            building_goods_input_mult = -0.1
+            building_throughput_add = 0.1
+        }
+    }
+}
+#烟草
+pm_magic_seed_1_tobacco = {
+    texture = "gfx/interface/icons/production_method_icons/pm_magic_seed_1.dds"
+    unlocking_technologies = {
+         tot_magic_power 
+    }
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_magic_energy_add = 3
+            goods_output_tobacco_add = 10
+        }
+        unscaled = {
+            building_goods_input_mult = -0.1
+            building_throughput_add = 0.1
+        }
+    }
+}
+
+pm_magic_seed_2_tobacco= {
+    texture = "gfx/interface/icons/production_method_icons/pm_magic_seed_1.dds"
+    unlocking_technologies = {
+        tot_mass_magic
+    }
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_magic_energy_add = 3
+            goods_input_magic_tools_add = 3
+            goods_output_tobacco_add = 20
+        }
+        unscaled = {
+            building_goods_input_mult = -0.1
+            building_throughput_add = 0.1
+        }
+    }
+}
+#糖料
+pm_magic_seed_1_sugar = {
+    texture = "gfx/interface/icons/production_method_icons/pm_magic_seed_1.dds"
+    unlocking_technologies = {
+        tot_magic_power 
+    }
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_magic_energy_add = 3
+            goods_output_sugar_add = 10
+        }
+        unscaled = {
+            building_goods_input_mult = -0.1
+            building_throughput_add = 0.1
+        }
+    }
+}
+
+pm_magic_seed_2_sugar = {
+    texture = "gfx/interface/icons/production_method_icons/pm_magic_seed_1.dds"
+    unlocking_technologies = {
+        tot_mass_magic
+    }
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_magic_energy_add = 3
+            goods_input_magic_tools_add = 3
+            goods_output_sugar_add = 20
+        }
+        unscaled = {
+            building_goods_input_mult = -0.1
+            building_throughput_add = 0.1
+        }
+    }
+}
+#水果
+pm_magic_seed_1_banana = {
+    texture = "gfx/interface/icons/production_method_icons/pm_magic_seed_1.dds"
+    unlocking_technologies = {
+         tot_magic_power 
+    }
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_magic_energy_add = 3
+            goods_output_fruit_add = 10
+        }
+        unscaled = {
+            building_goods_input_mult = -0.1
+            building_throughput_add = 0.1
+        }
+    }
+}
+
+pm_magic_seed_2_banana = {
+    texture = "gfx/interface/icons/production_method_icons/pm_magic_seed_1.dds"
+    unlocking_technologies = {
+        tot_mass_magic
+    }
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_magic_energy_add = 3
+            goods_input_magic_tools_add = 3
+            goods_output_fruit_add = 20
+        }
+        unscaled = {
+            building_goods_input_mult = -0.1
+            building_throughput_add = 0.1
+        }
+    }
+}
+#丝绸
+pm_magic_seed_1_silk = {
+    texture = "gfx/interface/icons/production_method_icons/pm_magic_seed_1.dds"
+    unlocking_technologies = {
+             tot_magic_power 
+    }
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_magic_energy_add = 3
+            goods_output_silk_add = 10
+        }
+        unscaled = {
+            building_goods_input_mult = -0.1
+            building_throughput_add = 0.1
+        }
+    }
+}
+
+pm_magic_seed_2_silk = {
+    texture = "gfx/interface/icons/production_method_icons/pm_magic_seed_1.dds"
+    unlocking_technologies = {
+        tot_mass_magic
+    }
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_magic_energy_add = 3
+            goods_input_magic_tools_add = 3
+            goods_output_silk_add = 20
+        }
+        unscaled = {
+            building_goods_input_mult = -0.1
+            building_throughput_add = 0.1
+        }
+    }
+}
+#葡萄酒
+pm_magic_seed_1_vineyard = {
+    texture = "gfx/interface/icons/production_method_icons/pm_magic_seed_1.dds"
+    unlocking_technologies = {
+            tot_magic_power 
+    }
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_magic_energy_add = 3
+            goods_output_wine_add = 10
+        }
+        unscaled = {
+            building_goods_input_mult = -0.1
+            building_throughput_add = 0.1
+        }
+    }
+}
+
+pm_magic_seed_2_vineyard = {
+    texture = "gfx/interface/icons/production_method_icons/pm_magic_seed_1.dds"
+    unlocking_technologies = {
+        tot_mass_magic
+    }
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_magic_energy_add = 3
+            goods_input_magic_tools_add = 3
+            goods_output_wine_add = 20
+        }
+        unscaled = {
+            building_goods_input_mult = -0.1
+            building_throughput_add = 0.1
+        }
+    }
+}
+
+pm_magic_transport = {
+	texture = "gfx/interface/icons/production_method_icons/log_carts.dds"
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+
+	unlocking_technologies = {
+		tot_mass_magic
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_transportation_add = 5
+            goods_input_magic_energy_add = 3
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2000
+            building_employment_fammers_add = -500
+		}
+	}
+}

@@ -935,7 +935,7 @@
 	}
 	# Zuidholland, Noordholland, Zeeland, and Utrecht
 	s:STATE_HOLLAND = {
-		region_state:NET = {
+		region_state:BEL = {
 			create_pop = {
 				culture = dutch
 				size = 842331
@@ -966,7 +966,7 @@
 	}
 	# Friesland, Overijssel, Groningen, and Drenthe
 	s:STATE_FRIESLAND = {
-		region_state:NET = {
+		region_state:BEL = {
 			create_pop = {
 				culture = dutch
 				size = 528678
@@ -989,45 +989,29 @@
 	}
 	# Noordbrabant, Gelderland, and Limburg
 	s:STATE_GELRE = {
-		region_state:NET = {
+		region_state:BEL = {
 			create_pop = {
 				culture = dutch
-				size = 192091
+				size = 192091  # 192091
 			}
 			create_pop = {
 				culture = dutch
 				religion = catholic
-				size = 513449
+				size = 673889  # 513449 + 160440
 			}
 			create_pop = {
 				culture = wallonian # French or Walloon Reformed
 				religion = protestant
-				size = 774
+				size = 774  # 774
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 5804
+				size = 6705  # 5804 + 901
 			}
 			create_pop = {
 				culture = north_german
 				religion = catholic
-				size = 15101
-			}
-		}
-		region_state:BEL = {
-			create_pop = {
-				culture = dutch
-				religion = catholic
-				size = 160440
-			}
-			create_pop = {
-				culture = north_german
-				religion = catholic
-				size = 4100
-			}
-			create_pop = {
-				culture = ashkenazi
-				size = 901
+				size = 19201  # 15101 + 4100
 			}
 		}
 	}
@@ -1312,31 +1296,19 @@
 		}
 	}
 	s:STATE_ELBE = {
-		region_state:BRE = {
+		region_state:PRU = {
 			create_pop = {
 				culture = north_german
-				size = 102004
+				size = 757196 #512788+102004+142404
 			}
 			create_pop = {
 				culture = north_german
 				religion = catholic
 				size = 4000
 			}
-		}
-		region_state:HAM = {
-			create_pop = {
-				culture = north_german
-				size = 142404
-			}
 			create_pop = {
 				culture = ashkenazi
 				size = 8000
-			}
-		}
-		region_state:HAN = {
-			create_pop = {
-				culture = north_german
-				size = 512788
 			}
 		}
 	}
@@ -1517,7 +1489,7 @@
 	}
 
 	s:STATE_RUHR = {
-		region_state:PRU = {
+		region_state:RHE = {
 			create_pop = {
 				culture = north_german
 				religion = catholic
@@ -1647,26 +1619,15 @@
 		}
 	}
 	s:STATE_HANNOVER = {
-		region_state:OLD = {
+		region_state:PRU = {
 			create_pop = {
 				culture = north_german
-				size = 219696
+				size = 1161904 #942208+219696
 			}
 			create_pop = {
 				culture = north_german
 				religion = catholic
-				size = 38000
-			}
-		}
-		region_state:HAN = {
-			create_pop = {
-				culture = north_german
-				size = 942208
-			}
-			create_pop = {
-				culture = north_german
-				religion = catholic
-				size = 195996
+				size = 233996 #195996+38000
 			}
 			create_pop = {
 				culture = ashkenazi

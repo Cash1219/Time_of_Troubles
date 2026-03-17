@@ -826,67 +826,36 @@
 		region_state:PER = {
 			create_pop = {
 				culture = bedouin
-				size = 10270
+				size = 15272 # 10270+5002=15272
 			}
 			create_pop = {
 				culture = bedouin
 				religion = sunni
-				size = 6001
-			}
-			create_pop = {
-				culture = persian
-				size = 20050
-			}
-			create_pop = {
-				pop_type = slaves
-				culture = lacustrine_bantu
-				size = 3200
-			}
-		}
-		region_state:OMA = {
-			create_pop = {
-				culture = persian
-				size = 40100
+				size = 8007 # 6001+2006=8007
 			}
 			create_pop = {
 				culture = bedouin
 				religion = ibadi
-				size = 8012
-			}
-			create_pop = {
-				culture = baluchi
-				size = 5002
-			}
-			create_pop = {
-				culture = bedouin
-				religion = sunni
-				size = 2006
-			}
-			create_pop = {
-				culture = sephardic
-				size = 910
-			}
-			create_pop = {
-				pop_type = slaves
-				culture = lacustrine_bantu
-				size = 8200
-			}
-		}
-		region_state:ABU = {
-			create_pop = {
-				culture = bedouin
-				size = 5002
+				size = 8012 # 0+8012=8012
 			}
 			create_pop = {
 				culture = persian
-				size = 2006
+				size = 62156 # 20050+40100+2006=62156
+			}
+			create_pop = {
+				culture = baluchi
+				size = 5002 # 0+5002=5002
+			}
+			create_pop = {
+				culture = sephardic
+				size = 910 # 0+910=910
 			}
 			create_pop = {
 				pop_type = slaves
 				culture = lacustrine_bantu
-				size = 230
+				size = 11630 # 3200+8200+230=11630
 			}
-		}
+}
 	}
 	s:STATE_SISTAN = {
 		region_state:MAK = {

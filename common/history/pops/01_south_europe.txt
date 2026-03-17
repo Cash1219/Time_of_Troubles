@@ -651,7 +651,7 @@
 		}
 	}
 	s:STATE_DALMATIA = {
-		region_state:SER = {
+		region_state:AQO = {
 			create_pop = {
 				culture = croat
 				size = 297796
@@ -667,7 +667,7 @@
 		}
 	}
 	s:STATE_CROATIA = {
-		region_state:SER = {
+		region_state:AQO = {
 			create_pop = {
 				culture = croat
 				size = 563592
@@ -692,7 +692,7 @@
 		}
 	}
 	s:STATE_SLAVONIA = {
-		region_state:SER = {
+		region_state:AQO = {
 			create_pop = {
 				culture = croat
 				size = 282048
@@ -807,41 +807,23 @@
 		region_state:BYZ = {
 			create_pop = {
 				culture = serb
-				size = 203567
+				size = 378922 # 203567+175355
 			}
 			create_pop = {
 				culture = romanian
-				size = 75573
+				size = 81418 # 75573+5845
 			}
 			create_pop = {
 				culture = albanian
-				size = 2031
+				size = 45870 # 2031+43839
 			}
 			create_pop = {
 				culture = sephardic
-				size = 201
-			}
-		}
-		region_state:TUR = {
-			create_pop = {
-				culture = serb
-				size = 175355
-			}
-			create_pop = {
-				culture = albanian
-				size = 43839
+				size = 321 # 201+120
 			}
 			create_pop = {
 				culture = turkish
 				size = 29226
-			}
-			create_pop = {
-				culture = romanian
-				size = 5845
-			}
-			create_pop = {
-				culture = sephardic
-				size = 120
 			}
 		}
 	}
@@ -896,7 +878,7 @@
 	}
 
 	s:STATE_EAST_AEGEAN_ISLANDS = {
-		region_state:RHD = {
+		region_state:ORHD = {
 			create_pop = {
 				culture = turkish
 				size = 8992

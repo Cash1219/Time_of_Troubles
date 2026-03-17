@@ -1,0 +1,55 @@
+pm_no_magic = {
+	texture = "gfx/interface/icons/production_method_icons/no_explosives.dds"
+}
+pm_railway_luotuomu = {
+		texture = "gfx/interface/icons/production_method_icons/pm_railway_luotuomu.dds"
+	replacement_if_valid = pm_steam_trains_principle_transport_3
+
+	unlocking_technologies = {
+		tot_magictools
+
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_magictools_add = 5 # 300
+			goods_input_magic_mineral_add = 5 # 150
+			goods_output_transportation_add = 10 # 750
+		}
+		
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_infrastructure_add = 15
+			state_pollution_generation_add = 10
+		}
+	}
+}
+
+pm_railway_transport = {
+		texture = "gfx/interface/icons/production_method_icons/pm_railway_luotuomu.dds"
+	replacement_if_valid = pm_steam_trains_principle_transport_3
+
+	unlocking_technologies = {
+		tot_mass_magic
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_magictools_add = 5
+			goods_input_magic_energy_add = 5
+			goods_input_magic_steels_add = 5
+			goods_output_transportation_add = 30
+			
+		}
+		
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_infrastructure_add = 30
+			state_pollution_generation_add = 10
+		}
+	}
+}
