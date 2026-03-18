@@ -2180,32 +2180,7 @@
 		}
 	}
 
-	c:BAD ?= {
-		create_military_formation = {
-			type = army
-			hq_region = sr:region_south_germany
-			name = Groherzoglich_Badische_Armee
-
-			combat_unit = {
-				type = unit_type:combat_unit_type_line_infantry
-				state_region = s:STATE_BADEN
-				count = 5
-			}
-
-			combat_unit = {
-				type = unit_type:combat_unit_type_dragoons
-				state_region = s:STATE_BADEN
-				count = 3
-			}
-
-			combat_unit = {
-				type = unit_type:combat_unit_type_cannon_artillery
-				state_region = s:STATE_BADEN
-				count = 2
-			}
-		}
-	}
-
+	
 	c:WUR ?= {
 		create_military_formation = {
 			type = army
@@ -2356,57 +2331,8 @@
 		}
 	}
 
-	c:HEK ?= {
-		create_military_formation = {
-			type = army
-			hq_region = sr:region_north_germany
-			name = Kurfrstlich_Hessische_Armee
 
-			combat_unit = {
-				type = unit_type:combat_unit_type_line_infantry
-				state_region = s:STATE_HESSE
-				count = 4
-			}
-
-			combat_unit = {
-				type = unit_type:combat_unit_type_hussars
-				state_region = s:STATE_HESSE
-				count = 1
-			}
-
-			combat_unit = {
-				type = unit_type:combat_unit_type_cannon_artillery
-				state_region = s:STATE_HESSE
-				count = 1
-			}
-		}
-	}
-
-	c:HES ?= {
-		create_military_formation = {
-			type = army
-			hq_region = sr:region_north_germany
-			name = Groherzoglich_Hessische_Armee
-
-			combat_unit = {
-				type = unit_type:combat_unit_type_line_infantry
-				state_region = s:STATE_HESSE
-				count = 3
-			}
-
-			combat_unit = {
-				type = unit_type:combat_unit_type_lancers
-				state_region = s:STATE_HESSE
-				count = 1
-			}
-
-			combat_unit = {
-				type = unit_type:combat_unit_type_cannon_artillery
-				state_region = s:STATE_HESSE
-				count = 1
-			}
-		}
-	}
+	
 
 	c:NAS ?= {
 		create_military_formation = {
@@ -2584,19 +2510,7 @@
 		}
 	}
 
-	c:FRM ?= {
-		create_military_formation = {
-			type = army
-			hq_region = sr:region_north_germany
-			name = Linienbataillon_Frankfurt
-
-			combat_unit = {
-				type = unit_type:combat_unit_type_line_infantry
-				state_region = s:STATE_HESSE
-				count = 1
-			}
-		}
-	}
+	
 
 	c:WLD ?= {
 		create_military_formation = {

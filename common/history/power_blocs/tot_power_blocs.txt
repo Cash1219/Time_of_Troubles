@@ -29,7 +29,6 @@
 			principle = principle_creative_legislature_1
 			member = c:ITA
 			member = c:SWI
-			member = c:RHE
 		}
 		
 	}
@@ -70,7 +69,7 @@
 	}
 	c:BYZ ?= {
 		create_power_bloc = {
-			name = HOLY_EMPIRE
+			name = BAND_EMPIRE
 
 			map_color = { 219 211 157 }
 
@@ -99,7 +98,7 @@
 	}
 	c:VEN ?= {
 		create_power_bloc = {
-			name = GIRLSBANDPARTY
+			name = GIRLS_BAND_PARTY
 
 			map_color = { 219 211 157 }
 
@@ -149,7 +148,7 @@
 	}
 	c:UMA ?= {
 		create_power_bloc = {
-			name = VARANGIANS_TATARS
+			name = STAY_GOLD
 			map_color = { 87  130  199 }
 
 			founding_date = 1444.11.11
@@ -158,9 +157,7 @@
 
 
 			# Habsburg leaders in Italy and Italian states held up by direct Austrian intervention
-			member = c:UMA
-			member = c:UMA
-			member = c:OZH
+			member = c:GOD
 		}
 		if = {
 			limit = {
@@ -200,39 +197,18 @@
 	}
 	c:PRU ?= {
 		create_power_bloc = {
-			name =  ZOLLVEREIN
+			name =  HOLY_MAHOUSHOUJO_EMPIRE
 
 			map_color = { 147 130 110 }
 
 			founding_date = 1834.01.01
 			identity = identity_trade_league
 			principle = principle_internal_trade_1
-			
-			member = c:LUB # After 1836, but member for gameplay balance reasons
-			member = c:HAM # After 1836, but member for gameplay balance reasons
-			member = c:BRE # After 1836, but member for gameplay balance reasons
-			member = c:BRA # After 1836, but member for gameplay balance reasons
-			member = c:SCM # After 1836, but member for gameplay balance reasons
-			member = c:MST # After 1836, but member for gameplay balance reasons
-			member = c:OLD # After 1836, but member for gameplay balance reasons
-			member = c:HES # 1834
-			member = c:BAV # 1834
-			member = c:WUR # 1834
-			member = c:BAD # 1835
-			member = c:SAX # 1834
-			member = c:HEK # 1834
-			member = c:MEC # 1826
-			member = c:NAS # 1835
-			member = c:WEI # 1834
-			member = c:SCW # 1834 
-			member = c:COB # 1834
-			member = c:MEI # 1834
-			member = c:ANH # 1821
-			member = c:WLD # 1834
-			member = c:LIP # Lippe-Detmold, 1834
+			member = c:BEL
+			member = c:RHE
+			member = c:BAV
+			member = c:WUR
 
-
-			member = c:FRM # Joins January 2nd, 1836, but I bet the negotiations were underway before then so let's just say they're in Jan. 1
 			# Luxembourg joined the Zollverein in 1842
 
 			# Steuerverein- separate from the Zollverein. Would include HAN, BRA, OLD
