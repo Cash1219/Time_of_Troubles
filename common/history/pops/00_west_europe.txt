@@ -935,7 +935,7 @@
 	}
 	# Zuidholland, Noordholland, Zeeland, and Utrecht
 	s:STATE_HOLLAND = {
-		region_state:BEL = {
+		region_state:TBUN = {
 			create_pop = {
 				culture = dutch
 				size = 842331
@@ -966,7 +966,7 @@
 	}
 	# Friesland, Overijssel, Groningen, and Drenthe
 	s:STATE_FRIESLAND = {
-		region_state:BEL = {
+		region_state:TBUN = {
 			create_pop = {
 				culture = dutch
 				size = 528678
@@ -989,7 +989,7 @@
 	}
 	# Noordbrabant, Gelderland, and Limburg
 	s:STATE_GELRE = {
-		region_state:BEL = {
+		region_state:TBUN = {
 			create_pop = {
 				culture = dutch
 				size = 192091  # 192091
@@ -1016,15 +1016,15 @@
 		}
 	}
 	s:STATE_WALLONIA = {
-		region_state:LUX = {
+		region_state:TBUN = {
 			create_pop = {
 				culture = wallonian
-				size = 103992
+				size = 1517468 # 103992+1413476
 			}
 			create_pop = {
 				culture = north_german
 				religion = catholic
-				size = 71996
+				size = 99843 # 71996+27847
 			}
 			create_pop = {
 				culture = north_german
@@ -1032,22 +1032,10 @@
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 210
-			}
-		}
-		# Hainaut, Liège, Luxembourg, and Namur
-		region_state:BEL = { #
-			create_pop = {
-				culture = wallonian # 'Walloon & French' in census data.
-				size = 1413476
+				size = 415 # 210+205
 			}
 			create_pop = {
-				culture = north_german
-				religion = catholic
-				size = 27847
-			}
-			create_pop = {
-				culture = flemish # 'Flemish & Dutch' in census data.
+				culture = flemish
 				size = 40207
 			}
 			create_pop = {
@@ -1059,15 +1047,11 @@
 				culture = british
 				size = 317
 			}
-			create_pop = {
-				culture = ashkenazi
-				size = 205
-			}
 		}
 	}
 	# Antwerp, Brabant, West Flanders, East Flanders, and Limburg
 	s:STATE_FLANDERS = {
-		region_state:BEL = {
+		region_state:TBUN = {
 			create_pop = {
 				culture = flemish # 'Flemish & Dutch' in census data.
 				size = 2224197
@@ -1497,7 +1481,7 @@
 		region_state:HOL = {
 			create_pop = {
 				culture = north_german
-				size = 374604
+				size = 657000 # 374604+82396+200000
 			}
 			create_pop = {
 				culture = ashkenazi
@@ -1506,32 +1490,11 @@
 			create_pop = {
 				culture = north_german
 				religion = catholic
-				size = 8000
+				size = 10000 # 8000+2000
 			}
 			create_pop = {
 				culture = danish
-				size = 20000
-			}
-		}
-		region_state:LUB = {
-			create_pop = {
-				culture = north_german
-				size = 82396
-			}
-			create_pop = {
-				culture = north_german
-				religion = catholic
-				size = 2000
-			}
-		}
-		region_state:SCH = {
-			create_pop = {
-				culture = north_german
-				size = 200000
-			}
-			create_pop = {
-				culture = danish
-				size = 136404
+				size = 156404 # 20000+136404
 			}
 		}
 	}

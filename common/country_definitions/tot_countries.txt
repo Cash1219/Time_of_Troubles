@@ -18,12 +18,12 @@
 #	cultures = { portuguese }
 #	capital = STATE_ESTREMADURA
 #}
-AUS = { #奥地利帝国
+AUS = { #偶像国
 	color = { 211  220  240 }
 
 	country_type = recognized
 
-	tier = empire
+	tier = kingdom
 	
 	cultures = { south_german }
 	capital = STATE_AUSTRIA
@@ -33,7 +33,7 @@ BOH = { #波西米亚
 
 	country_type = recognized
 
-	tier = principality
+	tier = kingdom
 	
 	cultures = { czech }
 	capital = STATE_BOHEMIA
@@ -53,38 +53,38 @@ SKD = { #斯卡蒂利亚
 	color = hsv360{ 38  97  83 }
 	
 	country_type = recognized
-
+	religion = seafort
 	tier = kingdom
 	
 	cultures = { spanish }
-	capital = STATE_TOLEDO
+	capital = STATE_NEW_CASTILE
 }
 GNC = { #加纳利西亚
-	color = hsv360{ 38  97  83 }
+	color = { 28 82 148 }
 	
 	country_type = recognized
-
+	religion = seafort
 	tier = kingdom
 	
 	cultures = { galician }
 	capital = STATE_GALICIA
 }
 ADL = { #安达卢西亚
-	color = hsv360{ 38  97  83 }
+	color = { 0  142  76 }
 	
 	country_type = recognized
-
+	religion = seafort
 	tier = kingdom
 	
 	cultures = { spanish }
-	capital = STATE_LOWER_ANDALUSIA_spanish
+	capital = STATE_LOWER_ANDALUSIA
 }
 ITA = { #意大利
 	color = hsv360{ 357  90  87 }
 
 	country_type = recognized
 
-	tier = empire
+	tier = kingdom
 
 	cultures = { north_italian south_italian }
 	capital = STATE_PIEDMONT
@@ -94,7 +94,7 @@ PRU = { #魔法少女联邦
 	
 	country_type = recognized
 
-	tier = kingdom
+	tier = empire
 	
 	cultures = { north_german }
 	capital = STATE_BRANDENBURG
@@ -104,7 +104,7 @@ TUR = { #土耳其 - 母鸡卡苏丹国
 	
 	country_type = recognized
 	religion = starbeat #tot mod 星之鼓动
-	tier = empire
+	tier = kindom
 	
 	cultures = { turkish }
 	capital = STATE_ANKARA
@@ -125,7 +125,7 @@ VEN = { #威尼斯 -邦多利本家
 	
 	country_type = recognized
 
-	tier = principality
+	tier = kindom
 	religion = starbeat #tot mod 星之鼓动
 	cultures = { north_italian }
 	capital = STATE_VENETIA
@@ -185,7 +185,7 @@ GBR = { #大不列颠
 	country_type = recognized
 
 	tier = empire	
-	
+	religion = { kindo }
 	cultures = { british scottish }
 	
 	capital = STATE_HOME_COUNTIES
@@ -228,7 +228,7 @@ UMA = { #赛马娘 克里木
 	color = hsv360{ 1 95 35 }
 
 	country_type = recognized
-
+	religion = kiseki
 	tier = kingdom	
 	
 	cultures = { tatar }
@@ -239,7 +239,7 @@ GOD = { #金色汗国 金帐
 	color = { 27 52 94 }
 	country_type = recognized
 
-	tier = kingdom	
+	tier = kindom	
 	
 	cultures = { tatar }
 	
@@ -283,7 +283,7 @@ LOU = { #露易丝安娜
 
 	country_type = colonial
 
-	tier = principality
+	tier = kindom
 
 	cultures = { cajun afro_antillean }
 	capital = STATE_LOUISIANA
@@ -314,8 +314,8 @@ DAL = { #精灵
 
 	country_type = recognized
 
-	tier = empire	
-	
+	tier = kindom	
+	religion = gaming
 	cultures = { panjabi }
 	
 	capital = STATE_PUNJAB
@@ -327,7 +327,7 @@ NEP = { #紫耀之都
 	country_type = recognized
 
 	tier = empire	
-	
+	religion = gaming
 	cultures = { hindustani }
 	
 	capital = STATE_DELHI
@@ -337,8 +337,8 @@ ELZ = { #艾尔奇亚
 
 	country_type = recognized
 
-	tier = empire	
-	
+	tier = kindom	
+	religion = gaming
 	cultures = { gujarati }
 	
 	capital = STATE_GUJARAT
@@ -349,7 +349,7 @@ OVL = { #安兹乌尔恭
 	country_type = recognized
 
 	tier = empire	
-	
+	religion = gaming
 	cultures = { kannada }
 	
 	capital = STATE_MADRAS
@@ -359,8 +359,8 @@ CIN = { #中印度
 
 	country_type = recognized
 
-	tier = empire	
-	
+	tier = principality	
+	religion = gaming
 	cultures = { kannada }
 	
 	capital = STATE_MADRAS
@@ -370,7 +370,7 @@ ACC = { #学园都市
 
 	country_type = recognized
 
-	tier = empire	
+	tier = kindom	
 	
 	cultures = { british scottish }
 	
@@ -381,7 +381,7 @@ YUZ = { #柚子社
 
 	country_type = recognized
 
-	tier = empire	
+	tier = kindom	
 	
 	cultures = { british scottish }
 	
@@ -424,7 +424,7 @@ AQO = { #水团
 
 	country_type = recognized
 
-	tier = empire	
+	tier = kingdom	
 	
 	cultures = { british scottish }
 	
@@ -435,7 +435,7 @@ NJS = { #虹团
 
 	country_type = recognized
 
-	tier = empire	
+	tier = kingdom	
 	
 	cultures = { british scottish }
 	
@@ -446,7 +446,7 @@ MYG = { #MYGO
 	
 	country_type = recognized
 	religion = starbeat #tot mod 星之鼓动
-	tier = empire
+	tier = principality
 	
 	cultures = { turkish }
 	capital = STATE_ANKARA
@@ -466,7 +466,7 @@ VAIV = { #四号谷地
 
 	country_type = recognized
 
-	tier = empire	
+	tier = principality	
 	
 	cultures = { greek }
 	
@@ -477,7 +477,7 @@ WULN = { #武陵
 
 	country_type = recognized
 
-	tier = empire	
+	tier = principality	
 	
 	cultures = { greek }
 	
@@ -488,7 +488,7 @@ TGCC = { #环塔商会
 
 	country_type = recognized
 
-	tier = empire	
+	tier = principality	
 	
 	cultures = { greek }
 	
@@ -499,7 +499,7 @@ TRIG = { #圣三一学园
 
 	country_type = recognized
 
-	tier = empire	
+	tier = principality	
 	
 	cultures = { greek }
 	
@@ -510,7 +510,7 @@ NAVL = { #新阿瓦隆
 
 	country_type = recognized
 
-	tier = empire	
+	tier = principality	
 	
 	cultures = { greek }
 	
@@ -520,7 +520,7 @@ HBPO = { #哈德逊湾港区
 	color = { 211  155  240 }
 	country_type = recognized
 
-	tier = empire	
+	tier = principality	
 	
 	cultures = { greek }
 	
@@ -531,9 +531,30 @@ CTCH = { #超天酱
 
 	country_type = recognized
 
-	tier = empire	
+	tier = principality	
 	
 	cultures = { greek }
 	
 	capital = STATE_RHODE_ISLAND
+}
+TBUN = { #旅者国
+	color = { 211  220  240 }
+
+	country_type = recognized
+
+	tier = kindom	
+	religion = tabi
+	cultures = { dutch }
+	
+	capital = STATE_HOLLAND
+}
+HOL = {
+	color = { 220  150  158 }
+
+	country_type = recognized
+
+	tier = principality
+
+	cultures = { north_german }
+	capital = STATE_SCHLESWIG_HOLSTEIN
 }

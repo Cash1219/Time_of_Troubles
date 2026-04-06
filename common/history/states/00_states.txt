@@ -95,7 +95,7 @@ STATES = {
 	}
 	s:STATE_HOLLAND = {
 		create_state = {
-			country = c:BEL
+			country = c:TBUN
 			owned_provinces = { x777732 x80C0A0 xC04021 x01C0A0 }
 		}
 		
@@ -1674,7 +1674,7 @@ STATES = {
 			state_type = unincorporated
 		}
 		create_state = {
-			country = c:BEL
+			country = c:TBUN
 			owned_provinces = { x6C8064 }
 			state_type = unincorporated
 
@@ -2103,7 +2103,7 @@ STATES = {
 	}
 	s:STATE_GUAYANA = {
 		create_state = {
-			country = c:BEL
+			country = c:TBUN
 			owned_provinces = { xF17CCC xA08011 xDBF640 x50D012 x29D96A xE18467 xDB86CE xE8D6CB xE6BBD3 xA9777B xF6408F x063557 xA299AE x210190 x771D68 xD8362B xF1E3BF x4B427A x0753FE x19A3D9 xC2E46E x58ABBF x3EC2E7 xB6F7B4 x43E136 x102B13 xCD1A5A x822364 x27E268 }
 			state_type = unincorporated
 		}
@@ -3680,30 +3680,25 @@ STATES = {
 	}
 	s:STATE_WALLONIA = {
 		create_state = {
-			country = c:LUX
-			owned_provinces = { xD001A0 }
-		}
-		create_state = {
-			country = c:BEL
-			owned_provinces = { xB0A0C0 x916574 x2D32D7 x8080A0 xEF2040 x3A5FB9 x5180A0 }
+			country = c:TBUN
+			owned_provinces = { xB0A0C0 x916574 x2D32D7 x8080A0 xEF2040 x3A5FB9 x5180A0 xD001A0 }
 		}
 
 		add_homeland = cu:wallonian
-		add_claim = c:BEL
+		
 	}
 	s:STATE_FLANDERS = {
 		create_state = {
-			country = c:BEL
+			country = c:TBUN
 			owned_provinces = { x93FB2E x018061 x0141A0 x8041A0 x800060 x808061 }
 		}
 
 		add_homeland = cu:flemish
-		add_claim = c:BEL
 	}
 
 	s:STATE_FRIESLAND = {
 		create_state = {
-			country = c:BEL
+			country = c:TBUN
 			owned_provinces = { x41C021 xC0C021 xC041A0 x4141A0 x5A48A2 }
 		}
 		
@@ -3711,11 +3706,11 @@ STATES = {
 	}
 	s:STATE_GELRE = {
 		create_state = {
-			country = c:BEL
+			country = c:TBUN
 			owned_provinces = { xC0C0A0 x4C4894 xAF3A54 x41C0A0 x0000DF }
 		}
 		add_homeland = cu:dutch
-		add_claim = c:BEL
+
 	}
 	s:STATE_JUTLAND = {
 		create_state = {
@@ -3820,7 +3815,7 @@ STATES = {
 			state_type = unincorporated
 		}
 		create_state = {
-			country = c:BEL
+			country = c:TBUN
 			owned_provinces = { xB03080 xECC061 x1D9B6B }
 			state_type = unincorporated
 		}
@@ -7750,15 +7745,7 @@ STATES = {
 	s:STATE_SCHLESWIG_HOLSTEIN = {
 		create_state = {
 			country = c:HOL
-			owned_provinces = { x804160 x64824C xE000A0 }
-		}
-		create_state = {
-			country = c:LUB
-			owned_provinces = { x60809F }
-		}
-		create_state = {
-			country = c:SCH
-			owned_provinces = { x00C060 x78B203 xE3C876 xBFCC21 }
+			owned_provinces = { x804160 x64824C xE000A0 x60809F x00C060 x78B203 xE3C876 xBFCC21 }
 		}
 		
 		add_homeland = cu:danish

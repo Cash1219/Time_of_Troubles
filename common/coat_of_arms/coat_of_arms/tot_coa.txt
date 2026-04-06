@@ -27,7 +27,7 @@ USA = {
 		texture = "tot_te_Fraxinus.dds"
 	}
 }
-POR = {
+TBUN = {
 	pattern = "pattern_solid.tga"
 	color1 = "red"
 	colored_emblem = {
@@ -469,4 +469,48 @@ NAVL = {
 		instance = { scale = { 0.5 0.5 } }
 	}	
 
+}
+SKD = { 
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	
+	textured_emblem = {
+		texture = "tot_te_aegir_icon.dds"
+		instance = { scale = { 0.8 0.8 } }
+	}	
+
+}
+
+SWE = { 
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+
+	
+	textured_emblem = {
+		texture = "tot_te_ooarai.dds"
+		instance = { scale = { 1 1 } }
+	}	
+
+}
+DEN = { 
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	textured_emblem = {
+		texture = "tot_te_501_witch.dds"
+		instance = { scale = { 0.8 0.8 } }
+	}	
+
+}
+HOL = {
+	# Inspired by the Australian Anglican flag because it still has some blue.
+	# Better to save the St George cross for England itself.
+	pattern = "pattern_solid.tga"
+	color1 = "red"
+	color2 = "white"
+	color3 = "black"
+	colored_emblem = {
+		texture = "ce_cross_england_fimbriated.dds"
+		color1 = color2
+		color2 = color3
+	}
 }
