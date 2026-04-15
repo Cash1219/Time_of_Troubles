@@ -18,7 +18,7 @@
 #	cultures = { portuguese }
 #	capital = STATE_ESTREMADURA
 #}
-AUS = { #偶像国
+IDMS = { #偶像国
 	color = { 211  220  240 }
 
 	country_type = recognized
@@ -79,7 +79,7 @@ ADL = { #安达卢西亚
 	cultures = { spanish }
 	capital = STATE_LOWER_ANDALUSIA
 }
-ITA = { #意大利
+STLI = { #意大利
 	color = hsv360{ 357  90  87 }
 
 	country_type = recognized
@@ -415,7 +415,7 @@ MUS = { #缪斯
 	country_type = recognized
 
 	tier = kingdom
-	
+	religion = kiseki
 	cultures = { hungarian }
 	capital = STATE_CENTRAL_HUNGARY
 }
@@ -425,7 +425,7 @@ AQO = { #水团
 	country_type = recognized
 
 	tier = kingdom	
-	
+	religion = kiseki
 	cultures = { british scottish }
 	
 	capital = STATE_HOME_COUNTIES
@@ -436,7 +436,7 @@ NJS = { #虹团
 	country_type = recognized
 
 	tier = kingdom	
-	
+	religion = kiseki
 	cultures = { british scottish }
 	
 	capital = STATE_HOME_COUNTIES
@@ -557,4 +557,14 @@ HOL = {
 
 	cultures = { north_german }
 	capital = STATE_SCHLESWIG_HOLSTEIN
+}
+ATRI = {
+	color = { 220  150  158 }
+
+	country_type = recognized
+
+	tier = principality
+
+	cultures = { north_german }
+	capital = STATE_RIGA
 }

@@ -1,0 +1,753 @@
+﻿MILITARY_FORMATIONS = {
+	c:SKD ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_iberia
+			name = "深海猎人小队"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_NEW_CASTILE
+				count = 30
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_NEW_CASTILE
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_NEW_CASTILE
+				count = 5
+			}
+		}
+	}
+	c:GNC ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_iberia
+			name = "加利西亚海军陆战队"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_GALICIA
+				count = 20
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_GALICIA
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_GALICIA
+				count = 5
+			}
+		}
+	}
+	c:ADL ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_iberia
+			name = "塞维利亚防卫队"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_LOWER_ANDALUSIA
+				count = 15
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_LOWER_ANDALUSIA
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_LOWER_ANDALUSIA
+				count = 2
+			}
+		}
+	}
+	c:FRA ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_france
+			name = "皇家禁卫军"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_ILE_DE_FRANCE
+				count = 100
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_ILE_DE_FRANCE
+				count = 25
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_ILE_DE_FRANCE
+				count = 25
+			}
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_france
+			name = "洛林边防军"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_LORRAINE
+				count = 40
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_LORRAINE
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_LORRAINE
+				count = 5
+			}
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_england
+			name = "巴黎卫队"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_ILE_DE_FRANCE
+				count = 30
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_ILE_DE_FRANCE
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_ILE_DE_FRANCE
+				count = 10
+			}
+		}
+		
+	}
+	c:GBR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_england
+			name = "红衫军"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_HOME_COUNTIES
+				count = 80
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_HOME_COUNTIES
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_HOME_COUNTIES
+				count = 20
+			}
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_england
+			name = "金色骑士团"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_HOME_COUNTIES
+				count = 40
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_HOME_COUNTIES
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_HOME_COUNTIES
+				count = 5
+			}
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_england
+			name = "女仆军团"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_LOWLANDS
+				count = 30
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_LOWLANDS
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_LOWLANDS
+				count = 5
+			}
+		}
+	}
+	c:TBUN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rhine
+			name = "第107魔女军团" #irena
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_HOLLAND
+				count = 40
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_HOLLAND
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_HOLLAND
+				count = 10
+			}
+		}
+	}
+	c:RHE ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rhine
+			name = "机动六课" 
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_NORTH_RHINE
+				count = 30
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_NORTH_RHINE
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_NORTH_RHINE
+				count = 15
+			}
+		}
+	}
+	c:ALS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rhine
+			name = "兔子卫队" 
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_ALSACE_LORRAINE
+				count = 15
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_ALSACE_LORRAINE
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_ALSACE_LORRAINE
+				count = 2
+			}
+		}
+	}
+	c:SWI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_south_germany
+			name = "瑞士卫队" 
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_WEST_SWITZERLAND
+				count = 25
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_WEST_SWITZERLAND
+				count = 5
+			}
+		}
+	}
+	c:STLI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_italy
+			name = "99组"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_PIEDMONT
+				count = 40
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_PIEDMONT
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_PIEDMONT
+				count = 5
+			}
+		}
+	}
+	c:PAP ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_italy
+			name = "教皇卫队" 
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_LAZIO
+				count = 20
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_LAZIO
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_LAZIO
+				count = 5
+			}
+		}
+	}
+	c:SIC ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_italy
+			name = "热情组织" 
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_CAMPANIA
+				count = 30
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_CAMPANIA
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_CAMPANIA
+				count = 5
+			}
+		}
+	}
+	c:VEN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_italy
+			name = "邦多利军团" 
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_VENETIA
+				count = 40
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_VENETIA
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_VENETIA
+				count = 10
+			}
+		}
+	}
+	c:TUS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_italy
+			name = "佛罗伦萨军" 
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_TUSCANY
+				count = 15
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_TUSCANY
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_TUSCANY
+				count = 2
+			}
+		}
+	}
+	c:PRU ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_germany
+			name = "联邦国防军" 
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_BRANDENBURG
+				count = 30
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_BRANDENBURG
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_BRANDENBURG
+				count = 10
+			}
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_germany
+			name = "魔法少女禁军" 
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_SAXONY
+				count = 40
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_SAXONY
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_SAXONY
+				count = 20
+			}
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_germany
+			name = "魔法少女禁军" 
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_SAXONY
+				count = 15
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_SAXONY
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_SAXONY
+				count = 5
+			}
+		}
+	}
+	c:WUR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_south_germany
+			name = "符腾堡军" 
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_WURTTEMBERG
+				count = 12
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_WURTTEMBERG
+				count = 3
+			}
+		}
+	}
+	c:BAV ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_south_germany
+			name = "魔法少女南军" 
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_BAVARIA
+				count = 25
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_BAVARIA
+				count = 15
+			}
+		}
+	}
+	c:BOH ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_south_germany
+			name = "波西米亚军" 
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_BOHEMIA
+				count = 40
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_BOHEMIA
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_BOHEMIA
+				count = 5
+			}
+		}
+	}
+	c:IDMS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_south_germany
+			name = "偶像军团" 
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_BOHEMIA
+				count = 20
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_BOHEMIA
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_BOHEMIA
+				count = 5
+			}
+		}
+	}
+	c:SWE ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_baltic
+			name = "大洗军团" 
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_SVEALAND
+				count = 10
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_SVEALAND
+				count = 30
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_SVEALAND
+				count = 10
+			}
+		}
+	}
+	c:NOR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_baltic
+			name = "挪威镇守军" 
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_WESTERN_NORWAY
+				count = 15
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_WESTERN_NORWAY
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_WESTERN_NORWAY
+				count = 10
+			}
+		}
+	}
+	c:DEN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_baltic
+			name = "第501统合战斗航空团总部" 
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_ZEALAND
+				count = 30
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_ZEALAND
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_ZEALAND
+				count = 5
+			}
+		}
+	}
+	c:HOL ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_germany
+			name = "第501统合战斗航空团卡尔斯兰部" 
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_SCHLESWIG_HOLSTEIN
+				count = 12
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_SCHLESWIG_HOLSTEIN
+				count = 3
+			}
+		}
+	}
+	c:MUS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_danubia
+			name = "缪斯军团" 
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_BEKES
+				count = 30
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_BEKES
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_BEKES
+				count = 5
+			}
+		}
+	}
+	c:AQO ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_balkans
+			name = "Aqours军团" 
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_CROATIA
+				count = 15
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_CROATIA
+				count = 2
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_CROATIA
+				count = 3
+			}
+		}
+	}
+	c:NJS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_danubia
+			name = "虹咲军团" 
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_SLOVAKIA
+				count = 15
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_SLOVAKIA
+				count = 2
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_SLOVAKIA
+				count = 3
+			}
+		}
+	}
+	c:ROM ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_danubia
+			name = "无刺有刺军团" 
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_SLOVAKIA
+				count = 20
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_SLOVAKIA
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_SLOVAKIA
+				count = 5
+			}
+		}
+	}
+	c:BYZ ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_anatolia
+			name = "轻音骑士团" 
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_EASTERN_THRACE
+				count = 60
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_EASTERN_THRACE
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_EASTERN_THRACE
+				count = 20
+			}
+		}
+	}
+}

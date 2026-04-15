@@ -1,0 +1,417 @@
+company_stella_cafe = {
+    flavored_company = yes
+    preferred_headquarters = { STATE_WESTERN_CUBA }
+    building_types = {
+        building_kissaten
+        building_coffee_plantation
+        building_sugar_plantation
+        building_tea_plantation
+        building_banana_plantation
+    }
+    extension_building_types = {
+        building_livestock_ranch
+        building_food_industry
+    }
+    potential = {
+
+    }
+    attainable = {
+
+    }
+    possible = {
+        any_scope_state = {
+            state_region = s:STATE_WESTERN_CUBA
+            any_scope_building = {
+                is_building_type = building_kissaten
+                level >= 5
+            }
+        }
+    }
+    prosperity_modifier = {
+
+    }
+	possible_prestige_goods = {
+		company_stella_cafe_prestige_good
+	}
+    ai_will_do = {
+        any_scope_state = {
+            state_region = s:building_kissaten
+        }
+    }
+    ai_construction_targets = {
+        building_kissaten = {
+            level = 5
+            state_trigger = {
+                state_region = s:STATE_WESTERN_CUBA
+            }
+        }
+    }
+    ai_weight = {
+        value = 5
+    }
+}
+
+company_homura = {
+    flavored_company = yes
+    preferred_headquarters = { STATE_CENTRAL_HUNGARY }
+    building_types = {
+        building_kissaten
+        building_food_industry
+        building_wheat_farm
+        building_sugar_plantation
+    }
+    extension_building_types = {
+        building_banana_plantation
+        building_livestock_ranch
+    }
+    potential = {
+
+    }
+    attainable = {
+
+    }
+    possible = {
+        any_scope_state = {
+            state_region = s:STATE_CENTRAL_HUNGARY
+            any_scope_building = {
+                is_building_type = building_kissaten
+                level >= 5
+            }
+        }
+    }
+    prosperity_modifier = {
+
+    }
+	possible_prestige_goods = {
+		company_homura_prestige_good
+	}
+    ai_will_do = {
+        any_scope_state = {
+            state_region = s:building_kissaten
+        }
+    }
+    ai_construction_targets = {
+        building_kissaten = {
+            level = 5
+            state_trigger = {
+                state_region = s:STATE_CENTRAL_HUNGARY
+            }
+        }
+    }
+    ai_weight = {
+        value = 5
+    }
+}
+
+company_minalinsky = {
+    flavored_company = yes
+    preferred_headquarters = { STATE_CENTRAL_HUNGARY }
+    building_types = {
+        building_kissaten
+    }
+    potential = {
+
+    }
+    attainable = {
+
+    }
+    possible = {
+        any_scope_state = {
+            state_region = s:STATE_CENTRAL_HUNGARY
+            any_scope_building = {
+                is_building_type = building_kissaten
+                level >= 5
+            }
+        }
+    }
+    prosperity_modifier = {
+
+    }
+	possible_prestige_goods = {
+		company_minalinsky_prestige_good
+	}
+    ai_will_do = {
+        any_scope_state = {
+            state_region = s:building_kissaten
+        }
+    }
+    ai_construction_targets = {
+        building_kissaten = {
+            level = 5
+            state_trigger = {
+                state_region = s:STATE_CENTRAL_HUNGARY
+            }
+        }
+    }
+    ai_weight = {
+        value = 5
+    }
+}
+
+company_otonokisaka = {
+    flavored_company = yes
+    preferred_headquarters = { STATE_CENTRAL_HUNGARY }
+    building_types = {
+        building_university
+    }
+    potential = {
+
+    }
+    attainable = {
+
+    }
+    possible = {
+        any_scope_state = {
+            state_region = s:STATE_CENTRAL_HUNGARY
+            any_scope_building = {
+                is_building_type = building_university
+                level >= 5
+            }
+        }
+    }
+    prosperity_modifier = {
+
+    }
+    ai_will_do = {
+        any_scope_state = {
+            state_region = s:building_university
+        }
+    }
+    ai_construction_targets = {
+        building_university = {
+            level = 5
+            state_trigger = {
+                state_region = s:STATE_CENTRAL_HUNGARY
+            }
+        }
+    }
+    ai_weight = {
+        value = 5
+    }
+}
+
+company_otonokisaka_kyuudoubu = {
+    flavored_company = yes
+    preferred_headquarters = { STATE_CENTRAL_HUNGARY }
+    building_types = {
+        building_arms_industry
+        building_munition_plant
+        building_artillery_foundry
+    }
+    potential = {
+
+    }
+    attainable = {
+
+    }
+    possible = {
+        any_scope_state = {
+            state_region = s:STATE_CENTRAL_HUNGARY
+            any_scope_building = {
+                is_building_type = building_arms_industry
+                level >= 5
+            }
+        }
+    }
+    prosperity_modifier = {
+
+    }
+	possible_prestige_goods = {
+		company_otonokisaka_kyuudoubu_prestige_good
+	}
+    ai_will_do = {
+        any_scope_state = {
+            state_region = s:building_arms_industry
+        }
+    }
+    ai_construction_targets = {
+        building_arms_industry = {
+            level = 5
+            state_trigger = {
+                state_region = s:STATE_CENTRAL_HUNGARY
+            }
+        }
+    }
+    ai_weight = {
+        value = 5
+    }
+}
+
+company_otonokisaka_idolbu = {
+    flavored_company = yes
+    preferred_headquarters = { STATE_CENTRAL_HUNGARY }
+    building_types = {
+        building_university
+    }
+    potential = {
+
+    }
+    attainable = {
+
+    }
+    possible = {
+        any_scope_state = {
+            state_region = s:STATE_CENTRAL_HUNGARY
+            any_scope_building = {
+                is_building_type = building_university
+                level >= 5
+            }
+        }
+    }
+    prosperity_modifier = {
+
+    }
+	possible_prestige_goods = {
+		company_otonokisaka_idolbu_prestige_good
+	}
+    ai_will_do = {
+        any_scope_state = {
+            state_region = s:building_university
+        }
+    }
+    ai_construction_targets = {
+        building_university = {
+            level = 5
+            state_trigger = {
+                state_region = s:STATE_CENTRAL_HUNGARY
+            }
+        }
+    }
+    ai_weight = {
+        value = 5
+    }
+}
+
+company_otonokisaka_zoo = {
+    flavored_company = yes
+    preferred_headquarters = { STATE_CENTRAL_HUNGARY }
+    building_types = {
+        building_livestock_ranch
+        building_wheat_farm
+    }
+    potential = {
+
+    }
+    attainable = {
+
+    }
+    possible = {
+        any_scope_state = {
+            state_region = s:STATE_CENTRAL_HUNGARY
+            any_scope_building = {
+                is_building_type = building_livestock_ranch
+                level >= 5
+            }
+        }
+    }
+    prosperity_modifier = {
+
+    }
+	possible_prestige_goods = {
+		company_otonokisaka_zoo_prestige_good
+	}
+    ai_will_do = {
+        any_scope_state = {
+            state_region = s:building_livestock_ranch
+        }
+    }
+    ai_construction_targets = {
+        building_livestock_ranch = {
+            level = 5
+            state_trigger = {
+                state_region = s:STATE_CENTRAL_HUNGARY
+            }
+        }
+    }
+    ai_weight = {
+        value = 5
+    }
+}
+
+company_nishikino_byouin = {
+    flavored_company = yes
+    preferred_headquarters = { STATE_CENTRAL_HUNGARY }
+    building_types = {
+        building_urban_center
+        building_opium_plantation
+    }
+    potential = {
+
+    }
+    attainable = {
+
+    }
+    possible = {
+        any_scope_state = {
+            state_region = s:STATE_CENTRAL_HUNGARY
+            any_scope_building = {
+                is_building_type = building_urban_center
+                level >= 5
+            }
+        }
+    }
+    prosperity_modifier = {
+
+    }
+    ai_will_do = {
+        any_scope_state = {
+            state_region = s:building_urban_center
+        }
+    }
+    ai_construction_targets = {
+        building_urban_center = {
+            level = 5
+            state_trigger = {
+                state_region = s:STATE_CENTRAL_HUNGARY
+            }
+        }
+    }
+    ai_weight = {
+        value = 5
+    }
+}
+
+company_otonokisaka_shinpi = {
+    flavored_company = yes
+    preferred_headquarters = { STATE_CENTRAL_HUNGARY }
+    building_types = {
+        building_paper_mill
+    }
+    potential = {
+
+    }
+    attainable = {
+
+    }
+    possible = {
+        any_scope_state = {
+            state_region = s:STATE_CENTRAL_HUNGARY
+            any_scope_building = {
+                is_building_type = building_paper_mill
+                level >= 5
+            }
+        }
+    }
+    prosperity_modifier = {
+
+    }
+	possible_prestige_goods = {
+		company_otonokisaka_shinpi_prestige_good
+	}
+    ai_will_do = {
+        any_scope_state = {
+            state_region = s:building_paper_mill
+        }
+    }
+    ai_construction_targets = {
+        building_paper_mill = {
+            level = 5
+            state_trigger = {
+                state_region = s:STATE_CENTRAL_HUNGARY
+            }
+        }
+    }
+    ai_weight = {
+        value = 5
+    }
+}
