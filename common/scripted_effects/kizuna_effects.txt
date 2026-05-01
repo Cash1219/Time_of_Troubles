@@ -1,4 +1,53 @@
-﻿add_kon_kizuna_modifier = {
+﻿
+update_kizuna = {
+    if = {
+        limit = {
+            has_variable_list = kizuna_list
+        }
+        clear_variable_list = kizuna_list
+    }
+    if = {
+        limit = {
+			any_interest_group = {
+				#is_in_government = yes
+				leader = {
+					OR = {
+						has_trait = tot_Kon_Yui_trait
+						has_trait = tot_Kon_Mio_trait
+						has_trait = tot_Kon_Tsumugi_trait
+						has_trait = tot_Kon_Ritsu_trait
+						has_trait = tot_Kon_Azusa_trait
+					}
+				}
+			}
+        }
+        every_interest_group = {
+            limit = {
+				#is_in_government = yes
+				leader = {
+					OR = {
+						has_trait = tot_Kon_Yui_trait
+						has_trait = tot_Kon_Mio_trait
+						has_trait = tot_Kon_Tsumugi_trait
+						has_trait = tot_Kon_Ritsu_trait
+						has_trait = tot_Kon_Azusa_trait
+					}
+				}
+            }
+            leader = {
+                root = {
+					add_to_variable_list = {
+						name = kizuna_list
+						target = prev
+					}
+				}
+            }
+        }
+    }
+}
+
+
+add_kon_kizuna_modifier = {
 	if = {
 		limit = {
 			var:kon_kizuna_number = 2

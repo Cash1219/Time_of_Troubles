@@ -1,4 +1,14 @@
-﻿kon_kizuna_list = {
+﻿get_is_in_government_type = {
+	scope = character
+	effect = {}
+	is_shown = {
+		this.interest_group ?= {
+			is_in_government = yes
+		}
+	}
+}
+kon_kizuna_list = {
+	scope = country
 	effect = {
 		if = {
 			limit = {
@@ -13,15 +23,18 @@
 		}
 	}
 	is_shown = {
-		any_scope_character = {
-			OR = {
-				has_trait = tot_Kon_Yui_trait
-				has_trait = tot_Kon_Mio_trait
-				has_trait = tot_Kon_Tsumugi_trait
-				has_trait = tot_Kon_Ritsu_trait
-				has_trait = tot_Kon_Azusa_trait
+		any_interest_group = {
+				is_in_government = yes
+				leader = {
+					OR = {
+						has_trait = tot_Kon_Yui_trait
+						has_trait = tot_Kon_Mio_trait
+						has_trait = tot_Kon_Tsumugi_trait
+						has_trait = tot_Kon_Ritsu_trait
+						has_trait = tot_Kon_Azusa_trait
+					}
+				}
 			}
-		}
     } 		
     
 	is_valid = {

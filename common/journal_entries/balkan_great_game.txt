@@ -9,14 +9,8 @@
 			c:NJS ?= this
 		}
     }
-
-	scripted_progress_bar = je_the_first_carlist_war_score_bar
-	scripted_button = je_the_first_carlist_war_royal_expedition_button
-	scripted_button = je_the_first_carlist_flush_them_out_button
-
 	should_be_involved = {
-		country_has_primary_culture = cu:spanish
-		is_in_geographic_region = geographic_region_iberia
+		
 	}
 
 	should_show_when_not_involved = {

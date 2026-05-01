@@ -1,0 +1,57 @@
+﻿je_kizuna_gui = {
+	icon = "gfx/interface/icons/faction_icons/faction_japan_imperial_house.dds"
+
+	group = je_group_kizuna_gui
+	widget = {
+		gui = "gui/kizuna_character_list.gui"
+		name = "widget_je_kizuna_character_list"
+		container = "custom_widget_container_3"
+		
+	}
+	
+	
+	is_shown_when_inactive = {
+		
+	}
+
+	possible = {
+		
+	}
+
+	immediate = {
+		
+	}
+
+	on_weekly_pulse = {
+		
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			update_kizuna = yes
+		}
+	}
+	on_complete = {
+		
+	}
+	fail = {
+		
+	}
+	on_fail = {
+		
+	}
+
+	
+
+	invalid = {
+		
+	}
+
+	on_invalid = {
+		
+	}
+
+	weight = 10000
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	can_revolution_inherit = yes
+}

@@ -35,7 +35,7 @@ company_stella_cafe = {
 	}
     ai_will_do = {
         any_scope_state = {
-            state_region = s:building_kissaten
+            state_region = s:STATE_WESTERN_CUBA
         }
     }
     ai_construction_targets = {
@@ -50,7 +50,6 @@ company_stella_cafe = {
         value = 5
     }
 }
-
 company_homura = {
     flavored_company = yes
     preferred_headquarters = { STATE_CENTRAL_HUNGARY }
@@ -87,7 +86,7 @@ company_homura = {
 	}
     ai_will_do = {
         any_scope_state = {
-            state_region = s:building_kissaten
+            state_region = s:STATE_CENTRAL_HUNGARY
         }
     }
     ai_construction_targets = {
@@ -102,7 +101,6 @@ company_homura = {
         value = 5
     }
 }
-
 company_minalinsky = {
     flavored_company = yes
     preferred_headquarters = { STATE_CENTRAL_HUNGARY }
@@ -132,7 +130,7 @@ company_minalinsky = {
 	}
     ai_will_do = {
         any_scope_state = {
-            state_region = s:building_kissaten
+            state_region = s:STATE_CENTRAL_HUNGARY
         }
     }
     ai_construction_targets = {
@@ -147,7 +145,6 @@ company_minalinsky = {
         value = 5
     }
 }
-
 company_otonokisaka = {
     flavored_company = yes
     preferred_headquarters = { STATE_CENTRAL_HUNGARY }
@@ -174,7 +171,7 @@ company_otonokisaka = {
     }
     ai_will_do = {
         any_scope_state = {
-            state_region = s:building_university
+            state_region = s:STATE_CENTRAL_HUNGARY
         }
     }
     ai_construction_targets = {
@@ -189,7 +186,6 @@ company_otonokisaka = {
         value = 5
     }
 }
-
 company_otonokisaka_kyuudoubu = {
     flavored_company = yes
     preferred_headquarters = { STATE_CENTRAL_HUNGARY }
@@ -221,7 +217,7 @@ company_otonokisaka_kyuudoubu = {
 	}
     ai_will_do = {
         any_scope_state = {
-            state_region = s:building_arms_industry
+            state_region = s:STATE_CENTRAL_HUNGARY
         }
     }
     ai_construction_targets = {
@@ -236,11 +232,11 @@ company_otonokisaka_kyuudoubu = {
         value = 5
     }
 }
-
 company_otonokisaka_idolbu = {
     flavored_company = yes
     preferred_headquarters = { STATE_CENTRAL_HUNGARY }
     building_types = {
+        building_art_academy
         building_university
     }
     potential = {
@@ -253,7 +249,7 @@ company_otonokisaka_idolbu = {
         any_scope_state = {
             state_region = s:STATE_CENTRAL_HUNGARY
             any_scope_building = {
-                is_building_type = building_university
+                is_building_type = building_art_academy
                 level >= 5
             }
         }
@@ -266,11 +262,11 @@ company_otonokisaka_idolbu = {
 	}
     ai_will_do = {
         any_scope_state = {
-            state_region = s:building_university
+            state_region = s:STATE_CENTRAL_HUNGARY
         }
     }
     ai_construction_targets = {
-        building_university = {
+        building_art_academy = {
             level = 5
             state_trigger = {
                 state_region = s:STATE_CENTRAL_HUNGARY
@@ -281,7 +277,6 @@ company_otonokisaka_idolbu = {
         value = 5
     }
 }
-
 company_otonokisaka_zoo = {
     flavored_company = yes
     preferred_headquarters = { STATE_CENTRAL_HUNGARY }
@@ -307,12 +302,9 @@ company_otonokisaka_zoo = {
     prosperity_modifier = {
 
     }
-	possible_prestige_goods = {
-		company_otonokisaka_zoo_prestige_good
-	}
     ai_will_do = {
         any_scope_state = {
-            state_region = s:building_livestock_ranch
+            state_region = s:STATE_CENTRAL_HUNGARY
         }
     }
     ai_construction_targets = {
@@ -327,7 +319,6 @@ company_otonokisaka_zoo = {
         value = 5
     }
 }
-
 company_nishikino_byouin = {
     flavored_company = yes
     preferred_headquarters = { STATE_CENTRAL_HUNGARY }
@@ -355,7 +346,7 @@ company_nishikino_byouin = {
     }
     ai_will_do = {
         any_scope_state = {
-            state_region = s:building_urban_center
+            state_region = s:STATE_CENTRAL_HUNGARY
         }
     }
     ai_construction_targets = {
@@ -370,7 +361,6 @@ company_nishikino_byouin = {
         value = 5
     }
 }
-
 company_otonokisaka_shinpi = {
     flavored_company = yes
     preferred_headquarters = { STATE_CENTRAL_HUNGARY }
@@ -395,12 +385,9 @@ company_otonokisaka_shinpi = {
     prosperity_modifier = {
 
     }
-	possible_prestige_goods = {
-		company_otonokisaka_shinpi_prestige_good
-	}
     ai_will_do = {
         any_scope_state = {
-            state_region = s:building_paper_mill
+            state_region = s:STATE_CENTRAL_HUNGARY
         }
     }
     ai_construction_targets = {
