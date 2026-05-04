@@ -2,100 +2,248 @@
 update_kizuna = {
     if = {
         limit = {
-            has_variable_list = kizuna_list
+            has_variable_list = kon_kizuna_list
         }
-        clear_variable_list = kizuna_list
+        clear_variable_list = kon_kizuna_list
     }
-    if = {
-        limit = {
-			any_interest_group = {
-				#is_in_government = yes
-				leader = {
-					OR = {
-						has_trait = tot_Kon_Yui_trait
-						has_trait = tot_Kon_Mio_trait
-						has_trait = tot_Kon_Tsumugi_trait
-						has_trait = tot_Kon_Ritsu_trait
-						has_trait = tot_Kon_Azusa_trait
+	
+		update_kon_kizuna = yes
+		update_band_kizuna = yes
+}
+update_kon_kizuna = {
+	if = {
+			limit = {
+				any_interest_group = {
+					#is_in_government = yes
+					leader = {
+						OR = {
+							has_trait = tot_Kon_Yui_trait
+							has_trait = tot_Kon_Mio_trait
+							has_trait = tot_Kon_Tsumugi_trait
+							has_trait = tot_Kon_Ritsu_trait
+							has_trait = tot_Kon_Azusa_trait
+						}
 					}
 				}
 			}
-        }
-        every_interest_group = {
-            limit = {
-				#is_in_government = yes
-				leader = {
-					OR = {
-						has_trait = tot_Kon_Yui_trait
-						has_trait = tot_Kon_Mio_trait
-						has_trait = tot_Kon_Tsumugi_trait
-						has_trait = tot_Kon_Ritsu_trait
-						has_trait = tot_Kon_Azusa_trait
+			every_interest_group = {
+				limit = {
+					leader = {
+						OR = {
+							has_trait = tot_Kon_Yui_trait
+							has_trait = tot_Kon_Mio_trait
+							has_trait = tot_Kon_Tsumugi_trait
+							has_trait = tot_Kon_Ritsu_trait
+							has_trait = tot_Kon_Azusa_trait
+						}
 					}
 				}
-            }
-            leader = {
-                root = {
+				leader = {
+					root = {
+						add_to_variable_list = {
+							name = kon_kizuna_list
+							target = prev
+						}
+						
+					}
+				}
+			}
+			every_interest_group = {
+				limit = {
+					is_in_government = yes
+					leader = {
+						OR = {
+							has_trait = tot_Kon_Yui_trait
+							has_trait = tot_Kon_Mio_trait
+							has_trait = tot_Kon_Tsumugi_trait
+							has_trait = tot_Kon_Ritsu_trait
+							has_trait = tot_Kon_Azusa_trait
+						}
+					}
+				}
+				leader = {
+					root = {
+						add_to_variable_list = {
+							name = kon_kizuna_effect
+							target = prev
+						}
+						
+					}
+				}
+			}
+		}
+		if = {
+			limit = { kon_kizuna_number == 1 }
+			je:je_kizuna_gui = {
+				remove_modifier = kon_kizuna_modifier_2
+				remove_modifier = kon_kizuna_modifier_3
+				remove_modifier = kon_kizuna_modifier_4
+				remove_modifier = kon_kizuna_modifier_5
+				remove_modifier = kon_kizuna_modifier_6
+				add_modifier = kon_kizuna_modifier_1
+			}
+		}
+		if = {
+			limit = { kon_kizuna_number == 2 }
+			je:je_kizuna_gui = {
+				remove_modifier = kon_kizuna_modifier_1
+				remove_modifier = kon_kizuna_modifier_3
+				remove_modifier = kon_kizuna_modifier_4
+				remove_modifier = kon_kizuna_modifier_5
+				remove_modifier = kon_kizuna_modifier_6
+				add_modifier = kon_kizuna_modifier_2
+			}
+		}
+		if = {
+			limit = { kon_kizuna_number == 3 }
+			je:je_kizuna_gui = {
+				remove_modifier = kon_kizuna_modifier_1
+				remove_modifier = kon_kizuna_modifier_2
+				remove_modifier = kon_kizuna_modifier_4
+				remove_modifier = kon_kizuna_modifier_5
+				remove_modifier = kon_kizuna_modifier_6
+				add_modifier = kon_kizuna_modifier_3
+			}
+		}
+		if = {
+			limit = { kon_kizuna_number == 4 }
+			je:je_kizuna_gui = {
+				remove_modifier = kon_kizuna_modifier_1
+				remove_modifier = kon_kizuna_modifier_2
+				remove_modifier = kon_kizuna_modifier_3
+				remove_modifier = kon_kizuna_modifier_5
+				remove_modifier = kon_kizuna_modifier_6
+				add_modifier = kon_kizuna_modifier_4
+			}
+		}
+		if = {
+			limit = { kon_kizuna_number == 5 }
+			je:je_kizuna_gui = {
+				remove_modifier = kon_kizuna_modifier_1
+				remove_modifier = kon_kizuna_modifier_2
+				remove_modifier = kon_kizuna_modifier_3
+				remove_modifier = kon_kizuna_modifier_4
+				remove_modifier = kon_kizuna_modifier_6
+				add_modifier = kon_kizuna_modifier_5
+			}
+		}
+		if = {
+			limit = { kon_kizuna_number == 6 }
+			je:je_kizuna_gui = {
+				remove_modifier = kon_kizuna_modifier_1
+				remove_modifier = kon_kizuna_modifier_2
+				remove_modifier = kon_kizuna_modifier_3
+				remove_modifier = kon_kizuna_modifier_4
+				remove_modifier = kon_kizuna_modifier_5
+				add_modifier = kon_kizuna_modifier_6
+			}
+		}
+}
+update_band_kizuna = {
+	if = {
+			limit = {
+				any_scope_character = {
+					OR = {
+						has_trait = tot_drummer_trait
+						has_trait = tot_guitarist_trait
+						has_trait = tot_bassist_trait
+						hsa_trait = tot_keyboardist_trait
+						has_trait = tot_lead_vocalist_trait
+						has_trait = tot_is_drummer_trait
+						has_trait = tot_is_guitarist_trait
+						has_trait = tot_is_bassist_trait
+						hsa_trait = tot_is_keyboardist_trait
+						has_trait = tot_is_lead_vocalist_trai
+					}
+				}
+			}
+			every_scope_character = {
+				limit = {
+					OR = {
+						has_trait = tot_drummer_trait
+						has_trait = tot_guitarist_trait
+						has_trait = tot_bassist_trait
+						hsa_trait = tot_keyboardist_trait
+						has_trait = tot_lead_vocalist_trait
+						has_trait = tot_is_drummer_trait
+						has_trait = tot_is_guitarist_trait
+						has_trait = tot_is_bassist_trait
+						hsa_trait = tot_is_keyboardist_trait
+						has_trait = tot_is_lead_vocalist_trai
+					}
+				}
 					add_to_variable_list = {
-						name = kizuna_list
+						name = band_kizuna_list
+						target = prev
+				}
+			}
+			every_scope_character = {
+				limit = {
+					OR = {
+						has_trait = tot_is_drummer_trait
+						has_trait = tot_is_guitarist_trait
+						has_trait = tot_is_bassist_trait
+						hsa_trait = tot_is_keyboardist_trait
+						has_trait = tot_is_lead_vocalist_trait
+					}
+				}
+					add_to_variable_list = {
+						name = band_kizuna_effect
 						target = prev
 					}
-				}
-            }
-        }
-    }
+			}
+		}
+		
 }
-
-
 add_kon_kizuna_modifier = {
 	if = {
 		limit = {
 			var:kon_kizuna_number = 2
 		}
-		add_modifier = kizuna_common_modifier_2
-		remove_modifier = kizuna_common_modifier_3
-		remove_modifier = kizuna_common_modifier_4
-		remove_modifier = kizuna_common_modifier_5
-		remove_modifier = kizuna_common_modifier_6
+		add_modifier = kon_kizuna_modifier_2
+		remove_modifier = kon_kizuna_modifier_3
+		remove_modifier = kon_kizuna_modifier_4
+		remove_modifier = kon_kizuna_modifier_5
+		remove_modifier = kon_kizuna_modifier_6
 	}
 	if = {
 		limit = {
 			var:kon_kizuna_number = 3
 		}
-		add_modifier = kizuna_common_modifier_3
-		remove_modifier = kizuna_common_modifier_2
-		remove_modifier = kizuna_common_modifier_4
-		remove_modifier = kizuna_common_modifier_5
-		remove_modifier = kizuna_common_modifier_6
+		add_modifier = kon_kizuna_modifier_3
+		remove_modifier = kon_kizuna_modifier_2
+		remove_modifier = kon_kizuna_modifier_4
+		remove_modifier = kon_kizuna_modifier_5
+		remove_modifier = kon_kizuna_modifier_6
 	}
 	if = {
 		limit = {
 			var:kon_kizuna_number = 4
 		}
-		add_modifier = kizuna_common_modifier_4
-		remove_modifier = kizuna_common_modifier_2
-		remove_modifier = kizuna_common_modifier_3
-		remove_modifier = kizuna_common_modifier_5
-		remove_modifier = kizuna_common_modifier_6
+		add_modifier = kon_kizuna_modifier_4
+		remove_modifier = kon_kizuna_modifier_2
+		remove_modifier = kon_kizuna_modifier_3
+		remove_modifier = kon_kizuna_modifier_5
+		remove_modifier = kon_kizuna_modifier_6
 	}
 	if = {
 		limit = {
 			var:kon_kizuna_number = 5
 		}
-		add_modifier = kizuna_common_modifier_5
-		remove_modifier = kizuna_common_modifier_2
-		remove_modifier = kizuna_common_modifier_3
-		remove_modifier = kizuna_common_modifier_4
-		remove_modifier = kizuna_common_modifier_6
+		add_modifier = kon_kizuna_modifier_5
+		remove_modifier = kon_kizuna_modifier_2
+		remove_modifier = kon_kizuna_modifier_3
+		remove_modifier = kon_kizuna_modifier_4
+		remove_modifier = kon_kizuna_modifier_6
 	}
 	if = {
 		limit = {
 			var:kon_kizuna_number = 6
 		}
-		add_modifier = kizuna_common_modifier_6
-		remove_modifier = kizuna_common_modifier_2
-		remove_modifier = kizuna_common_modifier_3
-		remove_modifier = kizuna_common_modifier_4
-		remove_modifier = kizuna_common_modifier_5
+		add_modifier = kon_kizuna_modifier_6
+		remove_modifier = kon_kizuna_modifier_2
+		remove_modifier = kon_kizuna_modifier_3
+		remove_modifier = kon_kizuna_modifier_4
+		remove_modifier = kon_kizuna_modifier_5
 	}
 }

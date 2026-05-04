@@ -1,0 +1,40 @@
+﻿appointing_band_member = {
+	icon = "gfx/interface/character_panel/grant_command.dds"
+	clicksound = "event:/SFX/UI/Military/command_grant"
+
+	potential = {
+		
+	}
+
+	possible = {
+		this = {
+			OR = {
+				has_trait = tot_drummer_trait
+				has_trait = tot_guitarist_trait
+				has_trait = tot_bassist_trait
+				hsa_trait = tot_keyboardist_trait
+				has_trait = tot_lead_vocalist_trait
+			}
+		}
+		this = {
+			NOT = {
+				has_trait = tot_is_drummer_trait
+				has_trait = tot_is_guitarist_trait
+				has_trait = tot_is_bassist_trait
+				hsa_trait = tot_is_keyboardist_trait
+				has_trait = tot_is_lead_vocalist_trait
+			}
+		}
+	}
+
+	effect = {
+		this = {
+			save_scope_as = appointing_band_member
+		}
+		trigger_event = { id = kizuna.1 popup = yes }
+	}
+
+	ai_chance = {
+		value =1
+	}
+}

@@ -7,20 +7,10 @@
 		}
 	}
 }
-kon_kizuna_list = {
+kon_kizuna_count = {
 	scope = country
 	effect = {
-		if = {
-			limit = {
-				var:kon_kizuna_number < 2
-				remove_modifier = kizuna_common_modifier_1
-				remove_modifier = kizuna_common_modifier_2
-				remove_modifier = kizuna_common_modifier_3
-				remove_modifier = kizuna_common_modifier_4
-				remove_modifier = kizuna_common_modifier_5
-				remove_modifier = kizuna_common_modifier_6
-			}
-		}
+		
 	}
 	is_shown = {
 		any_interest_group = {
@@ -41,7 +31,7 @@ kon_kizuna_list = {
 		
 	}
 }
-kon_kizuna_number = {
+kon_kizuna_show = {
 	effect = {
 		add_kon_kizuna_modifier = yes
 	}

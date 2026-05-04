@@ -1,4 +1,4 @@
-types kizuna_list_type
+types kizuna_list_type #角色列表
 {
 	type kizuna_character_widget = flowcontainer {
 		direction = vertical
@@ -190,6 +190,7 @@ types kizuna_list_type
 						}
 						
 						
+						
 
 					}
 					
@@ -203,8 +204,9 @@ types kizuna_list_type
 flowcontainer = {
 	name = "widget_je_kizuna_character_list"
 	ignoreinvisible = yes
+	
 	flowcontainer = {
-		visible = "[GetScriptedGui('kon_kizuna_list').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		visible = "[GetScriptedGui('kon_kizuna_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 		direction = vertical
 		
 		section_header_button = {
@@ -212,28 +214,28 @@ flowcontainer = {
 				size = { 520 38 }
 			
 			}
+			
 			blockoverride "left_text" {
 				text = "#v 轻音部#!"
-				
 			}
 			blockoverride "onclick" {
-				onclick = "[GetVariableSystem.Toggle('kizuna_list_toggle')]"
+				onclick = "[GetVariableSystem.Toggle('kon_kizuna_toggle')]"
 			}
 			blockoverride "onclick_showmore" {
 			
-				visible = "[Not(GetVariableSystem.Exists('kizuna_list_toggle'))]"
+				visible = "[Not(GetVariableSystem.Exists('kon_kizuna_toggle'))]"
 			}
 			blockoverride "onclick_showless" {
-				visible = "[GetVariableSystem.Exists('kizuna_list_toggle')]"
+				visible = "[GetVariableSystem.Exists('kon_kizuna_toggle')]"
 			}
 				
-			
 		}
 		
-		default_header_clean = {
-					name = "kon_kizuna_number" #樱高轻音部计数
-					visible = "[GetVariableSystem.Exists('kizuna_list_toggle')]"
+			default_header_clean = {
+					name = "kon_kizuna_show" #樱高轻音部计数
+					visible = "[GetVariableSystem.Exists('kon_kizuna_toggle')]"
 					size = { 500 100 }
+					
 					blockoverride "text" {
 						parentanchor = middle
 						icon = {
@@ -241,22 +243,20 @@ flowcontainer = {
 								size = { 50 50 }
 								position = { -50 -10 }
 							}
+							
 						raw_text = "樱高轻音部 [AccessPlayer.MakeScope.ScriptValue('kon_kizuna_number')|=+D]"
 						autoresize = yes
 						multiline = yes
 						using = fontsize_xl
 						default_format = "#medium"
-						
 					}
-					state = { #移除修正
-						name = _remove
-						trigger_when = "[Not(GetScriptedGui('kon_kizuna_list').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
-						on_start = "[GetScriptedGui('kon_kizuna_list').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-					}				
+					tooltip = "kon_kizuna_tooltip"		
+				
 				}
+				
 				default_header_clean = {
 					name = "kon_kizuna_modifier" #樱高轻音部修正
-					visible = "[GetVariableSystem.Exists('kizuna_list_toggle')]"
+					visible = "[GetVariableSystem.Exists('kon_kizuna_toggle')]"
 					size = { 500 200 }
 					
 					blockoverride "text" {
@@ -271,9 +271,136 @@ flowcontainer = {
 							
 				}
 		fixedgridbox = {
+			name = "kon_kizuna_character_list"
+			visible = "[GetVariableSystem.Exists('kon_kizuna_toggle')]" #樱高轻音部角色列表
+			datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('kon_kizuna_list')]"
+			addcolumn = 200
+			addrow = 100
+			
+			background = {
+				texture = "gfx/interface/tooltip/tooltip_title_bg.dds"
+				color = { 0.69 0.47 0.33 1 }
+				alpha = 0.4
+
+				modify_texture = {
+					using = texture_velvet
+				}
+			}
+
+			item = {
+				kizuna_character_widget = {}
+				
+			}
+		}
+		expand = {
+				
+		}
+		section_header_button = {
+			blockoverride "layout" {
+				size = { 520 38 }
+			
+			}
+			blockoverride "left_text" {
+				text = "#v 乐队#!"
+				
+			}
+			blockoverride "onclick" {
+				onclick = "[GetVariableSystem.Toggle('band_kizuna_toggle')]"
+			}
+			blockoverride "onclick_showmore" {
+			
+				visible = "[Not(GetVariableSystem.Exists('band_kizuna_toggle'))]"
+			}
+			blockoverride "onclick_showless" {
+				visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+			}
+				
+			
+		}
 		
-			visible = "[GetVariableSystem.Exists('kizuna_list_toggle')]"
-			datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('kizuna_list')]"
+		default_header_clean = {
+					name = "band_kizuna_show" #乐队计数
+					visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+					size = { 500 100 }
+					blockoverride "text" {
+						parentanchor = middle
+						icon = {
+								texture = "gfx/interface/icons/religion_icons/starbeat.dds"
+								size = { 50 50 }
+								position = { -50 -10 }
+							}
+						raw_text = "乐队 [AccessPlayer.MakeScope.ScriptValue('band_kizuna_number')|=+D]"
+						autoresize = yes
+						multiline = yes
+						using = fontsize_xl
+						default_format = "#medium"
+						tooltip = "band_kizuna_tooltip"		
+					}
+									
+									
+				}
+				
+				button = {
+					size = { 500 50 }
+					default_progressbar_horizontal = {	
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						size = { 500 50 }
+						tooltip = "band_kizuna_exp_progress_tooltip"
+					
+					parentanchor = vcenter
+						blockoverride "values" {
+							value = "50"
+						}
+						#icon = {
+						#	position = { -10 -25 }
+						#	size = { 520 100 }
+						#	texture = "gfx/interface/progressbar/cohesion_bar.dds"
+						#}
+					textbox = {
+						parentanchor = center
+						size = { 100 100 }
+						font = "OpenSans"
+						fontsize = 14
+						fontsize_min = 9
+						align = center|nobaseline
+						elide = right
+						text = "band_kizuna_exp_progress"
+					}
+				}
+				}
+				
+				button = {
+					size = { 500 50 }
+					default_progressbar_horizontal = {	
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						size = { 500 50 }
+						tooltip = "band_kizuna_creation_progress_tooltip"
+					
+					parentanchor = vcenter
+						blockoverride "values" {
+							value = "50"
+						}
+						#icon = {
+						#	position = { -10 -25 }
+						#	size = { 520 100 }
+						#	texture = "gfx/interface/progressbar/cohesion_bar.dds"
+						#}
+					textbox = {
+						parentanchor = center
+						size = { 100 100 }
+						font = "OpenSans"
+						fontsize = 14
+						fontsize_min = 9
+						align = center|nobaseline
+						elide = right
+						text = "band_kizuna_creation_progress"
+					}
+				}
+				}
+				fixedgridbox = {
+		
+			visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]" #乐队角色列表
+			datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('band_kizuna_list')]"
 			addcolumn = 200
 			addrow = 100
 			
@@ -291,10 +418,16 @@ flowcontainer = {
 				kizuna_character_widget = {}
 			}
 		}
+		
+				}
+			
+		}
+				
+				
+		
 		expand = {
 				
 		}
-		
 	}
 	
 }

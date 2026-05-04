@@ -1,5 +1,5 @@
 window = {
-	name = "kizuna_window"
+	name = "kizuna_window" #旧案作废
 	parentanchor = center
 	position = { 0% 0% }
 	size = { 1800 800 }
@@ -67,8 +67,8 @@ window = {
 			blockoverride "scrollbox_content" {
 				
 				default_header_clean = {
-					name = "kon_kizuna_number" #樱高轻音部计数
-					visible = "[GetScriptedGui('kon_kizuna_list').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					name = "kon_kizuna_show" #樱高轻音部展示
+					visible = "[GetScriptedGui('kon_kizuna_count').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 					using = tooltip_ne
 					size = { 1000 50 }
 					
@@ -79,22 +79,18 @@ window = {
 								size = { 50 50 }
 								position = { -50 -10 }
 							}
-						raw_text = "樱高轻音部 [AccessPlayer.MakeScope.ScriptValue('kon_kizuna_number')|=+D]"
+						raw_text = "樱高轻音部 [AccessPlayer.MakeScope.ScriptValue('kon_kizuna_show')|=+D]"
 						autoresize = yes
 						multiline = yes
 						using = fontsize_xl
 						default_format = "#medium"
 						
 					}
-					state = { #移除修正
-						name = _remove
-						trigger_when = "[Not(GetScriptedGui('kon_kizuna_list').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
-						on_start = "[GetScriptedGui('kon_kizuna_list').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-					}				
+									
 				}
 				default_header_clean = {
 					name = "kon_kizuna_modifier" #樱高轻音部修正
-					visible = "[GetScriptedGui(kon_kizuna_list).IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					visible = "[GetScriptedGui(kon_kizuna_count).IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 					using = tooltip_ne
 					size = { 1000 200 }
 					
@@ -110,7 +106,7 @@ window = {
 							
 				}
 				hbox = {
-					visible = "[GetScriptedGui('kon_kizuna_list').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					visible = "[GetScriptedGui('kon_kizuna_count').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 					layoutpolicy_horizontal = expanding
 					spacing = 10
 					
