@@ -4,7 +4,6 @@ types kizuna_list_type #角色列表
 		direction = vertical
 
 		divider_clean = {}
-		
 		widget = {
 		
 			parentanchor = hcenter
@@ -98,11 +97,7 @@ types kizuna_list_type #角色列表
 									parentanchor = hcenter
 									maximumsize = { 540 -1 }
 									minimumsize = { 300 -1 }
-
-
 									dynamicgridbox = {
-										position = { -50 0 }
-										parentanchor = hcenter
 										datamodel = "[Character.AccessTraits]"
 										datamodel_wrap = 3
 										flipdirection = yes
@@ -237,7 +232,7 @@ flowcontainer = {
 					size = { 500 100 }
 					
 					blockoverride "text" {
-						parentanchor = middle
+						
 						icon = {
 								texture = "gfx/interface/icons/religion_icons/starbeat.dds"
 								size = { 50 50 }
@@ -260,7 +255,7 @@ flowcontainer = {
 					size = { 500 200 }
 					
 					blockoverride "text" {
-						parentanchor = middle
+						
 						raw_text = "kon_kizuna_modifier_text"
 						autoresize = yes
 						multiline = yes
@@ -276,7 +271,6 @@ flowcontainer = {
 			datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('kon_kizuna_list')]"
 			addcolumn = 200
 			addrow = 100
-			
 			background = {
 				texture = "gfx/interface/tooltip/tooltip_title_bg.dds"
 				color = { 0.69 0.47 0.33 1 }
@@ -286,14 +280,10 @@ flowcontainer = {
 					using = texture_velvet
 				}
 			}
-
 			item = {
 				kizuna_character_widget = {}
 				
 			}
-		}
-		expand = {
-				
 		}
 		section_header_button = {
 			blockoverride "layout" {
@@ -323,7 +313,7 @@ flowcontainer = {
 					visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
 					size = { 500 100 }
 					blockoverride "text" {
-						parentanchor = middle
+						
 						icon = {
 								texture = "gfx/interface/icons/religion_icons/starbeat.dds"
 								size = { 50 50 }
@@ -397,14 +387,269 @@ flowcontainer = {
 					}
 				}
 				}
+				flowcontainer = {
+					button = {
+						icon = {
+							parentanchor = center
+							size = { 22 22 }
+							texture = "gfx/interface/icons/generic_icons/coin_icon_01.dds"
+						}
+						using = default_button
+						size = { 80 80 }
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						enabled = ""
+						onclick = "[GetScriptedGui('band_gold_effect_1').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						tooltip = "band_gold_tooltip_1"
+						text = ""
+					}
+					button = {
+						icon = {
+							parentanchor = center
+							size = { 22 22 }
+							texture = "gfx/interface/icons/generic_icons/coin_icon_03.dds"
+						}
+						using = default_button
+						size = { 80 80 }
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						enabled = ""
+						onclick = ""
+						tooltip = "band_gold_tooltip_2"
+						text = ""
+					}
+					button = {
+						icon = {
+							parentanchor = center
+							size = { 22 22 }
+							texture = "gfx/interface/icons/generic_icons/coin_icon_05.dds"
+						}
+						using = default_button
+						size = { 80 80 }
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						enabled = ""
+						onclick = ""
+						tooltip = "band_gold_tooltip_3"
+						text = ""
+					}
+					button = {
+						icon = {
+							parentanchor = center
+							size = { 22 22 }
+							texture = "gfx/interface/icons/generic_icons/coin_icon_07.dds"
+						}
+						using = default_button
+						size = { 80 80 }
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						enabled = ""
+						onclick = ""
+						tooltip = "band_gold_tooltip_4"
+						text = ""
+					}
+					button = {
+						icon = {
+							parentanchor = center
+							size = { 22 22 }
+							texture = "gfx/interface/icons/generic_icons/coin_icon_09.dds"
+						}
+						using = default_button
+						size = { 80 80 }
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						enabled = ""
+						onclick = ""
+						tooltip = "band_gold_tooltip_5"
+						text = ""
+					}
+					button = {
+						icon = {
+							parentanchor = center
+							size = { 22 22 }
+							texture = "gfx/interface/icons/generic_icons/coin_icon_11.dds"
+						}
+						using = default_button
+						size = { 80 80 }
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						enabled = ""
+						onclick = ""
+						tooltip = "band_gold_tooltip_6"
+						text = ""
+					}
+				}
+				flowcontainer = {
+					button = {
+						using = default_button
+						size = { 80 80 }
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						enabled = ""
+						onclick = ""
+						tooltip = "band_tools_tooltip"
+						text = "@tools!"
+					}
+					button = {
+						using = default_button
+						size = { 80 80 }
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						enabled = ""
+						onclick = ""
+						tooltip = "band_paper_tooltip"
+						text = "@paper!"
+					}
+					button = {
+						using = default_button
+						size = { 80 80 }
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						enabled = ""
+						onclick = ""
+						tooltip = "band_luxury_clothes_tooltip"
+						text = "@luxury_clothes!"
+					}
+					button = {
+						using = default_button
+						size = { 80 80 }
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						enabled = ""
+						onclick = ""
+						tooltip = "band_transportation_tooltip"
+						text = "@transportation!"
+					}
+					button = {
+						using = default_button
+						size = { 80 80 }
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						enabled = ""
+						onclick = ""
+						tooltip = "band_automobiles_tooltip"
+						text = "@automobiles!"
+					}
+					button = {
+						using = default_button
+						size = { 80 80 }
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						enabled = ""
+						onclick = ""
+						tooltip = "band_radios_tooltip"
+						text = "@radios!"
+					}
+				}
+				flowcontainer = {
+					button = {
+						using = default_button
+						size = { 80 80 }
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						enabled = ""
+						onclick = ""
+						tooltip = "band_fruit_tooltip"
+						text = "@fruit"
+					}
+					
+					button = {
+						using = default_button
+						size = { 80 80 }
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						enabled = ""
+						onclick = ""
+						tooltip = "band_tea_tooltip"
+						text = "@tea!"
+					}
+					button = {
+						using = default_button
+						size = { 80 80 }
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						enabled = ""
+						onclick = ""
+						tooltip = "band_coffee_tooltip"
+						text = "@coffee!"
+					}
+					button = {
+						using = default_button
+						size = { 80 80 }
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						enabled = ""
+						onclick = ""
+						tooltip = "band_groceries_tooltip"
+						text = "@groceries!"
+					}
+					button = {
+					using = default_button
+					size = { 80 80 }
+					visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+					enabled = ""
+					onclick = ""
+					tooltip = "band_luxury_drinks_tooltip"
+					text = "@luxury_drinks!"
+				}
+					button = {
+						using = default_button
+						size = { 80 80 }
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						enabled = ""
+						onclick = ""
+						tooltip = "band_luxury_foods_tooltip"
+						text = "@luxury_foods!"
+					}
+				}
+				flowcontainer = {
+					button = {
+						using = default_button
+						size = { 80 80 }
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						enabled = ""
+						onclick = ""
+						tooltip = "band_fruit_tooltip"
+						text = "@fruit"
+					}
+					
+					button = {
+						using = default_button
+						size = { 80 80 }
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						enabled = ""
+						onclick = ""
+						tooltip = "band_tea_tooltip"
+						text = "@tea!"
+					}
+					button = {
+						using = default_button
+						size = { 80 80 }
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						enabled = ""
+						onclick = ""
+						tooltip = "band_coffee_tooltip"
+						text = "@coffee!"
+					}
+					button = {
+						using = default_button
+						size = { 80 80 }
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						enabled = ""
+						onclick = ""
+						tooltip = "band_groceries_tooltip"
+						text = "@groceries!"
+					}
+					button = {
+					using = default_button
+					size = { 80 80 }
+					visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+					enabled = ""
+					onclick = ""
+					tooltip = "band_luxury_drinks_tooltip"
+					text = "@luxury_drinks!"
+				}
+					button = {
+						using = default_button
+						size = { 80 80 }
+						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+						enabled = ""
+						onclick = ""
+						tooltip = "band_luxury_foods_tooltip"
+						text = "@luxury_foods!"
+					}
+				}
 				fixedgridbox = {
-		
-			visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]" #乐队角色列表
-			datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('band_kizuna_list')]"
-			addcolumn = 200
-			addrow = 100
-			
-			background = {
+					name = "band_kizuna_character_list"
+					visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]" #乐队角色列表
+					datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('band_kizuna_list')]"
+					addcolumn = 200
+					addrow = 100
+					background = {
 				texture = "gfx/interface/tooltip/tooltip_title_bg.dds"
 				color = { 0.69 0.47 0.33 1 }
 				alpha = 0.4
@@ -413,21 +658,16 @@ flowcontainer = {
 					using = texture_velvet
 				}
 			}
-
-			item = {
-				kizuna_character_widget = {}
-			}
-		}
-		
+					item = {
+						kizuna_character_widget = {}
 				}
+				
+			}
 			
-		}
-				
-				
-		
-		expand = {
-				
-		}
+			
+			
 	}
-	
+			
 }
+			
+

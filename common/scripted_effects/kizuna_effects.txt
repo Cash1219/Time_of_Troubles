@@ -6,7 +6,7 @@ update_kizuna = {
         }
         clear_variable_list = kon_kizuna_list
     }
-	
+	 
 		update_kon_kizuna = yes
 		update_band_kizuna = yes
 }
@@ -64,7 +64,7 @@ update_kon_kizuna = {
 				leader = {
 					root = {
 						add_to_variable_list = {
-							name = kon_kizuna_effect
+							name = kon_kizuna_list
 							target = prev
 						}
 						
@@ -75,6 +75,7 @@ update_kon_kizuna = {
 		if = {
 			limit = { kon_kizuna_number == 1 }
 			je:je_kizuna_gui = {
+				remove_modifier = kon_kizuna_modifier_1
 				remove_modifier = kon_kizuna_modifier_2
 				remove_modifier = kon_kizuna_modifier_3
 				remove_modifier = kon_kizuna_modifier_4
@@ -87,6 +88,7 @@ update_kon_kizuna = {
 			limit = { kon_kizuna_number == 2 }
 			je:je_kizuna_gui = {
 				remove_modifier = kon_kizuna_modifier_1
+				remove_modifier = kon_kizuna_modifier_2
 				remove_modifier = kon_kizuna_modifier_3
 				remove_modifier = kon_kizuna_modifier_4
 				remove_modifier = kon_kizuna_modifier_5
@@ -99,6 +101,7 @@ update_kon_kizuna = {
 			je:je_kizuna_gui = {
 				remove_modifier = kon_kizuna_modifier_1
 				remove_modifier = kon_kizuna_modifier_2
+				remove_modifier = kon_kizuna_modifier_3
 				remove_modifier = kon_kizuna_modifier_4
 				remove_modifier = kon_kizuna_modifier_5
 				remove_modifier = kon_kizuna_modifier_6
@@ -111,6 +114,7 @@ update_kon_kizuna = {
 				remove_modifier = kon_kizuna_modifier_1
 				remove_modifier = kon_kizuna_modifier_2
 				remove_modifier = kon_kizuna_modifier_3
+				remove_modifier = kon_kizuna_modifier_4
 				remove_modifier = kon_kizuna_modifier_5
 				remove_modifier = kon_kizuna_modifier_6
 				add_modifier = kon_kizuna_modifier_4
@@ -123,6 +127,7 @@ update_kon_kizuna = {
 				remove_modifier = kon_kizuna_modifier_2
 				remove_modifier = kon_kizuna_modifier_3
 				remove_modifier = kon_kizuna_modifier_4
+				remove_modifier = kon_kizuna_modifier_5
 				remove_modifier = kon_kizuna_modifier_6
 				add_modifier = kon_kizuna_modifier_5
 			}
@@ -135,6 +140,7 @@ update_kon_kizuna = {
 				remove_modifier = kon_kizuna_modifier_3
 				remove_modifier = kon_kizuna_modifier_4
 				remove_modifier = kon_kizuna_modifier_5
+				remove_modifier = kon_kizuna_modifier_6
 				add_modifier = kon_kizuna_modifier_6
 			}
 		}
@@ -147,13 +153,14 @@ update_band_kizuna = {
 						has_trait = tot_drummer_trait
 						has_trait = tot_guitarist_trait
 						has_trait = tot_bassist_trait
-						hsa_trait = tot_keyboardist_trait
+						has_trait = tot_keyboardist_trait
 						has_trait = tot_lead_vocalist_trait
 						has_trait = tot_is_drummer_trait
 						has_trait = tot_is_guitarist_trait
 						has_trait = tot_is_bassist_trait
-						hsa_trait = tot_is_keyboardist_trait
-						has_trait = tot_is_lead_vocalist_trai
+						has_trait = tot_is_keyboardist_trait
+						has_trait = tot_is_lead_vocalist_trait
+						has_trait = tot_is_supper_lead_vocalist_trait
 					}
 				}
 			}
@@ -163,33 +170,21 @@ update_band_kizuna = {
 						has_trait = tot_drummer_trait
 						has_trait = tot_guitarist_trait
 						has_trait = tot_bassist_trait
-						hsa_trait = tot_keyboardist_trait
+						has_trait = tot_keyboardist_trait
 						has_trait = tot_lead_vocalist_trait
 						has_trait = tot_is_drummer_trait
 						has_trait = tot_is_guitarist_trait
 						has_trait = tot_is_bassist_trait
-						hsa_trait = tot_is_keyboardist_trait
-						has_trait = tot_is_lead_vocalist_trai
+						has_trait = tot_is_keyboardist_trait
+						has_trait = tot_is_lead_vocalist_trait
+						has_trait = tot_is_supper_lead_vocalist_trait
 					}
 				}
-					add_to_variable_list = {
+					root = {
+						add_to_variable_list = {
 						name = band_kizuna_list
 						target = prev
 				}
-			}
-			every_scope_character = {
-				limit = {
-					OR = {
-						has_trait = tot_is_drummer_trait
-						has_trait = tot_is_guitarist_trait
-						has_trait = tot_is_bassist_trait
-						hsa_trait = tot_is_keyboardist_trait
-						has_trait = tot_is_lead_vocalist_trait
-					}
-				}
-					add_to_variable_list = {
-						name = band_kizuna_effect
-						target = prev
 					}
 			}
 		}
