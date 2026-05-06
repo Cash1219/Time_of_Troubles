@@ -42,7 +42,7 @@ template diplomatic_action_button_properties {
 	icon = {
 		visible = "[DiplomaticAction.IsActivePact]"
 		using = highlighted_square_selection
-	}	
+	}
 }
 
 template diplomatic_action_button_after_label {
@@ -77,7 +77,7 @@ template diplomatic_action_button_after_label {
 
 		widget = {
 			size = { 30 30 }
-			
+
 			diplomatic_action_acceptance_icon = {
 				visible = "[Not(DiplomaticAction.GetType.CanSelectAnyState)]"
 			}
@@ -246,7 +246,6 @@ types country_panel_types
 
 		blockoverride "fixed_bottom" {
 			flowcontainer = {
-				visible = "[Not(Country.IsLocalPlayer)]"
 				direction = vertical
 				spacing = 5
 
@@ -261,13 +260,25 @@ types country_panel_types
 				widget = {
 					size = { 5 5 }
 				}
+				
+				button = {
+					text = "NATIONAL_CAST"
+					visible = "[GetMetaPlayer.IsPlayedOrObservedCountry(Country.Self)]"
+					onclick = "[InformationPanelBar.OpenPanelTab('pops_overview', 'national_cast')]"
+					parentanchor = hcenter
+					using = default_button_primary_big
+					align = hcenter|nobaseline
+					size = { @panel_width 50 }
+					using = fontsize_large
+				}				
 
 				button = {
 					parentanchor = hcenter
+					visible = "[Not(GetMetaPlayer.IsPlayedOrObservedCountry(Country.Self))]"
 					size = { 540 50 }
 					using = default_button_primary
 					onclick = "[InformationPanelBar.OpenTreatyDraftPanelForNewDraft(GetPlayer.Self, Country.Self)]"
-					enabled = "[GetPlayer.CanSignTreatyWith(Country.Self)]"
+					enabled = "[And(Not(GetMetaPlayer.IsObserver), GetPlayer.CanSignTreatyWith(Country.Self))]"
 					tooltip = "TREATY_CAN_SIGN_WITH"
 
 					flowcontainer = {
@@ -344,7 +355,7 @@ types country_panel_types
 
 			button_icon_zoom = {
 				onclick = "[State.ZoomToCapital]"
-				onrightclick = "[GetVariableSystem.Toggle('zoom_close_to_capital')]"			
+				onrightclick = "[GetVariableSystem.Toggle('zoom_close_to_capital')]"
 				visible = "[Not(GetVariableSystem.Exists('zoom_close_to_capital'))]"
 
 				tooltip = "ZOOM_TO_STATE"
@@ -354,7 +365,7 @@ types country_panel_types
 
 			button_icon_zoom = {
 				onclick = "[State.ZoomExtraCloseToCapital]"
-				onrightclick = "[GetVariableSystem.Toggle('zoom_close_to_capital')]"			
+				onrightclick = "[GetVariableSystem.Toggle('zoom_close_to_capital')]"
 				visible = "[GetVariableSystem.Exists('zoom_close_to_capital')]"
 
 				tooltip = "ZOOM_CLOSE_TO_STATE"
@@ -423,7 +434,7 @@ types country_panel_types
 				}
 			}
 
-			
+
 
 			flowcontainer = {
 				parentanchor = bottom
@@ -434,7 +445,7 @@ types country_panel_types
 					parentanchor = right
 
 					spacing = -2 #this flowcontainer is a BIT too wide compared to the government info below it
- 
+
 					# DIPLOMATIC PACTS
 					flowcontainer = {
 						datamodel = "[Country.AccessActiveDiplomaticPactTypes]"
@@ -471,10 +482,9 @@ types country_panel_types
 						datacontext = "[Country.AccessRuler]"
 						blockoverride "show_hat" {}
 						blockoverride "highlight" {}
-						blockoverride "commander_order_icon" {}
 					}
 				}
-				
+
 				#GOVERNMENT
 				flowcontainer = {
 					direction = vertical
@@ -594,8 +604,8 @@ types country_panel_types
 					textbox = {
 						autoresize = yes
 						visible = "[Not(CountryPanel.GetCountry.IsColonizable)]"
-						raw_text = "#variable @flotillas! [Country.GetWarships|0]#!"
-						tooltip = "PANEL_MILITARY_NAVY_CURRENT_FLOTILLAS_TOOLTIP"
+						raw_text = "#variable @ships! [Country.GetNumShips|0]#!"
+						tooltip = "PANEL_MILITARY_NAVY_CURRENT_SHIPS_TOOLTIP"
 						using = fontsize_mega
 						minimumsize = { 60 -1 }
 						align = right|nobaseline
@@ -623,7 +633,6 @@ types country_panel_types
 							size = { 50 50 }
 							parentanchor = right|vcenter
 
-
 							blockoverride "rank_text" {
 								raw_text = "#BOLD [Country.GetCountryScorePositionDesc]"
 							}
@@ -641,7 +650,7 @@ types country_panel_types
 					blockoverride "stats_label" {
 						text = "[concept_rank]"
 					}
-					
+
 					blockoverride "stats_value" {
 						raw_text = "#v [Country.GetRank]#!"
 					}
@@ -871,24 +880,24 @@ types country_panel_types
 					}
 				}
 
-				#FLOTILLAS
+				#SHIPS
 				country_stats_entry = {
-					alpha = "[TransparentIfZero_int32(Country.GetWarships)]"
+					alpha = "[TransparentIfZero_int32(Country.GetNumShips)]"
 					blockoverride "stats_tooltip" {
-						tooltip = "PANEL_MILITARY_NAVY_CURRENT_FLOTILLAS_TOOLTIP"
+						tooltip = "PANEL_MILITARY_NAVY_CURRENT_SHIPS_TOOLTIP"
 					}
 					blockoverride "information_icon" {
 						texture = "gfx/interface/icons/generic_icons/flotillas.dds"
 					}
 					blockoverride "stats_label" {
-						text = "FLOTILLAS"
+						text = "SHIPS_CONCEPT"
 					}
 					blockoverride "stats_value" {
-						raw_text = "#variable [Country.GetWarships|0]#!"
+						raw_text = "#variable [Country.GetNumShips|0]#!"
 					}
 
 					blockoverride "stats_rank" {
-						text = "[Country.GetFlotillasRanking]"
+						text = "[Country.GetShipsRanking]"
 					}
 				}
 
@@ -915,11 +924,13 @@ types country_panel_types
 						text = "[Country.GetGDPRanking]"
 					}
 				}
+
 				#GDP Ownership
 				country_stats_entry = {
 					onmousehierarchyenter = "[SetTempMapModeByKey('mm_gdp_ownership_ratio')]"
 					onmousehierarchyleave = "[RemoveTempMapMode]"
 					alwaystransparent = no
+
 					blockoverride "stats_tooltip" {
 						tooltip = "COUNTRY_GDP_OWNERSHIP_TOOLTIP"
 					}
@@ -932,6 +943,7 @@ types country_panel_types
 					blockoverride "stats_value" {
 						raw_text = "COUNTRY_ALL_OWNERSHIP"
 					}
+
 					blockoverride "stats_rank" {}
 				}
 
@@ -1041,7 +1053,9 @@ types country_panel_types
 
 				##CULTURE
 				country_stats_entry = {
-					blockoverride "stats_tooltip" {}
+					blockoverride "stats_tooltip" {
+						tooltip = "[Country.GetPrimaryCulturesDesc]"
+					}
 
 					blockoverride "information_icon" {
 						texture = "gfx/interface/population/pop_culture.dds"
@@ -3486,14 +3500,14 @@ types war_panel
 					parentanchor = vcenter
 					position = { 0 -4 }
 
-					small_flag = {
+					small_flag_no_interact = {
 						mobilization_icon_flag = {}
 					}
+
 					textbox = {
 						name = "warscore"
 						autoresize = yes
 						text = "WAR_SUPPORT_LEFT_SIDE"
-						tooltip = "WAR_LEFT_LEADER_TOOLTIP"
 						align = nobaseline
 						parentanchor = vcenter
 						using = fontsize_large
@@ -3509,14 +3523,14 @@ types war_panel
 					parentanchor = right|vcenter
 					position = { 0 -4 }
 
-					small_flag = {
+					small_flag_no_interact = {
 						mobilization_icon_flag = {}
 					}
+
 					textbox = {
 						name = "warscore"
 						autoresize = yes
 						text = "WAR_SUPPORT_RIGHT_SIDE"
-						tooltip = "WAR_RIGHT_LEADER_TOOLTIP"
 						align = right|nobaseline
 						parentanchor = vcenter
 						using = fontsize_large
@@ -4154,8 +4168,8 @@ types country_info
 			textbox = {
 				autoresize = yes
 				visible = "[Not(CountryPanel.GetCountry.IsColonizable)]"
-				raw_text = "#variable @flotillas![Country.GetWarships|0]#!"
-				tooltip = PANEL_MILITARY_NAVY_CURRENT_FLOTILLAS_TOOLTIP
+				raw_text = "#variable @ships![Country.GetNumShips|0]#!"
+				tooltip = PANEL_MILITARY_NAVY_CURRENT_SHIPS_TOOLTIP
 				using = fontsize_mega
 				minimumsize = { 60 -1 }
 				align = hcenter|nobaseline
@@ -4332,6 +4346,7 @@ types country_info
 		section_header_button = {
 			using = default_fade_in_out
 			parentanchor = hcenter
+			align = nobaseline
 
 			block "section_header_tooltip" {}
 

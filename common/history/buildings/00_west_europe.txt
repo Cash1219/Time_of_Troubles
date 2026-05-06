@@ -127,6 +127,17 @@
 				reserves=1
 				activate_production_methods={ "pm_hardwood" "pm_saw_mills" "pm_no_equipment" "pm_road_carts"  }
 			}
+			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:SWE"
+						levels=10
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
+			}
 		}
 	}
 	s:STATE_GOTALAND={
@@ -152,6 +163,17 @@
 					}
 				}
 				reserves=1
+			}
+			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:SWE"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
 			}
 			create_building={
 				building="building_paper_mill"
@@ -284,23 +306,12 @@
 					building={
 						type="building_shipyard"
 						country="c:SWE"
-						levels=1
+						levels=2
 						region="STATE_SCANIA"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding"  }
-			}
-			create_building={
-				building="building_military_shipyard"
-				add_ownership={
-					country={
-						country="c:SWE"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_military_shipbuilding_wooden"  }
 			}
 			create_building={
 				building="building_tooling_workshop"
@@ -386,6 +397,16 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:SWE"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
 			}
 		}
 	}
@@ -486,6 +507,17 @@
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
 			}
+			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:DEN"
+						levels=15
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
+			}
 		}
 	}
 	s:STATE_ZEALAND={
@@ -529,23 +561,12 @@
 					building={
 						type="building_financial_district"
 						country="c:DEN"
-						levels=1
+						levels=2
 						region="STATE_ZEALAND"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding"  }
-			}
-			create_building={
-				building="building_military_shipyard"
-				add_ownership={
-					country={
-						country="c:DEN"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_military_shipbuilding_wooden"  }
 			}
 			create_building={
 				building="building_textile_mill"
@@ -647,6 +668,16 @@
 				reserves=1
 				activate_production_methods={ "pm_crude_tools" "pm_automation_disabled"  }
 			}
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:DEN"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
+			}
 		}
 	}
 	s:STATE_WESTERN_NORWAY={
@@ -713,6 +744,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:NOR"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
 			}
 		}
 	}
@@ -1026,23 +1068,12 @@
 					building={
 						type="building_financial_district"
 						country="c:GBR"
-						levels=3
+						levels=5
 						region="STATE_HOME_COUNTIES"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding"  }
-			}
-			create_building={
-				building="building_military_shipyard"
-				add_ownership={
-					country={
-						country="c:GBR"
-						levels=2
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_military_shipbuilding_wooden_2"  }
 			}
 			create_building={
 				building="building_furniture_manufactory"
@@ -1124,6 +1155,27 @@
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
 			}
+			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=60
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
+			}
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
+			}
 		}
 	}
 	s:STATE_LANCASHIRE={
@@ -1157,6 +1209,17 @@
 					}
 				}
 				reserves=1
+			}
+			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=10
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
 			}
 			create_building={
 				building="building_textile_mill"
@@ -1339,6 +1402,17 @@
 				reserves=1
 			}
 			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
+			}
+			create_building={
 				building="building_paper_mill"
 				add_ownership={
 					building={
@@ -1433,6 +1507,17 @@
 					}
 				}
 				reserves=1
+			}
+			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=10
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
 			}
 			create_building={
 				building="building_tooling_workshop"
@@ -1738,6 +1823,17 @@
 				activate_production_methods={ "pm_cannons" "pm_automation_disabled"  }
 			}
 			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=10
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
+			}
+			create_building={
 				building="building_furniture_manufactory"
 				add_ownership={
 					building={
@@ -1901,6 +1997,17 @@
 				activate_production_methods={ "pm_scholastic_education" "pm_religious_academia" }
 			}
 			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=4
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
+			}
+			create_building={
 				building="building_furniture_manufactory"
 				add_ownership={
 					building={
@@ -1962,29 +2069,12 @@
 					building={
 						type="building_financial_district"
 						country="c:GBR"
-						levels=2
+						levels=3
 						region="STATE_EAST_ANGLIA"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding"  }
-			}
-			create_building={
-				building="building_military_shipyard"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:GBR"
-						levels=1
-						region="STATE_EAST_ANGLIA"
-					}
-					country={
-						country="c:GBR"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_military_shipbuilding_wooden_2"  }
 			}
 			create_building={
 				building="building_rye_farm"
@@ -2113,6 +2203,17 @@
 				reserves=1
 			}
 			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=40
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
+			}
+			create_building={
 				building="building_tooling_workshop"
 				add_ownership={
 					building={
@@ -2150,31 +2251,18 @@
 					building={
 						type="building_financial_district"
 						country="c:GBR"
-						levels=3
+						levels=4
 						region="STATE_WEST_COUNTRY"
 					}
 					building={
 						type="building_financial_district"
 						country="c:GBR"
-						levels=4
+						levels=5
 						region="STATE_HOME_COUNTIES"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding"  }
-			}
-			create_building={
-				building="building_military_shipyard"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:GBR"
-						levels=2
-						region="STATE_HOME_COUNTIES"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_military_shipbuilding_wooden_2"  }
 			}
 			create_building={
 				building="building_wheat_farm"
@@ -2238,6 +2326,16 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
 			}
 		}
 	}
@@ -2676,6 +2774,17 @@
 				activate_production_methods={ "pm_scholastic_education" "pm_religious_academia" }
 			}
 			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:FRA"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
+			}
+			create_building={
 				building="building_art_academy"
 				add_ownership={
 					building={
@@ -2708,12 +2817,37 @@
 				activate_production_methods={ "pm_lathe"  "pm_automation_disabled" "pm_no_luxuries" }
 			}
 			create_building={
+				building="building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:FRA"
+						levels=1
+						region="STATE_ILE_DE_FRANCE"
+					}
+					building={
+						type="building_financial_district"
+						country="c:FRA"
+						levels=1
+						region="STATE_ILE_DE_FRANCE"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_dye_workshops"  "pm_traditional_looms" "pm_craftsman_sewing" }
+			}
+			create_building={
 				building="building_wheat_farm"
 				add_ownership={
 					building={
 						type="building_manor_house"
 						country="c:FRA"
-						levels=5
+						levels=3
+						region="STATE_ILE_DE_FRANCE"
+					}
+					building={
+						type="building_wheat_farm"
+						country="c:FRA"
+						levels=2
 						region="STATE_ILE_DE_FRANCE"
 					}
 				}
@@ -2726,7 +2860,13 @@
 					building={
 						type="building_manor_house"
 						country="c:FRA"
-						levels=4
+						levels=2
+						region="STATE_ILE_DE_FRANCE"
+					}
+					building={
+						type="building_livestock_ranch"
+						country="c:FRA"
+						levels=2
 						region="STATE_ILE_DE_FRANCE"
 					}
 				}
@@ -2802,13 +2942,13 @@
 					building={
 						type="building_financial_district"
 						country="c:FRA"
-						levels=3
+						levels=2
 						region="STATE_PROVENCE"
 					}
 					building={
 						type="building_financial_district"
 						country="c:FRA"
-						levels=2
+						levels=3
 						region="STATE_ILE_DE_FRANCE"
 					}
 				}
@@ -2839,13 +2979,13 @@
 					building={
 						type="building_textile_mill"
 						country="c:FRA"
-						levels=2
+						levels=1
 						region="STATE_PROVENCE"
 					}
 					building={
 						type="building_financial_district"
 						country="c:FRA"
-						levels=1
+						levels=2
 						region="STATE_ILE_DE_FRANCE"
 					}
 				}
@@ -2884,7 +3024,13 @@
 					building={
 						type="building_manor_house"
 						country="c:FRA"
-						levels=6
+						levels=3
+						region="STATE_PROVENCE"
+					}
+					building={
+						type="building_wheat_farm"
+						country="c:FRA"
+						levels=3
 						region="STATE_PROVENCE"
 					}
 				}
@@ -2901,6 +3047,16 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:FRA"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
 			}
 		}
 	}
@@ -2937,13 +3093,13 @@
 					building={
 						type="building_financial_district"
 						country="c:FRA"
-						levels=2
+						levels=1
 						region="STATE_NORMANDY"
 					}
 					building={
 						type="building_financial_district"
 						country="c:FRA"
-						levels=1
+						levels=2
 						region="STATE_ILE_DE_FRANCE"
 					}
 				}
@@ -2955,25 +3111,18 @@
 					building={
 						type="building_shipyard"
 						country="c:FRA"
-						levels=3
+						levels=2
 						region="STATE_NORMANDY"
+					}
+					building={
+						type="building_financial_district"
+						country="c:FRA"
+						levels=4
+						region="STATE_ILE_DE_FRANCE"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding"  }
-			}
-			create_building={
-				building="building_military_shipyard"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:FRA"
-						levels=2
-						region="STATE_NORMANDY"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_military_shipbuilding_wooden"  }
 			}
 			create_building={
 				building="building_textile_mill"
@@ -2981,7 +3130,7 @@
 					building={
 						type="building_textile_mill"
 						country="c:FRA"
-						levels=4
+						levels=2
 						region="STATE_NORMANDY"
 					}
 					building={
@@ -2989,6 +3138,12 @@
 						country="c:FRA"
 						levels=2
 						region="STATE_NORMANDY"
+					}
+					building={
+						type="building_financial_district"
+						country="c:FRA"
+						levels=2
+						region="STATE_ILE_DE_FRANCE"
 					}
 				}
 				reserves=1
@@ -3013,7 +3168,13 @@
 					building={
 						type="building_manor_house"
 						country="c:FRA"
-						levels=4
+						levels=2
+						region="STATE_NORMANDY"
+					}
+					building={
+						type="building_wheat_farm"
+						country="c:FRA"
+						levels=2
 						region="STATE_NORMANDY"
 					}
 				}
@@ -3026,7 +3187,13 @@
 					building={
 						type="building_manor_house"
 						country="c:FRA"
-						levels=2
+						levels=1
+						region="STATE_NORMANDY"
+					}
+					building={
+						type="building_livestock_ranch"
+						country="c:FRA"
+						levels=1
 						region="STATE_NORMANDY"
 					}
 				}
@@ -3043,6 +3210,27 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:FRA"
+						levels=40
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
+			}
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:FRA"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
 			}
 		}
 	}
@@ -3116,13 +3304,13 @@
 					building={
 						type="building_financial_district"
 						country="c:FRA"
-						levels=3
+						levels=2
 						region="STATE_LANGUEDOC"
 					}
 					building={
 						type="building_financial_district"
 						country="c:FRA"
-						levels=1
+						levels=2
 						region="STATE_ILE_DE_FRANCE"
 					}
 				}
@@ -3135,7 +3323,13 @@
 					building={
 						type="building_manor_house"
 						country="c:FRA"
-						levels=7
+						levels=4
+						region="STATE_LANGUEDOC"
+					}
+					building={
+						type="building_wheat_farm"
+						country="c:FRA"
+						levels=3
 						region="STATE_LANGUEDOC"
 					}
 				}
@@ -3225,14 +3419,20 @@
 					building={
 						type="building_textile_mill"
 						country="c:FRA"
-						levels=3
+						levels=1
 						region="STATE_RHONE"
 					}
 					building={
 						type="building_financial_district"
 						country="c:FRA"
-						levels=2
+						levels=1
 						region="STATE_RHONE"
+					}
+					building={
+						type="building_financial_district"
+						country="c:FRA"
+						levels=3
+						region="STATE_ILE_DE_FRANCE"
 					}
 				}
 				reserves=1
@@ -3244,12 +3444,18 @@
 					building={
 						type="building_financial_district"
 						country="c:FRA"
-						levels=3
+						levels=1
 						region="STATE_RHONE"
 					}
 					country={
 						country="c:FRA"
 						levels=1
+					}
+					building={
+						type="building_financial_district"
+						country="c:FRA"
+						levels=2
+						region="STATE_ILE_DE_FRANCE"
 					}
 				}
 				reserves=1
@@ -3280,14 +3486,20 @@
 					building={
 						type="building_coal_mine"
 						country="c:FRA"
-						levels=2
+						levels=1
 						region="STATE_RHONE"
 					}
 					building={
 						type="building_coal_mine"
 						country="c:FRA"
-						levels=2
+						levels=1
 						region="STATE_RHONE"
+					}
+					building={
+						type="building_financial_district"
+						country="c:FRA"
+						levels=2
+						region="STATE_ILE_DE_FRANCE"
 					}
 				}
 				reserves=1
@@ -3318,7 +3530,13 @@
 					building={
 						type="building_manor_house"
 						country="c:FRA"
-						levels=9
+						levels=5
+						region="STATE_RHONE"
+					}
+					building={
+						type="building_wheat_farm"
+						country="c:FRA"
+						levels=4
 						region="STATE_RHONE"
 					}
 				}
@@ -3402,8 +3620,14 @@
 					building={
 						type="building_financial_district"
 						country="c:FRA"
-						levels=3
+						levels=1
 						region="STATE_FRENCH_LOW_COUNTRIES"
+					}
+					building={
+						type="building_financial_district"
+						country="c:FRA"
+						levels=2
+						region="STATE_ILE_DE_FRANCE"
 					}
 				}
 				reserves=1
@@ -3415,7 +3639,13 @@
 					building={
 						type="building_manor_house"
 						country="c:FRA"
-						levels=5
+						levels=3
+						region="STATE_FRENCH_LOW_COUNTRIES"
+					}
+					building={
+						type="building_manor_house"
+						country="c:FRA"
+						levels=2
 						region="STATE_FRENCH_LOW_COUNTRIES"
 					}
 				}
@@ -3452,13 +3682,13 @@
 					building={
 						type="building_financial_district"
 						country="c:FRA"
-						levels=6
+						levels=3
 						region="STATE_FRENCH_LOW_COUNTRIES"
 					}
 					building={
 						type="building_financial_district"
 						country="c:FRA"
-						levels=3
+						levels=6
 						region="STATE_ILE_DE_FRANCE"
 					}
 				}
@@ -3488,8 +3718,14 @@
 					building={
 						type="building_textile_mill"
 						country="c:FRA"
-						levels=5
+						levels=2
 						region="STATE_PICARDY"
+					}
+					building={
+						type="building_financial_district"
+						country="c:FRA"
+						levels=3
+						region="STATE_ILE_DE_FRANCE"
 					}
 				}
 				reserves=1
@@ -3563,8 +3799,14 @@
 					building={
 						type="building_financial_district"
 						country="c:ALS"
-						levels=2
+						levels=1
 						region="STATE_ALSACE_LORRAINE"
+					}
+					building={
+						type="building_financial_district"
+						country="c:FRA"
+						levels=1
+						region="STATE_ILE_DE_FRANCE"
 					}
 				}
 				reserves=1
@@ -3608,6 +3850,12 @@
 						country="c:ALS"
 						levels=5
 						region="STATE_ALSACE_LORRAINE"
+					}
+					building={
+						type="building_financial_district"
+						country="c:FRA"
+						levels=2
+						region="STATE_ILE_DE_FRANCE"
 					}
 				}
 				reserves=1
@@ -3684,7 +3932,13 @@
 					building={
 						type="building_manor_house"
 						country="c:FRA"
-						levels=2
+						levels=1
+						region="STATE_POITOU"
+					}
+					building={
+						type="building_wheat_farm"
+						country="c:FRA"
+						levels=1
 						region="STATE_POITOU"
 					}
 				}
@@ -3725,8 +3979,14 @@
 					building={
 						type="building_financial_district"
 						country="c:FRA"
-						levels=3
+						levels=2
 						region="STATE_GUYENNE"
+					}
+					building={
+						type="building_financial_district"
+						country="c:FRA"
+						levels=1
+						region="STATE_ILE_DE_FRANCE"
 					}
 				}
 				reserves=1
@@ -3841,7 +4101,7 @@
 						type="building_financial_district"
 						country="c:FRA"
 						levels=3
-						region="STATE_AUVERGNE_LIMOUSIN"
+						region="STATE_ILE_DE_FRANCE"
 					}
 				}
 				reserves=1
@@ -3854,7 +4114,7 @@
 						type="building_financial_district"
 						country="c:FRA"
 						levels=2
-						region="STATE_AUVERGNE_LIMOUSIN"
+						region="STATE_ILE_DE_FRANCE"
 					}
 					building={
 						type="building_logging_camp"
@@ -3944,7 +4204,7 @@
 					building={
 						type="building_financial_district"
 						country="c:FRA"
-						levels=1
+						levels=3
 						region="STATE_ILE_DE_FRANCE"
 					}
 				}
@@ -3952,15 +4212,15 @@
 				activate_production_methods={ "pm_basic_shipbuilding"  }
 			}
 			create_building={
-				building="building_military_shipyard"
+				building="building_naval_administration"
 				add_ownership={
 					country={
 						country="c:FRA"
-						levels=2
+						levels=40
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_military_shipbuilding_wooden"  }
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
 			}
 			create_building={
 				building="building_logging_camp"
@@ -3968,8 +4228,14 @@
 					building={
 						type="building_financial_district"
 						country="c:FRA"
-						levels=4
+						levels=2
 						region="STATE_BRITTANY"
+					}
+					building={
+						type="building_financial_district"
+						country="c:FRA"
+						levels=2
+						region="STATE_ILE_DE_FRANCE"
 					}
 				}
 				reserves=1
@@ -3994,7 +4260,13 @@
 					building={
 						type="building_manor_house"
 						country="c:FRA"
-						levels=2
+						levels=1
+						region="STATE_BRITTANY"
+					}
+					building={
+						type="building_wheat_farm"
+						country="c:FRA"
+						levels=1
 						region="STATE_BRITTANY"
 					}
 				}
@@ -4007,11 +4279,17 @@
 					building={
 						type="building_manor_house"
 						country="c:FRA"
-						levels=2
+						levels=1
 						region="STATE_ILE_DE_FRANCE"
 					}
 					building={
 						type="building_manor_house"
+						country="c:FRA"
+						levels=1
+						region="STATE_BRITTANY"
+					}
+					building={
+						type="building_livestock_ranch"
 						country="c:FRA"
 						levels=3
 						region="STATE_BRITTANY"
@@ -4031,6 +4309,16 @@
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
 			}
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:FRA"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
+			}
 		}
 	}
 	s:STATE_BURGUNDY={
@@ -4041,13 +4329,13 @@
 					building={
 						type="building_tooling_workshop"
 						country="c:FRA"
-						levels=3
+						levels=2
 						region="STATE_BURGUNDY"
 					}
 					building={
 						type="building_financial_district"
 						country="c:FRA"
-						levels=1
+						levels=2
 						region="STATE_ILE_DE_FRANCE"
 					}
 				}
@@ -4128,8 +4416,14 @@
 					building={
 						type="building_financial_district"
 						country="c:FRA"
-						levels=6
+						levels=3
 						region="STATE_CHAMPAGNE"
+					}
+					building={
+						type="building_financial_district"
+						country="c:FRA"
+						levels=3
+						region="STATE_ILE_DE_FRANCE"
 					}
 				}
 				reserves=1
@@ -4179,7 +4473,13 @@
 					building={
 						type="building_manor_house"
 						country="c:FRA"
-						levels=3
+						levels=2
+						region="STATE_CHAMPAGNE"
+					}
+					building={
+						type="building_wheat_farm"
+						country="c:FRA"
+						levels=1
 						region="STATE_CHAMPAGNE"
 					}
 				}
@@ -4228,13 +4528,13 @@
 					building={
 						type="building_financial_district"
 						country="c:FRA"
-						levels=2
+						levels=1
 						region="STATE_FRANCHE_COMTE"
 					}
 					building={
 						type="building_financial_district"
 						country="c:FRA"
-						levels=1
+						levels=2
 						region="STATE_ILE_DE_FRANCE"
 					}
 					building={
@@ -4290,7 +4590,7 @@
 						type="building_financial_district"
 						country="c:FRA"
 						levels=2
-						region="STATE_LORRAINE"
+						region="STATE_ILE_DE_FRANCE"
 					}
 				}
 				reserves=1
@@ -4347,8 +4647,14 @@
 					building={
 						type="building_financial_district"
 						country="c:FRA"
-						levels=4
+						levels=2
 						region="STATE_LORRAINE"
+					}
+					building={
+						type="building_financial_district"
+						country="c:FRA"
+						levels=2
+						region="STATE_ILE_DE_FRANCE"
 					}
 				}
 				reserves=1
@@ -4421,8 +4727,14 @@
 					building={
 						type="building_financial_district"
 						country="c:FRA"
-						levels=3
+						levels=2
 						region="STATE_AQUITAINE"
+					}
+					building={
+						type="building_financial_district"
+						country="c:FRA"
+						levels=1
+						region="STATE_ILE_DE_FRANCE"
 					}
 				}
 				reserves=1
@@ -4466,7 +4778,13 @@
 					building={
 						type="building_manor_house"
 						country="c:FRA"
-						levels=6
+						levels=3
+						region="STATE_AQUITAINE"
+					}
+					building={
+						type="building_wheat_farm"
+						country="c:FRA"
+						levels=3
 						region="STATE_AQUITAINE"
 					}
 				}
@@ -4494,8 +4812,14 @@
 					building={
 						type="building_financial_district"
 						country="c:FRA"
-						levels=2
+						levels=1
 						region="STATE_ORLEANS"
+					}
+					building={
+						type="building_financial_district"
+						country="c:FRA"
+						levels=1
+						region="STATE_ILE_DE_FRANCE"
 					}
 				}
 				reserves=1
@@ -4526,7 +4850,13 @@
 					building={
 						type="building_manor_house"
 						country="c:FRA"
-						levels=5
+						levels=3
+						region="STATE_ORLEANS"
+					}
+					building={
+						type="building_wheat_farm"
+						country="c:FRA"
+						levels=2
 						region="STATE_ORLEANS"
 					}
 				}
@@ -4539,7 +4869,13 @@
 					building={
 						type="building_manor_house"
 						country="c:FRA"
-						levels=4
+						levels=2
+						region="STATE_ORLEANS"
+					}
+					building={
+						type="building_livestock_ranch"
+						country="c:FRA"
+						levels=2
 						region="STATE_ORLEANS"
 					}
 				}
@@ -4608,17 +4944,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding"  }
-			}
-			create_building={
-				building="building_military_shipyard"
-				add_ownership={
-					country={
-						country="c:TBUN"
-						levels=2
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_military_shipbuilding_wooden"  }
 			}
 			create_building={
 				building="building_arms_industry"
@@ -4718,6 +5043,27 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:NET"
+						levels=15
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
+			}
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:NET"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
 			}
 		}
 	}
@@ -4905,6 +5251,34 @@
 	s:STATE_WALLONIA={
 		region_state:TBUN={
 			create_building={
+				building="building_wheat_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:TBUN"
+						levels=1
+						region="STATE_WALLONIA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled"  }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:TBUN"
+						levels=1
+						region="STATE_WALLONIA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated"  }
+			}
+		}
+		region_state:BEL={
+			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
@@ -5083,6 +5457,19 @@
 					}
 				}
 				reserves=1
+			}
+			create_building={
+				building="building_shipyard"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:TBUN"
+						levels=1
+						region="STATE_FLANDERS"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_shipbuilding"  }
 			}
 			create_building={
 				building="building_government_administration"
@@ -5279,6 +5666,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:TBUN"
+						levels=15
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
 			}
 		}
 	}
@@ -5612,6 +6010,17 @@
 	s:STATE_MORAVIA={
 		region_state:BOH={
 			create_building={
+				building="building_government_administration"
+				add_ownership={
+					country={
+						country="c:BOH"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_hereditary_bureaucrats" "pm_religious_bureaucrats" }
+			}
+			create_building={
 				building="building_textile_mill"
 				add_ownership={
 					building={
@@ -5635,7 +6044,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:IDMS"
+						country="c:BOH"
 						levels=1
 						region="STATE_MORAVIA"
 					}
@@ -5665,7 +6074,7 @@
 					}
 					building={
 						type="building_financial_district"
-						country="c:IDMS"
+						country="c:BOH"
 						levels=1
 						region="STATE_MORAVIA"
 					}
@@ -5673,32 +6082,14 @@
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts"  }
 			}
-			create_building={
-				building="building_wheat_farm"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:BOH"
-						levels=2
-						region="STATE_MORAVIA"
-					}
-					building={
-						type="building_manor_house"
-						country="c:IDMS"
-						levels=2
-						region="STATE_MORAVIA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_simple_farming" "pm_citrus_orchards" "pm_tools_disabled"  }
-			}
+			
 			create_building={
 				building="building_coal_mine"
 				add_ownership={
 					building={
 						type="building_coal_mine"
 						country="c:BOH"
-						levels=1
+						levels=2
 						region="STATE_MORAVIA"
 					}
 				}
@@ -5923,6 +6314,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:PRU"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
 			}
 		}
 	}

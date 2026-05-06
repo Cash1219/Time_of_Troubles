@@ -1,11 +1,11 @@
 ﻿BUILDINGS={
 	s:STATE_SAN_SALVADOR={
-		region_state:UCA={
+		region_state:YUZ1={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:UCA"
+						country="c:YUZ1"
 						levels=1
 					}
 				}
@@ -17,7 +17,7 @@
 				add_ownership={
 					building={
 						type="building_textile_mill"
-						country="c:UCA"
+						country="c:YUZ1"
 						levels=1
 						region="STATE_SAN_SALVADOR"
 					}
@@ -30,7 +30,7 @@
 				add_ownership={
 					building={
 						type="building_maize_farm"
-						country="c:UCA"
+						country="c:YUZ1"
 						levels=1
 						region="STATE_SAN_SALVADOR"
 					}
@@ -43,7 +43,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:UCA"
+						country="c:YUZ1"
 						levels=1
 						region="STATE_SAN_SALVADOR"
 					}
@@ -55,7 +55,7 @@
 				building="building_barrack"
 				add_ownership={
 					country={
-						country="c:UCA"
+						country="c:YUZ1"
 						levels=2
 					}
 				}
@@ -65,12 +65,12 @@
 		}
 	}
 	s:STATE_GUATEMALA={
-		region_state:UCA={
+		region_state:YUZ1={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:UCA"
+						country="c:YUZ1"
 						levels=1
 					}
 				}
@@ -82,7 +82,7 @@
 				add_ownership={
 					building={
 						type="building_maize_farm"
-						country="c:UCA"
+						country="c:YUZ1"
 						levels=2
 						region="STATE_GUATEMALA"
 					}
@@ -95,7 +95,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:UCA"
+						country="c:YUZ1"
 						levels=1
 						region="STATE_GUATEMALA"
 					}
@@ -107,7 +107,7 @@
 				building="building_barrack"
 				add_ownership={
 					country={
-						country="c:UCA"
+						country="c:YUZ1"
 						levels=2
 					}
 				}
@@ -130,13 +130,13 @@
 		}
 	}
 	s:STATE_HONDURAS={
-		region_state:UCA={
+		region_state:YUZ1={
 			create_building={
 				building="building_maize_farm"
 				add_ownership={
 					building={
 						type="building_maize_farm"
-						country="c:UCA"
+						country="c:YUZ1"
 						levels=1
 						region="STATE_HONDURAS"
 					}
@@ -149,7 +149,7 @@
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:UCA"
+						country="c:YUZ1"
 						levels=1
 						region="STATE_HONDURAS"
 					}
@@ -161,7 +161,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:UCA"
+						country="c:YUZ1"
 						levels=1
 					}
 				}
@@ -172,7 +172,7 @@
 				building="building_barrack"
 				add_ownership={
 					country={
-						country="c:UCA"
+						country="c:YUZ1"
 						levels=2
 					}
 				}
@@ -182,13 +182,13 @@
 		}
 	}
 	s:STATE_NICARAGUA={
-		region_state:UCA={
+		region_state:YUZ1={
 			create_building={
 				building="building_tobacco_plantation"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:UCA"
+						country="c:YUZ1"
 						levels=1
 						region="STATE_NICARAGUA"
 					}
@@ -201,7 +201,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:UCA"
+						country="c:YUZ1"
 						levels=1
 						region="STATE_NICARAGUA"
 					}
@@ -213,47 +213,23 @@
 				building="building_barrack"
 				add_ownership={
 					country={
-						country="c:UCA"
+						country="c:YUZ1"
 						levels=1
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_no_organization" }
-			}
-		}
-		region_state:MKT={
-			create_building={
-				building="building_barrack"
-				add_ownership={
-					country={
-						country="c:MKT"
-						levels=2
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_no_organization" }
-			}
-			create_building={
-				building="building_port"
-				add_ownership={
-					country={
-						country="c:MKT"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_anchorage" }
 			}
 		}
 	}
 	s:STATE_COSTA_RICA={
-		region_state:UCA={
+		region_state:YUZ1={
 			create_building={
 				building="building_coffee_plantation"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:UCA"
+						country="c:YUZ1"
 						levels=1
 						region="STATE_COSTA_RICA"
 					}
@@ -265,7 +241,7 @@
 				building="building_barrack"
 				add_ownership={
 					country={
-						country="c:UCA"
+						country="c:YUZ1"
 						levels=1
 					}
 				}
@@ -275,13 +251,13 @@
 		}
 	}
 	s:STATE_PANAMA={
-		region_state:CLM={
+		region_state:YUZ1={
 			create_building={
 				building="building_coffee_plantation"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:CLM"
+						country="c:YUZ1"
 						levels=1
 						region="STATE_PANAMA"
 					}
@@ -294,7 +270,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:CLM"
+						country="c:YUZ1"
 						levels=1
 						region="STATE_PANAMA"
 					}
@@ -305,12 +281,12 @@
 		}
 	}
 	s:STATE_HAITI={
-		region_state:YUZ={
+		region_state:HAI={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:YUZ"
+						country="c:HAI"
 						levels=1
 					}
 				}
@@ -323,7 +299,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:YUZ"
+						country="c:HAI"
 						levels=1
 						region="STATE_HAITI"
 					}
@@ -335,7 +311,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:YUZ"
+						country="c:HAI"
 						levels=2
 						region="STATE_HAITI"
 					}
@@ -348,7 +324,7 @@
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:YUZ"
+						country="c:HAI"
 						levels=1
 						region="STATE_HAITI"
 					}
@@ -361,7 +337,7 @@
 				add_ownership={
 					building={
 						type="building_rice_farm"
-						country="c:YUZ"
+						country="c:HAI"
 						levels=1
 						region="STATE_HAITI"
 					}
@@ -373,7 +349,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:YUZ"
+						country="c:HAI"
 						levels=1
 					}
 				}
@@ -383,12 +359,12 @@
 		}
 	}
 	s:STATE_SANTO_DOMINGO={
-		region_state:YUZ={
+		region_state:HAI={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:YUZ"
+						country="c:HAI"
 						levels=1
 					}
 				}
@@ -400,7 +376,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:YUZ"
+						country="c:HAI"
 						levels=2
 						region="STATE_SANTO_DOMINGO"
 					}
@@ -413,7 +389,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:YUZ"
+						country="c:HAI"
 						levels=1
 						region="STATE_SANTO_DOMINGO"
 					}
@@ -426,7 +402,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:YUZ"
+						country="c:HAI"
 						levels=1
 						region="STATE_SANTO_DOMINGO"
 					}
@@ -439,7 +415,7 @@
 				add_ownership={
 					building={
 						type="building_rice_farm"
-						country="c:YUZ"
+						country="c:HAI"
 						levels=1
 						region="STATE_SANTO_DOMINGO"
 					}
@@ -451,7 +427,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:YUZ"
+						country="c:HAI"
 						levels=1
 					}
 				}
@@ -984,6 +960,16 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts"  }
+			}
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:CUB"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
 			}
 		}
 	}

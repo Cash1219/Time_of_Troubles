@@ -292,17 +292,7 @@
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding"  }
 			}
-			create_building={
-				building="building_military_shipyard"
-				add_ownership={
-					country={
-						country="c:STLI"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_military_shipbuilding_wooden"  }
-			}
+			
 			create_building={
 				building="building_fishing_wharf"
 				add_ownership={
@@ -337,6 +327,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_muskets" "pm_automation_disabled"  }
+			}
+			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:SAR"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
 			}
 		}
 	}
@@ -451,6 +452,16 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=3
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
 			}
 		}
 	}
@@ -571,12 +582,12 @@
 		}
 	}
 	s:STATE_CAMPANIA={
-		region_state:SIC={
+		region_state:RITA={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:SIC"
+						country="c:RITA"
 						levels=4
 					}
 				}
@@ -584,17 +595,30 @@
 				activate_production_methods={ "pm_religious_bureaucrats" "pm_hereditary_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			create_building={
+				building="building_shipyard"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:RITA"
+						levels=2
+						region="STATE_CAMPANIA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_shipbuilding"  }
+			}
+			create_building={
 				building="building_vineyard"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:SIC"
+						country="c:RITA"
 						levels=1
 						region="STATE_CAMPANIA"
 					}
 					building={
 						type="building_vineyard"
-						country="c:SIC"
+						country="c:RITA"
 						levels=1
 						region="STATE_CAMPANIA"
 					}					
@@ -608,13 +632,13 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:SIC"
+						country="c:RITA"
 						levels=2
 						region="STATE_CAMPANIA"
 					}
 					building={
 						type="building_trade_center"
-						country="c:SIC"
+						country="c:RITA"
 						levels=3
 						region="STATE_CAMPANIA"
 					}					
@@ -625,7 +649,7 @@
 				building="building_construction_sector"
 				add_ownership={
 					country={
-						country="c:SIC"
+						country="c:RITA"
 						levels=2
 					}
 				}
@@ -637,7 +661,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:SIC"
+						country="c:RITA"
 						levels=1
 						region="STATE_CAMPANIA"
 					}
@@ -650,13 +674,13 @@
 				add_ownership={
 					building={
 						type="building_tooling_workshop"
-						country="c:SIC"
+						country="c:RITA"
 						levels=2
 						region="STATE_CAMPANIA"
 					}
 					building={
 						type="building_tooling_workshop"
-						country="c:SIC"
+						country="c:RITA"
 						levels=1
 						region="STATE_CAMPANIA"
 					}
@@ -668,7 +692,7 @@
 				building="building_arms_industry"
 				add_ownership={
 					country={
-						country="c:SIC"
+						country="c:RITA"
 						levels=2
 					}
 				}
@@ -680,13 +704,13 @@
 				add_ownership={
 					building={
 						type="building_textile_mill"
-						country="c:SIC"
+						country="c:RITA"
 						levels=2
 						region="STATE_CAMPANIA"
 					}
 					building={
 						type="building_financial_district"
-						country="c:SIC"
+						country="c:RITA"
 						levels=1
 						region="STATE_CAMPANIA"
 					}
@@ -699,7 +723,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:SIC"
+						country="c:RITA"
 						levels=2
 						region="STATE_CAMPANIA"
 					}
@@ -712,7 +736,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:SIC"
+						country="c:RITA"
 						levels=10
 						region="STATE_CAMPANIA"
 					}
@@ -725,7 +749,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:SIC"
+						country="c:RITA"
 						levels=5
 						region="STATE_CAMPANIA"
 					}
@@ -738,7 +762,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:SIC"
+						country="c:RITA"
 						levels=2
 						region="STATE_CAMPANIA"
 					}
@@ -750,7 +774,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:SIC"
+						country="c:RITA"
 						levels=3
 					}
 				}
@@ -761,23 +785,34 @@
 				building="building_paper_mill"
 				add_ownership={
 					country={
-						country="c:SIC"
+						country="c:RITA"
 						levels=1
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled"  }
 			}
+			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:RITA"
+						levels=10
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
+			}
 		}
 	}
 	s:STATE_CALABRIA={
-		region_state:SIC={
+		region_state:RITA={
 			create_building={
 				building="building_food_industry"
 				add_ownership={
 					building={
 						type="building_food_industry"
-						country="c:SIC"
+						country="c:RITA"
 						levels=1
 						region="STATE_CALABRIA"
 					}
@@ -790,7 +825,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:SIC"
+						country="c:RITA"
 						levels=2
 						region="STATE_CAMPANIA"
 					}
@@ -803,7 +838,7 @@
 				add_ownership={
 					building={
 						type="building_vineyard"
-						country="c:SIC"
+						country="c:RITA"
 						levels=1
 						region="STATE_CALABRIA"
 					}
@@ -816,7 +851,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:SIC"
+						country="c:RITA"
 						levels=1
 						region="STATE_CALABRIA"
 					}
@@ -829,7 +864,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:SIC"
+						country="c:RITA"
 						levels=3
 						region="STATE_CALABRIA"
 					}
@@ -842,7 +877,7 @@
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:SIC"
+						country="c:RITA"
 						levels=5
 						region="STATE_CALABRIA"
 					}
@@ -855,7 +890,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:SIC"
+						country="c:RITA"
 						levels=3
 						region="STATE_CALABRIA"
 					}
@@ -867,7 +902,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:SIC"
+						country="c:RITA"
 						levels=1
 					}
 				}
@@ -877,13 +912,13 @@
 		}
 	}
 	s:STATE_APULIA={
-		region_state:SIC={
+		region_state:RITA={
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:SIC"
+						country="c:RITA"
 						levels=3
 						region="STATE_APULIA"
 					}
@@ -896,7 +931,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:SIC"
+						country="c:RITA"
 						levels=1
 						region="STATE_APULIA"
 					}
@@ -909,7 +944,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:SIC"
+						country="c:RITA"
 						levels=4
 						region="STATE_APULIA"
 					}
@@ -922,7 +957,7 @@
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:SIC"
+						country="c:RITA"
 						levels=5
 						region="STATE_APULIA"
 					}
@@ -933,13 +968,13 @@
 		}
 	}
 	s:STATE_ABRUZZO={
-		region_state:SIC={
+		region_state:RITA={
 			create_building={
 				building="building_furniture_manufactory"
 				add_ownership={
 					building={
 						type="building_furniture_manufactory"
-						country="c:SIC"
+						country="c:RITA"
 						levels=1
 						region="STATE_ABRUZZO"
 					}
@@ -952,7 +987,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:SIC"
+						country="c:RITA"
 						levels=1
 						region="STATE_ABRUZZO"
 					}
@@ -965,7 +1000,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:SIC"
+						country="c:RITA"
 						levels=3
 						region="STATE_ABRUZZO"
 					}
@@ -978,7 +1013,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:SIC"
+						country="c:RITA"
 						levels=6
 						region="STATE_ABRUZZO"
 					}
@@ -991,7 +1026,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:SIC"
+						country="c:RITA"
 						levels=2
 						region="STATE_ABRUZZO"
 					}
@@ -1397,6 +1432,17 @@
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
 			}
+			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:TUS"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
+			}
 		}
 	}
 	s:STATE_ROMAGNA={
@@ -1488,6 +1534,19 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			create_building={
+				building="building_shipyard"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:PAP"
+						levels=1
+						region="STATE_LAZIO"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_shipbuilding"  }
+			}
+			create_building={
 				building="building_vineyard"
 				add_ownership={
 					building={
@@ -1534,7 +1593,7 @@
 						region="STATE_LAZIO"
 					}
 				}
-				reserves=2
+				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_citrus_orchards" "pm_tools_disabled"  }
 			}
 			create_building={
@@ -1573,6 +1632,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:PAP"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
 			}
 			create_building={
 				building="building_vatican_city"
@@ -1742,15 +1812,26 @@
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
 			}
+			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:AUS"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
+			}
 		}
 	}
 	s:STATE_SICILY={
-		region_state:SIC={
+		region_state:RITA={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:SIC"
+						country="c:RITA"
 						levels=3
 					}
 				}
@@ -1762,13 +1843,13 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:SIC"
+						country="c:RITA"
 						levels=4
 						region="STATE_SICILY"
 					}
 					building={
 						type="building_vineyard"
-						country="c:SIC"
+						country="c:RITA"
 						levels=1
 						region="STATE_SICILY"
 					}
@@ -1781,7 +1862,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:SIC"
+						country="c:RITA"
 						levels=5
 						region="STATE_SICILY"
 					}
@@ -1794,7 +1875,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:SIC"
+						country="c:RITA"
 						levels=5
 						region="STATE_SICILY"
 					}
@@ -1807,7 +1888,7 @@
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:SIC"
+						country="c:RITA"
 						levels=1
 						region="STATE_SICILY"
 					}
@@ -1821,7 +1902,7 @@
 				add_ownership={
 					building={
 						type="building_trade_center"
-						country="c:SIC"
+						country="c:RITA"
 						levels=3
 						region="STATE_SICILY"
 					}
@@ -1832,7 +1913,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:SIC"
+						country="c:RITA"
 						levels=2
 					}
 				}
@@ -2051,7 +2132,7 @@
 				activate_production_methods={ "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated"  }
 			}
 			create_building={
-				building="building_military_shipyard"
+				building="building_shipyard"
 				add_ownership={
 					country={
 						country="c:GNC"
@@ -2059,7 +2140,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_military_shipbuilding_wooden"  }
+				activate_production_methods={ "pm_basic_shipbuilding"  }
 			}
 			create_building={
 				building="building_fishing_wharf"
@@ -2103,6 +2184,16 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts"  }
+			}
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:GNC"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
 			}
 		}
 	}
@@ -2931,7 +3022,7 @@
 				activate_production_methods={ "default_building_vineyard" "pm_road_carts"  }
 			}
 			create_building={
-				building="building_military_shipyard"
+				building="building_shipyard"
 				add_ownership={
 					country={
 						country="c:ADL"
@@ -2939,7 +3030,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_military_shipbuilding_wooden"  }
+				activate_production_methods={ "pm_basic_shipbuilding"  }
 			}
 			create_building={
 				building="building_wheat_farm"
@@ -2990,6 +3081,16 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:ADL"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
 			}
 		}
 	}
@@ -3083,6 +3184,16 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=3
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
 			}
 		}
 	}
@@ -3228,7 +3339,7 @@
 				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts"  }
 			}
 			create_building={
-				building="building_military_shipyard"
+				building="building_shipyard"
 				add_ownership={
 					country={
 						country="c:ADL"
@@ -3236,7 +3347,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_military_shipbuilding_wooden"  }
+				activate_production_methods={ "pm_basic_shipbuilding"  }
 			}
 			create_building={
 				building="building_port"
@@ -3248,6 +3359,16 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:ADL"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
 			}
 		}
 	}
@@ -3414,6 +3535,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:ADL"
+						levels=10
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
 			}
 		}
 	}
@@ -3781,17 +3913,7 @@
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding"  }
 			}
-			create_building={
-				building="building_military_shipyard"
-				add_ownership={
-					country={
-						country="c:GNC"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_military_shipbuilding_wooden"  }
-			}
+			
 			create_building={
 				building="building_port"
 				add_ownership={
@@ -3802,6 +3924,27 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:GNC"
+						levels=10
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
+			}
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:GNC"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
 			}
 		}
 	}
@@ -4137,6 +4280,17 @@
 				reserves=1
 			}
 			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:BYZ"
+						levels=20
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
+			}
+			create_building={
 				building="building_paper_mill"
 				add_ownership={
 					country={
@@ -4163,23 +4317,13 @@
 				add_ownership={
 					country={
 						country="c:BYZ"
-						levels=2
+						levels=4
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding"  }
 			}
-			create_building={
-				building="building_military_shipyard"
-				add_ownership={
-					country={
-						country="c:BYZ"
-						levels=2
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_military_shipbuilding_wooden"  }
-			}
+			
 			create_building={
 				building="building_textile_mill"
 				add_ownership={
@@ -4259,6 +4403,16 @@
 			create_building={
 				building="building_hagia_sophia"
 				level=1
+			}
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:TUR"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
 			}
 		}
 	}
@@ -4928,17 +5082,7 @@
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding"  }
 			}
-			create_building={
-				building="building_military_shipyard"
-				add_ownership={
-					country={
-						country="c:VEN"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_military_shipbuilding_wooden"  }
-			}
+			
 			create_building={
 				building="building_fishing_wharf"
 				add_ownership={
@@ -5145,6 +5289,17 @@
 				}
 				reserves=1
 				activate_production_methods={  "pm_unrefrigerated" "pm_fishing_trawlers" }
+			}
+			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:BYZ"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
 			}
 		}
 	}
@@ -5627,6 +5782,16 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_anchorage" }
+			}
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:ION"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
 			}
 		}
 	}

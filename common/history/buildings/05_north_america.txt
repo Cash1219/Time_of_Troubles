@@ -280,6 +280,16 @@
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
 			}
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:NRHD"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
+			}
 		}
 	}
 	if = {
@@ -409,17 +419,7 @@
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding"  }
 			}
-			create_building={
-				building="building_military_shipyard"
-				add_ownership={
-					country={
-						country="c:NRHD"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_military_shipbuilding_wooden"  }
-			}
+			
 			create_building={
 				building="building_port"
 				add_ownership={
@@ -430,6 +430,16 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:NRHD"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
 			}
 		}
 	}
@@ -1246,6 +1256,16 @@
 	}
 	s:STATE_FLORIDA={
 		region_state:NRHD={
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:USA"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
+			}
 		}
 	}
 	s:STATE_GEORGIA={
@@ -2472,6 +2492,16 @@
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
 			}
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:NRHD"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
+			}
 		}
 	}
 	s:STATE_HAWAIIAN_ISLANDS={
@@ -2793,23 +2823,12 @@
 					building={
 						type="building_shipyard"
 						country="c:TRIG"
-						levels=1
+						levels=2
 						region="STATE_QUEBEC"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding"  }
-			}
-			create_building={
-				building="building_military_shipyard"
-				add_ownership={
-					country={
-						country="c:TRIG"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_military_shipbuilding_wooden"  }
 			}
 			create_building={
 				building="building_iron_mine"
@@ -3016,6 +3035,16 @@
 				reserves=1
 				activate_production_methods={ "pm_anchorage" }
 			}
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:GBR"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
+			}
 		}
 	}
 	s:STATE_TEXAS={
@@ -3032,6 +3061,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled"  }
+			}
+			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:TEX"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
 			}
 		}
 		region_state:MEX={
@@ -3470,6 +3510,27 @@
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
 			}
+			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:MEX"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
+			}
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:MEX"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
+			}
 		}
 	}
 	s:STATE_GUERRERO={
@@ -3742,8 +3803,6 @@
 				reserves=1
 				activate_production_methods={ "default_building_banana_plantation" "pm_road_carts"  }
 			}
-		}
-		region_state:UCA={
 		}
 	}
 	s:STATE_BAJA_CALIFORNIA={

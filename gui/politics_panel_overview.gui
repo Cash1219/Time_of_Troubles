@@ -393,7 +393,6 @@ types politics_panel_types
 				using = tooltip_below
 				blockoverride "show_hat" {}
 				blockoverride "highlight" {}
-				blockoverride "commander_order_icon" {}
 			}
 
 			vbox = {
@@ -446,6 +445,7 @@ types politics_panel_types
 							icon = {
 								size = { 30 42 }
 								texture = "[CharacterTrait.GetTexture]"
+								alpha = "[TransparentIfTrue(CharacterTrait.IsDisabled)]"
 								using = tooltip_above
 
 								tooltipwidget = {
@@ -798,34 +798,19 @@ types politics_panel_types
 												widget = {
 													size = { 35 35 }
 													icon = {
-														visible = "[And(Character.IsPolitician,And(Not(Character.IsRuler),Not(Character.IsHeir)))]"
+														visible = "[Character.GetPrimaryRole.IsValid]"
 														size = { 100% 100% }
-														texture = "gfx/interface/icons/character_role_icons/politician.dds"
+														texture = "[Character.GetPrimaryRole.GetTexture]"
 													}
 													icon = {
-														visible = "[Character.IsRuler]"
+														visible = "[Not(Character.GetPrimaryRole.IsValid)]"
 														size = { 100% 100% }
-														texture = "gfx/interface/icons/character_role_icons/ruler.dds"
-													}
-													icon = {
-														visible = "[Character.IsHeir]"
-														size = { 100% 100% }
-														texture = "gfx/interface/icons/character_role_icons/heir.dds"
-													}
-													icon = {
-														visible = "[And(Not(Or(Character.IsPolitician, Or(Character.IsRuler, Character.IsHeir))), Character.IsGeneral)]"
-														size = { 100% 100% }
-														texture = "gfx/interface/icons/character_role_icons/general.dds"
-													}
-													icon = {
-														visible = "[And(Not(Or(Character.IsPolitician, Or(Character.IsRuler, Character.IsHeir))), Character.IsAdmiral)]"
-														size = { 100% 100% }
-														texture = "gfx/interface/icons/character_role_icons/admiral.dds"
+														texture = "gfx/interface/icons/generic_icons/undecided_icon.dds"
 													}
 												}
 											}
 											blockoverride "label" {
-												text = "[Concept('concept_ruler', Character.GetPrimaryRoleTitle)]"
+												text = "[Character.GetPrimaryRoleTitle]"
 											}
 											blockoverride "text" {
 												text = "[Character.GetFullName]"
@@ -1613,7 +1598,7 @@ types politics_panel_types
 													autoresize = yes
 													align = hcenter|nobaseline
 													alpha = "[TransparentIfZero_int32(GetExilePool.GetNumInviteableExiles)]"
-													raw_text = "#variable [GetExilePool.GetNumInviteableExiles]#! / [GetDataModelSize(GetExilePool.GetAllExiles)|v]"
+													raw_text = "[GetExilePool.GetNumInviteableExiles|v] / [GetExilePool.GetNumAllExiles|v]"
 													parentanchor = right|vcenter
 													margin = { 15 15 }
 													tooltip = "TOOLTIP_NUM_INVITEABLE_EXILES"
@@ -1808,6 +1793,7 @@ types politics_panel_types
 											}
 
 											hbox = {
+												tooltip = "ELECTION_VOTER_TURNOUT_TOOLTIP"
 												layoutpolicy_horizontal = expanding
 												layoutpolicy_vertical = preferred
 												margin = { 10 10 }
@@ -1827,27 +1813,26 @@ types politics_panel_types
 													textbox = {
 														layoutpolicy_horizontal = expanding
 														size = { 0 30 }
-														text = "[Election.GetTotalVotersRaw|K]"
+														raw_text = "[Election.GetVoterTurnout|%0]"
 														using = fontsize_large
 														default_format = "#variable"
 													}
 
 													widget = { size = { 10 15 }}
 
-													# Politically Unaligned
+													# eligible voters
 													textbox = {
 														layoutpolicy_horizontal = expanding
 														size = { 0 30 }
-														text = "concept_politically_unaligned"
+														text = "ELIGIBLE_VOTERS"
 														elide = right
 														default_format = "#title"
 													}
 													textbox = {
 														layoutpolicy_horizontal = expanding
 														size = { 0 30 }
-														text = "[GetPlayer.GetInactivePopulation|kv]"
+														raw_text = "@population![Election.GetEligibleVoters|K]"
 														using = fontsize_large
-														tooltip = "POLITICALLY_UNALIGNED_POPULATION_TOOLTIP"
 														default_format = "#variable"
 													}
 
@@ -2003,6 +1988,7 @@ types politics_panel_types
 											}
 
 											vbox = {
+												tooltip = "ELECTION_VOTER_TURNOUT_TOOLTIP"
 												layoutpolicy_horizontal = expanding
 												layoutpolicy_vertical = preferred
 
@@ -2026,8 +2012,6 @@ types politics_panel_types
 													# total voters
 													vbox = {
 														layoutpolicy_horizontal = expanding
-														tooltip = "POLITICALLY_INVOLVED_POPULATION_TOOLTIP"
-
 														textbox = {
 															layoutpolicy_horizontal = expanding
 															size = { 0 25 }
@@ -2040,7 +2024,7 @@ types politics_panel_types
 															layoutpolicy_horizontal = expanding
 															size = { 0 25 }
 															align = right|nobaseline
-															text = "[Election.GetTotalVotersRaw|K]"
+															raw_text = "[Election.GetVoterTurnout|%0]"
 															default_format = "#variable"
 														}
 													}
@@ -2050,24 +2034,22 @@ types politics_panel_types
 														layoutpolicy_vertical = preferred
 													}
 
-													# Politically Unaligned
+													# eligible voters
 													vbox = {
 														layoutpolicy_horizontal = expanding
-														tooltip = "POLITICALLY_UNALIGNED_POPULATION_TOOLTIP"
-
 														textbox = {
 															layoutpolicy_horizontal = expanding
 															size = { 0 25 }
-															text = "concept_politically_unaligned"
+															text = "ELIGIBLE_VOTERS"
 															elide = right
-															align = nobaseline
+															align = right|nobaseline
 															default_format = "#title"
 														}
 														textbox = {
 															layoutpolicy_horizontal = expanding
 															size = { 0 25 }
-															align = nobaseline
-															text = "[GetPlayer.GetInactivePopulation|kv]"
+															align = right|nobaseline
+															raw_text = "@population![Election.GetEligibleVoters|K]"
 															default_format = "#variable"
 														}
 													}
@@ -2119,24 +2101,7 @@ types politics_panel_types
 											tooltip = "ONLY_SHOW_AVAILABLE_EXILED_AGITATORS_TOOLTIP"
 										}
 									}
-									hbox = {
-										margin_top = 5
-										spacing = 5
 
-										textbox = {
-											autoresize = yes
-											align = nobaseline
-											text = "ONLY_SHOW_HISTORICAL" #TOT ADD 筛选历史人物
-										}
-
-										checkbutton = {
-											using = check_button
-											size = { 24 24 }
-											onclick = "[GetVariableSystem.Toggle('politics_overview_exile_pool_show_historical')]"
-											checked = "[GetVariableSystem.Exists('politics_overview_exile_pool_show_historical')]"
-											tooltip = "ONLY_SHOW_HISTORICAL_EXILED_AGITATORS_TOOLTIP"
-										}
-									}
 
 									vbox = {
 										layoutpolicy_horizontal = expanding
@@ -2147,8 +2112,8 @@ types politics_panel_types
 
 										item = {
 											exiled_agitator = {
-											visible = "[And(Or(And(GetVariableSystem.Exists('politics_overview_exile_pool_show_available'),Character.GetInteraction('invite_exile').IsCommandValid(Character.Self)),Not(GetVariableSystem.Exists('politics_overview_exile_pool_show_available'))),Or(And(GetVariableSystem.Exists('politics_overview_exile_pool_show_historical'),Character.IsHistorical()),Not(GetVariableSystem.Exists('politics_overview_exile_pool_show_historical'))))]"
-												} #TOT ADD 筛选历史人物 by deepseek
+												visible = "[Or( And( GetVariableSystem.Exists('politics_overview_exile_pool_show_available'), Character.GetInteraction('invite_exile').IsCommandValid(Character.Self)),  And(Not(GetVariableSystem.Exists('politics_overview_exile_pool_show_available')), Or(Not(Character.GetInteraction('invite_exile').IsCommandValid(Character.Self)), Character.GetInteraction('invite_exile').IsCommandValid(Character.Self)) ) )]"
+											}
 										}
 									}
 
