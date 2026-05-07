@@ -1,0 +1,102 @@
+﻿namespace = kizuna
+
+kizuna.1 = { #乐队成员任命
+	type = country_event
+	placement = root
+	title = kizuna.1.t
+	desc = kizuna.1.d
+	flavor = kizuna.1.f
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	cancellation_trigger = {
+		OR = {
+			NOT = {
+				exists = scope:appointing_band_member
+			}
+			scope:appointing_band_member = {
+				is_character_alive = no
+			}
+		}
+	}
+	option = {
+		name = kizuna.1.a #主唱
+		trigger = {
+			NOT = {
+				scope:appointing_band_member = {
+					has_trait = tot_is_supper_lead_vocalist_trait
+					has_trait = tot_lead_vocalist_trait
+				}
+			}
+		}
+		if = {
+			limit = {
+				scope:appointing_band_member = {
+					has_trait = tot_is_supper_lead_vocalist_trait
+				}
+			}
+			scope:appointing_band_member = {
+				add_trait = tot_is_supper_lead_vocalist_trait
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					scope:appointing_band_member = {
+						has_trait = tot_is_lead_vocalist_trait
+					}
+				}
+			}
+			scope:appointing_band_member = {
+				add_trait = tot_is_lead_vocalist_trait
+			}
+		}
+		
+	}
+	option = {
+		name = kizuna.1.b #吉他
+		trigger = {
+			scope:appointing_band_member =  {
+				has_trait = tot_guitarist_trait	
+			}			
+		}
+		scope:appointing_band_member = {
+			remove_trait = tot_guitarist_trait
+			add_trait = tot_is_guitarist_trait
+		}
+	}
+	option = {
+		name = kizuna.1.c #贝斯
+		trigger = {
+			scope:appointing_band_member =  {
+				has_trait = tot_bassist_trait	
+			}
+		}
+		scope:appointing_band_member = {
+			remove_trait = tot_bassist_trait
+			add_trait = tot_is_bassist_trait
+		}
+	}
+	option = {
+		name = kizuna.1.d #键盘
+		trigger = {
+			scope:appointing_band_member = {
+				has_trait = tot_keyboardist_trait	
+			}
+		}
+		scope:appointing_band_member = {
+			remove_trait = tot_keyboardist_trait
+			add_trait = tot_is_keyboardist_trait
+		}
+	}
+	option = {
+		name = kizuna.1.e #鼓手
+		trigger = {
+			scope:appointing_band_member =  {
+				has_trait = tot_drummer_trait
+			}
+		}
+		scope:appointing_band_member = {
+			remove_trait = tot_drummer_trait
+			add_trait = tot_is_drummer_trait
+		}
+	}
+}
