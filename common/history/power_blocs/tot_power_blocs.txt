@@ -28,7 +28,6 @@
 			identity = identity_trade_league
 			principle = principle_internal_trade_1
 			
-			member = c:SWI
 		}
 		
 	}
@@ -51,14 +50,11 @@
 		create_power_bloc = {
 			name = LOVELIVE_EMPIRE
 
-			map_color = { 219 211 157 }
+			map_color = { 255  127  0 }
 
 			founding_date = 1200.1.1
 			identity = identity_sovereign_empire
 			principle = principle_vassalization_1
-
-
-			# Habsburg leaders in Italy and Italian states held up by direct Austrian intervention
 			member = c:AQO
 			member = c:NJS
 			
@@ -76,9 +72,6 @@
 			founding_date = 1200.1.1
 			identity = identity_sovereign_empire
 			principle = principle_vassalization_1
-
-
-			# Habsburg leaders in Italy and Italian states held up by direct Austrian intervention
 			member = c:ROM
 			member = c:UKR
 			member = c:MYG
@@ -98,17 +91,40 @@
 	}
 	c:GBDP ?= {
 		create_power_bloc = {
-			name = GIRLS_BAND_PARTY
+			name = STAR_UNION
 
-			map_color = { 219 211 157 }
+			map_color = { 255 229 0 }
 
 			founding_date = 1200.1.1
 			identity = identity_sovereign_empire
 			principle = principle_vassalization_1
 		
-			member = c:CUB
-			member = c:HAR
+			#member = c:CUB
+			#member = c:HAR
 			member = c:STLI
+		}
+		if = {
+			limit = {
+				has_dlc_feature = power_bloc_features
+			}
+			power_bloc = {
+				add_principle = principle_defensive_cooperation_1
+			}
+		}
+
+			
+	}
+	c:RITA ?= {
+		create_power_bloc = {
+			name = ROMAN_ALLIANCE
+
+			map_color = { 153 0 0 }
+
+			founding_date = 1200.1.1
+			identity = identity_sovereign_empire
+			principle = principle_vassalization_1
+		
+			member = c:PAP
 		}
 		if = {
 			limit = {
@@ -210,6 +226,7 @@
 			member = c:RHE
 			member = c:BAV
 			member = c:WUR
+			member = c:MHGK
 
 			# Luxembourg joined the Zollverein in 1842
 
