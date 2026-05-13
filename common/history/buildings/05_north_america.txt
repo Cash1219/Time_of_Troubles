@@ -508,73 +508,48 @@
 	s:STATE_IDAHO={
 		region_state:WULN={
 		}
-		region_state:NZP={
-		}
 	}
 	s:STATE_COLORADO={
-		region_state:MEX={
-		}
-		region_state:ARP={
-		}
+
 		region_state:UTE={
 		}
-		region_state:NRHD={
-		}
+
 	}
 	s:STATE_WYOMING={
-		region_state:NRHD={
-		}
+		
 		region_state:LKT={
-		}
-		region_state:ARP={
 		}
 	}
 	s:STATE_MONTANA={
-		region_state:NRHD={
-		}
-		region_state:ABS={
-		}
 		region_state:LKT={
-		}
-		region_state:BLF={
 		}
 	}
 	s:STATE_NORTH_DAKOTA={
-		region_state:NRHD={
-		}
 		region_state:LKT={
 		}
 	}
 	s:STATE_SOUTH_DAKOTA={
 		region_state:LKT={
 		}
-		region_state:NRHD={
-		}
 	}
 	s:STATE_NEBRASKA={
-		region_state:NRHD={
-		}
-		region_state:LKT={
-		}
 		region_state:PWN={
 		}
 	}
 	s:STATE_KANSAS={
-		region_state:NRHD={
-		}
+		
 		region_state:PWN={
 		}
-		region_state:COM={
-		}
+		
 	}
 	s:STATE_OKLAHOMA={
-		region_state:SEQ={
+		region_state:SBRT={
 			create_building={
 				building="building_cotton_plantation"
 				add_ownership={
 					building={
 						type="building_cotton_plantation"
-						country="c:SEQ"
+						country="c:SBRT"
 						levels=1
 						region="STATE_OKLAHOMA"
 					}
@@ -582,8 +557,6 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts"  }
 			}
-		}
-		region_state:COM={
 		}
 	}
 	s:STATE_ARKANSAS={
@@ -2390,10 +2363,6 @@
 		}
 	}
 	s:STATE_UTAH={
-		region_state:MEX={
-		}
-		region_state:NVJ={
-		}
 		region_state:UTE={
 		}
 	}
@@ -3048,13 +3017,13 @@
 		}
 	}
 	s:STATE_TEXAS={
-		region_state:TEX={
+		region_state:SBRT={
 			create_building={
 				building="building_maize_farm"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:TEX"
+						country="c:SBRT"
 						levels=1
 						region="STATE_TEXAS"
 					}
@@ -3066,7 +3035,7 @@
 				building="building_naval_administration"
 				add_ownership={
 					country={
-						country="c:TEX"
+						country="c:SBRT"
 						levels=1
 					}
 				}
@@ -3074,49 +3043,36 @@
 				activate_production_methods={ "pm_simple_sailor_recruitment" }
 			}
 		}
-		region_state:MEX={
-		}
-		region_state:COM={
-		}
 	}
 	s:STATE_NEVADA={
-		region_state:MEX={
+		region_state:VAIV={
 		}
 	}
 	s:STATE_ARIZONA={
-		region_state:MEX={
-		}
-		region_state:NVJ={
-		}
-		region_state:APC={
+		region_state:SBRT={
 		}
 	}
 	s:STATE_NEW_MEXICO={
-		region_state:MEX={
+		region_state:SBRT={
 		}
-		region_state:NVJ={
-		}
-		region_state:COM={
-		}
-		region_state:APC={
-		}
+		
 	}
 	s:STATE_CALIFORNIA={
 		region_state:VAIV={
 		}
 	}
 	s:STATE_SONORA={
-		region_state:MEX={
+		region_state:SBRT={
 		}
 	}
 	s:STATE_CHIHUAHUA={
-		region_state:MEX={
+		region_state:AKXS={
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_CHIHUAHUA"
 					}
@@ -3127,13 +3083,13 @@
 		}
 	}
 	s:STATE_RIO_GRANDE={
-		region_state:MEX={
+		region_state:AKXS={
 			create_building={
 				building="building_maize_farm"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_RIO_GRANDE"
 					}
@@ -3146,7 +3102,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_MEXICO"
 					}
@@ -3159,7 +3115,7 @@
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_RIO_GRANDE"
 					}
@@ -3170,13 +3126,13 @@
 		}
 	}
 	s:STATE_DURANGO={
-		region_state:MEX={
+		region_state:AKXS={
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_DURANGO"
 					}
@@ -3187,13 +3143,13 @@
 		}
 	}
 	s:STATE_SINALOA={
-		region_state:MEX={
+		region_state:AKXS={
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_SINALOA"
 					}
@@ -3204,12 +3160,12 @@
 		}
 	}
 	s:STATE_BAJIO={
-		region_state:MEX={
+		region_state:AKXS={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:MEX"
+						country="c:AKXS"
 						levels=2
 					}
 				}
@@ -3220,7 +3176,7 @@
 				building="building_gold_mine"
 				add_ownership={
 					country={
-						country="c:MEX"
+						country="c:AKXS"
 						levels=3
 					}
 				}
@@ -3232,7 +3188,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_BAJIO"
 					}
@@ -3245,7 +3201,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=3
 						region="STATE_BAJIO"
 					}
@@ -3258,7 +3214,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=2
 						region="STATE_BAJIO"
 					}
@@ -3269,13 +3225,13 @@
 		}
 	}
 	s:STATE_YUCATAN={
-		region_state:MEX={
+		region_state:AKXS={
 			create_building={
 				building="building_banana_plantation"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_YUCATAN"
 					}
@@ -3290,12 +3246,12 @@
 		}
 	}
 	s:STATE_MEXICO={
-		region_state:MEX={
+		region_state:AKXS={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:MEX"
+						country="c:AKXS"
 						levels=5
 					}
 				}
@@ -3306,7 +3262,7 @@
 				building="building_construction_sector"
 				add_ownership={
 					country={
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 					}
 				}
@@ -3318,7 +3274,7 @@
 				add_ownership={
 					building={
 						type="building_glassworks"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_MEXICO"
 					}
@@ -3331,7 +3287,7 @@
 				add_ownership={
 					building={
 						type="building_textile_mill"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=2
 						region="STATE_MEXICO"
 					}
@@ -3344,7 +3300,7 @@
 				add_ownership={
 					building={
 						type="building_furniture_manufactory"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=2
 						region="STATE_MEXICO"
 					}
@@ -3357,7 +3313,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_MEXICO"
 					}
@@ -3370,7 +3326,7 @@
 				add_ownership={
 					building={
 						type="building_livestock_ranch"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_MEXICO"
 					}
@@ -3383,7 +3339,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=2
 						region="STATE_MEXICO"
 					}
@@ -3396,7 +3352,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=3
 						region="STATE_MEXICO"
 					}
@@ -3409,7 +3365,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_MEXICO"
 					}
@@ -3420,13 +3376,13 @@
 		}
 	}
 	s:STATE_VERACRUZ={
-		region_state:MEX={
+		region_state:AKXS={
 			create_building={
 				building="building_textile_mill"
 				add_ownership={
 					building={
 						type="building_textile_mill"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_VERACRUZ"
 					}
@@ -3440,7 +3396,7 @@
 				add_ownership={
 					building={
 						type="building_trade_center"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=3
 						region="STATE_VERACRUZ"
 					}				
@@ -3452,7 +3408,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_VERACRUZ"
 					}
@@ -3465,7 +3421,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=2
 						region="STATE_VERACRUZ"
 					}
@@ -3478,7 +3434,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_VERACRUZ"
 					}
@@ -3491,7 +3447,7 @@
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_VERACRUZ"
 					}
@@ -3503,7 +3459,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 					}
 				}
@@ -3514,7 +3470,7 @@
 				building="building_naval_administration"
 				add_ownership={
 					country={
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 					}
 				}
@@ -3525,7 +3481,7 @@
 				building="building_naval_fortification"
 				add_ownership={
 					country={
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 					}
 				}
@@ -3534,12 +3490,12 @@
 		}
 	}
 	s:STATE_GUERRERO={
-		region_state:MEX={
+		region_state:AKXS={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 					}
 				}
@@ -3551,7 +3507,7 @@
 				add_ownership={
 					building={
 						type="building_food_industry"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_GUERRERO"
 					}
@@ -3564,7 +3520,7 @@
 				add_ownership={
 					building={
 						type="building_maize_farm"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_GUERRERO"
 					}
@@ -3577,7 +3533,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_GUERRERO"
 					}
@@ -3590,7 +3546,7 @@
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=2
 						region="STATE_GUERRERO"
 					}
@@ -3603,7 +3559,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_MEXICO"
 					}
@@ -3614,12 +3570,12 @@
 		}
 	}
 	s:STATE_OAXACA={
-		region_state:MEX={
+		region_state:AKXS={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 					}
 				}
@@ -3631,7 +3587,7 @@
 				add_ownership={
 					building={
 						type="building_maize_farm"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_OAXACA"
 					}
@@ -3644,7 +3600,7 @@
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_OAXACA"
 					}
@@ -3655,12 +3611,12 @@
 		}
 	}
 	s:STATE_JALISCO={
-		region_state:MEX={
+		region_state:AKXS={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:MEX"
+						country="c:AKXS"
 						levels=2
 					}
 				}
@@ -3671,7 +3627,7 @@
 				building="building_university"
 				add_ownership={
 					country={
-						country="c:MEX"
+						country="c:AKXS"
 						levels=2
 					}
 				}
@@ -3683,7 +3639,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=2
 						region="STATE_MEXICO"
 					}
@@ -3696,7 +3652,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_JALISCO"
 					}
@@ -3709,7 +3665,7 @@
 				add_ownership={
 					building={
 						type="building_maize_farm"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_JALISCO"
 					}
@@ -3720,13 +3676,13 @@
 		}
 	}
 	s:STATE_ZACATECAS={
-		region_state:MEX={
+		region_state:AKXS={
 			create_building={
 				building="building_maize_farm"
 				add_ownership={
 					building={
 						type="building_maize_farm"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_ZACATECAS"
 					}
@@ -3739,7 +3695,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_ZACATECAS"
 					}
@@ -3752,7 +3708,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_ZACATECAS"
 					}
@@ -3765,7 +3721,7 @@
 				add_ownership={
 					building={
 						type="building_tooling_workshop"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_ZACATECAS"
 					}
@@ -3776,13 +3732,13 @@
 		}
 	}
 	s:STATE_CHIAPAS={
-		region_state:MEX={
+		region_state:AKXS={
 			create_building={
 				building="building_dye_plantation"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_CHIAPAS"
 					}
@@ -3795,7 +3751,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:MEX"
+						country="c:AKXS"
 						levels=1
 						region="STATE_CHIAPAS"
 					}
@@ -3806,7 +3762,7 @@
 		}
 	}
 	s:STATE_BAJA_CALIFORNIA={
-		region_state:MEX={
+		region_state:AKXS={
 		}
 	}
 }

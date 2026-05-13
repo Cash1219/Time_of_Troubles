@@ -167,7 +167,7 @@
 		region_state:WULN = {
 			create_pop = {
 				culture = paiute
-				size = 3000
+				size = 23000
 			}
 			create_pop = {
 				culture = yankee
@@ -177,22 +177,14 @@
 				culture = anglo_canadian
 				size = 500
 			}
-		}
-		region_state:NZP = {
 			create_pop = {
 				culture = nez_perce
 				size = 40000
 			}
 		}
-		region_state:BNN = {
-			create_pop = {
-				culture = paiute
-				size = 20000
-			}
-		}
 	}
 	s:STATE_COLORADO = {
-		region_state:MEX = {
+		region_state:AKXS = {
 			create_pop = {
 				culture = siouan
 				size = 2000
@@ -230,89 +222,40 @@
 		}
 	}
 	s:STATE_WYOMING = {
-		region_state:NRHD = {
-			create_pop = {
-				culture = siouan
-				size = 8000
-			}
-		}
 		region_state:LKT = {
 			create_pop = {
 				culture = siouan
-				size = 6000
+				size = 24500
 			}
-		}
-		region_state:ARP = {
-			create_pop = {
-				culture = siouan
-				size = 4000
-			}
-		}
-		region_state:BNN = {
 			create_pop = {
 				culture = paiute
 				size = 12000
 			}
-		}
-		region_state:SLS = {
 			create_pop = {
 				culture = salish
 				#size = 1300 #historical increased for gameplay
 				size = 5600
 			}
 		}
-		region_state:ABS = {
-			create_pop = {
-				culture = siouan
-				size = 6500
-			}
-		}
 	}
 	s:STATE_MONTANA = {
-		region_state:NRHD = {
-			create_pop = {
-				culture = siouan
-				size = 5000
-			}
-			create_pop = {
-				culture = dakota
-				size = 2000
-			}
-		}
-		region_state:ABS = {
-			create_pop = {
-				culture = siouan
-				size = 28000
-			}
-		}
 		region_state:LKT = {
 			create_pop = {
-				culture = dakota
-				size = 6000
-			}
-		}
-		region_state:BLF = {
-			create_pop = {
 				culture = siouan
-				size = 14000
+				size = 47000
 			}
-		}
-		region_state:SLS = {
+			create_pop = {
+				culture = dakota
+				size = 8000
+			}
 			create_pop = {
 				culture = salish
 				#size = 5500 # historical increased for gameplay
 				size = 8600
 			}
-		}
+		}	
 	}
 	s:STATE_NORTH_DAKOTA = {
-		region_state:NRHD = {
-			create_pop = {
-				culture = siouan
-				size = 6000
-			}
-		}
-		# DKT had 22000
 		region_state:LKT = {
 			create_pop = {
 				culture = dakota
@@ -320,7 +263,7 @@
 			}
 			create_pop = {
 				culture = siouan
-				size = 4000
+				size = 10000 #6000+4000 
 			}
 		}
 	}
@@ -340,54 +283,38 @@
 		# DKT has 12000
 	}
 	s:STATE_NEBRASKA = {
-		region_state:NRHD = {
+		region_state:PWN = {
 			create_pop = {
 				culture = siouan
-				size = 4000
+				size = 6000
 			}
-		}
-		region_state:LKT = {
 			create_pop = {
 				culture = dakota
 				size = 4000
 			}
-		}
-		region_state:PWN = {
 			create_pop = {
 				culture = caddoan
 				size = 10000
 			}
-			create_pop = {
-				culture = siouan
-				size = 2000
-			}
 		}
 	}
 	s:STATE_KANSAS = {
-		region_state:NRHD = {
+		region_state:PWN = {
 			create_pop = {
 				culture = siouan
-				size = 12000
+				size = 16000
 			}
-		}
-		region_state:PWN = {
 			create_pop = {
 				culture = caddoan
 				size = 8000
 			}
 		}
-		region_state:COM = {
-			create_pop = {
-				culture = siouan
-				size = 4000
-			}
-		}
 	}
 	s:STATE_OKLAHOMA = {
-		region_state:SEQ = {
+		region_state:SBRT = {
 			create_pop = {
 				culture = siouan
-				size = 2000
+				size = 20000#2000+18000
 			}
 			create_pop = {
 				pop_type = slaves # there was even a slave revolt at Webbers Falls in 1842
@@ -401,12 +328,6 @@
 			create_pop = {
 				culture = cherokee
 				size = 50800
-			}
-		}
-		region_state:COM = {
-			create_pop = {
-				culture = siouan
-				size = 18000
 			}
 		}
 	}
@@ -492,16 +413,14 @@
 		}
 	}
 	s:STATE_MINNESOTA = {
-		region_state:NRHD = {
-			create_pop = {
-				culture = algonquian
-				size = 16000
-			}
-		}
 		region_state:LKT = {
 			create_pop = {
 				culture = dakota
 				size = 22000
+			}
+			create_pop = {
+				culture = algonquian
+				size = 16000
 			}
 		}
 	}
@@ -960,28 +879,17 @@
 		}
 	}
 	s:STATE_UTAH = {
-		region_state:MEX = {
+		region_state:AKXS = {
 			create_pop = {
 				culture = paiute
-				size = 3000
-			}
-		}
-		region_state:NVJ = {
-			create_pop = {
-				culture = paiute
-				size = 2000
+				size = 16000 #3000 +2000 + 11000
 			}
 			create_pop = {
 				culture = navajo
 				size = 4000
 			}
 		}
-		region_state:UTE = {
-			create_pop = {
-				culture = paiute
-				size = 11000
-			}
-		}
+		
 	}
 	s:STATE_SOUTH_CAROLINA = {
 		region_state:NRHD = {
@@ -1347,7 +1255,7 @@
 		}
 	}
 	s:STATE_TEXAS = {
-		region_state:TEX = {
+		region_state:SBRT = {
 			create_pop = {
 				culture = dixie
 				size = 42224
@@ -1367,20 +1275,12 @@
 			}
 			create_pop = {
 				culture = mexican
-				size = 2004
+				size = 5004  # 2004 + 3000
 			}
-		}
-		region_state:MEX = {
 			create_pop = {
 				culture = oodham
 				size = 12000
 			}
-			create_pop = {
-				culture = mexican
-				size = 3000
-			}
-		}
-		region_state:COM = {
 			create_pop = {
 				culture = comanche
 				size = 18000
@@ -1392,21 +1292,15 @@
 		}
 	}
 	s:STATE_NEVADA = {
-		region_state:MEX = {
+		region_state:VAIV = {
 			create_pop = {
 				culture = paiute
-				size = 22000
-			}
-		}
-		region_state:BNN = {
-			create_pop = {
-				culture = paiute
-				size = 6000
+				size = 28000 #22000+6000
 			}
 		}
 	}
 	s:STATE_ARIZONA = {
-		region_state:MEX = {
+		region_state:SBRT = {
 			create_pop = {
 				culture = oodham
 				size = 4000
@@ -1417,10 +1311,8 @@
 			}
 			create_pop = {
 				culture = pueblo
-				size = 3000
+				size = 9000
 			}
-		}
-		region_state:NVJ = {
 			create_pop = {
 				culture = navajo
 				size = 24000
@@ -1429,20 +1321,14 @@
 				culture = paiute
 				size = 4000
 			}
-		}
-		region_state:APC = {
 			create_pop = {
 				culture = apache
 				size = 11000
 			}
-			create_pop = {
-				culture = pueblo
-				size = 2000
-			}
 		}
 	}
 	s:STATE_NEW_MEXICO = {
-		region_state:MEX = {
+		region_state:SBRT = {
 			create_pop = {
 				culture = mexican
 				size = 27796
@@ -1451,8 +1337,6 @@
 				culture = pueblo
 				size = 18000
 			}
-		}
-		region_state:NVJ = {
 			create_pop = {
 				culture = navajo
 				size = 6000
@@ -1461,14 +1345,10 @@
 				culture = paiute
 				size = 2000
 			}
-		}
-		region_state:COM = {
 			create_pop = {
 				culture = siouan
 				size = 3000
 			}
-		}
-		region_state:APC = {
 			create_pop = {
 				culture = apache
 				size = 11000
@@ -1490,7 +1370,7 @@
 	# 97864 in 1830, 127586 in 1840
 	# working total of 112724
 	s:STATE_SONORA = {
-		region_state:MEX = {
+		region_state:AKXS = {
 			create_pop = {
 				culture = mexican
 				size = 69087
@@ -1502,7 +1382,7 @@
 		}
 	}
 	s:STATE_CHIHUAHUA = { # total population: 132189 (1830), 147600 (1840)
-		region_state:MEX = {
+		region_state:AKXS = {
 			create_pop = {
 				culture = mexican
 				size = 139895
@@ -1518,7 +1398,7 @@
 		}
 	}
 	s:STATE_RIO_GRANDE = { # Coahuila, Nuevo Leon and Tamaulipas. est. pop 182352 in 1830, 266647 in 1840
-		region_state:MEX = {
+		region_state:AKXS = {
 			create_pop = {
 				culture = mexican
 				size = 121499
@@ -1539,7 +1419,7 @@
 		}
 	}
 	s:STATE_VERACRUZ = { # 242658 in 1830, 259463 in 1840
-		region_state:MEX = {
+		region_state:AKXS = {
 			create_pop = {
 				culture = mexican
 				size = 251061
@@ -1547,7 +1427,7 @@
 		}
 	}
 	s:STATE_DURANGO = { # est. total of 156999. 153810 in 1830, 160187 in 1840
-		region_state:MEX = {
+		region_state:AKXS = {
 			create_pop = {
 				culture = mexican
 				size = 136199
@@ -1563,7 +1443,7 @@
 		}
 	}
 	s:STATE_SINALOA = { # est. total of 134941. 122285 in 1830, 147596 in 1840
-		region_state:MEX = {
+		region_state:AKXS = {
 			create_pop = {
 				culture = mexican
 				size = 113841
@@ -1583,7 +1463,7 @@
 	# Queretaro:		114437 in 1830, 122962 in 1840, so averaging out to 118699
 	# working total number of 950333
 	s:STATE_BAJIO = {
-		region_state:MEX = {
+		region_state:AKXS = {
 			create_pop = {
 				culture = mexican
 				size = 594909
@@ -1607,7 +1487,7 @@
 	# Tabasco:			58518 in 1830, 63919 in 1840, so averaging out to 61219
 	# working total number of 548936
 	s:STATE_YUCATAN = {
-		region_state:MEX = {
+		region_state:AKXS = {
 			create_pop = {
 				culture = mexican
 				size = 226764
@@ -1627,7 +1507,7 @@
 	# Tlaxcala: 72271 in 1830, 81524 in 1840, so averaging out to 76897
 	# working total number of 1811090
 	s:STATE_MEXICO = {
-		region_state:MEX = {
+		region_state:AKXS = {
 			create_pop = {
 				culture = mexican
 				size = 763486
@@ -1655,7 +1535,7 @@
 	# total of 231319. This number was revealed to me in a dream.
 	# jk. Couldn't find estimates for Guerrero in 1830 or 1840, but they could be found for 1870 onwards, so some math trickery was done. Neighboring Oaxaca's estimated 1835 population is 74.7% of its 1870 population, and 50.61% of its 1900 population, so those percentages were applied to Guerrero's 1870 and 1900 population figures, and the two results were averaged together into the above.
 	s:STATE_GUERRERO = {
-		region_state:MEX = {
+		region_state:AKXS = {
 			create_pop = {
 				culture = mexican
 				size = 114874
@@ -1679,7 +1559,7 @@
 		}
 	}
 	s:STATE_OAXACA = { # approx 479674. 457504 in 1830, 501844 in 1840.
-		region_state:MEX = {
+		region_state:AKXS = {
 			create_pop = {
 				culture = mexican
 				size = 143903
@@ -1708,7 +1588,7 @@
 	# working total of 1190162
 	# 1.5858
 	s:STATE_JALISCO = {
-		region_state:MEX = {
+		region_state:AKXS = {
 			create_pop = {
 				culture = mexican
 				size = 1011710
@@ -1728,7 +1608,7 @@
 	# Aguascalientes: 57125 in 1830, 72193, so averaging out to 64659
 	# working total of 313308
 	s:STATE_ZACATECAS = {
-		region_state:MEX = {
+		region_state:AKXS = {
 			create_pop = {
 				culture = mexican
 				size = 137347
@@ -1742,7 +1622,7 @@
 	# 121424 in 1830, 138595 in 1840
 	# working total of 130010
 	s:STATE_CHIAPAS = {
-		region_state:MEX = {
+		region_state:AKXS = {
 			create_pop = {
 				culture = mexican
 				size = 63408 #57846+5562
@@ -1758,7 +1638,7 @@
 		}
 	}
 	s:STATE_BAJA_CALIFORNIA = {
-		region_state:MEX = {
+		region_state:AKXS = {
 			create_pop = {
 				culture = mexican
 				size = 8264
