@@ -104,7 +104,46 @@
 				reserves = 1
 				activate_production_methods = { "default_building_dye_plantation" "pm_road_carts" }
 			}
-		}
+		
+			
+			# [TEMP_DISABLED_MAGIC_BUILDING]
+			# create_building={
+			# 				building="building_magic_spcies"
+			# 				add_ownership={
+			# 					country={
+			# 						country="c:CTCH"
+			# 						levels=1
+			# 					}
+			# 				}
+			# 				reserves=1
+			# 			}
+
+
+			
+			# [TEMP_DISABLED_MAGIC_BUILDING]
+			# create_building={
+			# 				building="building_magic_mineral_mining"
+			# 				add_ownership={
+			# 					country={
+			# 						country="c:CTCH"
+			# 						levels=1
+			# 					}
+			# 				}
+			# 				reserves=1
+			# 			}
+
+
+			create_building={
+				building="building_kissaten"
+				add_ownership={
+					country={
+						country="c:CTCH"
+						levels=1
+					}
+				}
+				reserves=1
+			}
+}
 	}
 	s:STATE_WEST_BENGAL= {
 		region_state:BIC = {
@@ -126,13 +165,13 @@
 					building={
 						type="building_financial_district"
 						country="c:BIC"
-						levels=3
+						levels=4
 						region="STATE_WEST_BENGAL"
 					}
 					building={
 						type="building_financial_district"
 						country="c:GBR"
-						levels=9
+						levels=12
 						region="STATE_HOME_COUNTIES"
 					}
 				}
@@ -168,7 +207,7 @@
 					building = {
 						type = "building_financial_district"
 						country = "c:GBR"
-						levels = 2
+						levels=3
 						region = "STATE_HOME_COUNTIES"
 					}
 				}
@@ -356,7 +395,7 @@
 					building={
 						type="building_fishing_wharf"
 						country="c:BIC"
-						levels=3
+						levels=4
 						region="STATE_WEST_BENGAL"
 					}
 				}
@@ -767,7 +806,7 @@
 					building = {
 						type = "building_manor_house"
 						country = "c:CTCH"
-						levels = 3
+						levels=4
 						region = "STATE_HOME_COUNTIES"
 					}
 				}
@@ -1505,7 +1544,7 @@
 					building={
 						type="building_tooling_workshop"
 						country = "c:DAL"
-						levels = 1
+						levels=1
 						region = "STATE_PUNJAB"
 					}
 				}
@@ -2225,7 +2264,7 @@
 					building = {
 						type = "building_manor_house"
 						country = "c:FRA"
-						levels = 5
+						levels=7
 						region = "STATE_HOME_COUNTIES"
 					}
 				}

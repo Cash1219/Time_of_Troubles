@@ -77,7 +77,32 @@
 				reserves=1
 				activate_production_methods={ "pm_no_organization" }
 			}
-		}
+		
+			
+			# [TEMP_DISABLED_MAGIC_BUILDING]
+			# create_building={
+			# 				building="building_magic_spcies"
+			# 				add_ownership={
+			# 					country={
+			# 						country="c:JOH"
+			# 						levels=1
+			# 					}
+			# 				}
+			# 				reserves=1
+			# 			}
+
+
+			create_building={
+				building="building_kissaten"
+				add_ownership={
+					country={
+						country="c:JOH"
+						levels=1
+					}
+				}
+				reserves=1
+			}
+}
 		region_state:SIA={
 			create_building={
 				building="building_banana_plantation"
@@ -519,7 +544,7 @@
 					building={
 						type="building_manor_house"
 						country="c:TBUN"
-						levels=10
+						levels=12
 						region="STATE_HOLLAND"
 					}
 					building={
@@ -531,7 +556,7 @@
 					building={
 						type="building_manor_house"
 						country="c:TBUN"
-						levels=3
+						levels=4
 						region="STATE_GELRE"
 					}
 				}
@@ -550,7 +575,7 @@
 					building={
 						type="building_manor_house"
 						country="c:TBUN"
-						levels=7
+						levels=9
 						region="STATE_HOLLAND"
 					}
 					building={
@@ -569,7 +594,7 @@
 					building={
 						type="building_manor_house"
 						country="c:TBUN"
-						levels=3
+						levels=4
 						region="STATE_HOLLAND"
 					}
 				}
@@ -640,7 +665,7 @@
 					building={
 						type="building_manor_house"
 						country="c:TBUN"
-						levels=4
+						levels=5
 						region="STATE_HOLLAND"
 					}
 					building={
@@ -678,7 +703,7 @@
 					building={
 						type="building_manor_house"
 						country="c:TBUN"
-						levels=4
+						levels=5
 						region="STATE_HOLLAND"
 					}
 				}
@@ -717,7 +742,7 @@
 					building={
 						type="building_manor_house"
 						country="c:TBUN"
-						levels=4
+						levels=5
 						region="STATE_HOLLAND"
 					}
 				}
@@ -770,7 +795,7 @@
 					building={
 						type="building_manor_house"
 						country="c:TBUN"
-						levels=4
+						levels=5
 						region="STATE_HOLLAND"
 					}
 				}
@@ -1433,7 +1458,7 @@
 				add_ownership={
 					country={
 						country="c:BAL"
-						levels=10
+						levels=11
 					}
 				}
 				reserves=1
@@ -1473,7 +1498,7 @@
 					building={
 						type="building_manor_house"
 						country="c:TBUN"
-						levels=3
+						levels=4
 						region="STATE_HOLLAND"
 					}
 				}
@@ -1614,7 +1639,7 @@
 					building={
 						type="building_manor_house"
 						country="c:PHI"
-						levels=10
+						levels=12
 						region="STATE_LUZON"
 					}
 				}
@@ -1640,7 +1665,7 @@
 					building={
 						type="building_manor_house"
 						country="c:PHI"
-						levels=5
+						levels=6
 						region="STATE_LUZON"
 					}
 				}
@@ -1696,7 +1721,7 @@
 					building={
 						type="building_manor_house"
 						country="c:PHI"
-						levels=3
+						levels=4
 						region="STATE_VISAYAS"
 					}
 				}

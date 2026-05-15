@@ -7,7 +7,7 @@
 					building={
 						type="building_manor_house"
 						country="c:NEJ"
-						levels=2
+						levels=1
 						region="STATE_NEJD"
 					}
 				}
@@ -19,13 +19,41 @@
 				add_ownership={
 					country={
 						country="c:NEJ"
-						levels=4
+						levels=3
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_no_organization" }
 			}
-		}
+		
+			
+			# [TEMP_DISABLED_MAGIC_BUILDING]
+			# create_building={
+			# 				building="building_magic_power"
+			# 				add_ownership={
+			# 					country={
+			# 						country="c:NEJ"
+			# 						levels=1
+			# 					}
+			# 				}
+			# 				reserves=1
+			# 			}
+
+
+			
+			# [TEMP_DISABLED_MAGIC_BUILDING]
+			# create_building={
+			# 				building="building_alchemy"
+			# 				add_ownership={
+			# 					country={
+			# 						country="c:NEJ"
+			# 						levels=1
+			# 					}
+			# 				}
+			# 				reserves=1
+			# 			}
+
+}
 	}
 	s:STATE_OMAN={
 		region_state:OMA={
@@ -34,7 +62,7 @@
 				add_ownership={
 					country={
 						country="c:OMA"
-						levels=3
+						levels=2
 					}
 				}
 				reserves=1
@@ -72,7 +100,7 @@
 					building={
 						type="building_fishing_wharf"
 						country="c:OMA"
-						levels=2
+						levels=1
 						region="STATE_OMAN"
 					}
 				}
@@ -84,7 +112,7 @@
 				add_ownership={
 					country={
 						country="c:OMA"
-						levels=5
+						levels=3
 					}
 				}
 				reserves=1
@@ -95,7 +123,7 @@
 				add_ownership={
 					country={
 						country="c:OMA"
-						levels=3
+						levels=2
 					}
 				}
 				reserves=1
@@ -154,7 +182,7 @@
 					building={
 						type="building_manor_house"
 						country="c:ZAI"
-						levels=2
+						levels=1
 						region="STATE_YEMEN"
 					}
 				}
@@ -192,7 +220,7 @@
 				add_ownership={
 					country={
 						country="c:ZAI"
-						levels=5
+						levels=3
 					}
 				}
 				reserves=1
@@ -221,7 +249,7 @@
 					building={
 						type="building_manor_house"
 						country="c:LAH"
-						levels=2
+						levels=1
 						region="STATE_YEMEN"
 					}
 				}
@@ -245,7 +273,7 @@
 				add_ownership={
 					country={
 						country="c:LAH"
-						levels=2
+						levels=1
 					}
 				}
 				reserves=1
@@ -264,7 +292,7 @@
 					building={
 						type="building_manor_house"
 						country="c:HDJ"
-						levels=2
+						levels=1
 						region="STATE_HEDJAZ"
 					}
 				}
@@ -276,7 +304,7 @@
 				add_ownership={
 					country={
 						country="c:HDJ"
-						levels=10
+						levels=6
 					}
 				}
 				reserves=1
@@ -454,7 +482,7 @@
 				add_ownership={
 					country={
 						country="c:SYR"
-						levels=3
+						levels=2
 					}
 				}
 				reserves=1
@@ -505,7 +533,7 @@
 					building={
 						type="building_manor_house"
 						country="c:SYR"
-						levels=2
+						levels=1
 						region="STATE_SYRIA"
 					}
 				}
@@ -518,7 +546,7 @@
 					building={
 						type="building_manor_house"
 						country="c:SYR"
-						levels=2
+						levels=1
 						region="STATE_SYRIA"
 					}
 				}
@@ -615,7 +643,7 @@
 					building={
 						type="building_manor_house"
 						country="c:IRQ"
-						levels=2
+						levels=1
 						region="STATE_BAGHDAD"
 					}
 				}
@@ -628,7 +656,7 @@
 					building={
 						type="building_manor_house"
 						country="c:TUR"
-						levels=3
+						levels=2
 						region="STATE_EASTERN_THRACE"
 					}
 				}
@@ -745,7 +773,7 @@
 				add_ownership={
 					country={
 						country="c:PER"
-						levels=2
+						levels=1
 					}
 				}
 				reserves=1
@@ -757,7 +785,7 @@
 					building={
 						type="building_manor_house"
 						country="c:PER"
-						levels=4
+						levels=3
 						region="STATE_FARS"
 					}
 				}
@@ -770,7 +798,7 @@
 					building={
 						type="building_manor_house"
 						country="c:PER"
-						levels=2
+						levels=1
 						region="STATE_FARS"
 					}
 				}
@@ -800,7 +828,7 @@
 					building={
 						type="building_manor_house"
 						country="c:PER"
-						levels=2
+						levels=1
 						region="STATE_KERMAN"
 					}
 				}
@@ -894,7 +922,7 @@
 				add_ownership={
 					country={
 						country="c:PER"
-						levels=2
+						levels=1
 					}
 				}
 				reserves=1
@@ -919,7 +947,7 @@
 					building={
 						type="building_manor_house"
 						country="c:PER"
-						levels=2
+						levels=1
 						region="STATE_KHORASAN"
 					}
 				}
@@ -1004,7 +1032,7 @@
 				add_ownership={
 					country={
 						country="c:PER"
-						levels=4
+						levels=3
 					}
 				}
 				reserves=1
@@ -1037,7 +1065,7 @@
 					building={
 						type="building_furniture_manufactory"
 						country="c:PER"
-						levels=2
+						levels=1
 						region="STATE_MAZANDARAN"
 					}
 				}
@@ -1063,7 +1091,7 @@
 					building={
 						type="building_financial_district"
 						country="c:PER"
-						levels=2
+						levels=1
 						region="STATE_MAZANDARAN"
 					}
 				}
@@ -1076,7 +1104,7 @@
 					building={
 						type="building_manor_house"
 						country="c:PER"
-						levels=2
+						levels=1
 						region="STATE_MAZANDARAN"
 					}
 				}
@@ -1089,7 +1117,7 @@
 					building={
 						type="building_manor_house"
 						country="c:PER"
-						levels=2
+						levels=1
 						region="STATE_MAZANDARAN"
 					}
 				}
@@ -1118,7 +1146,7 @@
 				add_ownership={
 					country={
 						country="c:PER"
-						levels=8
+						levels=6
 					}
 				}
 				reserves=1
@@ -1130,7 +1158,7 @@
 					building={
 						type="building_manor_house"
 						country="c:PER"
-						levels=3
+						levels=2
 						region="STATE_IRAKAJEMI"
 					}
 				}
@@ -1159,7 +1187,7 @@
 				add_ownership={
 					country={
 						country="c:PER"
-						levels=6
+						levels=4
 					}
 				}
 				reserves=1
@@ -1171,7 +1199,7 @@
 					building={
 						type="building_textile_mill"
 						country="c:PER"
-						levels=2
+						levels=1
 						region="STATE_TABRIZ"
 					}
 				}
@@ -1210,7 +1238,7 @@
 					building={
 						type="building_manor_house"
 						country="c:PER"
-						levels=2
+						levels=1
 						region="STATE_TABRIZ"
 					}
 				}
@@ -1223,7 +1251,7 @@
 					building={
 						type="building_manor_house"
 						country="c:PER"
-						levels=2
+						levels=1
 						region="STATE_TABRIZ"
 					}
 				}
@@ -1287,7 +1315,7 @@
 					building={
 						type="building_manor_house"
 						country="c:PER"
-						levels=2
+						levels=1
 						region="STATE_LURISTAN"
 					}
 				}
@@ -1316,7 +1344,7 @@
 				add_ownership={
 					country={
 						country="c:TUR"
-						levels=2
+						levels=1
 					}
 				}
 				reserves=1
@@ -1341,7 +1369,7 @@
 					building={
 						type="building_financial_district"
 						country="c:BYZ"
-						levels=2
+						levels=1
 						region="STATE_HUDAVENDIGAR"
 					}
 					country={
@@ -1358,7 +1386,7 @@
 					building={
 						type="building_logging_camp"
 						country="c:BYZ"
-						levels=2
+						levels=1
 						region="STATE_HUDAVENDIGAR"
 					}
 					building={
@@ -1390,7 +1418,7 @@
 					building={
 						type="building_manor_house"
 						country="c:BYZ"
-						levels=4
+						levels=3
 						region="STATE_HUDAVENDIGAR"
 					}
 				}
@@ -1403,7 +1431,7 @@
 					building={
 						type="building_manor_house"
 						country="c:BYZ"
-						levels=2
+						levels=1
 						region="STATE_HUDAVENDIGAR"
 					}
 				}
@@ -1415,7 +1443,7 @@
 				add_ownership={
 					country={
 						country="c:BYZ"
-						levels=2
+						levels=1
 					}
 				}
 				reserves=1
@@ -1457,7 +1485,7 @@
 					building={
 						type="building_furniture_manufactory"
 						country="c:BYZ"
-						levels=2
+						levels=1
 						region="STATE_AYDIN"
 					}
 				}
@@ -1470,7 +1498,7 @@
 					building={
 						type="building_fishing_wharf"
 						country="c:BYZ"
-						levels=4
+						levels=3
 						region="STATE_AYDIN"
 					}
 				}
@@ -1483,7 +1511,7 @@
 					building={
 						type="building_manor_house"
 						country="c:BYZ"
-						levels=3
+						levels=2
 						region="STATE_AYDIN"
 					}
 				}
@@ -1496,7 +1524,7 @@
 					building={
 						type="building_manor_house"
 						country="c:BYZ"
-						levels=2
+						levels=1
 						region="STATE_AYDIN"
 					}
 				}
@@ -1535,7 +1563,7 @@
 					building={
 						type="building_manor_house"
 						country="c:BYZ"
-						levels=2
+						levels=1
 						region="STATE_AYDIN"
 					}
 				}
@@ -1547,7 +1575,7 @@
 				add_ownership={
 					country={
 						country="c:BYZ"
-						levels=2
+						levels=1
 					}
 				}
 				reserves=1
@@ -1563,7 +1591,7 @@
 					building={
 						type="building_manor_house"
 						country="c:TUR"
-						levels=2
+						levels=1
 						region="STATE_KONYA"
 					}
 				}
@@ -1576,7 +1604,7 @@
 					building={
 						type="building_manor_house"
 						country="c:TUR"
-						levels=3
+						levels=2
 						region="STATE_KONYA"
 					}
 				}
@@ -1589,7 +1617,7 @@
 					building={
 						type="building_manor_house"
 						country="c:TUR"
-						levels=2
+						levels=1
 						region="STATE_KONYA"
 					}
 				}
@@ -1619,7 +1647,7 @@
 					building={
 						type="building_manor_house"
 						country="c:TUR"
-						levels=5
+						levels=4
 						region="STATE_KASTAMONU"
 					}
 				}
@@ -1632,7 +1660,7 @@
 					building={
 						type="building_fishing_wharf"
 						country="c:TUR"
-						levels=3
+						levels=2
 						region="STATE_KASTAMONU"
 					}
 				}
@@ -1662,7 +1690,7 @@
 					building={
 						type="building_manor_house"
 						country="c:IRQ"
-						levels=2
+						levels=1
 						region="STATE_DIYARBAKIR"
 					}
 				}
@@ -1675,7 +1703,7 @@
 					building={
 						type="building_manor_house"
 						country="c:IRQ"
-						levels=2
+						levels=1
 						region="STATE_DIYARBAKIR"
 					}
 				}
@@ -1705,7 +1733,7 @@
 					building={
 						type="building_fishing_wharf"
 						country="c:TUR"
-						levels=2
+						levels=1
 						region="STATE_ADANA"
 					}
 				}
@@ -1761,7 +1789,7 @@
 					building={
 						type="building_fishing_wharf"
 						country="c:TRA"
-						levels=2
+						levels=1
 						region="STATE_TRABZON"
 					}
 				}
@@ -1787,7 +1815,7 @@
 					building={
 						type="building_manor_house"
 						country="c:TRA"
-						levels=3
+						levels=2
 						region="STATE_TRABZON"
 					}
 				}
@@ -1800,7 +1828,7 @@
 					building={
 						type="building_financial_district"
 						country="c:TUR"
-						levels=2
+						levels=1
 						region="STATE_EASTERN_THRACE"
 					}
 				}
@@ -1828,7 +1856,7 @@
 					building={
 						type="building_logging_camp"
 						country="c:IRQ"
-						levels=2
+						levels=1
 						region="STATE_ERZURUM"
 					}
 				}
@@ -1870,7 +1898,7 @@
 				add_ownership={
 					country={
 						country="c:TUR"
-						levels=3
+						levels=2
 					}
 				}
 				reserves=1
@@ -1895,7 +1923,7 @@
 					building={
 						type="building_manor_house"
 						country="c:TUR"
-						levels=3
+						levels=2
 						region="STATE_ANKARA"
 					}
 				}
@@ -1908,7 +1936,7 @@
 					building={
 						type="building_manor_house"
 						country="c:TUR"
-						levels=2
+						levels=1
 						region="STATE_ANKARA"
 					}
 				}
@@ -1921,7 +1949,7 @@
 					building={
 						type="building_manor_house"
 						country="c:TUR"
-						levels=2
+						levels=1
 						region="STATE_ANKARA"
 					}
 				}

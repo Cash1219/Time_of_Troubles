@@ -61,7 +61,7 @@
 					building={
 						type="building_textile_mill"
 						country="c:GBDP"
-						levels=3
+						levels=4
 						region="STATE_LOMBARDY"
 					}
 					building={
@@ -85,7 +85,7 @@
 					}
 					country={
 						country="c:GBDP"
-						levels=3
+						levels=4
 					}
 				}
 				reserves=1
@@ -121,7 +121,29 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_citrus_orchards" "pm_tools_disabled"  }
 			}
-		}
+		
+			create_building={
+				building="building_musical_instrument"
+				add_ownership={
+					country={
+						country="c:GBDP"
+						levels=1
+					}
+				}
+				reserves=1
+			}
+
+			create_building={
+				building="building_game"
+				add_ownership={
+					country={
+						country="c:GBDP"
+						levels=1
+					}
+				}
+				reserves=1
+			}
+}
 	}
 	s:STATE_PIEDMONT={
 		region_state:STLI={
@@ -130,7 +152,7 @@
 				add_ownership={
 					country={
 						country="c:STLI"
-						levels=5
+						levels=6
 					}
 				}
 				reserves=1
@@ -333,7 +355,7 @@
 				add_ownership={
 					country={
 						country="c:SAR"
-						levels=5
+						levels=6
 					}
 				}
 				reserves=1
@@ -375,7 +397,7 @@
 					building={
 						type="building_logging_camp"
 						country="c:STLI"
-						levels=3
+						levels=4
 						region="STATE_SARDINIA"
 					}
 					building={
@@ -458,7 +480,7 @@
 				add_ownership={
 					country={
 						country="c:GBR"
-						levels=3
+						levels=4
 					}
 				}
 				activate_production_methods={ "pm_naval_fortification_basic"  }
@@ -588,7 +610,7 @@
 				add_ownership={
 					country={
 						country="c:RITA"
-						levels=4
+						levels=5
 					}
 				}
 				reserves=1
@@ -737,7 +759,7 @@
 					building={
 						type="building_manor_house"
 						country="c:RITA"
-						levels=10
+						levels=11
 						region="STATE_CAMPANIA"
 					}
 				}
@@ -797,7 +819,7 @@
 				add_ownership={
 					country={
 						country="c:RITA"
-						levels=10
+						levels=12
 					}
 				}
 				reserves=1
@@ -878,7 +900,7 @@
 					building={
 						type="building_fishing_wharf"
 						country="c:RITA"
-						levels=5
+						levels=6
 						region="STATE_CALABRIA"
 					}
 				}
@@ -958,7 +980,7 @@
 					building={
 						type="building_fishing_wharf"
 						country="c:RITA"
-						levels=5
+						levels=6
 						region="STATE_APULIA"
 					}
 				}
@@ -1001,7 +1023,7 @@
 					building={
 						type="building_financial_district"
 						country="c:RITA"
-						levels=3
+						levels=4
 						region="STATE_ABRUZZO"
 					}
 				}
@@ -1343,7 +1365,7 @@
 					building={
 						type="building_manor_house"
 						country="c:TUS"
-						levels=12
+						levels=13
 						region="STATE_TUSCANY"
 					}
 				}
@@ -1382,7 +1404,7 @@
 					building={
 						type="building_financial_district"
 						country="c:TUS"
-						levels=3
+						levels=4
 						region="STATE_TUSCANY"
 					}
 				}
@@ -1527,7 +1549,7 @@
 				add_ownership={
 					country={
 						country="c:PAP"
-						levels=4
+						levels=5
 					}
 				}
 				reserves=1
@@ -1701,7 +1723,7 @@
 					building={
 						type="building_financial_district"
 						country="c:GBDP"
-						levels=3
+						levels=4
 						region="STATE_VENETIA"
 					}
 					country={
@@ -1718,7 +1740,7 @@
 					building={
 						type="building_glassworks"
 						country="c:GBDP"
-						levels=3
+						levels=4
 						region="STATE_VENETIA"
 					}
 					building={
@@ -1737,7 +1759,7 @@
 					building={
 						type="building_textile_mill"
 						country="c:GBDP"
-						levels=4
+						levels=5
 						region="STATE_VENETIA"
 					}
 					building={
@@ -1762,7 +1784,7 @@
 					building={
 						type="building_fishing_wharf"
 						country="c:GBDP"
-						levels=4
+						levels=5
 						region="STATE_VENETIA"
 					}
 				}
@@ -1844,7 +1866,7 @@
 					building={
 						type="building_manor_house"
 						country="c:RITA"
-						levels=4
+						levels=5
 						region="STATE_SICILY"
 					}
 					building={
@@ -1863,7 +1885,7 @@
 					building={
 						type="building_financial_district"
 						country="c:RITA"
-						levels=5
+						levels=6
 						region="STATE_SICILY"
 					}
 				}
@@ -1929,7 +1951,7 @@
 				add_ownership={
 					country={
 						country="c:SKD"
-						levels=4
+						levels=5
 					}
 				}
 				reserves=1
@@ -2484,7 +2506,7 @@
 				add_ownership={
 					country={
 						country="c:SKD"
-						levels=3
+						levels=4
 					}
 				}
 				reserves=1
@@ -2767,7 +2789,7 @@
 					building={
 						type="building_vineyard"
 						country="c:SKD"
-						levels=3
+						levels=4
 						region="STATE_CATALONIA"
 					}
 				}
@@ -3190,7 +3212,7 @@
 				add_ownership={
 					country={
 						country="c:GBR"
-						levels=3
+						levels=4
 					}
 				}
 				activate_production_methods={ "pm_naval_fortification_basic"  }
@@ -3410,7 +3432,7 @@
 					building={
 						type="building_vineyard"
 						country="c:ADL"
-						levels=3
+						levels=4
 						region="STATE_VALENCIA"
 					}
 				}
@@ -3436,7 +3458,7 @@
 					building={
 						type="building_financial_district"
 						country="c:ADL"
-						levels=3
+						levels=4
 						region="STATE_VALENCIA"
 					}
 					country={
@@ -3541,7 +3563,7 @@
 				add_ownership={
 					country={
 						country="c:ADL"
-						levels=10
+						levels=12
 					}
 				}
 				reserves=1
@@ -3797,7 +3819,7 @@
 					building={
 						type="building_trade_center"
 						country="c:GNC"
-						levels=10
+						levels=12
 						region="STATE_ESTREMADURA"
 					}
 				}
@@ -3859,7 +3881,7 @@
 					building={
 						type="building_fishing_wharf"
 						country="c:GNC"
-						levels=3
+						levels=4
 						region="STATE_ESTREMADURA"
 					}
 				}
@@ -3930,7 +3952,7 @@
 				add_ownership={
 					country={
 						country="c:GNC"
-						levels=10
+						levels=12
 					}
 				}
 				reserves=1
@@ -4260,7 +4282,7 @@
 				add_ownership={
 					country={
 						country="c:BYZ"
-						levels=10
+						levels=11
 					}
 				}
 				reserves=1
@@ -4284,7 +4306,7 @@
 				add_ownership={
 					country={
 						country="c:BYZ"
-						levels=20
+						levels=24
 					}
 				}
 				reserves=1
@@ -4295,7 +4317,7 @@
 				add_ownership={
 					country={
 						country="c:BYZ"
-						levels=3
+						levels=4
 					}
 				}
 				reserves=1
@@ -4317,7 +4339,7 @@
 				add_ownership={
 					country={
 						country="c:BYZ"
-						levels=4
+						levels=5
 					}
 				}
 				reserves=1
@@ -4689,7 +4711,7 @@
 					building={
 						type="building_financial_district"
 						country="c:BYZ"
-						levels=3
+						levels=4
 						region="STATE_NORTHERN_THRACE"
 					}
 				}
@@ -4706,7 +4728,7 @@
 					building={
 						type="building_financial_district"
 						country="c:BYZ"
-						levels=3
+						levels=4
 						region="STATE_BULGARIA"
 					}
 				}
@@ -4781,7 +4803,7 @@
 					building={
 						type="building_financial_district"
 						country="c:BYZ"
-						levels=4
+						levels=5
 						region="STATE_BULGARIA"
 					}
 				}
@@ -4847,7 +4869,7 @@
 					building={
 						type="building_fishing_wharf"
 						country="c:AQO"
-						levels=3
+						levels=4
 						region="STATE_DALMATIA"
 					}
 				}
@@ -5089,7 +5111,7 @@
 					building={
 						type="building_fishing_wharf"
 						country="c:GBDP"
-						levels=4
+						levels=5
 						region="STATE_ISTRIA"
 					}
 				}
@@ -5101,7 +5123,7 @@
 				add_ownership={
 					country={
 						country="c:GBDP"
-						levels=4
+						levels=5
 					}
 				}
 				reserves=1
@@ -5679,7 +5701,7 @@
 					building={
 						type="building_glassworks"
 						country="c:TUR"
-						levels=3
+						levels=4
 						region="STATE_WESTERN_THRACE"
 					}
 					building={
@@ -5698,7 +5720,7 @@
 					building={
 						type="building_fishing_wharf"
 						country="c:TUR"
-						levels=3
+						levels=4
 						region="STATE_WESTERN_THRACE"
 					}
 				}

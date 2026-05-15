@@ -1,0 +1,733 @@
+MILITARY_FORMATIONS = {
+	c:ATRI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_eastern_europe
+			name = ATRI_Army
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_RIGA
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_RIGA
+				count = 1
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_eastern_europe
+			name = ATRI_Fleet
+			ship = {
+				type = ship_type:ship_type_frigate
+				state_region = s:STATE_RIGA
+				count = 1
+			}
+		}
+	}
+	c:AUS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_europe
+			name = AUS_Army
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_AUSTRIA
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_AUSTRIA
+				count = 2
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_AUSTRIA
+				count = 2
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_central_europe
+			name = AUS_Fleet
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				state_region = s:STATE_AUSTRIA
+				count = 2
+			}
+			ship = {
+				type = ship_type:ship_type_frigate
+				state_region = s:STATE_AUSTRIA
+				count = 2
+			}
+		}
+	}
+	c:BOH ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_europe
+			name = BOH_Army
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_BOHEMIA
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_BOHEMIA
+				count = 1
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_central_europe
+			name = BOH_Fleet
+			ship = {
+				type = ship_type:ship_type_frigate
+				state_region = s:STATE_BOHEMIA
+				count = 1
+			}
+		}
+	}
+	c:BUG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = BUG_Army
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_UGANDA
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_UGANDA
+				count = 1
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_east_africa
+			name = BUG_Fleet
+			ship = {
+				type = ship_type:ship_type_frigate
+				state_region = s:STATE_UGANDA
+				count = 1
+			}
+		}
+	}
+	c:EGY ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_nile_basin
+			name = EGY_Army
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_LOWER_EGYPT
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_LOWER_EGYPT
+				count = 1
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_LOWER_EGYPT
+				count = 1
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_nile_basin
+			name = EGY_Fleet
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				state_region = s:STATE_LOWER_EGYPT
+				count = 1
+			}
+			ship = {
+				type = ship_type:ship_type_frigate
+				state_region = s:STATE_LOWER_EGYPT
+				count = 1
+			}
+		}
+	}
+	c:FIN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_northern_europe
+			name = FIN_Army
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_UUSIMAA
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_UUSIMAA
+				count = 1
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_northern_europe
+			name = FIN_Fleet
+			ship = {
+				type = ship_type:ship_type_frigate
+				state_region = s:STATE_UUSIMAA
+				count = 1
+			}
+		}
+	}
+	c:GOD ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_russia
+			name = GOD_Army
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_ASTRAKHAN
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_ASTRAKHAN
+				count = 1
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_russia
+			name = GOD_Fleet
+			ship = {
+				type = ship_type:ship_type_frigate
+				state_region = s:STATE_ASTRAKHAN
+				count = 1
+			}
+		}
+	}
+	c:KZH ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_asia
+			name = KZH_Army
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_URALSK
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_URALSK
+				count = 1
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_central_asia
+			name = KZH_Fleet
+			ship = {
+				type = ship_type:ship_type_frigate
+				state_region = s:STATE_URALSK
+				count = 1
+			}
+		}
+	}
+	c:MHSB ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_northern_europe
+			name = MHSB_Army
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_SVEALAND
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_SVEALAND
+				count = 1
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_SVEALAND
+				count = 1
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_northern_europe
+			name = MHSB_Fleet
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				state_region = s:STATE_SVEALAND
+				count = 1
+			}
+			ship = {
+				type = ship_type:ship_type_frigate
+				state_region = s:STATE_SVEALAND
+				count = 1
+			}
+		}
+	}
+	c:MYG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_near_east
+			name = MYG_Army
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_ANKARA
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_ANKARA
+				count = 1
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_near_east
+			name = MYG_Fleet
+			ship = {
+				type = ship_type:ship_type_frigate
+				state_region = s:STATE_ANKARA
+				count = 1
+			}
+		}
+	}
+	c:NEWG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_india
+			name = NEWG_Army
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_ORISSA
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_ORISSA
+				count = 1
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_ORISSA
+				count = 1
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_north_india
+			name = NEWG_Fleet
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				state_region = s:STATE_ORISSA
+				count = 1
+			}
+			ship = {
+				type = ship_type:ship_type_frigate
+				state_region = s:STATE_ORISSA
+				count = 1
+			}
+		}
+	}
+	c:PAL ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_near_east
+			name = PAL_Army
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_PALESTINE
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_PALESTINE
+				count = 1
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_near_east
+			name = PAL_Fleet
+			ship = {
+				type = ship_type:ship_type_frigate
+				state_region = s:STATE_PALESTINE
+				count = 1
+			}
+		}
+	}
+	c:PER ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_greater_persia
+			name = PER_Army
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_IRAKAJEMI
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_IRAKAJEMI
+				count = 2
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_IRAKAJEMI
+				count = 2
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_greater_persia
+			name = PER_Fleet
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				state_region = s:STATE_IRAKAJEMI
+				count = 2
+			}
+			ship = {
+				type = ship_type:ship_type_frigate
+				state_region = s:STATE_IRAKAJEMI
+				count = 2
+			}
+		}
+	}
+	c:POR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_europe
+			name = POR_Army
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_ESTREMADURA
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_ESTREMADURA
+				count = 1
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_ESTREMADURA
+				count = 1
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_southern_europe
+			name = POR_Fleet
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				state_region = s:STATE_ESTREMADURA
+				count = 1
+			}
+			ship = {
+				type = ship_type:ship_type_frigate
+				state_region = s:STATE_ESTREMADURA
+				count = 1
+			}
+		}
+	}
+	c:RUS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_russia
+			name = RUS_Army
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_INGRIA
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_INGRIA
+				count = 2
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_INGRIA
+				count = 2
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_russia
+			name = RUS_Fleet
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				state_region = s:STATE_INGRIA
+				count = 2
+			}
+			ship = {
+				type = ship_type:ship_type_frigate
+				state_region = s:STATE_INGRIA
+				count = 2
+			}
+		}
+	}
+	c:SYR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_near_east
+			name = SYR_Army
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_SYRIA
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_SYRIA
+				count = 1
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_near_east
+			name = SYR_Fleet
+			ship = {
+				type = ship_type:ship_type_frigate
+				state_region = s:STATE_SYRIA
+				count = 1
+			}
+		}
+	}
+	c:TRI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_africa
+			name = TRI_Army
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_TRIPOLI
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_TRIPOLI
+				count = 1
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_north_africa
+			name = TRI_Fleet
+			ship = {
+				type = ship_type:ship_type_frigate
+				state_region = s:STATE_TRIPOLI
+				count = 1
+			}
+		}
+	}
+	c:TUR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_near_east
+			name = TUR_Army
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_ANKARA
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_ANKARA
+				count = 1
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_near_east
+			name = TUR_Fleet
+			ship = {
+				type = ship_type:ship_type_frigate
+				state_region = s:STATE_ANKARA
+				count = 1
+			}
+		}
+	}
+	c:UKR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_eastern_europe
+			name = UKR_Army
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_KIEV
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_KIEV
+				count = 1
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_KIEV
+				count = 1
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_eastern_europe
+			name = UKR_Fleet
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				state_region = s:STATE_KIEV
+				count = 1
+			}
+			ship = {
+				type = ship_type:ship_type_frigate
+				state_region = s:STATE_KIEV
+				count = 1
+			}
+		}
+	}
+	c:UMA ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_eastern_europe
+			name = UMA_Army
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_CRIMEA
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_CRIMEA
+				count = 1
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_CRIMEA
+				count = 1
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_eastern_europe
+			name = UMA_Fleet
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				state_region = s:STATE_CRIMEA
+				count = 1
+			}
+			ship = {
+				type = ship_type:ship_type_frigate
+				state_region = s:STATE_CRIMEA
+				count = 1
+			}
+		}
+	}
+	c:USA ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_atlantic_coast
+			name = USA_Army
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_DISTRICT_OF_COLUMBIA
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_DISTRICT_OF_COLUMBIA
+				count = 2
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_DISTRICT_OF_COLUMBIA
+				count = 2
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_atlantic_coast
+			name = USA_Fleet
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				state_region = s:STATE_DISTRICT_OF_COLUMBIA
+				count = 2
+			}
+			ship = {
+				type = ship_type:ship_type_frigate
+				state_region = s:STATE_DISTRICT_OF_COLUMBIA
+				count = 2
+			}
+		}
+	}
+	c:UZH ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_asia
+			name = UZH_Army
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_AKMOLINSK
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_AKMOLINSK
+				count = 1
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_central_asia
+			name = UZH_Fleet
+			ship = {
+				type = ship_type:ship_type_frigate
+				state_region = s:STATE_AKMOLINSK
+				count = 1
+			}
+		}
+	}
+	c:YUZ ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_near_east
+			name = YUZ_Army
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_ANKARA
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_ANKARA
+				count = 2
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_ANKARA
+				count = 2
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_near_east
+			name = YUZ_Fleet
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				state_region = s:STATE_ANKARA
+				count = 2
+			}
+			ship = {
+				type = ship_type:ship_type_frigate
+				state_region = s:STATE_ANKARA
+				count = 2
+			}
+		}
+	}
+}

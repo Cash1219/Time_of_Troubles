@@ -7,7 +7,7 @@
 					building={
 						type="building_manor_house"
 						country="c:POL"
-						levels=2
+						levels=3
 						region="STATE_MAZOVIA"
 					}
 				}
@@ -20,13 +20,38 @@
 					building={
 						type="building_financial_district"
 						country="c:POL"
-						levels=3
+						levels=4
 						region="STATE_MAZOVIA"
 					}
 				}
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts"  }
 			}
-		}
+		
+			create_building={
+				building="building_publisher"
+				add_ownership={
+					country={
+						country="c:POL"
+						levels=1
+					}
+				}
+				reserves=1
+			}
+
+			
+			# [TEMP_DISABLED_MAGIC_BUILDING]
+			# create_building={
+			# 				building="building_magic_power"
+			# 				add_ownership={
+			# 					country={
+			# 						country="c:POL"
+			# 						levels=1
+			# 					}
+			# 				}
+			# 				reserves=1
+			# 			}
+
+}
 	}
 	s:STATE_BREST={
 		region_state:POL={
@@ -36,7 +61,7 @@
 					building={
 						type="building_logging_camp"
 						country="c:POL"
-						levels=4
+						levels=6
 						region="STATE_BREST"
 					}
 					building={
@@ -77,7 +102,7 @@
 					building={
 						type="building_financial_district"
 						country="c:PRU"
-						levels=5
+						levels=7
 						region="STATE_LOWER_SILESIA"
 					}
 				}
@@ -140,7 +165,7 @@
 					building={
 						type="building_manor_house"
 						country="c:PRU"
-						levels=3
+						levels=4
 						region="STATE_LOWER_SILESIA"
 					}
 				}
@@ -153,7 +178,7 @@
 					building={
 						type="building_manor_house"
 						country="c:PRU"
-						levels=2
+						levels=3
 						region="STATE_LOWER_SILESIA"
 					}
 				}
@@ -200,13 +225,13 @@
 					building={
 						type="building_coal_mine"
 						country="c:PRU"
-						levels=2
+						levels=3
 						region="STATE_UPPER_SILESIA"
 					}
 					building={
 						type="building_financial_district"
 						country="c:PRU"
-						levels=4
+						levels=6
 						region="STATE_UPPER_SILESIA"
 					}
 				}
@@ -225,7 +250,7 @@
 					building={
 						type="building_financial_district"
 						country="c:PRU"
-						levels=2
+						levels=3
 						region="STATE_UPPER_SILESIA"
 					}
 				}
@@ -244,7 +269,7 @@
 					building={
 						type="building_financial_district"
 						country="c:PRU"
-						levels=2
+						levels=3
 						region="STATE_UPPER_SILESIA"
 					}
 				}
@@ -270,7 +295,7 @@
 					building={
 						type="building_manor_house"
 						country="c:PRU"
-						levels=2
+						levels=3
 						region="STATE_UPPER_SILESIA"
 					}
 				}
@@ -414,7 +439,7 @@
 					building={
 						type="building_manor_house"
 						country="c:POL"
-						levels=3
+						levels=4
 						region="STATE_GREATER_POLAND"
 					}
 				}
@@ -442,7 +467,7 @@
 					building={
 						type="building_manor_house"
 						country="c:POL"
-						levels=3
+						levels=4
 						region="STATE_LESSER_POLAND"
 					}
 				}
@@ -473,7 +498,7 @@
 					building={
 						type="building_financial_district"
 						country="c:PRU"
-						levels=3
+						levels=4
 						region="STATE_WEST_PRUSSIA"
 					}
 				}
@@ -498,7 +523,7 @@
 					building={
 						type="building_manor_house"
 						country="c:PRU"
-						levels=3
+						levels=4
 						region="STATE_WEST_PRUSSIA"
 					}
 				}
@@ -538,7 +563,7 @@
 					building={
 						type="building_financial_district"
 						country="c:PRU"
-						levels=2
+						levels=3
 						region="STATE_EAST_PRUSSIA"
 					}
 				}
@@ -569,7 +594,7 @@
 					building={
 						type="building_financial_district"
 						country="c:PRU"
-						levels=4
+						levels=6
 						region="STATE_EAST_PRUSSIA"
 					}
 					building={
@@ -588,7 +613,7 @@
 					building={
 						type="building_manor_house"
 						country="c:PRU"
-						levels=2
+						levels=3
 						region="STATE_EAST_PRUSSIA"
 					}
 				}
@@ -605,7 +630,7 @@
 					building={
 						type="building_financial_district"
 						country="c:PRU"
-						levels=5
+						levels=7
 						region="STATE_POSEN"
 					}
 				}
@@ -618,7 +643,7 @@
 					building={
 						type="building_manor_house"
 						country="c:PRU"
-						levels=2
+						levels=3
 						region="STATE_POSEN"
 					}
 				}
@@ -631,7 +656,7 @@
 					building={
 						type="building_manor_house"
 						country="c:PRU"
-						levels=3
+						levels=4
 						region="STATE_POSEN"
 					}
 				}
@@ -647,7 +672,7 @@
 				add_ownership={
 					country={
 						country="c:POL"
-						levels=5
+						levels=7
 					}
 				}
 				reserves=1
@@ -659,7 +684,7 @@
 					building={
 						type="building_manor_house"
 						country="c:IDMS"
-						levels=2
+						levels=3
 						region="STATE_AUSTRIA"
 					}
 				}
@@ -688,7 +713,7 @@
 					building={
 						type="building_financial_district"
 						country="c:POL"
-						levels=2
+						levels=3
 						region="STATE_WEST_GALICIA"
 					}
 				}
@@ -699,7 +724,7 @@
 				add_ownership={
 					country={
 						country="c:POL"
-						levels=2
+						levels=3
 					}
 				}
 				reserves=1
@@ -711,7 +736,7 @@
 					building={
 						type="building_financial_district"
 						country="c:POL"
-						levels=2
+						levels=3
 						region="STATE_WEST_GALICIA"
 					}
 				}
@@ -740,7 +765,7 @@
 				add_ownership={
 					country={
 						country="c:POL"
-						levels=3
+						levels=4
 					}
 				}
 				reserves=1
@@ -752,7 +777,7 @@
 					building={
 						type="building_manor_house"
 						country="c:IDMS"
-						levels=2
+						levels=3
 						region="STATE_AUSTRIA"
 					}
 				}
@@ -765,7 +790,7 @@
 					building={
 						type="building_manor_house"
 						country="c:IDMS"
-						levels=2
+						levels=3
 						region="STATE_AUSTRIA"
 					}
 				}
@@ -781,7 +806,7 @@
 				add_ownership={
 					country={
 						country="c:MUS"
-						levels=5
+						levels=7
 					}
 				}
 				reserves=1
@@ -804,7 +829,7 @@
 					building={
 						type="building_financial_district"
 						country="c:MUS"
-						levels=3
+						levels=4
 						region="STATE_CENTRAL_HUNGARY"
 					}
 				}
@@ -815,7 +840,7 @@
 				add_ownership={
 					country={
 						country="c:MUS"
-						levels=2
+						levels=3
 					}
 				}
 				reserves=1
@@ -846,7 +871,7 @@
 					building={
 						type="building_food_industry"
 						country="c:MUS"
-						levels=2
+						levels=3
 						region="STATE_CENTRAL_HUNGARY"
 					}
 				}
@@ -859,7 +884,7 @@
 					building={
 						type="building_manor_house"
 						country="c:MUS"
-						levels=2
+						levels=3
 						region="STATE_CENTRAL_HUNGARY"
 					}
 					building={
@@ -884,7 +909,7 @@
 					building={
 						type="building_vineyard"
 						country="c:MUS"
-						levels=2
+						levels=3
 						region="STATE_CENTRAL_HUNGARY"
 					}
 					building={
@@ -903,7 +928,7 @@
 					building={
 						type="building_manor_house"
 						country="c:MUS"
-						levels=3
+						levels=4
 						region="STATE_CENTRAL_HUNGARY"
 					}
 				}
@@ -920,7 +945,7 @@
 					building={
 						type="building_manor_house"
 						country="c:MUS"
-						levels=2
+						levels=3
 						region="STATE_BEKES"
 					}
 				}
@@ -933,7 +958,7 @@
 					building={
 						type="building_manor_house"
 						country="c:MUS"
-						levels=2
+						levels=3
 						region="STATE_BEKES"
 					}
 				}
@@ -950,7 +975,7 @@
 					building={
 						type="building_food_industry"
 						country="c:MUS"
-						levels=2
+						levels=3
 						region="STATE_TRANSDANUBIA"
 					}
 				}
@@ -1007,7 +1032,7 @@
 					building={
 						type="building_manor_house"
 						country="c:IDMS"
-						levels=2
+						levels=3
 						region="STATE_AUSTRIA"
 					}
 				}
@@ -1037,7 +1062,7 @@
 					building={
 						type="building_manor_house"
 						country="c:MUS"
-						levels=3
+						levels=4
 						region="STATE_DELVIDEK"
 					}
 				}
@@ -1054,7 +1079,7 @@
 					building={
 						type="building_manor_house"
 						country="c:IDMS"
-						levels=3
+						levels=4
 						region="STATE_AUSTRIA"
 					}
 				}
@@ -1073,7 +1098,7 @@
 					building={
 						type="building_manor_house"
 						country="c:IDMS"
-						levels=3
+						levels=4
 						region="STATE_AUSTRIA"
 					}
 				}
@@ -1089,7 +1114,7 @@
 				add_ownership={
 					country={
 						country="c:NJS"
-						levels=3
+						levels=4
 					}
 				}
 				reserves=1
@@ -1144,7 +1169,7 @@
 					building={
 						type="building_manor_house"
 						country="c:NJS"
-						levels=2
+						levels=3
 						region="STATE_TRANSDANUBIA"
 					}
 				}
@@ -1174,7 +1199,7 @@
 					building={
 						type="building_logging_camp"
 						country="c:NJS"
-						levels=3
+						levels=4
 						region="STATE_RUTHENIA"
 					}
 				}
@@ -1230,13 +1255,13 @@
 					building={
 						type="building_logging_camp"
 						country="c:ROM"
-						levels=3
+						levels=4
 						region="STATE_SOUTHERN_TRANSYLVANIA"
 					}
 					building={
 						type="building_financial_district"
 						country="c:ROM"
-						levels=2
+						levels=3
 						region="STATE_SOUTHERN_TRANSYLVANIA"
 					}
 				}
@@ -1271,7 +1296,7 @@
 				add_ownership={
 					country={
 						country="c:ROM"
-						levels=2
+						levels=3
 					}
 				}
 				reserves=1
@@ -1302,7 +1327,7 @@
 					building={
 						type="building_financial_district"
 						country="c:IDMS"
-						levels=2
+						levels=3
 						region="STATE_AUSTRIA"
 					}
 				}
@@ -1358,7 +1383,7 @@
 					building={
 						type="building_manor_house"
 						country="c:ROM"
-						levels=2
+						levels=3
 						region="STATE_AUSTRIA"
 					}
 				}
@@ -1426,7 +1451,7 @@
 					building={
 						type="building_manor_house"
 						country="c:ROM"
-						levels=2
+						levels=3
 						region="STATE_MOLDAVIA"
 					}
 				}
@@ -1480,7 +1505,7 @@
 					building={
 						type="building_manor_house"
 						country="c:ROM"
-						levels=14
+						levels=19
 						region="STATE_WALLACHIA"
 					}
 				}
@@ -1493,7 +1518,7 @@
 					building={
 						type="building_silk_plantation"
 						country="c:ROM"
-						levels=2
+						levels=3
 						region="STATE_WALLACHIA"
 					}
 				}
@@ -1506,7 +1531,7 @@
 					building={
 						type="building_manor_house"
 						country="c:ROM"
-						levels=2
+						levels=3
 						region="STATE_WALLACHIA"
 					}
 					building={
@@ -1525,7 +1550,7 @@
 					building={
 						type="building_coal_mine"
 						country="c:ROM"
-						levels=3
+						levels=4
 						region="STATE_WALLACHIA"
 					}
 					building={
@@ -1557,7 +1582,7 @@
 					building={
 						type="building_manor_house"
 						country="c:ROM"
-						levels=9
+						levels=12
 						region="STATE_WALLACHIA"
 					}
 				}
@@ -1570,13 +1595,13 @@
 					building={
 						type="building_logging_camp"
 						country="c:ROM"
-						levels=3
+						levels=4
 						region="STATE_WALLACHIA"
 					}
 					building={
 						type="building_financial_district"
 						country="c:ROM"
-						levels=2
+						levels=3
 						region="STATE_WALLACHIA"
 					}
 				}
