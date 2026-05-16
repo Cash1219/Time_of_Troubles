@@ -1,7 +1,9 @@
-﻿#缁煎悎鍑虹増绀?pm_publisher_main_null = { #鏃?	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"
+﻿#综合出版社
+pm_publisher_main_null = { #无
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"
 }
 
-pm_publisher_main_general_wood = { #鏈ㄧ増鏅垔
+pm_publisher_main_general_wood = { #木版普刊
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_table.dds"
 	building_modifiers = {
 		workforce_scaled = {
@@ -18,7 +20,7 @@ pm_publisher_main_general_wood = { #鏈ㄧ増鏅垔
 	}
 }
 
-pm_publisher_main_general_iron = { #閾佸嵃鏅垔
+pm_publisher_main_general_iron = { #铁印普刊
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_porcelain.dds"
 	unlocking_technologies = {
 		atmospheric_engine
@@ -40,7 +42,7 @@ pm_publisher_main_general_iron = { #閾佸嵃鏅垔
 	}
 }
 
-pm_publisher_main_general_steel = { #閽㈠嵃鏅垔
+pm_publisher_main_general_steel = { #钢印普刊
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_watertube_boiler.dds"
 	unlocking_technologies = {
 		steelworking
@@ -63,7 +65,7 @@ pm_publisher_main_general_steel = { #閽㈠嵃鏅垔
 	}
 }
 
-pm_publisher_main_general_electric = { #鐢靛嵃鏅垔
+pm_publisher_main_general_electric = { #电印普刊
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_flash_freezing.dds"
 	unlocking_technologies = {
 		electrical_generation
@@ -86,10 +88,11 @@ pm_publisher_main_general_electric = { #鐢靛嵃鏅垔
 	}
 }
 
-pm_publisher_business_none = { #鏃犻檮鍔犱笟鍔?	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"
+pm_publisher_business_none = { #无附加业务
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"
 }
 
-pm_publisher_business_publishing = { #鍑虹増浠ｇ悊
+pm_publisher_business_publishing = { #出版代理
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tea_black_tea.dds"
 	unlocking_technologies = {
 		central_archives
@@ -107,7 +110,7 @@ pm_publisher_business_publishing = { #鍑虹増浠ｇ悊
 	}
 }
 
-pm_publisher_business_ads = { #骞垮憡浠ｇ悊
+pm_publisher_business_ads = { #广告代理
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_sweet_pancake.dds"
 	unlocking_technologies = {
 		mass_communication
@@ -126,10 +129,12 @@ pm_publisher_business_ads = { #骞垮憡浠ｇ悊
 	}
 }
 
-#濞变箰浼犲獟绀?pm_ent_press_main_null = { #鏃?	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"
+#娱乐传媒社
+pm_ent_press_main_null = { #无
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"
 }
 
-pm_ent_press_main_novel_wood = { #杞诲皬璇村垔
+pm_ent_press_main_novel_wood = { #轻小说刊
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_table.dds"
 	building_modifiers = {
 		workforce_scaled = {
@@ -146,7 +151,8 @@ pm_ent_press_main_novel_wood = { #杞诲皬璇村垔
 	}
 }
 
-pm_ent_press_main_manga_iron = { #婕敾鍒?	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_porcelain.dds"
+pm_ent_press_main_manga_iron = { #漫画刊
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_porcelain.dds"
 	unlocking_technologies = {
 		atmospheric_engine
 	}
@@ -167,7 +173,8 @@ pm_ent_press_main_manga_iron = { #婕敾鍒?	texture = "gfx/interface/icons/p
 	}
 }
 
-pm_ent_press_main_serial_steel = { #杩炶浇鍒?	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_watertube_boiler.dds"
+pm_ent_press_main_serial_steel = { #连载刊
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_watertube_boiler.dds"
 	unlocking_technologies = {
 		steelworking
 	}
@@ -189,7 +196,7 @@ pm_ent_press_main_serial_steel = { #杩炶浇鍒?	texture = "gfx/interface/icons
 	}
 }
 
-pm_ent_press_main_multimedia_electric = { #澶氬獟浣撳垔
+pm_ent_press_main_multimedia_electric = { #多媒体刊
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_flash_freezing.dds"
 	unlocking_technologies = {
 		electrical_generation
@@ -212,7 +219,7 @@ pm_ent_press_main_multimedia_electric = { #澶氬獟浣撳垔
 	}
 }
 
-pm_ent_press_distribution_local = { #鏈湴鍙戣
+pm_ent_press_distribution_local = { #本地发行
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tea_milk.dds"
 	building_modifiers = {
 		workforce_scaled = {
@@ -226,7 +233,7 @@ pm_ent_press_distribution_local = { #鏈湴鍙戣
 	}
 }
 
-pm_ent_press_distribution_national = { #鍏ㄥ浗鍙戣
+pm_ent_press_distribution_national = { #全国发行
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tea_cocoa.dds"
 	unlocking_technologies = {
 		mass_communication
@@ -245,7 +252,7 @@ pm_ent_press_distribution_national = { #鍏ㄥ浗鍙戣
 	}
 }
 
-pm_ent_press_distribution_export = { #娴峰鍙戣
+pm_ent_press_distribution_export = { #海外发行
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tea_black_tea.dds"
 	unlocking_technologies = {
 		international_trade
@@ -264,4 +271,3 @@ pm_ent_press_distribution_export = { #娴峰鍙戣
 		}
 	}
 }
-

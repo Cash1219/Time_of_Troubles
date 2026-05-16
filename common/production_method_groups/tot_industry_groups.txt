@@ -1,4 +1,4 @@
-pmg_building_musical_instrument_main = { #主乐器线
+﻿pmg_building_musical_instrument_main = { #主乐器线
 	texture = "gfx/interface/icons/generic_icons/pmg_goods_ip.dds"
 	ai_selection = most_productive
 
@@ -35,19 +35,51 @@ pmg_publisher_business = { #附加业务
 	}
 }
 
-pmg_game_main = { #游戏开发
+pmg_ent_press_main = { #娱乐刊物
 	texture = "gfx/interface/icons/generic_icons/pmg_goods_print.dds"
 	ai_selection = most_productive
 
 	production_methods = {
-		pm_game_main_null
-		pm_game_main_tabletop_wood
-		pm_game_main_mechanical_iron
-		pm_game_main_electromechanical_steel
-		pm_game_main_digital_electric
+		pm_ent_press_main_null
+		pm_ent_press_main_novel_wood
+		pm_ent_press_main_manga_iron
+		pm_ent_press_main_serial_steel
+		pm_ent_press_main_multimedia_electric
 	}
 }
 
+pmg_ent_press_distribution = { #发行渠道
+	texture = "gfx/interface/icons/generic_icons/pmg_goods_ip.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_ent_press_distribution_local
+		pm_ent_press_distribution_national
+		pm_ent_press_distribution_export
+	}
+}
+
+pmg_game_traditional_dev = { #传统游戏开发
+	texture = "gfx/interface/icons/generic_icons/pmg_goods_print.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_game_traditional_tabletop
+		pm_game_traditional_mechanical
+		pm_game_traditional_craft
+	}
+}
+
+pmg_game_modern_dev = { #现代游戏开发
+	texture = "gfx/interface/icons/generic_icons/pmg_goods_ip.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_game_modern_pinball
+		pm_game_modern_arcade
+		pm_game_modern_video
+	}
+}
 pmg_game_business = { #商业模式
 	texture = "gfx/interface/icons/generic_icons/pmg_goods_ip.dds"
 	ai_selection = most_productive

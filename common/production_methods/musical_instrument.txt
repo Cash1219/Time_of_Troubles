@@ -1,15 +1,16 @@
-﻿#涔愬櫒宸ュ潑
-pm_musical_instrument_main_null = { #鏃?	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"
+﻿#乐器
+pm_musical_instrument_main_null = { 
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"
 }
 
-pm_musical_instrument_main_wood = { #鏈ㄥ埗涔愬櫒
+pm_musical_instrument_main_wood = { #木制乐器
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_table.dds"
 
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_wood_add = 30		#*20=600
-			goods_input_tools_add = 10		#*40=400
-			goods_output_instruments_add = 30		#*55=1650
+			goods_input_wood_add = 20		#*20=600
+			goods_input_tools_add = 15		#*40=400
+			goods_output_instruments_add = 20		#*55=1650
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 100
@@ -19,7 +20,7 @@ pm_musical_instrument_main_wood = { #鏈ㄥ埗涔愬櫒
 	}
 }
 
-pm_musical_instrument_main_iron = { #閾佸埗涔愬櫒
+pm_musical_instrument_main_iron = { #铁制乐器
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_porcelain.dds"
 	unlocking_technologies = {
 		atmospheric_engine
@@ -29,8 +30,8 @@ pm_musical_instrument_main_iron = { #閾佸埗涔愬櫒
 		workforce_scaled = {
 			goods_input_wood_add = 20		#*20=400
 			goods_input_iron_add = 10		#*40=400
-			goods_input_tools_add = 10		#*40=400
-			goods_output_instruments_add = 40		#*55=2200
+			goods_input_tools_add = 15		#*40=400
+			goods_output_instruments_add = 35		#*55=2200
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 100
@@ -40,7 +41,7 @@ pm_musical_instrument_main_iron = { #閾佸埗涔愬櫒
 	}
 }
 
-pm_musical_instrument_main_steel = { #閽㈠埗涔愬櫒
+pm_musical_instrument_main_steel = { #钢制乐器
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_watertube_boiler.dds"
 	unlocking_technologies = {
 		steelworking
@@ -48,11 +49,11 @@ pm_musical_instrument_main_steel = { #閽㈠埗涔愬櫒
 
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_wood_add = 30		#*20=600
+			goods_input_wood_add = 20		#*20=600
 			goods_input_steel_add = 10		#*60=600
 			goods_input_tools_add = 15		#*40=600
 			goods_input_glass_add = 5		#*40=200
-			goods_output_instruments_add = 55		#*55=3025
+			goods_output_instruments_add = 65		#*55=3025
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 150
@@ -63,7 +64,7 @@ pm_musical_instrument_main_steel = { #閽㈠埗涔愬櫒
 	}
 }
 
-pm_musical_instrument_main_electric = { #鐢垫皵涔愬櫒
+pm_musical_instrument_main_electric = { #电气乐器
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_flash_freezing.dds"
 	unlocking_technologies = {
 		electrical_generation
@@ -85,4 +86,3 @@ pm_musical_instrument_main_electric = { #鐢垫皵涔愬櫒
 		}
 	}
 }
-
