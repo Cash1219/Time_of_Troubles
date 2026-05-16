@@ -1011,7 +1011,7 @@
 			create_pop = {
 				culture = north_german
 				religion = catholic
-				size = 20737  # 15101 + 4100
+ = 11216  # 15101 + 4100
 			}
 		}
 	}
@@ -1019,7 +1019,7 @@
 		region_state:TBUN = {
 			create_pop = {
 				culture = wallonian
-				size = 1638865 # 103992+1413476
+ = 1140389 # 103992+1413476
 			}
 			create_pop = {
 				culture = north_german
@@ -1032,7 +1032,7 @@
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 448 # 210+205
+ = 1284 # 210+205
 			}
 			create_pop = {
 				culture = flemish
@@ -1045,7 +1045,7 @@
 			}
 			create_pop = {
 				culture = british
-				size = 342
+ = 1277
 			}
 		}
 	}
@@ -1303,7 +1303,7 @@
 		region_state:PRU = {
 			create_pop = {
 				culture = north_german
-				size = 817772 #512788+102004+142404
+ = 1137705 #512788+102004+142404
 			}
 			create_pop = {
 				culture = north_german
@@ -1384,7 +1384,7 @@
 			}
 			create_pop = {
 				culture = north_german
-				size = 585464 # 506715+27336+8045
+ = 110861 # 506715+27336+8045
 			}
 		}
 	}
@@ -1501,7 +1501,7 @@
 		region_state:GERW = {
 			create_pop = {
 				culture = north_german
-				size = 709560 # 374604+82396+200000
+ = 1505715 # 374604+82396+200000
 			}
 			create_pop = {
 				culture = ashkenazi
@@ -1531,7 +1531,7 @@
 			}
 			create_pop = {
 				culture = alemannic
-				size = 204307 # 189173
+ = 128382 # 189173
 			}
 		}
 	}
@@ -1582,7 +1582,7 @@
 		region_state:PRU = {
 			create_pop = {
 				culture = north_german
-				size = 553392 # 180000+220400+112000
+ = 1297540 # 180000+220400+112000
 			}
 			create_pop = {
 				culture = north_german
@@ -1629,12 +1629,12 @@
 		region_state:PRU = {
 			create_pop = {
 				culture = north_german
-				size = 2246629 # 1453212+133000+230000+154000+110000
+ = 11961836 # 1453212+133000+230000+154000+110000
 			}
 			create_pop = {
 				culture = north_german
 				religion = catholic
-				size = 23304 # 13004+2000+3000+2035+1539
+ = 117555 # 13004+2000+3000+2035+1539
 			}
 			create_pop = {
 				culture = ashkenazi
@@ -1647,7 +1647,7 @@
 			create_pop = {
 				culture = sorb
 				religion = protestant
-				size = 54114 # 50106
+ = 1396 # 50106
 			}
 		}
 	}
@@ -1655,7 +1655,7 @@
 		region_state:PRU = {
 			create_pop = {
 				culture = north_german
-				size = 1524105 # 100872+583308+500688+192004+27436
+ = 1259205 # 100872+583308+500688+192004+27436
 			}
 			create_pop = {
 				culture = ashkenazi
@@ -1664,7 +1664,7 @@
 			create_pop = {
 				culture = north_german
 				religion = catholic
-				size = 568211 # 8000+140800+129200+208000+28011
+ = 137815 # 8000+140800+129200+208000+28011
 			}
 		}
 	}
@@ -1680,5 +1680,23 @@
 			}
 		}
 		
+	}
+}
+# ToT balance direct edits
+s:STATE_HOME_COUNTIES = {
+	region_state:GBR = {
+		create_pop = { culture = british size = 286000 }
+	}
+}
+
+s:STATE_ILE_DE_FRANCE = {
+	region_state:FRA = {
+		create_pop = { culture = french size = 228000 }
+	}
+}
+
+s:STATE_BRANDENBURG = {
+	region_state:PRU = {
+		create_pop = { culture = north_german size = 194000 }
 	}
 }

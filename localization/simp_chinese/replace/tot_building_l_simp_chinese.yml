@@ -53,39 +53,41 @@
  goods_input_luxury_foods_add_desc: "建筑消费的@luxury_foods!高档食品数量"
  
  building_goods: "谷子工坊"
+ building_musical_instrument: "乐器工坊"
+ building_publisher: "综合出版社"
+ building_entertainment_press: "娱乐传媒社"
+ building_game: "游戏工坊"
  
- pmg_goods_plush: "毛绒产品"
- pm_goods_plush_null: "无"
- pm_goods_plush_cloth : "玩偶" #布料 + 棉花
- pm_goods_plush_pillow: "抱枕" #布料 + 棉花
- pm_goods_plush_lifesize: "等身玩偶" #布料 + 棉花 + 钢
+ pmg_building_musical_instrument_main: "乐器制造"
+ pm_musical_instrument_main_null: "无"
+ pm_musical_instrument_main_wood: "木制乐器"
+ pm_musical_instrument_main_iron: "铁制乐器"
+ pm_musical_instrument_main_steel: "钢制乐器"
+ pm_musical_instrument_main_electric: "电气乐器"
+
+ pmg_goods_doll: "毛绒产品"
+ pm_goods_doll_null: "无"
+ pm_goods_doll_doll: "玩偶"
+ pm_goods_doll_pillow: "抱枕"
  
  pmg_goods_jewelry: "小饰品"
  pm_goods_jewelry_null: "无"
  pm_goods_jewelry_badge: "徽章" #铁
+ pm_goods_jewelry_pendant: "挂件"
  pm_goods_jewelry_stand: "立牌" #玻璃
  pm_goods_jewelry_keychain: "挂件"
- 
- pmg_goods_media: "著作"
- pm_goods_media_null: "无"
- pm_goods_media_paper: "同人志" #纸张
- pm_goods_media_record: "唱片" #玻璃 + 工具
- pm_goods_media_buleray: "BD" #玻璃 + 工具
- 
- #pmg_goods_cloth: "衣物"
- #pm_goods_cloth_null: "无"
- #pm_goods_cloth_shirt: "痛衣" #衣服 + 染料
- #pm_goods_cloth_cosplay: "C服" #高档衣服 + 工具 
- #pm_goods_cloth_maid: "女仆装" #
  
  pmg_goods_garage: "模型"
  pm_goods_garage_null: "无"
  pm_goods_garage_prize: "木雕刻景品" #木材
+ pm_goods_garage_lego: "木制积木"
  pm_goods_garage_gundam: "高达" #塑造核心 +
  pm_goods_garage_kit: "手办" #
+ pm_goods_garage_motor: "电动玩具"
  
  pmg_goods_print: "印刷品"
  pm_goods_print_null: "无"
+ pm_goods_print_seal: "色纸"
  pm_goods_print_card: "卡牌" #纸张
  pm_goods_print_post: "海报" #纸张+染料
  pm_goods_print_art: "挂画" #纸张+染料+木材
@@ -94,6 +96,7 @@
  pm_goods_ip_null: "无"
  pm_goods_ip_home: "本国优先" #少量增加皈依和同化
  pm_goods_ip_hot: "热门优先" #少量增加产量
+ pm_goods_ip_random: "随机上架"
  pm_goods_ip_feelings: "情怀优先" #少量增加经济规模上限
  
  pmg_goods_selling: "销售方式"
@@ -104,14 +107,41 @@
  pm_goods_selling_large: "大量贩售" #少量加产量
  pm_goods_selling_limit: "饥饿营销" #少量增加
  
- building_publisher: ""
- pmg_publisher_main_publication: "主要刊物" #主要刊物
- pm_publisher_main_publication: "报纸"
- pm_publisher_main_publication: ""
- pm_publisher_main_publication: ""
- pmg_publisher_secondary_publication: "次要刊物"
- pmg_publisher_server #附加服务
- pmg_publisher_employee #雇员
+ pmg_publisher_main: "主要刊物"
+ pm_publisher_main_null: "无"
+ pm_publisher_main_general_wood: "木版普刊"
+ pm_publisher_main_general_iron: "铁印普刊"
+ pm_publisher_main_general_steel: "钢印普刊"
+ pm_publisher_main_general_electric: "电印普刊"
+
+ pmg_publisher_business: "附加业务"
+ pm_publisher_business_none: "无附加业务"
+ pm_publisher_business_publishing: "出版代理"
+ pm_publisher_business_ads: "广告代理"
+
+ pmg_ent_press_main: "娱乐刊物"
+ pm_ent_press_main_null: "无"
+ pm_ent_press_main_novel_wood: "轻小说刊"
+ pm_ent_press_main_manga_iron: "漫画刊"
+ pm_ent_press_main_serial_steel: "连载刊"
+ pm_ent_press_main_multimedia_electric: "多媒体刊"
+
+ pmg_ent_press_distribution: "发行渠道"
+ pm_ent_press_distribution_local: "本地发行"
+ pm_ent_press_distribution_national: "全国发行"
+ pm_ent_press_distribution_export: "海外发行"
+
+ pmg_game_main: "游戏开发"
+ pm_game_main_null: "无"
+ pm_game_main_tabletop_wood: "纸面桌游时代"
+ pm_game_main_mechanical_iron: "机械娱乐时代"
+ pm_game_main_electromechanical_steel: "机电娱乐时代"
+ pm_game_main_digital_electric: "数字游戏时代"
+
+ pmg_game_business: "商业模式"
+ pm_game_business_buyout: "买断制"
+ pm_game_business_subscription: "订阅制"
+ pm_game_business_service: "持续运营制"
  
  omocha: "周边"
  goods_output_omocha_add: "@omocha!周边产出"

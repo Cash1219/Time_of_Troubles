@@ -8438,3 +8438,28 @@
 		}
 	}
 }
+
+# ToT balance direct edits
+s:STATE_HOME_COUNTIES={
+	region_state:GBR={
+		create_building={ building="building_tooling_workshops" add_ownership={ country={ country="c:GBR" levels=6 } } reserves=1 activate_production_methods={ "pm_crude_tools" "pm_automation_disabled" } }
+		create_building={ building="building_steel_mills" add_ownership={ country={ country="c:GBR" levels=5 } } reserves=1 activate_production_methods={ "pm_puddling_furnaces" "pm_automation_disabled" } }
+		create_building={ building="building_motor_industry" add_ownership={ country={ country="c:GBR" levels=4 } } reserves=1 activate_production_methods={ "pm_road_carts" "pm_automation_disabled" } }
+	}
+}
+
+s:STATE_ILE_DE_FRANCE={
+	region_state:FRA={
+		create_building={ building="building_tooling_workshops" add_ownership={ country={ country="c:FRA" levels=5 } } reserves=1 activate_production_methods={ "pm_crude_tools" "pm_automation_disabled" } }
+		create_building={ building="building_steel_mills" add_ownership={ country={ country="c:FRA" levels=4 } } reserves=1 activate_production_methods={ "pm_puddling_furnaces" "pm_automation_disabled" } }
+		create_building={ building="building_textile_mills" add_ownership={ country={ country="c:FRA" levels=5 } } reserves=1 activate_production_methods={ "pm_weaving_mills" "pm_automation_disabled" } }
+	}
+}
+
+s:STATE_BRANDENBURG={
+	region_state:PRU={
+		create_building={ building="building_tooling_workshops" add_ownership={ country={ country="c:PRU" levels=6 } } reserves=1 activate_production_methods={ "pm_crude_tools" "pm_automation_disabled" } }
+		create_building={ building="building_arms_industry" add_ownership={ country={ country="c:PRU" levels=5 } } reserves=1 activate_production_methods={ "pm_muskets" "pm_automation_disabled" } }
+		create_building={ building="building_steel_mills" add_ownership={ country={ country="c:PRU" levels=4 } } reserves=1 activate_production_methods={ "pm_puddling_furnaces" "pm_automation_disabled" } }
+	}
+}

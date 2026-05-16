@@ -1,4 +1,4 @@
-﻿BUILDINGS={
+BUILDINGS={
 	s:STATE_TALINN={
 		region_state:ATRI={
 			create_building={
@@ -508,13 +508,13 @@
 		}
 	}
 	s:STATE_EAST_KARELIA={
-		region_state:RUS={
+		region_state:ZLXY={
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:RUS"
+						country="c:ZLXY"
 						levels=1
 						region="STATE_INGRIA"
 					}
@@ -549,7 +549,7 @@
 		}
 	}
 	s:STATE_KOLA={
-		region_state:RUS={
+		region_state:ZLXY={
 		}
 	}
 	s:STATE_INGRIA={
@@ -1133,14 +1133,14 @@
 		}
 	}
 	s:STATE_ARKHANGELSK={
-		region_state:RUS={
+		region_state:ZLXY={
 			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:RUS"
+						country="c:ZLXY"
 						levels=1
 						region="STATE_INGRIA"
 					}
@@ -1820,8 +1820,7 @@
 				activate_production_methods={ "pm_no_organization" }
 			}
 		}
-		region_state:RUS={
-		}
+		
 	}
 	s:STATE_FERGANA={
 		region_state:KOK={
@@ -2199,11 +2198,11 @@
 		}
 	}
 	s:STATE_SURGUT={
-		region_state:RUS={
+		region_state:SIBW={
 		}
 	}
 	s:STATE_KRASNOYARSK={
-		region_state:RUS={
+		region_state:SIBC={
 		}
 	}
 	s:STATE_ALTAI={
@@ -2211,11 +2210,11 @@
 		}
 	}
 	s:STATE_BURYATIA={
-		region_state:RUS={
+		region_state:SIBC={
 		}
 	}
 	s:STATE_KOLYMA={
-		region_state:RUS={
+		region_state:SIBE={
 		}
 	}
 	s:STATE_AMUR={
@@ -2293,7 +2292,19 @@
 		}
 	}
 	s:STATE_NENETSIA={
-		region_state:RUS={
+		region_state:SIBN={
 		}
+	}
+}
+
+
+
+
+
+# ToT balance direct edits
+s:STATE_INGRIA={
+	region_state:RUS={
+		create_building={ building="building_steel_mills" add_ownership={ country={ country="c:RUS" levels=4 } } reserves=1 activate_production_methods={ "pm_puddling_furnaces" "pm_automation_disabled" } }
+		create_building={ building="building_arms_industry" add_ownership={ country={ country="c:RUS" levels=4 } } reserves=1 activate_production_methods={ "pm_muskets" "pm_automation_disabled" } }
 	}
 }

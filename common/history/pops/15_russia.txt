@@ -433,7 +433,7 @@
 		}
 	}
 	s:STATE_KOLA = { #DONE
-		region_state:RUS = {
+		region_state:ZLXY = {
 			create_pop = {
 				culture = russian
 				size = 4452
@@ -457,7 +457,7 @@
 		}
 	}
 	s:STATE_EAST_KARELIA = { #DONE
-		region_state:RUS = {
+		region_state:ZLXY = {
 			create_pop = {
 				culture = russian
 				size = 128392
@@ -473,7 +473,7 @@
 		}
 	}
 	s:STATE_NENETSIA = { #DONE
-		region_state:RUS = {
+		region_state:SIBN = {
 			create_pop = {
 				culture = russian
 				size = 19230
@@ -485,7 +485,7 @@
 		}
 	}
 	s:STATE_ARKHANGELSK = { #DONE
-		region_state:RUS = {
+		region_state:ZLXY = {
 			create_pop = {
 				culture = russian
 				size = 267142
@@ -856,15 +856,15 @@
 			}
 			create_pop = {
 				culture = chechen
-				size = 118941 # 21197+85000
+ = 128616 # 21197+85000
 			}
 			create_pop = {
 				culture = north_caucasian
-				size = 126594 # 79030+21000+13000
+ = 1106690 # 79030+21000+13000
 			}
 			create_pop = {
 				culture = circassian
-				size = 70402 # 5050+57809
+ = 16818 # 5050+57809
 			}
 			create_pop = {
 				culture = kazak
@@ -1213,5 +1213,12 @@
 				size = 5208
 			}
 		}
+	}
+}
+
+# ToT balance direct edits
+s:STATE_INGRIA = {
+	region_state:RUS = {
+		create_pop = { culture = russian size = 122000 }
 	}
 }

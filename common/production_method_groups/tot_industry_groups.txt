@@ -1,0 +1,60 @@
+pmg_building_musical_instrument_main = { #主乐器线
+	texture = "gfx/interface/icons/generic_icons/pmg_goods_ip.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_musical_instrument_main_null
+		pm_musical_instrument_main_wood
+		pm_musical_instrument_main_iron
+		pm_musical_instrument_main_steel
+		pm_musical_instrument_main_electric
+	}
+}
+
+pmg_publisher_main = { #主要刊物
+	texture = "gfx/interface/icons/generic_icons/pmg_goods_print.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_publisher_main_null
+		pm_publisher_main_general_wood
+		pm_publisher_main_general_iron
+		pm_publisher_main_general_steel
+		pm_publisher_main_general_electric
+	}
+}
+
+pmg_publisher_business = { #附加业务
+	texture = "gfx/interface/icons/generic_icons/pmg_goods_ip.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_publisher_business_none
+		pm_publisher_business_publishing
+		pm_publisher_business_ads
+	}
+}
+
+pmg_game_main = { #游戏开发
+	texture = "gfx/interface/icons/generic_icons/pmg_goods_print.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_game_main_null
+		pm_game_main_tabletop_wood
+		pm_game_main_mechanical_iron
+		pm_game_main_electromechanical_steel
+		pm_game_main_digital_electric
+	}
+}
+
+pmg_game_business = { #商业模式
+	texture = "gfx/interface/icons/generic_icons/pmg_goods_ip.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_game_business_buyout
+		pm_game_business_subscription
+		pm_game_business_service
+	}
+}

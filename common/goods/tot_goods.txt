@@ -1,10 +1,11 @@
-﻿magic_mineral = {
-	texture = "gfx/interface/icons/goods_icons/magic_mineral.dds"
-	cost = 30
-	category = industrial
-	prestige_factor = 3
-	
-	traded_quantity = 7
+﻿#magic_mineral = {
+#	texture = "gfx/interface/icons/goods_icons/magic_mineral.dds"
+#	cost = 30
+#	category = industrial
+#	prestige_factor = 3
+#	
+#	traded_quantity = 7
+#}
 #magic_mineral = {
 #	texture = "gfx/interface/icons/goods_icons/magic_mineral.dds"
 #	cost = 40
@@ -35,18 +36,6 @@ luxury_foods = {
 	consumption_tax_cost = 150
 	traded_quantity = 4 # 240
 }
-
-magic_tools= {
-	texture = "gfx/interface/icons/goods_icons/magic_tools.dds"
-	cost = 40
-	category = industrial
-	
-	prestige_factor = 5
-}
-
-magic_steels= {
-	texture = "gfx/interface/icons/goods_icons/magic_steels.dds"
-}
 luxury_drinks = {
 	texture = "gfx/interface/icons/goods_icons/luxury_drinks.dds"
 	cost = 60
@@ -55,31 +44,87 @@ luxury_drinks = {
 	prestige_factor = 5
 }
 
-magic_spcies = {
-	texture = "gfx/interface/icons/goods_icons/magic_spcies.dds"
-	cost = 80
-	category = luxury
-	
+#magic_tools= {
+#	texture = "gfx/interface/icons/goods_icons/magic_tools.dds"
+#	cost = 40
+#	category = industrial
+#	
+#	prestige_factor = 5
+#}
 
-	obsession_chance = 1.0
-	prestige_factor = 8
-	traded_quantity = 4
-	convoy_cost_multiplier = 1.5
-	
-	consumption_tax_cost = 200
-	convoy_cost_multiplier = 0.75
-	traded_quantity = 4 # 240
-}
+#magic_steels= {
+#	texture = "gfx/interface/icons/goods_icons/magic_steels.dds"
+#}
+
+#magic_spcies = {
+#	texture = "gfx/interface/icons/goods_icons/magic_spcies.dds"
+#	cost = 80
+#	category = luxury
+#	
+#
+#	obsession_chance = 1.0
+#	prestige_factor = 8
+#	traded_quantity = 4
+#	convoy_cost_multiplier = 1.5
+#	
+#	consumption_tax_cost = 200
+#	convoy_cost_multiplier = 0.75
+#	traded_quantity = 4 # 240
+#}
 ###########
 #  基本品  #
 ###########
-seishun = {
-	texture = "gfx/interface/icons/goods_icons/seishun.dds"
-	cost = 50
+#seishun = {
+#	texture = "gfx/interface/icons/goods_icons/seishun.dds"
+#	cost = 50
+#	category = luxury
+#
+#	obsession_chance = 10.0
+#	prestige_factor = 2
+#	convoy_cost_multiplier = 0.75
+#	traded_quantity = 5 # 250
+#}
+
+instruments = {
+	texture = "gfx/interface/icons/goods_icons/tools.dds"
+	cost = 55
 	category = luxury
 
-	obsession_chance = 10.0
-	prestige_factor = 2
+	obsession_chance = 1.0
+	prestige_factor = 4
 	convoy_cost_multiplier = 0.75
-	traded_quantity = 5 # 250
+	traded_quantity = 5
+}
+
+publications = {
+	texture = "gfx/interface/icons/goods_icons/paper.dds"
+	cost = 50
+	category = industrial
+
+	prestige_factor = 3
+	traded_quantity = 6
+}
+
+entertainment_publications = {
+	texture = "gfx/interface/icons/goods_icons/luxury_clothes.dds"
+	cost = 65
+	category = luxury
+
+	obsession_chance = 1.0
+	prestige_factor = 6
+	consumption_tax_cost = 150
+	convoy_cost_multiplier = 0.75
+	traded_quantity = 4
+}
+
+games = {
+	texture = "gfx/interface/icons/goods_icons/radios.dds"
+	cost = 70
+	category = luxury
+
+	obsession_chance = 1.0
+	prestige_factor = 6
+	consumption_tax_cost = 180
+	convoy_cost_multiplier = 0.75
+	traded_quantity = 4
 }

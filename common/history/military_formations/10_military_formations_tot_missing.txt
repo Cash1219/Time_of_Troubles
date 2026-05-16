@@ -1,4 +1,4 @@
-MILITARY_FORMATIONS = {
+﻿MILITARY_FORMATIONS = {
 	c:ATRI ?= {
 		create_military_formation = {
 			type = army
@@ -34,17 +34,17 @@ MILITARY_FORMATIONS = {
 			combat_unit = {
 				type = unit_type:combat_unit_type_line_infantry
 				state_region = s:STATE_AUSTRIA
-				count = 8
+				count = 11
 			}
 			combat_unit = {
 				type = unit_type:combat_unit_type_hussars
 				state_region = s:STATE_AUSTRIA
-				count = 2
+				count = 3
 			}
 			combat_unit = {
 				type = unit_type:combat_unit_type_mobile_artillery
 				state_region = s:STATE_AUSTRIA
-				count = 2
+				count = 3
 			}
 		}
 		create_military_formation = {
@@ -294,7 +294,7 @@ MILITARY_FORMATIONS = {
 			name = MYG_Fleet
 			ship = {
 				type = ship_type:ship_type_frigate
-				state_region = s:STATE_ANKARA
+				state_region = s:STATE_CYPRUS
 				count = 1
 			}
 		}
@@ -550,7 +550,7 @@ MILITARY_FORMATIONS = {
 			name = TUR_Fleet
 			ship = {
 				type = ship_type:ship_type_frigate
-				state_region = s:STATE_ANKARA
+				state_region = s:STATE_TRABZON
 				count = 1
 			}
 		}
@@ -582,12 +582,12 @@ MILITARY_FORMATIONS = {
 			name = UKR_Fleet
 			ship = {
 				type = ship_type:ship_type_ship_of_the_line
-				state_region = s:STATE_KIEV
+				state_region = s:STATE_CHERSON
 				count = 1
 			}
 			ship = {
 				type = ship_type:ship_type_frigate
-				state_region = s:STATE_KIEV
+				state_region = s:STATE_CHERSON
 				count = 1
 			}
 		}

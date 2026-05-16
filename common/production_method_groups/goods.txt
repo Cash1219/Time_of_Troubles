@@ -51,12 +51,12 @@ pmg_goods_ip = { #ip管理 都要额外雇人，buff不同
 
 	production_methods = {
 		pm_goods_ip_null #无
-		pm_goods_ip_home: #本国优先 +同化+皈依+本国工资？
-		pm_goods_ip_hot: #热门优先 +商品竞争力
+		pm_goods_ip_home #本国优先 +同化+皈依+本国工资？
+		pm_goods_ip_hot #热门优先 +商品竞争力
 		pm_goods_ip_random #无差别上架 +产出
 	}
 }
-pmg_goods_ip = { #销售方式 
+pmg_goods_selling = { #销售方式 
 	texture = "gfx/interface/icons/generic_icons/pmg_goods_doll.dds"
 	ai_selection = most_productive
 

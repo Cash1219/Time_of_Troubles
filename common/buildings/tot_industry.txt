@@ -90,10 +90,9 @@ building_publisher = { #出版社
 	}
 
 	production_method_groups = {
-		pmg_publisher_main_publication #主要刊物
-		pmg_publisher_secondary_publication #次要刊物 
-		pmg_publisher_server #附加服务
-		pmg_publisher_employee #雇员
+		pmg_publisher_main #主要刊物
+		pmg_publisher_business #附加业务
+		pmg_building_automation #自动化
 	}
 
 	required_construction = construction_cost_high
@@ -116,10 +115,9 @@ building_game = { #游戏工坊
 	}
 
 	production_method_groups = {
-		pmg_publisher_main_publication #主要刊物
-		pmg_publisher_secondary_publication #次要刊物 
-		pmg_publisher_server #附加服务
-		pmg_publisher_employee #雇员
+		pmg_game_main #游戏开发
+		pmg_game_business #商业模式
+		pmg_building_automation #自动化
 	}
 
 	required_construction = construction_cost_high
@@ -130,7 +128,7 @@ building_game = { #游戏工坊
 	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_light_industry.dds"
 }
 
-building_goods = { 谷子工坊
+building_goods = { #谷子工坊
 	building_group = bg_light_industry
 	icon = "gfx/interface/icons/building_icons/building_goods_shop.dds"
 	city_type = city
@@ -143,12 +141,12 @@ building_goods = { 谷子工坊
 	}
 
 	production_method_groups = {
-		building_goods_doll #玩偶
-		building_goods_jewelry #小饰品
-		building_goods_garage #手办
-		building_goods_print #印刷
-		building_goods_ip #ip管理
-		building_goods_selling #销售方式
+		pmg_goods_doll #玩偶
+		pmg_goods_jewelry #小饰品
+		pmg_goods_garage #手办
+		pmg_goods_print #印刷
+		pmg_goods_ip #ip管理
+		pmg_goods_selling #销售方式
 		
 	}
 

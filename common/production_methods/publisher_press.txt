@@ -1,0 +1,267 @@
+﻿#缁煎悎鍑虹増绀?pm_publisher_main_null = { #鏃?	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"
+}
+
+pm_publisher_main_general_wood = { #鏈ㄧ増鏅垔
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_table.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_wood_add = 20		#*20=400
+			goods_input_paper_add = 20		#*30=600
+			goods_input_tools_add = 5		#*40=200
+			goods_output_publications_add = 40		#*50=2000
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 80
+			building_employment_laborers_add = 820
+			building_employment_clerks_add = 100
+		}
+	}
+}
+
+pm_publisher_main_general_iron = { #閾佸嵃鏅垔
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_porcelain.dds"
+	unlocking_technologies = {
+		atmospheric_engine
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_wood_add = 10		#*20=200
+			goods_input_iron_add = 10		#*40=400
+			goods_input_paper_add = 28		#*30=840
+			goods_input_tools_add = 8		#*40=320
+			goods_output_publications_add = 50		#*50=2500
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 100
+			building_employment_laborers_add = 700
+			building_employment_clerks_add = 180
+			building_employment_machinists_add = 20
+		}
+	}
+}
+
+pm_publisher_main_general_steel = { #閽㈠嵃鏅垔
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_watertube_boiler.dds"
+	unlocking_technologies = {
+		steelworking
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_steel_add = 10		#*60=600
+			goods_input_paper_add = 35		#*30=1050
+			goods_input_tools_add = 12		#*40=480
+			goods_input_glass_add = 5		#*40=200
+			goods_output_publications_add = 60		#*50=3000
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 120
+			building_employment_laborers_add = 560
+			building_employment_clerks_add = 240
+			building_employment_machinists_add = 70
+			building_employment_engineers_add = 10
+		}
+	}
+}
+
+pm_publisher_main_general_electric = { #鐢靛嵃鏅垔
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_flash_freezing.dds"
+	unlocking_technologies = {
+		electrical_generation
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_steel_add = 12		#*60=720
+			goods_input_engines_add = 8		#*70=560
+			goods_input_electricity_add = 15		#*50=750
+			goods_input_paper_add = 42		#*30=1260
+			goods_output_publications_add = 80		#*50=4000
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 150
+			building_employment_laborers_add = 420
+			building_employment_clerks_add = 300
+			building_employment_machinists_add = 100
+			building_employment_engineers_add = 30
+		}
+	}
+}
+
+pm_publisher_business_none = { #鏃犻檮鍔犱笟鍔?	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"
+}
+
+pm_publisher_business_publishing = { #鍑虹増浠ｇ悊
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tea_black_tea.dds"
+	unlocking_technologies = {
+		central_archives
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 5		#*30=150
+			goods_input_services_add = 8		#*30=240
+			goods_input_tools_add = 2		#*40=80
+			goods_output_publications_add = 10		#*50=500
+		}
+		level_scaled = {
+			building_employment_clerks_add = 120
+		}
+	}
+}
+
+pm_publisher_business_ads = { #骞垮憡浠ｇ悊
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_sweet_pancake.dds"
+	unlocking_technologies = {
+		mass_communication
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_services_add = 12		#*30=360
+			goods_input_paper_add = 4		#*30=120
+			goods_input_tools_add = 3		#*40=120
+			goods_output_publications_add = 10		#*50=500
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 40
+			building_employment_clerks_add = 140
+		}
+	}
+}
+
+#濞变箰浼犲獟绀?pm_ent_press_main_null = { #鏃?	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"
+}
+
+pm_ent_press_main_novel_wood = { #杞诲皬璇村垔
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_table.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_wood_add = 18		#*20=360
+			goods_input_paper_add = 18		#*30=540
+			goods_input_tools_add = 6		#*40=240
+			goods_output_entertainment_publications_add = 30		#*65=1950
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 80
+			building_employment_laborers_add = 760
+			building_employment_clerks_add = 160
+		}
+	}
+}
+
+pm_ent_press_main_manga_iron = { #婕敾鍒?	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_porcelain.dds"
+	unlocking_technologies = {
+		atmospheric_engine
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_iron_add = 8		#*40=320
+			goods_input_paper_add = 24		#*30=720
+			goods_input_tools_add = 10		#*40=400
+			goods_input_dye_add = 8		#*40=320
+			goods_output_entertainment_publications_add = 50		#*65=3250
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 100
+			building_employment_laborers_add = 620
+			building_employment_clerks_add = 220
+			building_employment_machinists_add = 60
+		}
+	}
+}
+
+pm_ent_press_main_serial_steel = { #杩炶浇鍒?	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_watertube_boiler.dds"
+	unlocking_technologies = {
+		steelworking
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_steel_add = 10		#*60=600
+			goods_input_paper_add = 30		#*30=900
+			goods_input_tools_add = 14		#*40=560
+			goods_input_dye_add = 10		#*40=400
+			goods_output_entertainment_publications_add = 60		#*65=3900
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 130
+			building_employment_laborers_add = 500
+			building_employment_clerks_add = 260
+			building_employment_machinists_add = 90
+			building_employment_engineers_add = 20
+		}
+	}
+}
+
+pm_ent_press_main_multimedia_electric = { #澶氬獟浣撳垔
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_flash_freezing.dds"
+	unlocking_technologies = {
+		electrical_generation
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_steel_add = 10		#*60=600
+			goods_input_engines_add = 10		#*70=700
+			goods_input_electricity_add = 20		#*50=1000
+			goods_input_paper_add = 24		#*30=720
+			goods_output_entertainment_publications_add = 80		#*65=5200
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 160
+			building_employment_laborers_add = 380
+			building_employment_clerks_add = 300
+			building_employment_machinists_add = 110
+			building_employment_engineers_add = 50
+		}
+	}
+}
+
+pm_ent_press_distribution_local = { #鏈湴鍙戣
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tea_milk.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_services_add = 6		#*30=180
+			goods_input_paper_add = 2		#*30=60
+			goods_input_tools_add = 2		#*40=80
+		}
+		level_scaled = {
+			building_employment_clerks_add = 60
+		}
+	}
+}
+
+pm_ent_press_distribution_national = { #鍏ㄥ浗鍙戣
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tea_cocoa.dds"
+	unlocking_technologies = {
+		mass_communication
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_services_add = 12		#*30=360
+			goods_input_transportation_add = 10		#*30=300
+			goods_input_paper_add = 4		#*30=120
+			goods_output_entertainment_publications_add = 10		#*65=650
+		}
+		level_scaled = {
+			building_employment_clerks_add = 100
+			building_employment_machinists_add = 20
+		}
+	}
+}
+
+pm_ent_press_distribution_export = { #娴峰鍙戣
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tea_black_tea.dds"
+	unlocking_technologies = {
+		international_trade
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_services_add = 18		#*30=540
+			goods_input_transportation_add = 15		#*30=450
+			goods_input_paper_add = 6		#*30=180
+			goods_output_entertainment_publications_add = 20		#*65=1300
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 40
+			building_employment_clerks_add = 120
+			building_employment_machinists_add = 40
+		}
+	}
+}
+

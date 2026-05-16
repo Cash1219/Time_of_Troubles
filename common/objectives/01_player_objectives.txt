@@ -1,96 +1,81 @@
-﻿objective_tot_updating = { #最新更新
+﻿# ToT scenario objectives (active)
+objective_tot_updating = {
 	enabled_background = "gfx/interface/icons/objectives/objective_tot_updating.dds"
 	icon = "gfx/interface/icons/objectives/hegemon.dds"
-	
-	recommended_tags = { FRA BUG }
-	
-	objective_subgoals = {
-	}
-	
-	on_start = {
-	}
+	recommended_tags = { BUG FRA }
 }
-objective_tot_western_europe = { #西欧罗巴
+
+objective_tot_euro_core = {
 	enabled_background = "gfx/interface/icons/objectives/objective_tot_western_europe.dds"
 	icon = "gfx/interface/icons/objectives/hegemon.dds"
-	
-	recommended_tags = { FRA GBR SPA POR }
-	
-	objective_subgoals = {
-	}
-	
-	on_start = {
-	}
+	recommended_tags = { GBR FRA ALS }
 }
-objective_tot_northern_europe = { #北欧罗巴
+
+objective_tot_germany = {
 	enabled_background = "gfx/interface/icons/objectives/objective_tot_northern_europe.dds"
 	icon = "gfx/interface/icons/objectives/hegemon.dds"
-	
-	recommended_tags = { GER SWE NOR DAN }
-	
-	objective_subgoals = {
-	}
-	
-	on_start = {
-	}
+	recommended_tags = { PRU GERW RHE BAV WUR IDMS MHGK }
 }
-objective_tot_danube = { #多瑙
-	enabled_background = "gfx/interface/icons/objectives/objective_tot_danube.dds"
-	icon = "gfx/interface/icons/objectives/hegemon.dds"
-	
-	recommended_tags = { IDMS HUN MHGK BAV }
-	
-	objective_subgoals = {
-	}
-	
-	on_start = {
-	}
-}
-objective_tot_italy = { #意大利
+
+objective_tot_italy_states = {
 	enabled_background = "gfx/interface/icons/objectives/objective_tot_italy.dds"
 	icon = "gfx/interface/icons/objectives/hegemon.dds"
-	
-	recommended_tags = { GBDP STLI PAP RITA }
-	
-	objective_subgoals = {
-	}
-	
-	on_start = {
-	}
+	recommended_tags = { STLI PAP RITA GBDP TUS }
 }
-objective_tot_constantinople = { #君士坦丁堡
+
+objective_tot_nordic_order = {
+	enabled_background = "gfx/interface/icons/objectives/objective_tot_northern_europe.dds"
+	icon = "gfx/interface/icons/objectives/hegemon.dds"
+	recommended_tags = { OOAR STRW NOR TBUN }
+}
+
+objective_tot_bluewhite_fort = {
 	enabled_background = "gfx/interface/icons/objectives/objective_tot_constantinople.dds"
 	icon = "gfx/interface/icons/objectives/hegemon.dds"
-	
-	recommended_tags = { BYZ ROM UKR SER }
-	
-	objective_subgoals = {
-	}
-	
-	on_start = {
-	}
+	recommended_tags = { BYZ ROM UKR MUS AQO NJS }
 }
-#objective_tot_tatar = { #鞑靼
-#	enabled_background = "gfx/interface/icons/objectives/objective_tot_tatar.dds"
+
+objective_tot_iberia_nafrica = {
+	enabled_background = "gfx/interface/icons/objectives/objective_tot_italy.dds"
+	icon = "gfx/interface/icons/objectives/hegemon.dds"
+	recommended_tags = { SKD GNC ADL EGY TRI }
+}
+
+objective_tot_rhodes_network = {
+	enabled_background = "gfx/interface/icons/objectives/objective_tot_danube.dds"
+	icon = "gfx/interface/icons/objectives/hegemon.dds"
+	recommended_tags = { NRHD ORHD CTCH TGCC HBPO }
+}
+
+objective_tot_india_arc = {
+	enabled_background = "gfx/interface/icons/objectives/objective_tot_updating.dds"
+	icon = "gfx/interface/icons/objectives/hegemon.dds"
+	recommended_tags = { NEP DAL ELZ OVL NEWG }
+}
+
+# Old ToT objective groups (commented for backup)
+#objective_tot_western_europe = {
+#	enabled_background = "gfx/interface/icons/objectives/objective_tot_western_europe.dds"
 #	icon = "gfx/interface/icons/objectives/hegemon.dds"
-#	
-#	recommended_tags = { UMA KAZ GOD }
-#	
-#	objective_subgoals = {
-#	}
-#	
-#	on_start = {
-#	}
+#	recommended_tags = { FRA GBR SPA POR }
 #}
-#objective_tot_eastern_mediterranean = { #东地中海
-#	enabled_background = "gfx/interface/icons/objectives/objective_tot_eastern_mediterranean.dds"
+#objective_tot_northern_europe = {
+#	enabled_background = "gfx/interface/icons/objectives/objective_tot_northern_europe.dds"
 #	icon = "gfx/interface/icons/objectives/hegemon.dds"
-#	
-#	recommended_tags = { TUR MYG ORHD }
-#	
-#	objective_subgoals = {
-#	}
-#	
-#	on_start = {
-#	}
+#	recommended_tags = { GER SWE NOR DAN }
+#}
+#objective_tot_danube = {
+#	enabled_background = "gfx/interface/icons/objectives/objective_tot_danube.dds"
+#	icon = "gfx/interface/icons/objectives/hegemon.dds"
+#	recommended_tags = { IDMS HUN MHGK BAV }
+#}
+#objective_tot_italy = {
+#	enabled_background = "gfx/interface/icons/objectives/objective_tot_italy.dds"
+#	icon = "gfx/interface/icons/objectives/hegemon.dds"
+#	recommended_tags = { GBDP STLI PAP RITA }
+#}
+#objective_tot_constantinople = {
+#	enabled_background = "gfx/interface/icons/objectives/objective_tot_constantinople.dds"
+#	icon = "gfx/interface/icons/objectives/hegemon.dds"
+#	recommended_tags = { BYZ ROM UKR SER }
 #}

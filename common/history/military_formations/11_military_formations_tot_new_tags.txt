@@ -1,4 +1,4 @@
-MILITARY_FORMATIONS = {
+﻿MILITARY_FORMATIONS = {
 	c:ACC ?= {
 		create_military_formation = {
 			type = army
@@ -98,17 +98,17 @@ MILITARY_FORMATIONS = {
 			combat_unit = {
 				type = unit_type:combat_unit_type_line_infantry
 				state_region = s:STATE_PUNJAB
-				count = 8
+				count = 10
 			}
 			combat_unit = {
 				type = unit_type:combat_unit_type_hussars
 				state_region = s:STATE_PUNJAB
-				count = 2
+				count = 3
 			}
 			combat_unit = {
 				type = unit_type:combat_unit_type_mobile_artillery
 				state_region = s:STATE_PUNJAB
-				count = 2
+				count = 3
 			}
 		}
 		create_military_formation = {
@@ -117,12 +117,12 @@ MILITARY_FORMATIONS = {
 			name = DAL_Fleet
 			ship = {
 				type = ship_type:ship_type_ship_of_the_line
-				state_region = s:STATE_PUNJAB
+				state_region = s:STATE_SINDH
 				count = 1
 			}
 			ship = {
 				type = ship_type:ship_type_frigate
-				state_region = s:STATE_PUNJAB
+				state_region = s:STATE_SINDH
 				count = 1
 			}
 		}
@@ -428,17 +428,17 @@ MILITARY_FORMATIONS = {
 			combat_unit = {
 				type = unit_type:combat_unit_type_line_infantry
 				state_region = s:STATE_DELHI
-				count = 10
+				count = 13
 			}
 			combat_unit = {
 				type = unit_type:combat_unit_type_hussars
 				state_region = s:STATE_DELHI
-				count = 3
+				count = 4
 			}
 			combat_unit = {
 				type = unit_type:combat_unit_type_mobile_artillery
 				state_region = s:STATE_DELHI
-				count = 3
+				count = 4
 			}
 		}
 		create_military_formation = {

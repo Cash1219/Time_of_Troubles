@@ -24,6 +24,7 @@ IDMS = { #偶像国
 	country_type = recognized
 
 	tier = kingdom
+	religion = protestant
 	
 	cultures = { south_german }
 	capital = STATE_AUSTRIA
@@ -95,6 +96,7 @@ PRU = { #魔法少女联邦
 	country_type = recognized
 
 	tier = empire
+	religion = protestant
 	
 	cultures = { north_german }
 	capital = STATE_BRANDENBURG
@@ -294,6 +296,7 @@ ALS = { #斯特拉斯堡
 	country_type = principality
 
 	tier = principality	
+	religion = protestant
 	
 	cultures = { french }
 	
@@ -516,6 +519,42 @@ TRIG = { #圣三一学园
 	
 	capital = STATE_RHODE_ISLAND
 }
+ZLXY = { #真理学园
+	color = { 86 130 201 }
+	country_type = recognized
+	tier = principality
+	cultures = { russian }
+	capital = STATE_INGRIA
+}
+BCXY = { #法属加拿大
+	color = { 87 141 211 }
+	country_type = recognized
+	tier = principality
+	cultures = { franco_canadian }
+	capital = STATE_MICHIGAN
+}
+SGXY = { #圣葛罗莉安娜女子学院
+	color = hsv360{ 38  97  83 }
+	country_type = recognized
+	tier = principality
+	cultures = { greek }
+	capital = STATE_QUEBEC
+}
+KIVO = { #大学选拔队
+	color = { 205 186 150 }
+	country_type = recognized
+	tier = principality
+	cultures = { mashriqi }
+	capital = STATE_BAGHDAD
+}
+XMQS = { #血盟骑士团
+	color = { 188 59 92 }
+	country_type = recognized
+	tier = principality	
+	religion = gaming
+	cultures = { kannada }
+	capital = STATE_CENTRAL_PROVINCES
+}
 NAVL = { #新阿瓦隆
 	color = hsv{ 0.99  0.7  0.9 }
 
@@ -575,6 +614,7 @@ ATRI = {
 	country_type = recognized
 
 	tier = principality
+	religion = protestant
 
 	cultures = { north_german }
 	capital = STATE_RIGA
@@ -595,6 +635,7 @@ GERW = {
 	country_type = recognized
 
 	tier = principality
+	religion = protestant
 
 	cultures = { north_german }
 	capital = STATE_SCHLESWIG_HOLSTEIN
@@ -629,3 +670,58 @@ NEWG = {
 	cultures = { oriya }
 	capital = STATE_ORISSA
 }
+SBRT = {
+	color = { 4  39  104 }
+
+	country_type = recognized
+
+	tier = principality
+
+	cultures = { dixie }
+	capital = STATE_TEXAS
+}
+AKXS = {
+	color = { 56 143 53 }
+
+	country_type = recognized
+
+	#173  242  175
+
+	tier = kingdom
+
+	cultures = { mexican }
+	capital = STATE_MEXICO
+}
+
+
+
+
+SIBN = { #西伯利亚北方松散政权
+	color = { 110 148 164 }
+	country_type = decentralized
+	tier = principality
+	cultures = { samoyed }
+	capital = STATE_NENETSIA
+}
+SIBW = { #西伯利亚西部松散政权
+	color = { 138 120 95 }
+	country_type = decentralized
+	tier = principality
+	cultures = { ugrian }
+	capital = STATE_TOBOLSK
+}
+SIBC = { #西伯利亚中部松散政权
+	color = { 108 133 102 }
+	country_type = decentralized
+	tier = principality
+	cultures = { buryat }
+	capital = STATE_KRASNOYARSK
+}
+SIBE = { #西伯利亚东部松散政权
+	color = { 84 122 166 }
+	country_type = decentralized
+	tier = principality
+	cultures = { yakut }
+	capital = STATE_YAKUTSK
+}
+
