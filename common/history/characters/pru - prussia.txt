@@ -1,4 +1,4 @@
-﻿CHARACTERS = {
+CHARACTERS = {
 	c:PRU ?= {
 		create_character = {
 			historical = yes
@@ -11,13 +11,18 @@
 			#religion = rel:protestant
 			culture = cu:bulgarian
 			traits = {
-				tot_Mhs_QB_trait
-				direct
+				tot_Mhs_QB_trait # tot_Mhs_QB_trait
+				direct # direct
+			
+			
+				tot_group_sheet_015_trait # 反派
+				tot_group_sheet_024_trait # 幕后操纵者
+				tot_group_sheet_048_trait # 塑造者
 			}
 		}
 		create_character = {
 			historical = yes
-			first_name = "Sakura2"
+			first_name = "Sakura"
 			last_name = "Kyouko"
 			birth_date = 1816.1.1 
 			female = yes
@@ -27,8 +32,12 @@
 			#religion = rel:protestant
 			culture = cu:bulgarian
 			traits = {
-				tot_Mhs_Kyouko_trait
-				direct
+				tot_Mhs_Kyouko_trait # tot_Mhs_Kyouko_trait
+				direct # direct
+			
+				tot_group_sheet_016_trait # 新篇魔法少女
+				tot_group_sheet_029_trait # 教会关系者
+				tot_group_sheet_038_trait # 美食家
 			}
 		}
 		create_character = {
@@ -43,8 +52,11 @@
 			#religion = rel:protestant
 			culture = cu:serb
 			traits = {
-				tot_Mhs_Mami_trait
-				direct
+				tot_Mhs_Mami_trait # tot_Mhs_Mami_trait
+				direct # direct
+				tot_group_sheet_016_trait # 新篇魔法少女
+				tot_group_sheet_036_trait # 射击手
+				tot_group_sheet_038_trait # 美食家
 			}
 		}
 		create_character = {
@@ -59,8 +71,8 @@
 			#religion = rel:protestant
 			culture = cu:serb
 			traits = {
-				tot_Mhs_Madoka_trait
-				direct
+				tot_Mhs_Madoka_trait # tot_Mhs_Madoka_trait
+				direct # direct
 			}
 		}
 		create_character = {
@@ -75,8 +87,12 @@
 			#religion = rel:protestant
 			culture = cu:serb
 			traits = {
-				tot_Mhs_Sayaka_trait
-				direct
+				tot_Mhs_Sayaka_trait # tot_Mhs_Sayaka_trait
+				direct # direct
+			
+				tot_group_sheet_016_trait # 新篇魔法少女
+				tot_group_sheet_021_trait # 斗士
+				tot_group_sheet_037_trait # 英俊
 			}
 		}
 		create_character = {
@@ -91,7 +107,11 @@
 			#religion = rel:protestant
 			culture = cu:north_german
 			traits = {
-				tot_Mhs_Homura_trait
+				tot_Mhs_Homura_trait # tot_Mhs_Homura_trait
+			
+				tot_group_sheet_016_trait # 新篇魔法少女
+				tot_group_sheet_024_trait # 幕后操纵者
+				tot_group_sheet_046_trait # 穿梭者
 			}
 		}
 	}
