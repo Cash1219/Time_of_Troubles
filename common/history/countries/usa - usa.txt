@@ -38,11 +38,11 @@
 		#	set_interest_group_name = ig_usa_spirit_publisher
 		#}
 		
-		add_modifier = {
-				name = modifier_suppressed_dem
-				years = 10
-				is_decaying = yes
-		}
+		#add_modifier = {
+		#		name = modifier_suppressed_dem
+		#		years = 10
+		#		is_decaying = yes
+		#}
 		#py:spirit_save_party ?= {
 		#	add_ig_to_party = ig:ig_industrialists
 		#	add_ig_to_party = ig:ig_armed_forces
@@ -61,6 +61,9 @@
 		#trigger_event = {
 		#	id = NRHD.1
 		#}
+		add_journal_entry = {
+			type = je_rhd_reconnection
+		}
 		add_company = company_type:company_william_cramp
 		company:company_william_cramp = {
 			set_company_establishment_date = 1830.1.1

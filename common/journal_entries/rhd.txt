@@ -1,0 +1,96 @@
+﻿je_rhd_reconnection = {
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	group = je_group_rhd
+	should_be_pinned_by_default = yes
+	is_shown_when_inactive = {
+		c:NRHD ?= this
+	}
+	should_be_involved = {
+		c:NRHD ?= this
+	}
+	complete = {
+		c:VAIV ?= {
+			is_adjacent_to_country = ROOT
+		}
+		c:WULN ?= {
+			is_adjacent_to_country = ROOT
+		}
+	}
+	on_complete = {
+		add_modifier = {
+			name = modifier_rhd_reconnection_reward
+			years = -1
+		}
+		c:VAIV ?= {
+			create_diplomatic_pact = {
+				type = puppet
+			}
+		}
+		c:WULN ?= {
+			create_diplomatic_pact = {
+				type = puppet
+			}
+		}
+		add_journal_entry = {
+			type = je_rhd_terra_reunification
+		}
+	}
+}
+
+je_rhd_terra_reunification = {
+	icon = "gfx/interface/icons/event_icons/event_politics.dds"
+	group = je_group_rhd
+	should_be_pinned_by_default = yes
+	is_shown_when_inactive = {
+		c:NRHD ?= this
+	}
+	should_be_involved = {
+		c:NRHD ?= this
+	}
+	scripted_progress_bar = je_rhd_wuln_integration_progress_bar
+	scripted_progress_bar = je_rhd_vaiv_integration_progress_bar
+	scripted_button = je_rhd_integrate_wuln_button
+	scripted_button = je_rhd_integrate_vaiv_button
+	complete = {
+	}
+	on_monthly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_variable = rhd_wuln_gdp_applied }
+					c:WULN ?= { gdp >= 1000000 }
+				}
+				set_variable = rhd_wuln_gdp_applied
+			}
+			if = {
+				limit = {
+					NOT = { has_variable = rhd_wuln_sol_applied }
+					c:WULN ?= { average_sol >= 15 }
+				}
+				set_variable = rhd_wuln_sol_applied
+			}
+			if = {
+				limit = {
+					NOT = { has_variable = rhd_vaiv_gdp_applied }
+					c:VAIV ?= { gdp >= 1000000 }
+				}
+				set_variable = rhd_vaiv_gdp_applied
+			}
+			if = {
+				limit = {
+					NOT = { has_variable = rhd_vaiv_sol_applied }
+					c:VAIV ?= { average_sol >= 15 }
+				}
+				set_variable = rhd_vaiv_sol_applied
+			}
+		}
+	}
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_rhd_terra_reunification_status
+				trigger = { always = yes }
+			}
+		}
+	}
+}

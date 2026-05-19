@@ -1,0 +1,49 @@
+je_rhd_integrate_wuln_button = {
+	name = je_rhd_integrate_wuln_button
+	desc = je_rhd_integrate_wuln_button_desc
+
+	visible = {
+		c:NRHD ?= this
+	}
+
+	possible = {
+		scope:journal_entry = {
+			"scripted_bar_progress(je_rhd_wuln_integration_progress_bar)" >= 5
+		}
+	}
+
+	effect = {
+		c:WULN ?= {
+			annex = ROOT
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+je_rhd_integrate_vaiv_button = {
+	name = je_rhd_integrate_vaiv_button
+	desc = je_rhd_integrate_vaiv_button_desc
+
+	visible = {
+		c:NRHD ?= this
+	}
+
+	possible = {
+		scope:journal_entry = {
+			"scripted_bar_progress(je_rhd_vaiv_integration_progress_bar)" >= 5
+		}
+	}
+
+	effect = {
+		c:VAIV ?= {
+			annex = ROOT
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}

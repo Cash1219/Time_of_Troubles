@@ -1,0 +1,61 @@
+je_rhd_wuln_integration_progress_bar = {
+	name = "je_rhd_wuln_integration_progress_bar_name"
+	desc = "je_rhd_wuln_integration_progress_bar_desc"
+	default_green = yes
+	start_value = 0
+	min_value = 0
+	max_value = 5
+	monthly_progress = {
+		add = {
+			desc = "je_rhd_wuln_integration_from_gdp_desc"
+			if = {
+				limit = {
+					NOT = { has_variable = rhd_wuln_gdp_applied }
+					c:WULN ?= { gdp >= 1000000 }
+				}
+				value = 1
+			}
+		}
+		add = {
+			desc = "je_rhd_wuln_integration_from_sol_desc"
+			if = {
+				limit = {
+					NOT = { has_variable = rhd_wuln_sol_applied }
+					c:WULN ?= { average_sol >= 15 }
+				}
+				value = 1
+			}
+		}
+	}
+}
+
+je_rhd_vaiv_integration_progress_bar = {
+	name = "je_rhd_vaiv_integration_progress_bar_name"
+	desc = "je_rhd_vaiv_integration_progress_bar_desc"
+	default_green = yes
+	start_value = 0
+	min_value = 0
+	max_value = 5
+	monthly_progress = {
+		add = {
+			desc = "je_rhd_vaiv_integration_from_gdp_desc"
+			if = {
+				limit = {
+					NOT = { has_variable = rhd_vaiv_gdp_applied }
+					c:VAIV ?= { gdp >= 1000000 }
+				}
+				value = 1
+			}
+		}
+		add = {
+			desc = "je_rhd_vaiv_integration_from_sol_desc"
+			if = {
+				limit = {
+					NOT = { has_variable = rhd_vaiv_sol_applied }
+					c:VAIV ?= { average_sol >= 15 }
+				}
+				value = 1
+			}
+		}
+	}
+}

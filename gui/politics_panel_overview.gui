@@ -2102,6 +2102,25 @@ types politics_panel_types
 										}
 									}
 
+									hbox = {
+										margin_top = 5
+										spacing = 5
+
+										textbox = {
+											autoresize = yes
+											align = nobaseline
+											text = "ONLY_SHOW_HISTORICAL"
+										}
+
+										checkbutton = {
+											using = check_button
+											size = { 24 24 }
+											onclick = "[GetVariableSystem.Toggle('politics_overview_exile_pool_show_historical')]"
+											checked = "[GetVariableSystem.Exists('politics_overview_exile_pool_show_historical')]"
+											tooltip = "ONLY_SHOW_HISTORICAL_EXILED_AGITATORS_TOOLTIP"
+										}
+									}
+
 
 									vbox = {
 										layoutpolicy_horizontal = expanding
@@ -2112,7 +2131,7 @@ types politics_panel_types
 
 										item = {
 											exiled_agitator = {
-												visible = "[Or( And( GetVariableSystem.Exists('politics_overview_exile_pool_show_available'), Character.GetInteraction('invite_exile').IsCommandValid(Character.Self)),  And(Not(GetVariableSystem.Exists('politics_overview_exile_pool_show_available')), Or(Not(Character.GetInteraction('invite_exile').IsCommandValid(Character.Self)), Character.GetInteraction('invite_exile').IsCommandValid(Character.Self)) ) )]"
+												visible = "[And(Or( And( GetVariableSystem.Exists('politics_overview_exile_pool_show_available'), Character.GetInteraction('invite_exile').IsCommandValid(Character.Self)), And(Not(GetVariableSystem.Exists('politics_overview_exile_pool_show_available')), Or(Not(Character.GetInteraction('invite_exile').IsCommandValid(Character.Self)), Character.GetInteraction('invite_exile').IsCommandValid(Character.Self)) ) ), Or(Not(GetVariableSystem.Exists('politics_overview_exile_pool_show_historical')), Character.IsHistorical) )]"
 											}
 										}
 									}
