@@ -32,15 +32,15 @@ pm_kissaten_coffee_mocha = { #摩卡咖啡
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			goods_input_coffee_add = 20		#*50=1000
-			goods_input_sugar_add = 40		#*30=1200
+			goods_input_coffee_add = 25		#*50=1250
+			goods_input_sugar_add = 45		#*30=1350
 			
 			# output goods
-			goods_output_luxury_drinks_add = 50		#*60=3000
+			goods_output_luxury_drinks_add = 55		#*60=3300
 		}
 
 		level_scaled = {
-			# profit = 900
+			# profit = 700
 			building_employment_shopkeepers_add = 100
 			building_employment_laborers_add = 800
 			building_employment_machinists_add = 100
@@ -56,15 +56,15 @@ pm_kissaten_coffee_latte = { #拿铁咖啡
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			goods_input_coffee_add = 30		#*50=1500
-			goods_input_sugar_add = 30		#*30=900
+			goods_input_coffee_add = 35		#*50=1750
+			goods_input_sugar_add = 55		#*30=1650
 			
 			# output goods
-			goods_output_luxury_drinks_add = 60		#*60=3600
+			goods_output_luxury_drinks_add = 70		#*60=4200
 		}
 
 		level_scaled = {
-			# profit = 1000
+			# profit = 800
 			building_employment_shopkeepers_add = 200
 			building_employment_laborers_add = 600
 			building_employment_machinists_add = 200
@@ -325,9 +325,9 @@ pm_kissaten_food_takoyaki = { #章鱼烧
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			goods_input_grain_add = 40		#*20=800
+			goods_input_grain_add = 45		#*20=900
 			goods_input_meat_add = 50		#*30=1500
-			goods_input_fish_add = 35		#*20=700
+			goods_input_fish_add = 25		#*20=500
 			
 			# output goods
 			goods_output_luxury_foods_add = 70		#*60=4200
@@ -341,31 +341,43 @@ pm_kissaten_food_takoyaki = { #章鱼烧
 		}
 	}
 }
-pm_kissaten_server_null = { #无
+pm_kissaten_server_null = { #普通营业
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"
-
-	
+	building_modifiers = {
+		workforce_scaled = {
+			# output goods
+			goods_output_services_add = 5
+		}
+		level_scaled = {
+			building_employment_laborers_add = 120
+			building_employment_clerks_add = 20
+		}
+		unscaled = {
+			building_throughput_add = 0.00
+		}
+	}
 }
-pm_kissaten_server_waitress = { #基本服务
+pm_kissaten_server_waitress = { #普通女仆
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_server_waitress.dds"
 
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
 			goods_input_clothes_add = 10		#*30=300
+			# output goods
+			goods_output_services_add = 15
 		}
 		level_scaled = {
 			building_employment_laborers_add = 100
 			building_employment_clerks_add = 40
 		}
 		unscaled = {
-			building_goods_input_mult = -0.03
-			building_throughput_add = 0.06
-			building_minimum_wage_mult = 0.03
+			building_throughput_add = 0.05
+			building_minimum_wage_mult = 0.10
 		}
 	}
 }
-pm_kissaten_server_maid = { #女仆装束
+pm_kissaten_server_maid = { #女仆营业
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_server_maid.dds"
 	unlocking_technologies = {
 		central_archives
@@ -375,19 +387,20 @@ pm_kissaten_server_maid = { #女仆装束
 		workforce_scaled = {
 			# input goods
 			goods_input_luxury_clothes_add = 20		#*60=1200
+			# output goods
+			goods_output_services_add = 25
 		}
 		level_scaled = {
 			building_employment_laborers_add = 40
 			building_employment_clerks_add = 180
 		}
 		unscaled = {
-			building_goods_input_mult = -0.06
-			building_throughput_add = 0.12
-			building_minimum_wage_mult = 0.10
+			building_throughput_add = 0.10
+			building_minimum_wage_mult = 0.20
 		}
 	}
 }
-pm_kissaten_server_fuwafuwa = { #美味仪式
+pm_kissaten_server_fuwafuwa = { #主题公演
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_server_fuwafuwa.dds"
 	unlocking_technologies = {
 		mass_communication
@@ -397,17 +410,17 @@ pm_kissaten_server_fuwafuwa = { #美味仪式
 		workforce_scaled = {
 			# input goods
 			goods_input_luxury_clothes_add = 25		#*60=1500
-			goods_input_sugar_add = 10		#*30=300
-			goods_input_luxury_drinks_add = 5		#*60=300
+			goods_input_musical_instruments_add = 10		#*40=400
+			# output goods
+			goods_output_services_add = 40
 		}
 		level_scaled = {
 			building_employment_laborers_add = 80
 			building_employment_clerks_add = 320
 		}
 		unscaled = {
-			building_goods_input_mult = -0.08
-			building_throughput_add = 0.18
-			building_minimum_wage_mult = 0.20
+			building_throughput_add = 0.15
+			building_minimum_wage_mult = 0.30
 		}
 	}
 }
@@ -430,7 +443,7 @@ pm_kissaten_tool_table = { #基本桌椅
 			building_employment_machinists_add = 100
 		}
 		unscaled = {
-			building_throughput_add = 0.05
+			building_goods_input_mult = -0.05
 		}
 	}
 }
@@ -443,6 +456,8 @@ pm_kissaten_tool_porcelain = { #餐具套装
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
+			goods_input_furniture_add = 10		#*30=300
+			goods_input_tools_add = 10		#*40=400
 			goods_input_porcelain_add = 10		#*70=700
 			goods_input_iron_add = 5		#*40=200
 		}
@@ -452,7 +467,7 @@ pm_kissaten_tool_porcelain = { #餐具套装
 			building_employment_machinists_add = 200
 		}
 		unscaled = {
-			building_throughput_add = 0.10
+			building_goods_input_mult = -0.10
 		}
 	}
 }
@@ -465,9 +480,11 @@ pm_kissaten_tool_watertube_boiler = { #水管锅炉
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
+			goods_input_furniture_add = 10		#*30=300
+			goods_input_tools_add = 15		#*40=600
+			goods_input_porcelain_add = 10		#*70=700
 			goods_input_coal_add = 10		#*30=300
 			goods_input_iron_add = 10		#*40=400
-			goods_input_tools_add = 10		#*40=400
 		}
 
 		level_scaled = {
@@ -476,7 +493,7 @@ pm_kissaten_tool_watertube_boiler = { #水管锅炉
 			building_employment_engineers_add = 200
 		}
 		unscaled = {
-			building_throughput_add = 0.20
+			building_goods_input_mult = -0.15
 		}
 	}
 }
@@ -489,9 +506,13 @@ pm_kissaten_tool_flash_freezing = { #冷藏设备
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
+			goods_input_furniture_add = 10		#*30=300
+			goods_input_tools_add = 20		#*40=800
+			goods_input_porcelain_add = 10		#*70=700
+			goods_input_coal_add = 10		#*30=300
+			goods_input_iron_add = 10		#*40=400
 			goods_input_engines_add = 10		#*60=600
 			goods_input_electricity_add = 20		#*30=600
-			goods_input_tools_add = 10		#*40=400
 		}
 
 		level_scaled = {
@@ -500,7 +521,7 @@ pm_kissaten_tool_flash_freezing = { #冷藏设备
 			building_employment_engineers_add = 300
 		}
 		unscaled = {
-			building_throughput_add = 0.30
+			building_goods_input_mult = -0.20
 		}
 	}
 }

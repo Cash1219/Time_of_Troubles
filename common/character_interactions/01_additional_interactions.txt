@@ -420,12 +420,40 @@ arrange_accident = {
 			}
 			multiply = 1.5
 		}
-		if = {
-			limit = {
-				historical = yes
-			}
-			multiply = 0
+	}
+}
+
+invite_subject_character = {
+	icon = "gfx/interface/character_panel/grant_command.dds"
+	clicksound = "event:/SFX/UI/Military/command_grant"
+
+	potential = {
+		is_in_exile_pool = no
+		is_in_void = no
+		is_ruler_of_own_country = no
+		is_heir_of_own_country = no
+		owner ?= {
+			is_subject_of = scope:actor
 		}
+	}
+
+	show_requirements = yes
+	show_confirmation_box = yes
+
+	possible = {
+		owner ?= {
+			is_subject_of = scope:actor
+		}
+	}
+
+	effect = {
+		transfer_character = scope:actor
+	}
+
+	cooldown = { days = normal_modifier_time }
+
+	ai_chance = {
+		value = 0
 	}
 }
 
@@ -1562,3 +1590,4 @@ grant_peerage = {
 		}
 	}
 }
+

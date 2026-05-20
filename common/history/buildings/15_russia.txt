@@ -215,7 +215,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:RUS"
+						country="c:ATRI"
 						levels=3
 						region="STATE_KAUNAS"
 					}
@@ -227,7 +227,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:RUS"
+						country="c:ATRI"
 						levels=1
 					}
 				}
@@ -243,7 +243,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:RUS"
+						country="c:ATRI"
 						levels=3
 						region="STATE_VILNIUS"
 					}
@@ -256,7 +256,7 @@
 				add_ownership={
 					building={
 						type="building_furniture_manufactory"
-						country="c:RUS"
+						country="c:ATRI"
 						levels=1
 						region="STATE_VILNIUS"
 					}
@@ -526,7 +526,7 @@
 				building="building_artillery_foundry"
 				add_ownership={
 					country={
-						country="c:RUS"
+						country="c:ZLXY"
 						levels=1
 					}
 				}
@@ -538,7 +538,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:RUS"
+						country="c:ZLXY"
 						levels=1
 						region="STATE_INGRIA"
 					}
@@ -816,7 +816,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:RUS"
+						country="c:POL"
 						levels=10
 						region="STATE_INGRIA"
 					}
@@ -833,7 +833,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:RUS"
+						country="c:POL"
 						levels=5
 						region="STATE_INGRIA"
 					}
@@ -919,7 +919,7 @@
 					}
 					building={
 						type="building_manor_house"
-						country="c:RUS"
+						country="c:UKR"
 						levels=10
 						region="STATE_INGRIA"
 					}
@@ -1152,7 +1152,7 @@
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:RUS"
+						country="c:ZLXY"
 						levels=1
 						region="STATE_ARKHANGELSK"
 					}
@@ -1164,7 +1164,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:RUS"
+						country="c:ZLXY"
 						levels=1
 					}
 				}
@@ -1180,7 +1180,7 @@
 				add_ownership={
 					building={
 						type="building_paper_mill"
-						country="c:RUS"
+						country="c:ZLXY"
 						levels=4
 						region="STATE_NOVGOROD"
 					}
@@ -1193,13 +1193,13 @@
 				add_ownership={
 					building={
 						type="building_logging_camp"
-						country="c:RUS"
+						country="c:ZLXY"
 						levels=5
 						region="STATE_NOVGOROD"
 					}
 					building={
 						type="building_financial_district"
-						country="c:RUS"
+						country="c:ZLXY"
 						levels=1
 						region="STATE_INGRIA"
 					}
@@ -1366,7 +1366,7 @@
 					}
 					building={
 						type="building_financial_district"
-						country="c:RUS"
+						country="c:UKR"
 						levels=1
 						region="STATE_MOSCOW"
 					}
@@ -1659,12 +1659,12 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:RUS"
+						country="c:GOD"
 						levels=1
 						region="STATE_MOSCOW"
 					}
 					country={
-						country="c:RUS"
+						country="c:GOD"
 						levels=1
 					}
 				}
@@ -1708,7 +1708,7 @@
 					}
 					building={
 						type="building_financial_district"
-						country="c:RUS"
+						country="c:GOD"
 						levels=1
 						region="STATE_MOSCOW"
 					}
@@ -1807,12 +1807,12 @@
 		}
 	}
 	s:STATE_AKMOLINSK={
-		region_state:KZH={
+		region_state:OZH={
 			create_building={
 				building="building_barrack"
 				add_ownership={
 					country={
-						country="c:KZH"
+						country="c:OZH"
 						levels=3
 					}
 				}
@@ -1875,7 +1875,7 @@
 					}
 					building={
 						type="building_manor_house"
-						country="c:UKR"
+						country="c:UMA"
 						levels=6
 						region="STATE_KIEV"
 					}
@@ -2074,13 +2074,13 @@
 		}
 	}
 	s:STATE_PSKOV={
-		region_state:RUS={
+		region_state:ZLXY={
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
 					building={
 						type="building_logging_camp"
-						country="c:RUS"
+						country="c:ZLXY"
 						levels=3
 						region="STATE_PSKOV"
 					}
@@ -2093,7 +2093,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:RUS"
+						country="c:ZLXY"
 						levels=6
 						region="STATE_PSKOV"
 					}
@@ -2267,7 +2267,7 @@
 					}
 					building={
 						type="building_manor_house"
-						country="c:UKR"
+						country="c:RUS"
 						levels=6
 						region="STATE_KIEV"
 					}
@@ -2292,7 +2292,7 @@
 		}
 	}
 	s:STATE_NENETSIA={
-		region_state:SIBN={
+		region_state:ZLXY={
 		}
 	}
 }
@@ -2304,7 +2304,7 @@
 # ToT balance direct edits
 s:STATE_INGRIA={
 	region_state:RUS={
-		create_building={ building="building_steel_mills" add_ownership={ country={ country="c:RUS" levels=4 } } reserves=1 activate_production_methods={ "pm_puddling_furnaces" "pm_automation_disabled" } }
-		create_building={ building="building_arms_industry" add_ownership={ country={ country="c:RUS" levels=4 } } reserves=1 activate_production_methods={ "pm_muskets" "pm_automation_disabled" } }
+		create_building={ building="building_steel_mills" add_ownership={ country={ country="c:ZLXY" levels=4 } } reserves=1 activate_production_methods={ "pm_puddling_furnaces" "pm_automation_disabled" } }
+		create_building={ building="building_arms_industry" add_ownership={ country={ country="c:ZLXY" levels=4 } } reserves=1 activate_production_methods={ "pm_muskets" "pm_automation_disabled" } }
 	}
 }

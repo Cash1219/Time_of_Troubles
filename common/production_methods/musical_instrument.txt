@@ -10,7 +10,7 @@ pm_musical_instrument_main_wood = { #木制乐器
 		workforce_scaled = {
 			goods_input_wood_add = 10		#*20=200
 			goods_input_tools_add = 10		#*40=400
-			goods_output_instruments_add = 20		#*55=1100
+			goods_output_instruments_add = 20		#*60=1200
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 100
@@ -28,9 +28,10 @@ pm_musical_instrument_main_iron = { #铁制乐器
 
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_wood_add = 5		#*20=100
+			goods_input_wood_add = 10		#*20=200
 			goods_input_iron_add = 10		#*40=400
-			goods_output_instruments_add = 35		#*55=1925
+			goods_input_tools_add = 10		#*40=400
+			goods_output_instruments_add = 30		#*60=1800
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 100
@@ -51,7 +52,7 @@ pm_musical_instrument_main_steel = { #钢制乐器
 			goods_input_wood_add = 10		#*20=200
 			goods_input_steel_add = 15		#*50=750
 			goods_input_tools_add = 20		#*40=800
-			goods_output_instruments_add = 65		#*55=3575
+			goods_output_instruments_add = 50		#*60=3000
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 150
@@ -71,9 +72,9 @@ pm_musical_instrument_main_electric = { #电气乐器
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_steel_add = 15		#*50=750
-			goods_input_engines_add = 10		#*60=600
+			goods_input_tools_add = 10		#*40=400
 			goods_input_electricity_add = 20		#*30=600
-			goods_output_instruments_add = 75		#*55=4125
+			goods_output_instruments_add = 60		#*60=3600
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 200
