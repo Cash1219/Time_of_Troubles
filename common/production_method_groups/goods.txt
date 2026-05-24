@@ -1,29 +1,28 @@
 ﻿#谷子工坊
 pmg_goods_doll = { #玩偶
-	texture = "gfx/interface/icons/generic_icons/pmg_goods_doll.dds"
-	ai_selection = most_productive
+	texture = "gfx/interface/icons/production_method_icons/pmg_goods_doll.dds"	ai_selection = most_productive
 
 	production_methods = {
 		pm_goods_doll_null #无
-		pm_goods_doll_doll #玩偶 +布料 +棉花
+		pm_goods_doll_doll #手工玩偶 +布料 +棉花
+		pm_goods_doll_custom #定制玩偶 +布料 +棉花
 		pm_goods_doll_pillow #抱枕 +布料 +棉花
-		##pm_goods_doll_iron #等身玩偶（等身的带铁骨架的那种） +钢
+		pm_goods_doll_iron #等身抱枕
 	}
 }
 pmg_goods_jewelry = { #饰品
-	texture = "gfx/interface/icons/generic_icons/pmg_goods_jewelry.dds"
-	ai_selection = most_productive
+	texture = "gfx/interface/icons/production_method_icons/pmg_goods_jewelry.dds"	ai_selection = most_productive
 
 	production_methods = {
 		pm_goods_jewelry_null #无
-		pm_goods_jewelry_badge #徽章（吧唧）+铁
-		pm_goods_jewelry_pendant #挂件 +陶瓷
-		pm_goods_jewelry_stand #立牌 +玻璃
+		pm_goods_jewelry_badge #徽章
+		pm_goods_jewelry_pendant #挂件
+		pm_goods_jewelry_stand #立牌
+		pm_goods_jewelry_premium #手办
 	}
 }
 pmg_goods_print = { #印染类
-	texture = "gfx/interface/icons/generic_icons/pmg_goods_print.dds"
-	ai_selection = most_productive
+	texture = "gfx/interface/icons/production_method_icons/pmg_goods_print.dds"	ai_selection = most_productive
 
 	production_methods = {
 		pm_goods_print_null #无
@@ -34,20 +33,18 @@ pmg_goods_print = { #印染类
 	}
 }
 pmg_goods_garage = { #模型
-	texture = "gfx/interface/icons/generic_icons/pmg_goods_garage.dds"
-	ai_selection = most_productive
+	texture = "gfx/interface/icons/production_method_icons/pmg_goods_garage.dds"	ai_selection = most_productive
 
 	production_methods = {
 		pm_goods_garage_null #无
-		pm_goods_garage_lego #木制积木 +木头
-		pm_goods_garage_gundam #拼装模型（高达） +铁 +工具
-		pm_goods_garage_kit #手办 +铁 +工具
-		pm_goods_garage_motor #电动玩具 +发动机
+		pm_goods_garage_lego #木制玩具
+		pm_goods_garage_kit #军用模型
+		pm_goods_garage_gundam #高达
+		pm_goods_garage_motor #电动玩具
 	}
 }
 pmg_goods_ip = { #ip管理 都要额外雇人，buff不同
-	texture = "gfx/interface/icons/generic_icons/pmg_goods_ip.dds"
-	ai_selection = most_productive
+	texture = "gfx/interface/icons/production_method_icons/pmg_goods_ip.dds"	ai_selection = most_productive
 
 	production_methods = {
 		pm_goods_ip_null #无
@@ -57,8 +54,7 @@ pmg_goods_ip = { #ip管理 都要额外雇人，buff不同
 	}
 }
 pmg_goods_selling = { #销售方式 
-	texture = "gfx/interface/icons/generic_icons/pmg_goods_doll.dds"
-	ai_selection = most_productive
+	texture = "gfx/interface/icons/production_method_icons/pmg_goods_selling.dds"	ai_selection = most_productive
 
 	production_methods = {
 		pm_goods_selling_null #无

@@ -71,7 +71,7 @@ goods_input_omocha_mult={
 		ai_value=0
 	}
 }
-goods_output_instruments_add={
+goods_output_musical_instrument_add={
 	decimals=1
 	color=good
 	percent=no
@@ -79,7 +79,7 @@ goods_output_instruments_add={
 		ai_value=0
 	}
 }
-goods_output_instruments_mult={
+goods_output_musical_instrument_mult={
 	decimals=1
 	color=good
 	percent=yes
@@ -87,7 +87,7 @@ goods_output_instruments_mult={
 		ai_value=0
 	}
 }
-goods_input_instruments_add={
+goods_input_musical_instrument_add={
 	decimals=1
 	color=bad
 	percent=no
@@ -95,7 +95,7 @@ goods_input_instruments_add={
 		ai_value=0
 	}
 }
-goods_input_instruments_mult={
+goods_input_musical_instrument_mult={
 	decimals=1
 	color=bad
 	percent=yes
@@ -234,6 +234,14 @@ goods_input_engines_add={
 goods_input_tea_add={
 	decimals=1
 	color=bad
+	game_data={
+		ai_value=0
+	}
+}
+goods_input_luxury_clothes_add={
+	decimals=1
+	color=bad
+	percent=no
 	game_data={
 		ai_value=0
 	}
@@ -427,4 +435,5 @@ country_supernatural_voting_power_add = {
 		ai_value=0
 	}
 }
+
 

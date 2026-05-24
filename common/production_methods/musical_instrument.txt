@@ -1,86 +1,69 @@
 ﻿#乐器
-pm_musical_instrument_main_null = { 
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"
+pm_musical_instrument_main_null = {
+	texture = "gfx/interface/icons/production_method_icons/pm_musical_instrument_main_null.dds"
 }
-
-pm_musical_instrument_main_wood = { #木制乐器
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_table.dds"
-
+pm_musical_instrument_main_wood = { #手工制作
+	texture = "gfx/interface/icons/production_method_icons/pm_musical_instrument_main_wood.dds"
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_wood_add = 10		#*20=200
-			goods_input_tools_add = 10		#*40=400
-			goods_output_instruments_add = 20		#*60=1200
+			goods_output_musical_instrument_add = 20
+			goods_input_wood_add = 20
+			goods_input_tools_add = 10
 		}
 		level_scaled = {
-			building_employment_shopkeepers_add = 100
-			building_employment_laborers_add = 850
-			building_employment_machinists_add = 50
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 4500
 		}
 	}
 }
-
-pm_musical_instrument_main_iron = { #铁制乐器
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_porcelain.dds"
-	unlocking_technologies = {
-		atmospheric_engine
-	}
-
+pm_musical_instrument_main_iron = { #冶金工艺
+	texture = "gfx/interface/icons/production_method_icons/pm_musical_instrument_main_iron.dds"
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_wood_add = 10		#*20=200
-			goods_input_iron_add = 10		#*40=400
-			goods_input_tools_add = 10		#*40=400
-			goods_output_instruments_add = 30		#*60=1800
+			goods_input_iron_add = 10
+			goods_input_wood_add = 10
+			goods_input_tools_add = 10
+			goods_output_musical_instrument_add = 30
 		}
 		level_scaled = {
-			building_employment_shopkeepers_add = 100
-			building_employment_laborers_add = 750
-			building_employment_machinists_add = 150
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 4000
+			building_employment_machinists_add = 500
 		}
 	}
 }
-
-pm_musical_instrument_main_steel = { #钢制乐器
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_watertube_boiler.dds"
-	unlocking_technologies = {
-		steelworking
-	}
-
+pm_musical_instrument_main_steel = { #机械加工
+	texture = "gfx/interface/icons/production_method_icons/pm_musical_instrument_main_steel.dds"
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_wood_add = 10		#*20=200
-			goods_input_steel_add = 15		#*50=750
-			goods_input_tools_add = 20		#*40=800
-			goods_output_instruments_add = 50		#*60=3000
+			goods_output_musical_instrument_add = 60
+			goods_input_steel_add = 20
+			goods_input_wood_add = 10
+			goods_input_tools_add = 20
 		}
 		level_scaled = {
-			building_employment_shopkeepers_add = 150
-			building_employment_laborers_add = 600
-			building_employment_machinists_add = 200
-			building_employment_engineers_add = 50
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 3500
+			building_employment_machinists_add = 500
+			building_employment_engineers_add = 500
 		}
 	}
 }
-
-pm_musical_instrument_main_electric = { #电气乐器
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_flash_freezing.dds"
-	unlocking_technologies = {
-		electrical_generation
-	}
-
+pm_musical_instrument_main_electric = { #电气化乐器
+	texture = "gfx/interface/icons/production_method_icons/pm_musical_instrument_main_electric.dds"
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_steel_add = 15		#*50=750
-			goods_input_tools_add = 10		#*40=400
-			goods_input_electricity_add = 20		#*30=600
-			goods_output_instruments_add = 60		#*60=3600
+			goods_output_musical_instrument_add = 80
+			goods_input_wood_add = 10
+			goods_input_steel_add = 20
+			goods_input_tools_add = 20
+			goods_input_electricity_add = 20
 		}
 		level_scaled = {
-			building_employment_shopkeepers_add = 200
-			building_employment_laborers_add = 450
-			building_employment_machinists_add = 250
-			building_employment_engineers_add = 100
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 3000
+			building_employment_machinists_add = 1000
+			building_employment_engineers_add = 500
 		}
 	}
 }

@@ -85,8 +85,19 @@ luxury_drinks = {
 #	traded_quantity = 5 # 250
 #}
 
-instruments = {
-	texture = "gfx/interface/icons/goods_icons/tools.dds"
+omocha = {
+	texture = "gfx/interface/icons/goods_icons/omocha.dds"
+	cost = 60
+	category = luxury
+
+	obsession_chance = 1.0
+	prestige_factor = 5
+	convoy_cost_multiplier = 0.75
+	traded_quantity = 5
+}
+
+musical_instrument = {
+	texture = "gfx/interface/icons/goods_icons/musical_instrument.dds"
 	cost = 60
 	category = luxury
 
@@ -126,3 +137,4 @@ games = {
 	prestige_factor = 10
 	traded_quantity = 3.5 # 300
 }
+

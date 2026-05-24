@@ -1,7 +1,6 @@
 ﻿#粮仓
 pmg_base_building_barn = { #基础设施
-	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
-	ai_selection = most_productive
+	texture = "gfx/interface/icons/production_method_icons/pmg_base_building_barn.dds"	ai_selection = most_productive
 
 	production_methods = { 
 		pm_wooden_barn #传统木制粮仓 +50谷物 +20肉 +雇佣农民，劳工
@@ -10,8 +9,7 @@ pmg_base_building_barn = { #基础设施
 	}
 }
 pmg_manage_building_barn = { #管理方式
-	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
-	ai_selection = most_productive
+	texture = "gfx/interface/icons/production_method_icons/pmg_manage_building_barn.dds"	ai_selection = most_productive
 
 	production_methods = {
 		pm_shopkeeper_barn #私人所有 +10%农业产量 +雇佣店主，资本家
@@ -20,8 +18,7 @@ pmg_manage_building_barn = { #管理方式
 	}
 }
 pmg_distribution_building_barn = { #主要作用
-	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
-	ai_selection = most_productive
+	texture = "gfx/interface/icons/production_method_icons/pmg_distribution_building_barn.dds"	ai_selection = most_productive
 
 	production_methods = {
 		pm_market_barn #控制市场 #-25%投机效果

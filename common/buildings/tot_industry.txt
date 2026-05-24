@@ -55,7 +55,7 @@ building_kissaten = { #咖啡厅
 }
 building_musical_instrument = { #乐器工坊
 	building_group = bg_light_industry
-	icon = "gfx/interface/icons/building_icons/building_kissaten.dds"
+	icon = "gfx/interface/icons/building_icons/building_musical_instrument.dds"
 	city_type = city
 	levels_per_mesh = 5
 	
@@ -67,7 +67,7 @@ building_musical_instrument = { #乐器工坊
 
 	production_method_groups = {
 		pmg_building_musical_instrument_main #乐器
-		pmg_building_automation #自动化
+		pmg_automation_building_tooling_workshop #自动化
 	}
 
 	required_construction = construction_cost_high
@@ -92,7 +92,7 @@ building_publisher = { #出版社
 	production_method_groups = {
 		pmg_publisher_main #主要刊物
 		pmg_publisher_business #附加业务
-		pmg_building_automation #自动化
+		pmg_automation_building_tooling_workshop #自动化
 	}
 
 	required_construction = construction_cost_high
@@ -117,7 +117,7 @@ building_entertainment_press = { #娱乐传媒社
 	production_method_groups = {
 		pmg_ent_press_main #娱乐刊物
 		pmg_ent_press_distribution #发行渠道
-		pmg_building_automation #自动化
+		pmg_automation_building_tooling_workshop #自动化
 	}
 
 	required_construction = construction_cost_high
@@ -143,7 +143,7 @@ building_game = { #游戏工坊
 		pmg_game_traditional_dev #传统游戏开发
 		pmg_game_modern_dev #现代游戏开发
 		pmg_game_business #商业模式
-		pmg_building_automation #自动化
+		pmg_automation_building_tooling_workshop #自动化
 	}
 
 	required_construction = construction_cost_high
@@ -156,7 +156,7 @@ building_game = { #游戏工坊
 
 building_goods = { #谷子工坊
 	building_group = bg_light_industry
-	icon = "gfx/interface/icons/building_icons/building_kissaten.dds"
+	icon = "gfx/interface/icons/building_icons/building_goods.dds"
 	city_type = city
 	levels_per_mesh = 5
 	
@@ -204,5 +204,6 @@ building_goods = { #谷子工坊
 #
 #	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_light_industry.dds"
 #}
+
 
 

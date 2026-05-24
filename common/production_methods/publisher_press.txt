@@ -1,265 +1,230 @@
-﻿#综合出版社
-pm_publisher_main_null = { #无
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"
-}
-
-pm_publisher_main_general_wood = { #手工编辑
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_table.dds"
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_paper_add = 30		#*30=900
-			goods_input_tools_add = 5		#*40=200
-			goods_output_publications_add = 40		#*50=2000
-		}
-		level_scaled = {
-			building_employment_shopkeepers_add = 80
-			building_employment_laborers_add = 820
-			building_employment_clerks_add = 100
-		}
-	}
-}
-
-pm_publisher_main_general_iron = { #分工编辑
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_porcelain.dds"
-	unlocking_technologies = {
-		atmospheric_engine
-	}
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_tools_add = 10		#*40=400
-			goods_input_paper_add = 45		#*30=1350
-			goods_output_publications_add = 50		#*50=2500
-		}
-		level_scaled = {
-			building_employment_shopkeepers_add = 100
-			building_employment_laborers_add = 700
-			building_employment_clerks_add = 180
-			building_employment_machinists_add = 20
-		}
-	}
-}
-
-pm_publisher_main_general_steel = { #标准化编辑部
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_watertube_boiler.dds"
-	unlocking_technologies = {
-		steelworking
-	}
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_tools_add = 15		#*40=600
-			goods_input_paper_add = 55		#*30=1650
-			goods_output_publications_add = 60		#*50=3000
-		}
-		level_scaled = {
-			building_employment_shopkeepers_add = 120
-			building_employment_laborers_add = 560
-			building_employment_clerks_add = 240
-			building_employment_machinists_add = 70
-			building_employment_engineers_add = 10
-		}
-	}
-}
-
-pm_publisher_main_general_electric = { #媒体编审体系
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_flash_freezing.dds"
-	unlocking_technologies = {
-		electrical_generation
-	}
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_tools_add = 20		#*40=800
-			goods_input_electricity_add = 15		#*30=450
-			goods_input_paper_add = 45		#*30=1350
-			goods_input_telephones_add = 10		#*60=600
-			goods_output_publications_add = 80		#*50=4000
-		}
-		level_scaled = {
-			building_employment_shopkeepers_add = 150
-			building_employment_laborers_add = 420
-			building_employment_clerks_add = 300
-			building_employment_machinists_add = 100
-			building_employment_engineers_add = 30
-		}
-	}
-}
-
-pm_publisher_business_none = { #无附加业务
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"
-}
-
-pm_publisher_business_publishing = { #出版代理
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tea_black_tea.dds"
-	unlocking_technologies = {
-		central_archives
-	}
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_paper_add = 20		#*30=600
-			goods_input_tools_add = 10		#*40=400
-			goods_output_publications_add = 25		#*50=1250
-		}
-		level_scaled = {
-			building_employment_clerks_add = 120
-		}
-		unscaled = {
-			country_weekly_innovation_add = 0.5
-			state_pop_qualifications_mult = 0.2
-		}
-	}
-}
-
-pm_publisher_business_ads = { #广告代理
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_sweet_pancake.dds"
-	unlocking_technologies = {
-		mass_communication
-	}
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_paper_add = 20		#*30=600
-			goods_input_tools_add = 10		#*40=400
-			goods_output_entertainment_publications_add = 35		#*65=2275
-		}
-		level_scaled = {
-			building_employment_shopkeepers_add = 40
-			building_employment_clerks_add = 140
-		}
-	}
-}
-
-#娱乐传媒社
-pm_ent_press_main_null = { #无
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"
-}
-
-pm_ent_press_main_novel = { #轻小说原作时代
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_table.dds"
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_paper_add = 25		#*30=750
-			goods_input_tools_add = 15		#*40=600
-			goods_output_entertainment_publications_add = 35		#*65=2275
-		}
-		level_scaled = {
-			building_employment_shopkeepers_add = 80
-			building_employment_laborers_add = 760
-			building_employment_clerks_add = 160
-		}
-	}
-}
-
-pm_ent_press_main_manga = { #漫画连载时代
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_porcelain.dds"
-	unlocking_technologies = {
-		atmospheric_engine
-	}
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_paper_add = 30		#*30=900
-			goods_input_tools_add = 20		#*40=800
-			goods_output_entertainment_publications_add = 50		#*65=3250
-		}
-		level_scaled = {
-			building_employment_shopkeepers_add = 100
-			building_employment_laborers_add = 620
-			building_employment_clerks_add = 220
-			building_employment_machinists_add = 60
-		}
-	}
-}
-
-pm_ent_press_main_serial = { #动画企划时代
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_watertube_boiler.dds"
-	unlocking_technologies = {
-		steelworking
-	}
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_paper_add = 35		#*30=1050
-			goods_input_tools_add = 25		#*40=1000
-			goods_input_electricity_add = 20		#*30=600
-			goods_output_entertainment_publications_add = 70		#*65=4550
-		}
-		level_scaled = {
-			building_employment_shopkeepers_add = 130
-			building_employment_laborers_add = 500
-			building_employment_clerks_add = 260
-			building_employment_machinists_add = 90
-			building_employment_engineers_add = 20
-		}
-	}
-}
-
-pm_ent_press_main_multimedia = { #IP联动时代
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_flash_freezing.dds"
-	unlocking_technologies = {
-		electrical_generation
-	}
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_paper_add = 40		#*30=1200
-			goods_input_tools_add = 30		#*40=1200
-			goods_input_electricity_add = 30		#*30=900
-			goods_output_entertainment_publications_add = 90		#*65=5850
-		}
-		level_scaled = {
-			building_employment_shopkeepers_add = 160
-			building_employment_laborers_add = 380
-			building_employment_clerks_add = 300
-			building_employment_machinists_add = 110
-			building_employment_engineers_add = 50
-		}
-	}
-}
-
-pm_ent_press_distribution_local = { #本地发行
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tea_milk.dds"
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_services_add = 5		#*30=150
-			goods_input_paper_add = 5		#*30=150
-			goods_input_tools_add = 5		#*40=200
-		}
-		level_scaled = {
-			building_employment_clerks_add = 60
-		}
-	}
-}
-
-pm_ent_press_distribution_national = { #全国发行
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tea_cocoa.dds"
-	unlocking_technologies = {
-		mass_communication
-	}
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_services_add = 10		#*30=300
-			goods_input_transportation_add = 10		#*30=300
-			goods_input_paper_add = 5		#*30=150
-			goods_output_entertainment_publications_add = 10		#*65=650
-		}
-		level_scaled = {
-			building_employment_clerks_add = 100
-			building_employment_machinists_add = 20
-		}
-	}
-}
-
-pm_ent_press_distribution_export = { #海外发行
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tea_black_tea.dds"
-	unlocking_technologies = {
-		international_trade
-	}
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_services_add = 15		#*30=450
-			goods_input_transportation_add = 15		#*30=450
-			goods_input_paper_add = 10		#*30=300
-			goods_output_entertainment_publications_add = 15		#*65=975
-		}
-		level_scaled = {
-			building_employment_shopkeepers_add = 40
-			building_employment_clerks_add = 120
-			building_employment_machinists_add = 40
-		}
-	}
-}
+﻿#综合出版社
+pm_publisher_main_null = { #无
+	texture = "gfx/interface/icons/production_method_icons/pm_publisher_main_null.dds"}
+
+pm_publisher_main_general_wood = { #手工编辑
+	texture = "gfx/interface/icons/production_method_icons/pm_publisher_main_general_wood.dds"	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 30		#*30=900
+			goods_input_tools_add = 5		#*40=200
+			goods_output_publications_add = 40		#*50=2000
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 300
+			building_employment_laborers_add = 2160
+			building_employment_clerks_add = 540
+		}
+	}
+}
+
+pm_publisher_main_general_iron = { #分工编辑
+	texture = "gfx/interface/icons/production_method_icons/pm_publisher_main_general_iron.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_tools_add = 10		#*40=400
+			goods_input_paper_add = 45		#*30=1350
+			goods_output_publications_add = 50		#*50=2500
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 300
+			building_employment_laborers_add = 1920
+			building_employment_clerks_add = 660
+			building_employment_machinists_add = 120
+		}
+	}
+}
+
+pm_publisher_main_general_steel = { #标准化编辑部
+	texture = "gfx/interface/icons/production_method_icons/pm_publisher_main_general_steel.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_tools_add = 15		#*40=600
+			goods_input_paper_add = 55		#*30=1650
+			goods_output_publications_add = 60		#*50=3000
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 300
+			building_employment_laborers_add = 1680
+			building_employment_clerks_add = 780
+			building_employment_machinists_add = 180
+			building_employment_engineers_add = 60
+		}
+	}
+}
+
+pm_publisher_main_general_electric = { #媒体编审体系
+	texture = "gfx/interface/icons/production_method_icons/pm_publisher_main_general_electric.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_tools_add = 20		#*40=800
+			goods_input_electricity_add = 15		#*30=450
+			goods_input_paper_add = 45		#*30=1350
+			goods_input_telephones_add = 10		#*60=600
+			goods_output_publications_add = 80		#*50=4000
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 300
+			building_employment_laborers_add = 1320
+			building_employment_clerks_add = 900
+			building_employment_machinists_add = 300
+			building_employment_engineers_add = 180
+		}
+	}
+}
+
+pm_publisher_business_none = { #无附加业务
+	texture = "gfx/interface/icons/production_method_icons/pm_publisher_business_none.dds"}
+
+pm_publisher_business_publishing = { #出版代理
+	texture = "gfx/interface/icons/production_method_icons/pm_publisher_business_publishing.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 20		#*30=600
+			goods_input_tools_add = 10		#*40=400
+			goods_output_publications_add = 25		#*50=1250
+		}
+		level_scaled = {
+			building_employment_clerks_add = 1600
+		}
+		unscaled = {
+			country_weekly_innovation_add = 0.5
+			state_pop_qualifications_mult = 0.2
+		}
+	}
+}
+
+pm_publisher_business_ads = { #广告代理
+	texture = "gfx/interface/icons/production_method_icons/pm_publisher_business_ads.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 20		#*30=600
+			goods_input_tools_add = 10		#*40=400
+			goods_output_entertainment_publications_add = 25		#*65=1625
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 400
+			building_employment_clerks_add = 1200
+		}
+	}
+}
+
+#娱乐传媒社
+pm_ent_press_main_null = { #无
+	texture = "gfx/interface/icons/production_method_icons/pm_ent_press_main_null.dds"}
+
+pm_ent_press_main_novel = { #轻小说原作时代
+	texture = "gfx/interface/icons/production_method_icons/pm_ent_press_main_novel.dds"	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 25		#*30=750
+			goods_input_tools_add = 15		#*40=600
+			goods_output_entertainment_publications_add = 35		#*65=2275
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 300
+			building_employment_laborers_add = 2160
+			building_employment_clerks_add = 540
+		}
+	}
+}
+
+pm_ent_press_main_manga = { #漫画连载时代
+	texture = "gfx/interface/icons/production_method_icons/pm_ent_press_main_manga.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 30		#*30=900
+			goods_input_tools_add = 20		#*40=800
+			goods_output_entertainment_publications_add = 45		#*65=2925
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 300
+			building_employment_laborers_add = 1920
+			building_employment_clerks_add = 660
+			building_employment_machinists_add = 120
+		}
+	}
+}
+
+pm_ent_press_main_serial = { #动画企划时代
+	texture = "gfx/interface/icons/production_method_icons/pm_ent_press_main_serial.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 35		#*30=1050
+			goods_input_tools_add = 25		#*40=1000
+			goods_input_electricity_add = 20		#*30=600
+			goods_output_entertainment_publications_add = 70		#*65=4550
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 300
+			building_employment_laborers_add = 1680
+			building_employment_clerks_add = 780
+			building_employment_machinists_add = 180
+			building_employment_engineers_add = 60
+		}
+	}
+}
+
+pm_ent_press_main_multimedia = { #IP联动时代
+	texture = "gfx/interface/icons/production_method_icons/pm_ent_press_main_multimedia.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 40		#*30=1200
+			goods_input_tools_add = 30		#*40=1200
+			goods_input_electricity_add = 30		#*30=900
+			goods_output_entertainment_publications_add = 85		#*65=5525
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 300
+			building_employment_laborers_add = 1320
+			building_employment_clerks_add = 900
+			building_employment_machinists_add = 300
+			building_employment_engineers_add = 180
+		}
+	}
+}
+
+pm_ent_press_distribution_local = { #本地发行
+	texture = "gfx/interface/icons/production_method_icons/pm_ent_press_distribution_local.dds"	building_modifiers = {
+		workforce_scaled = {
+			goods_input_services_add = 5		#*30=150
+			goods_input_paper_add = 5		#*30=150
+			goods_input_tools_add = 5		#*40=200
+			goods_output_entertainment_publications_add = 10		#*65=650
+		}
+		level_scaled = {
+			building_employment_clerks_add = 1600
+		}
+	}
+}
+
+pm_ent_press_distribution_national = { #全国发行
+	texture = "gfx/interface/icons/production_method_icons/pm_ent_press_distribution_national.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_services_add = 10		#*30=300
+			goods_input_transportation_add = 10		#*30=300
+			goods_input_paper_add = 5		#*30=150
+			goods_output_entertainment_publications_add = 20		#*65=1300
+		}
+		level_scaled = {
+			building_employment_clerks_add = 1200
+			building_employment_machinists_add = 400
+		}
+	}
+}
+
+pm_ent_press_distribution_export = { #海外发行
+	texture = "gfx/interface/icons/production_method_icons/pm_ent_press_distribution_export.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_services_add = 15		#*30=450
+			goods_input_transportation_add = 15		#*30=450
+			goods_input_paper_add = 10		#*30=300
+			goods_output_entertainment_publications_add = 30		#*65=1950
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 320
+			building_employment_clerks_add = 960
+			building_employment_machinists_add = 320
+		}
+	}
+}

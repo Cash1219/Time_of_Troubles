@@ -1,528 +1,866 @@
 ﻿#咖啡厅
+
 pm_kissaten_coffee_null = {
+
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"
 
 }
+
 pm_kissaten_coffee_coffee = { #标准咖啡
+
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_coffee.dds"
 
 	building_modifiers = {
+
 		workforce_scaled = {
+
 			# input goods
+
 			goods_input_coffee_add = 20		#*50=1000
+
 			goods_input_sugar_add = 10		#*30=300
-			
+
+
+
 			# output goods
-			goods_output_luxury_drinks_add = 30		#*60=1800
+
+			goods_output_luxury_drinks_add = 35		#*60=2100
+
 		}
 
+
+
 		level_scaled = {
-			# profit = 500
 			building_employment_shopkeepers_add = 100
 			building_employment_laborers_add = 900
 		}
+
 	}
+
 }
+
 pm_kissaten_coffee_mocha = { #摩卡咖啡
+
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_mocha.dds"
-	unlocking_technologies = {
-		mechanical_tools
-	}
+
+
 
 	building_modifiers = {
+
 		workforce_scaled = {
+
 			# input goods
+
 			goods_input_coffee_add = 25		#*50=1250
+
 			goods_input_sugar_add = 45		#*30=1350
-			
+
+
+
 			# output goods
-			goods_output_luxury_drinks_add = 55		#*60=3300
+
+			goods_output_luxury_drinks_add = 60		#*60=3600
+
 		}
 
+
+
 		level_scaled = {
-			# profit = 700
 			building_employment_shopkeepers_add = 100
 			building_employment_laborers_add = 800
 			building_employment_machinists_add = 100
 		}
+
 	}
+
 }
+
 pm_kissaten_coffee_latte = { #拿铁咖啡
+
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_latte.dds"
-	unlocking_technologies = {
-		steelworking
-	}
+
+
 
 	building_modifiers = {
+
 		workforce_scaled = {
+
 			# input goods
+
 			goods_input_coffee_add = 35		#*50=1750
+
 			goods_input_sugar_add = 55		#*30=1650
-			
+
+
+
 			# output goods
-			goods_output_luxury_drinks_add = 70		#*60=4200
+
+			goods_output_luxury_drinks_add = 80		#*60=4800
+
 		}
 
+
+
 		level_scaled = {
-			# profit = 800
 			building_employment_shopkeepers_add = 200
-			building_employment_laborers_add = 600
-			building_employment_machinists_add = 200
+			building_employment_laborers_add = 500
+			building_employment_machinists_add = 300
 		}
+
 	}
+
 }
+
 pm_kissaten_tea_null = { #无
+
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"
 
 }
+
 pm_kissaten_tea_milk = { #牛奶
+
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tea_milk.dds"
 
 	building_modifiers = {
+
 		workforce_scaled = {
+
 			# input goods
+
 			goods_input_sugar_add = 25		#*30=750
-			goods_input_tea_add = 5		#*50=250
-			
+
+			goods_input_tea_add = 10		#*50=500
+
+
+
 			# output goods
-			goods_output_luxury_drinks_add = 25		#*60=1500
+
+			goods_output_luxury_drinks_add = 30		#*60=1800
+
 		}
 
+
+
 		level_scaled = {
-			# profit = 300
 			building_employment_shopkeepers_add = 100
 			building_employment_laborers_add = 900
 		}
+
 	}
+
 }
+
 pm_kissaten_tea_cocoa = { #可可
+
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tea_cocoa.dds"
-	unlocking_technologies = {
-		mechanical_tools
-	}
+
+
 
 	building_modifiers = {
+
 		workforce_scaled = {
+
 			# input goods
+
 			goods_input_sugar_add = 45		#*30=1350
-			goods_input_tea_add = 5		#*50=250
-			
+
+			goods_input_tea_add = 10		#*50=500
+
+
+
 			# output goods
-			goods_output_luxury_drinks_add = 40		#*60=2400
+
+			goods_output_luxury_drinks_add = 45		#*60=2700
+
 		}
 
+
+
 		level_scaled = {
-			# profit = 600
 			building_employment_shopkeepers_add = 100
 			building_employment_laborers_add = 800
 			building_employment_machinists_add = 100
 		}
+
 	}
+
 }
+
 pm_kissaten_tea_black_tea = { #红茶
+
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tea_black_tea.dds"
-	unlocking_technologies = {
-		steelworking
-	}
+
+
 
 	building_modifiers = {
+
 		workforce_scaled = {
+
 			# input goods
-			goods_input_sugar_add = 55		#*30=1650
-			goods_input_tea_add = 15		#*50=750
-			
+
+			goods_input_sugar_add = 45		#*30=1350
+
+			goods_input_tea_add = 20		#*50=1000
+
+
+
 			# output goods
-			goods_output_luxury_drinks_add = 60		#*60=3600
+
+			goods_output_luxury_drinks_add = 70		#*60=4200
+
 		}
+
+
 
 		level_scaled = {
-			# profit = 800
 			building_employment_shopkeepers_add = 200
-			building_employment_laborers_add = 600
-			building_employment_machinists_add = 200
+			building_employment_laborers_add = 500
+			building_employment_machinists_add = 300
 		}
-		
+
+
+
 	}
+
 }
+
 pm_kissaten_sweet_null = { #无
+
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"
 
-	
+
+
 }
+
 pm_kissaten_sweet_biscuit = { #饼干
+
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_sweet_biscuit.dds"
 
 	building_modifiers = {
+
 		workforce_scaled = {
+
 			# input goods
+
 			goods_input_grain_add = 25		#*20=500
+
 			goods_input_sugar_add = 20		#*30=600
-			
+
+
+
 			# output goods
+
 			goods_output_luxury_foods_add = 30		#*60=1800
+
 		}
 
+
+
 		level_scaled = {
-			# profit = 400
 			building_employment_shopkeepers_add = 100
 			building_employment_laborers_add = 900
 		}
+
 	}
+
 }
+
 pm_kissaten_sweet_pancake = { #可丽饼
+
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_sweet_pancake.dds"
-	unlocking_technologies = {
-		mechanical_tools
-	}
+
+
 
 	building_modifiers = {
+
 		workforce_scaled = {
+
 			# input goods
+
 			goods_input_grain_add = 35		#*20=700
+
 			goods_input_sugar_add = 25		#*30=750
+
 			goods_input_fruit_add = 25		#*30=750
-			
+
+
+
 			# output goods
-			goods_output_luxury_foods_add = 50		#*60=3000
+
+			goods_output_luxury_foods_add = 55		#*60=3300
+
 		}
+
+
 
 		level_scaled = {
-			# profit = 500
-			building_employment_shopkeepers_add = 100
-			building_employment_laborers_add = 900
-		}
-	}
-}
-pm_kissaten_sweet_cake = { #蛋糕
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_sweet_cake.dds"
-	unlocking_technologies = {
-		steelworking
-	}
-
-	building_modifiers = {
-		workforce_scaled = {
-			# input goods
-			goods_input_grain_add = 45		#*20=900
-			goods_input_sugar_add = 35		#*30=1050
-			goods_input_fruit_add = 25		#*30=750
-			
-			# output goods
-			goods_output_luxury_foods_add = 65		#*60=3900
-		}
-
-		level_scaled = {
-			# profit = 800
 			building_employment_shopkeepers_add = 100
 			building_employment_laborers_add = 800
 			building_employment_machinists_add = 100
 		}
+
 	}
+
 }
-pm_kissaten_sweet_pie = { #苹果派
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_sweet_pie.dds"
-	unlocking_technologies = {
-		pasteurization
-	}
+
+pm_kissaten_sweet_cake = { #蛋糕
+
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_sweet_cake.dds"
+
+
 
 	building_modifiers = {
+
 		workforce_scaled = {
+
 			# input goods
+
 			goods_input_grain_add = 45		#*20=900
+
 			goods_input_sugar_add = 35		#*30=1050
-			goods_input_fruit_add = 35		#*30=1050
-			
+
+			goods_input_fruit_add = 25		#*30=750
+
+
+
 			# output goods
+
 			goods_output_luxury_foods_add = 70		#*60=4200
+
 		}
+
+
 
 		level_scaled = {
-			# profit = 800
-			building_employment_shopkeepers_add = 200
-			building_employment_laborers_add = 600
+			building_employment_shopkeepers_add = 100
+			building_employment_laborers_add = 700
 			building_employment_machinists_add = 200
 		}
+
 	}
+
 }
+
+pm_kissaten_sweet_pie = { #苹果派
+
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_sweet_pie.dds"
+
+
+
+	building_modifiers = {
+
+		workforce_scaled = {
+
+			# input goods
+
+			goods_input_grain_add = 45		#*20=900
+
+			goods_input_sugar_add = 35		#*30=1050
+
+			goods_input_fruit_add = 35		#*30=1050
+
+
+
+			# output goods
+
+			goods_output_luxury_foods_add = 80		#*60=4800
+
+		}
+
+
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 200
+			building_employment_laborers_add = 500
+			building_employment_machinists_add = 300
+		}
+
+	}
+
+}
+
 pm_kissaten_food_null = { #无
+
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"
 
-	
+
+
 }
+
 pm_kissaten_food_sandwich = { #三明治
+
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_food_sandwich.dds"
 
 	building_modifiers = {
+
 		workforce_scaled = {
+
 			# input goods
+
 			goods_input_grain_add = 20		#*20=400
+
 			goods_input_meat_add = 30		#*30=900
-			
+
+
+
 			# output goods
-			goods_output_luxury_foods_add = 30		#*60=1800
+
+			goods_output_luxury_foods_add = 35		#*60=2100
+
 		}
 
+
+
 		level_scaled = {
-			# profit = 400
 			building_employment_shopkeepers_add = 100
 			building_employment_laborers_add = 900
 		}
-		
+
+
+
 	}
+
 }
+
 pm_kissaten_food_pasta = { #意大利面
+
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_food_pasta.dds"
-	unlocking_technologies = {
-		mechanical_tools
-	}
+
+
 
 	building_modifiers = {
+
 		workforce_scaled = {
+
 			# input goods
+
 			goods_input_grain_add = 35		#*20=700
+
 			goods_input_meat_add = 30		#*30=900
-			
+
+
+
 			# output goods
-			goods_output_luxury_foods_add = 40		#*60=2400
+
+			goods_output_luxury_foods_add = 45		#*60=2700
+
 		}
+
+
 
 		level_scaled = {
-			# profit = 500
-			building_employment_shopkeepers_add = 100
-			building_employment_laborers_add = 900
-		}
-	}
-}
-pm_kissaten_food_omuraisu = { #蛋包饭
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_food_omuraisu.dds"
-	unlocking_technologies = {
-		steelworking
-	}
-
-	building_modifiers = {
-		workforce_scaled = {
-			# input goods
-			goods_input_grain_add = 45		#*20=900
-			goods_input_meat_add = 50		#*30=1500
-			
-			# output goods
-			goods_output_luxury_foods_add = 60		#*60=3600
-		}
-
-		level_scaled = {
-			# profit = 700
 			building_employment_shopkeepers_add = 100
 			building_employment_laborers_add = 800
 			building_employment_machinists_add = 100
 		}
+
 	}
+
 }
-pm_kissaten_food_takoyaki = { #章鱼烧
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_food_takoyaki.dds"
-	unlocking_technologies = {
-		pasteurization
-	}
+
+pm_kissaten_food_omuraisu = { #蛋包饭
+
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_food_omuraisu.dds"
+
+
 
 	building_modifiers = {
+
 		workforce_scaled = {
+
 			# input goods
+
 			goods_input_grain_add = 45		#*20=900
+
 			goods_input_meat_add = 50		#*30=1500
-			goods_input_fish_add = 25		#*20=500
-			
+
+
+
 			# output goods
-			goods_output_luxury_foods_add = 70		#*60=4200
+
+			goods_output_luxury_foods_add = 65		#*60=3900
+
 		}
 
+
+
 		level_scaled = {
-			# profit = 900
-			building_employment_shopkeepers_add = 200
-			building_employment_laborers_add = 600
+			building_employment_shopkeepers_add = 100
+			building_employment_laborers_add = 700
 			building_employment_machinists_add = 200
 		}
+
 	}
+
 }
-pm_kissaten_server_null = { #普通营业
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"
+
+pm_kissaten_food_takoyaki = { #章鱼烧
+
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_food_takoyaki.dds"
+
+
+
 	building_modifiers = {
+
 		workforce_scaled = {
+
+			# input goods
+
+			goods_input_grain_add = 45		#*20=900
+
+			goods_input_meat_add = 50		#*30=1500
+
+			goods_input_fish_add = 25		#*20=500
+
+
+
 			# output goods
-			goods_output_services_add = 5
+
+			goods_output_luxury_foods_add = 75		#*60=4500
+
 		}
+
+
+
 		level_scaled = {
-			building_employment_laborers_add = 120
-			building_employment_clerks_add = 20
+			building_employment_shopkeepers_add = 200
+			building_employment_laborers_add = 500
+			building_employment_machinists_add = 300
 		}
-		unscaled = {
-			building_throughput_add = 0.00
-		}
+
 	}
+
 }
+
+pm_kissaten_server_null = { #普通营业
+
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"	building_modifiers = {
+
+		workforce_scaled = {
+
+			# output goods
+
+			goods_output_services_add = 5
+
+		}
+
+		level_scaled = {
+
+			building_employment_laborers_add = 340
+
+			building_employment_clerks_add = 160
+
+		}
+
+		unscaled = {
+
+			building_throughput_add = 0.00
+
+		}
+
+	}
+
+}
+
 pm_kissaten_server_waitress = { #普通女仆
+
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_server_waitress.dds"
 
 	building_modifiers = {
+
 		workforce_scaled = {
+
 			# input goods
+
 			goods_input_clothes_add = 10		#*30=300
+
 			# output goods
+
 			goods_output_services_add = 15
-		}
-		level_scaled = {
-			building_employment_laborers_add = 100
-			building_employment_clerks_add = 40
-		}
-		unscaled = {
-			building_throughput_add = 0.05
-			building_minimum_wage_mult = 0.10
-		}
-	}
-}
-pm_kissaten_server_maid = { #女仆营业
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_server_maid.dds"
-	unlocking_technologies = {
-		central_archives
-	}
 
-	building_modifiers = {
-		workforce_scaled = {
-			# input goods
-			goods_input_luxury_clothes_add = 20		#*60=1200
-			# output goods
-			goods_output_services_add = 25
 		}
+
 		level_scaled = {
-			building_employment_laborers_add = 40
+
+			building_employment_laborers_add = 320
+
 			building_employment_clerks_add = 180
+
 		}
+
 		unscaled = {
-			building_throughput_add = 0.10
-			building_minimum_wage_mult = 0.20
+
+			building_throughput_add = 0.05
+
+			building_minimum_wage_mult = 0.10
+
 		}
-	}
-}
-pm_kissaten_server_fuwafuwa = { #主题公演
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_server_fuwafuwa.dds"
-	unlocking_technologies = {
-		mass_communication
+
 	}
 
-	building_modifiers = {
-		workforce_scaled = {
-			# input goods
-			goods_input_luxury_clothes_add = 25		#*60=1500
-			goods_input_musical_instruments_add = 10		#*40=400
-			# output goods
-			goods_output_services_add = 40
-		}
-		level_scaled = {
-			building_employment_laborers_add = 80
-			building_employment_clerks_add = 320
-		}
-		unscaled = {
-			building_throughput_add = 0.15
-			building_minimum_wage_mult = 0.30
-		}
-	}
 }
+
+pm_kissaten_server_maid = { #女仆营业
+
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_server_maid.dds"
+
+
+
+	building_modifiers = {
+
+		workforce_scaled = {
+
+			# input goods
+
+			goods_input_luxury_clothes_add = 20		#*60=1200
+
+			# output goods
+
+			goods_output_services_add = 50
+
+		}
+
+		level_scaled = {
+
+			building_employment_laborers_add = 140
+
+			building_employment_clerks_add = 360
+
+		}
+
+		unscaled = {
+
+			building_throughput_add = 0.10
+
+			building_minimum_wage_mult = 0.20
+
+		}
+
+	}
+
+}
+
+pm_kissaten_server_fuwafuwa = { #主题公演
+
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_server_fuwafuwa.dds"
+
+
+
+	building_modifiers = {
+
+		workforce_scaled = {
+
+			# input goods
+
+			goods_input_luxury_clothes_add = 25		#*60=1500
+
+			goods_input_musical_instrument_add = 5		#*40=200
+
+			# output goods
+
+			goods_output_services_add = 60
+
+		}
+
+		level_scaled = {
+
+			building_employment_laborers_add = 140
+
+			building_employment_clerks_add = 360
+
+		}
+
+		unscaled = {
+
+			building_throughput_add = 0.15
+
+			building_minimum_wage_mult = 0.30
+
+		}
+
+	}
+
+}
+
 pm_kissaten_tool_null = { #无
+
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"
 
 }
+
 pm_kissaten_tool_table = { #基本桌椅
+
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_table.dds"
 
 	building_modifiers = {
+
 		workforce_scaled = {
+
 			# input goods
+
 			goods_input_furniture_add = 10		#*30=300
+
 			goods_input_tools_add = 5		#*40=200
+
 		}
 
+
+
 		level_scaled = {
-			building_employment_laborers_add = -1000
-			building_employment_machinists_add = 100
+
+			building_employment_laborers_add = -560
+
+			building_employment_machinists_add = 60
+
 		}
+
 		unscaled = {
+
 			building_goods_input_mult = -0.05
+
 		}
+
 	}
+
 }
+
 pm_kissaten_tool_porcelain = { #餐具套装
+
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_porcelain.dds"
-	unlocking_technologies = {
-		steelworking
-	}
+
+
 
 	building_modifiers = {
+
 		workforce_scaled = {
+
 			# input goods
+
 			goods_input_furniture_add = 10		#*30=300
+
 			goods_input_tools_add = 10		#*40=400
+
 			goods_input_porcelain_add = 10		#*70=700
+
 			goods_input_iron_add = 5		#*40=200
+
 		}
 
+
+
 		level_scaled = {
-			building_employment_laborers_add = -1200
-			building_employment_machinists_add = 200
+
+			building_employment_laborers_add = -600
+
+			building_employment_machinists_add = 100
+
 		}
+
 		unscaled = {
+
 			building_goods_input_mult = -0.10
+
 		}
+
 	}
+
 }
+
 pm_kissaten_tool_watertube_boiler = { #水管锅炉
+
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_watertube_boiler.dds"
-	unlocking_technologies = {
-		atmospheric_engine
-	}
+
+
 
 	building_modifiers = {
+
 		workforce_scaled = {
+
 			# input goods
+
 			goods_input_furniture_add = 10		#*30=300
+
 			goods_input_tools_add = 15		#*40=600
+
 			goods_input_porcelain_add = 10		#*70=700
+
 			goods_input_coal_add = 10		#*30=300
+
 			goods_input_iron_add = 10		#*40=400
+
 		}
 
+
+
 		level_scaled = {
-			building_employment_laborers_add = -1800
-			building_employment_machinists_add = 600
-			building_employment_engineers_add = 200
+
+			building_employment_laborers_add = -900
+
+			building_employment_machinists_add = 300
+
+			building_employment_engineers_add = 100
+
 		}
+
 		unscaled = {
+
 			building_goods_input_mult = -0.15
+
 		}
+
 	}
+
 }
+
 pm_kissaten_tool_flash_freezing = { #冷藏设备
+
 	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tool_flash_freezing.dds"
-	unlocking_technologies = {
-		electrical_generation
-	}
+
+
 
 	building_modifiers = {
+
 		workforce_scaled = {
+
 			# input goods
+
 			goods_input_furniture_add = 10		#*30=300
+
 			goods_input_tools_add = 20		#*40=800
+
 			goods_input_porcelain_add = 10		#*70=700
+
 			goods_input_coal_add = 10		#*30=300
+
 			goods_input_iron_add = 10		#*40=400
-			goods_input_engines_add = 10		#*60=600
-			goods_input_electricity_add = 20		#*30=600
+
+			goods_input_engines_add = 5		#*60=300
+
+			goods_input_electricity_add = 15		#*30=450
+
 		}
 
+
+
 		level_scaled = {
-			building_employment_laborers_add = -2200
-			building_employment_machinists_add = 900
-			building_employment_engineers_add = 300
+
+			building_employment_laborers_add = -1100
+
+			building_employment_machinists_add = 440
+
+			building_employment_engineers_add = 160
+
 		}
+
 		unscaled = {
+
 			building_goods_input_mult = -0.20
+
 		}
+
 	}
+
 }
+
+
 

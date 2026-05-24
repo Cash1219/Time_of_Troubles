@@ -58,31 +58,32 @@
  building_entertainment_press: "娱乐传媒社"
  building_game: "游戏工坊"
  
- pmg_building_musical_instrument_main: "乐器制造"
+ pmg_building_musical_instrument_main: "乐器生产"
  pm_musical_instrument_main_null: "无"
- pm_musical_instrument_main_wood: "木制乐器"
- pm_musical_instrument_main_iron: "铁制乐器"
- pm_musical_instrument_main_steel: "钢制乐器"
- pm_musical_instrument_main_electric: "电气乐器"
+ pm_musical_instrument_main_wood: "手工制作"
+ pm_musical_instrument_main_iron: "冶金工艺"
+ pm_musical_instrument_main_steel: "机械加工"
+ pm_musical_instrument_main_electric: "电气化乐器"
 
  pmg_goods_doll: "毛绒产品"
  pm_goods_doll_null: "无"
- pm_goods_doll_doll: "玩偶"
+ pm_goods_doll_doll: "手工玩偶"
+ pm_goods_doll_custom: "定制玩偶"
  pm_goods_doll_pillow: "抱枕"
+ pm_goods_doll_iron: "等身抱枕"
  
  pmg_goods_jewelry: "小饰品"
  pm_goods_jewelry_null: "无"
- pm_goods_jewelry_badge: "徽章" #铁
+ pm_goods_jewelry_badge: "徽章"
  pm_goods_jewelry_pendant: "挂件"
- pm_goods_jewelry_stand: "立牌" #玻璃
- pm_goods_jewelry_keychain: "挂件"
+ pm_goods_jewelry_stand: "立牌"
+ pm_goods_jewelry_premium: "手办"
  
  pmg_goods_garage: "模型"
  pm_goods_garage_null: "无"
- pm_goods_garage_prize: "木雕刻景品" #木材
- pm_goods_garage_lego: "木制积木"
+ pm_goods_garage_lego: "木制玩具"
  pm_goods_garage_gundam: "高达" #塑造核心 +
- pm_goods_garage_kit: "手办" #
+ pm_goods_garage_kit: "军用模型" #
  pm_goods_garage_motor: "电动玩具"
  
  pmg_goods_print: "印刷品"
@@ -97,7 +98,6 @@
  pm_goods_ip_home: "本国优先" #少量增加皈依和同化
  pm_goods_ip_hot: "热门优先" #少量增加产量
  pm_goods_ip_random: "随机上架"
- pm_goods_ip_feelings: "情怀优先" #少量增加经济规模上限
  
  pmg_goods_selling: "销售方式"
  
@@ -147,11 +147,24 @@
  pm_game_business_service: "持续运营制"
  
  omocha: "周边"
+ musical_instrument: "乐器"
+ publications: "出版物"
+ entertainment_publications: "娱乐出版物"
+ games: "游戏"
  goods_output_omocha_add: "@omocha!周边产出"
  goods_output_omocha_add_desc: "建筑产出的@omocha!周边数量"
  goods_input_omocha_add: "@omocha!周边投入"
  goods_input_omocha_add_desc: "建筑消费的@omocha!周边数量"
+ goods_output_musical_instrument_add: "@musical_instrument!乐器产出"
+ goods_output_musical_instrument_add_desc: "建筑产出的@musical_instrument!乐器数量"
+ goods_output_publications_add: "@publications!出版物产出"
+ goods_output_publications_add_desc: "建筑产出的@publications!出版物数量"
+ goods_output_entertainment_publications_add: "@entertainment_publications!娱乐出版物产出"
+ goods_output_entertainment_publications_add_desc: "建筑产出的@entertainment_publications!娱乐出版物数量"
+ goods_output_games_add: "@games!游戏产出"
+ goods_output_games_add_desc: "建筑产出的@games!游戏数量"
  goods_input_furniture_add: "@furniture!家具投入"
  goods_input_furniture_add_desc: "建筑消费的@furniture!家具数量"
  goods_input_porcelain_add: "@porcelain!瓷器投入"
  goods_input_porcelain_add_desc: "建筑消费的@porcelain!瓷器数量"
+
