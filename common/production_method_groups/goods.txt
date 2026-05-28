@@ -38,7 +38,7 @@ pmg_goods_garage = { #模型
 	production_methods = {
 		pm_goods_garage_null #无
 		pm_goods_garage_lego #木制玩具
-		pm_goods_garage_kit #军用模型
+		pm_goods_garage_military_model #军用模型
 		pm_goods_garage_gundam #高达
 		pm_goods_garage_motor #电动玩具
 	}
@@ -60,6 +60,7 @@ pmg_goods_selling = { #销售方式
 		pm_goods_selling_null #无
 		pm_goods_selling_lotto #抽奖模式 -产出 +商品竞争力
 		pm_goods_selling_large #大量销售 +产出 -商品竞争力
-		pm_goods_selling_limit #饥饿营销 -产出 +商品竞争力
+		pm_goods_selling_hunger_marketing #饥饿营销 -产出 +商品竞争力
 	}
 }
+

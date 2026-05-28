@@ -67,16 +67,16 @@ pm_publisher_main_general_electric = { #媒体编审体系
 		}
 	}
 }
-pm_publisher_business_none = { #无附加业务
-	texture = "gfx/interface/icons/production_method_icons/pm_publisher_business_none.dds"
+pm_publisher_comprehensive_publishing = { #无附加业务
+	texture = "gfx/interface/icons/production_method_icons/pm_publisher_comprehensive_publishing.dds"
 	building_modifiers = {
 		unscaled = {
 			building_goods_input_mult = -0.05
 		}
 	}
 }
-pm_publisher_business_publishing = { #出版代理
-	texture = "gfx/interface/icons/production_method_icons/pm_publisher_business_publishing.dds"
+pm_publisher_professional_journal = { #出版代理
+	texture = "gfx/interface/icons/production_method_icons/pm_publisher_professional_journal.dds"
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_paper_add = 20		#*30=600
@@ -99,8 +99,8 @@ pm_publisher_business_publishing = { #出版代理
 		}
 	}
 }
-pm_publisher_business_ads = { #广告代理
-	texture = "gfx/interface/icons/production_method_icons/pm_publisher_business_ads.dds"
+pm_publisher_mass_magazine = { #广告代理
+	texture = "gfx/interface/icons/production_method_icons/pm_publisher_mass_magazine.dds"
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_paper_add = 20		#*30=600
@@ -225,4 +225,5 @@ pm_ent_press_distribution_export = { #海外发行
 		}
 	}
 }
+
 
