@@ -79,7 +79,7 @@ building_musical_instrument = { #乐器工坊
 }
 building_publisher = { #出版社
 	building_group = bg_light_industry
-	icon = "gfx/interface/icons/building_icons/building_kissaten.dds"
+	icon = "gfx/interface/icons/building_icons/building_publisher.dds"
 	city_type = city
 	levels_per_mesh = 5
 	
@@ -92,7 +92,6 @@ building_publisher = { #出版社
 	production_method_groups = {
 		pmg_publisher_main #主要刊物
 		pmg_publisher_business #附加业务
-		pmg_automation_building_tooling_workshop #自动化
 	}
 
 	required_construction = construction_cost_high
@@ -104,7 +103,7 @@ building_publisher = { #出版社
 }
 building_entertainment_press = { #娱乐传媒社
 	building_group = bg_light_industry
-	icon = "gfx/interface/icons/building_icons/building_kissaten.dds"
+	icon = "gfx/interface/icons/building_icons/building_entertainment_press.dds"
 	city_type = city
 	levels_per_mesh = 5
 	
@@ -140,9 +139,10 @@ building_game = { #游戏工坊
 	}
 
 	production_method_groups = {
-		pmg_game_traditional_dev #传统游戏开发
-		pmg_game_modern_dev #现代游戏开发
-		pmg_game_business #商业模式
+		pmg_game_traditional_dev #桌游开发
+		pmg_game_modern_dev #机械开发
+		pmg_game_business #电子开发
+		pmg_game_operation #运营模式
 		pmg_automation_building_tooling_workshop #自动化
 	}
 

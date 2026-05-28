@@ -1,5 +1,6 @@
 ﻿pmg_building_musical_instrument_main = { #主乐器线
-	texture = "gfx/interface/icons/production_method_icons/pmg_building_musical_instrument_main.dds"	ai_selection = most_productive
+	texture = "gfx/interface/icons/production_method_icons/pmg_building_musical_instrument_main.dds"
+	ai_selection = most_productive
 
 	production_methods = {
 		pm_musical_instrument_main_null
@@ -11,7 +12,8 @@
 }
 
 pmg_publisher_main = { #主要刊物
-	texture = "gfx/interface/icons/production_method_icons/pmg_publisher_main.dds"	ai_selection = most_productive
+	texture = "gfx/interface/icons/production_method_icons/pmg_publisher_main.dds"
+	ai_selection = most_productive
 
 	production_methods = {
 		pm_publisher_main_null
@@ -23,7 +25,8 @@ pmg_publisher_main = { #主要刊物
 }
 
 pmg_publisher_business = { #附加业务
-	texture = "gfx/interface/icons/production_method_icons/pmg_publisher_business.dds"	ai_selection = most_productive
+	texture = "gfx/interface/icons/production_method_icons/pmg_publisher_business.dds"
+	ai_selection = most_productive
 
 	production_methods = {
 		pm_publisher_business_none
@@ -33,19 +36,21 @@ pmg_publisher_business = { #附加业务
 }
 
 pmg_ent_press_main = { #娱乐刊物
-	texture = "gfx/interface/icons/production_method_icons/pmg_ent_press_main.dds"	ai_selection = most_productive
+	texture = "gfx/interface/icons/production_method_icons/pmg_ent_press_main.dds"
+	ai_selection = most_productive
 
 	production_methods = {
 		pm_ent_press_main_null
-		pm_ent_press_main_novel
 		pm_ent_press_main_manga
 		pm_ent_press_main_serial
+		pm_ent_press_main_novel
 		pm_ent_press_main_multimedia
 	}
 }
 
 pmg_ent_press_distribution = { #发行渠道
-	texture = "gfx/interface/icons/production_method_icons/pmg_ent_press_distribution.dds"	ai_selection = most_productive
+	texture = "gfx/interface/icons/production_method_icons/pmg_ent_press_distribution.dds"
+	ai_selection = most_productive
 
 	production_methods = {
 		pm_ent_press_distribution_local
@@ -54,8 +59,9 @@ pmg_ent_press_distribution = { #发行渠道
 	}
 }
 
-pmg_game_traditional_dev = { #传统游戏开发
-	texture = "gfx/interface/icons/production_method_icons/pmg_game_traditional_dev.dds"	ai_selection = most_productive
+pmg_game_traditional_dev = { #桌游开发
+	texture = "gfx/interface/icons/production_method_icons/pmg_game_traditional_dev.dds"
+	ai_selection = most_productive
 
 	production_methods = {
 		pm_game_traditional_tabletop
@@ -64,8 +70,9 @@ pmg_game_traditional_dev = { #传统游戏开发
 	}
 }
 
-pmg_game_modern_dev = { #现代游戏开发
-	texture = "gfx/interface/icons/production_method_icons/pmg_game_modern_dev.dds"	ai_selection = most_productive
+pmg_game_modern_dev = { #机械开发
+	texture = "gfx/interface/icons/production_method_icons/pmg_game_modern_dev.dds"
+	ai_selection = most_productive
 
 	production_methods = {
 		pm_game_modern_pinball
@@ -73,12 +80,25 @@ pmg_game_modern_dev = { #现代游戏开发
 		pm_game_modern_video
 	}
 }
-pmg_game_business = { #商业模式
-	texture = "gfx/interface/icons/production_method_icons/pmg_game_business.dds"	ai_selection = most_productive
+
+pmg_game_business = { #电子开发
+	texture = "gfx/interface/icons/production_method_icons/pmg_game_business.dds"
+	ai_selection = most_productive
 
 	production_methods = {
 		pm_game_business_buyout
 		pm_game_business_subscription
 		pm_game_business_service
+	}
+}
+
+pmg_game_operation = { #运营模式
+	texture = "gfx/interface/icons/production_method_icons/pmg_game_operation.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_game_operation_base
+		pm_game_operation_expansion
+		pm_game_operation_ip
 	}
 }

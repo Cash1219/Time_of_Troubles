@@ -1,0 +1,144 @@
+﻿tot_transfer_ig_landowners_characters = {
+	kind = directed
+	cost = 0
+	icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/transfer_state.dds"
+	flags = { can_be_enforced can_be_renegotiated hostile }
+	usage_limit = once_per_side
+	maintenance_paid_by = target_country
+	visible = {}
+	possible = { scope:other_country ?= { exists = this } }
+	can_ratify = {}
+	on_entry_into_force = { scope:article_options.source_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_landowners } } transfer_character = scope:article_options.target_country } } }
+	on_enforced = { scope:article_options.source_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_landowners } } transfer_character = scope:article_options.target_country } } }
+	on_withdrawal = {}
+	on_break = {}
+	ai = { treaty_categories = { expansion } evaluation_chance = { value = 0.1 } article_ai_usage = { request } inherent_accept_score = { value = -50 if = { limit = { scope:source_country = { is_subject_of = scope:target_country } } add = 30 } } }
+	wargoal = { execution_priority = 21 contestion_type = control_any_target_incorporated_state maneuvers = { value = 10 } infamy = { value = 2 } }
+}
+
+tot_transfer_ig_industrialists_characters = {
+	kind = directed
+	cost = 0
+	icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/transfer_state.dds"
+	flags = { can_be_enforced can_be_renegotiated hostile }
+	usage_limit = once_per_side
+	maintenance_paid_by = target_country
+	visible = {}
+	possible = { scope:other_country ?= { exists = this } }
+	can_ratify = {}
+	on_entry_into_force = { scope:article_options.source_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_industrialists } } transfer_character = scope:article_options.target_country } } }
+	on_enforced = { scope:article_options.source_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_industrialists } } transfer_character = scope:article_options.target_country } } }
+	on_withdrawal = {}
+	on_break = {}
+	ai = { treaty_categories = { expansion } evaluation_chance = { value = 0.1 } article_ai_usage = { request } inherent_accept_score = { value = -50 if = { limit = { scope:source_country = { is_subject_of = scope:target_country } } add = 30 } } }
+	wargoal = { execution_priority = 21 contestion_type = control_any_target_incorporated_state maneuvers = { value = 10 } infamy = { value = 2 } }
+}
+
+tot_transfer_ig_armed_forces_characters = {
+	kind = directed
+	cost = 0
+	icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/transfer_state.dds"
+	flags = { can_be_enforced can_be_renegotiated hostile }
+	usage_limit = once_per_side
+	maintenance_paid_by = target_country
+	visible = {}
+	possible = { scope:other_country ?= { exists = this } }
+	can_ratify = {}
+	on_entry_into_force = { scope:article_options.source_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_armed_forces } } transfer_character = scope:article_options.target_country } } }
+	on_enforced = { scope:article_options.source_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_armed_forces } } transfer_character = scope:article_options.target_country } } }
+	on_withdrawal = {}
+	on_break = {}
+	ai = { treaty_categories = { expansion } evaluation_chance = { value = 0.1 } article_ai_usage = { request } inherent_accept_score = { value = -50 if = { limit = { scope:source_country = { is_subject_of = scope:target_country } } add = 30 } } }
+	wargoal = { execution_priority = 21 contestion_type = control_any_target_incorporated_state maneuvers = { value = 10 } infamy = { value = 2 } }
+}
+
+tot_transfer_ig_devout_characters = {
+	kind = directed
+	cost = 0
+	icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/transfer_state.dds"
+	flags = { can_be_enforced can_be_renegotiated hostile }
+	usage_limit = once_per_side
+	maintenance_paid_by = target_country
+	visible = {}
+	possible = { scope:other_country ?= { exists = this } }
+	can_ratify = {}
+	on_entry_into_force = { scope:article_options.source_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_devout } } transfer_character = scope:article_options.target_country } } }
+	on_enforced = { scope:article_options.source_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_devout } } transfer_character = scope:article_options.target_country } } }
+	on_withdrawal = {}
+	on_break = {}
+	ai = { treaty_categories = { expansion } evaluation_chance = { value = 0.1 } article_ai_usage = { request } inherent_accept_score = { value = -50 if = { limit = { scope:source_country = { is_subject_of = scope:target_country } } add = 30 } } }
+	wargoal = { execution_priority = 21 contestion_type = control_any_target_incorporated_state maneuvers = { value = 10 } infamy = { value = 2 } }
+}
+
+tot_transfer_ig_intelligentsia_characters = {
+	kind = directed
+	cost = 0
+	icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/transfer_state.dds"
+	flags = { can_be_enforced can_be_renegotiated hostile }
+	usage_limit = once_per_side
+	maintenance_paid_by = target_country
+	visible = {}
+	possible = { scope:other_country ?= { exists = this } }
+	can_ratify = {}
+	on_entry_into_force = { scope:article_options.source_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_intelligentsia } } transfer_character = scope:article_options.target_country } } }
+	on_enforced = { scope:article_options.source_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_intelligentsia } } transfer_character = scope:article_options.target_country } } }
+	on_withdrawal = {}
+	on_break = {}
+	ai = { treaty_categories = { expansion } evaluation_chance = { value = 0.1 } article_ai_usage = { request } inherent_accept_score = { value = -50 if = { limit = { scope:source_country = { is_subject_of = scope:target_country } } add = 30 } } }
+	wargoal = { execution_priority = 21 contestion_type = control_any_target_incorporated_state maneuvers = { value = 10 } infamy = { value = 2 } }
+}
+
+tot_transfer_ig_trade_unions_characters = {
+	kind = directed
+	cost = 0
+	icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/transfer_state.dds"
+	flags = { can_be_enforced can_be_renegotiated hostile }
+	usage_limit = once_per_side
+	maintenance_paid_by = target_country
+	visible = {}
+	possible = { scope:other_country ?= { exists = this } }
+	can_ratify = {}
+	on_entry_into_force = { scope:article_options.source_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_trade_unions } } transfer_character = scope:article_options.target_country } } }
+	on_enforced = { scope:article_options.source_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_trade_unions } } transfer_character = scope:article_options.target_country } } }
+	on_withdrawal = {}
+	on_break = {}
+	ai = { treaty_categories = { expansion } evaluation_chance = { value = 0.1 } article_ai_usage = { request } inherent_accept_score = { value = -50 if = { limit = { scope:source_country = { is_subject_of = scope:target_country } } add = 30 } } }
+	wargoal = { execution_priority = 21 contestion_type = control_any_target_incorporated_state maneuvers = { value = 10 } infamy = { value = 2 } }
+}
+
+tot_transfer_ig_petty_bourgeoisie_characters = {
+	kind = directed
+	cost = 0
+	icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/transfer_state.dds"
+	flags = { can_be_enforced can_be_renegotiated hostile }
+	usage_limit = once_per_side
+	maintenance_paid_by = target_country
+	visible = {}
+	possible = { scope:other_country ?= { exists = this } }
+	can_ratify = {}
+	on_entry_into_force = { scope:article_options.source_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_petty_bourgeoisie } } transfer_character = scope:article_options.target_country } } }
+	on_enforced = { scope:article_options.source_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_petty_bourgeoisie } } transfer_character = scope:article_options.target_country } } }
+	on_withdrawal = {}
+	on_break = {}
+	ai = { treaty_categories = { expansion } evaluation_chance = { value = 0.1 } article_ai_usage = { request } inherent_accept_score = { value = -50 if = { limit = { scope:source_country = { is_subject_of = scope:target_country } } add = 30 } } }
+	wargoal = { execution_priority = 21 contestion_type = control_any_target_incorporated_state maneuvers = { value = 10 } infamy = { value = 2 } }
+}
+
+tot_transfer_ig_rural_folk_characters = {
+	kind = directed
+	cost = 0
+	icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/transfer_state.dds"
+	flags = { can_be_enforced can_be_renegotiated hostile }
+	usage_limit = once_per_side
+	maintenance_paid_by = target_country
+	visible = {}
+	possible = { scope:other_country ?= { exists = this } }
+	can_ratify = {}
+	on_entry_into_force = { scope:article_options.source_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_rural_folk } } transfer_character = scope:article_options.target_country } } }
+	on_enforced = { scope:article_options.source_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_rural_folk } } transfer_character = scope:article_options.target_country } } }
+	on_withdrawal = {}
+	on_break = {}
+	ai = { treaty_categories = { expansion } evaluation_chance = { value = 0.1 } article_ai_usage = { request } inherent_accept_score = { value = -50 if = { limit = { scope:source_country = { is_subject_of = scope:target_country } } add = 30 } } }
+	wargoal = { execution_priority = 21 contestion_type = control_any_target_incorporated_state maneuvers = { value = 10 } infamy = { value = 2 } }
+}
+

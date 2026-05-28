@@ -1,0 +1,322 @@
+pm_goods_doll_null = { #无
+	texture = "gfx/interface/icons/production_method_icons/pm_automation_disabled.dds"
+}
+
+pm_goods_doll_doll = { #玩偶
+	texture = "gfx/interface/icons/production_method_icons/pm_handcrafted_furniture.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_fabric_add = 10		#*20=200
+			goods_input_clothes_add = 5		#*30=150
+			goods_output_omocha_add = 20		#*60=1200
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 80
+			building_employment_laborers_add = 920
+		}
+	}
+}
+
+pm_goods_doll_pillow = { #抱枕
+	texture = "gfx/interface/icons/production_method_icons/pm_sewing_machines.dds"
+	unlocking_technologies = {
+		mechanical_tools
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_fabric_add = 10		#*20=200
+			goods_input_clothes_add = 5		#*30=150
+			goods_output_omocha_add = 25		#*60=1440
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 100
+			building_employment_laborers_add = 900
+		}
+	}
+}
+
+pm_goods_jewelry_null = { #无
+	texture = "gfx/interface/icons/production_method_icons/pm_automation_disabled.dds"
+}
+
+pm_goods_jewelry_badge = { #徽章
+	texture = "gfx/interface/icons/production_method_icons/pm_hydraulic_jacks.dds"
+	unlocking_technologies = {
+		mechanical_tools
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_iron_add = 10		#*40=400
+			goods_output_omocha_add = 20		#*60=1320
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 90
+			building_employment_laborers_add = 910
+		}
+	}
+}
+
+pm_goods_jewelry_pendant = { #挂件
+	texture = "gfx/interface/icons/production_method_icons/pm_hydraulic_jacks.dds"
+	unlocking_technologies = {
+		steelworking
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_glass_add = 10		#*40=400
+			goods_input_tools_add = 5		#*40=200
+			goods_output_omocha_add = 25		#*60=1440
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 100
+			building_employment_laborers_add = 900
+		}
+	}
+}
+
+pm_goods_jewelry_stand = { #立牌
+	texture = "gfx/interface/icons/production_method_icons/pm_rotary_valve_engine.dds"
+	unlocking_technologies = {
+		steelworking
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_glass_add = 10		#*40=400
+			goods_input_tools_add = 5		#*40=200
+			goods_output_omocha_add = 30		#*60=1680
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 120
+			building_employment_laborers_add = 880
+		}
+	}
+}
+
+pm_goods_print_null = { #无
+	texture = "gfx/interface/icons/production_method_icons/pm_automation_disabled.dds"
+}
+
+pm_goods_print_seal = { #色纸
+	texture = "gfx/interface/icons/production_method_icons/pm_wooden_printing_presses.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 10		#*30=300
+			goods_input_dye_add = 5		#*40=200
+			goods_output_omocha_add = 20		#*60=1320
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 90
+			building_employment_laborers_add = 910
+		}
+	}
+}
+
+pm_goods_print_card = { #卡牌
+	texture = "gfx/interface/icons/production_method_icons/pm_steam_donkey.dds"
+	unlocking_technologies = {
+		mechanical_tools
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 15		#*30=450
+			goods_input_dye_add = 5		#*40=200
+			goods_output_omocha_add = 25		#*60=1560
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 100
+			building_employment_laborers_add = 900
+		}
+	}
+}
+
+pm_goods_print_post = { #海报
+	texture = "gfx/interface/icons/production_method_icons/pm_rotary_valve_engine.dds"
+	unlocking_technologies = {
+		steelworking
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 15		#*30=450
+			goods_input_dye_add = 10		#*40=400
+			goods_output_omocha_add = 30		#*60=1680
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 110
+			building_employment_laborers_add = 890
+		}
+	}
+}
+
+pm_goods_print_art = { #画作
+	texture = "gfx/interface/icons/production_method_icons/pm_assembly_lines.dds"
+	unlocking_technologies = {
+		mechanized_workshops
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 10		#*30=300
+			goods_input_dye_add = 5		#*40=200
+			goods_input_fine_art_add = 5		#*200=1000
+			goods_output_omocha_add = 30		#*60=1920
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 130
+			building_employment_laborers_add = 870
+		}
+	}
+}
+
+pm_goods_garage_null = { #无
+	texture = "gfx/interface/icons/production_method_icons/pm_automation_disabled.dds"
+}
+
+pm_goods_garage_lego = { #木制积木
+	texture = "gfx/interface/icons/production_method_icons/pm_handcrafted_furniture.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_wood_add = 15		#*20=300
+			goods_output_omocha_add = 20		#*60=1320
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 90
+			building_employment_laborers_add = 910
+		}
+	}
+}
+
+pm_goods_garage_gundam = { #拼装模型
+	texture = "gfx/interface/icons/production_method_icons/pm_hydraulic_jacks.dds"
+	unlocking_technologies = {
+		mechanical_tools
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_iron_add = 10		#*40=400
+			goods_input_tools_add = 10		#*40=400
+			goods_output_omocha_add = 30		#*60=1800
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 130
+			building_employment_laborers_add = 870
+		}
+	}
+}
+
+pm_goods_garage_kit = { #手办
+	texture = "gfx/interface/icons/production_method_icons/pm_rotary_valve_engine.dds"
+	unlocking_technologies = {
+		steelworking
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_glass_add = 10		#*40=400
+			goods_input_tools_add = 10		#*40=400
+			goods_output_omocha_add = 35		#*60=2040
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 140
+			building_employment_laborers_add = 860
+		}
+	}
+}
+
+pm_goods_garage_motor = { #电动玩具
+	texture = "gfx/interface/icons/production_method_icons/pm_assembly_lines.dds"
+	unlocking_technologies = {
+		electrical_generation
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_engines_add = 10		#*60=600
+			goods_input_tools_add = 10		#*40=400
+			goods_input_electricity_add = 10		#*30=300
+			goods_output_omocha_add = 50		#*60=2400
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 160
+			building_employment_laborers_add = 840
+		}
+	}
+}
+
+pm_goods_ip_null = { #无
+	texture = "gfx/interface/icons/production_method_icons/pm_automation_disabled.dds"
+}
+
+pm_goods_ip_home = { #本国优先
+	texture = "gfx/interface/icons/production_method_icons/pm_privately_owned.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_omocha_add = 10		#*60=480
+		}
+		level_scaled = {
+			building_employment_clerks_add = 80
+		}
+	}
+}
+
+pm_goods_ip_hot = { #热门优先
+	texture = "gfx/interface/icons/production_method_icons/pm_publicly_traded.dds"
+	unlocking_technologies = {
+		mass_communication
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_omocha_add = 10		#*60=600
+		}
+		level_scaled = {
+			building_employment_clerks_add = 100
+		}
+	}
+}
+
+pm_goods_ip_random = { #随机上架
+	texture = "gfx/interface/icons/production_method_icons/pm_publicly_traded.dds"
+	unlocking_technologies = {
+		mass_communication
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_omocha_add = 10		#*60=720
+		}
+		level_scaled = {
+			building_employment_clerks_add = 120
+		}
+	}
+}
+
+pm_goods_selling_null = { #无
+	texture = "gfx/interface/icons/production_method_icons/pm_automation_disabled.dds"
+}
+
+pm_goods_selling_lotto = { #抽奖模式
+	texture = "gfx/interface/icons/production_method_icons/pm_market_stalls.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_omocha_add = 5		#*60=360
+		}
+	}
+}
+
+pm_goods_selling_large = { #大量销售	texture = "gfx/interface/icons/production_method_icons/pm_market_stalls.dds"
+	unlocking_technologies = {
+		mass_communication
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_omocha_add = 10		#*60=600
+		}
+	}
+}
+
+pm_goods_selling_limit = { #限量销售	texture = "gfx/interface/icons/production_method_icons/pm_market_stalls.dds"
+	unlocking_technologies = {
+		international_trade
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_omocha_add = 5		#*60=240
+		}
+	}
+}
+

@@ -24,7 +24,7 @@ pm_kissaten_coffee_coffee = { #标准咖啡
 
 			# output goods
 
-			goods_output_luxury_drinks_add = 35		#*60=2100
+			goods_output_luxury_drinks_add = 25		#*60=1500
 
 		}
 
@@ -59,7 +59,7 @@ pm_kissaten_coffee_mocha = { #摩卡咖啡
 
 			# output goods
 
-			goods_output_luxury_drinks_add = 60		#*60=3600
+			goods_output_luxury_drinks_add = 50		#*60=3000
 
 		}
 
@@ -95,7 +95,7 @@ pm_kissaten_coffee_latte = { #拿铁咖啡
 
 			# output goods
 
-			goods_output_luxury_drinks_add = 80		#*60=4800
+			goods_output_luxury_drinks_add = 70		#*60=4200
 
 		}
 
@@ -135,7 +135,7 @@ pm_kissaten_tea_milk = { #牛奶
 
 			# output goods
 
-			goods_output_luxury_drinks_add = 30		#*60=1800
+			goods_output_luxury_drinks_add = 25		#*60=1500
 
 		}
 
@@ -170,7 +170,7 @@ pm_kissaten_tea_cocoa = { #可可
 
 			# output goods
 
-			goods_output_luxury_drinks_add = 45		#*60=2700
+			goods_output_luxury_drinks_add = 40		#*60=2400
 
 		}
 
@@ -206,7 +206,7 @@ pm_kissaten_tea_black_tea = { #红茶
 
 			# output goods
 
-			goods_output_luxury_drinks_add = 70		#*60=4200
+			goods_output_luxury_drinks_add = 55		#*60=3300
 
 		}
 
@@ -250,7 +250,7 @@ pm_kissaten_sweet_biscuit = { #饼干
 
 			# output goods
 
-			goods_output_luxury_foods_add = 30		#*60=1800
+			goods_output_luxury_foods_add = 25		#*60=1500
 
 		}
 
@@ -287,7 +287,7 @@ pm_kissaten_sweet_pancake = { #可丽饼
 
 			# output goods
 
-			goods_output_luxury_foods_add = 55		#*60=3300
+			goods_output_luxury_foods_add = 45		#*60=2700
 
 		}
 
@@ -325,7 +325,7 @@ pm_kissaten_sweet_cake = { #蛋糕
 
 			# output goods
 
-			goods_output_luxury_foods_add = 70		#*60=4200
+			goods_output_luxury_foods_add = 60		#*60=3600
 
 		}
 
@@ -363,7 +363,7 @@ pm_kissaten_sweet_pie = { #苹果派
 
 			# output goods
 
-			goods_output_luxury_foods_add = 80		#*60=4800
+			goods_output_luxury_foods_add = 70		#*60=4200
 
 		}
 
@@ -405,7 +405,7 @@ pm_kissaten_food_sandwich = { #三明治
 
 			# output goods
 
-			goods_output_luxury_foods_add = 35		#*60=2100
+			goods_output_luxury_foods_add = 30		#*60=1800
 
 		}
 
@@ -442,7 +442,7 @@ pm_kissaten_food_pasta = { #意大利面
 
 			# output goods
 
-			goods_output_luxury_foods_add = 45		#*60=2700
+			goods_output_luxury_foods_add = 40		#*60=2400
 
 		}
 
@@ -478,7 +478,7 @@ pm_kissaten_food_omuraisu = { #蛋包饭
 
 			# output goods
 
-			goods_output_luxury_foods_add = 65		#*60=3900
+			goods_output_luxury_foods_add = 55		#*60=3300
 
 		}
 
@@ -516,7 +516,7 @@ pm_kissaten_food_takoyaki = { #章鱼烧
 
 			# output goods
 
-			goods_output_luxury_foods_add = 75		#*60=4500
+			goods_output_luxury_foods_add = 65		#*60=3900
 
 		}
 
@@ -534,7 +534,9 @@ pm_kissaten_food_takoyaki = { #章鱼烧
 
 pm_kissaten_server_null = { #普通营业
 
-	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"	building_modifiers = {
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_coffee_null.dds"
+
+	building_modifiers = {
 
 		workforce_scaled = {
 
@@ -546,9 +548,7 @@ pm_kissaten_server_null = { #普通营业
 
 		level_scaled = {
 
-			building_employment_laborers_add = 340
-
-			building_employment_clerks_add = 160
+			building_employment_laborers_add = 500
 
 		}
 
@@ -582,9 +582,9 @@ pm_kissaten_server_waitress = { #普通女仆
 
 		level_scaled = {
 
-			building_employment_laborers_add = 320
+			building_employment_laborers_add = 250
 
-			building_employment_clerks_add = 180
+			building_employment_clerks_add = 250
 
 		}
 
@@ -622,9 +622,7 @@ pm_kissaten_server_maid = { #女仆营业
 
 		level_scaled = {
 
-			building_employment_laborers_add = 140
-
-			building_employment_clerks_add = 360
+			building_employment_clerks_add = 500
 
 		}
 
@@ -664,9 +662,7 @@ pm_kissaten_server_fuwafuwa = { #主题公演
 
 		level_scaled = {
 
-			building_employment_laborers_add = 140
-
-			building_employment_clerks_add = 360
+			building_employment_academics_add = 500
 
 		}
 
@@ -708,9 +704,7 @@ pm_kissaten_tool_table = { #基本桌椅
 
 		level_scaled = {
 
-			building_employment_laborers_add = -560
-
-			building_employment_machinists_add = 60
+			building_employment_laborers_add = -500
 
 		}
 
@@ -750,9 +744,7 @@ pm_kissaten_tool_porcelain = { #餐具套装
 
 		level_scaled = {
 
-			building_employment_laborers_add = -600
-
-			building_employment_machinists_add = 100
+			building_employment_laborers_add = -1000
 
 		}
 
@@ -794,11 +786,7 @@ pm_kissaten_tool_watertube_boiler = { #水管锅炉
 
 		level_scaled = {
 
-			building_employment_laborers_add = -900
-
-			building_employment_machinists_add = 300
-
-			building_employment_engineers_add = 100
+			building_employment_laborers_add = -1500
 
 		}
 
@@ -844,11 +832,7 @@ pm_kissaten_tool_flash_freezing = { #冷藏设备
 
 		level_scaled = {
 
-			building_employment_laborers_add = -1100
-
-			building_employment_machinists_add = 440
-
-			building_employment_engineers_add = 160
+			building_employment_laborers_add = -2000
 
 		}
 

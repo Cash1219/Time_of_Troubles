@@ -1,0 +1,22 @@
+﻿tot_byz_annex_tur_test_decision = {
+	is_shown = {
+		c:BYZ ?= this
+	}
+
+	possible = {
+		c:BYZ ?= this
+		c:TUR ?= { exists = this }
+		NOT = { has_variable = tot_byz_annex_tur_test_done }
+	}
+
+	when_taken = {
+		set_variable = tot_byz_annex_tur_test_done
+		tot_transfer_annexed_country_characters_effect = { scope:target = c:TUR }
+		annex = c:TUR
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+

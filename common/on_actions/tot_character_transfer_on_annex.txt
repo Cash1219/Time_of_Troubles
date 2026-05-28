@@ -1,0 +1,14 @@
+﻿# Root = Annexer country
+# scope:target = Annexed country
+on_country_annexed = {
+	effect = {
+		scope:target ?= {
+			save_scope_as = tot_annexed_country
+		}
+		trigger_event = {
+			id = tot_annex.1
+			days = 0
+			popup = yes
+		}
+	}
+}

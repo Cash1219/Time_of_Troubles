@@ -1,0 +1,21 @@
+﻿tot_transfer_annexed_country_characters_effect = {
+	if = {
+		limit = {
+			exists = scope:target
+		}
+		scope:target = {
+			every_scope_character = {
+				limit = {
+					is_in_void = no
+					is_in_exile_pool = no
+				}
+				transfer_character = root
+				add_modifier = {
+					name = tot_recently_joined_character
+					days = 1825
+					is_decaying = yes
+				}
+			}
+		}
+	}
+}

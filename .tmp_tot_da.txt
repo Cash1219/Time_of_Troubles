@@ -1,0 +1,97 @@
+transfer_ig_landowners_characters = {
+	groups = { overlord }
+	texture = "gfx/interface/icons/diplomatic_action_icons/da_appoint_colonial_governor.dds"
+	requires_approval = yes
+	should_notify_third_parties = yes
+	show_effect_in_tooltip = yes
+	can_use_obligations = no
+	potential = { scope:target_country = { NOT = { is_country_type = decentralized } } }
+	possible = { scope:target_country = { NOT = { is_country_type = decentralized } any_scope_character = { interest_group ?= { is_interest_group_type = ig_landowners } } } }
+	accept_effect = { scope:target_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_landowners } } transfer_character = root } } }
+	ai = { evaluation_chance = { value = 0.1 } propose_score = { value = 10 } accept_score = { value = -50 if = { limit = { scope:target_country = { is_subject_of = root } } add = 30 } } }
+}
+transfer_ig_industrialists_characters = {
+	groups = { overlord }
+	texture = "gfx/interface/icons/diplomatic_action_icons/da_appoint_colonial_governor.dds"
+	requires_approval = yes
+	should_notify_third_parties = yes
+	show_effect_in_tooltip = yes
+	can_use_obligations = no
+	potential = { scope:target_country = { NOT = { is_country_type = decentralized } } }
+	possible = { scope:target_country = { NOT = { is_country_type = decentralized } any_scope_character = { interest_group ?= { is_interest_group_type = ig_industrialists } } } }
+	accept_effect = { scope:target_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_industrialists } } transfer_character = root } } }
+	ai = { evaluation_chance = { value = 0.1 } propose_score = { value = 10 } accept_score = { value = -50 if = { limit = { scope:target_country = { is_subject_of = root } } add = 30 } } }
+}
+transfer_ig_armed_forces_characters = {
+	groups = { overlord }
+	texture = "gfx/interface/icons/diplomatic_action_icons/da_appoint_colonial_governor.dds"
+	requires_approval = yes
+	should_notify_third_parties = yes
+	show_effect_in_tooltip = yes
+	can_use_obligations = no
+	potential = { scope:target_country = { NOT = { is_country_type = decentralized } } }
+	possible = { scope:target_country = { NOT = { is_country_type = decentralized } any_scope_character = { interest_group ?= { is_interest_group_type = ig_armed_forces } } } }
+	accept_effect = { scope:target_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_armed_forces } } transfer_character = root } } }
+	ai = { evaluation_chance = { value = 0.1 } propose_score = { value = 10 } accept_score = { value = -50 if = { limit = { scope:target_country = { is_subject_of = root } } add = 30 } } }
+}
+transfer_ig_devout_characters = {
+	groups = { overlord }
+	texture = "gfx/interface/icons/diplomatic_action_icons/da_appoint_colonial_governor.dds"
+	requires_approval = yes
+	should_notify_third_parties = yes
+	show_effect_in_tooltip = yes
+	can_use_obligations = no
+	potential = { scope:target_country = { NOT = { is_country_type = decentralized } } }
+	possible = { scope:target_country = { NOT = { is_country_type = decentralized } any_scope_character = { interest_group ?= { is_interest_group_type = ig_devout } } } }
+	accept_effect = { scope:target_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_devout } } transfer_character = root } } }
+	ai = { evaluation_chance = { value = 0.1 } propose_score = { value = 10 } accept_score = { value = -50 if = { limit = { scope:target_country = { is_subject_of = root } } add = 30 } } }
+}
+transfer_ig_intelligentsia_characters = {
+	groups = { overlord }
+	texture = "gfx/interface/icons/diplomatic_action_icons/da_appoint_colonial_governor.dds"
+	requires_approval = yes
+	should_notify_third_parties = yes
+	show_effect_in_tooltip = yes
+	can_use_obligations = no
+	potential = { scope:target_country = { NOT = { is_country_type = decentralized } } }
+	possible = { scope:target_country = { NOT = { is_country_type = decentralized } any_scope_character = { interest_group ?= { is_interest_group_type = ig_intelligentsia } } } }
+	accept_effect = { scope:target_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_intelligentsia } } transfer_character = root } } }
+	ai = { evaluation_chance = { value = 0.1 } propose_score = { value = 10 } accept_score = { value = -50 if = { limit = { scope:target_country = { is_subject_of = root } } add = 30 } } }
+}
+transfer_ig_trade_unions_characters = {
+	groups = { overlord }
+	texture = "gfx/interface/icons/diplomatic_action_icons/da_appoint_colonial_governor.dds"
+	requires_approval = yes
+	should_notify_third_parties = yes
+	show_effect_in_tooltip = yes
+	can_use_obligations = no
+	potential = { scope:target_country = { NOT = { is_country_type = decentralized } } }
+	possible = { scope:target_country = { NOT = { is_country_type = decentralized } any_scope_character = { interest_group ?= { is_interest_group_type = ig_trade_unions } } } }
+	accept_effect = { scope:target_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_trade_unions } } transfer_character = root } } }
+	ai = { evaluation_chance = { value = 0.1 } propose_score = { value = 10 } accept_score = { value = -50 if = { limit = { scope:target_country = { is_subject_of = root } } add = 30 } } }
+}
+transfer_ig_petty_bourgeoisie_characters = {
+	groups = { overlord }
+	texture = "gfx/interface/icons/diplomatic_action_icons/da_appoint_colonial_governor.dds"
+	requires_approval = yes
+	should_notify_third_parties = yes
+	show_effect_in_tooltip = yes
+	can_use_obligations = no
+	potential = { scope:target_country = { NOT = { is_country_type = decentralized } } }
+	possible = { scope:target_country = { NOT = { is_country_type = decentralized } any_scope_character = { interest_group ?= { is_interest_group_type = ig_petty_bourgeoisie } } } }
+	accept_effect = { scope:target_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_petty_bourgeoisie } } transfer_character = root } } }
+	ai = { evaluation_chance = { value = 0.1 } propose_score = { value = 10 } accept_score = { value = -50 if = { limit = { scope:target_country = { is_subject_of = root } } add = 30 } } }
+}
+transfer_ig_rural_folk_characters = {
+	groups = { overlord }
+	texture = "gfx/interface/icons/diplomatic_action_icons/da_appoint_colonial_governor.dds"
+	requires_approval = yes
+	should_notify_third_parties = yes
+	show_effect_in_tooltip = yes
+	can_use_obligations = no
+	potential = { scope:target_country = { NOT = { is_country_type = decentralized } } }
+	possible = { scope:target_country = { NOT = { is_country_type = decentralized } any_scope_character = { interest_group ?= { is_interest_group_type = ig_rural_folk } } } }
+	accept_effect = { scope:target_country = { every_scope_character = { limit = { interest_group ?= { is_interest_group_type = ig_rural_folk } } transfer_character = root } } }
+	ai = { evaluation_chance = { value = 0.1 } propose_score = { value = 10 } accept_score = { value = -50 if = { limit = { scope:target_country = { is_subject_of = root } } add = 30 } } }
+}
+

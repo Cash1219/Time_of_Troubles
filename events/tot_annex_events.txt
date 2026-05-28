@@ -1,0 +1,55 @@
+﻿namespace = tot_annex
+
+tot_annex.1 = {
+	type = country_event
+	placement = root
+	title = tot_annex.1.t
+	desc = tot_annex.1.d
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+
+	trigger = {
+		exists = scope:tot_annexed_country
+	}
+
+	option = {
+		name = tot_annex.1.a
+		scope:tot_annexed_country = {
+			every_scope_character = {
+				limit = {
+					is_in_void = no
+					is_in_exile_pool = no
+				}
+				transfer_character = root
+				add_modifier = {
+					name = tot_recently_joined_character
+					days = 1825
+					is_decaying = yes
+				}
+			}
+		}
+	}
+
+	option = {
+		name = tot_annex.1.b
+		scope:tot_annexed_country = {
+			every_scope_character = {
+				limit = {
+					is_in_void = no
+					is_in_exile_pool = no
+				}
+				# NOTE: engine lacks a stable historical-character trigger in event scope; temporary same behavior as option A
+				transfer_character = root
+				add_modifier = {
+					name = tot_recently_joined_character
+					days = 1825
+					is_decaying = yes
+				}
+			}
+		}
+	}
+
+	option = {
+		name = tot_annex.1.c
+		# no transfer
+	}
+}
