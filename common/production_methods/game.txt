@@ -10,9 +10,8 @@ pm_game_traditional_tabletop = { #古典棋牌
 			goods_output_games_add = 20		#*60=1200
 		}
 		level_scaled = {
-			building_employment_shopkeepers_add = 140
-			building_employment_laborers_add = 1090
-			building_employment_clerks_add = 370
+			building_employment_laborers_add = 1500
+			building_employment_machinists_add = 500
 		}
 	}
 }
@@ -27,10 +26,8 @@ pm_game_traditional_mechanical = { #近代兵棋
 			goods_output_games_add = 35		#*60=2100
 		}
 		level_scaled = {
-			building_employment_shopkeepers_add = 140
-			building_employment_laborers_add = 870
-			building_employment_clerks_add = 440
-			building_employment_machinists_add = 150
+			building_employment_laborers_add = 1200
+			building_employment_machinists_add = 800
 		}
 	}
 }
@@ -45,10 +42,9 @@ pm_game_traditional_craft = { #现代桌游
 			goods_output_games_add = 60		#*60=3600
 		}
 		level_scaled = {
-			building_employment_shopkeepers_add = 140
-			building_employment_laborers_add = 660
-			building_employment_clerks_add = 510
-			building_employment_machinists_add = 290
+			building_employment_laborers_add = 1000
+			building_employment_machinists_add = 800
+			building_employment_engineers_add = 200
 		}
 	}
 }
@@ -64,10 +60,8 @@ pm_game_modern_pinball = { #弹簧玩具
 			goods_output_games_add = 20		#*60=1200
 		}
 		level_scaled = {
-			building_employment_shopkeepers_add = 140
-			building_employment_laborers_add = 940
-			building_employment_clerks_add = 360
-			building_employment_machinists_add = 160
+			building_employment_laborers_add = 1500
+			building_employment_machinists_add = 500
 		}
 	}
 }
@@ -82,11 +76,8 @@ pm_game_modern_arcade = { #机电街机
 			goods_output_games_add = 35		#*60=2100
 		}
 		level_scaled = {
-			building_employment_shopkeepers_add = 140
-			building_employment_laborers_add = 710
-			building_employment_clerks_add = 460
-			building_employment_machinists_add = 210
-			building_employment_engineers_add = 80
+			building_employment_laborers_add = 1200
+			building_employment_machinists_add = 800
 		}
 	}
 }
@@ -101,11 +92,9 @@ pm_game_modern_video = { #现代街机
 			goods_output_games_add = 60		#*60=3600
 		}
 		level_scaled = {
-			building_employment_shopkeepers_add = 140
-			building_employment_laborers_add = 490
-			building_employment_clerks_add = 560
-			building_employment_machinists_add = 280
-			building_employment_engineers_add = 130
+			building_employment_laborers_add = 1000
+			building_employment_machinists_add = 800
+			building_employment_engineers_add = 200
 		}
 	}
 }
@@ -121,7 +110,8 @@ pm_game_cartridge_era = { #卡带时代
 			goods_output_games_add = 10		#*60=600
 		}
 		level_scaled = {
-			building_employment_clerks_add = 1800
+			building_employment_laborers_add = 1500
+			building_employment_machinists_add = 500
 		}
 	}
 }
@@ -136,8 +126,8 @@ pm_game_disc_era = { #光盘时代
 			goods_output_games_add = 20		#*60=1200
 		}
 		level_scaled = {
-			building_employment_shopkeepers_add = 450
-			building_employment_clerks_add = 1350
+			building_employment_laborers_add = 1200
+			building_employment_machinists_add = 800
 		}
 	}
 }
@@ -152,9 +142,9 @@ pm_game_mobile_era = { #移动时代
 			goods_output_games_add = 30		#*60=1800
 		}
 		level_scaled = {
-			building_employment_shopkeepers_add = 360
-			building_employment_clerks_add = 1080
-			building_employment_engineers_add = 360
+			building_employment_laborers_add = 1000
+			building_employment_machinists_add = 800
+			building_employment_engineers_add = 200
 		}
 	}
 }
@@ -162,6 +152,11 @@ pm_game_mobile_era = { #移动时代
 #运营模式
 pm_game_operation_base = { #仅本体
 	texture = "gfx/interface/icons/production_method_icons/pm_game_operation_base.dds"
+	building_modifiers = {
+		level_scaled = {
+			building_employment_clerks_add = 500
+		}
+	}
 }
 
 pm_game_operation_expansion = { #补充包
@@ -172,7 +167,7 @@ pm_game_operation_expansion = { #补充包
 			goods_output_games_add = 10
 		}
 		level_scaled = {
-			building_employment_clerks_add = 200
+			building_employment_clerks_add = 500
 		}
 	}
 }
@@ -186,10 +181,25 @@ pm_game_operation_ip = { #IP运营
 			goods_output_games_add = 20
 		}
 		level_scaled = {
-			building_employment_shopkeepers_add = 100
-			building_employment_clerks_add = 200
-			building_employment_engineers_add = 100
+			building_employment_shopkeepers_add = 125
+			building_employment_clerks_add = 250
+			building_employment_engineers_add = 125
 		}
 	}
 }
 
+pm_game_traditional_null = { #无生产方式
+	texture = "gfx/interface/icons/production_method_icons/pm_game_mobile_era.dds"
+}
+
+pm_game_modern_null = { #无生产方式
+	texture = "gfx/interface/icons/production_method_icons/pm_game_mobile_era.dds"
+}
+
+pm_game_business_null = { #无生产方式
+	texture = "gfx/interface/icons/production_method_icons/pm_game_mobile_era.dds"
+}
+
+pm_game_operation_null = { #无生产方式
+	texture = "gfx/interface/icons/production_method_icons/pm_game_mobile_era.dds"
+}
