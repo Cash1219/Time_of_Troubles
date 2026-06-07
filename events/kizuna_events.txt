@@ -4,99 +4,1553 @@ kizuna.1 = { #乐队成员任命
 	type = country_event
 	placement = root
 	title = kizuna.1.t
-	desc = kizuna.1.d
+	desc = kizuna.1.desc
 	flavor = kizuna.1.f
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
 	cancellation_trigger = {
 		OR = {
-			NOT = {
-				exists = scope:appointing_band_member
-			}
-			scope:appointing_band_member = {
-				is_character_alive = no
-			}
+			NOT = { exists = scope:appointing_band_member }
+			scope:appointing_band_member = { is_character_alive = no }
 		}
 	}
 	option = {
 		name = kizuna.1.a #主唱
 		trigger = {
-			NOT = {
-				scope:appointing_band_member = {
-					has_trait = tot_is_supper_lead_vocalist_trait
-					has_trait = tot_lead_vocalist_trait
-				}
-			}
-		}
-		if = {
-			limit = {
-				scope:appointing_band_member = {
-					has_trait = tot_is_supper_lead_vocalist_trait
-				}
-			}
-			scope:appointing_band_member = {
-				add_trait = tot_is_supper_lead_vocalist_trait
-			}
-		}
-		if = {
-			limit = {
-				NOT = {
-					scope:appointing_band_member = {
-						has_trait = tot_is_lead_vocalist_trait
-					}
-				}
-			}
-			scope:appointing_band_member = {
-				add_trait = tot_is_lead_vocalist_trait
-			}
-		}
-		
+		OR = {
+			NOT = { has_variable = tot_band_1_member_count }
+			var:tot_band_1_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 1 }
+		}		OR = {
+			NOT = { has_variable = tot_band_1_vocalist_count }
+			var:tot_band_1_vocalist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_vocalist has_variable = tot_band_id var:tot_band_id = 1 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_1_vocalist_effect = yes
+		update_kizuna = yes
 	}
 	option = {
 		name = kizuna.1.b #吉他
 		trigger = {
-			scope:appointing_band_member =  {
-				has_trait = tot_guitarist_trait	
-			}			
-		}
-		scope:appointing_band_member = {
-			remove_trait = tot_guitarist_trait
-			add_trait = tot_is_guitarist_trait
-		}
+		OR = {
+			NOT = { has_variable = tot_band_1_member_count }
+			var:tot_band_1_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 1 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_guitarist has_variable = tot_band_id var:tot_band_id = 1 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_1_guitarist_effect = yes
+		update_kizuna = yes
 	}
 	option = {
 		name = kizuna.1.c #贝斯
 		trigger = {
-			scope:appointing_band_member =  {
-				has_trait = tot_bassist_trait	
-			}
-		}
-		scope:appointing_band_member = {
-			remove_trait = tot_bassist_trait
-			add_trait = tot_is_bassist_trait
-		}
+		OR = {
+			NOT = { has_variable = tot_band_1_member_count }
+			var:tot_band_1_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 1 }
+		}		OR = {
+			NOT = { has_variable = tot_band_1_bassist_count }
+			var:tot_band_1_bassist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 1 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 1 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_1_bassist_effect = yes
+		update_kizuna = yes
 	}
 	option = {
 		name = kizuna.1.d #键盘
 		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_1_member_count }
+			var:tot_band_1_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 1 }
+		}		OR = {
+			NOT = { has_variable = tot_band_1_keyboardist_count }
+			var:tot_band_1_keyboardist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 1 }
+		}		OR = {
 			scope:appointing_band_member = {
-				has_trait = tot_keyboardist_trait	
-			}
-		}
-		scope:appointing_band_member = {
-			remove_trait = tot_keyboardist_trait
-			add_trait = tot_is_keyboardist_trait
-		}
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 1 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_1_keyboardist_effect = yes
+		update_kizuna = yes
 	}
 	option = {
 		name = kizuna.1.e #鼓手
 		trigger = {
-			scope:appointing_band_member =  {
-				has_trait = tot_drummer_trait
-			}
-		}
-		scope:appointing_band_member = {
-			remove_trait = tot_drummer_trait
-			add_trait = tot_is_drummer_trait
-		}
+		OR = {
+			NOT = { has_variable = tot_band_1_member_count }
+			var:tot_band_1_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 1 }
+		}		OR = {
+			NOT = { has_variable = tot_band_1_drummer_count }
+			var:tot_band_1_drummer_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 1 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 1 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_1_drummer_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = TOT_BAND_NO_VALID_ROLE
+		fallback = yes
 	}
 }
+kizuna.2 = { #乐队成员任命
+	type = country_event
+	placement = root
+	title = kizuna.2.t
+	desc = kizuna.2.desc
+	flavor = kizuna.2.f
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	cancellation_trigger = {
+		OR = {
+			NOT = { exists = scope:appointing_band_member }
+			scope:appointing_band_member = { is_character_alive = no }
+		}
+	}
+	option = {
+		name = kizuna.2.a #主唱
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_2_member_count }
+			var:tot_band_2_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 2 }
+		}		OR = {
+			NOT = { has_variable = tot_band_2_vocalist_count }
+			var:tot_band_2_vocalist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_vocalist has_variable = tot_band_id var:tot_band_id = 2 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_2_vocalist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.2.b #吉他
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_2_member_count }
+			var:tot_band_2_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 2 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_guitarist has_variable = tot_band_id var:tot_band_id = 2 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_2_guitarist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.2.c #贝斯
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_2_member_count }
+			var:tot_band_2_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 2 }
+		}		OR = {
+			NOT = { has_variable = tot_band_2_bassist_count }
+			var:tot_band_2_bassist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 2 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 2 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_2_bassist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.2.d #键盘
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_2_member_count }
+			var:tot_band_2_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 2 }
+		}		OR = {
+			NOT = { has_variable = tot_band_2_keyboardist_count }
+			var:tot_band_2_keyboardist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 2 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 2 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_2_keyboardist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.2.e #鼓手
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_2_member_count }
+			var:tot_band_2_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 2 }
+		}		OR = {
+			NOT = { has_variable = tot_band_2_drummer_count }
+			var:tot_band_2_drummer_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 2 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 2 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_2_drummer_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = TOT_BAND_NO_VALID_ROLE
+		fallback = yes
+	}
+}
+kizuna.3 = { #乐队成员任命
+	type = country_event
+	placement = root
+	title = kizuna.3.t
+	desc = kizuna.3.desc
+	flavor = kizuna.3.f
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	cancellation_trigger = {
+		OR = {
+			NOT = { exists = scope:appointing_band_member }
+			scope:appointing_band_member = { is_character_alive = no }
+		}
+	}
+	option = {
+		name = kizuna.3.a #主唱
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_3_member_count }
+			var:tot_band_3_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 3 }
+		}		OR = {
+			NOT = { has_variable = tot_band_3_vocalist_count }
+			var:tot_band_3_vocalist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_vocalist has_variable = tot_band_id var:tot_band_id = 3 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_3_vocalist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.3.b #吉他
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_3_member_count }
+			var:tot_band_3_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 3 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_guitarist has_variable = tot_band_id var:tot_band_id = 3 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_3_guitarist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.3.c #贝斯
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_3_member_count }
+			var:tot_band_3_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 3 }
+		}		OR = {
+			NOT = { has_variable = tot_band_3_bassist_count }
+			var:tot_band_3_bassist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 3 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 3 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_3_bassist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.3.d #键盘
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_3_member_count }
+			var:tot_band_3_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 3 }
+		}		OR = {
+			NOT = { has_variable = tot_band_3_keyboardist_count }
+			var:tot_band_3_keyboardist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 3 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 3 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_3_keyboardist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.3.e #鼓手
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_3_member_count }
+			var:tot_band_3_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 3 }
+		}		OR = {
+			NOT = { has_variable = tot_band_3_drummer_count }
+			var:tot_band_3_drummer_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 3 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 3 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_3_drummer_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = TOT_BAND_NO_VALID_ROLE
+		fallback = yes
+	}
+}
+kizuna.4 = { #乐队成员任命
+	type = country_event
+	placement = root
+	title = kizuna.4.t
+	desc = kizuna.4.desc
+	flavor = kizuna.4.f
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	cancellation_trigger = {
+		OR = {
+			NOT = { exists = scope:appointing_band_member }
+			scope:appointing_band_member = { is_character_alive = no }
+		}
+	}
+	option = {
+		name = kizuna.4.a #主唱
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_4_member_count }
+			var:tot_band_4_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 4 }
+		}		OR = {
+			NOT = { has_variable = tot_band_4_vocalist_count }
+			var:tot_band_4_vocalist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_vocalist has_variable = tot_band_id var:tot_band_id = 4 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_4_vocalist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.4.b #吉他
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_4_member_count }
+			var:tot_band_4_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 4 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_guitarist has_variable = tot_band_id var:tot_band_id = 4 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_4_guitarist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.4.c #贝斯
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_4_member_count }
+			var:tot_band_4_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 4 }
+		}		OR = {
+			NOT = { has_variable = tot_band_4_bassist_count }
+			var:tot_band_4_bassist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 4 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 4 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_4_bassist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.4.d #键盘
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_4_member_count }
+			var:tot_band_4_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 4 }
+		}		OR = {
+			NOT = { has_variable = tot_band_4_keyboardist_count }
+			var:tot_band_4_keyboardist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 4 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 4 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_4_keyboardist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.4.e #鼓手
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_4_member_count }
+			var:tot_band_4_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 4 }
+		}		OR = {
+			NOT = { has_variable = tot_band_4_drummer_count }
+			var:tot_band_4_drummer_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 4 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 4 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_4_drummer_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = TOT_BAND_NO_VALID_ROLE
+		fallback = yes
+	}
+}
+kizuna.5 = { #乐队成员任命
+	type = country_event
+	placement = root
+	title = kizuna.5.t
+	desc = kizuna.5.desc
+	flavor = kizuna.5.f
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	cancellation_trigger = {
+		OR = {
+			NOT = { exists = scope:appointing_band_member }
+			scope:appointing_band_member = { is_character_alive = no }
+		}
+	}
+	option = {
+		name = kizuna.5.a #主唱
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_5_member_count }
+			var:tot_band_5_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 5 }
+		}		OR = {
+			NOT = { has_variable = tot_band_5_vocalist_count }
+			var:tot_band_5_vocalist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_vocalist has_variable = tot_band_id var:tot_band_id = 5 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_5_vocalist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.5.b #吉他
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_5_member_count }
+			var:tot_band_5_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 5 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_guitarist has_variable = tot_band_id var:tot_band_id = 5 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_5_guitarist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.5.c #贝斯
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_5_member_count }
+			var:tot_band_5_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 5 }
+		}		OR = {
+			NOT = { has_variable = tot_band_5_bassist_count }
+			var:tot_band_5_bassist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 5 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 5 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_5_bassist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.5.d #键盘
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_5_member_count }
+			var:tot_band_5_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 5 }
+		}		OR = {
+			NOT = { has_variable = tot_band_5_keyboardist_count }
+			var:tot_band_5_keyboardist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 5 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 5 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_5_keyboardist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.5.e #鼓手
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_5_member_count }
+			var:tot_band_5_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 5 }
+		}		OR = {
+			NOT = { has_variable = tot_band_5_drummer_count }
+			var:tot_band_5_drummer_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 5 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 5 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_5_drummer_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = TOT_BAND_NO_VALID_ROLE
+		fallback = yes
+	}
+}
+kizuna.6 = { #乐队成员任命
+	type = country_event
+	placement = root
+	title = kizuna.6.t
+	desc = kizuna.6.desc
+	flavor = kizuna.6.f
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	cancellation_trigger = {
+		OR = {
+			NOT = { exists = scope:appointing_band_member }
+			scope:appointing_band_member = { is_character_alive = no }
+		}
+	}
+	option = {
+		name = kizuna.6.a #主唱
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_6_member_count }
+			var:tot_band_6_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 6 }
+		}		OR = {
+			NOT = { has_variable = tot_band_6_vocalist_count }
+			var:tot_band_6_vocalist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_vocalist has_variable = tot_band_id var:tot_band_id = 6 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_6_vocalist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.6.b #吉他
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_6_member_count }
+			var:tot_band_6_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 6 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_guitarist has_variable = tot_band_id var:tot_band_id = 6 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_6_guitarist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.6.c #贝斯
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_6_member_count }
+			var:tot_band_6_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 6 }
+		}		OR = {
+			NOT = { has_variable = tot_band_6_bassist_count }
+			var:tot_band_6_bassist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 6 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 6 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_6_bassist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.6.d #键盘
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_6_member_count }
+			var:tot_band_6_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 6 }
+		}		OR = {
+			NOT = { has_variable = tot_band_6_keyboardist_count }
+			var:tot_band_6_keyboardist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 6 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 6 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_6_keyboardist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.6.e #鼓手
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_6_member_count }
+			var:tot_band_6_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 6 }
+		}		OR = {
+			NOT = { has_variable = tot_band_6_drummer_count }
+			var:tot_band_6_drummer_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 6 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 6 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_6_drummer_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = TOT_BAND_NO_VALID_ROLE
+		fallback = yes
+	}
+}
+kizuna.7 = { #乐队成员任命
+	type = country_event
+	placement = root
+	title = kizuna.7.t
+	desc = kizuna.7.desc
+	flavor = kizuna.7.f
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	cancellation_trigger = {
+		OR = {
+			NOT = { exists = scope:appointing_band_member }
+			scope:appointing_band_member = { is_character_alive = no }
+		}
+	}
+	option = {
+		name = kizuna.7.a #主唱
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_7_member_count }
+			var:tot_band_7_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 7 }
+		}		OR = {
+			NOT = { has_variable = tot_band_7_vocalist_count }
+			var:tot_band_7_vocalist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_vocalist has_variable = tot_band_id var:tot_band_id = 7 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_7_vocalist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.7.b #吉他
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_7_member_count }
+			var:tot_band_7_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 7 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_guitarist has_variable = tot_band_id var:tot_band_id = 7 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_7_guitarist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.7.c #贝斯
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_7_member_count }
+			var:tot_band_7_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 7 }
+		}		OR = {
+			NOT = { has_variable = tot_band_7_bassist_count }
+			var:tot_band_7_bassist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 7 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 7 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_7_bassist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.7.d #键盘
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_7_member_count }
+			var:tot_band_7_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 7 }
+		}		OR = {
+			NOT = { has_variable = tot_band_7_keyboardist_count }
+			var:tot_band_7_keyboardist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 7 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 7 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_7_keyboardist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.7.e #鼓手
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_7_member_count }
+			var:tot_band_7_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 7 }
+		}		OR = {
+			NOT = { has_variable = tot_band_7_drummer_count }
+			var:tot_band_7_drummer_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 7 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 7 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_7_drummer_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = TOT_BAND_NO_VALID_ROLE
+		fallback = yes
+	}
+}
+kizuna.8 = { #乐队成员任命
+	type = country_event
+	placement = root
+	title = kizuna.8.t
+	desc = kizuna.8.desc
+	flavor = kizuna.8.f
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	cancellation_trigger = {
+		OR = {
+			NOT = { exists = scope:appointing_band_member }
+			scope:appointing_band_member = { is_character_alive = no }
+		}
+	}
+	option = {
+		name = kizuna.8.a #主唱
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_8_member_count }
+			var:tot_band_8_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 8 }
+		}		OR = {
+			NOT = { has_variable = tot_band_8_vocalist_count }
+			var:tot_band_8_vocalist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_vocalist has_variable = tot_band_id var:tot_band_id = 8 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_8_vocalist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.8.b #吉他
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_8_member_count }
+			var:tot_band_8_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 8 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_guitarist has_variable = tot_band_id var:tot_band_id = 8 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_8_guitarist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.8.c #贝斯
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_8_member_count }
+			var:tot_band_8_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 8 }
+		}		OR = {
+			NOT = { has_variable = tot_band_8_bassist_count }
+			var:tot_band_8_bassist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 8 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 8 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_8_bassist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.8.d #键盘
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_8_member_count }
+			var:tot_band_8_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 8 }
+		}		OR = {
+			NOT = { has_variable = tot_band_8_keyboardist_count }
+			var:tot_band_8_keyboardist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 8 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 8 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_8_keyboardist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.8.e #鼓手
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_8_member_count }
+			var:tot_band_8_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 8 }
+		}		OR = {
+			NOT = { has_variable = tot_band_8_drummer_count }
+			var:tot_band_8_drummer_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 8 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 8 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_8_drummer_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = TOT_BAND_NO_VALID_ROLE
+		fallback = yes
+	}
+}
+kizuna.9 = { #乐队成员任命
+	type = country_event
+	placement = root
+	title = kizuna.9.t
+	desc = kizuna.9.desc
+	flavor = kizuna.9.f
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	cancellation_trigger = {
+		OR = {
+			NOT = { exists = scope:appointing_band_member }
+			scope:appointing_band_member = { is_character_alive = no }
+		}
+	}
+	option = {
+		name = kizuna.9.a #主唱
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_9_member_count }
+			var:tot_band_9_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 9 }
+		}		OR = {
+			NOT = { has_variable = tot_band_9_vocalist_count }
+			var:tot_band_9_vocalist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_vocalist has_variable = tot_band_id var:tot_band_id = 9 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_9_vocalist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.9.b #吉他
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_9_member_count }
+			var:tot_band_9_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 9 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_guitarist has_variable = tot_band_id var:tot_band_id = 9 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_9_guitarist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.9.c #贝斯
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_9_member_count }
+			var:tot_band_9_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 9 }
+		}		OR = {
+			NOT = { has_variable = tot_band_9_bassist_count }
+			var:tot_band_9_bassist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 9 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 9 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_9_bassist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.9.d #键盘
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_9_member_count }
+			var:tot_band_9_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 9 }
+		}		OR = {
+			NOT = { has_variable = tot_band_9_keyboardist_count }
+			var:tot_band_9_keyboardist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 9 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 9 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_9_keyboardist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.9.e #鼓手
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_9_member_count }
+			var:tot_band_9_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 9 }
+		}		OR = {
+			NOT = { has_variable = tot_band_9_drummer_count }
+			var:tot_band_9_drummer_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 9 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 9 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_9_drummer_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = TOT_BAND_NO_VALID_ROLE
+		fallback = yes
+	}
+}
+kizuna.10 = { #乐队成员任命
+	type = country_event
+	placement = root
+	title = kizuna.10.t
+	desc = kizuna.10.desc
+	flavor = kizuna.10.f
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	cancellation_trigger = {
+		OR = {
+			NOT = { exists = scope:appointing_band_member }
+			scope:appointing_band_member = { is_character_alive = no }
+		}
+	}
+	option = {
+		name = kizuna.10.a #主唱
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_10_member_count }
+			var:tot_band_10_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 10 }
+		}		OR = {
+			NOT = { has_variable = tot_band_10_vocalist_count }
+			var:tot_band_10_vocalist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_vocalist has_variable = tot_band_id var:tot_band_id = 10 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_10_vocalist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.10.b #吉他
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_10_member_count }
+			var:tot_band_10_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 10 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_guitarist has_variable = tot_band_id var:tot_band_id = 10 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_10_guitarist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.10.c #贝斯
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_10_member_count }
+			var:tot_band_10_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 10 }
+		}		OR = {
+			NOT = { has_variable = tot_band_10_bassist_count }
+			var:tot_band_10_bassist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 10 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 10 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_10_bassist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.10.d #键盘
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_10_member_count }
+			var:tot_band_10_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 10 }
+		}		OR = {
+			NOT = { has_variable = tot_band_10_keyboardist_count }
+			var:tot_band_10_keyboardist_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 10 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 10 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_10_keyboardist_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = kizuna.10.e #鼓手
+		trigger = {
+		OR = {
+			NOT = { has_variable = tot_band_10_member_count }
+			var:tot_band_10_member_count < 5
+			scope:appointing_band_member = { has_variable = tot_band_id var:tot_band_id = 10 }
+		}		OR = {
+			NOT = { has_variable = tot_band_10_drummer_count }
+			var:tot_band_10_drummer_count = 0
+			scope:appointing_band_member = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 10 }
+		}		OR = {
+			scope:appointing_band_member = {
+				NOT = { has_variable = tot_band_role_guitarist }
+				NOT = { has_variable = tot_band_role_bassist }
+				NOT = { has_variable = tot_band_role_keyboardist }
+				NOT = { has_variable = tot_band_role_drummer }
+			}			scope:appointing_band_member = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 10 }
+		}		}
+		scope:appointing_band_member = { save_temporary_scope_as = tot_band_member }
+		tot_appoint_band_10_drummer_effect = yes
+		update_kizuna = yes
+	}
+	option = {
+		name = TOT_BAND_NO_VALID_ROLE
+		fallback = yes
+	}
+}
+kizuna.101 = {
+	 type = country_event
+	 placement = root
+	 title = TOT_BAND_CHOOSE_NAME
+	 desc = TOT_BAND_NAME_EVENT_DESC
+	 icon = "gfx/interface/icons/event_icons/event_default.dds"
+	option = {
+		 name = TOT_BAND_NAME_PRESET_1
+		 set_variable = { name = tot_band_1_name value = 1 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_2
+		 set_variable = { name = tot_band_1_name value = 2 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_3
+		 set_variable = { name = tot_band_1_name value = 3 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_4
+		 set_variable = { name = tot_band_1_name value = 4 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_5
+		 set_variable = { name = tot_band_1_name value = 5 }
+		 update_kizuna = yes
+	}
+}
+
+kizuna.102 = {
+	 type = country_event
+	 placement = root
+	 title = TOT_BAND_CHOOSE_NAME
+	 desc = TOT_BAND_NAME_EVENT_DESC
+	 icon = "gfx/interface/icons/event_icons/event_default.dds"
+	option = {
+		 name = TOT_BAND_NAME_PRESET_1
+		 set_variable = { name = tot_band_2_name value = 1 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_2
+		 set_variable = { name = tot_band_2_name value = 2 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_3
+		 set_variable = { name = tot_band_2_name value = 3 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_4
+		 set_variable = { name = tot_band_2_name value = 4 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_5
+		 set_variable = { name = tot_band_2_name value = 5 }
+		 update_kizuna = yes
+	}
+}
+
+kizuna.103 = {
+	 type = country_event
+	 placement = root
+	 title = TOT_BAND_CHOOSE_NAME
+	 desc = TOT_BAND_NAME_EVENT_DESC
+	 icon = "gfx/interface/icons/event_icons/event_default.dds"
+	option = {
+		 name = TOT_BAND_NAME_PRESET_1
+		 set_variable = { name = tot_band_3_name value = 1 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_2
+		 set_variable = { name = tot_band_3_name value = 2 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_3
+		 set_variable = { name = tot_band_3_name value = 3 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_4
+		 set_variable = { name = tot_band_3_name value = 4 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_5
+		 set_variable = { name = tot_band_3_name value = 5 }
+		 update_kizuna = yes
+	}
+}
+
+kizuna.104 = {
+	 type = country_event
+	 placement = root
+	 title = TOT_BAND_CHOOSE_NAME
+	 desc = TOT_BAND_NAME_EVENT_DESC
+	 icon = "gfx/interface/icons/event_icons/event_default.dds"
+	option = {
+		 name = TOT_BAND_NAME_PRESET_1
+		 set_variable = { name = tot_band_4_name value = 1 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_2
+		 set_variable = { name = tot_band_4_name value = 2 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_3
+		 set_variable = { name = tot_band_4_name value = 3 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_4
+		 set_variable = { name = tot_band_4_name value = 4 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_5
+		 set_variable = { name = tot_band_4_name value = 5 }
+		 update_kizuna = yes
+	}
+}
+
+kizuna.105 = {
+	 type = country_event
+	 placement = root
+	 title = TOT_BAND_CHOOSE_NAME
+	 desc = TOT_BAND_NAME_EVENT_DESC
+	 icon = "gfx/interface/icons/event_icons/event_default.dds"
+	option = {
+		 name = TOT_BAND_NAME_PRESET_1
+		 set_variable = { name = tot_band_5_name value = 1 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_2
+		 set_variable = { name = tot_band_5_name value = 2 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_3
+		 set_variable = { name = tot_band_5_name value = 3 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_4
+		 set_variable = { name = tot_band_5_name value = 4 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_5
+		 set_variable = { name = tot_band_5_name value = 5 }
+		 update_kizuna = yes
+	}
+}
+
+kizuna.106 = {
+	 type = country_event
+	 placement = root
+	 title = TOT_BAND_CHOOSE_NAME
+	 desc = TOT_BAND_NAME_EVENT_DESC
+	 icon = "gfx/interface/icons/event_icons/event_default.dds"
+	option = {
+		 name = TOT_BAND_NAME_PRESET_1
+		 set_variable = { name = tot_band_6_name value = 1 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_2
+		 set_variable = { name = tot_band_6_name value = 2 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_3
+		 set_variable = { name = tot_band_6_name value = 3 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_4
+		 set_variable = { name = tot_band_6_name value = 4 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_5
+		 set_variable = { name = tot_band_6_name value = 5 }
+		 update_kizuna = yes
+	}
+}
+
+kizuna.107 = {
+	 type = country_event
+	 placement = root
+	 title = TOT_BAND_CHOOSE_NAME
+	 desc = TOT_BAND_NAME_EVENT_DESC
+	 icon = "gfx/interface/icons/event_icons/event_default.dds"
+	option = {
+		 name = TOT_BAND_NAME_PRESET_1
+		 set_variable = { name = tot_band_7_name value = 1 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_2
+		 set_variable = { name = tot_band_7_name value = 2 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_3
+		 set_variable = { name = tot_band_7_name value = 3 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_4
+		 set_variable = { name = tot_band_7_name value = 4 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_5
+		 set_variable = { name = tot_band_7_name value = 5 }
+		 update_kizuna = yes
+	}
+}
+
+kizuna.108 = {
+	 type = country_event
+	 placement = root
+	 title = TOT_BAND_CHOOSE_NAME
+	 desc = TOT_BAND_NAME_EVENT_DESC
+	 icon = "gfx/interface/icons/event_icons/event_default.dds"
+	option = {
+		 name = TOT_BAND_NAME_PRESET_1
+		 set_variable = { name = tot_band_8_name value = 1 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_2
+		 set_variable = { name = tot_band_8_name value = 2 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_3
+		 set_variable = { name = tot_band_8_name value = 3 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_4
+		 set_variable = { name = tot_band_8_name value = 4 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_5
+		 set_variable = { name = tot_band_8_name value = 5 }
+		 update_kizuna = yes
+	}
+}
+
+kizuna.109 = {
+	 type = country_event
+	 placement = root
+	 title = TOT_BAND_CHOOSE_NAME
+	 desc = TOT_BAND_NAME_EVENT_DESC
+	 icon = "gfx/interface/icons/event_icons/event_default.dds"
+	option = {
+		 name = TOT_BAND_NAME_PRESET_1
+		 set_variable = { name = tot_band_9_name value = 1 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_2
+		 set_variable = { name = tot_band_9_name value = 2 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_3
+		 set_variable = { name = tot_band_9_name value = 3 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_4
+		 set_variable = { name = tot_band_9_name value = 4 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_5
+		 set_variable = { name = tot_band_9_name value = 5 }
+		 update_kizuna = yes
+	}
+}
+
+kizuna.110 = {
+	 type = country_event
+	 placement = root
+	 title = TOT_BAND_CHOOSE_NAME
+	 desc = TOT_BAND_NAME_EVENT_DESC
+	 icon = "gfx/interface/icons/event_icons/event_default.dds"
+	option = {
+		 name = TOT_BAND_NAME_PRESET_1
+		 set_variable = { name = tot_band_10_name value = 1 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_2
+		 set_variable = { name = tot_band_10_name value = 2 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_3
+		 set_variable = { name = tot_band_10_name value = 3 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_4
+		 set_variable = { name = tot_band_10_name value = 4 }
+		 update_kizuna = yes
+	}
+	option = {
+		 name = TOT_BAND_NAME_PRESET_5
+		 set_variable = { name = tot_band_10_name value = 5 }
+		 update_kizuna = yes
+	}
+}
+
+
+
+
+

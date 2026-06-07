@@ -1,0 +1,194 @@
+tot_refresh_province_governor_candidates = {
+	scope = country
+	effect = {
+		tot_update_province_governor_candidates = yes
+	}
+	is_shown = {
+		is_player = yes
+	}
+	is_valid = {
+		is_player = yes
+	}
+}
+
+tot_refresh_character_growth = {
+	scope = country
+	effect = {
+		tot_character_growth_refresh = yes
+	}
+	is_shown = {
+		is_player = yes
+	}
+	is_valid = {
+		is_player = yes
+	}
+}
+
+tot_character_growth_select_governor_state = {
+	scope = state
+	effect = {
+		owner ?= {
+			set_variable = {
+				name = tot_character_growth_selected_governor_state
+				value = prev
+			}
+			tot_character_growth_refresh = yes
+		}
+	}
+	is_shown = {
+		owner ?= {
+			is_player = yes
+		}
+	}
+	is_valid = {
+		owner ?= {
+			is_player = yes
+		}
+	}
+}
+
+tot_character_growth_has_selected_governor_state = {
+	scope = country
+	is_shown = {
+		has_variable = tot_character_growth_selected_governor_state
+	}
+	is_valid = {
+		has_variable = tot_character_growth_selected_governor_state
+	}
+}
+
+tot_character_growth_selected_governor_state_needs_appointment = {
+	scope = country
+	is_shown = {
+		has_variable = tot_character_growth_selected_governor_state
+		var:tot_character_growth_selected_governor_state ?= {
+			NOT = {
+				has_variable = tot_province_governor
+			}
+		}
+	}
+	is_valid = {
+		has_variable = tot_character_growth_selected_governor_state
+		var:tot_character_growth_selected_governor_state ?= {
+			NOT = {
+				has_variable = tot_province_governor
+			}
+		}
+	}
+}
+
+tot_appoint_selected_province_governor = {
+	scope = character
+	effect = {
+		tot_appoint_selected_province_governor_effect = yes
+	}
+	is_shown = {
+		is_character_alive = yes
+		NOT = {
+			has_role = character_role_tot_province_governor
+		}
+		owner ?= {
+			is_player = yes
+			has_variable = tot_character_growth_selected_governor_state
+		}
+	}
+	is_valid = {
+		is_character_alive = yes
+		NOT = {
+			has_role = character_role_tot_province_governor
+		}
+		owner ?= {
+			is_player = yes
+			has_variable = tot_character_growth_selected_governor_state
+			custom_tooltip = {
+				text = TOT_PROVINCE_GOVERNOR_LIMIT_REACHED
+				tot_province_governor_limit > tot_province_governor_count
+			}
+			var:tot_character_growth_selected_governor_state ?= {
+				owner ?= {
+					is_player = yes
+				}
+				NOT = {
+					has_variable = tot_province_governor
+				}
+				custom_tooltip = {
+					text = TOT_PROVINCE_GOVERNOR_COOLDOWN
+					NOT = {
+						has_variable = tot_province_governor_replace_cooldown
+					}
+				}
+			}
+		}
+	}
+}
+
+tot_appoint_province_governor = {
+	scope = character
+	effect = {
+		tot_appoint_province_governor_effect = yes
+	}
+	is_shown = {
+		is_character_alive = yes
+		NOT = {
+			has_role = character_role_tot_province_governor
+		}
+		owner ?= {
+			is_player = yes
+		}
+		scope:tot_governor_state ?= {
+			always = yes
+		}
+	}
+	is_valid = {
+		is_character_alive = yes
+		NOT = {
+			has_role = character_role_tot_province_governor
+		}
+		owner ?= {
+			is_player = yes
+			custom_tooltip = {
+				text = TOT_PROVINCE_GOVERNOR_LIMIT_REACHED
+				tot_province_governor_limit > tot_province_governor_count
+			}
+		}
+		scope:tot_governor_state ?= {
+			owner ?= {
+				is_player = yes
+			}
+			NOT = {
+				has_variable = tot_province_governor
+			}
+			custom_tooltip = {
+				text = TOT_PROVINCE_GOVERNOR_COOLDOWN
+				NOT = {
+					has_variable = tot_province_governor_replace_cooldown
+				}
+			}
+		}
+	}
+}
+
+tot_remove_province_governor = {
+	scope = state
+	effect = {
+		tot_clear_state_governor = yes
+	}
+	is_shown = {
+		has_variable = tot_province_governor
+		owner ?= {
+			is_player = yes
+		}
+	}
+	is_valid = {
+		has_variable = tot_province_governor
+		custom_tooltip = {
+			text = TOT_PROVINCE_GOVERNOR_COOLDOWN
+			NOT = {
+				has_variable = tot_province_governor_replace_cooldown
+			}
+		}
+		owner ?= {
+			is_player = yes
+		}
+	}
+}

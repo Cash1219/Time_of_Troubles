@@ -1,4 +1,4 @@
-types kizuna_list_type #角色列表
+﻿types kizuna_list_type #角色列表
 {
 	type kizuna_character_widget = flowcontainer {
 		direction = vertical
@@ -7,7 +7,7 @@ types kizuna_list_type #角色列表
 		widget = {
 		
 			parentanchor = hcenter
-			size = { 500 100 }
+			size = { 500 148 }
 			datacontext = "[Scope.GetCharacter]"
 			visible = "[Scope.GetCharacter.IsValid]"
 			
@@ -92,45 +92,35 @@ types kizuna_list_type #角色列表
 									align = left
 									using = regular_font
 									block "highlight_name" {}
+									elide = right
 								}
 								container = {
 									parentanchor = hcenter
 									maximumsize = { 540 -1 }
 									minimumsize = { 300 -1 }
-									dynamicgridbox = {
-										datamodel = "[Character.AccessTraits]"
-										datamodel_wrap = 3
-										flipdirection = yes
-										
-										item = {
-											flowcontainer = {
-												margin = { 0 0 }
-												using = tooltip_above
-												alpha = "[TransparentIfTrue(CharacterTrait.IsDisabled)]"
-
-												tooltipwidget = {
-													FancyTooltip_CharacterTrait = {}
-												}
-
-												icon = {
-													size = { 32 45 }
-													parentanchor = vcenter
-													texture = "[CharacterTrait.GetTexture]"
-												}
-
-												textbox = {
-													text = "[CharacterTrait.GetNameNoFormatting]"
-													margin_left = 5
-													max_width = 130
-													autoresize = yes
-													elide = right
-													parentanchor = vcenter
-													align = left|nobaseline
-													multiline = yes
-													fontsize_min = 10
-													using = fontsize_small
-												}
-											}
+									vbox = {
+										spacing = 2
+										textbox = {
+											text = "TOT_KIZUNA_ACTIVE_LABEL"
+											size = { 260 22 }
+											align = left|nobaseline
+											using = fontsize_small
+										}
+										textbox = {
+											visible = "[GetScriptedGui('tot_kizuna_character_active').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
+											text = "TOT_KIZUNA_ACTIVE_YES"
+											size = { 260 24 }
+											align = left|nobaseline
+											using = fontsize_small
+											default_format = "#P"
+										}
+										textbox = {
+											visible = "[Not(GetScriptedGui('tot_kizuna_character_active').IsShown(GuiScope.SetRoot(Character.MakeScope).End))]"
+											text = "TOT_KIZUNA_ACTIVE_NO"
+											size = { 260 24 }
+											align = left|nobaseline
+											using = fontsize_small
+											default_format = "#N"
 										}
 									}
 								}
@@ -149,10 +139,10 @@ types kizuna_list_type #角色列表
 									position = { -30 50 }
 									visible = "[GetScriptedGui('get_is_in_government_type').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
 									layoutpolicy_horizontal = expanding
-									size = { 100 30 }
+									size = { 90 24 }
 									text = "在政府中"
 									align = center|nobaseline
-									using = fontsize_medium
+									using = fontsize_small
 									block "highlight_name" {}
 									elide = right
 								}
@@ -170,10 +160,10 @@ types kizuna_list_type #角色列表
 									position = { -30 10 }
 									visible = "[Not(GetScriptedGui('get_is_in_government_type').IsShown(GuiScope.SetRoot(Character.MakeScope).End))]"
 									layoutpolicy_horizontal = expanding
-									size = { 100 30 }
-									text = "不在政府中"
+									size = { 90 24 }
+									text = "不在政府"
 									align = center|nobaseline
-									using = fontsize_medium
+									using = fontsize_small
 									block "highlight_name" {}
 									elide = right
 								}
@@ -195,479 +185,3673 @@ types kizuna_list_type #角色列表
 	}
 
 	
+	type tot_band_1_member_character = widget {
+		size = { 500 142 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			margin = { 12 10 }
+			spacing = 12
+			character_portrait_medium = {}
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				size = { 250 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+			}
+			flowcontainer = {
+				direction = vertical
+				spacing = 6
+				size = { 118 118 }
+				button_standard = {
+					text = "TOT_BAND_EDIT_ROLE"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_1_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_1_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_1_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+				button_standard = {
+					text = "TOT_BAND_REMOVE"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+			}
+		}
+	}
+
+	type tot_band_1_candidate_character = widget {
+		size = { 500 142 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			margin = { 12 10 }
+			spacing = 12
+			character_portrait_medium = {}
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				size = { 250 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+			}
+			flowcontainer = {
+				direction = vertical
+				spacing = 6
+				size = { 118 118 }
+				button_standard = {
+					text = "TOT_BAND_APPOINT_OR_EDIT"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_1_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_1_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_1_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+			}
+		}
+	}
+
+	type tot_band_2_member_character = widget {
+		size = { 500 142 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			margin = { 12 10 }
+			spacing = 12
+			character_portrait_medium = {}
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				size = { 250 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+			}
+			flowcontainer = {
+				direction = vertical
+				spacing = 6
+				size = { 118 118 }
+				button_standard = {
+					text = "TOT_BAND_EDIT_ROLE"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_2_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_2_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_2_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+				button_standard = {
+					text = "TOT_BAND_REMOVE"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+			}
+		}
+	}
+
+	type tot_band_2_candidate_character = widget {
+		size = { 500 142 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			margin = { 12 10 }
+			spacing = 12
+			character_portrait_medium = {}
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				size = { 250 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+			}
+			flowcontainer = {
+				direction = vertical
+				spacing = 6
+				size = { 118 118 }
+				button_standard = {
+					text = "TOT_BAND_APPOINT_OR_EDIT"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_2_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_2_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_2_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+			}
+		}
+	}
+
+	type tot_band_3_member_character = widget {
+		size = { 500 142 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			margin = { 12 10 }
+			spacing = 12
+			character_portrait_medium = {}
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				size = { 250 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+			}
+			flowcontainer = {
+				direction = vertical
+				spacing = 6
+				size = { 118 118 }
+				button_standard = {
+					text = "TOT_BAND_EDIT_ROLE"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_3_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_3_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_3_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+				button_standard = {
+					text = "TOT_BAND_REMOVE"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+			}
+		}
+	}
+
+	type tot_band_3_candidate_character = widget {
+		size = { 500 142 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			margin = { 12 10 }
+			spacing = 12
+			character_portrait_medium = {}
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				size = { 250 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+			}
+			flowcontainer = {
+				direction = vertical
+				spacing = 6
+				size = { 118 118 }
+				button_standard = {
+					text = "TOT_BAND_APPOINT_OR_EDIT"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_3_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_3_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_3_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+			}
+		}
+	}
+
+	type tot_band_4_member_character = widget {
+		size = { 500 142 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			margin = { 12 10 }
+			spacing = 12
+			character_portrait_medium = {}
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				size = { 250 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+			}
+			flowcontainer = {
+				direction = vertical
+				spacing = 6
+				size = { 118 118 }
+				button_standard = {
+					text = "TOT_BAND_EDIT_ROLE"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_4_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_4_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_4_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+				button_standard = {
+					text = "TOT_BAND_REMOVE"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+			}
+		}
+	}
+
+	type tot_band_4_candidate_character = widget {
+		size = { 500 142 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			margin = { 12 10 }
+			spacing = 12
+			character_portrait_medium = {}
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				size = { 250 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+			}
+			flowcontainer = {
+				direction = vertical
+				spacing = 6
+				size = { 118 118 }
+				button_standard = {
+					text = "TOT_BAND_APPOINT_OR_EDIT"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_4_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_4_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_4_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+			}
+		}
+	}
+
+	type tot_band_5_member_character = widget {
+		size = { 500 142 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			margin = { 12 10 }
+			spacing = 12
+			character_portrait_medium = {}
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				size = { 250 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+			}
+			flowcontainer = {
+				direction = vertical
+				spacing = 6
+				size = { 118 118 }
+				button_standard = {
+					text = "TOT_BAND_EDIT_ROLE"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_5_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_5_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_5_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+				button_standard = {
+					text = "TOT_BAND_REMOVE"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+			}
+		}
+	}
+
+	type tot_band_5_candidate_character = widget {
+		size = { 500 142 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			margin = { 12 10 }
+			spacing = 12
+			character_portrait_medium = {}
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				size = { 250 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+			}
+			flowcontainer = {
+				direction = vertical
+				spacing = 6
+				size = { 118 118 }
+				button_standard = {
+					text = "TOT_BAND_APPOINT_OR_EDIT"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_5_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_5_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_5_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+			}
+		}
+	}
+
+	type tot_band_6_member_character = widget {
+		size = { 500 142 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			margin = { 12 10 }
+			spacing = 12
+			character_portrait_medium = {}
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				size = { 250 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+			}
+			flowcontainer = {
+				direction = vertical
+				spacing = 6
+				size = { 118 118 }
+				button_standard = {
+					text = "TOT_BAND_EDIT_ROLE"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_6_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_6_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_6_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+				button_standard = {
+					text = "TOT_BAND_REMOVE"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+			}
+		}
+	}
+
+	type tot_band_6_candidate_character = widget {
+		size = { 500 142 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			margin = { 12 10 }
+			spacing = 12
+			character_portrait_medium = {}
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				size = { 250 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+			}
+			flowcontainer = {
+				direction = vertical
+				spacing = 6
+				size = { 118 118 }
+				button_standard = {
+					text = "TOT_BAND_APPOINT_OR_EDIT"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_6_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_6_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_6_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+			}
+		}
+	}
+
+	type tot_band_7_member_character = widget {
+		size = { 500 142 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			margin = { 12 10 }
+			spacing = 12
+			character_portrait_medium = {}
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				size = { 250 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+			}
+			flowcontainer = {
+				direction = vertical
+				spacing = 6
+				size = { 118 118 }
+				button_standard = {
+					text = "TOT_BAND_EDIT_ROLE"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_7_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_7_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_7_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+				button_standard = {
+					text = "TOT_BAND_REMOVE"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+			}
+		}
+	}
+
+	type tot_band_7_candidate_character = widget {
+		size = { 500 142 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			margin = { 12 10 }
+			spacing = 12
+			character_portrait_medium = {}
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				size = { 250 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+			}
+			flowcontainer = {
+				direction = vertical
+				spacing = 6
+				size = { 118 118 }
+				button_standard = {
+					text = "TOT_BAND_APPOINT_OR_EDIT"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_7_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_7_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_7_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+			}
+		}
+	}
+
+	type tot_band_8_member_character = widget {
+		size = { 500 142 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			margin = { 12 10 }
+			spacing = 12
+			character_portrait_medium = {}
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				size = { 250 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+			}
+			flowcontainer = {
+				direction = vertical
+				spacing = 6
+				size = { 118 118 }
+				button_standard = {
+					text = "TOT_BAND_EDIT_ROLE"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_8_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_8_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_8_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+				button_standard = {
+					text = "TOT_BAND_REMOVE"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+			}
+		}
+	}
+
+	type tot_band_8_candidate_character = widget {
+		size = { 500 142 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			margin = { 12 10 }
+			spacing = 12
+			character_portrait_medium = {}
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				size = { 250 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+			}
+			flowcontainer = {
+				direction = vertical
+				spacing = 6
+				size = { 118 118 }
+				button_standard = {
+					text = "TOT_BAND_APPOINT_OR_EDIT"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_8_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_8_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_8_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+			}
+		}
+	}
+
+	type tot_band_9_member_character = widget {
+		size = { 500 142 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			margin = { 12 10 }
+			spacing = 12
+			character_portrait_medium = {}
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				size = { 250 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+			}
+			flowcontainer = {
+				direction = vertical
+				spacing = 6
+				size = { 118 118 }
+				button_standard = {
+					text = "TOT_BAND_EDIT_ROLE"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_9_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_9_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_9_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+				button_standard = {
+					text = "TOT_BAND_REMOVE"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+			}
+		}
+	}
+
+	type tot_band_9_candidate_character = widget {
+		size = { 500 142 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			margin = { 12 10 }
+			spacing = 12
+			character_portrait_medium = {}
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				size = { 250 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+			}
+			flowcontainer = {
+				direction = vertical
+				spacing = 6
+				size = { 118 118 }
+				button_standard = {
+					text = "TOT_BAND_APPOINT_OR_EDIT"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_9_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_9_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_9_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+			}
+		}
+	}
+
+	type tot_band_10_member_character = widget {
+		size = { 500 142 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			margin = { 12 10 }
+			spacing = 12
+			character_portrait_medium = {}
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				size = { 250 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+			}
+			flowcontainer = {
+				direction = vertical
+				spacing = 6
+				size = { 118 118 }
+				button_standard = {
+					text = "TOT_BAND_EDIT_ROLE"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_10_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_10_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_10_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+				button_standard = {
+					text = "TOT_BAND_REMOVE"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+			}
+		}
+	}
+
+	type tot_band_10_candidate_character = widget {
+		size = { 500 142 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			margin = { 12 10 }
+			spacing = 12
+			character_portrait_medium = {}
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				size = { 250 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+			}
+			flowcontainer = {
+				direction = vertical
+				spacing = 6
+				size = { 118 118 }
+				button_standard = {
+					text = "TOT_BAND_APPOINT_OR_EDIT"
+					size = { 118 42 }
+					enabled = "[GetScriptedGui('tot_band_10_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_10_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_10_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+			}
+		}
+	}
+
+
 }
 flowcontainer = {
 	name = "widget_je_kizuna_character_list"
 	ignoreinvisible = yes
-	
-	flowcontainer = {
-		visible = "[GetScriptedGui('kon_kizuna_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-		direction = vertical
-		
-		section_header_button = {
-			blockoverride "layout" {
-				size = { 520 38 }
-			
-			}
-			
-			blockoverride "left_text" {
-				text = "#v 轻音部#!"
-			}
-			blockoverride "onclick" {
-				onclick = "[GetVariableSystem.Toggle('kon_kizuna_toggle')]"
-			}
-			blockoverride "onclick_showmore" {
-			
-				visible = "[Not(GetVariableSystem.Exists('kon_kizuna_toggle'))]"
-			}
-			blockoverride "onclick_showless" {
-				visible = "[GetVariableSystem.Exists('kon_kizuna_toggle')]"
-			}
-				
-		}
-		
-			default_header_clean = {
-					name = "kon_kizuna_show" #樱高轻音部计数
-					visible = "[GetVariableSystem.Exists('kon_kizuna_toggle')]"
-					size = { 500 100 }
-					
-					blockoverride "text" {
-						
-						icon = {
-								texture = "gfx/interface/icons/religion_icons/starbeat.dds"
-								size = { 50 50 }
-								position = { -50 -10 }
-							}
-							
-						raw_text = "樱高轻音部 [AccessPlayer.MakeScope.ScriptValue('kon_kizuna_number')|=+D]"
-						autoresize = yes
-						multiline = yes
-						using = fontsize_xl
-						default_format = "#medium"
-					}
-					tooltip = "kon_kizuna_tooltip"		
-				
-				}
-				
-				default_header_clean = {
-					name = "kon_kizuna_modifier" #樱高轻音部修正
-					visible = "[GetVariableSystem.Exists('kon_kizuna_toggle')]"
-					size = { 500 200 }
-					
-					blockoverride "text" {
-						
-						raw_text = "kon_kizuna_modifier_text"
-						autoresize = yes
-						multiline = yes
-						using = fontsize_xl
-						default_format = "#medium"
-						
-					}
-							
-				}
-		fixedgridbox = {
-			name = "kon_kizuna_character_list"
-			visible = "[GetVariableSystem.Exists('kon_kizuna_toggle')]" #樱高轻音部角色列表
-			datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('kon_kizuna_list')]"
-			addcolumn = 200
-			addrow = 100
-			background = {
-				texture = "gfx/interface/tooltip/tooltip_title_bg.dds"
-				color = { 0.69 0.47 0.33 1 }
-				alpha = 0.4
+	direction = vertical
+	spacing = 8
 
-				modify_texture = {
-					using = texture_velvet
-				}
-			}
-			item = {
-				kizuna_character_widget = {}
-				
-			}
-		}
-		section_header_button = {
-			blockoverride "layout" {
-				size = { 520 38 }
-			
-			}
-			blockoverride "left_text" {
-				text = "#v 乐队#!"
-				
-			}
-			blockoverride "onclick" {
-				onclick = "[GetVariableSystem.Toggle('band_kizuna_toggle')]"
-			}
-			blockoverride "onclick_showmore" {
-			
-				visible = "[Not(GetVariableSystem.Exists('band_kizuna_toggle'))]"
-			}
-			blockoverride "onclick_showless" {
-				visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-			}
-				
-			
-		}
-		
-		default_header_clean = {
-					name = "band_kizuna_show" #乐队计数
-					visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-					size = { 500 100 }
-					blockoverride "text" {
-						
-						icon = {
-								texture = "gfx/interface/icons/religion_icons/starbeat.dds"
-								size = { 50 50 }
-								position = { -50 -10 }
-							}
-						raw_text = "乐队 [AccessPlayer.MakeScope.ScriptValue('band_kizuna_number')|=+D]"
-						autoresize = yes
-						multiline = yes
-						using = fontsize_xl
-						default_format = "#medium"
-						tooltip = "band_kizuna_tooltip"		
-					}
-									
-									
-				}
-				
-				button = {
-					size = { 500 50 }
-					default_progressbar_horizontal = {	
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						size = { 500 50 }
-						tooltip = "band_kizuna_exp_progress_tooltip"
-					
-					parentanchor = vcenter
-						blockoverride "values" {
-							value = "50"
-						}
-						#icon = {
-						#	position = { -10 -25 }
-						#	size = { 520 100 }
-						#	texture = "gfx/interface/progressbar/cohesion_bar.dds"
-						#}
-					textbox = {
-						parentanchor = center
-						size = { 100 100 }
-						font = "OpenSans"
-						fontsize = 14
-						fontsize_min = 9
-						align = center|nobaseline
-						elide = right
-						text = "band_kizuna_exp_progress"
-					}
-				}
-				}
-				
-				button = {
-					size = { 500 50 }
-					default_progressbar_horizontal = {	
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						size = { 500 50 }
-						tooltip = "band_kizuna_creation_progress_tooltip"
-					
-					parentanchor = vcenter
-						blockoverride "values" {
-							value = "50"
-						}
-						#icon = {
-						#	position = { -10 -25 }
-						#	size = { 520 100 }
-						#	texture = "gfx/interface/progressbar/cohesion_bar.dds"
-						#}
-					textbox = {
-						parentanchor = center
-						size = { 100 100 }
-						font = "OpenSans"
-						fontsize = 14
-						fontsize_min = 9
-						align = center|nobaseline
-						elide = right
-						text = "band_kizuna_creation_progress"
-					}
-				}
-				}
-				flowcontainer = {
-					button = {
-						icon = {
-							parentanchor = center
-							size = { 22 22 }
-							texture = "gfx/interface/icons/generic_icons/coin_icon_01.dds"
-						}
-						using = default_button
-						size = { 80 80 }
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						enabled = ""
-						onclick = "[GetScriptedGui('band_gold_effect_1').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-						tooltip = "band_gold_tooltip_1"
-						text = ""
-					}
-					button = {
-						icon = {
-							parentanchor = center
-							size = { 22 22 }
-							texture = "gfx/interface/icons/generic_icons/coin_icon_03.dds"
-						}
-						using = default_button
-						size = { 80 80 }
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						enabled = ""
-						onclick = ""
-						tooltip = "band_gold_tooltip_2"
-						text = ""
-					}
-					button = {
-						icon = {
-							parentanchor = center
-							size = { 22 22 }
-							texture = "gfx/interface/icons/generic_icons/coin_icon_05.dds"
-						}
-						using = default_button
-						size = { 80 80 }
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						enabled = ""
-						onclick = ""
-						tooltip = "band_gold_tooltip_3"
-						text = ""
-					}
-					button = {
-						icon = {
-							parentanchor = center
-							size = { 22 22 }
-							texture = "gfx/interface/icons/generic_icons/coin_icon_07.dds"
-						}
-						using = default_button
-						size = { 80 80 }
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						enabled = ""
-						onclick = ""
-						tooltip = "band_gold_tooltip_4"
-						text = ""
-					}
-					button = {
-						icon = {
-							parentanchor = center
-							size = { 22 22 }
-							texture = "gfx/interface/icons/generic_icons/coin_icon_09.dds"
-						}
-						using = default_button
-						size = { 80 80 }
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						enabled = ""
-						onclick = ""
-						tooltip = "band_gold_tooltip_5"
-						text = ""
-					}
-					button = {
-						icon = {
-							parentanchor = center
-							size = { 22 22 }
-							texture = "gfx/interface/icons/generic_icons/coin_icon_11.dds"
-						}
-						using = default_button
-						size = { 80 80 }
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						enabled = ""
-						onclick = ""
-						tooltip = "band_gold_tooltip_6"
-						text = ""
-					}
-				}
-				flowcontainer = {
-					button = {
-						using = default_button
-						size = { 80 80 }
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						enabled = ""
-						onclick = ""
-						tooltip = "band_tools_tooltip"
-						text = "@tools!"
-					}
-					button = {
-						using = default_button
-						size = { 80 80 }
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						enabled = ""
-						onclick = ""
-						tooltip = "band_paper_tooltip"
-						text = "@paper!"
-					}
-					button = {
-						using = default_button
-						size = { 80 80 }
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						enabled = ""
-						onclick = ""
-						tooltip = "band_luxury_clothes_tooltip"
-						text = "@luxury_clothes!"
-					}
-					button = {
-						using = default_button
-						size = { 80 80 }
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						enabled = ""
-						onclick = ""
-						tooltip = "band_transportation_tooltip"
-						text = "@transportation!"
-					}
-					button = {
-						using = default_button
-						size = { 80 80 }
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						enabled = ""
-						onclick = ""
-						tooltip = "band_automobiles_tooltip"
-						text = "@automobiles!"
-					}
-					button = {
-						using = default_button
-						size = { 80 80 }
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						enabled = ""
-						onclick = ""
-						tooltip = "band_radios_tooltip"
-						text = "@radios!"
-					}
-				}
-				flowcontainer = {
-					button = {
-						using = default_button
-						size = { 80 80 }
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						enabled = ""
-						onclick = ""
-						tooltip = "band_fruit_tooltip"
-						text = "@fruit"
-					}
-					
-					button = {
-						using = default_button
-						size = { 80 80 }
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						enabled = ""
-						onclick = ""
-						tooltip = "band_tea_tooltip"
-						text = "@tea!"
-					}
-					button = {
-						using = default_button
-						size = { 80 80 }
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						enabled = ""
-						onclick = ""
-						tooltip = "band_coffee_tooltip"
-						text = "@coffee!"
-					}
-					button = {
-						using = default_button
-						size = { 80 80 }
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						enabled = ""
-						onclick = ""
-						tooltip = "band_groceries_tooltip"
-						text = "@groceries!"
-					}
-					button = {
-					using = default_button
-					size = { 80 80 }
-					visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-					enabled = ""
-					onclick = ""
-					tooltip = "band_luxury_drinks_tooltip"
-					text = "@luxury_drinks!"
-				}
-					button = {
-						using = default_button
-						size = { 80 80 }
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						enabled = ""
-						onclick = ""
-						tooltip = "band_luxury_foods_tooltip"
-						text = "@luxury_foods!"
-					}
-				}
-				flowcontainer = {
-					button = {
-						using = default_button
-						size = { 80 80 }
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						enabled = ""
-						onclick = ""
-						tooltip = "band_fruit_tooltip"
-						text = "@fruit"
-					}
-					
-					button = {
-						using = default_button
-						size = { 80 80 }
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						enabled = ""
-						onclick = ""
-						tooltip = "band_tea_tooltip"
-						text = "@tea!"
-					}
-					button = {
-						using = default_button
-						size = { 80 80 }
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						enabled = ""
-						onclick = ""
-						tooltip = "band_coffee_tooltip"
-						text = "@coffee!"
-					}
-					button = {
-						using = default_button
-						size = { 80 80 }
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						enabled = ""
-						onclick = ""
-						tooltip = "band_groceries_tooltip"
-						text = "@groceries!"
-					}
-					button = {
-					using = default_button
-					size = { 80 80 }
-					visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-					enabled = ""
-					onclick = ""
-					tooltip = "band_luxury_drinks_tooltip"
-					text = "@luxury_drinks!"
-				}
-					button = {
-						using = default_button
-						size = { 80 80 }
-						visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
-						enabled = ""
-						onclick = ""
-						tooltip = "band_luxury_foods_tooltip"
-						text = "@luxury_foods!"
-					}
-				}
-				fixedgridbox = {
-					name = "band_kizuna_character_list"
-					visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]" #乐队角色列表
-					datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('band_kizuna_list')]"
-					addcolumn = 200
-					addrow = 100
-					background = {
-				texture = "gfx/interface/tooltip/tooltip_title_bg.dds"
-				color = { 0.69 0.47 0.33 1 }
-				alpha = 0.4
-
-				modify_texture = {
-					using = texture_velvet
-				}
-			}
-					item = {
-						kizuna_character_widget = {}
-				}
-				
-			}
-			
-			
-			
+	state = {
+		name = refresh_kizuna_lists
+		trigger_on_create = yes
+		on_finish = "[GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 	}
+
+	widget = {
+		size = { 520 38 }
+		tab_buttons = {
+			blockoverride "first_button" { text = "KIZUNA_TAB_FACTION" }
+			blockoverride "first_button_selected" { text = "KIZUNA_TAB_FACTION" }
+			blockoverride "first_button_tooltip" { tooltip = "KIZUNA_TAB_FACTION" }
+			blockoverride "first_button_click" { onclick = "[GetVariableSystem.Set( 'tot_kizuna_page', 'faction' )]" }
+			blockoverride "first_button_visibility" { visible = "[Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ))))]" }
+			blockoverride "first_button_visibility_checked" { visible = "[And(Not(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' )), Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )))]" }
+			blockoverride "second_button" { text = "KIZUNA_TAB_PROFESSION" }
+			blockoverride "second_button_selected" { text = "KIZUNA_TAB_PROFESSION" }
+			blockoverride "second_button_tooltip" { tooltip = "KIZUNA_TAB_PROFESSION" }
+			blockoverride "second_button_click" { onclick = "[GetVariableSystem.Set( 'tot_kizuna_page', 'profession' )]" }
+			blockoverride "second_button_visibility" { visible = "[GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' )]" }
+			blockoverride "second_button_visibility_checked" { visible = "[Not(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ))]" }
+			blockoverride "third_button" { text = "KIZUNA_TAB_SPECIALTY" }
+			blockoverride "third_button_selected" { text = "KIZUNA_TAB_SPECIALTY" }
+			blockoverride "third_button_tooltip" { tooltip = "KIZUNA_TAB_SPECIALTY" }
+			blockoverride "third_button_click" { onclick = "[GetVariableSystem.Set( 'tot_kizuna_page', 'specialty' )]" }
+			blockoverride "third_button_visibility" { visible = "[GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )]" }
+			blockoverride "third_button_visibility_checked" { visible = "[Not(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ))]" }
+			blockoverride "fourth_button_visibility" { visible = no }
+			blockoverride "fourth_button_visibility_checked" { visible = no }
+			blockoverride "fifth_button_visibility" { visible = no }
+			blockoverride "fifth_button_visibility_checked" { visible = no }
+		}
+	}
+
+	scrollbox = {
+		size = { 540 720 }
+		blockoverride "scrollbox_content" {
+			flowcontainer = {
+				direction = vertical
+				spacing = 6
+				flowcontainer = {
+					visible = "[Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ))))]"
+					direction = vertical
+	
+						flowcontainer = {
+							visible = "[GetScriptedGui('kon_kizuna_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							direction = vertical
+		
+							section_header_button = {
+								blockoverride "layout" {
+									size = { 520 38 }
 			
+								}
+			
+								blockoverride "left_text" {
+									text = "#v 轻音部#!"
+								}
+								blockoverride "onclick" {
+									onclick = "[GetVariableSystem.Toggle('kon_kizuna_toggle')]"
+								}
+								blockoverride "onclick_showmore" {
+			
+									visible = "[Not(GetVariableSystem.Exists('kon_kizuna_toggle'))]"
+								}
+								blockoverride "onclick_showless" {
+									visible = "[GetVariableSystem.Exists('kon_kizuna_toggle')]"
+								}
+				
+							}
+		
+								default_header_clean = {
+										name = "kon_kizuna_show" #樱高轻音部计数
+										visible = "[GetVariableSystem.Exists('kon_kizuna_toggle')]"
+										size = { 500 148 }
+					
+										blockoverride "text" {
+						
+											icon = {
+													texture = "gfx/interface/icons/religion_icons/starbeat.dds"
+													size = { 50 50 }
+													position = { -50 -10 }
+												}
+							
+											raw_text = "樱高轻音部 [AccessPlayer.MakeScope.ScriptValue('kon_kizuna_number')|=+D]"
+											autoresize = yes
+											multiline = yes
+											using = fontsize_xl
+											default_format = "#medium"
+										}
+										tooltip = "kon_kizuna_tooltip"		
+				
+									}
+				
+									default_header_clean = {
+										name = "kon_kizuna_modifier" #樱高轻音部修正
+										visible = "[GetVariableSystem.Exists('kon_kizuna_toggle')]"
+										size = { 500 200 }
+					
+										blockoverride "text" {
+						
+											raw_text = "kon_kizuna_modifier_text"
+											autoresize = yes
+											multiline = yes
+											using = fontsize_xl
+											default_format = "#medium"
+						
+										}
+							
+									}
+							fixedgridbox = {
+								name = "kon_kizuna_character_list"
+								visible = "[GetVariableSystem.Exists('kon_kizuna_toggle')]" #樱高轻音部角色列表
+								datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('kon_kizuna_list')]"
+								addcolumn = 500
+								addrow = 148
+								background = {
+									texture = "gfx/interface/tooltip/tooltip_title_bg.dds"
+									color = { 0.69 0.47 0.33 1 }
+									alpha = 0.4
+
+									modify_texture = {
+										using = texture_velvet
+									}
+								}
+								item = {
+									kizuna_character_widget = {}
+				
+								}
+							}
+						}
+							section_header_button = {
+	visible = no
+	blockoverride "layout" { size = { 520 38 } }
+	blockoverride "left_text" { text = "#v 乐队管理#!" }
+	blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('band_kizuna_toggle')]" }
+	blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('band_kizuna_toggle'))]" }
+	blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]" }
 }
-			
+
+default_header_clean = {
+	name = "band_kizuna_show"
+	visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+	size = { 500 96 }
+	blockoverride "text" {
+		raw_text = "[AccessPlayer.MakeScope.ScriptValue('band_kizuna_number')|=+D]名成员 / 上限[AccessPlayer.MakeScope.Var('tot_band_limit').GetValue|0]"
+		using = fontsize_large
+		default_format = "#medium"
+		tooltip = "band_kizuna_tooltip"
+	}
+}
+
+flowcontainer = {
+	visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
+	direction = vertical
+	spacing = 4
+	button = { size = { 500 50 } default_progressbar_horizontal = { size = { 500 50 } tooltip = "band_kizuna_exp_progress_tooltip" blockoverride "values" { value = "50" } textbox = { parentanchor = center size = { 280 40 } fontsize = 14 align = center|nobaseline text = "band_kizuna_exp_progress" } } }
+	button = { size = { 500 50 } default_progressbar_horizontal = { size = { 500 50 } tooltip = "band_kizuna_creation_progress_tooltip" blockoverride "values" { value = "50" } textbox = { parentanchor = center size = { 280 40 } fontsize = 14 align = center|nobaseline text = "band_kizuna_creation_progress" } } }
+	flowcontainer = {
+		spacing = 4
+		button = { using = default_button size = { 78 56 } onclick = "[GetScriptedGui('band_gold_effect_1').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "band_gold_tooltip_1" text = "" icon = { parentanchor = center size = { 22 22 } texture = "gfx/interface/icons/generic_icons/coin_icon_01.dds" } }
+		button = { using = default_button size = { 78 56 } onclick = "[GetScriptedGui('band_gold_effect_2').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "band_gold_tooltip_2" text = "" icon = { parentanchor = center size = { 22 22 } texture = "gfx/interface/icons/generic_icons/coin_icon_03.dds" } }
+		button = { using = default_button size = { 78 56 } onclick = "[GetScriptedGui('band_gold_effect_3').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "band_gold_tooltip_3" text = "" icon = { parentanchor = center size = { 22 22 } texture = "gfx/interface/icons/generic_icons/coin_icon_05.dds" } }
+		button = { using = default_button size = { 78 56 } onclick = "[GetScriptedGui('band_gold_effect_4').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "band_gold_tooltip_4" text = "" icon = { parentanchor = center size = { 22 22 } texture = "gfx/interface/icons/generic_icons/coin_icon_07.dds" } }
+		button = { using = default_button size = { 78 56 } onclick = "[GetScriptedGui('band_gold_effect_5').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "band_gold_tooltip_5" text = "" icon = { parentanchor = center size = { 22 22 } texture = "gfx/interface/icons/generic_icons/coin_icon_09.dds" } }
+		button = { using = default_button size = { 78 56 } onclick = "[GetScriptedGui('band_gold_effect_6').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "band_gold_tooltip_6" text = "" icon = { parentanchor = center size = { 22 22 } texture = "gfx/interface/icons/generic_icons/coin_icon_11.dds" } }
+	}
+	flowcontainer = {
+		spacing = 4
+		button = { using = default_button size = { 78 56 } tooltip = "band_tools_tooltip" text = "@musical_instrument!" }
+		button = { using = default_button size = { 78 56 } tooltip = "band_paper_tooltip" text = "@paper!" }
+		button = { using = default_button size = { 78 56 } tooltip = "band_luxury_clothes_tooltip" text = "@luxury_clothes!" }
+		button = { using = default_button size = { 78 56 } tooltip = "band_transportation_tooltip" text = "@transportation!" }
+		button = { using = default_button size = { 78 56 } tooltip = "band_automobiles_tooltip" text = "@automobiles!" }
+		button = { using = default_button size = { 78 56 } tooltip = "band_radios_tooltip" text = "@radios!" }
+	}
+}
+
+flowcontainer = {
+	visible = "[And(GetVariableSystem.Exists('band_kizuna_toggle'), GetScriptedGui('tot_band_1_unlocked').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+	direction = vertical
+	spacing = 4
+	section_header_button = {
+		blockoverride "layout" { size = { 520 36 } }
+		blockoverride "left_text" { text = "TOT_BAND_1_HEADER" }
+		blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_band_1_toggle')]" }
+		blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_band_1_toggle'))]" }
+		blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_band_1_toggle')]" }
+	}
+	flowcontainer = {
+		visible = "[GetVariableSystem.Exists('tot_band_1_toggle')]"
+		direction = vertical
+		spacing = 4
+		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_1_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
+		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_1_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
+		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_1_members')]" addcolumn = 500 addrow = 142 item = { tot_band_1_member_character = {} } }
+		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_1_candidates')]" addcolumn = 500 addrow = 142 item = { tot_band_1_candidate_character = {} } } } }
+	}
+}
+
+flowcontainer = {
+	visible = "[And(GetVariableSystem.Exists('band_kizuna_toggle'), GetScriptedGui('tot_band_2_unlocked').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+	direction = vertical
+	spacing = 4
+	section_header_button = {
+		blockoverride "layout" { size = { 520 36 } }
+		blockoverride "left_text" { text = "TOT_BAND_2_HEADER" }
+		blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_band_2_toggle')]" }
+		blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_band_2_toggle'))]" }
+		blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_band_2_toggle')]" }
+	}
+	flowcontainer = {
+		visible = "[GetVariableSystem.Exists('tot_band_2_toggle')]"
+		direction = vertical
+		spacing = 4
+		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_2_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
+		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_2_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
+		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_2_members')]" addcolumn = 500 addrow = 142 item = { tot_band_2_member_character = {} } }
+		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_2_candidates')]" addcolumn = 500 addrow = 142 item = { tot_band_2_candidate_character = {} } } } }
+	}
+}
+
+flowcontainer = {
+	visible = "[And(GetVariableSystem.Exists('band_kizuna_toggle'), GetScriptedGui('tot_band_3_unlocked').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+	direction = vertical
+	spacing = 4
+	section_header_button = {
+		blockoverride "layout" { size = { 520 36 } }
+		blockoverride "left_text" { text = "TOT_BAND_3_HEADER" }
+		blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_band_3_toggle')]" }
+		blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_band_3_toggle'))]" }
+		blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_band_3_toggle')]" }
+	}
+	flowcontainer = {
+		visible = "[GetVariableSystem.Exists('tot_band_3_toggle')]"
+		direction = vertical
+		spacing = 4
+		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_3_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
+		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_3_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
+		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_3_members')]" addcolumn = 500 addrow = 142 item = { tot_band_3_member_character = {} } }
+		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_3_candidates')]" addcolumn = 500 addrow = 142 item = { tot_band_3_candidate_character = {} } } } }
+	}
+}
+
+flowcontainer = {
+	visible = "[And(GetVariableSystem.Exists('band_kizuna_toggle'), GetScriptedGui('tot_band_4_unlocked').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+	direction = vertical
+	spacing = 4
+	section_header_button = {
+		blockoverride "layout" { size = { 520 36 } }
+		blockoverride "left_text" { text = "TOT_BAND_4_HEADER" }
+		blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_band_4_toggle')]" }
+		blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_band_4_toggle'))]" }
+		blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_band_4_toggle')]" }
+	}
+	flowcontainer = {
+		visible = "[GetVariableSystem.Exists('tot_band_4_toggle')]"
+		direction = vertical
+		spacing = 4
+		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_4_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
+		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_4_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
+		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_4_members')]" addcolumn = 500 addrow = 142 item = { tot_band_4_member_character = {} } }
+		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_4_candidates')]" addcolumn = 500 addrow = 142 item = { tot_band_4_candidate_character = {} } } } }
+	}
+}
+
+flowcontainer = {
+	visible = "[And(GetVariableSystem.Exists('band_kizuna_toggle'), GetScriptedGui('tot_band_5_unlocked').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+	direction = vertical
+	spacing = 4
+	section_header_button = {
+		blockoverride "layout" { size = { 520 36 } }
+		blockoverride "left_text" { text = "TOT_BAND_5_HEADER" }
+		blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_band_5_toggle')]" }
+		blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_band_5_toggle'))]" }
+		blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_band_5_toggle')]" }
+	}
+	flowcontainer = {
+		visible = "[GetVariableSystem.Exists('tot_band_5_toggle')]"
+		direction = vertical
+		spacing = 4
+		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_5_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
+		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_5_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
+		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_5_members')]" addcolumn = 500 addrow = 142 item = { tot_band_5_member_character = {} } }
+		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_5_candidates')]" addcolumn = 500 addrow = 142 item = { tot_band_5_candidate_character = {} } } } }
+	}
+}
+
+flowcontainer = {
+	visible = "[And(GetVariableSystem.Exists('band_kizuna_toggle'), GetScriptedGui('tot_band_6_unlocked').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+	direction = vertical
+	spacing = 4
+	section_header_button = {
+		blockoverride "layout" { size = { 520 36 } }
+		blockoverride "left_text" { text = "TOT_BAND_6_HEADER" }
+		blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_band_6_toggle')]" }
+		blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_band_6_toggle'))]" }
+		blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_band_6_toggle')]" }
+	}
+	flowcontainer = {
+		visible = "[GetVariableSystem.Exists('tot_band_6_toggle')]"
+		direction = vertical
+		spacing = 4
+		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_6_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
+		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_6_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
+		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_6_members')]" addcolumn = 500 addrow = 142 item = { tot_band_6_member_character = {} } }
+		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_6_candidates')]" addcolumn = 500 addrow = 142 item = { tot_band_6_candidate_character = {} } } } }
+	}
+}
+
+flowcontainer = {
+	visible = "[And(GetVariableSystem.Exists('band_kizuna_toggle'), GetScriptedGui('tot_band_7_unlocked').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+	direction = vertical
+	spacing = 4
+	section_header_button = {
+		blockoverride "layout" { size = { 520 36 } }
+		blockoverride "left_text" { text = "TOT_BAND_7_HEADER" }
+		blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_band_7_toggle')]" }
+		blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_band_7_toggle'))]" }
+		blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_band_7_toggle')]" }
+	}
+	flowcontainer = {
+		visible = "[GetVariableSystem.Exists('tot_band_7_toggle')]"
+		direction = vertical
+		spacing = 4
+		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_7_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
+		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_7_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
+		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_7_members')]" addcolumn = 500 addrow = 142 item = { tot_band_7_member_character = {} } }
+		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_7_candidates')]" addcolumn = 500 addrow = 142 item = { tot_band_7_candidate_character = {} } } } }
+	}
+}
+
+flowcontainer = {
+	visible = "[And(GetVariableSystem.Exists('band_kizuna_toggle'), GetScriptedGui('tot_band_8_unlocked').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+	direction = vertical
+	spacing = 4
+	section_header_button = {
+		blockoverride "layout" { size = { 520 36 } }
+		blockoverride "left_text" { text = "TOT_BAND_8_HEADER" }
+		blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_band_8_toggle')]" }
+		blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_band_8_toggle'))]" }
+		blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_band_8_toggle')]" }
+	}
+	flowcontainer = {
+		visible = "[GetVariableSystem.Exists('tot_band_8_toggle')]"
+		direction = vertical
+		spacing = 4
+		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_8_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
+		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_8_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
+		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_8_members')]" addcolumn = 500 addrow = 142 item = { tot_band_8_member_character = {} } }
+		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_8_candidates')]" addcolumn = 500 addrow = 142 item = { tot_band_8_candidate_character = {} } } } }
+	}
+}
+
+flowcontainer = {
+	visible = "[And(GetVariableSystem.Exists('band_kizuna_toggle'), GetScriptedGui('tot_band_9_unlocked').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+	direction = vertical
+	spacing = 4
+	section_header_button = {
+		blockoverride "layout" { size = { 520 36 } }
+		blockoverride "left_text" { text = "TOT_BAND_9_HEADER" }
+		blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_band_9_toggle')]" }
+		blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_band_9_toggle'))]" }
+		blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_band_9_toggle')]" }
+	}
+	flowcontainer = {
+		visible = "[GetVariableSystem.Exists('tot_band_9_toggle')]"
+		direction = vertical
+		spacing = 4
+		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_9_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
+		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_9_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
+		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_9_members')]" addcolumn = 500 addrow = 142 item = { tot_band_9_member_character = {} } }
+		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_9_candidates')]" addcolumn = 500 addrow = 142 item = { tot_band_9_candidate_character = {} } } } }
+	}
+}
+
+flowcontainer = {
+	visible = "[And(GetVariableSystem.Exists('band_kizuna_toggle'), GetScriptedGui('tot_band_10_unlocked').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+	direction = vertical
+	spacing = 4
+	section_header_button = {
+		blockoverride "layout" { size = { 520 36 } }
+		blockoverride "left_text" { text = "TOT_BAND_10_HEADER" }
+		blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_band_10_toggle')]" }
+		blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_band_10_toggle'))]" }
+		blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_band_10_toggle')]" }
+	}
+	flowcontainer = {
+		visible = "[GetVariableSystem.Exists('tot_band_10_toggle')]"
+		direction = vertical
+		spacing = 4
+		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_10_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
+		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_10_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
+		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_10_members')]" addcolumn = 500 addrow = 142 item = { tot_band_10_member_character = {} } }
+		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_10_candidates')]" addcolumn = 500 addrow = 142 item = { tot_band_10_candidate_character = {} } } } }
+	}
+}
+flowcontainer = {
+					visible = "[And(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )))), GetScriptedGui('tot_kizuna_001_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_001_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_001_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_001_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_001_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_001_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_001_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_001_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_001_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_001_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_001_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_001_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )))), GetScriptedGui('tot_kizuna_002_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_002_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_002_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_002_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_002_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_002_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_002_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_002_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_002_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_002_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_002_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_002_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )))), GetScriptedGui('tot_kizuna_003_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_003_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_003_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_003_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_003_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_003_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_003_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_003_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_003_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_003_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_003_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_003_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )))), GetScriptedGui('tot_kizuna_004_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_004_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_004_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_004_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_004_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_004_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_004_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_004_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_004_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_004_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_004_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_004_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )))), GetScriptedGui('tot_kizuna_005_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_005_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_005_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_005_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_005_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_005_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_005_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_005_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_005_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_005_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_005_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_005_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )))), GetScriptedGui('tot_kizuna_006_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_006_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_006_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_006_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_006_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_006_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_006_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_006_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_006_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_006_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_006_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_006_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )))), GetScriptedGui('tot_kizuna_007_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_007_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_007_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_007_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_007_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_007_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_007_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_007_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_007_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_007_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_007_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_007_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )))), GetScriptedGui('tot_kizuna_008_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_008_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_008_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_008_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_008_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_008_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_008_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_008_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_008_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_008_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_008_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_008_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )))), GetScriptedGui('tot_kizuna_009_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_009_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_009_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_009_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_009_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_009_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_009_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_009_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_009_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_009_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_009_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_009_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )))), GetScriptedGui('tot_kizuna_010_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_010_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_010_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_010_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_010_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_010_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_010_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_010_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_010_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_010_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_010_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_010_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )))), GetScriptedGui('tot_kizuna_012_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_012_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_012_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_012_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_012_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_012_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_012_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_012_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_012_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_012_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_012_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_012_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )))), GetScriptedGui('tot_kizuna_013_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_013_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_013_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_013_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_013_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_013_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_013_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_013_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_013_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_013_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_013_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_013_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )))), GetScriptedGui('tot_kizuna_014_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_014_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_014_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_014_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_014_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_014_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_014_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_014_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_014_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_014_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_014_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_014_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )))), GetScriptedGui('tot_kizuna_015_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_015_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_015_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_015_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_015_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_015_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_015_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_015_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_015_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_015_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_015_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_015_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )))), GetScriptedGui('tot_kizuna_016_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_016_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_016_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_016_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_016_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_016_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_016_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_016_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_016_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_016_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_016_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_016_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )))), GetScriptedGui('tot_kizuna_017_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_017_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_017_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_017_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_017_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_017_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_017_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_017_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_017_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_017_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_017_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_017_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )))), GetScriptedGui('tot_kizuna_018_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_018_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_018_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_018_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_018_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_018_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_018_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_018_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_018_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_018_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_018_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_018_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )))), GetScriptedGui('tot_kizuna_019_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_019_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_019_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_019_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_019_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_019_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_019_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_019_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_019_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_019_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_019_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_019_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetScriptedGui('tot_kizuna_020_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_020_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_020_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_020_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_020_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_020_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_020_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_020_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_020_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_020_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_020_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_020_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetScriptedGui('tot_kizuna_021_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_021_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_021_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_021_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_021_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_021_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_021_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_021_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_021_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_021_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_021_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_021_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetScriptedGui('tot_kizuna_022_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_022_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_022_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_022_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_022_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_022_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_022_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_022_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_022_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_022_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_022_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_022_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetScriptedGui('tot_kizuna_023_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_023_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_023_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_023_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_023_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_023_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_023_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_023_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_023_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_023_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_023_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_023_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetScriptedGui('tot_kizuna_024_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_024_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_024_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_024_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_024_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_024_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_024_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_024_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_024_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_024_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_024_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_024_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetScriptedGui('tot_kizuna_025_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_025_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_025_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_025_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_025_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_025_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_025_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_025_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_025_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_025_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_025_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_025_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetScriptedGui('tot_kizuna_026_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_026_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_026_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_026_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_026_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_026_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_026_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_026_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_026_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_026_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_026_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_026_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetScriptedGui('tot_kizuna_027_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_027_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_027_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_027_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_027_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_027_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_027_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_027_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_027_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_027_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_027_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_027_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetScriptedGui('tot_kizuna_028_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_028_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_028_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_028_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_028_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_028_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_028_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_028_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_028_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_028_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_028_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_028_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetScriptedGui('tot_kizuna_029_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_029_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_029_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_029_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_029_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_029_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_029_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_029_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_029_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_029_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_029_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_029_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetScriptedGui('tot_kizuna_030_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_030_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_030_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_030_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_030_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_030_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_030_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_030_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_030_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_030_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_030_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_030_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetScriptedGui('tot_kizuna_031_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_031_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_031_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_031_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_031_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_031_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_031_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_031_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_031_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_031_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_031_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_031_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetScriptedGui('tot_kizuna_032_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_032_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_032_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_032_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_032_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_032_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_032_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_032_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_032_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_032_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_032_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_032_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetScriptedGui('tot_kizuna_033_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_033_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_033_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_033_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_033_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_033_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_033_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_033_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_033_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_033_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_033_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_033_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetScriptedGui('tot_kizuna_034_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_034_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_034_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_034_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_034_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_034_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_034_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_034_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_034_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_034_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_034_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_034_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetScriptedGui('tot_kizuna_035_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_035_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_035_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_035_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_035_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_035_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_035_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_035_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_035_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_035_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_035_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_035_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ), GetScriptedGui('tot_kizuna_036_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_036_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_036_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_036_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_036_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_036_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_036_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_036_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_036_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_036_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_036_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_036_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ), GetScriptedGui('tot_kizuna_037_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_037_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_037_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_037_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_037_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_037_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_037_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_037_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_037_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_037_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_037_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_037_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ), GetScriptedGui('tot_kizuna_038_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_038_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_038_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_038_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_038_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_038_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_038_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_038_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_038_toggle')]"
+						size = { 500 120 }
+						blockoverride "text" {
+							text = "tot_kizuna_038_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 14
+							fontsize_min = 11
+							default_format = "#medium"
+						}
+					}
+					widget = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_038_toggle')]"
+						size = { 520 276 }
+
+						flowcontainer = {
+							direction = vertical
+							spacing = 8
+
+							textbox = {
+								text = "TOT_GOURMET_PROGRESS_LABEL"
+								size = { 500 26 }
+								align = center|nobaseline
+								using = fontsize_medium
+								tooltip = "TOT_GOURMET_PROGRESS_TOOLTIP"
+							}
+
+							flowcontainer = {
+								size = { 500 44 }
+								spacing = 2
+								button = { size = { 49 44 } default_progressbar_horizontal = { size = { 49 44 } tooltip = "TOT_GOURMET_PROGRESS_TOOLTIP" blockoverride "values" { value = "[AccessPlayer.MakeScope.ScriptValue('tot_gourmet_progress_segment_1_value')]" min = 0 max = 1 } textbox = { parentanchor = center size = { 49 34 } fontsize = 9 align = center|nobaseline text = "" } } }
+								button = { size = { 70 44 } default_progressbar_horizontal = { size = { 70 44 } tooltip = "TOT_GOURMET_PROGRESS_TOOLTIP" blockoverride "values" { value = "[AccessPlayer.MakeScope.ScriptValue('tot_gourmet_progress_segment_2_value')]" min = 0 max = 1 } textbox = { parentanchor = center size = { 70 34 } fontsize = 9 align = center|nobaseline text = "" } } }
+								button = { size = { 77 44 } default_progressbar_horizontal = { size = { 77 44 } tooltip = "TOT_GOURMET_PROGRESS_TOOLTIP" blockoverride "values" { value = "[AccessPlayer.MakeScope.ScriptValue('tot_gourmet_progress_segment_3_value')]" min = 0 max = 1 } textbox = { parentanchor = center size = { 77 34 } fontsize = 10 align = center|nobaseline text = "" } } }
+								button = { size = { 308 44 } default_progressbar_horizontal = { size = { 308 44 } tooltip = "TOT_GOURMET_PROGRESS_TOOLTIP" blockoverride "values" { value = "[AccessPlayer.MakeScope.ScriptValue('tot_gourmet_progress_segment_4_value')]" min = 0 max = 1 } textbox = { parentanchor = center size = { 308 34 } fontsize = 10 align = center|nobaseline text = "" } } }
+							}
+							textbox = { size = { 500 22 } text = "TOT_GOURMET_PROGRESS_LEVEL_TEXT" using = fontsize_small align = center|nobaseline tooltip = "TOT_GOURMET_PROGRESS_TOOLTIP" }
+							flowcontainer = { spacing = 4 parentanchor = hcenter
+								textbox = { text = "TOT_GOURMET_TIER_1_STATUS" size = { 90 22 } using = fontsize_small align = center|nobaseline tooltip = "TOT_GOURMET_TIER_1_TOOLTIP" }
+								textbox = { text = "TOT_GOURMET_TIER_2_STATUS" size = { 90 22 } using = fontsize_small align = center|nobaseline tooltip = "TOT_GOURMET_TIER_2_TOOLTIP" }
+								textbox = { text = "TOT_GOURMET_TIER_3_STATUS" size = { 90 22 } using = fontsize_small align = center|nobaseline tooltip = "TOT_GOURMET_TIER_3_TOOLTIP" }
+								textbox = { text = "TOT_GOURMET_TIER_4_STATUS" size = { 90 22 } using = fontsize_small align = center|nobaseline tooltip = "TOT_GOURMET_TIER_4_TOOLTIP" }
+							}
+
+
+							textbox = {
+								text = "TOT_GOURMET_INVESTMENT_SUMMARY"
+								size = { 500 42 }
+								align = left|nobaseline
+								using = fontsize_small
+								multiline = yes
+								tooltip = "TOT_GOURMET_CURRENT_SOURCES_TOOLTIP"
+							}
+
+							flowcontainer = {
+								direction = vertical
+								spacing = 8
+								flowcontainer = {
+									spacing = 8
+								widget = { size = { 76 40 }
+									button = { visible = "[GetScriptedGui('tot_gourmet_invest_grain_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 76 40 } onclick = "[GetScriptedGui('tot_gourmet_invest_grain').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_GOURMET_INVEST_GRAIN" text = "" icon = { parentanchor = center size = { 28 28 } texture = "gfx/interface/icons/goods_icons/grain.dds" } }
+									button = { visible = "[Not(GetScriptedGui('tot_gourmet_invest_grain_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 76 40 } enabled = "[GetScriptedGui('tot_gourmet_invest_grain').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_gourmet_invest_grain').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "[SelectLocalization(GetScriptedGui('tot_gourmet_invest_grain').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End), 'TOT_GOURMET_INVEST_GRAIN', 'TOT_GOURMET_INVEST_GRAIN_INVALID')]" text = "" icon = { parentanchor = center size = { 28 28 } texture = "gfx/interface/icons/goods_icons/grain.dds" } }
+								}
+								widget = { size = { 76 40 }
+									button = { visible = "[GetScriptedGui('tot_gourmet_invest_meat_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 76 40 } onclick = "[GetScriptedGui('tot_gourmet_invest_meat').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_GOURMET_INVEST_MEAT" text = "" icon = { parentanchor = center size = { 28 28 } texture = "gfx/interface/icons/goods_icons/meat.dds" } }
+									button = { visible = "[Not(GetScriptedGui('tot_gourmet_invest_meat_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 76 40 } enabled = "[GetScriptedGui('tot_gourmet_invest_meat').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_gourmet_invest_meat').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "[SelectLocalization(GetScriptedGui('tot_gourmet_invest_meat').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End), 'TOT_GOURMET_INVEST_MEAT', 'TOT_GOURMET_INVEST_MEAT_INVALID')]" text = "" icon = { parentanchor = center size = { 28 28 } texture = "gfx/interface/icons/goods_icons/meat.dds" } }
+								}
+								widget = { size = { 76 40 }
+									button = { visible = "[GetScriptedGui('tot_gourmet_invest_fish_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 76 40 } onclick = "[GetScriptedGui('tot_gourmet_invest_fish').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_GOURMET_INVEST_FISH" text = "" icon = { parentanchor = center size = { 28 28 } texture = "gfx/interface/icons/goods_icons/fish.dds" } }
+									button = { visible = "[Not(GetScriptedGui('tot_gourmet_invest_fish_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 76 40 } enabled = "[GetScriptedGui('tot_gourmet_invest_fish').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_gourmet_invest_fish').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "[SelectLocalization(GetScriptedGui('tot_gourmet_invest_fish').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End), 'TOT_GOURMET_INVEST_FISH', 'TOT_GOURMET_INVEST_FISH_INVALID')]" text = "" icon = { parentanchor = center size = { 28 28 } texture = "gfx/interface/icons/goods_icons/fish.dds" } }
+								}
+								widget = { size = { 76 40 }
+									button = { visible = "[GetScriptedGui('tot_gourmet_invest_fruit_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 76 40 } onclick = "[GetScriptedGui('tot_gourmet_invest_fruit').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_GOURMET_INVEST_FRUIT" text = "" icon = { parentanchor = center size = { 28 28 } texture = "gfx/interface/icons/goods_icons/fruit.dds" } }
+									button = { visible = "[Not(GetScriptedGui('tot_gourmet_invest_fruit_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 76 40 } enabled = "[GetScriptedGui('tot_gourmet_invest_fruit').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_gourmet_invest_fruit').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "[SelectLocalization(GetScriptedGui('tot_gourmet_invest_fruit').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End), 'TOT_GOURMET_INVEST_FRUIT', 'TOT_GOURMET_INVEST_FRUIT_INVALID')]" text = "" icon = { parentanchor = center size = { 28 28 } texture = "gfx/interface/icons/goods_icons/fruit.dds" } }
+								}
+								widget = { size = { 76 40 }
+									button = { visible = "[GetScriptedGui('tot_gourmet_invest_groceries_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 76 40 } onclick = "[GetScriptedGui('tot_gourmet_invest_groceries').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_GOURMET_INVEST_GROCERIES" text = "" icon = { parentanchor = center size = { 28 28 } texture = "gfx/interface/icons/goods_icons/groceries.dds" } }
+									button = { visible = "[Not(GetScriptedGui('tot_gourmet_invest_groceries_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 76 40 } enabled = "[GetScriptedGui('tot_gourmet_invest_groceries').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_gourmet_invest_groceries').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "[SelectLocalization(GetScriptedGui('tot_gourmet_invest_groceries').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End), 'TOT_GOURMET_INVEST_GROCERIES', 'TOT_GOURMET_INVEST_GROCERIES_INVALID')]" text = "" icon = { parentanchor = center size = { 28 28 } texture = "gfx/interface/icons/goods_icons/groceries.dds" } }
+								}
+								}
+								flowcontainer = {
+									spacing = 8
+								widget = { size = { 76 40 }
+									button = { visible = "[GetScriptedGui('tot_gourmet_invest_tea_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 76 40 } onclick = "[GetScriptedGui('tot_gourmet_invest_tea').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_GOURMET_INVEST_TEA" text = "" icon = { parentanchor = center size = { 28 28 } texture = "gfx/interface/icons/goods_icons/tea.dds" } }
+									button = { visible = "[Not(GetScriptedGui('tot_gourmet_invest_tea_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 76 40 } enabled = "[GetScriptedGui('tot_gourmet_invest_tea').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_gourmet_invest_tea').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "[SelectLocalization(GetScriptedGui('tot_gourmet_invest_tea').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End), 'TOT_GOURMET_INVEST_TEA', 'TOT_GOURMET_INVEST_TEA_INVALID')]" text = "" icon = { parentanchor = center size = { 28 28 } texture = "gfx/interface/icons/goods_icons/tea.dds" } }
+								}
+								widget = { size = { 76 40 }
+									button = { visible = "[GetScriptedGui('tot_gourmet_invest_coffee_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 76 40 } onclick = "[GetScriptedGui('tot_gourmet_invest_coffee').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_GOURMET_INVEST_COFFEE" text = "" icon = { parentanchor = center size = { 28 28 } texture = "gfx/interface/icons/goods_icons/coffee.dds" } }
+									button = { visible = "[Not(GetScriptedGui('tot_gourmet_invest_coffee_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 76 40 } enabled = "[GetScriptedGui('tot_gourmet_invest_coffee').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_gourmet_invest_coffee').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "[SelectLocalization(GetScriptedGui('tot_gourmet_invest_coffee').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End), 'TOT_GOURMET_INVEST_COFFEE', 'TOT_GOURMET_INVEST_COFFEE_INVALID')]" text = "" icon = { parentanchor = center size = { 28 28 } texture = "gfx/interface/icons/goods_icons/coffee.dds" } }
+								}
+								widget = { size = { 76 40 }
+									button = { visible = "[GetScriptedGui('tot_gourmet_invest_luxury_drinks_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 76 40 } onclick = "[GetScriptedGui('tot_gourmet_invest_luxury_drinks').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_GOURMET_INVEST_LUXURY_DRINKS" text = "" icon = { parentanchor = center size = { 28 28 } texture = "gfx/interface/icons/goods_icons/luxury_drinks.dds" } }
+									button = { visible = "[Not(GetScriptedGui('tot_gourmet_invest_luxury_drinks_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 76 40 } enabled = "[GetScriptedGui('tot_gourmet_invest_luxury_drinks').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_gourmet_invest_luxury_drinks').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "[SelectLocalization(GetScriptedGui('tot_gourmet_invest_luxury_drinks').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End), 'TOT_GOURMET_INVEST_LUXURY_DRINKS', 'TOT_GOURMET_INVEST_LUXURY_DRINKS_INVALID')]" text = "" icon = { parentanchor = center size = { 28 28 } texture = "gfx/interface/icons/goods_icons/luxury_drinks.dds" } }
+								}
+								widget = { size = { 76 40 }
+									button = { visible = "[GetScriptedGui('tot_gourmet_invest_luxury_foods_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 76 40 } onclick = "[GetScriptedGui('tot_gourmet_invest_luxury_foods').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_GOURMET_INVEST_LUXURY" text = "" icon = { parentanchor = center size = { 28 28 } texture = "gfx/interface/icons/goods_icons/luxury_foods.dds" } }
+									button = { visible = "[Not(GetScriptedGui('tot_gourmet_invest_luxury_foods_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 76 40 } enabled = "[GetScriptedGui('tot_gourmet_invest_luxury_foods').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_gourmet_invest_luxury_foods').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "[SelectLocalization(GetScriptedGui('tot_gourmet_invest_luxury_foods').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End), 'TOT_GOURMET_INVEST_LUXURY', 'TOT_GOURMET_INVEST_LUXURY_INVALID')]" text = "" icon = { parentanchor = center size = { 28 28 } texture = "gfx/interface/icons/goods_icons/luxury_foods.dds" } }
+								}
+								}
+							}
+
+							button_standard = {
+								text = "TOT_GOURMET_RESET_INVESTMENT"
+								size = { 160 36 }
+								parentanchor = hcenter
+								onclick = "[GetScriptedGui('tot_gourmet_reset_investment').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								tooltip = "[GetScriptedGui('tot_gourmet_reset_investment').IsValidTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							}
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_038_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_038_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ), GetScriptedGui('tot_kizuna_039_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_039_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_039_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_039_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_039_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_039_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_039_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_039_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_039_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_039_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_039_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_039_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ), GetScriptedGui('tot_kizuna_040_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_040_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_040_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_040_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_040_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_040_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_040_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_040_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_040_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_040_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_040_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_040_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ), GetScriptedGui('tot_kizuna_041_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_041_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_041_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_041_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_041_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_041_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_041_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_041_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_041_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_041_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_041_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_041_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ), GetScriptedGui('tot_kizuna_042_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_042_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_042_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_042_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_042_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_042_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_042_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_042_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_042_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_042_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_042_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_042_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ), GetScriptedGui('tot_kizuna_043_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_043_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_043_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_043_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_043_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_043_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_043_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_043_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_043_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_043_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_043_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_043_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ), GetScriptedGui('tot_kizuna_044_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_044_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_044_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_044_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_044_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_044_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_044_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_044_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_044_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_044_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_044_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_044_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ), GetScriptedGui('tot_kizuna_045_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_045_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_045_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_045_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_045_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_045_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_045_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_045_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_045_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_045_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_045_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_045_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ), GetScriptedGui('tot_kizuna_046_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_046_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_046_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_046_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_046_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_046_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_046_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_046_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_046_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_046_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_046_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_046_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ), GetScriptedGui('tot_kizuna_047_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_047_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_047_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_047_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_047_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_047_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_047_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_047_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_047_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_047_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_047_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_047_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ), GetScriptedGui('tot_kizuna_048_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_048_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_048_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_048_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_048_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_048_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_048_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_048_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_048_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_048_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_048_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_048_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ), GetScriptedGui('tot_kizuna_049_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_049_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_049_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_049_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_049_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_049_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_049_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_049_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_049_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_049_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_049_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_049_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ), GetScriptedGui('tot_kizuna_050_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_050_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_050_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_050_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_050_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_050_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_050_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_050_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_050_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_050_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_050_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_050_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ), GetScriptedGui('tot_kizuna_051_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_051_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_051_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_051_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_051_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_051_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_051_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_051_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_051_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_051_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_051_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_051_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ), GetScriptedGui('tot_kizuna_052_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_052_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_052_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_052_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_052_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_052_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_052_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_052_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_052_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_052_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_052_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_052_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ), GetScriptedGui('tot_kizuna_053_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_053_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_053_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_053_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_053_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_053_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_053_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_053_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_053_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_053_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_053_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_053_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ), GetScriptedGui('tot_kizuna_054_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_054_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_054_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_054_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_054_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_054_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_054_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_054_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_054_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_054_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_054_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_054_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ), GetScriptedGui('tot_kizuna_055_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_055_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_055_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_055_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_055_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_055_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_055_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_055_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_055_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_055_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_055_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_055_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ), GetScriptedGui('tot_kizuna_056_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_056_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_056_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_056_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_056_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_056_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_056_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_056_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_056_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_056_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_056_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_056_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ), GetScriptedGui('tot_kizuna_057_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_057_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_057_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_057_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_057_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_057_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_057_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_057_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_057_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_057_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_057_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_057_display_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

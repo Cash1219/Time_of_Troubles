@@ -1,0 +1,55 @@
+tot_province_governor_rank_limit = {
+	value = 0
+
+	if = {
+		limit = {
+			country_rank = rank_value:great_power
+		}
+		add = 5
+	}
+	else_if = {
+		limit = {
+			OR = {
+				country_rank = rank_value:major_power
+				country_rank = rank_value:unrecognized_major_power
+			}
+		}
+		add = 4
+	}
+	else_if = {
+		limit = {
+			OR = {
+				country_rank = rank_value:minor_power
+				country_rank = rank_value:unrecognized_regional_power
+			}
+		}
+		add = 3
+	}
+	else_if = {
+		limit = {
+			OR = {
+				country_rank = rank_value:insignificant_power
+				country_rank = rank_value:unrecognized_power
+			}
+		}
+		add = 2
+	}
+	else = {
+		add = 1
+	}
+}
+
+tot_province_governor_limit = {
+	value = tot_province_governor_rank_limit
+	add = modifier:country_tot_governor_limit_add
+}
+
+tot_province_governor_count = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_role = character_role_tot_province_governor
+		}
+		add = 1
+	}
+}

@@ -1,0 +1,456 @@
+﻿types tot_character_growth_types
+{
+	type tot_character_growth_governor_state = widget {
+		size = { 520 116 }
+		datacontext = "[Scope.GetState]"
+		visible = "[Scope.GetState.IsValid]"
+
+		background = {
+			using = entry_bg_simple
+		}
+
+		flowcontainer = {
+			margin = { 12 10 }
+			spacing = 12
+
+			widget = {
+				size = { 78 96 }
+
+				character_portrait_medium = {
+					visible = "[GetScriptedGui('tot_remove_province_governor').IsShown(GuiScope.SetRoot(State.MakeScope).End)]"
+					datacontext = "[State.MakeScope.Var('tot_province_governor').GetCharacter]"
+					parentanchor = center
+				}
+
+				icon = {
+					visible = "[Not(GetScriptedGui('tot_remove_province_governor').IsShown(GuiScope.SetRoot(State.MakeScope).End))]"
+					texture = "gfx/interface/icons/generic_icons/red_cross.dds"
+					size = { 44 44 }
+					parentanchor = center
+				}
+			}
+
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				size = { 200 96 }
+
+				textbox = {
+					text = "[State.GetNameNoFormatting]"
+					default_format = "#v"
+					using = fontsize_medium
+					size = { 200 30 }
+					align = left|nobaseline
+					elide = right
+				}
+
+				textbox = {
+					visible = "[GetScriptedGui('tot_remove_province_governor').IsShown(GuiScope.SetRoot(State.MakeScope).End)]"
+					datacontext = "[State.MakeScope.Var('tot_province_governor').GetCharacter]"
+					text = "[Character.GetFullNameNoFormatting]"
+					using = fontsize_small
+					size = { 200 24 }
+					align = left|nobaseline
+					elide = right
+				}
+
+				textbox = {
+					visible = "[GetScriptedGui('tot_remove_province_governor').IsShown(GuiScope.SetRoot(State.MakeScope).End)]"
+					datacontext = "[State.MakeScope.Var('tot_province_governor').GetCharacter]"
+					text = "[Character.GetPrimaryRoleTitle]"
+					using = fontsize_small
+					size = { 200 24 }
+					align = left|nobaseline
+					elide = right
+				}
+
+				textbox = {
+					visible = "[Not(GetScriptedGui('tot_remove_province_governor').IsShown(GuiScope.SetRoot(State.MakeScope).End))]"
+					text = "TOT_PROVINCE_GOVERNOR_EMPTY"
+					using = fontsize_small
+					size = { 200 24 }
+					align = left|nobaseline
+					elide = right
+				}
+			}
+
+			textbox = {
+				parentanchor = vcenter
+				text = "TOT_PROVINCE_GOVERNOR_EFFECTS"
+				using = fontsize_small
+				size = { 96 46 }
+				align = center|nobaseline
+				multiline = yes
+			}
+
+			button_standard = {
+				parentanchor = vcenter
+				size = { 98 42 }
+				text = "TOT_CHARACTER_GROWTH_SELECT_STATE"
+				onclick = "[GetScriptedGui('tot_character_growth_select_governor_state').Execute(GuiScope.SetRoot(State.MakeScope).End)]"
+				tooltip = "TOT_CHARACTER_GROWTH_SELECT_STATE_TOOLTIP"
+			}
+		}
+	}
+
+	type tot_character_growth_candidate = widget {
+		size = { 500 122 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+
+		background = {
+			using = entry_bg_simple
+		}
+
+		flowcontainer = {
+			margin = { 12 10 }
+			spacing = 12
+
+			character_portrait_medium = {}
+
+			flowcontainer = {
+				direction = vertical
+				spacing = 5
+				size = { 260 102 }
+
+				textbox = {
+					text = "[Character.GetFullNameNoFormatting]"
+					default_format = "#v"
+					using = fontsize_medium
+					size = { 260 30 }
+					align = left|nobaseline
+					elide = right
+				}
+
+				textbox = {
+					text = "[Character.GetPrimaryRoleTitle]"
+					using = fontsize_small
+					size = { 260 24 }
+					align = left|nobaseline
+					elide = right
+				}
+			}
+
+			widget = {
+				parentanchor = vcenter
+				size = { 118 46 }
+				tooltip_enabled = yes
+				tooltip = "[GetScriptedGui('tot_appoint_selected_province_governor').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+
+				button_standard = {
+					visible = "[GetScriptedGui('tot_appoint_selected_province_governor').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					text = "TOT_PROVINCE_GOVERNOR_APPOINT"
+					size = { 118 46 }
+					onclick = "[GetScriptedGui('tot_appoint_selected_province_governor').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_refresh_character_growth').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_appoint_selected_province_governor').ExecuteTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+
+				button_standard = {
+					visible = "[Not(GetScriptedGui('tot_appoint_selected_province_governor').IsValid(GuiScope.SetRoot(Character.MakeScope).End))]"
+					text = "TOT_PROVINCE_GOVERNOR_APPOINT"
+					size = { 118 46 }
+					tooltip_enabled = yes
+					tooltip = "[GetScriptedGui('tot_appoint_selected_province_governor').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+			}
+		}
+	}
+
+	type tot_character_growth_progress_character = widget {
+		size = { 500 98 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+
+		background = {
+			using = entry_bg_simple
+		}
+
+		flowcontainer = {
+			margin = { 12 10 }
+			spacing = 12
+
+			character_portrait_medium = {}
+
+			widget = {
+				size = { 58 58 }
+				margin_top = 10
+				tooltip = "TOT_CHARACTER_GROWTH_EXP_TOOLTIP"
+
+				background = {
+					texture = "gfx/interface/backgrounds/round_button_bg.dds"
+				}
+
+				round_progress_default = {
+					size = { 52 52 }
+					parentanchor = center
+					value = "[Character.MakeScope.ScriptValue('tot_character_growth_exp_progress_value')]"
+				}
+
+				textbox = {
+					text = "[Character.MakeScope.Var('tot_character_growth_exp').GetValue|0]"
+					using = fontsize_small
+					size = { 48 22 }
+					parentanchor = center
+					align = center|nobaseline
+				}
+			}
+
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				minimumsize = { 286 78 }
+
+				textbox = {
+					text = "[Character.GetFullNameNoFormatting]"
+					default_format = "#v"
+					using = fontsize_medium
+					size = { 286 28 }
+					align = left|nobaseline
+					elide = right
+				}
+
+				textbox = {
+					text = "[Character.GetPrimaryRoleTitle]"
+					using = fontsize_small
+					size = { 286 22 }
+					align = left|nobaseline
+					elide = right
+				}
+
+				textbox = {
+					text = "TOT_CHARACTER_GROWTH_EXP_PROGRESS"
+					using = fontsize_small
+					size = { 286 22 }
+					align = left|nobaseline
+					tooltip = "TOT_CHARACTER_GROWTH_EXP_TOOLTIP"
+				}
+			}
+		}
+	}
+
+	type tot_character_growth_selected_governor_state = widget {
+		size = { 520 152 }
+		datacontext = "[Scope.GetState]"
+		visible = "[Scope.GetState.IsValid]"
+
+		background = {
+			using = entry_bg_simple
+		}
+
+		flowcontainer = {
+			margin = { 12 12 }
+			spacing = 12
+
+			widget = {
+				size = { 92 128 }
+
+				character_portrait_medium = {
+					visible = "[GetScriptedGui('tot_remove_province_governor').IsShown(GuiScope.SetRoot(State.MakeScope).End)]"
+					datacontext = "[State.MakeScope.Var('tot_province_governor').GetCharacter]"
+					parentanchor = center
+				}
+
+				icon = {
+					visible = "[Not(GetScriptedGui('tot_remove_province_governor').IsShown(GuiScope.SetRoot(State.MakeScope).End))]"
+					texture = "gfx/interface/icons/generic_icons/red_cross.dds"
+					size = { 54 54 }
+					parentanchor = center
+				}
+			}
+
+			flowcontainer = {
+				direction = vertical
+				spacing = 5
+				size = { 278 128 }
+
+				textbox = {
+					text = "[State.GetNameNoFormatting]"
+					default_format = "#v"
+					using = fontsize_medium
+					size = { 278 30 }
+					align = left|nobaseline
+					elide = right
+				}
+
+				textbox = {
+					visible = "[GetScriptedGui('tot_remove_province_governor').IsShown(GuiScope.SetRoot(State.MakeScope).End)]"
+					datacontext = "[State.MakeScope.Var('tot_province_governor').GetCharacter]"
+					text = "[Character.GetFullNameNoFormatting]"
+					default_format = "#v"
+					using = fontsize_medium
+					size = { 278 30 }
+					align = left|nobaseline
+					elide = right
+				}
+
+				textbox = {
+					visible = "[GetScriptedGui('tot_remove_province_governor').IsShown(GuiScope.SetRoot(State.MakeScope).End)]"
+					datacontext = "[State.MakeScope.Var('tot_province_governor').GetCharacter]"
+					text = "[Character.GetPrimaryRoleTitle]"
+					using = fontsize_small
+					size = { 278 24 }
+					align = left|nobaseline
+					elide = right
+				}
+
+				textbox = {
+					visible = "[Not(GetScriptedGui('tot_remove_province_governor').IsShown(GuiScope.SetRoot(State.MakeScope).End))]"
+					text = "TOT_CHARACTER_GROWTH_SELECTED_STATE"
+					using = fontsize_medium
+					size = { 278 42 }
+					align = left|nobaseline
+					multiline = yes
+				}
+
+				textbox = {
+					text = "TOT_PROVINCE_GOVERNOR_EFFECTS"
+					using = fontsize_small
+					size = { 278 34 }
+					align = left|nobaseline
+					multiline = yes
+				}
+			}
+
+			button_standard = {
+				visible = "[GetScriptedGui('tot_remove_province_governor').IsShown(GuiScope.SetRoot(State.MakeScope).End)]"
+				parentanchor = bottom|hcenter
+				size = { 112 42 }
+				text = "TOT_PROVINCE_GOVERNOR_REMOVE"
+				enabled = "[GetScriptedGui('tot_remove_province_governor').IsValid(GuiScope.SetRoot(State.MakeScope).End)]"
+				onclick = "[GetScriptedGui('tot_remove_province_governor').Execute(GuiScope.SetRoot(State.MakeScope).End)]"
+				onclick = "[GetScriptedGui('tot_refresh_character_growth').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				tooltip = "[GetScriptedGui('tot_remove_province_governor').IsValidTooltip(GuiScope.SetRoot(State.MakeScope).End)]"
+			}
+		}
+	}
+}
+
+flowcontainer = {
+	name = "widget_je_tot_character_growth"
+	ignoreinvisible = yes
+	direction = vertical
+	spacing = 8
+
+	state = {
+		name = refresh_character_growth
+		trigger_on_create = yes
+		on_finish = "[GetScriptedGui('tot_refresh_character_growth').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+	}
+
+	widget = {
+		size = { 520 38 }
+		tab_buttons = {
+			blockoverride "first_button" { text = "TOT_CHARACTER_GROWTH_TAB_GOVERNOR" }
+			blockoverride "first_button_selected" { text = "TOT_CHARACTER_GROWTH_TAB_GOVERNOR" }
+			blockoverride "first_button_tooltip" { tooltip = "TOT_CHARACTER_GROWTH_TAB_GOVERNOR" }
+			blockoverride "first_button_click" {
+				onclick = "[InformationPanel.SelectTab('tot_character_growth_governor')]"
+				onclick = "[GetScriptedGui('tot_refresh_character_growth').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			}
+			blockoverride "first_button_visibility" { visible = "[Or(InformationPanel.IsTabSelected('tot_character_growth_governor'), Not(InformationPanel.IsTabSelected('tot_character_growth_progress')))]" }
+			blockoverride "first_button_visibility_checked" { visible = "[InformationPanel.IsTabSelected('tot_character_growth_progress')]" }
+			blockoverride "second_button" { text = "TOT_CHARACTER_GROWTH_TAB_PROGRESS" }
+			blockoverride "second_button_selected" { text = "TOT_CHARACTER_GROWTH_TAB_PROGRESS" }
+			blockoverride "second_button_tooltip" { tooltip = "TOT_CHARACTER_GROWTH_TAB_PROGRESS" }
+			blockoverride "second_button_click" {
+				onclick = "[InformationPanel.SelectTab('tot_character_growth_progress')]"
+				onclick = "[GetScriptedGui('tot_refresh_character_growth').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			}
+			blockoverride "second_button_visibility" { visible = "[InformationPanel.IsTabSelected('tot_character_growth_progress')]" }
+			blockoverride "second_button_visibility_checked" { visible = "[Not(InformationPanel.IsTabSelected('tot_character_growth_progress'))]" }
+			blockoverride "third_button_visibility" { visible = no }
+			blockoverride "third_button_visibility_checked" { visible = no }
+			blockoverride "fourth_button_visibility" { visible = no }
+			blockoverride "fourth_button_visibility_checked" { visible = no }
+			blockoverride "fifth_button_visibility" { visible = no }
+			blockoverride "fifth_button_visibility_checked" { visible = no }
+		}
+	}
+
+	textbox = {
+		visible = "[Or(InformationPanel.IsTabSelected('tot_character_growth_governor'), Not(InformationPanel.IsTabSelected('tot_character_growth_progress')))]"
+		text = "TOT_PROVINCE_GOVERNOR_LIMIT_STATUS"
+		size = { 520 30 }
+		align = center|nobaseline
+		using = fontsize_medium
+		tooltip_enabled = yes
+		tooltip = "TOT_PROVINCE_GOVERNOR_LIMIT_TOOLTIP"
+	}
+
+	scrollbox = {
+		visible = "[Or(InformationPanel.IsTabSelected('tot_character_growth_governor'), Not(InformationPanel.IsTabSelected('tot_character_growth_progress')))]"
+		size = { 540 330 }
+
+		blockoverride "scrollbox_content" {
+			fixedgridbox = {
+				datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_character_growth_governor_states')]"
+				addcolumn = 520
+				addrow = 124
+
+				item = {
+					tot_character_growth_governor_state = {}
+				}
+			}
+		}
+	}
+
+	widget = {
+		visible = "[And(Or(InformationPanel.IsTabSelected('tot_character_growth_governor'), Not(InformationPanel.IsTabSelected('tot_character_growth_progress'))), GetScriptedGui('tot_character_growth_has_selected_governor_state').IsShown(GuiScope.SetRoot(JournalEntry.GetCountry.MakeScope).End))]"
+		size = { 520 160 }
+
+		fixedgridbox = {
+			datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_character_growth_selected_governor_state_list')]"
+			addcolumn = 520
+			addrow = 152
+
+			item = {
+				tot_character_growth_selected_governor_state = {}
+			}
+		}
+	}
+
+	textbox = {
+		visible = "[And(Or(InformationPanel.IsTabSelected('tot_character_growth_governor'), Not(InformationPanel.IsTabSelected('tot_character_growth_progress'))), Not(GetScriptedGui('tot_character_growth_has_selected_governor_state').IsShown(GuiScope.SetRoot(JournalEntry.GetCountry.MakeScope).End)))]"
+		text = "TOT_CHARACTER_GROWTH_SELECT_STATE_FIRST"
+		size = { 520 38 }
+		align = center|nobaseline
+		using = fontsize_medium
+	}
+
+	scrollbox = {
+		visible = "[And(Or(InformationPanel.IsTabSelected('tot_character_growth_governor'), Not(InformationPanel.IsTabSelected('tot_character_growth_progress'))), GetScriptedGui('tot_character_growth_selected_governor_state_needs_appointment').IsShown(GuiScope.SetRoot(JournalEntry.GetCountry.MakeScope).End))]"
+		size = { 540 322 }
+
+		blockoverride "scrollbox_content" {
+			fixedgridbox = {
+				datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_province_governor_candidates')]"
+				addcolumn = 500
+				addrow = 132
+
+				item = {
+					tot_character_growth_candidate = {}
+				}
+			}
+		}
+	}
+
+	scrollbox = {
+		visible = "[InformationPanel.IsTabSelected('tot_character_growth_progress')]"
+		size = { 540 740 }
+
+		blockoverride "scrollbox_content" {
+			fixedgridbox = {
+				datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_character_growth_characters')]"
+				addcolumn = 500
+				addrow = 106
+
+				item = {
+					tot_character_growth_progress_character = {}
+				}
+			}
+		}
+	}
+}
+
+

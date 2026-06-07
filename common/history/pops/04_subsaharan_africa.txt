@@ -148,14 +148,22 @@
 				size = 6000
 			}
 		}
-		region_state:GNC = {
+		region_state:BND = {
+			create_pop = {
+				culture = portuguese
+				size = 42
+			}
+			create_pop = {
+				culture = afro_brazilian
+				size = 142
+			}
 			create_pop = {
 				culture = fulbe
-				size = 112706
+				size = 9412
 			}
 			create_pop = {
 				culture = mande
-				size = 13121
+				size = 2312
 			}
 		}
 		region_state:SIL = {
@@ -236,7 +244,7 @@
 				size = 3121
 			}
 		}
-		region_state:GNC = {
+		region_state:BND = {
 			create_pop = {
 				culture = fulbe
 				religion = animist
@@ -250,7 +258,7 @@
 			}
 			create_pop = {
 				culture = portuguese
-				size = 50
+				size = 34
 			}
 		}
 	}
@@ -825,7 +833,7 @@
 				size = 20000
 			}
 		}
-		region_state:GNC = {
+		region_state:MDK = {
 			create_pop = {
 				culture = fulbe
 				size = 3412
@@ -869,7 +877,7 @@
 				size = 272
 			}
 		}
-		region_state:TBUN = {
+		region_state:ASH = {
 			create_pop = {
 				culture = akan
 				size = 54572
@@ -879,7 +887,7 @@
 				size = 172
 			}
 		}
-		region_state:STRW = {
+		region_state:ASH = {
 			create_pop = {
 				culture = akan
 				size = 25001
@@ -1252,6 +1260,7 @@
 		}
 		region_state:MBS = {
 			# ballparking this at 30000, which is probably being a little generous
+
 			create_pop = {
 				culture = bedouin
 				religion = ibadi
@@ -1387,6 +1396,7 @@
 				religion = sunni
 				size = 247200
 			}
+
 			create_pop = {
 				culture = kikuyu
 				size = 18000
@@ -1399,6 +1409,7 @@
 				size = 388483
 			}
 		}
+
 	}
 	s:STATE_AMHARA = {
 		region_state:WLG = {
@@ -2023,7 +2034,7 @@
 		}
 	}
 	s:STATE_MOCAMBIQUE = {
-		region_state:GNC = {
+		region_state:MRV = {
 			create_pop = {
 				culture = makua
 				size = 250000
@@ -2206,7 +2217,7 @@
 		region_state:SIL = {
 			create_pop = {
 				culture = british
-				size = 50
+				size = 42
 			}
 			create_pop = {
 				culture = fang
@@ -2226,7 +2237,7 @@
 				size = 1021
 			}
 		}
-		region_state:GNC = {
+		region_state:FNG = {
 			# ~16,000 in 1841
 			create_pop = {
 				pop_type = slaves
@@ -2534,7 +2545,7 @@
 		}
 	}
 	s:STATE_NORTH_ANGOLA = {
-		region_state:GNC = {
+		region_state:KON = {
 			create_pop = {
 				culture = portuguese
 				size = 3368
@@ -2562,7 +2573,7 @@
 		}
 	}
 	s:STATE_SOUTH_ANGOLA = {
-		region_state:GNC = {
+		region_state:OVM = {
 			create_pop = {
 				culture = ovimbundu
 				size = 116000
@@ -2937,7 +2948,7 @@
 			create_pop = {
 				culture = sena
 				size = 12000
-			}	
+			}
 		}
 		region_state:MNC = {
 			create_pop = {
@@ -3008,11 +3019,11 @@
 			create_pop = {
 				culture = kavango_bantu
 				size = 47440
-			}	
+			}
 			create_pop = {
 				culture = lunda
 				size = 2000
-			}	
+			}
 		}
 		region_state:SAN = {
 			create_pop = {
@@ -3222,7 +3233,7 @@
 			create_pop = {
 				culture = khoisan
 				size = 15300
-			}			
+			}
 		}
 	}
 	# 73000
@@ -3319,7 +3330,7 @@
 		}
 	}
 	s:STATE_LOURENCO_MARQUES = {
-		region_state:GNC = {
+		region_state:GZA = {
 			create_pop = {
 				culture = nguni
 				size = 66761

@@ -1,0 +1,330 @@
+﻿tot_character_growth_weekly_update = {
+	every_scope_character = {
+		limit = {
+			is_character_alive = yes
+			historical = yes
+		}
+
+		change_variable = {
+			name = tot_character_growth_exp
+			add = 10
+		}
+		if = {
+			limit = {
+				is_ruler_of_own_country = yes
+			}
+			change_variable = {
+				name = tot_character_growth_exp
+				add = 10
+			}
+		}
+		if = {
+			limit = {
+				interest_group ?= {
+					is_interest_group_type = ig_landowners
+				}
+			}
+			change_variable = {
+				name = tot_character_growth_exp
+				add = 5
+			}
+		}
+		tot_character_growth_check_level_up = yes
+	}
+}
+
+tot_character_growth_check_level_up = {
+	if = {
+		limit = {
+			has_variable = tot_character_growth_exp
+			var:tot_character_growth_exp >= 1000
+			historical = yes
+			NOT = {
+				AND = {
+					has_trait = tot_group_sheet_020_trait
+					has_trait = tot_group_sheet_021_trait
+					has_trait = tot_group_sheet_022_trait
+					has_trait = tot_group_sheet_023_trait
+					has_trait = tot_group_sheet_024_trait
+					has_trait = tot_group_sheet_025_trait
+					has_trait = tot_group_sheet_026_trait
+					has_trait = tot_group_sheet_027_trait
+					has_trait = tot_group_sheet_028_trait
+					has_trait = tot_group_sheet_029_trait
+					has_trait = tot_group_sheet_030_trait
+					has_trait = tot_group_sheet_031_trait
+					has_trait = tot_group_sheet_032_trait
+					has_trait = tot_group_sheet_033_trait
+					has_trait = tot_group_sheet_034_trait
+					has_trait = tot_group_sheet_035_trait
+					has_trait = tot_group_sheet_036_trait
+					has_trait = tot_group_sheet_037_trait
+					has_trait = tot_group_sheet_038_trait
+					has_trait = tot_group_sheet_039_trait
+					has_trait = tot_group_sheet_040_trait
+					has_trait = tot_group_sheet_041_trait
+					has_trait = tot_group_sheet_042_trait
+					has_trait = tot_group_sheet_043_trait
+					has_trait = tot_group_sheet_044_trait
+					has_trait = tot_group_sheet_045_trait
+					has_trait = tot_group_sheet_046_trait
+					has_trait = tot_group_sheet_047_trait
+					has_trait = tot_group_sheet_048_trait
+					has_trait = tot_group_sheet_049_trait
+					has_trait = tot_group_sheet_050_trait
+					has_trait = tot_group_sheet_051_trait
+					has_trait = tot_group_sheet_052_trait
+					has_trait = tot_group_sheet_053_trait
+					has_trait = tot_group_sheet_054_trait
+					has_trait = tot_group_sheet_055_trait
+					has_trait = tot_group_sheet_056_trait
+					has_trait = tot_group_sheet_057_trait
+				}
+			}
+		}
+
+		change_variable = {
+			name = tot_character_growth_exp
+			add = -1000
+		}
+		tot_character_growth_grant_random_kizuna_trait = yes
+		owner ?= {
+			update_kizuna = yes
+		}
+	}
+}
+
+tot_character_growth_grant_random_kizuna_trait = {
+	# 常规养成只随机获得职业/特长羁绊；阵营羁绊默认保留给开局与特殊机制。
+	random_list = {
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_020_trait }
+			}
+			add_trait = tot_group_sheet_020_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_021_trait }
+			}
+			add_trait = tot_group_sheet_021_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_022_trait }
+			}
+			add_trait = tot_group_sheet_022_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_023_trait }
+			}
+			add_trait = tot_group_sheet_023_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_024_trait }
+			}
+			add_trait = tot_group_sheet_024_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_025_trait }
+			}
+			add_trait = tot_group_sheet_025_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_026_trait }
+			}
+			add_trait = tot_group_sheet_026_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_027_trait }
+			}
+			add_trait = tot_group_sheet_027_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_028_trait }
+			}
+			add_trait = tot_group_sheet_028_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_029_trait }
+			}
+			add_trait = tot_group_sheet_029_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_030_trait }
+			}
+			add_trait = tot_group_sheet_030_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_031_trait }
+			}
+			add_trait = tot_group_sheet_031_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_032_trait }
+			}
+			add_trait = tot_group_sheet_032_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_033_trait }
+			}
+			add_trait = tot_group_sheet_033_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_034_trait }
+			}
+			add_trait = tot_group_sheet_034_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_035_trait }
+			}
+			add_trait = tot_group_sheet_035_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_036_trait }
+			}
+			add_trait = tot_group_sheet_036_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_037_trait }
+			}
+			add_trait = tot_group_sheet_037_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_038_trait }
+			}
+			add_trait = tot_group_sheet_038_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_039_trait }
+			}
+			add_trait = tot_group_sheet_039_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_040_trait }
+			}
+			add_trait = tot_group_sheet_040_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_041_trait }
+			}
+			add_trait = tot_group_sheet_041_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_042_trait }
+			}
+			add_trait = tot_group_sheet_042_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_043_trait }
+			}
+			add_trait = tot_group_sheet_043_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_044_trait }
+			}
+			add_trait = tot_group_sheet_044_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_045_trait }
+			}
+			add_trait = tot_group_sheet_045_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_046_trait }
+			}
+			add_trait = tot_group_sheet_046_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_047_trait }
+			}
+			add_trait = tot_group_sheet_047_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_048_trait }
+			}
+			add_trait = tot_group_sheet_048_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_049_trait }
+			}
+			add_trait = tot_group_sheet_049_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_050_trait }
+			}
+			add_trait = tot_group_sheet_050_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_051_trait }
+			}
+			add_trait = tot_group_sheet_051_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_052_trait }
+			}
+			add_trait = tot_group_sheet_052_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_053_trait }
+			}
+			add_trait = tot_group_sheet_053_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_054_trait }
+			}
+			add_trait = tot_group_sheet_054_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_055_trait }
+			}
+			add_trait = tot_group_sheet_055_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_056_trait }
+			}
+			add_trait = tot_group_sheet_056_trait
+		}
+		1 = {
+			trigger = {
+				NOT = { has_trait = tot_group_sheet_057_trait }
+			}
+			add_trait = tot_group_sheet_057_trait
+		}
+	}
+}
+

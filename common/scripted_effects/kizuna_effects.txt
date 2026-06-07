@@ -1,4 +1,4 @@
-﻿
+
 update_kizuna = {
     if = {
         limit = {
@@ -6,10 +6,124 @@ update_kizuna = {
         }
         clear_variable_list = kon_kizuna_list
     }
+    if = {
+        limit = {
+            has_variable_list = band_kizuna_list
+        }
+        clear_variable_list = band_kizuna_list
+    }
 	 
 		update_kon_kizuna = yes
 		update_band_kizuna = yes
+		update_tot_kizuna_groups = yes
+		update_tot_kizuna_profession_specialty_groups = yes
+		update_tot_kizuna_faction_default_modifiers = yes
+		tot_sync_investment_buy_orders = yes
 }
+
+tot_gourmet_weekly_update = {
+	if = {
+		limit = { NOT = { has_variable = tot_gourmet_progress } }
+		set_variable = { name = tot_gourmet_progress value = 0 }
+	}
+	every_scope_character = {
+		limit = {
+			is_character_alive = yes
+			has_trait = tot_group_sheet_038_trait
+		}
+		root = {
+			change_variable = {
+				name = tot_gourmet_progress
+				add = 3
+			}
+		}
+	}
+
+	if = {
+		limit = { has_variable = tot_gourmet_invest_grain market.mg:grain = { market_goods_sell_orders >= 50 } }
+		change_variable = { name = tot_gourmet_progress add = 5 }
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_meat market.mg:meat = { market_goods_sell_orders >= 50 } }
+		change_variable = { name = tot_gourmet_progress add = 5 }
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_fish market.mg:fish = { market_goods_sell_orders >= 50 } }
+		change_variable = { name = tot_gourmet_progress add = 5 }
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_fruit market.mg:fruit = { market_goods_sell_orders >= 50 } }
+		change_variable = { name = tot_gourmet_progress add = 5 }
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_groceries market.mg:groceries = { market_goods_sell_orders >= 50 } }
+		change_variable = { name = tot_gourmet_progress add = 5 }
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_tea market.mg:tea = { market_goods_sell_orders >= 50 } }
+		change_variable = { name = tot_gourmet_progress add = 5 }
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_coffee market.mg:coffee = { market_goods_sell_orders >= 50 } }
+		change_variable = { name = tot_gourmet_progress add = 5 }
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_luxury_drinks market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } }
+		change_variable = { name = tot_gourmet_progress add = 5 }
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_luxury_foods market.mg:luxury_foods = { market_goods_sell_orders >= 50 } }
+		change_variable = { name = tot_gourmet_progress add = 5 }
+	}
+
+	if = { limit = { tot_gourmet_variety_count_value >= 2 } change_variable = { name = tot_gourmet_progress add = 3 } }
+	if = { limit = { tot_gourmet_variety_count_value >= 3 } change_variable = { name = tot_gourmet_progress add = 3 } }
+	if = { limit = { tot_gourmet_variety_count_value >= 4 } change_variable = { name = tot_gourmet_progress add = 3 } }
+	if = { limit = { tot_gourmet_variety_count_value >= 5 } change_variable = { name = tot_gourmet_progress add = 3 } }
+	if = { limit = { tot_gourmet_variety_count_value >= 6 } change_variable = { name = tot_gourmet_progress add = 3 } }
+	if = { limit = { tot_gourmet_variety_count_value >= 7 } change_variable = { name = tot_gourmet_progress add = 3 } }
+	if = { limit = { tot_gourmet_variety_count_value >= 8 } change_variable = { name = tot_gourmet_progress add = 3 } }
+	if = { limit = { tot_gourmet_variety_count_value >= 9 } change_variable = { name = tot_gourmet_progress add = 3 } }
+
+	tot_gourmet_check_rewards = yes
+	update_kizuna = yes
+}
+
+tot_gourmet_check_rewards = {
+	if = {
+		limit = {
+			var:tot_gourmet_progress >= 3500
+			NOT = { has_variable = tot_gourmet_tier_1_claimed }
+		}
+		set_variable = { name = tot_gourmet_tier_1_claimed value = 1 }
+		add_modifier = tot_gourmet_reward_tier_1_modifier
+	}
+	if = {
+		limit = {
+			var:tot_gourmet_progress >= 8500
+			NOT = { has_variable = tot_gourmet_tier_2_claimed }
+		}
+		set_variable = { name = tot_gourmet_tier_2_claimed value = 1 }
+		add_modifier = tot_gourmet_reward_tier_2_modifier
+	}
+	if = {
+		limit = {
+			var:tot_gourmet_progress >= 14000
+			NOT = { has_variable = tot_gourmet_tier_3_claimed }
+		}
+		set_variable = { name = tot_gourmet_tier_3_claimed value = 1 }
+		add_modifier = tot_gourmet_reward_tier_3_modifier
+	}
+	if = {
+		limit = {
+			var:tot_gourmet_progress >= 36000
+			NOT = { has_variable = tot_gourmet_tier_4_claimed }
+		}
+		set_variable = { name = tot_gourmet_tier_4_claimed value = 1 }
+		add_modifier = tot_gourmet_reward_tier_4_modifier
+	}
+}
+
 update_kon_kizuna = {
 	if = {
 			limit = {
@@ -147,49 +261,765 @@ update_kon_kizuna = {
 }
 update_band_kizuna = {
 	if = {
+		limit = { NOT = { has_variable = tot_band_limit } }
+		set_variable = { name = tot_band_limit value = 1 }
+	}
+	if = { limit = { NOT = { has_variable = tot_band_1_name } } set_variable = { name = tot_band_1_name value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_band_2_name } } set_variable = { name = tot_band_2_name value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_band_3_name } } set_variable = { name = tot_band_3_name value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_band_4_name } } set_variable = { name = tot_band_4_name value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_band_5_name } } set_variable = { name = tot_band_5_name value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_band_6_name } } set_variable = { name = tot_band_6_name value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_band_7_name } } set_variable = { name = tot_band_7_name value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_band_8_name } } set_variable = { name = tot_band_8_name value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_band_9_name } } set_variable = { name = tot_band_9_name value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_band_10_name } } set_variable = { name = tot_band_10_name value = 0 } }
+	if = {
+		limit = { var:tot_band_limit > 10 }
+		set_variable = { name = tot_band_limit value = 10 }
+	}
+
+	remove_variable = tot_band_1_type
+	set_variable = { name = tot_band_1_kon_count value = 0 }
+	set_variable = { name = tot_band_1_bandori_count value = 0 }
+set_variable = { name = tot_band_1_member_count value = 0 }
+set_variable = { name = tot_band_1_vocalist_count value = 0 }
+set_variable = { name = tot_band_1_bassist_count value = 0 }
+set_variable = { name = tot_band_1_keyboardist_count value = 0 }
+set_variable = { name = tot_band_1_drummer_count value = 0 }
+	if = { limit = { has_variable_list = tot_band_1_members } clear_variable_list = tot_band_1_members }
+	if = { limit = { has_variable_list = tot_band_1_candidates } clear_variable_list = tot_band_1_candidates }
+	remove_variable = tot_band_2_type
+	set_variable = { name = tot_band_2_kon_count value = 0 }
+	set_variable = { name = tot_band_2_bandori_count value = 0 }
+set_variable = { name = tot_band_2_member_count value = 0 }
+set_variable = { name = tot_band_2_vocalist_count value = 0 }
+set_variable = { name = tot_band_2_bassist_count value = 0 }
+set_variable = { name = tot_band_2_keyboardist_count value = 0 }
+set_variable = { name = tot_band_2_drummer_count value = 0 }
+	if = { limit = { has_variable_list = tot_band_2_members } clear_variable_list = tot_band_2_members }
+	if = { limit = { has_variable_list = tot_band_2_candidates } clear_variable_list = tot_band_2_candidates }
+	remove_variable = tot_band_3_type
+	set_variable = { name = tot_band_3_kon_count value = 0 }
+	set_variable = { name = tot_band_3_bandori_count value = 0 }
+set_variable = { name = tot_band_3_member_count value = 0 }
+set_variable = { name = tot_band_3_vocalist_count value = 0 }
+set_variable = { name = tot_band_3_bassist_count value = 0 }
+set_variable = { name = tot_band_3_keyboardist_count value = 0 }
+set_variable = { name = tot_band_3_drummer_count value = 0 }
+	if = { limit = { has_variable_list = tot_band_3_members } clear_variable_list = tot_band_3_members }
+	if = { limit = { has_variable_list = tot_band_3_candidates } clear_variable_list = tot_band_3_candidates }
+	remove_variable = tot_band_4_type
+	set_variable = { name = tot_band_4_kon_count value = 0 }
+	set_variable = { name = tot_band_4_bandori_count value = 0 }
+set_variable = { name = tot_band_4_member_count value = 0 }
+set_variable = { name = tot_band_4_vocalist_count value = 0 }
+set_variable = { name = tot_band_4_bassist_count value = 0 }
+set_variable = { name = tot_band_4_keyboardist_count value = 0 }
+set_variable = { name = tot_band_4_drummer_count value = 0 }
+	if = { limit = { has_variable_list = tot_band_4_members } clear_variable_list = tot_band_4_members }
+	if = { limit = { has_variable_list = tot_band_4_candidates } clear_variable_list = tot_band_4_candidates }
+	remove_variable = tot_band_5_type
+	set_variable = { name = tot_band_5_kon_count value = 0 }
+	set_variable = { name = tot_band_5_bandori_count value = 0 }
+set_variable = { name = tot_band_5_member_count value = 0 }
+set_variable = { name = tot_band_5_vocalist_count value = 0 }
+set_variable = { name = tot_band_5_bassist_count value = 0 }
+set_variable = { name = tot_band_5_keyboardist_count value = 0 }
+set_variable = { name = tot_band_5_drummer_count value = 0 }
+	if = { limit = { has_variable_list = tot_band_5_members } clear_variable_list = tot_band_5_members }
+	if = { limit = { has_variable_list = tot_band_5_candidates } clear_variable_list = tot_band_5_candidates }
+	remove_variable = tot_band_6_type
+	set_variable = { name = tot_band_6_kon_count value = 0 }
+	set_variable = { name = tot_band_6_bandori_count value = 0 }
+set_variable = { name = tot_band_6_member_count value = 0 }
+set_variable = { name = tot_band_6_vocalist_count value = 0 }
+set_variable = { name = tot_band_6_bassist_count value = 0 }
+set_variable = { name = tot_band_6_keyboardist_count value = 0 }
+set_variable = { name = tot_band_6_drummer_count value = 0 }
+	if = { limit = { has_variable_list = tot_band_6_members } clear_variable_list = tot_band_6_members }
+	if = { limit = { has_variable_list = tot_band_6_candidates } clear_variable_list = tot_band_6_candidates }
+	remove_variable = tot_band_7_type
+	set_variable = { name = tot_band_7_kon_count value = 0 }
+	set_variable = { name = tot_band_7_bandori_count value = 0 }
+set_variable = { name = tot_band_7_member_count value = 0 }
+set_variable = { name = tot_band_7_vocalist_count value = 0 }
+set_variable = { name = tot_band_7_bassist_count value = 0 }
+set_variable = { name = tot_band_7_keyboardist_count value = 0 }
+set_variable = { name = tot_band_7_drummer_count value = 0 }
+	if = { limit = { has_variable_list = tot_band_7_members } clear_variable_list = tot_band_7_members }
+	if = { limit = { has_variable_list = tot_band_7_candidates } clear_variable_list = tot_band_7_candidates }
+	remove_variable = tot_band_8_type
+	set_variable = { name = tot_band_8_kon_count value = 0 }
+	set_variable = { name = tot_band_8_bandori_count value = 0 }
+set_variable = { name = tot_band_8_member_count value = 0 }
+set_variable = { name = tot_band_8_vocalist_count value = 0 }
+set_variable = { name = tot_band_8_bassist_count value = 0 }
+set_variable = { name = tot_band_8_keyboardist_count value = 0 }
+set_variable = { name = tot_band_8_drummer_count value = 0 }
+	if = { limit = { has_variable_list = tot_band_8_members } clear_variable_list = tot_band_8_members }
+	if = { limit = { has_variable_list = tot_band_8_candidates } clear_variable_list = tot_band_8_candidates }
+	remove_variable = tot_band_9_type
+	set_variable = { name = tot_band_9_kon_count value = 0 }
+	set_variable = { name = tot_band_9_bandori_count value = 0 }
+set_variable = { name = tot_band_9_member_count value = 0 }
+set_variable = { name = tot_band_9_vocalist_count value = 0 }
+set_variable = { name = tot_band_9_bassist_count value = 0 }
+set_variable = { name = tot_band_9_keyboardist_count value = 0 }
+set_variable = { name = tot_band_9_drummer_count value = 0 }
+	if = { limit = { has_variable_list = tot_band_9_members } clear_variable_list = tot_band_9_members }
+	if = { limit = { has_variable_list = tot_band_9_candidates } clear_variable_list = tot_band_9_candidates }
+	remove_variable = tot_band_10_type
+	set_variable = { name = tot_band_10_kon_count value = 0 }
+	set_variable = { name = tot_band_10_bandori_count value = 0 }
+set_variable = { name = tot_band_10_member_count value = 0 }
+set_variable = { name = tot_band_10_vocalist_count value = 0 }
+set_variable = { name = tot_band_10_bassist_count value = 0 }
+set_variable = { name = tot_band_10_keyboardist_count value = 0 }
+set_variable = { name = tot_band_10_drummer_count value = 0 }
+	if = { limit = { has_variable_list = tot_band_10_members } clear_variable_list = tot_band_10_members }
+	if = { limit = { has_variable_list = tot_band_10_candidates } clear_variable_list = tot_band_10_candidates }
+
+	if = { limit = { has_variable_list = band_kizuna_list } clear_variable_list = band_kizuna_list }
+
+	every_scope_character = {
+		limit = { is_character_alive = yes }
+		if = {
 			limit = {
-				any_scope_character = {
-					OR = {
-						has_trait = tot_drummer_trait
-						has_trait = tot_guitarist_trait
-						has_trait = tot_bassist_trait
-						has_trait = tot_keyboardist_trait
-						has_trait = tot_lead_vocalist_trait
-						has_trait = tot_is_drummer_trait
-						has_trait = tot_is_guitarist_trait
-						has_trait = tot_is_bassist_trait
-						has_trait = tot_is_keyboardist_trait
-						has_trait = tot_is_lead_vocalist_trait
-						has_trait = tot_is_supper_lead_vocalist_trait
-					}
+				has_variable = tot_band_id
+				OR = {
+					has_variable = tot_band_role_drummer
+					has_variable = tot_band_role_guitarist
+					has_variable = tot_band_role_bassist
+					has_variable = tot_band_role_keyboardist
+					has_variable = tot_band_role_vocalist
 				}
 			}
-			every_scope_character = {
-				limit = {
-					OR = {
-						has_trait = tot_drummer_trait
-						has_trait = tot_guitarist_trait
-						has_trait = tot_bassist_trait
-						has_trait = tot_keyboardist_trait
-						has_trait = tot_lead_vocalist_trait
-						has_trait = tot_is_drummer_trait
-						has_trait = tot_is_guitarist_trait
-						has_trait = tot_is_bassist_trait
-						has_trait = tot_is_keyboardist_trait
-						has_trait = tot_is_lead_vocalist_trait
-						has_trait = tot_is_supper_lead_vocalist_trait
-					}
-				}
-					root = {
-						add_to_variable_list = {
-						name = band_kizuna_list
-						target = prev
-				}
-					}
-			}
+			root = { add_to_variable_list = { name = band_kizuna_list target = prev } }
 		}
-		
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 1 }
+			root = { add_to_variable_list = { name = tot_band_1_members target = prev } }
+root = { change_variable = { name = tot_band_1_member_count add = 1 } }
+if = { limit = { has_variable = tot_band_role_vocalist } root = { change_variable = { name = tot_band_1_vocalist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_bassist } root = { change_variable = { name = tot_band_1_bassist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_keyboardist } root = { change_variable = { name = tot_band_1_keyboardist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_drummer } root = { change_variable = { name = tot_band_1_drummer_count add = 1 } } }
+		}
+		if = {
+			limit = { root = { var:tot_band_limit >= 1 } }
+			root = { add_to_variable_list = { name = tot_band_1_candidates target = prev } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 1 has_trait = tot_group_sheet_011_trait }
+			root = { change_variable = { name = tot_band_1_kon_count add = 1 } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 1 has_trait = tot_group_sheet_008_trait }
+			root = { change_variable = { name = tot_band_1_bandori_count add = 1 } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 2 }
+			root = { add_to_variable_list = { name = tot_band_2_members target = prev } }
+root = { change_variable = { name = tot_band_2_member_count add = 1 } }
+if = { limit = { has_variable = tot_band_role_vocalist } root = { change_variable = { name = tot_band_2_vocalist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_bassist } root = { change_variable = { name = tot_band_2_bassist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_keyboardist } root = { change_variable = { name = tot_band_2_keyboardist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_drummer } root = { change_variable = { name = tot_band_2_drummer_count add = 1 } } }
+		}
+		if = {
+			limit = { root = { var:tot_band_limit >= 2 } }
+			root = { add_to_variable_list = { name = tot_band_2_candidates target = prev } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 2 has_trait = tot_group_sheet_011_trait }
+			root = { change_variable = { name = tot_band_2_kon_count add = 1 } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 2 has_trait = tot_group_sheet_008_trait }
+			root = { change_variable = { name = tot_band_2_bandori_count add = 1 } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 3 }
+			root = { add_to_variable_list = { name = tot_band_3_members target = prev } }
+root = { change_variable = { name = tot_band_3_member_count add = 1 } }
+if = { limit = { has_variable = tot_band_role_vocalist } root = { change_variable = { name = tot_band_3_vocalist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_bassist } root = { change_variable = { name = tot_band_3_bassist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_keyboardist } root = { change_variable = { name = tot_band_3_keyboardist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_drummer } root = { change_variable = { name = tot_band_3_drummer_count add = 1 } } }
+		}
+		if = {
+			limit = { root = { var:tot_band_limit >= 3 } }
+			root = { add_to_variable_list = { name = tot_band_3_candidates target = prev } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 3 has_trait = tot_group_sheet_011_trait }
+			root = { change_variable = { name = tot_band_3_kon_count add = 1 } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 3 has_trait = tot_group_sheet_008_trait }
+			root = { change_variable = { name = tot_band_3_bandori_count add = 1 } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 4 }
+			root = { add_to_variable_list = { name = tot_band_4_members target = prev } }
+root = { change_variable = { name = tot_band_4_member_count add = 1 } }
+if = { limit = { has_variable = tot_band_role_vocalist } root = { change_variable = { name = tot_band_4_vocalist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_bassist } root = { change_variable = { name = tot_band_4_bassist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_keyboardist } root = { change_variable = { name = tot_band_4_keyboardist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_drummer } root = { change_variable = { name = tot_band_4_drummer_count add = 1 } } }
+		}
+		if = {
+			limit = { root = { var:tot_band_limit >= 4 } }
+			root = { add_to_variable_list = { name = tot_band_4_candidates target = prev } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 4 has_trait = tot_group_sheet_011_trait }
+			root = { change_variable = { name = tot_band_4_kon_count add = 1 } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 4 has_trait = tot_group_sheet_008_trait }
+			root = { change_variable = { name = tot_band_4_bandori_count add = 1 } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 5 }
+			root = { add_to_variable_list = { name = tot_band_5_members target = prev } }
+root = { change_variable = { name = tot_band_5_member_count add = 1 } }
+if = { limit = { has_variable = tot_band_role_vocalist } root = { change_variable = { name = tot_band_5_vocalist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_bassist } root = { change_variable = { name = tot_band_5_bassist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_keyboardist } root = { change_variable = { name = tot_band_5_keyboardist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_drummer } root = { change_variable = { name = tot_band_5_drummer_count add = 1 } } }
+		}
+		if = {
+			limit = { root = { var:tot_band_limit >= 5 } }
+			root = { add_to_variable_list = { name = tot_band_5_candidates target = prev } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 5 has_trait = tot_group_sheet_011_trait }
+			root = { change_variable = { name = tot_band_5_kon_count add = 1 } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 5 has_trait = tot_group_sheet_008_trait }
+			root = { change_variable = { name = tot_band_5_bandori_count add = 1 } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 6 }
+			root = { add_to_variable_list = { name = tot_band_6_members target = prev } }
+root = { change_variable = { name = tot_band_6_member_count add = 1 } }
+if = { limit = { has_variable = tot_band_role_vocalist } root = { change_variable = { name = tot_band_6_vocalist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_bassist } root = { change_variable = { name = tot_band_6_bassist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_keyboardist } root = { change_variable = { name = tot_band_6_keyboardist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_drummer } root = { change_variable = { name = tot_band_6_drummer_count add = 1 } } }
+		}
+		if = {
+			limit = { root = { var:tot_band_limit >= 6 } }
+			root = { add_to_variable_list = { name = tot_band_6_candidates target = prev } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 6 has_trait = tot_group_sheet_011_trait }
+			root = { change_variable = { name = tot_band_6_kon_count add = 1 } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 6 has_trait = tot_group_sheet_008_trait }
+			root = { change_variable = { name = tot_band_6_bandori_count add = 1 } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 7 }
+			root = { add_to_variable_list = { name = tot_band_7_members target = prev } }
+root = { change_variable = { name = tot_band_7_member_count add = 1 } }
+if = { limit = { has_variable = tot_band_role_vocalist } root = { change_variable = { name = tot_band_7_vocalist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_bassist } root = { change_variable = { name = tot_band_7_bassist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_keyboardist } root = { change_variable = { name = tot_band_7_keyboardist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_drummer } root = { change_variable = { name = tot_band_7_drummer_count add = 1 } } }
+		}
+		if = {
+			limit = { root = { var:tot_band_limit >= 7 } }
+			root = { add_to_variable_list = { name = tot_band_7_candidates target = prev } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 7 has_trait = tot_group_sheet_011_trait }
+			root = { change_variable = { name = tot_band_7_kon_count add = 1 } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 7 has_trait = tot_group_sheet_008_trait }
+			root = { change_variable = { name = tot_band_7_bandori_count add = 1 } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 8 }
+			root = { add_to_variable_list = { name = tot_band_8_members target = prev } }
+root = { change_variable = { name = tot_band_8_member_count add = 1 } }
+if = { limit = { has_variable = tot_band_role_vocalist } root = { change_variable = { name = tot_band_8_vocalist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_bassist } root = { change_variable = { name = tot_band_8_bassist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_keyboardist } root = { change_variable = { name = tot_band_8_keyboardist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_drummer } root = { change_variable = { name = tot_band_8_drummer_count add = 1 } } }
+		}
+		if = {
+			limit = { root = { var:tot_band_limit >= 8 } }
+			root = { add_to_variable_list = { name = tot_band_8_candidates target = prev } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 8 has_trait = tot_group_sheet_011_trait }
+			root = { change_variable = { name = tot_band_8_kon_count add = 1 } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 8 has_trait = tot_group_sheet_008_trait }
+			root = { change_variable = { name = tot_band_8_bandori_count add = 1 } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 9 }
+			root = { add_to_variable_list = { name = tot_band_9_members target = prev } }
+root = { change_variable = { name = tot_band_9_member_count add = 1 } }
+if = { limit = { has_variable = tot_band_role_vocalist } root = { change_variable = { name = tot_band_9_vocalist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_bassist } root = { change_variable = { name = tot_band_9_bassist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_keyboardist } root = { change_variable = { name = tot_band_9_keyboardist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_drummer } root = { change_variable = { name = tot_band_9_drummer_count add = 1 } } }
+		}
+		if = {
+			limit = { root = { var:tot_band_limit >= 9 } }
+			root = { add_to_variable_list = { name = tot_band_9_candidates target = prev } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 9 has_trait = tot_group_sheet_011_trait }
+			root = { change_variable = { name = tot_band_9_kon_count add = 1 } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 9 has_trait = tot_group_sheet_008_trait }
+			root = { change_variable = { name = tot_band_9_bandori_count add = 1 } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 10 }
+			root = { add_to_variable_list = { name = tot_band_10_members target = prev } }
+root = { change_variable = { name = tot_band_10_member_count add = 1 } }
+if = { limit = { has_variable = tot_band_role_vocalist } root = { change_variable = { name = tot_band_10_vocalist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_bassist } root = { change_variable = { name = tot_band_10_bassist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_keyboardist } root = { change_variable = { name = tot_band_10_keyboardist_count add = 1 } } }
+if = { limit = { has_variable = tot_band_role_drummer } root = { change_variable = { name = tot_band_10_drummer_count add = 1 } } }
+		}
+		if = {
+			limit = { root = { var:tot_band_limit >= 10 } }
+			root = { add_to_variable_list = { name = tot_band_10_candidates target = prev } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 10 has_trait = tot_group_sheet_011_trait }
+			root = { change_variable = { name = tot_band_10_kon_count add = 1 } }
+		}
+		if = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 10 has_trait = tot_group_sheet_008_trait }
+			root = { change_variable = { name = tot_band_10_bandori_count add = 1 } }
+		}
+	}
+
+	if = { limit = { var:tot_band_1_kon_count >= 3 } set_variable = { name = tot_band_1_type value = 1 } }
+	if = { limit = { NOT = { has_variable = tot_band_1_type } var:tot_band_1_bandori_count >= 3 } set_variable = { name = tot_band_1_type value = 2 } }
+	if = { limit = { var:tot_band_2_kon_count >= 3 } set_variable = { name = tot_band_2_type value = 1 } }
+	if = { limit = { NOT = { has_variable = tot_band_2_type } var:tot_band_2_bandori_count >= 3 } set_variable = { name = tot_band_2_type value = 2 } }
+	if = { limit = { var:tot_band_3_kon_count >= 3 } set_variable = { name = tot_band_3_type value = 1 } }
+	if = { limit = { NOT = { has_variable = tot_band_3_type } var:tot_band_3_bandori_count >= 3 } set_variable = { name = tot_band_3_type value = 2 } }
+	if = { limit = { var:tot_band_4_kon_count >= 3 } set_variable = { name = tot_band_4_type value = 1 } }
+	if = { limit = { NOT = { has_variable = tot_band_4_type } var:tot_band_4_bandori_count >= 3 } set_variable = { name = tot_band_4_type value = 2 } }
+	if = { limit = { var:tot_band_5_kon_count >= 3 } set_variable = { name = tot_band_5_type value = 1 } }
+	if = { limit = { NOT = { has_variable = tot_band_5_type } var:tot_band_5_bandori_count >= 3 } set_variable = { name = tot_band_5_type value = 2 } }
+	if = { limit = { var:tot_band_6_kon_count >= 3 } set_variable = { name = tot_band_6_type value = 1 } }
+	if = { limit = { NOT = { has_variable = tot_band_6_type } var:tot_band_6_bandori_count >= 3 } set_variable = { name = tot_band_6_type value = 2 } }
+	if = { limit = { var:tot_band_7_kon_count >= 3 } set_variable = { name = tot_band_7_type value = 1 } }
+	if = { limit = { NOT = { has_variable = tot_band_7_type } var:tot_band_7_bandori_count >= 3 } set_variable = { name = tot_band_7_type value = 2 } }
+	if = { limit = { var:tot_band_8_kon_count >= 3 } set_variable = { name = tot_band_8_type value = 1 } }
+	if = { limit = { NOT = { has_variable = tot_band_8_type } var:tot_band_8_bandori_count >= 3 } set_variable = { name = tot_band_8_type value = 2 } }
+	if = { limit = { var:tot_band_9_kon_count >= 3 } set_variable = { name = tot_band_9_type value = 1 } }
+	if = { limit = { NOT = { has_variable = tot_band_9_type } var:tot_band_9_bandori_count >= 3 } set_variable = { name = tot_band_9_type value = 2 } }
+	if = { limit = { var:tot_band_10_kon_count >= 3 } set_variable = { name = tot_band_10_type value = 1 } }
+	if = { limit = { NOT = { has_variable = tot_band_10_type } var:tot_band_10_bandori_count >= 3 } set_variable = { name = tot_band_10_type value = 2 } }
 }
+
+tot_clear_band_role_flags_effect = {
+	remove_trait = tot_is_guitarist_trait
+	remove_trait = tot_is_bassist_trait
+	remove_trait = tot_is_keyboardist_trait
+	remove_trait = tot_is_drummer_trait
+	remove_trait = tot_is_lead_vocalist_trait
+	remove_trait = tot_is_supper_lead_vocalist_trait
+	remove_variable = tot_band_role_guitarist
+	remove_variable = tot_band_role_bassist
+	remove_variable = tot_band_role_keyboardist
+	remove_variable = tot_band_role_drummer
+	remove_variable = tot_band_role_vocalist
+}
+
+tot_clear_band_instrument_flags_effect = {
+	remove_trait = tot_is_guitarist_trait
+	remove_trait = tot_is_bassist_trait
+	remove_trait = tot_is_keyboardist_trait
+	remove_trait = tot_is_drummer_trait
+	remove_variable = tot_band_role_guitarist
+	remove_variable = tot_band_role_bassist
+	remove_variable = tot_band_role_keyboardist
+	remove_variable = tot_band_role_drummer
+}
+tot_clear_band_member_effect = {
+	tot_clear_band_role_flags_effect = yes
+	remove_variable = tot_band_id
+}
+
+tot_prepare_band_1_member_effect = {
+	scope:tot_band_member ?= {
+		if = { limit = { has_variable = tot_band_id NOT = { var:tot_band_id = 1 } } tot_clear_band_role_flags_effect = yes }
+		set_variable = { name = tot_band_id value = 1 }
+	}
+}
+
+tot_prepare_band_2_member_effect = {
+	scope:tot_band_member ?= {
+		if = { limit = { has_variable = tot_band_id NOT = { var:tot_band_id = 2 } } tot_clear_band_role_flags_effect = yes }
+		set_variable = { name = tot_band_id value = 2 }
+	}
+}
+
+tot_prepare_band_3_member_effect = {
+	scope:tot_band_member ?= {
+		if = { limit = { has_variable = tot_band_id NOT = { var:tot_band_id = 3 } } tot_clear_band_role_flags_effect = yes }
+		set_variable = { name = tot_band_id value = 3 }
+	}
+}
+
+tot_prepare_band_4_member_effect = {
+	scope:tot_band_member ?= {
+		if = { limit = { has_variable = tot_band_id NOT = { var:tot_band_id = 4 } } tot_clear_band_role_flags_effect = yes }
+		set_variable = { name = tot_band_id value = 4 }
+	}
+}
+
+tot_prepare_band_5_member_effect = {
+	scope:tot_band_member ?= {
+		if = { limit = { has_variable = tot_band_id NOT = { var:tot_band_id = 5 } } tot_clear_band_role_flags_effect = yes }
+		set_variable = { name = tot_band_id value = 5 }
+	}
+}
+
+tot_prepare_band_6_member_effect = {
+	scope:tot_band_member ?= {
+		if = { limit = { has_variable = tot_band_id NOT = { var:tot_band_id = 6 } } tot_clear_band_role_flags_effect = yes }
+		set_variable = { name = tot_band_id value = 6 }
+	}
+}
+
+tot_prepare_band_7_member_effect = {
+	scope:tot_band_member ?= {
+		if = { limit = { has_variable = tot_band_id NOT = { var:tot_band_id = 7 } } tot_clear_band_role_flags_effect = yes }
+		set_variable = { name = tot_band_id value = 7 }
+	}
+}
+
+tot_prepare_band_8_member_effect = {
+	scope:tot_band_member ?= {
+		if = { limit = { has_variable = tot_band_id NOT = { var:tot_band_id = 8 } } tot_clear_band_role_flags_effect = yes }
+		set_variable = { name = tot_band_id value = 8 }
+	}
+}
+
+tot_prepare_band_9_member_effect = {
+	scope:tot_band_member ?= {
+		if = { limit = { has_variable = tot_band_id NOT = { var:tot_band_id = 9 } } tot_clear_band_role_flags_effect = yes }
+		set_variable = { name = tot_band_id value = 9 }
+	}
+}
+
+tot_prepare_band_10_member_effect = {
+	scope:tot_band_member ?= {
+		if = { limit = { has_variable = tot_band_id NOT = { var:tot_band_id = 10 } } tot_clear_band_role_flags_effect = yes }
+		set_variable = { name = tot_band_id value = 10 }
+	}
+}
+
+tot_add_band_vocalist_role_effect = {
+	scope:tot_band_member ?= {
+		set_variable = { name = tot_band_role_vocalist value = 1 }
+		if = { limit = { has_trait = tot_lead_vocalist_trait } add_trait = tot_is_supper_lead_vocalist_trait }
+		if = { limit = { NOT = { has_trait = tot_lead_vocalist_trait } } add_trait = tot_is_lead_vocalist_trait }
+	}
+}
+
+tot_add_band_guitarist_role_effect = {
+	scope:tot_band_member ?= {
+		tot_clear_band_instrument_flags_effect = yes
+		set_variable = { name = tot_band_role_guitarist value = 1 }
+		add_trait = tot_is_guitarist_trait
+	}
+}
+
+tot_add_band_bassist_role_effect = {
+	scope:tot_band_member ?= {
+		tot_clear_band_instrument_flags_effect = yes
+		set_variable = { name = tot_band_role_bassist value = 1 }
+		add_trait = tot_is_bassist_trait
+	}
+}
+
+tot_add_band_keyboardist_role_effect = {
+	scope:tot_band_member ?= {
+		tot_clear_band_instrument_flags_effect = yes
+		set_variable = { name = tot_band_role_keyboardist value = 1 }
+		add_trait = tot_is_keyboardist_trait
+	}
+}
+
+tot_add_band_drummer_role_effect = {
+	scope:tot_band_member ?= {
+		tot_clear_band_instrument_flags_effect = yes
+		set_variable = { name = tot_band_role_drummer value = 1 }
+		add_trait = tot_is_drummer_trait
+	}
+}
+
+tot_appoint_band_1_vocalist_effect = {
+	tot_prepare_band_1_member_effect = yes
+	tot_add_band_vocalist_role_effect = yes
+}
+
+tot_appoint_band_1_guitarist_effect = {
+	tot_prepare_band_1_member_effect = yes
+	tot_add_band_guitarist_role_effect = yes
+}
+
+tot_appoint_band_1_bassist_effect = {
+	tot_prepare_band_1_member_effect = yes
+	tot_add_band_bassist_role_effect = yes
+}
+
+tot_appoint_band_1_keyboardist_effect = {
+	tot_prepare_band_1_member_effect = yes
+	tot_add_band_keyboardist_role_effect = yes
+}
+
+tot_appoint_band_1_drummer_effect = {
+	tot_prepare_band_1_member_effect = yes
+	tot_add_band_drummer_role_effect = yes
+}
+
+tot_appoint_band_2_vocalist_effect = {
+	tot_prepare_band_2_member_effect = yes
+	tot_add_band_vocalist_role_effect = yes
+}
+
+tot_appoint_band_2_guitarist_effect = {
+	tot_prepare_band_2_member_effect = yes
+	tot_add_band_guitarist_role_effect = yes
+}
+
+tot_appoint_band_2_bassist_effect = {
+	tot_prepare_band_2_member_effect = yes
+	tot_add_band_bassist_role_effect = yes
+}
+
+tot_appoint_band_2_keyboardist_effect = {
+	tot_prepare_band_2_member_effect = yes
+	tot_add_band_keyboardist_role_effect = yes
+}
+
+tot_appoint_band_2_drummer_effect = {
+	tot_prepare_band_2_member_effect = yes
+	tot_add_band_drummer_role_effect = yes
+}
+
+tot_appoint_band_3_vocalist_effect = {
+	tot_prepare_band_3_member_effect = yes
+	tot_add_band_vocalist_role_effect = yes
+}
+
+tot_appoint_band_3_guitarist_effect = {
+	tot_prepare_band_3_member_effect = yes
+	tot_add_band_guitarist_role_effect = yes
+}
+
+tot_appoint_band_3_bassist_effect = {
+	tot_prepare_band_3_member_effect = yes
+	tot_add_band_bassist_role_effect = yes
+}
+
+tot_appoint_band_3_keyboardist_effect = {
+	tot_prepare_band_3_member_effect = yes
+	tot_add_band_keyboardist_role_effect = yes
+}
+
+tot_appoint_band_3_drummer_effect = {
+	tot_prepare_band_3_member_effect = yes
+	tot_add_band_drummer_role_effect = yes
+}
+
+tot_appoint_band_4_vocalist_effect = {
+	tot_prepare_band_4_member_effect = yes
+	tot_add_band_vocalist_role_effect = yes
+}
+
+tot_appoint_band_4_guitarist_effect = {
+	tot_prepare_band_4_member_effect = yes
+	tot_add_band_guitarist_role_effect = yes
+}
+
+tot_appoint_band_4_bassist_effect = {
+	tot_prepare_band_4_member_effect = yes
+	tot_add_band_bassist_role_effect = yes
+}
+
+tot_appoint_band_4_keyboardist_effect = {
+	tot_prepare_band_4_member_effect = yes
+	tot_add_band_keyboardist_role_effect = yes
+}
+
+tot_appoint_band_4_drummer_effect = {
+	tot_prepare_band_4_member_effect = yes
+	tot_add_band_drummer_role_effect = yes
+}
+
+tot_appoint_band_5_vocalist_effect = {
+	tot_prepare_band_5_member_effect = yes
+	tot_add_band_vocalist_role_effect = yes
+}
+
+tot_appoint_band_5_guitarist_effect = {
+	tot_prepare_band_5_member_effect = yes
+	tot_add_band_guitarist_role_effect = yes
+}
+
+tot_appoint_band_5_bassist_effect = {
+	tot_prepare_band_5_member_effect = yes
+	tot_add_band_bassist_role_effect = yes
+}
+
+tot_appoint_band_5_keyboardist_effect = {
+	tot_prepare_band_5_member_effect = yes
+	tot_add_band_keyboardist_role_effect = yes
+}
+
+tot_appoint_band_5_drummer_effect = {
+	tot_prepare_band_5_member_effect = yes
+	tot_add_band_drummer_role_effect = yes
+}
+
+tot_appoint_band_6_vocalist_effect = {
+	tot_prepare_band_6_member_effect = yes
+	tot_add_band_vocalist_role_effect = yes
+}
+
+tot_appoint_band_6_guitarist_effect = {
+	tot_prepare_band_6_member_effect = yes
+	tot_add_band_guitarist_role_effect = yes
+}
+
+tot_appoint_band_6_bassist_effect = {
+	tot_prepare_band_6_member_effect = yes
+	tot_add_band_bassist_role_effect = yes
+}
+
+tot_appoint_band_6_keyboardist_effect = {
+	tot_prepare_band_6_member_effect = yes
+	tot_add_band_keyboardist_role_effect = yes
+}
+
+tot_appoint_band_6_drummer_effect = {
+	tot_prepare_band_6_member_effect = yes
+	tot_add_band_drummer_role_effect = yes
+}
+
+tot_appoint_band_7_vocalist_effect = {
+	tot_prepare_band_7_member_effect = yes
+	tot_add_band_vocalist_role_effect = yes
+}
+
+tot_appoint_band_7_guitarist_effect = {
+	tot_prepare_band_7_member_effect = yes
+	tot_add_band_guitarist_role_effect = yes
+}
+
+tot_appoint_band_7_bassist_effect = {
+	tot_prepare_band_7_member_effect = yes
+	tot_add_band_bassist_role_effect = yes
+}
+
+tot_appoint_band_7_keyboardist_effect = {
+	tot_prepare_band_7_member_effect = yes
+	tot_add_band_keyboardist_role_effect = yes
+}
+
+tot_appoint_band_7_drummer_effect = {
+	tot_prepare_band_7_member_effect = yes
+	tot_add_band_drummer_role_effect = yes
+}
+
+tot_appoint_band_8_vocalist_effect = {
+	tot_prepare_band_8_member_effect = yes
+	tot_add_band_vocalist_role_effect = yes
+}
+
+tot_appoint_band_8_guitarist_effect = {
+	tot_prepare_band_8_member_effect = yes
+	tot_add_band_guitarist_role_effect = yes
+}
+
+tot_appoint_band_8_bassist_effect = {
+	tot_prepare_band_8_member_effect = yes
+	tot_add_band_bassist_role_effect = yes
+}
+
+tot_appoint_band_8_keyboardist_effect = {
+	tot_prepare_band_8_member_effect = yes
+	tot_add_band_keyboardist_role_effect = yes
+}
+
+tot_appoint_band_8_drummer_effect = {
+	tot_prepare_band_8_member_effect = yes
+	tot_add_band_drummer_role_effect = yes
+}
+
+tot_appoint_band_9_vocalist_effect = {
+	tot_prepare_band_9_member_effect = yes
+	tot_add_band_vocalist_role_effect = yes
+}
+
+tot_appoint_band_9_guitarist_effect = {
+	tot_prepare_band_9_member_effect = yes
+	tot_add_band_guitarist_role_effect = yes
+}
+
+tot_appoint_band_9_bassist_effect = {
+	tot_prepare_band_9_member_effect = yes
+	tot_add_band_bassist_role_effect = yes
+}
+
+tot_appoint_band_9_keyboardist_effect = {
+	tot_prepare_band_9_member_effect = yes
+	tot_add_band_keyboardist_role_effect = yes
+}
+
+tot_appoint_band_9_drummer_effect = {
+	tot_prepare_band_9_member_effect = yes
+	tot_add_band_drummer_role_effect = yes
+}
+
+tot_appoint_band_10_vocalist_effect = {
+	tot_prepare_band_10_member_effect = yes
+	tot_add_band_vocalist_role_effect = yes
+}
+
+tot_appoint_band_10_guitarist_effect = {
+	tot_prepare_band_10_member_effect = yes
+	tot_add_band_guitarist_role_effect = yes
+}
+
+tot_appoint_band_10_bassist_effect = {
+	tot_prepare_band_10_member_effect = yes
+	tot_add_band_bassist_role_effect = yes
+}
+
+tot_appoint_band_10_keyboardist_effect = {
+	tot_prepare_band_10_member_effect = yes
+	tot_add_band_keyboardist_role_effect = yes
+}
+
+tot_appoint_band_10_drummer_effect = {
+	tot_prepare_band_10_member_effect = yes
+	tot_add_band_drummer_role_effect = yes
+}
+
 add_kon_kizuna_modifier = {
 	if = {
 		limit = {
@@ -242,3 +1072,1766 @@ add_kon_kizuna_modifier = {
 		remove_modifier = kon_kizuna_modifier_5
 	}
 }
+# BEGIN GENERATED TOT KIZUNA GROUP EFFECTS
+update_tot_kizuna_groups = {
+	if = {
+		limit = { has_variable_list = tot_kizuna_001_list }
+		clear_variable_list = tot_kizuna_001_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_002_list }
+		clear_variable_list = tot_kizuna_002_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_003_list }
+		clear_variable_list = tot_kizuna_003_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_004_list }
+		clear_variable_list = tot_kizuna_004_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_005_list }
+		clear_variable_list = tot_kizuna_005_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_006_list }
+		clear_variable_list = tot_kizuna_006_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_007_list }
+		clear_variable_list = tot_kizuna_007_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_008_list }
+		clear_variable_list = tot_kizuna_008_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_009_list }
+		clear_variable_list = tot_kizuna_009_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_010_list }
+		clear_variable_list = tot_kizuna_010_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_012_list }
+		clear_variable_list = tot_kizuna_012_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_013_list }
+		clear_variable_list = tot_kizuna_013_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_014_list }
+		clear_variable_list = tot_kizuna_014_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_015_list }
+		clear_variable_list = tot_kizuna_015_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_016_list }
+		clear_variable_list = tot_kizuna_016_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_017_list }
+		clear_variable_list = tot_kizuna_017_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_018_list }
+		clear_variable_list = tot_kizuna_018_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_019_list }
+		clear_variable_list = tot_kizuna_019_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_020_list }
+		clear_variable_list = tot_kizuna_020_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_021_list }
+		clear_variable_list = tot_kizuna_021_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_022_list }
+		clear_variable_list = tot_kizuna_022_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_023_list }
+		clear_variable_list = tot_kizuna_023_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_024_list }
+		clear_variable_list = tot_kizuna_024_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_025_list }
+		clear_variable_list = tot_kizuna_025_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_026_list }
+		clear_variable_list = tot_kizuna_026_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_027_list }
+		clear_variable_list = tot_kizuna_027_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_028_list }
+		clear_variable_list = tot_kizuna_028_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_029_list }
+		clear_variable_list = tot_kizuna_029_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_030_list }
+		clear_variable_list = tot_kizuna_030_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_031_list }
+		clear_variable_list = tot_kizuna_031_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_032_list }
+		clear_variable_list = tot_kizuna_032_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_033_list }
+		clear_variable_list = tot_kizuna_033_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_034_list }
+		clear_variable_list = tot_kizuna_034_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_035_list }
+		clear_variable_list = tot_kizuna_035_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_036_list }
+		clear_variable_list = tot_kizuna_036_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_037_list }
+		clear_variable_list = tot_kizuna_037_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_038_list }
+		clear_variable_list = tot_kizuna_038_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_039_list }
+		clear_variable_list = tot_kizuna_039_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_040_list }
+		clear_variable_list = tot_kizuna_040_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_041_list }
+		clear_variable_list = tot_kizuna_041_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_042_list }
+		clear_variable_list = tot_kizuna_042_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_043_list }
+		clear_variable_list = tot_kizuna_043_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_044_list }
+		clear_variable_list = tot_kizuna_044_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_045_list }
+		clear_variable_list = tot_kizuna_045_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_046_list }
+		clear_variable_list = tot_kizuna_046_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_047_list }
+		clear_variable_list = tot_kizuna_047_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_048_list }
+		clear_variable_list = tot_kizuna_048_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_049_list }
+		clear_variable_list = tot_kizuna_049_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_050_list }
+		clear_variable_list = tot_kizuna_050_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_051_list }
+		clear_variable_list = tot_kizuna_051_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_052_list }
+		clear_variable_list = tot_kizuna_052_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_053_list }
+		clear_variable_list = tot_kizuna_053_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_054_list }
+		clear_variable_list = tot_kizuna_054_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_055_list }
+		clear_variable_list = tot_kizuna_055_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_056_list }
+		clear_variable_list = tot_kizuna_056_list
+	}
+	if = {
+		limit = { has_variable_list = tot_kizuna_057_list }
+		clear_variable_list = tot_kizuna_057_list
+	}
+
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_001_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_001_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_002_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_002_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_003_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_003_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_004_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_004_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_005_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_005_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_006_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_006_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_007_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_007_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_008_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_008_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_009_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_009_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_010_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_010_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_012_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_012_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_013_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_013_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_014_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_014_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_015_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_015_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_016_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_016_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_017_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_017_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_018_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_018_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_019_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_019_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_020_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_020_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_021_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_021_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_022_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_022_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_023_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_023_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_024_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_024_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_025_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_025_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_026_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_026_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_027_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_027_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_028_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_028_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_029_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_029_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_030_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_030_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_031_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_031_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_032_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_032_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_033_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_033_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_034_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_034_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_035_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_035_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_036_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_036_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_037_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_037_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_038_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_038_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_039_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_039_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_040_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_040_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_041_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_041_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_042_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_042_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_043_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_043_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_044_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_044_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_045_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_045_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_046_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_046_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_047_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_047_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_048_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_048_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_049_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_049_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_050_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_050_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_051_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_051_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_052_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_052_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_053_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_053_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_054_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_054_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_055_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_055_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_056_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_056_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_057_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_057_list
+				target = prev
+			}
+		}
+	}
+}
+
+# END GENERATED TOT KIZUNA GROUP EFFECTS
+
+# Profession and specialty kizuna should count qualifying domestic characters by trait,
+# independent from the faction-only government/ruler restrictions above.
+update_tot_kizuna_profession_specialty_groups = {
+	if = { limit = { has_variable_list = tot_kizuna_020_display_list } clear_variable_list = tot_kizuna_020_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_021_display_list } clear_variable_list = tot_kizuna_021_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_022_display_list } clear_variable_list = tot_kizuna_022_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_023_display_list } clear_variable_list = tot_kizuna_023_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_024_display_list } clear_variable_list = tot_kizuna_024_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_025_display_list } clear_variable_list = tot_kizuna_025_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_026_display_list } clear_variable_list = tot_kizuna_026_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_027_display_list } clear_variable_list = tot_kizuna_027_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_028_display_list } clear_variable_list = tot_kizuna_028_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_029_display_list } clear_variable_list = tot_kizuna_029_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_030_display_list } clear_variable_list = tot_kizuna_030_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_031_display_list } clear_variable_list = tot_kizuna_031_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_032_display_list } clear_variable_list = tot_kizuna_032_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_033_display_list } clear_variable_list = tot_kizuna_033_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_034_display_list } clear_variable_list = tot_kizuna_034_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_035_display_list } clear_variable_list = tot_kizuna_035_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_036_display_list } clear_variable_list = tot_kizuna_036_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_037_display_list } clear_variable_list = tot_kizuna_037_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_038_display_list } clear_variable_list = tot_kizuna_038_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_039_display_list } clear_variable_list = tot_kizuna_039_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_040_display_list } clear_variable_list = tot_kizuna_040_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_041_display_list } clear_variable_list = tot_kizuna_041_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_042_display_list } clear_variable_list = tot_kizuna_042_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_043_display_list } clear_variable_list = tot_kizuna_043_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_044_display_list } clear_variable_list = tot_kizuna_044_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_045_display_list } clear_variable_list = tot_kizuna_045_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_046_display_list } clear_variable_list = tot_kizuna_046_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_047_display_list } clear_variable_list = tot_kizuna_047_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_048_display_list } clear_variable_list = tot_kizuna_048_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_049_display_list } clear_variable_list = tot_kizuna_049_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_050_display_list } clear_variable_list = tot_kizuna_050_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_051_display_list } clear_variable_list = tot_kizuna_051_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_052_display_list } clear_variable_list = tot_kizuna_052_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_053_display_list } clear_variable_list = tot_kizuna_053_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_054_display_list } clear_variable_list = tot_kizuna_054_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_055_display_list } clear_variable_list = tot_kizuna_055_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_056_display_list } clear_variable_list = tot_kizuna_056_display_list }
+	if = { limit = { has_variable_list = tot_kizuna_057_display_list } clear_variable_list = tot_kizuna_057_display_list }
+
+	every_scope_character = {
+		limit = { is_character_alive = yes }
+		if = { limit = { has_trait = tot_group_sheet_020_trait } root = { add_to_variable_list = { name = tot_kizuna_020_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_021_trait } root = { add_to_variable_list = { name = tot_kizuna_021_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_022_trait } root = { add_to_variable_list = { name = tot_kizuna_022_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_023_trait } root = { add_to_variable_list = { name = tot_kizuna_023_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_024_trait } root = { add_to_variable_list = { name = tot_kizuna_024_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_025_trait } root = { add_to_variable_list = { name = tot_kizuna_025_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_026_trait } root = { add_to_variable_list = { name = tot_kizuna_026_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_027_trait } root = { add_to_variable_list = { name = tot_kizuna_027_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_028_trait } root = { add_to_variable_list = { name = tot_kizuna_028_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_029_trait } root = { add_to_variable_list = { name = tot_kizuna_029_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_030_trait } root = { add_to_variable_list = { name = tot_kizuna_030_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_031_trait } root = { add_to_variable_list = { name = tot_kizuna_031_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_032_trait } root = { add_to_variable_list = { name = tot_kizuna_032_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_033_trait } root = { add_to_variable_list = { name = tot_kizuna_033_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_034_trait } root = { add_to_variable_list = { name = tot_kizuna_034_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_035_trait } root = { add_to_variable_list = { name = tot_kizuna_035_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_036_trait } root = { add_to_variable_list = { name = tot_kizuna_036_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_037_trait } root = { add_to_variable_list = { name = tot_kizuna_037_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_038_trait } root = { add_to_variable_list = { name = tot_kizuna_038_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_039_trait } root = { add_to_variable_list = { name = tot_kizuna_039_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_040_trait } root = { add_to_variable_list = { name = tot_kizuna_040_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_041_trait } root = { add_to_variable_list = { name = tot_kizuna_041_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_042_trait } root = { add_to_variable_list = { name = tot_kizuna_042_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_043_trait } root = { add_to_variable_list = { name = tot_kizuna_043_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_044_trait } root = { add_to_variable_list = { name = tot_kizuna_044_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_045_trait } root = { add_to_variable_list = { name = tot_kizuna_045_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_046_trait } root = { add_to_variable_list = { name = tot_kizuna_046_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_047_trait } root = { add_to_variable_list = { name = tot_kizuna_047_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_048_trait } root = { add_to_variable_list = { name = tot_kizuna_048_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_049_trait } root = { add_to_variable_list = { name = tot_kizuna_049_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_050_trait } root = { add_to_variable_list = { name = tot_kizuna_050_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_051_trait } root = { add_to_variable_list = { name = tot_kizuna_051_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_052_trait } root = { add_to_variable_list = { name = tot_kizuna_052_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_053_trait } root = { add_to_variable_list = { name = tot_kizuna_053_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_054_trait } root = { add_to_variable_list = { name = tot_kizuna_054_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_055_trait } root = { add_to_variable_list = { name = tot_kizuna_055_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_056_trait } root = { add_to_variable_list = { name = tot_kizuna_056_display_list target = prev } } }
+		if = { limit = { has_trait = tot_group_sheet_057_trait } root = { add_to_variable_list = { name = tot_kizuna_057_display_list target = prev } } }
+	}
+}
+
+update_tot_kizuna_faction_default_modifiers = {
+	je:je_kizuna_gui = {
+		remove_modifier = tot_kizuna_faction_tier_2_modifier
+		remove_modifier = tot_kizuna_faction_tier_3_modifier
+		remove_modifier = tot_kizuna_faction_tier_4_modifier
+		remove_modifier = tot_kizuna_faction_tier_5_modifier
+	}
+
+	if = {
+		limit = {
+			OR = {
+				tot_kizuna_001_number >= 2
+				tot_kizuna_002_number >= 2
+				tot_kizuna_003_number >= 2
+				tot_kizuna_004_number >= 2
+				tot_kizuna_005_number >= 2
+				tot_kizuna_006_number >= 2
+				tot_kizuna_007_number >= 2
+				tot_kizuna_008_number >= 2
+				tot_kizuna_009_number >= 2
+				tot_kizuna_010_number >= 2
+				tot_kizuna_012_number >= 2
+				tot_kizuna_013_number >= 2
+				tot_kizuna_014_number >= 2
+				tot_kizuna_015_number >= 2
+				tot_kizuna_016_number >= 2
+				tot_kizuna_017_number >= 2
+				tot_kizuna_018_number >= 2
+				tot_kizuna_019_number >= 2
+			}
+		}
+		je:je_kizuna_gui = { add_modifier = tot_kizuna_faction_tier_2_modifier }
+	}
+
+	if = {
+		limit = {
+			OR = {
+				tot_kizuna_001_number >= 3
+				tot_kizuna_002_number >= 3
+				tot_kizuna_003_number >= 3
+				tot_kizuna_004_number >= 3
+				tot_kizuna_005_number >= 3
+				tot_kizuna_006_number >= 3
+				tot_kizuna_007_number >= 3
+				tot_kizuna_008_number >= 3
+				tot_kizuna_009_number >= 3
+				tot_kizuna_010_number >= 3
+				tot_kizuna_012_number >= 3
+				tot_kizuna_013_number >= 3
+				tot_kizuna_014_number >= 3
+				tot_kizuna_015_number >= 3
+				tot_kizuna_016_number >= 3
+				tot_kizuna_017_number >= 3
+				tot_kizuna_018_number >= 3
+				tot_kizuna_019_number >= 3
+			}
+		}
+		je:je_kizuna_gui = { add_modifier = tot_kizuna_faction_tier_3_modifier }
+	}
+
+	if = {
+		limit = {
+			OR = {
+				tot_kizuna_001_number >= 4
+				tot_kizuna_002_number >= 4
+				tot_kizuna_003_number >= 4
+				tot_kizuna_004_number >= 4
+				tot_kizuna_005_number >= 4
+				tot_kizuna_006_number >= 4
+				tot_kizuna_007_number >= 4
+				tot_kizuna_008_number >= 4
+				tot_kizuna_009_number >= 4
+				tot_kizuna_010_number >= 4
+				tot_kizuna_012_number >= 4
+				tot_kizuna_013_number >= 4
+				tot_kizuna_014_number >= 4
+				tot_kizuna_015_number >= 4
+				tot_kizuna_016_number >= 4
+				tot_kizuna_017_number >= 4
+				tot_kizuna_018_number >= 4
+				tot_kizuna_019_number >= 4
+			}
+		}
+		je:je_kizuna_gui = { add_modifier = tot_kizuna_faction_tier_4_modifier }
+	}
+
+	if = {
+		limit = {
+			OR = {
+				tot_kizuna_001_number >= 5
+				tot_kizuna_002_number >= 5
+				tot_kizuna_003_number >= 5
+				tot_kizuna_004_number >= 5
+				tot_kizuna_005_number >= 5
+				tot_kizuna_006_number >= 5
+				tot_kizuna_007_number >= 5
+				tot_kizuna_008_number >= 5
+				tot_kizuna_009_number >= 5
+				tot_kizuna_010_number >= 5
+				tot_kizuna_012_number >= 5
+				tot_kizuna_013_number >= 5
+				tot_kizuna_014_number >= 5
+				tot_kizuna_015_number >= 5
+				tot_kizuna_016_number >= 5
+				tot_kizuna_017_number >= 5
+				tot_kizuna_018_number >= 5
+				tot_kizuna_019_number >= 5
+			}
+		}
+		je:je_kizuna_gui = { add_modifier = tot_kizuna_faction_tier_5_modifier }
+	}
+}
+
+tot_band_check_rewards = {
+	if = { limit = { var:tot_band_limit >= 1 } tot_band_1_check_rewards = yes }
+	if = { limit = { var:tot_band_limit >= 2 } tot_band_2_check_rewards = yes }
+	if = { limit = { var:tot_band_limit >= 3 } tot_band_3_check_rewards = yes }
+	if = { limit = { var:tot_band_limit >= 4 } tot_band_4_check_rewards = yes }
+	if = { limit = { var:tot_band_limit >= 5 } tot_band_5_check_rewards = yes }
+	if = { limit = { var:tot_band_limit >= 6 } tot_band_6_check_rewards = yes }
+	if = { limit = { var:tot_band_limit >= 7 } tot_band_7_check_rewards = yes }
+	if = { limit = { var:tot_band_limit >= 8 } tot_band_8_check_rewards = yes }
+	if = { limit = { var:tot_band_limit >= 9 } tot_band_9_check_rewards = yes }
+	if = { limit = { var:tot_band_limit >= 10 } tot_band_10_check_rewards = yes }
+}
+
+# BEGIN GENERATED TOT BAND PER BAND
+tot_band_weekly_update = {
+	if = { limit = { var:tot_band_limit >= 1 NOT = { has_variable = tot_band_1_creation_progress } } set_variable = { name = tot_band_1_creation_progress value = 0 } }
+	if = { limit = { var:tot_band_limit >= 1 } change_variable = { name = tot_band_1_creation_progress add = band_1_kizuna_creation_weekly_gain_value } tot_band_1_check_rewards = yes }
+	if = { limit = { var:tot_band_limit >= 2 NOT = { has_variable = tot_band_2_creation_progress } } set_variable = { name = tot_band_2_creation_progress value = 0 } }
+	if = { limit = { var:tot_band_limit >= 2 } change_variable = { name = tot_band_2_creation_progress add = band_2_kizuna_creation_weekly_gain_value } tot_band_2_check_rewards = yes }
+	if = { limit = { var:tot_band_limit >= 3 NOT = { has_variable = tot_band_3_creation_progress } } set_variable = { name = tot_band_3_creation_progress value = 0 } }
+	if = { limit = { var:tot_band_limit >= 3 } change_variable = { name = tot_band_3_creation_progress add = band_3_kizuna_creation_weekly_gain_value } tot_band_3_check_rewards = yes }
+	if = { limit = { var:tot_band_limit >= 4 NOT = { has_variable = tot_band_4_creation_progress } } set_variable = { name = tot_band_4_creation_progress value = 0 } }
+	if = { limit = { var:tot_band_limit >= 4 } change_variable = { name = tot_band_4_creation_progress add = band_4_kizuna_creation_weekly_gain_value } tot_band_4_check_rewards = yes }
+	if = { limit = { var:tot_band_limit >= 5 NOT = { has_variable = tot_band_5_creation_progress } } set_variable = { name = tot_band_5_creation_progress value = 0 } }
+	if = { limit = { var:tot_band_limit >= 5 } change_variable = { name = tot_band_5_creation_progress add = band_5_kizuna_creation_weekly_gain_value } tot_band_5_check_rewards = yes }
+	if = { limit = { var:tot_band_limit >= 6 NOT = { has_variable = tot_band_6_creation_progress } } set_variable = { name = tot_band_6_creation_progress value = 0 } }
+	if = { limit = { var:tot_band_limit >= 6 } change_variable = { name = tot_band_6_creation_progress add = band_6_kizuna_creation_weekly_gain_value } tot_band_6_check_rewards = yes }
+	if = { limit = { var:tot_band_limit >= 7 NOT = { has_variable = tot_band_7_creation_progress } } set_variable = { name = tot_band_7_creation_progress value = 0 } }
+	if = { limit = { var:tot_band_limit >= 7 } change_variable = { name = tot_band_7_creation_progress add = band_7_kizuna_creation_weekly_gain_value } tot_band_7_check_rewards = yes }
+	if = { limit = { var:tot_band_limit >= 8 NOT = { has_variable = tot_band_8_creation_progress } } set_variable = { name = tot_band_8_creation_progress value = 0 } }
+	if = { limit = { var:tot_band_limit >= 8 } change_variable = { name = tot_band_8_creation_progress add = band_8_kizuna_creation_weekly_gain_value } tot_band_8_check_rewards = yes }
+	if = { limit = { var:tot_band_limit >= 9 NOT = { has_variable = tot_band_9_creation_progress } } set_variable = { name = tot_band_9_creation_progress value = 0 } }
+	if = { limit = { var:tot_band_limit >= 9 } change_variable = { name = tot_band_9_creation_progress add = band_9_kizuna_creation_weekly_gain_value } tot_band_9_check_rewards = yes }
+	if = { limit = { var:tot_band_limit >= 10 NOT = { has_variable = tot_band_10_creation_progress } } set_variable = { name = tot_band_10_creation_progress value = 0 } }
+	if = { limit = { var:tot_band_limit >= 10 } change_variable = { name = tot_band_10_creation_progress add = band_10_kizuna_creation_weekly_gain_value } tot_band_10_check_rewards = yes }
+	update_kizuna = yes
+}
+
+tot_band_1_check_rewards = {
+	if = {
+		limit = { var:tot_band_1_creation_progress >= 1000 NOT = { has_variable = tot_band_1_tier_1_claimed } }
+		set_variable = { name = tot_band_1_tier_1_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_1_modifier
+	}	if = {
+		limit = { var:tot_band_1_creation_progress >= 3000 NOT = { has_variable = tot_band_1_tier_2_claimed } }
+		set_variable = { name = tot_band_1_tier_2_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_2_modifier
+	}	if = {
+		limit = { var:tot_band_1_creation_progress >= 7000 NOT = { has_variable = tot_band_1_tier_3_claimed } }
+		set_variable = { name = tot_band_1_tier_3_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_3_modifier
+	}	if = {
+		limit = { var:tot_band_1_creation_progress >= 15000 NOT = { has_variable = tot_band_1_tier_4_claimed } }
+		set_variable = { name = tot_band_1_tier_4_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_4_modifier
+	}	if = {
+		limit = { var:tot_band_1_creation_progress >= 30000 NOT = { has_variable = tot_band_1_tier_5_claimed } }
+		set_variable = { name = tot_band_1_tier_5_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_5_modifier
+	}}
+
+tot_band_2_check_rewards = {
+	if = {
+		limit = { var:tot_band_2_creation_progress >= 1000 NOT = { has_variable = tot_band_2_tier_1_claimed } }
+		set_variable = { name = tot_band_2_tier_1_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_1_modifier
+	}	if = {
+		limit = { var:tot_band_2_creation_progress >= 3000 NOT = { has_variable = tot_band_2_tier_2_claimed } }
+		set_variable = { name = tot_band_2_tier_2_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_2_modifier
+	}	if = {
+		limit = { var:tot_band_2_creation_progress >= 7000 NOT = { has_variable = tot_band_2_tier_3_claimed } }
+		set_variable = { name = tot_band_2_tier_3_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_3_modifier
+	}	if = {
+		limit = { var:tot_band_2_creation_progress >= 15000 NOT = { has_variable = tot_band_2_tier_4_claimed } }
+		set_variable = { name = tot_band_2_tier_4_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_4_modifier
+	}	if = {
+		limit = { var:tot_band_2_creation_progress >= 30000 NOT = { has_variable = tot_band_2_tier_5_claimed } }
+		set_variable = { name = tot_band_2_tier_5_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_5_modifier
+	}}
+
+tot_band_3_check_rewards = {
+	if = {
+		limit = { var:tot_band_3_creation_progress >= 1000 NOT = { has_variable = tot_band_3_tier_1_claimed } }
+		set_variable = { name = tot_band_3_tier_1_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_1_modifier
+	}	if = {
+		limit = { var:tot_band_3_creation_progress >= 3000 NOT = { has_variable = tot_band_3_tier_2_claimed } }
+		set_variable = { name = tot_band_3_tier_2_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_2_modifier
+	}	if = {
+		limit = { var:tot_band_3_creation_progress >= 7000 NOT = { has_variable = tot_band_3_tier_3_claimed } }
+		set_variable = { name = tot_band_3_tier_3_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_3_modifier
+	}	if = {
+		limit = { var:tot_band_3_creation_progress >= 15000 NOT = { has_variable = tot_band_3_tier_4_claimed } }
+		set_variable = { name = tot_band_3_tier_4_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_4_modifier
+	}	if = {
+		limit = { var:tot_band_3_creation_progress >= 30000 NOT = { has_variable = tot_band_3_tier_5_claimed } }
+		set_variable = { name = tot_band_3_tier_5_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_5_modifier
+	}}
+
+tot_band_4_check_rewards = {
+	if = {
+		limit = { var:tot_band_4_creation_progress >= 1000 NOT = { has_variable = tot_band_4_tier_1_claimed } }
+		set_variable = { name = tot_band_4_tier_1_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_1_modifier
+	}	if = {
+		limit = { var:tot_band_4_creation_progress >= 3000 NOT = { has_variable = tot_band_4_tier_2_claimed } }
+		set_variable = { name = tot_band_4_tier_2_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_2_modifier
+	}	if = {
+		limit = { var:tot_band_4_creation_progress >= 7000 NOT = { has_variable = tot_band_4_tier_3_claimed } }
+		set_variable = { name = tot_band_4_tier_3_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_3_modifier
+	}	if = {
+		limit = { var:tot_band_4_creation_progress >= 15000 NOT = { has_variable = tot_band_4_tier_4_claimed } }
+		set_variable = { name = tot_band_4_tier_4_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_4_modifier
+	}	if = {
+		limit = { var:tot_band_4_creation_progress >= 30000 NOT = { has_variable = tot_band_4_tier_5_claimed } }
+		set_variable = { name = tot_band_4_tier_5_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_5_modifier
+	}}
+
+tot_band_5_check_rewards = {
+	if = {
+		limit = { var:tot_band_5_creation_progress >= 1000 NOT = { has_variable = tot_band_5_tier_1_claimed } }
+		set_variable = { name = tot_band_5_tier_1_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_1_modifier
+	}	if = {
+		limit = { var:tot_band_5_creation_progress >= 3000 NOT = { has_variable = tot_band_5_tier_2_claimed } }
+		set_variable = { name = tot_band_5_tier_2_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_2_modifier
+	}	if = {
+		limit = { var:tot_band_5_creation_progress >= 7000 NOT = { has_variable = tot_band_5_tier_3_claimed } }
+		set_variable = { name = tot_band_5_tier_3_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_3_modifier
+	}	if = {
+		limit = { var:tot_band_5_creation_progress >= 15000 NOT = { has_variable = tot_band_5_tier_4_claimed } }
+		set_variable = { name = tot_band_5_tier_4_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_4_modifier
+	}	if = {
+		limit = { var:tot_band_5_creation_progress >= 30000 NOT = { has_variable = tot_band_5_tier_5_claimed } }
+		set_variable = { name = tot_band_5_tier_5_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_5_modifier
+	}}
+
+tot_band_6_check_rewards = {
+	if = {
+		limit = { var:tot_band_6_creation_progress >= 1000 NOT = { has_variable = tot_band_6_tier_1_claimed } }
+		set_variable = { name = tot_band_6_tier_1_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_1_modifier
+	}	if = {
+		limit = { var:tot_band_6_creation_progress >= 3000 NOT = { has_variable = tot_band_6_tier_2_claimed } }
+		set_variable = { name = tot_band_6_tier_2_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_2_modifier
+	}	if = {
+		limit = { var:tot_band_6_creation_progress >= 7000 NOT = { has_variable = tot_band_6_tier_3_claimed } }
+		set_variable = { name = tot_band_6_tier_3_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_3_modifier
+	}	if = {
+		limit = { var:tot_band_6_creation_progress >= 15000 NOT = { has_variable = tot_band_6_tier_4_claimed } }
+		set_variable = { name = tot_band_6_tier_4_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_4_modifier
+	}	if = {
+		limit = { var:tot_band_6_creation_progress >= 30000 NOT = { has_variable = tot_band_6_tier_5_claimed } }
+		set_variable = { name = tot_band_6_tier_5_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_5_modifier
+	}}
+
+tot_band_7_check_rewards = {
+	if = {
+		limit = { var:tot_band_7_creation_progress >= 1000 NOT = { has_variable = tot_band_7_tier_1_claimed } }
+		set_variable = { name = tot_band_7_tier_1_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_1_modifier
+	}	if = {
+		limit = { var:tot_band_7_creation_progress >= 3000 NOT = { has_variable = tot_band_7_tier_2_claimed } }
+		set_variable = { name = tot_band_7_tier_2_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_2_modifier
+	}	if = {
+		limit = { var:tot_band_7_creation_progress >= 7000 NOT = { has_variable = tot_band_7_tier_3_claimed } }
+		set_variable = { name = tot_band_7_tier_3_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_3_modifier
+	}	if = {
+		limit = { var:tot_band_7_creation_progress >= 15000 NOT = { has_variable = tot_band_7_tier_4_claimed } }
+		set_variable = { name = tot_band_7_tier_4_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_4_modifier
+	}	if = {
+		limit = { var:tot_band_7_creation_progress >= 30000 NOT = { has_variable = tot_band_7_tier_5_claimed } }
+		set_variable = { name = tot_band_7_tier_5_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_5_modifier
+	}}
+
+tot_band_8_check_rewards = {
+	if = {
+		limit = { var:tot_band_8_creation_progress >= 1000 NOT = { has_variable = tot_band_8_tier_1_claimed } }
+		set_variable = { name = tot_band_8_tier_1_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_1_modifier
+	}	if = {
+		limit = { var:tot_band_8_creation_progress >= 3000 NOT = { has_variable = tot_band_8_tier_2_claimed } }
+		set_variable = { name = tot_band_8_tier_2_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_2_modifier
+	}	if = {
+		limit = { var:tot_band_8_creation_progress >= 7000 NOT = { has_variable = tot_band_8_tier_3_claimed } }
+		set_variable = { name = tot_band_8_tier_3_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_3_modifier
+	}	if = {
+		limit = { var:tot_band_8_creation_progress >= 15000 NOT = { has_variable = tot_band_8_tier_4_claimed } }
+		set_variable = { name = tot_band_8_tier_4_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_4_modifier
+	}	if = {
+		limit = { var:tot_band_8_creation_progress >= 30000 NOT = { has_variable = tot_band_8_tier_5_claimed } }
+		set_variable = { name = tot_band_8_tier_5_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_5_modifier
+	}}
+
+tot_band_9_check_rewards = {
+	if = {
+		limit = { var:tot_band_9_creation_progress >= 1000 NOT = { has_variable = tot_band_9_tier_1_claimed } }
+		set_variable = { name = tot_band_9_tier_1_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_1_modifier
+	}	if = {
+		limit = { var:tot_band_9_creation_progress >= 3000 NOT = { has_variable = tot_band_9_tier_2_claimed } }
+		set_variable = { name = tot_band_9_tier_2_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_2_modifier
+	}	if = {
+		limit = { var:tot_band_9_creation_progress >= 7000 NOT = { has_variable = tot_band_9_tier_3_claimed } }
+		set_variable = { name = tot_band_9_tier_3_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_3_modifier
+	}	if = {
+		limit = { var:tot_band_9_creation_progress >= 15000 NOT = { has_variable = tot_band_9_tier_4_claimed } }
+		set_variable = { name = tot_band_9_tier_4_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_4_modifier
+	}	if = {
+		limit = { var:tot_band_9_creation_progress >= 30000 NOT = { has_variable = tot_band_9_tier_5_claimed } }
+		set_variable = { name = tot_band_9_tier_5_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_5_modifier
+	}}
+
+tot_band_10_check_rewards = {
+	if = {
+		limit = { var:tot_band_10_creation_progress >= 1000 NOT = { has_variable = tot_band_10_tier_1_claimed } }
+		set_variable = { name = tot_band_10_tier_1_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_1_modifier
+	}	if = {
+		limit = { var:tot_band_10_creation_progress >= 3000 NOT = { has_variable = tot_band_10_tier_2_claimed } }
+		set_variable = { name = tot_band_10_tier_2_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_2_modifier
+	}	if = {
+		limit = { var:tot_band_10_creation_progress >= 7000 NOT = { has_variable = tot_band_10_tier_3_claimed } }
+		set_variable = { name = tot_band_10_tier_3_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_3_modifier
+	}	if = {
+		limit = { var:tot_band_10_creation_progress >= 15000 NOT = { has_variable = tot_band_10_tier_4_claimed } }
+		set_variable = { name = tot_band_10_tier_4_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_4_modifier
+	}	if = {
+		limit = { var:tot_band_10_creation_progress >= 30000 NOT = { has_variable = tot_band_10_tier_5_claimed } }
+		set_variable = { name = tot_band_10_tier_5_claimed value = 1 }
+		add_modifier = tot_band_reward_tier_5_modifier
+	}}
+
+# END GENERATED TOT BAND PER BAND
+

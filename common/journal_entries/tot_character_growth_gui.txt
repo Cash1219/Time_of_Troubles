@@ -1,0 +1,31 @@
+je_tot_character_growth_gui = {
+	icon = "gfx/interface/icons/character_role_icons/agitator.dds"
+
+	group = je_group_tot_character_growth
+	widget = {
+		gui = "gui/tot_character_growth.gui"
+		name = "widget_je_tot_character_growth"
+		container = "custom_widget_container_3"
+	}
+
+	is_shown_when_inactive = {
+	}
+
+	possible = {
+	}
+
+	immediate = {
+		tot_character_growth_refresh = yes
+	}
+
+	on_weekly_pulse = {
+		effect = {
+			tot_character_growth_refresh = yes
+			tot_character_growth_weekly_update = yes
+		}
+	}
+
+	weight = 10001
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	can_revolution_inherit = yes
+}

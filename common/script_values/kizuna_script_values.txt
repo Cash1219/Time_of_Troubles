@@ -20,13 +20,13 @@ band_kizuna_number = {
 	value = 0
 	every_scope_character = {
 		limit = {
+			has_variable = tot_band_id
 			OR = {
-				has_trait = tot_drummer_trait
-				has_trait = tot_guitarist_trait
-				has_trait = tot_bassist_trait
-				has_trait = tot_keyboardist_trait
-				has_trait = tot_lead_vocalist_trait
-				has_trait = tot_is_supper_lead_vocalist_trait
+				has_variable = tot_band_role_drummer
+				has_variable = tot_band_role_guitarist
+				has_variable = tot_band_role_bassist
+				has_variable = tot_band_role_keyboardist
+				has_variable = tot_band_role_vocalist
 			}
 		}
 		add = 1
@@ -36,15 +36,43 @@ band_kizuna_exp_progress = {
 	value = 5
 	every_scope_character = {
 		limit = {
+			has_variable = tot_band_id
 			OR = {
-				has_trait = tot_drummer_trait
-				has_trait = tot_guitarist_trait
-				has_trait = tot_bassist_trait
-				has_trait = tot_keyboardist_trait
-				has_trait = tot_lead_vocalist_trait
+				has_variable = tot_band_role_drummer
+				has_variable = tot_band_role_guitarist
+				has_variable = tot_band_role_bassist
+				has_variable = tot_band_role_keyboardist
+				has_variable = tot_band_role_vocalist
 			}
 		}
 		add = 3
+	}
+	every_scope_character = {
+		limit = {
+			OR = {
+				AND = {
+					has_variable = tot_band_role_drummer
+					has_trait = tot_drummer_trait
+				}
+				AND = {
+					has_variable = tot_band_role_guitarist
+					has_trait = tot_guitarist_trait
+				}
+				AND = {
+					has_variable = tot_band_role_bassist
+					has_trait = tot_bassist_trait
+				}
+				AND = {
+					has_variable = tot_band_role_keyboardist
+					has_trait = tot_keyboardist_trait
+				}
+				AND = {
+					has_variable = tot_band_role_vocalist
+					has_trait = tot_lead_vocalist_trait
+				}
+			}
+		}
+		add = 2
 	}
 	every_scope_character = {
 		limit = {
@@ -57,15 +85,43 @@ band_kizuna_creation_progress = {
 	value = 10
 	every_scope_character = {
 		limit = {
+			has_variable = tot_band_id
 			OR = {
-				has_trait = tot_drummer_trait
-				has_trait = tot_guitarist_trait
-				has_trait = tot_bassist_trait
-				has_trait = tot_keyboardist_trait
-				has_trait = tot_lead_vocalist_trait
+				has_variable = tot_band_role_drummer
+				has_variable = tot_band_role_guitarist
+				has_variable = tot_band_role_bassist
+				has_variable = tot_band_role_keyboardist
+				has_variable = tot_band_role_vocalist
 			}
 		}
 		add = 3
+	}
+	every_scope_character = {
+		limit = {
+			OR = {
+				AND = {
+					has_variable = tot_band_role_drummer
+					has_trait = tot_drummer_trait
+				}
+				AND = {
+					has_variable = tot_band_role_guitarist
+					has_trait = tot_guitarist_trait
+				}
+				AND = {
+					has_variable = tot_band_role_bassist
+					has_trait = tot_bassist_trait
+				}
+				AND = {
+					has_variable = tot_band_role_keyboardist
+					has_trait = tot_keyboardist_trait
+				}
+				AND = {
+					has_variable = tot_band_role_vocalist
+					has_trait = tot_lead_vocalist_trait
+				}
+			}
+		}
+		add = 2
 	}
 	every_scope_character = {
 		limit = {
@@ -73,6 +129,116 @@ band_kizuna_creation_progress = {
 		}
 		add = 10
 	}
+}
+
+band_kizuna_creation_base_gain_value = {
+	value = 10
+	every_scope_character = {
+		limit = {
+			has_variable = tot_band_id
+			OR = {
+				has_variable = tot_band_role_drummer
+				has_variable = tot_band_role_guitarist
+				has_variable = tot_band_role_bassist
+				has_variable = tot_band_role_keyboardist
+				has_variable = tot_band_role_vocalist
+			}
+		}
+		add = 3
+	}
+	every_scope_character = {
+		limit = {
+			OR = {
+				AND = { has_variable = tot_band_role_drummer has_trait = tot_drummer_trait }
+				AND = { has_variable = tot_band_role_guitarist has_trait = tot_guitarist_trait }
+				AND = { has_variable = tot_band_role_bassist has_trait = tot_bassist_trait }
+				AND = { has_variable = tot_band_role_keyboardist has_trait = tot_keyboardist_trait }
+				AND = { has_variable = tot_band_role_vocalist has_trait = tot_lead_vocalist_trait }
+			}
+		}
+		add = 2
+	}
+	every_scope_character = {
+		limit = { has_trait = tot_is_supper_lead_vocalist_trait }
+		add = 10
+	}
+}
+
+band_kizuna_resource_weekly_gain_value = {
+	value = 0
+	if = { limit = { has_variable = tot_band_invest_musical_instrument var:tot_band_invest_musical_instrument > 0 market.mg:musical_instrument = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_invest_paper var:tot_band_invest_paper > 0 market.mg:paper = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_invest_luxury_clothes var:tot_band_invest_luxury_clothes > 0 market.mg:luxury_clothes = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_invest_transportation var:tot_band_invest_transportation > 0 market.mg:transportation = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_invest_automobiles var:tot_band_invest_automobiles > 0 market.mg:automobiles = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_invest_radios var:tot_band_invest_radios > 0 market.mg:radios = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_invest_fruit var:tot_band_invest_fruit > 0 market.mg:fruit = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_invest_tea var:tot_band_invest_tea > 0 market.mg:tea = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_invest_coffee var:tot_band_invest_coffee > 0 market.mg:coffee = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_invest_groceries var:tot_band_invest_groceries > 0 market.mg:groceries = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_invest_luxury_drinks var:tot_band_invest_luxury_drinks > 0 market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_invest_luxury_foods var:tot_band_invest_luxury_foods > 0 market.mg:luxury_foods = { market_goods_sell_orders >= 50 } } add = 5 }
+}
+
+band_kizuna_resource_variety_count_value = {
+	value = 0
+	if = { limit = { has_variable = tot_band_invest_musical_instrument var:tot_band_invest_musical_instrument > 0 market.mg:musical_instrument = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_invest_paper var:tot_band_invest_paper > 0 market.mg:paper = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_invest_luxury_clothes var:tot_band_invest_luxury_clothes > 0 market.mg:luxury_clothes = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_invest_transportation var:tot_band_invest_transportation > 0 market.mg:transportation = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_invest_automobiles var:tot_band_invest_automobiles > 0 market.mg:automobiles = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_invest_radios var:tot_band_invest_radios > 0 market.mg:radios = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_invest_fruit var:tot_band_invest_fruit > 0 market.mg:fruit = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_invest_tea var:tot_band_invest_tea > 0 market.mg:tea = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_invest_coffee var:tot_band_invest_coffee > 0 market.mg:coffee = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_invest_groceries var:tot_band_invest_groceries > 0 market.mg:groceries = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_invest_luxury_drinks var:tot_band_invest_luxury_drinks > 0 market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_invest_luxury_foods var:tot_band_invest_luxury_foods > 0 market.mg:luxury_foods = { market_goods_sell_orders >= 50 } } add = 1 }
+}
+
+band_kizuna_resource_multiplier_percent_value = {
+	value = 100
+	if = { limit = { band_kizuna_resource_variety_count_value >= 2 } add = 10 }
+	if = { limit = { band_kizuna_resource_variety_count_value >= 3 } add = 10 }
+	if = { limit = { band_kizuna_resource_variety_count_value >= 4 } add = 10 }
+	if = { limit = { band_kizuna_resource_variety_count_value >= 5 } add = 10 }
+	if = { limit = { band_kizuna_resource_variety_count_value >= 6 } add = 10 }
+	if = { limit = { band_kizuna_resource_variety_count_value >= 7 } add = 10 }
+	if = { limit = { band_kizuna_resource_variety_count_value >= 8 } add = 10 }
+	if = { limit = { band_kizuna_resource_variety_count_value >= 9 } add = 10 }
+	if = { limit = { band_kizuna_resource_variety_count_value >= 10 } add = 10 }
+	if = { limit = { band_kizuna_resource_variety_count_value >= 11 } add = 10 }
+	if = { limit = { band_kizuna_resource_variety_count_value >= 12 } add = 10 }
+}
+
+band_kizuna_creation_weekly_gain_value = {
+	value = band_kizuna_creation_base_gain_value
+	add = band_kizuna_resource_weekly_gain_value
+	multiply = band_kizuna_resource_multiplier_percent_value
+	divide = 100
+}
+
+band_kizuna_creation_progress_bar_value = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_band_creation_progress }
+		add = var:tot_band_creation_progress
+	}
+	divide = 30000
+	min = 0
+	max = 1
+}
+
+band_kizuna_creation_progress_level_value = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_band_creation_progress }
+		add = var:tot_band_creation_progress
+	}
+	multiply = 100
+	divide = 30000
+	min = 0
+	max = 100
 }
 kon_kizuna_yui = {
 	value = 0
@@ -144,3 +310,2237 @@ kon_kizuna_azusa = {
 		add = 1
 	}
 }
+# BEGIN GENERATED TOT KIZUNA GROUP VALUES
+tot_kizuna_001_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_001_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_002_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_002_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_003_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_003_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_004_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_004_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_005_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_005_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_006_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_006_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_007_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_007_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_008_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_008_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_009_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_009_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_010_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_010_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_012_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_012_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_013_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_013_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_014_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_014_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_015_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_015_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_016_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_016_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_017_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_017_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_018_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_018_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_019_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_019_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_020_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_020_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_021_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_021_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_022_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_022_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_023_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_023_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_024_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_024_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_025_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_025_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_026_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_026_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_027_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_027_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_028_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_028_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_029_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_029_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_030_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_030_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_031_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_031_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_032_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_032_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_033_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_033_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_034_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_034_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_035_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_035_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_036_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_036_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_037_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_037_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_038_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_038_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_039_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_039_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_040_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_040_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_041_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_041_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_042_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_042_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_043_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_043_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_044_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_044_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_045_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_045_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_046_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_046_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_047_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_047_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_048_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_048_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_049_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_049_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_050_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_050_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_051_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_051_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_052_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_052_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_053_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_053_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_054_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_054_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_055_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_055_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_056_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_056_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+tot_kizuna_057_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_057_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+# END GENERATED TOT KIZUNA GROUP VALUES
+
+tot_gourmet_progress_bar_value = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_gourmet_progress }
+		add = var:tot_gourmet_progress
+	}
+	divide = 30000
+	min = 0
+	max = 1
+}
+
+tot_gourmet_variety_count_value = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_gourmet_invest_grain var:tot_gourmet_invest_grain > 0 }
+		add = 1
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_meat var:tot_gourmet_invest_meat > 0 }
+		add = 1
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_fish var:tot_gourmet_invest_fish > 0 }
+		add = 1
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_fruit var:tot_gourmet_invest_fruit > 0 }
+		add = 1
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_groceries var:tot_gourmet_invest_groceries > 0 }
+		add = 1
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_tea }
+		add = 1
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_coffee }
+		add = 1
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_luxury_drinks }
+		add = 1
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_luxury_foods }
+		add = 1
+	}
+}
+
+tot_gourmet_total_investment_value = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_gourmet_invest_grain }
+		add = 5
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_meat }
+		add = 5
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_fish }
+		add = 5
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_fruit }
+		add = 5
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_groceries }
+		add = 5
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_tea }
+		add = 5
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_coffee }
+		add = 5
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_luxury_drinks }
+		add = 5
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_luxury_foods }
+		add = 5
+	}
+}
+
+tot_gourmet_base_weekly_gain_value = {
+	value = 0
+
+	every_scope_character = {
+		limit = {
+			is_character_alive = yes
+			has_trait = tot_group_sheet_038_trait
+		}
+		add = 3
+	}
+}
+
+tot_gourmet_character_count_value = {
+	value = 0
+
+	every_scope_character = {
+		limit = {
+			is_character_alive = yes
+			has_trait = tot_group_sheet_038_trait
+		}
+		add = 1
+	}
+}
+
+tot_gourmet_government_multiplier_percent_value = {
+	value = 100
+
+	every_scope_character = {
+		limit = {
+			is_character_alive = yes
+			has_trait = tot_group_sheet_038_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 3
+	}
+}
+
+tot_gourmet_government_character_count_value = {
+	value = 0
+
+	every_scope_character = {
+		limit = {
+			is_character_alive = yes
+			has_trait = tot_group_sheet_038_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
+
+tot_gourmet_variety_bonus_value = {
+	value = 0
+
+	if = {
+		limit = { tot_gourmet_variety_count_value >= 2 }
+		add = 3
+	}
+	if = {
+		limit = { tot_gourmet_variety_count_value >= 3 }
+		add = 3
+	}
+	if = {
+		limit = { tot_gourmet_variety_count_value >= 4 }
+		add = 3
+	}
+	if = {
+		limit = { tot_gourmet_variety_count_value >= 5 }
+		add = 3
+	}
+	if = {
+		limit = { tot_gourmet_variety_count_value >= 6 }
+		add = 3
+	}
+	if = {
+		limit = { tot_gourmet_variety_count_value >= 7 }
+		add = 3
+	}
+	if = {
+		limit = { tot_gourmet_variety_count_value >= 8 }
+		add = 3
+	}
+	if = {
+		limit = { tot_gourmet_variety_count_value >= 9 }
+		add = 3
+	}
+}
+
+tot_gourmet_weekly_gain_value = {
+	value = tot_gourmet_base_weekly_gain_value
+
+	if = {
+		limit = { has_variable = tot_gourmet_invest_grain market.mg:grain = { market_goods_sell_orders >= 50 } }
+		add = 5
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_meat market.mg:meat = { market_goods_sell_orders >= 50 } }
+		add = 5
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_fish market.mg:fish = { market_goods_sell_orders >= 50 } }
+		add = 5
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_fruit market.mg:fruit = { market_goods_sell_orders >= 50 } }
+		add = 5
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_groceries market.mg:groceries = { market_goods_sell_orders >= 50 } }
+		add = 5
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_tea market.mg:tea = { market_goods_sell_orders >= 50 } }
+		add = 5
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_coffee market.mg:coffee = { market_goods_sell_orders >= 50 } }
+		add = 5
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_luxury_drinks market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } }
+		add = 5
+	}
+	if = {
+		limit = { has_variable = tot_gourmet_invest_luxury_foods market.mg:luxury_foods = { market_goods_sell_orders >= 50 } }
+		add = 5
+	}
+
+	add = tot_gourmet_variety_bonus_value
+
+	multiply = tot_gourmet_government_multiplier_percent_value
+	divide = 100
+}
+
+tot_gourmet_current_level_value = {
+	value = 0
+	if = { limit = { has_variable = tot_gourmet_progress var:tot_gourmet_progress >= 3500 } add = 1 }
+	if = { limit = { has_variable = tot_gourmet_progress var:tot_gourmet_progress >= 8500 } add = 1 }
+	if = { limit = { has_variable = tot_gourmet_progress var:tot_gourmet_progress >= 14000 } add = 1 }
+	if = { limit = { has_variable = tot_gourmet_progress var:tot_gourmet_progress >= 36000 } add = 1 }
+}
+# BEGIN GENERATED TOT BAND PER BAND
+band_1_kizuna_creation_base_gain_value = {
+	value = 10
+	every_scope_character = {
+		limit = {
+			has_variable = tot_band_id
+			var:tot_band_id = 1
+			OR = {
+				has_variable = tot_band_role_drummer
+				has_variable = tot_band_role_guitarist
+				has_variable = tot_band_role_bassist
+				has_variable = tot_band_role_keyboardist
+				has_variable = tot_band_role_vocalist
+			}
+		}
+		add = 3
+	}
+	every_scope_character = {
+		limit = {
+			has_variable = tot_band_id
+			var:tot_band_id = 1
+			OR = {
+				AND = { has_variable = tot_band_role_drummer has_trait = tot_drummer_trait }
+				AND = { has_variable = tot_band_role_guitarist has_trait = tot_guitarist_trait }
+				AND = { has_variable = tot_band_role_bassist has_trait = tot_bassist_trait }
+				AND = { has_variable = tot_band_role_keyboardist has_trait = tot_keyboardist_trait }
+				AND = { has_variable = tot_band_role_vocalist has_trait = tot_lead_vocalist_trait }
+			}
+		}
+		add = 2
+	}
+	every_scope_character = {
+		limit = { has_variable = tot_band_id var:tot_band_id = 1 has_trait = tot_is_supper_lead_vocalist_trait }
+		add = 10
+	}
+}
+
+band_1_kizuna_resource_weekly_gain_value = {
+	value = 0	if = { limit = { has_variable = tot_band_1_invest_musical_instrument var:tot_band_1_invest_musical_instrument > 0 market.mg:musical_instrument = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_1_invest_paper var:tot_band_1_invest_paper > 0 market.mg:paper = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_1_invest_luxury_clothes var:tot_band_1_invest_luxury_clothes > 0 market.mg:luxury_clothes = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_1_invest_transportation var:tot_band_1_invest_transportation > 0 market.mg:transportation = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_1_invest_automobiles var:tot_band_1_invest_automobiles > 0 market.mg:automobiles = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_1_invest_radios var:tot_band_1_invest_radios > 0 market.mg:radios = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_1_invest_fruit var:tot_band_1_invest_fruit > 0 market.mg:fruit = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_1_invest_tea var:tot_band_1_invest_tea > 0 market.mg:tea = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_1_invest_coffee var:tot_band_1_invest_coffee > 0 market.mg:coffee = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_1_invest_groceries var:tot_band_1_invest_groceries > 0 market.mg:groceries = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_1_invest_luxury_drinks var:tot_band_1_invest_luxury_drinks > 0 market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_1_invest_luxury_foods var:tot_band_1_invest_luxury_foods > 0 market.mg:luxury_foods = { market_goods_sell_orders >= 50 } } add = 5 }
+}
+
+band_1_kizuna_resource_variety_count_value = {
+	value = 0
+	if = { limit = { has_variable = tot_band_1_invest_musical_instrument var:tot_band_1_invest_musical_instrument > 0 market.mg:musical_instrument = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_1_invest_paper var:tot_band_1_invest_paper > 0 market.mg:paper = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_1_invest_luxury_clothes var:tot_band_1_invest_luxury_clothes > 0 market.mg:luxury_clothes = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_1_invest_transportation var:tot_band_1_invest_transportation > 0 market.mg:transportation = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_1_invest_automobiles var:tot_band_1_invest_automobiles > 0 market.mg:automobiles = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_1_invest_radios var:tot_band_1_invest_radios > 0 market.mg:radios = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_1_invest_fruit var:tot_band_1_invest_fruit > 0 market.mg:fruit = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_1_invest_tea var:tot_band_1_invest_tea > 0 market.mg:tea = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_1_invest_coffee var:tot_band_1_invest_coffee > 0 market.mg:coffee = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_1_invest_groceries var:tot_band_1_invest_groceries > 0 market.mg:groceries = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_1_invest_luxury_drinks var:tot_band_1_invest_luxury_drinks > 0 market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_1_invest_luxury_foods var:tot_band_1_invest_luxury_foods > 0 market.mg:luxury_foods = { market_goods_sell_orders >= 50 } } add = 1 }
+}
+
+band_1_kizuna_resource_multiplier_percent_value = {
+	value = 100
+	if = { limit = { band_1_kizuna_resource_variety_count_value >= 2 } add = 10 }
+	if = { limit = { band_1_kizuna_resource_variety_count_value >= 3 } add = 10 }
+	if = { limit = { band_1_kizuna_resource_variety_count_value >= 4 } add = 10 }
+	if = { limit = { band_1_kizuna_resource_variety_count_value >= 5 } add = 10 }
+	if = { limit = { band_1_kizuna_resource_variety_count_value >= 6 } add = 10 }
+	if = { limit = { band_1_kizuna_resource_variety_count_value >= 7 } add = 10 }
+	if = { limit = { band_1_kizuna_resource_variety_count_value >= 8 } add = 10 }
+	if = { limit = { band_1_kizuna_resource_variety_count_value >= 9 } add = 10 }
+	if = { limit = { band_1_kizuna_resource_variety_count_value >= 10 } add = 10 }
+	if = { limit = { band_1_kizuna_resource_variety_count_value >= 11 } add = 10 }
+	if = { limit = { band_1_kizuna_resource_variety_count_value >= 12 } add = 10 }
+}
+
+band_1_kizuna_creation_weekly_gain_value = {
+	value = band_1_kizuna_creation_base_gain_value
+	add = band_1_kizuna_resource_weekly_gain_value
+	multiply = band_1_kizuna_resource_multiplier_percent_value
+	divide = 100
+}
+
+band_1_kizuna_creation_progress_bar_value = {
+	value = 0
+	if = { limit = { has_variable = tot_band_1_creation_progress } add = var:tot_band_1_creation_progress }
+	multiply = 100
+	divide = 30000
+	min = 0
+	max = 100
+}
+band_2_kizuna_creation_base_gain_value = {
+	value = 10
+	every_scope_character = {
+		limit = {
+			has_variable = tot_band_id
+			var:tot_band_id = 2
+			OR = {
+				has_variable = tot_band_role_drummer
+				has_variable = tot_band_role_guitarist
+				has_variable = tot_band_role_bassist
+				has_variable = tot_band_role_keyboardist
+				has_variable = tot_band_role_vocalist
+			}
+		}
+		add = 3
+	}
+	every_scope_character = {
+		limit = {
+			has_variable = tot_band_id
+			var:tot_band_id = 2
+			OR = {
+				AND = { has_variable = tot_band_role_drummer has_trait = tot_drummer_trait }
+				AND = { has_variable = tot_band_role_guitarist has_trait = tot_guitarist_trait }
+				AND = { has_variable = tot_band_role_bassist has_trait = tot_bassist_trait }
+				AND = { has_variable = tot_band_role_keyboardist has_trait = tot_keyboardist_trait }
+				AND = { has_variable = tot_band_role_vocalist has_trait = tot_lead_vocalist_trait }
+			}
+		}
+		add = 2
+	}
+	every_scope_character = {
+		limit = { has_variable = tot_band_id var:tot_band_id = 2 has_trait = tot_is_supper_lead_vocalist_trait }
+		add = 10
+	}
+}
+
+band_2_kizuna_resource_weekly_gain_value = {
+	value = 0	if = { limit = { has_variable = tot_band_2_invest_musical_instrument var:tot_band_2_invest_musical_instrument > 0 market.mg:musical_instrument = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_2_invest_paper var:tot_band_2_invest_paper > 0 market.mg:paper = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_2_invest_luxury_clothes var:tot_band_2_invest_luxury_clothes > 0 market.mg:luxury_clothes = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_2_invest_transportation var:tot_band_2_invest_transportation > 0 market.mg:transportation = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_2_invest_automobiles var:tot_band_2_invest_automobiles > 0 market.mg:automobiles = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_2_invest_radios var:tot_band_2_invest_radios > 0 market.mg:radios = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_2_invest_fruit var:tot_band_2_invest_fruit > 0 market.mg:fruit = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_2_invest_tea var:tot_band_2_invest_tea > 0 market.mg:tea = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_2_invest_coffee var:tot_band_2_invest_coffee > 0 market.mg:coffee = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_2_invest_groceries var:tot_band_2_invest_groceries > 0 market.mg:groceries = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_2_invest_luxury_drinks var:tot_band_2_invest_luxury_drinks > 0 market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_2_invest_luxury_foods var:tot_band_2_invest_luxury_foods > 0 market.mg:luxury_foods = { market_goods_sell_orders >= 50 } } add = 5 }
+}
+
+band_2_kizuna_resource_variety_count_value = {
+	value = 0
+	if = { limit = { has_variable = tot_band_2_invest_musical_instrument var:tot_band_2_invest_musical_instrument > 0 market.mg:musical_instrument = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_2_invest_paper var:tot_band_2_invest_paper > 0 market.mg:paper = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_2_invest_luxury_clothes var:tot_band_2_invest_luxury_clothes > 0 market.mg:luxury_clothes = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_2_invest_transportation var:tot_band_2_invest_transportation > 0 market.mg:transportation = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_2_invest_automobiles var:tot_band_2_invest_automobiles > 0 market.mg:automobiles = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_2_invest_radios var:tot_band_2_invest_radios > 0 market.mg:radios = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_2_invest_fruit var:tot_band_2_invest_fruit > 0 market.mg:fruit = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_2_invest_tea var:tot_band_2_invest_tea > 0 market.mg:tea = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_2_invest_coffee var:tot_band_2_invest_coffee > 0 market.mg:coffee = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_2_invest_groceries var:tot_band_2_invest_groceries > 0 market.mg:groceries = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_2_invest_luxury_drinks var:tot_band_2_invest_luxury_drinks > 0 market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_2_invest_luxury_foods var:tot_band_2_invest_luxury_foods > 0 market.mg:luxury_foods = { market_goods_sell_orders >= 50 } } add = 1 }
+}
+
+band_2_kizuna_resource_multiplier_percent_value = {
+	value = 100
+	if = { limit = { band_2_kizuna_resource_variety_count_value >= 2 } add = 10 }
+	if = { limit = { band_2_kizuna_resource_variety_count_value >= 3 } add = 10 }
+	if = { limit = { band_2_kizuna_resource_variety_count_value >= 4 } add = 10 }
+	if = { limit = { band_2_kizuna_resource_variety_count_value >= 5 } add = 10 }
+	if = { limit = { band_2_kizuna_resource_variety_count_value >= 6 } add = 10 }
+	if = { limit = { band_2_kizuna_resource_variety_count_value >= 7 } add = 10 }
+	if = { limit = { band_2_kizuna_resource_variety_count_value >= 8 } add = 10 }
+	if = { limit = { band_2_kizuna_resource_variety_count_value >= 9 } add = 10 }
+	if = { limit = { band_2_kizuna_resource_variety_count_value >= 10 } add = 10 }
+	if = { limit = { band_2_kizuna_resource_variety_count_value >= 11 } add = 10 }
+	if = { limit = { band_2_kizuna_resource_variety_count_value >= 12 } add = 10 }
+}
+
+band_2_kizuna_creation_weekly_gain_value = {
+	value = band_2_kizuna_creation_base_gain_value
+	add = band_2_kizuna_resource_weekly_gain_value
+	multiply = band_2_kizuna_resource_multiplier_percent_value
+	divide = 100
+}
+
+band_2_kizuna_creation_progress_bar_value = {
+	value = 0
+	if = { limit = { has_variable = tot_band_2_creation_progress } add = var:tot_band_2_creation_progress }
+	multiply = 100
+	divide = 30000
+	min = 0
+	max = 100
+}
+band_3_kizuna_creation_base_gain_value = {
+	value = 10
+	every_scope_character = {
+		limit = {
+			has_variable = tot_band_id
+			var:tot_band_id = 3
+			OR = {
+				has_variable = tot_band_role_drummer
+				has_variable = tot_band_role_guitarist
+				has_variable = tot_band_role_bassist
+				has_variable = tot_band_role_keyboardist
+				has_variable = tot_band_role_vocalist
+			}
+		}
+		add = 3
+	}
+	every_scope_character = {
+		limit = {
+			has_variable = tot_band_id
+			var:tot_band_id = 3
+			OR = {
+				AND = { has_variable = tot_band_role_drummer has_trait = tot_drummer_trait }
+				AND = { has_variable = tot_band_role_guitarist has_trait = tot_guitarist_trait }
+				AND = { has_variable = tot_band_role_bassist has_trait = tot_bassist_trait }
+				AND = { has_variable = tot_band_role_keyboardist has_trait = tot_keyboardist_trait }
+				AND = { has_variable = tot_band_role_vocalist has_trait = tot_lead_vocalist_trait }
+			}
+		}
+		add = 2
+	}
+	every_scope_character = {
+		limit = { has_variable = tot_band_id var:tot_band_id = 3 has_trait = tot_is_supper_lead_vocalist_trait }
+		add = 10
+	}
+}
+
+band_3_kizuna_resource_weekly_gain_value = {
+	value = 0	if = { limit = { has_variable = tot_band_3_invest_musical_instrument var:tot_band_3_invest_musical_instrument > 0 market.mg:musical_instrument = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_3_invest_paper var:tot_band_3_invest_paper > 0 market.mg:paper = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_3_invest_luxury_clothes var:tot_band_3_invest_luxury_clothes > 0 market.mg:luxury_clothes = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_3_invest_transportation var:tot_band_3_invest_transportation > 0 market.mg:transportation = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_3_invest_automobiles var:tot_band_3_invest_automobiles > 0 market.mg:automobiles = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_3_invest_radios var:tot_band_3_invest_radios > 0 market.mg:radios = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_3_invest_fruit var:tot_band_3_invest_fruit > 0 market.mg:fruit = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_3_invest_tea var:tot_band_3_invest_tea > 0 market.mg:tea = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_3_invest_coffee var:tot_band_3_invest_coffee > 0 market.mg:coffee = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_3_invest_groceries var:tot_band_3_invest_groceries > 0 market.mg:groceries = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_3_invest_luxury_drinks var:tot_band_3_invest_luxury_drinks > 0 market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_3_invest_luxury_foods var:tot_band_3_invest_luxury_foods > 0 market.mg:luxury_foods = { market_goods_sell_orders >= 50 } } add = 5 }
+}
+
+band_3_kizuna_resource_variety_count_value = {
+	value = 0
+	if = { limit = { has_variable = tot_band_3_invest_musical_instrument var:tot_band_3_invest_musical_instrument > 0 market.mg:musical_instrument = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_3_invest_paper var:tot_band_3_invest_paper > 0 market.mg:paper = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_3_invest_luxury_clothes var:tot_band_3_invest_luxury_clothes > 0 market.mg:luxury_clothes = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_3_invest_transportation var:tot_band_3_invest_transportation > 0 market.mg:transportation = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_3_invest_automobiles var:tot_band_3_invest_automobiles > 0 market.mg:automobiles = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_3_invest_radios var:tot_band_3_invest_radios > 0 market.mg:radios = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_3_invest_fruit var:tot_band_3_invest_fruit > 0 market.mg:fruit = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_3_invest_tea var:tot_band_3_invest_tea > 0 market.mg:tea = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_3_invest_coffee var:tot_band_3_invest_coffee > 0 market.mg:coffee = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_3_invest_groceries var:tot_band_3_invest_groceries > 0 market.mg:groceries = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_3_invest_luxury_drinks var:tot_band_3_invest_luxury_drinks > 0 market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_3_invest_luxury_foods var:tot_band_3_invest_luxury_foods > 0 market.mg:luxury_foods = { market_goods_sell_orders >= 50 } } add = 1 }
+}
+
+band_3_kizuna_resource_multiplier_percent_value = {
+	value = 100
+	if = { limit = { band_3_kizuna_resource_variety_count_value >= 2 } add = 10 }
+	if = { limit = { band_3_kizuna_resource_variety_count_value >= 3 } add = 10 }
+	if = { limit = { band_3_kizuna_resource_variety_count_value >= 4 } add = 10 }
+	if = { limit = { band_3_kizuna_resource_variety_count_value >= 5 } add = 10 }
+	if = { limit = { band_3_kizuna_resource_variety_count_value >= 6 } add = 10 }
+	if = { limit = { band_3_kizuna_resource_variety_count_value >= 7 } add = 10 }
+	if = { limit = { band_3_kizuna_resource_variety_count_value >= 8 } add = 10 }
+	if = { limit = { band_3_kizuna_resource_variety_count_value >= 9 } add = 10 }
+	if = { limit = { band_3_kizuna_resource_variety_count_value >= 10 } add = 10 }
+	if = { limit = { band_3_kizuna_resource_variety_count_value >= 11 } add = 10 }
+	if = { limit = { band_3_kizuna_resource_variety_count_value >= 12 } add = 10 }
+}
+
+band_3_kizuna_creation_weekly_gain_value = {
+	value = band_3_kizuna_creation_base_gain_value
+	add = band_3_kizuna_resource_weekly_gain_value
+	multiply = band_3_kizuna_resource_multiplier_percent_value
+	divide = 100
+}
+
+band_3_kizuna_creation_progress_bar_value = {
+	value = 0
+	if = { limit = { has_variable = tot_band_3_creation_progress } add = var:tot_band_3_creation_progress }
+	multiply = 100
+	divide = 30000
+	min = 0
+	max = 100
+}
+band_4_kizuna_creation_base_gain_value = {
+	value = 10
+	every_scope_character = {
+		limit = {
+			has_variable = tot_band_id
+			var:tot_band_id = 4
+			OR = {
+				has_variable = tot_band_role_drummer
+				has_variable = tot_band_role_guitarist
+				has_variable = tot_band_role_bassist
+				has_variable = tot_band_role_keyboardist
+				has_variable = tot_band_role_vocalist
+			}
+		}
+		add = 3
+	}
+	every_scope_character = {
+		limit = {
+			has_variable = tot_band_id
+			var:tot_band_id = 4
+			OR = {
+				AND = { has_variable = tot_band_role_drummer has_trait = tot_drummer_trait }
+				AND = { has_variable = tot_band_role_guitarist has_trait = tot_guitarist_trait }
+				AND = { has_variable = tot_band_role_bassist has_trait = tot_bassist_trait }
+				AND = { has_variable = tot_band_role_keyboardist has_trait = tot_keyboardist_trait }
+				AND = { has_variable = tot_band_role_vocalist has_trait = tot_lead_vocalist_trait }
+			}
+		}
+		add = 2
+	}
+	every_scope_character = {
+		limit = { has_variable = tot_band_id var:tot_band_id = 4 has_trait = tot_is_supper_lead_vocalist_trait }
+		add = 10
+	}
+}
+
+band_4_kizuna_resource_weekly_gain_value = {
+	value = 0	if = { limit = { has_variable = tot_band_4_invest_musical_instrument var:tot_band_4_invest_musical_instrument > 0 market.mg:musical_instrument = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_4_invest_paper var:tot_band_4_invest_paper > 0 market.mg:paper = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_4_invest_luxury_clothes var:tot_band_4_invest_luxury_clothes > 0 market.mg:luxury_clothes = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_4_invest_transportation var:tot_band_4_invest_transportation > 0 market.mg:transportation = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_4_invest_automobiles var:tot_band_4_invest_automobiles > 0 market.mg:automobiles = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_4_invest_radios var:tot_band_4_invest_radios > 0 market.mg:radios = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_4_invest_fruit var:tot_band_4_invest_fruit > 0 market.mg:fruit = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_4_invest_tea var:tot_band_4_invest_tea > 0 market.mg:tea = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_4_invest_coffee var:tot_band_4_invest_coffee > 0 market.mg:coffee = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_4_invest_groceries var:tot_band_4_invest_groceries > 0 market.mg:groceries = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_4_invest_luxury_drinks var:tot_band_4_invest_luxury_drinks > 0 market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_4_invest_luxury_foods var:tot_band_4_invest_luxury_foods > 0 market.mg:luxury_foods = { market_goods_sell_orders >= 50 } } add = 5 }
+}
+
+band_4_kizuna_resource_variety_count_value = {
+	value = 0
+	if = { limit = { has_variable = tot_band_4_invest_musical_instrument var:tot_band_4_invest_musical_instrument > 0 market.mg:musical_instrument = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_4_invest_paper var:tot_band_4_invest_paper > 0 market.mg:paper = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_4_invest_luxury_clothes var:tot_band_4_invest_luxury_clothes > 0 market.mg:luxury_clothes = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_4_invest_transportation var:tot_band_4_invest_transportation > 0 market.mg:transportation = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_4_invest_automobiles var:tot_band_4_invest_automobiles > 0 market.mg:automobiles = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_4_invest_radios var:tot_band_4_invest_radios > 0 market.mg:radios = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_4_invest_fruit var:tot_band_4_invest_fruit > 0 market.mg:fruit = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_4_invest_tea var:tot_band_4_invest_tea > 0 market.mg:tea = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_4_invest_coffee var:tot_band_4_invest_coffee > 0 market.mg:coffee = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_4_invest_groceries var:tot_band_4_invest_groceries > 0 market.mg:groceries = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_4_invest_luxury_drinks var:tot_band_4_invest_luxury_drinks > 0 market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_4_invest_luxury_foods var:tot_band_4_invest_luxury_foods > 0 market.mg:luxury_foods = { market_goods_sell_orders >= 50 } } add = 1 }
+}
+
+band_4_kizuna_resource_multiplier_percent_value = {
+	value = 100
+	if = { limit = { band_4_kizuna_resource_variety_count_value >= 2 } add = 10 }
+	if = { limit = { band_4_kizuna_resource_variety_count_value >= 3 } add = 10 }
+	if = { limit = { band_4_kizuna_resource_variety_count_value >= 4 } add = 10 }
+	if = { limit = { band_4_kizuna_resource_variety_count_value >= 5 } add = 10 }
+	if = { limit = { band_4_kizuna_resource_variety_count_value >= 6 } add = 10 }
+	if = { limit = { band_4_kizuna_resource_variety_count_value >= 7 } add = 10 }
+	if = { limit = { band_4_kizuna_resource_variety_count_value >= 8 } add = 10 }
+	if = { limit = { band_4_kizuna_resource_variety_count_value >= 9 } add = 10 }
+	if = { limit = { band_4_kizuna_resource_variety_count_value >= 10 } add = 10 }
+	if = { limit = { band_4_kizuna_resource_variety_count_value >= 11 } add = 10 }
+	if = { limit = { band_4_kizuna_resource_variety_count_value >= 12 } add = 10 }
+}
+
+band_4_kizuna_creation_weekly_gain_value = {
+	value = band_4_kizuna_creation_base_gain_value
+	add = band_4_kizuna_resource_weekly_gain_value
+	multiply = band_4_kizuna_resource_multiplier_percent_value
+	divide = 100
+}
+
+band_4_kizuna_creation_progress_bar_value = {
+	value = 0
+	if = { limit = { has_variable = tot_band_4_creation_progress } add = var:tot_band_4_creation_progress }
+	multiply = 100
+	divide = 30000
+	min = 0
+	max = 100
+}
+band_5_kizuna_creation_base_gain_value = {
+	value = 10
+	every_scope_character = {
+		limit = {
+			has_variable = tot_band_id
+			var:tot_band_id = 5
+			OR = {
+				has_variable = tot_band_role_drummer
+				has_variable = tot_band_role_guitarist
+				has_variable = tot_band_role_bassist
+				has_variable = tot_band_role_keyboardist
+				has_variable = tot_band_role_vocalist
+			}
+		}
+		add = 3
+	}
+	every_scope_character = {
+		limit = {
+			has_variable = tot_band_id
+			var:tot_band_id = 5
+			OR = {
+				AND = { has_variable = tot_band_role_drummer has_trait = tot_drummer_trait }
+				AND = { has_variable = tot_band_role_guitarist has_trait = tot_guitarist_trait }
+				AND = { has_variable = tot_band_role_bassist has_trait = tot_bassist_trait }
+				AND = { has_variable = tot_band_role_keyboardist has_trait = tot_keyboardist_trait }
+				AND = { has_variable = tot_band_role_vocalist has_trait = tot_lead_vocalist_trait }
+			}
+		}
+		add = 2
+	}
+	every_scope_character = {
+		limit = { has_variable = tot_band_id var:tot_band_id = 5 has_trait = tot_is_supper_lead_vocalist_trait }
+		add = 10
+	}
+}
+
+band_5_kizuna_resource_weekly_gain_value = {
+	value = 0	if = { limit = { has_variable = tot_band_5_invest_musical_instrument var:tot_band_5_invest_musical_instrument > 0 market.mg:musical_instrument = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_5_invest_paper var:tot_band_5_invest_paper > 0 market.mg:paper = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_5_invest_luxury_clothes var:tot_band_5_invest_luxury_clothes > 0 market.mg:luxury_clothes = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_5_invest_transportation var:tot_band_5_invest_transportation > 0 market.mg:transportation = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_5_invest_automobiles var:tot_band_5_invest_automobiles > 0 market.mg:automobiles = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_5_invest_radios var:tot_band_5_invest_radios > 0 market.mg:radios = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_5_invest_fruit var:tot_band_5_invest_fruit > 0 market.mg:fruit = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_5_invest_tea var:tot_band_5_invest_tea > 0 market.mg:tea = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_5_invest_coffee var:tot_band_5_invest_coffee > 0 market.mg:coffee = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_5_invest_groceries var:tot_band_5_invest_groceries > 0 market.mg:groceries = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_5_invest_luxury_drinks var:tot_band_5_invest_luxury_drinks > 0 market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_5_invest_luxury_foods var:tot_band_5_invest_luxury_foods > 0 market.mg:luxury_foods = { market_goods_sell_orders >= 50 } } add = 5 }
+}
+
+band_5_kizuna_resource_variety_count_value = {
+	value = 0
+	if = { limit = { has_variable = tot_band_5_invest_musical_instrument var:tot_band_5_invest_musical_instrument > 0 market.mg:musical_instrument = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_5_invest_paper var:tot_band_5_invest_paper > 0 market.mg:paper = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_5_invest_luxury_clothes var:tot_band_5_invest_luxury_clothes > 0 market.mg:luxury_clothes = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_5_invest_transportation var:tot_band_5_invest_transportation > 0 market.mg:transportation = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_5_invest_automobiles var:tot_band_5_invest_automobiles > 0 market.mg:automobiles = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_5_invest_radios var:tot_band_5_invest_radios > 0 market.mg:radios = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_5_invest_fruit var:tot_band_5_invest_fruit > 0 market.mg:fruit = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_5_invest_tea var:tot_band_5_invest_tea > 0 market.mg:tea = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_5_invest_coffee var:tot_band_5_invest_coffee > 0 market.mg:coffee = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_5_invest_groceries var:tot_band_5_invest_groceries > 0 market.mg:groceries = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_5_invest_luxury_drinks var:tot_band_5_invest_luxury_drinks > 0 market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_5_invest_luxury_foods var:tot_band_5_invest_luxury_foods > 0 market.mg:luxury_foods = { market_goods_sell_orders >= 50 } } add = 1 }
+}
+
+band_5_kizuna_resource_multiplier_percent_value = {
+	value = 100
+	if = { limit = { band_5_kizuna_resource_variety_count_value >= 2 } add = 10 }
+	if = { limit = { band_5_kizuna_resource_variety_count_value >= 3 } add = 10 }
+	if = { limit = { band_5_kizuna_resource_variety_count_value >= 4 } add = 10 }
+	if = { limit = { band_5_kizuna_resource_variety_count_value >= 5 } add = 10 }
+	if = { limit = { band_5_kizuna_resource_variety_count_value >= 6 } add = 10 }
+	if = { limit = { band_5_kizuna_resource_variety_count_value >= 7 } add = 10 }
+	if = { limit = { band_5_kizuna_resource_variety_count_value >= 8 } add = 10 }
+	if = { limit = { band_5_kizuna_resource_variety_count_value >= 9 } add = 10 }
+	if = { limit = { band_5_kizuna_resource_variety_count_value >= 10 } add = 10 }
+	if = { limit = { band_5_kizuna_resource_variety_count_value >= 11 } add = 10 }
+	if = { limit = { band_5_kizuna_resource_variety_count_value >= 12 } add = 10 }
+}
+
+band_5_kizuna_creation_weekly_gain_value = {
+	value = band_5_kizuna_creation_base_gain_value
+	add = band_5_kizuna_resource_weekly_gain_value
+	multiply = band_5_kizuna_resource_multiplier_percent_value
+	divide = 100
+}
+
+band_5_kizuna_creation_progress_bar_value = {
+	value = 0
+	if = { limit = { has_variable = tot_band_5_creation_progress } add = var:tot_band_5_creation_progress }
+	multiply = 100
+	divide = 30000
+	min = 0
+	max = 100
+}
+band_6_kizuna_creation_base_gain_value = {
+	value = 10
+	every_scope_character = {
+		limit = {
+			has_variable = tot_band_id
+			var:tot_band_id = 6
+			OR = {
+				has_variable = tot_band_role_drummer
+				has_variable = tot_band_role_guitarist
+				has_variable = tot_band_role_bassist
+				has_variable = tot_band_role_keyboardist
+				has_variable = tot_band_role_vocalist
+			}
+		}
+		add = 3
+	}
+	every_scope_character = {
+		limit = {
+			has_variable = tot_band_id
+			var:tot_band_id = 6
+			OR = {
+				AND = { has_variable = tot_band_role_drummer has_trait = tot_drummer_trait }
+				AND = { has_variable = tot_band_role_guitarist has_trait = tot_guitarist_trait }
+				AND = { has_variable = tot_band_role_bassist has_trait = tot_bassist_trait }
+				AND = { has_variable = tot_band_role_keyboardist has_trait = tot_keyboardist_trait }
+				AND = { has_variable = tot_band_role_vocalist has_trait = tot_lead_vocalist_trait }
+			}
+		}
+		add = 2
+	}
+	every_scope_character = {
+		limit = { has_variable = tot_band_id var:tot_band_id = 6 has_trait = tot_is_supper_lead_vocalist_trait }
+		add = 10
+	}
+}
+
+band_6_kizuna_resource_weekly_gain_value = {
+	value = 0	if = { limit = { has_variable = tot_band_6_invest_musical_instrument var:tot_band_6_invest_musical_instrument > 0 market.mg:musical_instrument = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_6_invest_paper var:tot_band_6_invest_paper > 0 market.mg:paper = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_6_invest_luxury_clothes var:tot_band_6_invest_luxury_clothes > 0 market.mg:luxury_clothes = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_6_invest_transportation var:tot_band_6_invest_transportation > 0 market.mg:transportation = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_6_invest_automobiles var:tot_band_6_invest_automobiles > 0 market.mg:automobiles = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_6_invest_radios var:tot_band_6_invest_radios > 0 market.mg:radios = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_6_invest_fruit var:tot_band_6_invest_fruit > 0 market.mg:fruit = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_6_invest_tea var:tot_band_6_invest_tea > 0 market.mg:tea = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_6_invest_coffee var:tot_band_6_invest_coffee > 0 market.mg:coffee = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_6_invest_groceries var:tot_band_6_invest_groceries > 0 market.mg:groceries = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_6_invest_luxury_drinks var:tot_band_6_invest_luxury_drinks > 0 market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_6_invest_luxury_foods var:tot_band_6_invest_luxury_foods > 0 market.mg:luxury_foods = { market_goods_sell_orders >= 50 } } add = 5 }
+}
+
+band_6_kizuna_resource_variety_count_value = {
+	value = 0
+	if = { limit = { has_variable = tot_band_6_invest_musical_instrument var:tot_band_6_invest_musical_instrument > 0 market.mg:musical_instrument = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_6_invest_paper var:tot_band_6_invest_paper > 0 market.mg:paper = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_6_invest_luxury_clothes var:tot_band_6_invest_luxury_clothes > 0 market.mg:luxury_clothes = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_6_invest_transportation var:tot_band_6_invest_transportation > 0 market.mg:transportation = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_6_invest_automobiles var:tot_band_6_invest_automobiles > 0 market.mg:automobiles = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_6_invest_radios var:tot_band_6_invest_radios > 0 market.mg:radios = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_6_invest_fruit var:tot_band_6_invest_fruit > 0 market.mg:fruit = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_6_invest_tea var:tot_band_6_invest_tea > 0 market.mg:tea = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_6_invest_coffee var:tot_band_6_invest_coffee > 0 market.mg:coffee = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_6_invest_groceries var:tot_band_6_invest_groceries > 0 market.mg:groceries = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_6_invest_luxury_drinks var:tot_band_6_invest_luxury_drinks > 0 market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_6_invest_luxury_foods var:tot_band_6_invest_luxury_foods > 0 market.mg:luxury_foods = { market_goods_sell_orders >= 50 } } add = 1 }
+}
+
+band_6_kizuna_resource_multiplier_percent_value = {
+	value = 100
+	if = { limit = { band_6_kizuna_resource_variety_count_value >= 2 } add = 10 }
+	if = { limit = { band_6_kizuna_resource_variety_count_value >= 3 } add = 10 }
+	if = { limit = { band_6_kizuna_resource_variety_count_value >= 4 } add = 10 }
+	if = { limit = { band_6_kizuna_resource_variety_count_value >= 5 } add = 10 }
+	if = { limit = { band_6_kizuna_resource_variety_count_value >= 6 } add = 10 }
+	if = { limit = { band_6_kizuna_resource_variety_count_value >= 7 } add = 10 }
+	if = { limit = { band_6_kizuna_resource_variety_count_value >= 8 } add = 10 }
+	if = { limit = { band_6_kizuna_resource_variety_count_value >= 9 } add = 10 }
+	if = { limit = { band_6_kizuna_resource_variety_count_value >= 10 } add = 10 }
+	if = { limit = { band_6_kizuna_resource_variety_count_value >= 11 } add = 10 }
+	if = { limit = { band_6_kizuna_resource_variety_count_value >= 12 } add = 10 }
+}
+
+band_6_kizuna_creation_weekly_gain_value = {
+	value = band_6_kizuna_creation_base_gain_value
+	add = band_6_kizuna_resource_weekly_gain_value
+	multiply = band_6_kizuna_resource_multiplier_percent_value
+	divide = 100
+}
+
+band_6_kizuna_creation_progress_bar_value = {
+	value = 0
+	if = { limit = { has_variable = tot_band_6_creation_progress } add = var:tot_band_6_creation_progress }
+	multiply = 100
+	divide = 30000
+	min = 0
+	max = 100
+}
+band_7_kizuna_creation_base_gain_value = {
+	value = 10
+	every_scope_character = {
+		limit = {
+			has_variable = tot_band_id
+			var:tot_band_id = 7
+			OR = {
+				has_variable = tot_band_role_drummer
+				has_variable = tot_band_role_guitarist
+				has_variable = tot_band_role_bassist
+				has_variable = tot_band_role_keyboardist
+				has_variable = tot_band_role_vocalist
+			}
+		}
+		add = 3
+	}
+	every_scope_character = {
+		limit = {
+			has_variable = tot_band_id
+			var:tot_band_id = 7
+			OR = {
+				AND = { has_variable = tot_band_role_drummer has_trait = tot_drummer_trait }
+				AND = { has_variable = tot_band_role_guitarist has_trait = tot_guitarist_trait }
+				AND = { has_variable = tot_band_role_bassist has_trait = tot_bassist_trait }
+				AND = { has_variable = tot_band_role_keyboardist has_trait = tot_keyboardist_trait }
+				AND = { has_variable = tot_band_role_vocalist has_trait = tot_lead_vocalist_trait }
+			}
+		}
+		add = 2
+	}
+	every_scope_character = {
+		limit = { has_variable = tot_band_id var:tot_band_id = 7 has_trait = tot_is_supper_lead_vocalist_trait }
+		add = 10
+	}
+}
+
+band_7_kizuna_resource_weekly_gain_value = {
+	value = 0	if = { limit = { has_variable = tot_band_7_invest_musical_instrument var:tot_band_7_invest_musical_instrument > 0 market.mg:musical_instrument = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_7_invest_paper var:tot_band_7_invest_paper > 0 market.mg:paper = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_7_invest_luxury_clothes var:tot_band_7_invest_luxury_clothes > 0 market.mg:luxury_clothes = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_7_invest_transportation var:tot_band_7_invest_transportation > 0 market.mg:transportation = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_7_invest_automobiles var:tot_band_7_invest_automobiles > 0 market.mg:automobiles = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_7_invest_radios var:tot_band_7_invest_radios > 0 market.mg:radios = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_7_invest_fruit var:tot_band_7_invest_fruit > 0 market.mg:fruit = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_7_invest_tea var:tot_band_7_invest_tea > 0 market.mg:tea = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_7_invest_coffee var:tot_band_7_invest_coffee > 0 market.mg:coffee = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_7_invest_groceries var:tot_band_7_invest_groceries > 0 market.mg:groceries = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_7_invest_luxury_drinks var:tot_band_7_invest_luxury_drinks > 0 market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_7_invest_luxury_foods var:tot_band_7_invest_luxury_foods > 0 market.mg:luxury_foods = { market_goods_sell_orders >= 50 } } add = 5 }
+}
+
+band_7_kizuna_resource_variety_count_value = {
+	value = 0
+	if = { limit = { has_variable = tot_band_7_invest_musical_instrument var:tot_band_7_invest_musical_instrument > 0 market.mg:musical_instrument = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_7_invest_paper var:tot_band_7_invest_paper > 0 market.mg:paper = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_7_invest_luxury_clothes var:tot_band_7_invest_luxury_clothes > 0 market.mg:luxury_clothes = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_7_invest_transportation var:tot_band_7_invest_transportation > 0 market.mg:transportation = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_7_invest_automobiles var:tot_band_7_invest_automobiles > 0 market.mg:automobiles = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_7_invest_radios var:tot_band_7_invest_radios > 0 market.mg:radios = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_7_invest_fruit var:tot_band_7_invest_fruit > 0 market.mg:fruit = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_7_invest_tea var:tot_band_7_invest_tea > 0 market.mg:tea = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_7_invest_coffee var:tot_band_7_invest_coffee > 0 market.mg:coffee = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_7_invest_groceries var:tot_band_7_invest_groceries > 0 market.mg:groceries = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_7_invest_luxury_drinks var:tot_band_7_invest_luxury_drinks > 0 market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_7_invest_luxury_foods var:tot_band_7_invest_luxury_foods > 0 market.mg:luxury_foods = { market_goods_sell_orders >= 50 } } add = 1 }
+}
+
+band_7_kizuna_resource_multiplier_percent_value = {
+	value = 100
+	if = { limit = { band_7_kizuna_resource_variety_count_value >= 2 } add = 10 }
+	if = { limit = { band_7_kizuna_resource_variety_count_value >= 3 } add = 10 }
+	if = { limit = { band_7_kizuna_resource_variety_count_value >= 4 } add = 10 }
+	if = { limit = { band_7_kizuna_resource_variety_count_value >= 5 } add = 10 }
+	if = { limit = { band_7_kizuna_resource_variety_count_value >= 6 } add = 10 }
+	if = { limit = { band_7_kizuna_resource_variety_count_value >= 7 } add = 10 }
+	if = { limit = { band_7_kizuna_resource_variety_count_value >= 8 } add = 10 }
+	if = { limit = { band_7_kizuna_resource_variety_count_value >= 9 } add = 10 }
+	if = { limit = { band_7_kizuna_resource_variety_count_value >= 10 } add = 10 }
+	if = { limit = { band_7_kizuna_resource_variety_count_value >= 11 } add = 10 }
+	if = { limit = { band_7_kizuna_resource_variety_count_value >= 12 } add = 10 }
+}
+
+band_7_kizuna_creation_weekly_gain_value = {
+	value = band_7_kizuna_creation_base_gain_value
+	add = band_7_kizuna_resource_weekly_gain_value
+	multiply = band_7_kizuna_resource_multiplier_percent_value
+	divide = 100
+}
+
+band_7_kizuna_creation_progress_bar_value = {
+	value = 0
+	if = { limit = { has_variable = tot_band_7_creation_progress } add = var:tot_band_7_creation_progress }
+	multiply = 100
+	divide = 30000
+	min = 0
+	max = 100
+}
+band_8_kizuna_creation_base_gain_value = {
+	value = 10
+	every_scope_character = {
+		limit = {
+			has_variable = tot_band_id
+			var:tot_band_id = 8
+			OR = {
+				has_variable = tot_band_role_drummer
+				has_variable = tot_band_role_guitarist
+				has_variable = tot_band_role_bassist
+				has_variable = tot_band_role_keyboardist
+				has_variable = tot_band_role_vocalist
+			}
+		}
+		add = 3
+	}
+	every_scope_character = {
+		limit = {
+			has_variable = tot_band_id
+			var:tot_band_id = 8
+			OR = {
+				AND = { has_variable = tot_band_role_drummer has_trait = tot_drummer_trait }
+				AND = { has_variable = tot_band_role_guitarist has_trait = tot_guitarist_trait }
+				AND = { has_variable = tot_band_role_bassist has_trait = tot_bassist_trait }
+				AND = { has_variable = tot_band_role_keyboardist has_trait = tot_keyboardist_trait }
+				AND = { has_variable = tot_band_role_vocalist has_trait = tot_lead_vocalist_trait }
+			}
+		}
+		add = 2
+	}
+	every_scope_character = {
+		limit = { has_variable = tot_band_id var:tot_band_id = 8 has_trait = tot_is_supper_lead_vocalist_trait }
+		add = 10
+	}
+}
+
+band_8_kizuna_resource_weekly_gain_value = {
+	value = 0	if = { limit = { has_variable = tot_band_8_invest_musical_instrument var:tot_band_8_invest_musical_instrument > 0 market.mg:musical_instrument = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_8_invest_paper var:tot_band_8_invest_paper > 0 market.mg:paper = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_8_invest_luxury_clothes var:tot_band_8_invest_luxury_clothes > 0 market.mg:luxury_clothes = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_8_invest_transportation var:tot_band_8_invest_transportation > 0 market.mg:transportation = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_8_invest_automobiles var:tot_band_8_invest_automobiles > 0 market.mg:automobiles = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_8_invest_radios var:tot_band_8_invest_radios > 0 market.mg:radios = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_8_invest_fruit var:tot_band_8_invest_fruit > 0 market.mg:fruit = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_8_invest_tea var:tot_band_8_invest_tea > 0 market.mg:tea = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_8_invest_coffee var:tot_band_8_invest_coffee > 0 market.mg:coffee = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_8_invest_groceries var:tot_band_8_invest_groceries > 0 market.mg:groceries = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_8_invest_luxury_drinks var:tot_band_8_invest_luxury_drinks > 0 market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_8_invest_luxury_foods var:tot_band_8_invest_luxury_foods > 0 market.mg:luxury_foods = { market_goods_sell_orders >= 50 } } add = 5 }
+}
+
+band_8_kizuna_resource_variety_count_value = {
+	value = 0
+	if = { limit = { has_variable = tot_band_8_invest_musical_instrument var:tot_band_8_invest_musical_instrument > 0 market.mg:musical_instrument = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_8_invest_paper var:tot_band_8_invest_paper > 0 market.mg:paper = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_8_invest_luxury_clothes var:tot_band_8_invest_luxury_clothes > 0 market.mg:luxury_clothes = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_8_invest_transportation var:tot_band_8_invest_transportation > 0 market.mg:transportation = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_8_invest_automobiles var:tot_band_8_invest_automobiles > 0 market.mg:automobiles = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_8_invest_radios var:tot_band_8_invest_radios > 0 market.mg:radios = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_8_invest_fruit var:tot_band_8_invest_fruit > 0 market.mg:fruit = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_8_invest_tea var:tot_band_8_invest_tea > 0 market.mg:tea = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_8_invest_coffee var:tot_band_8_invest_coffee > 0 market.mg:coffee = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_8_invest_groceries var:tot_band_8_invest_groceries > 0 market.mg:groceries = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_8_invest_luxury_drinks var:tot_band_8_invest_luxury_drinks > 0 market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_8_invest_luxury_foods var:tot_band_8_invest_luxury_foods > 0 market.mg:luxury_foods = { market_goods_sell_orders >= 50 } } add = 1 }
+}
+
+band_8_kizuna_resource_multiplier_percent_value = {
+	value = 100
+	if = { limit = { band_8_kizuna_resource_variety_count_value >= 2 } add = 10 }
+	if = { limit = { band_8_kizuna_resource_variety_count_value >= 3 } add = 10 }
+	if = { limit = { band_8_kizuna_resource_variety_count_value >= 4 } add = 10 }
+	if = { limit = { band_8_kizuna_resource_variety_count_value >= 5 } add = 10 }
+	if = { limit = { band_8_kizuna_resource_variety_count_value >= 6 } add = 10 }
+	if = { limit = { band_8_kizuna_resource_variety_count_value >= 7 } add = 10 }
+	if = { limit = { band_8_kizuna_resource_variety_count_value >= 8 } add = 10 }
+	if = { limit = { band_8_kizuna_resource_variety_count_value >= 9 } add = 10 }
+	if = { limit = { band_8_kizuna_resource_variety_count_value >= 10 } add = 10 }
+	if = { limit = { band_8_kizuna_resource_variety_count_value >= 11 } add = 10 }
+	if = { limit = { band_8_kizuna_resource_variety_count_value >= 12 } add = 10 }
+}
+
+band_8_kizuna_creation_weekly_gain_value = {
+	value = band_8_kizuna_creation_base_gain_value
+	add = band_8_kizuna_resource_weekly_gain_value
+	multiply = band_8_kizuna_resource_multiplier_percent_value
+	divide = 100
+}
+
+band_8_kizuna_creation_progress_bar_value = {
+	value = 0
+	if = { limit = { has_variable = tot_band_8_creation_progress } add = var:tot_band_8_creation_progress }
+	multiply = 100
+	divide = 30000
+	min = 0
+	max = 100
+}
+band_9_kizuna_creation_base_gain_value = {
+	value = 10
+	every_scope_character = {
+		limit = {
+			has_variable = tot_band_id
+			var:tot_band_id = 9
+			OR = {
+				has_variable = tot_band_role_drummer
+				has_variable = tot_band_role_guitarist
+				has_variable = tot_band_role_bassist
+				has_variable = tot_band_role_keyboardist
+				has_variable = tot_band_role_vocalist
+			}
+		}
+		add = 3
+	}
+	every_scope_character = {
+		limit = {
+			has_variable = tot_band_id
+			var:tot_band_id = 9
+			OR = {
+				AND = { has_variable = tot_band_role_drummer has_trait = tot_drummer_trait }
+				AND = { has_variable = tot_band_role_guitarist has_trait = tot_guitarist_trait }
+				AND = { has_variable = tot_band_role_bassist has_trait = tot_bassist_trait }
+				AND = { has_variable = tot_band_role_keyboardist has_trait = tot_keyboardist_trait }
+				AND = { has_variable = tot_band_role_vocalist has_trait = tot_lead_vocalist_trait }
+			}
+		}
+		add = 2
+	}
+	every_scope_character = {
+		limit = { has_variable = tot_band_id var:tot_band_id = 9 has_trait = tot_is_supper_lead_vocalist_trait }
+		add = 10
+	}
+}
+
+band_9_kizuna_resource_weekly_gain_value = {
+	value = 0	if = { limit = { has_variable = tot_band_9_invest_musical_instrument var:tot_band_9_invest_musical_instrument > 0 market.mg:musical_instrument = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_9_invest_paper var:tot_band_9_invest_paper > 0 market.mg:paper = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_9_invest_luxury_clothes var:tot_band_9_invest_luxury_clothes > 0 market.mg:luxury_clothes = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_9_invest_transportation var:tot_band_9_invest_transportation > 0 market.mg:transportation = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_9_invest_automobiles var:tot_band_9_invest_automobiles > 0 market.mg:automobiles = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_9_invest_radios var:tot_band_9_invest_radios > 0 market.mg:radios = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_9_invest_fruit var:tot_band_9_invest_fruit > 0 market.mg:fruit = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_9_invest_tea var:tot_band_9_invest_tea > 0 market.mg:tea = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_9_invest_coffee var:tot_band_9_invest_coffee > 0 market.mg:coffee = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_9_invest_groceries var:tot_band_9_invest_groceries > 0 market.mg:groceries = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_9_invest_luxury_drinks var:tot_band_9_invest_luxury_drinks > 0 market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_9_invest_luxury_foods var:tot_band_9_invest_luxury_foods > 0 market.mg:luxury_foods = { market_goods_sell_orders >= 50 } } add = 5 }
+}
+
+band_9_kizuna_resource_variety_count_value = {
+	value = 0
+	if = { limit = { has_variable = tot_band_9_invest_musical_instrument var:tot_band_9_invest_musical_instrument > 0 market.mg:musical_instrument = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_9_invest_paper var:tot_band_9_invest_paper > 0 market.mg:paper = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_9_invest_luxury_clothes var:tot_band_9_invest_luxury_clothes > 0 market.mg:luxury_clothes = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_9_invest_transportation var:tot_band_9_invest_transportation > 0 market.mg:transportation = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_9_invest_automobiles var:tot_band_9_invest_automobiles > 0 market.mg:automobiles = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_9_invest_radios var:tot_band_9_invest_radios > 0 market.mg:radios = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_9_invest_fruit var:tot_band_9_invest_fruit > 0 market.mg:fruit = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_9_invest_tea var:tot_band_9_invest_tea > 0 market.mg:tea = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_9_invest_coffee var:tot_band_9_invest_coffee > 0 market.mg:coffee = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_9_invest_groceries var:tot_band_9_invest_groceries > 0 market.mg:groceries = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_9_invest_luxury_drinks var:tot_band_9_invest_luxury_drinks > 0 market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_9_invest_luxury_foods var:tot_band_9_invest_luxury_foods > 0 market.mg:luxury_foods = { market_goods_sell_orders >= 50 } } add = 1 }
+}
+
+band_9_kizuna_resource_multiplier_percent_value = {
+	value = 100
+	if = { limit = { band_9_kizuna_resource_variety_count_value >= 2 } add = 10 }
+	if = { limit = { band_9_kizuna_resource_variety_count_value >= 3 } add = 10 }
+	if = { limit = { band_9_kizuna_resource_variety_count_value >= 4 } add = 10 }
+	if = { limit = { band_9_kizuna_resource_variety_count_value >= 5 } add = 10 }
+	if = { limit = { band_9_kizuna_resource_variety_count_value >= 6 } add = 10 }
+	if = { limit = { band_9_kizuna_resource_variety_count_value >= 7 } add = 10 }
+	if = { limit = { band_9_kizuna_resource_variety_count_value >= 8 } add = 10 }
+	if = { limit = { band_9_kizuna_resource_variety_count_value >= 9 } add = 10 }
+	if = { limit = { band_9_kizuna_resource_variety_count_value >= 10 } add = 10 }
+	if = { limit = { band_9_kizuna_resource_variety_count_value >= 11 } add = 10 }
+	if = { limit = { band_9_kizuna_resource_variety_count_value >= 12 } add = 10 }
+}
+
+band_9_kizuna_creation_weekly_gain_value = {
+	value = band_9_kizuna_creation_base_gain_value
+	add = band_9_kizuna_resource_weekly_gain_value
+	multiply = band_9_kizuna_resource_multiplier_percent_value
+	divide = 100
+}
+
+band_9_kizuna_creation_progress_bar_value = {
+	value = 0
+	if = { limit = { has_variable = tot_band_9_creation_progress } add = var:tot_band_9_creation_progress }
+	multiply = 100
+	divide = 30000
+	min = 0
+	max = 100
+}
+band_10_kizuna_creation_base_gain_value = {
+	value = 10
+	every_scope_character = {
+		limit = {
+			has_variable = tot_band_id
+			var:tot_band_id = 10
+			OR = {
+				has_variable = tot_band_role_drummer
+				has_variable = tot_band_role_guitarist
+				has_variable = tot_band_role_bassist
+				has_variable = tot_band_role_keyboardist
+				has_variable = tot_band_role_vocalist
+			}
+		}
+		add = 3
+	}
+	every_scope_character = {
+		limit = {
+			has_variable = tot_band_id
+			var:tot_band_id = 10
+			OR = {
+				AND = { has_variable = tot_band_role_drummer has_trait = tot_drummer_trait }
+				AND = { has_variable = tot_band_role_guitarist has_trait = tot_guitarist_trait }
+				AND = { has_variable = tot_band_role_bassist has_trait = tot_bassist_trait }
+				AND = { has_variable = tot_band_role_keyboardist has_trait = tot_keyboardist_trait }
+				AND = { has_variable = tot_band_role_vocalist has_trait = tot_lead_vocalist_trait }
+			}
+		}
+		add = 2
+	}
+	every_scope_character = {
+		limit = { has_variable = tot_band_id var:tot_band_id = 10 has_trait = tot_is_supper_lead_vocalist_trait }
+		add = 10
+	}
+}
+
+band_10_kizuna_resource_weekly_gain_value = {
+	value = 0	if = { limit = { has_variable = tot_band_10_invest_musical_instrument var:tot_band_10_invest_musical_instrument > 0 market.mg:musical_instrument = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_10_invest_paper var:tot_band_10_invest_paper > 0 market.mg:paper = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_10_invest_luxury_clothes var:tot_band_10_invest_luxury_clothes > 0 market.mg:luxury_clothes = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_10_invest_transportation var:tot_band_10_invest_transportation > 0 market.mg:transportation = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_10_invest_automobiles var:tot_band_10_invest_automobiles > 0 market.mg:automobiles = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_10_invest_radios var:tot_band_10_invest_radios > 0 market.mg:radios = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_10_invest_fruit var:tot_band_10_invest_fruit > 0 market.mg:fruit = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_10_invest_tea var:tot_band_10_invest_tea > 0 market.mg:tea = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_10_invest_coffee var:tot_band_10_invest_coffee > 0 market.mg:coffee = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_10_invest_groceries var:tot_band_10_invest_groceries > 0 market.mg:groceries = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_10_invest_luxury_drinks var:tot_band_10_invest_luxury_drinks > 0 market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } } add = 5 }
+	if = { limit = { has_variable = tot_band_10_invest_luxury_foods var:tot_band_10_invest_luxury_foods > 0 market.mg:luxury_foods = { market_goods_sell_orders >= 50 } } add = 5 }
+}
+
+band_10_kizuna_resource_variety_count_value = {
+	value = 0
+	if = { limit = { has_variable = tot_band_10_invest_musical_instrument var:tot_band_10_invest_musical_instrument > 0 market.mg:musical_instrument = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_10_invest_paper var:tot_band_10_invest_paper > 0 market.mg:paper = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_10_invest_luxury_clothes var:tot_band_10_invest_luxury_clothes > 0 market.mg:luxury_clothes = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_10_invest_transportation var:tot_band_10_invest_transportation > 0 market.mg:transportation = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_10_invest_automobiles var:tot_band_10_invest_automobiles > 0 market.mg:automobiles = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_10_invest_radios var:tot_band_10_invest_radios > 0 market.mg:radios = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_10_invest_fruit var:tot_band_10_invest_fruit > 0 market.mg:fruit = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_10_invest_tea var:tot_band_10_invest_tea > 0 market.mg:tea = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_10_invest_coffee var:tot_band_10_invest_coffee > 0 market.mg:coffee = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_10_invest_groceries var:tot_band_10_invest_groceries > 0 market.mg:groceries = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_10_invest_luxury_drinks var:tot_band_10_invest_luxury_drinks > 0 market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } } add = 1 }
+	if = { limit = { has_variable = tot_band_10_invest_luxury_foods var:tot_band_10_invest_luxury_foods > 0 market.mg:luxury_foods = { market_goods_sell_orders >= 50 } } add = 1 }
+}
+
+band_10_kizuna_resource_multiplier_percent_value = {
+	value = 100
+	if = { limit = { band_10_kizuna_resource_variety_count_value >= 2 } add = 10 }
+	if = { limit = { band_10_kizuna_resource_variety_count_value >= 3 } add = 10 }
+	if = { limit = { band_10_kizuna_resource_variety_count_value >= 4 } add = 10 }
+	if = { limit = { band_10_kizuna_resource_variety_count_value >= 5 } add = 10 }
+	if = { limit = { band_10_kizuna_resource_variety_count_value >= 6 } add = 10 }
+	if = { limit = { band_10_kizuna_resource_variety_count_value >= 7 } add = 10 }
+	if = { limit = { band_10_kizuna_resource_variety_count_value >= 8 } add = 10 }
+	if = { limit = { band_10_kizuna_resource_variety_count_value >= 9 } add = 10 }
+	if = { limit = { band_10_kizuna_resource_variety_count_value >= 10 } add = 10 }
+	if = { limit = { band_10_kizuna_resource_variety_count_value >= 11 } add = 10 }
+	if = { limit = { band_10_kizuna_resource_variety_count_value >= 12 } add = 10 }
+}
+
+band_10_kizuna_creation_weekly_gain_value = {
+	value = band_10_kizuna_creation_base_gain_value
+	add = band_10_kizuna_resource_weekly_gain_value
+	multiply = band_10_kizuna_resource_multiplier_percent_value
+	divide = 100
+}
+
+band_10_kizuna_creation_progress_bar_value = {
+	value = 0
+	if = { limit = { has_variable = tot_band_10_creation_progress } add = var:tot_band_10_creation_progress }
+	multiply = 100
+	divide = 30000
+	min = 0
+	max = 100
+}
+
+band_1_kizuna_current_level_value = { value = 0 if = { limit = { has_variable = tot_band_1_creation_progress var:tot_band_1_creation_progress >= 1000 } add = 1 } if = { limit = { has_variable = tot_band_1_creation_progress var:tot_band_1_creation_progress >= 3000 } add = 1 } if = { limit = { has_variable = tot_band_1_creation_progress var:tot_band_1_creation_progress >= 7000 } add = 1 } if = { limit = { has_variable = tot_band_1_creation_progress var:tot_band_1_creation_progress >= 15000 } add = 1 } if = { limit = { has_variable = tot_band_1_creation_progress var:tot_band_1_creation_progress >= 30000 } add = 1 } }
+band_2_kizuna_current_level_value = { value = 0 if = { limit = { has_variable = tot_band_2_creation_progress var:tot_band_2_creation_progress >= 1000 } add = 1 } if = { limit = { has_variable = tot_band_2_creation_progress var:tot_band_2_creation_progress >= 3000 } add = 1 } if = { limit = { has_variable = tot_band_2_creation_progress var:tot_band_2_creation_progress >= 7000 } add = 1 } if = { limit = { has_variable = tot_band_2_creation_progress var:tot_band_2_creation_progress >= 15000 } add = 1 } if = { limit = { has_variable = tot_band_2_creation_progress var:tot_band_2_creation_progress >= 30000 } add = 1 } }
+band_3_kizuna_current_level_value = { value = 0 if = { limit = { has_variable = tot_band_3_creation_progress var:tot_band_3_creation_progress >= 1000 } add = 1 } if = { limit = { has_variable = tot_band_3_creation_progress var:tot_band_3_creation_progress >= 3000 } add = 1 } if = { limit = { has_variable = tot_band_3_creation_progress var:tot_band_3_creation_progress >= 7000 } add = 1 } if = { limit = { has_variable = tot_band_3_creation_progress var:tot_band_3_creation_progress >= 15000 } add = 1 } if = { limit = { has_variable = tot_band_3_creation_progress var:tot_band_3_creation_progress >= 30000 } add = 1 } }
+band_4_kizuna_current_level_value = { value = 0 if = { limit = { has_variable = tot_band_4_creation_progress var:tot_band_4_creation_progress >= 1000 } add = 1 } if = { limit = { has_variable = tot_band_4_creation_progress var:tot_band_4_creation_progress >= 3000 } add = 1 } if = { limit = { has_variable = tot_band_4_creation_progress var:tot_band_4_creation_progress >= 7000 } add = 1 } if = { limit = { has_variable = tot_band_4_creation_progress var:tot_band_4_creation_progress >= 15000 } add = 1 } if = { limit = { has_variable = tot_band_4_creation_progress var:tot_band_4_creation_progress >= 30000 } add = 1 } }
+band_5_kizuna_current_level_value = { value = 0 if = { limit = { has_variable = tot_band_5_creation_progress var:tot_band_5_creation_progress >= 1000 } add = 1 } if = { limit = { has_variable = tot_band_5_creation_progress var:tot_band_5_creation_progress >= 3000 } add = 1 } if = { limit = { has_variable = tot_band_5_creation_progress var:tot_band_5_creation_progress >= 7000 } add = 1 } if = { limit = { has_variable = tot_band_5_creation_progress var:tot_band_5_creation_progress >= 15000 } add = 1 } if = { limit = { has_variable = tot_band_5_creation_progress var:tot_band_5_creation_progress >= 30000 } add = 1 } }
+band_6_kizuna_current_level_value = { value = 0 if = { limit = { has_variable = tot_band_6_creation_progress var:tot_band_6_creation_progress >= 1000 } add = 1 } if = { limit = { has_variable = tot_band_6_creation_progress var:tot_band_6_creation_progress >= 3000 } add = 1 } if = { limit = { has_variable = tot_band_6_creation_progress var:tot_band_6_creation_progress >= 7000 } add = 1 } if = { limit = { has_variable = tot_band_6_creation_progress var:tot_band_6_creation_progress >= 15000 } add = 1 } if = { limit = { has_variable = tot_band_6_creation_progress var:tot_band_6_creation_progress >= 30000 } add = 1 } }
+band_7_kizuna_current_level_value = { value = 0 if = { limit = { has_variable = tot_band_7_creation_progress var:tot_band_7_creation_progress >= 1000 } add = 1 } if = { limit = { has_variable = tot_band_7_creation_progress var:tot_band_7_creation_progress >= 3000 } add = 1 } if = { limit = { has_variable = tot_band_7_creation_progress var:tot_band_7_creation_progress >= 7000 } add = 1 } if = { limit = { has_variable = tot_band_7_creation_progress var:tot_band_7_creation_progress >= 15000 } add = 1 } if = { limit = { has_variable = tot_band_7_creation_progress var:tot_band_7_creation_progress >= 30000 } add = 1 } }
+band_8_kizuna_current_level_value = { value = 0 if = { limit = { has_variable = tot_band_8_creation_progress var:tot_band_8_creation_progress >= 1000 } add = 1 } if = { limit = { has_variable = tot_band_8_creation_progress var:tot_band_8_creation_progress >= 3000 } add = 1 } if = { limit = { has_variable = tot_band_8_creation_progress var:tot_band_8_creation_progress >= 7000 } add = 1 } if = { limit = { has_variable = tot_band_8_creation_progress var:tot_band_8_creation_progress >= 15000 } add = 1 } if = { limit = { has_variable = tot_band_8_creation_progress var:tot_band_8_creation_progress >= 30000 } add = 1 } }
+band_9_kizuna_current_level_value = { value = 0 if = { limit = { has_variable = tot_band_9_creation_progress var:tot_band_9_creation_progress >= 1000 } add = 1 } if = { limit = { has_variable = tot_band_9_creation_progress var:tot_band_9_creation_progress >= 3000 } add = 1 } if = { limit = { has_variable = tot_band_9_creation_progress var:tot_band_9_creation_progress >= 7000 } add = 1 } if = { limit = { has_variable = tot_band_9_creation_progress var:tot_band_9_creation_progress >= 15000 } add = 1 } if = { limit = { has_variable = tot_band_9_creation_progress var:tot_band_9_creation_progress >= 30000 } add = 1 } }
+band_10_kizuna_current_level_value = { value = 0 if = { limit = { has_variable = tot_band_10_creation_progress var:tot_band_10_creation_progress >= 1000 } add = 1 } if = { limit = { has_variable = tot_band_10_creation_progress var:tot_band_10_creation_progress >= 3000 } add = 1 } if = { limit = { has_variable = tot_band_10_creation_progress var:tot_band_10_creation_progress >= 7000 } add = 1 } if = { limit = { has_variable = tot_band_10_creation_progress var:tot_band_10_creation_progress >= 15000 } add = 1 } if = { limit = { has_variable = tot_band_10_creation_progress var:tot_band_10_creation_progress >= 30000 } add = 1 } }
+# END GENERATED TOT BAND PER BAND
+
+# BEGIN GENERATED TOT GOURMET SEGMENTS
+tot_gourmet_progress_segment_1_value = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_gourmet_progress var:tot_gourmet_progress > 0 }
+		add = var:tot_gourmet_progress
+		subtract = 0
+	}
+	divide = 3500
+	min = 0
+	max = 1
+}
+
+tot_gourmet_progress_segment_2_value = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_gourmet_progress var:tot_gourmet_progress > 3500 }
+		add = var:tot_gourmet_progress
+		subtract = 3500
+	}
+	divide = 5000
+	min = 0
+	max = 1
+}
+
+tot_gourmet_progress_segment_3_value = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_gourmet_progress var:tot_gourmet_progress > 8500 }
+		add = var:tot_gourmet_progress
+		subtract = 8500
+	}
+	divide = 5500
+	min = 0
+	max = 1
+}
+
+tot_gourmet_progress_segment_4_value = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_gourmet_progress var:tot_gourmet_progress > 14000 }
+		add = var:tot_gourmet_progress
+		subtract = 14000
+	}
+	divide = 22000
+	min = 0
+	max = 1
+}
+
+# END GENERATED TOT GOURMET SEGMENTS

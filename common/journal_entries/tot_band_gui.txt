@@ -1,0 +1,30 @@
+je_tot_band_gui = {
+	icon = "gfx/interface/icons/faction_icons/faction_japan_imperial_house.dds"
+
+	group = je_group_tot_band
+	widget = {
+		gui = "gui/tot_band_management.gui"
+		name = "widget_je_tot_band_management"
+		container = "custom_widget_container_3"
+	}
+
+	is_shown_when_inactive = {
+	}
+
+	possible = {
+	}
+
+	immediate = {
+		update_kizuna = yes
+	}
+
+	on_weekly_pulse = {
+		effect = {
+			tot_band_weekly_update = yes
+		}
+	}
+
+	weight = 10002
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	can_revolution_inherit = yes
+}

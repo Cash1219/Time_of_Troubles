@@ -10,3 +10,12 @@ BYZ = {
 		priority = 2000
 	}
 }
+USAF = {
+	flag_definition = {
+		coa = CSA
+		subject_canton = sub_CSA_canton_stars
+		priority = 2000
+		allow_overlord_canton = yes
+		overlord_canton_scale = { 0.5 @[third*2.005] }
+	}
+}

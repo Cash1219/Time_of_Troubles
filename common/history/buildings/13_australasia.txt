@@ -8,8 +8,8 @@
 					building={
 						type="building_financial_district"
 						country="c:NSW"
-						levels=2
-						region="STATE_HOME_COUNTIES"
+						levels=1
+						region="STATE_NEW_SOUTH_WALES"
 					}
 				}
 				reserves=1
@@ -34,7 +34,7 @@
 						type="building_financial_district"
 						country="c:NSW"
 						levels=1
-						region="STATE_HOME_COUNTIES"
+						region="STATE_NEW_SOUTH_WALES"
 					}
 				}
 				reserves=1
@@ -46,7 +46,7 @@
 					building={
 						type="building_manor_house"
 						country="c:NSW"
-						levels=3
+						levels=2
 						region="STATE_NEW_SOUTH_WALES"
 					}
 				}
@@ -58,7 +58,7 @@
 				add_ownership={
 					country={
 						country="c:NSW"
-						levels=3
+						levels=2
 					}
 				}
 				reserves=1
@@ -69,7 +69,7 @@
 				add_ownership={
 					country={
 						country="c:NSW"
-						levels=2
+						levels=1
 					}
 				}
 				reserves=1
@@ -97,7 +97,7 @@
 				add_ownership={
 					country={
 						country="c:NSW"
-						levels=2
+						levels=1
 					}
 				}
 				reserves=1
@@ -109,12 +109,23 @@
 					building={
 						type="building_financial_district"
 						country="c:NSW"
-						levels=2
-						region="STATE_HOME_COUNTIES"
+						levels=1
+						region="STATE_VICTORIA"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_forestry" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts"  }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:NSW"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_port" }
 			}
 		}
 	}
@@ -125,7 +136,7 @@
 				add_ownership={
 					country={
 						country="c:TAS"
-						levels=2
+						levels=1
 					}
 				}
 				reserves=1
@@ -137,8 +148,8 @@
 					building={
 						type="building_financial_district"
 						country="c:TAS"
-						levels=2
-						region="STATE_HOME_COUNTIES"
+						levels=1
+						region="STATE_TASMANIA"
 					}
 				}
 				reserves=1
@@ -183,11 +194,24 @@
 				add_ownership={
 					country={
 						country="c:SAS"
-						levels=2
+						levels=1
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_no_organization" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:SAS"
+						levels=1
+						region="STATE_SOUTH_AUSTRALIA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_port" }
 			}
 		}
 		region_state:KAU={
@@ -210,7 +234,7 @@
 					building={
 						type="building_fishing_wharf"
 						country="c:KAU"
-						levels=2
+						levels=1
 						region="STATE_SOUTH_AUSTRALIA"
 					}
 				}
@@ -226,7 +250,7 @@
 				add_ownership={
 					country={
 						country="c:WAS"
-						levels=2
+						levels=1
 					}
 				}
 				reserves=1
@@ -237,18 +261,42 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:GBR"
-						levels=2
-						region="STATE_HOME_COUNTIES"
+						country="c:WAS"
+						levels=1
+						region="STATE_WESTERN_AUSTRALIA"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts"  }
 			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:WAS"
+						levels=1
+						region="STATE_WESTERN_AUSTRALIA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_port" }
+			}
 		}
 	}
 	s:STATE_NORTHERN_TERRITORY={
 		region_state:NSW={
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:NSW"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_port" }
+			}
 		}
 	}
 	s:STATE_NORTH_ISLAND={
@@ -258,7 +306,7 @@
 				add_ownership={
 					country={
 						country="c:UNT"
-						levels=4
+						levels=3
 					}
 				}
 				reserves=1
@@ -271,7 +319,7 @@
 				add_ownership={
 					country={
 						country="c:NSW"
-						levels=2
+						levels=1
 					}
 				}
 				reserves=1

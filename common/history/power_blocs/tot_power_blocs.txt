@@ -10,14 +10,7 @@
 
 			# subjects are automatically part of the bloc
 		}
-		if = {
-			limit = {
-				has_dlc_feature = power_bloc_features
-			}
-			power_bloc = {
-				add_principle = principle_colonial_offices_2
-			}
-		}
+		
 	}
 	c:FRA ?= {
 		create_power_bloc = {
@@ -78,14 +71,6 @@
 			member = c:TUR
 			
 		}
-		if = {
-			limit = {
-				has_dlc_feature = power_bloc_features
-			}
-			power_bloc = {
-				add_principle = principle_defensive_cooperation_1
-			}
-		}
 
 			
 	}
@@ -96,21 +81,14 @@
 			map_color = { 255 229 0 }
 
 			founding_date = 1200.1.1
-			identity = identity_sovereign_empire
-			principle = principle_vassalization_1
+			identity = identity_military_treaty_organization
+			principle = principle_defensive_cooperation_3
 		
 			#member = c:CUB
 			#member = c:HAR
 			member = c:STLI
 		}
-		if = {
-			limit = {
-				has_dlc_feature = power_bloc_features
-			}
-			power_bloc = {
-				add_principle = principle_defensive_cooperation_1
-			}
-		}
+		
 
 			
 	}
@@ -121,19 +99,12 @@
 			map_color = { 153 0 0 }
 
 			founding_date = 1200.1.1
-			identity = identity_sovereign_empire
-			principle = principle_vassalization_1
+			identity = identity_military_treaty_organization
+			principle = principle_defensive_cooperation_3
 		
 			member = c:PAP
 		}
-		if = {
-			limit = {
-				has_dlc_feature = power_bloc_features
-			}
-			power_bloc = {
-				add_principle = principle_defensive_cooperation_1
-			}
-		}
+		
 
 			
 	}
@@ -143,8 +114,8 @@
 			map_color = { 87  130  199 }
 
 			founding_date = 1444.11.11
-			identity = identity_sovereign_empire
-			principle = principle_vassalization_1
+			identity = identity_military_treaty_organization
+			principle = principle_defensive_cooperation_3
 
 
 			# Habsburg leaders in Italy and Italian states held up by direct Austrian intervention
@@ -170,8 +141,8 @@
 			map_color = { 87  130  199 }
 
 			founding_date = 1444.11.11
-			identity = identity_sovereign_empire
-			principle = principle_vassalization_1
+			identity = identity_military_treaty_organization
+			principle = principle_defensive_cooperation_3
 
 
 			# Habsburg leaders in Italy and Italian states held up by direct Austrian intervention
@@ -194,8 +165,8 @@
 			map_color = { 87  130  199 }
 
 			founding_date = 1444.11.11
-			identity = identity_sovereign_empire
-			principle = principle_vassalization_1
+			identity = identity_military_treaty_organization
+			principle = principle_defensive_cooperation_3
 
 
 			# Habsburg leaders in Italy and Italian states held up by direct Austrian intervention
@@ -232,13 +203,6 @@
 
 			# Steuerverein- separate from the Zollverein. Would include HAN, BRA, OLD
 		}
-		if = {
-			limit = {
-				has_dlc_feature = power_bloc_features
-			}
-			power_bloc = {
-				add_principle = principle_police_coordination_1
-			}
-		}
+		
 	}
 }

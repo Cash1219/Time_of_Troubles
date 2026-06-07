@@ -221,6 +221,30 @@
 				activate_production_methods={ "pm_no_organization" }
 			}
 		}
+		region_state:YUZ1={
+			create_building={
+				building="building_barrack"
+				add_ownership={
+					country={
+						country="c:YUZ1"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_no_organization" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:YUZ1"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+		}
 	}
 	s:STATE_COSTA_RICA={
 		region_state:YUZ1={
@@ -464,7 +488,7 @@
 						type="building_manor_house"
 						country="c:PCO"
 						levels=1
-						region="STATE_NEW_CASTILE"
+						region="STATE_PUERTO_RICO"
 					}
 				}
 				reserves=1
@@ -496,7 +520,7 @@
 						type="building_manor_house"
 						country="c:PCO"
 						levels=1
-						region="STATE_NEW_CASTILE"
+						region="STATE_PUERTO_RICO"
 					}
 				}
 				reserves=1
@@ -525,6 +549,16 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_anchorage" }
+			}
+			create_building={
+				building="building_naval_fortification"
+				add_ownership={
+					country={
+						country="c:PCO"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_naval_fortification_basic"  }
 			}
 		}
 	}
@@ -579,7 +613,7 @@
 						type="building_financial_district"
 						country="c:FRA"
 						levels=1
-						region="STATE_ILE_DE_FRANCE"
+						region="STATE_WEST_INDIES"
 					}
 				}
 				reserves=1
@@ -591,7 +625,7 @@
 						type="building_manor_house"
 						country="c:FRA"
 						levels=3
-						region="STATE_ILE_DE_FRANCE"
+						region="STATE_WEST_INDIES"
 					}
 				}
 				reserves=1
@@ -604,7 +638,7 @@
 						type="building_manor_house"
 						country="c:FRA"
 						levels=2
-						region="STATE_ILE_DE_FRANCE"
+						region="STATE_WEST_INDIES"
 					}
 				}
 				reserves=1
@@ -617,7 +651,7 @@
 						type="building_manor_house"
 						country="c:FRA"
 						levels=2
-						region="STATE_ILE_DE_FRANCE"
+						region="STATE_WEST_INDIES"
 					}
 				}
 				reserves=1
@@ -635,12 +669,12 @@
 				activate_production_methods={ "pm_anchorage" }
 			}
 		}
-		region_state:STRW={
+		region_state:GBR={
 			create_building={
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:STRW"
+						country="c:GBR"
 						levels=1
 					}
 				}
@@ -652,21 +686,21 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:STRW"
+						country="c:GBR"
 						levels=1
-						region="STATE_ZEALAND"
+						region="STATE_WEST_INDIES"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts"  }
 			}
 		}
-		region_state:TBUN={
+		region_state:GBR={
 			create_building={
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:TBUN"
+						country="c:GBR"
 						levels=1
 					}
 				}
@@ -678,7 +712,7 @@
 				add_ownership={
 					building={
 						type="building_cotton_plantation"
-						country="c:TBUN"
+						country="c:GBR"
 						levels=1
 						region="STATE_WEST_INDIES"
 					}
@@ -739,15 +773,15 @@
 				activate_production_methods={ "pm_anchorage" }
 			}
 		}
-		region_state:VNZ={
+		region_state:GBR={
 			create_building={
 				building="building_sugar_plantation"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:VNZ"
+						country="c:GBR"
 						levels=1
-						region="STATE_BOLIVAR"
+						region="STATE_WEST_INDIES"
 					}
 				}
 				reserves=1
@@ -771,7 +805,7 @@
 						type="building_financial_district"
 						country="c:GBR"
 						levels=1
-						region="STATE_HOME_COUNTIES"
+						region="STATE_JAMAICA"
 					}
 				}
 				reserves=1
@@ -802,7 +836,7 @@
 						type="building_manor_house"
 						country="c:GBR"
 						levels=1
-						region="STATE_HOME_COUNTIES"
+						region="STATE_JAMAICA"
 					}
 				}
 				reserves=1
@@ -814,14 +848,14 @@
 					building={
 						type="building_manor_house"
 						country="c:GBR"
-						levels=5
+						levels=4
 						region="STATE_JAMAICA"
 					}
 					building={
 						type="building_manor_house"
 						country="c:GBR"
 						levels=1
-						region="STATE_HOME_COUNTIES"
+						region="STATE_JAMAICA"
 					}
 				}
 				reserves=1
@@ -856,13 +890,13 @@
 						type="building_financial_district"
 						country="c:CUB"
 						levels=3
-						region="STATE_NEW_CASTILE"
+						region="STATE_WESTERN_CUBA"
 					}
 					building={
 						type="building_financial_district"
 						country="c:CUB"
 						levels=2
-						region="STATE_CATALONIA"
+						region="STATE_WESTERN_CUBA"
 					}
 				}
 				reserves=1
@@ -893,7 +927,7 @@
 						type="building_manor_house"
 						country="c:CUB"
 						levels=2
-						region="STATE_NEW_CASTILE"
+						region="STATE_WESTERN_CUBA"
 					}
 				}
 				reserves=1
@@ -905,20 +939,20 @@
 					building={
 						type="building_manor_house"
 						country="c:CUB"
-						levels=5
+						levels=4
 						region="STATE_WESTERN_CUBA"
 					}
 					building={
 						type="building_manor_house"
 						country="c:CUB"
 						levels=2
-						region="STATE_NEW_CASTILE"
+						region="STATE_WESTERN_CUBA"
 					}
 					building={
 						type="building_manor_house"
 						country="c:CUB"
 						levels=2
-						region="STATE_CATALONIA"
+						region="STATE_WESTERN_CUBA"
 					}
 				}
 				reserves=1
@@ -988,7 +1022,7 @@
 						type="building_manor_house"
 						country="c:CUB"
 						levels=1
-						region="STATE_NEW_CASTILE"
+						region="STATE_CENTRAL_CUBA"
 					}
 				}
 				reserves=1
@@ -1020,7 +1054,7 @@
 						type="building_manor_house"
 						country="c:CUB"
 						levels=1
-						region="STATE_NEW_CASTILE"
+						region="STATE_CENTRAL_CUBA"
 					}
 				}
 				reserves=1
@@ -1082,7 +1116,7 @@
 						type="building_manor_house"
 						country="c:CUB"
 						levels=2
-						region="STATE_NEW_CASTILE"
+						region="STATE_EASTERN_CUBA"
 					}
 				}
 				reserves=1

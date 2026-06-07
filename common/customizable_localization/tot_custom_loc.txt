@@ -385,3 +385,181 @@
 			localization_key = fra_no_creation
 		}
 	}
+	tot_band_profession_summary = {
+		type = character
+		text = { trigger = { has_trait = tot_group_sheet_020_trait } localization_key = tot_group_sheet_020_trait }
+		text = { trigger = { has_trait = tot_group_sheet_021_trait } localization_key = tot_group_sheet_021_trait }
+		text = { trigger = { has_trait = tot_group_sheet_022_trait } localization_key = tot_group_sheet_022_trait }
+		text = { trigger = { has_trait = tot_group_sheet_023_trait } localization_key = tot_group_sheet_023_trait }
+		text = { trigger = { has_trait = tot_group_sheet_024_trait } localization_key = tot_group_sheet_024_trait }
+		text = { trigger = { has_trait = tot_group_sheet_025_trait } localization_key = tot_group_sheet_025_trait }
+		text = { trigger = { has_trait = tot_group_sheet_026_trait } localization_key = tot_group_sheet_026_trait }
+		text = { trigger = { has_trait = tot_group_sheet_027_trait } localization_key = tot_group_sheet_027_trait }
+		text = { trigger = { has_trait = tot_group_sheet_028_trait } localization_key = tot_group_sheet_028_trait }
+		text = { trigger = { has_trait = tot_group_sheet_029_trait } localization_key = tot_group_sheet_029_trait }
+		text = { trigger = { has_trait = tot_group_sheet_030_trait } localization_key = tot_group_sheet_030_trait }
+		text = { trigger = { has_trait = tot_group_sheet_031_trait } localization_key = tot_group_sheet_031_trait }
+		text = { trigger = { has_trait = tot_group_sheet_032_trait } localization_key = tot_group_sheet_032_trait }
+		text = { trigger = { has_trait = tot_group_sheet_033_trait } localization_key = tot_group_sheet_033_trait }
+		text = { trigger = { has_trait = tot_group_sheet_034_trait } localization_key = tot_group_sheet_034_trait }
+		text = { trigger = { has_trait = tot_group_sheet_035_trait } localization_key = tot_group_sheet_035_trait }
+		text = { localization_key = TOT_BAND_NO_PROFESSION }
+	}
+	tot_band_specialty_summary = {
+		type = character
+		text = { trigger = { has_trait = tot_group_sheet_036_trait } localization_key = tot_group_sheet_036_trait }
+		text = { trigger = { has_trait = tot_group_sheet_037_trait } localization_key = tot_group_sheet_037_trait }
+		text = { trigger = { has_trait = tot_group_sheet_038_trait } localization_key = tot_group_sheet_038_trait }
+		text = { trigger = { has_trait = tot_group_sheet_039_trait } localization_key = tot_group_sheet_039_trait }
+		text = { trigger = { has_trait = tot_group_sheet_040_trait } localization_key = tot_group_sheet_040_trait }
+		text = { trigger = { has_trait = tot_group_sheet_041_trait } localization_key = tot_group_sheet_041_trait }
+		text = { trigger = { has_trait = tot_group_sheet_042_trait } localization_key = tot_group_sheet_042_trait }
+		text = { trigger = { has_trait = tot_group_sheet_043_trait } localization_key = tot_group_sheet_043_trait }
+		text = { trigger = { has_trait = tot_group_sheet_044_trait } localization_key = tot_group_sheet_044_trait }
+		text = { trigger = { has_trait = tot_group_sheet_045_trait } localization_key = tot_group_sheet_045_trait }
+		text = { trigger = { has_trait = tot_group_sheet_046_trait } localization_key = tot_group_sheet_046_trait }
+		text = { trigger = { has_trait = tot_group_sheet_047_trait } localization_key = tot_group_sheet_047_trait }
+		text = { trigger = { has_trait = tot_group_sheet_048_trait } localization_key = tot_group_sheet_048_trait }
+		text = { trigger = { has_trait = tot_group_sheet_049_trait } localization_key = tot_group_sheet_049_trait }
+		text = { trigger = { has_trait = tot_group_sheet_050_trait } localization_key = tot_group_sheet_050_trait }
+		text = { trigger = { has_trait = tot_group_sheet_051_trait } localization_key = tot_group_sheet_051_trait }
+		text = { trigger = { has_trait = tot_group_sheet_052_trait } localization_key = tot_group_sheet_052_trait }
+		text = { trigger = { has_trait = tot_group_sheet_053_trait } localization_key = tot_group_sheet_053_trait }
+		text = { trigger = { has_trait = tot_group_sheet_054_trait } localization_key = tot_group_sheet_054_trait }
+		text = { trigger = { has_trait = tot_group_sheet_055_trait } localization_key = tot_group_sheet_055_trait }
+		text = { trigger = { has_trait = tot_group_sheet_056_trait } localization_key = tot_group_sheet_056_trait }
+		text = { trigger = { has_trait = tot_group_sheet_057_trait } localization_key = tot_group_sheet_057_trait }
+		text = { localization_key = TOT_BAND_NO_SPECIALTY }
+	}
+	tot_band_current_roles = {
+		type = character
+		text = { trigger = { has_variable = tot_band_role_vocalist has_variable = tot_band_role_guitarist } localization_key = TOT_BAND_ROLE_VOCAL_GUITAR }
+		text = { trigger = { has_variable = tot_band_role_vocalist has_variable = tot_band_role_bassist } localization_key = TOT_BAND_ROLE_VOCAL_BASS }
+		text = { trigger = { has_variable = tot_band_role_vocalist has_variable = tot_band_role_keyboardist } localization_key = TOT_BAND_ROLE_VOCAL_KEYBOARD }
+		text = { trigger = { has_variable = tot_band_role_vocalist has_variable = tot_band_role_drummer } localization_key = TOT_BAND_ROLE_VOCAL_DRUM }
+		text = { trigger = { has_variable = tot_band_role_vocalist } localization_key = TOT_BAND_ROLE_VOCAL }
+		text = { trigger = { has_variable = tot_band_role_guitarist } localization_key = TOT_BAND_ROLE_GUITAR }
+		text = { trigger = { has_variable = tot_band_role_bassist } localization_key = TOT_BAND_ROLE_BASS }
+		text = { trigger = { has_variable = tot_band_role_keyboardist } localization_key = TOT_BAND_ROLE_KEYBOARD }
+		text = { trigger = { has_variable = tot_band_role_drummer } localization_key = TOT_BAND_ROLE_DRUM }
+		text = { localization_key = TOT_BAND_ROLE_NONE }
+	}
+	tot_band_music_specialty_summary = {
+		type = character
+		text = { trigger = { has_trait = tot_is_supper_lead_vocalist_trait has_trait = tot_guitarist_trait } localization_key = TOT_BAND_SKILL_SUPER_VOCAL_GUITAR }
+		text = { trigger = { has_trait = tot_is_supper_lead_vocalist_trait has_trait = tot_bassist_trait } localization_key = TOT_BAND_SKILL_SUPER_VOCAL_BASS }
+		text = { trigger = { has_trait = tot_is_supper_lead_vocalist_trait has_trait = tot_keyboardist_trait } localization_key = TOT_BAND_SKILL_SUPER_VOCAL_KEYBOARD }
+		text = { trigger = { has_trait = tot_is_supper_lead_vocalist_trait has_trait = tot_drummer_trait } localization_key = TOT_BAND_SKILL_SUPER_VOCAL_DRUM }
+		text = { trigger = { has_trait = tot_lead_vocalist_trait has_trait = tot_guitarist_trait } localization_key = TOT_BAND_SKILL_VOCAL_GUITAR }
+		text = { trigger = { has_trait = tot_lead_vocalist_trait has_trait = tot_bassist_trait } localization_key = TOT_BAND_SKILL_VOCAL_BASS }
+		text = { trigger = { has_trait = tot_lead_vocalist_trait has_trait = tot_keyboardist_trait } localization_key = TOT_BAND_SKILL_VOCAL_KEYBOARD }
+		text = { trigger = { has_trait = tot_lead_vocalist_trait has_trait = tot_drummer_trait } localization_key = TOT_BAND_SKILL_VOCAL_DRUM }
+		text = { trigger = { has_trait = tot_is_supper_lead_vocalist_trait } localization_key = TOT_BAND_SKILL_SUPER_VOCAL }
+		text = { trigger = { has_trait = tot_lead_vocalist_trait } localization_key = TOT_BAND_SKILL_VOCAL }
+		text = { trigger = { has_trait = tot_guitarist_trait } localization_key = TOT_BAND_SKILL_GUITAR }
+		text = { trigger = { has_trait = tot_bassist_trait } localization_key = TOT_BAND_SKILL_BASS }
+		text = { trigger = { has_trait = tot_keyboardist_trait } localization_key = TOT_BAND_SKILL_KEYBOARD }
+		text = { trigger = { has_trait = tot_drummer_trait } localization_key = TOT_BAND_SKILL_DRUM }
+		text = { localization_key = TOT_BAND_SKILL_NONE }
+	}
+	 tot_band_1_name_loc = {
+		 type = country
+		text = { trigger = { var:tot_band_1_name = 1 } localization_key = TOT_BAND_NAME_PRESET_1 }
+		text = { trigger = { var:tot_band_1_name = 2 } localization_key = TOT_BAND_NAME_PRESET_2 }
+		text = { trigger = { var:tot_band_1_name = 3 } localization_key = TOT_BAND_NAME_PRESET_3 }
+		text = { trigger = { var:tot_band_1_name = 4 } localization_key = TOT_BAND_NAME_PRESET_4 }
+		text = { trigger = { var:tot_band_1_name = 5 } localization_key = TOT_BAND_NAME_PRESET_5 }
+		text = { localization_key = TOT_BAND_DEFAULT_NAME_1 }
+	}
+
+	 tot_band_2_name_loc = {
+		 type = country
+		text = { trigger = { var:tot_band_2_name = 1 } localization_key = TOT_BAND_NAME_PRESET_1 }
+		text = { trigger = { var:tot_band_2_name = 2 } localization_key = TOT_BAND_NAME_PRESET_2 }
+		text = { trigger = { var:tot_band_2_name = 3 } localization_key = TOT_BAND_NAME_PRESET_3 }
+		text = { trigger = { var:tot_band_2_name = 4 } localization_key = TOT_BAND_NAME_PRESET_4 }
+		text = { trigger = { var:tot_band_2_name = 5 } localization_key = TOT_BAND_NAME_PRESET_5 }
+		text = { localization_key = TOT_BAND_DEFAULT_NAME_2 }
+	}
+
+	 tot_band_3_name_loc = {
+		 type = country
+		text = { trigger = { var:tot_band_3_name = 1 } localization_key = TOT_BAND_NAME_PRESET_1 }
+		text = { trigger = { var:tot_band_3_name = 2 } localization_key = TOT_BAND_NAME_PRESET_2 }
+		text = { trigger = { var:tot_band_3_name = 3 } localization_key = TOT_BAND_NAME_PRESET_3 }
+		text = { trigger = { var:tot_band_3_name = 4 } localization_key = TOT_BAND_NAME_PRESET_4 }
+		text = { trigger = { var:tot_band_3_name = 5 } localization_key = TOT_BAND_NAME_PRESET_5 }
+		text = { localization_key = TOT_BAND_DEFAULT_NAME_3 }
+	}
+
+	 tot_band_4_name_loc = {
+		 type = country
+		text = { trigger = { var:tot_band_4_name = 1 } localization_key = TOT_BAND_NAME_PRESET_1 }
+		text = { trigger = { var:tot_band_4_name = 2 } localization_key = TOT_BAND_NAME_PRESET_2 }
+		text = { trigger = { var:tot_band_4_name = 3 } localization_key = TOT_BAND_NAME_PRESET_3 }
+		text = { trigger = { var:tot_band_4_name = 4 } localization_key = TOT_BAND_NAME_PRESET_4 }
+		text = { trigger = { var:tot_band_4_name = 5 } localization_key = TOT_BAND_NAME_PRESET_5 }
+		text = { localization_key = TOT_BAND_DEFAULT_NAME_4 }
+	}
+
+	 tot_band_5_name_loc = {
+		 type = country
+		text = { trigger = { var:tot_band_5_name = 1 } localization_key = TOT_BAND_NAME_PRESET_1 }
+		text = { trigger = { var:tot_band_5_name = 2 } localization_key = TOT_BAND_NAME_PRESET_2 }
+		text = { trigger = { var:tot_band_5_name = 3 } localization_key = TOT_BAND_NAME_PRESET_3 }
+		text = { trigger = { var:tot_band_5_name = 4 } localization_key = TOT_BAND_NAME_PRESET_4 }
+		text = { trigger = { var:tot_band_5_name = 5 } localization_key = TOT_BAND_NAME_PRESET_5 }
+		text = { localization_key = TOT_BAND_DEFAULT_NAME_5 }
+	}
+
+	 tot_band_6_name_loc = {
+		 type = country
+		text = { trigger = { var:tot_band_6_name = 1 } localization_key = TOT_BAND_NAME_PRESET_1 }
+		text = { trigger = { var:tot_band_6_name = 2 } localization_key = TOT_BAND_NAME_PRESET_2 }
+		text = { trigger = { var:tot_band_6_name = 3 } localization_key = TOT_BAND_NAME_PRESET_3 }
+		text = { trigger = { var:tot_band_6_name = 4 } localization_key = TOT_BAND_NAME_PRESET_4 }
+		text = { trigger = { var:tot_band_6_name = 5 } localization_key = TOT_BAND_NAME_PRESET_5 }
+		text = { localization_key = TOT_BAND_DEFAULT_NAME_6 }
+	}
+
+	 tot_band_7_name_loc = {
+		 type = country
+		text = { trigger = { var:tot_band_7_name = 1 } localization_key = TOT_BAND_NAME_PRESET_1 }
+		text = { trigger = { var:tot_band_7_name = 2 } localization_key = TOT_BAND_NAME_PRESET_2 }
+		text = { trigger = { var:tot_band_7_name = 3 } localization_key = TOT_BAND_NAME_PRESET_3 }
+		text = { trigger = { var:tot_band_7_name = 4 } localization_key = TOT_BAND_NAME_PRESET_4 }
+		text = { trigger = { var:tot_band_7_name = 5 } localization_key = TOT_BAND_NAME_PRESET_5 }
+		text = { localization_key = TOT_BAND_DEFAULT_NAME_7 }
+	}
+
+	 tot_band_8_name_loc = {
+		 type = country
+		text = { trigger = { var:tot_band_8_name = 1 } localization_key = TOT_BAND_NAME_PRESET_1 }
+		text = { trigger = { var:tot_band_8_name = 2 } localization_key = TOT_BAND_NAME_PRESET_2 }
+		text = { trigger = { var:tot_band_8_name = 3 } localization_key = TOT_BAND_NAME_PRESET_3 }
+		text = { trigger = { var:tot_band_8_name = 4 } localization_key = TOT_BAND_NAME_PRESET_4 }
+		text = { trigger = { var:tot_band_8_name = 5 } localization_key = TOT_BAND_NAME_PRESET_5 }
+		text = { localization_key = TOT_BAND_DEFAULT_NAME_8 }
+	}
+
+	 tot_band_9_name_loc = {
+		 type = country
+		text = { trigger = { var:tot_band_9_name = 1 } localization_key = TOT_BAND_NAME_PRESET_1 }
+		text = { trigger = { var:tot_band_9_name = 2 } localization_key = TOT_BAND_NAME_PRESET_2 }
+		text = { trigger = { var:tot_band_9_name = 3 } localization_key = TOT_BAND_NAME_PRESET_3 }
+		text = { trigger = { var:tot_band_9_name = 4 } localization_key = TOT_BAND_NAME_PRESET_4 }
+		text = { trigger = { var:tot_band_9_name = 5 } localization_key = TOT_BAND_NAME_PRESET_5 }
+		text = { localization_key = TOT_BAND_DEFAULT_NAME_9 }
+	}
+
+	 tot_band_10_name_loc = {
+		 type = country
+		text = { trigger = { var:tot_band_10_name = 1 } localization_key = TOT_BAND_NAME_PRESET_1 }
+		text = { trigger = { var:tot_band_10_name = 2 } localization_key = TOT_BAND_NAME_PRESET_2 }
+		text = { trigger = { var:tot_band_10_name = 3 } localization_key = TOT_BAND_NAME_PRESET_3 }
+		text = { trigger = { var:tot_band_10_name = 4 } localization_key = TOT_BAND_NAME_PRESET_4 }
+		text = { trigger = { var:tot_band_10_name = 5 } localization_key = TOT_BAND_NAME_PRESET_5 }
+		text = { localization_key = TOT_BAND_DEFAULT_NAME_10 }
+	}
+
+

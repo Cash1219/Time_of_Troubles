@@ -1,0 +1,293 @@
+tot_debug_open_character_journals_decision = {
+	is_shown = {
+		OR = {
+			NOT = { has_journal_entry = je_tot_character_growth_gui }
+			NOT = { has_journal_entry = je_kizuna_gui }
+			NOT = { has_journal_entry = je_tot_band_gui }
+		}
+	}
+
+	possible = {
+	}
+
+	when_taken = {
+		if = {
+			limit = {
+				NOT = { has_journal_entry = je_tot_character_growth_gui }
+			}
+			add_journal_entry = { type = je_tot_character_growth_gui }
+		}
+		if = {
+			limit = {
+				NOT = { has_journal_entry = je_kizuna_gui }
+			}
+			add_journal_entry = { type = je_kizuna_gui }
+		}
+		if = {
+			limit = {
+				NOT = { has_journal_entry = je_tot_band_gui }
+			}
+			add_journal_entry = { type = je_tot_band_gui }
+		}
+		tot_character_growth_refresh = yes
+		update_kizuna = yes
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+tot_debug_refresh_character_systems_decision = {
+	is_shown = {
+	}
+
+	possible = {
+	}
+
+	when_taken = {
+		tot_character_growth_refresh = yes
+		update_kizuna = yes
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+tot_debug_add_character_growth_exp_100_decision = {
+	is_shown = {
+	}
+
+	possible = {
+	}
+
+	when_taken = {
+		every_scope_character = {
+			limit = {
+				is_character_alive = yes
+				historical = yes
+			}
+			change_variable = {
+				name = tot_character_growth_exp
+				add = 100
+			}
+			tot_character_growth_check_level_up = yes
+		}
+		tot_character_growth_refresh = yes
+		update_kizuna = yes
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+tot_debug_add_character_growth_exp_1000_decision = {
+	is_shown = {
+	}
+
+	possible = {
+	}
+
+	when_taken = {
+		every_scope_character = {
+			limit = {
+				is_character_alive = yes
+				historical = yes
+			}
+			change_variable = {
+				name = tot_character_growth_exp
+				add = 1000
+			}
+			tot_character_growth_check_level_up = yes
+		}
+		tot_character_growth_refresh = yes
+		update_kizuna = yes
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+tot_debug_grant_ruler_random_kizuna_trait_decision = {
+	is_shown = {
+		exists = ruler
+	}
+
+	possible = {
+		ruler = {
+			historical = yes
+		}
+	}
+
+	when_taken = {
+		ruler = {
+			tot_character_growth_grant_random_kizuna_trait = yes
+		}
+		tot_character_growth_refresh = yes
+		update_kizuna = yes
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+tot_debug_grant_ruler_kizuna_001_trait_decision = {
+	is_shown = {
+		exists = ruler
+	}
+
+	possible = {
+		ruler = {
+			historical = yes
+			NOT = { has_trait = tot_group_sheet_001_trait }
+		}
+	}
+
+	when_taken = {
+		ruler = {
+			add_trait = tot_group_sheet_001_trait
+		}
+		tot_character_growth_refresh = yes
+		update_kizuna = yes
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+tot_debug_clear_character_growth_exp_decision = {
+	is_shown = {
+	}
+
+	possible = {
+	}
+
+	when_taken = {
+		every_scope_character = {
+			limit = {
+				has_variable = tot_character_growth_exp
+				historical = yes
+			}
+			remove_variable = tot_character_growth_exp
+		}
+		tot_character_growth_refresh = yes
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+tot_debug_clear_governor_replace_cooldowns_decision = {
+	is_shown = {
+	}
+
+	possible = {
+	}
+
+	when_taken = {
+		every_scope_state = {
+			limit = {
+				has_variable = tot_province_governor_replace_cooldown
+			}
+			remove_variable = tot_province_governor_replace_cooldown
+		}
+		tot_character_growth_refresh = yes
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+tot_debug_unlock_all_bands_decision = {
+	is_shown = {
+	}
+
+	possible = {
+	}
+
+	when_taken = {
+		set_variable = {
+			name = tot_band_limit
+			value = 10
+		}
+		update_kizuna = yes
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+tot_debug_add_gourmet_progress_1000_decision = {
+	is_shown = {
+	}
+
+	possible = {
+	}
+
+	when_taken = {
+		change_variable = { name = tot_gourmet_progress add = 1000 }
+		tot_gourmet_check_rewards = yes
+		update_kizuna = yes
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+tot_debug_add_gourmet_progress_10000_decision = {
+	is_shown = {
+	}
+
+	possible = {
+	}
+
+	when_taken = {
+		change_variable = { name = tot_gourmet_progress add = 10000 }
+		tot_gourmet_check_rewards = yes
+		update_kizuna = yes
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+tot_debug_clear_gourmet_progress_decision = {
+	is_shown = {
+	}
+
+	possible = {
+	}
+
+	when_taken = {
+		remove_variable = tot_gourmet_progress
+		remove_variable = tot_gourmet_tier_1_claimed
+		remove_variable = tot_gourmet_tier_2_claimed
+		remove_variable = tot_gourmet_tier_3_claimed
+		remove_variable = tot_gourmet_tier_4_claimed
+		remove_variable = tot_gourmet_tier_5_claimed
+		remove_variable = tot_gourmet_invest_grain
+		remove_variable = tot_gourmet_invest_meat
+		remove_variable = tot_gourmet_invest_fish
+		remove_variable = tot_gourmet_invest_fruit
+		remove_variable = tot_gourmet_invest_groceries
+		remove_variable = tot_gourmet_invest_tea
+		remove_variable = tot_gourmet_invest_coffee
+		remove_variable = tot_gourmet_invest_luxury_drinks
+		remove_variable = tot_gourmet_invest_luxury_foods
+		update_kizuna = yes
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}

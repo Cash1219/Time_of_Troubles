@@ -1,0 +1,5375 @@
+﻿MILITARY_FORMATIONS = {
+	c:ABU ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_arabia
+			name = "ABU_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ABU_DHABI count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ABU_DHABI count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ABU_DHABI count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_arabia
+			name = "ABU_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:ACE ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indonesia
+			name = "ACE_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ACEH count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ACEH count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ACEH count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_indonesia
+			name = "ACE_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:ACH ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "ACH_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_UGANDA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_UGANDA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_UGANDA count = 1 }
+		}
+	}
+	c:ADG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "ADG_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TIMBUKTU count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TIMBUKTU count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TIMBUKTU count = 1 }
+		}
+	}
+	c:ADL ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_europe
+			name = "ADL_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_LOWER_ANDALUSIA count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_LOWER_ANDALUSIA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_LOWER_ANDALUSIA count = 2 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_southern_europe
+			name = "ADL_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 2
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 6
+			}
+		}
+	}
+	c:ADR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "ADR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_INNER_MAURITANIA count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_INNER_MAURITANIA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_INNER_MAURITANIA count = 1 }
+		}
+	}
+	c:AGC ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "AGC_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_MOCAMBIQUE count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_MOCAMBIQUE count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_MOCAMBIQUE count = 1 }
+		}
+	}
+	c:AHG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_africa
+			name = "AHG_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EAST_SAHARA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EAST_SAHARA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EAST_SAHARA count = 1 }
+		}
+	}
+	c:AIN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_northeast_asia
+			name = "AIN_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SAKHALIN count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SAKHALIN count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SAKHALIN count = 1 }
+		}
+	}
+	c:AIR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "AIR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_NIGER count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_NIGER count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_NIGER count = 1 }
+		}
+	}
+	c:AJJ ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_africa
+			name = "AJJ_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_LIBYAN_DESERT count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_LIBYAN_DESERT count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_LIBYAN_DESERT count = 1 }
+		}
+	}
+	c:AJR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "AJR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_KENYA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_KENYA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_KENYA count = 1 }
+		}
+	}
+	c:AKXS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_america
+			name = "AKXS_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_MEXICO count = 15 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_MEXICO count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_MEXICO count = 4 }
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_america
+			name = "AKXS_army_2"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_RIO_GRANDE count = 14 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_RIO_GRANDE count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_RIO_GRANDE count = 4 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_central_america
+			name = "AKXS_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:ALS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_western_europe
+			name = "ALS_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ALSACE_LORRAINE count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ALSACE_LORRAINE count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ALSACE_LORRAINE count = 1 }
+		}
+	}
+	c:ANK ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "ANK_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_UGANDA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_UGANDA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_UGANDA count = 1 }
+		}
+	}
+	c:ANU ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "ANU_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_AMHARA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_AMHARA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_AMHARA count = 1 }
+		}
+	}
+	c:AQO ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_balkans
+			name = "AQO_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_BOSNIA count = 8 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_BOSNIA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_BOSNIA count = 2 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_balkans
+			name = "AQO_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:ARG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_la_plata
+			name = "ARG_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_BUENOS_AIRES count = 16 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_BUENOS_AIRES count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_BUENOS_AIRES count = 4 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_la_plata
+			name = "ARG_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:ARS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "ARS_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_OROMIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_OROMIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_OROMIA count = 1 }
+		}
+	}
+	c:ASH ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "ASH_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_GOLD_COAST count = 12 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_GOLD_COAST count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_GOLD_COAST count = 3 }
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "ASH_army_2"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TOGO count = 11 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TOGO count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TOGO count = 3 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_west_africa
+			name = "ASH_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:ATB ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_pacific_coast
+			name = "ATB_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ALASKA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ALASKA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ALASKA count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_pacific_coast
+			name = "ATB_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:ATR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "ATR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TIMBUKTU count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TIMBUKTU count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TIMBUKTU count = 1 }
+		}
+	}
+	c:ATRI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_eastern_europe
+			name = "ATRI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_RIGA count = 12 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_RIGA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_RIGA count = 3 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_eastern_europe
+			name = "ATRI_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 2
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 5
+			}
+		}
+	}
+	c:AUL ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "AUL_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_KENYA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_KENYA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_KENYA count = 1 }
+		}
+	}
+	c:AWS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "AWS_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_GONDER count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_GONDER count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_GONDER count = 1 }
+		}
+	}
+	c:AYI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "AYI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_IVORY_COAST count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_IVORY_COAST count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_IVORY_COAST count = 1 }
+		}
+	}
+	c:BAL ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indonesia
+			name = "BAL_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SUNDA_ISLANDS count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SUNDA_ISLANDS count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SUNDA_ISLANDS count = 2 }
+		}
+	}
+	c:BAV ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_europe
+			name = "BAV_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_BAVARIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_BAVARIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_BAVARIA count = 1 }
+		}
+	}
+	c:BCE ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_south_india
+			name = "BCE_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CEYLON count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CEYLON count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CEYLON count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_south_india
+			name = "BCE_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:BCXY ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_atlantic_coast
+			name = "BCXY_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_NEW_BRUNSWICK count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_NEW_BRUNSWICK count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_NEW_BRUNSWICK count = 2 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_atlantic_coast
+			name = "BCXY_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 3
+			}
+		}
+	}
+	c:BEN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "BEN_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_BENIN count = 13 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_BENIN count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_BENIN count = 3 }
+		}
+	}
+	c:BGI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_equatorial_africa
+			name = "BGI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_WADDAI count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_WADDAI count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_WADDAI count = 1 }
+		}
+	}
+	c:BGM ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "BGM_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_GONDER count = 9 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_GONDER count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_GONDER count = 2 }
+		}
+	}
+	c:BHN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_arabia
+			name = "BHN_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ABU_DHABI count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ABU_DHABI count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ABU_DHABI count = 1 }
+		}
+	}
+	c:BHU ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_himalayas
+			name = "BHU_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EASTERN_HIMALAYAS count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EASTERN_HIMALAYAS count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EASTERN_HIMALAYAS count = 1 }
+		}
+	}
+	c:BIC ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_india
+			name = "BIC_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_WEST_BENGAL count = 14 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_WEST_BENGAL count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_WEST_BENGAL count = 3 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_north_india
+			name = "BIC_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 3
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 9
+			}
+		}
+	}
+	c:BLA ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_oceania
+			name = "BLA_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SOLOMON_ISLANDS count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SOLOMON_ISLANDS count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SOLOMON_ISLANDS count = 1 }
+		}
+	}
+	c:BLE ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "BLE_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_WINDWARD_COAST count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_WINDWARD_COAST count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_WINDWARD_COAST count = 1 }
+		}
+	}
+	c:BLF ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_canada
+			name = "BLF_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ALBERTA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ALBERTA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ALBERTA count = 1 }
+		}
+	}
+	c:BLG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indonesia
+			name = "BLG_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EAST_BORNEO count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EAST_BORNEO count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EAST_BORNEO count = 1 }
+		}
+	}
+	c:BMB ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "BMB_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_KAZEMBE count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_KAZEMBE count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_KAZEMBE count = 1 }
+		}
+	}
+	c:BMM ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_equatorial_africa
+			name = "BMM_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_NORTH_CAMEROON count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_NORTH_CAMEROON count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_NORTH_CAMEROON count = 1 }
+		}
+	}
+	c:BND ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "BND_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SENEGAL count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SENEGAL count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SENEGAL count = 1 }
+		}
+	}
+	c:BNG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_equatorial_africa
+			name = "BNG_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EQUATEUR count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EQUATEUR count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EQUATEUR count = 1 }
+		}
+	}
+	c:BNJ ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indonesia
+			name = "BNJ_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EAST_BORNEO count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EAST_BORNEO count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EAST_BORNEO count = 1 }
+		}
+	}
+	c:BNY ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "BNY_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_UGANDA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_UGANDA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_UGANDA count = 1 }
+		}
+	}
+	c:BOB ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_equatorial_africa
+			name = "BOB_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EQUATEUR count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EQUATEUR count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EQUATEUR count = 1 }
+		}
+	}
+	c:BOL ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_andes
+			name = "BOL_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_LA_PAZ count = 8 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_LA_PAZ count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_LA_PAZ count = 2 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_andes
+			name = "BOL_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:BOR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "BOR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_BORNU count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_BORNU count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_BORNU count = 2 }
+		}
+	}
+	c:BRD ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "BRD_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TANGANYIKA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TANGANYIKA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TANGANYIKA count = 1 }
+		}
+	}
+	c:BRG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "BRG_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_HAUSALAND count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_HAUSALAND count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_HAUSALAND count = 1 }
+		}
+	}
+	c:BRK ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "BRK_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_MAURITANIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_MAURITANIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_MAURITANIA count = 1 }
+		}
+	}
+	c:BRN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "BRN_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_AMHARA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_AMHARA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_AMHARA count = 1 }
+		}
+	}
+	c:BRU ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indonesia
+			name = "BRU_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_NORTH_BORNEO count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_NORTH_BORNEO count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_NORTH_BORNEO count = 1 }
+		}
+	}
+	c:BRZ ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_brazil
+			name = "BRZ_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_RIO_DE_JANEIRO count = 14 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_RIO_DE_JANEIRO count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_RIO_DE_JANEIRO count = 3 }
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_brazil
+			name = "BRZ_army_2"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_MATO_GROSSO count = 14 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_MATO_GROSSO count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_MATO_GROSSO count = 3 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_brazil
+			name = "BRZ_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 3
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 7
+			}
+		}
+	}
+	c:BST ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_africa
+			name = "BST_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ZULULAND count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ZULULAND count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ZULULAND count = 1 }
+		}
+	}
+	c:BTN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indonesia
+			name = "BTN_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CELEBES count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CELEBES count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CELEBES count = 1 }
+		}
+	}
+	c:BUG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "BUG_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_UGANDA count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_UGANDA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_UGANDA count = 2 }
+		}
+	}
+	c:BUK ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_asia
+			name = "BUK_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_UZBEKIA count = 13 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_UZBEKIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_UZBEKIA count = 3 }
+		}
+	}
+	c:BUR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indochina
+			name = "BUR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_MANDALAY count = 8 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_MANDALAY count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_MANDALAY count = 2 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_indochina
+			name = "BUR_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:BYZ ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_balkans
+			name = "BYZ_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EASTERN_THRACE count = 18 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EASTERN_THRACE count = 5 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EASTERN_THRACE count = 4 }
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_balkans
+			name = "BYZ_army_2"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_BULGARIA count = 18 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_BULGARIA count = 5 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_BULGARIA count = 4 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_balkans
+			name = "BYZ_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 3
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 8
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_near_east
+			name = "BYZ_fleet_2"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 3
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 7
+			}
+		}
+	}
+	c:CAM ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indochina
+			name = "CAM_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CAMBODIA count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CAMBODIA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CAMBODIA count = 2 }
+		}
+	}
+	c:CAY ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "CAY_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SENEGAL count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SENEGAL count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SENEGAL count = 1 }
+		}
+	}
+	c:CHI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_china
+			name = "CHI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_BEIJING count = 28 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_BEIJING count = 8 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_BEIJING count = 7 }
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_china
+			name = "CHI_army_2"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ULIASTAI count = 28 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ULIASTAI count = 8 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ULIASTAI count = 7 }
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_china
+			name = "CHI_army_3"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_URGA count = 28 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_URGA count = 8 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_URGA count = 7 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_south_china
+			name = "CHI_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 4
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 10
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_south_china
+			name = "CHI_fleet_2"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 4
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 10
+			}
+		}
+	}
+	c:CHK ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_equatorial_africa
+			name = "CHK_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EAST_ANGOLA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EAST_ANGOLA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EAST_ANGOLA count = 1 }
+		}
+	}
+	c:CHL ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_la_plata
+			name = "CHL_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SANTIAGO count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SANTIAGO count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SANTIAGO count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_la_plata
+			name = "CHL_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:CHP ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indochina
+			name = "CHP_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_LAOS count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_LAOS count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_LAOS count = 1 }
+		}
+	}
+	c:CLM ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_gran_colombia
+			name = "CLM_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CUNDINAMARCA count = 11 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CUNDINAMARCA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CUNDINAMARCA count = 3 }
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_gran_colombia
+			name = "CLM_army_2"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_GUAVIARE count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_GUAVIARE count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_GUAVIARE count = 3 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_gran_colombia
+			name = "CLM_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 3
+			}
+		}
+	}
+	c:CMB ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_africa
+			name = "CMB_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EAST_SAHARA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EAST_SAHARA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EAST_SAHARA count = 1 }
+		}
+	}
+	c:CMI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indochina
+			name = "CMI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CHIANG_MAI count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CHIANG_MAI count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CHIANG_MAI count = 2 }
+		}
+	}
+	c:CUB ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_america
+			name = "CUB_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_WESTERN_CUBA count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_WESTERN_CUBA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_WESTERN_CUBA count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_central_america
+			name = "CUB_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:DAH ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "DAH_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_DAHOMEY count = 5 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_DAHOMEY count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_DAHOMEY count = 1 }
+		}
+	}
+	c:DAI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indochina
+			name = "DAI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ANNAM count = 19 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ANNAM count = 5 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ANNAM count = 4 }
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indochina
+			name = "DAI_army_2"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TONKIN count = 18 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TONKIN count = 5 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TONKIN count = 4 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_indochina
+			name = "DAI_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:DAK ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_equatorial_africa
+			name = "DAK_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_UBANGI_SHARI count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_UBANGI_SHARI count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_UBANGI_SHARI count = 1 }
+		}
+	}
+	c:DAL ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_india
+			name = "DAL_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_PUNJAB count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_PUNJAB count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_PUNJAB count = 2 }
+		}
+	}
+	c:DEI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indonesia
+			name = "DEI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_WEST_JAVA count = 11 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_WEST_JAVA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_WEST_JAVA count = 3 }
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indonesia
+			name = "DEI_army_2"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SOUTH_SUMATRA count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SOUTH_SUMATRA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SOUTH_SUMATRA count = 3 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_indonesia
+			name = "DEI_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 3
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 7
+			}
+		}
+	}
+	c:DFR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_nile_basin
+			name = "DFR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_DARFUR count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_DARFUR count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_DARFUR count = 1 }
+		}
+	}
+	c:DFT ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_nile_basin
+			name = "DFT_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EQUATORIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EQUATORIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EQUATORIA count = 1 }
+		}
+	}
+	c:DGR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indochina
+			name = "DGR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_MEKONG count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_MEKONG count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_MEKONG count = 1 }
+		}
+	}
+	c:DIN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "DIN_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_NIGER count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_NIGER count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_NIGER count = 1 }
+		}
+	}
+	c:DIO ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "DIO_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SENEGAL count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SENEGAL count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SENEGAL count = 1 }
+		}
+	}
+	c:DLA ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_equatorial_africa
+			name = "DLA_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SOUTH_CAMEROON count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SOUTH_CAMEROON count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SOUTH_CAMEROON count = 1 }
+		}
+	}
+	c:DLM ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_africa
+			name = "DLM_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_WEST_SAHARA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_WEST_SAHARA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_WEST_SAHARA count = 1 }
+		}
+	}
+	c:DNK ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_nile_basin
+			name = "DNK_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EQUATORIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EQUATORIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EQUATORIA count = 1 }
+		}
+	}
+	c:EGY ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_nile_basin
+			name = "EGY_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_LOWER_EGYPT count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_LOWER_EGYPT count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_LOWER_EGYPT count = 2 }
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_nile_basin
+			name = "EGY_army_2"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_DONGOLA count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_DONGOLA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_DONGOLA count = 2 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_nile_basin
+			name = "EGY_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 3
+			}
+		}
+	}
+	c:ELZ ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_india
+			name = "ELZ_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_GUJARAT count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_GUJARAT count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_GUJARAT count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_south_india
+			name = "ELZ_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 2
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 6
+			}
+		}
+	}
+	c:EWE ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "EWE_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TOGO count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TOGO count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TOGO count = 1 }
+		}
+	}
+	c:EZO ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_northeast_asia
+			name = "EZO_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_HOKKAIDO count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_HOKKAIDO count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_HOKKAIDO count = 1 }
+		}
+	}
+	c:FIN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_northern_europe
+			name = "FIN_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_UUSIMAA count = 12 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_UUSIMAA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_UUSIMAA count = 3 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_northern_europe
+			name = "FIN_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:FJI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_oceania
+			name = "FJI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_FIJI count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_FIJI count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_FIJI count = 1 }
+		}
+	}
+	c:FNG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_equatorial_africa
+			name = "FNG_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_GABON count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_GABON count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_GABON count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_equatorial_africa
+			name = "FNG_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:FRA ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_western_europe
+			name = "FRA_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ILE_DE_FRANCE count = 16 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ILE_DE_FRANCE count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ILE_DE_FRANCE count = 4 }
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_western_europe
+			name = "FRA_army_2"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_BRITTANY count = 16 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_BRITTANY count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_BRITTANY count = 4 }
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_western_europe
+			name = "FRA_army_3"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ORLEANS count = 16 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ORLEANS count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ORLEANS count = 4 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_western_europe
+			name = "FRA_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 3
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 8
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_western_europe
+			name = "FRA_fleet_2"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 3
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 7
+			}
+		}
+	}
+	c:FTJ ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "FTJ_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_GUINEA count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_GUINEA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_GUINEA count = 2 }
+		}
+	}
+	c:FTR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "FTR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SENEGAL count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SENEGAL count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SENEGAL count = 2 }
+		}
+	}
+	c:FZN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_africa
+			name = "FZN_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_LIBYAN_DESERT count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_LIBYAN_DESERT count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_LIBYAN_DESERT count = 1 }
+		}
+	}
+	c:GBDP ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_europe
+			name = "GBDP_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_VENETIA count = 12 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_VENETIA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_VENETIA count = 3 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_southern_europe
+			name = "GBDP_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 3
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 7
+			}
+		}
+	}
+	c:GBR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_western_europe
+			name = "GBR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_HOME_COUNTIES count = 16 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_HOME_COUNTIES count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_HOME_COUNTIES count = 4 }
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_western_europe
+			name = "GBR_army_2"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_HIGHLANDS count = 16 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_HIGHLANDS count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_HIGHLANDS count = 4 }
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_western_europe
+			name = "GBR_army_3"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_LOWLANDS count = 16 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_LOWLANDS count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_LOWLANDS count = 4 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_western_europe
+			name = "GBR_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 7
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 21
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_western_europe
+			name = "GBR_fleet_2"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 7
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 21
+			}
+		}
+	}
+	c:GEO ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_greater_persia
+			name = "GEO_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_GREATER_CAUCASUS count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_GREATER_CAUCASUS count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_GREATER_CAUCASUS count = 2 }
+		}
+	}
+	c:GERW ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_europe
+			name = "GERW_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SCHLESWIG_HOLSTEIN count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SCHLESWIG_HOLSTEIN count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SCHLESWIG_HOLSTEIN count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_central_europe
+			name = "GERW_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:GGO ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "GGO_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_LINDI count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_LINDI count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_LINDI count = 1 }
+		}
+	}
+	c:GJM ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "GJM_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_GONDER count = 13 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_GONDER count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_GONDER count = 3 }
+		}
+	}
+	c:GLD ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "GLD_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SOMALILAND count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SOMALILAND count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SOMALILAND count = 1 }
+		}
+	}
+	c:GNC ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_europe
+			name = "GNC_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_GALICIA count = 19 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_GALICIA count = 5 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_GALICIA count = 5 }
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_europe
+			name = "GNC_army_2"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ALENTEJO count = 19 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ALENTEJO count = 5 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ALENTEJO count = 4 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_southern_europe
+			name = "GNC_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 3
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 9
+			}
+		}
+	}
+	c:GNI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_la_plata
+			name = "GNI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ALTO_PARAGUAY count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ALTO_PARAGUAY count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ALTO_PARAGUAY count = 1 }
+		}
+	}
+	c:GOD ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_russia
+			name = "GOD_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TARTARIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TARTARIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TARTARIA count = 1 }
+		}
+	}
+	c:GZA ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "GZA_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_LOURENCO_MARQUES count = 17 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_LOURENCO_MARQUES count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_LOURENCO_MARQUES count = 4 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_east_africa
+			name = "GZA_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:HAI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_america
+			name = "HAI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_HAITI count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_HAITI count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_HAITI count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_central_america
+			name = "HAI_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:HAR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "HAR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_OROMIA count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_OROMIA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_OROMIA count = 2 }
+		}
+	}
+	c:HAU ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "HAU_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_OUTER_HAUSALAND count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_OUTER_HAUSALAND count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_OUTER_HAUSALAND count = 2 }
+		}
+	}
+	c:HAW ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_oceania
+			name = "HAW_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_HAWAIIAN_ISLANDS count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_HAWAIIAN_ISLANDS count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_HAWAIIAN_ISLANDS count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_oceania
+			name = "HAW_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:HDJ ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_arabia
+			name = "HDJ_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_HEDJAZ count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_HEDJAZ count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_HEDJAZ count = 2 }
+		}
+	}
+	c:HDY ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "HDY_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_AMHARA count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_AMHARA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_AMHARA count = 2 }
+		}
+	}
+	c:HHE ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "HHE_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_LINDI count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_LINDI count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_LINDI count = 1 }
+		}
+	}
+	c:HLA ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_oceania
+			name = "HLA_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_BOUGAINVILLE count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_BOUGAINVILLE count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_BOUGAINVILLE count = 1 }
+		}
+	}
+	c:HMB ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_equatorial_africa
+			name = "HMB_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CONGO_ORIENTALE count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CONGO_ORIENTALE count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CONGO_ORIENTALE count = 1 }
+		}
+	}
+	c:HRO ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_africa
+			name = "HRO_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_HEREROLAND count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_HEREROLAND count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_HEREROLAND count = 1 }
+		}
+	}
+	c:HTS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_northeast_asia
+			name = "HTS_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SAKHALIN count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SAKHALIN count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SAKHALIN count = 1 }
+		}
+	}
+	c:IBO ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "IBO_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_NIGER_DELTA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_NIGER_DELTA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_NIGER_DELTA count = 1 }
+		}
+	}
+	c:IDMS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_europe
+			name = "IDMS_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_AUSTRIA count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_AUSTRIA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_AUSTRIA count = 1 }
+		}
+	}
+	c:ION ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_balkans
+			name = "ION_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_IONIAN_ISLANDS count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_IONIAN_ISLANDS count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_IONIAN_ISLANDS count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_balkans
+			name = "ION_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:IQU ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_andes
+			name = "IQU_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ICA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ICA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ICA count = 1 }
+		}
+	}
+	c:IRC ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_canada
+			name = "IRC_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SASKATCHEWAN count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SASKATCHEWAN count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SASKATCHEWAN count = 1 }
+		}
+	}
+	c:ISQ ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "ISQ_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SOMALILAND count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SOMALILAND count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SOMALILAND count = 1 }
+		}
+	}
+	c:JAB ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_arabia
+			name = "JAB_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_HAIL count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_HAIL count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_HAIL count = 1 }
+		}
+	}
+	c:JAP ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_northeast_asia
+			name = "JAP_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_KYOTO count = 11 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_KYOTO count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_KYOTO count = 3 }
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_northeast_asia
+			name = "JAP_army_2"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TOHOKU count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TOHOKU count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TOHOKU count = 3 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_northeast_asia
+			name = "JAP_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 2
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 4
+			}
+		}
+	}
+	c:JLF ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "JLF_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SENEGAL count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SENEGAL count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SENEGAL count = 1 }
+		}
+	}
+	c:JMB ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indonesia
+			name = "JMB_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_NORTH_SUMATRA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_NORTH_SUMATRA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_NORTH_SUMATRA count = 1 }
+		}
+	}
+	c:JOH ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indochina
+			name = "JOH_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_MALAYA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_MALAYA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_MALAYA count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_indochina
+			name = "JOH_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:KAB ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_greater_persia
+			name = "KAB_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_KABUL count = 12 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_KABUL count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_KABUL count = 3 }
+		}
+	}
+	c:KAT ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_arabia
+			name = "KAT_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_YEMEN count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_YEMEN count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_YEMEN count = 1 }
+		}
+	}
+	c:KAU ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_oceania
+			name = "KAU_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SOUTH_AUSTRALIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SOUTH_AUSTRALIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SOUTH_AUSTRALIA count = 1 }
+		}
+	}
+	c:KBA ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_equatorial_africa
+			name = "KBA_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_KASAI count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_KASAI count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_KASAI count = 1 }
+		}
+	}
+	c:KBD ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "KBD_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_WINDWARD_COAST count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_WINDWARD_COAST count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_WINDWARD_COAST count = 1 }
+		}
+	}
+	c:KBU ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "KBU_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SENEGAL count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SENEGAL count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SENEGAL count = 1 }
+		}
+	}
+	c:KFA ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "KFA_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_AMHARA count = 9 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_AMHARA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_AMHARA count = 2 }
+		}
+	}
+	c:KHI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_asia
+			name = "KHI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TURKMENIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TURKMENIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TURKMENIA count = 1 }
+		}
+	}
+	c:KIVO ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_near_east
+			name = "KIVO_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_BAGHDAD count = 8 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_BAGHDAD count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_BAGHDAD count = 2 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_near_east
+			name = "KIVO_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:KKI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indochina
+			name = "KKI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_MANDALAY count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_MANDALAY count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_MANDALAY count = 1 }
+		}
+	}
+	c:KKY ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "KKY_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_KENYA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_KENYA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_KENYA count = 1 }
+		}
+	}
+	c:KLO ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indochina
+			name = "KLO_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CAMBODIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CAMBODIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CAMBODIA count = 1 }
+		}
+	}
+	c:KNG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "KNG_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_IVORY_COAST count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_IVORY_COAST count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_IVORY_COAST count = 1 }
+		}
+	}
+	c:KNK ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_oceania
+			name = "KNK_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_KANAK count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_KANAK count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_KANAK count = 1 }
+		}
+	}
+	c:KOK ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_asia
+			name = "KOK_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_FERGANA count = 13 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_FERGANA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_FERGANA count = 3 }
+		}
+	}
+	c:KON ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_equatorial_africa
+			name = "KON_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_BAS_CONGO count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_BAS_CONGO count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_BAS_CONGO count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_equatorial_africa
+			name = "KON_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:KOR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_northeast_asia
+			name = "KOR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SEOUL count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SEOUL count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SEOUL count = 2 }
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_northeast_asia
+			name = "KOR_army_2"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_PYONGYANG count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_PYONGYANG count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_PYONGYANG count = 2 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_northeast_asia
+			name = "KOR_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:KRG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "KRG_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TANGANYIKA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TANGANYIKA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TANGANYIKA count = 1 }
+		}
+	}
+	c:KRT ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "KRT_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_WESTERN_MALI count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_WESTERN_MALI count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_WESTERN_MALI count = 2 }
+		}
+	}
+	c:KRU ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "KRU_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_WINDWARD_COAST count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_WINDWARD_COAST count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_WINDWARD_COAST count = 1 }
+		}
+	}
+	c:KSN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_equatorial_africa
+			name = "KSN_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EAST_ANGOLA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EAST_ANGOLA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EAST_ANGOLA count = 1 }
+		}
+	}
+	c:KTI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indonesia
+			name = "KTI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EAST_BORNEO count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EAST_BORNEO count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EAST_BORNEO count = 1 }
+		}
+	}
+	c:KZM ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "KZM_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_KAZEMBE count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_KAZEMBE count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_KAZEMBE count = 1 }
+		}
+	}
+	c:LAH ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_arabia
+			name = "LAH_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_YEMEN count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_YEMEN count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_YEMEN count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_arabia
+			name = "LAH_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:LAN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indonesia
+			name = "LAN_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_WEST_BORNEO count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_WEST_BORNEO count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_WEST_BORNEO count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_indonesia
+			name = "LAN_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:LBA ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_equatorial_africa
+			name = "LBA_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_KATANGA count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_KATANGA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_KATANGA count = 1 }
+		}
+	}
+	c:LGA ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_equatorial_africa
+			name = "LGA_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CONGO_ORIENTALE count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CONGO_ORIENTALE count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CONGO_ORIENTALE count = 1 }
+		}
+	}
+	c:LIB ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "LIB_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_LIBERIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_LIBERIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_LIBERIA count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_west_africa
+			name = "LIB_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:LKT ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_great_plains
+			name = "LKT_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SOUTH_DAKOTA count = 12 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SOUTH_DAKOTA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SOUTH_DAKOTA count = 3 }
+		}
+	}
+	c:LND ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_equatorial_africa
+			name = "LND_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EAST_ANGOLA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EAST_ANGOLA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EAST_ANGOLA count = 1 }
+		}
+	}
+	c:LNG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_equatorial_africa
+			name = "LNG_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CONGO count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CONGO count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CONGO count = 1 }
+		}
+	}
+	c:LOU ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_great_plains
+			name = "LOU_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_LOUISIANA count = 8 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_LOUISIANA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_LOUISIANA count = 2 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_great_plains
+			name = "LOU_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:LUA ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indochina
+			name = "LUA_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_LAOS count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_LAOS count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_LAOS count = 1 }
+		}
+	}
+	c:LUO ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "LUO_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_RIFT_VALLEY count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_RIFT_VALLEY count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_RIFT_VALLEY count = 1 }
+		}
+	}
+	c:LZO ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "LZO_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ZAMBIA count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ZAMBIA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ZAMBIA count = 1 }
+		}
+	}
+	c:MAD ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "MAD_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_NORTH_MADAGASCAR count = 13 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_NORTH_MADAGASCAR count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_NORTH_MADAGASCAR count = 3 }
+		}
+	}
+	c:MAH ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_arabia
+			name = "MAH_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_YEMEN count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_YEMEN count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_YEMEN count = 1 }
+		}
+	}
+	c:MBS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "MBS_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_KENYA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_KENYA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_KENYA count = 1 }
+		}
+	}
+	c:MCR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_oceania
+			name = "MCR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EAST_MICRONESIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EAST_MICRONESIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EAST_MICRONESIA count = 1 }
+		}
+	}
+	c:MDK ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "MDK_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_GUINEA count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_GUINEA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_GUINEA count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_west_africa
+			name = "MDK_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:MGD ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indonesia
+			name = "MGD_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_MINDANAO count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_MINDANAO count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_MINDANAO count = 1 }
+		}
+	}
+	c:MHGK ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_europe
+			name = "MHGK_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_BOHEMIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_BOHEMIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_BOHEMIA count = 1 }
+		}
+	}
+	c:MHSB ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_northern_europe
+			name = "MHSB_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_GOTLAND count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_GOTLAND count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_GOTLAND count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_northern_europe
+			name = "MHSB_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:MJK ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "MJK_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_KENYA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_KENYA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_KENYA count = 1 }
+		}
+	}
+	c:MJT ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "MJT_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SOMALILAND count = 5 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SOMALILAND count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SOMALILAND count = 1 }
+		}
+	}
+	c:MLD ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_south_india
+			name = "MLD_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CEYLON count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CEYLON count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CEYLON count = 1 }
+		}
+	}
+	c:MNB ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_equatorial_africa
+			name = "MNB_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CONGO_ORIENTALE count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CONGO_ORIENTALE count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CONGO_ORIENTALE count = 1 }
+		}
+	}
+	c:MNC ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "MNC_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ZAMBEZIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ZAMBEZIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ZAMBEZIA count = 1 }
+		}
+	}
+	c:MOR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_africa
+			name = "MOR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_FEZ count = 18 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_FEZ count = 5 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_FEZ count = 4 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_north_africa
+			name = "MOR_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 3
+			}
+		}
+	}
+	c:MOS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "MOS_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_VOLTA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_VOLTA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_VOLTA count = 1 }
+		}
+	}
+	c:MRN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_oceania
+			name = "MRN_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_WESTERN_AUSTRALIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_WESTERN_AUSTRALIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_WESTERN_AUSTRALIA count = 1 }
+		}
+	}
+	c:MRV ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "MRV_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_KAZEMBE count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_KAZEMBE count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_KAZEMBE count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_east_africa
+			name = "MRV_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:MSH ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "MSH_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ZAMBEZI count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ZAMBEZI count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ZAMBEZI count = 1 }
+		}
+	}
+	c:MSI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "MSI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_RIFT_VALLEY count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_RIFT_VALLEY count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_RIFT_VALLEY count = 1 }
+		}
+	}
+	c:MSK ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "MSK_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ZAMBEZIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ZAMBEZIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ZAMBEZIA count = 1 }
+		}
+	}
+	c:MSN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "MSN_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EASTERN_MALI count = 13 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EASTERN_MALI count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EASTERN_MALI count = 3 }
+		}
+	}
+	c:MTB ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_africa
+			name = "MTB_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TRANSVAAL count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TRANSVAAL count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TRANSVAAL count = 1 }
+		}
+	}
+	c:MTP ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "MTP_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ZAMBEZI count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ZAMBEZI count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ZAMBEZI count = 1 }
+		}
+	}
+	c:MUS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_balkans
+			name = "MUS_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CENTRAL_HUNGARY count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CENTRAL_HUNGARY count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CENTRAL_HUNGARY count = 2 }
+		}
+	}
+	c:MYG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_near_east
+			name = "MYG_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CYPRUS count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CYPRUS count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CYPRUS count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_near_east
+			name = "MYG_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:MZB ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_africa
+			name = "MZB_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SAHARA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SAHARA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SAHARA count = 1 }
+		}
+	}
+	c:NAM ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_africa
+			name = "NAM_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_NAMAQUALAND count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_NAMAQUALAND count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_NAMAQUALAND count = 1 }
+		}
+	}
+	c:NAVL ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_atlantic_coast
+			name = "NAVL_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_NEW_BRUNSWICK count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_NEW_BRUNSWICK count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_NEW_BRUNSWICK count = 1 }
+		}
+	}
+	c:NEJ ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_arabia
+			name = "NEJ_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_NEJD count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_NEJD count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_NEJD count = 1 }
+		}
+	}
+	c:NEP ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_india
+			name = "NEP_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_DELHI count = 12 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_DELHI count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_DELHI count = 3 }
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_india
+			name = "NEP_army_2"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_RAJPUTANA count = 11 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_RAJPUTANA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_RAJPUTANA count = 3 }
+		}
+	}
+	c:NEWG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_india
+			name = "NEWG_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ORISSA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ORISSA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ORISSA count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_south_india
+			name = "NEWG_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:NJS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_balkans
+			name = "NJS_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SLOVAKIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SLOVAKIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SLOVAKIA count = 1 }
+		}
+	}
+	c:NNG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_oceania
+			name = "NNG_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_WESTERN_AUSTRALIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_WESTERN_AUSTRALIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_WESTERN_AUSTRALIA count = 1 }
+		}
+	}
+	c:NOR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_northern_europe
+			name = "NOR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EASTERN_NORWAY count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EASTERN_NORWAY count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EASTERN_NORWAY count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_northern_europe
+			name = "NOR_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 3
+			}
+		}
+	}
+	c:NPU ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_andes
+			name = "NPU_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_LIMA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_LIMA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_LIMA count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_andes
+			name = "NPU_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:NRHD ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_atlantic_coast
+			name = "NRHD_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_RHODE_ISLAND count = 14 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_RHODE_ISLAND count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_RHODE_ISLAND count = 3 }
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_atlantic_coast
+			name = "NRHD_army_2"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_NEW_YORK count = 14 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_NEW_YORK count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_NEW_YORK count = 3 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_atlantic_coast
+			name = "NRHD_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 3
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 7
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_atlantic_coast
+			name = "NRHD_fleet_2"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 3
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 7
+			}
+		}
+	}
+	c:NRU ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_oceania
+			name = "NRU_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_NAURU count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_NAURU count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_NAURU count = 1 }
+		}
+	}
+	c:NSW ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_oceania
+			name = "NSW_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_NEW_SOUTH_WALES count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_NEW_SOUTH_WALES count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_NEW_SOUTH_WALES count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_oceania
+			name = "NSW_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 2
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 4
+			}
+		}
+	}
+	c:NTO ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_oceania
+			name = "NTO_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_NORTH_ISLAND count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_NORTH_ISLAND count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_NORTH_ISLAND count = 1 }
+		}
+	}
+	c:NTU ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_oceania
+			name = "NTU_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SOUTH_ISLAND count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SOUTH_ISLAND count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SOUTH_ISLAND count = 1 }
+		}
+	}
+	c:NUE ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_nile_basin
+			name = "NUE_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EQUATORIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EQUATORIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EQUATORIA count = 1 }
+		}
+	}
+	c:NYM ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "NYM_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TANGANYIKA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TANGANYIKA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TANGANYIKA count = 1 }
+		}
+	}
+	c:OGD ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "OGD_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_OROMIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_OROMIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_OROMIA count = 1 }
+		}
+	}
+	c:OMA ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_arabia
+			name = "OMA_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ABU_DHABI count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ABU_DHABI count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ABU_DHABI count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_east_africa
+			name = "OMA_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:OMO ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "OMO_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_AMHARA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_AMHARA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_AMHARA count = 1 }
+		}
+	}
+	c:OOAR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_northern_europe
+			name = "OOAR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SVEALAND count = 8 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SVEALAND count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SVEALAND count = 2 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_northern_europe
+			name = "OOAR_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 3
+			}
+		}
+	}
+	c:ORA ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_africa
+			name = "ORA_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_VRYSTAAT count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_VRYSTAAT count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_VRYSTAAT count = 1 }
+		}
+	}
+	c:ORHD ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_near_east
+			name = "ORHD_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EAST_AEGEAN_ISLANDS count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EAST_AEGEAN_ISLANDS count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EAST_AEGEAN_ISLANDS count = 1 }
+		}
+	}
+	c:ORM ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "ORM_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_KENYA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_KENYA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_KENYA count = 1 }
+		}
+	}
+	c:OUA ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "OUA_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_INNER_MAURITANIA count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_INNER_MAURITANIA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_INNER_MAURITANIA count = 1 }
+		}
+	}
+	c:OVB ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_africa
+			name = "OVB_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_HEREROLAND count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_HEREROLAND count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_HEREROLAND count = 1 }
+		}
+	}
+	c:OVL ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_south_india
+			name = "OVL_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_MADRAS count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_MADRAS count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_MADRAS count = 2 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_south_india
+			name = "OVL_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 3
+			}
+		}
+	}
+	c:OVM ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_equatorial_africa
+			name = "OVM_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SOUTH_ANGOLA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SOUTH_ANGOLA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SOUTH_ANGOLA count = 1 }
+		}
+	}
+	c:OYO ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "OYO_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_YORUBA_STATES count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_YORUBA_STATES count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_YORUBA_STATES count = 2 }
+		}
+	}
+	c:OZH ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_asia
+			name = "OZH_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_URALSK count = 13 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_URALSK count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_URALSK count = 3 }
+		}
+	}
+	c:PAL ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_near_east
+			name = "PAL_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_PALESTINE count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_PALESTINE count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_PALESTINE count = 1 }
+		}
+	}
+	c:PAP ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_europe
+			name = "PAP_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_LAZIO count = 8 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_LAZIO count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_LAZIO count = 2 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_southern_europe
+			name = "PAP_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 3
+			}
+		}
+	}
+	c:PAT ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_la_plata
+			name = "PAT_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_PATAGONIA count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_PATAGONIA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_PATAGONIA count = 1 }
+		}
+	}
+	c:PCO ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_america
+			name = "PCO_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_PUERTO_RICO count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_PUERTO_RICO count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_PUERTO_RICO count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_central_america
+			name = "PCO_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:PDI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_africa
+			name = "PDI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TRANSVAAL count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TRANSVAAL count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TRANSVAAL count = 1 }
+		}
+	}
+	c:PER ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_greater_persia
+			name = "PER_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_IRAKAJEMI count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_IRAKAJEMI count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_IRAKAJEMI count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_arabia
+			name = "PER_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 3
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 8
+			}
+		}
+	}
+	c:PHI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indonesia
+			name = "PHI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_LUZON count = 8 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_LUZON count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_LUZON count = 2 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_indonesia
+			name = "PHI_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:PHL ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_africa
+			name = "PHL_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_VRYSTAAT count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_VRYSTAAT count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_VRYSTAAT count = 1 }
+		}
+	}
+	c:PLY ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_oceania
+			name = "PLY_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TAHITI count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TAHITI count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TAHITI count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_oceania
+			name = "PLY_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:PNI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_brazil
+			name = "PNI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_RIO_GRANDE_DO_SUL count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_RIO_GRANDE_DO_SUL count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_RIO_GRANDE_DO_SUL count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_brazil
+			name = "PNI_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:POL ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_eastern_europe
+			name = "POL_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_GREATER_POLAND count = 14 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_GREATER_POLAND count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_GREATER_POLAND count = 3 }
+		}
+	}
+	c:PON ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indonesia
+			name = "PON_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_WEST_BORNEO count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_WEST_BORNEO count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_WEST_BORNEO count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_indonesia
+			name = "PON_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:PPU ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indonesia
+			name = "PPU_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EASTERN_NEW_GUINEA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EASTERN_NEW_GUINEA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EASTERN_NEW_GUINEA count = 1 }
+		}
+	}
+	c:PRA ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_brazil
+			name = "PRA_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_PARA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_PARA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_PARA count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_brazil
+			name = "PRA_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:PRG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_la_plata
+			name = "PRG_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_BAJO_PARAGUAY count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_BAJO_PARAGUAY count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_BAJO_PARAGUAY count = 1 }
+		}
+	}
+	c:PRK ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indochina
+			name = "PRK_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_MALAYA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_MALAYA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_MALAYA count = 1 }
+		}
+	}
+	c:PRU ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_europe
+			name = "PRU_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_BRANDENBURG count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_BRANDENBURG count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_BRANDENBURG count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_central_europe
+			name = "PRU_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 3
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 7
+			}
+		}
+	}
+	c:PWN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_great_plains
+			name = "PWN_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_NEBRASKA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_NEBRASKA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_NEBRASKA count = 1 }
+		}
+	}
+	c:QWR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "QWR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_GONDER count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_GONDER count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_GONDER count = 3 }
+		}
+	}
+	c:RGB ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_africa
+			name = "RGB_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_WEST_SAHARA count = 8 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_WEST_SAHARA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_WEST_SAHARA count = 2 }
+		}
+	}
+	c:RHE ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_western_europe
+			name = "RHE_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_NORTH_RHINE count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_NORTH_RHINE count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_NORTH_RHINE count = 1 }
+		}
+	}
+	c:RITA ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_europe
+			name = "RITA_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CAMPANIA count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CAMPANIA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CAMPANIA count = 2 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_southern_europe
+			name = "RITA_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 2
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 6
+			}
+		}
+	}
+	c:ROM ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_balkans
+			name = "ROM_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_WALLACHIA count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_WALLACHIA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_WALLACHIA count = 2 }
+		}
+	}
+	c:RUS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_russia
+			name = "RUS_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_GALICH count = 19 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_GALICH count = 5 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_GALICH count = 5 }
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_russia
+			name = "RUS_army_2"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_PERM count = 19 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_PERM count = 5 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_PERM count = 4 }
+		}
+	}
+	c:RWD ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "RWD_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TANGANYIKA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TANGANYIKA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TANGANYIKA count = 1 }
+		}
+	}
+	c:RYU ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_northeast_asia
+			name = "RYU_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_RYUKYU_ISLANDS count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_RYUKYU_ISLANDS count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_RYUKYU_ISLANDS count = 1 }
+		}
+	}
+	c:SAF ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_africa
+			name = "SAF_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CAPE_COLONY count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CAPE_COLONY count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CAPE_COLONY count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_southern_africa
+			name = "SAF_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:SAK ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indonesia
+			name = "SAK_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_NORTH_SUMATRA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_NORTH_SUMATRA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_NORTH_SUMATRA count = 1 }
+		}
+	}
+	c:SAN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_africa
+			name = "SAN_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_BOTSWANA count = 8 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_BOTSWANA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_BOTSWANA count = 2 }
+		}
+	}
+	c:SAS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_oceania
+			name = "SAS_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SOUTH_AUSTRALIA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SOUTH_AUSTRALIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SOUTH_AUSTRALIA count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_oceania
+			name = "SAS_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:SBRT ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_great_plains
+			name = "SBRT_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TEXAS count = 8 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TEXAS count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TEXAS count = 2 }
+		}
+	}
+	c:SCT ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indochina
+			name = "SCT_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TONKIN count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TONKIN count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TONKIN count = 1 }
+		}
+	}
+	c:SDM ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "SDM_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_AMHARA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_AMHARA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_AMHARA count = 1 }
+		}
+	}
+	c:SEL ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indochina
+			name = "SEL_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_MALAYA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_MALAYA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_MALAYA count = 1 }
+		}
+	}
+	c:SGU ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "SGU_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_WESTERN_MALI count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_WESTERN_MALI count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_WESTERN_MALI count = 2 }
+		}
+	}
+	c:SGXY ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_canada
+			name = "SGXY_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_MANITOBA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_MANITOBA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_MANITOBA count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_canada
+			name = "SGXY_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:SHS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indochina
+			name = "SHS_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SHAN_STATES count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SHAN_STATES count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SHAN_STATES count = 1 }
+		}
+	}
+	c:SHW ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "SHW_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_OROMIA count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_OROMIA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_OROMIA count = 2 }
+		}
+	}
+	c:SIA ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indochina
+			name = "SIA_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_BANGKOK count = 15 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_BANGKOK count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_BANGKOK count = 4 }
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indochina
+			name = "SIA_army_2"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_NAKHON_RATCHASIMA count = 14 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_NAKHON_RATCHASIMA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_NAKHON_RATCHASIMA count = 4 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_indochina
+			name = "SIA_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 3
+			}
+		}
+	}
+	c:SIBC ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_siberia
+			name = "SIBC_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_KRASNOYARSK count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_KRASNOYARSK count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_KRASNOYARSK count = 2 }
+		}
+	}
+	c:SIBE ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_siberia
+			name = "SIBE_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_YAKUTSK count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_YAKUTSK count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_YAKUTSK count = 2 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_northeast_asia
+			name = "SIBE_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:SIBW ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_siberia
+			name = "SIBW_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TOBOLSK count = 8 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TOBOLSK count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TOBOLSK count = 2 }
+		}
+	}
+	c:SIK ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_himalayas
+			name = "SIK_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EASTERN_HIMALAYAS count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EASTERN_HIMALAYAS count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EASTERN_HIMALAYAS count = 1 }
+		}
+	}
+	c:SIL ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "SIL_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SIERRA_LEONE count = 8 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SIERRA_LEONE count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SIERRA_LEONE count = 2 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_west_africa
+			name = "SIL_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 2
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 4
+			}
+		}
+	}
+	c:SKD ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_europe
+			name = "SKD_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_NEW_CASTILE count = 18 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_NEW_CASTILE count = 5 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_NEW_CASTILE count = 4 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_southern_europe
+			name = "SKD_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 2
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 4
+			}
+		}
+	}
+	c:SKH ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_northeast_asia
+			name = "SKH_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SAKHALIN count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SAKHALIN count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SAKHALIN count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_northeast_asia
+			name = "SKH_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:SKM ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "SKM_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TANGANYIKA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TANGANYIKA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TANGANYIKA count = 1 }
+		}
+	}
+	c:SKY ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "SKY_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_KENYA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_KENYA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_KENYA count = 1 }
+		}
+	}
+	c:SLK ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_la_plata
+			name = "SLK_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ARAUCANIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ARAUCANIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ARAUCANIA count = 1 }
+		}
+	}
+	c:SLOF ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_atlantic_coast
+			name = "SLOF_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_MICHIGAN count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_MICHIGAN count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_MICHIGAN count = 2 }
+		}
+	}
+	c:SLW ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indonesia
+			name = "SLW_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CELEBES count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CELEBES count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CELEBES count = 1 }
+		}
+	}
+	c:SMB ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indonesia
+			name = "SMB_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_WEST_BORNEO count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_WEST_BORNEO count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_WEST_BORNEO count = 1 }
+		}
+	}
+	c:SNG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "SNG_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_LINDI count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_LINDI count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_LINDI count = 1 }
+		}
+	}
+	c:SOK ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "SOK_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_HAUSALAND count = 23 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_HAUSALAND count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_HAUSALAND count = 6 }
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "SOK_army_2"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EAST_HAUSALAND count = 23 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EAST_HAUSALAND count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EAST_HAUSALAND count = 6 }
+		}
+	}
+	c:SPU ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_andes
+			name = "SPU_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ICA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ICA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ICA count = 1 }
+		}
+	}
+	c:SRK ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indonesia
+			name = "SRK_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CENTRAL_JAVA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CENTRAL_JAVA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CENTRAL_JAVA count = 1 }
+		}
+	}
+	c:SRR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "SRR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SENEGAL count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SENEGAL count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SENEGAL count = 1 }
+		}
+	}
+	c:SSU ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "SSU_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_GUINEA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_GUINEA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_GUINEA count = 1 }
+		}
+	}
+	c:STG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indonesia
+			name = "STG_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_WEST_BORNEO count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_WEST_BORNEO count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_WEST_BORNEO count = 1 }
+		}
+	}
+	c:STLI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_europe
+			name = "STLI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_PIEDMONT count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_PIEDMONT count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_PIEDMONT count = 2 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_southern_europe
+			name = "STLI_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 3
+			}
+		}
+	}
+	c:STRW ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_northern_europe
+			name = "STRW_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ZEALAND count = 14 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ZEALAND count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ZEALAND count = 3 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_northern_europe
+			name = "STRW_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 2
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 4
+			}
+		}
+	}
+	c:SUL ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indonesia
+			name = "SUL_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_MINDANAO count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_MINDANAO count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_MINDANAO count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_indonesia
+			name = "SUL_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:SWI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_europe
+			name = "SWI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_WEST_SWITZERLAND count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_WEST_SWITZERLAND count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_WEST_SWITZERLAND count = 2 }
+		}
+	}
+	c:SWZ ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_africa
+			name = "SWZ_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TRANSVAAL count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TRANSVAAL count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TRANSVAAL count = 1 }
+		}
+	}
+	c:SYR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_near_east
+			name = "SYR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SYRIA count = 8 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SYRIA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SYRIA count = 2 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_near_east
+			name = "SYR_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:TAS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_oceania
+			name = "TAS_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TASMANIA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TASMANIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TASMANIA count = 1 }
+		}
+	}
+	c:TBI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_equatorial_africa
+			name = "TBI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CHAD count = 8 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CHAD count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CHAD count = 2 }
+		}
+	}
+	c:TBUN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_western_europe
+			name = "TBUN_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_HOLLAND count = 16 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_HOLLAND count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_HOLLAND count = 4 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_western_europe
+			name = "TBUN_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 2
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 6
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_western_europe
+			name = "TBUN_fleet_2"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 2
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 5
+			}
+		}
+	}
+	c:TEK ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_africa
+			name = "TEK_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_INNER_MOROCCO count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_INNER_MOROCCO count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_INNER_MOROCCO count = 1 }
+		}
+	}
+	c:TGCC ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_pacific_coast
+			name = "TGCC_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_BRITISH_COLUMBIA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_BRITISH_COLUMBIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_BRITISH_COLUMBIA count = 1 }
+		}
+	}
+	c:TGI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "TGI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_MOCAMBIQUE count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_MOCAMBIQUE count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_MOCAMBIQUE count = 1 }
+		}
+	}
+	c:TGR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "TGR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_GONDER count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_GONDER count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_GONDER count = 2 }
+		}
+	}
+	c:THL ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_la_plata
+			name = "THL_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_PATAGONIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_PATAGONIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_PATAGONIA count = 1 }
+		}
+	}
+	c:TIB ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_himalayas
+			name = "TIB_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_LHASA count = 12 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_LHASA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_LHASA count = 3 }
+		}
+	}
+	c:TID ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indonesia
+			name = "TID_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_MOLUCCAS count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_MOLUCCAS count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_MOLUCCAS count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_indonesia
+			name = "TID_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:TKE ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_equatorial_africa
+			name = "TKE_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CONGO count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CONGO count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CONGO count = 1 }
+		}
+	}
+	c:TMN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "TMN_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SIERRA_LEONE count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SIERRA_LEONE count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SIERRA_LEONE count = 1 }
+		}
+	}
+	c:TNG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_oceania
+			name = "TNG_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TONGA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TONGA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TONGA count = 1 }
+		}
+	}
+	c:TPS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_nile_basin
+			name = "TPS_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EQUATORIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EQUATORIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EQUATORIA count = 1 }
+		}
+	}
+	c:TRI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_africa
+			name = "TRI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TRIPOLI count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TRIPOLI count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TRIPOLI count = 2 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_north_africa
+			name = "TRI_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:TRK ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "TRK_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_RIFT_VALLEY count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_RIFT_VALLEY count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_RIFT_VALLEY count = 1 }
+		}
+	}
+	c:TRM ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_asia
+			name = "TRM_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TURKMENIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TURKMENIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TURKMENIA count = 1 }
+		}
+	}
+	c:TRN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_africa
+			name = "TRN_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TRANSVAAL count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TRANSVAAL count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TRANSVAAL count = 1 }
+		}
+	}
+	c:TRZ ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_africa
+			name = "TRZ_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_MAURITANIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_MAURITANIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_MAURITANIA count = 1 }
+		}
+	}
+	c:TSW ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_africa
+			name = "TSW_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_BOTSWANA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_BOTSWANA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_BOTSWANA count = 1 }
+		}
+	}
+	c:TUA ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_africa
+			name = "TUA_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SAHARA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SAHARA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SAHARA count = 1 }
+		}
+	}
+	c:TUN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_africa
+			name = "TUN_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TUNISIA count = 14 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TUNISIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TUNISIA count = 3 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_north_africa
+			name = "TUN_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 2
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 5
+			}
+		}
+	}
+	c:TUR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_near_east
+			name = "TUR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ANKARA count = 14 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ANKARA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ANKARA count = 3 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_near_east
+			name = "TUR_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 3
+			}
+		}
+	}
+	c:UKR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_eastern_europe
+			name = "UKR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_KIEV count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_KIEV count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_KIEV count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_eastern_europe
+			name = "UKR_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:ULT ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_northeast_asia
+			name = "ULT_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SAKHALIN count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SAKHALIN count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SAKHALIN count = 1 }
+		}
+	}
+	c:UMA ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_eastern_europe
+			name = "UMA_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CRIMEA count = 11 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CRIMEA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CRIMEA count = 3 }
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_eastern_europe
+			name = "UMA_army_2"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_KHARKOV count = 10 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_KHARKOV count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_KHARKOV count = 3 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_eastern_europe
+			name = "UMA_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:UNT ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_oceania
+			name = "UNT_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_NORTH_ISLAND count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_NORTH_ISLAND count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_NORTH_ISLAND count = 1 }
+		}
+	}
+	c:URU ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_brazil
+			name = "URU_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_URUGUAY count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_URUGUAY count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_URUGUAY count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_brazil
+			name = "URU_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:USAF ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_atlantic_coast
+			name = "USAF_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_GEORGIA count = 14 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_GEORGIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_GEORGIA count = 3 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_atlantic_coast
+			name = "USAF_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 2
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 4
+			}
+		}
+	}
+	c:UTE ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_pacific_coast
+			name = "UTE_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_UTAH count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_UTAH count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_UTAH count = 1 }
+		}
+	}
+	c:VAIV ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_pacific_coast
+			name = "VAIV_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CALIFORNIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CALIFORNIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CALIFORNIA count = 1 }
+		}
+	}
+	c:VND ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_africa
+			name = "VND_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TRANSVAAL count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_TRANSVAAL count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TRANSVAAL count = 1 }
+		}
+	}
+	c:VNT ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_oceania
+			name = "VNT_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_VANUATU count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_VANUATU count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_VANUATU count = 1 }
+		}
+	}
+	c:WAD ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_equatorial_africa
+			name = "WAD_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_WADDAI count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_WADDAI count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_WADDAI count = 2 }
+		}
+	}
+	c:WAS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_oceania
+			name = "WAS_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_WESTERN_AUSTRALIA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_WESTERN_AUSTRALIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_WESTERN_AUSTRALIA count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_oceania
+			name = "WAS_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:WBL ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_africa
+			name = "WBL_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_NORTHERN_CAPE count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_NORTHERN_CAPE count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_NORTHERN_CAPE count = 1 }
+		}
+	}
+	c:WLG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "WLG_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_AMHARA count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_AMHARA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_AMHARA count = 1 }
+		}
+	}
+	c:WLT ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "WLT_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_AMHARA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_AMHARA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_AMHARA count = 1 }
+		}
+	}
+	c:WSG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "WSG_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SOMALILAND count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SOMALILAND count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SOMALILAND count = 1 }
+		}
+	}
+	c:WTI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_oceania
+			name = "WTI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_WESTERN_AUSTRALIA count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_WESTERN_AUSTRALIA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_WESTERN_AUSTRALIA count = 1 }
+		}
+	}
+	c:WTU ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_africa
+			name = "WTU_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_KENYA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_KENYA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_KENYA count = 1 }
+		}
+	}
+	c:WULN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_pacific_coast
+			name = "WULN_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_OREGON count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_OREGON count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_OREGON count = 1 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_pacific_coast
+			name = "WULN_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:WUR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_europe
+			name = "WUR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_WURTTEMBERG count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_WURTTEMBERG count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_WURTTEMBERG count = 1 }
+		}
+	}
+	c:XHO ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_africa
+			name = "XHO_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EASTERN_CAPE count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EASTERN_CAPE count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_EASTERN_CAPE count = 1 }
+		}
+	}
+	c:XMQS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_india
+			name = "XMQS_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CENTRAL_PROVINCES count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CENTRAL_PROVINCES count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CENTRAL_PROVINCES count = 1 }
+		}
+	}
+	c:YKA ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_equatorial_africa
+			name = "YKA_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_BAS_CONGO count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_BAS_CONGO count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_BAS_CONGO count = 1 }
+		}
+	}
+	c:YOG ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_indonesia
+			name = "YOG_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CENTRAL_JAVA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CENTRAL_JAVA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CENTRAL_JAVA count = 1 }
+		}
+	}
+	c:YUZ1 ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_central_america
+			name = "YUZ1_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_NICARAGUA count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_NICARAGUA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_NICARAGUA count = 2 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_central_america
+			name = "YUZ1_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 2
+			}
+		}
+	}
+	c:ZAI ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_arabia
+			name = "ZAI_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_YEMEN count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_YEMEN count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_YEMEN count = 1 }
+		}
+	}
+	c:ZLXY ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_russia
+			name = "ZLXY_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_INGRIA count = 14 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_INGRIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_INGRIA count = 3 }
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_russia
+			name = "ZLXY_fleet_1"
+
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 2
+			}
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 5
+			}
+		}
+	}
+	c:ZND ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_equatorial_africa
+			name = "ZND_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_CONGO_ORIENTALE count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_CONGO_ORIENTALE count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_CONGO_ORIENTALE count = 1 }
+		}
+	}
+	c:ZUL ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_southern_africa
+			name = "ZUL_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ZULULAND count = 13 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ZULULAND count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_ZULULAND count = 3 }
+		}
+	}
+	c:ZWY ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_north_africa
+			name = "ZWY_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_LIBYA count = 6 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_LIBYA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_LIBYA count = 1 }
+		}
+	}
+}

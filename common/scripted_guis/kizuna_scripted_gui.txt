@@ -1,4 +1,4 @@
-﻿get_is_in_government_type = {
+get_is_in_government_type = {
 	scope = character
 	effect = {}
 	is_shown = {
@@ -6,6 +6,64 @@
 			is_in_government = yes
 		}
 	}
+}
+tot_kizuna_character_active = {
+	scope = character
+	effect = {}
+	is_shown = {
+		OR = {
+			is_ruler_of_own_country = yes
+			is_heir_of_own_country = yes
+			AND = {
+				is_interest_group_leader = yes
+				interest_group ?= {
+					is_in_government = yes
+				}
+			}
+		}
+	}
+}
+tot_kizuna_refresh = {
+	scope = country
+	effect = {
+		update_kizuna = yes
+	}
+	is_shown = {
+		is_player = yes
+	}
+	is_valid = {
+		is_player = yes
+	}
+}
+tot_kizuna_select_faction_tab = {
+	scope = country
+	effect = {
+		remove_variable = tot_kizuna_tab_profession
+		remove_variable = tot_kizuna_tab_specialty
+		set_variable = { name = tot_kizuna_tab_faction value = 1 }
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+tot_kizuna_select_profession_tab = {
+	scope = country
+	effect = {
+		remove_variable = tot_kizuna_tab_faction
+		remove_variable = tot_kizuna_tab_specialty
+		set_variable = { name = tot_kizuna_tab_profession value = 1 }
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+tot_kizuna_select_specialty_tab = {
+	scope = country
+	effect = {
+		remove_variable = tot_kizuna_tab_faction
+		remove_variable = tot_kizuna_tab_profession
+		set_variable = { name = tot_kizuna_tab_specialty value = 1 }
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
 }
 kon_kizuna_count = {
 	scope = country
@@ -53,13 +111,393 @@ kon_kizuna_show = {
 }
 band_gold_effect_1 = {
 	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_creation_progress } } set_variable = { name = tot_band_creation_progress value = 0 } }
 		add_treasury = -1000
+		change_variable = { name = tot_band_creation_progress add = 10 }
+		tot_band_check_rewards = yes
+		update_kizuna = yes
 	}
 }
 band_gold_effect_2 = {
 	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_creation_progress } } set_variable = { name = tot_band_creation_progress value = 0 } }
 		add_treasury = -2000
+		change_variable = { name = tot_band_creation_progress add = 30 }
+		tot_band_check_rewards = yes
+		update_kizuna = yes
 	}
+}
+band_gold_effect_3 = {
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_creation_progress } } set_variable = { name = tot_band_creation_progress value = 0 } }
+		add_treasury = -3000
+		change_variable = { name = tot_band_creation_progress add = 50 }
+		tot_band_check_rewards = yes
+		update_kizuna = yes
+	}
+}
+band_gold_effect_4 = {
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_creation_progress } } set_variable = { name = tot_band_creation_progress value = 0 } }
+		add_treasury = -4000
+		change_variable = { name = tot_band_creation_progress add = 70 }
+		tot_band_check_rewards = yes
+		update_kizuna = yes
+	}
+}
+band_gold_effect_5 = {
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_creation_progress } } set_variable = { name = tot_band_creation_progress value = 0 } }
+		add_treasury = -5000
+		change_variable = { name = tot_band_creation_progress add = 90 }
+		tot_band_check_rewards = yes
+		update_kizuna = yes
+	}
+}
+band_gold_effect_6 = {
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_creation_progress } } set_variable = { name = tot_band_creation_progress value = 0 } }
+		add_treasury = -6000
+		change_variable = { name = tot_band_creation_progress add = 110 }
+		tot_band_check_rewards = yes
+		update_kizuna = yes
+	}
+}
+
+tot_band_invest_musical_instrument = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_invest_musical_instrument }
+			remove_variable = tot_band_invest_musical_instrument
+		}
+		else = {
+			set_variable = { name = tot_band_invest_musical_instrument value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_invest_musical_instrument
+			market.mg:musical_instrument = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_invest_paper = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_invest_paper }
+			remove_variable = tot_band_invest_paper
+		}
+		else = {
+			set_variable = { name = tot_band_invest_paper value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_invest_paper
+			market.mg:paper = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_invest_luxury_clothes = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_invest_luxury_clothes }
+			remove_variable = tot_band_invest_luxury_clothes
+		}
+		else = {
+			set_variable = { name = tot_band_invest_luxury_clothes value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_invest_luxury_clothes
+			market.mg:luxury_clothes = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_invest_transportation = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_invest_transportation }
+			remove_variable = tot_band_invest_transportation
+		}
+		else = {
+			set_variable = { name = tot_band_invest_transportation value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_invest_transportation
+			market.mg:transportation = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_invest_automobiles = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_invest_automobiles }
+			remove_variable = tot_band_invest_automobiles
+		}
+		else = {
+			set_variable = { name = tot_band_invest_automobiles value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_invest_automobiles
+			market.mg:automobiles = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_invest_radios = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_invest_radios }
+			remove_variable = tot_band_invest_radios
+		}
+		else = {
+			set_variable = { name = tot_band_invest_radios value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_invest_radios
+			market.mg:radios = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_invest_fruit = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_invest_fruit }
+			remove_variable = tot_band_invest_fruit
+		}
+		else = {
+			set_variable = { name = tot_band_invest_fruit value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_invest_fruit
+			market.mg:fruit = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_invest_tea = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_invest_tea }
+			remove_variable = tot_band_invest_tea
+		}
+		else = {
+			set_variable = { name = tot_band_invest_tea value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_invest_tea
+			market.mg:tea = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_invest_coffee = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_invest_coffee }
+			remove_variable = tot_band_invest_coffee
+		}
+		else = {
+			set_variable = { name = tot_band_invest_coffee value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_invest_coffee
+			market.mg:coffee = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_invest_groceries = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_invest_groceries }
+			remove_variable = tot_band_invest_groceries
+		}
+		else = {
+			set_variable = { name = tot_band_invest_groceries value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_invest_groceries
+			market.mg:groceries = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_invest_luxury_drinks = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_invest_luxury_drinks }
+			remove_variable = tot_band_invest_luxury_drinks
+		}
+		else = {
+			set_variable = { name = tot_band_invest_luxury_drinks value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_invest_luxury_drinks
+			market.mg:luxury_drinks = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_invest_luxury_foods = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_invest_luxury_foods }
+			remove_variable = tot_band_invest_luxury_foods
+		}
+		else = {
+			set_variable = { name = tot_band_invest_luxury_foods value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_invest_luxury_foods
+			market.mg:luxury_foods = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+tot_band_invest_musical_instrument_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_invest_musical_instrument }
+	is_valid = { is_player = yes }
+}
+tot_band_invest_paper_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_invest_paper }
+	is_valid = { is_player = yes }
+}
+tot_band_invest_luxury_clothes_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_invest_luxury_clothes }
+	is_valid = { is_player = yes }
+}
+tot_band_invest_transportation_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_invest_transportation }
+	is_valid = { is_player = yes }
+}
+tot_band_invest_automobiles_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_invest_automobiles }
+	is_valid = { is_player = yes }
+}
+tot_band_invest_radios_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_invest_radios }
+	is_valid = { is_player = yes }
+}
+tot_band_invest_fruit_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_invest_fruit }
+	is_valid = { is_player = yes }
+}
+tot_band_invest_tea_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_invest_tea }
+	is_valid = { is_player = yes }
+}
+tot_band_invest_coffee_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_invest_coffee }
+	is_valid = { is_player = yes }
+}
+tot_band_invest_groceries_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_invest_groceries }
+	is_valid = { is_player = yes }
+}
+tot_band_invest_luxury_drinks_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_invest_luxury_drinks }
+	is_valid = { is_player = yes }
+}
+tot_band_invest_luxury_foods_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_invest_luxury_foods }
+	is_valid = { is_player = yes }
 }
 kon_kizuna_yui = {
 	effect = {
@@ -146,3 +584,4081 @@ kon_kizuna_azusa = {
 		
 	}
 }
+tot_band_has_limit = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_limit }
+	is_valid = { has_variable = tot_band_limit }
+}
+
+tot_band_1_unlocked = {
+	scope = country
+	effect = {}
+	is_shown = { var:tot_band_limit >= 1 }
+	is_valid = { var:tot_band_limit >= 1 }
+}
+
+tot_band_1_appoint_character = {
+	scope = character
+	effect = {
+		save_scope_as = appointing_band_member
+		trigger_event = { id = kizuna.1 popup = yes }
+	}
+	is_shown = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 1 }
+	}
+	is_valid = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 1 }
+	}
+}
+
+tot_band_2_unlocked = {
+	scope = country
+	effect = {}
+	is_shown = { var:tot_band_limit >= 2 }
+	is_valid = { var:tot_band_limit >= 2 }
+}
+
+tot_band_2_appoint_character = {
+	scope = character
+	effect = {
+		save_scope_as = appointing_band_member
+		trigger_event = { id = kizuna.2 popup = yes }
+	}
+	is_shown = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 2 }
+	}
+	is_valid = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 2 }
+	}
+}
+
+tot_band_3_unlocked = {
+	scope = country
+	effect = {}
+	is_shown = { var:tot_band_limit >= 3 }
+	is_valid = { var:tot_band_limit >= 3 }
+}
+
+tot_band_3_appoint_character = {
+	scope = character
+	effect = {
+		save_scope_as = appointing_band_member
+		trigger_event = { id = kizuna.3 popup = yes }
+	}
+	is_shown = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 3 }
+	}
+	is_valid = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 3 }
+	}
+}
+
+tot_band_4_unlocked = {
+	scope = country
+	effect = {}
+	is_shown = { var:tot_band_limit >= 4 }
+	is_valid = { var:tot_band_limit >= 4 }
+}
+
+tot_band_4_appoint_character = {
+	scope = character
+	effect = {
+		save_scope_as = appointing_band_member
+		trigger_event = { id = kizuna.4 popup = yes }
+	}
+	is_shown = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 4 }
+	}
+	is_valid = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 4 }
+	}
+}
+
+tot_band_5_unlocked = {
+	scope = country
+	effect = {}
+	is_shown = { var:tot_band_limit >= 5 }
+	is_valid = { var:tot_band_limit >= 5 }
+}
+
+tot_band_5_appoint_character = {
+	scope = character
+	effect = {
+		save_scope_as = appointing_band_member
+		trigger_event = { id = kizuna.5 popup = yes }
+	}
+	is_shown = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 5 }
+	}
+	is_valid = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 5 }
+	}
+}
+
+tot_band_6_unlocked = {
+	scope = country
+	effect = {}
+	is_shown = { var:tot_band_limit >= 6 }
+	is_valid = { var:tot_band_limit >= 6 }
+}
+
+tot_band_6_appoint_character = {
+	scope = character
+	effect = {
+		save_scope_as = appointing_band_member
+		trigger_event = { id = kizuna.6 popup = yes }
+	}
+	is_shown = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 6 }
+	}
+	is_valid = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 6 }
+	}
+}
+
+tot_band_7_unlocked = {
+	scope = country
+	effect = {}
+	is_shown = { var:tot_band_limit >= 7 }
+	is_valid = { var:tot_band_limit >= 7 }
+}
+
+tot_band_7_appoint_character = {
+	scope = character
+	effect = {
+		save_scope_as = appointing_band_member
+		trigger_event = { id = kizuna.7 popup = yes }
+	}
+	is_shown = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 7 }
+	}
+	is_valid = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 7 }
+	}
+}
+
+tot_band_8_unlocked = {
+	scope = country
+	effect = {}
+	is_shown = { var:tot_band_limit >= 8 }
+	is_valid = { var:tot_band_limit >= 8 }
+}
+
+tot_band_8_appoint_character = {
+	scope = character
+	effect = {
+		save_scope_as = appointing_band_member
+		trigger_event = { id = kizuna.8 popup = yes }
+	}
+	is_shown = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 8 }
+	}
+	is_valid = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 8 }
+	}
+}
+
+tot_band_9_unlocked = {
+	scope = country
+	effect = {}
+	is_shown = { var:tot_band_limit >= 9 }
+	is_valid = { var:tot_band_limit >= 9 }
+}
+
+tot_band_9_appoint_character = {
+	scope = character
+	effect = {
+		save_scope_as = appointing_band_member
+		trigger_event = { id = kizuna.9 popup = yes }
+	}
+	is_shown = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 9 }
+	}
+	is_valid = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 9 }
+	}
+}
+
+tot_band_10_unlocked = {
+	scope = country
+	effect = {}
+	is_shown = { var:tot_band_limit >= 10 }
+	is_valid = { var:tot_band_limit >= 10 }
+}
+
+tot_band_10_appoint_character = {
+	scope = character
+	effect = {
+		save_scope_as = appointing_band_member
+		trigger_event = { id = kizuna.10 popup = yes }
+	}
+	is_shown = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 10 }
+	}
+	is_valid = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 10 }
+	}
+}
+
+tot_band_remove_character = {
+	scope = character
+	effect = {
+		tot_clear_band_member_effect = yes
+		owner ?= { update_kizuna = yes }
+	}
+	is_shown = { is_character_alive = yes has_variable = tot_band_id owner ?= { is_player = yes } }
+	is_valid = { is_character_alive = yes has_variable = tot_band_id owner ?= { is_player = yes } }
+}
+
+tot_band_1_set_name_1 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_1_name value = 1 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 1 }
+	is_valid = { var:tot_band_limit >= 1 }
+}
+
+tot_band_1_set_name_2 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_1_name value = 2 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 1 }
+	is_valid = { var:tot_band_limit >= 1 }
+}
+
+tot_band_1_set_name_3 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_1_name value = 3 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 1 }
+	is_valid = { var:tot_band_limit >= 1 }
+}
+
+tot_band_1_set_name_4 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_1_name value = 4 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 1 }
+	is_valid = { var:tot_band_limit >= 1 }
+}
+
+tot_band_1_set_name_5 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_1_name value = 5 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 1 }
+	is_valid = { var:tot_band_limit >= 1 }
+}
+
+tot_band_2_set_name_1 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_2_name value = 1 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 2 }
+	is_valid = { var:tot_band_limit >= 2 }
+}
+
+tot_band_2_set_name_2 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_2_name value = 2 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 2 }
+	is_valid = { var:tot_band_limit >= 2 }
+}
+
+tot_band_2_set_name_3 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_2_name value = 3 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 2 }
+	is_valid = { var:tot_band_limit >= 2 }
+}
+
+tot_band_2_set_name_4 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_2_name value = 4 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 2 }
+	is_valid = { var:tot_band_limit >= 2 }
+}
+
+tot_band_2_set_name_5 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_2_name value = 5 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 2 }
+	is_valid = { var:tot_band_limit >= 2 }
+}
+
+tot_band_3_set_name_1 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_3_name value = 1 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 3 }
+	is_valid = { var:tot_band_limit >= 3 }
+}
+
+tot_band_3_set_name_2 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_3_name value = 2 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 3 }
+	is_valid = { var:tot_band_limit >= 3 }
+}
+
+tot_band_3_set_name_3 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_3_name value = 3 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 3 }
+	is_valid = { var:tot_band_limit >= 3 }
+}
+
+tot_band_3_set_name_4 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_3_name value = 4 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 3 }
+	is_valid = { var:tot_band_limit >= 3 }
+}
+
+tot_band_3_set_name_5 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_3_name value = 5 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 3 }
+	is_valid = { var:tot_band_limit >= 3 }
+}
+
+tot_band_4_set_name_1 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_4_name value = 1 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 4 }
+	is_valid = { var:tot_band_limit >= 4 }
+}
+
+tot_band_4_set_name_2 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_4_name value = 2 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 4 }
+	is_valid = { var:tot_band_limit >= 4 }
+}
+
+tot_band_4_set_name_3 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_4_name value = 3 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 4 }
+	is_valid = { var:tot_band_limit >= 4 }
+}
+
+tot_band_4_set_name_4 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_4_name value = 4 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 4 }
+	is_valid = { var:tot_band_limit >= 4 }
+}
+
+tot_band_4_set_name_5 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_4_name value = 5 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 4 }
+	is_valid = { var:tot_band_limit >= 4 }
+}
+
+tot_band_5_set_name_1 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_5_name value = 1 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 5 }
+	is_valid = { var:tot_band_limit >= 5 }
+}
+
+tot_band_5_set_name_2 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_5_name value = 2 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 5 }
+	is_valid = { var:tot_band_limit >= 5 }
+}
+
+tot_band_5_set_name_3 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_5_name value = 3 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 5 }
+	is_valid = { var:tot_band_limit >= 5 }
+}
+
+tot_band_5_set_name_4 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_5_name value = 4 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 5 }
+	is_valid = { var:tot_band_limit >= 5 }
+}
+
+tot_band_5_set_name_5 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_5_name value = 5 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 5 }
+	is_valid = { var:tot_band_limit >= 5 }
+}
+
+tot_band_6_set_name_1 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_6_name value = 1 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 6 }
+	is_valid = { var:tot_band_limit >= 6 }
+}
+
+tot_band_6_set_name_2 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_6_name value = 2 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 6 }
+	is_valid = { var:tot_band_limit >= 6 }
+}
+
+tot_band_6_set_name_3 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_6_name value = 3 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 6 }
+	is_valid = { var:tot_band_limit >= 6 }
+}
+
+tot_band_6_set_name_4 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_6_name value = 4 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 6 }
+	is_valid = { var:tot_band_limit >= 6 }
+}
+
+tot_band_6_set_name_5 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_6_name value = 5 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 6 }
+	is_valid = { var:tot_band_limit >= 6 }
+}
+
+tot_band_7_set_name_1 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_7_name value = 1 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 7 }
+	is_valid = { var:tot_band_limit >= 7 }
+}
+
+tot_band_7_set_name_2 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_7_name value = 2 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 7 }
+	is_valid = { var:tot_band_limit >= 7 }
+}
+
+tot_band_7_set_name_3 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_7_name value = 3 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 7 }
+	is_valid = { var:tot_band_limit >= 7 }
+}
+
+tot_band_7_set_name_4 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_7_name value = 4 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 7 }
+	is_valid = { var:tot_band_limit >= 7 }
+}
+
+tot_band_7_set_name_5 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_7_name value = 5 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 7 }
+	is_valid = { var:tot_band_limit >= 7 }
+}
+
+tot_band_8_set_name_1 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_8_name value = 1 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 8 }
+	is_valid = { var:tot_band_limit >= 8 }
+}
+
+tot_band_8_set_name_2 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_8_name value = 2 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 8 }
+	is_valid = { var:tot_band_limit >= 8 }
+}
+
+tot_band_8_set_name_3 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_8_name value = 3 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 8 }
+	is_valid = { var:tot_band_limit >= 8 }
+}
+
+tot_band_8_set_name_4 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_8_name value = 4 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 8 }
+	is_valid = { var:tot_band_limit >= 8 }
+}
+
+tot_band_8_set_name_5 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_8_name value = 5 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 8 }
+	is_valid = { var:tot_band_limit >= 8 }
+}
+
+tot_band_9_set_name_1 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_9_name value = 1 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 9 }
+	is_valid = { var:tot_band_limit >= 9 }
+}
+
+tot_band_9_set_name_2 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_9_name value = 2 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 9 }
+	is_valid = { var:tot_band_limit >= 9 }
+}
+
+tot_band_9_set_name_3 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_9_name value = 3 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 9 }
+	is_valid = { var:tot_band_limit >= 9 }
+}
+
+tot_band_9_set_name_4 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_9_name value = 4 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 9 }
+	is_valid = { var:tot_band_limit >= 9 }
+}
+
+tot_band_9_set_name_5 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_9_name value = 5 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 9 }
+	is_valid = { var:tot_band_limit >= 9 }
+}
+
+tot_band_10_set_name_1 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_10_name value = 1 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 10 }
+	is_valid = { var:tot_band_limit >= 10 }
+}
+
+tot_band_10_set_name_2 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_10_name value = 2 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 10 }
+	is_valid = { var:tot_band_limit >= 10 }
+}
+
+tot_band_10_set_name_3 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_10_name value = 3 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 10 }
+	is_valid = { var:tot_band_limit >= 10 }
+}
+
+tot_band_10_set_name_4 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_10_name value = 4 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 10 }
+	is_valid = { var:tot_band_limit >= 10 }
+}
+
+tot_band_10_set_name_5 = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_10_name value = 5 }
+		update_kizuna = yes
+	}
+	is_shown = { var:tot_band_limit >= 10 }
+	is_valid = { var:tot_band_limit >= 10 }
+}
+
+
+tot_band_1_choose_name = {
+	scope = country
+	effect = { trigger_event = { id = kizuna.101 popup = yes } }
+	is_shown = { var:tot_band_limit >= 1 }
+	is_valid = { var:tot_band_limit >= 1 }
+}
+tot_band_2_choose_name = {
+	scope = country
+	effect = { trigger_event = { id = kizuna.102 popup = yes } }
+	is_shown = { var:tot_band_limit >= 2 }
+	is_valid = { var:tot_band_limit >= 2 }
+}
+tot_band_3_choose_name = {
+	scope = country
+	effect = { trigger_event = { id = kizuna.103 popup = yes } }
+	is_shown = { var:tot_band_limit >= 3 }
+	is_valid = { var:tot_band_limit >= 3 }
+}
+tot_band_4_choose_name = {
+	scope = country
+	effect = { trigger_event = { id = kizuna.104 popup = yes } }
+	is_shown = { var:tot_band_limit >= 4 }
+	is_valid = { var:tot_band_limit >= 4 }
+}
+tot_band_5_choose_name = {
+	scope = country
+	effect = { trigger_event = { id = kizuna.105 popup = yes } }
+	is_shown = { var:tot_band_limit >= 5 }
+	is_valid = { var:tot_band_limit >= 5 }
+}
+tot_band_6_choose_name = {
+	scope = country
+	effect = { trigger_event = { id = kizuna.106 popup = yes } }
+	is_shown = { var:tot_band_limit >= 6 }
+	is_valid = { var:tot_band_limit >= 6 }
+}
+tot_band_7_choose_name = {
+	scope = country
+	effect = { trigger_event = { id = kizuna.107 popup = yes } }
+	is_shown = { var:tot_band_limit >= 7 }
+	is_valid = { var:tot_band_limit >= 7 }
+}
+tot_band_8_choose_name = {
+	scope = country
+	effect = { trigger_event = { id = kizuna.108 popup = yes } }
+	is_shown = { var:tot_band_limit >= 8 }
+	is_valid = { var:tot_band_limit >= 8 }
+}
+tot_band_9_choose_name = {
+	scope = country
+	effect = { trigger_event = { id = kizuna.109 popup = yes } }
+	is_shown = { var:tot_band_limit >= 9 }
+	is_valid = { var:tot_band_limit >= 9 }
+}
+tot_band_10_choose_name = {
+	scope = country
+	effect = { trigger_event = { id = kizuna.110 popup = yes } }
+	is_shown = { var:tot_band_limit >= 10 }
+	is_valid = { var:tot_band_limit >= 10 }
+}
+
+tot_gourmet_invest_grain = {
+	scope = country
+	effect = {
+		if = { limit = { has_variable = tot_gourmet_invest_grain } remove_variable = tot_gourmet_invest_grain }
+		else = { set_variable = { name = tot_gourmet_invest_grain value = 1 } }
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		OR = {
+			has_variable = tot_gourmet_invest_grain
+			market.mg:grain = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_gourmet_invest_meat = {
+	scope = country
+	effect = {
+		if = { limit = { has_variable = tot_gourmet_invest_meat } remove_variable = tot_gourmet_invest_meat }
+		else = { set_variable = { name = tot_gourmet_invest_meat value = 1 } }
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		OR = {
+			has_variable = tot_gourmet_invest_meat
+			market.mg:meat = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_gourmet_invest_fish = {
+	scope = country
+	effect = {
+		if = { limit = { has_variable = tot_gourmet_invest_fish } remove_variable = tot_gourmet_invest_fish }
+		else = { set_variable = { name = tot_gourmet_invest_fish value = 1 } }
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		OR = {
+			has_variable = tot_gourmet_invest_fish
+			market.mg:fish = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_gourmet_invest_fruit = {
+	scope = country
+	effect = {
+		if = { limit = { has_variable = tot_gourmet_invest_fruit } remove_variable = tot_gourmet_invest_fruit }
+		else = { set_variable = { name = tot_gourmet_invest_fruit value = 1 } }
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		OR = {
+			has_variable = tot_gourmet_invest_fruit
+			market.mg:fruit = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_gourmet_invest_groceries = {
+	scope = country
+	effect = {
+		if = { limit = { has_variable = tot_gourmet_invest_groceries } remove_variable = tot_gourmet_invest_groceries }
+		else = { set_variable = { name = tot_gourmet_invest_groceries value = 1 } }
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		OR = {
+			has_variable = tot_gourmet_invest_groceries
+			market.mg:groceries = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_gourmet_invest_tea = {
+	scope = country
+	effect = {
+		if = { limit = { has_variable = tot_gourmet_invest_tea } remove_variable = tot_gourmet_invest_tea }
+		else = { set_variable = { name = tot_gourmet_invest_tea value = 1 } }
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		OR = {
+			has_variable = tot_gourmet_invest_tea
+			market.mg:tea = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_gourmet_invest_coffee = {
+	scope = country
+	effect = {
+		if = { limit = { has_variable = tot_gourmet_invest_coffee } remove_variable = tot_gourmet_invest_coffee }
+		else = { set_variable = { name = tot_gourmet_invest_coffee value = 1 } }
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		OR = {
+			has_variable = tot_gourmet_invest_coffee
+			market.mg:coffee = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_gourmet_invest_luxury_drinks = {
+	scope = country
+	effect = {
+		if = { limit = { has_variable = tot_gourmet_invest_luxury_drinks } remove_variable = tot_gourmet_invest_luxury_drinks }
+		else = { set_variable = { name = tot_gourmet_invest_luxury_drinks value = 1 } }
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		OR = {
+			has_variable = tot_gourmet_invest_luxury_drinks
+			market.mg:luxury_drinks = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_gourmet_invest_luxury_foods = {
+	scope = country
+	effect = {
+		if = { limit = { has_variable = tot_gourmet_invest_luxury_foods } remove_variable = tot_gourmet_invest_luxury_foods }
+		else = { set_variable = { name = tot_gourmet_invest_luxury_foods value = 1 } }
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		OR = {
+			has_variable = tot_gourmet_invest_luxury_foods
+			market.mg:luxury_foods = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_gourmet_reset_investment = {
+	scope = country
+	effect = {
+		remove_variable = tot_gourmet_invest_grain
+		remove_variable = tot_gourmet_invest_meat
+		remove_variable = tot_gourmet_invest_fish
+		remove_variable = tot_gourmet_invest_fruit
+		remove_variable = tot_gourmet_invest_groceries
+		remove_variable = tot_gourmet_invest_tea
+		remove_variable = tot_gourmet_invest_coffee
+		remove_variable = tot_gourmet_invest_luxury_drinks
+		remove_variable = tot_gourmet_invest_luxury_foods
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+
+# BEGIN GENERATED TOT GOURMET ACTIVE GUIS
+tot_gourmet_invest_grain_active = { scope = country effect = {} is_shown = { has_variable = tot_gourmet_invest_grain } is_valid = { is_player = yes } }
+tot_gourmet_invest_meat_active = { scope = country effect = {} is_shown = { has_variable = tot_gourmet_invest_meat } is_valid = { is_player = yes } }
+tot_gourmet_invest_fish_active = { scope = country effect = {} is_shown = { has_variable = tot_gourmet_invest_fish } is_valid = { is_player = yes } }
+tot_gourmet_invest_fruit_active = { scope = country effect = {} is_shown = { has_variable = tot_gourmet_invest_fruit } is_valid = { is_player = yes } }
+tot_gourmet_invest_groceries_active = { scope = country effect = {} is_shown = { has_variable = tot_gourmet_invest_groceries } is_valid = { is_player = yes } }
+tot_gourmet_invest_tea_active = { scope = country effect = {} is_shown = { has_variable = tot_gourmet_invest_tea } is_valid = { is_player = yes } }
+tot_gourmet_invest_coffee_active = { scope = country effect = {} is_shown = { has_variable = tot_gourmet_invest_coffee } is_valid = { is_player = yes } }
+tot_gourmet_invest_luxury_drinks_active = { scope = country effect = {} is_shown = { has_variable = tot_gourmet_invest_luxury_drinks } is_valid = { is_player = yes } }
+tot_gourmet_invest_luxury_foods_active = { scope = country effect = {} is_shown = { has_variable = tot_gourmet_invest_luxury_foods } is_valid = { is_player = yes } }
+# END GENERATED TOT GOURMET ACTIVE GUIS
+
+# BEGIN GENERATED TOT KIZUNA GROUP SCRIPTED GUIS
+tot_kizuna_001_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_001_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_002_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_002_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_003_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_003_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_004_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_004_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_005_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_005_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_006_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_006_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_007_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_007_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_008_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_008_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_009_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_009_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_010_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_010_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_012_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_012_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_013_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_013_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_014_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_014_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_015_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_015_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_016_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_016_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_017_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_017_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_018_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_018_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_019_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_019_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_020_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_020_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_021_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_021_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_022_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_022_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_023_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_023_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_024_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_024_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_025_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_025_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_026_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_026_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_027_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_027_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_028_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_028_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_029_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_029_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_030_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_030_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_031_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_031_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_032_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_032_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_033_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_033_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_034_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_034_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_035_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_035_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_036_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_036_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_037_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_037_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_038_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_038_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_039_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_039_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_040_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_040_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_041_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_041_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_042_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_042_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_043_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_043_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_044_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_044_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_045_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_045_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_046_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_046_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_047_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_047_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_048_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_048_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_049_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_049_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_050_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_050_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_051_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_051_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_052_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_052_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_053_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_053_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_054_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_054_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_055_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_055_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_056_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_056_trait
+		}
+	}
+	is_valid = {}
+}
+tot_kizuna_057_show = {
+	scope = country
+	effect = {}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_057_trait
+		}
+	}
+	is_valid = {}
+}
+# END GENERATED TOT KIZUNA GROUP SCRIPTED GUIS
+# BEGIN GENERATED TOT BAND PER BAND
+band_1_gold_effect_1 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_1_creation_progress } } set_variable = { name = tot_band_1_creation_progress value = 0 } }
+		add_treasury = -1000
+		change_variable = { name = tot_band_1_creation_progress add = 10 }
+		tot_band_1_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_1_gold_effect_2 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_1_creation_progress } } set_variable = { name = tot_band_1_creation_progress value = 0 } }
+		add_treasury = -2000
+		change_variable = { name = tot_band_1_creation_progress add = 30 }
+		tot_band_1_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_1_gold_effect_3 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_1_creation_progress } } set_variable = { name = tot_band_1_creation_progress value = 0 } }
+		add_treasury = -3000
+		change_variable = { name = tot_band_1_creation_progress add = 50 }
+		tot_band_1_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_1_gold_effect_4 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_1_creation_progress } } set_variable = { name = tot_band_1_creation_progress value = 0 } }
+		add_treasury = -4000
+		change_variable = { name = tot_band_1_creation_progress add = 70 }
+		tot_band_1_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_1_gold_effect_5 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_1_creation_progress } } set_variable = { name = tot_band_1_creation_progress value = 0 } }
+		add_treasury = -5000
+		change_variable = { name = tot_band_1_creation_progress add = 90 }
+		tot_band_1_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_1_gold_effect_6 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_1_creation_progress } } set_variable = { name = tot_band_1_creation_progress value = 0 } }
+		add_treasury = -6000
+		change_variable = { name = tot_band_1_creation_progress add = 110 }
+		tot_band_1_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_1_invest_musical_instrument
+			market.mg:musical_instrument = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_1_invest_musical_instrument_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_1_invest_musical_instrument }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_1_invest_paper
+			market.mg:paper = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_1_invest_paper_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_1_invest_paper }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_1_invest_luxury_clothes
+			market.mg:luxury_clothes = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_1_invest_luxury_clothes_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_1_invest_luxury_clothes }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_1_invest_transportation
+			market.mg:transportation = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_1_invest_transportation_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_1_invest_transportation }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_1_invest_automobiles
+			market.mg:automobiles = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_1_invest_automobiles_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_1_invest_automobiles }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_1_invest_radios
+			market.mg:radios = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_1_invest_radios_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_1_invest_radios }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_1_invest_fruit
+			market.mg:fruit = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_1_invest_fruit_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_1_invest_fruit }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_1_invest_tea
+			market.mg:tea = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_1_invest_tea_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_1_invest_tea }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_1_invest_coffee
+			market.mg:coffee = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_1_invest_coffee_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_1_invest_coffee }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_1_invest_groceries
+			market.mg:groceries = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_1_invest_groceries_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_1_invest_groceries }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_1_invest_luxury_drinks
+			market.mg:luxury_drinks = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_1_invest_luxury_drinks_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_1_invest_luxury_drinks }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_1_invest_luxury_foods
+			market.mg:luxury_foods = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_1_invest_luxury_foods_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_1_invest_luxury_foods }
+	is_valid = { is_player = yes }
+}
+band_2_gold_effect_1 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_2_creation_progress } } set_variable = { name = tot_band_2_creation_progress value = 0 } }
+		add_treasury = -1000
+		change_variable = { name = tot_band_2_creation_progress add = 10 }
+		tot_band_2_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_2_gold_effect_2 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_2_creation_progress } } set_variable = { name = tot_band_2_creation_progress value = 0 } }
+		add_treasury = -2000
+		change_variable = { name = tot_band_2_creation_progress add = 30 }
+		tot_band_2_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_2_gold_effect_3 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_2_creation_progress } } set_variable = { name = tot_band_2_creation_progress value = 0 } }
+		add_treasury = -3000
+		change_variable = { name = tot_band_2_creation_progress add = 50 }
+		tot_band_2_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_2_gold_effect_4 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_2_creation_progress } } set_variable = { name = tot_band_2_creation_progress value = 0 } }
+		add_treasury = -4000
+		change_variable = { name = tot_band_2_creation_progress add = 70 }
+		tot_band_2_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_2_gold_effect_5 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_2_creation_progress } } set_variable = { name = tot_band_2_creation_progress value = 0 } }
+		add_treasury = -5000
+		change_variable = { name = tot_band_2_creation_progress add = 90 }
+		tot_band_2_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_2_gold_effect_6 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_2_creation_progress } } set_variable = { name = tot_band_2_creation_progress value = 0 } }
+		add_treasury = -6000
+		change_variable = { name = tot_band_2_creation_progress add = 110 }
+		tot_band_2_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_2_invest_musical_instrument
+			market.mg:musical_instrument = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_2_invest_musical_instrument_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_2_invest_musical_instrument }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_2_invest_paper
+			market.mg:paper = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_2_invest_paper_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_2_invest_paper }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_2_invest_luxury_clothes
+			market.mg:luxury_clothes = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_2_invest_luxury_clothes_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_2_invest_luxury_clothes }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_2_invest_transportation
+			market.mg:transportation = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_2_invest_transportation_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_2_invest_transportation }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_2_invest_automobiles
+			market.mg:automobiles = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_2_invest_automobiles_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_2_invest_automobiles }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_2_invest_radios
+			market.mg:radios = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_2_invest_radios_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_2_invest_radios }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_2_invest_fruit
+			market.mg:fruit = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_2_invest_fruit_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_2_invest_fruit }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_2_invest_tea
+			market.mg:tea = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_2_invest_tea_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_2_invest_tea }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_2_invest_coffee
+			market.mg:coffee = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_2_invest_coffee_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_2_invest_coffee }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_2_invest_groceries
+			market.mg:groceries = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_2_invest_groceries_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_2_invest_groceries }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_2_invest_luxury_drinks
+			market.mg:luxury_drinks = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_2_invest_luxury_drinks_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_2_invest_luxury_drinks }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_2_invest_luxury_foods
+			market.mg:luxury_foods = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_2_invest_luxury_foods_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_2_invest_luxury_foods }
+	is_valid = { is_player = yes }
+}
+band_3_gold_effect_1 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_3_creation_progress } } set_variable = { name = tot_band_3_creation_progress value = 0 } }
+		add_treasury = -1000
+		change_variable = { name = tot_band_3_creation_progress add = 10 }
+		tot_band_3_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_3_gold_effect_2 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_3_creation_progress } } set_variable = { name = tot_band_3_creation_progress value = 0 } }
+		add_treasury = -2000
+		change_variable = { name = tot_band_3_creation_progress add = 30 }
+		tot_band_3_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_3_gold_effect_3 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_3_creation_progress } } set_variable = { name = tot_band_3_creation_progress value = 0 } }
+		add_treasury = -3000
+		change_variable = { name = tot_band_3_creation_progress add = 50 }
+		tot_band_3_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_3_gold_effect_4 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_3_creation_progress } } set_variable = { name = tot_band_3_creation_progress value = 0 } }
+		add_treasury = -4000
+		change_variable = { name = tot_band_3_creation_progress add = 70 }
+		tot_band_3_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_3_gold_effect_5 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_3_creation_progress } } set_variable = { name = tot_band_3_creation_progress value = 0 } }
+		add_treasury = -5000
+		change_variable = { name = tot_band_3_creation_progress add = 90 }
+		tot_band_3_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_3_gold_effect_6 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_3_creation_progress } } set_variable = { name = tot_band_3_creation_progress value = 0 } }
+		add_treasury = -6000
+		change_variable = { name = tot_band_3_creation_progress add = 110 }
+		tot_band_3_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_3_invest_musical_instrument
+			market.mg:musical_instrument = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_3_invest_musical_instrument_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_3_invest_musical_instrument }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_3_invest_paper
+			market.mg:paper = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_3_invest_paper_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_3_invest_paper }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_3_invest_luxury_clothes
+			market.mg:luxury_clothes = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_3_invest_luxury_clothes_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_3_invest_luxury_clothes }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_3_invest_transportation
+			market.mg:transportation = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_3_invest_transportation_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_3_invest_transportation }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_3_invest_automobiles
+			market.mg:automobiles = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_3_invest_automobiles_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_3_invest_automobiles }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_3_invest_radios
+			market.mg:radios = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_3_invest_radios_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_3_invest_radios }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_3_invest_fruit
+			market.mg:fruit = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_3_invest_fruit_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_3_invest_fruit }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_3_invest_tea
+			market.mg:tea = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_3_invest_tea_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_3_invest_tea }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_3_invest_coffee
+			market.mg:coffee = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_3_invest_coffee_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_3_invest_coffee }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_3_invest_groceries
+			market.mg:groceries = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_3_invest_groceries_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_3_invest_groceries }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_3_invest_luxury_drinks
+			market.mg:luxury_drinks = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_3_invest_luxury_drinks_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_3_invest_luxury_drinks }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_3_invest_luxury_foods
+			market.mg:luxury_foods = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_3_invest_luxury_foods_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_3_invest_luxury_foods }
+	is_valid = { is_player = yes }
+}
+band_4_gold_effect_1 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_4_creation_progress } } set_variable = { name = tot_band_4_creation_progress value = 0 } }
+		add_treasury = -1000
+		change_variable = { name = tot_band_4_creation_progress add = 10 }
+		tot_band_4_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_4_gold_effect_2 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_4_creation_progress } } set_variable = { name = tot_band_4_creation_progress value = 0 } }
+		add_treasury = -2000
+		change_variable = { name = tot_band_4_creation_progress add = 30 }
+		tot_band_4_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_4_gold_effect_3 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_4_creation_progress } } set_variable = { name = tot_band_4_creation_progress value = 0 } }
+		add_treasury = -3000
+		change_variable = { name = tot_band_4_creation_progress add = 50 }
+		tot_band_4_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_4_gold_effect_4 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_4_creation_progress } } set_variable = { name = tot_band_4_creation_progress value = 0 } }
+		add_treasury = -4000
+		change_variable = { name = tot_band_4_creation_progress add = 70 }
+		tot_band_4_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_4_gold_effect_5 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_4_creation_progress } } set_variable = { name = tot_band_4_creation_progress value = 0 } }
+		add_treasury = -5000
+		change_variable = { name = tot_band_4_creation_progress add = 90 }
+		tot_band_4_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_4_gold_effect_6 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_4_creation_progress } } set_variable = { name = tot_band_4_creation_progress value = 0 } }
+		add_treasury = -6000
+		change_variable = { name = tot_band_4_creation_progress add = 110 }
+		tot_band_4_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_4_invest_musical_instrument
+			market.mg:musical_instrument = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_4_invest_musical_instrument_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_4_invest_musical_instrument }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_4_invest_paper
+			market.mg:paper = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_4_invest_paper_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_4_invest_paper }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_4_invest_luxury_clothes
+			market.mg:luxury_clothes = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_4_invest_luxury_clothes_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_4_invest_luxury_clothes }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_4_invest_transportation
+			market.mg:transportation = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_4_invest_transportation_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_4_invest_transportation }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_4_invest_automobiles
+			market.mg:automobiles = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_4_invest_automobiles_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_4_invest_automobiles }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_4_invest_radios
+			market.mg:radios = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_4_invest_radios_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_4_invest_radios }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_4_invest_fruit
+			market.mg:fruit = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_4_invest_fruit_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_4_invest_fruit }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_4_invest_tea
+			market.mg:tea = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_4_invest_tea_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_4_invest_tea }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_4_invest_coffee
+			market.mg:coffee = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_4_invest_coffee_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_4_invest_coffee }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_4_invest_groceries
+			market.mg:groceries = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_4_invest_groceries_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_4_invest_groceries }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_4_invest_luxury_drinks
+			market.mg:luxury_drinks = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_4_invest_luxury_drinks_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_4_invest_luxury_drinks }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_4_invest_luxury_foods
+			market.mg:luxury_foods = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_4_invest_luxury_foods_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_4_invest_luxury_foods }
+	is_valid = { is_player = yes }
+}
+band_5_gold_effect_1 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_5_creation_progress } } set_variable = { name = tot_band_5_creation_progress value = 0 } }
+		add_treasury = -1000
+		change_variable = { name = tot_band_5_creation_progress add = 10 }
+		tot_band_5_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_5_gold_effect_2 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_5_creation_progress } } set_variable = { name = tot_band_5_creation_progress value = 0 } }
+		add_treasury = -2000
+		change_variable = { name = tot_band_5_creation_progress add = 30 }
+		tot_band_5_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_5_gold_effect_3 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_5_creation_progress } } set_variable = { name = tot_band_5_creation_progress value = 0 } }
+		add_treasury = -3000
+		change_variable = { name = tot_band_5_creation_progress add = 50 }
+		tot_band_5_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_5_gold_effect_4 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_5_creation_progress } } set_variable = { name = tot_band_5_creation_progress value = 0 } }
+		add_treasury = -4000
+		change_variable = { name = tot_band_5_creation_progress add = 70 }
+		tot_band_5_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_5_gold_effect_5 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_5_creation_progress } } set_variable = { name = tot_band_5_creation_progress value = 0 } }
+		add_treasury = -5000
+		change_variable = { name = tot_band_5_creation_progress add = 90 }
+		tot_band_5_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_5_gold_effect_6 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_5_creation_progress } } set_variable = { name = tot_band_5_creation_progress value = 0 } }
+		add_treasury = -6000
+		change_variable = { name = tot_band_5_creation_progress add = 110 }
+		tot_band_5_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_5_invest_musical_instrument
+			market.mg:musical_instrument = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_5_invest_musical_instrument_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_5_invest_musical_instrument }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_5_invest_paper
+			market.mg:paper = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_5_invest_paper_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_5_invest_paper }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_5_invest_luxury_clothes
+			market.mg:luxury_clothes = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_5_invest_luxury_clothes_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_5_invest_luxury_clothes }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_5_invest_transportation
+			market.mg:transportation = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_5_invest_transportation_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_5_invest_transportation }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_5_invest_automobiles
+			market.mg:automobiles = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_5_invest_automobiles_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_5_invest_automobiles }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_5_invest_radios
+			market.mg:radios = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_5_invest_radios_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_5_invest_radios }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_5_invest_fruit
+			market.mg:fruit = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_5_invest_fruit_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_5_invest_fruit }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_5_invest_tea
+			market.mg:tea = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_5_invest_tea_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_5_invest_tea }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_5_invest_coffee
+			market.mg:coffee = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_5_invest_coffee_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_5_invest_coffee }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_5_invest_groceries
+			market.mg:groceries = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_5_invest_groceries_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_5_invest_groceries }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_5_invest_luxury_drinks
+			market.mg:luxury_drinks = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_5_invest_luxury_drinks_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_5_invest_luxury_drinks }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_5_invest_luxury_foods
+			market.mg:luxury_foods = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_5_invest_luxury_foods_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_5_invest_luxury_foods }
+	is_valid = { is_player = yes }
+}
+band_6_gold_effect_1 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_6_creation_progress } } set_variable = { name = tot_band_6_creation_progress value = 0 } }
+		add_treasury = -1000
+		change_variable = { name = tot_band_6_creation_progress add = 10 }
+		tot_band_6_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_6_gold_effect_2 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_6_creation_progress } } set_variable = { name = tot_band_6_creation_progress value = 0 } }
+		add_treasury = -2000
+		change_variable = { name = tot_band_6_creation_progress add = 30 }
+		tot_band_6_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_6_gold_effect_3 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_6_creation_progress } } set_variable = { name = tot_band_6_creation_progress value = 0 } }
+		add_treasury = -3000
+		change_variable = { name = tot_band_6_creation_progress add = 50 }
+		tot_band_6_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_6_gold_effect_4 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_6_creation_progress } } set_variable = { name = tot_band_6_creation_progress value = 0 } }
+		add_treasury = -4000
+		change_variable = { name = tot_band_6_creation_progress add = 70 }
+		tot_band_6_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_6_gold_effect_5 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_6_creation_progress } } set_variable = { name = tot_band_6_creation_progress value = 0 } }
+		add_treasury = -5000
+		change_variable = { name = tot_band_6_creation_progress add = 90 }
+		tot_band_6_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_6_gold_effect_6 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_6_creation_progress } } set_variable = { name = tot_band_6_creation_progress value = 0 } }
+		add_treasury = -6000
+		change_variable = { name = tot_band_6_creation_progress add = 110 }
+		tot_band_6_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_6_invest_musical_instrument
+			market.mg:musical_instrument = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_6_invest_musical_instrument_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_6_invest_musical_instrument }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_6_invest_paper
+			market.mg:paper = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_6_invest_paper_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_6_invest_paper }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_6_invest_luxury_clothes
+			market.mg:luxury_clothes = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_6_invest_luxury_clothes_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_6_invest_luxury_clothes }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_6_invest_transportation
+			market.mg:transportation = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_6_invest_transportation_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_6_invest_transportation }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_6_invest_automobiles
+			market.mg:automobiles = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_6_invest_automobiles_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_6_invest_automobiles }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_6_invest_radios
+			market.mg:radios = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_6_invest_radios_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_6_invest_radios }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_6_invest_fruit
+			market.mg:fruit = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_6_invest_fruit_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_6_invest_fruit }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_6_invest_tea
+			market.mg:tea = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_6_invest_tea_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_6_invest_tea }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_6_invest_coffee
+			market.mg:coffee = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_6_invest_coffee_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_6_invest_coffee }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_6_invest_groceries
+			market.mg:groceries = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_6_invest_groceries_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_6_invest_groceries }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_6_invest_luxury_drinks
+			market.mg:luxury_drinks = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_6_invest_luxury_drinks_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_6_invest_luxury_drinks }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_6_invest_luxury_foods
+			market.mg:luxury_foods = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_6_invest_luxury_foods_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_6_invest_luxury_foods }
+	is_valid = { is_player = yes }
+}
+band_7_gold_effect_1 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_7_creation_progress } } set_variable = { name = tot_band_7_creation_progress value = 0 } }
+		add_treasury = -1000
+		change_variable = { name = tot_band_7_creation_progress add = 10 }
+		tot_band_7_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_7_gold_effect_2 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_7_creation_progress } } set_variable = { name = tot_band_7_creation_progress value = 0 } }
+		add_treasury = -2000
+		change_variable = { name = tot_band_7_creation_progress add = 30 }
+		tot_band_7_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_7_gold_effect_3 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_7_creation_progress } } set_variable = { name = tot_band_7_creation_progress value = 0 } }
+		add_treasury = -3000
+		change_variable = { name = tot_band_7_creation_progress add = 50 }
+		tot_band_7_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_7_gold_effect_4 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_7_creation_progress } } set_variable = { name = tot_band_7_creation_progress value = 0 } }
+		add_treasury = -4000
+		change_variable = { name = tot_band_7_creation_progress add = 70 }
+		tot_band_7_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_7_gold_effect_5 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_7_creation_progress } } set_variable = { name = tot_band_7_creation_progress value = 0 } }
+		add_treasury = -5000
+		change_variable = { name = tot_band_7_creation_progress add = 90 }
+		tot_band_7_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_7_gold_effect_6 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_7_creation_progress } } set_variable = { name = tot_band_7_creation_progress value = 0 } }
+		add_treasury = -6000
+		change_variable = { name = tot_band_7_creation_progress add = 110 }
+		tot_band_7_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_7_invest_musical_instrument
+			market.mg:musical_instrument = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_7_invest_musical_instrument_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_7_invest_musical_instrument }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_7_invest_paper
+			market.mg:paper = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_7_invest_paper_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_7_invest_paper }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_7_invest_luxury_clothes
+			market.mg:luxury_clothes = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_7_invest_luxury_clothes_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_7_invest_luxury_clothes }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_7_invest_transportation
+			market.mg:transportation = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_7_invest_transportation_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_7_invest_transportation }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_7_invest_automobiles
+			market.mg:automobiles = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_7_invest_automobiles_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_7_invest_automobiles }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_7_invest_radios
+			market.mg:radios = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_7_invest_radios_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_7_invest_radios }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_7_invest_fruit
+			market.mg:fruit = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_7_invest_fruit_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_7_invest_fruit }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_7_invest_tea
+			market.mg:tea = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_7_invest_tea_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_7_invest_tea }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_7_invest_coffee
+			market.mg:coffee = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_7_invest_coffee_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_7_invest_coffee }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_7_invest_groceries
+			market.mg:groceries = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_7_invest_groceries_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_7_invest_groceries }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_7_invest_luxury_drinks
+			market.mg:luxury_drinks = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_7_invest_luxury_drinks_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_7_invest_luxury_drinks }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_7_invest_luxury_foods
+			market.mg:luxury_foods = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_7_invest_luxury_foods_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_7_invest_luxury_foods }
+	is_valid = { is_player = yes }
+}
+band_8_gold_effect_1 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_8_creation_progress } } set_variable = { name = tot_band_8_creation_progress value = 0 } }
+		add_treasury = -1000
+		change_variable = { name = tot_band_8_creation_progress add = 10 }
+		tot_band_8_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_8_gold_effect_2 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_8_creation_progress } } set_variable = { name = tot_band_8_creation_progress value = 0 } }
+		add_treasury = -2000
+		change_variable = { name = tot_band_8_creation_progress add = 30 }
+		tot_band_8_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_8_gold_effect_3 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_8_creation_progress } } set_variable = { name = tot_band_8_creation_progress value = 0 } }
+		add_treasury = -3000
+		change_variable = { name = tot_band_8_creation_progress add = 50 }
+		tot_band_8_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_8_gold_effect_4 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_8_creation_progress } } set_variable = { name = tot_band_8_creation_progress value = 0 } }
+		add_treasury = -4000
+		change_variable = { name = tot_band_8_creation_progress add = 70 }
+		tot_band_8_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_8_gold_effect_5 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_8_creation_progress } } set_variable = { name = tot_band_8_creation_progress value = 0 } }
+		add_treasury = -5000
+		change_variable = { name = tot_band_8_creation_progress add = 90 }
+		tot_band_8_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_8_gold_effect_6 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_8_creation_progress } } set_variable = { name = tot_band_8_creation_progress value = 0 } }
+		add_treasury = -6000
+		change_variable = { name = tot_band_8_creation_progress add = 110 }
+		tot_band_8_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_8_invest_musical_instrument
+			market.mg:musical_instrument = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_8_invest_musical_instrument_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_8_invest_musical_instrument }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_8_invest_paper
+			market.mg:paper = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_8_invest_paper_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_8_invest_paper }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_8_invest_luxury_clothes
+			market.mg:luxury_clothes = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_8_invest_luxury_clothes_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_8_invest_luxury_clothes }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_8_invest_transportation
+			market.mg:transportation = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_8_invest_transportation_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_8_invest_transportation }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_8_invest_automobiles
+			market.mg:automobiles = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_8_invest_automobiles_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_8_invest_automobiles }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_8_invest_radios
+			market.mg:radios = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_8_invest_radios_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_8_invest_radios }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_8_invest_fruit
+			market.mg:fruit = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_8_invest_fruit_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_8_invest_fruit }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_8_invest_tea
+			market.mg:tea = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_8_invest_tea_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_8_invest_tea }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_8_invest_coffee
+			market.mg:coffee = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_8_invest_coffee_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_8_invest_coffee }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_8_invest_groceries
+			market.mg:groceries = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_8_invest_groceries_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_8_invest_groceries }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_8_invest_luxury_drinks
+			market.mg:luxury_drinks = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_8_invest_luxury_drinks_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_8_invest_luxury_drinks }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_8_invest_luxury_foods
+			market.mg:luxury_foods = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_8_invest_luxury_foods_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_8_invest_luxury_foods }
+	is_valid = { is_player = yes }
+}
+band_9_gold_effect_1 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_9_creation_progress } } set_variable = { name = tot_band_9_creation_progress value = 0 } }
+		add_treasury = -1000
+		change_variable = { name = tot_band_9_creation_progress add = 10 }
+		tot_band_9_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_9_gold_effect_2 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_9_creation_progress } } set_variable = { name = tot_band_9_creation_progress value = 0 } }
+		add_treasury = -2000
+		change_variable = { name = tot_band_9_creation_progress add = 30 }
+		tot_band_9_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_9_gold_effect_3 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_9_creation_progress } } set_variable = { name = tot_band_9_creation_progress value = 0 } }
+		add_treasury = -3000
+		change_variable = { name = tot_band_9_creation_progress add = 50 }
+		tot_band_9_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_9_gold_effect_4 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_9_creation_progress } } set_variable = { name = tot_band_9_creation_progress value = 0 } }
+		add_treasury = -4000
+		change_variable = { name = tot_band_9_creation_progress add = 70 }
+		tot_band_9_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_9_gold_effect_5 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_9_creation_progress } } set_variable = { name = tot_band_9_creation_progress value = 0 } }
+		add_treasury = -5000
+		change_variable = { name = tot_band_9_creation_progress add = 90 }
+		tot_band_9_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_9_gold_effect_6 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_9_creation_progress } } set_variable = { name = tot_band_9_creation_progress value = 0 } }
+		add_treasury = -6000
+		change_variable = { name = tot_band_9_creation_progress add = 110 }
+		tot_band_9_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_9_invest_musical_instrument
+			market.mg:musical_instrument = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_9_invest_musical_instrument_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_9_invest_musical_instrument }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_9_invest_paper
+			market.mg:paper = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_9_invest_paper_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_9_invest_paper }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_9_invest_luxury_clothes
+			market.mg:luxury_clothes = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_9_invest_luxury_clothes_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_9_invest_luxury_clothes }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_9_invest_transportation
+			market.mg:transportation = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_9_invest_transportation_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_9_invest_transportation }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_9_invest_automobiles
+			market.mg:automobiles = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_9_invest_automobiles_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_9_invest_automobiles }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_9_invest_radios
+			market.mg:radios = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_9_invest_radios_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_9_invest_radios }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_9_invest_fruit
+			market.mg:fruit = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_9_invest_fruit_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_9_invest_fruit }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_9_invest_tea
+			market.mg:tea = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_9_invest_tea_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_9_invest_tea }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_9_invest_coffee
+			market.mg:coffee = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_9_invest_coffee_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_9_invest_coffee }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_9_invest_groceries
+			market.mg:groceries = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_9_invest_groceries_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_9_invest_groceries }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_9_invest_luxury_drinks
+			market.mg:luxury_drinks = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_9_invest_luxury_drinks_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_9_invest_luxury_drinks }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_9_invest_luxury_foods
+			market.mg:luxury_foods = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_9_invest_luxury_foods_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_9_invest_luxury_foods }
+	is_valid = { is_player = yes }
+}
+band_10_gold_effect_1 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_10_creation_progress } } set_variable = { name = tot_band_10_creation_progress value = 0 } }
+		add_treasury = -1000
+		change_variable = { name = tot_band_10_creation_progress add = 10 }
+		tot_band_10_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_10_gold_effect_2 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_10_creation_progress } } set_variable = { name = tot_band_10_creation_progress value = 0 } }
+		add_treasury = -2000
+		change_variable = { name = tot_band_10_creation_progress add = 30 }
+		tot_band_10_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_10_gold_effect_3 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_10_creation_progress } } set_variable = { name = tot_band_10_creation_progress value = 0 } }
+		add_treasury = -3000
+		change_variable = { name = tot_band_10_creation_progress add = 50 }
+		tot_band_10_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_10_gold_effect_4 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_10_creation_progress } } set_variable = { name = tot_band_10_creation_progress value = 0 } }
+		add_treasury = -4000
+		change_variable = { name = tot_band_10_creation_progress add = 70 }
+		tot_band_10_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_10_gold_effect_5 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_10_creation_progress } } set_variable = { name = tot_band_10_creation_progress value = 0 } }
+		add_treasury = -5000
+		change_variable = { name = tot_band_10_creation_progress add = 90 }
+		tot_band_10_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+band_10_gold_effect_6 = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_band_10_creation_progress } } set_variable = { name = tot_band_10_creation_progress value = 0 } }
+		add_treasury = -6000
+		change_variable = { name = tot_band_10_creation_progress add = 110 }
+		tot_band_10_check_rewards = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_10_invest_musical_instrument
+			market.mg:musical_instrument = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_10_invest_musical_instrument_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_10_invest_musical_instrument }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_10_invest_paper
+			market.mg:paper = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_10_invest_paper_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_10_invest_paper }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_10_invest_luxury_clothes
+			market.mg:luxury_clothes = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_10_invest_luxury_clothes_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_10_invest_luxury_clothes }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_10_invest_transportation
+			market.mg:transportation = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_10_invest_transportation_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_10_invest_transportation }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_10_invest_automobiles
+			market.mg:automobiles = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_10_invest_automobiles_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_10_invest_automobiles }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_10_invest_radios
+			market.mg:radios = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_10_invest_radios_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_10_invest_radios }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_10_invest_fruit
+			market.mg:fruit = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_10_invest_fruit_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_10_invest_fruit }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_10_invest_tea
+			market.mg:tea = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_10_invest_tea_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_10_invest_tea }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_10_invest_coffee
+			market.mg:coffee = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_10_invest_coffee_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_10_invest_coffee }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_10_invest_groceries
+			market.mg:groceries = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_10_invest_groceries_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_10_invest_groceries }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_10_invest_luxury_drinks
+			market.mg:luxury_drinks = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_10_invest_luxury_drinks_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_10_invest_luxury_drinks }
+	is_valid = { is_player = yes }
+}
+ = {
+		is_player = yes
+		OR = {
+			has_variable = tot_band_10_invest_luxury_foods
+			market.mg:luxury_foods = { market_goods_sell_orders >= 50 }
+		}
+	}
+}
+
+tot_band_10_invest_luxury_foods_active = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_10_invest_luxury_foods }
+	is_valid = { is_player = yes }
+}
+# END GENERATED TOT BAND PER BAND
+
+

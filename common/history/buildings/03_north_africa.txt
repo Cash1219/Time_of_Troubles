@@ -6,7 +6,7 @@
 				add_ownership={
 					country={
 						country="c:EGY"
-						levels=5
+						levels=7
 					}
 				}
 				reserves=1
@@ -19,12 +19,12 @@
 					building={
 						type="building_trade_center"
 						country="c:EGY"
-						levels=2
+						levels=3
 						region="STATE_LOWER_EGYPT"
 					}
 					country={
 						country="c:EGY"
-						levels=4
+						levels=5
 					}
 				}
 				reserves=1
@@ -45,7 +45,7 @@
 				add_ownership={
 					country={
 						country="c:EGY"
-						levels=2
+						levels=3
 					}
 				}
 				reserves=1
@@ -57,7 +57,7 @@
 					building={
 						type="building_textile_mill"
 						country="c:EGY"
-						levels=2
+						levels=3
 						region="STATE_LOWER_EGYPT"
 					}
 				}
@@ -69,7 +69,7 @@
 				add_ownership={
 					country={
 						country="c:EGY"
-						levels=1
+						levels=2
 					}
 				}
 				reserves=1
@@ -80,7 +80,7 @@
 				add_ownership={
 					country={
 						country="c:EGY"
-						levels=1
+						levels=2
 					}
 				}
 				reserves=1
@@ -92,7 +92,7 @@
 					building={
 						type="building_manor_house"
 						country="c:EGY"
-						levels=6
+						levels=7
 						region="STATE_LOWER_EGYPT"
 					}
 				}
@@ -118,7 +118,7 @@
 					building={
 						type="building_manor_house"
 						country="c:EGY"
-						levels=2
+						levels=3
 						region="STATE_LOWER_EGYPT"
 					}
 				}
@@ -144,7 +144,7 @@
 					building={
 						type="building_manor_house"
 						country="c:EGY"
-						levels=6
+						levels=8
 						region="STATE_LOWER_EGYPT"
 					}
 				}
@@ -157,7 +157,7 @@
 					building={
 						type="building_manor_house"
 						country="c:EGY"
-						levels=6
+						levels=8
 						region="STATE_LOWER_EGYPT"
 					}
 				}
@@ -170,7 +170,7 @@
 					building={
 						type="building_fishing_wharf"
 						country="c:EGY"
-						levels=2
+						levels=3
 						region="STATE_LOWER_EGYPT"
 					}
 				}
@@ -193,7 +193,7 @@
 				add_ownership={
 					country={
 						country="c:EGY"
-						levels=10
+						levels=15
 					}
 				}
 				reserves=1
@@ -213,32 +213,7 @@
 				}
 				activate_production_methods={ "pm_naval_fortification_basic"  }
 			}
-		
-			
-			# [TEMP_DISABLED_MAGIC_BUILDING]
-			# create_building={
-			# 				building="building_magic_power"
-			# 				add_ownership={
-			# 					country={
-			# 						country="c:EGY"
-			# 						levels=1
-			# 					}
-			# 				}
-			# 				reserves=1
-			# 			}
-
-
-			create_building={
-				building="building_kissaten"
-				add_ownership={
-					country={
-						country="c:EGY"
-						levels=1
-					}
-				}
-				reserves=1
-			}
-}
+		}
 	}
 	s:STATE_UPPER_EGYPT={
 		region_state:EGY={
@@ -300,7 +275,7 @@
 					building={
 						type="building_manor_house"
 						country="c:EGY"
-						levels=2
+						levels=3
 						region="STATE_MIDDLE_EGYPT"
 					}
 				}
@@ -339,7 +314,7 @@
 					building={
 						type="building_manor_house"
 						country="c:EGY"
-						levels=2
+						levels=3
 						region="STATE_MIDDLE_EGYPT"
 					}
 				}
@@ -470,7 +445,7 @@
 				add_ownership={
 					country={
 						country="c:DFR"
-						levels=3
+						levels=5
 					}
 				}
 				reserves=1
@@ -525,7 +500,7 @@
 					building={
 						type="building_logging_camp"
 						country="c:EGY"
-						levels=3
+						levels=4
 						region="STATE_BLUE_NILE"
 					}
 				}
@@ -570,7 +545,7 @@
 					}
 				}
 				reserves=1
-			}			
+			}
 			create_building={
 				building="building_glassworks"
 				add_ownership={
@@ -590,7 +565,7 @@
 					building={
 						type="building_fishing_wharf"
 						country="c:MOR"
-						levels=1
+						levels=2
 						region="STATE_MARRAKECH"
 					}
 				}
@@ -615,7 +590,7 @@
 				add_ownership={
 					country={
 						country="c:MOR"
-						levels=7
+						levels=10
 					}
 				}
 				reserves=1
@@ -641,7 +616,7 @@
 				add_ownership={
 					country={
 						country="c:MOR"
-						levels=2
+						levels=3
 					}
 				}
 				reserves=1
@@ -691,7 +666,7 @@
 				add_ownership={
 					country={
 						country="c:MOR"
-						levels=7
+						levels=10
 					}
 				}
 				reserves=1
@@ -756,7 +731,7 @@
 				add_ownership={
 					country={
 						country="c:MOR"
-						levels=2
+						levels=3
 					}
 				}
 				reserves=1
@@ -767,7 +742,7 @@
 				add_ownership={
 					country={
 						country="c:MOR"
-						levels=1
+						levels=2
 					}
 				}
 				reserves=1
@@ -785,15 +760,15 @@
 				activate_production_methods={ "pm_basic_shipbuilding"  }
 			}
 		}
-		region_state:SPA={
+		region_state:MOR={
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:SPA"
+						country="c:MOR"
 						levels=1
-						region="STATE_NEW_CASTILE"
+						region="STATE_AL_RIF"
 					}
 				}
 				reserves=1
@@ -803,7 +778,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:SPA"
+						country="c:MOR"
 						levels=1
 					}
 				}
@@ -833,7 +808,7 @@
 					building={
 						type="building_iron_mine"
 						country="c:MOR"
-						levels=1
+						levels=2
 						region="STATE_INNER_MOROCCO"
 					}
 				}
@@ -845,7 +820,7 @@
 				add_ownership={
 					country={
 						country="c:MOR"
-						levels=3
+						levels=4
 					}
 				}
 				reserves=1
@@ -865,7 +840,7 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_organization" "pm_religious_bureaucrats" "pm_professional_bureaucrats" }
-			}		
+			}
 			create_building={
 				building="building_fishing_wharf"
 				add_ownership={
@@ -889,7 +864,7 @@
 					}
 				}
 				reserves=1
-			}			
+			}
 			create_building={
 				building="building_port"
 				add_ownership={
@@ -945,7 +920,7 @@
 				add_ownership={
 					country={
 						country="c:TUN"
-						levels=1
+						levels=2
 					}
 				}
 				reserves=1
@@ -963,7 +938,7 @@
 				activate_production_methods={ "pm_basic_shipbuilding"  }
 			}
 		}
-		region_state:FRA={
+		region_state:TUN={
 			create_building={
 				building="building_port"
 				add_ownership={
@@ -993,7 +968,7 @@
 						type="building_manor_house"
 						country="c:TUN"
 						levels=1
-						region="STATE_ILE_DE_FRANCE"
+						region="STATE_ALGIERS"
 					}
 				}
 				reserves=1
@@ -1006,7 +981,7 @@
 						type="building_manor_house"
 						country="c:TUN"
 						levels=1
-						region="STATE_ILE_DE_FRANCE"
+						region="STATE_ALGIERS"
 					}
 				}
 				reserves=1
@@ -1037,7 +1012,7 @@
 					}
 				}
 				reserves=1
-			}			
+			}
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -1069,7 +1044,7 @@
 				add_ownership={
 					country={
 						country="c:TUN"
-						levels=4
+						levels=6
 					}
 				}
 				reserves=1
@@ -1080,7 +1055,7 @@
 				add_ownership={
 					country={
 						country="c:TUN"
-						levels=1
+						levels=2
 					}
 				}
 				reserves=1
@@ -1098,6 +1073,95 @@
 				activate_production_methods={ "pm_basic_shipbuilding"  }
 			}
 		}
+		region_state:TUN={
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:TUN"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+			create_building={
+				building="building_wheat_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:TUN"
+						levels=1
+						region="STATE_CONSTANTINE"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled"  }
+			}
+		}
+		region_state:TUN={
+			create_building={
+				building="building_government_administration"
+				add_ownership={
+					country={
+						country="c:TUN"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_organization" "pm_hereditary_bureaucrats" "pm_religious_bureaucrats" }
+			}
+			create_building={
+				building="building_wheat_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:TUN"
+						levels=1
+						region="STATE_CONSTANTINE"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled"  }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:TUN"
+						levels=2
+						region="STATE_CONSTANTINE"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated"  }
+			}
+			create_building={
+				building="building_barrack"
+				add_ownership={
+					country={
+						country="c:TUN"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_no_organization" }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					building={
+						type="building_logging_camp"
+						country="c:TUN"
+						levels=1
+						region="STATE_CONSTANTINE"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_forestry" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts"  }
+			}
+		}
 	}
 	s:STATE_ORAN={
 		region_state:TUN={
@@ -1106,19 +1170,19 @@
 				add_ownership={
 					country={
 						country="c:TUN"
-						levels=2
+						levels=3
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_organization" "pm_religious_bureaucrats" "pm_professional_bureaucrats" }
-			}		
+			}
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
 					building={
 						type="building_manor_house"
 						country="c:TUN"
-						levels=2
+						levels=3
 						region="STATE_ORAN"
 					}
 				}
@@ -1139,7 +1203,7 @@
 				activate_production_methods={ "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated"  }
 			}
 		}
-		region_state:FRA={
+		region_state:TUN={
 			create_building={
 				building="building_port"
 				add_ownership={
@@ -1224,7 +1288,7 @@
 					building={
 						type="building_logging_camp"
 						country="c:TUN"
-						levels=2
+						levels=3
 						region="STATE_TUNISIA"
 					}
 					building={
@@ -1268,7 +1332,7 @@
 				add_ownership={
 					country={
 						country="c:TUN"
-						levels=9
+						levels=13
 					}
 				}
 				reserves=1
@@ -1331,7 +1395,7 @@
 				add_ownership={
 					country={
 						country="c:TRI"
-						levels=6
+						levels=9
 					}
 				}
 				reserves=1
@@ -1398,7 +1462,7 @@
 				add_ownership={
 					country={
 						country="c:TRI"
-						levels=4
+						levels=6
 					}
 				}
 				reserves=1
@@ -1417,12 +1481,12 @@
 	s:STATE_EAST_SAHARA={
 		region_state:AHG={
 		}
-		region_state:TUN={
+		region_state:AHG={
 			create_building={
 				building="building_barrack"
 				add_ownership={
 					country={
-						country="c:TUN"
+						country="c:AHG"
 						levels=1
 					}
 				}
@@ -1442,7 +1506,7 @@
 				add_ownership={
 					country={
 						country="c:FTR"
-						levels=3
+						levels=5
 					}
 				}
 				reserves=1
@@ -1491,7 +1555,7 @@
 				add_ownership={
 					country={
 						country="c:MSN"
-						levels=14
+						levels=20
 					}
 				}
 				reserves=1
@@ -1519,7 +1583,7 @@
 				add_ownership={
 					country={
 						country="c:SGU"
-						levels=7
+						levels=10
 					}
 				}
 				reserves=1
@@ -1545,7 +1609,7 @@
 				add_ownership={
 					country={
 						country="c:KRT"
-						levels=7
+						levels=10
 					}
 				}
 				reserves=1
@@ -1583,7 +1647,7 @@
 				add_ownership={
 					country={
 						country="c:WAD"
-						levels=3
+						levels=5
 					}
 				}
 				reserves=1

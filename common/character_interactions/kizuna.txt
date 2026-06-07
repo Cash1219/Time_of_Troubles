@@ -1,34 +1,15 @@
-﻿appointing_band_member = {
+appointing_band_1_member = {
 	icon = "gfx/interface/character_panel/grant_command.dds"
 	clicksound = "event:/SFX/UI/Military/command_grant"
 
 	potential = {
-		
 	}
 
 	possible = {
 		this = {
-			OR = {
-				has_trait = tot_lead_vocalist_trait
-				OR = {
-					has_trait = tot_drummer_trait
-					has_trait = tot_guitarist_trait
-					has_trait = tot_bassist_trait
-					has_trait = tot_keyboardist_trait
-				}
-			}
-		}
-		this = {
-			OR = {
-				NOT = {
-					has_trait = tot_is_drummer_trait
-					has_trait = tot_is_guitarist_trait
-					has_trait = tot_is_bassist_trait
-					has_trait = tot_is_keyboardist_trait
-					has_trait = tot_lead_vocalist_trait
-					has_trait = tot_is_supper_lead_vocalist_trait
-				}
-				has_trait = tot_lead_vocalist_trait
+			is_character_alive = yes
+			owner = {
+				is_player = yes
 			}
 		}
 	}
@@ -38,6 +19,65 @@
 			save_scope_as = appointing_band_member
 		}
 		trigger_event = { id = kizuna.1 popup = yes }
+	}
+
+	ai_chance = {
+		value = 1
+	}
+}
+
+appointing_band_2_member = {
+	icon = "gfx/interface/character_panel/grant_command.dds"
+	clicksound = "event:/SFX/UI/Military/command_grant"
+
+	potential = {
+	}
+
+	possible = {
+		this = {
+			is_character_alive = yes
+			owner = {
+				is_player = yes
+			}
+		}
+	}
+
+	effect = {
+		this = {
+			save_scope_as = appointing_band_member
+		}
+		trigger_event = { id = kizuna.2 popup = yes }
+	}
+
+	ai_chance = {
+		value = 1
+	}
+}
+
+remove_band_member = {
+	icon = "gfx/interface/character_panel/grant_command_not.dds"
+	clicksound = "event:/SFX/UI/Military/command_grant"
+
+	potential = {
+	}
+
+	possible = {
+		this = {
+			is_character_alive = yes
+			owner = {
+				is_player = yes
+			}
+			has_variable = tot_band_id
+		}
+	}
+
+	effect = {
+		this = {
+			tot_clear_band_member_effect = yes
+		}
+		owner = {
+			update_kizuna = yes
+		}
 	}
 
 	ai_chance = {

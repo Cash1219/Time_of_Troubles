@@ -36,7 +36,7 @@
 						type = "building_manor_house"
 						country = "c:NEP"
 						levels = 15
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_BIHAR"
 					}
 					company = {
 						type=company_east_india_company
@@ -60,7 +60,7 @@
 						type = "building_manor_house"
 						country = "c:NEP"
 						levels = 2
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_BIHAR"
 					}
 				}
 				reserves = 1
@@ -79,7 +79,7 @@
 						type = "building_manor_house"
 						country = "c:NEP"
 						levels = 1
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_BIHAR"
 					}
 				}
 				reserves = 1
@@ -98,52 +98,13 @@
 						type = "building_manor_house"
 						country = "c:NEP"
 						levels = 3
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_BIHAR"
 					}
 				}
 				reserves = 1
 				activate_production_methods = { "default_building_dye_plantation" "pm_road_carts" }
 			}
-		
-			
-			# [TEMP_DISABLED_MAGIC_BUILDING]
-			# create_building={
-			# 				building="building_magic_spcies"
-			# 				add_ownership={
-			# 					country={
-			# 						country = "c:NEP"
-			# 						levels=1
-			# 					}
-			# 				}
-			# 				reserves=1
-			# 			}
-
-
-			
-			# [TEMP_DISABLED_MAGIC_BUILDING]
-			# create_building={
-			# 				building="building_magic_mineral_mining"
-			# 				add_ownership={
-			# 					country={
-			# 						country = "c:NEP"
-			# 						levels=1
-			# 					}
-			# 				}
-			# 				reserves=1
-			# 			}
-
-
-			create_building={
-				building="building_kissaten"
-				add_ownership={
-					country={
-						country = "c:NEP"
-						levels=1
-					}
-				}
-				reserves=1
-			}
-}
+		}
 	}
 	s:STATE_WEST_BENGAL= {
 		region_state:BIC = {
@@ -165,14 +126,14 @@
 					building={
 						type="building_financial_district"
 						country="c:BIC"
-						levels=4
+						levels=3
 						region="STATE_WEST_BENGAL"
 					}
 					building={
 						type="building_financial_district"
-						country="c:GBR"
-						levels=12
-						region="STATE_HOME_COUNTIES"
+						country="c:BIC"
+						levels=9
+						region="STATE_WEST_BENGAL"
 					}
 				}
 				reserves=1
@@ -193,9 +154,9 @@
 				add_ownership = {
 					building = {
 						type = "building_financial_district"
-						country = "c:GBR"
+						country = "c:BIC"
 						levels = 1
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_WEST_BENGAL"
 					}
 				}
 				reserves = 1
@@ -206,9 +167,9 @@
 				add_ownership = {
 					building = {
 						type = "building_financial_district"
-						country = "c:GBR"
-						levels=3
-						region = "STATE_HOME_COUNTIES"
+						country = "c:BIC"
+						levels = 2
+						region = "STATE_WEST_BENGAL"
 					}
 				}
 				reserves=1
@@ -238,13 +199,13 @@
 					}
 					building = {
 						type = "building_manor_house"
-						country = "c:GBR"
+						country = "c:BIC"
 						levels = 15
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_WEST_BENGAL"
 					}
 					company={
 						type=company_east_india_company
-						country="c:GBR"
+						country="c:BIC"
 						levels=5
 					}
 				}
@@ -262,9 +223,9 @@
 					}
 					building = {
 						type = "building_manor_house"
-						country = "c:GBR"
+						country = "c:BIC"
 						levels = 3
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_WEST_BENGAL"
 					}
 				}
 				reserves = 1
@@ -281,13 +242,13 @@
 					}
 					building = {
 						type = "building_manor_house"
-						country = "c:GBR"
+						country = "c:BIC"
 						levels = 3
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_WEST_BENGAL"
 					}
 					company={
 						type=company_east_india_company
-						country="c:GBR"
+						country="c:BIC"
 						levels=1
 					}
 				}
@@ -310,9 +271,9 @@
 				add_ownership = {
 					building = {
 						type = "building_manor_house"
-						country = "c:GBR"
+						country = "c:BIC"
 						levels = 3
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_WEST_BENGAL"
 					}
 				}
 				reserves = 1
@@ -338,7 +299,7 @@
 						type = "building_manor_house"
 						country = "c:BIC"
 						levels = 3
-						region = "STATE_EAST_BENGAL"
+						region = "STATE_WEST_BENGAL"
 					}
 				}
 				reserves = 1
@@ -355,9 +316,9 @@
 					}
 					building = {
 						type = "building_manor_house"
-						country = "c:GBR"
+						country = "c:BIC"
 						levels = 3
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_WEST_BENGAL"
 					}
 				}
 				reserves = 1
@@ -395,7 +356,7 @@
 					building={
 						type="building_fishing_wharf"
 						country="c:BIC"
-						levels=4
+						levels=3
 						region="STATE_WEST_BENGAL"
 					}
 				}
@@ -407,7 +368,7 @@
 				add_ownership = {
 					country= {
 						country = "c:BIC"
-						levels = 6
+						levels = 7
 					}
 				}
 				reserves = 1
@@ -480,7 +441,7 @@
 						type = "building_manor_house"
 						country = "c:BIC"
 						levels = 4
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_EAST_BENGAL"
 					}
 				}
 				reserves = 1
@@ -536,9 +497,9 @@
 					}
 					building = {
 						type = "building_manor_house"
-						country = "c:GBR"
+						country = "c:BIC"
 						levels = 1
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_ASSAM"
 					}
 				}
 				reserves = 1
@@ -558,7 +519,7 @@
 				activate_production_methods = { "pm_simple_forestry"  "pm_no_equipment" "pm_road_carts" "pm_hardwood" }
 			}
 		}
-		region_state:BIC = {
+		region_state:BIC= {
 			create_building = {
 				building = "building_government_administration"
 				add_ownership = {
@@ -770,11 +731,11 @@
 						type = "building_manor_house"
 						country = "c:NEP"
 						levels = 9
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_AWADH"
 					}
 					company = {
 						type=company_east_india_company
-						country = "c:NEP"
+						country="c:NEP"
 						levels=5
 					}
 				}
@@ -794,7 +755,7 @@
 						type = "building_manor_house"
 						country = "c:NEP"
 						levels = 6
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_AWADH"
 					}
 				}
 				reserves = 1
@@ -806,8 +767,8 @@
 					building = {
 						type = "building_manor_house"
 						country = "c:NEP"
-						levels=4
-						region = "STATE_HOME_COUNTIES"
+						levels = 3
+						region = "STATE_AWADH"
 					}
 				}
 				reserves=1
@@ -878,13 +839,13 @@
 						type = "building_manor_house"
 						country = "c:NEP"
 						levels = 2
-						region = "STATE_AWADH"
+						region = "STATE_AGRA"
 					}
 					building = {
 						type = "building_manor_house"
 						country = "c:NEP"
 						levels = 3
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_AGRA"
 					}
 				}
 				reserves = 1
@@ -910,10 +871,10 @@
 						type = "building_financial_district"
 						country = "c:NEP"
 						levels = 1
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_AGRA"
 					}
 				}
-				reserves = 2
+				reserves = 1
 				activate_production_methods = { "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
 			create_building={
@@ -923,7 +884,7 @@
 						type="building_financial_district"
 						country="c:NEP"
 						levels=1
-						region="STATE_HOME_COUNTIES"
+						region="STATE_AGRA"
 					}
 				}
 				reserves=1
@@ -968,8 +929,8 @@
 			}
 		}
 	}
-	s:STATE_GUJARAT = {
-		region_state:PAN = {
+	s:STATE_GUJARAT= {
+		region_state:ELZ = {
 			create_building = {
 				building = "building_government_administration"
 				add_ownership = {
@@ -1072,6 +1033,8 @@
 				reserves = 1
 				activate_production_methods = { "pm_simple_fishing" "pm_unrefrigerated" }
 			}
+		}
+		region_state:ELZ= {
 			create_building = {
 				building = "building_government_administration"
 				add_ownership = {
@@ -1082,6 +1045,19 @@
 				}
 				reserves = 1
 				activate_production_methods = { "pm_simple_organization" "pm_hereditary_bureaucrats" "pm_religious_bureaucrats" }
+			}
+			create_building={
+				building="building_shipyard"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:ELZ"
+						levels=1
+						region="STATE_GUJARAT"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_shipbuilding"  }
 			}
 			create_building = {
 				building = "building_furniture_manufactory"
@@ -1135,6 +1111,19 @@
 				reserves = 1
 				activate_production_methods = { "default_building_tobacco_plantation" "pm_road_carts" }
 			}
+			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:ELZ"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
+			}
+		}
+		region_state:ELZ= {
 			create_building = {
 				building = "building_fishing_wharf"
 				add_ownership = {
@@ -1161,6 +1150,8 @@
 				reserves = 1
 				activate_production_methods = { "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
+		}
+		region_state:ELZ= {
 			create_building = {
 				building = "building_fishing_wharf"
 				add_ownership = {
@@ -1187,6 +1178,8 @@
 				reserves = 1
 				activate_production_methods = { "default_building_cotton_plantation" "pm_road_carts" }
 			}
+		}
+		region_state:ELZ= {
 			create_building = {
 				building = "building_fishing_wharf"
 				add_ownership = {
@@ -1200,6 +1193,8 @@
 				reserves = 1
 				activate_production_methods = { "pm_simple_fishing" "pm_unrefrigerated" }
 			}
+		}
+		region_state:ELZ= {
 			create_building = {
 				building = "building_livestock_ranch"
 				add_ownership = {
@@ -1213,6 +1208,8 @@
 				reserves = 1
 				activate_production_methods = { "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
+		}
+		region_state:ELZ= {
 			create_building={
 				building="building_port"
 				add_ownership={
@@ -1226,8 +1223,8 @@
 			}
 		}
 	}
-	s:STATE_BUNDELKHAND = {
-		region_state:XMQS = {
+	s:STATE_BUNDELKHAND= {
+		region_state:XMQS= {
 			create_building = {
 				building = "building_cotton_plantation"
 				add_ownership = {
@@ -1252,6 +1249,8 @@
 				reserves = 1
 				activate_production_methods = { "pm_muskets" "pm_automation_disabled" }
 			}
+		}
+		region_state:XMQS= {
 			create_building = {
 				building = "building_cotton_plantation"
 				add_ownership = {
@@ -1266,9 +1265,9 @@
 				activate_production_methods = { "default_building_cotton_plantation" "pm_road_carts" }
 			}
 		}
-}
-	s:STATE_MALWA = {
-		region_state:XMQS = {
+	}
+	s:STATE_MALWA= {
+		region_state:XMQS= {
 			create_building = {
 				building = "building_opium_plantation"
 				add_ownership = {
@@ -1295,6 +1294,8 @@
 				reserves = 1
 				activate_production_methods = { "pm_pulp_pressing" "pm_automation_disabled" }
 			}
+		}
+		region_state:XMQS= {
 			create_building = {
 				building = "building_cotton_plantation"
 				add_ownership = {
@@ -1321,6 +1322,8 @@
 				reserves = 1
 				activate_production_methods = { "default_building_opium_plantation" "pm_road_carts" }
 			}
+		}
+		region_state:XMQS= {
 			create_building = {
 				building = "building_opium_plantation"
 				add_ownership = {
@@ -1349,8 +1352,8 @@
 			}
 		}
 	}
-	s:STATE_KASHMIR = {
-		region_state:DAL = {
+	s:STATE_KASHMIR= {
+		region_state:DAL= {
 			create_building = {
 				building = "building_livestock_ranch"
 				add_ownership = {
@@ -1364,6 +1367,8 @@
 				reserves = 1
 				activate_production_methods = { "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
+		}
+		region_state:DAL= {
 			create_building = {
 				building = "building_government_administration"
 				add_ownership = {
@@ -1544,7 +1549,7 @@
 					building={
 						type="building_tooling_workshop"
 						country = "c:DAL"
-						levels=1
+						levels = 1
 						region = "STATE_PUNJAB"
 					}
 				}
@@ -1726,8 +1731,8 @@
 			}
 		}
 	}
-	s:STATE_CENTRAL_PROVINCES = {
-		region_state:XMQS = {
+	s:STATE_CENTRAL_PROVINCES= {
+		region_state:XMQS= {
 			create_building = {
 				building = "building_textile_mill"
 				add_ownership = {
@@ -1780,6 +1785,8 @@
 				reserves = 1
 				activate_production_methods = { "pm_simple_forestry"  "pm_no_equipment" "pm_road_carts" "pm_hardwood" }
 			}
+		}
+		region_state:XMQS= {
 			create_building = {
 				building = "building_opium_plantation"
 				add_ownership = {
@@ -1806,6 +1813,8 @@
 				reserves = 1
 				activate_production_methods = { "default_building_dye_plantation" "pm_road_carts" }
 			}
+		}
+		region_state:XMQS = {
 			create_building = {
 				building = "building_cotton_plantation"
 				add_ownership = {
@@ -1826,7 +1835,7 @@
 						type = "building_financial_district"
 						country = "c:XMQS"
 						levels = 1
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_CENTRAL_PROVINCES"
 					}
 				}
 				reserves = 1
@@ -1845,7 +1854,7 @@
 						type = "building_manor_house"
 						country = "c:XMQS"
 						levels = 2
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_CENTRAL_PROVINCES"
 					}
 				}
 				reserves = 1
@@ -1897,7 +1906,11 @@
 		}
 	}
 	s:STATE_RAJPUTANA= {
-		region_state:NEP = {
+		region_state:NEP= {
+		}
+		region_state:NEP= {
+		}
+		region_state:NEP= {
 			create_building = {
 				building = "building_opium_plantation"
 				add_ownership = {
@@ -1911,6 +1924,10 @@
 				reserves = 1
 				activate_production_methods = { "default_building_opium_plantation" "pm_road_carts" }
 			}
+		}
+		region_state:NEP= {
+		}
+		region_state:NEP= {
 		}
 		region_state:NEP= {
 			create_building = {
@@ -1961,9 +1978,9 @@
 				add_ownership = {
 					building = {
 						type = "building_manor_house"
-						country = "c:GBR"
+						country = "c:BCE"
 						levels = 4
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_CEYLON"
 					}
 				}
 				reserves = 1
@@ -1974,9 +1991,9 @@
 				add_ownership = {
 					building = {
 						type = "building_manor_house"
-						country = "c:GBR"
+						country = "c:BCE"
 						levels = 2
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_CEYLON"
 					}
 				}
 				reserves = 1
@@ -1987,9 +2004,9 @@
 				add_ownership = {
 					building = {
 						type = "building_manor_house"
-						country = "c:GBR"
+						country = "c:BCE"
 						levels = 3
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_CEYLON"
 					}
 				}
 				reserves = 1
@@ -2018,7 +2035,7 @@
 				}
 				reserves = 1
 				activate_production_methods = { "pm_anchorage" }
-			}		
+			}
 		}
 	}
 	s:STATE_INDIAN_OCEAN_TERRITORY= {
@@ -2031,7 +2048,7 @@
 						type="building_financial_district"
 						country="c:FRA"
 						levels=1
-						region="STATE_ILE_DE_FRANCE"
+						region="STATE_INDIAN_OCEAN_TERRITORY"
 					}
 				}
 				reserves=1
@@ -2043,7 +2060,7 @@
 						type = "building_manor_house"
 						country = "c:FRA"
 						levels = 2
-						region = "STATE_ILE_DE_FRANCE"
+						region = "STATE_INDIAN_OCEAN_TERRITORY"
 					}
 				}
 				reserves = 1
@@ -2070,7 +2087,7 @@
 						type="building_financial_district"
 						country="c:GBR"
 						levels=1
-						region="STATE_HOME_COUNTIES"
+						region="STATE_INDIAN_OCEAN_TERRITORY"
 					}
 				}
 				reserves=1
@@ -2082,7 +2099,7 @@
 						type = "building_manor_house"
 						country = "c:GBR"
 						levels = 3
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_INDIAN_OCEAN_TERRITORY"
 					}
 				}
 				reserves = 1
@@ -2102,7 +2119,7 @@
 		}
 	}
 	s:STATE_ORISSA= {
-		region_state:NEWG = {
+		region_state:NEWG= {
 			create_building = {
 				building = "building_sugar_plantation"
 				add_ownership = {
@@ -2157,7 +2174,7 @@
 			}
 		}
 	}
-	s:STATE_CIRCARS = {
+	s:STATE_CIRCARS= {
 		region_state:NEWG = {
 			create_building = {
 				building = "building_logging_camp"
@@ -2172,6 +2189,8 @@
 				reserves = 1
 				activate_production_methods = { "pm_simple_forestry"  "pm_no_equipment" "pm_road_carts" "pm_hardwood" }
 			}
+		}
+		region_state:NEWG = {
 			create_building = {
 				building = "building_government_administration"
 				add_ownership = {
@@ -2191,7 +2210,7 @@
 						type="building_financial_district"
 						country="c:NEWG"
 						levels=1
-						region="STATE_MADRAS"
+						region="STATE_CIRCARS"
 					}
 				}
 				reserves=1
@@ -2233,7 +2252,7 @@
 						type = "building_manor_house"
 						country = "c:NEWG"
 						levels = 1
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_CIRCARS"
 					}
 				}
 				reserves = 1
@@ -2252,7 +2271,7 @@
 						type = "building_manor_house"
 						country = "c:NEWG"
 						levels = 2
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_CIRCARS"
 					}
 				}
 				reserves = 1
@@ -2264,8 +2283,8 @@
 					building = {
 						type = "building_manor_house"
 						country = "c:NEWG"
-						levels=7
-						region = "STATE_HOME_COUNTIES"
+						levels = 5
+						region = "STATE_CIRCARS"
 					}
 				}
 				reserves=1
@@ -2284,7 +2303,7 @@
 						type = "building_manor_house"
 						country = "c:NEWG"
 						levels = 1
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_CIRCARS"
 					}
 				}
 				reserves = 1
@@ -2303,8 +2322,8 @@
 			}
 		}
 	}
-	s:STATE_MYSORE = {
-		region_state:OVL = {
+	s:STATE_MYSORE= {
+		region_state:OVL= {
 			create_building = {
 				building = "building_textile_mill"
 				add_ownership = {
@@ -2390,6 +2409,8 @@
 				reserves = 1
 				activate_production_methods = { "pm_horizontal_drawer_cabinets" "pm_professional_bureaucrats" "pm_secular_bureaucrats" }
 			}
+		}
+		region_state:OVL = {
 			create_building = {
 				building = "building_coffee_plantation"
 				add_ownership = {
@@ -2416,8 +2437,8 @@
 			}
 		}
 	}
-	s:STATE_TRAVANCORE = {
-		region_state:OVL = {
+	s:STATE_TRAVANCORE= {
+		region_state:OVL= {
 			create_building = {
 				building = "building_tea_plantation"
 				add_ownership = {
@@ -2431,6 +2452,21 @@
 				reserves = 1
 				activate_production_methods = { "default_building_tea_plantation" "pm_road_carts" }
 			}
+			create_building={
+				building="building_shipyard"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:OVL"
+						levels=1
+						region="STATE_TRAVANCORE"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_shipbuilding"  }
+			}
+		}
+		region_state:OVL = {
 			create_building = {
 				building = "building_coffee_plantation"
 				add_ownership = {
@@ -2446,8 +2482,8 @@
 			}
 		}
 	}
-	s:STATE_MADRAS = {
-		region_state:OVL = {
+	s:STATE_MADRAS= {
+		region_state:OVL= {
 			create_building = {
 				building = "building_dye_plantation"
 				add_ownership = {
@@ -2455,7 +2491,7 @@
 						type = "building_manor_house"
 						country = "c:OVL"
 						levels = 1
-						region = "STATE_ILE_DE_FRANCE"
+						region = "STATE_MADRAS"
 					}
 				}
 				reserves = 1
@@ -2472,6 +2508,9 @@
 				reserves = 1
 				activate_production_methods = { "pm_anchorage" }
 			}
+		}
+
+		region_state:OVL={
 			create_building={
 				building="building_port"
 				add_ownership={
@@ -2483,6 +2522,9 @@
 				reserves=1
 				activate_production_methods={ "pm_anchorage" }
 			}
+		}
+
+		region_state:OVL = {
 			create_building = {
 				building = "building_government_administration"
 				add_ownership = {
@@ -2531,7 +2573,7 @@
 						type = "building_manor_house"
 						country = "c:OVL"
 						levels = 3
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_MADRAS"
 					}
 				}
 				reserves = 1
@@ -2568,7 +2610,7 @@
 						type = "building_financial_district"
 						country = "c:OVL"
 						levels = 2
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_MADRAS"
 					}
 				}
 				reserves = 1
@@ -2607,7 +2649,7 @@
 						type = "building_manor_house"
 						country = "c:OVL"
 						levels = 10
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_MADRAS"
 					}
 				}
 				reserves = 1
@@ -2620,7 +2662,7 @@
 						type = "building_manor_house"
 						country = "c:OVL"
 						levels = 6
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_MADRAS"
 					}
 				}
 				reserves = 1
@@ -2734,8 +2776,8 @@
 			}
 		}
 	}
-	s:STATE_BOMBAY = {
-		region_state:ELZ = {
+	s:STATE_BOMBAY= {
+		region_state:ELZ= {
 			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
@@ -2749,17 +2791,17 @@
 				}
 				reserves=1
 			}
-			create_building = {
+			create_building={
 				building="building_rice_farm"
-				add_ownership = {
-					building = {
-						type = "building_manor_house"
-						country = "c:ELZ"
-						levels = 2
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:ELZ"
+						levels=2
 						region="STATE_BOMBAY"
 					}
 				}
-				reserves = 1
+				reserves=1
 				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_fig_orchards_building_rice_farm" "pm_tools_disabled"  }
 			}
 			create_building = {
@@ -2773,6 +2815,8 @@
 				reserves = 1
 				activate_production_methods = { "pm_anchorage" }
 			}
+		}
+		region_state:ELZ = {
 			create_building = {
 				building = "building_government_administration"
 				add_ownership = {
@@ -2887,11 +2931,22 @@
 				add_ownership = {
 					country= {
 						country = "c:ELZ"
-						levels = 2
+						levels = 4
 					}
 				}
 				reserves = 1
 				activate_production_methods = { "pm_basic_port" }
+			}
+			create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:ELZ"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
 			}
 			create_building = {
 				building = "building_logging_camp"
@@ -2909,14 +2964,3 @@
 		}
 	}
 }
-
-
-
-# ToT balance direct edits
-s:STATE_DELHI={
-	region_state:NEP={
-		create_building={ building="building_textile_mills" add_ownership={ country={ country="c:NEP" levels=6 } } reserves=1 activate_production_methods={ "pm_weaving_mills" "pm_automation_disabled" } }
-		create_building={ building="building_tooling_workshops" add_ownership={ country={ country="c:NEP" levels=4 } } reserves=1 activate_production_methods={ "pm_crude_tools" "pm_automation_disabled" } }
-	}
-}
-
