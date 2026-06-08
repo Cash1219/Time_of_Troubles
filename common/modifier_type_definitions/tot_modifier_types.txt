@@ -15,6 +15,14 @@ goods_iuput_luxury_foods_add={
 		ai_value=0
 	}
 }
+goods_input_luxury_foods_add={
+	decimals=1
+	color=bad
+	percent=no
+	game_data={
+		ai_value=0
+	}
+}
 goods_output_luxury_foods_add={
 	decimals=1
 	color=good
@@ -26,6 +34,14 @@ goods_output_luxury_foods_add={
 goods_iuput_luxury_drinks_add={
 	decimals=1
 	color=good
+	percent=no
+	game_data={
+		ai_value=0
+	}
+}
+goods_input_luxury_drinks_add={
+	decimals=1
+	color=bad
 	percent=no
 	game_data={
 		ai_value=0
@@ -446,6 +462,42 @@ building_employment_mage_add = {
 #政治
 
 country_tot_governor_limit_add = { #总督上限
+	decimals=0
+	color=good
+	percent=no
+	game_data={
+		ai_value=0
+	}
+}
+
+country_tot_band_limit_add = { #乐队总部上限
+	decimals=0
+	color=good
+	percent=no
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_output_performance_add = {
+	decimals=1
+	color=good
+	percent=no
+	game_data={
+		ai_value=0
+	}
+}
+
+building_stage_throughput_add = {
+	decimals=0
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+building_tot_band_creative_progress_add = { #乐队创作进度
 	decimals=0
 	color=good
 	percent=no

@@ -1,0 +1,258 @@
+types building_panels
+{
+	type tot_band_headquarter_management = widget {
+		size = { 560 680 }
+		parentanchor = hcenter
+
+		background = {
+			using = default_background
+			margin = { 8 8 }
+		}
+
+		flowcontainer = {
+			direction = vertical
+			spacing = 8
+			margin = { 10 10 }
+
+			state = {
+				name = refresh_band_hq_lists
+				trigger_on_create = yes
+				on_finish = "[GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			}
+
+			default_header_clean = {
+				size = { 516 48 }
+				blockoverride "text" {
+					text = "TOT_BAND_BUILDING_PANEL_LABEL"
+					using = fontsize_large
+					default_format = "#medium"
+				}
+			}
+
+			textbox = {
+				size = { 516 34 }
+				text = "TOT_BAND_BUILDING_PANEL_TOOLTIP"
+				using = fontsize_small
+				align = left|nobaseline
+				multiline = yes
+			}
+
+			flowcontainer = {
+				visible = "[GetScriptedGui('tot_band_hq_state_unbound').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+				spacing = 6
+				button_standard = {
+					size = { 166 34 }
+					text = "TOT_BAND_BIND_1"
+					enabled = "[GetScriptedGui('tot_band_hq_state_bind_1').IsValid(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_hq_state_bind_1').Execute(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_hq_state_bind_1').IsValidTooltip(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+				}
+				button_standard = {
+					size = { 166 34 }
+					text = "TOT_BAND_BIND_2"
+					enabled = "[GetScriptedGui('tot_band_hq_state_bind_2').IsValid(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_hq_state_bind_2').Execute(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_hq_state_bind_2').IsValidTooltip(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+				}
+				button_standard = {
+					size = { 166 34 }
+					text = "TOT_BAND_BIND_3"
+					enabled = "[GetScriptedGui('tot_band_hq_state_bind_3').IsValid(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_hq_state_bind_3').Execute(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_band_hq_state_bind_3').IsValidTooltip(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+				}
+			}
+
+			textbox = {
+				visible = "[GetScriptedGui('tot_band_hq_state_unbound').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+				size = { 516 30 }
+				text = "TOT_BAND_BUILDING_CREATE_HQ_BAND_HINT"
+				using = fontsize_small
+				align = left|nobaseline
+				multiline = yes
+			}
+
+			default_header_clean = {
+				visible = "[GetScriptedGui('tot_band_hq_state_bound_1').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+				size = { 516 42 }
+				blockoverride "text" {
+					text = "TOT_BAND_1_NAME_LABEL"
+					using = fontsize_large
+					default_format = "#medium"
+				}
+			}
+			default_header_clean = {
+				visible = "[GetScriptedGui('tot_band_hq_state_bound_2').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+				size = { 516 42 }
+				blockoverride "text" {
+					text = "TOT_BAND_2_NAME_LABEL"
+					using = fontsize_large
+					default_format = "#medium"
+				}
+			}
+			default_header_clean = {
+				visible = "[GetScriptedGui('tot_band_hq_state_bound_3').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+				size = { 516 42 }
+				blockoverride "text" {
+					text = "TOT_BAND_3_NAME_LABEL"
+					using = fontsize_large
+					default_format = "#medium"
+				}
+			}
+
+			textbox = {
+				visible = "[Or(GetScriptedGui('tot_band_hq_state_bound_1').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End), GetScriptedGui('tot_band_hq_state_bound_2').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End), GetScriptedGui('tot_band_hq_state_bound_3').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End))]"
+				size = { 516 44 }
+				text = "TOT_BAND_BUILDING_BOUND_HINT"
+				using = fontsize_small
+				align = left|nobaseline
+				multiline = yes
+			}
+
+			textbox = {
+				visible = "[GetScriptedGui('tot_band_hq_state_bound_1').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+				size = { 516 22 }
+				text = "TOT_BAND_ROLE_PICKER_LABEL"
+				using = fontsize_small
+				align = left|nobaseline
+			}
+			button = {
+				visible = "[GetScriptedGui('tot_band_hq_state_bound_1').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+				using = default_button_primary
+				size = { 516 36 }
+				onclick = "[GetScriptedGui('tot_band_1_select_role_vocalist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				text = "TOT_BAND_SLOT_VOCAL"
+			}
+			flowcontainer = {
+				visible = "[GetScriptedGui('tot_band_hq_state_bound_1').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+				spacing = 5
+				button = { visible = "[GetScriptedGui('tot_band_1_role_guitarist_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 124 36 } onclick = "[GetScriptedGui('tot_band_1_select_role_guitarist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_GUITAR" }
+				button = { visible = "[Not(GetScriptedGui('tot_band_1_role_guitarist_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 124 36 } onclick = "[GetScriptedGui('tot_band_1_select_role_guitarist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_GUITAR" }
+				button = { visible = "[GetScriptedGui('tot_band_1_role_bassist_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 124 36 } onclick = "[GetScriptedGui('tot_band_1_select_role_bassist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_BASS" }
+				button = { visible = "[Not(GetScriptedGui('tot_band_1_role_bassist_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 124 36 } onclick = "[GetScriptedGui('tot_band_1_select_role_bassist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_BASS" }
+				button = { visible = "[GetScriptedGui('tot_band_1_role_keyboardist_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 124 36 } onclick = "[GetScriptedGui('tot_band_1_select_role_keyboardist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_KEYBOARD" }
+				button = { visible = "[Not(GetScriptedGui('tot_band_1_role_keyboardist_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 124 36 } onclick = "[GetScriptedGui('tot_band_1_select_role_keyboardist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_KEYBOARD" }
+				button = { visible = "[GetScriptedGui('tot_band_1_role_drummer_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 124 36 } onclick = "[GetScriptedGui('tot_band_1_select_role_drummer').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_DRUM" }
+				button = { visible = "[Not(GetScriptedGui('tot_band_1_role_drummer_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 124 36 } onclick = "[GetScriptedGui('tot_band_1_select_role_drummer').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_DRUM" }
+			}
+			textbox = {
+				visible = "[GetScriptedGui('tot_band_hq_state_bound_1').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+				size = { 516 20 }
+				text = "TOT_BAND_1_SELECTED_ROLE_TEXT"
+				using = fontsize_small
+				align = left|nobaseline
+			}
+			scrollbox = {
+				visible = "[GetScriptedGui('tot_band_hq_state_bound_1').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+				size = { 540 350 }
+				blockoverride "scrollbox_content" {
+					fixedgridbox = {
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_band_1_candidates')]"
+						addcolumn = 500
+						addrow = 142
+						item = { tot_band_1_candidate_character = {} }
+					}
+				}
+			}
+
+			textbox = {
+				visible = "[GetScriptedGui('tot_band_hq_state_bound_2').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+				size = { 516 22 }
+				text = "TOT_BAND_ROLE_PICKER_LABEL"
+				using = fontsize_small
+				align = left|nobaseline
+			}
+			button = {
+				visible = "[GetScriptedGui('tot_band_hq_state_bound_2').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+				using = default_button_primary
+				size = { 516 36 }
+				onclick = "[GetScriptedGui('tot_band_2_select_role_vocalist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				text = "TOT_BAND_SLOT_VOCAL"
+			}
+			flowcontainer = {
+				visible = "[GetScriptedGui('tot_band_hq_state_bound_2').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+				spacing = 5
+				button = { visible = "[GetScriptedGui('tot_band_2_role_guitarist_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 124 36 } onclick = "[GetScriptedGui('tot_band_2_select_role_guitarist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_GUITAR" }
+				button = { visible = "[Not(GetScriptedGui('tot_band_2_role_guitarist_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 124 36 } onclick = "[GetScriptedGui('tot_band_2_select_role_guitarist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_GUITAR" }
+				button = { visible = "[GetScriptedGui('tot_band_2_role_bassist_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 124 36 } onclick = "[GetScriptedGui('tot_band_2_select_role_bassist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_BASS" }
+				button = { visible = "[Not(GetScriptedGui('tot_band_2_role_bassist_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 124 36 } onclick = "[GetScriptedGui('tot_band_2_select_role_bassist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_BASS" }
+				button = { visible = "[GetScriptedGui('tot_band_2_role_keyboardist_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 124 36 } onclick = "[GetScriptedGui('tot_band_2_select_role_keyboardist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_KEYBOARD" }
+				button = { visible = "[Not(GetScriptedGui('tot_band_2_role_keyboardist_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 124 36 } onclick = "[GetScriptedGui('tot_band_2_select_role_keyboardist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_KEYBOARD" }
+				button = { visible = "[GetScriptedGui('tot_band_2_role_drummer_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 124 36 } onclick = "[GetScriptedGui('tot_band_2_select_role_drummer').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_DRUM" }
+				button = { visible = "[Not(GetScriptedGui('tot_band_2_role_drummer_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 124 36 } onclick = "[GetScriptedGui('tot_band_2_select_role_drummer').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_DRUM" }
+			}
+			textbox = {
+				visible = "[GetScriptedGui('tot_band_hq_state_bound_2').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+				size = { 516 20 }
+				text = "TOT_BAND_2_SELECTED_ROLE_TEXT"
+				using = fontsize_small
+				align = left|nobaseline
+			}
+			scrollbox = {
+				visible = "[GetScriptedGui('tot_band_hq_state_bound_2').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+				size = { 540 350 }
+				blockoverride "scrollbox_content" {
+					fixedgridbox = {
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_band_2_candidates')]"
+						addcolumn = 500
+						addrow = 142
+						item = { tot_band_2_candidate_character = {} }
+					}
+				}
+			}
+
+			textbox = {
+				visible = "[GetScriptedGui('tot_band_hq_state_bound_3').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+				size = { 516 22 }
+				text = "TOT_BAND_ROLE_PICKER_LABEL"
+				using = fontsize_small
+				align = left|nobaseline
+			}
+			button = {
+				visible = "[GetScriptedGui('tot_band_hq_state_bound_3').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+				using = default_button_primary
+				size = { 516 36 }
+				onclick = "[GetScriptedGui('tot_band_3_select_role_vocalist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				text = "TOT_BAND_SLOT_VOCAL"
+			}
+			flowcontainer = {
+				visible = "[GetScriptedGui('tot_band_hq_state_bound_3').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+				spacing = 5
+				button = { visible = "[GetScriptedGui('tot_band_3_role_guitarist_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 124 36 } onclick = "[GetScriptedGui('tot_band_3_select_role_guitarist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_GUITAR" }
+				button = { visible = "[Not(GetScriptedGui('tot_band_3_role_guitarist_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 124 36 } onclick = "[GetScriptedGui('tot_band_3_select_role_guitarist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_GUITAR" }
+				button = { visible = "[GetScriptedGui('tot_band_3_role_bassist_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 124 36 } onclick = "[GetScriptedGui('tot_band_3_select_role_bassist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_BASS" }
+				button = { visible = "[Not(GetScriptedGui('tot_band_3_role_bassist_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 124 36 } onclick = "[GetScriptedGui('tot_band_3_select_role_bassist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_BASS" }
+				button = { visible = "[GetScriptedGui('tot_band_3_role_keyboardist_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 124 36 } onclick = "[GetScriptedGui('tot_band_3_select_role_keyboardist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_KEYBOARD" }
+				button = { visible = "[Not(GetScriptedGui('tot_band_3_role_keyboardist_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 124 36 } onclick = "[GetScriptedGui('tot_band_3_select_role_keyboardist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_KEYBOARD" }
+				button = { visible = "[GetScriptedGui('tot_band_3_role_drummer_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 124 36 } onclick = "[GetScriptedGui('tot_band_3_select_role_drummer').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_DRUM" }
+				button = { visible = "[Not(GetScriptedGui('tot_band_3_role_drummer_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 124 36 } onclick = "[GetScriptedGui('tot_band_3_select_role_drummer').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_SLOT_DRUM" }
+			}
+			textbox = {
+				visible = "[GetScriptedGui('tot_band_hq_state_bound_3').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+				size = { 516 20 }
+				text = "TOT_BAND_3_SELECTED_ROLE_TEXT"
+				using = fontsize_small
+				align = left|nobaseline
+			}
+			scrollbox = {
+				visible = "[GetScriptedGui('tot_band_hq_state_bound_3').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End)]"
+				size = { 540 350 }
+				blockoverride "scrollbox_content" {
+					fixedgridbox = {
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_band_3_candidates')]"
+						addcolumn = 500
+						addrow = 142
+						item = { tot_band_3_candidate_character = {} }
+					}
+				}
+			}
+
+			button_standard = {
+				visible = "[Or(GetScriptedGui('tot_band_hq_state_bound_1').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End), GetScriptedGui('tot_band_hq_state_bound_2').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End), GetScriptedGui('tot_band_hq_state_bound_3').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End))]"
+				size = { 516 34 }
+				text = "TOT_BAND_OPEN_JOURNAL"
+				onclick = "[InformationPanelBar.OpenJournalEntryPanel(GetPlayerJournalEntry('je_tot_band_gui'))]"
+			}
+		}
+	}
+}

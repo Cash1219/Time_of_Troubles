@@ -1,0 +1,25 @@
+building_stage = {
+	buildable = yes
+	expandable = yes
+	downsizeable = yes
+	building_group = bg_arts
+	icon = "gfx/interface/icons/building_icons/building_arts_academy.dds"
+	city_type = city
+	levels_per_mesh = 25
+
+	unlocking_technologies = {
+		romanticism
+	}
+
+	production_method_groups = {
+		pmg_stage_operation
+		pmg_stage_scale
+	}
+
+	required_construction = construction_cost_medium
+	ownership_type = no_ownership
+	can_build_government = yes
+	can_build_private = { always = no }
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_monuments.dds"
+	ai_value = { value = 200 }
+}

@@ -1,0 +1,16 @@
+BUILDINGS = {
+	s:STATE_EASTERN_THRACE = {
+		region_state:BYZ = {
+			create_building = {
+				building = "building_band_headquarter"
+				add_ownership = {
+					country = {
+						country = "c:BYZ"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+}

@@ -700,3 +700,30 @@ is_tot_historial_character = {
 
 	}
 }
+
+tot_band_has_free_capacity_trigger = {
+	OR = {
+		AND = { tot_band_limit_value >= 1 NOT = { has_variable = tot_band_1_created } }
+		AND = { tot_band_limit_value >= 2 NOT = { has_variable = tot_band_2_created } }
+		AND = { tot_band_limit_value >= 3 NOT = { has_variable = tot_band_3_created } }
+		AND = { tot_band_limit_value >= 4 NOT = { has_variable = tot_band_4_created } }
+		AND = { tot_band_limit_value >= 5 NOT = { has_variable = tot_band_5_created } }
+		AND = { tot_band_limit_value >= 6 NOT = { has_variable = tot_band_6_created } }
+		AND = { tot_band_limit_value >= 7 NOT = { has_variable = tot_band_7_created } }
+		AND = { tot_band_limit_value >= 8 NOT = { has_variable = tot_band_8_created } }
+		AND = { tot_band_limit_value >= 9 NOT = { has_variable = tot_band_9_created } }
+		AND = { tot_band_limit_value >= 10 NOT = { has_variable = tot_band_10_created } }
+	}
+}
+
+tot_band_hq_state_build_allowed_trigger = {
+	owner ?= {
+		is_player = yes
+		tot_band_has_free_capacity_trigger = yes
+	}
+	NOT = {
+		any_scope_building = {
+			is_building_type = building_band_headquarter
+		}
+	}
+}

@@ -35,6 +35,153 @@ tot_kizuna_refresh = {
 		is_player = yes
 	}
 }
+
+tot_band_hq_state_unbound = {
+	scope = state
+	effect = {}
+	is_shown = {
+		owner ?= { is_player = yes }
+		any_scope_building = { is_building_type = building_band_headquarter }
+		NOT = { has_variable = tot_band_hq_slot }
+	}
+	is_valid = {
+		owner ?= {
+			is_player = yes
+			tot_band_has_free_capacity_trigger = yes
+		}
+		any_scope_building = { is_building_type = building_band_headquarter }
+		NOT = { has_variable = tot_band_hq_slot }
+	}
+}
+
+tot_band_hq_state_bound_1 = {
+	scope = state
+	effect = {}
+	is_shown = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 }
+	is_valid = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 }
+}
+tot_band_hq_state_bound_2 = {
+	scope = state
+	effect = {}
+	is_shown = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 }
+	is_valid = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 }
+}
+tot_band_hq_state_bound_3 = {
+	scope = state
+	effect = {}
+	is_shown = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 }
+	is_valid = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 }
+}
+
+tot_band_hq_state_create = {
+	scope = state
+	effect = {
+		owner ?= {
+			if = {
+				limit = { var:tot_band_limit >= 1 NOT = { has_variable = tot_band_1_created } }
+				set_variable = { name = tot_band_1_created value = 1 }
+				if = { limit = { NOT = { has_variable = tot_band_1_name } } set_variable = { name = tot_band_1_name value = 5 } }
+				root = { set_variable = { name = tot_band_hq_slot value = 1 } }
+			}
+			else_if = {
+				limit = { var:tot_band_limit >= 2 NOT = { has_variable = tot_band_2_created } }
+				set_variable = { name = tot_band_2_created value = 1 }
+				if = { limit = { NOT = { has_variable = tot_band_2_name } } set_variable = { name = tot_band_2_name value = 5 } }
+				root = { set_variable = { name = tot_band_hq_slot value = 2 } }
+			}
+			else_if = {
+				limit = { var:tot_band_limit >= 3 NOT = { has_variable = tot_band_3_created } }
+				set_variable = { name = tot_band_3_created value = 1 }
+				if = { limit = { NOT = { has_variable = tot_band_3_name } } set_variable = { name = tot_band_3_name value = 5 } }
+				root = { set_variable = { name = tot_band_hq_slot value = 3 } }
+			}
+			update_kizuna = yes
+		}
+	}
+	is_shown = {
+		owner ?= { is_player = yes }
+		any_scope_building = { is_building_type = building_band_headquarter }
+		NOT = { has_variable = tot_band_hq_slot }
+	}
+	is_valid = {
+		owner ?= {
+			is_player = yes
+			OR = {
+				AND = { var:tot_band_limit >= 1 NOT = { has_variable = tot_band_1_created } }
+				AND = { var:tot_band_limit >= 2 NOT = { has_variable = tot_band_2_created } }
+				AND = { var:tot_band_limit >= 3 NOT = { has_variable = tot_band_3_created } }
+			}
+		}
+		any_scope_building = { is_building_type = building_band_headquarter }
+		NOT = { has_variable = tot_band_hq_slot }
+	}
+}
+
+tot_band_hq_state_bind_1 = {
+	scope = state
+	effect = {
+		owner ?= {
+			set_variable = { name = tot_band_1_created value = 1 }
+			if = { limit = { NOT = { has_variable = tot_band_1_name } } set_variable = { name = tot_band_1_name value = 5 } }
+			root = { set_variable = { name = tot_band_hq_slot value = 1 } }
+			update_kizuna = yes
+		}
+	}
+	is_shown = {
+		owner ?= { is_player = yes }
+		any_scope_building = { is_building_type = building_band_headquarter }
+		NOT = { has_variable = tot_band_hq_slot }
+	}
+	is_valid = {
+		owner ?= { is_player = yes tot_band_limit_value >= 1 NOT = { has_variable = tot_band_1_created } }
+		any_scope_building = { is_building_type = building_band_headquarter }
+		NOT = { has_variable = tot_band_hq_slot }
+	}
+}
+
+tot_band_hq_state_bind_2 = {
+	scope = state
+	effect = {
+		owner ?= {
+			set_variable = { name = tot_band_2_created value = 1 }
+			if = { limit = { NOT = { has_variable = tot_band_2_name } } set_variable = { name = tot_band_2_name value = 5 } }
+			root = { set_variable = { name = tot_band_hq_slot value = 2 } }
+			update_kizuna = yes
+		}
+	}
+	is_shown = {
+		owner ?= { is_player = yes }
+		any_scope_building = { is_building_type = building_band_headquarter }
+		NOT = { has_variable = tot_band_hq_slot }
+	}
+	is_valid = {
+		owner ?= { is_player = yes tot_band_limit_value >= 2 NOT = { has_variable = tot_band_2_created } }
+		any_scope_building = { is_building_type = building_band_headquarter }
+		NOT = { has_variable = tot_band_hq_slot }
+	}
+}
+
+tot_band_hq_state_bind_3 = {
+	scope = state
+	effect = {
+		owner ?= {
+			set_variable = { name = tot_band_3_created value = 1 }
+			if = { limit = { NOT = { has_variable = tot_band_3_name } } set_variable = { name = tot_band_3_name value = 5 } }
+			root = { set_variable = { name = tot_band_hq_slot value = 3 } }
+			update_kizuna = yes
+		}
+	}
+	is_shown = {
+		owner ?= { is_player = yes }
+		any_scope_building = { is_building_type = building_band_headquarter }
+		NOT = { has_variable = tot_band_hq_slot }
+	}
+	is_valid = {
+		owner ?= { is_player = yes tot_band_limit_value >= 3 NOT = { has_variable = tot_band_3_created } }
+		any_scope_building = { is_building_type = building_band_headquarter }
+		NOT = { has_variable = tot_band_hq_slot }
+	}
+}
 tot_kizuna_select_faction_tab = {
 	scope = country
 	effect = {
@@ -598,6 +745,35 @@ tot_band_1_unlocked = {
 	is_valid = { var:tot_band_limit >= 1 }
 }
 
+tot_band_1_created = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_1_created }
+	is_valid = { has_variable = tot_band_1_created }
+}
+
+tot_band_1_not_created = {
+	scope = country
+	effect = {}
+	is_shown = { NOT = { has_variable = tot_band_1_created } }
+	is_valid = { NOT = { has_variable = tot_band_1_created } }
+}
+
+tot_band_1_create = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_1_created value = 1 }
+		if = {
+			limit = { NOT = { has_variable = tot_band_1_name } }
+			set_variable = { name = tot_band_1_name value = 5 }
+		}
+		tot_ensure_band_headquarter_effect = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes var:tot_band_limit >= 1 }
+	is_valid = { is_player = yes var:tot_band_limit >= 1 }
+}
+
 tot_band_1_appoint_character = {
 	scope = character
 	effect = {
@@ -621,6 +797,35 @@ tot_band_2_unlocked = {
 	is_valid = { var:tot_band_limit >= 2 }
 }
 
+tot_band_2_created = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_2_created }
+	is_valid = { has_variable = tot_band_2_created }
+}
+
+tot_band_2_not_created = {
+	scope = country
+	effect = {}
+	is_shown = { NOT = { has_variable = tot_band_2_created } }
+	is_valid = { NOT = { has_variable = tot_band_2_created } }
+}
+
+tot_band_2_create = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_2_created value = 1 }
+		if = {
+			limit = { NOT = { has_variable = tot_band_2_name } }
+			set_variable = { name = tot_band_2_name value = 5 }
+		}
+		tot_ensure_band_headquarter_effect = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes var:tot_band_limit >= 2 }
+	is_valid = { is_player = yes var:tot_band_limit >= 2 }
+}
+
 tot_band_2_appoint_character = {
 	scope = character
 	effect = {
@@ -642,6 +847,35 @@ tot_band_3_unlocked = {
 	effect = {}
 	is_shown = { var:tot_band_limit >= 3 }
 	is_valid = { var:tot_band_limit >= 3 }
+}
+
+tot_band_3_created = {
+	scope = country
+	effect = {}
+	is_shown = { has_variable = tot_band_3_created }
+	is_valid = { has_variable = tot_band_3_created }
+}
+
+tot_band_3_not_created = {
+	scope = country
+	effect = {}
+	is_shown = { NOT = { has_variable = tot_band_3_created } }
+	is_valid = { NOT = { has_variable = tot_band_3_created } }
+}
+
+tot_band_3_create = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_3_created value = 1 }
+		if = {
+			limit = { NOT = { has_variable = tot_band_3_name } }
+			set_variable = { name = tot_band_3_name value = 5 }
+		}
+		tot_ensure_band_headquarter_effect = yes
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes var:tot_band_limit >= 3 }
+	is_valid = { is_player = yes var:tot_band_limit >= 3 }
 }
 
 tot_band_3_appoint_character = {
@@ -2211,7 +2445,20 @@ band_1_gold_effect_6 = {
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_1_invest_musical_instrument = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_1_invest_musical_instrument }
+			remove_variable = tot_band_1_invest_musical_instrument
+		}
+		else = {
+			set_variable = { name = tot_band_1_invest_musical_instrument value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_1_invest_musical_instrument
@@ -2226,7 +2473,20 @@ tot_band_1_invest_musical_instrument_active = {
 	is_shown = { has_variable = tot_band_1_invest_musical_instrument }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_1_invest_paper = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_1_invest_paper }
+			remove_variable = tot_band_1_invest_paper
+		}
+		else = {
+			set_variable = { name = tot_band_1_invest_paper value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_1_invest_paper
@@ -2241,7 +2501,20 @@ tot_band_1_invest_paper_active = {
 	is_shown = { has_variable = tot_band_1_invest_paper }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_1_invest_luxury_clothes = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_1_invest_luxury_clothes }
+			remove_variable = tot_band_1_invest_luxury_clothes
+		}
+		else = {
+			set_variable = { name = tot_band_1_invest_luxury_clothes value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_1_invest_luxury_clothes
@@ -2256,7 +2529,20 @@ tot_band_1_invest_luxury_clothes_active = {
 	is_shown = { has_variable = tot_band_1_invest_luxury_clothes }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_1_invest_transportation = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_1_invest_transportation }
+			remove_variable = tot_band_1_invest_transportation
+		}
+		else = {
+			set_variable = { name = tot_band_1_invest_transportation value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_1_invest_transportation
@@ -2271,7 +2557,20 @@ tot_band_1_invest_transportation_active = {
 	is_shown = { has_variable = tot_band_1_invest_transportation }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_1_invest_automobiles = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_1_invest_automobiles }
+			remove_variable = tot_band_1_invest_automobiles
+		}
+		else = {
+			set_variable = { name = tot_band_1_invest_automobiles value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_1_invest_automobiles
@@ -2286,7 +2585,20 @@ tot_band_1_invest_automobiles_active = {
 	is_shown = { has_variable = tot_band_1_invest_automobiles }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_1_invest_radios = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_1_invest_radios }
+			remove_variable = tot_band_1_invest_radios
+		}
+		else = {
+			set_variable = { name = tot_band_1_invest_radios value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_1_invest_radios
@@ -2301,7 +2613,20 @@ tot_band_1_invest_radios_active = {
 	is_shown = { has_variable = tot_band_1_invest_radios }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_1_invest_fruit = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_1_invest_fruit }
+			remove_variable = tot_band_1_invest_fruit
+		}
+		else = {
+			set_variable = { name = tot_band_1_invest_fruit value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_1_invest_fruit
@@ -2316,7 +2641,20 @@ tot_band_1_invest_fruit_active = {
 	is_shown = { has_variable = tot_band_1_invest_fruit }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_1_invest_tea = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_1_invest_tea }
+			remove_variable = tot_band_1_invest_tea
+		}
+		else = {
+			set_variable = { name = tot_band_1_invest_tea value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_1_invest_tea
@@ -2331,7 +2669,20 @@ tot_band_1_invest_tea_active = {
 	is_shown = { has_variable = tot_band_1_invest_tea }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_1_invest_coffee = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_1_invest_coffee }
+			remove_variable = tot_band_1_invest_coffee
+		}
+		else = {
+			set_variable = { name = tot_band_1_invest_coffee value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_1_invest_coffee
@@ -2346,7 +2697,20 @@ tot_band_1_invest_coffee_active = {
 	is_shown = { has_variable = tot_band_1_invest_coffee }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_1_invest_groceries = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_1_invest_groceries }
+			remove_variable = tot_band_1_invest_groceries
+		}
+		else = {
+			set_variable = { name = tot_band_1_invest_groceries value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_1_invest_groceries
@@ -2361,7 +2725,20 @@ tot_band_1_invest_groceries_active = {
 	is_shown = { has_variable = tot_band_1_invest_groceries }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_1_invest_luxury_drinks = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_1_invest_luxury_drinks }
+			remove_variable = tot_band_1_invest_luxury_drinks
+		}
+		else = {
+			set_variable = { name = tot_band_1_invest_luxury_drinks value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_1_invest_luxury_drinks
@@ -2376,7 +2753,20 @@ tot_band_1_invest_luxury_drinks_active = {
 	is_shown = { has_variable = tot_band_1_invest_luxury_drinks }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_1_invest_luxury_foods = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_1_invest_luxury_foods }
+			remove_variable = tot_band_1_invest_luxury_foods
+		}
+		else = {
+			set_variable = { name = tot_band_1_invest_luxury_foods value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_1_invest_luxury_foods
@@ -2463,7 +2853,20 @@ band_2_gold_effect_6 = {
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_2_invest_musical_instrument = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_2_invest_musical_instrument }
+			remove_variable = tot_band_2_invest_musical_instrument
+		}
+		else = {
+			set_variable = { name = tot_band_2_invest_musical_instrument value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_2_invest_musical_instrument
@@ -2478,7 +2881,20 @@ tot_band_2_invest_musical_instrument_active = {
 	is_shown = { has_variable = tot_band_2_invest_musical_instrument }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_2_invest_paper = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_2_invest_paper }
+			remove_variable = tot_band_2_invest_paper
+		}
+		else = {
+			set_variable = { name = tot_band_2_invest_paper value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_2_invest_paper
@@ -2493,7 +2909,20 @@ tot_band_2_invest_paper_active = {
 	is_shown = { has_variable = tot_band_2_invest_paper }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_2_invest_luxury_clothes = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_2_invest_luxury_clothes }
+			remove_variable = tot_band_2_invest_luxury_clothes
+		}
+		else = {
+			set_variable = { name = tot_band_2_invest_luxury_clothes value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_2_invest_luxury_clothes
@@ -2508,7 +2937,20 @@ tot_band_2_invest_luxury_clothes_active = {
 	is_shown = { has_variable = tot_band_2_invest_luxury_clothes }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_2_invest_transportation = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_2_invest_transportation }
+			remove_variable = tot_band_2_invest_transportation
+		}
+		else = {
+			set_variable = { name = tot_band_2_invest_transportation value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_2_invest_transportation
@@ -2523,7 +2965,20 @@ tot_band_2_invest_transportation_active = {
 	is_shown = { has_variable = tot_band_2_invest_transportation }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_2_invest_automobiles = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_2_invest_automobiles }
+			remove_variable = tot_band_2_invest_automobiles
+		}
+		else = {
+			set_variable = { name = tot_band_2_invest_automobiles value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_2_invest_automobiles
@@ -2538,7 +2993,20 @@ tot_band_2_invest_automobiles_active = {
 	is_shown = { has_variable = tot_band_2_invest_automobiles }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_2_invest_radios = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_2_invest_radios }
+			remove_variable = tot_band_2_invest_radios
+		}
+		else = {
+			set_variable = { name = tot_band_2_invest_radios value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_2_invest_radios
@@ -2553,7 +3021,20 @@ tot_band_2_invest_radios_active = {
 	is_shown = { has_variable = tot_band_2_invest_radios }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_2_invest_fruit = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_2_invest_fruit }
+			remove_variable = tot_band_2_invest_fruit
+		}
+		else = {
+			set_variable = { name = tot_band_2_invest_fruit value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_2_invest_fruit
@@ -2568,7 +3049,20 @@ tot_band_2_invest_fruit_active = {
 	is_shown = { has_variable = tot_band_2_invest_fruit }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_2_invest_tea = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_2_invest_tea }
+			remove_variable = tot_band_2_invest_tea
+		}
+		else = {
+			set_variable = { name = tot_band_2_invest_tea value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_2_invest_tea
@@ -2583,7 +3077,20 @@ tot_band_2_invest_tea_active = {
 	is_shown = { has_variable = tot_band_2_invest_tea }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_2_invest_coffee = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_2_invest_coffee }
+			remove_variable = tot_band_2_invest_coffee
+		}
+		else = {
+			set_variable = { name = tot_band_2_invest_coffee value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_2_invest_coffee
@@ -2598,7 +3105,20 @@ tot_band_2_invest_coffee_active = {
 	is_shown = { has_variable = tot_band_2_invest_coffee }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_2_invest_groceries = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_2_invest_groceries }
+			remove_variable = tot_band_2_invest_groceries
+		}
+		else = {
+			set_variable = { name = tot_band_2_invest_groceries value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_2_invest_groceries
@@ -2613,7 +3133,20 @@ tot_band_2_invest_groceries_active = {
 	is_shown = { has_variable = tot_band_2_invest_groceries }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_2_invest_luxury_drinks = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_2_invest_luxury_drinks }
+			remove_variable = tot_band_2_invest_luxury_drinks
+		}
+		else = {
+			set_variable = { name = tot_band_2_invest_luxury_drinks value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_2_invest_luxury_drinks
@@ -2628,7 +3161,20 @@ tot_band_2_invest_luxury_drinks_active = {
 	is_shown = { has_variable = tot_band_2_invest_luxury_drinks }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_2_invest_luxury_foods = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_2_invest_luxury_foods }
+			remove_variable = tot_band_2_invest_luxury_foods
+		}
+		else = {
+			set_variable = { name = tot_band_2_invest_luxury_foods value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_2_invest_luxury_foods
@@ -2715,7 +3261,20 @@ band_3_gold_effect_6 = {
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_3_invest_musical_instrument = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_3_invest_musical_instrument }
+			remove_variable = tot_band_3_invest_musical_instrument
+		}
+		else = {
+			set_variable = { name = tot_band_3_invest_musical_instrument value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_3_invest_musical_instrument
@@ -2730,7 +3289,20 @@ tot_band_3_invest_musical_instrument_active = {
 	is_shown = { has_variable = tot_band_3_invest_musical_instrument }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_3_invest_paper = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_3_invest_paper }
+			remove_variable = tot_band_3_invest_paper
+		}
+		else = {
+			set_variable = { name = tot_band_3_invest_paper value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_3_invest_paper
@@ -2745,7 +3317,20 @@ tot_band_3_invest_paper_active = {
 	is_shown = { has_variable = tot_band_3_invest_paper }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_3_invest_luxury_clothes = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_3_invest_luxury_clothes }
+			remove_variable = tot_band_3_invest_luxury_clothes
+		}
+		else = {
+			set_variable = { name = tot_band_3_invest_luxury_clothes value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_3_invest_luxury_clothes
@@ -2760,7 +3345,20 @@ tot_band_3_invest_luxury_clothes_active = {
 	is_shown = { has_variable = tot_band_3_invest_luxury_clothes }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_3_invest_transportation = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_3_invest_transportation }
+			remove_variable = tot_band_3_invest_transportation
+		}
+		else = {
+			set_variable = { name = tot_band_3_invest_transportation value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_3_invest_transportation
@@ -2775,7 +3373,20 @@ tot_band_3_invest_transportation_active = {
 	is_shown = { has_variable = tot_band_3_invest_transportation }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_3_invest_automobiles = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_3_invest_automobiles }
+			remove_variable = tot_band_3_invest_automobiles
+		}
+		else = {
+			set_variable = { name = tot_band_3_invest_automobiles value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_3_invest_automobiles
@@ -2790,7 +3401,20 @@ tot_band_3_invest_automobiles_active = {
 	is_shown = { has_variable = tot_band_3_invest_automobiles }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_3_invest_radios = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_3_invest_radios }
+			remove_variable = tot_band_3_invest_radios
+		}
+		else = {
+			set_variable = { name = tot_band_3_invest_radios value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_3_invest_radios
@@ -2805,7 +3429,20 @@ tot_band_3_invest_radios_active = {
 	is_shown = { has_variable = tot_band_3_invest_radios }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_3_invest_fruit = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_3_invest_fruit }
+			remove_variable = tot_band_3_invest_fruit
+		}
+		else = {
+			set_variable = { name = tot_band_3_invest_fruit value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_3_invest_fruit
@@ -2820,7 +3457,20 @@ tot_band_3_invest_fruit_active = {
 	is_shown = { has_variable = tot_band_3_invest_fruit }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_3_invest_tea = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_3_invest_tea }
+			remove_variable = tot_band_3_invest_tea
+		}
+		else = {
+			set_variable = { name = tot_band_3_invest_tea value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_3_invest_tea
@@ -2835,7 +3485,20 @@ tot_band_3_invest_tea_active = {
 	is_shown = { has_variable = tot_band_3_invest_tea }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_3_invest_coffee = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_3_invest_coffee }
+			remove_variable = tot_band_3_invest_coffee
+		}
+		else = {
+			set_variable = { name = tot_band_3_invest_coffee value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_3_invest_coffee
@@ -2850,7 +3513,20 @@ tot_band_3_invest_coffee_active = {
 	is_shown = { has_variable = tot_band_3_invest_coffee }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_3_invest_groceries = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_3_invest_groceries }
+			remove_variable = tot_band_3_invest_groceries
+		}
+		else = {
+			set_variable = { name = tot_band_3_invest_groceries value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_3_invest_groceries
@@ -2865,7 +3541,20 @@ tot_band_3_invest_groceries_active = {
 	is_shown = { has_variable = tot_band_3_invest_groceries }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_3_invest_luxury_drinks = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_3_invest_luxury_drinks }
+			remove_variable = tot_band_3_invest_luxury_drinks
+		}
+		else = {
+			set_variable = { name = tot_band_3_invest_luxury_drinks value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_3_invest_luxury_drinks
@@ -2880,7 +3569,20 @@ tot_band_3_invest_luxury_drinks_active = {
 	is_shown = { has_variable = tot_band_3_invest_luxury_drinks }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_3_invest_luxury_foods = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_3_invest_luxury_foods }
+			remove_variable = tot_band_3_invest_luxury_foods
+		}
+		else = {
+			set_variable = { name = tot_band_3_invest_luxury_foods value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_3_invest_luxury_foods
@@ -2967,7 +3669,20 @@ band_4_gold_effect_6 = {
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_4_invest_musical_instrument = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_4_invest_musical_instrument }
+			remove_variable = tot_band_4_invest_musical_instrument
+		}
+		else = {
+			set_variable = { name = tot_band_4_invest_musical_instrument value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_4_invest_musical_instrument
@@ -2982,7 +3697,20 @@ tot_band_4_invest_musical_instrument_active = {
 	is_shown = { has_variable = tot_band_4_invest_musical_instrument }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_4_invest_paper = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_4_invest_paper }
+			remove_variable = tot_band_4_invest_paper
+		}
+		else = {
+			set_variable = { name = tot_band_4_invest_paper value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_4_invest_paper
@@ -2997,7 +3725,20 @@ tot_band_4_invest_paper_active = {
 	is_shown = { has_variable = tot_band_4_invest_paper }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_4_invest_luxury_clothes = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_4_invest_luxury_clothes }
+			remove_variable = tot_band_4_invest_luxury_clothes
+		}
+		else = {
+			set_variable = { name = tot_band_4_invest_luxury_clothes value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_4_invest_luxury_clothes
@@ -3012,7 +3753,20 @@ tot_band_4_invest_luxury_clothes_active = {
 	is_shown = { has_variable = tot_band_4_invest_luxury_clothes }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_4_invest_transportation = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_4_invest_transportation }
+			remove_variable = tot_band_4_invest_transportation
+		}
+		else = {
+			set_variable = { name = tot_band_4_invest_transportation value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_4_invest_transportation
@@ -3027,7 +3781,20 @@ tot_band_4_invest_transportation_active = {
 	is_shown = { has_variable = tot_band_4_invest_transportation }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_4_invest_automobiles = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_4_invest_automobiles }
+			remove_variable = tot_band_4_invest_automobiles
+		}
+		else = {
+			set_variable = { name = tot_band_4_invest_automobiles value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_4_invest_automobiles
@@ -3042,7 +3809,20 @@ tot_band_4_invest_automobiles_active = {
 	is_shown = { has_variable = tot_band_4_invest_automobiles }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_4_invest_radios = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_4_invest_radios }
+			remove_variable = tot_band_4_invest_radios
+		}
+		else = {
+			set_variable = { name = tot_band_4_invest_radios value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_4_invest_radios
@@ -3057,7 +3837,20 @@ tot_band_4_invest_radios_active = {
 	is_shown = { has_variable = tot_band_4_invest_radios }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_4_invest_fruit = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_4_invest_fruit }
+			remove_variable = tot_band_4_invest_fruit
+		}
+		else = {
+			set_variable = { name = tot_band_4_invest_fruit value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_4_invest_fruit
@@ -3072,7 +3865,20 @@ tot_band_4_invest_fruit_active = {
 	is_shown = { has_variable = tot_band_4_invest_fruit }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_4_invest_tea = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_4_invest_tea }
+			remove_variable = tot_band_4_invest_tea
+		}
+		else = {
+			set_variable = { name = tot_band_4_invest_tea value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_4_invest_tea
@@ -3087,7 +3893,20 @@ tot_band_4_invest_tea_active = {
 	is_shown = { has_variable = tot_band_4_invest_tea }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_4_invest_coffee = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_4_invest_coffee }
+			remove_variable = tot_band_4_invest_coffee
+		}
+		else = {
+			set_variable = { name = tot_band_4_invest_coffee value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_4_invest_coffee
@@ -3102,7 +3921,20 @@ tot_band_4_invest_coffee_active = {
 	is_shown = { has_variable = tot_band_4_invest_coffee }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_4_invest_groceries = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_4_invest_groceries }
+			remove_variable = tot_band_4_invest_groceries
+		}
+		else = {
+			set_variable = { name = tot_band_4_invest_groceries value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_4_invest_groceries
@@ -3117,7 +3949,20 @@ tot_band_4_invest_groceries_active = {
 	is_shown = { has_variable = tot_band_4_invest_groceries }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_4_invest_luxury_drinks = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_4_invest_luxury_drinks }
+			remove_variable = tot_band_4_invest_luxury_drinks
+		}
+		else = {
+			set_variable = { name = tot_band_4_invest_luxury_drinks value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_4_invest_luxury_drinks
@@ -3132,7 +3977,20 @@ tot_band_4_invest_luxury_drinks_active = {
 	is_shown = { has_variable = tot_band_4_invest_luxury_drinks }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_4_invest_luxury_foods = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_4_invest_luxury_foods }
+			remove_variable = tot_band_4_invest_luxury_foods
+		}
+		else = {
+			set_variable = { name = tot_band_4_invest_luxury_foods value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_4_invest_luxury_foods
@@ -3219,7 +4077,20 @@ band_5_gold_effect_6 = {
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_5_invest_musical_instrument = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_5_invest_musical_instrument }
+			remove_variable = tot_band_5_invest_musical_instrument
+		}
+		else = {
+			set_variable = { name = tot_band_5_invest_musical_instrument value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_5_invest_musical_instrument
@@ -3234,7 +4105,20 @@ tot_band_5_invest_musical_instrument_active = {
 	is_shown = { has_variable = tot_band_5_invest_musical_instrument }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_5_invest_paper = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_5_invest_paper }
+			remove_variable = tot_band_5_invest_paper
+		}
+		else = {
+			set_variable = { name = tot_band_5_invest_paper value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_5_invest_paper
@@ -3249,7 +4133,20 @@ tot_band_5_invest_paper_active = {
 	is_shown = { has_variable = tot_band_5_invest_paper }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_5_invest_luxury_clothes = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_5_invest_luxury_clothes }
+			remove_variable = tot_band_5_invest_luxury_clothes
+		}
+		else = {
+			set_variable = { name = tot_band_5_invest_luxury_clothes value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_5_invest_luxury_clothes
@@ -3264,7 +4161,20 @@ tot_band_5_invest_luxury_clothes_active = {
 	is_shown = { has_variable = tot_band_5_invest_luxury_clothes }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_5_invest_transportation = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_5_invest_transportation }
+			remove_variable = tot_band_5_invest_transportation
+		}
+		else = {
+			set_variable = { name = tot_band_5_invest_transportation value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_5_invest_transportation
@@ -3279,7 +4189,20 @@ tot_band_5_invest_transportation_active = {
 	is_shown = { has_variable = tot_band_5_invest_transportation }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_5_invest_automobiles = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_5_invest_automobiles }
+			remove_variable = tot_band_5_invest_automobiles
+		}
+		else = {
+			set_variable = { name = tot_band_5_invest_automobiles value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_5_invest_automobiles
@@ -3294,7 +4217,20 @@ tot_band_5_invest_automobiles_active = {
 	is_shown = { has_variable = tot_band_5_invest_automobiles }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_5_invest_radios = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_5_invest_radios }
+			remove_variable = tot_band_5_invest_radios
+		}
+		else = {
+			set_variable = { name = tot_band_5_invest_radios value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_5_invest_radios
@@ -3309,7 +4245,20 @@ tot_band_5_invest_radios_active = {
 	is_shown = { has_variable = tot_band_5_invest_radios }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_5_invest_fruit = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_5_invest_fruit }
+			remove_variable = tot_band_5_invest_fruit
+		}
+		else = {
+			set_variable = { name = tot_band_5_invest_fruit value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_5_invest_fruit
@@ -3324,7 +4273,20 @@ tot_band_5_invest_fruit_active = {
 	is_shown = { has_variable = tot_band_5_invest_fruit }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_5_invest_tea = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_5_invest_tea }
+			remove_variable = tot_band_5_invest_tea
+		}
+		else = {
+			set_variable = { name = tot_band_5_invest_tea value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_5_invest_tea
@@ -3339,7 +4301,20 @@ tot_band_5_invest_tea_active = {
 	is_shown = { has_variable = tot_band_5_invest_tea }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_5_invest_coffee = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_5_invest_coffee }
+			remove_variable = tot_band_5_invest_coffee
+		}
+		else = {
+			set_variable = { name = tot_band_5_invest_coffee value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_5_invest_coffee
@@ -3354,7 +4329,20 @@ tot_band_5_invest_coffee_active = {
 	is_shown = { has_variable = tot_band_5_invest_coffee }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_5_invest_groceries = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_5_invest_groceries }
+			remove_variable = tot_band_5_invest_groceries
+		}
+		else = {
+			set_variable = { name = tot_band_5_invest_groceries value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_5_invest_groceries
@@ -3369,7 +4357,20 @@ tot_band_5_invest_groceries_active = {
 	is_shown = { has_variable = tot_band_5_invest_groceries }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_5_invest_luxury_drinks = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_5_invest_luxury_drinks }
+			remove_variable = tot_band_5_invest_luxury_drinks
+		}
+		else = {
+			set_variable = { name = tot_band_5_invest_luxury_drinks value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_5_invest_luxury_drinks
@@ -3384,7 +4385,20 @@ tot_band_5_invest_luxury_drinks_active = {
 	is_shown = { has_variable = tot_band_5_invest_luxury_drinks }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_5_invest_luxury_foods = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_5_invest_luxury_foods }
+			remove_variable = tot_band_5_invest_luxury_foods
+		}
+		else = {
+			set_variable = { name = tot_band_5_invest_luxury_foods value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_5_invest_luxury_foods
@@ -3471,7 +4485,20 @@ band_6_gold_effect_6 = {
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_6_invest_musical_instrument = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_6_invest_musical_instrument }
+			remove_variable = tot_band_6_invest_musical_instrument
+		}
+		else = {
+			set_variable = { name = tot_band_6_invest_musical_instrument value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_6_invest_musical_instrument
@@ -3486,7 +4513,20 @@ tot_band_6_invest_musical_instrument_active = {
 	is_shown = { has_variable = tot_band_6_invest_musical_instrument }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_6_invest_paper = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_6_invest_paper }
+			remove_variable = tot_band_6_invest_paper
+		}
+		else = {
+			set_variable = { name = tot_band_6_invest_paper value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_6_invest_paper
@@ -3501,7 +4541,20 @@ tot_band_6_invest_paper_active = {
 	is_shown = { has_variable = tot_band_6_invest_paper }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_6_invest_luxury_clothes = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_6_invest_luxury_clothes }
+			remove_variable = tot_band_6_invest_luxury_clothes
+		}
+		else = {
+			set_variable = { name = tot_band_6_invest_luxury_clothes value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_6_invest_luxury_clothes
@@ -3516,7 +4569,20 @@ tot_band_6_invest_luxury_clothes_active = {
 	is_shown = { has_variable = tot_band_6_invest_luxury_clothes }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_6_invest_transportation = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_6_invest_transportation }
+			remove_variable = tot_band_6_invest_transportation
+		}
+		else = {
+			set_variable = { name = tot_band_6_invest_transportation value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_6_invest_transportation
@@ -3531,7 +4597,20 @@ tot_band_6_invest_transportation_active = {
 	is_shown = { has_variable = tot_band_6_invest_transportation }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_6_invest_automobiles = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_6_invest_automobiles }
+			remove_variable = tot_band_6_invest_automobiles
+		}
+		else = {
+			set_variable = { name = tot_band_6_invest_automobiles value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_6_invest_automobiles
@@ -3546,7 +4625,20 @@ tot_band_6_invest_automobiles_active = {
 	is_shown = { has_variable = tot_band_6_invest_automobiles }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_6_invest_radios = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_6_invest_radios }
+			remove_variable = tot_band_6_invest_radios
+		}
+		else = {
+			set_variable = { name = tot_band_6_invest_radios value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_6_invest_radios
@@ -3561,7 +4653,20 @@ tot_band_6_invest_radios_active = {
 	is_shown = { has_variable = tot_band_6_invest_radios }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_6_invest_fruit = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_6_invest_fruit }
+			remove_variable = tot_band_6_invest_fruit
+		}
+		else = {
+			set_variable = { name = tot_band_6_invest_fruit value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_6_invest_fruit
@@ -3576,7 +4681,20 @@ tot_band_6_invest_fruit_active = {
 	is_shown = { has_variable = tot_band_6_invest_fruit }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_6_invest_tea = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_6_invest_tea }
+			remove_variable = tot_band_6_invest_tea
+		}
+		else = {
+			set_variable = { name = tot_band_6_invest_tea value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_6_invest_tea
@@ -3591,7 +4709,20 @@ tot_band_6_invest_tea_active = {
 	is_shown = { has_variable = tot_band_6_invest_tea }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_6_invest_coffee = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_6_invest_coffee }
+			remove_variable = tot_band_6_invest_coffee
+		}
+		else = {
+			set_variable = { name = tot_band_6_invest_coffee value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_6_invest_coffee
@@ -3606,7 +4737,20 @@ tot_band_6_invest_coffee_active = {
 	is_shown = { has_variable = tot_band_6_invest_coffee }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_6_invest_groceries = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_6_invest_groceries }
+			remove_variable = tot_band_6_invest_groceries
+		}
+		else = {
+			set_variable = { name = tot_band_6_invest_groceries value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_6_invest_groceries
@@ -3621,7 +4765,20 @@ tot_band_6_invest_groceries_active = {
 	is_shown = { has_variable = tot_band_6_invest_groceries }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_6_invest_luxury_drinks = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_6_invest_luxury_drinks }
+			remove_variable = tot_band_6_invest_luxury_drinks
+		}
+		else = {
+			set_variable = { name = tot_band_6_invest_luxury_drinks value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_6_invest_luxury_drinks
@@ -3636,7 +4793,20 @@ tot_band_6_invest_luxury_drinks_active = {
 	is_shown = { has_variable = tot_band_6_invest_luxury_drinks }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_6_invest_luxury_foods = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_6_invest_luxury_foods }
+			remove_variable = tot_band_6_invest_luxury_foods
+		}
+		else = {
+			set_variable = { name = tot_band_6_invest_luxury_foods value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_6_invest_luxury_foods
@@ -3723,7 +4893,20 @@ band_7_gold_effect_6 = {
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_7_invest_musical_instrument = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_7_invest_musical_instrument }
+			remove_variable = tot_band_7_invest_musical_instrument
+		}
+		else = {
+			set_variable = { name = tot_band_7_invest_musical_instrument value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_7_invest_musical_instrument
@@ -3738,7 +4921,20 @@ tot_band_7_invest_musical_instrument_active = {
 	is_shown = { has_variable = tot_band_7_invest_musical_instrument }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_7_invest_paper = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_7_invest_paper }
+			remove_variable = tot_band_7_invest_paper
+		}
+		else = {
+			set_variable = { name = tot_band_7_invest_paper value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_7_invest_paper
@@ -3753,7 +4949,20 @@ tot_band_7_invest_paper_active = {
 	is_shown = { has_variable = tot_band_7_invest_paper }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_7_invest_luxury_clothes = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_7_invest_luxury_clothes }
+			remove_variable = tot_band_7_invest_luxury_clothes
+		}
+		else = {
+			set_variable = { name = tot_band_7_invest_luxury_clothes value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_7_invest_luxury_clothes
@@ -3768,7 +4977,20 @@ tot_band_7_invest_luxury_clothes_active = {
 	is_shown = { has_variable = tot_band_7_invest_luxury_clothes }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_7_invest_transportation = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_7_invest_transportation }
+			remove_variable = tot_band_7_invest_transportation
+		}
+		else = {
+			set_variable = { name = tot_band_7_invest_transportation value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_7_invest_transportation
@@ -3783,7 +5005,20 @@ tot_band_7_invest_transportation_active = {
 	is_shown = { has_variable = tot_band_7_invest_transportation }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_7_invest_automobiles = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_7_invest_automobiles }
+			remove_variable = tot_band_7_invest_automobiles
+		}
+		else = {
+			set_variable = { name = tot_band_7_invest_automobiles value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_7_invest_automobiles
@@ -3798,7 +5033,20 @@ tot_band_7_invest_automobiles_active = {
 	is_shown = { has_variable = tot_band_7_invest_automobiles }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_7_invest_radios = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_7_invest_radios }
+			remove_variable = tot_band_7_invest_radios
+		}
+		else = {
+			set_variable = { name = tot_band_7_invest_radios value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_7_invest_radios
@@ -3813,7 +5061,20 @@ tot_band_7_invest_radios_active = {
 	is_shown = { has_variable = tot_band_7_invest_radios }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_7_invest_fruit = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_7_invest_fruit }
+			remove_variable = tot_band_7_invest_fruit
+		}
+		else = {
+			set_variable = { name = tot_band_7_invest_fruit value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_7_invest_fruit
@@ -3828,7 +5089,20 @@ tot_band_7_invest_fruit_active = {
 	is_shown = { has_variable = tot_band_7_invest_fruit }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_7_invest_tea = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_7_invest_tea }
+			remove_variable = tot_band_7_invest_tea
+		}
+		else = {
+			set_variable = { name = tot_band_7_invest_tea value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_7_invest_tea
@@ -3843,7 +5117,20 @@ tot_band_7_invest_tea_active = {
 	is_shown = { has_variable = tot_band_7_invest_tea }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_7_invest_coffee = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_7_invest_coffee }
+			remove_variable = tot_band_7_invest_coffee
+		}
+		else = {
+			set_variable = { name = tot_band_7_invest_coffee value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_7_invest_coffee
@@ -3858,7 +5145,20 @@ tot_band_7_invest_coffee_active = {
 	is_shown = { has_variable = tot_band_7_invest_coffee }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_7_invest_groceries = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_7_invest_groceries }
+			remove_variable = tot_band_7_invest_groceries
+		}
+		else = {
+			set_variable = { name = tot_band_7_invest_groceries value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_7_invest_groceries
@@ -3873,7 +5173,20 @@ tot_band_7_invest_groceries_active = {
 	is_shown = { has_variable = tot_band_7_invest_groceries }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_7_invest_luxury_drinks = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_7_invest_luxury_drinks }
+			remove_variable = tot_band_7_invest_luxury_drinks
+		}
+		else = {
+			set_variable = { name = tot_band_7_invest_luxury_drinks value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_7_invest_luxury_drinks
@@ -3888,7 +5201,20 @@ tot_band_7_invest_luxury_drinks_active = {
 	is_shown = { has_variable = tot_band_7_invest_luxury_drinks }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_7_invest_luxury_foods = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_7_invest_luxury_foods }
+			remove_variable = tot_band_7_invest_luxury_foods
+		}
+		else = {
+			set_variable = { name = tot_band_7_invest_luxury_foods value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_7_invest_luxury_foods
@@ -3975,7 +5301,20 @@ band_8_gold_effect_6 = {
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_8_invest_musical_instrument = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_8_invest_musical_instrument }
+			remove_variable = tot_band_8_invest_musical_instrument
+		}
+		else = {
+			set_variable = { name = tot_band_8_invest_musical_instrument value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_8_invest_musical_instrument
@@ -3990,7 +5329,20 @@ tot_band_8_invest_musical_instrument_active = {
 	is_shown = { has_variable = tot_band_8_invest_musical_instrument }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_8_invest_paper = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_8_invest_paper }
+			remove_variable = tot_band_8_invest_paper
+		}
+		else = {
+			set_variable = { name = tot_band_8_invest_paper value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_8_invest_paper
@@ -4005,7 +5357,20 @@ tot_band_8_invest_paper_active = {
 	is_shown = { has_variable = tot_band_8_invest_paper }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_8_invest_luxury_clothes = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_8_invest_luxury_clothes }
+			remove_variable = tot_band_8_invest_luxury_clothes
+		}
+		else = {
+			set_variable = { name = tot_band_8_invest_luxury_clothes value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_8_invest_luxury_clothes
@@ -4020,7 +5385,20 @@ tot_band_8_invest_luxury_clothes_active = {
 	is_shown = { has_variable = tot_band_8_invest_luxury_clothes }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_8_invest_transportation = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_8_invest_transportation }
+			remove_variable = tot_band_8_invest_transportation
+		}
+		else = {
+			set_variable = { name = tot_band_8_invest_transportation value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_8_invest_transportation
@@ -4035,7 +5413,20 @@ tot_band_8_invest_transportation_active = {
 	is_shown = { has_variable = tot_band_8_invest_transportation }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_8_invest_automobiles = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_8_invest_automobiles }
+			remove_variable = tot_band_8_invest_automobiles
+		}
+		else = {
+			set_variable = { name = tot_band_8_invest_automobiles value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_8_invest_automobiles
@@ -4050,7 +5441,20 @@ tot_band_8_invest_automobiles_active = {
 	is_shown = { has_variable = tot_band_8_invest_automobiles }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_8_invest_radios = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_8_invest_radios }
+			remove_variable = tot_band_8_invest_radios
+		}
+		else = {
+			set_variable = { name = tot_band_8_invest_radios value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_8_invest_radios
@@ -4065,7 +5469,20 @@ tot_band_8_invest_radios_active = {
 	is_shown = { has_variable = tot_band_8_invest_radios }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_8_invest_fruit = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_8_invest_fruit }
+			remove_variable = tot_band_8_invest_fruit
+		}
+		else = {
+			set_variable = { name = tot_band_8_invest_fruit value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_8_invest_fruit
@@ -4080,7 +5497,20 @@ tot_band_8_invest_fruit_active = {
 	is_shown = { has_variable = tot_band_8_invest_fruit }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_8_invest_tea = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_8_invest_tea }
+			remove_variable = tot_band_8_invest_tea
+		}
+		else = {
+			set_variable = { name = tot_band_8_invest_tea value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_8_invest_tea
@@ -4095,7 +5525,20 @@ tot_band_8_invest_tea_active = {
 	is_shown = { has_variable = tot_band_8_invest_tea }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_8_invest_coffee = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_8_invest_coffee }
+			remove_variable = tot_band_8_invest_coffee
+		}
+		else = {
+			set_variable = { name = tot_band_8_invest_coffee value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_8_invest_coffee
@@ -4110,7 +5553,20 @@ tot_band_8_invest_coffee_active = {
 	is_shown = { has_variable = tot_band_8_invest_coffee }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_8_invest_groceries = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_8_invest_groceries }
+			remove_variable = tot_band_8_invest_groceries
+		}
+		else = {
+			set_variable = { name = tot_band_8_invest_groceries value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_8_invest_groceries
@@ -4125,7 +5581,20 @@ tot_band_8_invest_groceries_active = {
 	is_shown = { has_variable = tot_band_8_invest_groceries }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_8_invest_luxury_drinks = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_8_invest_luxury_drinks }
+			remove_variable = tot_band_8_invest_luxury_drinks
+		}
+		else = {
+			set_variable = { name = tot_band_8_invest_luxury_drinks value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_8_invest_luxury_drinks
@@ -4140,7 +5609,20 @@ tot_band_8_invest_luxury_drinks_active = {
 	is_shown = { has_variable = tot_band_8_invest_luxury_drinks }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_8_invest_luxury_foods = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_8_invest_luxury_foods }
+			remove_variable = tot_band_8_invest_luxury_foods
+		}
+		else = {
+			set_variable = { name = tot_band_8_invest_luxury_foods value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_8_invest_luxury_foods
@@ -4227,7 +5709,20 @@ band_9_gold_effect_6 = {
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_9_invest_musical_instrument = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_9_invest_musical_instrument }
+			remove_variable = tot_band_9_invest_musical_instrument
+		}
+		else = {
+			set_variable = { name = tot_band_9_invest_musical_instrument value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_9_invest_musical_instrument
@@ -4242,7 +5737,20 @@ tot_band_9_invest_musical_instrument_active = {
 	is_shown = { has_variable = tot_band_9_invest_musical_instrument }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_9_invest_paper = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_9_invest_paper }
+			remove_variable = tot_band_9_invest_paper
+		}
+		else = {
+			set_variable = { name = tot_band_9_invest_paper value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_9_invest_paper
@@ -4257,7 +5765,20 @@ tot_band_9_invest_paper_active = {
 	is_shown = { has_variable = tot_band_9_invest_paper }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_9_invest_luxury_clothes = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_9_invest_luxury_clothes }
+			remove_variable = tot_band_9_invest_luxury_clothes
+		}
+		else = {
+			set_variable = { name = tot_band_9_invest_luxury_clothes value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_9_invest_luxury_clothes
@@ -4272,7 +5793,20 @@ tot_band_9_invest_luxury_clothes_active = {
 	is_shown = { has_variable = tot_band_9_invest_luxury_clothes }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_9_invest_transportation = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_9_invest_transportation }
+			remove_variable = tot_band_9_invest_transportation
+		}
+		else = {
+			set_variable = { name = tot_band_9_invest_transportation value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_9_invest_transportation
@@ -4287,7 +5821,20 @@ tot_band_9_invest_transportation_active = {
 	is_shown = { has_variable = tot_band_9_invest_transportation }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_9_invest_automobiles = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_9_invest_automobiles }
+			remove_variable = tot_band_9_invest_automobiles
+		}
+		else = {
+			set_variable = { name = tot_band_9_invest_automobiles value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_9_invest_automobiles
@@ -4302,7 +5849,20 @@ tot_band_9_invest_automobiles_active = {
 	is_shown = { has_variable = tot_band_9_invest_automobiles }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_9_invest_radios = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_9_invest_radios }
+			remove_variable = tot_band_9_invest_radios
+		}
+		else = {
+			set_variable = { name = tot_band_9_invest_radios value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_9_invest_radios
@@ -4317,7 +5877,20 @@ tot_band_9_invest_radios_active = {
 	is_shown = { has_variable = tot_band_9_invest_radios }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_9_invest_fruit = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_9_invest_fruit }
+			remove_variable = tot_band_9_invest_fruit
+		}
+		else = {
+			set_variable = { name = tot_band_9_invest_fruit value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_9_invest_fruit
@@ -4332,7 +5905,20 @@ tot_band_9_invest_fruit_active = {
 	is_shown = { has_variable = tot_band_9_invest_fruit }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_9_invest_tea = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_9_invest_tea }
+			remove_variable = tot_band_9_invest_tea
+		}
+		else = {
+			set_variable = { name = tot_band_9_invest_tea value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_9_invest_tea
@@ -4347,7 +5933,20 @@ tot_band_9_invest_tea_active = {
 	is_shown = { has_variable = tot_band_9_invest_tea }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_9_invest_coffee = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_9_invest_coffee }
+			remove_variable = tot_band_9_invest_coffee
+		}
+		else = {
+			set_variable = { name = tot_band_9_invest_coffee value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_9_invest_coffee
@@ -4362,7 +5961,20 @@ tot_band_9_invest_coffee_active = {
 	is_shown = { has_variable = tot_band_9_invest_coffee }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_9_invest_groceries = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_9_invest_groceries }
+			remove_variable = tot_band_9_invest_groceries
+		}
+		else = {
+			set_variable = { name = tot_band_9_invest_groceries value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_9_invest_groceries
@@ -4377,7 +5989,20 @@ tot_band_9_invest_groceries_active = {
 	is_shown = { has_variable = tot_band_9_invest_groceries }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_9_invest_luxury_drinks = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_9_invest_luxury_drinks }
+			remove_variable = tot_band_9_invest_luxury_drinks
+		}
+		else = {
+			set_variable = { name = tot_band_9_invest_luxury_drinks value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_9_invest_luxury_drinks
@@ -4392,7 +6017,20 @@ tot_band_9_invest_luxury_drinks_active = {
 	is_shown = { has_variable = tot_band_9_invest_luxury_drinks }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_9_invest_luxury_foods = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_9_invest_luxury_foods }
+			remove_variable = tot_band_9_invest_luxury_foods
+		}
+		else = {
+			set_variable = { name = tot_band_9_invest_luxury_foods value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_9_invest_luxury_foods
@@ -4479,7 +6117,20 @@ band_10_gold_effect_6 = {
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_10_invest_musical_instrument = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_10_invest_musical_instrument }
+			remove_variable = tot_band_10_invest_musical_instrument
+		}
+		else = {
+			set_variable = { name = tot_band_10_invest_musical_instrument value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_10_invest_musical_instrument
@@ -4494,7 +6145,20 @@ tot_band_10_invest_musical_instrument_active = {
 	is_shown = { has_variable = tot_band_10_invest_musical_instrument }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_10_invest_paper = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_10_invest_paper }
+			remove_variable = tot_band_10_invest_paper
+		}
+		else = {
+			set_variable = { name = tot_band_10_invest_paper value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_10_invest_paper
@@ -4509,7 +6173,20 @@ tot_band_10_invest_paper_active = {
 	is_shown = { has_variable = tot_band_10_invest_paper }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_10_invest_luxury_clothes = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_10_invest_luxury_clothes }
+			remove_variable = tot_band_10_invest_luxury_clothes
+		}
+		else = {
+			set_variable = { name = tot_band_10_invest_luxury_clothes value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_10_invest_luxury_clothes
@@ -4524,7 +6201,20 @@ tot_band_10_invest_luxury_clothes_active = {
 	is_shown = { has_variable = tot_band_10_invest_luxury_clothes }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_10_invest_transportation = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_10_invest_transportation }
+			remove_variable = tot_band_10_invest_transportation
+		}
+		else = {
+			set_variable = { name = tot_band_10_invest_transportation value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_10_invest_transportation
@@ -4539,7 +6229,20 @@ tot_band_10_invest_transportation_active = {
 	is_shown = { has_variable = tot_band_10_invest_transportation }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_10_invest_automobiles = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_10_invest_automobiles }
+			remove_variable = tot_band_10_invest_automobiles
+		}
+		else = {
+			set_variable = { name = tot_band_10_invest_automobiles value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_10_invest_automobiles
@@ -4554,7 +6257,20 @@ tot_band_10_invest_automobiles_active = {
 	is_shown = { has_variable = tot_band_10_invest_automobiles }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_10_invest_radios = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_10_invest_radios }
+			remove_variable = tot_band_10_invest_radios
+		}
+		else = {
+			set_variable = { name = tot_band_10_invest_radios value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_10_invest_radios
@@ -4569,7 +6285,20 @@ tot_band_10_invest_radios_active = {
 	is_shown = { has_variable = tot_band_10_invest_radios }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_10_invest_fruit = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_10_invest_fruit }
+			remove_variable = tot_band_10_invest_fruit
+		}
+		else = {
+			set_variable = { name = tot_band_10_invest_fruit value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_10_invest_fruit
@@ -4584,7 +6313,20 @@ tot_band_10_invest_fruit_active = {
 	is_shown = { has_variable = tot_band_10_invest_fruit }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_10_invest_tea = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_10_invest_tea }
+			remove_variable = tot_band_10_invest_tea
+		}
+		else = {
+			set_variable = { name = tot_band_10_invest_tea value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_10_invest_tea
@@ -4599,7 +6341,20 @@ tot_band_10_invest_tea_active = {
 	is_shown = { has_variable = tot_band_10_invest_tea }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_10_invest_coffee = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_10_invest_coffee }
+			remove_variable = tot_band_10_invest_coffee
+		}
+		else = {
+			set_variable = { name = tot_band_10_invest_coffee value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_10_invest_coffee
@@ -4614,7 +6369,20 @@ tot_band_10_invest_coffee_active = {
 	is_shown = { has_variable = tot_band_10_invest_coffee }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_10_invest_groceries = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_10_invest_groceries }
+			remove_variable = tot_band_10_invest_groceries
+		}
+		else = {
+			set_variable = { name = tot_band_10_invest_groceries value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_10_invest_groceries
@@ -4629,7 +6397,20 @@ tot_band_10_invest_groceries_active = {
 	is_shown = { has_variable = tot_band_10_invest_groceries }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_10_invest_luxury_drinks = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_10_invest_luxury_drinks }
+			remove_variable = tot_band_10_invest_luxury_drinks
+		}
+		else = {
+			set_variable = { name = tot_band_10_invest_luxury_drinks value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_10_invest_luxury_drinks
@@ -4644,7 +6425,20 @@ tot_band_10_invest_luxury_drinks_active = {
 	is_shown = { has_variable = tot_band_10_invest_luxury_drinks }
 	is_valid = { is_player = yes }
 }
- = {
+tot_band_10_invest_luxury_foods = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_10_invest_luxury_foods }
+			remove_variable = tot_band_10_invest_luxury_foods
+		}
+		else = {
+			set_variable = { name = tot_band_10_invest_luxury_foods value = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
 		is_player = yes
 		OR = {
 			has_variable = tot_band_10_invest_luxury_foods
@@ -4660,5 +6454,6 @@ tot_band_10_invest_luxury_foods_active = {
 	is_valid = { is_player = yes }
 }
 # END GENERATED TOT BAND PER BAND
+
 
 

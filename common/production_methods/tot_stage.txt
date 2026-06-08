@@ -1,0 +1,79 @@
+pm_stage_operation_public = {
+	texture = "gfx/interface/icons/generic_icons/red_cross.dds"
+	building_modifiers = {
+		level_scaled = {
+			building_employment_clerks_add = 500
+			building_employment_shopkeepers_add = 100
+		}
+		workforce_scaled = {
+			goods_input_paper_add = 15
+			goods_input_transportation_add = 10
+			goods_output_performance_add = 30
+		}
+	}
+}
+
+pm_stage_operation_ticketed = {
+	texture = "gfx/interface/icons/generic_icons/banknotes.dds"
+	building_modifiers = {
+		level_scaled = {
+			building_employment_clerks_add = 500
+			building_employment_shopkeepers_add = 150
+		}
+		workforce_scaled = {
+			goods_input_paper_add = 20
+			goods_input_transportation_add = 15
+			goods_input_luxury_drinks_add = 10
+			goods_output_services_add = 10
+			goods_output_performance_add = 45
+		}
+	}
+}
+
+pm_stage_operation_festival = {
+	texture = "gfx/interface/icons/generic_icons/market_square.dds"
+	building_modifiers = {
+		level_scaled = {
+			building_employment_clerks_add = 600
+			building_employment_shopkeepers_add = 200
+		}
+		workforce_scaled = {
+			goods_input_paper_add = 25
+			goods_input_transportation_add = 20
+			goods_input_luxury_foods_add = 10
+			goods_input_luxury_drinks_add = 15
+			goods_output_services_add = 15
+			goods_output_performance_add = 65
+		}
+	}
+}
+
+pm_stage_scale_small = {
+	texture = "gfx/interface/icons/generic_icons/market_stall.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			building_throughput_add = 0
+		}
+	}
+}
+
+pm_stage_scale_medium = {
+	texture = "gfx/interface/icons/generic_icons/market_square.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_musical_instrument_add = 10
+			building_throughput_add = 0.1
+		}
+	}
+}
+
+pm_stage_scale_large = {
+	texture = "gfx/interface/icons/generic_icons/city_icon.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_musical_instrument_add = 15
+			goods_input_radios_add = 10
+			building_throughput_add = 0.2
+		}
+	}
+}

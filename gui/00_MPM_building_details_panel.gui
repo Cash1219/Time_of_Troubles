@@ -159,6 +159,17 @@ types building_panels
 						}
 					}
 
+					textbox = {
+						visible = "[Building.IsBuildingType('building_band_headquarter')]"
+						layoutpolicy_horizontal = expanding
+						size = { 0 30 }
+						align = hcenter|nobaseline
+						using = elide_fontsize_min
+						text = "TOT_BAND_BUILDING_PANEL_LABEL"
+						tooltip = "TOT_BAND_BUILDING_PANEL_TOOLTIP"
+						using = tooltip_ne
+					}
+
 					expand = {}
 
 					### STATE TRAITS
@@ -293,6 +304,10 @@ types building_panels
             widget = { # MPM - Spacer
                 minimumsize = { 100% 5 }
             }
+
+			tot_band_headquarter_management = {
+				visible = "[Building.IsBuildingType('building_band_headquarter')]"
+			}
 		}
 	}
     

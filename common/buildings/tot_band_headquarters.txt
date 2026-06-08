@@ -1,0 +1,36 @@
+building_band_headquarter = {
+	buildable = yes
+	expandable = no
+	downsizeable = no
+	building_group = bg_arts
+	icon = "gfx/interface/icons/building_icons/building_musical_instrument.dds"
+	city_type = city
+	levels_per_mesh = 1
+	ownership_type = no_ownership
+	production_method_groups = {
+		pmg_band_operation_mode
+		pmg_band_commercialization
+		pmg_band_invest_musical_instrument
+		pmg_band_invest_paper
+		pmg_band_invest_luxury_clothes
+		pmg_band_invest_transportation
+		pmg_band_invest_automobiles
+		pmg_band_invest_radios
+		pmg_band_invest_fruit
+		pmg_band_invest_tea
+		pmg_band_invest_coffee
+		pmg_band_invest_groceries
+		pmg_band_invest_luxury_drinks
+		pmg_band_invest_luxury_foods
+	}
+	required_construction = construction_cost_medium
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_arts.dds"
+	ai_value = { value = 0 }
+	can_build_government = {
+		custom_tooltip = {
+			text = TOT_BAND_CAN_BUILD_HQ_TT
+			tot_band_hq_state_build_allowed_trigger = yes
+		}
+	}
+	can_build_private = { always = no }
+}

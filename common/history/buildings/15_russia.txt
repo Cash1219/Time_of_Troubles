@@ -80,8 +80,6 @@
 		}
 	}
 	s:STATE_RIGA={
-		region_state:RUS={
-		}
 		region_state:ATRI={
 			create_building={
 				building="building_government_administration"
@@ -150,6 +148,7 @@
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
 			}
+		
 		}
 	}
 	s:STATE_COURLAND={
@@ -1682,13 +1681,13 @@
 		}
 	}
 	s:STATE_PERM={
-		region_state:RUS={
+		region_state:PRM={
 			create_building={
 				building="building_iron_mine"
 				add_ownership={
 					building={
 						type="building_iron_mine"
-						country="c:RUS"
+						country="c:PRM"
 						levels=2
 						region="STATE_PERM"
 					}
@@ -1701,7 +1700,7 @@
 				add_ownership={
 					building={
 						type="building_logging_camp"
-						country="c:RUS"
+						country="c:PRM"
 						levels=2
 						region="STATE_PERM"
 					}
@@ -1709,6 +1708,7 @@
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts"  }
 			}
+		
 		}
 	}
 	s:STATE_KAZAN={
@@ -1903,13 +1903,11 @@
 		}
 	}
 	s:STATE_FERGANA={
-		region_state:KOK={
+		region_state:PER={
 		}
 	}
 	s:STATE_MERZ={
-		region_state:KHI={
-		}
-		region_state:BUK={
+		region_state:PER={
 		}
 	}
 	s:STATE_SYRDARYA={
@@ -2303,13 +2301,13 @@
 		}
 	}
 	s:STATE_UFA={
-		region_state:RUS={
+		region_state:PRM={
 			create_building={
 				building="building_iron_mine"
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:RUS"
+						country="c:PRM"
 						levels=1
 						region="STATE_UFA"
 					}
@@ -2317,6 +2315,7 @@
 				reserves=1
 				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts"  }
 			}
+		
 		}
 	}
 	s:STATE_SURGUT={
@@ -2344,13 +2343,13 @@
 		}
 	}
 	s:STATE_CHELYABINSK={
-		region_state:OZH={
+		region_state:PRM={
 			create_building={
 				building="building_iron_mine"
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:OZH"
+						country="c:PRM"
 						levels=2
 						region="STATE_CHELYABINSK"
 					}
@@ -2358,10 +2357,7 @@
 				reserves=1
 				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts"  }
 			}
-		}
-		region_state:OZH={
-		}
-		region_state:OZH={
+		
 		}
 	}
 	s:STATE_ELIZAVETPOL={

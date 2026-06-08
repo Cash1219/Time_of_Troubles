@@ -1,0 +1,2025 @@
+tot_band_1_select_role_vocalist = {
+	scope = country
+	effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 } set_variable = { name = tot_band_selected_role value = 1 } } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 1 }
+	is_valid = { var:tot_band_limit >= 1 }
+}
+
+tot_band_1_role_vocalist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 has_variable = tot_band_selected_role var:tot_band_selected_role = 1 } }
+	is_valid = { var:tot_band_limit >= 1 }
+}
+
+tot_band_1_select_role_guitarist = {
+	scope = country
+	effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 } set_variable = { name = tot_band_selected_role value = 2 } } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 1 }
+	is_valid = { var:tot_band_limit >= 1 }
+}
+
+tot_band_1_role_guitarist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 has_variable = tot_band_selected_role var:tot_band_selected_role = 2 } }
+	is_valid = { var:tot_band_limit >= 1 }
+}
+
+tot_band_1_select_role_bassist = {
+	scope = country
+	effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 } set_variable = { name = tot_band_selected_role value = 3 } } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 1 }
+	is_valid = { var:tot_band_limit >= 1 }
+}
+
+tot_band_1_role_bassist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 has_variable = tot_band_selected_role var:tot_band_selected_role = 3 } }
+	is_valid = { var:tot_band_limit >= 1 }
+}
+
+tot_band_1_select_role_keyboardist = {
+	scope = country
+	effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 } set_variable = { name = tot_band_selected_role value = 4 } } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 1 }
+	is_valid = { var:tot_band_limit >= 1 }
+}
+
+tot_band_1_role_keyboardist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 has_variable = tot_band_selected_role var:tot_band_selected_role = 4 } }
+	is_valid = { var:tot_band_limit >= 1 }
+}
+
+tot_band_1_select_role_drummer = {
+	scope = country
+	effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 } set_variable = { name = tot_band_selected_role value = 5 } } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 1 }
+	is_valid = { var:tot_band_limit >= 1 }
+}
+
+tot_band_1_role_drummer_selected = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 has_variable = tot_band_selected_role var:tot_band_selected_role = 5 } }
+	is_valid = { var:tot_band_limit >= 1 }
+}
+
+tot_band_1_assign_selected_role = {
+	scope = character
+	effect = {
+		save_scope_as = tot_band_member
+		owner ?= {
+			if = { limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 has_variable = tot_band_selected_role var:tot_band_selected_role = 1 } } tot_appoint_band_1_vocalist_effect = yes }
+			if = { limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 has_variable = tot_band_selected_role var:tot_band_selected_role = 2 } } tot_appoint_band_1_guitarist_effect = yes }
+			if = { limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 has_variable = tot_band_selected_role var:tot_band_selected_role = 3 } } tot_appoint_band_1_bassist_effect = yes }
+			if = { limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 has_variable = tot_band_selected_role var:tot_band_selected_role = 4 } } tot_appoint_band_1_keyboardist_effect = yes }
+			if = { limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 has_variable = tot_band_selected_role var:tot_band_selected_role = 5 } } tot_appoint_band_1_drummer_effect = yes }
+			update_kizuna = yes
+		}
+	}
+	is_shown = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 1 }
+	}
+	is_valid = {
+		is_character_alive = yes
+		owner ?= {
+			is_player = yes
+			var:tot_band_limit >= 1
+			custom_tooltip = {
+				text = TOT_BAND_SELECT_ROLE_FIRST
+				any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 has_variable = tot_band_selected_role }
+			}
+			OR = {
+				NOT = { has_variable = tot_band_1_member_count }
+				var:tot_band_1_member_count < 5
+				prev = { has_variable = tot_band_id var:tot_band_id = 1 }
+			}
+			if = {
+				limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 var:tot_band_selected_role = 1 } }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_VOCALIST
+					OR = {
+						NOT = { has_variable = tot_band_1_vocalist_count }
+						var:tot_band_1_vocalist_count = 0
+						prev = { has_variable = tot_band_role_vocalist has_variable = tot_band_id var:tot_band_id = 1 }
+					}
+				}
+			}
+			if = {
+				limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 var:tot_band_selected_role = 2 } }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_guitarist has_variable = tot_band_id var:tot_band_id = 1 }
+					}
+				}
+			}
+			if = {
+				limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 var:tot_band_selected_role = 3 } }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_BASS
+					OR = {
+						NOT = { has_variable = tot_band_1_bassist_count }
+						var:tot_band_1_bassist_count = 0
+						prev = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 1 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 1 }
+					}
+				}
+			}
+			if = {
+				limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 var:tot_band_selected_role = 4 } }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_KEYBOARD
+					OR = {
+						NOT = { has_variable = tot_band_1_keyboardist_count }
+						var:tot_band_1_keyboardist_count = 0
+						prev = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 1 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 1 }
+					}
+				}
+			}
+			if = {
+				limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 var:tot_band_selected_role = 5 } }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_DRUM
+					OR = {
+						NOT = { has_variable = tot_band_1_drummer_count }
+						var:tot_band_1_drummer_count = 0
+						prev = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 1 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 1 }
+					}
+				}
+			}
+		}
+	}
+}
+
+tot_band_2_select_role_vocalist = {
+	scope = country
+	effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 } set_variable = { name = tot_band_selected_role value = 1 } } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 2 }
+	is_valid = { var:tot_band_limit >= 2 }
+}
+
+tot_band_2_role_vocalist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 has_variable = tot_band_selected_role var:tot_band_selected_role = 1 } }
+	is_valid = { var:tot_band_limit >= 2 }
+}
+
+tot_band_2_select_role_guitarist = {
+	scope = country
+	effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 } set_variable = { name = tot_band_selected_role value = 2 } } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 2 }
+	is_valid = { var:tot_band_limit >= 2 }
+}
+
+tot_band_2_role_guitarist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 has_variable = tot_band_selected_role var:tot_band_selected_role = 2 } }
+	is_valid = { var:tot_band_limit >= 2 }
+}
+
+tot_band_2_select_role_bassist = {
+	scope = country
+	effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 } set_variable = { name = tot_band_selected_role value = 3 } } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 2 }
+	is_valid = { var:tot_band_limit >= 2 }
+}
+
+tot_band_2_role_bassist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 has_variable = tot_band_selected_role var:tot_band_selected_role = 3 } }
+	is_valid = { var:tot_band_limit >= 2 }
+}
+
+tot_band_2_select_role_keyboardist = {
+	scope = country
+	effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 } set_variable = { name = tot_band_selected_role value = 4 } } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 2 }
+	is_valid = { var:tot_band_limit >= 2 }
+}
+
+tot_band_2_role_keyboardist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 has_variable = tot_band_selected_role var:tot_band_selected_role = 4 } }
+	is_valid = { var:tot_band_limit >= 2 }
+}
+
+tot_band_2_select_role_drummer = {
+	scope = country
+	effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 } set_variable = { name = tot_band_selected_role value = 5 } } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 2 }
+	is_valid = { var:tot_band_limit >= 2 }
+}
+
+tot_band_2_role_drummer_selected = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 has_variable = tot_band_selected_role var:tot_band_selected_role = 5 } }
+	is_valid = { var:tot_band_limit >= 2 }
+}
+
+tot_band_2_assign_selected_role = {
+	scope = character
+	effect = {
+		save_scope_as = tot_band_member
+		owner ?= {
+			if = { limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 has_variable = tot_band_selected_role var:tot_band_selected_role = 1 } } tot_appoint_band_2_vocalist_effect = yes }
+			if = { limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 has_variable = tot_band_selected_role var:tot_band_selected_role = 2 } } tot_appoint_band_2_guitarist_effect = yes }
+			if = { limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 has_variable = tot_band_selected_role var:tot_band_selected_role = 3 } } tot_appoint_band_2_bassist_effect = yes }
+			if = { limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 has_variable = tot_band_selected_role var:tot_band_selected_role = 4 } } tot_appoint_band_2_keyboardist_effect = yes }
+			if = { limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 has_variable = tot_band_selected_role var:tot_band_selected_role = 5 } } tot_appoint_band_2_drummer_effect = yes }
+			update_kizuna = yes
+		}
+	}
+	is_shown = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 2 }
+	}
+	is_valid = {
+		is_character_alive = yes
+		owner ?= {
+			is_player = yes
+			var:tot_band_limit >= 2
+			custom_tooltip = {
+				text = TOT_BAND_SELECT_ROLE_FIRST
+				any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 has_variable = tot_band_selected_role }
+			}
+			OR = {
+				NOT = { has_variable = tot_band_2_member_count }
+				var:tot_band_2_member_count < 5
+				prev = { has_variable = tot_band_id var:tot_band_id = 2 }
+			}
+			if = {
+				limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 var:tot_band_selected_role = 1 } }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_VOCALIST
+					OR = {
+						NOT = { has_variable = tot_band_2_vocalist_count }
+						var:tot_band_2_vocalist_count = 0
+						prev = { has_variable = tot_band_role_vocalist has_variable = tot_band_id var:tot_band_id = 2 }
+					}
+				}
+			}
+			if = {
+				limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 var:tot_band_selected_role = 2 } }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_guitarist has_variable = tot_band_id var:tot_band_id = 2 }
+					}
+				}
+			}
+			if = {
+				limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 var:tot_band_selected_role = 3 } }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_BASS
+					OR = {
+						NOT = { has_variable = tot_band_2_bassist_count }
+						var:tot_band_2_bassist_count = 0
+						prev = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 2 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 2 }
+					}
+				}
+			}
+			if = {
+				limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 var:tot_band_selected_role = 4 } }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_KEYBOARD
+					OR = {
+						NOT = { has_variable = tot_band_2_keyboardist_count }
+						var:tot_band_2_keyboardist_count = 0
+						prev = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 2 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 2 }
+					}
+				}
+			}
+			if = {
+				limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 var:tot_band_selected_role = 5 } }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_DRUM
+					OR = {
+						NOT = { has_variable = tot_band_2_drummer_count }
+						var:tot_band_2_drummer_count = 0
+						prev = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 2 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 2 }
+					}
+				}
+			}
+		}
+	}
+}
+
+tot_band_3_select_role_vocalist = {
+	scope = country
+	effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 } set_variable = { name = tot_band_selected_role value = 1 } } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 3 }
+	is_valid = { var:tot_band_limit >= 3 }
+}
+
+tot_band_3_role_vocalist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 has_variable = tot_band_selected_role var:tot_band_selected_role = 1 } }
+	is_valid = { var:tot_band_limit >= 3 }
+}
+
+tot_band_3_select_role_guitarist = {
+	scope = country
+	effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 } set_variable = { name = tot_band_selected_role value = 2 } } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 3 }
+	is_valid = { var:tot_band_limit >= 3 }
+}
+
+tot_band_3_role_guitarist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 has_variable = tot_band_selected_role var:tot_band_selected_role = 2 } }
+	is_valid = { var:tot_band_limit >= 3 }
+}
+
+tot_band_3_select_role_bassist = {
+	scope = country
+	effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 } set_variable = { name = tot_band_selected_role value = 3 } } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 3 }
+	is_valid = { var:tot_band_limit >= 3 }
+}
+
+tot_band_3_role_bassist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 has_variable = tot_band_selected_role var:tot_band_selected_role = 3 } }
+	is_valid = { var:tot_band_limit >= 3 }
+}
+
+tot_band_3_select_role_keyboardist = {
+	scope = country
+	effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 } set_variable = { name = tot_band_selected_role value = 4 } } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 3 }
+	is_valid = { var:tot_band_limit >= 3 }
+}
+
+tot_band_3_role_keyboardist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 has_variable = tot_band_selected_role var:tot_band_selected_role = 4 } }
+	is_valid = { var:tot_band_limit >= 3 }
+}
+
+tot_band_3_select_role_drummer = {
+	scope = country
+	effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 } set_variable = { name = tot_band_selected_role value = 5 } } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 3 }
+	is_valid = { var:tot_band_limit >= 3 }
+}
+
+tot_band_3_role_drummer_selected = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 has_variable = tot_band_selected_role var:tot_band_selected_role = 5 } }
+	is_valid = { var:tot_band_limit >= 3 }
+}
+
+tot_band_3_assign_selected_role = {
+	scope = character
+	effect = {
+		save_scope_as = tot_band_member
+		owner ?= {
+			if = { limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 has_variable = tot_band_selected_role var:tot_band_selected_role = 1 } } tot_appoint_band_3_vocalist_effect = yes }
+			if = { limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 has_variable = tot_band_selected_role var:tot_band_selected_role = 2 } } tot_appoint_band_3_guitarist_effect = yes }
+			if = { limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 has_variable = tot_band_selected_role var:tot_band_selected_role = 3 } } tot_appoint_band_3_bassist_effect = yes }
+			if = { limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 has_variable = tot_band_selected_role var:tot_band_selected_role = 4 } } tot_appoint_band_3_keyboardist_effect = yes }
+			if = { limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 has_variable = tot_band_selected_role var:tot_band_selected_role = 5 } } tot_appoint_band_3_drummer_effect = yes }
+			update_kizuna = yes
+		}
+	}
+	is_shown = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 3 }
+	}
+	is_valid = {
+		is_character_alive = yes
+		owner ?= {
+			is_player = yes
+			var:tot_band_limit >= 3
+			custom_tooltip = {
+				text = TOT_BAND_SELECT_ROLE_FIRST
+				any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 has_variable = tot_band_selected_role }
+			}
+			OR = {
+				NOT = { has_variable = tot_band_3_member_count }
+				var:tot_band_3_member_count < 5
+				prev = { has_variable = tot_band_id var:tot_band_id = 3 }
+			}
+			if = {
+				limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 var:tot_band_selected_role = 1 } }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_VOCALIST
+					OR = {
+						NOT = { has_variable = tot_band_3_vocalist_count }
+						var:tot_band_3_vocalist_count = 0
+						prev = { has_variable = tot_band_role_vocalist has_variable = tot_band_id var:tot_band_id = 3 }
+					}
+				}
+			}
+			if = {
+				limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 var:tot_band_selected_role = 2 } }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_guitarist has_variable = tot_band_id var:tot_band_id = 3 }
+					}
+				}
+			}
+			if = {
+				limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 var:tot_band_selected_role = 3 } }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_BASS
+					OR = {
+						NOT = { has_variable = tot_band_3_bassist_count }
+						var:tot_band_3_bassist_count = 0
+						prev = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 3 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 3 }
+					}
+				}
+			}
+			if = {
+				limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 var:tot_band_selected_role = 4 } }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_KEYBOARD
+					OR = {
+						NOT = { has_variable = tot_band_3_keyboardist_count }
+						var:tot_band_3_keyboardist_count = 0
+						prev = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 3 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 3 }
+					}
+				}
+			}
+			if = {
+				limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 var:tot_band_selected_role = 5 } }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_DRUM
+					OR = {
+						NOT = { has_variable = tot_band_3_drummer_count }
+						var:tot_band_3_drummer_count = 0
+						prev = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 3 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 3 }
+					}
+				}
+			}
+		}
+	}
+}
+
+tot_band_1_filter_all = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 } set_variable = { name = tot_band_candidate_filter value = 0 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 1 } is_valid = { var:tot_band_limit >= 1 } }
+tot_band_1_filter_historical = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 } set_variable = { name = tot_band_candidate_filter value = 1 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 1 } is_valid = { var:tot_band_limit >= 1 } }
+tot_band_1_filter_any_specialty = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 } set_variable = { name = tot_band_candidate_filter value = 2 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 1 } is_valid = { var:tot_band_limit >= 1 } }
+tot_band_1_filter_vocal = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 } set_variable = { name = tot_band_candidate_filter value = 3 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 1 } is_valid = { var:tot_band_limit >= 1 } }
+tot_band_1_filter_guitar = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 } set_variable = { name = tot_band_candidate_filter value = 4 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 1 } is_valid = { var:tot_band_limit >= 1 } }
+tot_band_1_filter_bass = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 } set_variable = { name = tot_band_candidate_filter value = 5 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 1 } is_valid = { var:tot_band_limit >= 1 } }
+tot_band_1_filter_keyboard = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 } set_variable = { name = tot_band_candidate_filter value = 6 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 1 } is_valid = { var:tot_band_limit >= 1 } }
+tot_band_1_filter_drum = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 } set_variable = { name = tot_band_candidate_filter value = 7 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 1 } is_valid = { var:tot_band_limit >= 1 } }
+tot_band_2_filter_all = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 } set_variable = { name = tot_band_candidate_filter value = 0 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 2 } is_valid = { var:tot_band_limit >= 2 } }
+tot_band_2_filter_historical = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 } set_variable = { name = tot_band_candidate_filter value = 1 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 2 } is_valid = { var:tot_band_limit >= 2 } }
+tot_band_2_filter_any_specialty = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 } set_variable = { name = tot_band_candidate_filter value = 2 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 2 } is_valid = { var:tot_band_limit >= 2 } }
+tot_band_2_filter_vocal = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 } set_variable = { name = tot_band_candidate_filter value = 3 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 2 } is_valid = { var:tot_band_limit >= 2 } }
+tot_band_2_filter_guitar = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 } set_variable = { name = tot_band_candidate_filter value = 4 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 2 } is_valid = { var:tot_band_limit >= 2 } }
+tot_band_2_filter_bass = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 } set_variable = { name = tot_band_candidate_filter value = 5 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 2 } is_valid = { var:tot_band_limit >= 2 } }
+tot_band_2_filter_keyboard = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 } set_variable = { name = tot_band_candidate_filter value = 6 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 2 } is_valid = { var:tot_band_limit >= 2 } }
+tot_band_2_filter_drum = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 } set_variable = { name = tot_band_candidate_filter value = 7 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 2 } is_valid = { var:tot_band_limit >= 2 } }
+tot_band_3_filter_all = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 } set_variable = { name = tot_band_candidate_filter value = 0 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 3 } is_valid = { var:tot_band_limit >= 3 } }
+tot_band_3_filter_historical = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 } set_variable = { name = tot_band_candidate_filter value = 1 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 3 } is_valid = { var:tot_band_limit >= 3 } }
+tot_band_3_filter_any_specialty = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 } set_variable = { name = tot_band_candidate_filter value = 2 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 3 } is_valid = { var:tot_band_limit >= 3 } }
+tot_band_3_filter_vocal = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 } set_variable = { name = tot_band_candidate_filter value = 3 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 3 } is_valid = { var:tot_band_limit >= 3 } }
+tot_band_3_filter_guitar = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 } set_variable = { name = tot_band_candidate_filter value = 4 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 3 } is_valid = { var:tot_band_limit >= 3 } }
+tot_band_3_filter_bass = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 } set_variable = { name = tot_band_candidate_filter value = 5 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 3 } is_valid = { var:tot_band_limit >= 3 } }
+tot_band_3_filter_keyboard = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 } set_variable = { name = tot_band_candidate_filter value = 6 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 3 } is_valid = { var:tot_band_limit >= 3 } }
+tot_band_3_filter_drum = { scope = country effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 } set_variable = { name = tot_band_candidate_filter value = 7 } } update_kizuna = yes } is_shown = { var:tot_band_limit >= 3 } is_valid = { var:tot_band_limit >= 3 } }
+
+tot_band_4_select_role_vocalist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_4_selected_role value = 1 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 4 }
+	is_valid = { var:tot_band_limit >= 4 }
+}
+
+tot_band_4_role_vocalist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_4_selected_role var:tot_band_4_selected_role = 1 }
+	is_valid = { var:tot_band_limit >= 4 }
+}
+
+tot_band_4_select_role_guitarist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_4_selected_role value = 2 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 4 }
+	is_valid = { var:tot_band_limit >= 4 }
+}
+
+tot_band_4_role_guitarist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_4_selected_role var:tot_band_4_selected_role = 2 }
+	is_valid = { var:tot_band_limit >= 4 }
+}
+
+tot_band_4_select_role_bassist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_4_selected_role value = 3 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 4 }
+	is_valid = { var:tot_band_limit >= 4 }
+}
+
+tot_band_4_role_bassist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_4_selected_role var:tot_band_4_selected_role = 3 }
+	is_valid = { var:tot_band_limit >= 4 }
+}
+
+tot_band_4_select_role_keyboardist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_4_selected_role value = 4 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 4 }
+	is_valid = { var:tot_band_limit >= 4 }
+}
+
+tot_band_4_role_keyboardist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_4_selected_role var:tot_band_4_selected_role = 4 }
+	is_valid = { var:tot_band_limit >= 4 }
+}
+
+tot_band_4_select_role_drummer = {
+	scope = country
+	effect = { set_variable = { name = tot_band_4_selected_role value = 5 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 4 }
+	is_valid = { var:tot_band_limit >= 4 }
+}
+
+tot_band_4_role_drummer_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_4_selected_role var:tot_band_4_selected_role = 5 }
+	is_valid = { var:tot_band_limit >= 4 }
+}
+
+tot_band_4_assign_selected_role = {
+	scope = character
+	effect = {
+		save_scope_as = tot_band_member
+		owner ?= {
+			if = { limit = { has_variable = tot_band_4_selected_role var:tot_band_4_selected_role = 1 } tot_appoint_band_4_vocalist_effect = yes }
+			if = { limit = { has_variable = tot_band_4_selected_role var:tot_band_4_selected_role = 2 } tot_appoint_band_4_guitarist_effect = yes }
+			if = { limit = { has_variable = tot_band_4_selected_role var:tot_band_4_selected_role = 3 } tot_appoint_band_4_bassist_effect = yes }
+			if = { limit = { has_variable = tot_band_4_selected_role var:tot_band_4_selected_role = 4 } tot_appoint_band_4_keyboardist_effect = yes }
+			if = { limit = { has_variable = tot_band_4_selected_role var:tot_band_4_selected_role = 5 } tot_appoint_band_4_drummer_effect = yes }
+			update_kizuna = yes
+		}
+	}
+	is_shown = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 4 }
+	}
+	is_valid = {
+		is_character_alive = yes
+		owner ?= {
+			is_player = yes
+			var:tot_band_limit >= 4
+			custom_tooltip = {
+				text = TOT_BAND_SELECT_ROLE_FIRST
+				has_variable = tot_band_4_selected_role
+			}
+			OR = {
+				NOT = { has_variable = tot_band_4_member_count }
+				var:tot_band_4_member_count < 5
+				prev = { has_variable = tot_band_id var:tot_band_id = 4 }
+			}
+			if = {
+				limit = { var:tot_band_4_selected_role = 1 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_VOCALIST
+					OR = {
+						NOT = { has_variable = tot_band_4_vocalist_count }
+						var:tot_band_4_vocalist_count = 0
+						prev = { has_variable = tot_band_role_vocalist has_variable = tot_band_id var:tot_band_id = 4 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_4_selected_role = 2 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_guitarist has_variable = tot_band_id var:tot_band_id = 4 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_4_selected_role = 3 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_BASS
+					OR = {
+						NOT = { has_variable = tot_band_4_bassist_count }
+						var:tot_band_4_bassist_count = 0
+						prev = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 4 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 4 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_4_selected_role = 4 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_KEYBOARD
+					OR = {
+						NOT = { has_variable = tot_band_4_keyboardist_count }
+						var:tot_band_4_keyboardist_count = 0
+						prev = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 4 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 4 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_4_selected_role = 5 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_DRUM
+					OR = {
+						NOT = { has_variable = tot_band_4_drummer_count }
+						var:tot_band_4_drummer_count = 0
+						prev = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 4 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 4 }
+					}
+				}
+			}
+		}
+	}
+}
+
+tot_band_5_select_role_vocalist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_5_selected_role value = 1 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 5 }
+	is_valid = { var:tot_band_limit >= 5 }
+}
+
+tot_band_5_role_vocalist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_5_selected_role var:tot_band_5_selected_role = 1 }
+	is_valid = { var:tot_band_limit >= 5 }
+}
+
+tot_band_5_select_role_guitarist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_5_selected_role value = 2 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 5 }
+	is_valid = { var:tot_band_limit >= 5 }
+}
+
+tot_band_5_role_guitarist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_5_selected_role var:tot_band_5_selected_role = 2 }
+	is_valid = { var:tot_band_limit >= 5 }
+}
+
+tot_band_5_select_role_bassist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_5_selected_role value = 3 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 5 }
+	is_valid = { var:tot_band_limit >= 5 }
+}
+
+tot_band_5_role_bassist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_5_selected_role var:tot_band_5_selected_role = 3 }
+	is_valid = { var:tot_band_limit >= 5 }
+}
+
+tot_band_5_select_role_keyboardist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_5_selected_role value = 4 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 5 }
+	is_valid = { var:tot_band_limit >= 5 }
+}
+
+tot_band_5_role_keyboardist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_5_selected_role var:tot_band_5_selected_role = 4 }
+	is_valid = { var:tot_band_limit >= 5 }
+}
+
+tot_band_5_select_role_drummer = {
+	scope = country
+	effect = { set_variable = { name = tot_band_5_selected_role value = 5 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 5 }
+	is_valid = { var:tot_band_limit >= 5 }
+}
+
+tot_band_5_role_drummer_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_5_selected_role var:tot_band_5_selected_role = 5 }
+	is_valid = { var:tot_band_limit >= 5 }
+}
+
+tot_band_5_assign_selected_role = {
+	scope = character
+	effect = {
+		save_scope_as = tot_band_member
+		owner ?= {
+			if = { limit = { has_variable = tot_band_5_selected_role var:tot_band_5_selected_role = 1 } tot_appoint_band_5_vocalist_effect = yes }
+			if = { limit = { has_variable = tot_band_5_selected_role var:tot_band_5_selected_role = 2 } tot_appoint_band_5_guitarist_effect = yes }
+			if = { limit = { has_variable = tot_band_5_selected_role var:tot_band_5_selected_role = 3 } tot_appoint_band_5_bassist_effect = yes }
+			if = { limit = { has_variable = tot_band_5_selected_role var:tot_band_5_selected_role = 4 } tot_appoint_band_5_keyboardist_effect = yes }
+			if = { limit = { has_variable = tot_band_5_selected_role var:tot_band_5_selected_role = 5 } tot_appoint_band_5_drummer_effect = yes }
+			update_kizuna = yes
+		}
+	}
+	is_shown = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 5 }
+	}
+	is_valid = {
+		is_character_alive = yes
+		owner ?= {
+			is_player = yes
+			var:tot_band_limit >= 5
+			custom_tooltip = {
+				text = TOT_BAND_SELECT_ROLE_FIRST
+				has_variable = tot_band_5_selected_role
+			}
+			OR = {
+				NOT = { has_variable = tot_band_5_member_count }
+				var:tot_band_5_member_count < 5
+				prev = { has_variable = tot_band_id var:tot_band_id = 5 }
+			}
+			if = {
+				limit = { var:tot_band_5_selected_role = 1 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_VOCALIST
+					OR = {
+						NOT = { has_variable = tot_band_5_vocalist_count }
+						var:tot_band_5_vocalist_count = 0
+						prev = { has_variable = tot_band_role_vocalist has_variable = tot_band_id var:tot_band_id = 5 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_5_selected_role = 2 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_guitarist has_variable = tot_band_id var:tot_band_id = 5 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_5_selected_role = 3 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_BASS
+					OR = {
+						NOT = { has_variable = tot_band_5_bassist_count }
+						var:tot_band_5_bassist_count = 0
+						prev = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 5 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 5 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_5_selected_role = 4 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_KEYBOARD
+					OR = {
+						NOT = { has_variable = tot_band_5_keyboardist_count }
+						var:tot_band_5_keyboardist_count = 0
+						prev = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 5 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 5 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_5_selected_role = 5 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_DRUM
+					OR = {
+						NOT = { has_variable = tot_band_5_drummer_count }
+						var:tot_band_5_drummer_count = 0
+						prev = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 5 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 5 }
+					}
+				}
+			}
+		}
+	}
+}
+
+tot_band_6_select_role_vocalist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_6_selected_role value = 1 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 6 }
+	is_valid = { var:tot_band_limit >= 6 }
+}
+
+tot_band_6_role_vocalist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_6_selected_role var:tot_band_6_selected_role = 1 }
+	is_valid = { var:tot_band_limit >= 6 }
+}
+
+tot_band_6_select_role_guitarist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_6_selected_role value = 2 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 6 }
+	is_valid = { var:tot_band_limit >= 6 }
+}
+
+tot_band_6_role_guitarist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_6_selected_role var:tot_band_6_selected_role = 2 }
+	is_valid = { var:tot_band_limit >= 6 }
+}
+
+tot_band_6_select_role_bassist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_6_selected_role value = 3 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 6 }
+	is_valid = { var:tot_band_limit >= 6 }
+}
+
+tot_band_6_role_bassist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_6_selected_role var:tot_band_6_selected_role = 3 }
+	is_valid = { var:tot_band_limit >= 6 }
+}
+
+tot_band_6_select_role_keyboardist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_6_selected_role value = 4 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 6 }
+	is_valid = { var:tot_band_limit >= 6 }
+}
+
+tot_band_6_role_keyboardist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_6_selected_role var:tot_band_6_selected_role = 4 }
+	is_valid = { var:tot_band_limit >= 6 }
+}
+
+tot_band_6_select_role_drummer = {
+	scope = country
+	effect = { set_variable = { name = tot_band_6_selected_role value = 5 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 6 }
+	is_valid = { var:tot_band_limit >= 6 }
+}
+
+tot_band_6_role_drummer_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_6_selected_role var:tot_band_6_selected_role = 5 }
+	is_valid = { var:tot_band_limit >= 6 }
+}
+
+tot_band_6_assign_selected_role = {
+	scope = character
+	effect = {
+		save_scope_as = tot_band_member
+		owner ?= {
+			if = { limit = { has_variable = tot_band_6_selected_role var:tot_band_6_selected_role = 1 } tot_appoint_band_6_vocalist_effect = yes }
+			if = { limit = { has_variable = tot_band_6_selected_role var:tot_band_6_selected_role = 2 } tot_appoint_band_6_guitarist_effect = yes }
+			if = { limit = { has_variable = tot_band_6_selected_role var:tot_band_6_selected_role = 3 } tot_appoint_band_6_bassist_effect = yes }
+			if = { limit = { has_variable = tot_band_6_selected_role var:tot_band_6_selected_role = 4 } tot_appoint_band_6_keyboardist_effect = yes }
+			if = { limit = { has_variable = tot_band_6_selected_role var:tot_band_6_selected_role = 5 } tot_appoint_band_6_drummer_effect = yes }
+			update_kizuna = yes
+		}
+	}
+	is_shown = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 6 }
+	}
+	is_valid = {
+		is_character_alive = yes
+		owner ?= {
+			is_player = yes
+			var:tot_band_limit >= 6
+			custom_tooltip = {
+				text = TOT_BAND_SELECT_ROLE_FIRST
+				has_variable = tot_band_6_selected_role
+			}
+			OR = {
+				NOT = { has_variable = tot_band_6_member_count }
+				var:tot_band_6_member_count < 5
+				prev = { has_variable = tot_band_id var:tot_band_id = 6 }
+			}
+			if = {
+				limit = { var:tot_band_6_selected_role = 1 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_VOCALIST
+					OR = {
+						NOT = { has_variable = tot_band_6_vocalist_count }
+						var:tot_band_6_vocalist_count = 0
+						prev = { has_variable = tot_band_role_vocalist has_variable = tot_band_id var:tot_band_id = 6 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_6_selected_role = 2 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_guitarist has_variable = tot_band_id var:tot_band_id = 6 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_6_selected_role = 3 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_BASS
+					OR = {
+						NOT = { has_variable = tot_band_6_bassist_count }
+						var:tot_band_6_bassist_count = 0
+						prev = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 6 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 6 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_6_selected_role = 4 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_KEYBOARD
+					OR = {
+						NOT = { has_variable = tot_band_6_keyboardist_count }
+						var:tot_band_6_keyboardist_count = 0
+						prev = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 6 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 6 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_6_selected_role = 5 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_DRUM
+					OR = {
+						NOT = { has_variable = tot_band_6_drummer_count }
+						var:tot_band_6_drummer_count = 0
+						prev = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 6 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 6 }
+					}
+				}
+			}
+		}
+	}
+}
+
+tot_band_7_select_role_vocalist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_7_selected_role value = 1 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 7 }
+	is_valid = { var:tot_band_limit >= 7 }
+}
+
+tot_band_7_role_vocalist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_7_selected_role var:tot_band_7_selected_role = 1 }
+	is_valid = { var:tot_band_limit >= 7 }
+}
+
+tot_band_7_select_role_guitarist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_7_selected_role value = 2 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 7 }
+	is_valid = { var:tot_band_limit >= 7 }
+}
+
+tot_band_7_role_guitarist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_7_selected_role var:tot_band_7_selected_role = 2 }
+	is_valid = { var:tot_band_limit >= 7 }
+}
+
+tot_band_7_select_role_bassist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_7_selected_role value = 3 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 7 }
+	is_valid = { var:tot_band_limit >= 7 }
+}
+
+tot_band_7_role_bassist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_7_selected_role var:tot_band_7_selected_role = 3 }
+	is_valid = { var:tot_band_limit >= 7 }
+}
+
+tot_band_7_select_role_keyboardist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_7_selected_role value = 4 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 7 }
+	is_valid = { var:tot_band_limit >= 7 }
+}
+
+tot_band_7_role_keyboardist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_7_selected_role var:tot_band_7_selected_role = 4 }
+	is_valid = { var:tot_band_limit >= 7 }
+}
+
+tot_band_7_select_role_drummer = {
+	scope = country
+	effect = { set_variable = { name = tot_band_7_selected_role value = 5 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 7 }
+	is_valid = { var:tot_band_limit >= 7 }
+}
+
+tot_band_7_role_drummer_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_7_selected_role var:tot_band_7_selected_role = 5 }
+	is_valid = { var:tot_band_limit >= 7 }
+}
+
+tot_band_7_assign_selected_role = {
+	scope = character
+	effect = {
+		save_scope_as = tot_band_member
+		owner ?= {
+			if = { limit = { has_variable = tot_band_7_selected_role var:tot_band_7_selected_role = 1 } tot_appoint_band_7_vocalist_effect = yes }
+			if = { limit = { has_variable = tot_band_7_selected_role var:tot_band_7_selected_role = 2 } tot_appoint_band_7_guitarist_effect = yes }
+			if = { limit = { has_variable = tot_band_7_selected_role var:tot_band_7_selected_role = 3 } tot_appoint_band_7_bassist_effect = yes }
+			if = { limit = { has_variable = tot_band_7_selected_role var:tot_band_7_selected_role = 4 } tot_appoint_band_7_keyboardist_effect = yes }
+			if = { limit = { has_variable = tot_band_7_selected_role var:tot_band_7_selected_role = 5 } tot_appoint_band_7_drummer_effect = yes }
+			update_kizuna = yes
+		}
+	}
+	is_shown = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 7 }
+	}
+	is_valid = {
+		is_character_alive = yes
+		owner ?= {
+			is_player = yes
+			var:tot_band_limit >= 7
+			custom_tooltip = {
+				text = TOT_BAND_SELECT_ROLE_FIRST
+				has_variable = tot_band_7_selected_role
+			}
+			OR = {
+				NOT = { has_variable = tot_band_7_member_count }
+				var:tot_band_7_member_count < 5
+				prev = { has_variable = tot_band_id var:tot_band_id = 7 }
+			}
+			if = {
+				limit = { var:tot_band_7_selected_role = 1 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_VOCALIST
+					OR = {
+						NOT = { has_variable = tot_band_7_vocalist_count }
+						var:tot_band_7_vocalist_count = 0
+						prev = { has_variable = tot_band_role_vocalist has_variable = tot_band_id var:tot_band_id = 7 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_7_selected_role = 2 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_guitarist has_variable = tot_band_id var:tot_band_id = 7 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_7_selected_role = 3 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_BASS
+					OR = {
+						NOT = { has_variable = tot_band_7_bassist_count }
+						var:tot_band_7_bassist_count = 0
+						prev = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 7 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 7 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_7_selected_role = 4 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_KEYBOARD
+					OR = {
+						NOT = { has_variable = tot_band_7_keyboardist_count }
+						var:tot_band_7_keyboardist_count = 0
+						prev = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 7 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 7 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_7_selected_role = 5 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_DRUM
+					OR = {
+						NOT = { has_variable = tot_band_7_drummer_count }
+						var:tot_band_7_drummer_count = 0
+						prev = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 7 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 7 }
+					}
+				}
+			}
+		}
+	}
+}
+
+tot_band_8_select_role_vocalist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_8_selected_role value = 1 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 8 }
+	is_valid = { var:tot_band_limit >= 8 }
+}
+
+tot_band_8_role_vocalist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_8_selected_role var:tot_band_8_selected_role = 1 }
+	is_valid = { var:tot_band_limit >= 8 }
+}
+
+tot_band_8_select_role_guitarist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_8_selected_role value = 2 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 8 }
+	is_valid = { var:tot_band_limit >= 8 }
+}
+
+tot_band_8_role_guitarist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_8_selected_role var:tot_band_8_selected_role = 2 }
+	is_valid = { var:tot_band_limit >= 8 }
+}
+
+tot_band_8_select_role_bassist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_8_selected_role value = 3 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 8 }
+	is_valid = { var:tot_band_limit >= 8 }
+}
+
+tot_band_8_role_bassist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_8_selected_role var:tot_band_8_selected_role = 3 }
+	is_valid = { var:tot_band_limit >= 8 }
+}
+
+tot_band_8_select_role_keyboardist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_8_selected_role value = 4 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 8 }
+	is_valid = { var:tot_band_limit >= 8 }
+}
+
+tot_band_8_role_keyboardist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_8_selected_role var:tot_band_8_selected_role = 4 }
+	is_valid = { var:tot_band_limit >= 8 }
+}
+
+tot_band_8_select_role_drummer = {
+	scope = country
+	effect = { set_variable = { name = tot_band_8_selected_role value = 5 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 8 }
+	is_valid = { var:tot_band_limit >= 8 }
+}
+
+tot_band_8_role_drummer_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_8_selected_role var:tot_band_8_selected_role = 5 }
+	is_valid = { var:tot_band_limit >= 8 }
+}
+
+tot_band_8_assign_selected_role = {
+	scope = character
+	effect = {
+		save_scope_as = tot_band_member
+		owner ?= {
+			if = { limit = { has_variable = tot_band_8_selected_role var:tot_band_8_selected_role = 1 } tot_appoint_band_8_vocalist_effect = yes }
+			if = { limit = { has_variable = tot_band_8_selected_role var:tot_band_8_selected_role = 2 } tot_appoint_band_8_guitarist_effect = yes }
+			if = { limit = { has_variable = tot_band_8_selected_role var:tot_band_8_selected_role = 3 } tot_appoint_band_8_bassist_effect = yes }
+			if = { limit = { has_variable = tot_band_8_selected_role var:tot_band_8_selected_role = 4 } tot_appoint_band_8_keyboardist_effect = yes }
+			if = { limit = { has_variable = tot_band_8_selected_role var:tot_band_8_selected_role = 5 } tot_appoint_band_8_drummer_effect = yes }
+			update_kizuna = yes
+		}
+	}
+	is_shown = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 8 }
+	}
+	is_valid = {
+		is_character_alive = yes
+		owner ?= {
+			is_player = yes
+			var:tot_band_limit >= 8
+			custom_tooltip = {
+				text = TOT_BAND_SELECT_ROLE_FIRST
+				has_variable = tot_band_8_selected_role
+			}
+			OR = {
+				NOT = { has_variable = tot_band_8_member_count }
+				var:tot_band_8_member_count < 5
+				prev = { has_variable = tot_band_id var:tot_band_id = 8 }
+			}
+			if = {
+				limit = { var:tot_band_8_selected_role = 1 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_VOCALIST
+					OR = {
+						NOT = { has_variable = tot_band_8_vocalist_count }
+						var:tot_band_8_vocalist_count = 0
+						prev = { has_variable = tot_band_role_vocalist has_variable = tot_band_id var:tot_band_id = 8 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_8_selected_role = 2 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_guitarist has_variable = tot_band_id var:tot_band_id = 8 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_8_selected_role = 3 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_BASS
+					OR = {
+						NOT = { has_variable = tot_band_8_bassist_count }
+						var:tot_band_8_bassist_count = 0
+						prev = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 8 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 8 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_8_selected_role = 4 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_KEYBOARD
+					OR = {
+						NOT = { has_variable = tot_band_8_keyboardist_count }
+						var:tot_band_8_keyboardist_count = 0
+						prev = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 8 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 8 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_8_selected_role = 5 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_DRUM
+					OR = {
+						NOT = { has_variable = tot_band_8_drummer_count }
+						var:tot_band_8_drummer_count = 0
+						prev = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 8 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 8 }
+					}
+				}
+			}
+		}
+	}
+}
+
+tot_band_9_select_role_vocalist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_9_selected_role value = 1 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 9 }
+	is_valid = { var:tot_band_limit >= 9 }
+}
+
+tot_band_9_role_vocalist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_9_selected_role var:tot_band_9_selected_role = 1 }
+	is_valid = { var:tot_band_limit >= 9 }
+}
+
+tot_band_9_select_role_guitarist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_9_selected_role value = 2 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 9 }
+	is_valid = { var:tot_band_limit >= 9 }
+}
+
+tot_band_9_role_guitarist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_9_selected_role var:tot_band_9_selected_role = 2 }
+	is_valid = { var:tot_band_limit >= 9 }
+}
+
+tot_band_9_select_role_bassist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_9_selected_role value = 3 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 9 }
+	is_valid = { var:tot_band_limit >= 9 }
+}
+
+tot_band_9_role_bassist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_9_selected_role var:tot_band_9_selected_role = 3 }
+	is_valid = { var:tot_band_limit >= 9 }
+}
+
+tot_band_9_select_role_keyboardist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_9_selected_role value = 4 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 9 }
+	is_valid = { var:tot_band_limit >= 9 }
+}
+
+tot_band_9_role_keyboardist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_9_selected_role var:tot_band_9_selected_role = 4 }
+	is_valid = { var:tot_band_limit >= 9 }
+}
+
+tot_band_9_select_role_drummer = {
+	scope = country
+	effect = { set_variable = { name = tot_band_9_selected_role value = 5 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 9 }
+	is_valid = { var:tot_band_limit >= 9 }
+}
+
+tot_band_9_role_drummer_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_9_selected_role var:tot_band_9_selected_role = 5 }
+	is_valid = { var:tot_band_limit >= 9 }
+}
+
+tot_band_9_assign_selected_role = {
+	scope = character
+	effect = {
+		save_scope_as = tot_band_member
+		owner ?= {
+			if = { limit = { has_variable = tot_band_9_selected_role var:tot_band_9_selected_role = 1 } tot_appoint_band_9_vocalist_effect = yes }
+			if = { limit = { has_variable = tot_band_9_selected_role var:tot_band_9_selected_role = 2 } tot_appoint_band_9_guitarist_effect = yes }
+			if = { limit = { has_variable = tot_band_9_selected_role var:tot_band_9_selected_role = 3 } tot_appoint_band_9_bassist_effect = yes }
+			if = { limit = { has_variable = tot_band_9_selected_role var:tot_band_9_selected_role = 4 } tot_appoint_band_9_keyboardist_effect = yes }
+			if = { limit = { has_variable = tot_band_9_selected_role var:tot_band_9_selected_role = 5 } tot_appoint_band_9_drummer_effect = yes }
+			update_kizuna = yes
+		}
+	}
+	is_shown = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 9 }
+	}
+	is_valid = {
+		is_character_alive = yes
+		owner ?= {
+			is_player = yes
+			var:tot_band_limit >= 9
+			custom_tooltip = {
+				text = TOT_BAND_SELECT_ROLE_FIRST
+				has_variable = tot_band_9_selected_role
+			}
+			OR = {
+				NOT = { has_variable = tot_band_9_member_count }
+				var:tot_band_9_member_count < 5
+				prev = { has_variable = tot_band_id var:tot_band_id = 9 }
+			}
+			if = {
+				limit = { var:tot_band_9_selected_role = 1 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_VOCALIST
+					OR = {
+						NOT = { has_variable = tot_band_9_vocalist_count }
+						var:tot_band_9_vocalist_count = 0
+						prev = { has_variable = tot_band_role_vocalist has_variable = tot_band_id var:tot_band_id = 9 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_9_selected_role = 2 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_guitarist has_variable = tot_band_id var:tot_band_id = 9 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_9_selected_role = 3 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_BASS
+					OR = {
+						NOT = { has_variable = tot_band_9_bassist_count }
+						var:tot_band_9_bassist_count = 0
+						prev = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 9 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 9 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_9_selected_role = 4 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_KEYBOARD
+					OR = {
+						NOT = { has_variable = tot_band_9_keyboardist_count }
+						var:tot_band_9_keyboardist_count = 0
+						prev = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 9 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 9 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_9_selected_role = 5 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_DRUM
+					OR = {
+						NOT = { has_variable = tot_band_9_drummer_count }
+						var:tot_band_9_drummer_count = 0
+						prev = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 9 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 9 }
+					}
+				}
+			}
+		}
+	}
+}
+
+tot_band_10_select_role_vocalist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_10_selected_role value = 1 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 10 }
+	is_valid = { var:tot_band_limit >= 10 }
+}
+
+tot_band_10_role_vocalist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_10_selected_role var:tot_band_10_selected_role = 1 }
+	is_valid = { var:tot_band_limit >= 10 }
+}
+
+tot_band_10_select_role_guitarist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_10_selected_role value = 2 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 10 }
+	is_valid = { var:tot_band_limit >= 10 }
+}
+
+tot_band_10_role_guitarist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_10_selected_role var:tot_band_10_selected_role = 2 }
+	is_valid = { var:tot_band_limit >= 10 }
+}
+
+tot_band_10_select_role_bassist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_10_selected_role value = 3 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 10 }
+	is_valid = { var:tot_band_limit >= 10 }
+}
+
+tot_band_10_role_bassist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_10_selected_role var:tot_band_10_selected_role = 3 }
+	is_valid = { var:tot_band_limit >= 10 }
+}
+
+tot_band_10_select_role_keyboardist = {
+	scope = country
+	effect = { set_variable = { name = tot_band_10_selected_role value = 4 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 10 }
+	is_valid = { var:tot_band_limit >= 10 }
+}
+
+tot_band_10_role_keyboardist_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_10_selected_role var:tot_band_10_selected_role = 4 }
+	is_valid = { var:tot_band_limit >= 10 }
+}
+
+tot_band_10_select_role_drummer = {
+	scope = country
+	effect = { set_variable = { name = tot_band_10_selected_role value = 5 } update_kizuna = yes }
+	is_shown = { var:tot_band_limit >= 10 }
+	is_valid = { var:tot_band_limit >= 10 }
+}
+
+tot_band_10_role_drummer_selected = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_band_10_selected_role var:tot_band_10_selected_role = 5 }
+	is_valid = { var:tot_band_limit >= 10 }
+}
+
+tot_band_10_assign_selected_role = {
+	scope = character
+	effect = {
+		save_scope_as = tot_band_member
+		owner ?= {
+			if = { limit = { has_variable = tot_band_10_selected_role var:tot_band_10_selected_role = 1 } tot_appoint_band_10_vocalist_effect = yes }
+			if = { limit = { has_variable = tot_band_10_selected_role var:tot_band_10_selected_role = 2 } tot_appoint_band_10_guitarist_effect = yes }
+			if = { limit = { has_variable = tot_band_10_selected_role var:tot_band_10_selected_role = 3 } tot_appoint_band_10_bassist_effect = yes }
+			if = { limit = { has_variable = tot_band_10_selected_role var:tot_band_10_selected_role = 4 } tot_appoint_band_10_keyboardist_effect = yes }
+			if = { limit = { has_variable = tot_band_10_selected_role var:tot_band_10_selected_role = 5 } tot_appoint_band_10_drummer_effect = yes }
+			update_kizuna = yes
+		}
+	}
+	is_shown = {
+		is_character_alive = yes
+		owner ?= { is_player = yes var:tot_band_limit >= 10 }
+	}
+	is_valid = {
+		is_character_alive = yes
+		owner ?= {
+			is_player = yes
+			var:tot_band_limit >= 10
+			custom_tooltip = {
+				text = TOT_BAND_SELECT_ROLE_FIRST
+				has_variable = tot_band_10_selected_role
+			}
+			OR = {
+				NOT = { has_variable = tot_band_10_member_count }
+				var:tot_band_10_member_count < 5
+				prev = { has_variable = tot_band_id var:tot_band_id = 10 }
+			}
+			if = {
+				limit = { var:tot_band_10_selected_role = 1 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_VOCALIST
+					OR = {
+						NOT = { has_variable = tot_band_10_vocalist_count }
+						var:tot_band_10_vocalist_count = 0
+						prev = { has_variable = tot_band_role_vocalist has_variable = tot_band_id var:tot_band_id = 10 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_10_selected_role = 2 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_guitarist has_variable = tot_band_id var:tot_band_id = 10 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_10_selected_role = 3 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_BASS
+					OR = {
+						NOT = { has_variable = tot_band_10_bassist_count }
+						var:tot_band_10_bassist_count = 0
+						prev = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 10 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_bassist has_variable = tot_band_id var:tot_band_id = 10 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_10_selected_role = 4 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_KEYBOARD
+					OR = {
+						NOT = { has_variable = tot_band_10_keyboardist_count }
+						var:tot_band_10_keyboardist_count = 0
+						prev = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 10 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_keyboardist has_variable = tot_band_id var:tot_band_id = 10 }
+					}
+				}
+			}
+			if = {
+				limit = { var:tot_band_10_selected_role = 5 }
+				custom_tooltip = {
+					text = TOT_BAND_RULE_UNIQUE_DRUM
+					OR = {
+						NOT = { has_variable = tot_band_10_drummer_count }
+						var:tot_band_10_drummer_count = 0
+						prev = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 10 }
+					}
+				}
+				custom_tooltip = {
+					text = TOT_BAND_RULE_ONE_INSTRUMENT
+					OR = {
+						prev = {
+							NOT = { has_variable = tot_band_role_guitarist }
+							NOT = { has_variable = tot_band_role_bassist }
+							NOT = { has_variable = tot_band_role_keyboardist }
+							NOT = { has_variable = tot_band_role_drummer }
+						}
+						prev = { has_variable = tot_band_role_drummer has_variable = tot_band_id var:tot_band_id = 10 }
+					}
+				}
+			}
+		}
+	}
+}
+

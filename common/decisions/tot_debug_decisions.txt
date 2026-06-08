@@ -213,10 +213,8 @@ tot_debug_unlock_all_bands_decision = {
 	}
 
 	when_taken = {
-		set_variable = {
-			name = tot_band_limit
-			value = 10
-		}
+		remove_modifier = tot_debug_all_band_limit_modifier
+		add_modifier = tot_debug_all_band_limit_modifier
 		update_kizuna = yes
 	}
 

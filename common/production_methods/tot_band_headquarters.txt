@@ -1,0 +1,133 @@
+pm_band_mode_state_sponsored = {
+	texture = "gfx/interface/icons/generic_icons/in_government_icon.dds"
+	building_modifiers = {
+		unscaled = {
+			building_tot_band_creative_progress_add = 6
+		}
+		level_scaled = {
+			building_employment_bureaucrats_add = 100
+			building_employment_clerks_add = 200
+		}
+	}
+}
+
+pm_band_mode_independent = {
+	texture = "gfx/interface/icons/generic_icons/in_opposition_icon.dds"
+	building_modifiers = {
+		unscaled = {
+			building_tot_band_creative_progress_add = 4
+		}
+		level_scaled = {
+			building_employment_bureaucrats_add = 50
+			building_employment_clerks_add = 200
+			building_employment_shopkeepers_add = 100
+		}
+	}
+}
+
+pm_band_mode_exile = {
+	texture = "gfx/interface/icons/generic_icons/in_opposition_icon.dds"
+	building_modifiers = {
+		unscaled = {
+			building_tot_band_creative_progress_add = 2
+		}
+		level_scaled = {
+			building_employment_bureaucrats_add = 50
+			building_employment_clerks_add = 150
+		}
+	}
+}
+
+pm_band_commercialization_public_service = {
+	texture = "gfx/interface/icons/generic_icons/red_cross.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_services_add = 5
+		}
+	}
+}
+
+pm_band_commercialization_local_stage = {
+	texture = "gfx/interface/icons/generic_icons/playing_cards.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 10
+			goods_input_transportation_add = 10
+			goods_output_services_add = 10
+			goods_output_performance_add = 15
+		}
+	}
+}
+
+pm_band_commercialization_ticketed_performance = {
+	texture = "gfx/interface/icons/generic_icons/banknotes.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 15
+			goods_input_transportation_add = 15
+			goods_input_luxury_clothes_add = 10
+			goods_output_services_add = 15
+			goods_output_performance_add = 30
+		}
+	}
+}
+
+pm_band_invest_musical_instrument_off = { texture = "gfx/interface/icons/generic_icons/red_cross.dds" }
+pm_band_invest_musical_instrument_low = { texture = "gfx/interface/icons/goods_icons/musical_instrument.dds" building_modifiers = { workforce_scaled = { goods_input_musical_instrument_add = 5 } } }
+pm_band_invest_musical_instrument_mid = { texture = "gfx/interface/icons/goods_icons/musical_instrument.dds" building_modifiers = { workforce_scaled = { goods_input_musical_instrument_add = 20 } } }
+pm_band_invest_musical_instrument_high = { texture = "gfx/interface/icons/goods_icons/musical_instrument.dds" building_modifiers = { workforce_scaled = { goods_input_musical_instrument_add = 50 } } }
+
+pm_band_invest_paper_off = { texture = "gfx/interface/icons/generic_icons/red_cross.dds" }
+pm_band_invest_paper_low = { texture = "gfx/interface/icons/goods_icons/paper.dds" building_modifiers = { workforce_scaled = { goods_input_paper_add = 5 } } }
+pm_band_invest_paper_mid = { texture = "gfx/interface/icons/goods_icons/paper.dds" building_modifiers = { workforce_scaled = { goods_input_paper_add = 20 } } }
+pm_band_invest_paper_high = { texture = "gfx/interface/icons/goods_icons/paper.dds" building_modifiers = { workforce_scaled = { goods_input_paper_add = 50 } } }
+
+pm_band_invest_luxury_clothes_off = { texture = "gfx/interface/icons/generic_icons/red_cross.dds" }
+pm_band_invest_luxury_clothes_low = { texture = "gfx/interface/icons/goods_icons/luxury_clothes.dds" building_modifiers = { workforce_scaled = { goods_input_luxury_clothes_add = 5 } } }
+pm_band_invest_luxury_clothes_mid = { texture = "gfx/interface/icons/goods_icons/luxury_clothes.dds" building_modifiers = { workforce_scaled = { goods_input_luxury_clothes_add = 20 } } }
+pm_band_invest_luxury_clothes_high = { texture = "gfx/interface/icons/goods_icons/luxury_clothes.dds" building_modifiers = { workforce_scaled = { goods_input_luxury_clothes_add = 50 } } }
+
+pm_band_invest_transportation_off = { texture = "gfx/interface/icons/generic_icons/red_cross.dds" }
+pm_band_invest_transportation_low = { texture = "gfx/interface/icons/goods_icons/transportation.dds" building_modifiers = { workforce_scaled = { goods_input_transportation_add = 5 } } }
+pm_band_invest_transportation_mid = { texture = "gfx/interface/icons/goods_icons/transportation.dds" building_modifiers = { workforce_scaled = { goods_input_transportation_add = 20 } } }
+pm_band_invest_transportation_high = { texture = "gfx/interface/icons/goods_icons/transportation.dds" building_modifiers = { workforce_scaled = { goods_input_transportation_add = 50 } } }
+
+pm_band_invest_automobiles_off = { texture = "gfx/interface/icons/generic_icons/red_cross.dds" }
+pm_band_invest_automobiles_low = { texture = "gfx/interface/icons/goods_icons/automobiles.dds" building_modifiers = { workforce_scaled = { goods_input_automobiles_add = 5 } } }
+pm_band_invest_automobiles_mid = { texture = "gfx/interface/icons/goods_icons/automobiles.dds" building_modifiers = { workforce_scaled = { goods_input_automobiles_add = 20 } } }
+pm_band_invest_automobiles_high = { texture = "gfx/interface/icons/goods_icons/automobiles.dds" building_modifiers = { workforce_scaled = { goods_input_automobiles_add = 50 } } }
+
+pm_band_invest_radios_off = { texture = "gfx/interface/icons/generic_icons/red_cross.dds" }
+pm_band_invest_radios_low = { texture = "gfx/interface/icons/goods_icons/radios.dds" building_modifiers = { workforce_scaled = { goods_input_radios_add = 5 } } }
+pm_band_invest_radios_mid = { texture = "gfx/interface/icons/goods_icons/radios.dds" building_modifiers = { workforce_scaled = { goods_input_radios_add = 20 } } }
+pm_band_invest_radios_high = { texture = "gfx/interface/icons/goods_icons/radios.dds" building_modifiers = { workforce_scaled = { goods_input_radios_add = 50 } } }
+
+pm_band_invest_fruit_off = { texture = "gfx/interface/icons/generic_icons/red_cross.dds" }
+pm_band_invest_fruit_low = { texture = "gfx/interface/icons/goods_icons/fruit.dds" building_modifiers = { workforce_scaled = { goods_input_fruit_add = 5 } } }
+pm_band_invest_fruit_mid = { texture = "gfx/interface/icons/goods_icons/fruit.dds" building_modifiers = { workforce_scaled = { goods_input_fruit_add = 20 } } }
+pm_band_invest_fruit_high = { texture = "gfx/interface/icons/goods_icons/fruit.dds" building_modifiers = { workforce_scaled = { goods_input_fruit_add = 50 } } }
+
+pm_band_invest_tea_off = { texture = "gfx/interface/icons/generic_icons/red_cross.dds" }
+pm_band_invest_tea_low = { texture = "gfx/interface/icons/goods_icons/tea.dds" building_modifiers = { workforce_scaled = { goods_input_tea_add = 5 } } }
+pm_band_invest_tea_mid = { texture = "gfx/interface/icons/goods_icons/tea.dds" building_modifiers = { workforce_scaled = { goods_input_tea_add = 20 } } }
+pm_band_invest_tea_high = { texture = "gfx/interface/icons/goods_icons/tea.dds" building_modifiers = { workforce_scaled = { goods_input_tea_add = 50 } } }
+
+pm_band_invest_coffee_off = { texture = "gfx/interface/icons/generic_icons/red_cross.dds" }
+pm_band_invest_coffee_low = { texture = "gfx/interface/icons/goods_icons/coffee.dds" building_modifiers = { workforce_scaled = { goods_input_coffee_add = 5 } } }
+pm_band_invest_coffee_mid = { texture = "gfx/interface/icons/goods_icons/coffee.dds" building_modifiers = { workforce_scaled = { goods_input_coffee_add = 20 } } }
+pm_band_invest_coffee_high = { texture = "gfx/interface/icons/goods_icons/coffee.dds" building_modifiers = { workforce_scaled = { goods_input_coffee_add = 50 } } }
+
+pm_band_invest_groceries_off = { texture = "gfx/interface/icons/generic_icons/red_cross.dds" }
+pm_band_invest_groceries_low = { texture = "gfx/interface/icons/goods_icons/groceries.dds" building_modifiers = { workforce_scaled = { goods_input_groceries_add = 5 } } }
+pm_band_invest_groceries_mid = { texture = "gfx/interface/icons/goods_icons/groceries.dds" building_modifiers = { workforce_scaled = { goods_input_groceries_add = 20 } } }
+pm_band_invest_groceries_high = { texture = "gfx/interface/icons/goods_icons/groceries.dds" building_modifiers = { workforce_scaled = { goods_input_groceries_add = 50 } } }
+
+pm_band_invest_luxury_drinks_off = { texture = "gfx/interface/icons/generic_icons/red_cross.dds" }
+pm_band_invest_luxury_drinks_low = { texture = "gfx/interface/icons/goods_icons/luxury_drinks.dds" building_modifiers = { workforce_scaled = { goods_input_luxury_drinks_add = 5 } } }
+pm_band_invest_luxury_drinks_mid = { texture = "gfx/interface/icons/goods_icons/luxury_drinks.dds" building_modifiers = { workforce_scaled = { goods_input_luxury_drinks_add = 20 } } }
+pm_band_invest_luxury_drinks_high = { texture = "gfx/interface/icons/goods_icons/luxury_drinks.dds" building_modifiers = { workforce_scaled = { goods_input_luxury_drinks_add = 50 } } }
+
+pm_band_invest_luxury_foods_off = { texture = "gfx/interface/icons/generic_icons/red_cross.dds" }
+pm_band_invest_luxury_foods_low = { texture = "gfx/interface/icons/goods_icons/luxury_foods.dds" building_modifiers = { workforce_scaled = { goods_input_luxury_foods_add = 5 } } }
+pm_band_invest_luxury_foods_mid = { texture = "gfx/interface/icons/goods_icons/luxury_foods.dds" building_modifiers = { workforce_scaled = { goods_input_luxury_foods_add = 20 } } }
+pm_band_invest_luxury_foods_high = { texture = "gfx/interface/icons/goods_icons/luxury_foods.dds" building_modifiers = { workforce_scaled = { goods_input_luxury_foods_add = 50 } } }
