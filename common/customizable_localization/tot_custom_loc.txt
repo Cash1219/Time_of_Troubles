@@ -464,16 +464,16 @@
 	}
 	tot_band_pending_event_band_loc = {
 		type = country
-		text = { trigger = { var:tot_band_pending_event_band_id = 1 } localization_key = TOT_BAND_EVENT_BAND_1 }
-		text = { trigger = { var:tot_band_pending_event_band_id = 2 } localization_key = TOT_BAND_EVENT_BAND_2 }
-		text = { trigger = { var:tot_band_pending_event_band_id = 3 } localization_key = TOT_BAND_EVENT_BAND_3 }
-		text = { trigger = { var:tot_band_pending_event_band_id = 4 } localization_key = TOT_BAND_EVENT_BAND_4 }
-		text = { trigger = { var:tot_band_pending_event_band_id = 5 } localization_key = TOT_BAND_EVENT_BAND_5 }
-		text = { trigger = { var:tot_band_pending_event_band_id = 6 } localization_key = TOT_BAND_EVENT_BAND_6 }
-		text = { trigger = { var:tot_band_pending_event_band_id = 7 } localization_key = TOT_BAND_EVENT_BAND_7 }
-		text = { trigger = { var:tot_band_pending_event_band_id = 8 } localization_key = TOT_BAND_EVENT_BAND_8 }
-		text = { trigger = { var:tot_band_pending_event_band_id = 9 } localization_key = TOT_BAND_EVENT_BAND_9 }
-		text = { trigger = { var:tot_band_pending_event_band_id = 10 } localization_key = TOT_BAND_EVENT_BAND_10 }
+		text = { trigger = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 1 } localization_key = TOT_BAND_EVENT_BAND_1 }
+		text = { trigger = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 2 } localization_key = TOT_BAND_EVENT_BAND_2 }
+		text = { trigger = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 3 } localization_key = TOT_BAND_EVENT_BAND_3 }
+		text = { trigger = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 4 } localization_key = TOT_BAND_EVENT_BAND_4 }
+		text = { trigger = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 5 } localization_key = TOT_BAND_EVENT_BAND_5 }
+		text = { trigger = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 6 } localization_key = TOT_BAND_EVENT_BAND_6 }
+		text = { trigger = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 7 } localization_key = TOT_BAND_EVENT_BAND_7 }
+		text = { trigger = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 8 } localization_key = TOT_BAND_EVENT_BAND_8 }
+		text = { trigger = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 9 } localization_key = TOT_BAND_EVENT_BAND_9 }
+		text = { trigger = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 10 } localization_key = TOT_BAND_EVENT_BAND_10 }
 		text = { localization_key = TOT_BAND_EVENT_BAND_UNKNOWN }
 	}
 	tot_band_1_selected_role_loc = {
@@ -635,5 +635,6 @@
 		text = { trigger = { var:tot_band_10_name = 5 } localization_key = TOT_BAND_NAME_PRESET_5 }
 		text = { localization_key = TOT_BAND_DEFAULT_NAME_10 }
 	}
+
 
 

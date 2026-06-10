@@ -84,7 +84,7 @@ window = {
                                     blockoverride "values" {
 										tooltip = "magic_tech_research_text"
 										max = 10000
-                                        value = "[GetPlayer.MakeScope.ScriptValue('magic_tech_research_reserve_value')|+2]"
+                                        value = "[GetPlayer.MakeScope.ScriptValue('magic_tech_research_reserve_value')]"
                                     }
 									textbox = {
 										text = "magic_tech_research_reserve_value_text"
@@ -263,7 +263,7 @@ window = {
 					
 				}
 				text_single = {
-							text = "magic_tech_military_tab" # 军事
+							raw_text = "magic_tech_military_tab" # 军事
 							visible = "[And(GetVariableSystem.HasValue( 'magic_tech_tabs', 'magic_tech_research' ) ,GetScriptedGui('magic_tech_military_tab').IsShown( GuiScope.End ))]"
 							
 						}

@@ -7,7 +7,7 @@
 		widget = {
 		
 			parentanchor = hcenter
-			size = { 500 148 }
+			size = { 560 148 }
 			datacontext = "[Scope.GetCharacter]"
 			visible = "[Scope.GetCharacter.IsValid]"
 			
@@ -86,13 +86,13 @@
 								### NAME
 								textbox = {
 									layoutpolicy_horizontal = expanding
-									size = { 0 30 }
+									size = { 0 48 }
 									text = "[Character.GetFullNameNoFormatting]"
 									default_format = "#v"
 									align = left
 									using = regular_font
 									block "highlight_name" {}
-									elide = right
+									multiline = yes
 								}
 								container = {
 									parentanchor = hcenter
@@ -140,7 +140,7 @@
 									visible = "[GetScriptedGui('get_is_in_government_type').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
 									layoutpolicy_horizontal = expanding
 									size = { 90 24 }
-									text = "在政府中"
+									raw_text = "在政府中"
 									align = center|nobaseline
 									using = fontsize_small
 									block "highlight_name" {}
@@ -161,7 +161,7 @@
 									visible = "[Not(GetScriptedGui('get_is_in_government_type').IsShown(GuiScope.SetRoot(Character.MakeScope).End))]"
 									layoutpolicy_horizontal = expanding
 									size = { 90 24 }
-									text = "不在政府"
+									raw_text = "不在政府"
 									align = center|nobaseline
 									using = fontsize_small
 									block "highlight_name" {}
@@ -186,7 +186,7 @@
 
 	
 	type tot_band_1_member_character = widget {
-		size = { 570 136 }
+		size = { 820 136 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 
@@ -199,18 +199,18 @@
 			flowcontainer = {
 				direction = vertical
 				spacing = 4
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 300 24 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 300 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 300 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 300 42 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 24 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 42 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
 			}
 			flowcontainer = {
 				direction = vertical
 				spacing = 6
-				textbox = { text = "TOT_BAND_EDIT_FROM_SLOTS" size = { 130 34 } using = fontsize_small align = center|nobaseline multiline = yes tooltip = "TOT_BAND_EDIT_FROM_SLOTS_TOOLTIP" }
+				textbox = { text = "TOT_BAND_EDIT_FROM_SLOTS" size = { 180 34 } using = fontsize_small align = center|nobaseline multiline = yes tooltip = "TOT_BAND_EDIT_FROM_SLOTS_TOOLTIP" }
 				button_standard = {
 					text = "TOT_BAND_REMOVE"
-					size = { 130 36 }
+					size = { 180 36 }
 					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
@@ -220,7 +220,7 @@
 	}
 
 	type tot_band_1_candidate_character = widget {
-		size = { 570 136 }
+		size = { 820 136 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 
@@ -233,19 +233,19 @@
 			flowcontainer = {
 				direction = vertical
 				spacing = 4
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 300 24 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 300 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 300 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 300 18 } align = left|nobaseline elide = right tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-				textbox = { raw_text = "当前筛选：[Character.GetOwner.GetCustom('tot_band_1_candidate_filter_loc')]" using = fontsize_small size = { 300 18 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 24 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+				textbox = { raw_text = "当前筛选：[AccessPlayer.GetCustom('tot_band_1_candidate_filter_loc')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
 			}
 			flowcontainer = {
 				direction = vertical
 				spacing = 6
-				textbox = { text = "TOT_BAND_1_SELECTED_ROLE_TEXT" size = { 130 32 } using = fontsize_small align = center|nobaseline multiline = yes }
+				textbox = { text = "TOT_BAND_1_SELECTED_ROLE_TEXT" size = { 180 32 } using = fontsize_small align = center|nobaseline multiline = yes }
 				button_standard = {
 					text = "TOT_BAND_APPOINT_OR_EDIT"
-					size = { 130 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_1_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_1_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_1_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
@@ -255,7 +255,7 @@
 	}
 
 	type tot_band_2_member_character = widget {
-		size = { 570 136 }
+		size = { 820 136 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 
@@ -268,19 +268,19 @@
 			flowcontainer = {
 				direction = vertical
 				spacing = 4
-				size = { 300 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 300 24 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 300 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 300 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 300 42 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+				size = { 550 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 24 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 42 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
 			}
 			flowcontainer = {
 				direction = vertical
 				spacing = 6
-				textbox = { text = "TOT_BAND_EDIT_FROM_SLOTS" size = { 130 34 } using = fontsize_small align = center|nobaseline multiline = yes tooltip = "TOT_BAND_EDIT_FROM_SLOTS_TOOLTIP" }
+				textbox = { text = "TOT_BAND_EDIT_FROM_SLOTS" size = { 180 34 } using = fontsize_small align = center|nobaseline multiline = yes tooltip = "TOT_BAND_EDIT_FROM_SLOTS_TOOLTIP" }
 				button_standard = {
 					text = "TOT_BAND_REMOVE"
-					size = { 130 36 }
+					size = { 180 36 }
 					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
@@ -290,7 +290,7 @@
 	}
 
 	type tot_band_2_candidate_character = widget {
-		size = { 570 136 }
+		size = { 820 136 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 
@@ -303,20 +303,20 @@
 			flowcontainer = {
 				direction = vertical
 				spacing = 4
-				size = { 300 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 300 24 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 300 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 300 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 300 18 } align = left|nobaseline elide = right tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-				textbox = { raw_text = "当前筛选：[Character.GetOwner.GetCustom('tot_band_2_candidate_filter_loc')]" using = fontsize_small size = { 300 18 } align = left|nobaseline elide = right }
+				size = { 550 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 24 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+				textbox = { raw_text = "当前筛选：[AccessPlayer.GetCustom('tot_band_2_candidate_filter_loc')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
 			}
 			flowcontainer = {
 				direction = vertical
 				spacing = 6
-				textbox = { text = "TOT_BAND_2_SELECTED_ROLE_TEXT" size = { 130 32 } using = fontsize_small align = center|nobaseline multiline = yes }
+				textbox = { text = "TOT_BAND_2_SELECTED_ROLE_TEXT" size = { 180 32 } using = fontsize_small align = center|nobaseline multiline = yes }
 				button_standard = {
 					text = "TOT_BAND_APPOINT_OR_EDIT"
-					size = { 130 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_2_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_2_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_2_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
@@ -326,7 +326,7 @@
 	}
 
 	type tot_band_3_member_character = widget {
-		size = { 570 136 }
+		size = { 820 136 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 
@@ -339,19 +339,19 @@
 			flowcontainer = {
 				direction = vertical
 				spacing = 4
-				size = { 300 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 300 24 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 300 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 300 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 300 42 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+				size = { 550 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 24 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 42 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
 			}
 			flowcontainer = {
 				direction = vertical
 				spacing = 6
-				textbox = { text = "TOT_BAND_EDIT_FROM_SLOTS" size = { 130 34 } using = fontsize_small align = center|nobaseline multiline = yes tooltip = "TOT_BAND_EDIT_FROM_SLOTS_TOOLTIP" }
+				textbox = { text = "TOT_BAND_EDIT_FROM_SLOTS" size = { 180 34 } using = fontsize_small align = center|nobaseline multiline = yes tooltip = "TOT_BAND_EDIT_FROM_SLOTS_TOOLTIP" }
 				button_standard = {
 					text = "TOT_BAND_REMOVE"
-					size = { 130 36 }
+					size = { 180 36 }
 					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
@@ -361,7 +361,7 @@
 	}
 
 	type tot_band_3_candidate_character = widget {
-		size = { 570 136 }
+		size = { 820 136 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 
@@ -374,20 +374,20 @@
 			flowcontainer = {
 				direction = vertical
 				spacing = 4
-				size = { 300 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 300 24 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 300 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 300 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 300 18 } align = left|nobaseline elide = right tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-				textbox = { raw_text = "当前筛选：[Character.GetOwner.GetCustom('tot_band_3_candidate_filter_loc')]" using = fontsize_small size = { 300 18 } align = left|nobaseline elide = right }
+				size = { 550 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 24 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+				textbox = { raw_text = "当前筛选：[AccessPlayer.GetCustom('tot_band_3_candidate_filter_loc')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
 			}
 			flowcontainer = {
 				direction = vertical
 				spacing = 6
-				textbox = { text = "TOT_BAND_3_SELECTED_ROLE_TEXT" size = { 130 32 } using = fontsize_small align = center|nobaseline multiline = yes }
+				textbox = { text = "TOT_BAND_3_SELECTED_ROLE_TEXT" size = { 180 32 } using = fontsize_small align = center|nobaseline multiline = yes }
 				button_standard = {
 					text = "TOT_BAND_APPOINT_OR_EDIT"
-					size = { 130 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_3_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_3_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_3_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
@@ -397,7 +397,7 @@
 	}
 
 	type tot_band_4_member_character = widget {
-		size = { 500 142 }
+		size = { 820 136 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 
@@ -410,26 +410,26 @@
 			flowcontainer = {
 				direction = vertical
 				spacing = 4
-				size = { 250 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+				size = { 550 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
 			}
 			flowcontainer = {
 				direction = vertical
 				spacing = 6
-				size = { 118 118 }
+				size = { 180 118 }
 				button_standard = {
 					text = "TOT_BAND_EDIT_ROLE"
-					size = { 118 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_4_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_4_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_4_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
 				}
 				button_standard = {
 					text = "TOT_BAND_REMOVE"
-					size = { 118 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
@@ -439,7 +439,7 @@
 	}
 
 	type tot_band_4_candidate_character = widget {
-		size = { 500 142 }
+		size = { 820 136 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 
@@ -452,19 +452,19 @@
 			flowcontainer = {
 				direction = vertical
 				spacing = 4
-				size = { 250 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+				size = { 550 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
 			}
 			flowcontainer = {
 				direction = vertical
 				spacing = 6
-				size = { 118 118 }
+				size = { 180 118 }
 				button_standard = {
 					text = "TOT_BAND_APPOINT_OR_EDIT"
-					size = { 118 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_4_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_4_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_4_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
@@ -474,7 +474,7 @@
 	}
 
 	type tot_band_5_member_character = widget {
-		size = { 500 142 }
+		size = { 820 136 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 
@@ -487,26 +487,26 @@
 			flowcontainer = {
 				direction = vertical
 				spacing = 4
-				size = { 250 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+				size = { 550 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
 			}
 			flowcontainer = {
 				direction = vertical
 				spacing = 6
-				size = { 118 118 }
+				size = { 180 118 }
 				button_standard = {
 					text = "TOT_BAND_EDIT_ROLE"
-					size = { 118 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_5_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_5_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_5_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
 				}
 				button_standard = {
 					text = "TOT_BAND_REMOVE"
-					size = { 118 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
@@ -516,7 +516,7 @@
 	}
 
 	type tot_band_5_candidate_character = widget {
-		size = { 500 142 }
+		size = { 820 136 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 
@@ -529,19 +529,19 @@
 			flowcontainer = {
 				direction = vertical
 				spacing = 4
-				size = { 250 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+				size = { 550 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
 			}
 			flowcontainer = {
 				direction = vertical
 				spacing = 6
-				size = { 118 118 }
+				size = { 180 118 }
 				button_standard = {
 					text = "TOT_BAND_APPOINT_OR_EDIT"
-					size = { 118 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_5_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_5_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_5_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
@@ -551,7 +551,7 @@
 	}
 
 	type tot_band_6_member_character = widget {
-		size = { 500 142 }
+		size = { 820 136 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 
@@ -564,26 +564,26 @@
 			flowcontainer = {
 				direction = vertical
 				spacing = 4
-				size = { 250 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+				size = { 550 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
 			}
 			flowcontainer = {
 				direction = vertical
 				spacing = 6
-				size = { 118 118 }
+				size = { 180 118 }
 				button_standard = {
 					text = "TOT_BAND_EDIT_ROLE"
-					size = { 118 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_6_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_6_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_6_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
 				}
 				button_standard = {
 					text = "TOT_BAND_REMOVE"
-					size = { 118 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
@@ -593,7 +593,7 @@
 	}
 
 	type tot_band_6_candidate_character = widget {
-		size = { 500 142 }
+		size = { 820 136 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 
@@ -606,19 +606,19 @@
 			flowcontainer = {
 				direction = vertical
 				spacing = 4
-				size = { 250 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+				size = { 550 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
 			}
 			flowcontainer = {
 				direction = vertical
 				spacing = 6
-				size = { 118 118 }
+				size = { 180 118 }
 				button_standard = {
 					text = "TOT_BAND_APPOINT_OR_EDIT"
-					size = { 118 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_6_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_6_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_6_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
@@ -628,7 +628,7 @@
 	}
 
 	type tot_band_7_member_character = widget {
-		size = { 500 142 }
+		size = { 820 136 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 
@@ -641,26 +641,26 @@
 			flowcontainer = {
 				direction = vertical
 				spacing = 4
-				size = { 250 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+				size = { 550 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
 			}
 			flowcontainer = {
 				direction = vertical
 				spacing = 6
-				size = { 118 118 }
+				size = { 180 118 }
 				button_standard = {
 					text = "TOT_BAND_EDIT_ROLE"
-					size = { 118 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_7_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_7_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_7_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
 				}
 				button_standard = {
 					text = "TOT_BAND_REMOVE"
-					size = { 118 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
@@ -670,7 +670,7 @@
 	}
 
 	type tot_band_7_candidate_character = widget {
-		size = { 500 142 }
+		size = { 820 136 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 
@@ -683,19 +683,19 @@
 			flowcontainer = {
 				direction = vertical
 				spacing = 4
-				size = { 250 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+				size = { 550 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
 			}
 			flowcontainer = {
 				direction = vertical
 				spacing = 6
-				size = { 118 118 }
+				size = { 180 118 }
 				button_standard = {
 					text = "TOT_BAND_APPOINT_OR_EDIT"
-					size = { 118 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_7_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_7_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_7_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
@@ -705,7 +705,7 @@
 	}
 
 	type tot_band_8_member_character = widget {
-		size = { 500 142 }
+		size = { 820 136 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 
@@ -718,26 +718,26 @@
 			flowcontainer = {
 				direction = vertical
 				spacing = 4
-				size = { 250 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+				size = { 550 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
 			}
 			flowcontainer = {
 				direction = vertical
 				spacing = 6
-				size = { 118 118 }
+				size = { 180 118 }
 				button_standard = {
 					text = "TOT_BAND_EDIT_ROLE"
-					size = { 118 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_8_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_8_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_8_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
 				}
 				button_standard = {
 					text = "TOT_BAND_REMOVE"
-					size = { 118 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
@@ -747,7 +747,7 @@
 	}
 
 	type tot_band_8_candidate_character = widget {
-		size = { 500 142 }
+		size = { 820 136 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 
@@ -760,19 +760,19 @@
 			flowcontainer = {
 				direction = vertical
 				spacing = 4
-				size = { 250 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+				size = { 550 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
 			}
 			flowcontainer = {
 				direction = vertical
 				spacing = 6
-				size = { 118 118 }
+				size = { 180 118 }
 				button_standard = {
 					text = "TOT_BAND_APPOINT_OR_EDIT"
-					size = { 118 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_8_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_8_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_8_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
@@ -782,7 +782,7 @@
 	}
 
 	type tot_band_9_member_character = widget {
-		size = { 500 142 }
+		size = { 820 136 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 
@@ -795,26 +795,26 @@
 			flowcontainer = {
 				direction = vertical
 				spacing = 4
-				size = { 250 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+				size = { 550 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
 			}
 			flowcontainer = {
 				direction = vertical
 				spacing = 6
-				size = { 118 118 }
+				size = { 180 118 }
 				button_standard = {
 					text = "TOT_BAND_EDIT_ROLE"
-					size = { 118 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_9_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_9_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_9_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
 				}
 				button_standard = {
 					text = "TOT_BAND_REMOVE"
-					size = { 118 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
@@ -824,7 +824,7 @@
 	}
 
 	type tot_band_9_candidate_character = widget {
-		size = { 500 142 }
+		size = { 820 136 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 
@@ -837,19 +837,19 @@
 			flowcontainer = {
 				direction = vertical
 				spacing = 4
-				size = { 250 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+				size = { 550 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
 			}
 			flowcontainer = {
 				direction = vertical
 				spacing = 6
-				size = { 118 118 }
+				size = { 180 118 }
 				button_standard = {
 					text = "TOT_BAND_APPOINT_OR_EDIT"
-					size = { 118 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_9_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_9_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_9_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
@@ -859,7 +859,7 @@
 	}
 
 	type tot_band_10_member_character = widget {
-		size = { 500 142 }
+		size = { 820 136 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 
@@ -872,26 +872,26 @@
 			flowcontainer = {
 				direction = vertical
 				spacing = 4
-				size = { 250 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+				size = { 550 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
 			}
 			flowcontainer = {
 				direction = vertical
 				spacing = 6
-				size = { 118 118 }
+				size = { 180 118 }
 				button_standard = {
 					text = "TOT_BAND_EDIT_ROLE"
-					size = { 118 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_10_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_10_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_10_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
 				}
 				button_standard = {
 					text = "TOT_BAND_REMOVE"
-					size = { 118 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
@@ -901,7 +901,7 @@
 	}
 
 	type tot_band_10_candidate_character = widget {
-		size = { 500 142 }
+		size = { 820 136 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 
@@ -914,19 +914,19 @@
 			flowcontainer = {
 				direction = vertical
 				spacing = 4
-				size = { 250 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 250 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 250 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 250 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+				size = { 550 118 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
+				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
 			}
 			flowcontainer = {
 				direction = vertical
 				spacing = 6
-				size = { 118 118 }
+				size = { 180 118 }
 				button_standard = {
 					text = "TOT_BAND_APPOINT_OR_EDIT"
-					size = { 118 42 }
+					size = { 180 42 }
 					enabled = "[GetScriptedGui('tot_band_10_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
 					onclick = "[GetScriptedGui('tot_band_10_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_10_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
@@ -970,7 +970,8 @@
 
 			textbox = {
 				size = { 100% 100% }
-				margin = { 40 0 10 0 }
+				margin_left = 40
+				margin_right = 10
 				raw_text = "前往乐队总部：[Building.GetState.GetNameNoFormatting]"
 				using = fontsize_small
 				align = left|nobaseline
@@ -980,8 +981,7 @@
 	}
 
 
-}
-flowcontainer = {
+	type widget_je_kizuna_character_list = flowcontainer {
 	name = "widget_je_kizuna_character_list"
 	ignoreinvisible = yes
 	direction = vertical
@@ -1032,7 +1032,7 @@ flowcontainer = {
 					direction = vertical
 	
 						flowcontainer = {
-							visible = "[GetScriptedGui('kon_kizuna_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							visible = no
 							direction = vertical
 		
 							section_header_button = {
@@ -1042,7 +1042,7 @@ flowcontainer = {
 								}
 			
 								blockoverride "left_text" {
-									text = "#v 轻音部#!"
+									raw_text = "#v 轻音部#!"
 								}
 								blockoverride "onclick" {
 									onclick = "[GetVariableSystem.Toggle('kon_kizuna_toggle')]"
@@ -1120,7 +1120,7 @@ flowcontainer = {
 							section_header_button = {
 	visible = no
 	blockoverride "layout" { size = { 520 38 } }
-	blockoverride "left_text" { text = "#v 乐队管理#!" }
+	blockoverride "left_text" { raw_text = "#v 乐队管理#!" }
 	blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('band_kizuna_toggle')]" }
 	blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('band_kizuna_toggle'))]" }
 	blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]" }
@@ -1155,12 +1155,12 @@ flowcontainer = {
 	}
 	flowcontainer = {
 		spacing = 4
-		button = { using = default_button size = { 78 56 } tooltip = "band_tools_tooltip" text = "@musical_instrument!" }
-		button = { using = default_button size = { 78 56 } tooltip = "band_paper_tooltip" text = "@paper!" }
-		button = { using = default_button size = { 78 56 } tooltip = "band_luxury_clothes_tooltip" text = "@luxury_clothes!" }
-		button = { using = default_button size = { 78 56 } tooltip = "band_transportation_tooltip" text = "@transportation!" }
-		button = { using = default_button size = { 78 56 } tooltip = "band_automobiles_tooltip" text = "@automobiles!" }
-		button = { using = default_button size = { 78 56 } tooltip = "band_radios_tooltip" text = "@radios!" }
+		button = { using = default_button size = { 78 56 } tooltip = "band_tools_tooltip" raw_text = "@musical_instrument!" }
+		button = { using = default_button size = { 78 56 } tooltip = "band_paper_tooltip" raw_text = "@paper!" }
+		button = { using = default_button size = { 78 56 } tooltip = "band_luxury_clothes_tooltip" raw_text = "@luxury_clothes!" }
+		button = { using = default_button size = { 78 56 } tooltip = "band_transportation_tooltip" raw_text = "@transportation!" }
+		button = { using = default_button size = { 78 56 } tooltip = "band_automobiles_tooltip" raw_text = "@automobiles!" }
+		button = { using = default_button size = { 78 56 } tooltip = "band_radios_tooltip" raw_text = "@radios!" }
 	}
 }
 
@@ -1818,6 +1818,48 @@ flowcontainer = {
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_010_toggle')]"
 						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_010_list')]"
+						addcolumn = 500
+						addrow = 148
+						item = { kizuna_character_widget = {} }
+					}
+				}
+				flowcontainer = {
+					visible = "[And(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )))), GetScriptedGui('tot_kizuna_011_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					section_header_button = {
+						blockoverride "layout" { size = { 520 38 } }
+						blockoverride "left_text" { text = "tot_group_sheet_011_trait" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_011_toggle')]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_011_toggle'))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_011_toggle')]" }
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_011_toggle')]"
+						size = { 500 80 }
+						blockoverride "text" {
+							text = "tot_kizuna_011_header"
+							autoresize = yes
+							multiline = yes
+							using = fontsize_xl
+							default_format = "#medium"
+						}
+						tooltip = "tot_kizuna_011_tooltip"
+					}
+					default_header_clean = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_011_toggle')]"
+						size = { 500 148 }
+						blockoverride "text" {
+							text = "tot_kizuna_011_modifier_text"
+							autoresize = yes
+							multiline = yes
+							fontsize = 15
+													fontsize_min = 12
+							default_format = "#medium"
+						}
+					}
+					fixedgridbox = {
+						visible = "[GetVariableSystem.Exists('tot_kizuna_011_toggle')]"
+						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_011_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }

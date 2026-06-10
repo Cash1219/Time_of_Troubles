@@ -1,34 +1,12 @@
 tot_debug_open_character_journals_decision = {
 	is_shown = {
-		OR = {
-			NOT = { has_journal_entry = je_tot_character_growth_gui }
-			NOT = { has_journal_entry = je_kizuna_gui }
-			NOT = { has_journal_entry = je_tot_band_gui }
-		}
+		always = no
 	}
 
 	possible = {
 	}
 
 	when_taken = {
-		if = {
-			limit = {
-				NOT = { has_journal_entry = je_tot_character_growth_gui }
-			}
-			add_journal_entry = { type = je_tot_character_growth_gui }
-		}
-		if = {
-			limit = {
-				NOT = { has_journal_entry = je_kizuna_gui }
-			}
-			add_journal_entry = { type = je_kizuna_gui }
-		}
-		if = {
-			limit = {
-				NOT = { has_journal_entry = je_tot_band_gui }
-			}
-			add_journal_entry = { type = je_tot_band_gui }
-		}
 		tot_character_growth_refresh = yes
 		update_kizuna = yes
 	}
@@ -215,6 +193,35 @@ tot_debug_unlock_all_bands_decision = {
 	when_taken = {
 		remove_modifier = tot_debug_all_band_limit_modifier
 		add_modifier = tot_debug_all_band_limit_modifier
+		update_kizuna = yes
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+tot_debug_add_all_bands_creative_progress_400_decision = {
+	is_shown = {
+	}
+
+	possible = {
+	}
+
+	when_taken = {
+		set_variable = { name = tot_band_pending_event_creative_delta value = 400 }
+		if = { limit = { var:tot_band_limit >= 1 } set_variable = { name = tot_band_pending_event_band_id value = 1 } tot_band_add_creative_progress_effect = yes }
+		if = { limit = { var:tot_band_limit >= 2 } set_variable = { name = tot_band_pending_event_band_id value = 2 } tot_band_add_creative_progress_effect = yes }
+		if = { limit = { var:tot_band_limit >= 3 } set_variable = { name = tot_band_pending_event_band_id value = 3 } tot_band_add_creative_progress_effect = yes }
+		if = { limit = { var:tot_band_limit >= 4 } set_variable = { name = tot_band_pending_event_band_id value = 4 } tot_band_add_creative_progress_effect = yes }
+		if = { limit = { var:tot_band_limit >= 5 } set_variable = { name = tot_band_pending_event_band_id value = 5 } tot_band_add_creative_progress_effect = yes }
+		if = { limit = { var:tot_band_limit >= 6 } set_variable = { name = tot_band_pending_event_band_id value = 6 } tot_band_add_creative_progress_effect = yes }
+		if = { limit = { var:tot_band_limit >= 7 } set_variable = { name = tot_band_pending_event_band_id value = 7 } tot_band_add_creative_progress_effect = yes }
+		if = { limit = { var:tot_band_limit >= 8 } set_variable = { name = tot_band_pending_event_band_id value = 8 } tot_band_add_creative_progress_effect = yes }
+		if = { limit = { var:tot_band_limit >= 9 } set_variable = { name = tot_band_pending_event_band_id value = 9 } tot_band_add_creative_progress_effect = yes }
+		if = { limit = { var:tot_band_limit >= 10 } set_variable = { name = tot_band_pending_event_band_id value = 10 } tot_band_add_creative_progress_effect = yes }
+		remove_variable = tot_band_pending_event_creative_delta
+		remove_variable = tot_band_pending_event_band_id
 		update_kizuna = yes
 	}
 

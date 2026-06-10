@@ -12,8 +12,16 @@ update_kizuna = {
         }
         clear_variable_list = band_kizuna_list
     }
+	if = {
+		limit = { always = yes }
+		remove_modifier = kon_kizuna_modifier_1
+		remove_modifier = kon_kizuna_modifier_2
+		remove_modifier = kon_kizuna_modifier_3
+		remove_modifier = kon_kizuna_modifier_4
+		remove_modifier = kon_kizuna_modifier_5
+		remove_modifier = kon_kizuna_modifier_6
+	}
 	 
-		update_kon_kizuna = yes
 		update_band_kizuna = yes
 	update_tot_kizuna_groups = yes
 	update_tot_kizuna_profession_specialty_groups = yes
@@ -200,75 +208,63 @@ update_kon_kizuna = {
 		}
 		if = {
 			limit = { kon_kizuna_number == 1 }
-			je:je_kizuna_gui = {
-				remove_modifier = kon_kizuna_modifier_1
-				remove_modifier = kon_kizuna_modifier_2
-				remove_modifier = kon_kizuna_modifier_3
-				remove_modifier = kon_kizuna_modifier_4
-				remove_modifier = kon_kizuna_modifier_5
-				remove_modifier = kon_kizuna_modifier_6
-				add_modifier = kon_kizuna_modifier_1
-			}
+			remove_modifier = kon_kizuna_modifier_1
+			remove_modifier = kon_kizuna_modifier_2
+			remove_modifier = kon_kizuna_modifier_3
+			remove_modifier = kon_kizuna_modifier_4
+			remove_modifier = kon_kizuna_modifier_5
+			remove_modifier = kon_kizuna_modifier_6
+			add_modifier = kon_kizuna_modifier_1
 		}
 		if = {
 			limit = { kon_kizuna_number == 2 }
-			je:je_kizuna_gui = {
-				remove_modifier = kon_kizuna_modifier_1
-				remove_modifier = kon_kizuna_modifier_2
-				remove_modifier = kon_kizuna_modifier_3
-				remove_modifier = kon_kizuna_modifier_4
-				remove_modifier = kon_kizuna_modifier_5
-				remove_modifier = kon_kizuna_modifier_6
-				add_modifier = kon_kizuna_modifier_2
-			}
+			remove_modifier = kon_kizuna_modifier_1
+			remove_modifier = kon_kizuna_modifier_2
+			remove_modifier = kon_kizuna_modifier_3
+			remove_modifier = kon_kizuna_modifier_4
+			remove_modifier = kon_kizuna_modifier_5
+			remove_modifier = kon_kizuna_modifier_6
+			add_modifier = kon_kizuna_modifier_2
 		}
 		if = {
 			limit = { kon_kizuna_number == 3 }
-			je:je_kizuna_gui = {
-				remove_modifier = kon_kizuna_modifier_1
-				remove_modifier = kon_kizuna_modifier_2
-				remove_modifier = kon_kizuna_modifier_3
-				remove_modifier = kon_kizuna_modifier_4
-				remove_modifier = kon_kizuna_modifier_5
-				remove_modifier = kon_kizuna_modifier_6
-				add_modifier = kon_kizuna_modifier_3
-			}
+			remove_modifier = kon_kizuna_modifier_1
+			remove_modifier = kon_kizuna_modifier_2
+			remove_modifier = kon_kizuna_modifier_3
+			remove_modifier = kon_kizuna_modifier_4
+			remove_modifier = kon_kizuna_modifier_5
+			remove_modifier = kon_kizuna_modifier_6
+			add_modifier = kon_kizuna_modifier_3
 		}
 		if = {
 			limit = { kon_kizuna_number == 4 }
-			je:je_kizuna_gui = {
-				remove_modifier = kon_kizuna_modifier_1
-				remove_modifier = kon_kizuna_modifier_2
-				remove_modifier = kon_kizuna_modifier_3
-				remove_modifier = kon_kizuna_modifier_4
-				remove_modifier = kon_kizuna_modifier_5
-				remove_modifier = kon_kizuna_modifier_6
-				add_modifier = kon_kizuna_modifier_4
-			}
+			remove_modifier = kon_kizuna_modifier_1
+			remove_modifier = kon_kizuna_modifier_2
+			remove_modifier = kon_kizuna_modifier_3
+			remove_modifier = kon_kizuna_modifier_4
+			remove_modifier = kon_kizuna_modifier_5
+			remove_modifier = kon_kizuna_modifier_6
+			add_modifier = kon_kizuna_modifier_4
 		}
 		if = {
 			limit = { kon_kizuna_number == 5 }
-			je:je_kizuna_gui = {
-				remove_modifier = kon_kizuna_modifier_1
-				remove_modifier = kon_kizuna_modifier_2
-				remove_modifier = kon_kizuna_modifier_3
-				remove_modifier = kon_kizuna_modifier_4
-				remove_modifier = kon_kizuna_modifier_5
-				remove_modifier = kon_kizuna_modifier_6
-				add_modifier = kon_kizuna_modifier_5
-			}
+			remove_modifier = kon_kizuna_modifier_1
+			remove_modifier = kon_kizuna_modifier_2
+			remove_modifier = kon_kizuna_modifier_3
+			remove_modifier = kon_kizuna_modifier_4
+			remove_modifier = kon_kizuna_modifier_5
+			remove_modifier = kon_kizuna_modifier_6
+			add_modifier = kon_kizuna_modifier_5
 		}
 		if = {
 			limit = { kon_kizuna_number == 6 }
-			je:je_kizuna_gui = {
-				remove_modifier = kon_kizuna_modifier_1
-				remove_modifier = kon_kizuna_modifier_2
-				remove_modifier = kon_kizuna_modifier_3
-				remove_modifier = kon_kizuna_modifier_4
-				remove_modifier = kon_kizuna_modifier_5
-				remove_modifier = kon_kizuna_modifier_6
-				add_modifier = kon_kizuna_modifier_6
-			}
+			remove_modifier = kon_kizuna_modifier_1
+			remove_modifier = kon_kizuna_modifier_2
+			remove_modifier = kon_kizuna_modifier_3
+			remove_modifier = kon_kizuna_modifier_4
+			remove_modifier = kon_kizuna_modifier_5
+			remove_modifier = kon_kizuna_modifier_6
+			add_modifier = kon_kizuna_modifier_6
 		}
 }
 update_band_kizuna = {
@@ -887,13 +883,25 @@ tot_setup_byz_initial_band_effect = {
 	set_variable = { name = tot_byz_initial_band_setup_done value = 1 }
 	set_variable = { name = tot_band_limit value = 3 }
 	set_variable = { name = tot_band_1_created value = 1 }
+	set_variable = { name = tot_band_2_created value = 1 }
+	set_variable = { name = tot_band_3_created value = 1 }
 	set_variable = { name = tot_band_1_name value = 1 }
+	set_variable = { name = tot_band_2_name value = 2 }
+	set_variable = { name = tot_band_3_name value = 3 }
 	capital = { set_variable = { name = tot_band_hq_slot value = 1 } }
+	random_scope_state = {
+		limit = { NOT = { has_variable = tot_band_hq_slot } }
+		set_variable = { name = tot_band_hq_slot value = 2 }
+	}
+	random_scope_state = {
+		limit = { NOT = { has_variable = tot_band_hq_slot } }
+		set_variable = { name = tot_band_hq_slot value = 3 }
+	}
 	every_scope_character = {
 		limit = {
 			is_character_alive = yes
 			is_historical = yes
-			has_trait = tot_Kon_Yui_trait
+			has_trait = tot_Bang_Kasumi_trait
 		}
 		save_scope_as = tot_band_member
 		tot_appoint_band_1_vocalist_effect = yes
@@ -903,7 +911,7 @@ tot_setup_byz_initial_band_effect = {
 		limit = {
 			is_character_alive = yes
 			is_historical = yes
-			has_trait = tot_Kon_Mio_trait
+			has_trait = tot_Bang_Rimi_trait
 		}
 		save_scope_as = tot_band_member
 		tot_appoint_band_1_bassist_effect = yes
@@ -912,7 +920,7 @@ tot_setup_byz_initial_band_effect = {
 		limit = {
 			is_character_alive = yes
 			is_historical = yes
-			has_trait = tot_Kon_Tsumugi_trait
+			has_trait = tot_Bang_Arisa_trait
 		}
 		save_scope_as = tot_band_member
 		tot_appoint_band_1_keyboardist_effect = yes
@@ -921,7 +929,7 @@ tot_setup_byz_initial_band_effect = {
 		limit = {
 			is_character_alive = yes
 			is_historical = yes
-			has_trait = tot_Kon_Ritsu_trait
+			has_trait = tot_Bang_Saya_trait
 		}
 		save_scope_as = tot_band_member
 		tot_appoint_band_1_drummer_effect = yes
@@ -930,10 +938,101 @@ tot_setup_byz_initial_band_effect = {
 		limit = {
 			is_character_alive = yes
 			is_historical = yes
-			has_trait = tot_Kon_Azusa_trait
+			has_trait = tot_Bang_Tae_trait
 		}
 		save_scope_as = tot_band_member
 		tot_appoint_band_1_guitarist_effect = yes
+	}
+	every_scope_character = {
+		limit = {
+			is_character_alive = yes
+			is_historical = yes
+			has_trait = tot_Bang_Ran_trait
+		}
+		save_scope_as = tot_band_member
+		tot_appoint_band_2_vocalist_effect = yes
+		tot_appoint_band_2_guitarist_effect = yes
+	}
+	every_scope_character = {
+		limit = {
+			is_character_alive = yes
+			is_historical = yes
+			has_trait = tot_Bang_Moca_trait
+		}
+		save_scope_as = tot_band_member
+		tot_appoint_band_2_guitarist_effect = yes
+	}
+	every_scope_character = {
+		limit = {
+			is_character_alive = yes
+			is_historical = yes
+			has_trait = tot_Bang_Himari_trait
+		}
+		save_scope_as = tot_band_member
+		tot_appoint_band_2_bassist_effect = yes
+	}
+	every_scope_character = {
+		limit = {
+			is_character_alive = yes
+			is_historical = yes
+			has_trait = tot_Bang_Tsugumi_trait
+		}
+		save_scope_as = tot_band_member
+		tot_appoint_band_2_keyboardist_effect = yes
+	}
+	every_scope_character = {
+		limit = {
+			is_character_alive = yes
+			is_historical = yes
+			has_trait = tot_Bang_Tomoe_trait
+		}
+		save_scope_as = tot_band_member
+		tot_appoint_band_2_drummer_effect = yes
+	}
+	every_scope_character = {
+		limit = {
+			is_character_alive = yes
+			is_historical = yes
+			has_trait = tot_Minato_Yukina_trait
+		}
+		save_scope_as = tot_band_member
+		tot_appoint_band_3_vocalist_effect = yes
+	}
+	every_scope_character = {
+		limit = {
+			is_character_alive = yes
+			is_historical = yes
+			has_trait = tot_Hikawa_Sayo_trait
+		}
+		save_scope_as = tot_band_member
+		tot_appoint_band_3_guitarist_effect = yes
+	}
+	every_scope_character = {
+		limit = {
+			is_character_alive = yes
+			is_historical = yes
+			has_trait = tot_Imai_Lisa_trait
+		}
+		save_scope_as = tot_band_member
+		tot_appoint_band_3_bassist_effect = yes
+	}
+	every_scope_character = {
+		limit = {
+			is_character_alive = yes
+			is_historical = yes
+			has_trait = tot_Shirokane_Rinko_trait
+		}
+		save_scope_as = tot_band_member
+		tot_appoint_band_3_keyboardist_effect = yes
+	}
+	every_scope_character = {
+		limit = {
+			is_character_alive = yes
+			is_historical = yes
+			has_trait = tot_Udagawa_Ako_trait
+		}
+		save_scope_as = tot_band_member
+		tot_appoint_band_3_drummer_effect = yes
 	}
 }
 
@@ -1392,6 +1491,10 @@ update_tot_kizuna_groups = {
 		clear_variable_list = tot_kizuna_010_list
 	}
 	if = {
+		limit = { has_variable_list = tot_kizuna_011_list }
+		clear_variable_list = tot_kizuna_011_list
+	}
+	if = {
 		limit = { has_variable_list = tot_kizuna_012_list }
 		clear_variable_list = tot_kizuna_012_list
 	}
@@ -1762,6 +1865,25 @@ update_tot_kizuna_groups = {
 		root = {
 			add_to_variable_list = {
 				name = tot_kizuna_010_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_011_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_011_list
 				target = prev
 			}
 		}
@@ -2730,12 +2852,10 @@ update_tot_kizuna_profession_specialty_groups = {
 }
 
 update_tot_kizuna_faction_default_modifiers = {
-	je:je_kizuna_gui = {
-		remove_modifier = tot_kizuna_faction_tier_2_modifier
-		remove_modifier = tot_kizuna_faction_tier_3_modifier
-		remove_modifier = tot_kizuna_faction_tier_4_modifier
-		remove_modifier = tot_kizuna_faction_tier_5_modifier
-	}
+	remove_modifier = tot_kizuna_faction_tier_2_modifier
+	remove_modifier = tot_kizuna_faction_tier_3_modifier
+	remove_modifier = tot_kizuna_faction_tier_4_modifier
+	remove_modifier = tot_kizuna_faction_tier_5_modifier
 
 	if = {
 		limit = {
@@ -2750,6 +2870,7 @@ update_tot_kizuna_faction_default_modifiers = {
 				tot_kizuna_008_number >= 2
 				tot_kizuna_009_number >= 2
 				tot_kizuna_010_number >= 2
+				tot_kizuna_011_number >= 2
 				tot_kizuna_012_number >= 2
 				tot_kizuna_013_number >= 2
 				tot_kizuna_014_number >= 2
@@ -2760,7 +2881,7 @@ update_tot_kizuna_faction_default_modifiers = {
 				tot_kizuna_019_number >= 2
 			}
 		}
-		je:je_kizuna_gui = { add_modifier = tot_kizuna_faction_tier_2_modifier }
+		add_modifier = tot_kizuna_faction_tier_2_modifier
 	}
 
 	if = {
@@ -2776,6 +2897,7 @@ update_tot_kizuna_faction_default_modifiers = {
 				tot_kizuna_008_number >= 3
 				tot_kizuna_009_number >= 3
 				tot_kizuna_010_number >= 3
+				tot_kizuna_011_number >= 3
 				tot_kizuna_012_number >= 3
 				tot_kizuna_013_number >= 3
 				tot_kizuna_014_number >= 3
@@ -2786,7 +2908,7 @@ update_tot_kizuna_faction_default_modifiers = {
 				tot_kizuna_019_number >= 3
 			}
 		}
-		je:je_kizuna_gui = { add_modifier = tot_kizuna_faction_tier_3_modifier }
+		add_modifier = tot_kizuna_faction_tier_3_modifier
 	}
 
 	if = {
@@ -2802,6 +2924,7 @@ update_tot_kizuna_faction_default_modifiers = {
 				tot_kizuna_008_number >= 4
 				tot_kizuna_009_number >= 4
 				tot_kizuna_010_number >= 4
+				tot_kizuna_011_number >= 4
 				tot_kizuna_012_number >= 4
 				tot_kizuna_013_number >= 4
 				tot_kizuna_014_number >= 4
@@ -2812,7 +2935,7 @@ update_tot_kizuna_faction_default_modifiers = {
 				tot_kizuna_019_number >= 4
 			}
 		}
-		je:je_kizuna_gui = { add_modifier = tot_kizuna_faction_tier_4_modifier }
+		add_modifier = tot_kizuna_faction_tier_4_modifier
 	}
 
 	if = {
@@ -2828,6 +2951,7 @@ update_tot_kizuna_faction_default_modifiers = {
 				tot_kizuna_008_number >= 5
 				tot_kizuna_009_number >= 5
 				tot_kizuna_010_number >= 5
+				tot_kizuna_011_number >= 5
 				tot_kizuna_012_number >= 5
 				tot_kizuna_013_number >= 5
 				tot_kizuna_014_number >= 5
@@ -2838,11 +2962,26 @@ update_tot_kizuna_faction_default_modifiers = {
 				tot_kizuna_019_number >= 5
 			}
 		}
-		je:je_kizuna_gui = { add_modifier = tot_kizuna_faction_tier_5_modifier }
+		add_modifier = tot_kizuna_faction_tier_5_modifier
 	}
 }
 
+
+tot_band_ensure_creation_progress_vars = {
+	if = { limit = { NOT = { has_variable = tot_band_1_creation_progress } } set_variable = { name = tot_band_1_creation_progress value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_band_2_creation_progress } } set_variable = { name = tot_band_2_creation_progress value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_band_3_creation_progress } } set_variable = { name = tot_band_3_creation_progress value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_band_4_creation_progress } } set_variable = { name = tot_band_4_creation_progress value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_band_5_creation_progress } } set_variable = { name = tot_band_5_creation_progress value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_band_6_creation_progress } } set_variable = { name = tot_band_6_creation_progress value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_band_7_creation_progress } } set_variable = { name = tot_band_7_creation_progress value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_band_8_creation_progress } } set_variable = { name = tot_band_8_creation_progress value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_band_9_creation_progress } } set_variable = { name = tot_band_9_creation_progress value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_band_10_creation_progress } } set_variable = { name = tot_band_10_creation_progress value = 0 } }
+}
+
 tot_band_check_rewards = {
+	tot_band_ensure_creation_progress_vars = yes
 	if = { limit = { var:tot_band_limit >= 1 } tot_band_1_check_rewards = yes }
 	if = { limit = { var:tot_band_limit >= 2 } tot_band_2_check_rewards = yes }
 	if = { limit = { var:tot_band_limit >= 3 } tot_band_3_check_rewards = yes }
@@ -2857,18 +2996,21 @@ tot_band_check_rewards = {
 
 # BEGIN GENERATED TOT BAND PER BAND
 tot_band_weekly_update = {
+	if = { limit = { var:tot_band_limit >= 1 NOT = { has_variable = tot_band_1_creation_progress } } set_variable = { name = tot_band_1_creation_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 1 NOT = { has_variable = tot_band_1_creative_progress } } set_variable = { name = tot_band_1_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 1 NOT = { has_variable = tot_band_1_random_event_threshold } } set_variable = { name = tot_band_1_random_event_threshold value = 400 } }
 	if = { limit = { var:tot_band_limit >= 1 var:tot_band_1_creative_progress < 1000 } change_variable = { name = tot_band_1_creative_progress add = band_1_kizuna_creation_weekly_gain_value } }
 	if = { limit = { var:tot_band_limit >= 1 var:tot_band_1_creative_progress > 1000 } set_variable = { name = tot_band_1_creative_progress value = 1000 } }
 	if = { limit = { var:tot_band_limit >= 1 var:tot_band_1_creative_progress >= 1000 } set_variable = { name = tot_band_pending_event_band_id value = 1 } trigger_event = { id = kizuna.201 popup = yes } }
 	if = { limit = { var:tot_band_limit >= 1 var:tot_band_1_creative_progress < 1000 var:tot_band_1_creative_progress >= var:tot_band_1_random_event_threshold } set_variable = { name = tot_band_pending_event_band_id value = 1 } change_variable = { name = tot_band_1_random_event_threshold add = 400 } tot_band_trigger_random_progress_event = yes }
+	if = { limit = { var:tot_band_limit >= 2 NOT = { has_variable = tot_band_2_creation_progress } } set_variable = { name = tot_band_2_creation_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 2 NOT = { has_variable = tot_band_2_creative_progress } } set_variable = { name = tot_band_2_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 2 NOT = { has_variable = tot_band_2_random_event_threshold } } set_variable = { name = tot_band_2_random_event_threshold value = 400 } }
 	if = { limit = { var:tot_band_limit >= 2 var:tot_band_2_creative_progress < 1000 } change_variable = { name = tot_band_2_creative_progress add = band_2_kizuna_creation_weekly_gain_value } }
 	if = { limit = { var:tot_band_limit >= 2 var:tot_band_2_creative_progress > 1000 } set_variable = { name = tot_band_2_creative_progress value = 1000 } }
 	if = { limit = { var:tot_band_limit >= 2 var:tot_band_2_creative_progress >= 1000 } set_variable = { name = tot_band_pending_event_band_id value = 2 } trigger_event = { id = kizuna.201 popup = yes } }
 	if = { limit = { var:tot_band_limit >= 2 var:tot_band_2_creative_progress < 1000 var:tot_band_2_creative_progress >= var:tot_band_2_random_event_threshold } set_variable = { name = tot_band_pending_event_band_id value = 2 } change_variable = { name = tot_band_2_random_event_threshold add = 400 } tot_band_trigger_random_progress_event = yes }
+	if = { limit = { var:tot_band_limit >= 3 NOT = { has_variable = tot_band_3_creation_progress } } set_variable = { name = tot_band_3_creation_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 3 NOT = { has_variable = tot_band_3_creative_progress } } set_variable = { name = tot_band_3_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 3 NOT = { has_variable = tot_band_3_random_event_threshold } } set_variable = { name = tot_band_3_random_event_threshold value = 400 } }
 	if = { limit = { var:tot_band_limit >= 3 var:tot_band_3_creative_progress < 1000 } change_variable = { name = tot_band_3_creative_progress add = band_3_kizuna_creation_weekly_gain_value } }
@@ -3165,62 +3307,73 @@ tot_band_resolve_creative_event = {
 	}
 }
 tot_band_clear_creative_progress_effect = {
-	if = { limit = { var:tot_band_pending_event_band_id = 1 } set_variable = { name = tot_band_1_creative_progress value = 0 } set_variable = { name = tot_band_1_random_event_threshold value = 400 } }
-	if = { limit = { var:tot_band_pending_event_band_id = 2 } set_variable = { name = tot_band_2_creative_progress value = 0 } set_variable = { name = tot_band_2_random_event_threshold value = 400 } }
-	if = { limit = { var:tot_band_pending_event_band_id = 3 } set_variable = { name = tot_band_3_creative_progress value = 0 } set_variable = { name = tot_band_3_random_event_threshold value = 400 } }
-	if = { limit = { var:tot_band_pending_event_band_id = 4 } set_variable = { name = tot_band_4_creative_progress value = 0 } set_variable = { name = tot_band_4_random_event_threshold value = 400 } }
-	if = { limit = { var:tot_band_pending_event_band_id = 5 } set_variable = { name = tot_band_5_creative_progress value = 0 } set_variable = { name = tot_band_5_random_event_threshold value = 400 } }
-	if = { limit = { var:tot_band_pending_event_band_id = 6 } set_variable = { name = tot_band_6_creative_progress value = 0 } set_variable = { name = tot_band_6_random_event_threshold value = 400 } }
-	if = { limit = { var:tot_band_pending_event_band_id = 7 } set_variable = { name = tot_band_7_creative_progress value = 0 } set_variable = { name = tot_band_7_random_event_threshold value = 400 } }
-	if = { limit = { var:tot_band_pending_event_band_id = 8 } set_variable = { name = tot_band_8_creative_progress value = 0 } set_variable = { name = tot_band_8_random_event_threshold value = 400 } }
-	if = { limit = { var:tot_band_pending_event_band_id = 9 } set_variable = { name = tot_band_9_creative_progress value = 0 } set_variable = { name = tot_band_9_random_event_threshold value = 400 } }
-	if = { limit = { var:tot_band_pending_event_band_id = 10 } set_variable = { name = tot_band_10_creative_progress value = 0 } set_variable = { name = tot_band_10_random_event_threshold value = 400 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 1 } set_variable = { name = tot_band_1_creative_progress value = 0 } set_variable = { name = tot_band_1_random_event_threshold value = 400 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 2 } set_variable = { name = tot_band_2_creative_progress value = 0 } set_variable = { name = tot_band_2_random_event_threshold value = 400 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 3 } set_variable = { name = tot_band_3_creative_progress value = 0 } set_variable = { name = tot_band_3_random_event_threshold value = 400 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 4 } set_variable = { name = tot_band_4_creative_progress value = 0 } set_variable = { name = tot_band_4_random_event_threshold value = 400 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 5 } set_variable = { name = tot_band_5_creative_progress value = 0 } set_variable = { name = tot_band_5_random_event_threshold value = 400 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 6 } set_variable = { name = tot_band_6_creative_progress value = 0 } set_variable = { name = tot_band_6_random_event_threshold value = 400 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 7 } set_variable = { name = tot_band_7_creative_progress value = 0 } set_variable = { name = tot_band_7_random_event_threshold value = 400 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 8 } set_variable = { name = tot_band_8_creative_progress value = 0 } set_variable = { name = tot_band_8_random_event_threshold value = 400 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 9 } set_variable = { name = tot_band_9_creative_progress value = 0 } set_variable = { name = tot_band_9_random_event_threshold value = 400 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 10 } set_variable = { name = tot_band_10_creative_progress value = 0 } set_variable = { name = tot_band_10_random_event_threshold value = 400 } }
 }
 tot_band_add_creation_experience_effect = {
-	if = { limit = { var:tot_band_pending_event_band_id = 1 } change_variable = { name = tot_band_1_creation_progress add = var:tot_band_pending_event_exp_gain } tot_band_1_check_rewards = yes }
-	if = { limit = { var:tot_band_pending_event_band_id = 2 } change_variable = { name = tot_band_2_creation_progress add = var:tot_band_pending_event_exp_gain } tot_band_2_check_rewards = yes }
-	if = { limit = { var:tot_band_pending_event_band_id = 3 } change_variable = { name = tot_band_3_creation_progress add = var:tot_band_pending_event_exp_gain } tot_band_3_check_rewards = yes }
-	if = { limit = { var:tot_band_pending_event_band_id = 4 } change_variable = { name = tot_band_4_creation_progress add = var:tot_band_pending_event_exp_gain } tot_band_4_check_rewards = yes }
-	if = { limit = { var:tot_band_pending_event_band_id = 5 } change_variable = { name = tot_band_5_creation_progress add = var:tot_band_pending_event_exp_gain } tot_band_5_check_rewards = yes }
-	if = { limit = { var:tot_band_pending_event_band_id = 6 } change_variable = { name = tot_band_6_creation_progress add = var:tot_band_pending_event_exp_gain } tot_band_6_check_rewards = yes }
-	if = { limit = { var:tot_band_pending_event_band_id = 7 } change_variable = { name = tot_band_7_creation_progress add = var:tot_band_pending_event_exp_gain } tot_band_7_check_rewards = yes }
-	if = { limit = { var:tot_band_pending_event_band_id = 8 } change_variable = { name = tot_band_8_creation_progress add = var:tot_band_pending_event_exp_gain } tot_band_8_check_rewards = yes }
-	if = { limit = { var:tot_band_pending_event_band_id = 9 } change_variable = { name = tot_band_9_creation_progress add = var:tot_band_pending_event_exp_gain } tot_band_9_check_rewards = yes }
-	if = { limit = { var:tot_band_pending_event_band_id = 10 } change_variable = { name = tot_band_10_creation_progress add = var:tot_band_pending_event_exp_gain } tot_band_10_check_rewards = yes }
+	tot_band_ensure_creation_progress_vars = yes
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 1 NOT = { has_variable = tot_band_1_creation_progress } } set_variable = { name = tot_band_1_creation_progress value = 0 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 2 NOT = { has_variable = tot_band_2_creation_progress } } set_variable = { name = tot_band_2_creation_progress value = 0 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 3 NOT = { has_variable = tot_band_3_creation_progress } } set_variable = { name = tot_band_3_creation_progress value = 0 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 4 NOT = { has_variable = tot_band_4_creation_progress } } set_variable = { name = tot_band_4_creation_progress value = 0 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 5 NOT = { has_variable = tot_band_5_creation_progress } } set_variable = { name = tot_band_5_creation_progress value = 0 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 6 NOT = { has_variable = tot_band_6_creation_progress } } set_variable = { name = tot_band_6_creation_progress value = 0 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 7 NOT = { has_variable = tot_band_7_creation_progress } } set_variable = { name = tot_band_7_creation_progress value = 0 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 8 NOT = { has_variable = tot_band_8_creation_progress } } set_variable = { name = tot_band_8_creation_progress value = 0 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 9 NOT = { has_variable = tot_band_9_creation_progress } } set_variable = { name = tot_band_9_creation_progress value = 0 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 10 NOT = { has_variable = tot_band_10_creation_progress } } set_variable = { name = tot_band_10_creation_progress value = 0 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 1 } change_variable = { name = tot_band_1_creation_progress add = var:tot_band_pending_event_exp_gain } tot_band_1_check_rewards = yes }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 2 } change_variable = { name = tot_band_2_creation_progress add = var:tot_band_pending_event_exp_gain } tot_band_2_check_rewards = yes }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 3 } change_variable = { name = tot_band_3_creation_progress add = var:tot_band_pending_event_exp_gain } tot_band_3_check_rewards = yes }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 4 } change_variable = { name = tot_band_4_creation_progress add = var:tot_band_pending_event_exp_gain } tot_band_4_check_rewards = yes }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 5 } change_variable = { name = tot_band_5_creation_progress add = var:tot_band_pending_event_exp_gain } tot_band_5_check_rewards = yes }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 6 } change_variable = { name = tot_band_6_creation_progress add = var:tot_band_pending_event_exp_gain } tot_band_6_check_rewards = yes }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 7 } change_variable = { name = tot_band_7_creation_progress add = var:tot_band_pending_event_exp_gain } tot_band_7_check_rewards = yes }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 8 } change_variable = { name = tot_band_8_creation_progress add = var:tot_band_pending_event_exp_gain } tot_band_8_check_rewards = yes }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 9 } change_variable = { name = tot_band_9_creation_progress add = var:tot_band_pending_event_exp_gain } tot_band_9_check_rewards = yes }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 10 } change_variable = { name = tot_band_10_creation_progress add = var:tot_band_pending_event_exp_gain } tot_band_10_check_rewards = yes }
 }
 tot_band_refund_creative_progress_effect = {
-	if = { limit = { var:tot_band_pending_event_band_id = 1 } change_variable = { name = tot_band_1_creative_progress add = var:tot_band_pending_event_refund } }
-	if = { limit = { var:tot_band_pending_event_band_id = 2 } change_variable = { name = tot_band_2_creative_progress add = var:tot_band_pending_event_refund } }
-	if = { limit = { var:tot_band_pending_event_band_id = 3 } change_variable = { name = tot_band_3_creative_progress add = var:tot_band_pending_event_refund } }
-	if = { limit = { var:tot_band_pending_event_band_id = 4 } change_variable = { name = tot_band_4_creative_progress add = var:tot_band_pending_event_refund } }
-	if = { limit = { var:tot_band_pending_event_band_id = 5 } change_variable = { name = tot_band_5_creative_progress add = var:tot_band_pending_event_refund } }
-	if = { limit = { var:tot_band_pending_event_band_id = 6 } change_variable = { name = tot_band_6_creative_progress add = var:tot_band_pending_event_refund } }
-	if = { limit = { var:tot_band_pending_event_band_id = 7 } change_variable = { name = tot_band_7_creative_progress add = var:tot_band_pending_event_refund } }
-	if = { limit = { var:tot_band_pending_event_band_id = 8 } change_variable = { name = tot_band_8_creative_progress add = var:tot_band_pending_event_refund } }
-	if = { limit = { var:tot_band_pending_event_band_id = 9 } change_variable = { name = tot_band_9_creative_progress add = var:tot_band_pending_event_refund } }
-	if = { limit = { var:tot_band_pending_event_band_id = 10 } change_variable = { name = tot_band_10_creative_progress add = var:tot_band_pending_event_refund } }
-	if = { limit = { var:tot_band_pending_event_band_id = 1 var:tot_band_1_creative_progress > 1000 } set_variable = { name = tot_band_1_creative_progress value = 1000 } }
-	if = { limit = { var:tot_band_pending_event_band_id = 2 var:tot_band_2_creative_progress > 1000 } set_variable = { name = tot_band_2_creative_progress value = 1000 } }
-	if = { limit = { var:tot_band_pending_event_band_id = 3 var:tot_band_3_creative_progress > 1000 } set_variable = { name = tot_band_3_creative_progress value = 1000 } }
-	if = { limit = { var:tot_band_pending_event_band_id = 4 var:tot_band_4_creative_progress > 1000 } set_variable = { name = tot_band_4_creative_progress value = 1000 } }
-	if = { limit = { var:tot_band_pending_event_band_id = 5 var:tot_band_5_creative_progress > 1000 } set_variable = { name = tot_band_5_creative_progress value = 1000 } }
-	if = { limit = { var:tot_band_pending_event_band_id = 6 var:tot_band_6_creative_progress > 1000 } set_variable = { name = tot_band_6_creative_progress value = 1000 } }
-	if = { limit = { var:tot_band_pending_event_band_id = 7 var:tot_band_7_creative_progress > 1000 } set_variable = { name = tot_band_7_creative_progress value = 1000 } }
-	if = { limit = { var:tot_band_pending_event_band_id = 8 var:tot_band_8_creative_progress > 1000 } set_variable = { name = tot_band_8_creative_progress value = 1000 } }
-	if = { limit = { var:tot_band_pending_event_band_id = 9 var:tot_band_9_creative_progress > 1000 } set_variable = { name = tot_band_9_creative_progress value = 1000 } }
-	if = { limit = { var:tot_band_pending_event_band_id = 10 var:tot_band_10_creative_progress > 1000 } set_variable = { name = tot_band_10_creative_progress value = 1000 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 1 } change_variable = { name = tot_band_1_creative_progress add = var:tot_band_pending_event_refund } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 2 } change_variable = { name = tot_band_2_creative_progress add = var:tot_band_pending_event_refund } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 3 } change_variable = { name = tot_band_3_creative_progress add = var:tot_band_pending_event_refund } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 4 } change_variable = { name = tot_band_4_creative_progress add = var:tot_band_pending_event_refund } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 5 } change_variable = { name = tot_band_5_creative_progress add = var:tot_band_pending_event_refund } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 6 } change_variable = { name = tot_band_6_creative_progress add = var:tot_band_pending_event_refund } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 7 } change_variable = { name = tot_band_7_creative_progress add = var:tot_band_pending_event_refund } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 8 } change_variable = { name = tot_band_8_creative_progress add = var:tot_band_pending_event_refund } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 9 } change_variable = { name = tot_band_9_creative_progress add = var:tot_band_pending_event_refund } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 10 } change_variable = { name = tot_band_10_creative_progress add = var:tot_band_pending_event_refund } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 1 var:tot_band_1_creative_progress > 1000 } set_variable = { name = tot_band_1_creative_progress value = 1000 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 2 var:tot_band_2_creative_progress > 1000 } set_variable = { name = tot_band_2_creative_progress value = 1000 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 3 var:tot_band_3_creative_progress > 1000 } set_variable = { name = tot_band_3_creative_progress value = 1000 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 4 var:tot_band_4_creative_progress > 1000 } set_variable = { name = tot_band_4_creative_progress value = 1000 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 5 var:tot_band_5_creative_progress > 1000 } set_variable = { name = tot_band_5_creative_progress value = 1000 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 6 var:tot_band_6_creative_progress > 1000 } set_variable = { name = tot_band_6_creative_progress value = 1000 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 7 var:tot_band_7_creative_progress > 1000 } set_variable = { name = tot_band_7_creative_progress value = 1000 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 8 var:tot_band_8_creative_progress > 1000 } set_variable = { name = tot_band_8_creative_progress value = 1000 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 9 var:tot_band_9_creative_progress > 1000 } set_variable = { name = tot_band_9_creative_progress value = 1000 } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 10 var:tot_band_10_creative_progress > 1000 } set_variable = { name = tot_band_10_creative_progress value = 1000 } }
 }
 tot_band_add_creative_progress_effect = {
-	if = { limit = { var:tot_band_pending_event_band_id = 1 } change_variable = { name = tot_band_1_creative_progress add = var:tot_band_pending_event_creative_delta } if = { limit = { var:tot_band_1_creative_progress < 0 } set_variable = { name = tot_band_1_creative_progress value = 0 } } if = { limit = { var:tot_band_1_creative_progress > 1000 } set_variable = { name = tot_band_1_creative_progress value = 1000 } } }
-	if = { limit = { var:tot_band_pending_event_band_id = 2 } change_variable = { name = tot_band_2_creative_progress add = var:tot_band_pending_event_creative_delta } if = { limit = { var:tot_band_2_creative_progress < 0 } set_variable = { name = tot_band_2_creative_progress value = 0 } } if = { limit = { var:tot_band_2_creative_progress > 1000 } set_variable = { name = tot_band_2_creative_progress value = 1000 } } }
-	if = { limit = { var:tot_band_pending_event_band_id = 3 } change_variable = { name = tot_band_3_creative_progress add = var:tot_band_pending_event_creative_delta } if = { limit = { var:tot_band_3_creative_progress < 0 } set_variable = { name = tot_band_3_creative_progress value = 0 } } if = { limit = { var:tot_band_3_creative_progress > 1000 } set_variable = { name = tot_band_3_creative_progress value = 1000 } } }
-	if = { limit = { var:tot_band_pending_event_band_id = 4 } change_variable = { name = tot_band_4_creative_progress add = var:tot_band_pending_event_creative_delta } if = { limit = { var:tot_band_4_creative_progress < 0 } set_variable = { name = tot_band_4_creative_progress value = 0 } } if = { limit = { var:tot_band_4_creative_progress > 1000 } set_variable = { name = tot_band_4_creative_progress value = 1000 } } }
-	if = { limit = { var:tot_band_pending_event_band_id = 5 } change_variable = { name = tot_band_5_creative_progress add = var:tot_band_pending_event_creative_delta } if = { limit = { var:tot_band_5_creative_progress < 0 } set_variable = { name = tot_band_5_creative_progress value = 0 } } if = { limit = { var:tot_band_5_creative_progress > 1000 } set_variable = { name = tot_band_5_creative_progress value = 1000 } } }
-	if = { limit = { var:tot_band_pending_event_band_id = 6 } change_variable = { name = tot_band_6_creative_progress add = var:tot_band_pending_event_creative_delta } if = { limit = { var:tot_band_6_creative_progress < 0 } set_variable = { name = tot_band_6_creative_progress value = 0 } } if = { limit = { var:tot_band_6_creative_progress > 1000 } set_variable = { name = tot_band_6_creative_progress value = 1000 } } }
-	if = { limit = { var:tot_band_pending_event_band_id = 7 } change_variable = { name = tot_band_7_creative_progress add = var:tot_band_pending_event_creative_delta } if = { limit = { var:tot_band_7_creative_progress < 0 } set_variable = { name = tot_band_7_creative_progress value = 0 } } if = { limit = { var:tot_band_7_creative_progress > 1000 } set_variable = { name = tot_band_7_creative_progress value = 1000 } } }
-	if = { limit = { var:tot_band_pending_event_band_id = 8 } change_variable = { name = tot_band_8_creative_progress add = var:tot_band_pending_event_creative_delta } if = { limit = { var:tot_band_8_creative_progress < 0 } set_variable = { name = tot_band_8_creative_progress value = 0 } } if = { limit = { var:tot_band_8_creative_progress > 1000 } set_variable = { name = tot_band_8_creative_progress value = 1000 } } }
-	if = { limit = { var:tot_band_pending_event_band_id = 9 } change_variable = { name = tot_band_9_creative_progress add = var:tot_band_pending_event_creative_delta } if = { limit = { var:tot_band_9_creative_progress < 0 } set_variable = { name = tot_band_9_creative_progress value = 0 } } if = { limit = { var:tot_band_9_creative_progress > 1000 } set_variable = { name = tot_band_9_creative_progress value = 1000 } } }
-	if = { limit = { var:tot_band_pending_event_band_id = 10 } change_variable = { name = tot_band_10_creative_progress add = var:tot_band_pending_event_creative_delta } if = { limit = { var:tot_band_10_creative_progress < 0 } set_variable = { name = tot_band_10_creative_progress value = 0 } } if = { limit = { var:tot_band_10_creative_progress > 1000 } set_variable = { name = tot_band_10_creative_progress value = 1000 } } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 1 } change_variable = { name = tot_band_1_creative_progress add = var:tot_band_pending_event_creative_delta } if = { limit = { var:tot_band_1_creative_progress < 0 } set_variable = { name = tot_band_1_creative_progress value = 0 } } if = { limit = { var:tot_band_1_creative_progress > 1000 } set_variable = { name = tot_band_1_creative_progress value = 1000 } } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 2 } change_variable = { name = tot_band_2_creative_progress add = var:tot_band_pending_event_creative_delta } if = { limit = { var:tot_band_2_creative_progress < 0 } set_variable = { name = tot_band_2_creative_progress value = 0 } } if = { limit = { var:tot_band_2_creative_progress > 1000 } set_variable = { name = tot_band_2_creative_progress value = 1000 } } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 3 } change_variable = { name = tot_band_3_creative_progress add = var:tot_band_pending_event_creative_delta } if = { limit = { var:tot_band_3_creative_progress < 0 } set_variable = { name = tot_band_3_creative_progress value = 0 } } if = { limit = { var:tot_band_3_creative_progress > 1000 } set_variable = { name = tot_band_3_creative_progress value = 1000 } } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 4 } change_variable = { name = tot_band_4_creative_progress add = var:tot_band_pending_event_creative_delta } if = { limit = { var:tot_band_4_creative_progress < 0 } set_variable = { name = tot_band_4_creative_progress value = 0 } } if = { limit = { var:tot_band_4_creative_progress > 1000 } set_variable = { name = tot_band_4_creative_progress value = 1000 } } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 5 } change_variable = { name = tot_band_5_creative_progress add = var:tot_band_pending_event_creative_delta } if = { limit = { var:tot_band_5_creative_progress < 0 } set_variable = { name = tot_band_5_creative_progress value = 0 } } if = { limit = { var:tot_band_5_creative_progress > 1000 } set_variable = { name = tot_band_5_creative_progress value = 1000 } } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 6 } change_variable = { name = tot_band_6_creative_progress add = var:tot_band_pending_event_creative_delta } if = { limit = { var:tot_band_6_creative_progress < 0 } set_variable = { name = tot_band_6_creative_progress value = 0 } } if = { limit = { var:tot_band_6_creative_progress > 1000 } set_variable = { name = tot_band_6_creative_progress value = 1000 } } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 7 } change_variable = { name = tot_band_7_creative_progress add = var:tot_band_pending_event_creative_delta } if = { limit = { var:tot_band_7_creative_progress < 0 } set_variable = { name = tot_band_7_creative_progress value = 0 } } if = { limit = { var:tot_band_7_creative_progress > 1000 } set_variable = { name = tot_band_7_creative_progress value = 1000 } } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 8 } change_variable = { name = tot_band_8_creative_progress add = var:tot_band_pending_event_creative_delta } if = { limit = { var:tot_band_8_creative_progress < 0 } set_variable = { name = tot_band_8_creative_progress value = 0 } } if = { limit = { var:tot_band_8_creative_progress > 1000 } set_variable = { name = tot_band_8_creative_progress value = 1000 } } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 9 } change_variable = { name = tot_band_9_creative_progress add = var:tot_band_pending_event_creative_delta } if = { limit = { var:tot_band_9_creative_progress < 0 } set_variable = { name = tot_band_9_creative_progress value = 0 } } if = { limit = { var:tot_band_9_creative_progress > 1000 } set_variable = { name = tot_band_9_creative_progress value = 1000 } } }
+	if = { limit = { has_variable = tot_band_pending_event_band_id var:tot_band_pending_event_band_id = 10 } change_variable = { name = tot_band_10_creative_progress add = var:tot_band_pending_event_creative_delta } if = { limit = { var:tot_band_10_creative_progress < 0 } set_variable = { name = tot_band_10_creative_progress value = 0 } } if = { limit = { var:tot_band_10_creative_progress > 1000 } set_variable = { name = tot_band_10_creative_progress value = 1000 } } }
 }
 tot_band_trigger_random_progress_event = {
 	random_list = {
@@ -3238,6 +3391,7 @@ tot_band_trigger_random_progress_event = {
 	}
 }
 # END GENERATED TOT BAND PER BAND
+
 
 
 

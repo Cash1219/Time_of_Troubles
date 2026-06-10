@@ -9,6 +9,7 @@
 			principle = principle_vassalization_1
 
 			# subjects are automatically part of the bloc
+			member = c:SGXY
 		}
 		
 	}
@@ -20,7 +21,8 @@
 			founding_date = 1816.10.17
 			identity = identity_trade_league
 			principle = principle_internal_trade_1
-			
+			member = c:BCXY
+			member = c:ALS
 		}
 		
 	}
@@ -121,6 +123,8 @@
 			# Habsburg leaders in Italy and Italian states held up by direct Austrian intervention
 			member = c:NOR
 			member = c:FIN
+			member = c:ZLXY
+			member = c:HSXY
 			member = c:STRW
 			member = c:GERW
 		}
@@ -183,6 +187,24 @@
 		}
 
 			
+	}
+	c:KIVO ?= {
+		create_power_bloc = {
+			name = KIVOTOS_ALLIANCE
+			map_color = { 88 140 209 }
+
+			founding_date = 1836.1.1
+			identity = identity_military_treaty_organization
+			principle = principle_defensive_cooperation_3
+
+			member = c:TJOR
+			member = c:LEBN
+			member = c:DMAS
+			member = c:ALPP
+			member = c:SINA
+			member = c:DEZR
+			member = c:MOSL
+		}
 	}
 	c:PRU ?= {
 		create_power_bloc = {

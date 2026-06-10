@@ -8,13 +8,9 @@
 	
 	every_country = {
 		add_journal_entry = {
-				type = je_kizuna_gui 
-			}
-		add_journal_entry = {
-				type = je_tot_character_growth_gui
-			}
-		add_journal_entry = {
-				type = je_tot_band_gui
-			}
+			type = je_tot_character_system_backend
+		}
+		update_kizuna = yes
+		tot_character_growth_refresh = yes
 	}
 }

@@ -261,7 +261,7 @@ window = {
 						button_icon_square_action = {
 							name = "religion_icon_utena" #柊舞缇娜
 							visible = "[GetScriptedGui('religion_icon_sakura').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-							onclick = "[GetScriptedGui(religion_icon_sakura).Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							onclick = "[GetScriptedGui('religion_icon_sakura').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							tooltip = "RELIGION_ICON_SAKURA_TOOLTIP" 
 							using = tooltip_ne
 							size = { 150 150 }
@@ -381,7 +381,7 @@ window = {
 							name = "religion_icon_sharon" #莎朗
 							visible = "[GetScriptedGui('religion_icon_sharon').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							onclick = "[GetScriptedGui('religion_icon_sharon').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-							tooltip = "RELIGION_ICON_SHARON_TT" 
+							raw_tooltip = "RELIGION_ICON_SHARON_TT" 
 							using = tooltip_ne
 							size = { 150 150 }
 							

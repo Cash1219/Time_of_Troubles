@@ -527,6 +527,23 @@ tot_kizuna_010_number = {
 		add = 1
 	}
 }
+tot_kizuna_011_number = {
+	value = 0
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_011_trait
+			OR = {
+				is_ruler_of_own_country = yes
+				is_heir_of_own_country = yes
+				AND = {
+					is_interest_group_leader = yes
+					interest_group ?= { is_in_government = yes }
+				}
+			}
+		}
+		add = 1
+	}
+}
 tot_kizuna_012_number = {
 	value = 0
 	every_scope_character = {

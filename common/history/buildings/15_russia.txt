@@ -1,11 +1,11 @@
 ﻿BUILDINGS={
 	s:STATE_TALINN={
-		region_state:ATRI={
+		region_state:HSXY={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:ATRI"
+						country="c:HSXY"
 						levels=1
 					}
 				}
@@ -17,7 +17,7 @@
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:ATRI"
+						country="c:HSXY"
 						levels=1
 						region="STATE_TALINN"
 					}
@@ -30,7 +30,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:ATRI"
+						country="c:HSXY"
 						levels=1
 						region="STATE_TALINN"
 					}
@@ -42,7 +42,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:ATRI"
+						country="c:HSXY"
 						levels=1
 					}
 				}
@@ -52,13 +52,13 @@
 		}
 	}
 	s:STATE_TARTU={
-		region_state:ATRI={
+		region_state:HSXY={
 			create_building={
 				building="building_fishing_wharf"
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:ATRI"
+						country="c:HSXY"
 						levels=1
 						region="STATE_TARTU"
 					}
@@ -70,7 +70,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:ATRI"
+						country="c:HSXY"
 						levels=1
 					}
 				}
@@ -80,12 +80,12 @@
 		}
 	}
 	s:STATE_RIGA={
-		region_state:ATRI={
+		region_state:HSXY={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:ATRI"
+						country="c:HSXY"
 						levels=1
 					}
 				}
@@ -98,13 +98,13 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:ATRI"
+						country="c:HSXY"
 						levels=2
 						region="STATE_RIGA"
 					}
 					building={
 						type="building_financial_district"
-						country="c:ATRI"
+						country="c:HSXY"
 						levels=2
 						region="STATE_RIGA"
 					}
@@ -116,7 +116,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:ATRI"
+						country="c:HSXY"
 						levels=3
 						region="STATE_RIGA"
 					}
@@ -129,7 +129,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:ATRI"
+						country="c:HSXY"
 						levels=2
 						region="STATE_RIGA"
 					}
@@ -141,7 +141,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:ATRI"
+						country="c:HSXY"
 						levels=2
 					}
 				}
@@ -152,13 +152,13 @@
 		}
 	}
 	s:STATE_COURLAND={
-		region_state:ATRI={
+		region_state:HSXY={
 			create_building={
 				building="building_rye_farm"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:ATRI"
+						country="c:HSXY"
 						levels=2
 						region="STATE_COURLAND"
 					}
@@ -169,13 +169,13 @@
 		}
 	}
 	s:STATE_KAUNAS={
-		region_state:ATRI={
+		region_state:VLG={
 			create_building={
 				building="building_rye_farm"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:ATRI"
+						country="c:VLG"
 						levels=2
 						region="STATE_KAUNAS"
 					}
@@ -187,7 +187,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:ATRI"
+						country="c:VLG"
 						levels=1
 					}
 				}
@@ -197,13 +197,13 @@
 		}
 	}
 	s:STATE_VILNIUS={
-		region_state:ATRI={
+		region_state:VLG={
 			create_building={
 				building="building_rye_farm"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:ATRI"
+						country="c:VLG"
 						levels=2
 						region="STATE_VILNIUS"
 					}
@@ -216,7 +216,7 @@
 				add_ownership={
 					building={
 						type="building_furniture_manufactory"
-						country="c:ATRI"
+						country="c:VLG"
 						levels=1
 						region="STATE_VILNIUS"
 					}
@@ -1113,19 +1113,19 @@
 		}
 	}
 	s:STATE_MOGILEV={
-		region_state:RUS={
+		region_state:VLG={
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
 					building={
 						type="building_logging_camp"
-						country="c:RUS"
+						country="c:VLG"
 						levels=6
 						region="STATE_MOGILEV"
 					}
 					building={
 						type="building_financial_district"
-						country="c:RUS"
+						country="c:VLG"
 						levels=2
 						region="STATE_MOGILEV"
 					}
@@ -1138,7 +1138,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:RUS"
+						country="c:VLG"
 						levels=2
 						region="STATE_MOGILEV"
 					}
@@ -1517,12 +1517,12 @@
 		}
 	}
 	s:STATE_MINSK={
-		region_state:RUS={
+		region_state:VLG={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:RUS"
+						country="c:VLG"
 						levels=2
 					}
 				}
@@ -1533,7 +1533,7 @@
 				building="building_naval_administration"
 				add_ownership={
 					country={
-						country="c:RUS"
+						country="c:VLG"
 						levels=2
 					}
 				}
@@ -1545,7 +1545,7 @@
 				add_ownership={
 					building={
 						type="building_furniture_manufactory"
-						country="c:RUS"
+						country="c:VLG"
 						levels=2
 						region="STATE_MINSK"
 					}
@@ -1558,7 +1558,7 @@
 				add_ownership={
 					building={
 						type="building_textile_mill"
-						country="c:RUS"
+						country="c:VLG"
 						levels=1
 						region="STATE_MINSK"
 					}
@@ -1571,7 +1571,7 @@
 				add_ownership={
 					building={
 						type="building_logging_camp"
-						country="c:RUS"
+						country="c:VLG"
 						levels=3
 						region="STATE_MINSK"
 					}
@@ -2113,23 +2113,23 @@
 		}
 	}
 	s:STATE_VITEBSK={
-		region_state:RUS={
+		region_state:VLG={
 			create_building={
 				building="building_paper_mill"
 				add_ownership={
 					country={
-						country="c:RUS"
+						country="c:VLG"
 						levels=1
 					}
 					building={
 						type="building_financial_district"
-						country="c:RUS"
+						country="c:VLG"
 						levels=1
 						region="STATE_VITEBSK"
 					}
 					building={
 						type="building_financial_district"
-						country="c:RUS"
+						country="c:VLG"
 						levels=1
 						region="STATE_VITEBSK"
 					}
@@ -2142,13 +2142,13 @@
 				add_ownership={
 					building={
 						type="building_logging_camp"
-						country="c:RUS"
+						country="c:VLG"
 						levels=4
 						region="STATE_VITEBSK"
 					}
 					building={
 						type="building_financial_district"
-						country="c:RUS"
+						country="c:VLG"
 						levels=2
 						region="STATE_VITEBSK"
 					}

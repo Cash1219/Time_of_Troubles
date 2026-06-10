@@ -379,11 +379,11 @@
 			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TIMBUKTU count = 1 }
 		}
 	}
-	c:ATRI ?= {
+	c:HSXY ?= {
 		create_military_formation = {
 			type = army
 			hq_region = sr:region_eastern_europe
-			name = "ATRI_army_1"
+			name = "HSXY_army_1"
 
 			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_RIGA count = 12 }
 			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_RIGA count = 3 }
@@ -392,7 +392,7 @@
 		create_military_formation = {
 			type = fleet
 			hq_region = sr:region_eastern_europe
-			name = "ATRI_fleet_1"
+			name = "HSXY_fleet_1"
 
 			ship = {
 				type = ship_type:ship_type_ship_of_the_line
@@ -4544,30 +4544,81 @@
 			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_TRANSVAAL count = 1 }
 		}
 	}
-	c:SYR ?= {
+	c:TJOR ?= {
 		create_military_formation = {
 			type = army
 			hq_region = sr:region_near_east
-			name = "SYR_army_1"
+			name = "TJOR_army_1"
 
-			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SYRIA count = 8 }
-			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SYRIA count = 2 }
-			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SYRIA count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_TRANSJORDAN count = 2 }
+		}
+	}
+	c:LEBN ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_near_east
+			name = "LEBN_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_LEBANON count = 2 }
+		}
+	}
+	c:DMAS ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_near_east
+			name = "DMAS_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SYRIA count = 4 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_SYRIA count = 1 }
+			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_SYRIA count = 1 }
+		}
+	}
+	c:ALPP ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_near_east
+			name = "ALPP_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_ALEPPO count = 3 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_ALEPPO count = 1 }
 		}
 		create_military_formation = {
 			type = fleet
 			hq_region = sr:region_near_east
-			name = "SYR_fleet_1"
-
-			ship = {
-				type = ship_type:ship_type_ship_of_the_line
-				count = 1
-			}
+			name = "ALPP_fleet_1"
 
 			ship = {
 				type = ship_type:ship_type_frigate
-				count = 2
+				count = 1
 			}
+		}
+	}
+	c:SINA ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_near_east
+			name = "SINA_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_SINAI count = 1 }
+		}
+	}
+	c:MOSL ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_near_east
+			name = "MOSL_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_MOSUL count = 2 }
+			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_MOSUL count = 1 }
+		}
+	}
+	c:DEZR ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_near_east
+			name = "DEZR_army_1"
+
+			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_DEIR_EZ_ZOR count = 2 }
 		}
 	}
 	c:TAS ?= {

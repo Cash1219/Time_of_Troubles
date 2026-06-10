@@ -101,7 +101,7 @@ types building_panels
 			}
 
 			textbox = {
-				visible = "[Or(GetScriptedGui('tot_band_hq_state_bound_1').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End), GetScriptedGui('tot_band_hq_state_bound_2').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End), GetScriptedGui('tot_band_hq_state_bound_3').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End))]"
+				visible = "[Or(GetScriptedGui('tot_band_hq_state_bound_1').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End), Or(GetScriptedGui('tot_band_hq_state_bound_2').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End), GetScriptedGui('tot_band_hq_state_bound_3').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End)))]"
 				size = { 516 44 }
 				text = "TOT_BAND_BUILDING_BOUND_HINT"
 				using = fontsize_small
@@ -248,10 +248,10 @@ types building_panels
 			}
 
 			button_standard = {
-				visible = "[Or(GetScriptedGui('tot_band_hq_state_bound_1').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End), GetScriptedGui('tot_band_hq_state_bound_2').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End), GetScriptedGui('tot_band_hq_state_bound_3').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End))]"
+				visible = "[Or(GetScriptedGui('tot_band_hq_state_bound_1').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End), Or(GetScriptedGui('tot_band_hq_state_bound_2').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End), GetScriptedGui('tot_band_hq_state_bound_3').IsShown(GuiScope.SetRoot(Building.AccessState.MakeScope).End)))]"
 				size = { 516 34 }
 				text = "TOT_BAND_OPEN_JOURNAL"
-				onclick = "[InformationPanelBar.OpenJournalEntryPanel(GetPlayerJournalEntry('je_tot_band_gui'))]"
+				onclick = "[InformationPanelBar.OpenPanel('tot_character_system_panel')]"
 			}
 		}
 	}
