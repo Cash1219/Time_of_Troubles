@@ -251,16 +251,26 @@ PAP_theocracy = {
 	#	instance = { scale = { 0.7 0.7 } position = { 0.5 0.5 } }
 	#}		
 }
-TUR = {
+AVMJ = {
 	pattern = "pattern_solid.tga"
-	color1 = "red"
-	
+	color1 = "black"
+	color2 = "red"
+
 	colored_emblem = {
-		texture = "ce_crescent.dds"
+		texture = "ce_bicolor_bottom.dds"
+		color1 = "red"
+		color2 = "black"
+	}
+	colored_emblem = {
+		texture = "ce_diamond.dds"
 		color1 = "white"
 		color2 = "white"
-		instance = { scale = { 0.66 0.66 } position = { 0.32 0.5 } }	
-	}	
+		instance = { scale = { 0.72 0.72 } position = { 0.5 0.5 } }
+	}
+	textured_emblem = {
+		texture = "tot_te_bang_mujica.dds"
+		instance = { scale = { 0.56 0.56 } position = { 0.5 0.5 } }
+	}
 }
 
 ROM = {	
@@ -286,6 +296,70 @@ GBDP = {
 	}
 	
 	
+}
+
+GBDP_subject = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	textured_emblem = {
+		texture = "tot_te_bang_union.dds"
+		instance = { scale = { 0.7 0.7 } position = { 0.5 0.5 } }
+	}
+}
+
+AFTG = {
+	pattern = "pattern_solid.tga"
+	color1 = "orange"
+	textured_emblem = {
+		texture = "tot_te_bang_ag.dds"
+		instance = { scale = { 0.72 0.72 } position = { 0.5 0.5 } }
+	}
+}
+
+MRFN = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	color2 = "blue_light"
+
+	colored_emblem = {
+		texture = "ce_bicolor_horizontal.dds"
+		color1 = "blue_light"
+		color2 = "white"
+	}
+	colored_emblem = {
+		texture = "ce_diamond.dds"
+		color1 = "blue"
+		color2 = "blue"
+		instance = { scale = { 0.82 0.82 } position = { 0.5 0.5 } }
+	}
+	textured_emblem = {
+		texture = "tot_te_bang_mof.dds"
+		instance = { scale = { 0.62 0.62 } position = { 0.5 0.5 } }
+	}
+}
+
+HHWO = {
+	pattern = "pattern_solid.tga"
+	color1 = "yellow"
+	color2 = "orange"
+	color3 = "white"
+
+	colored_emblem = {
+		texture = "ce_cross_saltire.dds"
+		color1 = "orange"
+		color2 = "orange"
+		instance = { scale = { 1.0 1.0 } position = { 0.5 0.5 } }
+	}
+	colored_emblem = {
+		texture = "ce_circle.dds"
+		color1 = "white"
+		color2 = "white"
+		instance = { scale = { 0.55 0.55 } position = { 0.5 0.5 } }
+	}
+	textured_emblem = {
+		texture = "tot_te_bang_hhw.dds"
+		instance = { scale = { 0.52 0.52 } position = { 0.5 0.5 } }
+	}
 }
 
 #GBDP = { # Venice 废案之神秘条纹旗
@@ -340,11 +414,22 @@ GBDP = {
 MYG = { 
 	pattern = "pattern_solid.tga"
 	color1 = "blue"
-	
-	
+	color2 = "white"
+
+	colored_emblem = {
+		texture = "ce_bicolor_horizontal.dds"
+		color1 = "white"
+		color2 = "blue"
+	}
+	colored_emblem = {
+		texture = "ce_circle.dds"
+		color1 = "black"
+		color2 = "black"
+		instance = { scale = { 0.62 0.62 } position = { 0.5 0.5 } }
+	}
 	textured_emblem = {
-		texture = "tot_te_mygo.dds"
-		instance = { scale = { 0.8 0.8 } position = { 0.50 0.52 } }
+		texture = "tot_te_bang_mygo.dds"
+		instance = { scale = { 0.62 0.62 } position = { 0.50 0.52 } }
 	}		
 }
 #MUS = { 

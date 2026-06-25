@@ -2,913 +2,913 @@
 tot_sync_gourmet_buy_orders = {
 	if = {
 		limit = { has_variable = tot_gourmet_invest_grain }
-		if = { limit = { NOT = { has_modifier = tot_gourmet_buy_orders_grain_modifier } } add_modifier = tot_gourmet_buy_orders_grain_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_gourmet_buy_orders_grain_modifier } } add_modifier = tot_gourmet_buy_orders_grain_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_gourmet_buy_orders_grain_modifier } remove_modifier = tot_gourmet_buy_orders_grain_modifier }
+		capital = { if = { limit = { has_modifier = tot_gourmet_buy_orders_grain_modifier } remove_modifier = tot_gourmet_buy_orders_grain_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_gourmet_invest_meat }
-		if = { limit = { NOT = { has_modifier = tot_gourmet_buy_orders_meat_modifier } } add_modifier = tot_gourmet_buy_orders_meat_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_gourmet_buy_orders_meat_modifier } } add_modifier = tot_gourmet_buy_orders_meat_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_gourmet_buy_orders_meat_modifier } remove_modifier = tot_gourmet_buy_orders_meat_modifier }
+		capital = { if = { limit = { has_modifier = tot_gourmet_buy_orders_meat_modifier } remove_modifier = tot_gourmet_buy_orders_meat_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_gourmet_invest_fish }
-		if = { limit = { NOT = { has_modifier = tot_gourmet_buy_orders_fish_modifier } } add_modifier = tot_gourmet_buy_orders_fish_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_gourmet_buy_orders_fish_modifier } } add_modifier = tot_gourmet_buy_orders_fish_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_gourmet_buy_orders_fish_modifier } remove_modifier = tot_gourmet_buy_orders_fish_modifier }
+		capital = { if = { limit = { has_modifier = tot_gourmet_buy_orders_fish_modifier } remove_modifier = tot_gourmet_buy_orders_fish_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_gourmet_invest_fruit }
-		if = { limit = { NOT = { has_modifier = tot_gourmet_buy_orders_fruit_modifier } } add_modifier = tot_gourmet_buy_orders_fruit_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_gourmet_buy_orders_fruit_modifier } } add_modifier = tot_gourmet_buy_orders_fruit_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_gourmet_buy_orders_fruit_modifier } remove_modifier = tot_gourmet_buy_orders_fruit_modifier }
+		capital = { if = { limit = { has_modifier = tot_gourmet_buy_orders_fruit_modifier } remove_modifier = tot_gourmet_buy_orders_fruit_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_gourmet_invest_groceries }
-		if = { limit = { NOT = { has_modifier = tot_gourmet_buy_orders_groceries_modifier } } add_modifier = tot_gourmet_buy_orders_groceries_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_gourmet_buy_orders_groceries_modifier } } add_modifier = tot_gourmet_buy_orders_groceries_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_gourmet_buy_orders_groceries_modifier } remove_modifier = tot_gourmet_buy_orders_groceries_modifier }
+		capital = { if = { limit = { has_modifier = tot_gourmet_buy_orders_groceries_modifier } remove_modifier = tot_gourmet_buy_orders_groceries_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_gourmet_invest_tea }
-		if = { limit = { NOT = { has_modifier = tot_gourmet_buy_orders_tea_modifier } } add_modifier = tot_gourmet_buy_orders_tea_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_gourmet_buy_orders_tea_modifier } } add_modifier = tot_gourmet_buy_orders_tea_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_gourmet_buy_orders_tea_modifier } remove_modifier = tot_gourmet_buy_orders_tea_modifier }
+		capital = { if = { limit = { has_modifier = tot_gourmet_buy_orders_tea_modifier } remove_modifier = tot_gourmet_buy_orders_tea_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_gourmet_invest_coffee }
-		if = { limit = { NOT = { has_modifier = tot_gourmet_buy_orders_coffee_modifier } } add_modifier = tot_gourmet_buy_orders_coffee_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_gourmet_buy_orders_coffee_modifier } } add_modifier = tot_gourmet_buy_orders_coffee_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_gourmet_buy_orders_coffee_modifier } remove_modifier = tot_gourmet_buy_orders_coffee_modifier }
+		capital = { if = { limit = { has_modifier = tot_gourmet_buy_orders_coffee_modifier } remove_modifier = tot_gourmet_buy_orders_coffee_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_gourmet_invest_luxury_drinks }
-		if = { limit = { NOT = { has_modifier = tot_gourmet_buy_orders_luxury_drinks_modifier } } add_modifier = tot_gourmet_buy_orders_luxury_drinks_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_gourmet_buy_orders_luxury_drinks_modifier } } add_modifier = tot_gourmet_buy_orders_luxury_drinks_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_gourmet_buy_orders_luxury_drinks_modifier } remove_modifier = tot_gourmet_buy_orders_luxury_drinks_modifier }
+		capital = { if = { limit = { has_modifier = tot_gourmet_buy_orders_luxury_drinks_modifier } remove_modifier = tot_gourmet_buy_orders_luxury_drinks_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_gourmet_invest_luxury_foods }
-		if = { limit = { NOT = { has_modifier = tot_gourmet_buy_orders_luxury_foods_modifier } } add_modifier = tot_gourmet_buy_orders_luxury_foods_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_gourmet_buy_orders_luxury_foods_modifier } } add_modifier = tot_gourmet_buy_orders_luxury_foods_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_gourmet_buy_orders_luxury_foods_modifier } remove_modifier = tot_gourmet_buy_orders_luxury_foods_modifier }
+		capital = { if = { limit = { has_modifier = tot_gourmet_buy_orders_luxury_foods_modifier } remove_modifier = tot_gourmet_buy_orders_luxury_foods_modifier } }
 	}
 }
 
 tot_sync_band_buy_orders = {
 	if = {
 		limit = { has_variable = tot_band_1_invest_musical_instrument }
-		if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_musical_instrument_modifier } } add_modifier = tot_band_1_buy_orders_musical_instrument_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_musical_instrument_modifier } } add_modifier = tot_band_1_buy_orders_musical_instrument_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_1_buy_orders_musical_instrument_modifier } remove_modifier = tot_band_1_buy_orders_musical_instrument_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_1_buy_orders_musical_instrument_modifier } remove_modifier = tot_band_1_buy_orders_musical_instrument_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_1_invest_paper }
-		if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_paper_modifier } } add_modifier = tot_band_1_buy_orders_paper_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_paper_modifier } } add_modifier = tot_band_1_buy_orders_paper_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_1_buy_orders_paper_modifier } remove_modifier = tot_band_1_buy_orders_paper_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_1_buy_orders_paper_modifier } remove_modifier = tot_band_1_buy_orders_paper_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_1_invest_luxury_clothes }
-		if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_luxury_clothes_modifier } } add_modifier = tot_band_1_buy_orders_luxury_clothes_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_luxury_clothes_modifier } } add_modifier = tot_band_1_buy_orders_luxury_clothes_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_1_buy_orders_luxury_clothes_modifier } remove_modifier = tot_band_1_buy_orders_luxury_clothes_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_1_buy_orders_luxury_clothes_modifier } remove_modifier = tot_band_1_buy_orders_luxury_clothes_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_1_invest_transportation }
-		if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_transportation_modifier } } add_modifier = tot_band_1_buy_orders_transportation_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_transportation_modifier } } add_modifier = tot_band_1_buy_orders_transportation_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_1_buy_orders_transportation_modifier } remove_modifier = tot_band_1_buy_orders_transportation_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_1_buy_orders_transportation_modifier } remove_modifier = tot_band_1_buy_orders_transportation_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_1_invest_automobiles }
-		if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_automobiles_modifier } } add_modifier = tot_band_1_buy_orders_automobiles_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_automobiles_modifier } } add_modifier = tot_band_1_buy_orders_automobiles_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_1_buy_orders_automobiles_modifier } remove_modifier = tot_band_1_buy_orders_automobiles_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_1_buy_orders_automobiles_modifier } remove_modifier = tot_band_1_buy_orders_automobiles_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_1_invest_radios }
-		if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_radios_modifier } } add_modifier = tot_band_1_buy_orders_radios_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_radios_modifier } } add_modifier = tot_band_1_buy_orders_radios_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_1_buy_orders_radios_modifier } remove_modifier = tot_band_1_buy_orders_radios_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_1_buy_orders_radios_modifier } remove_modifier = tot_band_1_buy_orders_radios_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_1_invest_fruit }
-		if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_fruit_modifier } } add_modifier = tot_band_1_buy_orders_fruit_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_fruit_modifier } } add_modifier = tot_band_1_buy_orders_fruit_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_1_buy_orders_fruit_modifier } remove_modifier = tot_band_1_buy_orders_fruit_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_1_buy_orders_fruit_modifier } remove_modifier = tot_band_1_buy_orders_fruit_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_1_invest_tea }
-		if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_tea_modifier } } add_modifier = tot_band_1_buy_orders_tea_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_tea_modifier } } add_modifier = tot_band_1_buy_orders_tea_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_1_buy_orders_tea_modifier } remove_modifier = tot_band_1_buy_orders_tea_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_1_buy_orders_tea_modifier } remove_modifier = tot_band_1_buy_orders_tea_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_1_invest_coffee }
-		if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_coffee_modifier } } add_modifier = tot_band_1_buy_orders_coffee_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_coffee_modifier } } add_modifier = tot_band_1_buy_orders_coffee_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_1_buy_orders_coffee_modifier } remove_modifier = tot_band_1_buy_orders_coffee_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_1_buy_orders_coffee_modifier } remove_modifier = tot_band_1_buy_orders_coffee_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_1_invest_groceries }
-		if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_groceries_modifier } } add_modifier = tot_band_1_buy_orders_groceries_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_groceries_modifier } } add_modifier = tot_band_1_buy_orders_groceries_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_1_buy_orders_groceries_modifier } remove_modifier = tot_band_1_buy_orders_groceries_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_1_buy_orders_groceries_modifier } remove_modifier = tot_band_1_buy_orders_groceries_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_1_invest_luxury_drinks }
-		if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_luxury_drinks_modifier } } add_modifier = tot_band_1_buy_orders_luxury_drinks_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_luxury_drinks_modifier } } add_modifier = tot_band_1_buy_orders_luxury_drinks_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_1_buy_orders_luxury_drinks_modifier } remove_modifier = tot_band_1_buy_orders_luxury_drinks_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_1_buy_orders_luxury_drinks_modifier } remove_modifier = tot_band_1_buy_orders_luxury_drinks_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_1_invest_luxury_foods }
-		if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_luxury_foods_modifier } } add_modifier = tot_band_1_buy_orders_luxury_foods_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_1_buy_orders_luxury_foods_modifier } } add_modifier = tot_band_1_buy_orders_luxury_foods_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_1_buy_orders_luxury_foods_modifier } remove_modifier = tot_band_1_buy_orders_luxury_foods_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_1_buy_orders_luxury_foods_modifier } remove_modifier = tot_band_1_buy_orders_luxury_foods_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_2_invest_musical_instrument }
-		if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_musical_instrument_modifier } } add_modifier = tot_band_2_buy_orders_musical_instrument_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_musical_instrument_modifier } } add_modifier = tot_band_2_buy_orders_musical_instrument_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_2_buy_orders_musical_instrument_modifier } remove_modifier = tot_band_2_buy_orders_musical_instrument_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_2_buy_orders_musical_instrument_modifier } remove_modifier = tot_band_2_buy_orders_musical_instrument_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_2_invest_paper }
-		if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_paper_modifier } } add_modifier = tot_band_2_buy_orders_paper_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_paper_modifier } } add_modifier = tot_band_2_buy_orders_paper_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_2_buy_orders_paper_modifier } remove_modifier = tot_band_2_buy_orders_paper_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_2_buy_orders_paper_modifier } remove_modifier = tot_band_2_buy_orders_paper_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_2_invest_luxury_clothes }
-		if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_luxury_clothes_modifier } } add_modifier = tot_band_2_buy_orders_luxury_clothes_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_luxury_clothes_modifier } } add_modifier = tot_band_2_buy_orders_luxury_clothes_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_2_buy_orders_luxury_clothes_modifier } remove_modifier = tot_band_2_buy_orders_luxury_clothes_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_2_buy_orders_luxury_clothes_modifier } remove_modifier = tot_band_2_buy_orders_luxury_clothes_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_2_invest_transportation }
-		if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_transportation_modifier } } add_modifier = tot_band_2_buy_orders_transportation_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_transportation_modifier } } add_modifier = tot_band_2_buy_orders_transportation_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_2_buy_orders_transportation_modifier } remove_modifier = tot_band_2_buy_orders_transportation_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_2_buy_orders_transportation_modifier } remove_modifier = tot_band_2_buy_orders_transportation_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_2_invest_automobiles }
-		if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_automobiles_modifier } } add_modifier = tot_band_2_buy_orders_automobiles_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_automobiles_modifier } } add_modifier = tot_band_2_buy_orders_automobiles_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_2_buy_orders_automobiles_modifier } remove_modifier = tot_band_2_buy_orders_automobiles_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_2_buy_orders_automobiles_modifier } remove_modifier = tot_band_2_buy_orders_automobiles_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_2_invest_radios }
-		if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_radios_modifier } } add_modifier = tot_band_2_buy_orders_radios_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_radios_modifier } } add_modifier = tot_band_2_buy_orders_radios_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_2_buy_orders_radios_modifier } remove_modifier = tot_band_2_buy_orders_radios_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_2_buy_orders_radios_modifier } remove_modifier = tot_band_2_buy_orders_radios_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_2_invest_fruit }
-		if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_fruit_modifier } } add_modifier = tot_band_2_buy_orders_fruit_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_fruit_modifier } } add_modifier = tot_band_2_buy_orders_fruit_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_2_buy_orders_fruit_modifier } remove_modifier = tot_band_2_buy_orders_fruit_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_2_buy_orders_fruit_modifier } remove_modifier = tot_band_2_buy_orders_fruit_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_2_invest_tea }
-		if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_tea_modifier } } add_modifier = tot_band_2_buy_orders_tea_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_tea_modifier } } add_modifier = tot_band_2_buy_orders_tea_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_2_buy_orders_tea_modifier } remove_modifier = tot_band_2_buy_orders_tea_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_2_buy_orders_tea_modifier } remove_modifier = tot_band_2_buy_orders_tea_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_2_invest_coffee }
-		if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_coffee_modifier } } add_modifier = tot_band_2_buy_orders_coffee_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_coffee_modifier } } add_modifier = tot_band_2_buy_orders_coffee_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_2_buy_orders_coffee_modifier } remove_modifier = tot_band_2_buy_orders_coffee_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_2_buy_orders_coffee_modifier } remove_modifier = tot_band_2_buy_orders_coffee_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_2_invest_groceries }
-		if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_groceries_modifier } } add_modifier = tot_band_2_buy_orders_groceries_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_groceries_modifier } } add_modifier = tot_band_2_buy_orders_groceries_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_2_buy_orders_groceries_modifier } remove_modifier = tot_band_2_buy_orders_groceries_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_2_buy_orders_groceries_modifier } remove_modifier = tot_band_2_buy_orders_groceries_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_2_invest_luxury_drinks }
-		if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_luxury_drinks_modifier } } add_modifier = tot_band_2_buy_orders_luxury_drinks_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_luxury_drinks_modifier } } add_modifier = tot_band_2_buy_orders_luxury_drinks_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_2_buy_orders_luxury_drinks_modifier } remove_modifier = tot_band_2_buy_orders_luxury_drinks_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_2_buy_orders_luxury_drinks_modifier } remove_modifier = tot_band_2_buy_orders_luxury_drinks_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_2_invest_luxury_foods }
-		if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_luxury_foods_modifier } } add_modifier = tot_band_2_buy_orders_luxury_foods_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_2_buy_orders_luxury_foods_modifier } } add_modifier = tot_band_2_buy_orders_luxury_foods_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_2_buy_orders_luxury_foods_modifier } remove_modifier = tot_band_2_buy_orders_luxury_foods_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_2_buy_orders_luxury_foods_modifier } remove_modifier = tot_band_2_buy_orders_luxury_foods_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_3_invest_musical_instrument }
-		if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_musical_instrument_modifier } } add_modifier = tot_band_3_buy_orders_musical_instrument_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_musical_instrument_modifier } } add_modifier = tot_band_3_buy_orders_musical_instrument_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_3_buy_orders_musical_instrument_modifier } remove_modifier = tot_band_3_buy_orders_musical_instrument_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_3_buy_orders_musical_instrument_modifier } remove_modifier = tot_band_3_buy_orders_musical_instrument_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_3_invest_paper }
-		if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_paper_modifier } } add_modifier = tot_band_3_buy_orders_paper_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_paper_modifier } } add_modifier = tot_band_3_buy_orders_paper_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_3_buy_orders_paper_modifier } remove_modifier = tot_band_3_buy_orders_paper_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_3_buy_orders_paper_modifier } remove_modifier = tot_band_3_buy_orders_paper_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_3_invest_luxury_clothes }
-		if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_luxury_clothes_modifier } } add_modifier = tot_band_3_buy_orders_luxury_clothes_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_luxury_clothes_modifier } } add_modifier = tot_band_3_buy_orders_luxury_clothes_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_3_buy_orders_luxury_clothes_modifier } remove_modifier = tot_band_3_buy_orders_luxury_clothes_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_3_buy_orders_luxury_clothes_modifier } remove_modifier = tot_band_3_buy_orders_luxury_clothes_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_3_invest_transportation }
-		if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_transportation_modifier } } add_modifier = tot_band_3_buy_orders_transportation_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_transportation_modifier } } add_modifier = tot_band_3_buy_orders_transportation_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_3_buy_orders_transportation_modifier } remove_modifier = tot_band_3_buy_orders_transportation_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_3_buy_orders_transportation_modifier } remove_modifier = tot_band_3_buy_orders_transportation_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_3_invest_automobiles }
-		if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_automobiles_modifier } } add_modifier = tot_band_3_buy_orders_automobiles_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_automobiles_modifier } } add_modifier = tot_band_3_buy_orders_automobiles_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_3_buy_orders_automobiles_modifier } remove_modifier = tot_band_3_buy_orders_automobiles_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_3_buy_orders_automobiles_modifier } remove_modifier = tot_band_3_buy_orders_automobiles_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_3_invest_radios }
-		if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_radios_modifier } } add_modifier = tot_band_3_buy_orders_radios_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_radios_modifier } } add_modifier = tot_band_3_buy_orders_radios_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_3_buy_orders_radios_modifier } remove_modifier = tot_band_3_buy_orders_radios_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_3_buy_orders_radios_modifier } remove_modifier = tot_band_3_buy_orders_radios_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_3_invest_fruit }
-		if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_fruit_modifier } } add_modifier = tot_band_3_buy_orders_fruit_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_fruit_modifier } } add_modifier = tot_band_3_buy_orders_fruit_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_3_buy_orders_fruit_modifier } remove_modifier = tot_band_3_buy_orders_fruit_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_3_buy_orders_fruit_modifier } remove_modifier = tot_band_3_buy_orders_fruit_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_3_invest_tea }
-		if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_tea_modifier } } add_modifier = tot_band_3_buy_orders_tea_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_tea_modifier } } add_modifier = tot_band_3_buy_orders_tea_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_3_buy_orders_tea_modifier } remove_modifier = tot_band_3_buy_orders_tea_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_3_buy_orders_tea_modifier } remove_modifier = tot_band_3_buy_orders_tea_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_3_invest_coffee }
-		if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_coffee_modifier } } add_modifier = tot_band_3_buy_orders_coffee_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_coffee_modifier } } add_modifier = tot_band_3_buy_orders_coffee_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_3_buy_orders_coffee_modifier } remove_modifier = tot_band_3_buy_orders_coffee_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_3_buy_orders_coffee_modifier } remove_modifier = tot_band_3_buy_orders_coffee_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_3_invest_groceries }
-		if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_groceries_modifier } } add_modifier = tot_band_3_buy_orders_groceries_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_groceries_modifier } } add_modifier = tot_band_3_buy_orders_groceries_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_3_buy_orders_groceries_modifier } remove_modifier = tot_band_3_buy_orders_groceries_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_3_buy_orders_groceries_modifier } remove_modifier = tot_band_3_buy_orders_groceries_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_3_invest_luxury_drinks }
-		if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_luxury_drinks_modifier } } add_modifier = tot_band_3_buy_orders_luxury_drinks_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_luxury_drinks_modifier } } add_modifier = tot_band_3_buy_orders_luxury_drinks_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_3_buy_orders_luxury_drinks_modifier } remove_modifier = tot_band_3_buy_orders_luxury_drinks_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_3_buy_orders_luxury_drinks_modifier } remove_modifier = tot_band_3_buy_orders_luxury_drinks_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_3_invest_luxury_foods }
-		if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_luxury_foods_modifier } } add_modifier = tot_band_3_buy_orders_luxury_foods_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_3_buy_orders_luxury_foods_modifier } } add_modifier = tot_band_3_buy_orders_luxury_foods_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_3_buy_orders_luxury_foods_modifier } remove_modifier = tot_band_3_buy_orders_luxury_foods_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_3_buy_orders_luxury_foods_modifier } remove_modifier = tot_band_3_buy_orders_luxury_foods_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_4_invest_musical_instrument }
-		if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_musical_instrument_modifier } } add_modifier = tot_band_4_buy_orders_musical_instrument_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_musical_instrument_modifier } } add_modifier = tot_band_4_buy_orders_musical_instrument_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_4_buy_orders_musical_instrument_modifier } remove_modifier = tot_band_4_buy_orders_musical_instrument_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_4_buy_orders_musical_instrument_modifier } remove_modifier = tot_band_4_buy_orders_musical_instrument_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_4_invest_paper }
-		if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_paper_modifier } } add_modifier = tot_band_4_buy_orders_paper_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_paper_modifier } } add_modifier = tot_band_4_buy_orders_paper_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_4_buy_orders_paper_modifier } remove_modifier = tot_band_4_buy_orders_paper_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_4_buy_orders_paper_modifier } remove_modifier = tot_band_4_buy_orders_paper_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_4_invest_luxury_clothes }
-		if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_luxury_clothes_modifier } } add_modifier = tot_band_4_buy_orders_luxury_clothes_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_luxury_clothes_modifier } } add_modifier = tot_band_4_buy_orders_luxury_clothes_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_4_buy_orders_luxury_clothes_modifier } remove_modifier = tot_band_4_buy_orders_luxury_clothes_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_4_buy_orders_luxury_clothes_modifier } remove_modifier = tot_band_4_buy_orders_luxury_clothes_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_4_invest_transportation }
-		if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_transportation_modifier } } add_modifier = tot_band_4_buy_orders_transportation_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_transportation_modifier } } add_modifier = tot_band_4_buy_orders_transportation_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_4_buy_orders_transportation_modifier } remove_modifier = tot_band_4_buy_orders_transportation_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_4_buy_orders_transportation_modifier } remove_modifier = tot_band_4_buy_orders_transportation_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_4_invest_automobiles }
-		if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_automobiles_modifier } } add_modifier = tot_band_4_buy_orders_automobiles_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_automobiles_modifier } } add_modifier = tot_band_4_buy_orders_automobiles_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_4_buy_orders_automobiles_modifier } remove_modifier = tot_band_4_buy_orders_automobiles_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_4_buy_orders_automobiles_modifier } remove_modifier = tot_band_4_buy_orders_automobiles_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_4_invest_radios }
-		if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_radios_modifier } } add_modifier = tot_band_4_buy_orders_radios_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_radios_modifier } } add_modifier = tot_band_4_buy_orders_radios_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_4_buy_orders_radios_modifier } remove_modifier = tot_band_4_buy_orders_radios_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_4_buy_orders_radios_modifier } remove_modifier = tot_band_4_buy_orders_radios_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_4_invest_fruit }
-		if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_fruit_modifier } } add_modifier = tot_band_4_buy_orders_fruit_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_fruit_modifier } } add_modifier = tot_band_4_buy_orders_fruit_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_4_buy_orders_fruit_modifier } remove_modifier = tot_band_4_buy_orders_fruit_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_4_buy_orders_fruit_modifier } remove_modifier = tot_band_4_buy_orders_fruit_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_4_invest_tea }
-		if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_tea_modifier } } add_modifier = tot_band_4_buy_orders_tea_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_tea_modifier } } add_modifier = tot_band_4_buy_orders_tea_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_4_buy_orders_tea_modifier } remove_modifier = tot_band_4_buy_orders_tea_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_4_buy_orders_tea_modifier } remove_modifier = tot_band_4_buy_orders_tea_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_4_invest_coffee }
-		if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_coffee_modifier } } add_modifier = tot_band_4_buy_orders_coffee_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_coffee_modifier } } add_modifier = tot_band_4_buy_orders_coffee_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_4_buy_orders_coffee_modifier } remove_modifier = tot_band_4_buy_orders_coffee_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_4_buy_orders_coffee_modifier } remove_modifier = tot_band_4_buy_orders_coffee_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_4_invest_groceries }
-		if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_groceries_modifier } } add_modifier = tot_band_4_buy_orders_groceries_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_groceries_modifier } } add_modifier = tot_band_4_buy_orders_groceries_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_4_buy_orders_groceries_modifier } remove_modifier = tot_band_4_buy_orders_groceries_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_4_buy_orders_groceries_modifier } remove_modifier = tot_band_4_buy_orders_groceries_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_4_invest_luxury_drinks }
-		if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_luxury_drinks_modifier } } add_modifier = tot_band_4_buy_orders_luxury_drinks_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_luxury_drinks_modifier } } add_modifier = tot_band_4_buy_orders_luxury_drinks_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_4_buy_orders_luxury_drinks_modifier } remove_modifier = tot_band_4_buy_orders_luxury_drinks_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_4_buy_orders_luxury_drinks_modifier } remove_modifier = tot_band_4_buy_orders_luxury_drinks_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_4_invest_luxury_foods }
-		if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_luxury_foods_modifier } } add_modifier = tot_band_4_buy_orders_luxury_foods_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_4_buy_orders_luxury_foods_modifier } } add_modifier = tot_band_4_buy_orders_luxury_foods_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_4_buy_orders_luxury_foods_modifier } remove_modifier = tot_band_4_buy_orders_luxury_foods_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_4_buy_orders_luxury_foods_modifier } remove_modifier = tot_band_4_buy_orders_luxury_foods_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_5_invest_musical_instrument }
-		if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_musical_instrument_modifier } } add_modifier = tot_band_5_buy_orders_musical_instrument_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_musical_instrument_modifier } } add_modifier = tot_band_5_buy_orders_musical_instrument_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_5_buy_orders_musical_instrument_modifier } remove_modifier = tot_band_5_buy_orders_musical_instrument_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_5_buy_orders_musical_instrument_modifier } remove_modifier = tot_band_5_buy_orders_musical_instrument_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_5_invest_paper }
-		if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_paper_modifier } } add_modifier = tot_band_5_buy_orders_paper_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_paper_modifier } } add_modifier = tot_band_5_buy_orders_paper_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_5_buy_orders_paper_modifier } remove_modifier = tot_band_5_buy_orders_paper_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_5_buy_orders_paper_modifier } remove_modifier = tot_band_5_buy_orders_paper_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_5_invest_luxury_clothes }
-		if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_luxury_clothes_modifier } } add_modifier = tot_band_5_buy_orders_luxury_clothes_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_luxury_clothes_modifier } } add_modifier = tot_band_5_buy_orders_luxury_clothes_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_5_buy_orders_luxury_clothes_modifier } remove_modifier = tot_band_5_buy_orders_luxury_clothes_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_5_buy_orders_luxury_clothes_modifier } remove_modifier = tot_band_5_buy_orders_luxury_clothes_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_5_invest_transportation }
-		if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_transportation_modifier } } add_modifier = tot_band_5_buy_orders_transportation_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_transportation_modifier } } add_modifier = tot_band_5_buy_orders_transportation_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_5_buy_orders_transportation_modifier } remove_modifier = tot_band_5_buy_orders_transportation_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_5_buy_orders_transportation_modifier } remove_modifier = tot_band_5_buy_orders_transportation_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_5_invest_automobiles }
-		if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_automobiles_modifier } } add_modifier = tot_band_5_buy_orders_automobiles_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_automobiles_modifier } } add_modifier = tot_band_5_buy_orders_automobiles_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_5_buy_orders_automobiles_modifier } remove_modifier = tot_band_5_buy_orders_automobiles_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_5_buy_orders_automobiles_modifier } remove_modifier = tot_band_5_buy_orders_automobiles_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_5_invest_radios }
-		if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_radios_modifier } } add_modifier = tot_band_5_buy_orders_radios_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_radios_modifier } } add_modifier = tot_band_5_buy_orders_radios_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_5_buy_orders_radios_modifier } remove_modifier = tot_band_5_buy_orders_radios_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_5_buy_orders_radios_modifier } remove_modifier = tot_band_5_buy_orders_radios_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_5_invest_fruit }
-		if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_fruit_modifier } } add_modifier = tot_band_5_buy_orders_fruit_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_fruit_modifier } } add_modifier = tot_band_5_buy_orders_fruit_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_5_buy_orders_fruit_modifier } remove_modifier = tot_band_5_buy_orders_fruit_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_5_buy_orders_fruit_modifier } remove_modifier = tot_band_5_buy_orders_fruit_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_5_invest_tea }
-		if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_tea_modifier } } add_modifier = tot_band_5_buy_orders_tea_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_tea_modifier } } add_modifier = tot_band_5_buy_orders_tea_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_5_buy_orders_tea_modifier } remove_modifier = tot_band_5_buy_orders_tea_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_5_buy_orders_tea_modifier } remove_modifier = tot_band_5_buy_orders_tea_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_5_invest_coffee }
-		if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_coffee_modifier } } add_modifier = tot_band_5_buy_orders_coffee_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_coffee_modifier } } add_modifier = tot_band_5_buy_orders_coffee_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_5_buy_orders_coffee_modifier } remove_modifier = tot_band_5_buy_orders_coffee_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_5_buy_orders_coffee_modifier } remove_modifier = tot_band_5_buy_orders_coffee_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_5_invest_groceries }
-		if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_groceries_modifier } } add_modifier = tot_band_5_buy_orders_groceries_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_groceries_modifier } } add_modifier = tot_band_5_buy_orders_groceries_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_5_buy_orders_groceries_modifier } remove_modifier = tot_band_5_buy_orders_groceries_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_5_buy_orders_groceries_modifier } remove_modifier = tot_band_5_buy_orders_groceries_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_5_invest_luxury_drinks }
-		if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_luxury_drinks_modifier } } add_modifier = tot_band_5_buy_orders_luxury_drinks_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_luxury_drinks_modifier } } add_modifier = tot_band_5_buy_orders_luxury_drinks_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_5_buy_orders_luxury_drinks_modifier } remove_modifier = tot_band_5_buy_orders_luxury_drinks_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_5_buy_orders_luxury_drinks_modifier } remove_modifier = tot_band_5_buy_orders_luxury_drinks_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_5_invest_luxury_foods }
-		if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_luxury_foods_modifier } } add_modifier = tot_band_5_buy_orders_luxury_foods_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_5_buy_orders_luxury_foods_modifier } } add_modifier = tot_band_5_buy_orders_luxury_foods_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_5_buy_orders_luxury_foods_modifier } remove_modifier = tot_band_5_buy_orders_luxury_foods_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_5_buy_orders_luxury_foods_modifier } remove_modifier = tot_band_5_buy_orders_luxury_foods_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_6_invest_musical_instrument }
-		if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_musical_instrument_modifier } } add_modifier = tot_band_6_buy_orders_musical_instrument_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_musical_instrument_modifier } } add_modifier = tot_band_6_buy_orders_musical_instrument_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_6_buy_orders_musical_instrument_modifier } remove_modifier = tot_band_6_buy_orders_musical_instrument_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_6_buy_orders_musical_instrument_modifier } remove_modifier = tot_band_6_buy_orders_musical_instrument_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_6_invest_paper }
-		if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_paper_modifier } } add_modifier = tot_band_6_buy_orders_paper_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_paper_modifier } } add_modifier = tot_band_6_buy_orders_paper_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_6_buy_orders_paper_modifier } remove_modifier = tot_band_6_buy_orders_paper_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_6_buy_orders_paper_modifier } remove_modifier = tot_band_6_buy_orders_paper_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_6_invest_luxury_clothes }
-		if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_luxury_clothes_modifier } } add_modifier = tot_band_6_buy_orders_luxury_clothes_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_luxury_clothes_modifier } } add_modifier = tot_band_6_buy_orders_luxury_clothes_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_6_buy_orders_luxury_clothes_modifier } remove_modifier = tot_band_6_buy_orders_luxury_clothes_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_6_buy_orders_luxury_clothes_modifier } remove_modifier = tot_band_6_buy_orders_luxury_clothes_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_6_invest_transportation }
-		if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_transportation_modifier } } add_modifier = tot_band_6_buy_orders_transportation_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_transportation_modifier } } add_modifier = tot_band_6_buy_orders_transportation_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_6_buy_orders_transportation_modifier } remove_modifier = tot_band_6_buy_orders_transportation_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_6_buy_orders_transportation_modifier } remove_modifier = tot_band_6_buy_orders_transportation_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_6_invest_automobiles }
-		if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_automobiles_modifier } } add_modifier = tot_band_6_buy_orders_automobiles_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_automobiles_modifier } } add_modifier = tot_band_6_buy_orders_automobiles_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_6_buy_orders_automobiles_modifier } remove_modifier = tot_band_6_buy_orders_automobiles_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_6_buy_orders_automobiles_modifier } remove_modifier = tot_band_6_buy_orders_automobiles_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_6_invest_radios }
-		if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_radios_modifier } } add_modifier = tot_band_6_buy_orders_radios_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_radios_modifier } } add_modifier = tot_band_6_buy_orders_radios_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_6_buy_orders_radios_modifier } remove_modifier = tot_band_6_buy_orders_radios_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_6_buy_orders_radios_modifier } remove_modifier = tot_band_6_buy_orders_radios_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_6_invest_fruit }
-		if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_fruit_modifier } } add_modifier = tot_band_6_buy_orders_fruit_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_fruit_modifier } } add_modifier = tot_band_6_buy_orders_fruit_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_6_buy_orders_fruit_modifier } remove_modifier = tot_band_6_buy_orders_fruit_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_6_buy_orders_fruit_modifier } remove_modifier = tot_band_6_buy_orders_fruit_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_6_invest_tea }
-		if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_tea_modifier } } add_modifier = tot_band_6_buy_orders_tea_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_tea_modifier } } add_modifier = tot_band_6_buy_orders_tea_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_6_buy_orders_tea_modifier } remove_modifier = tot_band_6_buy_orders_tea_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_6_buy_orders_tea_modifier } remove_modifier = tot_band_6_buy_orders_tea_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_6_invest_coffee }
-		if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_coffee_modifier } } add_modifier = tot_band_6_buy_orders_coffee_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_coffee_modifier } } add_modifier = tot_band_6_buy_orders_coffee_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_6_buy_orders_coffee_modifier } remove_modifier = tot_band_6_buy_orders_coffee_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_6_buy_orders_coffee_modifier } remove_modifier = tot_band_6_buy_orders_coffee_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_6_invest_groceries }
-		if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_groceries_modifier } } add_modifier = tot_band_6_buy_orders_groceries_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_groceries_modifier } } add_modifier = tot_band_6_buy_orders_groceries_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_6_buy_orders_groceries_modifier } remove_modifier = tot_band_6_buy_orders_groceries_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_6_buy_orders_groceries_modifier } remove_modifier = tot_band_6_buy_orders_groceries_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_6_invest_luxury_drinks }
-		if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_luxury_drinks_modifier } } add_modifier = tot_band_6_buy_orders_luxury_drinks_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_luxury_drinks_modifier } } add_modifier = tot_band_6_buy_orders_luxury_drinks_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_6_buy_orders_luxury_drinks_modifier } remove_modifier = tot_band_6_buy_orders_luxury_drinks_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_6_buy_orders_luxury_drinks_modifier } remove_modifier = tot_band_6_buy_orders_luxury_drinks_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_6_invest_luxury_foods }
-		if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_luxury_foods_modifier } } add_modifier = tot_band_6_buy_orders_luxury_foods_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_6_buy_orders_luxury_foods_modifier } } add_modifier = tot_band_6_buy_orders_luxury_foods_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_6_buy_orders_luxury_foods_modifier } remove_modifier = tot_band_6_buy_orders_luxury_foods_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_6_buy_orders_luxury_foods_modifier } remove_modifier = tot_band_6_buy_orders_luxury_foods_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_7_invest_musical_instrument }
-		if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_musical_instrument_modifier } } add_modifier = tot_band_7_buy_orders_musical_instrument_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_musical_instrument_modifier } } add_modifier = tot_band_7_buy_orders_musical_instrument_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_7_buy_orders_musical_instrument_modifier } remove_modifier = tot_band_7_buy_orders_musical_instrument_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_7_buy_orders_musical_instrument_modifier } remove_modifier = tot_band_7_buy_orders_musical_instrument_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_7_invest_paper }
-		if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_paper_modifier } } add_modifier = tot_band_7_buy_orders_paper_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_paper_modifier } } add_modifier = tot_band_7_buy_orders_paper_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_7_buy_orders_paper_modifier } remove_modifier = tot_band_7_buy_orders_paper_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_7_buy_orders_paper_modifier } remove_modifier = tot_band_7_buy_orders_paper_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_7_invest_luxury_clothes }
-		if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_luxury_clothes_modifier } } add_modifier = tot_band_7_buy_orders_luxury_clothes_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_luxury_clothes_modifier } } add_modifier = tot_band_7_buy_orders_luxury_clothes_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_7_buy_orders_luxury_clothes_modifier } remove_modifier = tot_band_7_buy_orders_luxury_clothes_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_7_buy_orders_luxury_clothes_modifier } remove_modifier = tot_band_7_buy_orders_luxury_clothes_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_7_invest_transportation }
-		if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_transportation_modifier } } add_modifier = tot_band_7_buy_orders_transportation_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_transportation_modifier } } add_modifier = tot_band_7_buy_orders_transportation_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_7_buy_orders_transportation_modifier } remove_modifier = tot_band_7_buy_orders_transportation_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_7_buy_orders_transportation_modifier } remove_modifier = tot_band_7_buy_orders_transportation_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_7_invest_automobiles }
-		if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_automobiles_modifier } } add_modifier = tot_band_7_buy_orders_automobiles_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_automobiles_modifier } } add_modifier = tot_band_7_buy_orders_automobiles_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_7_buy_orders_automobiles_modifier } remove_modifier = tot_band_7_buy_orders_automobiles_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_7_buy_orders_automobiles_modifier } remove_modifier = tot_band_7_buy_orders_automobiles_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_7_invest_radios }
-		if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_radios_modifier } } add_modifier = tot_band_7_buy_orders_radios_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_radios_modifier } } add_modifier = tot_band_7_buy_orders_radios_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_7_buy_orders_radios_modifier } remove_modifier = tot_band_7_buy_orders_radios_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_7_buy_orders_radios_modifier } remove_modifier = tot_band_7_buy_orders_radios_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_7_invest_fruit }
-		if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_fruit_modifier } } add_modifier = tot_band_7_buy_orders_fruit_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_fruit_modifier } } add_modifier = tot_band_7_buy_orders_fruit_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_7_buy_orders_fruit_modifier } remove_modifier = tot_band_7_buy_orders_fruit_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_7_buy_orders_fruit_modifier } remove_modifier = tot_band_7_buy_orders_fruit_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_7_invest_tea }
-		if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_tea_modifier } } add_modifier = tot_band_7_buy_orders_tea_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_tea_modifier } } add_modifier = tot_band_7_buy_orders_tea_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_7_buy_orders_tea_modifier } remove_modifier = tot_band_7_buy_orders_tea_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_7_buy_orders_tea_modifier } remove_modifier = tot_band_7_buy_orders_tea_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_7_invest_coffee }
-		if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_coffee_modifier } } add_modifier = tot_band_7_buy_orders_coffee_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_coffee_modifier } } add_modifier = tot_band_7_buy_orders_coffee_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_7_buy_orders_coffee_modifier } remove_modifier = tot_band_7_buy_orders_coffee_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_7_buy_orders_coffee_modifier } remove_modifier = tot_band_7_buy_orders_coffee_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_7_invest_groceries }
-		if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_groceries_modifier } } add_modifier = tot_band_7_buy_orders_groceries_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_groceries_modifier } } add_modifier = tot_band_7_buy_orders_groceries_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_7_buy_orders_groceries_modifier } remove_modifier = tot_band_7_buy_orders_groceries_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_7_buy_orders_groceries_modifier } remove_modifier = tot_band_7_buy_orders_groceries_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_7_invest_luxury_drinks }
-		if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_luxury_drinks_modifier } } add_modifier = tot_band_7_buy_orders_luxury_drinks_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_luxury_drinks_modifier } } add_modifier = tot_band_7_buy_orders_luxury_drinks_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_7_buy_orders_luxury_drinks_modifier } remove_modifier = tot_band_7_buy_orders_luxury_drinks_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_7_buy_orders_luxury_drinks_modifier } remove_modifier = tot_band_7_buy_orders_luxury_drinks_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_7_invest_luxury_foods }
-		if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_luxury_foods_modifier } } add_modifier = tot_band_7_buy_orders_luxury_foods_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_7_buy_orders_luxury_foods_modifier } } add_modifier = tot_band_7_buy_orders_luxury_foods_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_7_buy_orders_luxury_foods_modifier } remove_modifier = tot_band_7_buy_orders_luxury_foods_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_7_buy_orders_luxury_foods_modifier } remove_modifier = tot_band_7_buy_orders_luxury_foods_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_8_invest_musical_instrument }
-		if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_musical_instrument_modifier } } add_modifier = tot_band_8_buy_orders_musical_instrument_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_musical_instrument_modifier } } add_modifier = tot_band_8_buy_orders_musical_instrument_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_8_buy_orders_musical_instrument_modifier } remove_modifier = tot_band_8_buy_orders_musical_instrument_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_8_buy_orders_musical_instrument_modifier } remove_modifier = tot_band_8_buy_orders_musical_instrument_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_8_invest_paper }
-		if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_paper_modifier } } add_modifier = tot_band_8_buy_orders_paper_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_paper_modifier } } add_modifier = tot_band_8_buy_orders_paper_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_8_buy_orders_paper_modifier } remove_modifier = tot_band_8_buy_orders_paper_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_8_buy_orders_paper_modifier } remove_modifier = tot_band_8_buy_orders_paper_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_8_invest_luxury_clothes }
-		if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_luxury_clothes_modifier } } add_modifier = tot_band_8_buy_orders_luxury_clothes_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_luxury_clothes_modifier } } add_modifier = tot_band_8_buy_orders_luxury_clothes_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_8_buy_orders_luxury_clothes_modifier } remove_modifier = tot_band_8_buy_orders_luxury_clothes_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_8_buy_orders_luxury_clothes_modifier } remove_modifier = tot_band_8_buy_orders_luxury_clothes_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_8_invest_transportation }
-		if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_transportation_modifier } } add_modifier = tot_band_8_buy_orders_transportation_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_transportation_modifier } } add_modifier = tot_band_8_buy_orders_transportation_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_8_buy_orders_transportation_modifier } remove_modifier = tot_band_8_buy_orders_transportation_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_8_buy_orders_transportation_modifier } remove_modifier = tot_band_8_buy_orders_transportation_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_8_invest_automobiles }
-		if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_automobiles_modifier } } add_modifier = tot_band_8_buy_orders_automobiles_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_automobiles_modifier } } add_modifier = tot_band_8_buy_orders_automobiles_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_8_buy_orders_automobiles_modifier } remove_modifier = tot_band_8_buy_orders_automobiles_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_8_buy_orders_automobiles_modifier } remove_modifier = tot_band_8_buy_orders_automobiles_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_8_invest_radios }
-		if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_radios_modifier } } add_modifier = tot_band_8_buy_orders_radios_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_radios_modifier } } add_modifier = tot_band_8_buy_orders_radios_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_8_buy_orders_radios_modifier } remove_modifier = tot_band_8_buy_orders_radios_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_8_buy_orders_radios_modifier } remove_modifier = tot_band_8_buy_orders_radios_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_8_invest_fruit }
-		if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_fruit_modifier } } add_modifier = tot_band_8_buy_orders_fruit_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_fruit_modifier } } add_modifier = tot_band_8_buy_orders_fruit_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_8_buy_orders_fruit_modifier } remove_modifier = tot_band_8_buy_orders_fruit_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_8_buy_orders_fruit_modifier } remove_modifier = tot_band_8_buy_orders_fruit_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_8_invest_tea }
-		if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_tea_modifier } } add_modifier = tot_band_8_buy_orders_tea_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_tea_modifier } } add_modifier = tot_band_8_buy_orders_tea_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_8_buy_orders_tea_modifier } remove_modifier = tot_band_8_buy_orders_tea_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_8_buy_orders_tea_modifier } remove_modifier = tot_band_8_buy_orders_tea_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_8_invest_coffee }
-		if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_coffee_modifier } } add_modifier = tot_band_8_buy_orders_coffee_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_coffee_modifier } } add_modifier = tot_band_8_buy_orders_coffee_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_8_buy_orders_coffee_modifier } remove_modifier = tot_band_8_buy_orders_coffee_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_8_buy_orders_coffee_modifier } remove_modifier = tot_band_8_buy_orders_coffee_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_8_invest_groceries }
-		if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_groceries_modifier } } add_modifier = tot_band_8_buy_orders_groceries_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_groceries_modifier } } add_modifier = tot_band_8_buy_orders_groceries_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_8_buy_orders_groceries_modifier } remove_modifier = tot_band_8_buy_orders_groceries_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_8_buy_orders_groceries_modifier } remove_modifier = tot_band_8_buy_orders_groceries_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_8_invest_luxury_drinks }
-		if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_luxury_drinks_modifier } } add_modifier = tot_band_8_buy_orders_luxury_drinks_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_luxury_drinks_modifier } } add_modifier = tot_band_8_buy_orders_luxury_drinks_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_8_buy_orders_luxury_drinks_modifier } remove_modifier = tot_band_8_buy_orders_luxury_drinks_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_8_buy_orders_luxury_drinks_modifier } remove_modifier = tot_band_8_buy_orders_luxury_drinks_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_8_invest_luxury_foods }
-		if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_luxury_foods_modifier } } add_modifier = tot_band_8_buy_orders_luxury_foods_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_8_buy_orders_luxury_foods_modifier } } add_modifier = tot_band_8_buy_orders_luxury_foods_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_8_buy_orders_luxury_foods_modifier } remove_modifier = tot_band_8_buy_orders_luxury_foods_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_8_buy_orders_luxury_foods_modifier } remove_modifier = tot_band_8_buy_orders_luxury_foods_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_9_invest_musical_instrument }
-		if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_musical_instrument_modifier } } add_modifier = tot_band_9_buy_orders_musical_instrument_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_musical_instrument_modifier } } add_modifier = tot_band_9_buy_orders_musical_instrument_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_9_buy_orders_musical_instrument_modifier } remove_modifier = tot_band_9_buy_orders_musical_instrument_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_9_buy_orders_musical_instrument_modifier } remove_modifier = tot_band_9_buy_orders_musical_instrument_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_9_invest_paper }
-		if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_paper_modifier } } add_modifier = tot_band_9_buy_orders_paper_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_paper_modifier } } add_modifier = tot_band_9_buy_orders_paper_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_9_buy_orders_paper_modifier } remove_modifier = tot_band_9_buy_orders_paper_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_9_buy_orders_paper_modifier } remove_modifier = tot_band_9_buy_orders_paper_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_9_invest_luxury_clothes }
-		if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_luxury_clothes_modifier } } add_modifier = tot_band_9_buy_orders_luxury_clothes_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_luxury_clothes_modifier } } add_modifier = tot_band_9_buy_orders_luxury_clothes_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_9_buy_orders_luxury_clothes_modifier } remove_modifier = tot_band_9_buy_orders_luxury_clothes_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_9_buy_orders_luxury_clothes_modifier } remove_modifier = tot_band_9_buy_orders_luxury_clothes_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_9_invest_transportation }
-		if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_transportation_modifier } } add_modifier = tot_band_9_buy_orders_transportation_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_transportation_modifier } } add_modifier = tot_band_9_buy_orders_transportation_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_9_buy_orders_transportation_modifier } remove_modifier = tot_band_9_buy_orders_transportation_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_9_buy_orders_transportation_modifier } remove_modifier = tot_band_9_buy_orders_transportation_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_9_invest_automobiles }
-		if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_automobiles_modifier } } add_modifier = tot_band_9_buy_orders_automobiles_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_automobiles_modifier } } add_modifier = tot_band_9_buy_orders_automobiles_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_9_buy_orders_automobiles_modifier } remove_modifier = tot_band_9_buy_orders_automobiles_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_9_buy_orders_automobiles_modifier } remove_modifier = tot_band_9_buy_orders_automobiles_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_9_invest_radios }
-		if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_radios_modifier } } add_modifier = tot_band_9_buy_orders_radios_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_radios_modifier } } add_modifier = tot_band_9_buy_orders_radios_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_9_buy_orders_radios_modifier } remove_modifier = tot_band_9_buy_orders_radios_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_9_buy_orders_radios_modifier } remove_modifier = tot_band_9_buy_orders_radios_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_9_invest_fruit }
-		if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_fruit_modifier } } add_modifier = tot_band_9_buy_orders_fruit_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_fruit_modifier } } add_modifier = tot_band_9_buy_orders_fruit_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_9_buy_orders_fruit_modifier } remove_modifier = tot_band_9_buy_orders_fruit_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_9_buy_orders_fruit_modifier } remove_modifier = tot_band_9_buy_orders_fruit_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_9_invest_tea }
-		if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_tea_modifier } } add_modifier = tot_band_9_buy_orders_tea_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_tea_modifier } } add_modifier = tot_band_9_buy_orders_tea_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_9_buy_orders_tea_modifier } remove_modifier = tot_band_9_buy_orders_tea_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_9_buy_orders_tea_modifier } remove_modifier = tot_band_9_buy_orders_tea_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_9_invest_coffee }
-		if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_coffee_modifier } } add_modifier = tot_band_9_buy_orders_coffee_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_coffee_modifier } } add_modifier = tot_band_9_buy_orders_coffee_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_9_buy_orders_coffee_modifier } remove_modifier = tot_band_9_buy_orders_coffee_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_9_buy_orders_coffee_modifier } remove_modifier = tot_band_9_buy_orders_coffee_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_9_invest_groceries }
-		if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_groceries_modifier } } add_modifier = tot_band_9_buy_orders_groceries_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_groceries_modifier } } add_modifier = tot_band_9_buy_orders_groceries_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_9_buy_orders_groceries_modifier } remove_modifier = tot_band_9_buy_orders_groceries_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_9_buy_orders_groceries_modifier } remove_modifier = tot_band_9_buy_orders_groceries_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_9_invest_luxury_drinks }
-		if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_luxury_drinks_modifier } } add_modifier = tot_band_9_buy_orders_luxury_drinks_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_luxury_drinks_modifier } } add_modifier = tot_band_9_buy_orders_luxury_drinks_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_9_buy_orders_luxury_drinks_modifier } remove_modifier = tot_band_9_buy_orders_luxury_drinks_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_9_buy_orders_luxury_drinks_modifier } remove_modifier = tot_band_9_buy_orders_luxury_drinks_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_9_invest_luxury_foods }
-		if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_luxury_foods_modifier } } add_modifier = tot_band_9_buy_orders_luxury_foods_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_9_buy_orders_luxury_foods_modifier } } add_modifier = tot_band_9_buy_orders_luxury_foods_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_9_buy_orders_luxury_foods_modifier } remove_modifier = tot_band_9_buy_orders_luxury_foods_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_9_buy_orders_luxury_foods_modifier } remove_modifier = tot_band_9_buy_orders_luxury_foods_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_10_invest_musical_instrument }
-		if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_musical_instrument_modifier } } add_modifier = tot_band_10_buy_orders_musical_instrument_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_musical_instrument_modifier } } add_modifier = tot_band_10_buy_orders_musical_instrument_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_10_buy_orders_musical_instrument_modifier } remove_modifier = tot_band_10_buy_orders_musical_instrument_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_10_buy_orders_musical_instrument_modifier } remove_modifier = tot_band_10_buy_orders_musical_instrument_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_10_invest_paper }
-		if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_paper_modifier } } add_modifier = tot_band_10_buy_orders_paper_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_paper_modifier } } add_modifier = tot_band_10_buy_orders_paper_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_10_buy_orders_paper_modifier } remove_modifier = tot_band_10_buy_orders_paper_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_10_buy_orders_paper_modifier } remove_modifier = tot_band_10_buy_orders_paper_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_10_invest_luxury_clothes }
-		if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_luxury_clothes_modifier } } add_modifier = tot_band_10_buy_orders_luxury_clothes_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_luxury_clothes_modifier } } add_modifier = tot_band_10_buy_orders_luxury_clothes_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_10_buy_orders_luxury_clothes_modifier } remove_modifier = tot_band_10_buy_orders_luxury_clothes_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_10_buy_orders_luxury_clothes_modifier } remove_modifier = tot_band_10_buy_orders_luxury_clothes_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_10_invest_transportation }
-		if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_transportation_modifier } } add_modifier = tot_band_10_buy_orders_transportation_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_transportation_modifier } } add_modifier = tot_band_10_buy_orders_transportation_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_10_buy_orders_transportation_modifier } remove_modifier = tot_band_10_buy_orders_transportation_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_10_buy_orders_transportation_modifier } remove_modifier = tot_band_10_buy_orders_transportation_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_10_invest_automobiles }
-		if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_automobiles_modifier } } add_modifier = tot_band_10_buy_orders_automobiles_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_automobiles_modifier } } add_modifier = tot_band_10_buy_orders_automobiles_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_10_buy_orders_automobiles_modifier } remove_modifier = tot_band_10_buy_orders_automobiles_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_10_buy_orders_automobiles_modifier } remove_modifier = tot_band_10_buy_orders_automobiles_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_10_invest_radios }
-		if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_radios_modifier } } add_modifier = tot_band_10_buy_orders_radios_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_radios_modifier } } add_modifier = tot_band_10_buy_orders_radios_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_10_buy_orders_radios_modifier } remove_modifier = tot_band_10_buy_orders_radios_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_10_buy_orders_radios_modifier } remove_modifier = tot_band_10_buy_orders_radios_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_10_invest_fruit }
-		if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_fruit_modifier } } add_modifier = tot_band_10_buy_orders_fruit_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_fruit_modifier } } add_modifier = tot_band_10_buy_orders_fruit_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_10_buy_orders_fruit_modifier } remove_modifier = tot_band_10_buy_orders_fruit_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_10_buy_orders_fruit_modifier } remove_modifier = tot_band_10_buy_orders_fruit_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_10_invest_tea }
-		if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_tea_modifier } } add_modifier = tot_band_10_buy_orders_tea_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_tea_modifier } } add_modifier = tot_band_10_buy_orders_tea_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_10_buy_orders_tea_modifier } remove_modifier = tot_band_10_buy_orders_tea_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_10_buy_orders_tea_modifier } remove_modifier = tot_band_10_buy_orders_tea_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_10_invest_coffee }
-		if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_coffee_modifier } } add_modifier = tot_band_10_buy_orders_coffee_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_coffee_modifier } } add_modifier = tot_band_10_buy_orders_coffee_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_10_buy_orders_coffee_modifier } remove_modifier = tot_band_10_buy_orders_coffee_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_10_buy_orders_coffee_modifier } remove_modifier = tot_band_10_buy_orders_coffee_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_10_invest_groceries }
-		if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_groceries_modifier } } add_modifier = tot_band_10_buy_orders_groceries_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_groceries_modifier } } add_modifier = tot_band_10_buy_orders_groceries_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_10_buy_orders_groceries_modifier } remove_modifier = tot_band_10_buy_orders_groceries_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_10_buy_orders_groceries_modifier } remove_modifier = tot_band_10_buy_orders_groceries_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_10_invest_luxury_drinks }
-		if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_luxury_drinks_modifier } } add_modifier = tot_band_10_buy_orders_luxury_drinks_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_luxury_drinks_modifier } } add_modifier = tot_band_10_buy_orders_luxury_drinks_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_10_buy_orders_luxury_drinks_modifier } remove_modifier = tot_band_10_buy_orders_luxury_drinks_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_10_buy_orders_luxury_drinks_modifier } remove_modifier = tot_band_10_buy_orders_luxury_drinks_modifier } }
 	}
 	if = {
 		limit = { has_variable = tot_band_10_invest_luxury_foods }
-		if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_luxury_foods_modifier } } add_modifier = tot_band_10_buy_orders_luxury_foods_modifier }
+		capital = { if = { limit = { NOT = { has_modifier = tot_band_10_buy_orders_luxury_foods_modifier } } add_modifier = tot_band_10_buy_orders_luxury_foods_modifier } }
 	}
 	else = {
-		if = { limit = { has_modifier = tot_band_10_buy_orders_luxury_foods_modifier } remove_modifier = tot_band_10_buy_orders_luxury_foods_modifier }
+		capital = { if = { limit = { has_modifier = tot_band_10_buy_orders_luxury_foods_modifier } remove_modifier = tot_band_10_buy_orders_luxury_foods_modifier } }
 	}
 }
 
 tot_sync_investment_buy_orders = {
 	tot_sync_gourmet_buy_orders = yes
-	tot_sync_band_buy_orders = yes
 }
+

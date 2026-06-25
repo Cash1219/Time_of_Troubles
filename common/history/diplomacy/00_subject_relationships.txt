@@ -12,11 +12,11 @@
 	c:MUS ?= {
 		create_diplomatic_pact = {
 			country = c:AQO
-			type = idol_group
+			type = puppet
 		}
 		create_diplomatic_pact = {
 			country = c:NJS
-			type = idol_group
+			type = puppet
 		}
 	}
 	c:TBUN ?= {
@@ -36,6 +36,18 @@
 			country = c:DEI
 			type = dominion
 		}
+		create_diplomatic_pact = {
+			country = c:FIN
+			type = puppet
+		}
+		create_diplomatic_pact = {
+			country = c:HSXY
+			type = puppet
+		}
+		create_diplomatic_pact = {
+			country = c:ZLXY
+			type = alliance
+		}
 		#create_diplomatic_pact = {
 		#	country = c:HBPO
 		#	type = chartered_company
@@ -54,24 +66,8 @@
 		#	type = personal_union
 		#}
 		create_diplomatic_pact = {
-			country = c:HSXY
-			type = puppet
-		}
-		create_diplomatic_pact = {
 			country = c:ALK
 			type = chartered_company
-		}
-		create_diplomatic_pact = {
-			country = c:OZH
-			type = protectorate
-		}
-		create_diplomatic_pact = {
-			country = c:OZH
-			type = protectorate
-		}
-		create_diplomatic_pact = {
-			country = c:OZH
-			type = protectorate
 		}
 	}
 	
@@ -114,14 +110,14 @@
 			country = c:LIB
 			type = protectorate
 		}
+		create_diplomatic_pact = {
+			country = c:ORHD
+			type = puppet
+		}
 	}
 	c:GBR ?= {
 		create_diplomatic_pact = {
 			country = c:ABU
-			type = protectorate
-		}
-		create_diplomatic_pact = {
-			country = c:ION
 			type = protectorate
 		}
 		create_diplomatic_pact = {
@@ -141,6 +137,10 @@
 
 		create_diplomatic_pact = {
 			country = c:NAVL
+			type = colony
+		}
+		create_diplomatic_pact = {
+			country = c:SGXY
 			type = colony
 		}
 		
@@ -223,12 +223,36 @@
 			type = protectorate
 		}
 		create_diplomatic_pact = {
-			country = c:TUR
+			country = c:AVMJ
 			type = protectorate
 		}
 		create_diplomatic_pact = {
 			country = c:MYG
 			type = protectorate
+		}
+	}
+	c:GBDP ?= {
+		create_diplomatic_pact = {
+			country = c:AFTG
+			type = protectorate
+		}
+		create_diplomatic_pact = {
+			country = c:HHWO
+			type = protectorate
+		}
+		create_diplomatic_pact = {
+			country = c:MRFN
+			type = protectorate
+		}
+		create_diplomatic_pact = {
+			country = c:STLI
+			type = alliance
+		}
+	}
+	c:PAP ?= {
+		create_diplomatic_pact = {
+			country = c:RITA
+			type = alliance
 		}
 	}
 	#c:TUR ?= {
@@ -484,6 +508,10 @@
 			country = c:PLY
 			type = protectorate
 		}
+		create_diplomatic_pact = {
+			country = c:LOU
+			type = protectorate
+		}
 	}
 
 	c:BOL ?= {
@@ -552,18 +580,6 @@
 	#c:FIN = {
 	#	add_liberty_desire = 10
 	#}
-
-	c:OZH = {
-		add_liberty_desire = 10
-	}
-
-	c:OZH = {
-		add_liberty_desire = 10
-	}
-
-	c:OZH = {
-		add_liberty_desire = 10
-	}
 
 	c:SEQ = {
 		add_liberty_desire = 10

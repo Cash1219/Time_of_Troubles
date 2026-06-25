@@ -1,18 +1,19 @@
 # NOTE: "Pasha" is a title, not a name. However, due to some Ottoman Turkish names lacking a last name, it is used in place of one
 
 CHARACTERS = {
-	c:HAR ?= {
+	c:AFTG ?= {
 		create_character = {
 			historical = yes
 			first_name = "Mitake"
 			last_name = "Ran"
 			birth_date = 1816.1.1 
 			female = yes
+			ruler = yes
 			ig_leader = yes
-			ideology = ideology_moderate
+			ideology = ideology_free_creation
 			interest_group = ig_landowners
-			#religion = rel:protestant
-			culture = cu:north_italian
+			religion = rel:starbeat
+			culture = cu:bandori
 			traits = {
 				tot_Bang_Ran_trait # tot_Bang_Ran_trait
 			}
@@ -24,10 +25,10 @@ CHARACTERS = {
 			birth_date = 1816.1.1 
 			female = yes
 			ig_leader = yes
-			ideology = ideology_moderate
+			ideology = ideology_bond_keeper
 			interest_group = ig_intelligentsia
-			#religion = rel:protestant
-			culture = cu:north_italian
+			religion = rel:starbeat
+			culture = cu:bandori
 			traits = {
 				tot_Bang_Moca_trait # tot_Bang_Moca_trait
 			
@@ -40,10 +41,10 @@ CHARACTERS = {
 			birth_date = 1816.1.1 
 			female = yes
 			ig_leader = yes
-			ideology = ideology_moderate
-			interest_group = ig_devout
-			#religion = rel:protestant
-			culture = cu:north_italian
+			ideology = ideology_bond_keeper
+			interest_group = ig_rural_folk
+			religion = rel:starbeat
+			culture = cu:bandori
 			traits = {
 				tot_Bang_Himari_trait # tot_Bang_Himari_trait
 			
@@ -56,10 +57,10 @@ CHARACTERS = {
 			birth_date = 1816.1.1 
 			female = yes
 			ig_leader = yes
-			ideology = ideology_moderate
+			ideology = ideology_club_autonomy
 			interest_group = ig_petty_bourgeoisie
-			#religion = rel:protestant
-			culture = cu:north_italian
+			religion = rel:starbeat
+			culture = cu:bandori
 			traits = {
 				tot_Bang_Tsugumi_trait # tot_Bang_Tsugumi_trait
 			}
@@ -71,10 +72,10 @@ CHARACTERS = {
 			birth_date = 1816.1.1 
 			female = yes
 			ig_leader = yes
-			ideology = ideology_moderate
+			ideology = ideology_discipline_first
 			interest_group = ig_armed_forces
-			#religion = rel:protestant
-			culture = cu:north_italian
+			religion = rel:starbeat
+			culture = cu:bandori
 			traits = {
 				tot_Bang_Tomoe_trait # tot_Bang_Tomoe_trait
 			}

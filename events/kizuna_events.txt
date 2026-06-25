@@ -4,7 +4,7 @@ kizuna.201 = {
 	placement = root
 	title = kizuna.201.t
 	desc = kizuna.201.desc
-	icon = "gfx/interface/icons/event_icons/event_artists.dds"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
 	immediate = {
 		tot_band_clear_creative_progress_effect = yes
 	}
@@ -18,12 +18,15 @@ kizuna.202 = {
 	placement = root
 	title = kizuna.202.t
 	desc = kizuna.202.desc
-	icon = "gfx/interface/icons/event_icons/event_artists.dds"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
 	option = {
 		name = kizuna.202.a
 		custom_tooltip = { text = kizuna.202.a.tt }
-		set_variable = { name = tot_band_pending_event_exp_gain value = 2200 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 2600 }
 		tot_band_add_creation_experience_effect = yes
+		set_variable = { name = tot_band_pending_event_reward_points value = 2 }
+		tot_band_apply_reward_point_bonus_effect = yes
+		tot_band_add_reward_points_effect = yes
 		add_modifier = {
 			name = tot_band_hit_song_modifier
 			years = 2
@@ -35,12 +38,15 @@ kizuna.203 = {
 	placement = root
 	title = kizuna.203.t
 	desc = kizuna.203.desc
-	icon = "gfx/interface/icons/event_icons/event_artists.dds"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
 	option = {
 		name = kizuna.203.a
 		custom_tooltip = { text = kizuna.203.a.tt }
-		set_variable = { name = tot_band_pending_event_exp_gain value = 800 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 1100 }
 		tot_band_add_creation_experience_effect = yes
+		set_variable = { name = tot_band_pending_event_reward_points value = 1 }
+		tot_band_apply_reward_point_bonus_effect = yes
+		tot_band_add_reward_points_effect = yes
 	}
 }
 kizuna.204 = {
@@ -48,12 +54,14 @@ kizuna.204 = {
 	placement = root
 	title = kizuna.204.t
 	desc = kizuna.204.desc
-	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
 	option = {
 		name = kizuna.204.a
 		custom_tooltip = { text = kizuna.204.a.tt }
-		set_variable = { name = tot_band_pending_event_exp_gain value = 1600 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 2100 }
 		tot_band_add_creation_experience_effect = yes
+		set_variable = { name = tot_band_pending_event_reward_points value = 0 }
+		tot_band_add_reward_points_effect = yes
 		set_variable = { name = tot_band_pending_event_refund value = 250 }
 		tot_band_refund_creative_progress_effect = yes
 	}
@@ -63,29 +71,29 @@ kizuna.211 = {
 	placement = root
 	title = kizuna.211.t
 	desc = kizuna.211.desc
-	icon = "gfx/interface/icons/event_icons/event_artists.dds"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
 	option = {
 		name = kizuna.211.a
 		custom_tooltip = { text = kizuna.211.a.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = -30 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = -20 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 140 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 170 }
 		tot_band_add_creation_experience_effect = yes
 	}
 	option = {
 		name = kizuna.211.b
 		custom_tooltip = { text = kizuna.211.b.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 80 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 40 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 50 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 110 }
 		tot_band_add_creation_experience_effect = yes
 	}
 	option = {
 		name = kizuna.211.c
 		custom_tooltip = { text = kizuna.211.c.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = -90 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = -40 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 170 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 220 }
 		tot_band_add_creation_experience_effect = yes
 	}
 }
@@ -94,29 +102,29 @@ kizuna.212 = {
 	placement = root
 	title = kizuna.212.t
 	desc = kizuna.212.desc
-	icon = "gfx/interface/icons/event_icons/event_artists.dds"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
 	option = {
 		name = kizuna.212.a
 		custom_tooltip = { text = kizuna.212.a.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = -90 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = -40 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 140 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 180 }
 		tot_band_add_creation_experience_effect = yes
 	}
 	option = {
 		name = kizuna.212.b
 		custom_tooltip = { text = kizuna.212.b.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 50 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 30 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 40 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 90 }
 		tot_band_add_creation_experience_effect = yes
 	}
 	option = {
 		name = kizuna.212.c
 		custom_tooltip = { text = kizuna.212.c.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 10 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 0 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 100 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 150 }
 		tot_band_add_creation_experience_effect = yes
 	}
 }
@@ -125,29 +133,29 @@ kizuna.213 = {
 	placement = root
 	title = kizuna.213.t
 	desc = kizuna.213.desc
-	icon = "gfx/interface/icons/event_icons/event_artists.dds"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
 	option = {
 		name = kizuna.213.a
 		custom_tooltip = { text = kizuna.213.a.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 140 }
-		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 70 }
-		tot_band_add_creation_experience_effect = yes
-	}
-	option = {
-		name = kizuna.213.b
-		custom_tooltip = { text = kizuna.213.b.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 90 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 60 }
 		tot_band_add_creative_progress_effect = yes
 		set_variable = { name = tot_band_pending_event_exp_gain value = 120 }
 		tot_band_add_creation_experience_effect = yes
 	}
 	option = {
+		name = kizuna.213.b
+		custom_tooltip = { text = kizuna.213.b.tt }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 40 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 170 }
+		tot_band_add_creation_experience_effect = yes
+	}
+	option = {
 		name = kizuna.213.c
 		custom_tooltip = { text = kizuna.213.c.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 70 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 20 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 110 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 160 }
 		tot_band_add_creation_experience_effect = yes
 	}
 }
@@ -156,29 +164,29 @@ kizuna.215 = {
 	placement = root
 	title = kizuna.215.t
 	desc = kizuna.215.desc
-	icon = "gfx/interface/icons/event_icons/event_artists.dds"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
 	option = {
 		name = kizuna.215.a
 		custom_tooltip = { text = kizuna.215.a.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 80 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 30 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 150 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 210 }
 		tot_band_add_creation_experience_effect = yes
 	}
 	option = {
 		name = kizuna.215.b
 		custom_tooltip = { text = kizuna.215.b.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 50 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 15 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 110 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 170 }
 		tot_band_add_creation_experience_effect = yes
 	}
 	option = {
 		name = kizuna.215.c
 		custom_tooltip = { text = kizuna.215.c.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 100 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 45 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 80 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 130 }
 		tot_band_add_creation_experience_effect = yes
 	}
 }
@@ -187,29 +195,29 @@ kizuna.216 = {
 	placement = root
 	title = kizuna.216.t
 	desc = kizuna.216.desc
-	icon = "gfx/interface/icons/event_icons/event_artists.dds"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
 	option = {
 		name = kizuna.216.a
 		custom_tooltip = { text = kizuna.216.a.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 90 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 35 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 90 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 140 }
 		tot_band_add_creation_experience_effect = yes
 	}
 	option = {
 		name = kizuna.216.b
 		custom_tooltip = { text = kizuna.216.b.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 60 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 20 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 120 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 180 }
 		tot_band_add_creation_experience_effect = yes
 	}
 	option = {
 		name = kizuna.216.c
 		custom_tooltip = { text = kizuna.216.c.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 20 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 0 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 130 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 190 }
 		tot_band_add_creation_experience_effect = yes
 	}
 }
@@ -218,37 +226,37 @@ kizuna.217 = {
 	placement = root
 	title = kizuna.217.t
 	desc = kizuna.217.desc
-	icon = "gfx/interface/icons/event_icons/event_artists.dds"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
 	option = {
 		name = kizuna.217.a
 		custom_tooltip = { text = kizuna.217.a.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 50 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 20 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 120 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 170 }
 		tot_band_add_creation_experience_effect = yes
 	}
 	option = {
 		name = kizuna.217.b
 		custom_tooltip = { text = kizuna.217.b.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 30 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 10 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 90 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 140 }
 		tot_band_add_creation_experience_effect = yes
 	}
 	option = {
 		name = kizuna.217.c
 		custom_tooltip = { text = kizuna.217.c.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 60 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 25 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 110 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 160 }
 		tot_band_add_creation_experience_effect = yes
 	}
 	option = {
 		name = kizuna.217.d
 		custom_tooltip = { text = kizuna.217.d.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 80 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 40 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 20 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 80 }
 		tot_band_add_creation_experience_effect = yes
 	}
 }
@@ -257,29 +265,29 @@ kizuna.218 = {
 	placement = root
 	title = kizuna.218.t
 	desc = kizuna.218.desc
-	icon = "gfx/interface/icons/event_icons/event_artists.dds"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
 	option = {
 		name = kizuna.218.a
 		custom_tooltip = { text = kizuna.218.a.tt }
 		set_variable = { name = tot_band_pending_event_creative_delta value = -10 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 130 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 180 }
 		tot_band_add_creation_experience_effect = yes
 	}
 	option = {
 		name = kizuna.218.b
 		custom_tooltip = { text = kizuna.218.b.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 70 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 25 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 40 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 90 }
 		tot_band_add_creation_experience_effect = yes
 	}
 	option = {
 		name = kizuna.218.c
 		custom_tooltip = { text = kizuna.218.c.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = -90 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = -40 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 170 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 220 }
 		tot_band_add_creation_experience_effect = yes
 	}
 }
@@ -288,29 +296,29 @@ kizuna.219 = {
 	placement = root
 	title = kizuna.219.t
 	desc = kizuna.219.desc
-	icon = "gfx/interface/icons/event_icons/event_artists.dds"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
 	option = {
 		name = kizuna.219.a
 		custom_tooltip = { text = kizuna.219.a.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 120 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 50 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 70 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 120 }
 		tot_band_add_creation_experience_effect = yes
 	}
 	option = {
 		name = kizuna.219.b
 		custom_tooltip = { text = kizuna.219.b.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 50 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 20 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 80 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 130 }
 		tot_band_add_creation_experience_effect = yes
 	}
 	option = {
 		name = kizuna.219.c
 		custom_tooltip = { text = kizuna.219.c.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 10 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 0 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 130 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 180 }
 		tot_band_add_creation_experience_effect = yes
 	}
 }
@@ -319,29 +327,29 @@ kizuna.220 = {
 	placement = root
 	title = kizuna.220.t
 	desc = kizuna.220.desc
-	icon = "gfx/interface/icons/event_icons/event_artists.dds"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
 	option = {
 		name = kizuna.220.a
 		custom_tooltip = { text = kizuna.220.a.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 120 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 50 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 70 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 120 }
 		tot_band_add_creation_experience_effect = yes
 	}
 	option = {
 		name = kizuna.220.b
 		custom_tooltip = { text = kizuna.220.b.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 70 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 25 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 110 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 160 }
 		tot_band_add_creation_experience_effect = yes
 	}
 	option = {
 		name = kizuna.220.c
 		custom_tooltip = { text = kizuna.220.c.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 30 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 10 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 80 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 130 }
 		tot_band_add_creation_experience_effect = yes
 	}
 }
@@ -354,25 +362,25 @@ kizuna.221 = {
 	option = {
 		name = kizuna.221.a
 		custom_tooltip = { text = kizuna.221.a.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = -40 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = -20 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 120 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 170 }
 		tot_band_add_creation_experience_effect = yes
 	}
 	option = {
 		name = kizuna.221.b
 		custom_tooltip = { text = kizuna.221.b.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 20 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 0 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 80 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 130 }
 		tot_band_add_creation_experience_effect = yes
 	}
 	option = {
 		name = kizuna.221.c
 		custom_tooltip = { text = kizuna.221.c.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 90 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 35 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 50 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 100 }
 		tot_band_add_creation_experience_effect = yes
 	}
 }
@@ -385,25 +393,311 @@ kizuna.222 = {
 	option = {
 		name = kizuna.222.a
 		custom_tooltip = { text = kizuna.222.a.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = -80 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = -30 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 160 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 210 }
 		tot_band_add_creation_experience_effect = yes
 	}
 	option = {
 		name = kizuna.222.b
 		custom_tooltip = { text = kizuna.222.b.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 80 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 30 }
 		tot_band_add_creative_progress_effect = yes
-		set_variable = { name = tot_band_pending_event_exp_gain value = 50 }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 100 }
 		tot_band_add_creation_experience_effect = yes
 	}
 	option = {
 		name = kizuna.222.c
 		custom_tooltip = { text = kizuna.222.c.tt }
-		set_variable = { name = tot_band_pending_event_creative_delta value = 10 }
+		set_variable = { name = tot_band_pending_event_creative_delta value = 0 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 180 }
+		tot_band_add_creation_experience_effect = yes
+	}
+}
+kizuna.223 = {
+	type = country_event
+	placement = root
+	title = kizuna.223.t
+	desc = kizuna.223.desc
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
+	option = {
+		name = kizuna.223.a
+		set_variable = { name = tot_band_pending_event_creative_delta value = 45 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 120 }
+		tot_band_add_creation_experience_effect = yes
+	}
+	option = {
+		name = kizuna.223.b
+		set_variable = { name = tot_band_pending_event_creative_delta value = 20 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 150 }
+		tot_band_add_creation_experience_effect = yes
+	}
+	option = {
+		name = kizuna.223.c
+		set_variable = { name = tot_band_pending_event_creative_delta value = 0 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 170 }
+		tot_band_add_creation_experience_effect = yes
+	}
+}
+kizuna.224 = {
+	type = country_event
+	placement = root
+	title = kizuna.224.t
+	desc = kizuna.224.desc
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
+	option = {
+		name = kizuna.224.a
+		set_variable = { name = tot_band_pending_event_creative_delta value = 60 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 100 }
+		tot_band_add_creation_experience_effect = yes
+	}
+	option = {
+		name = kizuna.224.b
+		set_variable = { name = tot_band_pending_event_creative_delta value = 30 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 150 }
+		tot_band_add_creation_experience_effect = yes
+	}
+	option = {
+		name = kizuna.224.c
+		set_variable = { name = tot_band_pending_event_creative_delta value = 0 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 180 }
+		tot_band_add_creation_experience_effect = yes
+	}
+}
+kizuna.225 = {
+	type = country_event
+	placement = root
+	title = kizuna.225.t
+	desc = kizuna.225.desc
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
+	option = {
+		name = kizuna.225.a
+		set_variable = { name = tot_band_pending_event_creative_delta value = -20 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 180 }
+		tot_band_add_creation_experience_effect = yes
+	}
+	option = {
+		name = kizuna.225.b
+		set_variable = { name = tot_band_pending_event_creative_delta value = 15 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 150 }
+		tot_band_add_creation_experience_effect = yes
+	}
+	option = {
+		name = kizuna.225.c
+		set_variable = { name = tot_band_pending_event_creative_delta value = 35 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 80 }
+		tot_band_add_creation_experience_effect = yes
+	}
+}
+kizuna.226 = {
+	type = country_event
+	placement = root
+	title = kizuna.226.t
+	desc = kizuna.226.desc
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
+	option = {
+		name = kizuna.226.a
+		add_treasury = -3000
+		set_variable = { name = tot_band_pending_event_creative_delta value = 35 }
 		tot_band_add_creative_progress_effect = yes
 		set_variable = { name = tot_band_pending_event_exp_gain value = 130 }
+		tot_band_add_creation_experience_effect = yes
+	}
+	option = {
+		name = kizuna.226.b
+		add_treasury = -1000
+		set_variable = { name = tot_band_pending_event_creative_delta value = 10 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 150 }
+		tot_band_add_creation_experience_effect = yes
+	}
+	option = {
+		name = kizuna.226.c
+		set_variable = { name = tot_band_pending_event_creative_delta value = 0 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 180 }
+		tot_band_add_creation_experience_effect = yes
+	}
+}
+kizuna.227 = {
+	type = country_event
+	placement = root
+	title = kizuna.227.t
+	desc = kizuna.227.desc
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
+	option = {
+		name = kizuna.227.a
+		add_treasury = -2000
+		set_variable = { name = tot_band_pending_event_creative_delta value = 20 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 140 }
+		tot_band_add_creation_experience_effect = yes
+	}
+	option = {
+		name = kizuna.227.b
+		add_treasury = -1000
+		set_variable = { name = tot_band_pending_event_creative_delta value = 10 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 160 }
+		tot_band_add_creation_experience_effect = yes
+	}
+	option = {
+		name = kizuna.227.c
+		set_variable = { name = tot_band_pending_event_creative_delta value = 0 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 170 }
+		tot_band_add_creation_experience_effect = yes
+	}
+}
+kizuna.228 = {
+	type = country_event
+	placement = root
+	title = kizuna.228.t
+	desc = kizuna.228.desc
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
+	option = {
+		name = kizuna.228.a
+		add_treasury = 3000
+		set_variable = { name = tot_band_pending_event_creative_delta value = 35 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 130 }
+		tot_band_add_creation_experience_effect = yes
+	}
+	option = {
+		name = kizuna.228.b
+		add_treasury = 1500
+		set_variable = { name = tot_band_pending_event_creative_delta value = 15 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 160 }
+		tot_band_add_creation_experience_effect = yes
+	}
+	option = {
+		name = kizuna.228.c
+		set_variable = { name = tot_band_pending_event_creative_delta value = 0 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 190 }
+		tot_band_add_creation_experience_effect = yes
+	}
+}
+kizuna.229 = {
+	type = country_event
+	placement = root
+	title = kizuna.229.t
+	desc = kizuna.229.desc
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
+	option = {
+		name = kizuna.229.a
+		set_variable = { name = tot_band_pending_event_creative_delta value = 45 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 140 }
+		tot_band_add_creation_experience_effect = yes
+	}
+	option = {
+		name = kizuna.229.b
+		set_variable = { name = tot_band_pending_event_creative_delta value = 20 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 170 }
+		tot_band_add_creation_experience_effect = yes
+	}
+	option = {
+		name = kizuna.229.c
+		set_variable = { name = tot_band_pending_event_creative_delta value = 0 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 190 }
+		tot_band_add_creation_experience_effect = yes
+	}
+}
+kizuna.230 = {
+	type = country_event
+	placement = root
+	title = kizuna.230.t
+	desc = kizuna.230.desc
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
+	option = {
+		name = kizuna.230.a
+		set_variable = { name = tot_band_pending_event_creative_delta value = 35 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 150 }
+		tot_band_add_creation_experience_effect = yes
+	}
+	option = {
+		name = kizuna.230.b
+		set_variable = { name = tot_band_pending_event_creative_delta value = 20 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 170 }
+		tot_band_add_creation_experience_effect = yes
+	}
+	option = {
+		name = kizuna.230.c
+		set_variable = { name = tot_band_pending_event_creative_delta value = 0 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 180 }
+		tot_band_add_creation_experience_effect = yes
+	}
+}
+kizuna.231 = {
+	type = country_event
+	placement = root
+	title = kizuna.231.t
+	desc = kizuna.231.desc
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
+	option = {
+		name = kizuna.231.a
+		set_variable = { name = tot_band_pending_event_creative_delta value = 40 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 130 }
+		tot_band_add_creation_experience_effect = yes
+	}
+	option = {
+		name = kizuna.231.b
+		set_variable = { name = tot_band_pending_event_creative_delta value = 20 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 190 }
+		tot_band_add_creation_experience_effect = yes
+	}
+	option = {
+		name = kizuna.231.c
+		set_variable = { name = tot_band_pending_event_creative_delta value = 30 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 120 }
+		tot_band_add_creation_experience_effect = yes
+	}
+}
+kizuna.232 = {
+	type = country_event
+	placement = root
+	title = kizuna.232.t
+	desc = kizuna.232.desc
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
+	option = {
+		name = kizuna.232.a
+		set_variable = { name = tot_band_pending_event_creative_delta value = 45 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 130 }
+		tot_band_add_creation_experience_effect = yes
+	}
+	option = {
+		name = kizuna.232.b
+		set_variable = { name = tot_band_pending_event_creative_delta value = 20 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 170 }
+		tot_band_add_creation_experience_effect = yes
+	}
+	option = {
+		name = kizuna.232.c
+		set_variable = { name = tot_band_pending_event_creative_delta value = 10 }
+		tot_band_add_creative_progress_effect = yes
+		set_variable = { name = tot_band_pending_event_exp_gain value = 180 }
 		tot_band_add_creation_experience_effect = yes
 	}
 }

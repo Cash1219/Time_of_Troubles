@@ -7,7 +7,7 @@
 		widget = {
 		
 			parentanchor = hcenter
-			size = { 560 148 }
+			size = { 500 148 }
 			datacontext = "[Scope.GetCharacter]"
 			visible = "[Scope.GetCharacter.IsValid]"
 			
@@ -86,13 +86,13 @@
 								### NAME
 								textbox = {
 									layoutpolicy_horizontal = expanding
-									size = { 0 48 }
+									size = { 0 30 }
 									text = "[Character.GetFullNameNoFormatting]"
 									default_format = "#v"
 									align = left
 									using = regular_font
 									block "highlight_name" {}
-									multiline = yes
+									elide = right
 								}
 								container = {
 									parentanchor = hcenter
@@ -140,7 +140,7 @@
 									visible = "[GetScriptedGui('get_is_in_government_type').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
 									layoutpolicy_horizontal = expanding
 									size = { 90 24 }
-									raw_text = "在政府中"
+									text = "在政府中"
 									align = center|nobaseline
 									using = fontsize_small
 									block "highlight_name" {}
@@ -161,7 +161,7 @@
 									visible = "[Not(GetScriptedGui('get_is_in_government_type').IsShown(GuiScope.SetRoot(Character.MakeScope).End))]"
 									layoutpolicy_horizontal = expanding
 									size = { 90 24 }
-									raw_text = "不在政府"
+									text = "不在政府"
 									align = center|nobaseline
 									using = fontsize_small
 									block "highlight_name" {}
@@ -185,768 +185,470 @@
 	}
 
 	
-	type tot_band_1_member_character = widget {
-		size = { 820 136 }
+	type tot_band_member_character_base = widget {
+		size = { 500 138 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
-
 		background = { using = entry_bg_simple }
-
 		flowcontainer = {
-			margin = { 12 10 }
+			margin = { 12 8 }
 			spacing = 12
-			character_portrait_medium = {}
-			flowcontainer = {
-				direction = vertical
-				spacing = 4
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 24 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 42 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+			widget = {
+				size = { 116 116 }
+				background = {
+					texture = "gfx/interface/icons/character_icons/character_frame.dds"
+					parentanchor = center
+					size = { 116 116 }
+				}
+				character_portrait_small2 = {
+					parentanchor = center
+					blockoverride "show_hat" {}
+					blockoverride "highlight" {}
+					blockoverride "rank_icon" {}
+				}
 			}
 			flowcontainer = {
 				direction = vertical
-				spacing = 6
-				textbox = { text = "TOT_BAND_EDIT_FROM_SLOTS" size = { 180 34 } using = fontsize_small align = center|nobaseline multiline = yes tooltip = "TOT_BAND_EDIT_FROM_SLOTS_TOOLTIP" }
+				spacing = 4
+				size = { 260 116 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_large size = { 260 28 } align = left|nobaseline elide = right }
+				flowcontainer = {
+					spacing = 6
+					icon = { visible = "[GetScriptedGui('tot_band_character_is_vocalist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 28 28 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_vocal.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+					icon = { visible = "[GetScriptedGui('tot_band_character_is_guitarist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 28 28 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_guitar_center.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+					icon = { visible = "[GetScriptedGui('tot_band_character_is_bassist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 28 28 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_bass.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+					icon = { visible = "[GetScriptedGui('tot_band_character_is_keyboardist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 28 28 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_keyboard.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+					icon = { visible = "[GetScriptedGui('tot_band_character_is_drummer').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 28 28 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_drums.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+				}
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" size = { 260 22 } using = fontsize_small align = left|nobaseline elide = right }
+				textbox = { visible = "[GetScriptedGui('tot_band_character_has_specialty').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" raw_text = "特长：[Character.GetCustom('tot_band_specialty_summary')]" size = { 260 22 } using = fontsize_small align = left|nobaseline elide = right }
+			}
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				size = { 110 116 }
 				button_standard = {
 					text = "TOT_BAND_REMOVE"
-					size = { 180 36 }
+					size = { 110 52 }
 					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
 				}
 			}
 		}
 	}
 
-	type tot_band_1_candidate_character = widget {
-		size = { 820 136 }
+	type tot_band_candidate_character_base = widget {
+		size = { 470 124 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
-
 		background = { using = entry_bg_simple }
-
 		flowcontainer = {
-			margin = { 12 10 }
-			spacing = 12
-			character_portrait_medium = {}
-			flowcontainer = {
-				direction = vertical
-				spacing = 4
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 24 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-				textbox = { raw_text = "当前筛选：[AccessPlayer.GetCustom('tot_band_1_candidate_filter_loc')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
+			margin = { 10 8 }
+			spacing = 10
+			widget = {
+				size = { 92 92 }
+				background = {
+					texture = "gfx/interface/icons/character_icons/character_frame.dds"
+					parentanchor = center
+					size = { 92 92 }
+				}
+				character_portrait_small2 = {
+					parentanchor = center
+					blockoverride "show_hat" {}
+					blockoverride "highlight" {}
+					blockoverride "rank_icon" {}
+				}
 			}
 			flowcontainer = {
 				direction = vertical
-				spacing = 6
-				textbox = { text = "TOT_BAND_1_SELECTED_ROLE_TEXT" size = { 180 32 } using = fontsize_small align = center|nobaseline multiline = yes }
-				button_standard = {
-					text = "TOT_BAND_APPOINT_OR_EDIT"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_1_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_1_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_1_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				spacing = 3
+				size = { 160 104 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_small size = { 160 22 } align = left|nobaseline elide = right }
+				flowcontainer = {
+					spacing = 3
+					icon = { visible = "[GetScriptedGui('tot_band_character_is_vocalist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 20 20 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_vocal.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+					icon = { visible = "[GetScriptedGui('tot_band_character_is_guitarist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 20 20 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_guitar_center.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+					icon = { visible = "[GetScriptedGui('tot_band_character_is_bassist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 20 20 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_bass.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+					icon = { visible = "[GetScriptedGui('tot_band_character_is_keyboardist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 20 20 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_keyboard.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+					icon = { visible = "[GetScriptedGui('tot_band_character_is_drummer').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 20 20 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_drums.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+				}
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" size = { 160 18 } using = fontsize_very_small align = left|nobaseline elide = right }
+				textbox = { visible = "[GetScriptedGui('tot_band_character_has_specialty').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" raw_text = "特长：[Character.GetCustom('tot_band_specialty_summary')]" size = { 160 16 } using = fontsize_very_small align = left|nobaseline elide = right }
+			}
+			block "appoint_buttons" {
+				flowcontainer = {
+					direction = vertical
+					spacing = 3
+					size = { 192 104 }
+					flowcontainer = {
+						spacing = 3
+						button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_VOCAL_TEXT" onclick = "[GetScriptedGui('tot_band_1_select_role_vocalist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_1_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_vocal.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+						button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_GUITAR_TEXT" onclick = "[GetScriptedGui('tot_band_1_select_role_guitarist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_1_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_guitar_center.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+					}
+					flowcontainer = {
+						spacing = 3
+						button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_BASS_TEXT" onclick = "[GetScriptedGui('tot_band_1_select_role_bassist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_1_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_bass.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+						button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_KEYBOARD_TEXT" onclick = "[GetScriptedGui('tot_band_1_select_role_keyboardist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_1_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_keyboard.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+					}
+					button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_DRUM_TEXT" onclick = "[GetScriptedGui('tot_band_1_select_role_drummer').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_1_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_drums.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
 				}
 			}
 		}
 	}
 
-	type tot_band_2_member_character = widget {
-		size = { 820 136 }
-		datacontext = "[Scope.GetCharacter]"
-		visible = "[Scope.GetCharacter.IsValid]"
-
-		background = { using = entry_bg_simple }
-
-		flowcontainer = {
-			margin = { 12 10 }
-			spacing = 12
-			character_portrait_medium = {}
-			flowcontainer = {
-				direction = vertical
-				spacing = 4
-				size = { 550 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 24 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 42 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-			}
-			flowcontainer = {
-				direction = vertical
-				spacing = 6
-				textbox = { text = "TOT_BAND_EDIT_FROM_SLOTS" size = { 180 34 } using = fontsize_small align = center|nobaseline multiline = yes tooltip = "TOT_BAND_EDIT_FROM_SLOTS_TOOLTIP" }
-				button_standard = {
-					text = "TOT_BAND_REMOVE"
-					size = { 180 36 }
-					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-			}
-		}
-	}
-
-	type tot_band_2_candidate_character = widget {
-		size = { 820 136 }
-		datacontext = "[Scope.GetCharacter]"
-		visible = "[Scope.GetCharacter.IsValid]"
-
-		background = { using = entry_bg_simple }
-
-		flowcontainer = {
-			margin = { 12 10 }
-			spacing = 12
-			character_portrait_medium = {}
-			flowcontainer = {
-				direction = vertical
-				spacing = 4
-				size = { 550 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 24 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-				textbox = { raw_text = "当前筛选：[AccessPlayer.GetCustom('tot_band_2_candidate_filter_loc')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
-			}
-			flowcontainer = {
-				direction = vertical
-				spacing = 6
-				textbox = { text = "TOT_BAND_2_SELECTED_ROLE_TEXT" size = { 180 32 } using = fontsize_small align = center|nobaseline multiline = yes }
-				button_standard = {
-					text = "TOT_BAND_APPOINT_OR_EDIT"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_2_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_2_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_2_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-			}
-		}
-	}
-
-	type tot_band_3_member_character = widget {
-		size = { 820 136 }
-		datacontext = "[Scope.GetCharacter]"
-		visible = "[Scope.GetCharacter.IsValid]"
-
-		background = { using = entry_bg_simple }
-
-		flowcontainer = {
-			margin = { 12 10 }
-			spacing = 12
-			character_portrait_medium = {}
-			flowcontainer = {
-				direction = vertical
-				spacing = 4
-				size = { 550 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 24 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 42 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-			}
-			flowcontainer = {
-				direction = vertical
-				spacing = 6
-				textbox = { text = "TOT_BAND_EDIT_FROM_SLOTS" size = { 180 34 } using = fontsize_small align = center|nobaseline multiline = yes tooltip = "TOT_BAND_EDIT_FROM_SLOTS_TOOLTIP" }
-				button_standard = {
-					text = "TOT_BAND_REMOVE"
-					size = { 180 36 }
-					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-			}
-		}
-	}
-
-	type tot_band_3_candidate_character = widget {
-		size = { 820 136 }
-		datacontext = "[Scope.GetCharacter]"
-		visible = "[Scope.GetCharacter.IsValid]"
-
-		background = { using = entry_bg_simple }
-
-		flowcontainer = {
-			margin = { 12 10 }
-			spacing = 12
-			character_portrait_medium = {}
-			flowcontainer = {
-				direction = vertical
-				spacing = 4
-				size = { 550 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 24 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-				textbox = { raw_text = "当前筛选：[AccessPlayer.GetCustom('tot_band_3_candidate_filter_loc')]" using = fontsize_small size = { 550 18 } align = left|nobaseline elide = right }
-			}
-			flowcontainer = {
-				direction = vertical
-				spacing = 6
-				textbox = { text = "TOT_BAND_3_SELECTED_ROLE_TEXT" size = { 180 32 } using = fontsize_small align = center|nobaseline multiline = yes }
-				button_standard = {
-					text = "TOT_BAND_APPOINT_OR_EDIT"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_3_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_3_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_3_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-			}
-		}
-	}
-
-	type tot_band_4_member_character = widget {
-		size = { 820 136 }
-		datacontext = "[Scope.GetCharacter]"
-		visible = "[Scope.GetCharacter.IsValid]"
-
-		background = { using = entry_bg_simple }
-
-		flowcontainer = {
-			margin = { 12 10 }
-			spacing = 12
-			character_portrait_medium = {}
-			flowcontainer = {
-				direction = vertical
-				spacing = 4
-				size = { 550 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-			}
-			flowcontainer = {
-				direction = vertical
-				spacing = 6
-				size = { 180 118 }
-				button_standard = {
-					text = "TOT_BAND_EDIT_ROLE"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_4_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_4_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_4_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-				button_standard = {
-					text = "TOT_BAND_REMOVE"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-			}
-		}
-	}
-
-	type tot_band_4_candidate_character = widget {
-		size = { 820 136 }
-		datacontext = "[Scope.GetCharacter]"
-		visible = "[Scope.GetCharacter.IsValid]"
-
-		background = { using = entry_bg_simple }
-
-		flowcontainer = {
-			margin = { 12 10 }
-			spacing = 12
-			character_portrait_medium = {}
-			flowcontainer = {
-				direction = vertical
-				spacing = 4
-				size = { 550 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-			}
-			flowcontainer = {
-				direction = vertical
-				spacing = 6
-				size = { 180 118 }
-				button_standard = {
-					text = "TOT_BAND_APPOINT_OR_EDIT"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_4_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_4_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_4_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-			}
-		}
-	}
-
-	type tot_band_5_member_character = widget {
-		size = { 820 136 }
-		datacontext = "[Scope.GetCharacter]"
-		visible = "[Scope.GetCharacter.IsValid]"
-
-		background = { using = entry_bg_simple }
-
-		flowcontainer = {
-			margin = { 12 10 }
-			spacing = 12
-			character_portrait_medium = {}
-			flowcontainer = {
-				direction = vertical
-				spacing = 4
-				size = { 550 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-			}
-			flowcontainer = {
-				direction = vertical
-				spacing = 6
-				size = { 180 118 }
-				button_standard = {
-					text = "TOT_BAND_EDIT_ROLE"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_5_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_5_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_5_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-				button_standard = {
-					text = "TOT_BAND_REMOVE"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-			}
-		}
-	}
-
-	type tot_band_5_candidate_character = widget {
-		size = { 820 136 }
-		datacontext = "[Scope.GetCharacter]"
-		visible = "[Scope.GetCharacter.IsValid]"
-
-		background = { using = entry_bg_simple }
-
-		flowcontainer = {
-			margin = { 12 10 }
-			spacing = 12
-			character_portrait_medium = {}
-			flowcontainer = {
-				direction = vertical
-				spacing = 4
-				size = { 550 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-			}
-			flowcontainer = {
-				direction = vertical
-				spacing = 6
-				size = { 180 118 }
-				button_standard = {
-					text = "TOT_BAND_APPOINT_OR_EDIT"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_5_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_5_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_5_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-			}
-		}
-	}
-
-	type tot_band_6_member_character = widget {
-		size = { 820 136 }
-		datacontext = "[Scope.GetCharacter]"
-		visible = "[Scope.GetCharacter.IsValid]"
-
-		background = { using = entry_bg_simple }
-
-		flowcontainer = {
-			margin = { 12 10 }
-			spacing = 12
-			character_portrait_medium = {}
-			flowcontainer = {
-				direction = vertical
-				spacing = 4
-				size = { 550 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-			}
-			flowcontainer = {
-				direction = vertical
-				spacing = 6
-				size = { 180 118 }
-				button_standard = {
-					text = "TOT_BAND_EDIT_ROLE"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_6_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_6_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_6_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-				button_standard = {
-					text = "TOT_BAND_REMOVE"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-			}
-		}
-	}
-
-	type tot_band_6_candidate_character = widget {
-		size = { 820 136 }
-		datacontext = "[Scope.GetCharacter]"
-		visible = "[Scope.GetCharacter.IsValid]"
-
-		background = { using = entry_bg_simple }
-
-		flowcontainer = {
-			margin = { 12 10 }
-			spacing = 12
-			character_portrait_medium = {}
-			flowcontainer = {
-				direction = vertical
-				spacing = 4
-				size = { 550 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-			}
-			flowcontainer = {
-				direction = vertical
-				spacing = 6
-				size = { 180 118 }
-				button_standard = {
-					text = "TOT_BAND_APPOINT_OR_EDIT"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_6_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_6_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_6_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-			}
-		}
-	}
-
-	type tot_band_7_member_character = widget {
-		size = { 820 136 }
-		datacontext = "[Scope.GetCharacter]"
-		visible = "[Scope.GetCharacter.IsValid]"
-
-		background = { using = entry_bg_simple }
-
-		flowcontainer = {
-			margin = { 12 10 }
-			spacing = 12
-			character_portrait_medium = {}
-			flowcontainer = {
-				direction = vertical
-				spacing = 4
-				size = { 550 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-			}
-			flowcontainer = {
-				direction = vertical
-				spacing = 6
-				size = { 180 118 }
-				button_standard = {
-					text = "TOT_BAND_EDIT_ROLE"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_7_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_7_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_7_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-				button_standard = {
-					text = "TOT_BAND_REMOVE"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-			}
-		}
-	}
-
-	type tot_band_7_candidate_character = widget {
-		size = { 820 136 }
-		datacontext = "[Scope.GetCharacter]"
-		visible = "[Scope.GetCharacter.IsValid]"
-
-		background = { using = entry_bg_simple }
-
-		flowcontainer = {
-			margin = { 12 10 }
-			spacing = 12
-			character_portrait_medium = {}
-			flowcontainer = {
-				direction = vertical
-				spacing = 4
-				size = { 550 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-			}
-			flowcontainer = {
-				direction = vertical
-				spacing = 6
-				size = { 180 118 }
-				button_standard = {
-					text = "TOT_BAND_APPOINT_OR_EDIT"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_7_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_7_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_7_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-			}
-		}
-	}
-
-	type tot_band_8_member_character = widget {
-		size = { 820 136 }
-		datacontext = "[Scope.GetCharacter]"
-		visible = "[Scope.GetCharacter.IsValid]"
-
-		background = { using = entry_bg_simple }
-
-		flowcontainer = {
-			margin = { 12 10 }
-			spacing = 12
-			character_portrait_medium = {}
-			flowcontainer = {
-				direction = vertical
-				spacing = 4
-				size = { 550 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-			}
-			flowcontainer = {
-				direction = vertical
-				spacing = 6
-				size = { 180 118 }
-				button_standard = {
-					text = "TOT_BAND_EDIT_ROLE"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_8_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_8_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_8_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-				button_standard = {
-					text = "TOT_BAND_REMOVE"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-			}
-		}
-	}
-
-	type tot_band_8_candidate_character = widget {
-		size = { 820 136 }
-		datacontext = "[Scope.GetCharacter]"
-		visible = "[Scope.GetCharacter.IsValid]"
-
-		background = { using = entry_bg_simple }
-
-		flowcontainer = {
-			margin = { 12 10 }
-			spacing = 12
-			character_portrait_medium = {}
-			flowcontainer = {
-				direction = vertical
-				spacing = 4
-				size = { 550 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-			}
-			flowcontainer = {
-				direction = vertical
-				spacing = 6
-				size = { 180 118 }
-				button_standard = {
-					text = "TOT_BAND_APPOINT_OR_EDIT"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_8_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_8_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_8_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-			}
-		}
-	}
-
-	type tot_band_9_member_character = widget {
-		size = { 820 136 }
-		datacontext = "[Scope.GetCharacter]"
-		visible = "[Scope.GetCharacter.IsValid]"
-
-		background = { using = entry_bg_simple }
-
-		flowcontainer = {
-			margin = { 12 10 }
-			spacing = 12
-			character_portrait_medium = {}
-			flowcontainer = {
-				direction = vertical
-				spacing = 4
-				size = { 550 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-			}
-			flowcontainer = {
-				direction = vertical
-				spacing = 6
-				size = { 180 118 }
-				button_standard = {
-					text = "TOT_BAND_EDIT_ROLE"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_9_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_9_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_9_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-				button_standard = {
-					text = "TOT_BAND_REMOVE"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-			}
-		}
-	}
-
-	type tot_band_9_candidate_character = widget {
-		size = { 820 136 }
-		datacontext = "[Scope.GetCharacter]"
-		visible = "[Scope.GetCharacter.IsValid]"
-
-		background = { using = entry_bg_simple }
-
-		flowcontainer = {
-			margin = { 12 10 }
-			spacing = 12
-			character_portrait_medium = {}
-			flowcontainer = {
-				direction = vertical
-				spacing = 4
-				size = { 550 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-			}
-			flowcontainer = {
-				direction = vertical
-				spacing = 6
-				size = { 180 118 }
-				button_standard = {
-					text = "TOT_BAND_APPOINT_OR_EDIT"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_9_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_9_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_9_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-			}
-		}
-	}
-
-	type tot_band_10_member_character = widget {
-		size = { 820 136 }
-		datacontext = "[Scope.GetCharacter]"
-		visible = "[Scope.GetCharacter.IsValid]"
-
-		background = { using = entry_bg_simple }
-
-		flowcontainer = {
-			margin = { 12 10 }
-			spacing = 12
-			character_portrait_medium = {}
-			flowcontainer = {
-				direction = vertical
-				spacing = 4
-				size = { 550 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-			}
-			flowcontainer = {
-				direction = vertical
-				spacing = 6
-				size = { 180 118 }
-				button_standard = {
-					text = "TOT_BAND_EDIT_ROLE"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_10_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_10_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_10_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-				button_standard = {
-					text = "TOT_BAND_REMOVE"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-			}
-		}
-	}
-
-	type tot_band_10_candidate_character = widget {
-		size = { 820 136 }
-		datacontext = "[Scope.GetCharacter]"
-		visible = "[Scope.GetCharacter.IsValid]"
-
-		background = { using = entry_bg_simple }
-
-		flowcontainer = {
-			margin = { 12 10 }
-			spacing = 12
-			character_portrait_medium = {}
-			flowcontainer = {
-				direction = vertical
-				spacing = 4
-				size = { 550 118 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 550 28 } align = left|nobaseline elide = right }
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "乐队特长：[Character.GetCustom('tot_band_music_specialty_summary')]" using = fontsize_small size = { 550 20 } align = left|nobaseline elide = right }
-				textbox = { raw_text = "当前岗位：[Character.GetCustom('tot_band_current_roles')]" using = fontsize_small size = { 550 38 } align = left|nobaseline multiline = yes tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-			}
-			flowcontainer = {
-				direction = vertical
-				spacing = 6
-				size = { 180 118 }
-				button_standard = {
-					text = "TOT_BAND_APPOINT_OR_EDIT"
-					size = { 180 42 }
-					enabled = "[GetScriptedGui('tot_band_10_appoint_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
-					onclick = "[GetScriptedGui('tot_band_10_appoint_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
-					tooltip = "[GetScriptedGui('tot_band_10_appoint_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
-				}
-			}
-		}
-	}
+	type tot_band_1_member_character = tot_band_member_character_base {}
+	type tot_band_1_candidate_character = tot_band_candidate_character_base {}
+	type tot_band_2_member_character = tot_band_member_character_base {}
+	type tot_band_2_candidate_character = tot_band_candidate_character_base { blockoverride "appoint_buttons" { flowcontainer = { direction = vertical spacing = 3 size = { 192 104 } flowcontainer = { spacing = 3 button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_VOCAL_TEXT" onclick = "[GetScriptedGui('tot_band_2_select_role_vocalist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_2_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_vocal.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_GUITAR_TEXT" onclick = "[GetScriptedGui('tot_band_2_select_role_guitarist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_2_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_guitar_center.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } flowcontainer = { spacing = 3 button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_BASS_TEXT" onclick = "[GetScriptedGui('tot_band_2_select_role_bassist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_2_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_bass.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_KEYBOARD_TEXT" onclick = "[GetScriptedGui('tot_band_2_select_role_keyboardist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_2_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_keyboard.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_DRUM_TEXT" onclick = "[GetScriptedGui('tot_band_2_select_role_drummer').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_2_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_drums.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } } }
+	type tot_band_3_member_character = tot_band_member_character_base {}
+	type tot_band_3_candidate_character = tot_band_candidate_character_base { blockoverride "appoint_buttons" { flowcontainer = { direction = vertical spacing = 3 size = { 192 104 } flowcontainer = { spacing = 3 button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_VOCAL_TEXT" onclick = "[GetScriptedGui('tot_band_3_select_role_vocalist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_3_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_vocal.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_GUITAR_TEXT" onclick = "[GetScriptedGui('tot_band_3_select_role_guitarist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_3_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_guitar_center.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } flowcontainer = { spacing = 3 button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_BASS_TEXT" onclick = "[GetScriptedGui('tot_band_3_select_role_bassist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_3_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_bass.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_KEYBOARD_TEXT" onclick = "[GetScriptedGui('tot_band_3_select_role_keyboardist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_3_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_keyboard.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_DRUM_TEXT" onclick = "[GetScriptedGui('tot_band_3_select_role_drummer').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_3_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_drums.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } } }
+	type tot_band_4_member_character = tot_band_member_character_base {}
+	type tot_band_4_candidate_character = tot_band_candidate_character_base { blockoverride "appoint_buttons" { flowcontainer = { direction = vertical spacing = 3 size = { 192 104 } flowcontainer = { spacing = 3 button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_VOCAL_TEXT" onclick = "[GetScriptedGui('tot_band_4_select_role_vocalist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_4_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_vocal.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_GUITAR_TEXT" onclick = "[GetScriptedGui('tot_band_4_select_role_guitarist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_4_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_guitar_center.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } flowcontainer = { spacing = 3 button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_BASS_TEXT" onclick = "[GetScriptedGui('tot_band_4_select_role_bassist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_4_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_bass.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_KEYBOARD_TEXT" onclick = "[GetScriptedGui('tot_band_4_select_role_keyboardist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_4_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_keyboard.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_DRUM_TEXT" onclick = "[GetScriptedGui('tot_band_4_select_role_drummer').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_4_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_drums.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } } }
+	type tot_band_5_member_character = tot_band_member_character_base {}
+	type tot_band_5_candidate_character = tot_band_candidate_character_base { blockoverride "appoint_buttons" { flowcontainer = { direction = vertical spacing = 3 size = { 192 104 } flowcontainer = { spacing = 3 button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_VOCAL_TEXT" onclick = "[GetScriptedGui('tot_band_5_select_role_vocalist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_5_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_vocal.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_GUITAR_TEXT" onclick = "[GetScriptedGui('tot_band_5_select_role_guitarist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_5_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_guitar_center.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } flowcontainer = { spacing = 3 button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_BASS_TEXT" onclick = "[GetScriptedGui('tot_band_5_select_role_bassist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_5_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_bass.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_KEYBOARD_TEXT" onclick = "[GetScriptedGui('tot_band_5_select_role_keyboardist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_5_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_keyboard.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_DRUM_TEXT" onclick = "[GetScriptedGui('tot_band_5_select_role_drummer').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_5_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_drums.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } } }
+	type tot_band_6_member_character = tot_band_member_character_base {}
+	type tot_band_6_candidate_character = tot_band_candidate_character_base { blockoverride "appoint_buttons" { flowcontainer = { direction = vertical spacing = 3 size = { 192 104 } flowcontainer = { spacing = 3 button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_VOCAL_TEXT" onclick = "[GetScriptedGui('tot_band_6_select_role_vocalist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_6_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_vocal.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_GUITAR_TEXT" onclick = "[GetScriptedGui('tot_band_6_select_role_guitarist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_6_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_guitar_center.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } flowcontainer = { spacing = 3 button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_BASS_TEXT" onclick = "[GetScriptedGui('tot_band_6_select_role_bassist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_6_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_bass.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_KEYBOARD_TEXT" onclick = "[GetScriptedGui('tot_band_6_select_role_keyboardist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_6_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_keyboard.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_DRUM_TEXT" onclick = "[GetScriptedGui('tot_band_6_select_role_drummer').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_6_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_drums.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } } }
+	type tot_band_7_member_character = tot_band_member_character_base {}
+	type tot_band_7_candidate_character = tot_band_candidate_character_base { blockoverride "appoint_buttons" { flowcontainer = { direction = vertical spacing = 3 size = { 192 104 } flowcontainer = { spacing = 3 button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_VOCAL_TEXT" onclick = "[GetScriptedGui('tot_band_7_select_role_vocalist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_7_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_vocal.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_GUITAR_TEXT" onclick = "[GetScriptedGui('tot_band_7_select_role_guitarist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_7_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_guitar_center.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } flowcontainer = { spacing = 3 button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_BASS_TEXT" onclick = "[GetScriptedGui('tot_band_7_select_role_bassist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_7_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_bass.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_KEYBOARD_TEXT" onclick = "[GetScriptedGui('tot_band_7_select_role_keyboardist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_7_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_keyboard.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_DRUM_TEXT" onclick = "[GetScriptedGui('tot_band_7_select_role_drummer').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_7_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_drums.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } } }
+	type tot_band_8_member_character = tot_band_member_character_base {}
+	type tot_band_8_candidate_character = tot_band_candidate_character_base { blockoverride "appoint_buttons" { flowcontainer = { direction = vertical spacing = 3 size = { 192 104 } flowcontainer = { spacing = 3 button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_VOCAL_TEXT" onclick = "[GetScriptedGui('tot_band_8_select_role_vocalist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_8_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_vocal.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_GUITAR_TEXT" onclick = "[GetScriptedGui('tot_band_8_select_role_guitarist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_8_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_guitar_center.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } flowcontainer = { spacing = 3 button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_BASS_TEXT" onclick = "[GetScriptedGui('tot_band_8_select_role_bassist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_8_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_bass.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_KEYBOARD_TEXT" onclick = "[GetScriptedGui('tot_band_8_select_role_keyboardist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_8_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_keyboard.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_DRUM_TEXT" onclick = "[GetScriptedGui('tot_band_8_select_role_drummer').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_8_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_drums.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } } }
+	type tot_band_9_member_character = tot_band_member_character_base {}
+	type tot_band_9_candidate_character = tot_band_candidate_character_base { blockoverride "appoint_buttons" { flowcontainer = { direction = vertical spacing = 3 size = { 192 104 } flowcontainer = { spacing = 3 button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_VOCAL_TEXT" onclick = "[GetScriptedGui('tot_band_9_select_role_vocalist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_9_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_vocal.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_GUITAR_TEXT" onclick = "[GetScriptedGui('tot_band_9_select_role_guitarist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_9_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_guitar_center.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } flowcontainer = { spacing = 3 button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_BASS_TEXT" onclick = "[GetScriptedGui('tot_band_9_select_role_bassist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_9_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_bass.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_KEYBOARD_TEXT" onclick = "[GetScriptedGui('tot_band_9_select_role_keyboardist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_9_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_keyboard.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_DRUM_TEXT" onclick = "[GetScriptedGui('tot_band_9_select_role_drummer').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_9_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_drums.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } } }
+	type tot_band_10_member_character = tot_band_member_character_base {}
+	type tot_band_10_candidate_character = tot_band_candidate_character_base { blockoverride "appoint_buttons" { flowcontainer = { direction = vertical spacing = 3 size = { 192 104 } flowcontainer = { spacing = 3 button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_VOCAL_TEXT" onclick = "[GetScriptedGui('tot_band_10_select_role_vocalist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_10_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_vocal.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_GUITAR_TEXT" onclick = "[GetScriptedGui('tot_band_10_select_role_guitarist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_10_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_guitar_center.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } flowcontainer = { spacing = 3 button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_BASS_TEXT" onclick = "[GetScriptedGui('tot_band_10_select_role_bassist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_10_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_bass.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_KEYBOARD_TEXT" onclick = "[GetScriptedGui('tot_band_10_select_role_keyboardist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_10_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_keyboard.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_DRUM_TEXT" onclick = "[GetScriptedGui('tot_band_10_select_role_drummer').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_10_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_drums.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } } }
 
 	type tot_band_role_slot_portrait = widget {
-		size = { 92 56 }
+		size = { 96 124 }
 		datacontext = "[Scope.AccessCharacter]"
 		visible = "[Character.IsValid]"
 
-		background = { using = dark_area }
+		background = { using = entry_bg_simple }
 
-		character_portrait_small = {
-			parentanchor = center
-			blockoverride "show_hat" {}
-			blockoverride "rank_icon" {}
-			blockoverride "highlight" {}
+		flowcontainer = {
+			direction = vertical
+			spacing = 2
+			margin = { 4 4 }
+			widget = {
+				size = { 88 68 }
+				background = { using = dark_area }
+
+				character_portrait_small2 = {
+					parentanchor = center
+					blockoverride "show_hat" {}
+					blockoverride "rank_icon" {}
+					blockoverride "highlight" {}
+				}
+			}
+			textbox = {
+				size = { 88 22 }
+				text = "[Character.GetFullNameNoFormatting]"
+				using = fontsize_small
+				align = center|nobaseline
+				elide = right
+			}
+			textbox = {
+				size = { 88 18 }
+				text = "[Character.GetPrimaryRoleTitle]"
+				using = fontsize_very_small
+				align = center|nobaseline
+				elide = right
+			}
+			button_standard = {
+				text = "TOT_BAND_REMOVE"
+				size = { 88 34 }
+				enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+				onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+			}
+		}
+	}
+
+	type tot_band_role_slot_vocal_portrait = widget {
+		size = { 96 124 }
+		datacontext = "[Scope.AccessCharacter]"
+		visible = "[Character.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			direction = vertical
+			spacing = 2
+			margin = { 4 4 }
+			widget = {
+				size = { 88 68 }
+				background = { using = dark_area }
+
+				icon = {
+					parentanchor = left|vcenter
+					position = { 4 0 }
+					size = { 22 22 }
+					texture = "gfx/interface/icons/band_role_icons/tot_band_role_vocal.dds"
+				}
+
+				character_portrait_small2 = {
+					parentanchor = center
+					position = { 10 0 }
+					blockoverride "show_hat" {}
+					blockoverride "rank_icon" {}
+					blockoverride "highlight" {}
+				}
+			}
+			textbox = {
+				size = { 88 22 }
+				text = "[Character.GetFullNameNoFormatting]"
+				using = fontsize_small
+				align = center|nobaseline
+				elide = right
+			}
+			flowcontainer = {
+				spacing = 2
+				parentanchor = hcenter
+				icon = { size = { 14 14 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_vocal.dds" }
+				textbox = { size = { 70 18 } text = "TOT_BAND_ROLE_VOCAL_TEXT" using = fontsize_very_small align = left|nobaseline elide = right }
+			}
+			button_standard = {
+				text = "TOT_BAND_REMOVE"
+				size = { 88 34 }
+				enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+				onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+			}
+		}
+	}
+
+	type tot_band_role_slot_guitar_portrait = widget {
+		size = { 96 124 }
+		datacontext = "[Scope.AccessCharacter]"
+		visible = "[Character.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			direction = vertical
+			spacing = 2
+			margin = { 4 4 }
+			widget = {
+				size = { 88 68 }
+				background = { using = dark_area }
+
+				icon = {
+					parentanchor = left|vcenter
+					position = { 4 0 }
+					size = { 22 22 }
+					texture = "gfx/interface/icons/band_role_icons/tot_band_role_guitar_center.dds"
+				}
+
+				character_portrait_small2 = {
+					parentanchor = center
+					position = { 10 0 }
+					blockoverride "show_hat" {}
+					blockoverride "rank_icon" {}
+					blockoverride "highlight" {}
+				}
+			}
+			textbox = {
+				size = { 88 22 }
+				text = "[Character.GetFullNameNoFormatting]"
+				using = fontsize_small
+				align = center|nobaseline
+				elide = right
+			}
+			flowcontainer = {
+				spacing = 2
+				parentanchor = hcenter
+				icon = { size = { 14 14 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_guitar_center.dds" }
+				textbox = { size = { 70 18 } text = "TOT_BAND_ROLE_GUITAR_TEXT" using = fontsize_very_small align = left|nobaseline elide = right }
+			}
+			button_standard = {
+				text = "TOT_BAND_REMOVE"
+				size = { 88 34 }
+				enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+				onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+			}
+		}
+	}
+
+	type tot_band_role_slot_bass_portrait = widget {
+		size = { 96 124 }
+		datacontext = "[Scope.AccessCharacter]"
+		visible = "[Character.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			direction = vertical
+			spacing = 2
+			margin = { 4 4 }
+			widget = {
+				size = { 88 68 }
+				background = { using = dark_area }
+
+				icon = {
+					parentanchor = left|vcenter
+					position = { 4 0 }
+					size = { 22 22 }
+					texture = "gfx/interface/icons/band_role_icons/tot_band_role_bass.dds"
+				}
+
+				character_portrait_small2 = {
+					parentanchor = center
+					position = { 10 0 }
+					blockoverride "show_hat" {}
+					blockoverride "rank_icon" {}
+					blockoverride "highlight" {}
+				}
+			}
+			textbox = {
+				size = { 88 22 }
+				text = "[Character.GetFullNameNoFormatting]"
+				using = fontsize_small
+				align = center|nobaseline
+				elide = right
+			}
+			flowcontainer = {
+				spacing = 2
+				parentanchor = hcenter
+				icon = { size = { 14 14 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_bass.dds" }
+				textbox = { size = { 70 18 } text = "TOT_BAND_ROLE_BASS_TEXT" using = fontsize_very_small align = left|nobaseline elide = right }
+			}
+			button_standard = {
+				text = "TOT_BAND_REMOVE"
+				size = { 88 34 }
+				enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+				onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+			}
+		}
+	}
+
+	type tot_band_role_slot_keyboard_portrait = widget {
+		size = { 96 124 }
+		datacontext = "[Scope.AccessCharacter]"
+		visible = "[Character.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			direction = vertical
+			spacing = 2
+			margin = { 4 4 }
+			widget = {
+				size = { 88 68 }
+				background = { using = dark_area }
+
+				icon = {
+					parentanchor = left|vcenter
+					position = { 4 0 }
+					size = { 22 22 }
+					texture = "gfx/interface/icons/band_role_icons/tot_band_role_keyboard.dds"
+				}
+
+				character_portrait_small2 = {
+					parentanchor = center
+					position = { 10 0 }
+					blockoverride "show_hat" {}
+					blockoverride "rank_icon" {}
+					blockoverride "highlight" {}
+				}
+			}
+			textbox = {
+				size = { 88 22 }
+				text = "[Character.GetFullNameNoFormatting]"
+				using = fontsize_small
+				align = center|nobaseline
+				elide = right
+			}
+			flowcontainer = {
+				spacing = 2
+				parentanchor = hcenter
+				icon = { size = { 14 14 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_keyboard.dds" }
+				textbox = { size = { 70 18 } text = "TOT_BAND_ROLE_KEYBOARD_TEXT" using = fontsize_very_small align = left|nobaseline elide = right }
+			}
+			button_standard = {
+				text = "TOT_BAND_REMOVE"
+				size = { 88 34 }
+				enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+				onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+			}
+		}
+	}
+
+	type tot_band_role_slot_drum_portrait = widget {
+		size = { 96 124 }
+		datacontext = "[Scope.AccessCharacter]"
+		visible = "[Character.IsValid]"
+
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			direction = vertical
+			spacing = 2
+			margin = { 4 4 }
+			widget = {
+				size = { 88 68 }
+				background = { using = dark_area }
+
+				icon = {
+					parentanchor = left|vcenter
+					position = { 4 0 }
+					size = { 22 22 }
+					texture = "gfx/interface/icons/band_role_icons/tot_band_role_drums.dds"
+				}
+
+				character_portrait_small2 = {
+					parentanchor = center
+					position = { 10 0 }
+					blockoverride "show_hat" {}
+					blockoverride "rank_icon" {}
+					blockoverride "highlight" {}
+				}
+			}
+			textbox = {
+				size = { 88 22 }
+				text = "[Character.GetFullNameNoFormatting]"
+				using = fontsize_small
+				align = center|nobaseline
+				elide = right
+			}
+			flowcontainer = {
+				spacing = 2
+				parentanchor = hcenter
+				icon = { size = { 14 14 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_drums.dds" }
+				textbox = { size = { 70 18 } text = "TOT_BAND_ROLE_DRUM_TEXT" using = fontsize_very_small align = left|nobaseline elide = right }
+			}
+			button_standard = {
+				text = "TOT_BAND_REMOVE"
+				size = { 88 34 }
+				enabled = "[GetScriptedGui('tot_band_remove_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+				onclick = "[GetScriptedGui('tot_band_remove_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				tooltip = "[GetScriptedGui('tot_band_remove_character').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+			}
+		}
+	}
+
+	type tot_band_role_slot_empty = widget {
+		size = { 96 124 }
+		background = { using = entry_bg_simple }
+		flowcontainer = {
+			direction = vertical
+			spacing = 4
+			margin = { 6 6 }
+			widget = {
+				size = { 84 68 }
+				background = { using = dark_area }
+				textbox = {
+					parentanchor = center
+					size = { 84 28 }
+					text = "TOT_BAND_ROLE_EMPTY"
+					using = fontsize_small
+					align = center|nobaseline
+				}
+			}
+			textbox = { size = { 84 20 } text = "TOT_BAND_SLOT_VACANT" using = fontsize_small align = center|nobaseline }
+			textbox = { size = { 84 18 } text = "TOT_BAND_SLOT_WAIT_ASSIGN" using = fontsize_very_small align = center|nobaseline }
 		}
 	}
 
@@ -970,8 +672,7 @@
 
 			textbox = {
 				size = { 100% 100% }
-				margin_left = 40
-				margin_right = 10
+				margin = { 40 0 10 0 }
 				raw_text = "前往乐队总部：[Building.GetState.GetNameNoFormatting]"
 				using = fontsize_small
 				align = left|nobaseline
@@ -981,7 +682,8 @@
 	}
 
 
-	type widget_je_kizuna_character_list = flowcontainer {
+}
+flowcontainer = {
 	name = "widget_je_kizuna_character_list"
 	ignoreinvisible = yes
 	direction = vertical
@@ -993,27 +695,27 @@
 		on_finish = "[GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 	}
 
-	widget = {
-		size = { 520 38 }
-		tab_buttons = {
-			blockoverride "first_button" { text = "KIZUNA_TAB_FACTION" }
-			blockoverride "first_button_selected" { text = "KIZUNA_TAB_FACTION" }
-			blockoverride "first_button_tooltip" { tooltip = "KIZUNA_TAB_FACTION" }
-			blockoverride "first_button_click" { onclick = "[GetVariableSystem.Set( 'tot_kizuna_page', 'faction' )]" }
-			blockoverride "first_button_visibility" { visible = "[Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ))))]" }
-			blockoverride "first_button_visibility_checked" { visible = "[And(Not(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' )), Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )))]" }
-			blockoverride "second_button" { text = "KIZUNA_TAB_PROFESSION" }
-			blockoverride "second_button_selected" { text = "KIZUNA_TAB_PROFESSION" }
-			blockoverride "second_button_tooltip" { tooltip = "KIZUNA_TAB_PROFESSION" }
-			blockoverride "second_button_click" { onclick = "[GetVariableSystem.Set( 'tot_kizuna_page', 'profession' )]" }
-			blockoverride "second_button_visibility" { visible = "[GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' )]" }
-			blockoverride "second_button_visibility_checked" { visible = "[Not(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ))]" }
-			blockoverride "third_button" { text = "KIZUNA_TAB_SPECIALTY" }
-			blockoverride "third_button_selected" { text = "KIZUNA_TAB_SPECIALTY" }
-			blockoverride "third_button_tooltip" { tooltip = "KIZUNA_TAB_SPECIALTY" }
-			blockoverride "third_button_click" { onclick = "[GetVariableSystem.Set( 'tot_kizuna_page', 'specialty' )]" }
-			blockoverride "third_button_visibility" { visible = "[GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )]" }
-			blockoverride "third_button_visibility_checked" { visible = "[Not(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ))]" }
+		widget = {
+			size = { 520 38 }
+			tab_buttons = {
+				blockoverride "first_button" { text = "KIZUNA_TAB_FACTION" }
+				blockoverride "first_button_selected" { text = "KIZUNA_TAB_FACTION" }
+				blockoverride "first_button_tooltip" { tooltip = "KIZUNA_TAB_FACTION" }
+				blockoverride "first_button_click" { onclick = "[GetVariableSystem.Set( 'tot_kizuna_page', 'faction' )]" }
+				blockoverride "first_button_visibility" { visible = "[Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ))))]" }
+				blockoverride "first_button_visibility_checked" { visible = "[And(Not(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' )), Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )))]" }
+				blockoverride "second_button" { text = "KIZUNA_TAB_PROFESSION" }
+				blockoverride "second_button_selected" { text = "KIZUNA_TAB_PROFESSION" }
+				blockoverride "second_button_tooltip" { tooltip = "KIZUNA_TAB_PROFESSION" }
+				blockoverride "second_button_click" { onclick = "[GetVariableSystem.Set( 'tot_kizuna_page', 'profession' )]" }
+				blockoverride "second_button_visibility" { visible = "[GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' )]" }
+				blockoverride "second_button_visibility_checked" { visible = "[Not(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ))]" }
+				blockoverride "third_button" { text = "KIZUNA_TAB_SPECIALTY" }
+				blockoverride "third_button_selected" { text = "KIZUNA_TAB_SPECIALTY" }
+				blockoverride "third_button_tooltip" { tooltip = "KIZUNA_TAB_SPECIALTY" }
+				blockoverride "third_button_click" { onclick = "[GetVariableSystem.Set( 'tot_kizuna_page', 'specialty' )]" }
+				blockoverride "third_button_visibility" { visible = "[GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )]" }
+				blockoverride "third_button_visibility_checked" { visible = "[Not(GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' ))]" }
 			blockoverride "fourth_button_visibility" { visible = no }
 			blockoverride "fourth_button_visibility_checked" { visible = no }
 			blockoverride "fifth_button_visibility" { visible = no }
@@ -1032,7 +734,7 @@
 					direction = vertical
 	
 						flowcontainer = {
-							visible = no
+							visible = "[GetScriptedGui('kon_kizuna_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							direction = vertical
 		
 							section_header_button = {
@@ -1042,7 +744,7 @@
 								}
 			
 								blockoverride "left_text" {
-									raw_text = "#v 轻音部#!"
+									text = "#v 轻音部#!"
 								}
 								blockoverride "onclick" {
 									onclick = "[GetVariableSystem.Toggle('kon_kizuna_toggle')]"
@@ -1120,7 +822,7 @@
 							section_header_button = {
 	visible = no
 	blockoverride "layout" { size = { 520 38 } }
-	blockoverride "left_text" { raw_text = "#v 乐队管理#!" }
+	blockoverride "left_text" { text = "#v 乐队管理#!" }
 	blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('band_kizuna_toggle')]" }
 	blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('band_kizuna_toggle'))]" }
 	blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]" }
@@ -1131,11 +833,11 @@ default_header_clean = {
 	visible = "[GetVariableSystem.Exists('band_kizuna_toggle')]"
 	size = { 500 96 }
 	blockoverride "text" {
-		raw_text = "[AccessPlayer.MakeScope.ScriptValue('band_kizuna_number')|=+D]名成员 / 已创建[AccessPlayer.MakeScope.ScriptValue('tot_band_created_count')|0]队 / 总部上限[AccessPlayer.MakeScope.ScriptValue('tot_band_limit_value')|0]"
+		text = "TOT_BAND_PANEL_SUMMARY"
 		using = fontsize_large
 		default_format = "#medium"
-		tooltip = "band_kizuna_tooltip"
 	}
+	tooltip = "band_kizuna_tooltip"
 }
 
 flowcontainer = {
@@ -1155,12 +857,12 @@ flowcontainer = {
 	}
 	flowcontainer = {
 		spacing = 4
-		button = { using = default_button size = { 78 56 } tooltip = "band_tools_tooltip" raw_text = "@musical_instrument!" }
-		button = { using = default_button size = { 78 56 } tooltip = "band_paper_tooltip" raw_text = "@paper!" }
-		button = { using = default_button size = { 78 56 } tooltip = "band_luxury_clothes_tooltip" raw_text = "@luxury_clothes!" }
-		button = { using = default_button size = { 78 56 } tooltip = "band_transportation_tooltip" raw_text = "@transportation!" }
-		button = { using = default_button size = { 78 56 } tooltip = "band_automobiles_tooltip" raw_text = "@automobiles!" }
-		button = { using = default_button size = { 78 56 } tooltip = "band_radios_tooltip" raw_text = "@radios!" }
+		button = { using = default_button size = { 78 56 } tooltip = "band_tools_tooltip" text = "@musical_instrument!" }
+		button = { using = default_button size = { 78 56 } tooltip = "band_paper_tooltip" text = "@paper!" }
+		button = { using = default_button size = { 78 56 } tooltip = "band_luxury_clothes_tooltip" text = "@luxury_clothes!" }
+		button = { using = default_button size = { 78 56 } tooltip = "band_transportation_tooltip" text = "@transportation!" }
+		button = { using = default_button size = { 78 56 } tooltip = "band_automobiles_tooltip" text = "@automobiles!" }
+		button = { using = default_button size = { 78 56 } tooltip = "band_radios_tooltip" text = "@radios!" }
 	}
 }
 
@@ -1182,9 +884,9 @@ flowcontainer = {
 		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_1_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_1_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_1_members')]" addcolumn = 500 addrow = 142 item = { tot_band_1_member_character = {} } }
+		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_1_members')]" addcolumn = 500 addrow = 164 item = { tot_band_1_member_character = {} } }
 		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_1_candidates')]" addcolumn = 500 addrow = 142 item = { tot_band_1_candidate_character = {} } } } }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_1_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_1_candidate_character = {} } } } }
 	}
 }
 
@@ -1206,9 +908,9 @@ flowcontainer = {
 		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_2_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_2_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_2_members')]" addcolumn = 500 addrow = 142 item = { tot_band_2_member_character = {} } }
+		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_2_members')]" addcolumn = 500 addrow = 164 item = { tot_band_2_member_character = {} } }
 		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_2_candidates')]" addcolumn = 500 addrow = 142 item = { tot_band_2_candidate_character = {} } } } }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_2_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_2_candidate_character = {} } } } }
 	}
 }
 
@@ -1230,9 +932,9 @@ flowcontainer = {
 		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_3_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_3_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_3_members')]" addcolumn = 500 addrow = 142 item = { tot_band_3_member_character = {} } }
+		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_3_members')]" addcolumn = 500 addrow = 164 item = { tot_band_3_member_character = {} } }
 		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_3_candidates')]" addcolumn = 500 addrow = 142 item = { tot_band_3_candidate_character = {} } } } }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_3_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_3_candidate_character = {} } } } }
 	}
 }
 
@@ -1254,9 +956,9 @@ flowcontainer = {
 		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_4_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_4_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_4_members')]" addcolumn = 500 addrow = 142 item = { tot_band_4_member_character = {} } }
+		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_4_members')]" addcolumn = 500 addrow = 164 item = { tot_band_4_member_character = {} } }
 		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_4_candidates')]" addcolumn = 500 addrow = 142 item = { tot_band_4_candidate_character = {} } } } }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_4_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_4_candidate_character = {} } } } }
 	}
 }
 
@@ -1278,9 +980,9 @@ flowcontainer = {
 		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_5_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_5_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_5_members')]" addcolumn = 500 addrow = 142 item = { tot_band_5_member_character = {} } }
+		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_5_members')]" addcolumn = 500 addrow = 164 item = { tot_band_5_member_character = {} } }
 		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_5_candidates')]" addcolumn = 500 addrow = 142 item = { tot_band_5_candidate_character = {} } } } }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_5_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_5_candidate_character = {} } } } }
 	}
 }
 
@@ -1302,9 +1004,9 @@ flowcontainer = {
 		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_6_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_6_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_6_members')]" addcolumn = 500 addrow = 142 item = { tot_band_6_member_character = {} } }
+		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_6_members')]" addcolumn = 500 addrow = 164 item = { tot_band_6_member_character = {} } }
 		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_6_candidates')]" addcolumn = 500 addrow = 142 item = { tot_band_6_candidate_character = {} } } } }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_6_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_6_candidate_character = {} } } } }
 	}
 }
 
@@ -1326,9 +1028,9 @@ flowcontainer = {
 		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_7_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_7_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_7_members')]" addcolumn = 500 addrow = 142 item = { tot_band_7_member_character = {} } }
+		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_7_members')]" addcolumn = 500 addrow = 164 item = { tot_band_7_member_character = {} } }
 		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_7_candidates')]" addcolumn = 500 addrow = 142 item = { tot_band_7_candidate_character = {} } } } }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_7_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_7_candidate_character = {} } } } }
 	}
 }
 
@@ -1350,9 +1052,9 @@ flowcontainer = {
 		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_8_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_8_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_8_members')]" addcolumn = 500 addrow = 142 item = { tot_band_8_member_character = {} } }
+		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_8_members')]" addcolumn = 500 addrow = 164 item = { tot_band_8_member_character = {} } }
 		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_8_candidates')]" addcolumn = 500 addrow = 142 item = { tot_band_8_candidate_character = {} } } } }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_8_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_8_candidate_character = {} } } } }
 	}
 }
 
@@ -1374,9 +1076,9 @@ flowcontainer = {
 		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_9_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_9_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_9_members')]" addcolumn = 500 addrow = 142 item = { tot_band_9_member_character = {} } }
+		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_9_members')]" addcolumn = 500 addrow = 164 item = { tot_band_9_member_character = {} } }
 		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_9_candidates')]" addcolumn = 500 addrow = 142 item = { tot_band_9_candidate_character = {} } } } }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_9_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_9_candidate_character = {} } } } }
 	}
 }
 
@@ -1398,9 +1100,9 @@ flowcontainer = {
 		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_10_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_10_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_10_members')]" addcolumn = 500 addrow = 142 item = { tot_band_10_member_character = {} } }
+		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_10_members')]" addcolumn = 500 addrow = 164 item = { tot_band_10_member_character = {} } }
 		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_10_candidates')]" addcolumn = 500 addrow = 142 item = { tot_band_10_candidate_character = {} } } } }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_10_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_10_candidate_character = {} } } } }
 	}
 }
 flowcontainer = {
@@ -1818,48 +1520,6 @@ flowcontainer = {
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_010_toggle')]"
 						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_010_list')]"
-						addcolumn = 500
-						addrow = 148
-						item = { kizuna_character_widget = {} }
-					}
-				}
-				flowcontainer = {
-					visible = "[And(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'faction' ), Not(Or(GetVariableSystem.HasValue( 'tot_kizuna_page', 'profession' ), GetVariableSystem.HasValue( 'tot_kizuna_page', 'specialty' )))), GetScriptedGui('tot_kizuna_011_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
-					direction = vertical
-					section_header_button = {
-						blockoverride "layout" { size = { 520 38 } }
-						blockoverride "left_text" { text = "tot_group_sheet_011_trait" }
-						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_kizuna_011_toggle')]" }
-						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_kizuna_011_toggle'))]" }
-						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_kizuna_011_toggle')]" }
-					}
-					default_header_clean = {
-						visible = "[GetVariableSystem.Exists('tot_kizuna_011_toggle')]"
-						size = { 500 80 }
-						blockoverride "text" {
-							text = "tot_kizuna_011_header"
-							autoresize = yes
-							multiline = yes
-							using = fontsize_xl
-							default_format = "#medium"
-						}
-						tooltip = "tot_kizuna_011_tooltip"
-					}
-					default_header_clean = {
-						visible = "[GetVariableSystem.Exists('tot_kizuna_011_toggle')]"
-						size = { 500 148 }
-						blockoverride "text" {
-							text = "tot_kizuna_011_modifier_text"
-							autoresize = yes
-							multiline = yes
-							fontsize = 15
-													fontsize_min = 12
-							default_format = "#medium"
-						}
-					}
-					fixedgridbox = {
-						visible = "[GetVariableSystem.Exists('tot_kizuna_011_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_011_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }

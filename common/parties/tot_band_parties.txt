@@ -1,0 +1,1448 @@
+band_academy_party = {
+	color = { 255 214 13 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = band_academy_party
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/liberal.dds"
+	}
+	valid_for_country = {
+		always = yes
+	}
+	available_for_interest_group = {
+		owner = {
+			country_has_voting_franchise = yes
+			always = yes
+		}
+	}
+	join_weight = {
+		value = {
+			value = 0
+			desc = "base_value"
+		}
+		if = {
+			limit = {
+				OR = {
+					is_interest_group_type = ig_intelligentsia
+					is_interest_group_type = ig_armed_forces
+				}
+			}
+			add = {
+				value = 12
+				desc = "from_archetype_party"
+			}
+		}
+		if = {
+			limit = {
+				leader ?= {
+					OR = {
+						has_ideology = ideology:ideology_academy_council
+						has_ideology = ideology:ideology_elite_training
+						has_ideology = ideology:ideology_president_supremacy
+						has_ideology = ideology:ideology_academy_prestige
+					}
+				}
+			}
+			add = {
+				value = 20
+				desc = "from_academy_leader"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_academy_council
+					has_ideology = ideology:ideology_elite_training
+					has_ideology = ideology:ideology_president_supremacy
+					has_ideology = ideology:ideology_academy_prestige
+				}
+			}
+			add = {
+				value = 16
+				desc = "from_academy_ig"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_republican
+					has_ideology = ideology:ideology_meritocratic
+					has_ideology = ideology:ideology_reformer
+					has_ideology = ideology:ideology_republican_leader
+					has_ideology = ideology:ideology_positivist
+					has_ideology = ideology:ideology_modernizer_leader
+				}
+			}
+			add = {
+				value = -28
+				desc = "from_vanilla_compatible_ideology"
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						OR = {
+							c:GBDP ?= this
+							c:MUS ?= this
+							c:AQO ?= this
+							c:NJS ?= this
+							c:AFTG ?= this
+							c:HHWO ?= this
+							c:MRFN ?= this
+							c:MYG ?= this
+							c:STLI ?= this
+							c:BYZ ?= this
+							c:HTT ?= this
+						}
+					}
+				}
+			}
+			add = {
+				value = -30
+				desc = "from_non_band_country"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_stage_noblesse
+					has_ideology = ideology:ideology_club_autonomy
+					has_ideology = ideology:ideology_free_creation
+					has_ideology = ideology:ideology_world_tour
+					has_ideology = ideology:ideology_discipline_first
+				}
+			}
+			add = {
+				value = -4
+				desc = "from_conservatism"
+			}
+		}
+		if = {
+			limit = {
+				scope:number <= 1
+				is_powerful = no
+				ig_counts_as_marginal = no
+			}
+			multiply = {
+				value = 2.5
+				desc = "from_influential_supporting_member"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number = 2
+			}
+			multiply = {
+				value = 0.85
+				desc = "from_two_prior_members"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number >= 3
+			}
+			multiply = {
+				value = 0.65
+				desc = "from_three_prior_members"
+			}
+		}
+	}
+}
+
+band_club_party = {
+	color = { 255 132 0 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = band_club_party
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/liberal.dds"
+	}
+	valid_for_country = {
+		always = yes
+	}
+	available_for_interest_group = {
+		owner = {
+			country_has_voting_franchise = yes
+			always = yes
+		}
+	}
+	join_weight = {
+		value = {
+			value = 0
+			desc = "base_value"
+		}
+		if = {
+			limit = {
+				OR = {
+					is_interest_group_type = ig_petty_bourgeoisie
+					is_interest_group_type = ig_intelligentsia
+					is_interest_group_type = ig_trade_unions
+				}
+			}
+			add = {
+				value = 12
+				desc = "from_archetype_party"
+			}
+		}
+		if = {
+			limit = {
+				leader ?= {
+					OR = {
+						has_ideology = ideology:ideology_club_autonomy
+						has_ideology = ideology:ideology_free_creation
+						has_ideology = ideology:ideology_world_tour
+						has_ideology = ideology:ideology_youth_pacesetter
+						has_ideology = ideology:ideology_bond_keeper
+					}
+				}
+			}
+			add = {
+				value = 20
+				desc = "from_club_leader"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_club_autonomy
+					has_ideology = ideology:ideology_free_creation
+					has_ideology = ideology:ideology_world_tour
+					has_ideology = ideology:ideology_youth_pacesetter
+					has_ideology = ideology:ideology_bond_keeper
+				}
+			}
+			add = {
+				value = 17
+				desc = "from_club_ig"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_liberal
+					has_ideology = ideology:ideology_anti_clerical
+					has_ideology = ideology:ideology_egalitarian
+					has_ideology = ideology:ideology_humanitarian
+					has_ideology = ideology:ideology_liberal_leader
+				}
+			}
+			add = {
+				value = -28
+				desc = "from_vanilla_compatible_ideology"
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						OR = {
+							c:GBDP ?= this
+							c:MUS ?= this
+							c:AQO ?= this
+							c:NJS ?= this
+							c:AFTG ?= this
+							c:HHWO ?= this
+							c:MRFN ?= this
+							c:MYG ?= this
+							c:STLI ?= this
+							c:BYZ ?= this
+							c:HTT ?= this
+						}
+					}
+				}
+			}
+			add = {
+				value = -30
+				desc = "from_non_band_country"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_stage_noblesse
+					has_ideology = ideology:ideology_president_supremacy
+					has_ideology = ideology:ideology_discipline_first
+					has_ideology = ideology:ideology_house_style
+				}
+			}
+			add = {
+				value = -4
+				desc = "from_conservatism"
+			}
+		}
+		if = {
+			limit = {
+				scope:number <= 1
+				is_powerful = no
+				ig_counts_as_marginal = no
+			}
+			multiply = {
+				value = 2.5
+				desc = "from_influential_supporting_member"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number = 2
+			}
+			multiply = {
+				value = 0.85
+				desc = "from_two_prior_members"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number >= 3
+			}
+			multiply = {
+				value = 0.65
+				desc = "from_three_prior_members"
+			}
+		}
+	}
+}
+
+band_band_party = {
+	color = { 255 92 92 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = band_band_party
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/liberal.dds"
+	}
+	valid_for_country = {
+		always = yes
+	}
+	available_for_interest_group = {
+		owner = {
+			country_has_voting_franchise = yes
+			always = yes
+		}
+	}
+	join_weight = {
+		value = {
+			value = 0
+			desc = "base_value"
+		}
+		if = {
+			limit = {
+				OR = {
+					is_interest_group_type = ig_industrialists
+					is_interest_group_type = ig_petty_bourgeoisie
+					is_interest_group_type = ig_trade_unions
+				}
+			}
+			add = {
+				value = 10
+				desc = "from_archetype_party"
+			}
+		}
+		if = {
+			limit = {
+				leader ?= {
+					OR = {
+						has_ideology = ideology:ideology_youth_pacesetter
+						has_ideology = ideology:ideology_free_creation
+						has_ideology = ideology:ideology_bond_keeper
+					}
+				}
+			}
+			add = {
+				value = 22
+				desc = "from_band_leader"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_youth_pacesetter
+					has_ideology = ideology:ideology_free_creation
+					has_ideology = ideology:ideology_bond_keeper
+					has_ideology = ideology:ideology_club_autonomy
+				}
+			}
+			add = {
+				value = 18
+				desc = "from_band_ig"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_liberal
+					has_ideology = ideology:ideology_humanitarian
+					has_ideology = ideology:ideology_moderate
+					has_ideology = ideology:ideology_liberal_leader
+				}
+			}
+			add = {
+				value = -28
+				desc = "from_vanilla_compatible_ideology"
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						OR = {
+							c:GBDP ?= this
+							c:MUS ?= this
+							c:AQO ?= this
+							c:NJS ?= this
+							c:AFTG ?= this
+							c:HHWO ?= this
+							c:MRFN ?= this
+							c:MYG ?= this
+							c:STLI ?= this
+							c:BYZ ?= this
+							c:HTT ?= this
+						}
+					}
+				}
+			}
+			add = {
+				value = -30
+				desc = "from_non_band_country"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_stage_noblesse
+					has_ideology = ideology:ideology_president_supremacy
+					has_ideology = ideology:ideology_discipline_first
+				}
+			}
+			add = {
+				value = -4
+				desc = "from_conservatism"
+			}
+		}
+		if = {
+			limit = {
+				scope:number <= 1
+				is_powerful = no
+				ig_counts_as_marginal = no
+			}
+			multiply = {
+				value = 2.5
+				desc = "from_influential_supporting_member"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number = 2
+			}
+			multiply = {
+				value = 0.85
+				desc = "from_two_prior_members"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number >= 3
+			}
+			multiply = {
+				value = 0.65
+				desc = "from_three_prior_members"
+			}
+		}
+	}
+}
+
+band_management_party = {
+	color = { 241 24 138 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = band_management_party
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/free_trade.dds"
+	}
+	valid_for_country = {
+		always = yes
+	}
+	available_for_interest_group = {
+		owner = {
+			country_has_voting_franchise = yes
+			always = yes
+		}
+	}
+	join_weight = {
+		value = {
+			value = 0
+			desc = "base_value"
+		}
+		if = {
+			limit = {
+				OR = {
+					is_interest_group_type = ig_industrialists
+					is_interest_group_type = ig_landowners
+				}
+			}
+			add = {
+				value = 12
+				desc = "from_archetype_party"
+			}
+		}
+		if = {
+			limit = {
+				leader ?= {
+					OR = {
+						has_ideology = ideology:ideology_elite_training
+						has_ideology = ideology:ideology_merit_stage
+						has_ideology = ideology:ideology_academy_prestige
+						has_ideology = ideology:ideology_agency_management
+						has_ideology = ideology:ideology_fan_market
+					}
+				}
+			}
+			add = {
+				value = 16
+				desc = "from_meritocracy"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_agency_management
+					has_ideology = ideology:ideology_fan_market
+					has_ideology = ideology:ideology_elite_training
+					has_ideology = ideology:ideology_merit_stage
+					has_ideology = ideology:ideology_stage_noblesse
+				}
+			}
+			add = {
+				value = 18
+				desc = "from_capitalism"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_plutocratic
+					has_ideology = ideology:ideology_laissez_faire
+					has_ideology = ideology:ideology_interventionist
+					has_ideology = ideology:ideology_corporatist
+					has_ideology = ideology:ideology_meritocratic
+					has_ideology = ideology:ideology_market_liberal
+					has_ideology = ideology:ideology_modernizer_leader
+					has_ideology = ideology:ideology_corporatist_leader
+					has_ideology = ideology:ideology_sovereignist_leader
+				}
+			}
+			add = {
+				value = -26
+				desc = "from_vanilla_compatible_ideology"
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						OR = {
+							c:GBDP ?= this
+							c:MUS ?= this
+							c:AQO ?= this
+							c:NJS ?= this
+							c:AFTG ?= this
+							c:HHWO ?= this
+							c:MRFN ?= this
+							c:MYG ?= this
+							c:STLI ?= this
+							c:BYZ ?= this
+							c:HTT ?= this
+						}
+					}
+				}
+			}
+			add = {
+				value = -30
+				desc = "from_non_band_country"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_stage_noblesse
+					has_ideology = ideology:ideology_idol_worship
+					has_ideology = ideology:ideology_club_autonomy
+					has_ideology = ideology:ideology_world_tour
+					has_ideology = ideology:ideology_stage_reform
+				}
+			}
+			add = {
+				value = -4
+				desc = "from_relevant_landowners"
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_law_or_variant = law_type:law_free_trade
+						has_law_or_variant = law_type:law_laissez_faire
+						has_law_or_variant = law_type:law_corporate_state
+						has_law_or_variant = law_type:law_technocracy
+					}
+				}
+			}
+			add = {
+				value = 10
+				desc = "from_capital_friendly_laws"
+			}
+		}
+		if = {
+			limit = {
+				scope:number <= 1
+				is_powerful = no
+				ig_counts_as_marginal = no
+			}
+			multiply = {
+				value = 2.5
+				desc = "from_influential_supporting_member"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number = 2
+			}
+			multiply = {
+				value = 0.85
+				desc = "from_two_prior_members"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number >= 3
+			}
+			multiply = {
+				value = 0.65
+				desc = "from_three_prior_members"
+			}
+		}
+	}
+}
+
+band_community_party = {
+	color = { 64 173 59 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = band_community_party
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/agrarians.dds"
+	}
+	valid_for_country = {
+		always = yes
+	}
+	available_for_interest_group = {
+		owner = {
+			country_has_voting_franchise = yes
+			always = yes
+		}
+	}
+	join_weight = {
+		value = {
+			value = 0
+			desc = "base_value"
+		}
+		if = {
+			limit = {
+				OR = {
+					is_interest_group_type = ig_rural_folk
+					is_interest_group_type = ig_devout
+					is_interest_group_type = ig_petty_bourgeoisie
+				}
+			}
+			add = {
+				value = 12
+				desc = "from_archetype_party"
+			}
+		}
+		if = {
+			limit = {
+				leader ?= {
+					OR = {
+						has_ideology = ideology:ideology_house_style
+						has_ideology = ideology:ideology_bond_keeper
+						has_ideology = ideology:ideology_local_revival
+						has_ideology = ideology:ideology_hometown_support
+					}
+				}
+			}
+			add = {
+				value = 16
+				desc = "from_community_leader"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_idol_worship
+					has_ideology = ideology:ideology_local_revival
+					has_ideology = ideology:ideology_hometown_support
+					has_ideology = ideology:ideology_club_autonomy
+				}
+			}
+			add = {
+				value = 17
+				desc = "from_community_ig"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_agrarian
+					has_ideology = ideology:ideology_pious
+					has_ideology = ideology:ideology_particularist
+					has_ideology = ideology:ideology_isolationist
+					has_ideology = ideology:ideology_moderate
+					has_ideology = ideology:ideology_pacifist
+					has_ideology = ideology:ideology_traditionalist
+				}
+			}
+			add = {
+				value = -28
+				desc = "from_vanilla_compatible_ideology"
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						OR = {
+							c:GBDP ?= this
+							c:MUS ?= this
+							c:AQO ?= this
+							c:NJS ?= this
+							c:AFTG ?= this
+							c:HHWO ?= this
+							c:MRFN ?= this
+							c:MYG ?= this
+							c:STLI ?= this
+							c:BYZ ?= this
+							c:HTT ?= this
+						}
+					}
+				}
+			}
+			add = {
+				value = -30
+				desc = "from_non_band_country"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_free_creation
+					has_ideology = ideology:ideology_world_tour
+				}
+			}
+			add = {
+				value = -4
+				desc = "from_cosmopolitan_rival"
+			}
+		}
+		if = {
+			limit = {
+				scope:number <= 1
+				is_powerful = no
+				ig_counts_as_marginal = no
+			}
+			multiply = {
+				value = 2.5
+				desc = "from_influential_supporting_member"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number = 2
+			}
+			multiply = {
+				value = 0.85
+				desc = "from_two_prior_members"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number >= 3
+			}
+			multiply = {
+				value = 0.65
+				desc = "from_three_prior_members"
+			}
+		}
+	}
+}
+
+band_merit_party = {
+	color = { 80 170 220 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = band_merit_party
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/social_democrats.dds"
+	}
+	valid_for_country = {
+		always = yes
+	}
+	available_for_interest_group = {
+		owner = {
+			country_has_voting_franchise = yes
+			always = yes
+		}
+	}
+	join_weight = {
+		value = {
+			value = -1
+			desc = "base_value"
+		}
+		if = {
+			limit = {
+				OR = {
+					is_interest_group_type = ig_intelligentsia
+					is_interest_group_type = ig_petty_bourgeoisie
+					is_interest_group_type = ig_trade_unions
+				}
+			}
+			add = {
+				value = 18
+				desc = "from_archetype_party"
+			}
+		}
+		if = {
+			limit = {
+				leader ?= {
+					OR = {
+						has_ideology = ideology:ideology_elite_training
+						has_ideology = ideology:ideology_free_creation
+						has_ideology = ideology:ideology_club_autonomy
+						has_ideology = ideology:ideology_youth_pacesetter
+					}
+				}
+			}
+			add = {
+				value = 12
+				desc = "from_merit_leader"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_elite_training
+					has_ideology = ideology:ideology_free_creation
+					has_ideology = ideology:ideology_club_autonomy
+					has_ideology = ideology:ideology_world_tour
+					has_ideology = ideology:ideology_stage_reform
+					has_ideology = ideology:ideology_production_floor
+				}
+			}
+			add = {
+				value = 16
+				desc = "from_merit_ig"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_proletarian
+					has_ideology = ideology:ideology_egalitarian
+					has_ideology = ideology:ideology_populist
+					has_ideology = ideology:ideology_socialist
+					has_ideology = ideology:ideology_social_democrat
+					has_ideology = ideology:ideology_reformer
+					has_ideology = ideology:ideology_radical
+					has_ideology = ideology:ideology_land_reformer
+					has_ideology = ideology:ideology_humanitarian
+					has_ideology = ideology:ideology_utilitarian_leader
+				}
+			}
+			add = {
+				value = -28
+				desc = "from_vanilla_compatible_ideology"
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						OR = {
+							c:GBDP ?= this
+							c:MUS ?= this
+							c:AQO ?= this
+							c:NJS ?= this
+							c:AFTG ?= this
+							c:HHWO ?= this
+							c:MRFN ?= this
+							c:MYG ?= this
+							c:STLI ?= this
+							c:BYZ ?= this
+							c:HTT ?= this
+						}
+					}
+				}
+			}
+			add = {
+				value = -30
+				desc = "from_non_band_country"
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_law_or_variant = law_type:law_protected_speech
+						has_law_or_variant = law_type:law_public_schools
+						has_law_or_variant = law_type:law_right_to_associate
+					}
+				}
+			}
+			add = {
+				value = 8
+				desc = "from_merit_friendly_laws"
+			}
+		}
+		if = {
+			limit = {
+				scope:number <= 1
+				is_powerful = no
+				ig_counts_as_marginal = no
+			}
+			multiply = {
+				value = 2.0
+				desc = "from_influential_supporting_member"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number = 2
+			}
+			multiply = {
+				value = 0.85
+				desc = "from_two_prior_members"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number >= 3
+			}
+			multiply = {
+				value = 0.65
+				desc = "from_three_prior_members"
+			}
+		}
+	}
+}
+
+band_discipline_party = {
+	color = { 108 64 179 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = band_discipline_party
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/conservatism.dds"
+	}
+	valid_for_country = {
+		always = yes
+	}
+	available_for_interest_group = {
+		owner = {
+			country_has_voting_franchise = yes
+			always = yes
+		}
+	}
+	join_weight = {
+		value = {
+			value = 0
+			desc = "base_value"
+		}
+		if = {
+			limit = {
+				OR = {
+					is_interest_group_type = ig_landowners
+					is_interest_group_type = ig_devout
+					is_interest_group_type = ig_armed_forces
+				}
+			}
+			add = {
+				value = 18
+				desc = "from_archetype_party"
+			}
+		}
+		if = {
+			limit = {
+				leader ?= {
+					OR = {
+						has_ideology = ideology:ideology_unified_tempo
+						has_ideology = ideology:ideology_discipline_first
+						has_ideology = ideology:ideology_idol_worship
+						has_ideology = ideology:ideology_stage_supremacy
+						has_ideology = ideology:ideology_house_style
+					}
+				}
+			}
+			add = {
+				value = 12
+				desc = "from_conservative_leader"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_stage_noblesse
+					has_ideology = ideology:ideology_president_supremacy
+					has_ideology = ideology:ideology_unified_tempo
+					has_ideology = ideology:ideology_idol_worship
+					has_ideology = ideology:ideology_discipline_first
+					has_ideology = ideology:ideology_stage_supremacy
+					has_ideology = ideology:ideology_house_style
+				}
+			}
+			add = {
+				value = 17
+				desc = "from_conservative_ig"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_paternalistic
+					has_ideology = ideology:ideology_hierarchic
+					has_ideology = ideology:ideology_oligarchic
+					has_ideology = ideology:ideology_pious
+					has_ideology = ideology:ideology_loyalist
+					has_ideology = ideology:ideology_moralist
+					has_ideology = ideology:ideology_jingoist
+					has_ideology = ideology:ideology_reactionary
+					has_ideology = ideology:ideology_patriarchal
+					has_ideology = ideology:ideology_traditionalist
+					has_ideology = ideology:ideology_theocrat
+					has_ideology = ideology:ideology_authoritarian
+					has_ideology = ideology:ideology_royalist
+					has_ideology = ideology:ideology_jingoist_leader
+				}
+			}
+			add = {
+				value = -26
+				desc = "from_vanilla_compatible_ideology"
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						OR = {
+							c:GBDP ?= this
+							c:MUS ?= this
+							c:AQO ?= this
+							c:NJS ?= this
+							c:AFTG ?= this
+							c:HHWO ?= this
+							c:MRFN ?= this
+							c:MYG ?= this
+							c:STLI ?= this
+							c:BYZ ?= this
+							c:HTT ?= this
+						}
+					}
+				}
+			}
+			add = {
+				value = -30
+				desc = "from_non_band_country"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_free_creation
+					has_ideology = ideology:ideology_stage_reform
+					has_ideology = ideology:ideology_club_autonomy
+					has_ideology = ideology:ideology_world_tour
+					has_ideology = ideology:ideology_youth_pacesetter
+					has_ideology = ideology:ideology_bond_keeper
+				}
+			}
+			add = {
+				value = -4
+				desc = "from_progressive_con"
+			}
+		}
+		if = {
+			limit = {
+				scope:number = 1
+				is_powerful = no
+				ig_counts_as_marginal = no
+			}
+			multiply = {
+				value = 2.5
+				desc = "from_influential_supporting_member"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number = 2
+			}
+			multiply = {
+				value = 0.85
+				desc = "from_two_prior_members"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number >= 3
+			}
+			multiply = {
+				value = 0.65
+				desc = "from_three_prior_members"
+			}
+		}
+	}
+}
+
+band_arts_party = {
+	color = { 86 170 222 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = band_arts_party
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/liberal.dds"
+	}
+	valid_for_country = {
+		always = yes
+	}
+	available_for_interest_group = {
+		owner = {
+			country_has_voting_franchise = yes
+			always = yes
+		}
+	}
+	join_weight = {
+		value = {
+			value = 0
+			desc = "base_value"
+		}
+		if = {
+			limit = {
+				OR = {
+					is_interest_group_type = ig_intelligentsia
+					is_interest_group_type = ig_petty_bourgeoisie
+					is_interest_group_type = ig_devout
+				}
+			}
+			add = {
+				value = 12
+				desc = "from_archetype_party"
+			}
+		}
+		if = {
+			limit = {
+				leader ?= {
+					OR = {
+						has_ideology = ideology:ideology_free_creation
+						has_ideology = ideology:ideology_inquisitive
+						has_ideology = ideology:ideology_kon
+					}
+				}
+			}
+			add = {
+				value = 20
+				desc = "from_arts_leader"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_free_creation
+					has_ideology = ideology:ideology_inquisitive
+					has_ideology = ideology:ideology_kon
+				}
+			}
+			add = {
+				value = 17
+				desc = "from_arts_ig"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_liberal
+					has_ideology = ideology:ideology_anti_clerical
+					has_ideology = ideology:ideology_humanitarian
+					has_ideology = ideology:ideology_positivist
+					has_ideology = ideology:ideology_liberal_leader
+				}
+			}
+			add = {
+				value = -24
+				desc = "from_vanilla_compatible_ideology"
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						OR = {
+							c:GBDP ?= this
+							c:MUS ?= this
+							c:AQO ?= this
+							c:NJS ?= this
+							c:AFTG ?= this
+							c:HHWO ?= this
+							c:MRFN ?= this
+							c:MYG ?= this
+							c:STLI ?= this
+							c:BYZ ?= this
+							c:HTT ?= this
+						}
+					}
+				}
+			}
+			add = {
+				value = -30
+				desc = "from_non_band_country"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_stage_noblesse
+					has_ideology = ideology:ideology_president_supremacy
+					has_ideology = ideology:ideology_discipline_first
+					has_ideology = ideology:ideology_house_style
+				}
+			}
+			add = {
+				value = -4
+				desc = "from_conservatism"
+			}
+		}
+		if = {
+			limit = {
+				scope:number <= 1
+				is_powerful = no
+				ig_counts_as_marginal = no
+			}
+			multiply = {
+				value = 2.5
+				desc = "from_influential_supporting_member"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number = 2
+			}
+			multiply = {
+				value = 0.85
+				desc = "from_two_prior_members"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number >= 3
+			}
+			multiply = {
+				value = 0.65
+				desc = "from_three_prior_members"
+			}
+		}
+	}
+}
+
+band_peace_party = {
+	color = { 121 204 153 }
+	name = {
+		first_valid = {
+			triggered_desc = {
+				desc = band_peace_party
+				trigger = {
+					always = yes
+				}
+			}
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/liberal.dds"
+	}
+	valid_for_country = {
+		always = yes
+	}
+	available_for_interest_group = {
+		owner = {
+			country_has_voting_franchise = yes
+			always = yes
+		}
+	}
+	join_weight = {
+		value = {
+			value = 0
+			desc = "base_value"
+		}
+		if = {
+			limit = {
+				OR = {
+					is_interest_group_type = ig_devout
+					is_interest_group_type = ig_armed_forces
+					is_interest_group_type = ig_trade_unions
+				}
+			}
+			add = {
+				value = 12
+				desc = "from_archetype_party"
+			}
+		}
+		if = {
+			limit = {
+				leader ?= {
+					OR = {
+						has_ideology = ideology:ideology_pacifist
+						has_ideology = ideology:ideology_humanitarian
+						has_ideology = ideology:ideology_bond_keeper
+					}
+				}
+			}
+			add = {
+				value = 18
+				desc = "from_peace_leader"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_pacifist
+					has_ideology = ideology:ideology_bond_keeper
+					has_ideology = ideology:ideology_campus_guardian
+					has_ideology = ideology:ideology_kon
+				}
+			}
+			add = {
+				value = 16
+				desc = "from_peace_ig"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_jingoist
+					has_ideology = ideology:ideology_jingoist_leader
+					has_ideology = ideology:ideology_authoritarian
+					has_ideology = ideology:ideology_fascist
+				}
+			}
+			add = {
+				value = -28
+				desc = "from_vanilla_compatible_ideology"
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						OR = {
+							c:GBDP ?= this
+							c:MUS ?= this
+							c:AQO ?= this
+							c:NJS ?= this
+							c:AFTG ?= this
+							c:HHWO ?= this
+							c:MRFN ?= this
+							c:MYG ?= this
+							c:STLI ?= this
+							c:BYZ ?= this
+							c:HTT ?= this
+						}
+					}
+				}
+			}
+			add = {
+				value = -30
+				desc = "from_non_band_country"
+			}
+		}
+		if = {
+			limit = {
+				scope:number <= 1
+				is_powerful = no
+				ig_counts_as_marginal = no
+			}
+			multiply = {
+				value = 2.5
+				desc = "from_influential_supporting_member"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number = 2
+			}
+			multiply = {
+				value = 0.85
+				desc = "from_two_prior_members"
+			}
+		}
+		else_if = {
+			limit = {
+				scope:number >= 3
+			}
+			multiply = {
+				value = 0.65
+				desc = "from_three_prior_members"
+			}
+		}
+	}
+}

@@ -1,4 +1,4 @@
-﻿template hud_elements_alpha {
+template hud_elements_alpha {
 	alpha = 1
 }
 
@@ -347,7 +347,6 @@ types topbar_components
 									size = { 100 40 }
 									tooltip = "BUREAUCRACY_TOOLTIP"
 									using = tooltip_below
-									onclick = "[InformationPanelBar.ClosePanel]"
 									onclick = "[InformationPanelBar.OpenPanelTab('politics', 'institutions')]"
 									onclick = "[GetVariableSystem.Clear('show_mana')]"
 									enabled = "[GetMetaPlayer.GetPlayedOrObservedCountry.IsValid]"
@@ -391,7 +390,6 @@ types topbar_components
 									size = { 100 40 }
 									tooltip = "AUTHORITY_TOOLTIP"
 									using = tooltip_below
-									onclick = "[InformationPanelBar.ClosePanel]"
 									onclick = "[InformationPanelBar.OpenPanelTab('politics', 'default')]"
 									onclick = "[GetVariableSystem.Clear('show_mana')]"
 									enabled = "[GetMetaPlayer.GetPlayedOrObservedCountry.IsValid]"
@@ -435,7 +433,6 @@ types topbar_components
 									size = { 100 40 }
 									tooltip = "INFLUENCE_TOOLTIP"
 									using = tooltip_below
-									onclick = "[InformationPanelBar.ClosePanel]"
 									onclick = "[InformationPanelBar.OpenPanelTab('diplomatic_overview', 'default')]"
 									onclick = "[GetVariableSystem.Clear('show_mana')]"
 									enabled = "[GetMetaPlayer.GetPlayedOrObservedCountry.IsValid]"
@@ -478,7 +475,6 @@ types topbar_components
 									size = { 100 40 }
 									tooltip = "MANA_TOOLTIP"
 									using = tooltip_below
-									onclick = "[InformationPanelBar.ClosePanel]"
 									onclick = "[GetVariableSystem.Toggle('show_mana')]"
 									onclick = "[InformationPanelBar.ClosePanel]"
 									onclick = "[MapListPanelManager.CloseCurrentPanel]"
@@ -525,7 +521,6 @@ types topbar_components
 									size = { 100 40 }
 									tooltip = "SUPPLY_SHIPS_TOPBAR_TOOLTIP"
 									using = tooltip_below
-									onclick = "[InformationPanelBar.ClosePanel]"
 									onclick = "[InformationPanelBar.OpenMarketPanel(AccessPlayer.AccessFirstMarket.Self)]"
 									enabled = "[GetMetaPlayer.GetPlayedOrObservedCountry.IsValid]"
 
@@ -578,7 +573,6 @@ types topbar_components
 									tooltip = "CAPITAL_MONEY"
 									using = tooltip_below
 									using = money_tooltip_with_graph
-									onclick = "[InformationPanelBar.ClosePanel]"
 									onclick = "[InformationPanelBar.OpenPanelTab('budget', 'default')]"
 									onclick = "[GetVariableSystem.Clear('show_mana')]"
 									enabled = "[GetMetaPlayer.GetPlayedOrObservedCountry.IsValid]"
@@ -683,7 +677,6 @@ types topbar_components
 				}
 				
 				blockoverride "on_click" {
-					onclick = "[InformationPanelBar.ClosePanel]"
 					onclick = "[GetVariableSystem.Toggle('more_topbar_info')]"
 				}
 				blockoverride "view_1" {
@@ -736,7 +729,6 @@ types topbar_components
 		size = { 57 57 }
 		position = { -4 78 }
 		
-		onclick = "[InformationPanelBar.ClosePanel]"
 		onclick = "[MapListPanelManager.OpenCurrentPanel]"
 		onclick = "[SetTempMapModeByKey('mm_default')]"
 
@@ -746,4 +738,3 @@ types topbar_components
 		}
 	}
 }
-

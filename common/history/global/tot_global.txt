@@ -7,10 +7,19 @@
 	}
 	
 	every_country = {
-		add_journal_entry = {
-			type = je_tot_character_system_backend
+		if = {
+			limit = { NOT = { has_journal_entry = je_kizuna_gui } }
+			add_journal_entry = { type = je_kizuna_gui }
 		}
-		update_kizuna = yes
-		tot_character_growth_refresh = yes
+		if = {
+			limit = { NOT = { has_journal_entry = je_tot_character_growth_gui } }
+			add_journal_entry = { type = je_tot_character_growth_gui }
+		}
+		if = {
+			limit = { NOT = { has_journal_entry = je_tot_band_gui } }
+			add_journal_entry = { type = je_tot_band_gui }
+		}
+		tot_setup_default_kon_band_effect = yes
+		tot_setup_default_story_bands_effect = yes
 	}
 }

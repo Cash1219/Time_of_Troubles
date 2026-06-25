@@ -1,7 +1,84 @@
-﻿COUNTRIES = {
+COUNTRIES = {
 	c:GBDP ?= {
 		effect_starting_technology_tier_3_tech = yes
 		effect_starting_politics_liberal = yes
+		activate_law = law_type:law_student_council_system
+		activate_law = law_type:law_disciplinary_committee
+		activate_law = law_type:law_student_executive_cadres
 		activate_law = law_type:law_artistic_freedom
+		activate_law = law_type:law_club_school_coordination
+		activate_law = law_type:law_freedom_of_conscience
+		activate_law = law_type:law_census_voting
+		activate_law = law_type:law_tenant_farmers
+		activate_law = law_type:law_national_supremacy
+
+		ig:ig_landowners ?= {
+			remove_ideology = ideology_paternalistic
+			remove_ideology = ideology_patriarchal
+			remove_ideology = ideology_hierarchic
+			add_ideology = ideology_stage_noblesse
+			add_ideology = ideology_house_style
+			set_interest_group_name = ig_landowners_band
+		}
+		ig:ig_devout ?= {
+			remove_ideology = ideology_pious
+			remove_ideology = ideology_moralist
+			remove_ideology = ideology_patriarchal
+			add_ideology = ideology_idol_worship
+			add_ideology = ideology_support_offering
+			set_interest_group_name = ig_devout_band
+		}
+		ig:ig_armed_forces ?= {
+			remove_ideology = ideology_jingoist
+			remove_ideology = ideology_loyalist
+			remove_ideology = ideology_patriotic
+			add_ideology = ideology_president_supremacy
+			add_ideology = ideology_discipline_first
+			add_ideology = ideology_stage_supremacy
+			set_interest_group_name = ig_armed_forces_band
+		}
+		ig:ig_industrialists ?= {
+			remove_ideology = ideology_plutocratic
+			remove_ideology = ideology_laissez_faire
+			remove_ideology = ideology_individualist
+			add_ideology = ideology_agency_management
+			add_ideology = ideology_fan_market
+			set_interest_group_name = ig_industrialists_band
+		}
+		ig:ig_petty_bourgeoisie ?= {
+			remove_ideology = ideology_reactionary
+			remove_ideology = ideology_meritocratic
+			remove_ideology = ideology_patriotic
+			add_ideology = ideology_club_autonomy
+			add_ideology = ideology_world_tour
+			set_interest_group_name = ig_petty_bourgeoisie_band
+		}
+		ig:ig_rural_folk ?= {
+			remove_ideology = ideology_agrarian
+			remove_ideology = ideology_particularist
+			remove_ideology = ideology_isolationist
+			add_ideology = ideology_local_revival
+			add_ideology = ideology_hometown_support
+			set_interest_group_name = ig_rural_folk_band
+		}
+		ig:ig_trade_unions ?= {
+			remove_ideology = ideology_proletarian
+			remove_ideology = ideology_egalitarian
+			remove_ideology = ideology_populist
+			remove_ideology = ideology_anti_slavery
+			add_ideology = ideology_stage_reform
+			add_ideology = ideology_production_floor
+			set_interest_group_name = ig_trade_unions_band
+		}
+		ig:ig_intelligentsia ?= {
+			remove_ideology = ideology_liberal
+			remove_ideology = ideology_anti_clerical
+			remove_ideology = ideology_republican
+			remove_ideology = ideology_anti_slavery
+			add_ideology = ideology_academy_council
+			add_ideology = ideology_elite_training
+			add_ideology = ideology_free_creation
+			set_interest_group_name = ig_intelligentsia_band
+		}
 	}
 }

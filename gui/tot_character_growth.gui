@@ -158,7 +158,7 @@
 	}
 
 	type tot_character_growth_progress_character = widget {
-		size = { 500 98 }
+		size = { 500 112 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 
@@ -174,7 +174,7 @@
 
 			widget = {
 				size = { 58 58 }
-				margin_top = 10
+				margin_top = 8
 				tooltip = "TOT_CHARACTER_GROWTH_EXP_TOOLTIP"
 
 				background = {
@@ -188,9 +188,9 @@
 				}
 
 				textbox = {
-					text = "[Character.MakeScope.Var('tot_character_growth_exp').GetValue|0]"
+					text = "[Character.MakeScope.ScriptValue('tot_character_growth_next_cost_text_value')|0]"
 					using = fontsize_small
-					size = { 48 22 }
+					size = { 52 22 }
 					parentanchor = center
 					align = center|nobaseline
 				}
@@ -198,8 +198,8 @@
 
 			flowcontainer = {
 				direction = vertical
-				spacing = 4
-				minimumsize = { 286 78 }
+				spacing = 2
+				minimumsize = { 286 86 }
 
 				textbox = {
 					text = "[Character.GetFullNameNoFormatting]"
@@ -213,7 +213,7 @@
 				textbox = {
 					text = "[Character.GetPrimaryRoleTitle]"
 					using = fontsize_small
-					size = { 286 22 }
+					size = { 286 18 }
 					align = left|nobaseline
 					elide = right
 				}
@@ -221,8 +221,19 @@
 				textbox = {
 					text = "TOT_CHARACTER_GROWTH_EXP_PROGRESS"
 					using = fontsize_small
-					size = { 286 22 }
+					size = { 286 18 }
 					align = left|nobaseline
+					tooltip = "TOT_CHARACTER_GROWTH_EXP_TOOLTIP"
+				}
+
+				textbox = {
+					text = "TOT_CHARACTER_GROWTH_EXP_STAGE_COSTS"
+					using = fontsize_small
+					fontsize = 13
+					size = { 286 32 }
+					align = left|nobaseline
+					multiline = yes
+					elide = right
 					tooltip = "TOT_CHARACTER_GROWTH_EXP_TOOLTIP"
 				}
 			}

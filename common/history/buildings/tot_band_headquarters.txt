@@ -3,9 +3,190 @@ BUILDINGS = {
 		region_state:BYZ = {
 			create_building = {
 				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_axis_interest_3" "pm_band_axis_club_3" "pm_band_axis_independent_1" "pm_band_food_basic" "pm_band_entertainment_daily" "pm_band_equipment_standard" }
 				add_ownership = {
 					country = {
 						country = "c:BYZ"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_VENETIA = {
+		region_state:GBDP = {
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_axis_interest_2" "pm_band_axis_club_2" "pm_band_axis_independent_1" "pm_band_food_basic" "pm_band_entertainment_daily" "pm_band_equipment_standard" }
+				add_ownership = {
+					country = {
+						country = "c:GBDP"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_LOMBARDY = {
+		region_state:GBDP = {
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_axis_commercial_1" "pm_band_axis_professional_3" "pm_band_axis_independent_1" "pm_band_food_regular" "pm_band_entertainment_routine" "pm_band_equipment_enhanced" }
+				add_ownership = {
+					country = {
+						country = "c:GBDP"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_ISTRIA = {
+		region_state:GBDP = {
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_axis_commercial_2" "pm_band_axis_professional_3" "pm_band_axis_corporate_1" "pm_band_food_regular" "pm_band_entertainment_routine" "pm_band_equipment_professional" }
+				add_ownership = {
+					country = {
+						country = "c:GBDP"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_AUSTRIA = {
+		region_state:MRFN = {
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_axis_interest_1" "pm_band_axis_club_2" "pm_band_axis_independent_1" "pm_band_food_basic" "pm_band_entertainment_daily" "pm_band_equipment_standard" }
+				add_ownership = {
+					country = {
+						country = "c:MRFN"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_CYPRUS = {
+		region_state:MYG = {
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_axis_interest_2" "pm_band_axis_club_1" "pm_band_axis_independent_3" "pm_band_food_regular" "pm_band_entertainment_routine" "pm_band_equipment_standard" }
+				add_ownership = {
+					country = {
+						country = "c:MYG"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_WALLACHIA = {
+		region_state:ROM = {
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_axis_interest_1" "pm_band_axis_professional_1" "pm_band_axis_independent_2" "pm_band_food_basic" "pm_band_entertainment_daily" "pm_band_equipment_standard" }
+				add_ownership = {
+					country = {
+						country = "c:ROM"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_SOUTHERN_TRANSYLVANIA = {
+		region_state:ROM = {
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_axis_commercial_2" "pm_band_axis_professional_2" "pm_band_axis_corporate_2" "pm_band_food_regular" "pm_band_entertainment_routine" "pm_band_equipment_professional" }
+				add_ownership = {
+					country = {
+						country = "c:ROM"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_KIEV = {
+		region_state:UKR = {
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_axis_interest_2" "pm_band_axis_club_1" "pm_band_axis_independent_3" "pm_band_food_regular" "pm_band_entertainment_routine" "pm_band_equipment_standard" }
+				add_ownership = {
+					country = {
+						country = "c:UKR"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_ANKARA = {
+		region_state:AVMJ = {
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_axis_commercial_1" "pm_band_axis_professional_2" "pm_band_axis_corporate_3" "pm_band_food_regular" "pm_band_entertainment_immersive" "pm_band_equipment_professional" }
+				add_ownership = {
+					country = {
+						country = "c:AVMJ"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_GONDER = {
+		region_state:AFTG = {
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_axis_interest_2" "pm_band_axis_club_3" "pm_band_axis_independent_2" "pm_band_food_basic" "pm_band_entertainment_daily" "pm_band_equipment_standard" }
+				add_ownership = {
+					country = {
+						country = "c:AFTG"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_DISTRICT_OF_COLUMBIA = {
+		region_state:HHWO = {
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_axis_interest_1" "pm_band_axis_club_1" "pm_band_axis_independent_1" "pm_band_food_regular" "pm_band_entertainment_routine" "pm_band_equipment_standard" }
+				add_ownership = {
+					country = {
+						country = "c:HHWO"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_PENNSYLVANIA = {
+		region_state:HHWO = {
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_axis_interest_1" "pm_band_axis_club_1" "pm_band_axis_independent_1" "pm_band_food_regular" "pm_band_entertainment_routine" "pm_band_equipment_standard" }
+				add_ownership = {
+					country = {
+						country = "c:HHWO"
 						levels = 1
 					}
 				}

@@ -1,8 +1,31 @@
-﻿tot_character_growth_weekly_update = {
+tot_character_growth_weekly_update = {
+	set_variable = { name = tot_club_growth_bonus value = 0 }
+	if = {
+		limit = { modifier:country_tot_club_growth_exp_add > 0 }
+		set_variable = {
+			name = tot_club_growth_bonus
+			value = modifier:country_tot_club_growth_exp_add
+		}
+	}
+
 	every_scope_character = {
 		limit = {
 			is_character_alive = yes
 			historical = yes
+		}
+		if = {
+			limit = { has_variable = tot_character_growth_club_cost_mult }
+			remove_variable = tot_character_growth_club_cost_mult
+		}
+		if = {
+			limit = { modifier:country_tot_character_growth_cost_mult_add != 0 }
+			set_variable = {
+				name = tot_character_growth_club_cost_mult
+				value = {
+					value = modifier:country_tot_character_growth_cost_mult_add
+					multiply = 100
+				}
+			}
 		}
 
 		change_variable = {
@@ -15,79 +38,156 @@
 			}
 			change_variable = {
 				name = tot_character_growth_exp
-				add = 10
+				add = 3
 			}
 		}
 		if = {
 			limit = {
-				interest_group ?= {
-					is_interest_group_type = ig_landowners
-				}
+				is_interest_group_leader = yes
 			}
 			change_variable = {
 				name = tot_character_growth_exp
-				add = 5
+				add = 3
 			}
 		}
+		if = {
+			limit = { root.var:tot_club_growth_bonus > 0 }
+			change_variable = {
+				name = tot_character_growth_exp
+				add = root.var:tot_club_growth_bonus
+			}
+		}
+		tot_character_growth_refresh_cost = yes
 		tot_character_growth_check_level_up = yes
 	}
 }
 
+tot_character_growth_refresh_cost = {
+	set_variable = {
+		name = tot_character_growth_current_cost
+		value = 1000
+	}
+
+	if = {
+		limit = { has_variable = tot_character_growth_trait_cost_mult }
+		change_variable = {
+			name = tot_character_growth_current_cost
+			multiply = 100
+		}
+		change_variable = {
+			name = tot_character_growth_current_cost
+			add = var:tot_character_growth_trait_cost_mult
+		}
+		change_variable = {
+			name = tot_character_growth_current_cost
+			divide = 100
+		}
+	}
+	if = {
+		limit = { has_variable = tot_character_growth_club_cost_mult }
+		change_variable = {
+			name = tot_character_growth_current_cost
+			multiply = 100
+		}
+		change_variable = {
+			name = tot_character_growth_current_cost
+			add = var:tot_character_growth_club_cost_mult
+		}
+		change_variable = {
+			name = tot_character_growth_current_cost
+			divide = 100
+		}
+	}
+
+	if = {
+		limit = { has_variable = tot_character_growth_trait_cost_add }
+		change_variable = {
+			name = tot_character_growth_current_cost
+			add = var:tot_character_growth_trait_cost_add
+		}
+	}
+
+	if = {
+		limit = { tot_character_growth_acquired_traits_count_value > 0 }
+		change_variable = {
+			name = tot_character_growth_current_cost
+			add = {
+				value = tot_character_growth_acquired_traits_count_value
+				multiply = 3000
+			}
+		}
+	}
+
+	if = {
+		limit = { var:tot_character_growth_current_cost < 1 }
+		set_variable = { name = tot_character_growth_current_cost value = 1 }
+	}
+}
+
+tot_character_growth_has_available_random_trait = {
+	OR = {
+		NOT = { has_trait = tot_group_sheet_020_trait }
+		NOT = { has_trait = tot_group_sheet_021_trait }
+		NOT = { has_trait = tot_group_sheet_022_trait }
+		NOT = { has_trait = tot_group_sheet_023_trait }
+		NOT = { has_trait = tot_group_sheet_024_trait }
+		NOT = { has_trait = tot_group_sheet_025_trait }
+		NOT = { has_trait = tot_group_sheet_026_trait }
+		NOT = { has_trait = tot_group_sheet_027_trait }
+		NOT = { has_trait = tot_group_sheet_028_trait }
+		NOT = { has_trait = tot_group_sheet_029_trait }
+		NOT = { has_trait = tot_group_sheet_030_trait }
+		NOT = { has_trait = tot_group_sheet_031_trait }
+		NOT = { has_trait = tot_group_sheet_032_trait }
+		NOT = { has_trait = tot_group_sheet_033_trait }
+		NOT = { has_trait = tot_group_sheet_034_trait }
+		NOT = { has_trait = tot_group_sheet_035_trait }
+		NOT = { has_trait = tot_group_sheet_036_trait }
+		NOT = { has_trait = tot_group_sheet_037_trait }
+		NOT = { has_trait = tot_group_sheet_038_trait }
+		NOT = { has_trait = tot_group_sheet_039_trait }
+		NOT = { has_trait = tot_group_sheet_040_trait }
+		NOT = { has_trait = tot_group_sheet_041_trait }
+		NOT = { has_trait = tot_group_sheet_042_trait }
+		NOT = { has_trait = tot_group_sheet_043_trait }
+		NOT = { has_trait = tot_group_sheet_044_trait }
+		NOT = { has_trait = tot_group_sheet_045_trait }
+		NOT = { has_trait = tot_group_sheet_046_trait }
+		NOT = { has_trait = tot_group_sheet_047_trait }
+		NOT = { has_trait = tot_group_sheet_048_trait }
+		NOT = { has_trait = tot_group_sheet_049_trait }
+		NOT = { has_trait = tot_group_sheet_050_trait }
+		NOT = { has_trait = tot_group_sheet_051_trait }
+		NOT = { has_trait = tot_group_sheet_052_trait }
+		NOT = { has_trait = tot_group_sheet_053_trait }
+		NOT = { has_trait = tot_group_sheet_054_trait }
+		NOT = { has_trait = tot_group_sheet_055_trait }
+		NOT = { has_trait = tot_group_sheet_056_trait }
+		NOT = { has_trait = tot_group_sheet_057_trait }
+	}
+}
+
 tot_character_growth_check_level_up = {
+	tot_character_growth_refresh_cost = yes
+
 	if = {
 		limit = {
 			has_variable = tot_character_growth_exp
-			var:tot_character_growth_exp >= 1000
+			has_variable = tot_character_growth_current_cost
+			var:tot_character_growth_exp >= var:tot_character_growth_current_cost
 			historical = yes
-			NOT = {
-				AND = {
-					has_trait = tot_group_sheet_020_trait
-					has_trait = tot_group_sheet_021_trait
-					has_trait = tot_group_sheet_022_trait
-					has_trait = tot_group_sheet_023_trait
-					has_trait = tot_group_sheet_024_trait
-					has_trait = tot_group_sheet_025_trait
-					has_trait = tot_group_sheet_026_trait
-					has_trait = tot_group_sheet_027_trait
-					has_trait = tot_group_sheet_028_trait
-					has_trait = tot_group_sheet_029_trait
-					has_trait = tot_group_sheet_030_trait
-					has_trait = tot_group_sheet_031_trait
-					has_trait = tot_group_sheet_032_trait
-					has_trait = tot_group_sheet_033_trait
-					has_trait = tot_group_sheet_034_trait
-					has_trait = tot_group_sheet_035_trait
-					has_trait = tot_group_sheet_036_trait
-					has_trait = tot_group_sheet_037_trait
-					has_trait = tot_group_sheet_038_trait
-					has_trait = tot_group_sheet_039_trait
-					has_trait = tot_group_sheet_040_trait
-					has_trait = tot_group_sheet_041_trait
-					has_trait = tot_group_sheet_042_trait
-					has_trait = tot_group_sheet_043_trait
-					has_trait = tot_group_sheet_044_trait
-					has_trait = tot_group_sheet_045_trait
-					has_trait = tot_group_sheet_046_trait
-					has_trait = tot_group_sheet_047_trait
-					has_trait = tot_group_sheet_048_trait
-					has_trait = tot_group_sheet_049_trait
-					has_trait = tot_group_sheet_050_trait
-					has_trait = tot_group_sheet_051_trait
-					has_trait = tot_group_sheet_052_trait
-					has_trait = tot_group_sheet_053_trait
-					has_trait = tot_group_sheet_054_trait
-					has_trait = tot_group_sheet_055_trait
-					has_trait = tot_group_sheet_056_trait
-					has_trait = tot_group_sheet_057_trait
-				}
-			}
+			tot_character_growth_has_available_random_trait = yes
 		}
 
 		change_variable = {
 			name = tot_character_growth_exp
-			add = -1000
+			add = {
+				value = var:tot_character_growth_current_cost
+				multiply = -1
+			}
 		}
 		tot_character_growth_grant_random_kizuna_trait = yes
+		tot_character_growth_refresh_cost = yes
 		owner ?= {
 			update_kizuna = yes
 		}
@@ -327,4 +427,3 @@ tot_character_growth_grant_random_kizuna_trait = {
 		}
 	}
 }
-

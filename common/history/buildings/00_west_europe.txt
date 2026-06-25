@@ -5687,14 +5687,14 @@
 		}
 	}
 	s:STATE_AUSTRIA={
-		region_state:IDMS={
+		region_state:MRFN={
 			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:IDMS"
+						country="c:MRFN"
 						levels=4
 						region="STATE_AUSTRIA"
 					}
@@ -5705,7 +5705,7 @@
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:IDMS"
+						country="c:MRFN"
 						levels=10
 					}
 				}
@@ -5716,7 +5716,7 @@
 				building="building_construction_sector"
 				add_ownership={
 					country={
-						country="c:IDMS"
+						country="c:MRFN"
 						levels=2
 					}
 				}
@@ -5727,7 +5727,7 @@
 				building="building_university"
 				add_ownership={
 					country={
-						country="c:IDMS"
+						country="c:MRFN"
 						levels=2
 					}
 				}
@@ -5739,7 +5739,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:IDMS"
+						country="c:MRFN"
 						levels=1
 						region="STATE_AUSTRIA"
 					}
@@ -5752,13 +5752,13 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:IDMS"
+						country="c:MRFN"
 						levels=1
 						region="STATE_AUSTRIA"
 					}
 					building={
 						type="building_furniture_manufactory"
-						country="c:IDMS"
+						country="c:MRFN"
 						levels=4
 						region="STATE_AUSTRIA"
 					}
@@ -5771,17 +5771,17 @@
 				add_ownership={
 					building={
 						type="building_paper_mill"
-						country="c:IDMS"
+						country="c:MRFN"
 						levels=2
 						region="STATE_AUSTRIA"
 					}
 					country={
-						country="c:IDMS"
+						country="c:MRFN"
 						levels=2
 					}
 					building={
 						type="building_financial_district"
-						country="c:IDMS"
+						country="c:MRFN"
 						levels=1
 						region="STATE_AUSTRIA"
 					}
@@ -5790,11 +5790,21 @@
 				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled"  }
 			}
 			create_building={
+				building="building_stage"
+				add_ownership={
+					country={
+						country="c:MRFN"
+						levels=1
+					}
+				}
+				reserves=1
+			}
+			create_building={
 				building="building_wheat_farm"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:IDMS"
+						country="c:MRFN"
 						levels=10
 						region="STATE_AUSTRIA"
 					}
@@ -5807,7 +5817,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:IDMS"
+						country="c:MRFN"
 						levels=3
 						region="STATE_AUSTRIA"
 					}
@@ -6117,13 +6127,13 @@
 		}
 	}
 	s:STATE_STYRIA={
-		region_state:IDMS={
+		region_state:MRFN={
 			create_building={
 				building="building_iron_mine"
 				add_ownership={
 					building={
 						type="building_iron_mine"
-						country="c:IDMS"
+						country="c:MRFN"
 						levels=2
 						region="STATE_STYRIA"
 					}
@@ -6136,7 +6146,7 @@
 				add_ownership={
 					building={
 						type="building_lead_mine"
-						country="c:IDMS"
+						country="c:MRFN"
 						levels=2
 						region="STATE_STYRIA"
 					}
@@ -6149,7 +6159,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:IDMS"
+						country="c:MRFN"
 						levels=1
 						region="STATE_STYRIA"
 					}
@@ -6162,7 +6172,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:IDMS"
+						country="c:MRFN"
 						levels=2
 						region="STATE_STYRIA"
 					}
@@ -6173,13 +6183,13 @@
 		}
 	}
 	s:STATE_TYROL={
-		region_state:IDMS={
+		region_state:MRFN={
 			create_building={
 				building="building_iron_mine"
 				add_ownership={
 					building={
 						type="building_iron_mine"
-						country="c:IDMS"
+						country="c:MRFN"
 						levels=1
 						region="STATE_TYROL"
 					}
@@ -6191,7 +6201,7 @@
 				building="building_gold_mine"
 				add_ownership={
 					country={
-						country="c:IDMS"
+						country="c:MRFN"
 						levels=2
 					}
 				}
@@ -6203,7 +6213,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:IDMS"
+						country="c:MRFN"
 						levels=1
 						region="STATE_TYROL"
 					}

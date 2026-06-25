@@ -72,6 +72,13 @@ tot_band_hq_state_bound_3 = {
 	is_shown = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 }
 	is_valid = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 }
 }
+tot_band_hq_state_bound_4 = { scope = state effect = {} is_shown = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 4 } is_valid = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 4 } }
+tot_band_hq_state_bound_5 = { scope = state effect = {} is_shown = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 5 } is_valid = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 5 } }
+tot_band_hq_state_bound_6 = { scope = state effect = {} is_shown = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 6 } is_valid = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 6 } }
+tot_band_hq_state_bound_7 = { scope = state effect = {} is_shown = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 7 } is_valid = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 7 } }
+tot_band_hq_state_bound_8 = { scope = state effect = {} is_shown = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 8 } is_valid = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 8 } }
+tot_band_hq_state_bound_9 = { scope = state effect = {} is_shown = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 9 } is_valid = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 9 } }
+tot_band_hq_state_bound_10 = { scope = state effect = {} is_shown = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 10 } is_valid = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 10 } }
 
 tot_band_hq_state_create = {
 	scope = state
@@ -95,6 +102,13 @@ tot_band_hq_state_create = {
 				if = { limit = { NOT = { has_variable = tot_band_3_name } } set_variable = { name = tot_band_3_name value = 5 } }
 				root = { set_variable = { name = tot_band_hq_slot value = 3 } }
 			}
+			else_if = { limit = { var:tot_band_limit >= 4 NOT = { has_variable = tot_band_4_created } } set_variable = { name = tot_band_4_created value = 1 } if = { limit = { NOT = { has_variable = tot_band_4_name } } set_variable = { name = tot_band_4_name value = 5 } } root = { set_variable = { name = tot_band_hq_slot value = 4 } } }
+			else_if = { limit = { var:tot_band_limit >= 5 NOT = { has_variable = tot_band_5_created } } set_variable = { name = tot_band_5_created value = 1 } if = { limit = { NOT = { has_variable = tot_band_5_name } } set_variable = { name = tot_band_5_name value = 5 } } root = { set_variable = { name = tot_band_hq_slot value = 5 } } }
+			else_if = { limit = { var:tot_band_limit >= 6 NOT = { has_variable = tot_band_6_created } } set_variable = { name = tot_band_6_created value = 1 } if = { limit = { NOT = { has_variable = tot_band_6_name } } set_variable = { name = tot_band_6_name value = 5 } } root = { set_variable = { name = tot_band_hq_slot value = 6 } } }
+			else_if = { limit = { var:tot_band_limit >= 7 NOT = { has_variable = tot_band_7_created } } set_variable = { name = tot_band_7_created value = 1 } if = { limit = { NOT = { has_variable = tot_band_7_name } } set_variable = { name = tot_band_7_name value = 5 } } root = { set_variable = { name = tot_band_hq_slot value = 7 } } }
+			else_if = { limit = { var:tot_band_limit >= 8 NOT = { has_variable = tot_band_8_created } } set_variable = { name = tot_band_8_created value = 1 } if = { limit = { NOT = { has_variable = tot_band_8_name } } set_variable = { name = tot_band_8_name value = 5 } } root = { set_variable = { name = tot_band_hq_slot value = 8 } } }
+			else_if = { limit = { var:tot_band_limit >= 9 NOT = { has_variable = tot_band_9_created } } set_variable = { name = tot_band_9_created value = 1 } if = { limit = { NOT = { has_variable = tot_band_9_name } } set_variable = { name = tot_band_9_name value = 5 } } root = { set_variable = { name = tot_band_hq_slot value = 9 } } }
+			else_if = { limit = { var:tot_band_limit >= 10 NOT = { has_variable = tot_band_10_created } } set_variable = { name = tot_band_10_created value = 1 } if = { limit = { NOT = { has_variable = tot_band_10_name } } set_variable = { name = tot_band_10_name value = 5 } } root = { set_variable = { name = tot_band_hq_slot value = 10 } } }
 			update_kizuna = yes
 		}
 	}
@@ -110,6 +124,13 @@ tot_band_hq_state_create = {
 				AND = { var:tot_band_limit >= 1 NOT = { has_variable = tot_band_1_created } }
 				AND = { var:tot_band_limit >= 2 NOT = { has_variable = tot_band_2_created } }
 				AND = { var:tot_band_limit >= 3 NOT = { has_variable = tot_band_3_created } }
+				AND = { var:tot_band_limit >= 4 NOT = { has_variable = tot_band_4_created } }
+				AND = { var:tot_band_limit >= 5 NOT = { has_variable = tot_band_5_created } }
+				AND = { var:tot_band_limit >= 6 NOT = { has_variable = tot_band_6_created } }
+				AND = { var:tot_band_limit >= 7 NOT = { has_variable = tot_band_7_created } }
+				AND = { var:tot_band_limit >= 8 NOT = { has_variable = tot_band_8_created } }
+				AND = { var:tot_band_limit >= 9 NOT = { has_variable = tot_band_9_created } }
+				AND = { var:tot_band_limit >= 10 NOT = { has_variable = tot_band_10_created } }
 			}
 		}
 		any_scope_building = { is_building_type = building_band_headquarter }
@@ -182,6 +203,77 @@ tot_band_hq_state_bind_3 = {
 		NOT = { has_variable = tot_band_hq_slot }
 	}
 }
+tot_band_hq_state_bind_4 = { scope = state effect = { owner ?= { set_variable = { name = tot_band_4_created value = 1 } if = { limit = { NOT = { has_variable = tot_band_4_name } } set_variable = { name = tot_band_4_name value = 5 } } root = { set_variable = { name = tot_band_hq_slot value = 4 } } update_kizuna = yes } } is_shown = { owner ?= { is_player = yes } any_scope_building = { is_building_type = building_band_headquarter } NOT = { has_variable = tot_band_hq_slot } } is_valid = { owner ?= { is_player = yes tot_band_limit_value >= 4 NOT = { has_variable = tot_band_4_created } } any_scope_building = { is_building_type = building_band_headquarter } NOT = { has_variable = tot_band_hq_slot } } }
+tot_band_hq_state_bind_5 = { scope = state effect = { owner ?= { set_variable = { name = tot_band_5_created value = 1 } if = { limit = { NOT = { has_variable = tot_band_5_name } } set_variable = { name = tot_band_5_name value = 5 } } root = { set_variable = { name = tot_band_hq_slot value = 5 } } update_kizuna = yes } } is_shown = { owner ?= { is_player = yes } any_scope_building = { is_building_type = building_band_headquarter } NOT = { has_variable = tot_band_hq_slot } } is_valid = { owner ?= { is_player = yes tot_band_limit_value >= 5 NOT = { has_variable = tot_band_5_created } } any_scope_building = { is_building_type = building_band_headquarter } NOT = { has_variable = tot_band_hq_slot } } }
+tot_band_hq_state_bind_6 = { scope = state effect = { owner ?= { set_variable = { name = tot_band_6_created value = 1 } if = { limit = { NOT = { has_variable = tot_band_6_name } } set_variable = { name = tot_band_6_name value = 5 } } root = { set_variable = { name = tot_band_hq_slot value = 6 } } update_kizuna = yes } } is_shown = { owner ?= { is_player = yes } any_scope_building = { is_building_type = building_band_headquarter } NOT = { has_variable = tot_band_hq_slot } } is_valid = { owner ?= { is_player = yes tot_band_limit_value >= 6 NOT = { has_variable = tot_band_6_created } } any_scope_building = { is_building_type = building_band_headquarter } NOT = { has_variable = tot_band_hq_slot } } }
+tot_band_hq_state_bind_7 = { scope = state effect = { owner ?= { set_variable = { name = tot_band_7_created value = 1 } if = { limit = { NOT = { has_variable = tot_band_7_name } } set_variable = { name = tot_band_7_name value = 5 } } root = { set_variable = { name = tot_band_hq_slot value = 7 } } update_kizuna = yes } } is_shown = { owner ?= { is_player = yes } any_scope_building = { is_building_type = building_band_headquarter } NOT = { has_variable = tot_band_hq_slot } } is_valid = { owner ?= { is_player = yes tot_band_limit_value >= 7 NOT = { has_variable = tot_band_7_created } } any_scope_building = { is_building_type = building_band_headquarter } NOT = { has_variable = tot_band_hq_slot } } }
+tot_band_hq_state_bind_8 = { scope = state effect = { owner ?= { set_variable = { name = tot_band_8_created value = 1 } if = { limit = { NOT = { has_variable = tot_band_8_name } } set_variable = { name = tot_band_8_name value = 5 } } root = { set_variable = { name = tot_band_hq_slot value = 8 } } update_kizuna = yes } } is_shown = { owner ?= { is_player = yes } any_scope_building = { is_building_type = building_band_headquarter } NOT = { has_variable = tot_band_hq_slot } } is_valid = { owner ?= { is_player = yes tot_band_limit_value >= 8 NOT = { has_variable = tot_band_8_created } } any_scope_building = { is_building_type = building_band_headquarter } NOT = { has_variable = tot_band_hq_slot } } }
+
+tot_band_shop_buy_law_success_buff = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_reward_points_total var:tot_band_reward_points_total >= 5 }
+			if = { limit = { NOT = { has_variable = tot_band_reward_points_spent_total } } set_variable = { name = tot_band_reward_points_spent_total value = 0 } }
+			change_variable = { name = tot_band_reward_points_spent_total add = 5 }
+			add_modifier = {
+				name = tot_band_shop_law_success_buff_modifier
+				years = 2
+			}
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		has_variable = tot_band_reward_points_total
+		var:tot_band_reward_points_total >= 5
+	}
+}
+tot_band_shop_buy_authority_buff = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_reward_points_total var:tot_band_reward_points_total >= 5 }
+			if = { limit = { NOT = { has_variable = tot_band_reward_points_spent_total } } set_variable = { name = tot_band_reward_points_spent_total value = 0 } }
+			change_variable = { name = tot_band_reward_points_spent_total add = 5 }
+			add_modifier = {
+				name = tot_band_shop_authority_buff_modifier
+				years = 5
+			}
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		has_variable = tot_band_reward_points_total
+		var:tot_band_reward_points_total >= 5
+	}
+}
+tot_band_shop_buy_influence_buff = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_band_reward_points_total var:tot_band_reward_points_total >= 5 }
+			if = { limit = { NOT = { has_variable = tot_band_reward_points_spent_total } } set_variable = { name = tot_band_reward_points_spent_total value = 0 } }
+			change_variable = { name = tot_band_reward_points_spent_total add = 5 }
+			add_modifier = {
+				name = tot_band_shop_influence_buff_modifier
+				years = 5
+			}
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		has_variable = tot_band_reward_points_total
+		var:tot_band_reward_points_total >= 5
+	}
+}
+tot_band_hq_state_bind_9 = { scope = state effect = { owner ?= { set_variable = { name = tot_band_9_created value = 1 } if = { limit = { NOT = { has_variable = tot_band_9_name } } set_variable = { name = tot_band_9_name value = 5 } } root = { set_variable = { name = tot_band_hq_slot value = 9 } } update_kizuna = yes } } is_shown = { owner ?= { is_player = yes } any_scope_building = { is_building_type = building_band_headquarter } NOT = { has_variable = tot_band_hq_slot } } is_valid = { owner ?= { is_player = yes tot_band_limit_value >= 9 NOT = { has_variable = tot_band_9_created } } any_scope_building = { is_building_type = building_band_headquarter } NOT = { has_variable = tot_band_hq_slot } } }
+tot_band_hq_state_bind_10 = { scope = state effect = { owner ?= { set_variable = { name = tot_band_10_created value = 1 } if = { limit = { NOT = { has_variable = tot_band_10_name } } set_variable = { name = tot_band_10_name value = 5 } } root = { set_variable = { name = tot_band_hq_slot value = 10 } } update_kizuna = yes } } is_shown = { owner ?= { is_player = yes } any_scope_building = { is_building_type = building_band_headquarter } NOT = { has_variable = tot_band_hq_slot } } is_valid = { owner ?= { is_player = yes tot_band_limit_value >= 10 NOT = { has_variable = tot_band_10_created } } any_scope_building = { is_building_type = building_band_headquarter } NOT = { has_variable = tot_band_hq_slot } } }
 tot_kizuna_select_faction_tab = {
 	scope = country
 	effect = {
@@ -900,6 +992,8 @@ tot_band_4_unlocked = {
 	is_shown = { var:tot_band_limit >= 4 }
 	is_valid = { var:tot_band_limit >= 4 }
 }
+tot_band_4_created = { scope = country effect = {} is_shown = { has_variable = tot_band_4_created } is_valid = { has_variable = tot_band_4_created } }
+tot_band_4_not_created = { scope = country effect = {} is_shown = { NOT = { has_variable = tot_band_4_created } } is_valid = { NOT = { has_variable = tot_band_4_created } } }
 
 tot_band_4_appoint_character = {
 	scope = character
@@ -923,6 +1017,8 @@ tot_band_5_unlocked = {
 	is_shown = { var:tot_band_limit >= 5 }
 	is_valid = { var:tot_band_limit >= 5 }
 }
+tot_band_5_created = { scope = country effect = {} is_shown = { has_variable = tot_band_5_created } is_valid = { has_variable = tot_band_5_created } }
+tot_band_5_not_created = { scope = country effect = {} is_shown = { NOT = { has_variable = tot_band_5_created } } is_valid = { NOT = { has_variable = tot_band_5_created } } }
 
 tot_band_5_appoint_character = {
 	scope = character
@@ -946,6 +1042,8 @@ tot_band_6_unlocked = {
 	is_shown = { var:tot_band_limit >= 6 }
 	is_valid = { var:tot_band_limit >= 6 }
 }
+tot_band_6_created = { scope = country effect = {} is_shown = { has_variable = tot_band_6_created } is_valid = { has_variable = tot_band_6_created } }
+tot_band_6_not_created = { scope = country effect = {} is_shown = { NOT = { has_variable = tot_band_6_created } } is_valid = { NOT = { has_variable = tot_band_6_created } } }
 
 tot_band_6_appoint_character = {
 	scope = character
@@ -969,6 +1067,8 @@ tot_band_7_unlocked = {
 	is_shown = { var:tot_band_limit >= 7 }
 	is_valid = { var:tot_band_limit >= 7 }
 }
+tot_band_7_created = { scope = country effect = {} is_shown = { has_variable = tot_band_7_created } is_valid = { has_variable = tot_band_7_created } }
+tot_band_7_not_created = { scope = country effect = {} is_shown = { NOT = { has_variable = tot_band_7_created } } is_valid = { NOT = { has_variable = tot_band_7_created } } }
 
 tot_band_7_appoint_character = {
 	scope = character
@@ -992,6 +1092,8 @@ tot_band_8_unlocked = {
 	is_shown = { var:tot_band_limit >= 8 }
 	is_valid = { var:tot_band_limit >= 8 }
 }
+tot_band_8_created = { scope = country effect = {} is_shown = { has_variable = tot_band_8_created } is_valid = { has_variable = tot_band_8_created } }
+tot_band_8_not_created = { scope = country effect = {} is_shown = { NOT = { has_variable = tot_band_8_created } } is_valid = { NOT = { has_variable = tot_band_8_created } } }
 
 tot_band_8_appoint_character = {
 	scope = character
@@ -1015,6 +1117,8 @@ tot_band_9_unlocked = {
 	is_shown = { var:tot_band_limit >= 9 }
 	is_valid = { var:tot_band_limit >= 9 }
 }
+tot_band_9_created = { scope = country effect = {} is_shown = { has_variable = tot_band_9_created } is_valid = { has_variable = tot_band_9_created } }
+tot_band_9_not_created = { scope = country effect = {} is_shown = { NOT = { has_variable = tot_band_9_created } } is_valid = { NOT = { has_variable = tot_band_9_created } } }
 
 tot_band_9_appoint_character = {
 	scope = character
@@ -1038,6 +1142,8 @@ tot_band_10_unlocked = {
 	is_shown = { var:tot_band_limit >= 10 }
 	is_valid = { var:tot_band_limit >= 10 }
 }
+tot_band_10_created = { scope = country effect = {} is_shown = { has_variable = tot_band_10_created } is_valid = { has_variable = tot_band_10_created } }
+tot_band_10_not_created = { scope = country effect = {} is_shown = { NOT = { has_variable = tot_band_10_created } } is_valid = { NOT = { has_variable = tot_band_10_created } } }
 
 tot_band_10_appoint_character = {
 	scope = character
@@ -1061,8 +1167,8 @@ tot_band_remove_character = {
 		tot_clear_band_member_effect = yes
 		owner ?= { update_kizuna = yes }
 	}
-	is_shown = { is_character_alive = yes has_variable = tot_band_id owner ?= { is_player = yes } }
-	is_valid = { is_character_alive = yes has_variable = tot_band_id owner ?= { is_player = yes } }
+	is_shown = { is_character_alive = yes has_variable = tot_band_id }
+	is_valid = { is_character_alive = yes has_variable = tot_band_id }
 }
 
 tot_band_1_set_name_1 = {

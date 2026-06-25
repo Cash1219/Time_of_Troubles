@@ -3,7 +3,7 @@ building_stage = {
 	expandable = yes
 	downsizeable = yes
 	building_group = bg_arts
-	icon = "gfx/interface/icons/building_icons/building_arts_academy.dds"
+	icon = "gfx/interface/icons/building_icons/building_stage.dds"
 	city_type = city
 	levels_per_mesh = 25
 
@@ -14,6 +14,8 @@ building_stage = {
 	production_method_groups = {
 		pmg_stage_operation
 		pmg_stage_scale
+		pmg_stage_merchandising
+		pmg_stage_media
 	}
 
 	required_construction = construction_cost_medium

@@ -1,82 +1,77 @@
-pmg_band_operation_mode = {
-	texture = "gfx/interface/icons/generic_icons/mixed_icon_ownership.dds"
+pmg_band_axis_interest_commercial = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
 	ai_selection = most_productive
-
 	production_methods = {
-		pm_band_mode_state_sponsored
-		pm_band_mode_independent
-		pm_band_mode_exile
+		pm_band_axis_interest_3
+		pm_band_axis_interest_2
+		pm_band_axis_interest_1
+		pm_band_axis_interest_balance
+		pm_band_axis_commercial_1
+		pm_band_axis_commercial_2
+		pm_band_axis_commercial_3
 	}
 }
 
-pmg_band_commercialization = {
-	texture = "gfx/interface/icons/generic_icons/sales_icon.dds"
+pmg_band_axis_club_professional = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
 	ai_selection = most_productive
-
 	production_methods = {
-		pm_band_commercialization_public_service
-		pm_band_commercialization_local_stage
-		pm_band_commercialization_ticketed_performance
+		pm_band_axis_club_3
+		pm_band_axis_club_2
+		pm_band_axis_club_1
+		pm_band_axis_club_balance
+		pm_band_axis_professional_1
+		pm_band_axis_professional_2
+		pm_band_axis_professional_3
 	}
 }
 
-pmg_band_invest_musical_instrument = {
-	texture = "gfx/interface/icons/goods_icons/musical_instrument.dds"
+pmg_band_axis_independent_corporate = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
 	ai_selection = most_productive
-	production_methods = { pm_band_invest_musical_instrument_off pm_band_invest_musical_instrument_low pm_band_invest_musical_instrument_mid pm_band_invest_musical_instrument_high }
+	production_methods = {
+		pm_band_axis_independent_3
+		pm_band_axis_independent_2
+		pm_band_axis_independent_1
+		pm_band_axis_independent_balance
+		pm_band_axis_corporate_1
+		pm_band_axis_corporate_2
+		pm_band_axis_corporate_3
+	}
 }
-pmg_band_invest_paper = {
-	texture = "gfx/interface/icons/goods_icons/paper.dds"
+
+pmg_band_food_support = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
 	ai_selection = most_productive
-	production_methods = { pm_band_invest_paper_off pm_band_invest_paper_low pm_band_invest_paper_mid pm_band_invest_paper_high }
+	production_methods = {
+		pm_band_food_none
+		pm_band_food_basic
+		pm_band_food_regular
+		pm_band_food_generous
+		pm_band_food_lavish
+	}
 }
-pmg_band_invest_luxury_clothes = {
-	texture = "gfx/interface/icons/goods_icons/luxury_clothes.dds"
+
+pmg_band_entertainment_support = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
 	ai_selection = most_productive
-	production_methods = { pm_band_invest_luxury_clothes_off pm_band_invest_luxury_clothes_low pm_band_invest_luxury_clothes_mid pm_band_invest_luxury_clothes_high }
+	production_methods = {
+		pm_band_entertainment_none
+		pm_band_entertainment_daily
+		pm_band_entertainment_routine
+		pm_band_entertainment_active
+		pm_band_entertainment_immersive
+	}
 }
-pmg_band_invest_transportation = {
-	texture = "gfx/interface/icons/goods_icons/transportation.dds"
+
+pmg_band_equipment_support = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
 	ai_selection = most_productive
-	production_methods = { pm_band_invest_transportation_off pm_band_invest_transportation_low pm_band_invest_transportation_mid pm_band_invest_transportation_high }
-}
-pmg_band_invest_automobiles = {
-	texture = "gfx/interface/icons/goods_icons/automobiles.dds"
-	ai_selection = most_productive
-	production_methods = { pm_band_invest_automobiles_off pm_band_invest_automobiles_low pm_band_invest_automobiles_mid pm_band_invest_automobiles_high }
-}
-pmg_band_invest_radios = {
-	texture = "gfx/interface/icons/goods_icons/radios.dds"
-	ai_selection = most_productive
-	production_methods = { pm_band_invest_radios_off pm_band_invest_radios_low pm_band_invest_radios_mid pm_band_invest_radios_high }
-}
-pmg_band_invest_fruit = {
-	texture = "gfx/interface/icons/goods_icons/fruit.dds"
-	ai_selection = most_productive
-	production_methods = { pm_band_invest_fruit_off pm_band_invest_fruit_low pm_band_invest_fruit_mid pm_band_invest_fruit_high }
-}
-pmg_band_invest_tea = {
-	texture = "gfx/interface/icons/goods_icons/tea.dds"
-	ai_selection = most_productive
-	production_methods = { pm_band_invest_tea_off pm_band_invest_tea_low pm_band_invest_tea_mid pm_band_invest_tea_high }
-}
-pmg_band_invest_coffee = {
-	texture = "gfx/interface/icons/goods_icons/coffee.dds"
-	ai_selection = most_productive
-	production_methods = { pm_band_invest_coffee_off pm_band_invest_coffee_low pm_band_invest_coffee_mid pm_band_invest_coffee_high }
-}
-pmg_band_invest_groceries = {
-	texture = "gfx/interface/icons/goods_icons/groceries.dds"
-	ai_selection = most_productive
-	production_methods = { pm_band_invest_groceries_off pm_band_invest_groceries_low pm_band_invest_groceries_mid pm_band_invest_groceries_high }
-}
-pmg_band_invest_luxury_drinks = {
-	texture = "gfx/interface/icons/goods_icons/luxury_drinks.dds"
-	ai_selection = most_productive
-	production_methods = { pm_band_invest_luxury_drinks_off pm_band_invest_luxury_drinks_low pm_band_invest_luxury_drinks_mid pm_band_invest_luxury_drinks_high }
-}
-pmg_band_invest_luxury_foods = {
-	texture = "gfx/interface/icons/goods_icons/luxury_foods.dds"
-	ai_selection = most_productive
-	production_methods = { pm_band_invest_luxury_foods_off pm_band_invest_luxury_foods_low pm_band_invest_luxury_foods_mid pm_band_invest_luxury_foods_high }
+	production_methods = {
+		pm_band_equipment_none
+		pm_band_equipment_standard
+		pm_band_equipment_enhanced
+		pm_band_equipment_maintained
+		pm_band_equipment_professional
+	}
 }

@@ -6,7 +6,7 @@
 				add_ownership={
 					country={
 						country="c:GBDP"
-						levels=3
+						levels=4
 					}
 				}
 				reserves=1
@@ -780,6 +780,16 @@
 				}
 				reserves=1
 				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts"  }
+			}
+			create_building={
+				building="building_stage"
+				add_ownership={
+					country={
+						country="c:BYZ"
+						levels=2
+					}
+				}
+				reserves=1
 			}
 			create_building={
 				building="building_wheat_farm"
@@ -1733,7 +1743,7 @@
 					building={
 						type="building_financial_district"
 						country="c:GBDP"
-						levels=1
+						levels=5
 						region="STATE_VENETIA"
 					}
 				}
@@ -1795,6 +1805,17 @@
 				activate_production_methods={ "pm_forest_glass"  "pm_manual_glassblowing" "pm_ceramics" }
 			}
 			create_building={
+				building="building_stage"
+				add_ownership={
+					country={
+						country="c:GBDP"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_stage_operation_public" "pm_stage_scale_small" "pm_stage_merchandising_none" "pm_stage_media_none" }
+			}
+			create_building={
 				building="building_textile_mill"
 				add_ownership={
 					building={
@@ -1847,9 +1868,28 @@
 						levels=4
 						region="STATE_VENETIA"
 					}
+					building={
+						type="building_manor_house"
+						country="c:GBDP"
+						levels=2
+						region="STATE_VENETIA"
+					}
 				}
 				reserves=1
 				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts"  }
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:GBDP"
+						levels=2
+						region="STATE_VENETIA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_crude_tools" "pm_automation_disabled"  }
 			}
 			create_building={
 				building="building_wheat_farm"
@@ -1969,6 +2009,28 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts"  }
+			}
+			create_building={
+				building="building_university"
+				add_ownership={
+					country={
+						country="c:GBDP"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_paper_of_record" "pm_traditional_academia" }
+			}
+			create_building={
+				building="building_arts_academy"
+				add_ownership={
+					country={
+						country="c:GBDP"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_majestic_studio" "pm_tank_tracking" "pm_public_patronage" }
 			}
 		}
 	}
@@ -4936,19 +4998,19 @@
 		}
 	}
 	s:STATE_SLOVENIA={
-		region_state:GBDP={
+		region_state:MRFN={
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:GBDP"
+						country="c:MRFN"
 						levels=1
 						region="STATE_SLOVENIA"
 					}
 					building={
 						type="building_manor_house"
-						country="c:GBDP"
+						country="c:MRFN"
 						levels=2
 						region="STATE_SLOVENIA"
 					}
@@ -4961,7 +5023,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:GBDP"
+						country="c:MRFN"
 						levels=1
 						region="STATE_SLOVENIA"
 					}
@@ -4974,7 +5036,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:GBDP"
+						country="c:MRFN"
 						levels=2
 						region="STATE_SLOVENIA"
 					}
@@ -5035,6 +5097,29 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={
+				building="building_shipyard"
+				add_ownership={
+					building={
+						type="building_shipyard"
+						country="c:AQO"
+						levels=2
+						region="STATE_DALMATIA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_shipbuilding" }
+			}
+			create_building={
+				building="building_stage"
+				add_ownership={
+					country={
+						country="c:AQO"
+						levels=1
+					}
+				}
+				reserves=1
 			}
 		}
 	}
@@ -5889,13 +5974,13 @@
 		}
 	}
 	s:STATE_IONIAN_ISLANDS={
-		region_state:ION={
+		region_state:GBDP={
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
 					building={
 						type="building_wheat_farm"
-						country="c:ION"
+						country="c:GBDP"
 						levels=1
 						region="STATE_IONIAN_ISLANDS"
 					}
@@ -5908,7 +5993,7 @@
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:ION"
+						country="c:GBDP"
 						levels=1
 						region="STATE_IONIAN_ISLANDS"
 					}
@@ -5920,7 +6005,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:ION"
+						country="c:GBDP"
 						levels=1
 					}
 				}
@@ -5931,7 +6016,7 @@
 				building="building_naval_fortification"
 				add_ownership={
 					country={
-						country="c:ION"
+						country="c:GBDP"
 						levels=1
 					}
 				}

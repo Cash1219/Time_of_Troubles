@@ -1,16 +1,151 @@
+tot_character_growth_acquired_traits_count_value = {
+	value = 0
+
+	if = { limit = { has_trait = tot_group_sheet_020_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_021_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_022_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_023_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_024_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_025_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_026_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_027_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_028_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_029_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_030_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_031_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_032_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_033_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_034_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_035_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_036_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_037_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_038_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_039_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_040_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_041_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_042_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_043_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_044_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_045_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_046_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_047_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_048_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_049_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_050_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_051_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_052_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_053_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_054_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_055_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_056_trait } add = 1 }
+	if = { limit = { has_trait = tot_group_sheet_057_trait } add = 1 }
+}
+
+tot_character_growth_cost_base_value = {
+	value = 1000
+}
+
+tot_character_growth_cost_mult_value = {
+	value = 0
+
+	if = {
+		limit = { has_variable = tot_character_growth_trait_cost_mult }
+		add = var:tot_character_growth_trait_cost_mult
+	}
+	if = {
+		limit = { has_variable = tot_character_growth_club_cost_mult }
+		add = var:tot_character_growth_club_cost_mult
+	}
+}
+
+tot_character_growth_cost_add_value = {
+	value = 0
+
+	if = {
+		limit = { has_variable = tot_character_growth_trait_cost_add }
+		add = var:tot_character_growth_trait_cost_add
+	}
+}
+
+tot_character_growth_cost_per_trait_flat_value = {
+	value = 3000
+}
+
+tot_character_growth_current_cost_value = {
+	value = 1000
+
+	if = {
+		limit = { has_variable = tot_character_growth_trait_cost_mult }
+		multiply = 100
+		add = var:tot_character_growth_trait_cost_mult
+		divide = 100
+	}
+	if = {
+		limit = { has_variable = tot_character_growth_club_cost_mult }
+		multiply = 100
+		add = var:tot_character_growth_club_cost_mult
+		divide = 100
+	}
+
+	if = {
+		limit = { has_variable = tot_character_growth_trait_cost_add }
+		add = var:tot_character_growth_trait_cost_add
+	}
+
+	if = {
+		limit = { tot_character_growth_acquired_traits_count_value > 0 }
+		add = {
+			value = tot_character_growth_acquired_traits_count_value
+			multiply = 3000
+		}
+	}
+
+	min = 1
+}
+
 tot_character_growth_exp_progress_value = {
 	value = 0
 
 	if = {
-		limit = {
-			has_variable = tot_character_growth_exp
-		}
+		limit = { has_variable = tot_character_growth_exp }
 		add = var:tot_character_growth_exp
 	}
 
-	divide = 1000
+	divide = tot_character_growth_current_cost_value
 	min = 0
 	max = 1
+}
+
+tot_character_growth_next_cost_text_value = {
+	value = 1000
+
+	if = {
+		limit = { has_variable = tot_character_growth_trait_cost_mult }
+		multiply = 100
+		add = var:tot_character_growth_trait_cost_mult
+		divide = 100
+	}
+	if = {
+		limit = { has_variable = tot_character_growth_club_cost_mult }
+		multiply = 100
+		add = var:tot_character_growth_club_cost_mult
+		divide = 100
+	}
+
+	if = {
+		limit = { has_variable = tot_character_growth_trait_cost_add }
+		add = var:tot_character_growth_trait_cost_add
+	}
+
+	if = {
+		limit = { tot_character_growth_acquired_traits_count_value > 0 }
+		add = {
+			value = tot_character_growth_acquired_traits_count_value
+			multiply = 3000
+		}
+	}
+
+	min = 1
 }
 
 tot_character_growth_weekly_gain_value = {
@@ -20,15 +155,13 @@ tot_character_growth_weekly_gain_value = {
 		limit = {
 			is_ruler_of_own_country = yes
 		}
-		add = 10
+		add = 3
 	}
 
 	if = {
 		limit = {
-			interest_group ?= {
-				is_interest_group_type = ig_landowners
-			}
+			is_interest_group_leader = yes
 		}
-		add = 5
+		add = 3
 	}
 }

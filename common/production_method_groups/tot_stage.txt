@@ -5,6 +5,7 @@ pmg_stage_operation = {
 	production_methods = {
 		pm_stage_operation_public
 		pm_stage_operation_ticketed
+		pm_stage_operation_hospitality
 		pm_stage_operation_festival
 	}
 }
@@ -15,7 +16,34 @@ pmg_stage_scale = {
 
 	production_methods = {
 		pm_stage_scale_small
+		pm_stage_scale_compact
 		pm_stage_scale_medium
 		pm_stage_scale_large
+	}
+}
+
+pmg_stage_merchandising = {
+	texture = "gfx/interface/icons/goods_icons/omocha.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_stage_merchandising_none
+		pm_stage_merchandising_basic
+		pm_stage_merchandising_standard
+		pm_stage_merchandising_full
+		pm_stage_merchandising_premium
+	}
+}
+
+pmg_stage_media = {
+	texture = "gfx/interface/icons/goods_icons/entertainment_publications.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_stage_media_none
+		pm_stage_media_flyers
+		pm_stage_media_magazines
+		pm_stage_media_radio
+		pm_stage_media_ip_collab
 	}
 }

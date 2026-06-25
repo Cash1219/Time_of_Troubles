@@ -1,6 +1,76 @@
 ﻿COUNTRIES = {
 	c:HTT ?= {
 		effect_starting_technology_tier_2_tech = yes
+		activate_law = law_type:law_club_advisor_guidance
+		ig:ig_landowners ?= {
+			remove_ideology = ideology_paternalistic
+			remove_ideology = ideology_patriarchal
+			remove_ideology = ideology_hierarchic
+			add_ideology = ideology_academy_prestige
+			add_ideology = ideology_inquisitive
+			set_interest_group_name = ig_landowners_htt
+		}
+		ig:ig_devout ?= {
+			remove_ideology = ideology_pious
+			remove_ideology = ideology_moralist
+			remove_ideology = ideology_patriarchal
+			add_ideology = ideology_free_creation
+			add_ideology = ideology_academy_council
+			add_ideology = ideology_pacifist
+			set_interest_group_name = ig_devout_htt
+		}
+		ig:ig_armed_forces ?= {
+			remove_ideology = ideology_jingoist
+			remove_ideology = ideology_loyalist
+			remove_ideology = ideology_patriotic
+			add_ideology = ideology_academy_council
+			add_ideology = ideology_club_autonomy
+			add_ideology = ideology_pacifist
+			set_interest_group_name = ig_armed_forces_htt
+		}
+		ig:ig_industrialists ?= {
+			remove_ideology = ideology_plutocratic
+			remove_ideology = ideology_laissez_faire
+			remove_ideology = ideology_individualist
+			add_ideology = ideology_agency_management
+			add_ideology = ideology_free_creation
+			set_interest_group_name = ig_industrialists_htt
+		}
+		ig:ig_petty_bourgeoisie ?= {
+			remove_ideology = ideology_reactionary
+			remove_ideology = ideology_meritocratic
+			remove_ideology = ideology_patriotic
+			add_ideology = ideology_club_autonomy
+			add_ideology = ideology_free_creation
+			set_interest_group_name = ig_petty_bourgeoisie_htt
+		}
+		ig:ig_rural_folk ?= {
+			remove_ideology = ideology_agrarian
+			remove_ideology = ideology_particularist
+			remove_ideology = ideology_isolationist
+			add_ideology = ideology_academy_council
+			add_ideology = ideology_club_autonomy
+			set_interest_group_name = ig_rural_folk_htt
+		}
+		ig:ig_trade_unions ?= {
+			remove_ideology = ideology_proletarian
+			remove_ideology = ideology_egalitarian
+			remove_ideology = ideology_populist
+			remove_ideology = ideology_anti_slavery
+			add_ideology = ideology_academy_council
+			add_ideology = ideology_production_floor
+			set_interest_group_name = ig_trade_unions_htt
+		}
+		ig:ig_intelligentsia ?= {
+			remove_ideology = ideology_liberal
+			remove_ideology = ideology_anti_clerical
+			remove_ideology = ideology_republican
+			remove_ideology = ideology_anti_slavery
+			add_ideology = ideology_academy_council
+			add_ideology = ideology_inquisitive
+			add_ideology = ideology_free_creation
+			set_interest_group_name = ig_intelligentsia_htt
+		}
 
 		set_tax_level = medium
 

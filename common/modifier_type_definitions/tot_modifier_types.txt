@@ -87,6 +87,62 @@ goods_input_omocha_mult={
 		ai_value=0
 	}
 }
+goods_output_experience_add={
+	decimals=1
+	color=good
+	percent=no
+	game_data={
+		ai_value=0
+	}
+}
+goods_output_experience_mult={
+	decimals=1
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+country_tot_club_growth_exp_add={
+	decimals=1
+	color=good
+	percent=no
+	game_data={
+		ai_value=0
+	}
+}
+goods_input_experience_add={
+	decimals=1
+	color=bad
+	percent=no
+	game_data={
+		ai_value=0
+	}
+}
+goods_input_experience_mult={
+	decimals=1
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+country_institution_club_management_max_investment_add={
+	decimals=0
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+country_tot_character_growth_cost_mult_add={
+	decimals=0
+	color=good
+	percent=yes
+	script_only=yes
+	game_data={
+		ai_value=0
+	}
+}
 goods_output_musical_instrument_add={
 	decimals=1
 	color=good
@@ -471,6 +527,24 @@ country_tot_governor_limit_add = { #总督上限
 }
 
 country_tot_band_limit_add = { #乐队总部上限
+	decimals=0
+	color=good
+	percent=no
+	game_data={
+		ai_value=0
+	}
+}
+
+country_tot_band_creative_success_weight_add = { #乐队创作成功率权重
+	decimals=0
+	color=good
+	percent=no
+	game_data={
+		ai_value=0
+	}
+}
+
+country_tot_band_reward_points_add = { #乐队额外奖励点
 	decimals=0
 	color=good
 	percent=no
