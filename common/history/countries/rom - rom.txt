@@ -10,24 +10,24 @@
 			remove_ideology = ideology_hierarchic
 			add_ideology = ideology_stage_noblesse
 			add_ideology = ideology_house_style
-			set_interest_group_name = ig_landowners_band
+			set_interest_group_name = ig_landowners_rom
 		}
 		ig:ig_devout ?= {
 			remove_ideology = ideology_pious
 			remove_ideology = ideology_moralist
 			remove_ideology = ideology_patriarchal
-			add_ideology = ideology_idol_worship
+			add_ideology = ideology_rock
 			add_ideology = ideology_support_offering
-			set_interest_group_name = ig_devout_band
+			set_interest_group_name = ig_devout_rom
 		}
 		ig:ig_armed_forces ?= {
 			remove_ideology = ideology_jingoist
 			remove_ideology = ideology_loyalist
 			remove_ideology = ideology_patriotic
-			add_ideology = ideology_president_supremacy
-			add_ideology = ideology_discipline_first
+			add_ideology = ideology_rock
 			add_ideology = ideology_stage_supremacy
-			set_interest_group_name = ig_armed_forces_band
+			add_ideology = ideology_merit_stage
+			set_interest_group_name = ig_armed_forces_rom
 		}
 		ig:ig_industrialists ?= {
 			remove_ideology = ideology_plutocratic
@@ -35,15 +35,15 @@
 			remove_ideology = ideology_individualist
 			add_ideology = ideology_agency_management
 			add_ideology = ideology_fan_market
-			set_interest_group_name = ig_industrialists_band
+			set_interest_group_name = ig_industrialists_rom
 		}
 		ig:ig_petty_bourgeoisie ?= {
 			remove_ideology = ideology_reactionary
 			remove_ideology = ideology_meritocratic
 			remove_ideology = ideology_patriotic
-			add_ideology = ideology_club_autonomy
-			add_ideology = ideology_world_tour
-			set_interest_group_name = ig_petty_bourgeoisie_band
+			add_ideology = ideology_rock
+			add_ideology = ideology_production_floor
+			set_interest_group_name = ig_petty_bourgeoisie_rom
 		}
 		ig:ig_rural_folk ?= {
 			remove_ideology = ideology_agrarian
@@ -51,7 +51,7 @@
 			remove_ideology = ideology_isolationist
 			add_ideology = ideology_local_revival
 			add_ideology = ideology_hometown_support
-			set_interest_group_name = ig_rural_folk_band
+			set_interest_group_name = ig_rural_folk_rom
 		}
 		ig:ig_trade_unions ?= {
 			remove_ideology = ideology_proletarian
@@ -60,17 +60,16 @@
 			remove_ideology = ideology_anti_slavery
 			add_ideology = ideology_stage_reform
 			add_ideology = ideology_production_floor
-			set_interest_group_name = ig_trade_unions_band
+			set_interest_group_name = ig_trade_unions_rom
 		}
 		ig:ig_intelligentsia ?= {
 			remove_ideology = ideology_liberal
 			remove_ideology = ideology_anti_clerical
 			remove_ideology = ideology_republican
 			remove_ideology = ideology_anti_slavery
-			add_ideology = ideology_academy_council
-			add_ideology = ideology_elite_training
-			add_ideology = ideology_free_creation
-			set_interest_group_name = ig_intelligentsia_band
+			add_ideology = ideology_rock
+			add_ideology = ideology_production_floor
+			set_interest_group_name = ig_intelligentsia_rom
 		}
 	}
 }

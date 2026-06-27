@@ -4,6 +4,21 @@ CHARACTERS = {
 	c:BYZ ?= {
 		create_character = {
 			historical = yes
+			first_name = "Chitanda"
+			last_name = "Eru"
+			birth_date = 1816.1.1 
+			female = yes
+			ig_leader = yes
+			ideology = ideology_traditional_family
+			interest_group = ig_landowners
+			#religion = rel:orthodox
+			culture = cu:greek
+			traits = {
+				tot_group_sheet_003_trait # 罗马协约
+			}
+		}
+		create_character = {
+			historical = yes
 			first_name = "Hirasawa"
 			last_name = "Yui"
 			birth_date = 1816.1.1 
@@ -116,7 +131,7 @@ CHARACTERS = {
 			birth_date = 1816.1.1 
 			female = yes
 			ig_leader = yes
-			ideology = ideology_free_creation
+			ideology = ideology_inquisitive
 			interest_group = ig_intelligentsia
 			#religion = rel:orthodox
 			culture = cu:greek
