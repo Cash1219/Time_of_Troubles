@@ -1,0 +1,47 @@
+flowcontainer = {
+	name = "widget_je_tot_club_management"
+	ignoreinvisible = yes
+	direction = vertical
+	spacing = 8
+
+	default_header_clean = {
+		size = { 520 72 }
+		blockoverride "text" {
+			text = "TOT_CLUB_PANEL_SUMMARY"
+			using = fontsize_large
+			default_format = "#medium"
+		}
+		tooltip = "TOT_CLUB_PANEL_SUMMARY_TOOLTIP"
+	}
+
+	textbox = {
+		size = { 520 42 }
+		text = "TOT_CLUB_PANEL_DESC"
+		using = fontsize_small
+		align = left|nobaseline
+		multiline = yes
+	}
+
+	background = {
+		using = entry_bg_simple
+		size = { 520 250 }
+
+		flowcontainer = {
+			margin = { 16 16 }
+			direction = vertical
+			spacing = 6
+
+			textbox = { size = { 488 24 } text = "TOT_CLUB_PANEL_CORE_VALUES" using = fontsize_medium default_format = "#v" align = left|nobaseline }
+			textbox = { size = { 488 22 } text = "TOT_CLUB_VALUE_TOTAL" using = fontsize_small align = left|nobaseline }
+			textbox = { size = { 488 22 } raw_text = "[AccessPlayer.MakeScope.Var('tot_club_total_count').GetValue|0]" using = fontsize_small align = left|nobaseline }
+			textbox = { size = { 488 22 } text = "TOT_CLUB_VALUE_CAP" using = fontsize_small align = left|nobaseline }
+			textbox = { size = { 488 22 } raw_text = "[AccessPlayer.MakeScope.ScriptValue('tot_club_capacity')|1]" using = fontsize_small align = left|nobaseline }
+			textbox = { size = { 488 22 } text = "TOT_CLUB_VALUE_USAGE" using = fontsize_small align = left|nobaseline }
+			textbox = { size = { 488 22 } raw_text = "[AccessPlayer.MakeScope.ScriptValue('tot_club_capacity_usage')|1]" using = fontsize_small align = left|nobaseline }
+			textbox = { size = { 488 22 } text = "TOT_CLUB_VALUE_FREE" using = fontsize_small align = left|nobaseline }
+			textbox = { size = { 488 22 } raw_text = "[AccessPlayer.MakeScope.ScriptValue('tot_club_capacity_balance')|1]" using = fontsize_small align = left|nobaseline }
+			textbox = { size = { 488 22 } text = "TOT_CLUB_VALUE_WEEKLY" using = fontsize_small align = left|nobaseline }
+			textbox = { size = { 488 22 } raw_text = "[AccessPlayer.MakeScope.Var('tot_club_growth_bonus').GetValue|2]" using = fontsize_small align = left|nobaseline }
+		}
+	}
+}

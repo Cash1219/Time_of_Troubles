@@ -156,7 +156,7 @@ band_kizuna_creation_progress = {
 }
 
 band_kizuna_creation_base_gain_value = {
-	value = 15
+	value = 6
 	every_scope_character = {
 		limit = {
 			has_variable = tot_band_id
@@ -168,7 +168,7 @@ band_kizuna_creation_base_gain_value = {
 				has_variable = tot_band_role_vocalist
 			}
 		}
-		add = 4
+		add = 2
 	}
 	every_scope_character = {
 		limit = {
@@ -180,11 +180,11 @@ band_kizuna_creation_base_gain_value = {
 				AND = { has_variable = tot_band_role_vocalist has_trait = tot_lead_vocalist_trait }
 			}
 		}
-		add = 3
+		add = 1
 	}
 	every_scope_character = {
 		limit = { has_trait = tot_is_supper_lead_vocalist_trait }
-		add = 10
+		add = 4
 	}
 }
 
@@ -211,13 +211,14 @@ band_kizuna_resource_variety_count_value = {
 
 band_kizuna_resource_multiplier_percent_value = {
 	value = 100
-	if = { limit = { band_kizuna_resource_variety_count_value >= 2 } add = 5 }
-	if = { limit = { band_kizuna_resource_variety_count_value >= 3 } add = 5 }
+	if = { limit = { band_kizuna_resource_variety_count_value >= 2 } add = 3 }
+	if = { limit = { band_kizuna_resource_variety_count_value >= 3 } add = 3 }
 }
 
 band_kizuna_creation_weekly_gain_value = {
 	value = band_kizuna_creation_base_gain_value
 	add = band_kizuna_resource_effective_weekly_gain_value
+	divide = 2
 }
 
 band_kizuna_resource_effective_weekly_gain_value = {
@@ -1520,7 +1521,7 @@ tot_gourmet_current_level_value = {
 }
 # BEGIN GENERATED TOT BAND PER BAND
 band_1_kizuna_creation_base_gain_value = {
-	value = 15
+	value = 6
 	every_scope_character = {
 		limit = {
 			has_variable = tot_band_id
@@ -1533,7 +1534,7 @@ band_1_kizuna_creation_base_gain_value = {
 				has_variable = tot_band_role_vocalist
 			}
 		}
-		add = 4
+		add = 2
 	}
 	every_scope_character = {
 		limit = {
@@ -1547,11 +1548,11 @@ band_1_kizuna_creation_base_gain_value = {
 				AND = { has_variable = tot_band_role_vocalist has_trait = tot_lead_vocalist_trait }
 			}
 		}
-		add = 3
+		add = 1
 	}
 	every_scope_character = {
 		limit = { has_variable = tot_band_id var:tot_band_id = 1 has_trait = tot_is_supper_lead_vocalist_trait }
-		add = 10
+		add = 4
 	}
 }
 
@@ -1578,20 +1579,21 @@ band_1_kizuna_resource_variety_count_value = {
 
 band_1_kizuna_resource_multiplier_percent_value = {
 	value = 100
-	if = { limit = { band_1_kizuna_resource_variety_count_value >= 2 } add = 5 }
-	if = { limit = { band_1_kizuna_resource_variety_count_value >= 3 } add = 5 }
+	if = { limit = { band_1_kizuna_resource_variety_count_value >= 2 } add = 3 }
+	if = { limit = { band_1_kizuna_resource_variety_count_value >= 3 } add = 3 }
 }
 
 band_1_kizuna_resource_effective_weekly_gain_value = {
 	value = band_1_kizuna_resource_weekly_gain_value
 	multiply = band_1_kizuna_resource_multiplier_percent_value
-	divide = 100
+	divide = 200
 }
 
 band_1_kizuna_creation_weekly_gain_value = {
 	value = band_1_kizuna_creation_base_gain_value
 	add = band_1_kizuna_resource_effective_weekly_gain_value
 	if = { limit = { has_variable = tot_band_1_weekly_bonus } add = var:tot_band_1_weekly_bonus }
+	divide = 2
 }
 
 band_1_kizuna_creation_progress_bar_value = {
@@ -1603,7 +1605,7 @@ band_1_kizuna_creation_progress_bar_value = {
 	max = 100
 }
 band_2_kizuna_creation_base_gain_value = {
-	value = 15
+	value = 6
 	every_scope_character = {
 		limit = {
 			has_variable = tot_band_id
@@ -1616,7 +1618,7 @@ band_2_kizuna_creation_base_gain_value = {
 				has_variable = tot_band_role_vocalist
 			}
 		}
-		add = 4
+		add = 2
 	}
 	every_scope_character = {
 		limit = {
@@ -1630,11 +1632,11 @@ band_2_kizuna_creation_base_gain_value = {
 				AND = { has_variable = tot_band_role_vocalist has_trait = tot_lead_vocalist_trait }
 			}
 		}
-		add = 3
+		add = 1
 	}
 	every_scope_character = {
 		limit = { has_variable = tot_band_id var:tot_band_id = 2 has_trait = tot_is_supper_lead_vocalist_trait }
-		add = 10
+		add = 4
 	}
 }
 
@@ -1661,20 +1663,21 @@ band_2_kizuna_resource_variety_count_value = {
 
 band_2_kizuna_resource_multiplier_percent_value = {
 	value = 100
-	if = { limit = { band_2_kizuna_resource_variety_count_value >= 2 } add = 5 }
-	if = { limit = { band_2_kizuna_resource_variety_count_value >= 3 } add = 5 }
+	if = { limit = { band_2_kizuna_resource_variety_count_value >= 2 } add = 3 }
+	if = { limit = { band_2_kizuna_resource_variety_count_value >= 3 } add = 3 }
 }
 
 band_2_kizuna_resource_effective_weekly_gain_value = {
 	value = band_2_kizuna_resource_weekly_gain_value
 	multiply = band_2_kizuna_resource_multiplier_percent_value
-	divide = 100
+	divide = 200
 }
 
 band_2_kizuna_creation_weekly_gain_value = {
 	value = band_2_kizuna_creation_base_gain_value
 	add = band_2_kizuna_resource_effective_weekly_gain_value
 	if = { limit = { has_variable = tot_band_2_weekly_bonus } add = var:tot_band_2_weekly_bonus }
+	divide = 2
 }
 
 band_2_kizuna_creation_progress_bar_value = {
@@ -1686,7 +1689,7 @@ band_2_kizuna_creation_progress_bar_value = {
 	max = 100
 }
 band_3_kizuna_creation_base_gain_value = {
-	value = 15
+	value = 6
 	every_scope_character = {
 		limit = {
 			has_variable = tot_band_id
@@ -1699,7 +1702,7 @@ band_3_kizuna_creation_base_gain_value = {
 				has_variable = tot_band_role_vocalist
 			}
 		}
-		add = 4
+		add = 2
 	}
 	every_scope_character = {
 		limit = {
@@ -1713,11 +1716,11 @@ band_3_kizuna_creation_base_gain_value = {
 				AND = { has_variable = tot_band_role_vocalist has_trait = tot_lead_vocalist_trait }
 			}
 		}
-		add = 3
+		add = 1
 	}
 	every_scope_character = {
 		limit = { has_variable = tot_band_id var:tot_band_id = 3 has_trait = tot_is_supper_lead_vocalist_trait }
-		add = 10
+		add = 4
 	}
 }
 
@@ -1744,20 +1747,21 @@ band_3_kizuna_resource_variety_count_value = {
 
 band_3_kizuna_resource_multiplier_percent_value = {
 	value = 100
-	if = { limit = { band_3_kizuna_resource_variety_count_value >= 2 } add = 5 }
-	if = { limit = { band_3_kizuna_resource_variety_count_value >= 3 } add = 5 }
+	if = { limit = { band_3_kizuna_resource_variety_count_value >= 2 } add = 3 }
+	if = { limit = { band_3_kizuna_resource_variety_count_value >= 3 } add = 3 }
 }
 
 band_3_kizuna_resource_effective_weekly_gain_value = {
 	value = band_3_kizuna_resource_weekly_gain_value
 	multiply = band_3_kizuna_resource_multiplier_percent_value
-	divide = 100
+	divide = 200
 }
 
 band_3_kizuna_creation_weekly_gain_value = {
 	value = band_3_kizuna_creation_base_gain_value
 	add = band_3_kizuna_resource_effective_weekly_gain_value
 	if = { limit = { has_variable = tot_band_3_weekly_bonus } add = var:tot_band_3_weekly_bonus }
+	divide = 2
 }
 
 band_3_kizuna_creation_progress_bar_value = {
@@ -1769,7 +1773,7 @@ band_3_kizuna_creation_progress_bar_value = {
 	max = 100
 }
 band_4_kizuna_creation_base_gain_value = {
-	value = 15
+	value = 6
 	every_scope_character = {
 		limit = {
 			has_variable = tot_band_id
@@ -1782,7 +1786,7 @@ band_4_kizuna_creation_base_gain_value = {
 				has_variable = tot_band_role_vocalist
 			}
 		}
-		add = 4
+		add = 2
 	}
 	every_scope_character = {
 		limit = {
@@ -1796,11 +1800,11 @@ band_4_kizuna_creation_base_gain_value = {
 				AND = { has_variable = tot_band_role_vocalist has_trait = tot_lead_vocalist_trait }
 			}
 		}
-		add = 3
+		add = 1
 	}
 	every_scope_character = {
 		limit = { has_variable = tot_band_id var:tot_band_id = 4 has_trait = tot_is_supper_lead_vocalist_trait }
-		add = 10
+		add = 4
 	}
 }
 
@@ -1878,8 +1882,9 @@ band_4_kizuna_creation_weekly_gain_value = {
 	value = band_4_kizuna_creation_base_gain_value
 	add = band_4_kizuna_resource_weekly_gain_value
 	multiply = band_4_kizuna_resource_multiplier_percent_value
-	divide = 100
+	divide = 200
 	if = { limit = { has_variable = tot_band_4_weekly_bonus } add = var:tot_band_4_weekly_bonus }
+	divide = 2
 }
 
 band_4_kizuna_creation_progress_bar_value = {
@@ -1891,7 +1896,7 @@ band_4_kizuna_creation_progress_bar_value = {
 	max = 100
 }
 band_5_kizuna_creation_base_gain_value = {
-	value = 15
+	value = 6
 	every_scope_character = {
 		limit = {
 			has_variable = tot_band_id
@@ -1904,7 +1909,7 @@ band_5_kizuna_creation_base_gain_value = {
 				has_variable = tot_band_role_vocalist
 			}
 		}
-		add = 4
+		add = 2
 	}
 	every_scope_character = {
 		limit = {
@@ -1918,11 +1923,11 @@ band_5_kizuna_creation_base_gain_value = {
 				AND = { has_variable = tot_band_role_vocalist has_trait = tot_lead_vocalist_trait }
 			}
 		}
-		add = 3
+		add = 1
 	}
 	every_scope_character = {
 		limit = { has_variable = tot_band_id var:tot_band_id = 5 has_trait = tot_is_supper_lead_vocalist_trait }
-		add = 10
+		add = 4
 	}
 }
 
@@ -2000,8 +2005,9 @@ band_5_kizuna_creation_weekly_gain_value = {
 	value = band_5_kizuna_creation_base_gain_value
 	add = band_5_kizuna_resource_weekly_gain_value
 	multiply = band_5_kizuna_resource_multiplier_percent_value
-	divide = 100
+	divide = 200
 	if = { limit = { has_variable = tot_band_5_weekly_bonus } add = var:tot_band_5_weekly_bonus }
+	divide = 2
 }
 
 band_5_kizuna_creation_progress_bar_value = {
@@ -2013,7 +2019,7 @@ band_5_kizuna_creation_progress_bar_value = {
 	max = 100
 }
 band_6_kizuna_creation_base_gain_value = {
-	value = 15
+	value = 6
 	every_scope_character = {
 		limit = {
 			has_variable = tot_band_id
@@ -2026,7 +2032,7 @@ band_6_kizuna_creation_base_gain_value = {
 				has_variable = tot_band_role_vocalist
 			}
 		}
-		add = 4
+		add = 2
 	}
 	every_scope_character = {
 		limit = {
@@ -2040,11 +2046,11 @@ band_6_kizuna_creation_base_gain_value = {
 				AND = { has_variable = tot_band_role_vocalist has_trait = tot_lead_vocalist_trait }
 			}
 		}
-		add = 3
+		add = 1
 	}
 	every_scope_character = {
 		limit = { has_variable = tot_band_id var:tot_band_id = 6 has_trait = tot_is_supper_lead_vocalist_trait }
-		add = 10
+		add = 4
 	}
 }
 
@@ -2122,8 +2128,9 @@ band_6_kizuna_creation_weekly_gain_value = {
 	value = band_6_kizuna_creation_base_gain_value
 	add = band_6_kizuna_resource_weekly_gain_value
 	multiply = band_6_kizuna_resource_multiplier_percent_value
-	divide = 100
+	divide = 200
 	if = { limit = { has_variable = tot_band_6_weekly_bonus } add = var:tot_band_6_weekly_bonus }
+	divide = 2
 }
 
 band_6_kizuna_creation_progress_bar_value = {
@@ -2135,7 +2142,7 @@ band_6_kizuna_creation_progress_bar_value = {
 	max = 100
 }
 band_7_kizuna_creation_base_gain_value = {
-	value = 15
+	value = 6
 	every_scope_character = {
 		limit = {
 			has_variable = tot_band_id
@@ -2148,7 +2155,7 @@ band_7_kizuna_creation_base_gain_value = {
 				has_variable = tot_band_role_vocalist
 			}
 		}
-		add = 4
+		add = 2
 	}
 	every_scope_character = {
 		limit = {
@@ -2162,11 +2169,11 @@ band_7_kizuna_creation_base_gain_value = {
 				AND = { has_variable = tot_band_role_vocalist has_trait = tot_lead_vocalist_trait }
 			}
 		}
-		add = 3
+		add = 1
 	}
 	every_scope_character = {
 		limit = { has_variable = tot_band_id var:tot_band_id = 7 has_trait = tot_is_supper_lead_vocalist_trait }
-		add = 10
+		add = 4
 	}
 }
 
@@ -2244,8 +2251,9 @@ band_7_kizuna_creation_weekly_gain_value = {
 	value = band_7_kizuna_creation_base_gain_value
 	add = band_7_kizuna_resource_weekly_gain_value
 	multiply = band_7_kizuna_resource_multiplier_percent_value
-	divide = 100
+	divide = 200
 	if = { limit = { has_variable = tot_band_7_weekly_bonus } add = var:tot_band_7_weekly_bonus }
+	divide = 2
 }
 
 band_7_kizuna_creation_progress_bar_value = {
@@ -2257,7 +2265,7 @@ band_7_kizuna_creation_progress_bar_value = {
 	max = 100
 }
 band_8_kizuna_creation_base_gain_value = {
-	value = 15
+	value = 6
 	every_scope_character = {
 		limit = {
 			has_variable = tot_band_id
@@ -2270,7 +2278,7 @@ band_8_kizuna_creation_base_gain_value = {
 				has_variable = tot_band_role_vocalist
 			}
 		}
-		add = 4
+		add = 2
 	}
 	every_scope_character = {
 		limit = {
@@ -2284,11 +2292,11 @@ band_8_kizuna_creation_base_gain_value = {
 				AND = { has_variable = tot_band_role_vocalist has_trait = tot_lead_vocalist_trait }
 			}
 		}
-		add = 3
+		add = 1
 	}
 	every_scope_character = {
 		limit = { has_variable = tot_band_id var:tot_band_id = 8 has_trait = tot_is_supper_lead_vocalist_trait }
-		add = 10
+		add = 4
 	}
 }
 
@@ -2366,8 +2374,9 @@ band_8_kizuna_creation_weekly_gain_value = {
 	value = band_8_kizuna_creation_base_gain_value
 	add = band_8_kizuna_resource_weekly_gain_value
 	multiply = band_8_kizuna_resource_multiplier_percent_value
-	divide = 100
+	divide = 200
 	if = { limit = { has_variable = tot_band_8_weekly_bonus } add = var:tot_band_8_weekly_bonus }
+	divide = 2
 }
 
 band_8_kizuna_creation_progress_bar_value = {
@@ -2379,7 +2388,7 @@ band_8_kizuna_creation_progress_bar_value = {
 	max = 100
 }
 band_9_kizuna_creation_base_gain_value = {
-	value = 15
+	value = 6
 	every_scope_character = {
 		limit = {
 			has_variable = tot_band_id
@@ -2392,7 +2401,7 @@ band_9_kizuna_creation_base_gain_value = {
 				has_variable = tot_band_role_vocalist
 			}
 		}
-		add = 4
+		add = 2
 	}
 	every_scope_character = {
 		limit = {
@@ -2406,11 +2415,11 @@ band_9_kizuna_creation_base_gain_value = {
 				AND = { has_variable = tot_band_role_vocalist has_trait = tot_lead_vocalist_trait }
 			}
 		}
-		add = 3
+		add = 1
 	}
 	every_scope_character = {
 		limit = { has_variable = tot_band_id var:tot_band_id = 9 has_trait = tot_is_supper_lead_vocalist_trait }
-		add = 10
+		add = 4
 	}
 }
 
@@ -2488,8 +2497,9 @@ band_9_kizuna_creation_weekly_gain_value = {
 	value = band_9_kizuna_creation_base_gain_value
 	add = band_9_kizuna_resource_weekly_gain_value
 	multiply = band_9_kizuna_resource_multiplier_percent_value
-	divide = 100
+	divide = 200
 	if = { limit = { has_variable = tot_band_9_weekly_bonus } add = var:tot_band_9_weekly_bonus }
+	divide = 2
 }
 
 band_9_kizuna_creation_progress_bar_value = {
@@ -2501,7 +2511,7 @@ band_9_kizuna_creation_progress_bar_value = {
 	max = 100
 }
 band_10_kizuna_creation_base_gain_value = {
-	value = 15
+	value = 6
 	every_scope_character = {
 		limit = {
 			has_variable = tot_band_id
@@ -2514,7 +2524,7 @@ band_10_kizuna_creation_base_gain_value = {
 				has_variable = tot_band_role_vocalist
 			}
 		}
-		add = 4
+		add = 2
 	}
 	every_scope_character = {
 		limit = {
@@ -2528,11 +2538,11 @@ band_10_kizuna_creation_base_gain_value = {
 				AND = { has_variable = tot_band_role_vocalist has_trait = tot_lead_vocalist_trait }
 			}
 		}
-		add = 3
+		add = 1
 	}
 	every_scope_character = {
 		limit = { has_variable = tot_band_id var:tot_band_id = 10 has_trait = tot_is_supper_lead_vocalist_trait }
-		add = 10
+		add = 4
 	}
 }
 
@@ -2610,8 +2620,9 @@ band_10_kizuna_creation_weekly_gain_value = {
 	value = band_10_kizuna_creation_base_gain_value
 	add = band_10_kizuna_resource_weekly_gain_value
 	multiply = band_10_kizuna_resource_multiplier_percent_value
-	divide = 100
+	divide = 200
 	if = { limit = { has_variable = tot_band_10_weekly_bonus } add = var:tot_band_10_weekly_bonus }
+	divide = 2
 }
 
 band_10_kizuna_creation_progress_bar_value = {

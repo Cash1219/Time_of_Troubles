@@ -1,6 +1,6 @@
 ﻿COUNTRIES = {
 	c:MUS ?= {
-		set_next_election_date = 1836.2.1
+		set_next_election_date = 1836.12.1
 
 		effect_starting_technology_tier_2_tech = yes
 		effect_starting_politics_conservative = yes
@@ -86,8 +86,8 @@
 		activate_law = law_type:law_monarchy
 		activate_law = law_type:law_club_school_coordination
 		activate_law = law_type:law_wealth_voting
-		activate_law = law_type:law_freedom_of_conscience
 		activate_law = law_type:law_women_own_property
+		activate_law = law_type:law_freedom_of_conscience
 		activate_law = law_type:law_student_executive_cadres
 		activate_law = law_type:law_manorialism
 		activate_law = law_type:law_subjecthood
@@ -103,6 +103,15 @@
 		add_journal_entry = {
 			type = je_idol_unmei_ituations
 		}
-		
+		add_journal_entry = {
+			type = je_tot_idol_succession_crisis
+		}
+		set_variable = { name = tot_idol_crisis_ll_score value = 0 }
+		set_variable = { name = tot_idol_crisis_imas_score value = 0 }
+		set_variable = { name = tot_idol_crisis_gbdp_score value = 0 }
+		set_variable = { name = tot_idol_crisis_ger_score value = 0 }
+		set_variable = { name = tot_idol_crisis_htt_score value = 0 }
+		set_variable = { name = tot_idol_crisis_tension value = 20 }
+		set_variable = { name = tot_idol_crisis_compromise_score value = 30 }
 	}
 }

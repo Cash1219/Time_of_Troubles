@@ -19,6 +19,10 @@
 			limit = { NOT = { has_journal_entry = je_tot_band_gui } }
 			add_journal_entry = { type = je_tot_band_gui }
 		}
+		if = {
+			limit = { NOT = { has_journal_entry = je_tot_club_gui } }
+			add_journal_entry = { type = je_tot_club_gui }
+		}
 		tot_setup_default_kon_band_effect = yes
 		tot_setup_default_story_bands_effect = yes
 	}

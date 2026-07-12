@@ -19,6 +19,12 @@ on_game_started = {
 				}
 				add_journal_entry = { type = je_tot_band_gui }
 			}
+			if = {
+				limit = {
+					NOT = { has_journal_entry = je_tot_club_gui }
+				}
+				add_journal_entry = { type = je_tot_club_gui }
+			}
 		}
 		every_country = {
 			tot_setup_default_kon_band_effect = yes
@@ -52,6 +58,12 @@ on_game_started_after_lobby = {
 				}
 				add_journal_entry = { type = je_tot_band_gui }
 			}
+			if = {
+				limit = {
+					NOT = { has_journal_entry = je_tot_club_gui }
+				}
+				add_journal_entry = { type = je_tot_club_gui }
+			}
 		}
 		every_country = {
 			tot_setup_default_kon_band_effect = yes
@@ -84,7 +96,19 @@ on_monthly_pulse_country = {
 			}
 			add_journal_entry = { type = je_tot_band_gui }
 		}
+		if = {
+			limit = {
+				NOT = { has_journal_entry = je_tot_club_gui }
+			}
+			add_journal_entry = { type = je_tot_club_gui }
+		}
 		tot_band_initialize_axes = yes
 		update_kizuna = yes
+	}
+}
+
+on_daily_pulse_country = {
+	effect = {
+		tot_character_growth_refresh_club_bonus = yes
 	}
 }

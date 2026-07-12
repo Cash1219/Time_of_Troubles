@@ -111,6 +111,22 @@ country_tot_club_growth_exp_add={
 		ai_value=0
 	}
 }
+country_tot_club_capacity_add={
+	decimals=1
+	color=good
+	percent=no
+	game_data={
+		ai_value=0
+	}
+}
+country_tot_club_capacity_usage_add={
+	decimals=1
+	color=bad
+	percent=no
+	game_data={
+		ai_value=0
+	}
+}
 goods_input_experience_add={
 	decimals=1
 	color=bad
@@ -136,7 +152,7 @@ country_institution_club_management_max_investment_add={
 }
 country_tot_character_growth_cost_mult_add={
 	decimals=0
-	color=good
+	color=bad
 	percent=yes
 	script_only=yes
 	game_data={
@@ -363,6 +379,22 @@ country_institution_cost_institution_anti_speculation_mult={
 	decimals=0
 	color=bad
 	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+country_institution_cost_institution_club_management_mult={
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+state_building_club_max_level_add = {
+	decimals=0
+	color=good
 	game_data={
 		ai_value=0
 	}

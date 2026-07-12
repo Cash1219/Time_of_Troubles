@@ -8,10 +8,11 @@ COUNTRIES = {
 		ig:ig_rural_folk ?= {
 			add_ruling_interest_group = yes
 		}
-		set_next_election_date = 1836.2.1
+		set_next_election_date = 1836.12.1
 		activate_law = law_type:law_monarchy
 		activate_law = law_type:law_club_advisor_guidance
 		activate_law = law_type:law_wealth_voting
+		activate_law = law_type:law_women_own_property
 		activate_law = law_type:law_artistic_freedom
 		activate_law = law_type:law_freedom_of_conscience
 		activate_law = law_type:law_student_executive_cadres
@@ -83,5 +84,13 @@ COUNTRIES = {
 			add_ideology = ideology_free_creation
 			set_interest_group_name = ig_intelligentsia_band
 		}
+		add_journal_entry = { type = je_tot_idol_succession_crisis }
+		set_variable = { name = tot_idol_crisis_ll_score value = 0 }
+		set_variable = { name = tot_idol_crisis_imas_score value = 0 }
+		set_variable = { name = tot_idol_crisis_gbdp_score value = 0 }
+		set_variable = { name = tot_idol_crisis_ger_score value = 0 }
+		set_variable = { name = tot_idol_crisis_htt_score value = 0 }
+		set_variable = { name = tot_idol_crisis_tension value = 20 }
+		set_variable = { name = tot_idol_crisis_compromise_score value = 30 }
 	}
 }

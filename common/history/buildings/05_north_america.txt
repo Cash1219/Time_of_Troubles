@@ -1147,6 +1147,17 @@
 	s:STATE_MISSISSIPPI={
 		region_state:LOU={
 			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:LOU"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={

@@ -1,12 +1,12 @@
-BUILDINGS = {
+﻿BUILDINGS = {
 	s:STATE_EASTERN_THRACE = {
-		region_state:BYZ = {
+		region_state:HTT = {
 			create_building = {
 				building = "building_band_headquarter"
 				activate_production_methods = { "pm_band_axis_interest_3" "pm_band_axis_club_3" "pm_band_axis_independent_1" "pm_band_food_basic" "pm_band_entertainment_daily" "pm_band_equipment_standard" }
 				add_ownership = {
 					country = {
-						country = "c:BYZ"
+						country = "c:HTT"
 						levels = 1
 					}
 				}
@@ -19,6 +19,17 @@ BUILDINGS = {
 			create_building = {
 				building = "building_band_headquarter"
 				activate_production_methods = { "pm_band_axis_interest_2" "pm_band_axis_club_2" "pm_band_axis_independent_1" "pm_band_food_basic" "pm_band_entertainment_daily" "pm_band_equipment_standard" }
+				add_ownership = {
+					country = {
+						country = "c:GBDP"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_club"
+				activate_production_methods = { "pm_club_general" "pm_club_support_autonomy" }
 				add_ownership = {
 					country = {
 						country = "c:GBDP"
@@ -60,13 +71,13 @@ BUILDINGS = {
 		}
 	}
 	s:STATE_AUSTRIA = {
-		region_state:MRFN = {
+		region_state:IDMS = {
 			create_building = {
 				building = "building_band_headquarter"
 				activate_production_methods = { "pm_band_axis_interest_1" "pm_band_axis_club_2" "pm_band_axis_independent_1" "pm_band_food_basic" "pm_band_entertainment_daily" "pm_band_equipment_standard" }
 				add_ownership = {
 					country = {
-						country = "c:MRFN"
+						country = "c:IDMS"
 						levels = 1
 					}
 				}
@@ -195,3 +206,4 @@ BUILDINGS = {
 		}
 	}
 }
+

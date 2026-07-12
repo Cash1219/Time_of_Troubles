@@ -1,0 +1,335 @@
+tot_golden_hall_add_major_score = {
+	if = {
+		limit = {
+			OR = {
+				c:MUS ?= root
+				c:AQO ?= root
+				c:NJS ?= root
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					c:MUS ?= this
+					c:AQO ?= this
+					c:NJS ?= this
+					c:IDMS ?= this
+					c:GKMS ?= this
+					c:GBDP ?= this
+					c:HTT ?= this
+					c:PRU ?= this
+				}
+			}
+			change_variable = { name = tot_idol_crisis_ll_score add = 3 }
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				c:IDMS ?= root
+				c:GKMS ?= root
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					c:MUS ?= this
+					c:AQO ?= this
+					c:NJS ?= this
+					c:IDMS ?= this
+					c:GKMS ?= this
+					c:GBDP ?= this
+					c:HTT ?= this
+					c:PRU ?= this
+				}
+			}
+			change_variable = { name = tot_idol_crisis_imas_score add = 3 }
+		}
+	}
+	if = {
+		limit = { c:GBDP ?= root }
+		every_country = {
+			limit = {
+				OR = {
+					c:MUS ?= this
+					c:AQO ?= this
+					c:NJS ?= this
+					c:IDMS ?= this
+					c:GKMS ?= this
+					c:GBDP ?= this
+					c:HTT ?= this
+					c:PRU ?= this
+				}
+			}
+			change_variable = { name = tot_idol_crisis_gbdp_score add = 3 }
+		}
+	}
+	if = {
+		limit = { c:HTT ?= root }
+		every_country = {
+			limit = {
+				OR = {
+					c:MUS ?= this
+					c:AQO ?= this
+					c:NJS ?= this
+					c:IDMS ?= this
+					c:GKMS ?= this
+					c:GBDP ?= this
+					c:HTT ?= this
+					c:PRU ?= this
+				}
+			}
+			change_variable = { name = tot_idol_crisis_htt_score add = 3 }
+		}
+	}
+	if = {
+		limit = { c:PRU ?= root }
+		every_country = {
+			limit = {
+				OR = {
+					c:MUS ?= this
+					c:AQO ?= this
+					c:NJS ?= this
+					c:IDMS ?= this
+					c:GKMS ?= this
+					c:GBDP ?= this
+					c:HTT ?= this
+					c:PRU ?= this
+				}
+			}
+			change_variable = { name = tot_idol_crisis_ger_score add = 3 }
+		}
+	}
+}
+
+tot_golden_hall_add_minor_score = {
+	if = {
+		limit = {
+			OR = {
+				c:MUS ?= root
+				c:AQO ?= root
+				c:NJS ?= root
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					c:MUS ?= this
+					c:AQO ?= this
+					c:NJS ?= this
+					c:IDMS ?= this
+					c:GKMS ?= this
+					c:GBDP ?= this
+					c:HTT ?= this
+					c:PRU ?= this
+				}
+			}
+			change_variable = { name = tot_idol_crisis_ll_score add = 2 }
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				c:IDMS ?= root
+				c:GKMS ?= root
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					c:MUS ?= this
+					c:AQO ?= this
+					c:NJS ?= this
+					c:IDMS ?= this
+					c:GKMS ?= this
+					c:GBDP ?= this
+					c:HTT ?= this
+					c:PRU ?= this
+				}
+			}
+			change_variable = { name = tot_idol_crisis_imas_score add = 2 }
+		}
+	}
+	if = {
+		limit = { c:GBDP ?= root }
+		every_country = {
+			limit = {
+				OR = {
+					c:MUS ?= this
+					c:AQO ?= this
+					c:NJS ?= this
+					c:IDMS ?= this
+					c:GKMS ?= this
+					c:GBDP ?= this
+					c:HTT ?= this
+					c:PRU ?= this
+				}
+			}
+			change_variable = { name = tot_idol_crisis_gbdp_score add = 2 }
+		}
+	}
+	if = {
+		limit = { c:HTT ?= root }
+		every_country = {
+			limit = {
+				OR = {
+					c:MUS ?= this
+					c:AQO ?= this
+					c:NJS ?= this
+					c:IDMS ?= this
+					c:GKMS ?= this
+					c:GBDP ?= this
+					c:HTT ?= this
+					c:PRU ?= this
+				}
+			}
+			change_variable = { name = tot_idol_crisis_htt_score add = 2 }
+		}
+	}
+	if = {
+		limit = { c:PRU ?= root }
+		every_country = {
+			limit = {
+				OR = {
+					c:MUS ?= this
+					c:AQO ?= this
+					c:NJS ?= this
+					c:IDMS ?= this
+					c:GKMS ?= this
+					c:GBDP ?= this
+					c:HTT ?= this
+					c:PRU ?= this
+				}
+			}
+			change_variable = { name = tot_idol_crisis_ger_score add = 2 }
+		}
+	}
+}
+
+tot_golden_hall_check_core_completion = {
+	if = {
+		limit = {
+			var:tot_golden_hall_built < 1
+			var:tot_golden_hall_facade_progress >= 5
+			var:tot_golden_hall_stair_progress >= 5
+			var:tot_golden_hall_mainhall_progress >= 5
+			var:tot_golden_hall_ceiling_progress >= 5
+			var:tot_golden_hall_stage_progress >= 5
+		}
+		every_country = {
+			limit = {
+				OR = {
+					c:MUS ?= this
+					c:AQO ?= this
+					c:NJS ?= this
+					c:IDMS ?= this
+					c:GKMS ?= this
+					c:GBDP ?= this
+					c:HTT ?= this
+					c:PRU ?= this
+				}
+			}
+			set_variable = { name = tot_golden_hall_built value = 1 }
+			change_variable = { name = tot_idol_crisis_tension add = -35 }
+			change_variable = { name = tot_idol_crisis_compromise_score add = 15 }
+		}
+		s:STATE_AUSTRIA = {
+			if = {
+				limit = { NOT = { has_building = building_tot_golden_hall_monument } }
+				create_building = {
+					building = building_tot_golden_hall_monument
+					level = 1
+					reserves = 1
+				}
+			}
+			add_building_level = {
+				building = building_stage
+				level = 5
+			}
+		}
+		every_scope_state = {
+			limit = { state_region = s:STATE_AUSTRIA }
+			owner = {
+				add_modifier = { name = modifier_tot_golden_hall_complete_owner years = 10 }
+			}
+		}
+	}
+}
+
+tot_golden_hall_handoff_to_vienna_owner = {
+	if = {
+		limit = {
+			var:tot_golden_hall_built < 1
+			OR = {
+				var:tot_golden_hall_facade_progress > 0
+				var:tot_golden_hall_stair_progress > 0
+				var:tot_golden_hall_mainhall_progress > 0
+				var:tot_golden_hall_ceiling_progress > 0
+				var:tot_golden_hall_stage_progress > 0
+				var:tot_golden_hall_acoustics_progress > 0
+				var:tot_golden_hall_backstage_progress > 0
+				var:tot_golden_hall_ticketing_progress > 0
+				var:tot_golden_hall_vip_progress > 0
+				var:tot_golden_hall_reception_progress > 0
+			}
+		}
+		every_scope_state = {
+			limit = { state_region = s:STATE_AUSTRIA }
+			owner = {
+				set_variable = { name = tot_golden_hall_built value = root.var:tot_golden_hall_built }
+				set_variable = { name = tot_golden_hall_facade_progress value = root.var:tot_golden_hall_facade_progress }
+				set_variable = { name = tot_golden_hall_stair_progress value = root.var:tot_golden_hall_stair_progress }
+				set_variable = { name = tot_golden_hall_mainhall_progress value = root.var:tot_golden_hall_mainhall_progress }
+				set_variable = { name = tot_golden_hall_ceiling_progress value = root.var:tot_golden_hall_ceiling_progress }
+				set_variable = { name = tot_golden_hall_stage_progress value = root.var:tot_golden_hall_stage_progress }
+				set_variable = { name = tot_golden_hall_acoustics_progress value = root.var:tot_golden_hall_acoustics_progress }
+				set_variable = { name = tot_golden_hall_backstage_progress value = root.var:tot_golden_hall_backstage_progress }
+				set_variable = { name = tot_golden_hall_ticketing_progress value = root.var:tot_golden_hall_ticketing_progress }
+				set_variable = { name = tot_golden_hall_vip_progress value = root.var:tot_golden_hall_vip_progress }
+				set_variable = { name = tot_golden_hall_reception_progress value = root.var:tot_golden_hall_reception_progress }
+				if = {
+					limit = { NOT = { has_journal_entry = je_tot_golden_hall_continuation } }
+					add_journal_entry = { type = je_tot_golden_hall_continuation }
+				}
+			}
+		}
+	}
+}
+
+tot_idol_succession_cleanup_effect = {
+	every_country = {
+		limit = {
+			OR = {
+				c:MUS ?= this
+				c:AQO ?= this
+				c:NJS ?= this
+				c:IDMS ?= this
+				c:GKMS ?= this
+				c:GBDP ?= this
+				c:HTT ?= this
+				c:PRU ?= this
+			}
+		}
+		if = { limit = { has_journal_entry = je_tot_golden_hall_project } remove_journal_entry = je_tot_golden_hall_project }
+		if = { limit = { has_journal_entry = je_tot_ll_publication_program } remove_journal_entry = je_tot_ll_publication_program }
+		if = { limit = { has_journal_entry = je_tot_imas_publication_program } remove_journal_entry = je_tot_imas_publication_program }
+		if = { limit = { has_journal_entry = je_tot_idol_succession_crisis } remove_journal_entry = je_tot_idol_succession_crisis }
+		if = { limit = { has_variable = tot_idol_crisis_ll_score } remove_variable = tot_idol_crisis_ll_score }
+		if = { limit = { has_variable = tot_idol_crisis_imas_score } remove_variable = tot_idol_crisis_imas_score }
+		if = { limit = { has_variable = tot_idol_crisis_gbdp_score } remove_variable = tot_idol_crisis_gbdp_score }
+		if = { limit = { has_variable = tot_idol_crisis_ger_score } remove_variable = tot_idol_crisis_ger_score }
+		if = { limit = { has_variable = tot_idol_crisis_htt_score } remove_variable = tot_idol_crisis_htt_score }
+		if = { limit = { has_variable = tot_idol_crisis_tension } remove_variable = tot_idol_crisis_tension }
+		if = { limit = { has_variable = tot_idol_crisis_compromise_score } remove_variable = tot_idol_crisis_compromise_score }
+		if = { limit = { has_variable = tot_ll_publication_paper } remove_variable = tot_ll_publication_paper }
+		if = { limit = { has_variable = tot_ll_publication_academy } remove_variable = tot_ll_publication_academy }
+		if = { limit = { has_variable = tot_ll_publication_stage } remove_variable = tot_ll_publication_stage }
+		if = { limit = { has_variable = tot_imas_publication_paper } remove_variable = tot_imas_publication_paper }
+		if = { limit = { has_variable = tot_imas_publication_academy } remove_variable = tot_imas_publication_academy }
+		if = { limit = { has_variable = tot_imas_publication_stage } remove_variable = tot_imas_publication_stage }
+		if = { limit = { has_variable = tot_ll_industry_stage_ready } remove_variable = tot_ll_industry_stage_ready }
+		if = { limit = { has_variable = tot_ll_industry_transit_ready } remove_variable = tot_ll_industry_transit_ready }
+		if = { limit = { has_variable = tot_imas_industry_agency_ready } remove_variable = tot_imas_industry_agency_ready }
+		if = { limit = { has_variable = tot_imas_industry_training_ready } remove_variable = tot_imas_industry_training_ready }
+	}
+}

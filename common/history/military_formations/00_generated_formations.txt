@@ -911,11 +911,11 @@
 			}
 		}
 	}
-	c:BYZ ?= {
+	c:HTT ?= {
 		create_military_formation = {
 			type = army
 			hq_region = sr:region_balkans
-			name = "BYZ_army_1"
+			name = "HTT_army_1"
 
 			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_EASTERN_THRACE count = 18 }
 			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_EASTERN_THRACE count = 5 }
@@ -924,7 +924,7 @@
 		create_military_formation = {
 			type = army
 			hq_region = sr:region_balkans
-			name = "BYZ_army_2"
+			name = "HTT_army_2"
 
 			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_BULGARIA count = 18 }
 			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_BULGARIA count = 5 }
@@ -933,7 +933,7 @@
 		create_military_formation = {
 			type = fleet
 			hq_region = sr:region_balkans
-			name = "BYZ_fleet_1"
+			name = "HTT_fleet_1"
 
 			ship = {
 				type = ship_type:ship_type_ship_of_the_line
@@ -948,7 +948,7 @@
 		create_military_formation = {
 			type = fleet
 			hq_region = sr:region_near_east
-			name = "BYZ_fleet_2"
+			name = "HTT_fleet_2"
 
 			ship = {
 				type = ship_type:ship_type_ship_of_the_line
@@ -1628,11 +1628,11 @@
 			}
 		}
 	}
-	c:MRFN ?= {
+	c:IDMS ?= {
 		create_military_formation = {
 			type = army
 			hq_region = sr:region_central_europe
-			name = "MRFN_army_1"
+			name = "IDMS_army_2"
 
 			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_AUSTRIA count = 5 }
 			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_AUSTRIA count = 1 }
@@ -2731,11 +2731,11 @@
 			combat_unit = { type = unit_type:combat_unit_type_mobile_artillery state_region = s:STATE_MINDANAO count = 1 }
 		}
 	}
-	c:MHGK ?= {
+	c:GKMS ?= {
 		create_military_formation = {
 			type = army
 			hq_region = sr:region_central_europe
-			name = "MHGK_army_1"
+			name = "GKMS_army_1"
 
 			combat_unit = { type = unit_type:combat_unit_type_line_infantry state_region = s:STATE_BOHEMIA count = 4 }
 			combat_unit = { type = unit_type:combat_unit_type_hussars state_region = s:STATE_BOHEMIA count = 1 }
@@ -5428,3 +5428,5 @@
 		}
 	}
 }
+
+

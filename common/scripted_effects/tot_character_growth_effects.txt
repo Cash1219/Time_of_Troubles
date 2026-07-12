@@ -1,12 +1,14 @@
 tot_character_growth_weekly_update = {
 	set_variable = { name = tot_club_growth_bonus value = 0 }
+	set_variable = { name = tot_character_growth_country_cost_mult value = 0 }
 	if = {
-		limit = { modifier:country_tot_club_growth_exp_add > 0 }
+		limit = { modifier:country_tot_character_growth_cost_mult_add != 0 }
 		set_variable = {
-			name = tot_club_growth_bonus
-			value = modifier:country_tot_club_growth_exp_add
+			name = tot_character_growth_country_cost_mult
+			value = modifier:country_tot_character_growth_cost_mult_add
 		}
 	}
+	tot_character_growth_refresh_club_bonus = yes
 
 	every_scope_character = {
 		limit = {
@@ -18,47 +20,174 @@ tot_character_growth_weekly_update = {
 			remove_variable = tot_character_growth_club_cost_mult
 		}
 		if = {
-			limit = { modifier:country_tot_character_growth_cost_mult_add != 0 }
+			limit = { root.var:tot_character_growth_country_cost_mult != 0 }
 			set_variable = {
 				name = tot_character_growth_club_cost_mult
-				value = {
-					value = modifier:country_tot_character_growth_cost_mult_add
-					multiply = 100
-				}
+				value = root.var:tot_character_growth_country_cost_mult
 			}
 		}
 
-		change_variable = {
-			name = tot_character_growth_exp
-			add = 10
-		}
+		set_variable = { name = tot_character_growth_weekly_gain value = 10 }
 		if = {
 			limit = {
 				is_ruler_of_own_country = yes
 			}
-			change_variable = {
-				name = tot_character_growth_exp
-				add = 3
-			}
+			change_variable = { name = tot_character_growth_weekly_gain add = 3 }
 		}
 		if = {
 			limit = {
 				is_interest_group_leader = yes
 			}
-			change_variable = {
-				name = tot_character_growth_exp
-				add = 3
-			}
+			change_variable = { name = tot_character_growth_weekly_gain add = 3 }
 		}
 		if = {
 			limit = { root.var:tot_club_growth_bonus > 0 }
+			change_variable = { name = tot_character_growth_weekly_gain add = root.var:tot_club_growth_bonus }
+		}
+		if = {
+			limit = { root = { tot_club_capacity_deficit_ratio < 0 } }
 			change_variable = {
-				name = tot_character_growth_exp
-				add = root.var:tot_club_growth_bonus
+				name = tot_character_growth_weekly_gain
+				multiply = {
+					value = 1
+					add = {
+						value = root.tot_club_capacity_deficit_ratio
+						multiply = 0.20
+					}
+				}
 			}
 		}
+		change_variable = { name = tot_character_growth_exp add = var:tot_character_growth_weekly_gain }
 		tot_character_growth_refresh_cost = yes
 		tot_character_growth_check_level_up = yes
+	}
+}
+
+tot_character_growth_refresh_club_bonus = {
+	if = {
+		limit = { has_modifier = tot_club_capacity_surplus_modifier }
+		remove_modifier = tot_club_capacity_surplus_modifier
+	}
+	set_variable = { name = tot_club_law_mult value = 0 }
+	set_variable = { name = tot_club_total_count value = 0 }
+	set_variable = { name = tot_club_theme_count value = 0 }
+	set_variable = { name = tot_club_theme_literature value = 0 }
+	set_variable = { name = tot_club_theme_athletics value = 0 }
+	set_variable = { name = tot_club_theme_music value = 0 }
+	set_variable = { name = tot_club_theme_drama value = 0 }
+	set_variable = { name = tot_club_theme_art value = 0 }
+
+	if = {
+		limit = { has_law = law_club_autonomy }
+		set_variable = { name = tot_club_law_mult value = 0.85 }
+	}
+	if = {
+		limit = { has_law = law_club_advisor_guidance }
+		set_variable = { name = tot_club_law_mult value = 1.0 }
+	}
+	if = {
+		limit = { has_law = law_club_strict_admission }
+		set_variable = { name = tot_club_law_mult value = 1.15 }
+	}
+	if = {
+		limit = { has_law = law_club_school_coordination }
+		set_variable = { name = tot_club_law_mult value = 1.05 }
+	}
+
+	every_scope_state = {
+		limit = { owner = root }
+		every_scope_building = {
+			limit = { is_building_type = building_club }
+			root = {
+				change_variable = { name = tot_club_total_count add = 1 }
+			}
+
+			if = {
+				limit = { has_active_production_method = pm_club_literature }
+				root = {
+					set_variable = { name = tot_club_theme_literature value = 1 }
+				}
+			}
+			if = {
+				limit = { has_active_production_method = pm_club_athletics }
+				root = {
+					set_variable = { name = tot_club_theme_athletics value = 1 }
+				}
+			}
+			if = {
+				limit = { has_active_production_method = pm_club_music }
+				root = {
+					set_variable = { name = tot_club_theme_music value = 1 }
+				}
+			}
+			if = {
+				limit = { has_active_production_method = pm_club_drama }
+				root = {
+					set_variable = { name = tot_club_theme_drama value = 1 }
+				}
+			}
+			if = {
+				limit = { has_active_production_method = pm_club_art }
+				root = {
+					set_variable = { name = tot_club_theme_art value = 1 }
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = { var:tot_club_theme_literature > 0 }
+		change_variable = { name = tot_club_theme_count add = 1 }
+	}
+	if = {
+		limit = { var:tot_club_theme_athletics > 0 }
+		change_variable = { name = tot_club_theme_count add = 1 }
+	}
+	if = {
+		limit = { var:tot_club_theme_music > 0 }
+		change_variable = { name = tot_club_theme_count add = 1 }
+	}
+	if = {
+		limit = { var:tot_club_theme_drama > 0 }
+		change_variable = { name = tot_club_theme_count add = 1 }
+	}
+	if = {
+		limit = { var:tot_club_theme_art > 0 }
+		change_variable = { name = tot_club_theme_count add = 1 }
+	}
+
+	if = {
+		limit = {
+			tot_club_capacity_surplus_ratio > 0
+		}
+		add_modifier = {
+			name = tot_club_capacity_surplus_modifier
+			multiplier = tot_club_capacity_surplus_ratio
+		}
+	}
+
+	if = {
+		limit = { tot_club_capacity_effective_usage > 0 }
+		set_variable = { name = tot_club_growth_bonus value = tot_club_capacity_effective_usage }
+		change_variable = { name = tot_club_growth_bonus multiply = 0.12 }
+		change_variable = { name = tot_club_growth_bonus multiply = var:tot_club_law_mult }
+
+		if = {
+			limit = { var:tot_club_theme_count = 2 }
+			change_variable = { name = tot_club_growth_bonus multiply = 1.05 }
+		}
+		if = {
+			limit = { var:tot_club_theme_count = 3 }
+			change_variable = { name = tot_club_growth_bonus multiply = 1.10 }
+		}
+		if = {
+			limit = { var:tot_club_theme_count = 4 }
+			change_variable = { name = tot_club_growth_bonus multiply = 1.15 }
+		}
+		if = {
+			limit = { var:tot_club_theme_count >= 5 }
+			change_variable = { name = tot_club_growth_bonus multiply = 1.20 }
+		}
 	}
 }
 
@@ -72,30 +201,20 @@ tot_character_growth_refresh_cost = {
 		limit = { has_variable = tot_character_growth_trait_cost_mult }
 		change_variable = {
 			name = tot_character_growth_current_cost
-			multiply = 100
-		}
-		change_variable = {
-			name = tot_character_growth_current_cost
-			add = var:tot_character_growth_trait_cost_mult
-		}
-		change_variable = {
-			name = tot_character_growth_current_cost
-			divide = 100
+			multiply = {
+				value = 1
+				add = var:tot_character_growth_trait_cost_mult
+			}
 		}
 	}
 	if = {
 		limit = { has_variable = tot_character_growth_club_cost_mult }
 		change_variable = {
 			name = tot_character_growth_current_cost
-			multiply = 100
-		}
-		change_variable = {
-			name = tot_character_growth_current_cost
-			add = var:tot_character_growth_club_cost_mult
-		}
-		change_variable = {
-			name = tot_character_growth_current_cost
-			divide = 100
+			multiply = {
+				value = 1
+				add = var:tot_character_growth_club_cost_mult
+			}
 		}
 	}
 

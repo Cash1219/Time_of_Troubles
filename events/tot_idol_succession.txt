@@ -1,0 +1,123 @@
+namespace = tot_idol_succession
+
+tot_idol_succession.1 = {
+	type = country_event
+	title = tot_idol_succession.1.t
+	desc = tot_idol_succession.1.d
+
+	trigger = {
+		c:MUS ?= this
+		has_journal_entry = je_tot_idol_succession_crisis
+		var:tot_idol_crisis_tension >= 100
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				var:tot_idol_crisis_ll_score >= var:tot_idol_crisis_imas_score
+			}
+			set_variable = { name = tot_idol_crisis_war_side value = 1 }
+		}
+		else = {
+			set_variable = { name = tot_idol_crisis_war_side value = 2 }
+		}
+	}
+
+	option = {
+		name = tot_idol_succession.1.a
+		if = {
+			limit = {
+				var:tot_idol_crisis_war_side = 1
+				exists = c:MUS
+				exists = c:IDMS
+			}
+			c:MUS ?= {
+				create_diplomatic_play = {
+					name = tot_idol_succession_war
+					type = dp_regime_change
+					target_country = c:IDMS
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				exists = c:IDMS
+				exists = c:MUS
+			}
+			c:IDMS ?= {
+				create_diplomatic_play = {
+					name = tot_idol_succession_war
+					type = dp_regime_change
+					target_country = c:MUS
+				}
+			}
+		}
+		hidden_effect = {
+			tot_golden_hall_handoff_to_vienna_owner = yes
+			tot_idol_succession_cleanup_effect = yes
+			if = { limit = { has_variable = tot_idol_crisis_war_side } remove_variable = tot_idol_crisis_war_side }
+		}
+	}
+}
+
+tot_idol_succession.2 = {
+	type = country_event
+	title = tot_idol_succession.2.t
+	desc = tot_idol_succession.2.d
+
+	trigger = {
+		c:MUS ?= this
+		has_journal_entry = je_tot_idol_succession_crisis
+	}
+
+	immediate = {
+		set_variable = {
+			name = tot_idol_crisis_ll_compromise_threshold
+			value = var:tot_idol_crisis_imas_score
+		}
+		change_variable = {
+			name = tot_idol_crisis_ll_compromise_threshold
+			add = 4
+		}
+		set_variable = {
+			name = tot_idol_crisis_imas_compromise_threshold
+			value = var:tot_idol_crisis_ll_score
+		}
+		change_variable = {
+			name = tot_idol_crisis_imas_compromise_threshold
+			add = 4
+		}
+	}
+
+	option = {
+		name = tot_idol_succession.2.a
+		trigger = {
+			var:tot_idol_crisis_ll_score <= var:tot_idol_crisis_ll_compromise_threshold
+			var:tot_idol_crisis_imas_score <= var:tot_idol_crisis_imas_compromise_threshold
+		}
+		custom_tooltip = tot_idol_succession_compromise_tt
+		hidden_effect = {
+			tot_golden_hall_handoff_to_vienna_owner = yes
+			tot_idol_succession_cleanup_effect = yes
+			remove_variable = tot_idol_crisis_ll_compromise_threshold
+			remove_variable = tot_idol_crisis_imas_compromise_threshold
+		}
+	}
+
+	option = {
+		name = tot_idol_succession.2.b
+		trigger = {
+			OR = {
+				var:tot_idol_crisis_ll_score > var:tot_idol_crisis_ll_compromise_threshold
+				var:tot_idol_crisis_imas_score > var:tot_idol_crisis_imas_compromise_threshold
+			}
+		}
+		custom_tooltip = tot_idol_succession_no_compromise_tt
+		hidden_effect = {
+			tot_golden_hall_handoff_to_vienna_owner = yes
+			tot_idol_succession_cleanup_effect = yes
+			remove_variable = tot_idol_crisis_ll_compromise_threshold
+			remove_variable = tot_idol_crisis_imas_compromise_threshold
+		}
+	}
+}

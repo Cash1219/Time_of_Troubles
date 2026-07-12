@@ -1,3 +1,23 @@
+pm_club_general = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	is_default = yes
+	building_modifiers = {
+		level_scaled = {
+			building_employment_clerks_add = 200
+			building_employment_laborers_add = 200
+		}
+		workforce_scaled = {
+			goods_input_services_add = 3
+			goods_output_experience_add = 5
+		}
+	}
+	country_modifiers = {
+		workforce_scaled = {
+			country_tot_club_capacity_usage_add = 1.0
+		}
+	}
+}
+
 pm_club_literature = {
 	texture = "gfx/interface/icons/production_method_icons/pm_publisher_main_general_wood.dds"
 	building_modifiers = {
@@ -10,10 +30,10 @@ pm_club_literature = {
 			goods_input_services_add = 4
 			goods_output_experience_add = 6
 		}
-		state_modifiers = {
-			workforce_scaled = {
-				state_education_access_add = 0.01
-			}
+	}
+	country_modifiers = {
+		workforce_scaled = {
+			country_tot_club_capacity_usage_add = 1.8
 		}
 	}
 }
@@ -30,35 +50,150 @@ pm_club_athletics = {
 			goods_input_services_add = 4
 			goods_output_experience_add = 6
 		}
-		country_modifiers = {
-			building_training_rate_mult = 0.01
+	}
+	country_modifiers = {
+		workforce_scaled = {
+			country_tot_club_capacity_usage_add = 1.8
 		}
 	}
 }
 
-pm_club_support_normal = {
+pm_club_music = {
+	texture = "gfx/interface/icons/production_method_icons/pm_goods_musical_instrument.dds"
+	building_modifiers = {
+		level_scaled = {
+			building_employment_clerks_add = 220
+			building_employment_laborers_add = 180
+		}
+		workforce_scaled = {
+			goods_input_musical_instrument_add = 4
+			goods_input_services_add = 4
+			goods_output_experience_add = 7
+		}
+	}
+	country_modifiers = {
+		workforce_scaled = {
+			country_tot_club_capacity_usage_add = 2.2
+		}
+	}
+}
+
+pm_club_drama = {
+	texture = "gfx/interface/icons/production_method_icons/pm_goods_publications_general_wood.dds"
+	building_modifiers = {
+		level_scaled = {
+			building_employment_clerks_add = 240
+			building_employment_laborers_add = 160
+		}
+		workforce_scaled = {
+			goods_input_paper_add = 6
+			goods_input_clothes_add = 3
+			goods_input_services_add = 4
+			goods_output_experience_add = 7
+		}
+	}
+	country_modifiers = {
+		workforce_scaled = {
+			country_tot_club_capacity_usage_add = 2.2
+		}
+	}
+}
+
+pm_club_art = {
+	texture = "gfx/interface/icons/production_method_icons/pm_paper_backed_art.dds"
+	building_modifiers = {
+		level_scaled = {
+			building_employment_clerks_add = 230
+			building_employment_laborers_add = 170
+		}
+		workforce_scaled = {
+			goods_input_paper_add = 5
+			goods_input_services_add = 5
+			goods_output_experience_add = 7
+		}
+	}
+	country_modifiers = {
+		workforce_scaled = {
+			country_tot_club_capacity_usage_add = 2.0
+		}
+	}
+}
+
+pm_club_support_illegal = {
 	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	disallowing_laws = {
+		law_club_autonomy
+		law_club_advisor_guidance
+		law_club_strict_admission
+		law_club_school_coordination
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_services_add = 2
 			goods_output_experience_add = 2
-		}
-		country_modifiers = {
-			country_tot_club_growth_exp_add = 1
+			building_throughput_add = -0.20
 		}
 	}
 }
 
-pm_club_support_key = {
+pm_club_support_autonomy = {
 	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	unlocking_laws = {
+		law_club_autonomy
+	}
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_services_add = 5
+			goods_input_services_add = 2
+			goods_output_experience_add = 3
+		}
+	}
+}
+
+pm_club_support_advisor = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	unlocking_laws = {
+		law_club_advisor_guidance
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_services_add = 3
+			goods_input_paper_add = 2
+			goods_output_experience_add = 2
+			building_throughput_add = 0.05
+		}
+		level_scaled = {
+			building_employment_clerks_add = 100
+		}
+	}
+}
+
+pm_club_support_strict = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	unlocking_laws = {
+		law_club_strict_admission
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_services_add = 3
+			goods_output_experience_add = 2
+			building_throughput_add = 0.20
+		}
+	}
+}
+
+pm_club_support_coordination = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	unlocking_laws = {
+		law_club_school_coordination
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_services_add = 4
 			goods_input_paper_add = 3
 			goods_output_experience_add = 3
 		}
-		country_modifiers = {
-			country_tot_club_growth_exp_add = 3
+		level_scaled = {
+			building_employment_clerks_add = 120
 		}
 	}
 }

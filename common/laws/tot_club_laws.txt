@@ -7,6 +7,9 @@ law_no_club_management = {
 	disallowing_laws = {
 		law_no_schools
 	}
+
+	modifier = {
+	}
 }
 
 law_club_autonomy = {
@@ -20,12 +23,13 @@ law_club_autonomy = {
 	}
 
 	modifier = {
-		country_institution_club_management_max_investment_add = 2
+		country_institution_cost_institution_club_management_mult = -0.10
+		country_institution_club_management_max_investment_add = 3
 	}
 
 	institution = institution_club_management
 	institution_modifier = {
-		country_tot_character_growth_cost_mult_add = -0.05
+		country_tot_character_growth_cost_mult_add = -0.04
 	}
 }
 
@@ -40,6 +44,7 @@ law_club_advisor_guidance = {
 	}
 
 	modifier = {
+		country_institution_cost_institution_club_management_mult = 0.10
 		country_institution_club_management_max_investment_add = 3
 	}
 
@@ -60,7 +65,8 @@ law_club_strict_admission = {
 	}
 
 	modifier = {
-		country_institution_club_management_max_investment_add = 4
+		country_institution_cost_institution_club_management_mult = 0.00
+		country_institution_club_management_max_investment_add = 3
 	}
 
 	institution = institution_club_management
@@ -80,11 +86,12 @@ law_club_school_coordination = {
 	}
 
 	modifier = {
-		country_institution_club_management_max_investment_add = 5
+		country_institution_cost_institution_club_management_mult = 0.20
+		country_institution_club_management_max_investment_add = 3
 	}
 
 	institution = institution_club_management
 	institution_modifier = {
-		country_tot_character_growth_cost_mult_add = -0.05
+		country_tot_character_growth_cost_mult_add = -0.07
 	}
 }

@@ -8,7 +8,8 @@ COUNTRIES = {
 		activate_law = law_type:law_artistic_freedom
 		activate_law = law_type:law_club_school_coordination
 		activate_law = law_type:law_freedom_of_conscience
-		activate_law = law_type:law_census_voting
+		activate_law = law_type:law_wealth_voting
+		activate_law = law_type:law_women_own_property
 		activate_law = law_type:law_tenant_farmers
 		activate_law = law_type:law_national_supremacy
 
@@ -18,6 +19,7 @@ COUNTRIES = {
 			remove_ideology = ideology_hierarchic
 			add_ideology = ideology_stage_noblesse
 			add_ideology = ideology_house_style
+			add_ideology = ideology_idol_worship
 			set_interest_group_name = ig_landowners_band
 		}
 		ig:ig_devout ?= {
@@ -67,6 +69,7 @@ COUNTRIES = {
 			remove_ideology = ideology_anti_slavery
 			add_ideology = ideology_stage_reform
 			add_ideology = ideology_production_floor
+			add_ideology = ideology_academy_council
 			set_interest_group_name = ig_trade_unions_band
 		}
 		ig:ig_intelligentsia ?= {
@@ -78,5 +81,13 @@ COUNTRIES = {
 			add_ideology = ideology_free_creation
 			set_interest_group_name = ig_intelligentsia_band
 		}
+		add_journal_entry = { type = je_tot_idol_succession_crisis }
+		set_variable = { name = tot_idol_crisis_ll_score value = 0 }
+		set_variable = { name = tot_idol_crisis_imas_score value = 0 }
+		set_variable = { name = tot_idol_crisis_gbdp_score value = 0 }
+		set_variable = { name = tot_idol_crisis_ger_score value = 0 }
+		set_variable = { name = tot_idol_crisis_htt_score value = 0 }
+		set_variable = { name = tot_idol_crisis_tension value = 20 }
+		set_variable = { name = tot_idol_crisis_compromise_score value = 30 }
 	}
 }

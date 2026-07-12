@@ -1,0 +1,31 @@
+je_tot_club_gui = {
+	icon = "gfx/interface/icons/building_icons/building_stage.dds"
+
+	group = je_group_tot_club
+	widget = {
+		gui = "gui/tot_club_management.gui"
+		name = "widget_je_tot_club_management"
+		container = "custom_widget_container_3"
+	}
+
+	is_shown_when_inactive = {
+		always = yes
+	}
+
+	possible = {
+	}
+
+	immediate = {
+		tot_character_growth_refresh_club_bonus = yes
+	}
+
+	on_weekly_pulse = {
+		effect = {
+			tot_character_growth_refresh_club_bonus = yes
+		}
+	}
+
+	weight = 10000
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	can_revolution_inherit = yes
+}

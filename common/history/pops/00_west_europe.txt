@@ -1,4 +1,4 @@
-﻿POPS = {
+POPS = {
 	s:STATE_SVEALAND = {
 		region_state:OOAR = {
 			create_pop = {
@@ -1124,40 +1124,48 @@
 		}
 	}
 	s:STATE_AUSTRIA = {
-		region_state:MRFN = {
+		region_state:IDMS = {
 			create_pop = {
-				culture = south_german
-				size = 1964404
+				culture = imas_765
+				size = 1988404
+			}
+			create_pop = {
+				culture = imas_gakuen
+				size = 24000
 			}
 			create_pop = {
 				culture = ashkenazi
 				size = 1996
 			}
 			create_pop = {
-				culture = hungarian
-				size = 16000
+				culture = lovelive_mu
+				size = 0
 			}
 			create_pop = {
 				culture = czech
 				religion = catholic
-				size = 24000
+				size = 0
 			}
 			create_pop = {
-				culture = hungarian
-				religion = protestant
-				size = 8000
+				culture = lovelive_mu
+				religion = kiseki
+				size = 0
 			}
 		}
 	}
 	s:STATE_BOHEMIA = {
-		region_state:MHGK = {
+		region_state:GKMS = {
 			create_pop = {
-				culture = south_german
-				size = 1499608
+				culture = imas_765
+				size = 700000
 			}
 			create_pop = {
-				culture = czech
-				religion = catholic
+				culture = imas_765
+				size = 300000
+			}
+			create_pop = {
+				culture = imas_gakuen
+				religion = starbeat
 				pop_type = shopkeepers
 				size = 20000
 			}
@@ -1177,21 +1185,21 @@
 				size = 30000
 			}
 			create_pop = {
-				culture = czech
-				religion = catholic
+				culture = imas_gakuen
+				religion = starbeat
 				pop_type = soldiers
 				size = 30000
 			}
 			create_pop = {
-				culture = czech
-				religion = catholic
+				culture = imas_gakuen
+				religion = starbeat
 				pop_type = clerks
 				size = 20000
 			}
 			create_pop = {
-				culture = czech
-				religion = catholic
-				size = 2504808
+				culture = imas_gakuen
+				religion = starbeat
+				size = 3004416
 			}
 			create_pop = {
 				culture = ashkenazi
@@ -1200,16 +1208,20 @@
 		}
 	}
 	s:STATE_MORAVIA = {
-		region_state:MHGK = {
+		region_state:GKMS = {
 			create_pop = {
-				culture = south_german
-				size = 10000
+				culture = imas_765
+				size = 3000
 				pop_type = aristocrats
 			}
 			create_pop = {
-				culture = czech
-				size = 3500
+				culture = imas_gakuen
+				size = 7500
 				pop_type = aristocrats
+			}
+			create_pop = {
+				culture = imas_765
+				size = 183000
 			}
 			create_pop = {
 				culture = ashkenazi
@@ -1227,35 +1239,35 @@
 				size = 10000
 			}
 			create_pop = {
-				culture = czech
-				religion = catholic
+				culture = imas_gakuen
+				religion = starbeat
 				pop_type = shopkeepers
 				size = 10000
 			}
 			create_pop = {
-				culture = czech
-				religion = catholic
+				culture = imas_gakuen
+				religion = starbeat
 				pop_type = soldiers
 				size = 30000
 			}
 			create_pop = {
-				culture = czech
-				religion = catholic
+				culture = imas_gakuen
+				religion = starbeat
 				pop_type = clerks
 				size = 5000
 			}
 			create_pop = {
-				culture = south_german
-				size = 470408
+				culture = imas_765
+				size = 180000
 			}
 			create_pop = {
-				culture = czech
-				religion = catholic
-				size = 1158496
+				culture = imas_gakuen
+				religion = starbeat
+				size = 1386482
 			}
 		    create_pop = {
-		        culture = czech
-		        religion = protestant
+		        culture = imas_gakuen
+		        religion = starbeat
 		        size = 5062
 		    }
 			create_pop = {
@@ -1275,30 +1287,30 @@
 		    create_pop = {
 		        culture = north_german
 		        religion = catholic
-		        size = 131778
+		        size = 50000
 		    }
 		    create_pop = {
 		        culture = north_german
-		        size = 55800
+		        size = 20000
 		    }
 		}
 	}
 	s:STATE_STYRIA = {
-		region_state:MRFN = {
+		region_state:IDMS = {
 			create_pop = {
-				culture = south_german
+				culture = imas_765
 				size = 664796
 			}
 			create_pop = {
-				culture = slovene
+				culture = imas_765
 				size = 72000
 			}
 		}
 	}
 	s:STATE_TYROL = {
-		region_state:MRFN = {
+		region_state:IDMS = {
 			create_pop = {
-				culture = south_german
+				culture = imas_765
 				size = 429286
 			}
 			# Voralberg. Arbitrarily pinning this at 23% of the total population of Voralburg + Tyrol + Salzburg
@@ -1312,12 +1324,21 @@
 	s:STATE_SOUTH_TYROL = {
 		region_state:GBDP = {
 			create_pop = {
-				culture = south_german
-				size = 183000
+				culture = imas_765
+				size = 70000
 			}
 			create_pop = {
 				culture = bandori
-				size = 308000
+				size = 361000
+			}
+			create_pop = {
+				culture = imas_765
+				size = 35000
+			}
+			create_pop = {
+				culture = lovelive_aqo
+				religion = starbeat
+				size = 25000
 			}
 		}
 	}

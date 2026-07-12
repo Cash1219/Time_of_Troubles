@@ -56,6 +56,14 @@ tot_character_growth_cost_mult_value = {
 		limit = { has_variable = tot_character_growth_club_cost_mult }
 		add = var:tot_character_growth_club_cost_mult
 	}
+
+	multiply = 100
+}
+
+tot_character_growth_cost_reduction_value = {
+	value = tot_character_growth_cost_mult_value
+	multiply = -1
+	min = 0
 }
 
 tot_character_growth_cost_add_value = {
@@ -76,15 +84,17 @@ tot_character_growth_current_cost_value = {
 
 	if = {
 		limit = { has_variable = tot_character_growth_trait_cost_mult }
-		multiply = 100
-		add = var:tot_character_growth_trait_cost_mult
-		divide = 100
+		multiply = {
+			value = 1
+			add = var:tot_character_growth_trait_cost_mult
+		}
 	}
 	if = {
 		limit = { has_variable = tot_character_growth_club_cost_mult }
-		multiply = 100
-		add = var:tot_character_growth_club_cost_mult
-		divide = 100
+		multiply = {
+			value = 1
+			add = var:tot_character_growth_club_cost_mult
+		}
 	}
 
 	if = {
@@ -121,15 +131,17 @@ tot_character_growth_next_cost_text_value = {
 
 	if = {
 		limit = { has_variable = tot_character_growth_trait_cost_mult }
-		multiply = 100
-		add = var:tot_character_growth_trait_cost_mult
-		divide = 100
+		multiply = {
+			value = 1
+			add = var:tot_character_growth_trait_cost_mult
+		}
 	}
 	if = {
 		limit = { has_variable = tot_character_growth_club_cost_mult }
-		multiply = 100
-		add = var:tot_character_growth_club_cost_mult
-		divide = 100
+		multiply = {
+			value = 1
+			add = var:tot_character_growth_club_cost_mult
+		}
 	}
 
 	if = {

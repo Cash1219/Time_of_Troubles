@@ -1,0 +1,26 @@
+pm_default_building_tot_golden_hall_monument = {
+	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
+
+	is_hidden_when_unavailable = yes
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_prestige_add = 40
+			goods_output_experience_mult = 0.10
+			goods_output_services_mult = 0.05
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			building_stage_throughput_add = 0.10
+		}
+	}
+
+	building_modifiers = {
+		level_scaled = {
+			building_employment_clerks_add = 100
+			building_employment_machinists_add = 100
+		}
+	}
+}

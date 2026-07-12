@@ -1,12 +1,16 @@
-﻿COUNTRIES = {
+COUNTRIES = {
 	c:HTT ?= {
 		effect_starting_technology_tier_2_tech = yes
+		effect_starting_politics_liberal = yes
+		activate_law = law_type:law_wealth_voting
+		activate_law = law_type:law_women_own_property
+		activate_law = law_type:law_artistic_freedom
 		activate_law = law_type:law_club_advisor_guidance
 		ig:ig_landowners ?= {
 			remove_ideology = ideology_paternalistic
 			remove_ideology = ideology_patriarchal
 			remove_ideology = ideology_hierarchic
-			add_ideology = ideology_academy_prestige
+			add_ideology = ideology_traditional_family
 			add_ideology = ideology_inquisitive
 			set_interest_group_name = ig_landowners_htt
 		}
@@ -15,41 +19,39 @@
 			remove_ideology = ideology_moralist
 			remove_ideology = ideology_patriarchal
 			add_ideology = ideology_free_creation
-			add_ideology = ideology_academy_council
-			add_ideology = ideology_pacifist
+			add_ideology = ideology_kon
 			set_interest_group_name = ig_devout_htt
 		}
 		ig:ig_armed_forces ?= {
 			remove_ideology = ideology_jingoist
 			remove_ideology = ideology_loyalist
 			remove_ideology = ideology_patriotic
-			add_ideology = ideology_academy_council
-			add_ideology = ideology_club_autonomy
-			add_ideology = ideology_pacifist
+			add_ideology = ideology_kon
+			add_ideology = ideology_free_creation
 			set_interest_group_name = ig_armed_forces_htt
 		}
 		ig:ig_industrialists ?= {
 			remove_ideology = ideology_plutocratic
 			remove_ideology = ideology_laissez_faire
 			remove_ideology = ideology_individualist
-			add_ideology = ideology_agency_management
-			add_ideology = ideology_free_creation
+			add_ideology = ideology_kon
+			add_ideology = ideology_production_floor
 			set_interest_group_name = ig_industrialists_htt
 		}
 		ig:ig_petty_bourgeoisie ?= {
 			remove_ideology = ideology_reactionary
 			remove_ideology = ideology_meritocratic
 			remove_ideology = ideology_patriotic
-			add_ideology = ideology_club_autonomy
-			add_ideology = ideology_free_creation
+			add_ideology = ideology_kon
+			add_ideology = ideology_youth_pacesetter
 			set_interest_group_name = ig_petty_bourgeoisie_htt
 		}
 		ig:ig_rural_folk ?= {
 			remove_ideology = ideology_agrarian
 			remove_ideology = ideology_particularist
 			remove_ideology = ideology_isolationist
-			add_ideology = ideology_academy_council
-			add_ideology = ideology_club_autonomy
+			add_ideology = ideology_kon
+			add_ideology = ideology_youth_pacesetter
 			set_interest_group_name = ig_rural_folk_htt
 		}
 		ig:ig_trade_unions ?= {
@@ -57,7 +59,7 @@
 			remove_ideology = ideology_egalitarian
 			remove_ideology = ideology_populist
 			remove_ideology = ideology_anti_slavery
-			add_ideology = ideology_academy_council
+			add_ideology = ideology_kon
 			add_ideology = ideology_production_floor
 			set_interest_group_name = ig_trade_unions_htt
 		}
@@ -66,39 +68,17 @@
 			remove_ideology = ideology_anti_clerical
 			remove_ideology = ideology_republican
 			remove_ideology = ideology_anti_slavery
-			add_ideology = ideology_academy_council
 			add_ideology = ideology_inquisitive
-			add_ideology = ideology_free_creation
+			add_ideology = ideology_academy_council
 			set_interest_group_name = ig_intelligentsia_htt
 		}
-
-		set_tax_level = medium
-
-		# Laws 
-		activate_law = law_type:law_monarchy
-		activate_law = law_type:law_autocracy 
-		activate_law = law_type:law_freedom_of_conscience
-		activate_law = law_type:law_women_own_property
-		activate_law = law_type:law_hereditary_bureaucrats
-		activate_law = law_type:law_national_supremacy
-		activate_law = law_type:law_mercantilism
-		activate_law = law_type:law_interventionism
-		activate_law = law_type:law_local_police
-		activate_law = law_type:law_public_schools
-		activate_law = law_type:law_censorship
-		activate_law = law_type:law_land_based_taxation
-
-		set_institution_investment_level = {
-			institution = institution_schools
-			level = 1
-		}
-		
-		set_institution_investment_level = {
-			institution = institution_police
-			level = 2
-		}		
-		
-	
-	
+		add_journal_entry = { type = je_tot_idol_succession_crisis }
+		set_variable = { name = tot_idol_crisis_ll_score value = 0 }
+		set_variable = { name = tot_idol_crisis_imas_score value = 0 }
+		set_variable = { name = tot_idol_crisis_gbdp_score value = 0 }
+		set_variable = { name = tot_idol_crisis_ger_score value = 0 }
+		set_variable = { name = tot_idol_crisis_htt_score value = 0 }
+		set_variable = { name = tot_idol_crisis_tension value = 20 }
+		set_variable = { name = tot_idol_crisis_compromise_score value = 30 }
 	}
 }

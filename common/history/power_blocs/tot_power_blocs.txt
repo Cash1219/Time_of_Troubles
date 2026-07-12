@@ -9,7 +9,6 @@
 			principle = principle_vassalization_1
 
 			# subjects are automatically part of the bloc
-			member = c:SGXY
 		}
 		
 	}
@@ -21,7 +20,6 @@
 			founding_date = 1816.10.17
 			identity = identity_trade_league
 			principle = principle_internal_trade_1
-			member = c:BCXY
 			member = c:ALS
 		}
 		
@@ -58,7 +56,7 @@
 
 			
 	}
-	c:BYZ ?= {
+	c:HTT ?= {
 		create_power_bloc = {
 			name = BAND_EMPIRE
 
@@ -83,8 +81,8 @@
 			map_color = { 255 229 0 }
 
 			founding_date = 1200.1.1
-			identity = identity_military_treaty_organization
-			principle = principle_defensive_cooperation_3
+			identity = identity_trade_league
+			principle = principle_internal_trade_1
 		
 			#member = c:CUB
 			#member = c:HAR
@@ -116,8 +114,8 @@
 			map_color = { 87  130  199 }
 
 			founding_date = 1444.11.11
-			identity = identity_military_treaty_organization
-			principle = principle_defensive_cooperation_3
+			identity = identity_trade_league
+			principle = principle_internal_trade_1
 
 
 			# Habsburg leaders in Italy and Italian states held up by direct Austrian intervention
@@ -125,6 +123,9 @@
 			member = c:FIN
 			member = c:ZLXY
 			member = c:HSXY
+			member = c:SGXY
+			member = c:USAF
+			member = c:BCXY
 			member = c:STRW
 			member = c:GERW
 		}
@@ -133,7 +134,7 @@
 				has_dlc_feature = power_bloc_features
 			}
 			power_bloc = {
-				add_principle = principle_defensive_cooperation_1
+				add_principle = principle_internal_trade_2
 			}
 		}
 
@@ -206,6 +207,18 @@
 			member = c:MOSL
 		}
 	}
+	c:IDMS ?= {
+		create_power_bloc = {
+			name = IDOL_EMPIRE
+
+			map_color = { 255 168 214 }
+
+			founding_date = 1200.1.1
+			identity = identity_sovereign_empire
+			principle = principle_vassalization_1
+			member = c:GKMS
+		}
+	}
 	c:PRU ?= {
 		create_power_bloc = {
 			name =  HOLY_MAHOUSHOUJO_EMPIRE
@@ -219,7 +232,6 @@
 			member = c:RHE
 			member = c:BAV
 			member = c:WUR
-			member = c:MHGK
 
 			# Luxembourg joined the Zollverein in 1842
 

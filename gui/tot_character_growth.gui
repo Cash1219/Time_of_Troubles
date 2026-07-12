@@ -158,7 +158,7 @@
 	}
 
 	type tot_character_growth_progress_character = widget {
-		size = { 500 112 }
+		size = { 500 136 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 
@@ -188,7 +188,7 @@
 				}
 
 				textbox = {
-					text = "[Character.MakeScope.ScriptValue('tot_character_growth_next_cost_text_value')|0]"
+					text = "[Character.MakeScope.Var('tot_character_growth_exp').GetValue|0]"
 					using = fontsize_small
 					size = { 52 22 }
 					parentanchor = center
@@ -198,14 +198,14 @@
 
 			flowcontainer = {
 				direction = vertical
-				spacing = 2
-				minimumsize = { 286 86 }
+				spacing = 5
+				minimumsize = { 316 108 }
 
 				textbox = {
 					text = "[Character.GetFullNameNoFormatting]"
 					default_format = "#v"
 					using = fontsize_medium
-					size = { 286 28 }
+					size = { 316 28 }
 					align = left|nobaseline
 					elide = right
 				}
@@ -213,7 +213,7 @@
 				textbox = {
 					text = "[Character.GetPrimaryRoleTitle]"
 					using = fontsize_small
-					size = { 286 18 }
+					size = { 316 20 }
 					align = left|nobaseline
 					elide = right
 				}
@@ -221,8 +221,18 @@
 				textbox = {
 					text = "TOT_CHARACTER_GROWTH_EXP_PROGRESS"
 					using = fontsize_small
-					size = { 286 18 }
+					size = { 316 20 }
 					align = left|nobaseline
+					tooltip = "TOT_CHARACTER_GROWTH_EXP_TOOLTIP"
+				}
+
+				textbox = {
+					text = "TOT_CHARACTER_GROWTH_CURRENT_REQUIREMENT"
+					using = fontsize_small
+					fontsize = 13
+					size = { 316 20 }
+					align = left|nobaseline
+					elide = right
 					tooltip = "TOT_CHARACTER_GROWTH_EXP_TOOLTIP"
 				}
 
@@ -230,9 +240,8 @@
 					text = "TOT_CHARACTER_GROWTH_EXP_STAGE_COSTS"
 					using = fontsize_small
 					fontsize = 13
-					size = { 286 32 }
+					size = { 316 20 }
 					align = left|nobaseline
-					multiline = yes
 					elide = right
 					tooltip = "TOT_CHARACTER_GROWTH_EXP_TOOLTIP"
 				}
@@ -454,7 +463,7 @@ flowcontainer = {
 			fixedgridbox = {
 				datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_character_growth_characters')]"
 				addcolumn = 500
-				addrow = 106
+				addrow = 138
 
 				item = {
 					tot_character_growth_progress_character = {}

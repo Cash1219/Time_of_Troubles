@@ -1,4 +1,4 @@
-band_academy_party = {
+﻿band_academy_party = {
 	color = { 255 214 13 }
 	name = {
 		first_valid = {
@@ -35,7 +35,7 @@ band_academy_party = {
 				}
 			}
 			add = {
-				value = 12
+				value = 14
 				desc = "from_archetype_party"
 			}
 		}
@@ -51,7 +51,7 @@ band_academy_party = {
 				}
 			}
 			add = {
-				value = 20
+				value = 32
 				desc = "from_academy_leader"
 			}
 		}
@@ -65,7 +65,7 @@ band_academy_party = {
 				}
 			}
 			add = {
-				value = 16
+				value = 9
 				desc = "from_academy_ig"
 			}
 		}
@@ -96,10 +96,9 @@ band_academy_party = {
 							c:NJS ?= this
 							c:AFTG ?= this
 							c:HHWO ?= this
-							c:MRFN ?= this
+							c:IDMS ?= this
 							c:MYG ?= this
 							c:STLI ?= this
-							c:BYZ ?= this
 							c:HTT ?= this
 						}
 					}
@@ -195,7 +194,7 @@ band_club_party = {
 				}
 			}
 			add = {
-				value = 12
+				value = 14
 				desc = "from_archetype_party"
 			}
 		}
@@ -212,7 +211,7 @@ band_club_party = {
 				}
 			}
 			add = {
-				value = 20
+				value = 32
 				desc = "from_club_leader"
 			}
 		}
@@ -227,7 +226,7 @@ band_club_party = {
 				}
 			}
 			add = {
-				value = 17
+				value = 9
 				desc = "from_club_ig"
 			}
 		}
@@ -257,10 +256,9 @@ band_club_party = {
 							c:NJS ?= this
 							c:AFTG ?= this
 							c:HHWO ?= this
-							c:MRFN ?= this
+							c:IDMS ?= this
 							c:MYG ?= this
 							c:STLI ?= this
-							c:BYZ ?= this
 							c:HTT ?= this
 						}
 					}
@@ -355,7 +353,7 @@ band_band_party = {
 				}
 			}
 			add = {
-				value = 10
+				value = 13
 				desc = "from_archetype_party"
 			}
 		}
@@ -370,7 +368,7 @@ band_band_party = {
 				}
 			}
 			add = {
-				value = 22
+				value = 34
 				desc = "from_band_leader"
 			}
 		}
@@ -384,7 +382,7 @@ band_band_party = {
 				}
 			}
 			add = {
-				value = 18
+				value = 9
 				desc = "from_band_ig"
 			}
 		}
@@ -413,10 +411,9 @@ band_band_party = {
 							c:NJS ?= this
 							c:AFTG ?= this
 							c:HHWO ?= this
-							c:MRFN ?= this
+							c:IDMS ?= this
 							c:MYG ?= this
 							c:STLI ?= this
-							c:BYZ ?= this
 							c:HTT ?= this
 						}
 					}
@@ -509,7 +506,7 @@ band_management_party = {
 				}
 			}
 			add = {
-				value = 12
+				value = 14
 				desc = "from_archetype_party"
 			}
 		}
@@ -526,7 +523,7 @@ band_management_party = {
 				}
 			}
 			add = {
-				value = 16
+				value = 30
 				desc = "from_meritocracy"
 			}
 		}
@@ -541,7 +538,7 @@ band_management_party = {
 				}
 			}
 			add = {
-				value = 18
+				value = 9
 				desc = "from_capitalism"
 			}
 		}
@@ -575,10 +572,9 @@ band_management_party = {
 							c:NJS ?= this
 							c:AFTG ?= this
 							c:HHWO ?= this
-							c:MRFN ?= this
+							c:IDMS ?= this
 							c:MYG ?= this
 							c:STLI ?= this
-							c:BYZ ?= this
 							c:HTT ?= this
 						}
 					}
@@ -690,7 +686,7 @@ band_community_party = {
 				}
 			}
 			add = {
-				value = 12
+				value = 14
 				desc = "from_archetype_party"
 			}
 		}
@@ -706,7 +702,7 @@ band_community_party = {
 				}
 			}
 			add = {
-				value = 16
+				value = 28
 				desc = "from_community_leader"
 			}
 		}
@@ -720,7 +716,7 @@ band_community_party = {
 				}
 			}
 			add = {
-				value = 17
+				value = 9
 				desc = "from_community_ig"
 			}
 		}
@@ -752,10 +748,9 @@ band_community_party = {
 							c:NJS ?= this
 							c:AFTG ?= this
 							c:HHWO ?= this
-							c:MRFN ?= this
+							c:IDMS ?= this
 							c:MYG ?= this
 							c:STLI ?= this
-							c:BYZ ?= this
 							c:HTT ?= this
 						}
 					}
@@ -836,7 +831,7 @@ band_merit_party = {
 	}
 	join_weight = {
 		value = {
-			value = -1
+			value = 0
 			desc = "base_value"
 		}
 		if = {
@@ -848,7 +843,7 @@ band_merit_party = {
 				}
 			}
 			add = {
-				value = 18
+				value = 16
 				desc = "from_archetype_party"
 			}
 		}
@@ -857,14 +852,14 @@ band_merit_party = {
 				leader ?= {
 					OR = {
 						has_ideology = ideology:ideology_elite_training
-						has_ideology = ideology:ideology_free_creation
-						has_ideology = ideology:ideology_club_autonomy
-						has_ideology = ideology:ideology_youth_pacesetter
+						has_ideology = ideology:ideology_merit_stage
+						has_ideology = ideology:ideology_production_floor
+						has_ideology = ideology:ideology_discipline_first
 					}
 				}
 			}
 			add = {
-				value = 12
+				value = 28
 				desc = "from_merit_leader"
 			}
 		}
@@ -872,15 +867,13 @@ band_merit_party = {
 			limit = {
 				OR = {
 					has_ideology = ideology:ideology_elite_training
-					has_ideology = ideology:ideology_free_creation
-					has_ideology = ideology:ideology_club_autonomy
-					has_ideology = ideology:ideology_world_tour
-					has_ideology = ideology:ideology_stage_reform
+					has_ideology = ideology:ideology_merit_stage
 					has_ideology = ideology:ideology_production_floor
+					has_ideology = ideology:ideology_discipline_first
 				}
 			}
 			add = {
-				value = 16
+				value = 9
 				desc = "from_merit_ig"
 			}
 		}
@@ -915,10 +908,9 @@ band_merit_party = {
 							c:NJS ?= this
 							c:AFTG ?= this
 							c:HHWO ?= this
-							c:MRFN ?= this
+							c:IDMS ?= this
 							c:MYG ?= this
 							c:STLI ?= this
-							c:BYZ ?= this
 							c:HTT ?= this
 						}
 					}
@@ -1014,7 +1006,7 @@ band_discipline_party = {
 				}
 			}
 			add = {
-				value = 18
+				value = 16
 				desc = "from_archetype_party"
 			}
 		}
@@ -1022,16 +1014,16 @@ band_discipline_party = {
 			limit = {
 				leader ?= {
 					OR = {
-						has_ideology = ideology:ideology_unified_tempo
-						has_ideology = ideology:ideology_discipline_first
-						has_ideology = ideology:ideology_idol_worship
-						has_ideology = ideology:ideology_stage_supremacy
+						has_ideology = ideology:ideology_stage_noblesse
 						has_ideology = ideology:ideology_house_style
+						has_ideology = ideology:ideology_academy_prestige
+						has_ideology = ideology:ideology_discipline_first
+						has_ideology = ideology:ideology_stage_supremacy
 					}
 				}
 			}
 			add = {
-				value = 12
+				value = 28
 				desc = "from_conservative_leader"
 			}
 		}
@@ -1039,16 +1031,15 @@ band_discipline_party = {
 			limit = {
 				OR = {
 					has_ideology = ideology:ideology_stage_noblesse
-					has_ideology = ideology:ideology_president_supremacy
-					has_ideology = ideology:ideology_unified_tempo
-					has_ideology = ideology:ideology_idol_worship
+					has_ideology = ideology:ideology_house_style
+					has_ideology = ideology:ideology_academy_prestige
 					has_ideology = ideology:ideology_discipline_first
 					has_ideology = ideology:ideology_stage_supremacy
-					has_ideology = ideology:ideology_house_style
+					has_ideology = ideology:ideology_president_supremacy
 				}
 			}
 			add = {
-				value = 17
+				value = 9
 				desc = "from_conservative_ig"
 			}
 		}
@@ -1087,10 +1078,9 @@ band_discipline_party = {
 							c:NJS ?= this
 							c:AFTG ?= this
 							c:HHWO ?= this
-							c:MRFN ?= this
+							c:IDMS ?= this
 							c:MYG ?= this
 							c:STLI ?= this
-							c:BYZ ?= this
 							c:HTT ?= this
 						}
 					}
@@ -1187,7 +1177,7 @@ band_arts_party = {
 				}
 			}
 			add = {
-				value = 12
+				value = 14
 				desc = "from_archetype_party"
 			}
 		}
@@ -1197,12 +1187,13 @@ band_arts_party = {
 					OR = {
 						has_ideology = ideology:ideology_free_creation
 						has_ideology = ideology:ideology_inquisitive
+						has_ideology = ideology:ideology_stage_reform
 						has_ideology = ideology:ideology_kon
 					}
 				}
 			}
 			add = {
-				value = 20
+				value = 30
 				desc = "from_arts_leader"
 			}
 		}
@@ -1211,11 +1202,12 @@ band_arts_party = {
 				OR = {
 					has_ideology = ideology:ideology_free_creation
 					has_ideology = ideology:ideology_inquisitive
+					has_ideology = ideology:ideology_stage_reform
 					has_ideology = ideology:ideology_kon
 				}
 			}
 			add = {
-				value = 17
+				value = 9
 				desc = "from_arts_ig"
 			}
 		}
@@ -1245,10 +1237,9 @@ band_arts_party = {
 							c:NJS ?= this
 							c:AFTG ?= this
 							c:HHWO ?= this
-							c:MRFN ?= this
+							c:IDMS ?= this
 							c:MYG ?= this
 							c:STLI ?= this
-							c:BYZ ?= this
 							c:HTT ?= this
 						}
 					}
@@ -1343,7 +1334,7 @@ band_peace_party = {
 				}
 			}
 			add = {
-				value = 12
+				value = 14
 				desc = "from_archetype_party"
 			}
 		}
@@ -1352,13 +1343,13 @@ band_peace_party = {
 				leader ?= {
 					OR = {
 						has_ideology = ideology:ideology_pacifist
-						has_ideology = ideology:ideology_humanitarian
 						has_ideology = ideology:ideology_bond_keeper
+						has_ideology = ideology:ideology_campus_guardian
 					}
 				}
 			}
 			add = {
-				value = 18
+				value = 30
 				desc = "from_peace_leader"
 			}
 		}
@@ -1369,10 +1360,11 @@ band_peace_party = {
 					has_ideology = ideology:ideology_bond_keeper
 					has_ideology = ideology:ideology_campus_guardian
 					has_ideology = ideology:ideology_kon
+					has_ideology = ideology:ideology_school_idol_unity
 				}
 			}
 			add = {
-				value = 16
+				value = 9
 				desc = "from_peace_ig"
 			}
 		}
@@ -1401,10 +1393,9 @@ band_peace_party = {
 							c:NJS ?= this
 							c:AFTG ?= this
 							c:HHWO ?= this
-							c:MRFN ?= this
+							c:IDMS ?= this
 							c:MYG ?= this
 							c:STLI ?= this
-							c:BYZ ?= this
 							c:HTT ?= this
 						}
 					}
@@ -1446,3 +1437,5 @@ band_peace_party = {
 		}
 	}
 }
+
+

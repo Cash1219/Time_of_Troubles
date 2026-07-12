@@ -1,0 +1,87 @@
+IDEP = {
+	use_culture_states = yes
+
+	states = {
+		STATE_AUSTRIA
+		STATE_STYRIA
+		STATE_SLOVENIA
+		STATE_BOHEMIA
+		STATE_MORAVIA
+		STATE_CENTRAL_HUNGARY
+		STATE_BEKES
+		STATE_TRANSDANUBIA
+		STATE_DELVIDEK
+		STATE_BANAT
+		STATE_SLOVAKIA
+		STATE_RUTHENIA
+		STATE_DALMATIA
+		STATE_CROATIA
+		STATE_SLAVONIA
+		STATE_BOSNIA
+		STATE_NORTHERN_TRANSYLVANIA
+		STATE_SOUTHERN_TRANSYLVANIA
+	}
+
+	required_states_fraction = 0.75
+
+	ai_will_do = { always = yes }
+
+	potential = {
+		OR = {
+			c:MUS ?= this
+			c:AQO ?= this
+			c:NJS ?= this
+			c:IDMS ?= this
+			c:GKMS ?= this
+		}
+	}
+
+	possible = { }
+}
+
+IDEF = {
+	use_culture_states = yes
+
+	states = {
+		STATE_AUSTRIA
+		STATE_STYRIA
+		STATE_SLOVENIA
+		STATE_BOHEMIA
+		STATE_MORAVIA
+		STATE_CENTRAL_HUNGARY
+		STATE_BEKES
+		STATE_TRANSDANUBIA
+		STATE_DELVIDEK
+		STATE_BANAT
+		STATE_SLOVAKIA
+		STATE_RUTHENIA
+		STATE_DALMATIA
+		STATE_CROATIA
+		STATE_SLAVONIA
+		STATE_BOSNIA
+		STATE_NORTHERN_TRANSYLVANIA
+		STATE_SOUTHERN_TRANSYLVANIA
+		STATE_VENETIA
+		STATE_LOMBARDY
+		STATE_ISTRIA
+		STATE_SOUTH_TYROL
+	}
+
+	required_states_fraction = 0.75
+
+	ai_will_do = { always = yes }
+
+	potential = {
+		OR = {
+			c:MUS ?= this
+			c:AQO ?= this
+			c:NJS ?= this
+			c:IDMS ?= this
+			c:GKMS ?= this
+			c:GBDP ?= this
+			c:IDEP ?= this
+		}
+	}
+
+	possible = { }
+}

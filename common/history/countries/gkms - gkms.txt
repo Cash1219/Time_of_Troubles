@@ -1,0 +1,95 @@
+COUNTRIES = {
+	c:GKMS ?= {
+		effect_starting_technology_tier_2_tech = yes
+		set_next_election_date = 1836.12.1
+		set_state_religion = rel:starbeat
+		activate_law = law_type:law_monarchy
+		activate_law = law_type:law_club_advisor_guidance
+		activate_law = law_type:law_wealth_voting
+		activate_law = law_type:law_women_own_property
+		activate_law = law_type:law_artistic_freedom
+		activate_law = law_type:law_freedom_of_conscience
+		activate_law = law_type:law_student_executive_cadres
+		activate_law = law_type:law_protected_speech
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_land_based_taxation
+		activate_law = law_type:law_tenant_farmers
+		ig:ig_landowners ?= {
+			remove_ideology = ideology_paternalistic
+			remove_ideology = ideology_patriarchal
+			remove_ideology = ideology_hierarchic
+			add_ideology = ideology_house_style
+			add_ideology = ideology_agency_management
+			set_interest_group_name = ig_landowners_idms
+		}
+		ig:ig_devout ?= {
+			remove_ideology = ideology_pious
+			remove_ideology = ideology_moralist
+			remove_ideology = ideology_patriarchal
+			add_ideology = ideology_idol_worship
+			add_ideology = ideology_fan_market
+			set_interest_group_name = ig_devout_idms
+		}
+		ig:ig_armed_forces ?= {
+			remove_ideology = ideology_jingoist
+			remove_ideology = ideology_loyalist
+			remove_ideology = ideology_patriotic
+			add_ideology = ideology_agency_management
+			add_ideology = ideology_discipline_first
+			set_interest_group_name = ig_armed_forces_idms
+		}
+		ig:ig_industrialists ?= {
+			remove_ideology = ideology_plutocratic
+			remove_ideology = ideology_laissez_faire
+			remove_ideology = ideology_individualist
+			add_ideology = ideology_agency_management
+			add_ideology = ideology_elite_training
+			set_interest_group_name = ig_industrialists_idms
+		}
+		ig:ig_petty_bourgeoisie ?= {
+			remove_ideology = ideology_reactionary
+			remove_ideology = ideology_meritocratic
+			remove_ideology = ideology_patriotic
+			add_ideology = ideology_idol_worship
+			add_ideology = ideology_agency_management
+			set_interest_group_name = ig_petty_bourgeoisie_idms
+		}
+		ig:ig_rural_folk ?= {
+			remove_ideology = ideology_agrarian
+			remove_ideology = ideology_particularist
+			remove_ideology = ideology_isolationist
+			add_ideology = ideology_hometown_support
+			add_ideology = ideology_idol_worship
+			add_ideology = ideology_fan_market
+			set_interest_group_name = ig_rural_folk_idms
+		}
+		ig:ig_trade_unions ?= {
+			remove_ideology = ideology_proletarian
+			remove_ideology = ideology_egalitarian
+			remove_ideology = ideology_populist
+			remove_ideology = ideology_anti_slavery
+			add_ideology = ideology_production_floor
+			add_ideology = ideology_stage_reform
+			set_interest_group_name = ig_trade_unions_idms
+		}
+		ig:ig_intelligentsia ?= {
+			remove_ideology = ideology_liberal
+			remove_ideology = ideology_anti_clerical
+			remove_ideology = ideology_republican
+			remove_ideology = ideology_anti_slavery
+			add_ideology = ideology_free_creation
+			add_ideology = ideology_elite_training
+			add_ideology = ideology_academy_council
+			set_interest_group_name = ig_intelligentsia_idms
+		}
+		set_tax_level = medium
+		add_journal_entry = { type = je_tot_idol_succession_crisis }
+		set_variable = { name = tot_idol_crisis_ll_score value = 0 }
+		set_variable = { name = tot_idol_crisis_imas_score value = 0 }
+		set_variable = { name = tot_idol_crisis_gbdp_score value = 0 }
+		set_variable = { name = tot_idol_crisis_ger_score value = 0 }
+		set_variable = { name = tot_idol_crisis_htt_score value = 0 }
+		set_variable = { name = tot_idol_crisis_tension value = 20 }
+		set_variable = { name = tot_idol_crisis_compromise_score value = 30 }
+	}
+}

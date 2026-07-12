@@ -1,0 +1,48 @@
+tot_club_capacity_from_innovation = {
+	value = modifier:country_weekly_innovation_add
+	min = 0
+}
+
+tot_club_capacity = {
+	value = 100
+	add = modifier:country_tot_club_capacity_add
+	add = tot_club_capacity_from_innovation
+}
+
+tot_club_capacity_usage = {
+	value = modifier:country_tot_club_capacity_usage_add
+	min = 0
+}
+
+tot_club_capacity_effective_usage = {
+	value = tot_club_capacity_usage
+	max = tot_club_capacity
+	min = 0
+}
+
+tot_club_capacity_balance = {
+	value = tot_club_capacity
+	add = {
+		value = tot_club_capacity_usage
+		multiply = -1
+	}
+}
+
+tot_club_capacity_free = {
+	value = tot_club_capacity_balance
+	min = 0
+}
+
+tot_club_capacity_surplus_ratio = {
+	value = tot_club_capacity_balance
+	divide = tot_club_capacity
+	min = 0
+	max = 1
+}
+
+tot_club_capacity_deficit_ratio = {
+	value = tot_club_capacity_balance
+	divide = tot_club_capacity
+	min = -1
+	max = 0
+}

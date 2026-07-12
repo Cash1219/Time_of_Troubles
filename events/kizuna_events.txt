@@ -4,7 +4,7 @@ kizuna.201 = {
 	placement = root
 	title = kizuna.201.t
 	desc = kizuna.201.desc
-	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	immediate = {
 		tot_band_clear_creative_progress_effect = yes
 	}
@@ -18,7 +18,7 @@ kizuna.202 = {
 	placement = root
 	title = kizuna.202.t
 	desc = kizuna.202.desc
-	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	option = {
 		name = kizuna.202.a
 		custom_tooltip = { text = kizuna.202.a.tt }
@@ -32,13 +32,27 @@ kizuna.202 = {
 			years = 2
 		}
 	}
+	option = {
+		name = kizuna.202.b
+		custom_tooltip = { text = kizuna.202.b.tt }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 2600 }
+		tot_band_add_creation_experience_effect = yes
+		set_variable = { name = tot_band_pending_event_reward_points value = 2 }
+		tot_band_apply_reward_point_bonus_effect = yes
+		tot_band_add_reward_points_effect = yes
+		add_modifier = {
+			name = tot_band_hit_song_modifier
+			years = 2
+		}
+		trigger_event = { id = kizuna.205 popup = yes }
+	}
 }
 kizuna.203 = {
 	type = country_event
 	placement = root
 	title = kizuna.203.t
 	desc = kizuna.203.desc
-	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	option = {
 		name = kizuna.203.a
 		custom_tooltip = { text = kizuna.203.a.tt }
@@ -48,13 +62,23 @@ kizuna.203 = {
 		tot_band_apply_reward_point_bonus_effect = yes
 		tot_band_add_reward_points_effect = yes
 	}
+	option = {
+		name = kizuna.203.b
+		custom_tooltip = { text = kizuna.203.b.tt }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 1100 }
+		tot_band_add_creation_experience_effect = yes
+		set_variable = { name = tot_band_pending_event_reward_points value = 1 }
+		tot_band_apply_reward_point_bonus_effect = yes
+		tot_band_add_reward_points_effect = yes
+		trigger_event = { id = kizuna.205 popup = yes }
+	}
 }
 kizuna.204 = {
 	type = country_event
 	placement = root
 	title = kizuna.204.t
 	desc = kizuna.204.desc
-	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	option = {
 		name = kizuna.204.a
 		custom_tooltip = { text = kizuna.204.a.tt }
@@ -65,13 +89,85 @@ kizuna.204 = {
 		set_variable = { name = tot_band_pending_event_refund value = 250 }
 		tot_band_refund_creative_progress_effect = yes
 	}
+	option = {
+		name = kizuna.204.b
+		custom_tooltip = { text = kizuna.204.b.tt }
+		set_variable = { name = tot_band_pending_event_exp_gain value = 2100 }
+		tot_band_add_creation_experience_effect = yes
+		set_variable = { name = tot_band_pending_event_reward_points value = 0 }
+		tot_band_add_reward_points_effect = yes
+		set_variable = { name = tot_band_pending_event_refund value = 250 }
+		tot_band_refund_creative_progress_effect = yes
+		trigger_event = { id = kizuna.205 popup = yes }
+	}
+}
+kizuna.205 = {
+	type = country_event
+	placement = root
+	title = kizuna.205.t
+	desc = kizuna.205.desc
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
+	option = {
+		name = kizuna.205.a
+		custom_tooltip = { text = kizuna.205.a.tt }
+		set_variable = { name = tot_band_pending_event_reward_points value = 2 }
+		tot_band_add_reward_points_effect = yes
+	}
+	option = {
+		name = kizuna.205.b
+		trigger = { tot_band_current_can_shift_interest_left = yes }
+		custom_tooltip = { text = kizuna.205.b.tt }
+		tot_band_shift_interest_toward_passion = yes
+		set_variable = { name = tot_band_pending_event_reward_points value = 1 }
+		tot_band_add_reward_points_effect = yes
+	}
+	option = {
+		name = kizuna.205.c
+		trigger = { tot_band_current_can_shift_interest_right = yes }
+		custom_tooltip = { text = kizuna.205.c.tt }
+		tot_band_shift_interest_toward_commerce = yes
+		set_variable = { name = tot_band_pending_event_reward_points value = 1 }
+		tot_band_add_reward_points_effect = yes
+	}
+	option = {
+		name = kizuna.205.d
+		trigger = { tot_band_current_can_shift_club_left = yes }
+		custom_tooltip = { text = kizuna.205.d.tt }
+		tot_band_shift_club_toward_casual = yes
+		set_variable = { name = tot_band_pending_event_reward_points value = 1 }
+		tot_band_add_reward_points_effect = yes
+	}
+	option = {
+		name = kizuna.205.e
+		trigger = { tot_band_current_can_shift_club_right = yes }
+		custom_tooltip = { text = kizuna.205.e.tt }
+		tot_band_shift_club_toward_professional = yes
+		set_variable = { name = tot_band_pending_event_reward_points value = 1 }
+		tot_band_add_reward_points_effect = yes
+	}
+	option = {
+		name = kizuna.205.f
+		trigger = { tot_band_current_can_shift_independent_left = yes }
+		custom_tooltip = { text = kizuna.205.f.tt }
+		tot_band_shift_independent_toward_autonomy = yes
+		set_variable = { name = tot_band_pending_event_reward_points value = 1 }
+		tot_band_add_reward_points_effect = yes
+	}
+	option = {
+		name = kizuna.205.g
+		trigger = { tot_band_current_can_shift_independent_right = yes }
+		custom_tooltip = { text = kizuna.205.g.tt }
+		tot_band_shift_independent_toward_corporate = yes
+		set_variable = { name = tot_band_pending_event_reward_points value = 1 }
+		tot_band_add_reward_points_effect = yes
+	}
 }
 kizuna.211 = {
 	type = country_event
 	placement = root
 	title = kizuna.211.t
 	desc = kizuna.211.desc
-	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	option = {
 		name = kizuna.211.a
 		custom_tooltip = { text = kizuna.211.a.tt }
@@ -102,7 +198,7 @@ kizuna.212 = {
 	placement = root
 	title = kizuna.212.t
 	desc = kizuna.212.desc
-	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	option = {
 		name = kizuna.212.a
 		custom_tooltip = { text = kizuna.212.a.tt }
@@ -133,7 +229,7 @@ kizuna.213 = {
 	placement = root
 	title = kizuna.213.t
 	desc = kizuna.213.desc
-	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	option = {
 		name = kizuna.213.a
 		custom_tooltip = { text = kizuna.213.a.tt }
@@ -164,7 +260,7 @@ kizuna.215 = {
 	placement = root
 	title = kizuna.215.t
 	desc = kizuna.215.desc
-	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	option = {
 		name = kizuna.215.a
 		custom_tooltip = { text = kizuna.215.a.tt }
@@ -195,7 +291,7 @@ kizuna.216 = {
 	placement = root
 	title = kizuna.216.t
 	desc = kizuna.216.desc
-	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	option = {
 		name = kizuna.216.a
 		custom_tooltip = { text = kizuna.216.a.tt }
@@ -226,7 +322,7 @@ kizuna.217 = {
 	placement = root
 	title = kizuna.217.t
 	desc = kizuna.217.desc
-	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	option = {
 		name = kizuna.217.a
 		custom_tooltip = { text = kizuna.217.a.tt }
@@ -265,7 +361,7 @@ kizuna.218 = {
 	placement = root
 	title = kizuna.218.t
 	desc = kizuna.218.desc
-	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	option = {
 		name = kizuna.218.a
 		custom_tooltip = { text = kizuna.218.a.tt }
@@ -296,7 +392,7 @@ kizuna.219 = {
 	placement = root
 	title = kizuna.219.t
 	desc = kizuna.219.desc
-	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	option = {
 		name = kizuna.219.a
 		custom_tooltip = { text = kizuna.219.a.tt }
@@ -707,7 +803,7 @@ kizuna.1 = { #乐队成员任命
 	title = kizuna.1.t
 	desc = kizuna.1.desc
 	flavor = kizuna.1.f
-	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	cancellation_trigger = {
 		OR = {
 			NOT = { exists = scope:appointing_band_member }
@@ -829,7 +925,7 @@ kizuna.2 = { #乐队成员任命
 	title = kizuna.2.t
 	desc = kizuna.2.desc
 	flavor = kizuna.2.f
-	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	cancellation_trigger = {
 		OR = {
 			NOT = { exists = scope:appointing_band_member }
@@ -951,7 +1047,7 @@ kizuna.3 = { #乐队成员任命
 	title = kizuna.3.t
 	desc = kizuna.3.desc
 	flavor = kizuna.3.f
-	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	cancellation_trigger = {
 		OR = {
 			NOT = { exists = scope:appointing_band_member }
@@ -1073,7 +1169,7 @@ kizuna.4 = { #乐队成员任命
 	title = kizuna.4.t
 	desc = kizuna.4.desc
 	flavor = kizuna.4.f
-	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	cancellation_trigger = {
 		OR = {
 			NOT = { exists = scope:appointing_band_member }
@@ -1195,7 +1291,7 @@ kizuna.5 = { #乐队成员任命
 	title = kizuna.5.t
 	desc = kizuna.5.desc
 	flavor = kizuna.5.f
-	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	cancellation_trigger = {
 		OR = {
 			NOT = { exists = scope:appointing_band_member }
@@ -1317,7 +1413,7 @@ kizuna.6 = { #乐队成员任命
 	title = kizuna.6.t
 	desc = kizuna.6.desc
 	flavor = kizuna.6.f
-	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	cancellation_trigger = {
 		OR = {
 			NOT = { exists = scope:appointing_band_member }
@@ -1439,7 +1535,7 @@ kizuna.7 = { #乐队成员任命
 	title = kizuna.7.t
 	desc = kizuna.7.desc
 	flavor = kizuna.7.f
-	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	cancellation_trigger = {
 		OR = {
 			NOT = { exists = scope:appointing_band_member }
@@ -1561,7 +1657,7 @@ kizuna.8 = { #乐队成员任命
 	title = kizuna.8.t
 	desc = kizuna.8.desc
 	flavor = kizuna.8.f
-	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	cancellation_trigger = {
 		OR = {
 			NOT = { exists = scope:appointing_band_member }
@@ -1683,7 +1779,7 @@ kizuna.9 = { #乐队成员任命
 	title = kizuna.9.t
 	desc = kizuna.9.desc
 	flavor = kizuna.9.f
-	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	cancellation_trigger = {
 		OR = {
 			NOT = { exists = scope:appointing_band_member }
@@ -1805,7 +1901,7 @@ kizuna.10 = { #乐队成员任命
 	title = kizuna.10.t
 	desc = kizuna.10.desc
 	flavor = kizuna.10.f
-	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	cancellation_trigger = {
 		OR = {
 			NOT = { exists = scope:appointing_band_member }
@@ -1926,7 +2022,7 @@ kizuna.101 = {
 	 placement = root
 	 title = TOT_BAND_CHOOSE_NAME
 	 desc = TOT_BAND_NAME_EVENT_DESC
-	 icon = "gfx/interface/icons/event_icons/event_default.dds"
+	 icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	option = {
 		 name = TOT_BAND_NAME_PRESET_1
 		 set_variable = { name = tot_band_1_name value = 1 }
@@ -1959,7 +2055,7 @@ kizuna.102 = {
 	 placement = root
 	 title = TOT_BAND_CHOOSE_NAME
 	 desc = TOT_BAND_NAME_EVENT_DESC
-	 icon = "gfx/interface/icons/event_icons/event_default.dds"
+	 icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	option = {
 		 name = TOT_BAND_NAME_PRESET_1
 		 set_variable = { name = tot_band_2_name value = 1 }
@@ -1992,7 +2088,7 @@ kizuna.103 = {
 	 placement = root
 	 title = TOT_BAND_CHOOSE_NAME
 	 desc = TOT_BAND_NAME_EVENT_DESC
-	 icon = "gfx/interface/icons/event_icons/event_default.dds"
+	 icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	option = {
 		 name = TOT_BAND_NAME_PRESET_1
 		 set_variable = { name = tot_band_3_name value = 1 }
@@ -2025,7 +2121,7 @@ kizuna.104 = {
 	 placement = root
 	 title = TOT_BAND_CHOOSE_NAME
 	 desc = TOT_BAND_NAME_EVENT_DESC
-	 icon = "gfx/interface/icons/event_icons/event_default.dds"
+	 icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	option = {
 		 name = TOT_BAND_NAME_PRESET_1
 		 set_variable = { name = tot_band_4_name value = 1 }
@@ -2058,7 +2154,7 @@ kizuna.105 = {
 	 placement = root
 	 title = TOT_BAND_CHOOSE_NAME
 	 desc = TOT_BAND_NAME_EVENT_DESC
-	 icon = "gfx/interface/icons/event_icons/event_default.dds"
+	 icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	option = {
 		 name = TOT_BAND_NAME_PRESET_1
 		 set_variable = { name = tot_band_5_name value = 1 }
@@ -2091,7 +2187,7 @@ kizuna.106 = {
 	 placement = root
 	 title = TOT_BAND_CHOOSE_NAME
 	 desc = TOT_BAND_NAME_EVENT_DESC
-	 icon = "gfx/interface/icons/event_icons/event_default.dds"
+	 icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	option = {
 		 name = TOT_BAND_NAME_PRESET_1
 		 set_variable = { name = tot_band_6_name value = 1 }
@@ -2124,7 +2220,7 @@ kizuna.107 = {
 	 placement = root
 	 title = TOT_BAND_CHOOSE_NAME
 	 desc = TOT_BAND_NAME_EVENT_DESC
-	 icon = "gfx/interface/icons/event_icons/event_default.dds"
+	 icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	option = {
 		 name = TOT_BAND_NAME_PRESET_1
 		 set_variable = { name = tot_band_7_name value = 1 }
@@ -2157,7 +2253,7 @@ kizuna.108 = {
 	 placement = root
 	 title = TOT_BAND_CHOOSE_NAME
 	 desc = TOT_BAND_NAME_EVENT_DESC
-	 icon = "gfx/interface/icons/event_icons/event_default.dds"
+	 icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	option = {
 		 name = TOT_BAND_NAME_PRESET_1
 		 set_variable = { name = tot_band_8_name value = 1 }
@@ -2190,7 +2286,7 @@ kizuna.109 = {
 	 placement = root
 	 title = TOT_BAND_CHOOSE_NAME
 	 desc = TOT_BAND_NAME_EVENT_DESC
-	 icon = "gfx/interface/icons/event_icons/event_default.dds"
+	 icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	option = {
 		 name = TOT_BAND_NAME_PRESET_1
 		 set_variable = { name = tot_band_9_name value = 1 }
@@ -2223,7 +2319,7 @@ kizuna.110 = {
 	 placement = root
 	 title = TOT_BAND_CHOOSE_NAME
 	 desc = TOT_BAND_NAME_EVENT_DESC
-	 icon = "gfx/interface/icons/event_icons/event_default.dds"
+	 icon = "gfx/interface/icons/event_icons/event_artists.dds"
 	option = {
 		 name = TOT_BAND_NAME_PRESET_1
 		 set_variable = { name = tot_band_10_name value = 1 }

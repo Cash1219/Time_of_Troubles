@@ -468,14 +468,14 @@ types topbar_components
 										}
 									}
 								}
-								### mana
+								### club capacity
 								button = {
-									name = "tutorial_highlight_mana"
+									name = "tutorial_highlight_club_capacity"
 									using = glow_button
 									size = { 100 40 }
-									tooltip = "MANA_TOOLTIP"
+									tooltip = "TOT_CLUB_CAPACITY_TOOLTIP"
 									using = tooltip_below
-									onclick = "[GetVariableSystem.Toggle('show_mana')]"
+									onclick = "[InformationPanelBar.OpenPanelTab('journal', 'pinned')]"
 									onclick = "[InformationPanelBar.ClosePanel]"
 									onclick = "[MapListPanelManager.CloseCurrentPanel]"
 									onclick = "[GetVariableSystem.Clear('international_open')]"
@@ -484,15 +484,15 @@ types topbar_components
 									icon = {
 										size = { 32 32 }
 										position = { 0 2 }
-										name = mana_power_icon
-										texture = "gfx/interface/icons/topbar/mana_icon.dds"
+										name = club_capacity_icon
+										texture = "gfx/interface/icons/building_icons/building_stage.dds"
 										parentanchor = vcenter
 									}
 									
 									textbox = {
 										position = { 35 -3 }
-										name = capital_value
-										raw_text = "#bold [AccessPlayer.MakeScope.ScriptValue('mana')|=+D]#!"
+										name = club_capacity_value
+										raw_text = "#bold [AccessPlayer.MakeScope.ScriptValue('tot_club_capacity_balance')|=+1]#!"
 										align = left|nobaseline
 										using = fontsize_large
 										autoresize = yes
@@ -505,10 +505,10 @@ types topbar_components
 										parentanchor = bottom
 										
 										blockoverride "value_left" {
-											value = "[AccessPlayer.MakeScope.ScriptValue('normalized_mana_deficit')]"
+											value = "[AccessPlayer.MakeScope.ScriptValue('tot_club_capacity_deficit_ratio')]"
 										}
 										blockoverride "value_right" {
-											value = "[AccessPlayer.MakeScope.ScriptValue('normalized_mana_surplus')]"
+											value = "[AccessPlayer.MakeScope.ScriptValue('tot_club_capacity_surplus_ratio')]"
 										}
 									}
 								}
