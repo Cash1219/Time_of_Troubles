@@ -1,0 +1,81 @@
+je_tot_game_workshop_program = {
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	group = je_group_global
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+
+	possible = {
+		NOT = { has_variable = tot_game_workshop_program_complete }
+		country_has_building_type_levels = {
+			building = building_game
+			value > 0
+		}
+	}
+
+	complete = {
+		any_scope_building = {
+			is_building_type = building_game
+			level >= 4
+			occupancy >= 0.75
+			weekly_profit > 0
+			is_subsidized = no
+		}
+	}
+
+	is_progressing = {
+		any_scope_building = {
+			is_building_type = building_game
+			is_under_construction = yes
+		}
+	}
+
+	on_complete = {
+		set_variable = tot_game_workshop_program_complete
+		country_event = { id = tot_industry_je.1 days = 1 }
+	}
+
+	weight = 1000
+	transferable = yes
+}
+
+je_tot_goods_workshop_program = {
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	group = je_group_global
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+
+	possible = {
+		NOT = { has_variable = tot_goods_workshop_program_complete }
+		country_has_building_type_levels = {
+			building = building_goods
+			value > 0
+		}
+	}
+
+	complete = {
+		any_scope_building = {
+			is_building_type = building_goods
+			level >= 4
+			occupancy >= 0.75
+			weekly_profit > 0
+			is_subsidized = no
+		}
+	}
+
+	is_progressing = {
+		any_scope_building = {
+			is_building_type = building_goods
+			is_under_construction = yes
+		}
+	}
+
+	on_complete = {
+		set_variable = tot_goods_workshop_program_complete
+		country_event = { id = tot_industry_je.2 days = 1 }
+	}
+
+	weight = 1000
+	transferable = yes
+}

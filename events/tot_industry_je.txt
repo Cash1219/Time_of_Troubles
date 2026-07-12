@@ -1,0 +1,51 @@
+namespace = tot_industry_je
+
+tot_industry_je.1 = {
+	type = country_event
+	placement = root
+	title = tot_industry_je.1.t
+	desc = tot_industry_je.1.d
+	flavor = tot_industry_je.1.f
+
+	duration = 3
+
+	event_image = {
+		texture = "gfx/event_pictures/industry_1.dds"
+	}
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/misc/1Character_Banner"
+
+	option = {
+		name = tot_industry_je.1.a
+		add_modifier = {
+			name = modifier_tot_game_workshop_boom
+			years = 10
+		}
+	}
+}
+
+tot_industry_je.2 = {
+	type = country_event
+	placement = root
+	title = tot_industry_je.2.t
+	desc = tot_industry_je.2.d
+	flavor = tot_industry_je.2.f
+
+	duration = 3
+
+	event_image = {
+		texture = "gfx/event_pictures/market_1.dds"
+	}
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/misc/1Character_Banner"
+
+	option = {
+		name = tot_industry_je.2.a
+		add_modifier = {
+			name = modifier_tot_goods_workshop_boom
+			years = 10
+		}
+	}
+}

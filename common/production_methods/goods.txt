@@ -17,6 +17,9 @@ pm_goods_doll_doll = { #玩偶
 }
 pm_goods_doll_pillow = { #抱枕
 	texture = "gfx/interface/icons/production_method_icons/pm_goods_doll_pillow.dds"
+	unlocking_technologies = {
+		mechanical_tools
+	}
 	building_modifiers = {
 			workforce_scaled = {
 				goods_input_fabric_add = 15		#*20=300
@@ -32,6 +35,9 @@ pm_goods_doll_pillow = { #抱枕
 }
 pm_goods_doll_custom = { #定制玩偶
 	texture = "gfx/interface/icons/production_method_icons/pm_goods_doll_custom.dds"
+	unlocking_technologies = {
+		lathe
+	}
 	building_modifiers = {
 			workforce_scaled = {
 				goods_input_fabric_add = 10		#*20=200
@@ -63,6 +69,9 @@ pm_goods_jewelry_badge = { #角色徽章
 }
 pm_goods_doll_iron = { #等身抱枕
 	texture = "gfx/interface/icons/production_method_icons/pm_goods_doll_iron.dds"
+	unlocking_technologies = {
+		mechanized_workshops
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_fabric_add = 20		#*20=400
@@ -79,6 +88,9 @@ pm_goods_doll_iron = { #等身抱枕
 }
 pm_goods_jewelry_pendant = { #挂件
 	texture = "gfx/interface/icons/production_method_icons/pm_goods_jewelry_pendant.dds"
+	unlocking_technologies = {
+		mechanical_tools
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_glass_add = 10		#*40=400
@@ -94,6 +106,9 @@ pm_goods_jewelry_pendant = { #挂件
 }
 pm_goods_jewelry_stand = { #立牌
 	texture = "gfx/interface/icons/production_method_icons/pm_goods_jewelry_stand.dds"
+	unlocking_technologies = {
+		mechanized_workshops
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_glass_add = 10		#*40=400
@@ -109,6 +124,9 @@ pm_goods_jewelry_stand = { #立牌
 }
 pm_goods_jewelry_premium = { #高端收藏手办
 	texture = "gfx/interface/icons/production_method_icons/pm_goods_jewelry_premium.dds"
+	unlocking_technologies = {
+		rubber_mastication
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_glass_add = 15		#*40=600
@@ -143,6 +161,9 @@ pm_goods_print_seal = { #色纸
 }
 pm_goods_print_card = { #卡牌
 	texture = "gfx/interface/icons/production_method_icons/pm_goods_print_card.dds"
+	unlocking_technologies = {
+		mechanical_tools
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_paper_add = 15		#*30=450
@@ -158,6 +179,9 @@ pm_goods_print_card = { #卡牌
 }
 pm_goods_print_post = { #海报
 	texture = "gfx/interface/icons/production_method_icons/pm_goods_print_post.dds"
+	unlocking_technologies = {
+		chemical_bleaching
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_paper_add = 20		#*30=600
@@ -173,6 +197,9 @@ pm_goods_print_post = { #海报
 }
 pm_goods_print_art = { #画作
 	texture = "gfx/interface/icons/production_method_icons/pm_goods_print_art.dds"
+	unlocking_technologies = {
+		shift_work
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_paper_add = 25		#*30=750
@@ -205,6 +232,9 @@ pm_goods_garage_lego = { #木制积木
 }
 pm_goods_garage_gundam = { #拼装模型
 	texture = "gfx/interface/icons/production_method_icons/pm_goods_garage_gundam.dds"
+	unlocking_technologies = {
+		rubber_mastication
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_iron_add = 15		#*40=600
@@ -221,6 +251,9 @@ pm_goods_garage_gundam = { #拼装模型
 }
 pm_goods_garage_military_model = { #手办
 	texture = "gfx/interface/icons/production_method_icons/pm_goods_garage_military_model.dds"
+	unlocking_technologies = {
+		mechanized_workshops
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_glass_add = 10		#*40=400
@@ -236,6 +269,9 @@ pm_goods_garage_military_model = { #手办
 }
 pm_goods_garage_motor = { #电动玩具
 	texture = "gfx/interface/icons/production_method_icons/pm_goods_garage_motor.dds"
+	unlocking_technologies = {
+		electrical_capacitors
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_engines_add = 10		#*60=600

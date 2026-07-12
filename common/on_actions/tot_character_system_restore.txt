@@ -25,6 +25,28 @@ on_game_started = {
 				}
 				add_journal_entry = { type = je_tot_club_gui }
 			}
+			if = {
+				limit = {
+					NOT = { has_journal_entry = je_tot_game_workshop_program }
+					NOT = { has_variable = tot_game_workshop_program_complete }
+					country_has_building_type_levels = {
+						building = building_game
+						value > 0
+					}
+				}
+				add_journal_entry = { type = je_tot_game_workshop_program }
+			}
+			if = {
+				limit = {
+					NOT = { has_journal_entry = je_tot_goods_workshop_program }
+					NOT = { has_variable = tot_goods_workshop_program_complete }
+					country_has_building_type_levels = {
+						building = building_goods
+						value > 0
+					}
+				}
+				add_journal_entry = { type = je_tot_goods_workshop_program }
+			}
 		}
 		every_country = {
 			tot_setup_default_kon_band_effect = yes
@@ -64,6 +86,28 @@ on_game_started_after_lobby = {
 				}
 				add_journal_entry = { type = je_tot_club_gui }
 			}
+			if = {
+				limit = {
+					NOT = { has_journal_entry = je_tot_game_workshop_program }
+					NOT = { has_variable = tot_game_workshop_program_complete }
+					country_has_building_type_levels = {
+						building = building_game
+						value > 0
+					}
+				}
+				add_journal_entry = { type = je_tot_game_workshop_program }
+			}
+			if = {
+				limit = {
+					NOT = { has_journal_entry = je_tot_goods_workshop_program }
+					NOT = { has_variable = tot_goods_workshop_program_complete }
+					country_has_building_type_levels = {
+						building = building_goods
+						value > 0
+					}
+				}
+				add_journal_entry = { type = je_tot_goods_workshop_program }
+			}
 		}
 		every_country = {
 			tot_setup_default_kon_band_effect = yes
@@ -101,6 +145,28 @@ on_monthly_pulse_country = {
 				NOT = { has_journal_entry = je_tot_club_gui }
 			}
 			add_journal_entry = { type = je_tot_club_gui }
+		}
+		if = {
+			limit = {
+				NOT = { has_journal_entry = je_tot_game_workshop_program }
+				NOT = { has_variable = tot_game_workshop_program_complete }
+				country_has_building_type_levels = {
+					building = building_game
+					value > 0
+				}
+			}
+			add_journal_entry = { type = je_tot_game_workshop_program }
+		}
+		if = {
+			limit = {
+				NOT = { has_journal_entry = je_tot_goods_workshop_program }
+				NOT = { has_variable = tot_goods_workshop_program_complete }
+				country_has_building_type_levels = {
+					building = building_goods
+					value > 0
+				}
+			}
+			add_journal_entry = { type = je_tot_goods_workshop_program }
 		}
 		tot_band_initialize_axes = yes
 		update_kizuna = yes

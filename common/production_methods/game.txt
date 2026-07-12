@@ -18,6 +18,9 @@ pm_game_traditional_tabletop = { #古典棋牌
 
 pm_game_traditional_mechanical = { #近代兵棋
 	texture = "gfx/interface/icons/production_method_icons/pm_game_traditional_mechanical.dds"
+	unlocking_technologies = {
+		mechanical_tools
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_paper_add = 10		#*30=300
@@ -34,6 +37,9 @@ pm_game_traditional_mechanical = { #近代兵棋
 
 pm_game_traditional_craft = { #现代桌游
 	texture = "gfx/interface/icons/production_method_icons/pm_game_traditional_craft.dds"
+	unlocking_technologies = {
+		mechanized_workshops
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_paper_add = 15		#*30=450
@@ -52,6 +58,9 @@ pm_game_traditional_craft = { #现代桌游
 #机械开发
 pm_game_modern_pinball = { #弹簧玩具
 	texture = "gfx/interface/icons/production_method_icons/pm_game_modern_pinball.dds"
+	unlocking_technologies = {
+		mechanical_tools
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_iron_add = 5		#*40=200
@@ -68,11 +77,15 @@ pm_game_modern_pinball = { #弹簧玩具
 
 pm_game_modern_arcade = { #机电街机
 	texture = "gfx/interface/icons/production_method_icons/pm_game_modern_arcade.dds"
+	unlocking_technologies = {
+		electrical_generation
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_steel_add = 10		#*50=500
 			goods_input_tools_add = 5		#*40=200
 			goods_input_engines_add = 5		#*60=300
+			goods_input_electricity_add = 5		#*30=150
 			goods_output_games_add = 35		#*60=2100
 		}
 		level_scaled = {
@@ -84,6 +97,9 @@ pm_game_modern_arcade = { #机电街机
 
 pm_game_modern_video = { #现代街机
 	texture = "gfx/interface/icons/production_method_icons/pm_game_modern_video.dds"
+	unlocking_technologies = {
+		electrical_capacitors
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_electricity_add = 20		#*30=600
@@ -102,6 +118,9 @@ pm_game_modern_video = { #现代街机
 #电子开发
 pm_game_cartridge_era = { #卡带时代
 	texture = "gfx/interface/icons/production_method_icons/pm_game_cartridge_era.dds"
+	unlocking_technologies = {
+		electrical_generation
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_services_add = 20		#*30=600
@@ -118,6 +137,9 @@ pm_game_cartridge_era = { #卡带时代
 
 pm_game_disc_era = { #光盘时代
 	texture = "gfx/interface/icons/production_method_icons/pm_game_disc_era.dds"
+	unlocking_technologies = {
+		electrical_capacitors
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_services_add = 30		#*30=900
@@ -134,11 +156,15 @@ pm_game_disc_era = { #光盘时代
 
 pm_game_mobile_era = { #移动时代
 	texture = "gfx/interface/icons/production_method_icons/pm_game_mobile_era.dds"
+	unlocking_technologies = {
+		radio
+	}
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_services_add = 50		#*30=1500
+			goods_input_services_add = 60		#*30=1800
 			goods_input_electricity_add = 20		#*30=600
 			goods_input_tools_add = 20		#*40=800
+			goods_input_telephones_add = 10		#*60=600
 			goods_output_games_add = 100		#*60=6000
 		}
 		level_scaled = {
@@ -153,6 +179,9 @@ pm_game_mobile_era = { #移动时代
 pm_game_operation_base = { #仅本体
 	texture = "gfx/interface/icons/production_method_icons/pm_game_operation_base.dds"
 	building_modifiers = {
+		workforce_scaled = {
+			goods_output_experience_add = 10
+		}
 		level_scaled = {
 			building_employment_clerks_add = 500
 		}
@@ -161,10 +190,15 @@ pm_game_operation_base = { #仅本体
 
 pm_game_operation_expansion = { #补充包
 	texture = "gfx/interface/icons/production_method_icons/pm_game_operation_expansion.dds"
+	unlocking_technologies = {
+		camera
+	}
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_services_add = 5
-			goods_output_games_add = 10
+			goods_input_services_add = 10
+			goods_input_paper_add = 5
+			goods_output_games_mult = -0.05
+			goods_output_experience_add = 20
 		}
 		level_scaled = {
 			building_employment_clerks_add = 500
@@ -174,11 +208,16 @@ pm_game_operation_expansion = { #补充包
 
 pm_game_operation_ip = { #IP运营
 	texture = "gfx/interface/icons/production_method_icons/pm_game_operation_ip.dds"
+	unlocking_technologies = {
+		film
+	}
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_services_add = 10
-			goods_input_telephones_add = 5
-			goods_output_games_add = 20
+			goods_input_services_add = 15
+			goods_input_telephones_add = 10
+			goods_input_paper_add = 5
+			goods_output_games_mult = -0.10
+			goods_output_experience_add = 35
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 125
@@ -200,6 +239,3 @@ pm_game_business_null = { #无生产方式
 	texture = "gfx/interface/icons/production_method_icons/pm_game_mobile_era.dds"
 }
 
-pm_game_operation_null = { #无生产方式
-	texture = "gfx/interface/icons/production_method_icons/pm_game_mobile_era.dds"
-}
