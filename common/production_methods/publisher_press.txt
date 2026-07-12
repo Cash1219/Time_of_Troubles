@@ -19,6 +19,9 @@ pm_publisher_main_general_wood = { #手工编辑
 }
 pm_publisher_main_general_iron = { #分工编辑
 	texture = "gfx/interface/icons/production_method_icons/pm_publisher_main_general_iron.dds"
+	unlocking_technologies = {
+		realism
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_tools_add = 10		#*40=400
@@ -35,6 +38,9 @@ pm_publisher_main_general_iron = { #分工编辑
 }
 pm_publisher_main_general_steel = { #标准化编辑部
 	texture = "gfx/interface/icons/production_method_icons/pm_publisher_main_general_steel.dds"
+	unlocking_technologies = {
+		philosophical_pragmatism
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_tools_add = 15		#*40=600
@@ -51,6 +57,9 @@ pm_publisher_main_general_steel = { #标准化编辑部
 }
 pm_publisher_main_general_electric = { #媒体编审体系
 	texture = "gfx/interface/icons/production_method_icons/pm_publisher_main_general_electric.dds"
+	unlocking_technologies = {
+		political_agitation
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_tools_add = 20		#*40=800
@@ -117,6 +126,9 @@ pm_ent_press_main_null = { #无
 }
 pm_ent_press_main_novel = { #轻改改编时代
 	texture = "gfx/interface/icons/production_method_icons/pm_ent_press_main_novel.dds"
+	unlocking_technologies = {
+		film
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_paper_add = 35		#*30=1050
@@ -149,6 +161,9 @@ pm_ent_press_main_manga = { #漫画工坊时代
 }
 pm_ent_press_main_serial = { #动画工业时代
 	texture = "gfx/interface/icons/production_method_icons/pm_ent_press_main_serial.dds"
+	unlocking_technologies = {
+		camera
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_paper_add = 30		#*30=900
@@ -165,6 +180,9 @@ pm_ent_press_main_serial = { #动画工业时代
 }
 pm_ent_press_main_multimedia = { #跨媒联动时代
 	texture = "gfx/interface/icons/production_method_icons/pm_ent_press_main_multimedia.dds"
+	unlocking_technologies = {
+		mass_propaganda
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_paper_add = 40		#*30=1200

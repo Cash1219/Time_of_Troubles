@@ -18,6 +18,9 @@ pm_musical_instrument_main_wood = { #手工制作
 }
 pm_musical_instrument_main_iron = { #冶金工艺
 	texture = "gfx/interface/icons/production_method_icons/pm_musical_instrument_main_iron.dds"
+	unlocking_technologies = {
+		lathe
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_iron_add = 10
@@ -34,6 +37,9 @@ pm_musical_instrument_main_iron = { #冶金工艺
 }
 pm_musical_instrument_main_steel = { #机械加工
 	texture = "gfx/interface/icons/production_method_icons/pm_musical_instrument_main_steel.dds"
+	unlocking_technologies = {
+		mechanical_tools
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_output_musical_instrument_add = 60
@@ -51,6 +57,9 @@ pm_musical_instrument_main_steel = { #机械加工
 }
 pm_musical_instrument_main_electric = { #电气化乐器
 	texture = "gfx/interface/icons/production_method_icons/pm_musical_instrument_main_electric.dds"
+	unlocking_technologies = {
+		electrical_capacitors
+	}
 	building_modifiers = {
 		workforce_scaled = {
 			goods_output_musical_instrument_add = 80
