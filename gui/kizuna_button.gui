@@ -1,32 +1,30 @@
 widget = {
-    layer = top #旧案作废
-	visible = "[GetMetaPlayer.GetPlayedOrObservedCountry.IsValid]"
+    layer = top
+    visible = "[GetMetaPlayer.GetPlayedOrObservedCountry.IsValid]"
     name = kizuna_button
     position = { -10 880 }
     size = { 80 80 }
     alpha = 0.7
     using = Animation_ShowHide_Quick
-    
 
     sidepanel_button_small = {
-            tooltip = "KIZUNA_TEXT_MENU_BUTTON"
-            onclick = "[GetVariableSystem.Toggle('kizuna_visible')]"
-			visible = "[Not(InformationPanelBar.IsAnyPanelOpen())]"
-            using = maplens_generic_sound
-            #input_action = go_to_details
+        tooltip = "KIZUNA_TEXT_MENU_BUTTON"
+        onclick = "[GetVariableSystem.Toggle('kizuna_visible')]"
+        visible = "[Not(InformationPanelBar.IsAnyPanelOpen())]"
+        using = maplens_generic_sound
         name = "kizuna_shortcut_button"
         size = { 45 45 }
         alpha = 0.6
+
         blockoverride "icon" {
             texture = "gfx/interface/icons/religion_icons/catholic.dds"
-			alpha = 2.0
-                }
-                
+            alpha = 2.0
+        }
 
-            blockoverride "icon_size" {
-                    size = { 40 40 }
-                }
-        
+        blockoverride "icon_size" {
+            size = { 40 40 }
+        }
+
         state = {
             name = _mouse_enter
             alpha = 1

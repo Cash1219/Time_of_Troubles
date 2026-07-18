@@ -772,7 +772,7 @@
 				add_ownership={
 					country={
 						country="c:MUS"
-						levels=7
+						levels=8
 					}
 				}
 				reserves=1
@@ -856,7 +856,7 @@
 					building={
 						type="building_manor_house"
 						country="c:MUS"
-						levels=3
+						levels=5
 						region="STATE_CENTRAL_HUNGARY"
 					}
 				}
@@ -984,10 +984,32 @@
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_no_steam_automation" "pm_road_carts" }
 			}
+			create_building={
+				building="building_railway"
+				add_ownership={
+					country={
+						country="c:MUS"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_early_trains" "pm_wooden_passenger_carriages" }
+			}
 		}
 	}
 	s:STATE_BEKES={
 		region_state:MUS={
+			create_building={
+				building="building_government_administration"
+				add_ownership={
+					country={
+						country="c:MUS"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_hereditary_bureaucrats" "pm_religious_bureaucrats" }
+			}
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -1031,6 +1053,17 @@
 	}
 	s:STATE_TRANSDANUBIA={
 		region_state:MUS={
+			create_building={
+				building="building_government_administration"
+				add_ownership={
+					country={
+						country="c:MUS"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_hereditary_bureaucrats" "pm_religious_bureaucrats" }
+			}
 			create_building={
 				building="building_food_industry"
 				add_ownership={
@@ -1119,6 +1152,17 @@
 	s:STATE_DELVIDEK={
 		region_state:MUS={
 			create_building={
+				building="building_government_administration"
+				add_ownership={
+					country={
+						country="c:MUS"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_hereditary_bureaucrats" "pm_religious_bureaucrats" }
+			}
+			create_building={
 				building="building_wheat_farm"
 				add_ownership={
 					building={
@@ -1161,6 +1205,17 @@
 	}
 	s:STATE_BANAT={
 		region_state:MUS={
+			create_building={
+				building="building_government_administration"
+				add_ownership={
+					country={
+						country="c:MUS"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_hereditary_bureaucrats" "pm_religious_bureaucrats" }
+			}
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={

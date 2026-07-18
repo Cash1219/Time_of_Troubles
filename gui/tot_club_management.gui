@@ -4,6 +4,12 @@ flowcontainer = {
 	direction = vertical
 	spacing = 8
 
+	state = {
+		name = refresh_club_panel
+		trigger_on_create = yes
+		on_finish = "[GetScriptedGui('tot_club_refresh_panel').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+	}
+
 	default_header_clean = {
 		size = { 520 72 }
 		blockoverride "text" {
@@ -15,7 +21,7 @@ flowcontainer = {
 	}
 
 	textbox = {
-		size = { 520 42 }
+		size = { 520 44 }
 		text = "TOT_CLUB_PANEL_DESC"
 		using = fontsize_small
 		align = left|nobaseline
@@ -24,24 +30,202 @@ flowcontainer = {
 
 	background = {
 		using = entry_bg_simple
-		size = { 520 250 }
+		size = { 520 660 }
 
 		flowcontainer = {
 			margin = { 16 16 }
 			direction = vertical
-			spacing = 6
+			spacing = 8
 
-			textbox = { size = { 488 24 } text = "TOT_CLUB_PANEL_CORE_VALUES" using = fontsize_medium default_format = "#v" align = left|nobaseline }
-			textbox = { size = { 488 22 } text = "TOT_CLUB_VALUE_TOTAL" using = fontsize_small align = left|nobaseline }
-			textbox = { size = { 488 22 } raw_text = "[AccessPlayer.MakeScope.Var('tot_club_total_count').GetValue|0]" using = fontsize_small align = left|nobaseline }
-			textbox = { size = { 488 22 } text = "TOT_CLUB_VALUE_CAP" using = fontsize_small align = left|nobaseline }
-			textbox = { size = { 488 22 } raw_text = "[AccessPlayer.MakeScope.ScriptValue('tot_club_capacity')|1]" using = fontsize_small align = left|nobaseline }
-			textbox = { size = { 488 22 } text = "TOT_CLUB_VALUE_USAGE" using = fontsize_small align = left|nobaseline }
-			textbox = { size = { 488 22 } raw_text = "[AccessPlayer.MakeScope.ScriptValue('tot_club_capacity_usage')|1]" using = fontsize_small align = left|nobaseline }
-			textbox = { size = { 488 22 } text = "TOT_CLUB_VALUE_FREE" using = fontsize_small align = left|nobaseline }
-			textbox = { size = { 488 22 } raw_text = "[AccessPlayer.MakeScope.ScriptValue('tot_club_capacity_balance')|1]" using = fontsize_small align = left|nobaseline }
-			textbox = { size = { 488 22 } text = "TOT_CLUB_VALUE_WEEKLY" using = fontsize_small align = left|nobaseline }
-			textbox = { size = { 488 22 } raw_text = "[AccessPlayer.MakeScope.Var('tot_club_growth_bonus').GetValue|2]" using = fontsize_small align = left|nobaseline }
+			textbox = {
+				size = { 488 24 }
+				text = "TOT_CLUB_PANEL_CORE_VALUES"
+				using = fontsize_medium
+				default_format = "#v"
+				align = left|nobaseline
+			}
+
+			flowcontainer = {
+				spacing = 8
+				textbox = { size = { 190 22 } text = "TOT_CLUB_VALUE_TOTAL" using = fontsize_small align = left|nobaseline }
+				textbox = { size = { 290 22 } raw_text = "[AccessPlayer.MakeScope.Var('tot_club_total_count').GetValue|0]" using = fontsize_small align = right|nobaseline }
+			}
+			flowcontainer = {
+				spacing = 8
+				textbox = { size = { 190 22 } text = "TOT_CLUB_VALUE_CAP" using = fontsize_small align = left|nobaseline }
+				textbox = { size = { 290 22 } raw_text = "[AccessPlayer.MakeScope.ScriptValue('tot_club_capacity')|1]" using = fontsize_small align = right|nobaseline }
+			}
+			flowcontainer = {
+				spacing = 8
+				textbox = { size = { 190 22 } text = "TOT_CLUB_VALUE_USAGE" using = fontsize_small align = left|nobaseline }
+				textbox = { size = { 290 22 } raw_text = "[AccessPlayer.MakeScope.ScriptValue('tot_club_capacity_usage')|1]" using = fontsize_small align = right|nobaseline }
+			}
+			flowcontainer = {
+				spacing = 8
+				textbox = { size = { 190 22 } text = "TOT_CLUB_VALUE_FREE" using = fontsize_small align = left|nobaseline }
+				textbox = { size = { 290 22 } raw_text = "[AccessPlayer.MakeScope.ScriptValue('tot_club_capacity_balance')|=+1]" using = fontsize_small align = right|nobaseline }
+			}
+			flowcontainer = {
+				spacing = 8
+				textbox = { size = { 190 22 } text = "TOT_CLUB_VALUE_EFFECTIVE" using = fontsize_small align = left|nobaseline }
+				textbox = { size = { 290 22 } raw_text = "[AccessPlayer.MakeScope.ScriptValue('tot_club_capacity_effective_usage')|1]" using = fontsize_small align = right|nobaseline }
+			}
+			flowcontainer = {
+				spacing = 8
+				textbox = { size = { 190 22 } text = "TOT_CLUB_VALUE_THEME_COUNT" using = fontsize_small align = left|nobaseline }
+				textbox = { size = { 290 22 } raw_text = "[AccessPlayer.MakeScope.Var('tot_club_theme_count').GetValue|0]" using = fontsize_small align = right|nobaseline }
+			}
+			flowcontainer = {
+				spacing = 8
+				textbox = { size = { 190 22 } text = "TOT_CLUB_VALUE_MULT" using = fontsize_small align = left|nobaseline }
+				textbox = { size = { 290 22 } raw_text = "[AccessPlayer.MakeScope.Var('tot_club_law_mult').GetValue|2]" using = fontsize_small align = right|nobaseline }
+			}
+			flowcontainer = {
+				spacing = 8
+				textbox = { size = { 190 22 } text = "TOT_CLUB_VALUE_WEEKLY" using = fontsize_small align = left|nobaseline }
+				textbox = { size = { 290 22 } raw_text = "#P +[AccessPlayer.MakeScope.Var('tot_club_growth_bonus').GetValue|2]#!" using = fontsize_small align = right|nobaseline }
+			}
+
+			textbox = {
+				size = { 488 42 }
+				text = "TOT_CLUB_PANEL_THEME_DESC"
+				using = fontsize_small
+				align = left|nobaseline
+				multiline = yes
+			}
+
+			textbox = {
+				size = { 488 24 }
+				text = "TOT_CLUB_PANEL_THEME_VALUES"
+				using = fontsize_medium
+				default_format = "#v"
+				align = left|nobaseline
+			}
+
+			background = {
+				using = entry_bg_simple
+				size = { 488 74 }
+				flowcontainer = {
+					margin = { 12 8 }
+					spacing = 10
+					icon = { size = { 42 42 } texture = "gfx/interface/icons/production_method_icons/pm_publisher_main_general_wood.dds" }
+					flowcontainer = {
+						direction = vertical
+						spacing = 1
+						textbox = { size = { 220 18 } text = "TOT_CLUB_THEME_LITERATURE" using = fontsize_medium align = left|nobaseline }
+						textbox = { size = { 220 16 } text = "TOT_CLUB_THEME_LITERATURE_DESC" using = fontsize_small align = left|nobaseline }
+						textbox = { visible = "[GetScriptedGui('tot_club_theme_literature_owned').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 220 16 } text = "TOT_CLUB_STATUS_PRESENT" using = fontsize_small align = left|nobaseline }
+						textbox = { visible = "[Not(GetScriptedGui('tot_club_theme_literature_owned').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" size = { 220 16 } text = "TOT_CLUB_STATUS_ABSENT" using = fontsize_small align = left|nobaseline }
+					}
+					widget = {
+						size = { 110 40 }
+						button = { visible = "[GetScriptedGui('tot_club_theme_literature_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 110 28 } onclick = "[GetScriptedGui('tot_club_toggle_literature').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_CLUB_THEME_LITERATURE_TOOLTIP" text = "TOT_CLUB_ACTION_ACTIVE" }
+						button = { visible = "[Not(GetScriptedGui('tot_club_theme_literature_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 110 28 } enabled = "[GetScriptedGui('tot_club_toggle_literature').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_club_toggle_literature').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "[SelectLocalization(GetScriptedGui('tot_club_toggle_literature').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End), 'TOT_CLUB_THEME_LITERATURE_TOOLTIP', 'TOT_CLUB_THEME_INVALID_TOOLTIP')]" text = "TOT_CLUB_ACTION_INACTIVE" }
+						textbox = { parentanchor = bottom size = { 110 14 } text = "TOT_CLUB_THEME_LITERATURE_EFFECT_SHORT" using = fontsize_small align = center|nobaseline }
+					}
+					textbox = { size = { 86 30 } text = "TOT_CLUB_THEME_LITERATURE_EFFECT_MINI" using = fontsize_small align = center|nobaseline multiline = yes }
+				}
+			}
+
+			background = {
+				using = entry_bg_simple
+				size = { 488 74 }
+				flowcontainer = {
+					margin = { 12 8 }
+					spacing = 10
+					icon = { size = { 42 42 } texture = "gfx/interface/icons/production_method_icons/pm_no_organization.dds" }
+					flowcontainer = {
+						direction = vertical
+						spacing = 1
+						textbox = { size = { 220 18 } text = "TOT_CLUB_THEME_ATHLETICS" using = fontsize_medium align = left|nobaseline }
+						textbox = { size = { 220 16 } text = "TOT_CLUB_THEME_ATHLETICS_DESC" using = fontsize_small align = left|nobaseline }
+						textbox = { visible = "[GetScriptedGui('tot_club_theme_athletics_owned').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 220 16 } text = "TOT_CLUB_STATUS_PRESENT" using = fontsize_small align = left|nobaseline }
+						textbox = { visible = "[Not(GetScriptedGui('tot_club_theme_athletics_owned').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" size = { 220 16 } text = "TOT_CLUB_STATUS_ABSENT" using = fontsize_small align = left|nobaseline }
+					}
+					widget = {
+						size = { 110 40 }
+						button = { visible = "[GetScriptedGui('tot_club_theme_athletics_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 110 28 } onclick = "[GetScriptedGui('tot_club_toggle_athletics').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_CLUB_THEME_ATHLETICS_TOOLTIP" text = "TOT_CLUB_ACTION_ACTIVE" }
+						button = { visible = "[Not(GetScriptedGui('tot_club_theme_athletics_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 110 28 } enabled = "[GetScriptedGui('tot_club_toggle_athletics').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_club_toggle_athletics').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "[SelectLocalization(GetScriptedGui('tot_club_toggle_athletics').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End), 'TOT_CLUB_THEME_ATHLETICS_TOOLTIP', 'TOT_CLUB_THEME_INVALID_TOOLTIP')]" text = "TOT_CLUB_ACTION_INACTIVE" }
+						textbox = { parentanchor = bottom size = { 110 14 } text = "TOT_CLUB_THEME_ATHLETICS_EFFECT_SHORT" using = fontsize_small align = center|nobaseline }
+					}
+					textbox = { size = { 86 30 } text = "TOT_CLUB_THEME_ATHLETICS_EFFECT_MINI" using = fontsize_small align = center|nobaseline multiline = yes }
+				}
+			}
+
+			background = {
+				using = entry_bg_simple
+				size = { 488 74 }
+				flowcontainer = {
+					margin = { 12 8 }
+					spacing = 10
+					icon = { size = { 42 42 } texture = "gfx/interface/icons/production_method_icons/pm_goods_musical_instrument.dds" }
+					flowcontainer = {
+						direction = vertical
+						spacing = 1
+						textbox = { size = { 220 18 } text = "TOT_CLUB_THEME_MUSIC" using = fontsize_medium align = left|nobaseline }
+						textbox = { size = { 220 16 } text = "TOT_CLUB_THEME_MUSIC_DESC" using = fontsize_small align = left|nobaseline }
+						textbox = { visible = "[GetScriptedGui('tot_club_theme_music_owned').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 220 16 } text = "TOT_CLUB_STATUS_PRESENT" using = fontsize_small align = left|nobaseline }
+						textbox = { visible = "[Not(GetScriptedGui('tot_club_theme_music_owned').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" size = { 220 16 } text = "TOT_CLUB_STATUS_ABSENT" using = fontsize_small align = left|nobaseline }
+					}
+					widget = {
+						size = { 110 40 }
+						button = { visible = "[GetScriptedGui('tot_club_theme_music_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 110 28 } onclick = "[GetScriptedGui('tot_club_toggle_music').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_CLUB_THEME_MUSIC_TOOLTIP" text = "TOT_CLUB_ACTION_ACTIVE" }
+						button = { visible = "[Not(GetScriptedGui('tot_club_theme_music_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 110 28 } enabled = "[GetScriptedGui('tot_club_toggle_music').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_club_toggle_music').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "[SelectLocalization(GetScriptedGui('tot_club_toggle_music').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End), 'TOT_CLUB_THEME_MUSIC_TOOLTIP', 'TOT_CLUB_THEME_INVALID_TOOLTIP')]" text = "TOT_CLUB_ACTION_INACTIVE" }
+						textbox = { parentanchor = bottom size = { 110 14 } text = "TOT_CLUB_THEME_MUSIC_EFFECT_SHORT" using = fontsize_small align = center|nobaseline }
+					}
+					textbox = { size = { 86 30 } text = "TOT_CLUB_THEME_MUSIC_EFFECT_MINI" using = fontsize_small align = center|nobaseline multiline = yes }
+				}
+			}
+
+			background = {
+				using = entry_bg_simple
+				size = { 488 74 }
+				flowcontainer = {
+					margin = { 12 8 }
+					spacing = 10
+					icon = { size = { 42 42 } texture = "gfx/interface/icons/production_method_icons/pm_goods_publications_general_wood.dds" }
+					flowcontainer = {
+						direction = vertical
+						spacing = 1
+						textbox = { size = { 220 18 } text = "TOT_CLUB_THEME_DRAMA" using = fontsize_medium align = left|nobaseline }
+						textbox = { size = { 220 16 } text = "TOT_CLUB_THEME_DRAMA_DESC" using = fontsize_small align = left|nobaseline }
+						textbox = { visible = "[GetScriptedGui('tot_club_theme_drama_owned').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 220 16 } text = "TOT_CLUB_STATUS_PRESENT" using = fontsize_small align = left|nobaseline }
+						textbox = { visible = "[Not(GetScriptedGui('tot_club_theme_drama_owned').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" size = { 220 16 } text = "TOT_CLUB_STATUS_ABSENT" using = fontsize_small align = left|nobaseline }
+					}
+					widget = {
+						size = { 110 40 }
+						button = { visible = "[GetScriptedGui('tot_club_theme_drama_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 110 28 } onclick = "[GetScriptedGui('tot_club_toggle_drama').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_CLUB_THEME_DRAMA_TOOLTIP" text = "TOT_CLUB_ACTION_ACTIVE" }
+						button = { visible = "[Not(GetScriptedGui('tot_club_theme_drama_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 110 28 } enabled = "[GetScriptedGui('tot_club_toggle_drama').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_club_toggle_drama').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "[SelectLocalization(GetScriptedGui('tot_club_toggle_drama').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End), 'TOT_CLUB_THEME_DRAMA_TOOLTIP', 'TOT_CLUB_THEME_INVALID_TOOLTIP')]" text = "TOT_CLUB_ACTION_INACTIVE" }
+						textbox = { parentanchor = bottom size = { 110 14 } text = "TOT_CLUB_THEME_DRAMA_EFFECT_SHORT" using = fontsize_small align = center|nobaseline }
+					}
+					textbox = { size = { 86 30 } text = "TOT_CLUB_THEME_DRAMA_EFFECT_MINI" using = fontsize_small align = center|nobaseline multiline = yes }
+				}
+			}
+
+			background = {
+				using = entry_bg_simple
+				size = { 488 74 }
+				flowcontainer = {
+					margin = { 12 8 }
+					spacing = 10
+					icon = { size = { 42 42 } texture = "gfx/interface/icons/production_method_icons/pm_paper_backed_art.dds" }
+					flowcontainer = {
+						direction = vertical
+						spacing = 1
+						textbox = { size = { 220 18 } text = "TOT_CLUB_THEME_ART" using = fontsize_medium align = left|nobaseline }
+						textbox = { size = { 220 16 } text = "TOT_CLUB_THEME_ART_DESC" using = fontsize_small align = left|nobaseline }
+						textbox = { visible = "[GetScriptedGui('tot_club_theme_art_owned').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 220 16 } text = "TOT_CLUB_STATUS_PRESENT" using = fontsize_small align = left|nobaseline }
+						textbox = { visible = "[Not(GetScriptedGui('tot_club_theme_art_owned').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" size = { 220 16 } text = "TOT_CLUB_STATUS_ABSENT" using = fontsize_small align = left|nobaseline }
+					}
+					widget = {
+						size = { 110 40 }
+						button = { visible = "[GetScriptedGui('tot_club_theme_art_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 110 28 } onclick = "[GetScriptedGui('tot_club_toggle_art').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_CLUB_THEME_ART_TOOLTIP" text = "TOT_CLUB_ACTION_ACTIVE" }
+						button = { visible = "[Not(GetScriptedGui('tot_club_theme_art_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 110 28 } enabled = "[GetScriptedGui('tot_club_toggle_art').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_club_toggle_art').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "[SelectLocalization(GetScriptedGui('tot_club_toggle_art').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End), 'TOT_CLUB_THEME_ART_TOOLTIP', 'TOT_CLUB_THEME_INVALID_TOOLTIP')]" text = "TOT_CLUB_ACTION_INACTIVE" }
+						textbox = { parentanchor = bottom size = { 110 14 } text = "TOT_CLUB_THEME_ART_EFFECT_SHORT" using = fontsize_small align = center|nobaseline }
+					}
+					textbox = { size = { 86 30 } text = "TOT_CLUB_THEME_ART_EFFECT_MINI" using = fontsize_small align = center|nobaseline multiline = yes }
+				}
+			}
 		}
 	}
 }

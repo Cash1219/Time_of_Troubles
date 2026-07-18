@@ -1,0 +1,188 @@
+tot_club_refresh_panel = {
+	scope = country
+	effect = {
+		tot_character_growth_refresh_club_bonus = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+
+tot_club_toggle_literature = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_club_theme_active_literature }
+			remove_variable = tot_club_theme_active_literature
+		}
+		else = {
+			set_variable = { name = tot_club_theme_active_literature value = 1 }
+		}
+		tot_character_growth_refresh_club_bonus = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		var:tot_club_theme_literature > 0
+	}
+}
+
+tot_club_toggle_athletics = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_club_theme_active_athletics }
+			remove_variable = tot_club_theme_active_athletics
+		}
+		else = {
+			set_variable = { name = tot_club_theme_active_athletics value = 1 }
+		}
+		tot_character_growth_refresh_club_bonus = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		var:tot_club_theme_athletics > 0
+	}
+}
+
+tot_club_toggle_music = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_club_theme_active_music }
+			remove_variable = tot_club_theme_active_music
+		}
+		else = {
+			set_variable = { name = tot_club_theme_active_music value = 1 }
+		}
+		tot_character_growth_refresh_club_bonus = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		var:tot_club_theme_music > 0
+	}
+}
+
+tot_club_toggle_drama = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_club_theme_active_drama }
+			remove_variable = tot_club_theme_active_drama
+		}
+		else = {
+			set_variable = { name = tot_club_theme_active_drama value = 1 }
+		}
+		tot_character_growth_refresh_club_bonus = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		var:tot_club_theme_drama > 0
+	}
+}
+
+tot_club_toggle_art = {
+	scope = country
+	effect = {
+		if = {
+			limit = { has_variable = tot_club_theme_active_art }
+			remove_variable = tot_club_theme_active_art
+		}
+		else = {
+			set_variable = { name = tot_club_theme_active_art value = 1 }
+		}
+		tot_character_growth_refresh_club_bonus = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		var:tot_club_theme_art > 0
+	}
+}
+
+tot_club_theme_literature_owned = {
+	scope = country
+	effect = {}
+	is_shown = { var:tot_club_theme_literature > 0 }
+	is_valid = { is_player = yes }
+}
+
+tot_club_theme_athletics_owned = {
+	scope = country
+	effect = {}
+	is_shown = { var:tot_club_theme_athletics > 0 }
+	is_valid = { is_player = yes }
+}
+
+tot_club_theme_music_owned = {
+	scope = country
+	effect = {}
+	is_shown = { var:tot_club_theme_music > 0 }
+	is_valid = { is_player = yes }
+}
+
+tot_club_theme_drama_owned = {
+	scope = country
+	effect = {}
+	is_shown = { var:tot_club_theme_drama > 0 }
+	is_valid = { is_player = yes }
+}
+
+tot_club_theme_art_owned = {
+	scope = country
+	effect = {}
+	is_shown = { var:tot_club_theme_art > 0 }
+	is_valid = { is_player = yes }
+}
+
+tot_club_theme_literature_active = {
+	scope = country
+	effect = {}
+	is_shown = {
+		has_variable = tot_club_theme_active_literature
+		var:tot_club_theme_literature > 0
+	}
+	is_valid = { is_player = yes }
+}
+
+tot_club_theme_athletics_active = {
+	scope = country
+	effect = {}
+	is_shown = {
+		has_variable = tot_club_theme_active_athletics
+		var:tot_club_theme_athletics > 0
+	}
+	is_valid = { is_player = yes }
+}
+
+tot_club_theme_music_active = {
+	scope = country
+	effect = {}
+	is_shown = {
+		has_variable = tot_club_theme_active_music
+		var:tot_club_theme_music > 0
+	}
+	is_valid = { is_player = yes }
+}
+
+tot_club_theme_drama_active = {
+	scope = country
+	effect = {}
+	is_shown = {
+		has_variable = tot_club_theme_active_drama
+		var:tot_club_theme_drama > 0
+	}
+	is_valid = { is_player = yes }
+}
+
+tot_club_theme_art_active = {
+	scope = country
+	effect = {}
+	is_shown = {
+		has_variable = tot_club_theme_active_art
+		var:tot_club_theme_art > 0
+	}
+	is_valid = { is_player = yes }
+}

@@ -68,9 +68,30 @@ tot_character_growth_refresh_club_bonus = {
 		limit = { has_modifier = tot_club_capacity_surplus_modifier }
 		remove_modifier = tot_club_capacity_surplus_modifier
 	}
+	if = {
+		limit = { has_modifier = tot_club_focus_literature_modifier }
+		remove_modifier = tot_club_focus_literature_modifier
+	}
+	if = {
+		limit = { has_modifier = tot_club_focus_athletics_modifier }
+		remove_modifier = tot_club_focus_athletics_modifier
+	}
+	if = {
+		limit = { has_modifier = tot_club_focus_music_modifier }
+		remove_modifier = tot_club_focus_music_modifier
+	}
+	if = {
+		limit = { has_modifier = tot_club_focus_drama_modifier }
+		remove_modifier = tot_club_focus_drama_modifier
+	}
+	if = {
+		limit = { has_modifier = tot_club_focus_art_modifier }
+		remove_modifier = tot_club_focus_art_modifier
+	}
 	set_variable = { name = tot_club_law_mult value = 0 }
 	set_variable = { name = tot_club_total_count value = 0 }
 	set_variable = { name = tot_club_theme_count value = 0 }
+	set_variable = { name = tot_club_theme_active_count value = 0 }
 	set_variable = { name = tot_club_theme_literature value = 0 }
 	set_variable = { name = tot_club_theme_athletics value = 0 }
 	set_variable = { name = tot_club_theme_music value = 0 }
@@ -154,6 +175,83 @@ tot_character_growth_refresh_club_bonus = {
 	if = {
 		limit = { var:tot_club_theme_art > 0 }
 		change_variable = { name = tot_club_theme_count add = 1 }
+	}
+
+	if = {
+		limit = {
+			has_variable = tot_club_theme_active_literature
+			var:tot_club_theme_literature = 0
+		}
+		remove_variable = tot_club_theme_active_literature
+	}
+	if = {
+		limit = {
+			has_variable = tot_club_theme_active_athletics
+			var:tot_club_theme_athletics = 0
+		}
+		remove_variable = tot_club_theme_active_athletics
+	}
+	if = {
+		limit = {
+			has_variable = tot_club_theme_active_music
+			var:tot_club_theme_music = 0
+		}
+		remove_variable = tot_club_theme_active_music
+	}
+	if = {
+		limit = {
+			has_variable = tot_club_theme_active_drama
+			var:tot_club_theme_drama = 0
+		}
+		remove_variable = tot_club_theme_active_drama
+	}
+	if = {
+		limit = {
+			has_variable = tot_club_theme_active_art
+			var:tot_club_theme_art = 0
+		}
+		remove_variable = tot_club_theme_active_art
+	}
+
+	if = {
+		limit = {
+			has_variable = tot_club_theme_active_literature
+			var:tot_club_theme_literature > 0
+		}
+		change_variable = { name = tot_club_theme_active_count add = 1 }
+		add_modifier = { name = tot_club_focus_literature_modifier }
+	}
+	if = {
+		limit = {
+			has_variable = tot_club_theme_active_athletics
+			var:tot_club_theme_athletics > 0
+		}
+		change_variable = { name = tot_club_theme_active_count add = 1 }
+		add_modifier = { name = tot_club_focus_athletics_modifier }
+	}
+	if = {
+		limit = {
+			has_variable = tot_club_theme_active_music
+			var:tot_club_theme_music > 0
+		}
+		change_variable = { name = tot_club_theme_active_count add = 1 }
+		add_modifier = { name = tot_club_focus_music_modifier }
+	}
+	if = {
+		limit = {
+			has_variable = tot_club_theme_active_drama
+			var:tot_club_theme_drama > 0
+		}
+		change_variable = { name = tot_club_theme_active_count add = 1 }
+		add_modifier = { name = tot_club_focus_drama_modifier }
+	}
+	if = {
+		limit = {
+			has_variable = tot_club_theme_active_art
+			var:tot_club_theme_art > 0
+		}
+		change_variable = { name = tot_club_theme_active_count add = 1 }
+		add_modifier = { name = tot_club_focus_art_modifier }
 	}
 
 	if = {

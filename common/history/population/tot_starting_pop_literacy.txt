@@ -1,0 +1,75 @@
+POPULATION = {
+	# Custom countries in ToT do not inherit vanilla population presets unless
+	# they have their own POPULATION entries. Without these, they fall back to
+	# near-zero default literacy and display values such as 0.9% or 1.0%.
+
+	# Southern / Mediterranean Europe
+	c:ADL ?= { effect_starting_pop_literacy_low = yes }
+	c:AQO ?= { effect_starting_pop_literacy_low = yes }
+	c:AVMJ ?= { effect_starting_pop_literacy_low = yes }
+	c:GBDP ?= { effect_starting_pop_literacy_low = yes }
+	c:GNC ?= { effect_starting_pop_literacy_low = yes }
+	c:HTT ?= { effect_starting_pop_literacy_low = yes }
+	c:LOU ?= { effect_starting_pop_literacy_low = yes }
+	c:MYG ?= { effect_starting_pop_literacy_low = yes }
+	c:ORHD ?= { effect_starting_pop_literacy_low = yes }
+	c:RITA ?= { effect_starting_pop_literacy_low = yes }
+	c:ROM ?= { effect_starting_pop_literacy_low = yes }
+	c:SKD ?= { effect_starting_pop_literacy_low = yes }
+	c:STLI ?= { effect_starting_pop_literacy_low = yes }
+	c:YUZ ?= { effect_starting_pop_literacy_low = yes }
+
+	# Central Europe
+	c:ALS ?= { effect_starting_pop_literacy_middling = yes }
+	c:GKMS ?= { effect_starting_pop_literacy_middling = yes }
+	c:IDMS ?= { effect_starting_pop_literacy_middling = yes }
+	c:MUS ?= { effect_starting_pop_literacy_middling = yes }
+	c:NJS ?= { effect_starting_pop_literacy_middling = yes }
+
+	# Northern / Western Europe and settler states
+	c:BTR ?= { effect_starting_pop_literacy_high = yes }
+	c:BCXY ?= { effect_starting_pop_literacy_high = yes }
+	c:GERW ?= { effect_starting_pop_literacy_high = yes }
+	c:HHWO ?= { effect_starting_pop_literacy_high = yes }
+	c:HSXY ?= { effect_starting_pop_literacy_high = yes }
+	c:NRHD ?= { effect_starting_pop_literacy_high = yes }
+	c:RHE ?= { effect_starting_pop_literacy_high = yes }
+	c:SBRT ?= { effect_starting_pop_literacy_high = yes }
+	c:SGXY ?= { effect_starting_pop_literacy_high = yes }
+	c:STRW ?= { effect_starting_pop_literacy_high = yes }
+	c:TBUN ?= { effect_starting_pop_literacy_high = yes }
+	c:USAF ?= { effect_starting_pop_literacy_high = yes }
+	c:VLG ?= { effect_starting_pop_literacy_high = yes }
+
+	# Scandinavia
+	c:MHSB ?= { effect_starting_pop_literacy_very_high = yes }
+	c:OOAR ?= { effect_starting_pop_literacy_very_high = yes }
+
+	# Middle East / India / low-education baseline starts
+	c:AFTG ?= { effect_starting_pop_literacy_baseline = yes }
+	c:ALPP ?= { effect_starting_pop_literacy_baseline = yes }
+	c:DEZR ?= { effect_starting_pop_literacy_baseline = yes }
+	c:DMAS ?= { effect_starting_pop_literacy_baseline = yes }
+	c:KIVO ?= { effect_starting_pop_literacy_baseline = yes }
+	c:LEBN ?= { effect_starting_pop_literacy_baseline = yes }
+	c:MOSL ?= { effect_starting_pop_literacy_baseline = yes }
+	c:NEWG ?= { effect_starting_pop_literacy_baseline = yes }
+	c:PLA ?= { effect_starting_pop_literacy_baseline = yes }
+	c:SINA ?= { effect_starting_pop_literacy_baseline = yes }
+	c:TJOR ?= { effect_starting_pop_literacy_baseline = yes }
+	c:XMQS ?= { effect_starting_pop_literacy_baseline = yes }
+
+	# Russia / steppe / Siberia
+	c:GOD ?= { effect_starting_pop_literacy_very_low = yes }
+	c:PRM ?= { effect_starting_pop_literacy_very_low = yes }
+	c:SIBC ?= { effect_starting_pop_literacy_very_low = yes }
+	c:SIBE ?= { effect_starting_pop_literacy_very_low = yes }
+	c:SIBN ?= { effect_starting_pop_literacy_very_low = yes }
+	c:SIBW ?= { effect_starting_pop_literacy_very_low = yes }
+	c:UKR ?= { effect_starting_pop_literacy_very_low = yes }
+	c:UMA ?= { effect_starting_pop_literacy_very_low = yes }
+	c:ZLXY ?= { effect_starting_pop_literacy_very_low = yes }
+
+	# Latin America
+	c:AKXS ?= { effect_starting_pop_literacy_low = yes }
+}

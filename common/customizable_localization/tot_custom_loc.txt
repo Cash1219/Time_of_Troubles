@@ -26,27 +26,83 @@
 
 		text = {
 			trigger = {
-				c:FRA = ROOT
+				OR = {
+					c:AQO = ROOT
+					c:MUS = ROOT
+					c:GBDP = ROOT
+					c:HTT = ROOT
+					c:ROM = ROOT
+					c:STLI = ROOT
+					c:IDMS = ROOT
+					c:GKMS = ROOT
+					c:NJS = ROOT
+					c:AFTG = ROOT
+					c:HHWO = ROOT
+					c:MYG = ROOT
+					c:AVMJ = ROOT
+				}
 			}
-			localization_key = FRA_CONTENT_DESC
+			localization_key = UNIQUE_CHARACTER_CONTENT_DESC
 		}
 		text = {
 			trigger = {
-				c:GBR = ROOT
+				OR = {
+					c:JAP = ROOT
+					c:SOK = ROOT
+					c:OVL = ROOT
+					c:SLOF = ROOT
+					c:RITA = ROOT
+					c:FRA = ROOT
+					c:MHSB = ROOT
+					c:YUZ1 = ROOT
+					c:YUZ2 = ROOT
+					c:DAL = ROOT
+					c:NAVL = ROOT
+					c:LOU = ROOT
+					c:FIN = ROOT
+					c:GBR = ROOT
+				}
 			}
-			localization_key = GBR_CONTENT_DESC
+			localization_key = MASS_CHARACTER_CONTENT_DESC
 		}
 		text = {
 			trigger = {
-				c:ITA = ROOT
+				OR = {
+					c:XMQS = ROOT
+					c:NEWG = ROOT
+					c:RUS = ROOT
+					c:TRI = ROOT
+					c:UMA = ROOT
+					c:EGY = ROOT
+					c:SKD = ROOT
+					c:STRW = ROOT
+					c:PER = ROOT
+					c:OOAR = ROOT
+					c:ORHD = ROOT
+					c:WUR = ROOT
+					c:PAP = ROOT
+					c:BAV = ROOT
+					c:TBUN = ROOT
+					c:PRU = ROOT
+					c:DEI = ROOT
+					c:ABU = ROOT
+					c:ALS = ROOT
+					c:ZLXY = ROOT
+					c:UKR = ROOT
+					c:SBRT = ROOT
+					c:SGXY = ROOT
+					c:SIA = ROOT
+					c:AKXS = ROOT
+					c:PAL = ROOT
+					c:HSXY = ROOT
+					c:GERW = ROOT
+					c:RHE = ROOT
+					c:USAF = ROOT
+					c:KIVO = ROOT
+					c:BUG = ROOT
+				}
 			}
-			localization_key = ITA_CONTENT_DESC
-		}
-		text = {
-			trigger = {
-				c:PRU = ROOT
-			}
-			localization_key = PRU_CONTENT_DESC
+			localization_key = BASIC_CHARACTER_CONTENT_DESC
 		}
 		text = {
 			localization_key = NO_CONTENT_DESC
@@ -72,17 +128,32 @@
 		}
 	}
 
-	has_major_formable_loc = {
+	major_formable_desc = {
 		type = country
 
 		text = {
 			trigger = {
-				has_variable = has_major_formable_var
+				OR = {
+					c:MUS = ROOT
+					c:AQO = ROOT
+					c:NJS = ROOT
+					c:IDMS = ROOT
+					c:GKMS = ROOT
+				}
 			}
-			localization_key = ICON_CHECK
+			localization_key = MAJOR_FORMABLE_IDOL_BOTH_DESC
 		}
 		text = {
-			localization_key = ICON_CROSS
+			trigger = {
+				OR = {
+					c:GBDP = ROOT
+					c:IDEP = ROOT
+				}
+			}
+			localization_key = MAJOR_FORMABLE_IDOL_FEDERATION_DESC
+		}
+		text = {
+			localization_key = MAJOR_FORMABLE_NONE_DESC
 		}
 	}
 

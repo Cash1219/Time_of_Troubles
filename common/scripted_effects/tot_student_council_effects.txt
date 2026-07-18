@@ -1,0 +1,474 @@
+tot_refresh_student_council_candidates_effect = {
+	save_temporary_scope_as = tot_student_council_country
+
+	if = {
+		limit = {
+			has_variable = tot_student_council_president
+			OR = {
+				NOT = {
+					var:tot_student_council_president ?= {
+						is_character_alive = yes
+					}
+				}
+				var:tot_student_council_president ?= {
+					NOT = {
+						owner = scope:tot_student_council_country
+					}
+				}
+			}
+		}
+		var:tot_student_council_president ?= {
+			if = {
+				limit = {
+					has_role = character_role_tot_student_council_president
+				}
+				remove_character_role = character_role_tot_student_council_president
+			}
+		}
+		remove_variable = tot_student_council_president
+		if = {
+			limit = {
+				has_modifier = tot_student_council_president_modifier
+			}
+			remove_modifier = tot_student_council_president_modifier
+		}
+	}
+
+	if = {
+		limit = {
+			has_variable = tot_discipline_minister
+			OR = {
+				NOT = {
+					var:tot_discipline_minister ?= {
+						is_character_alive = yes
+					}
+				}
+				var:tot_discipline_minister ?= {
+					NOT = {
+						owner = scope:tot_student_council_country
+					}
+				}
+			}
+		}
+		var:tot_discipline_minister ?= {
+			if = {
+				limit = {
+					has_role = character_role_tot_discipline_minister
+				}
+				remove_character_role = character_role_tot_discipline_minister
+			}
+		}
+		remove_variable = tot_discipline_minister
+		if = {
+			limit = {
+				has_modifier = tot_discipline_minister_modifier
+			}
+			remove_modifier = tot_discipline_minister_modifier
+		}
+	}
+
+	if = {
+		limit = {
+			has_variable = tot_education_minister
+			OR = {
+				NOT = { var:tot_education_minister ?= { is_character_alive = yes } }
+				var:tot_education_minister ?= { NOT = { owner = scope:tot_student_council_country } }
+			}
+		}
+		var:tot_education_minister ?= {
+			if = { limit = { has_role = character_role_tot_education_minister } remove_character_role = character_role_tot_education_minister }
+		}
+		remove_variable = tot_education_minister
+		if = { limit = { has_modifier = tot_education_minister_modifier } remove_modifier = tot_education_minister_modifier }
+	}
+
+	if = {
+		limit = {
+			has_variable = tot_propaganda_minister
+			OR = {
+				NOT = { var:tot_propaganda_minister ?= { is_character_alive = yes } }
+				var:tot_propaganda_minister ?= { NOT = { owner = scope:tot_student_council_country } }
+			}
+		}
+		var:tot_propaganda_minister ?= {
+			if = { limit = { has_role = character_role_tot_propaganda_minister } remove_character_role = character_role_tot_propaganda_minister }
+		}
+		remove_variable = tot_propaganda_minister
+		if = { limit = { has_modifier = tot_propaganda_minister_modifier } remove_modifier = tot_propaganda_minister_modifier }
+	}
+
+	if = {
+		limit = {
+			has_variable = tot_chief_of_staff
+			OR = {
+				NOT = { var:tot_chief_of_staff ?= { is_character_alive = yes } }
+				var:tot_chief_of_staff ?= { NOT = { owner = scope:tot_student_council_country } }
+			}
+		}
+		var:tot_chief_of_staff ?= {
+			if = { limit = { has_role = character_role_tot_chief_of_staff } remove_character_role = character_role_tot_chief_of_staff }
+		}
+		remove_variable = tot_chief_of_staff
+		if = { limit = { has_modifier = tot_chief_of_staff_modifier } remove_modifier = tot_chief_of_staff_modifier }
+	}
+
+	if = {
+		limit = {
+			has_variable_list = tot_student_council_candidates
+		}
+		clear_variable_list = tot_student_council_candidates
+	}
+
+	every_scope_character = {
+		limit = {
+			owner = scope:tot_student_council_country
+			is_character_alive = yes
+			is_ruler_of_own_country = no
+			is_heir_of_own_country = no
+			is_interest_group_leader = no
+			NOT = {
+				has_role = character_role_tot_student_council_president
+			}
+			NOT = {
+				has_role = character_role_tot_discipline_minister
+			}
+			NOT = { has_role = character_role_tot_education_minister }
+			NOT = { has_role = character_role_tot_propaganda_minister }
+			NOT = { has_role = character_role_tot_chief_of_staff }
+			# Filters are evaluated while building the list, not hidden afterwards in the GUI.
+			OR = {
+				scope:tot_student_council_country = {
+					NOT = { has_variable = tot_character_duty_filter }
+				}
+				scope:tot_student_council_country = {
+					var:tot_character_duty_filter = 0
+				}
+				AND = {
+					scope:tot_student_council_country = {
+						var:tot_character_duty_filter = 1
+					}
+					OR = {
+						has_role = character_role_general
+						has_role = character_role_admiral
+						has_role = character_role_executive
+						has_role = character_role_magnate
+						has_role = character_role_agitator
+						has_role = character_role_tot_province_governor
+					}
+				}
+				AND = {
+					scope:tot_student_council_country = {
+						var:tot_character_duty_filter = 2
+					}
+					has_role = character_role_politician
+					NOT = {
+						OR = {
+							has_role = character_role_general
+							has_role = character_role_admiral
+							has_role = character_role_executive
+							has_role = character_role_magnate
+							has_role = character_role_agitator
+							has_role = character_role_tot_province_governor
+							has_role = character_role_tot_student_council_president
+							has_role = character_role_tot_discipline_minister
+							has_role = character_role_tot_education_minister
+							has_role = character_role_tot_propaganda_minister
+							has_role = character_role_tot_chief_of_staff
+						}
+					}
+				}
+			}
+			OR = {
+				scope:tot_student_council_country = {
+					NOT = { has_variable = tot_character_history_filter }
+				}
+				scope:tot_student_council_country = {
+					var:tot_character_history_filter = 0
+				}
+				AND = {
+					scope:tot_student_council_country = {
+						var:tot_character_history_filter = 1
+					}
+					is_historical = yes
+				}
+				AND = {
+					scope:tot_student_council_country = {
+						var:tot_character_history_filter = 2
+					}
+					is_historical = no
+				}
+			}
+		}
+		scope:tot_student_council_country = {
+			add_to_variable_list = {
+				name = tot_student_council_candidates
+				target = prev
+			}
+		}
+	}
+}
+
+tot_clear_student_council_president_effect = {
+	if = {
+		limit = {
+			has_variable = tot_student_council_president
+		}
+		var:tot_student_council_president ?= {
+			if = {
+				limit = {
+					has_role = character_role_tot_student_council_president
+				}
+				remove_character_role = character_role_tot_student_council_president
+			}
+		}
+		remove_variable = tot_student_council_president
+	}
+
+	if = {
+		limit = {
+			has_modifier = tot_student_council_president_modifier
+		}
+		remove_modifier = tot_student_council_president_modifier
+	}
+
+	tot_refresh_student_council_candidates_effect = yes
+}
+
+tot_appoint_student_council_president_effect = {
+	if = {
+		limit = {
+			is_character_alive = yes
+			is_ruler_of_own_country = no
+			is_heir_of_own_country = no
+			is_interest_group_leader = no
+			NOT = {
+				has_role = character_role_tot_student_council_president
+			}
+			NOT = {
+				OR = {
+					has_role = character_role_tot_discipline_minister
+					has_role = character_role_tot_education_minister
+					has_role = character_role_tot_propaganda_minister
+					has_role = character_role_tot_chief_of_staff
+				}
+			}
+			owner ?= {
+				is_player = yes
+			}
+		}
+
+		save_temporary_scope_as = tot_selected_student_council_president
+
+		owner ?= {
+			tot_clear_student_council_president_effect = yes
+			set_variable = {
+				name = tot_student_council_president
+				value = scope:tot_selected_student_council_president
+			}
+			add_modifier = {
+				name = tot_student_council_president_modifier
+			}
+		}
+
+		add_character_role = character_role_tot_student_council_president
+
+		owner ?= {
+			tot_refresh_student_council_candidates_effect = yes
+		}
+	}
+}
+
+tot_clear_discipline_minister_effect = {
+	if = {
+		limit = {
+			has_variable = tot_discipline_minister
+		}
+		var:tot_discipline_minister ?= {
+			if = {
+				limit = {
+					has_role = character_role_tot_discipline_minister
+				}
+				remove_character_role = character_role_tot_discipline_minister
+			}
+		}
+		remove_variable = tot_discipline_minister
+	}
+
+	if = {
+		limit = {
+			has_modifier = tot_discipline_minister_modifier
+		}
+		remove_modifier = tot_discipline_minister_modifier
+	}
+
+	tot_refresh_student_council_candidates_effect = yes
+}
+
+tot_appoint_discipline_minister_effect = {
+	if = {
+		limit = {
+			is_character_alive = yes
+			is_ruler_of_own_country = no
+			is_heir_of_own_country = no
+			is_interest_group_leader = no
+			NOT = {
+				has_role = character_role_tot_student_council_president
+			}
+			NOT = {
+				has_role = character_role_tot_discipline_minister
+			}
+			NOT = {
+				OR = {
+					has_role = character_role_tot_education_minister
+					has_role = character_role_tot_propaganda_minister
+					has_role = character_role_tot_chief_of_staff
+				}
+			}
+			owner ?= {
+				is_player = yes
+			}
+		}
+
+		save_temporary_scope_as = tot_selected_discipline_minister
+
+		owner ?= {
+			tot_clear_discipline_minister_effect = yes
+			set_variable = {
+				name = tot_discipline_minister
+				value = scope:tot_selected_discipline_minister
+			}
+			add_modifier = {
+				name = tot_discipline_minister_modifier
+			}
+		}
+
+		add_character_role = character_role_tot_discipline_minister
+
+		owner ?= {
+			tot_refresh_student_council_candidates_effect = yes
+		}
+	}
+}
+
+tot_clear_education_minister_effect = {
+	if = {
+		limit = { has_variable = tot_education_minister }
+		var:tot_education_minister ?= {
+			if = { limit = { has_role = character_role_tot_education_minister } remove_character_role = character_role_tot_education_minister }
+		}
+		remove_variable = tot_education_minister
+	}
+	if = { limit = { has_modifier = tot_education_minister_modifier } remove_modifier = tot_education_minister_modifier }
+	tot_refresh_student_council_candidates_effect = yes
+}
+
+tot_appoint_education_minister_effect = {
+	if = {
+		limit = {
+			is_character_alive = yes
+			is_ruler_of_own_country = no
+			is_heir_of_own_country = no
+			is_interest_group_leader = no
+			NOT = {
+				OR = {
+					has_role = character_role_tot_student_council_president
+					has_role = character_role_tot_discipline_minister
+					has_role = character_role_tot_education_minister
+					has_role = character_role_tot_propaganda_minister
+					has_role = character_role_tot_chief_of_staff
+				}
+			}
+			owner ?= { is_player = yes }
+		}
+		save_temporary_scope_as = tot_selected_education_minister
+		owner ?= {
+			tot_clear_education_minister_effect = yes
+			set_variable = { name = tot_education_minister value = scope:tot_selected_education_minister }
+			add_modifier = { name = tot_education_minister_modifier }
+		}
+		add_character_role = character_role_tot_education_minister
+		owner ?= { tot_refresh_student_council_candidates_effect = yes }
+	}
+}
+
+tot_clear_propaganda_minister_effect = {
+	if = {
+		limit = { has_variable = tot_propaganda_minister }
+		var:tot_propaganda_minister ?= {
+			if = { limit = { has_role = character_role_tot_propaganda_minister } remove_character_role = character_role_tot_propaganda_minister }
+		}
+		remove_variable = tot_propaganda_minister
+	}
+	if = { limit = { has_modifier = tot_propaganda_minister_modifier } remove_modifier = tot_propaganda_minister_modifier }
+	tot_refresh_student_council_candidates_effect = yes
+}
+
+tot_appoint_propaganda_minister_effect = {
+	if = {
+		limit = {
+			is_character_alive = yes
+			is_ruler_of_own_country = no
+			is_heir_of_own_country = no
+			is_interest_group_leader = no
+			NOT = {
+				OR = {
+					has_role = character_role_tot_student_council_president
+					has_role = character_role_tot_discipline_minister
+					has_role = character_role_tot_education_minister
+					has_role = character_role_tot_propaganda_minister
+					has_role = character_role_tot_chief_of_staff
+				}
+			}
+			owner ?= { is_player = yes }
+		}
+		save_temporary_scope_as = tot_selected_propaganda_minister
+		owner ?= {
+			tot_clear_propaganda_minister_effect = yes
+			set_variable = { name = tot_propaganda_minister value = scope:tot_selected_propaganda_minister }
+			add_modifier = { name = tot_propaganda_minister_modifier }
+		}
+		add_character_role = character_role_tot_propaganda_minister
+		owner ?= { tot_refresh_student_council_candidates_effect = yes }
+	}
+}
+
+tot_clear_chief_of_staff_effect = {
+	if = {
+		limit = { has_variable = tot_chief_of_staff }
+		var:tot_chief_of_staff ?= {
+			if = { limit = { has_role = character_role_tot_chief_of_staff } remove_character_role = character_role_tot_chief_of_staff }
+		}
+		remove_variable = tot_chief_of_staff
+	}
+	if = { limit = { has_modifier = tot_chief_of_staff_modifier } remove_modifier = tot_chief_of_staff_modifier }
+	tot_refresh_student_council_candidates_effect = yes
+}
+
+tot_appoint_chief_of_staff_effect = {
+	if = {
+		limit = {
+			is_character_alive = yes
+			is_ruler_of_own_country = no
+			is_heir_of_own_country = no
+			is_interest_group_leader = no
+			NOT = {
+				OR = {
+					has_role = character_role_tot_student_council_president
+					has_role = character_role_tot_discipline_minister
+					has_role = character_role_tot_education_minister
+					has_role = character_role_tot_propaganda_minister
+					has_role = character_role_tot_chief_of_staff
+				}
+			}
+			owner ?= { is_player = yes }
+		}
+		save_temporary_scope_as = tot_selected_chief_of_staff
+		owner ?= {
+			tot_clear_chief_of_staff_effect = yes
+			set_variable = { name = tot_chief_of_staff value = scope:tot_selected_chief_of_staff }
+			add_modifier = { name = tot_chief_of_staff_modifier }
+		}
+		add_character_role = character_role_tot_chief_of_staff
+		owner ?= { tot_refresh_student_council_candidates_effect = yes }
+	}
+}

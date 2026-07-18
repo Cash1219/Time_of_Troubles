@@ -1,0 +1,1114 @@
+﻿types tot_character_panel_types
+{
+	type tot_character_capacity_summary = widget {
+		size = { 250 80 }
+		tooltip = "TOT_CLUB_CAPACITY_TOOLTIP"
+
+		background = {
+			using = entry_bg_simple
+		}
+
+		hbox = {
+			margin = { 10 5 }
+			spacing = 9
+
+			icon = {
+				parentanchor = vcenter
+				texture = "gfx/interface/icons/topbar/club_capacity.dds"
+				size = { 26 26 }
+			}
+			position = { 0 -20 }
+			vbox = {
+				parentanchor = vcenter
+				spacing = 1
+				textbox = {
+					
+					size = { 260 14 }
+					text = "TOT_CHARACTER_CAPACITY_HEADER"
+					using = fontsize_very_small
+					align = left|nobaseline
+				}
+
+				textbox = {
+					size = { 260 20 }
+					raw_text = "#bold 已占用 @bur![GetPlayer.MakeScope.ScriptValue('tot_club_capacity_usage')|1]/[GetPlayer.MakeScope.ScriptValue('tot_club_capacity')|1]#!"
+					using = fontsize_medium
+					align = left|nobaseline
+				}
+			}
+		}
+	}
+	type tot_character_minister_slot = widget {
+		size = { 332 176 }
+
+		background = {
+			using = entry_bg_fancy
+		}
+
+		block "selected_overlay" {}
+
+		vbox = {
+			margin = { 10 8 }
+			spacing = 3
+
+			textbox = {
+				size = { 308 18 }
+				using = fontsize_medium
+				default_format = "#v"
+				align = left|nobaseline
+
+				block "slot_title" {
+					text = "TOT_CHARACTER_SLOT_STUDENT"
+				}
+			}
+
+			textbox = {
+				size = { 308 15 }
+				using = fontsize_very_small
+				align = left|nobaseline
+				elide = right
+
+				block "slot_hint" {
+					text = "TOT_CHARACTER_SLOT_STUDENT_HINT"
+				}
+			}
+
+			textbox = {
+				size = { 308 35 }
+				using = fontsize_very_small
+				using = entry_bg_simple
+				default_format = "#P"
+				align = left
+				multiline = yes
+				margin = { 6 1 }
+
+				block "slot_effects" {
+					text = "TOT_CHARACTER_SLOT_STUDENT_EFFECTS"
+				}
+			}
+
+			widget = {
+				size = { 308 60 }
+
+				background = {
+					using = dark_area
+				}
+
+				block "holder_content" {}
+			}
+
+			hbox = {
+				parentanchor = hcenter
+				spacing = 8
+
+				block "select_button" {}
+				block "remove_button" {}
+			}
+		}
+	}
+
+	type tot_character_candidate_item = widget {
+		datacontext = "[Scope.GetCharacter]"
+
+		size = { 1088 125 }
+
+		using = entry_bg_fancy
+
+		tooltipwidget = {
+			FancyTooltip_Character = {}
+		}
+
+		hbox = {
+			margin = { 12 5 }
+			spacing = 12
+
+			widget = {
+				size = { 106 96 }
+
+				widget = {
+					size = { 96 96 }
+					parentanchor = center
+
+					background = {
+						texture = "gfx/interface/icons/character_icons/character_frame.dds"
+						size = { 92 92 }
+						parentanchor = center
+					}
+
+					character_portrait_large = {
+						parentanchor = center
+						blockoverride "show_hat" {}
+						blockoverride "highlight" {}
+						blockoverride "rank_icon" {}
+					}
+				}
+
+				widget = {
+					visible = "[Character.GetInterestGroup.IsValid]"
+					size = { 38 38 }
+					position = { -5 65 }
+					datacontext = "[Character.GetInterestGroup]"
+
+					icon = {
+						parentanchor = center
+						texture = "[InterestGroup.GetTexture]"
+						size = { 36 36 }
+
+						tooltipwidget = {
+							FancyTooltip_IG = {}
+						}
+					}
+				}
+
+				widget = {
+					visible = "[Character.GetIdeology.IsValid]"
+					size = { 38 38 }
+					position = { 70 65 }
+					datacontext = "[Character.GetIdeology]"
+
+					icon = {
+						parentanchor = center
+						texture = "[Ideology.GetTexture]"
+						size = { 36 36 }
+
+						tooltipwidget = {
+							FancyTooltip_Ideology = {}
+						}
+					}
+				}
+			}
+
+			widget = {
+				size = { 794 96 }
+
+				vbox = {
+					parentanchor = vcenter
+					spacing = 4
+
+					hbox = {
+						size = { 794 24 }
+						spacing = 10
+
+						textbox = {
+							size = { 580 24 }
+							raw_text = "#BOLD [Character.GetFullNameNoFormatting]#!"
+							using = fontsize_large
+							align = left|nobaseline
+							elide = right
+						}
+
+						textbox = {
+							size = { 204 18 }
+							parentanchor = vcenter
+							raw_text = "[SelectLocalization(Character.IsHistorical, 'HISTORICAL_FILTER_NAME', 'NON_HISTORICAL_FILTER_NAME')]"
+							using = fontsize_very_small
+							align = right|nobaseline
+							elide = right
+						}
+					}
+
+					textbox = {
+						size = { 794 17 }
+						raw_text = "#title [Character.GetPrimaryRoleTitle]#!"
+						using = fontsize_small
+						align = left|nobaseline
+						elide = right
+					}
+
+					hbox = {
+						size = { 794 36 }
+						spacing = 8
+
+						widget = {
+							size = { 320 36 }
+							background = {
+								using = entry_bg_simple
+							}
+
+							widget = {
+								visible = "[Character.GetInterestGroup.IsValid]"
+									size = { 320 36 }
+								datacontext = "[Character.GetInterestGroup]"
+
+								hbox = {
+									parentanchor = center
+									spacing = 6
+
+									icon = {
+										parentanchor = vcenter
+										texture = "[InterestGroup.GetTexture]"
+										size = { 28 28 }
+
+										tooltipwidget = {
+											FancyTooltip_IG = {}
+										}
+									}
+
+									textbox = {
+										size = { 272 18 }
+										raw_text = "#v [InterestGroup.GetNameNoFormatting]#!"
+										using = fontsize_small
+										align = left|nobaseline
+										elide = right
+									}
+								}
+							}
+
+							textbox = {
+								visible = "[Not(Character.GetInterestGroup.IsValid)]"
+								size = { 320 16 }
+								parentanchor = center
+								text = "-"
+								using = fontsize_very_small
+								align = center|nobaseline
+							}
+						}
+
+						widget = {
+							size = { 320 36 }
+							background = {
+								using = entry_bg_simple
+							}
+
+							widget = {
+								visible = "[Character.GetIdeology.IsValid]"
+									size = { 320 36 }
+								datacontext = "[Character.GetIdeology]"
+
+								hbox = {
+									parentanchor = center
+									spacing = 6
+
+									icon = {
+										parentanchor = vcenter
+										texture = "[Ideology.GetTexture]"
+										size = { 28 28 }
+
+										tooltipwidget = {
+											FancyTooltip_Ideology = {}
+										}
+									}
+
+									textbox = {
+										size = { 272 18 }
+										raw_text = "#v [Ideology.GetNameNoFormatting]#!"
+										using = fontsize_small
+										align = left|nobaseline
+										elide = right
+									}
+								}
+							}
+
+							textbox = {
+								visible = "[Not(Character.GetIdeology.IsValid)]"
+								size = { 320 16 }
+								parentanchor = center
+								text = "-"
+								using = fontsize_very_small
+								align = center|nobaseline
+							}
+						}
+					}
+				}
+			}
+
+			widget = {
+				size = { 140 96 }
+
+				vbox = {
+					parentanchor = center
+					spacing = 4
+
+					block "candidate_action_block" {}
+
+					textbox = {
+						size = { 132 16 }
+						using = fontsize_very_small
+						align = center|nobaseline
+						elide = right
+
+						block "appoint_hint" {
+							text = "TOT_CHARACTER_ASSIGN_STUDENT"
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+window = {
+	name = "tot_character_window"
+	parentanchor = center
+	position = { -100 0 }
+	size = { 1300 950 }
+	layer = windows_layer
+	filter_mouse = all
+	allow_outside = yes
+	alwaystransparent = no
+
+	using = Window_Background
+	using = Window_Decoration
+
+	movable = yes
+	visible = "[GetVariableSystem.Exists('tot_character_panel_visible')]"
+
+	datacontext = "[GetPlayer]"
+
+	state = {
+		name = refresh_character_panel
+		trigger_on_create = yes
+		on_finish = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'student_council' )]"
+		on_finish = "[GetVariableSystem.Set( 'tot_character_filters', 'yes' )]"
+		on_finish = "[GetScriptedGui('tot_character_filter_default').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+	}
+
+	state = {
+		name = _show
+		using = Animation_FadeIn_Quick
+	}
+
+	state = {
+		name = _hide
+		using = Animation_FadeOut_Quick
+	}
+
+	vbox = {
+		restrictparent_min = yes
+		using = Window_Margins
+		spacing = 8
+
+		header_pattern = {
+			layoutpolicy_horizontal = expanding
+
+			blockoverride "header_text" {
+				text = "TOT_CHARACTER_PANEL_TITLE"
+			}
+
+			blockoverride "button_close" {
+				onclick = "[GetVariableSystem.Toggle('tot_character_panel_visible')]"
+			}
+		}
+
+		widget = {
+			size = { 1510 44 }
+
+			widget = {
+				size = { 336 44 }
+				parentanchor = top|left
+				position = { 0 -8 }
+
+				tot_character_capacity_summary = {
+					parentanchor = hcenter|vcenter
+				}
+			}
+		}
+
+		widget = {
+			size = { 1510 644 }
+
+			hbox = {
+				spacing = 12
+
+				widget = {
+					size = { 352 644 }
+
+					background = {
+						using = entry_bg_fancy
+					}
+
+					vbox = {
+						margin = { 10 10 }
+						spacing = 8
+
+						textbox = {
+							size = { 352 22 }
+							text = "TOT_CHARACTER_MINISTER_SLOT_HEADER"
+							using = fontsize_large
+							align = left|nobaseline
+						}
+
+						scrollbox = {
+							size = { 352 600 }
+
+							blockoverride "scrollbox_content" {
+								vbox = {
+									spacing = 12
+
+									tot_character_minister_slot = {
+									
+										blockoverride "selected_overlay" {
+											icon = {
+												visible = "[GetVariableSystem.HasValue( 'tot_character_minister_slot', 'student_council' )]"
+												using = highlighted_square_selection
+												parentanchor = center
+												
+											}
+										}
+										blockoverride "slot_title" {
+											text = "TOT_CHARACTER_SLOT_STUDENT"
+										}
+										blockoverride "slot_hint" {
+											text = "TOT_CHARACTER_SLOT_STUDENT_HINT"
+										}
+										blockoverride "slot_effects" {
+											text = "TOT_CHARACTER_SLOT_STUDENT_EFFECTS"
+										}
+										blockoverride "holder_content" {
+											widget = {
+												visible = "[GetScriptedGui('tot_has_student_council_president').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												size = { 296 60 }
+												datacontext = "[GetPlayer.MakeScope.Var('tot_student_council_president').GetCharacter]"
+
+												hbox = {
+													parentanchor = center
+													spacing = 8
+
+													widget = {
+														size = { 60 60 }
+
+														background = {
+															texture = "gfx/interface/icons/character_icons/character_frame.dds"
+															size = { 56 56 }
+															parentanchor = center
+														}
+
+														character_portrait_small2 = {
+															parentanchor = center
+															blockoverride "show_hat" {}
+															blockoverride "highlight" {}
+															blockoverride "rank_icon" {}
+														}
+													}
+
+													vbox = {
+														size = { 190 58 }
+														parentanchor = vcenter
+														spacing = 2
+
+														textbox = {
+															size = { 190 18 }
+															raw_text = "#BOLD [Character.GetFullNameNoFormatting]#!"
+															using = fontsize_small
+															align = left|nobaseline
+															elide = right
+														}
+
+														textbox = {
+															size = { 190 14 }
+															raw_text = "[Character.GetPrimaryRoleTitle]"
+															using = fontsize_very_small
+															align = left|nobaseline
+															elide = right
+														}
+													}
+
+													hbox = {
+														parentanchor = vcenter
+														spacing = 5
+
+														widget = {
+															visible = "[Character.GetInterestGroup.IsValid]"
+															size = { 20 20 }
+															datacontext = "[Character.GetInterestGroup]"
+
+															icon = {
+																parentanchor = center
+																texture = "[InterestGroup.GetTexture]"
+																size = { 20 20 }
+
+																tooltipwidget = {
+																	FancyTooltip_IG = {}
+																}
+															}
+														}
+
+														widget = {
+															visible = "[Character.GetIdeology.IsValid]"
+															size = { 20 20 }
+															datacontext = "[Character.GetIdeology]"
+
+															icon = {
+																parentanchor = center
+																texture = "[Ideology.GetTexture]"
+																size = { 20 20 }
+
+																tooltipwidget = {
+																	FancyTooltip_Ideology = {}
+																}
+															}
+														}
+													}
+												}
+											}
+
+											widget = {
+												visible = "[Not(GetScriptedGui('tot_has_student_council_president').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+												size = { 296 60 }
+
+												textbox = {
+													size = { 260 18 }
+													parentanchor = center
+													text = "TOT_CHARACTER_SLOT_EMPTY"
+													using = fontsize_small
+													align = center|nobaseline
+												}
+											}
+										}
+										blockoverride "select_button" {
+											button_standard = {
+												size = { 96 30 }
+												text = "TOT_CHARACTER_SLOT_SELECT"
+												onclick = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'student_council' )]"
+											}
+										}
+										blockoverride "remove_button" {
+											button_standard = {
+												visible = "[GetScriptedGui('tot_has_student_council_president').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												size = { 96 30 }
+												text = "TOT_CHARACTER_SLOT_REMOVE"
+												enabled = "[GetScriptedGui('tot_remove_student_council_president').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												onclick = "[GetScriptedGui('tot_remove_student_council_president').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+											}
+										}
+									}
+
+									tot_character_minister_slot = {
+										blockoverride "selected_overlay" {
+											icon = {
+												visible = "[GetVariableSystem.HasValue( 'tot_character_minister_slot', 'discipline' )]"
+												using = highlighted_square_selection
+												parentanchor = center
+												size = { 96% 96% }
+											}
+										}
+										blockoverride "slot_title" {
+											text = "TOT_CHARACTER_SLOT_DISCIPLINE"
+										}
+										blockoverride "slot_hint" {
+											text = "TOT_CHARACTER_SLOT_DISCIPLINE_HINT"
+										}
+										blockoverride "slot_effects" {
+											text = "TOT_CHARACTER_SLOT_DISCIPLINE_EFFECTS"
+										}
+										blockoverride "holder_content" {
+											widget = {
+												visible = "[GetScriptedGui('tot_has_discipline_minister').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												size = { 296 60 }
+												datacontext = "[GetPlayer.MakeScope.Var('tot_discipline_minister').GetCharacter]"
+
+												hbox = {
+													parentanchor = center
+													spacing = 8
+
+													widget = {
+														size = { 60 60 }
+
+														background = {
+															texture = "gfx/interface/icons/character_icons/character_frame.dds"
+															size = { 56 56 }
+															parentanchor = center
+														}
+
+														character_portrait_small2 = {
+															parentanchor = center
+															blockoverride "show_hat" {}
+															blockoverride "highlight" {}
+															blockoverride "rank_icon" {}
+														}
+													}
+
+													vbox = {
+														size = { 190 58 }
+														parentanchor = vcenter
+														spacing = 2
+
+														textbox = {
+															size = { 190 18 }
+															raw_text = "#BOLD [Character.GetFullNameNoFormatting]#!"
+															using = fontsize_small
+															align = left|nobaseline
+															elide = right
+														}
+
+														textbox = {
+															size = { 190 14 }
+															raw_text = "[Character.GetPrimaryRoleTitle]"
+															using = fontsize_very_small
+															align = left|nobaseline
+															elide = right
+														}
+													}
+
+													hbox = {
+														parentanchor = vcenter
+														spacing = 5
+
+														widget = {
+															visible = "[Character.GetInterestGroup.IsValid]"
+															size = { 20 20 }
+															datacontext = "[Character.GetInterestGroup]"
+
+															icon = {
+																parentanchor = center
+																texture = "[InterestGroup.GetTexture]"
+																size = { 20 20 }
+
+																tooltipwidget = {
+																	FancyTooltip_IG = {}
+																}
+															}
+														}
+
+														widget = {
+															visible = "[Character.GetIdeology.IsValid]"
+															size = { 20 20 }
+															datacontext = "[Character.GetIdeology]"
+
+															icon = {
+																parentanchor = center
+																texture = "[Ideology.GetTexture]"
+																size = { 20 20 }
+
+																tooltipwidget = {
+																	FancyTooltip_Ideology = {}
+																}
+															}
+														}
+													}
+												}
+											}
+
+											widget = {
+												visible = "[Not(GetScriptedGui('tot_has_discipline_minister').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+												size = { 296 60 }
+
+												textbox = {
+													size = { 260 18 }
+													parentanchor = center
+													text = "TOT_CHARACTER_SLOT_EMPTY"
+													using = fontsize_small
+													align = center|nobaseline
+												}
+											}
+										}
+										blockoverride "select_button" {
+											button_standard = {
+												size = { 96 30 }
+												text = "TOT_CHARACTER_SLOT_SELECT"
+												onclick = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'discipline' )]"
+											}
+										}
+										blockoverride "remove_button" {
+											button_standard = {
+												visible = "[GetScriptedGui('tot_has_discipline_minister').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												size = { 96 30 }
+												text = "TOT_CHARACTER_SLOT_REMOVE"
+												enabled = "[GetScriptedGui('tot_remove_discipline_minister').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												onclick = "[GetScriptedGui('tot_remove_discipline_minister').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+											}
+										}
+									}
+
+									tot_character_minister_slot = {
+										blockoverride "selected_overlay" {
+											icon = {
+												visible = "[GetVariableSystem.HasValue( 'tot_character_minister_slot', 'education' )]"
+												using = highlighted_square_selection
+												parentanchor = center
+												size = { 96% 96% }
+											}
+										}
+										blockoverride "slot_title" { text = "TOT_CHARACTER_SLOT_EDUCATION" }
+										blockoverride "slot_hint" { text = "TOT_CHARACTER_SLOT_EDUCATION_HINT" }
+										blockoverride "slot_effects" { text = "TOT_CHARACTER_SLOT_EDUCATION_EFFECTS" }
+										blockoverride "holder_content" {
+											widget = {
+												visible = "[GetScriptedGui('tot_has_education_minister').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												size = { 296 54 }
+												datacontext = "[GetPlayer.MakeScope.Var('tot_education_minister').GetCharacter]"
+												hbox = {
+													parentanchor = center
+													spacing = 8
+													widget = {
+														size = { 54 54 }
+														background = { texture = "gfx/interface/icons/character_icons/character_frame.dds" size = { 50 50 } parentanchor = center }
+														character_portrait_small2 = { parentanchor = center blockoverride "show_hat" {} blockoverride "highlight" {} blockoverride "rank_icon" {} }
+													}
+													vbox = {
+														size = { 188 52 }
+														parentanchor = vcenter
+														spacing = 2
+														textbox = { size = { 188 18 } raw_text = "#BOLD [Character.GetFullNameNoFormatting]#!" using = fontsize_small align = left|nobaseline elide = right }
+														textbox = { size = { 188 14 } raw_text = "[Character.GetPrimaryRoleTitle]" using = fontsize_very_small align = left|nobaseline elide = right }
+													}
+													hbox = {
+														parentanchor = vcenter
+														spacing = 5
+														widget = { visible = "[Character.GetInterestGroup.IsValid]" size = { 20 20 } datacontext = "[Character.GetInterestGroup]" icon = { parentanchor = center texture = "[InterestGroup.GetTexture]" size = { 20 20 } tooltipwidget = { FancyTooltip_IG = {} } } }
+														widget = { visible = "[Character.GetIdeology.IsValid]" size = { 20 20 } datacontext = "[Character.GetIdeology]" icon = { parentanchor = center texture = "[Ideology.GetTexture]" size = { 20 20 } tooltipwidget = { FancyTooltip_Ideology = {} } } }
+													}
+												}
+											}
+											widget = { visible = "[Not(GetScriptedGui('tot_has_education_minister').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" size = { 296 54 } textbox = { size = { 260 18 } parentanchor = center text = "TOT_CHARACTER_SLOT_EMPTY" using = fontsize_small align = center|nobaseline } }
+										}
+										blockoverride "select_button" { button_standard = { size = { 96 30 } text = "TOT_CHARACTER_SLOT_SELECT" onclick = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'education' )]" } }
+										blockoverride "remove_button" { button_standard = { visible = "[GetScriptedGui('tot_has_education_minister').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 96 30 } text = "TOT_CHARACTER_SLOT_REMOVE" enabled = "[GetScriptedGui('tot_remove_education_minister').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_remove_education_minister').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } }
+									}
+
+									tot_character_minister_slot = {
+										blockoverride "selected_overlay" { icon = { visible = "[GetVariableSystem.HasValue( 'tot_character_minister_slot', 'propaganda' )]" using = highlighted_square_selection parentanchor = center size = { 96% 96% } } }
+										blockoverride "slot_title" { text = "TOT_CHARACTER_SLOT_PROPAGANDA" }
+										blockoverride "slot_hint" { text = "TOT_CHARACTER_SLOT_PROPAGANDA_HINT" }
+										blockoverride "slot_effects" { text = "TOT_CHARACTER_SLOT_PROPAGANDA_EFFECTS" }
+										blockoverride "holder_content" {
+											widget = {
+												visible = "[GetScriptedGui('tot_has_propaganda_minister').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												size = { 296 54 }
+												datacontext = "[GetPlayer.MakeScope.Var('tot_propaganda_minister').GetCharacter]"
+												hbox = {
+													parentanchor = center
+													spacing = 8
+													widget = { size = { 54 54 } background = { texture = "gfx/interface/icons/character_icons/character_frame.dds" size = { 50 50 } parentanchor = center } character_portrait_small2 = { parentanchor = center blockoverride "show_hat" {} blockoverride "highlight" {} blockoverride "rank_icon" {} } }
+													vbox = { size = { 188 52 } parentanchor = vcenter spacing = 2 textbox = { size = { 188 18 } raw_text = "#BOLD [Character.GetFullNameNoFormatting]#!" using = fontsize_small align = left|nobaseline elide = right } textbox = { size = { 188 14 } raw_text = "[Character.GetPrimaryRoleTitle]" using = fontsize_very_small align = left|nobaseline elide = right } }
+													hbox = { parentanchor = vcenter spacing = 5 widget = { visible = "[Character.GetInterestGroup.IsValid]" size = { 20 20 } datacontext = "[Character.GetInterestGroup]" icon = { parentanchor = center texture = "[InterestGroup.GetTexture]" size = { 20 20 } tooltipwidget = { FancyTooltip_IG = {} } } } widget = { visible = "[Character.GetIdeology.IsValid]" size = { 20 20 } datacontext = "[Character.GetIdeology]" icon = { parentanchor = center texture = "[Ideology.GetTexture]" size = { 20 20 } tooltipwidget = { FancyTooltip_Ideology = {} } } } }
+												}
+											}
+											widget = { visible = "[Not(GetScriptedGui('tot_has_propaganda_minister').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" size = { 296 54 } textbox = { size = { 260 18 } parentanchor = center text = "TOT_CHARACTER_SLOT_EMPTY" using = fontsize_small align = center|nobaseline } }
+										}
+										blockoverride "select_button" { button_standard = { size = { 96 30 } text = "TOT_CHARACTER_SLOT_SELECT" onclick = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'propaganda' )]" } }
+										blockoverride "remove_button" { button_standard = { visible = "[GetScriptedGui('tot_has_propaganda_minister').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 96 30 } text = "TOT_CHARACTER_SLOT_REMOVE" enabled = "[GetScriptedGui('tot_remove_propaganda_minister').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_remove_propaganda_minister').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } }
+									}
+
+									tot_character_minister_slot = {
+										blockoverride "selected_overlay" { icon = { visible = "[GetVariableSystem.HasValue( 'tot_character_minister_slot', 'chief_of_staff' )]" using = highlighted_square_selection parentanchor = center size = { 96% 96% } } }
+										blockoverride "slot_title" { text = "TOT_CHARACTER_SLOT_CHIEF_OF_STAFF" }
+										blockoverride "slot_hint" { text = "TOT_CHARACTER_SLOT_CHIEF_OF_STAFF_HINT" }
+										blockoverride "slot_effects" { text = "TOT_CHARACTER_SLOT_CHIEF_OF_STAFF_EFFECTS" }
+										blockoverride "holder_content" {
+											widget = {
+												visible = "[GetScriptedGui('tot_has_chief_of_staff').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												size = { 296 54 }
+												datacontext = "[GetPlayer.MakeScope.Var('tot_chief_of_staff').GetCharacter]"
+												hbox = {
+													parentanchor = center
+													spacing = 8
+													widget = { size = { 54 54 } background = { texture = "gfx/interface/icons/character_icons/character_frame.dds" size = { 50 50 } parentanchor = center } character_portrait_small2 = { parentanchor = center blockoverride "show_hat" {} blockoverride "highlight" {} blockoverride "rank_icon" {} } }
+													vbox = { size = { 188 52 } parentanchor = vcenter spacing = 2 textbox = { size = { 188 18 } raw_text = "#BOLD [Character.GetFullNameNoFormatting]#!" using = fontsize_small align = left|nobaseline elide = right } textbox = { size = { 188 14 } raw_text = "[Character.GetPrimaryRoleTitle]" using = fontsize_very_small align = left|nobaseline elide = right } }
+													hbox = { parentanchor = vcenter spacing = 5 widget = { visible = "[Character.GetInterestGroup.IsValid]" size = { 20 20 } datacontext = "[Character.GetInterestGroup]" icon = { parentanchor = center texture = "[InterestGroup.GetTexture]" size = { 20 20 } tooltipwidget = { FancyTooltip_IG = {} } } } widget = { visible = "[Character.GetIdeology.IsValid]" size = { 20 20 } datacontext = "[Character.GetIdeology]" icon = { parentanchor = center texture = "[Ideology.GetTexture]" size = { 20 20 } tooltipwidget = { FancyTooltip_Ideology = {} } } } }
+												}
+											}
+											widget = { visible = "[Not(GetScriptedGui('tot_has_chief_of_staff').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" size = { 296 54 } textbox = { size = { 260 18 } parentanchor = center text = "TOT_CHARACTER_SLOT_EMPTY" using = fontsize_small align = center|nobaseline } }
+										}
+										blockoverride "select_button" { button_standard = { size = { 96 30 } text = "TOT_CHARACTER_SLOT_SELECT" onclick = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'chief_of_staff' )]" } }
+										blockoverride "remove_button" { button_standard = { visible = "[GetScriptedGui('tot_has_chief_of_staff').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 96 30 } text = "TOT_CHARACTER_SLOT_REMOVE" enabled = "[GetScriptedGui('tot_remove_chief_of_staff').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_remove_chief_of_staff').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } }
+									}
+								}
+							}
+						}
+					}
+				}
+
+				widget = {
+					size = { 1146 644 }
+					position = { 0 -14 }
+					
+					background = {
+						using = entry_bg_fancy
+					}
+
+						vbox = {
+							margin = { 10 10 }
+							spacing = 8
+
+							vbox = {
+								visible = no
+								size = { 1124 0 }
+								spacing = 2
+
+								textbox = {
+									size = { 1124 18 }
+									text = "TOT_CHARACTER_MINISTER_CANDIDATES_HEADER"
+									using = fontsize_large
+									align = left|nobaseline
+								}
+
+								textbox = {
+									visible = "[GetVariableSystem.HasValue( 'tot_character_minister_slot', 'student_council' )]"
+									size = { 1124 14 }
+									text = "TOT_CHARACTER_MINISTER_CURRENT_TARGET_STUDENT"
+									using = fontsize_small
+									align = left|nobaseline
+									elide = right
+								}
+
+								textbox = {
+									visible = "[GetVariableSystem.HasValue( 'tot_character_minister_slot', 'discipline' )]"
+									size = { 1124 14 }
+									text = "TOT_CHARACTER_MINISTER_CURRENT_TARGET_DISCIPLINE"
+									using = fontsize_small
+									align = left|nobaseline
+									elide = right
+								}
+
+								textbox = {
+									visible = "[GetVariableSystem.HasValue( 'tot_character_minister_slot', 'education' )]"
+									size = { 1124 14 }
+									text = "TOT_CHARACTER_MINISTER_CURRENT_TARGET_EDUCATION"
+									using = fontsize_small
+									align = left|nobaseline
+									elide = right
+								}
+
+								textbox = {
+									visible = "[GetVariableSystem.HasValue( 'tot_character_minister_slot', 'propaganda' )]"
+									size = { 1124 14 }
+									text = "TOT_CHARACTER_MINISTER_CURRENT_TARGET_PROPAGANDA"
+									using = fontsize_small
+									align = left|nobaseline
+									elide = right
+								}
+
+								textbox = {
+									visible = "[GetVariableSystem.HasValue( 'tot_character_minister_slot', 'chief_of_staff' )]"
+									size = { 1124 14 }
+									text = "TOT_CHARACTER_MINISTER_CURRENT_TARGET_CHIEF_OF_STAFF"
+									using = fontsize_small
+									align = left|nobaseline
+									elide = right
+								}
+							}
+
+						widget = {
+							size = { 1124 128 }
+							
+							flowcontainer = {
+								direction = vertical
+
+								background = {
+									using = dropdown_background
+									margin = { 0 -2 }
+								}
+
+								section_header_button = {
+									blockoverride "left_text" {
+										text = "FILTERS"
+										fontsize_min = 12
+										elide = right
+									}
+
+									blockoverride "right_text" {
+										section_header_right_text = {
+											text = "TOT_CHARACTER_CANDIDATE_COUNT"
+											using = fontsize_very_small
+										}
+									}
+
+									blockoverride "onclick" {
+										onclick = "[GetVariableSystem.Toggle( 'tot_character_filters' )]"
+									}
+
+									blockoverride "onclick_showmore" {
+										visible = "[Not(GetVariableSystem.Exists( 'tot_character_filters' ))]"
+									}
+
+									blockoverride "onclick_showless" {
+										visible = "[GetVariableSystem.Exists( 'tot_character_filters' )]"
+									}
+								}
+
+								flowcontainer = {
+									visible = "[GetVariableSystem.Exists( 'tot_character_filters' )]"
+									parentanchor = hcenter
+									margin_top = 4
+									margin_bottom = 6
+									direction = vertical
+
+									building_browser_filter_line = {
+										parentanchor = hcenter
+										blockoverride "line_background" {}
+
+										blockoverride "line_size" {
+											size = { 1098 38 }
+										}
+
+										blockoverride "filter_line_label" {
+											text = "TOT_CHARACTER_FILTER_DUTY"
+										}
+
+										blockoverride "filter_line_buttons" {
+											building_browser_filter_line_button = {
+												text = "ALL"
+												align = hcenter
+												blockoverride "line_button_onclick" { onclick = "[GetScriptedGui('tot_character_filter_duty_all').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+												blockoverride "line_button_icon_texture" { visible = no }
+												blockoverride "line_button_selected" {
+													visible = "[GetScriptedGui('tot_character_filter_duty_all_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												}
+											}
+
+											building_browser_filter_line_button = {
+												text = "TOT_CHARACTER_FILTER_SPECIAL_DUTY"
+												align = hcenter
+												blockoverride "line_button_onclick" { onclick = "[GetScriptedGui('tot_character_filter_duty_special').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+												blockoverride "line_button_icon_texture" { visible = no }
+												blockoverride "line_button_selected" {
+													visible = "[GetScriptedGui('tot_character_filter_duty_special_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												}
+											}
+
+											building_browser_filter_line_button = {
+												text = "TOT_CHARACTER_FILTER_NO_DUTY"
+												align = hcenter
+												blockoverride "line_button_onclick" { onclick = "[GetScriptedGui('tot_character_filter_duty_none').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+												blockoverride "line_button_icon_texture" { visible = no }
+												blockoverride "line_button_selected" {
+													visible = "[GetScriptedGui('tot_character_filter_duty_none_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												}
+											}
+										}
+									}
+
+									building_browser_filter_line = {
+										parentanchor = hcenter
+										blockoverride "line_background" {}
+
+										blockoverride "line_size" {
+											size = { 1098 38 }
+										}
+
+										blockoverride "filter_line_label" {
+											text = "FILTER_HISTORICAL"
+										}
+
+										blockoverride "filter_line_buttons" {
+											building_browser_filter_line_button = {
+												text = "ALL"
+												align = hcenter
+												blockoverride "line_button_onclick" { onclick = "[GetScriptedGui('tot_character_filter_history_all').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+												blockoverride "line_button_icon_texture" { visible = no }
+												blockoverride "line_button_selected" {
+													visible = "[GetScriptedGui('tot_character_filter_history_all_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												}
+											}
+
+											building_browser_filter_line_button = {
+												text = "HISTORICAL_FILTER_NAME"
+												align = hcenter
+												blockoverride "line_button_onclick" { onclick = "[GetScriptedGui('tot_character_filter_history_historical').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+												blockoverride "line_button_icon_texture" { visible = no }
+												blockoverride "line_button_selected" {
+													visible = "[GetScriptedGui('tot_character_filter_history_historical_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												}
+											}
+
+											building_browser_filter_line_button = {
+												text = "NON_HISTORICAL_FILTER_NAME"
+												align = hcenter
+												blockoverride "line_button_onclick" { onclick = "[GetScriptedGui('tot_character_filter_history_non_historical').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+												blockoverride "line_button_icon_texture" { visible = no }
+												blockoverride "line_button_selected" {
+													visible = "[GetScriptedGui('tot_character_filter_history_non_historical_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												}
+											}
+										}
+									}
+
+								}
+							}
+						}
+
+						
+
+						scrollbox = {
+							size = { 1126 434 }
+							blockoverride "scrollbox_content" {
+								flowcontainer = {
+									direction = vertical
+									spacing = 4
+									datamodel = "[GetPlayer.MakeScope.GetList('tot_student_council_candidates')]"
+									
+									item = {
+											tot_character_candidate_item = {
+												blockoverride "candidate_action_block" {
+													widget = {
+														visible = "[GetVariableSystem.HasValue('tot_character_minister_slot','student_council')]"
+														size = { 132 34 }
+														button_standard = {
+															text = "TOT_STUDENT_COUNCIL_APPOINT"
+															size = { 120 32 }
+															parentanchor = hcenter
+															enabled = "[GetScriptedGui('tot_appoint_student_council_president').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+															onclick = "[GetScriptedGui('tot_appoint_student_council_president').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+															onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+														}
+													}
+
+													widget = {
+													visible = "[GetVariableSystem.HasValue('tot_character_minister_slot','discipline')]"
+													size = { 132 34 }
+														button_standard = {
+															text = "TOT_STUDENT_COUNCIL_APPOINT"
+															size = { 120 32 }
+															parentanchor = hcenter
+															enabled = "[GetScriptedGui('tot_appoint_discipline_minister').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+															onclick = "[GetScriptedGui('tot_appoint_discipline_minister').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+															onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+														}
+													}
+
+													widget = {
+														visible = "[GetVariableSystem.HasValue('tot_character_minister_slot','education')]"
+														size = { 132 34 }
+														button_standard = {
+															text = "TOT_STUDENT_COUNCIL_APPOINT"
+															size = { 120 32 }
+															parentanchor = hcenter
+															enabled = "[GetScriptedGui('tot_appoint_education_minister').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+															onclick = "[GetScriptedGui('tot_appoint_education_minister').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+															onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+														}
+													}
+
+													widget = {
+														visible = "[GetVariableSystem.HasValue('tot_character_minister_slot','propaganda')]"
+														size = { 132 34 }
+														button_standard = {
+															text = "TOT_STUDENT_COUNCIL_APPOINT"
+															size = { 120 32 }
+															parentanchor = hcenter
+															enabled = "[GetScriptedGui('tot_appoint_propaganda_minister').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+															onclick = "[GetScriptedGui('tot_appoint_propaganda_minister').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+															onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+														}
+													}
+
+													widget = {
+														visible = "[GetVariableSystem.HasValue('tot_character_minister_slot','chief_of_staff')]"
+														size = { 132 34 }
+														button_standard = {
+															text = "TOT_STUDENT_COUNCIL_APPOINT"
+															size = { 120 32 }
+															parentanchor = hcenter
+															enabled = "[GetScriptedGui('tot_appoint_chief_of_staff').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+															onclick = "[GetScriptedGui('tot_appoint_chief_of_staff').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+															onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+														}
+													}
+												}
+												blockoverride "appoint_hint" {
+													text = "TOT_CHARACTER_ASSIGN_CURRENT"
+												}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

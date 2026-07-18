@@ -4177,31 +4177,35 @@ types country_info
 				margin_right = 10
 			}
 		}
+	}
 
 	type has_custom_content_narrative = textbox {
-		fontsize = 16
+		fontsize = 17
 		autoresize = yes
 		multiline = yes
 		maximumsize = { 420 -1 }
 		text = "HAS_NARRATIVE"
+		default_format = "#bold"
 		align = nobaseline|center
 	}
 
 	type has_custom_interest_groups = textbox {
-		fontsize = 16
+		fontsize = 17
 		autoresize = yes
 		multiline = yes
 		maximumsize = { 420 -1 }
 		text = "HAS_FLAVORED_INTEREST_GROUPS"
+		default_format = "#bold"
 		align = nobaseline|center
 	}
 
 	type has_major_formable = textbox {
-		fontsize = 16
+		fontsize = 17
 		autoresize = yes
 		multiline = yes
 		maximumsize = { 420 -1 }
 		text = "HAS_MAJOR_FORMABLE"
+		default_format = "#bold"
 		align = nobaseline|center
 	}
 

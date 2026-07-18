@@ -1,0 +1,373 @@
+types tot_student_council_types
+{
+	type tot_student_council_candidate_item = widget {
+		size = { 500 124 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+		background = { using = entry_bg_simple }
+
+		flowcontainer = {
+			margin = { 10 8 }
+			spacing = 10
+
+			widget = {
+				size = { 92 92 }
+				background = {
+					texture = "gfx/interface/icons/character_icons/character_frame.dds"
+					parentanchor = center
+					size = { 92 92 }
+				}
+				character_portrait_small2 = {
+					parentanchor = center
+					blockoverride "show_hat" {}
+					blockoverride "highlight" {}
+					blockoverride "rank_icon" {}
+				}
+			}
+
+			flowcontainer = {
+				direction = vertical
+				spacing = 3
+				size = { 230 104 }
+
+				textbox = {
+					text = "[Character.GetFullNameNoFormatting]"
+					default_format = "#v"
+					using = fontsize_small
+					size = { 230 22 }
+					align = left|nobaseline
+					elide = right
+				}
+				textbox = {
+					text = "[Character.GetPrimaryRoleTitle]"
+					size = { 230 18 }
+					using = fontsize_very_small
+					align = left|nobaseline
+					elide = right
+				}
+				textbox = {
+					raw_text = "[Character.GetInterestGroup.GetNameNoFormatting]"
+					size = { 230 18 }
+					using = fontsize_very_small
+					align = left|nobaseline
+					elide = right
+				}
+
+				flowcontainer = {
+					spacing = 6
+
+					icon = {
+						datacontext = "[Character.GetInterestGroup]"
+						texture = "[InterestGroup.GetTexture]"
+						size = { 20 20 }
+						tooltipwidget = {
+							FancyTooltip_IG = {}
+						}
+					}
+
+					icon = {
+						datacontext = "[Character.GetIdeology]"
+						texture = "[Ideology.GetTexture]"
+						size = { 20 20 }
+						tooltipwidget = {
+							FancyTooltip_Ideology = {}
+						}
+					}
+				}
+			}
+
+			flowcontainer = {
+				direction = vertical
+				spacing = 6
+				size = { 138 104 }
+
+				button_standard = {
+					text = "TOT_STUDENT_COUNCIL_APPOINT"
+					size = { 138 48 }
+					enabled = "[GetScriptedGui('tot_appoint_student_council_president').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_appoint_student_council_president').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_appoint_student_council_president').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+				}
+
+				textbox = {
+					text = "TOT_STUDENT_COUNCIL_APPOINT_HINT"
+					size = { 138 42 }
+					using = fontsize_very_small
+					align = center|nobaseline
+					multiline = yes
+				}
+			}
+		}
+	}
+}
+
+window = {
+	name = "tot_student_council_window"
+	parentanchor = center
+	position = { 0% 0% }
+	size = { 1440 820 }
+	layer = windows_layer
+	filter_mouse = all
+	allow_outside = yes
+	alwaystransparent = no
+
+	using = Window_Background
+	using = Window_Decoration
+
+	movable = yes
+	visible = "[GetVariableSystem.Exists('tot_student_council_visible')]"
+
+	datacontext = "[GetVariableSystem]"
+	datacontext = "[GetPlayer]"
+
+	state = {
+		name = refresh_student_council_panel
+		trigger_on_create = yes
+		on_finish = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+	}
+
+	state = {
+		name = _show
+		using = Animation_FadeIn_Quick
+	}
+
+	state = {
+		name = _hide
+		using = Animation_FadeOut_Quick
+	}
+
+	vbox = {
+		restrictparent_min = yes
+		using = Window_Margins
+
+		header_pattern = {
+			layoutpolicy_horizontal = expanding
+
+			blockoverride "header_text" {
+				text = "TOT_STUDENT_COUNCIL_TITLE"
+			}
+
+			blockoverride "button_close" {
+				onclick = "[GetVariableSystem.Toggle('tot_student_council_visible')]"
+			}
+		}
+
+		textbox = {
+			layoutpolicy_horizontal = expanding
+			size = { 0 52 }
+			text = "TOT_STUDENT_COUNCIL_DESC"
+			using = fontsize_small
+			align = left|nobaseline
+			multiline = yes
+		}
+
+		hbox = {
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			spacing = 12
+
+			vbox = {
+				size = { 420 680 }
+				spacing = 8
+				background = { using = entry_bg_simple }
+
+				flowcontainer = {
+					margin = { 12 12 }
+					direction = vertical
+					spacing = 8
+
+					textbox = {
+						text = "TOT_STUDENT_COUNCIL_SLOT_HEADER"
+						using = fontsize_medium
+						default_format = "#v"
+						size = { 392 26 }
+						align = left|nobaseline
+					}
+
+					widget = {
+						visible = "[GetScriptedGui('tot_has_student_council_president').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						size = { 392 238 }
+						background = { using = dark_area }
+						datacontext = "[GetPlayer.MakeScope.Var('tot_student_council_president').GetCharacter]"
+
+						flowcontainer = {
+							margin = { 10 10 }
+							direction = vertical
+							spacing = 6
+
+							widget = {
+								size = { 160 160 }
+								parentanchor = hcenter
+								background = {
+									texture = "gfx/interface/icons/character_icons/character_frame.dds"
+									parentanchor = center
+									size = { 160 160 }
+								}
+								character_portrait_medium = {
+									parentanchor = center
+									blockoverride "show_hat" {}
+									blockoverride "highlight" {}
+									blockoverride "rank_icon" {}
+								}
+							}
+
+							textbox = {
+								text = "[Character.GetFullNameNoFormatting]"
+								size = { 392 26 }
+								using = fontsize_medium
+								default_format = "#v"
+								align = center|nobaseline
+								elide = right
+							}
+							textbox = {
+								text = "[Character.GetPrimaryRoleTitle]"
+								size = { 392 20 }
+								using = fontsize_small
+								align = center|nobaseline
+								elide = right
+							}
+
+							flowcontainer = {
+								parentanchor = hcenter
+								spacing = 8
+
+								icon = {
+									datacontext = "[Character.GetInterestGroup]"
+									texture = "[InterestGroup.GetTexture]"
+									size = { 26 26 }
+									tooltipwidget = {
+										FancyTooltip_IG = {}
+									}
+								}
+
+								icon = {
+									datacontext = "[Character.GetIdeology]"
+									texture = "[Ideology.GetTexture]"
+									size = { 26 26 }
+									tooltipwidget = {
+										FancyTooltip_Ideology = {}
+									}
+								}
+							}
+						}
+					}
+
+					widget = {
+						visible = "[Not(GetScriptedGui('tot_has_student_council_president').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+						size = { 392 238 }
+						background = { using = dark_area }
+
+						flowcontainer = {
+							parentanchor = center
+							direction = vertical
+							spacing = 8
+
+							icon = {
+								parentanchor = hcenter
+								size = { 72 72 }
+								texture = "gfx/interface/icons/character_role_icons/politician.dds"
+							}
+							textbox = {
+								text = "TOT_STUDENT_COUNCIL_EMPTY"
+								size = { 320 24 }
+								using = fontsize_medium
+								align = center|nobaseline
+							}
+							textbox = {
+								text = "TOT_STUDENT_COUNCIL_EMPTY_DESC"
+								size = { 320 48 }
+								using = fontsize_small
+								align = center|nobaseline
+								multiline = yes
+							}
+						}
+					}
+
+					textbox = {
+						text = "TOT_STUDENT_COUNCIL_EFFECTS_HEADER"
+						using = fontsize_medium
+						default_format = "#v"
+						size = { 392 24 }
+						align = left|nobaseline
+					}
+					textbox = {
+						text = "TOT_STUDENT_COUNCIL_EFFECTS_DESC"
+						using = fontsize_small
+						size = { 392 58 }
+						align = left|nobaseline
+						multiline = yes
+					}
+
+					flowcontainer = {
+						spacing = 8
+
+						button = {
+							using = default_button_primary
+							size = { 180 34 }
+							text = "TOT_STUDENT_COUNCIL_REMOVE"
+							visible = "[GetScriptedGui('tot_has_student_council_president').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							enabled = "[GetScriptedGui('tot_remove_student_council_president').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							onclick = "[GetScriptedGui('tot_remove_student_council_president').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "[GetScriptedGui('tot_remove_student_council_president').IsValidTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						}
+
+						button = {
+							using = default_button
+							size = { 180 34 }
+							text = "TOT_STUDENT_COUNCIL_REFRESH"
+							onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "TOT_STUDENT_COUNCIL_REFRESH_TOOLTIP"
+						}
+					}
+				}
+			}
+
+			vbox = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				spacing = 8
+				background = { using = entry_bg_simple }
+
+				flowcontainer = {
+					margin = { 12 12 }
+					direction = vertical
+					spacing = 8
+
+					textbox = {
+						text = "TOT_STUDENT_COUNCIL_CANDIDATES_HEADER"
+						using = fontsize_medium
+						default_format = "#v"
+						size = { 956 24 }
+						align = left|nobaseline
+					}
+
+					textbox = {
+						text = "TOT_STUDENT_COUNCIL_CANDIDATES_DESC"
+						using = fontsize_small
+						size = { 956 38 }
+						align = left|nobaseline
+						multiline = yes
+					}
+
+					scrollbox = {
+						size = { 980 576 }
+
+						blockoverride "scrollbox_content" {
+							fixedgridbox = {
+								datamodel = "[GetPlayer.MakeScope.GetList('tot_student_council_candidates')]"
+								addcolumn = 500
+								addrow = 128
+
+								item = {
+									tot_student_council_candidate_item = {}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
