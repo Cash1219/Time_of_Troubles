@@ -127,6 +127,22 @@ country_tot_club_capacity_usage_add={
 		ai_value=0
 	}
 }
+country_tot_cabinet_seats_add={
+	decimals=0
+	color=good
+	percent=no
+	game_data={
+		ai_value=0
+	}
+}
+country_tot_cabinet_seats_usage_add={
+	decimals=0
+	color=bad
+	percent=no
+	game_data={
+		ai_value=0
+	}
+}
 goods_input_experience_add={
 	decimals=1
 	color=bad
@@ -595,6 +611,15 @@ goods_output_performance_add = {
 }
 
 building_stage_throughput_add = {
+	decimals=0
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+building_club_throughput_add = {
 	decimals=0
 	color=good
 	percent=yes

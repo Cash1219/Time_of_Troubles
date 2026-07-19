@@ -1,8 +1,8 @@
-﻿flowcontainer = {
-	name = "widget_je_tot_band_management"
+﻿types tot_band_page_types
+{
+	 type tot_band_page = widget {
+	size = { 1460 680 }
 	ignoreinvisible = yes
-	direction = vertical
-	spacing = 8
 
 	state = {
 		name = refresh_band_lists
@@ -17,9 +17,13 @@
 	state = {
 		name = init_band_management_tab
 		trigger_on_create = yes
-		on_finish = "[GetVariableSystem.Set( 'tot_band_page', 'management' )]"
+		on_finish = "[GetVariableSystem.Set( 'tot_band_page', 'management' )][GetVariableSystem.Set( 'tot_band_selected', '1' )]"
 	}
 
+	flowcontainer = {
+		position = { 0 0 }
+		direction = vertical
+		spacing = 8
 	default_header_clean = {
 		size = { 520 72 }
 		blockoverride "text" {
@@ -59,11 +63,13 @@
 			blockoverride "fifth_button_visibility_checked" { visible = no }
 		}
 	}
+	}
 
 
 	scrollbox = {
+		position = { 0 120 }
 		visible = "[Or(GetVariableSystem.HasValue( 'tot_band_page', 'management' ), Not(GetVariableSystem.HasValue( 'tot_band_page', 'shop' )))]"
-		size = { 520 820 }
+		size = { 520 560 }
 		blockoverride "scrollbox_content" {
 			flowcontainer = {
 				direction = vertical
@@ -76,12 +82,12 @@
 					section_header_button = {
 						blockoverride "layout" { size = { 520 36 } }
 						blockoverride "left_text" { text = "TOT_BAND_1_HEADER" }
-						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_band_1_toggle')]" }
-						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_band_1_toggle'))]" }
-						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_band_1_toggle')]" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Set( 'tot_band_selected', '1' )]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.HasValue( 'tot_band_selected', '1' ))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '1' )]" }
 					}
 					flowcontainer = {
-						visible = "[GetVariableSystem.Exists('tot_band_1_toggle')]"
+						visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '1' )]"
 						direction = vertical
 						spacing = 4
 						textbox = { visible = "[GetScriptedGui('tot_band_1_not_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 500 42 } text = "TOT_BAND_BUILD_HQ_FIRST_HINT" using = fontsize_small align = left|nobaseline multiline = yes }
@@ -172,7 +178,7 @@
 							button = { visible = "[GetScriptedGui('tot_band_1_filter_historical_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 118 34 } onclick = "[GetScriptedGui('tot_band_1_filter_historical').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_HISTORICAL" }
 							button = { visible = "[Not(GetScriptedGui('tot_band_1_filter_historical_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 118 34 } onclick = "[GetScriptedGui('tot_band_1_filter_historical').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_kizuna_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_HISTORICAL" }
 						}
-						scrollbox = { visible = "[GetScriptedGui('tot_band_1_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 480 384 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_1_candidates')]" addcolumn = 480 addrow = 170 item = { tot_band_1_candidate_character = {} } } } }
+# 						scrollbox = { visible = "[GetScriptedGui('tot_band_1_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 480 384 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_1_candidates')]" addcolumn = 480 addrow = 170 item = { tot_band_1_candidate_character = {} } } } }
 					}
 				}
 
@@ -183,12 +189,12 @@
 					section_header_button = {
 						blockoverride "layout" { size = { 520 36 } }
 						blockoverride "left_text" { text = "TOT_BAND_2_HEADER" }
-						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_band_2_toggle')]" }
-						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_band_2_toggle'))]" }
-						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_band_2_toggle')]" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Set( 'tot_band_selected', '2' )]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.HasValue( 'tot_band_selected', '2' ))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '2' )]" }
 					}
 					flowcontainer = {
-						visible = "[GetVariableSystem.Exists('tot_band_2_toggle')]"
+						visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '2' )]"
 						direction = vertical
 						spacing = 4
 						textbox = { visible = "[GetScriptedGui('tot_band_2_not_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 500 42 } text = "TOT_BAND_BUILD_HQ_FIRST_HINT" using = fontsize_small align = left|nobaseline multiline = yes }
@@ -279,7 +285,7 @@
 							button = { visible = "[GetScriptedGui('tot_band_2_filter_historical_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 118 34 } onclick = "[GetScriptedGui('tot_band_2_filter_historical').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_HISTORICAL" }
 							button = { visible = "[Not(GetScriptedGui('tot_band_2_filter_historical_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 118 34 } onclick = "[GetScriptedGui('tot_band_2_filter_historical').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_HISTORICAL" }
 						}
-						scrollbox = { visible = "[GetScriptedGui('tot_band_2_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 480 384 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_2_candidates')]" addcolumn = 480 addrow = 170 item = { tot_band_2_candidate_character = {} } } } }
+# 						scrollbox = { visible = "[GetScriptedGui('tot_band_2_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 480 384 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_2_candidates')]" addcolumn = 480 addrow = 170 item = { tot_band_2_candidate_character = {} } } } }
 					}
 				}
 
@@ -290,12 +296,12 @@
 					section_header_button = {
 						blockoverride "layout" { size = { 520 36 } }
 						blockoverride "left_text" { text = "TOT_BAND_3_HEADER" }
-						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_band_3_toggle')]" }
-						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_band_3_toggle'))]" }
-						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_band_3_toggle')]" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Set( 'tot_band_selected', '3' )]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.HasValue( 'tot_band_selected', '3' ))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '3' )]" }
 					}
 					flowcontainer = {
-						visible = "[GetVariableSystem.Exists('tot_band_3_toggle')]"
+						visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '3' )]"
 						direction = vertical
 						spacing = 4
 						textbox = { visible = "[GetScriptedGui('tot_band_3_not_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 500 42 } text = "TOT_BAND_BUILD_HQ_FIRST_HINT" using = fontsize_small align = left|nobaseline multiline = yes }
@@ -386,7 +392,7 @@
 							button = { visible = "[GetScriptedGui('tot_band_3_filter_historical_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 118 34 } onclick = "[GetScriptedGui('tot_band_3_filter_historical').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_HISTORICAL" }
 							button = { visible = "[Not(GetScriptedGui('tot_band_3_filter_historical_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 118 34 } onclick = "[GetScriptedGui('tot_band_3_filter_historical').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_HISTORICAL" }
 						}
-						scrollbox = { visible = "[GetScriptedGui('tot_band_3_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 480 384 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_3_candidates')]" addcolumn = 480 addrow = 170 item = { tot_band_3_candidate_character = {} } } } }
+# 						scrollbox = { visible = "[GetScriptedGui('tot_band_3_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 480 384 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_3_candidates')]" addcolumn = 480 addrow = 170 item = { tot_band_3_candidate_character = {} } } } }
 					}
 				}
 
@@ -397,12 +403,12 @@
 					section_header_button = {
 						blockoverride "layout" { size = { 520 36 } }
 						blockoverride "left_text" { text = "TOT_BAND_4_HEADER" }
-						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_band_4_toggle')]" }
-						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_band_4_toggle'))]" }
-						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_band_4_toggle')]" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Set( 'tot_band_selected', '4' )]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.HasValue( 'tot_band_selected', '4' ))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '4' )]" }
 					}
 					flowcontainer = {
-						visible = "[GetVariableSystem.Exists('tot_band_4_toggle')]"
+						visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '4' )]"
 						direction = vertical
 						spacing = 4
 						default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_4_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
@@ -443,7 +449,7 @@
 							textbox = { size = { 500 56 } text = "TOT_BAND_4_INVESTMENT_SUMMARY" using = fontsize_small align = left|nobaseline multiline = yes tooltip = "band_4_kizuna_creation_progress_tooltip" }
 
 						textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-						scrollbox = { size = { 480 384 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_4_candidates')]" addcolumn = 480 addrow = 170 item = { tot_band_4_candidate_character = {} } } } }
+# 						scrollbox = { size = { 480 384 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_4_candidates')]" addcolumn = 480 addrow = 170 item = { tot_band_4_candidate_character = {} } } } }
 					}
 				}
 
@@ -454,12 +460,12 @@
 					section_header_button = {
 						blockoverride "layout" { size = { 520 36 } }
 						blockoverride "left_text" { text = "TOT_BAND_5_HEADER" }
-						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_band_5_toggle')]" }
-						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_band_5_toggle'))]" }
-						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_band_5_toggle')]" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Set( 'tot_band_selected', '5' )]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.HasValue( 'tot_band_selected', '5' ))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '5' )]" }
 					}
 					flowcontainer = {
-						visible = "[GetVariableSystem.Exists('tot_band_5_toggle')]"
+						visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '5' )]"
 						direction = vertical
 						spacing = 4
 						default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_5_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
@@ -500,7 +506,7 @@
 							textbox = { size = { 500 56 } text = "TOT_BAND_5_INVESTMENT_SUMMARY" using = fontsize_small align = left|nobaseline multiline = yes tooltip = "band_5_kizuna_creation_progress_tooltip" }
 
 						textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-						scrollbox = { size = { 480 384 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_5_candidates')]" addcolumn = 480 addrow = 170 item = { tot_band_5_candidate_character = {} } } } }
+# 						scrollbox = { size = { 480 384 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_5_candidates')]" addcolumn = 480 addrow = 170 item = { tot_band_5_candidate_character = {} } } } }
 					}
 				}
 
@@ -511,12 +517,12 @@
 					section_header_button = {
 						blockoverride "layout" { size = { 520 36 } }
 						blockoverride "left_text" { text = "TOT_BAND_6_HEADER" }
-						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_band_6_toggle')]" }
-						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_band_6_toggle'))]" }
-						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_band_6_toggle')]" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Set( 'tot_band_selected', '6' )]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.HasValue( 'tot_band_selected', '6' ))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '6' )]" }
 					}
 					flowcontainer = {
-						visible = "[GetVariableSystem.Exists('tot_band_6_toggle')]"
+						visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '6' )]"
 						direction = vertical
 						spacing = 4
 						default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_6_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
@@ -557,7 +563,7 @@
 							textbox = { size = { 500 56 } text = "TOT_BAND_6_INVESTMENT_SUMMARY" using = fontsize_small align = left|nobaseline multiline = yes tooltip = "band_6_kizuna_creation_progress_tooltip" }
 
 						textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-						scrollbox = { size = { 480 384 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_6_candidates')]" addcolumn = 480 addrow = 170 item = { tot_band_6_candidate_character = {} } } } }
+# 						scrollbox = { size = { 480 384 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_6_candidates')]" addcolumn = 480 addrow = 170 item = { tot_band_6_candidate_character = {} } } } }
 					}
 				}
 
@@ -568,12 +574,12 @@
 					section_header_button = {
 						blockoverride "layout" { size = { 520 36 } }
 						blockoverride "left_text" { text = "TOT_BAND_7_HEADER" }
-						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_band_7_toggle')]" }
-						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_band_7_toggle'))]" }
-						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_band_7_toggle')]" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Set( 'tot_band_selected', '7' )]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.HasValue( 'tot_band_selected', '7' ))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '7' )]" }
 					}
 					flowcontainer = {
-						visible = "[GetVariableSystem.Exists('tot_band_7_toggle')]"
+						visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '7' )]"
 						direction = vertical
 						spacing = 4
 						default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_7_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
@@ -614,7 +620,7 @@
 							textbox = { size = { 500 56 } text = "TOT_BAND_7_INVESTMENT_SUMMARY" using = fontsize_small align = left|nobaseline multiline = yes tooltip = "band_7_kizuna_creation_progress_tooltip" }
 
 						textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-						scrollbox = { size = { 480 384 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_7_candidates')]" addcolumn = 480 addrow = 170 item = { tot_band_7_candidate_character = {} } } } }
+# 						scrollbox = { size = { 480 384 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_7_candidates')]" addcolumn = 480 addrow = 170 item = { tot_band_7_candidate_character = {} } } } }
 					}
 				}
 
@@ -625,12 +631,12 @@
 					section_header_button = {
 						blockoverride "layout" { size = { 520 36 } }
 						blockoverride "left_text" { text = "TOT_BAND_8_HEADER" }
-						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_band_8_toggle')]" }
-						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_band_8_toggle'))]" }
-						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_band_8_toggle')]" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Set( 'tot_band_selected', '8' )]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.HasValue( 'tot_band_selected', '8' ))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '8' )]" }
 					}
 					flowcontainer = {
-						visible = "[GetVariableSystem.Exists('tot_band_8_toggle')]"
+						visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '8' )]"
 						direction = vertical
 						spacing = 4
 						default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_8_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
@@ -664,7 +670,7 @@
 						}
 						textbox = { size = { 500 56 } text = "TOT_BAND_8_INVESTMENT_SUMMARY" using = fontsize_small align = left|nobaseline multiline = yes tooltip = "band_8_kizuna_creation_progress_tooltip" }
 						textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-						scrollbox = { size = { 480 384 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_8_candidates')]" addcolumn = 480 addrow = 170 item = { tot_band_8_candidate_character = {} } } } }
+# 						scrollbox = { size = { 480 384 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_8_candidates')]" addcolumn = 480 addrow = 170 item = { tot_band_8_candidate_character = {} } } } }
 					}
 				}
 
@@ -675,12 +681,12 @@
 					section_header_button = {
 						blockoverride "layout" { size = { 520 36 } }
 						blockoverride "left_text" { text = "TOT_BAND_9_HEADER" }
-						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_band_9_toggle')]" }
-						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_band_9_toggle'))]" }
-						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_band_9_toggle')]" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Set( 'tot_band_selected', '9' )]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.HasValue( 'tot_band_selected', '9' ))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '9' )]" }
 					}
 					flowcontainer = {
-						visible = "[GetVariableSystem.Exists('tot_band_9_toggle')]"
+						visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '9' )]"
 						direction = vertical
 						spacing = 4
 						default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_9_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
@@ -714,7 +720,7 @@
 						}
 						textbox = { size = { 500 56 } text = "TOT_BAND_9_INVESTMENT_SUMMARY" using = fontsize_small align = left|nobaseline multiline = yes tooltip = "band_9_kizuna_creation_progress_tooltip" }
 						textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-						scrollbox = { size = { 480 384 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_9_candidates')]" addcolumn = 480 addrow = 170 item = { tot_band_9_candidate_character = {} } } } }
+# 						scrollbox = { size = { 480 384 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_9_candidates')]" addcolumn = 480 addrow = 170 item = { tot_band_9_candidate_character = {} } } } }
 					}
 				}
 
@@ -725,12 +731,12 @@
 					section_header_button = {
 						blockoverride "layout" { size = { 520 36 } }
 						blockoverride "left_text" { text = "TOT_BAND_10_HEADER" }
-						blockoverride "onclick" { onclick = "[GetVariableSystem.Toggle('tot_band_10_toggle')]" }
-						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.Exists('tot_band_10_toggle'))]" }
-						blockoverride "onclick_showless" { visible = "[GetVariableSystem.Exists('tot_band_10_toggle')]" }
+						blockoverride "onclick" { onclick = "[GetVariableSystem.Set( 'tot_band_selected', '10' )]" }
+						blockoverride "onclick_showmore" { visible = "[Not(GetVariableSystem.HasValue( 'tot_band_selected', '10' ))]" }
+						blockoverride "onclick_showless" { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '10' )]" }
 					}
 					flowcontainer = {
-						visible = "[GetVariableSystem.Exists('tot_band_10_toggle')]"
+						visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '10' )]"
 						direction = vertical
 						spacing = 4
 						default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_10_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
@@ -764,7 +770,7 @@
 						}
 						textbox = { size = { 500 56 } text = "TOT_BAND_10_INVESTMENT_SUMMARY" using = fontsize_small align = left|nobaseline multiline = yes tooltip = "band_10_kizuna_creation_progress_tooltip" }
 						textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-						scrollbox = { size = { 480 384 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_10_candidates')]" addcolumn = 480 addrow = 170 item = { tot_band_10_candidate_character = {} } } } }
+# 						scrollbox = { size = { 480 384 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_10_candidates')]" addcolumn = 480 addrow = 170 item = { tot_band_10_candidate_character = {} } } } }
 					}
 				}
 			}
@@ -772,9 +778,60 @@
 		}
 	}
 
+	# The left column configures the active band; this column keeps recruitment visible.
+	scrollbox = {
+		position = { 535 120 }
+		visible = "[Or(GetVariableSystem.HasValue( 'tot_band_page', 'management' ), Not(GetVariableSystem.HasValue( 'tot_band_page', 'shop' )))]"
+		size = { 925 560 }
+		blockoverride "scrollbox_content" {
+			flowcontainer = {
+				direction = vertical
+				spacing = 6
+				default_header_clean = {
+					size = { 900 54 }
+					blockoverride "text" { text = "TOT_BAND_CANDIDATES_LABEL" using = fontsize_large default_format = "#medium" }
+				}
+				textbox = { size = { 900 28 } text = "TOT_BAND_RECRUITMENT_HINT" using = fontsize_small align = left|nobaseline }
+
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '1' ), GetScriptedGui('tot_band_1_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					spacing = 4
+					default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_1_NAME_LABEL" using = fontsize_medium default_format = "#medium" } }
+					textbox = { raw_text = "当前筛选：[AccessPlayer.GetCustom('tot_band_1_candidate_filter_loc')]" size = { 900 22 } using = fontsize_small align = left|nobaseline }
+					fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_1_candidates')]" addcolumn = 480 addrow = 132 item = { tot_band_1_candidate_character = {} } }
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '2' ), GetScriptedGui('tot_band_2_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					spacing = 4
+					default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_2_NAME_LABEL" using = fontsize_medium default_format = "#medium" } }
+					textbox = { raw_text = "当前筛选：[AccessPlayer.GetCustom('tot_band_2_candidate_filter_loc')]" size = { 900 22 } using = fontsize_small align = left|nobaseline }
+					fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_2_candidates')]" addcolumn = 480 addrow = 132 item = { tot_band_2_candidate_character = {} } }
+				}
+				flowcontainer = {
+					visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '3' ), GetScriptedGui('tot_band_3_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					direction = vertical
+					spacing = 4
+					default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_3_NAME_LABEL" using = fontsize_medium default_format = "#medium" } }
+					textbox = { raw_text = "当前筛选：[AccessPlayer.GetCustom('tot_band_3_candidate_filter_loc')]" size = { 900 22 } using = fontsize_small align = left|nobaseline }
+					fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_3_candidates')]" addcolumn = 480 addrow = 132 item = { tot_band_3_candidate_character = {} } }
+				}
+				flowcontainer = { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '4' )]" direction = vertical spacing = 4 default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_4_NAME_LABEL" using = fontsize_medium default_format = "#medium" } } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_4_candidates')]" addcolumn = 480 addrow = 132 item = { tot_band_4_candidate_character = {} } } }
+				flowcontainer = { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '5' )]" direction = vertical spacing = 4 default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_5_NAME_LABEL" using = fontsize_medium default_format = "#medium" } } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_5_candidates')]" addcolumn = 480 addrow = 132 item = { tot_band_5_candidate_character = {} } } }
+				flowcontainer = { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '6' )]" direction = vertical spacing = 4 default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_6_NAME_LABEL" using = fontsize_medium default_format = "#medium" } } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_6_candidates')]" addcolumn = 480 addrow = 132 item = { tot_band_6_candidate_character = {} } } }
+				flowcontainer = { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '7' )]" direction = vertical spacing = 4 default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_7_NAME_LABEL" using = fontsize_medium default_format = "#medium" } } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_7_candidates')]" addcolumn = 480 addrow = 132 item = { tot_band_7_candidate_character = {} } } }
+				flowcontainer = { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '8' )]" direction = vertical spacing = 4 default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_8_NAME_LABEL" using = fontsize_medium default_format = "#medium" } } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_8_candidates')]" addcolumn = 480 addrow = 132 item = { tot_band_8_candidate_character = {} } } }
+				flowcontainer = { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '9' )]" direction = vertical spacing = 4 default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_9_NAME_LABEL" using = fontsize_medium default_format = "#medium" } } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_9_candidates')]" addcolumn = 480 addrow = 132 item = { tot_band_9_candidate_character = {} } } }
+				flowcontainer = { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '10' )]" direction = vertical spacing = 4 default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_10_NAME_LABEL" using = fontsize_medium default_format = "#medium" } } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_10_candidates')]" addcolumn = 480 addrow = 132 item = { tot_band_10_candidate_character = {} } } }
+			}
+		}
+	}
+
 	scrollbox = {
 		visible = "[GetVariableSystem.HasValue( 'tot_band_page', 'shop' )]"
-		size = { 540 860 }
+		position = { 0 120 }
+		size = { 1460 560 }
 		blockoverride "scrollbox_content" {
 			flowcontainer = {
 				direction = vertical
@@ -839,19 +896,4 @@
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}

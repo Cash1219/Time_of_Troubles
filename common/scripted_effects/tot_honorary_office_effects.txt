@@ -1,0 +1,63 @@
+# All honorary offices share a character role, but each country slot retains its own holder and modifier.
+tot_clear_honorary_office_effect = {
+	if = {
+		limit = { has_variable = tot_honorary_$SLOT$ }
+		var:tot_honorary_$SLOT$ ?= {
+			if = {
+				limit = { has_role = character_role_tot_honorary_official }
+				remove_character_role = character_role_tot_honorary_official
+			}
+		}
+		remove_variable = tot_honorary_$SLOT$
+	}
+	if = {
+		limit = { has_modifier = tot_honorary_$SLOT$_modifier }
+		remove_modifier = tot_honorary_$SLOT$_modifier
+	}
+}
+
+tot_refresh_honorary_office_effect = {
+	if = {
+		limit = {
+			has_variable = tot_honorary_$SLOT$
+			OR = {
+				NOT = { var:tot_honorary_$SLOT$ ?= { is_character_alive = yes } }
+				var:tot_honorary_$SLOT$ ?= { NOT = { owner = root } }
+			}
+		}
+		tot_clear_honorary_office_effect = { SLOT = $SLOT$ }
+	}
+}
+
+tot_appoint_honorary_office_effect = {
+	if = {
+		limit = {
+			is_character_alive = yes
+			is_ruler_of_own_country = no
+			is_heir_of_own_country = no
+			is_interest_group_leader = no
+			NOT = { has_role = character_role_tot_honorary_official }
+			NOT = {
+				OR = {
+					has_role = character_role_tot_student_council_president
+					has_role = character_role_tot_discipline_minister
+					has_role = character_role_tot_education_minister
+					has_role = character_role_tot_propaganda_minister
+					has_role = character_role_tot_chief_of_staff
+				}
+			}
+			owner ?= {
+				is_player = yes
+				OR = { tot_club_capacity_free >= 10 has_variable = tot_honorary_$SLOT$ }
+			}
+		}
+		save_temporary_scope_as = tot_selected_honorary_office
+		owner ?= {
+			tot_clear_honorary_office_effect = { SLOT = $SLOT$ }
+			set_variable = { name = tot_honorary_$SLOT$ value = scope:tot_selected_honorary_office }
+			add_modifier = { name = tot_honorary_$SLOT$_modifier }
+		}
+		add_character_role = character_role_tot_honorary_official
+		owner ?= { tot_refresh_student_council_candidates_effect = yes }
+	}
+}

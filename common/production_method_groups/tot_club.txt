@@ -1,24 +1,20 @@
-pmg_club_type = {
+pmg_club_activity = {
 	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
 	ai_selection = most_productive
 	production_methods = {
-		pm_club_general
-		pm_club_literature
-		pm_club_athletics
-		pm_club_music
-		pm_club_drama
-		pm_club_art
+		pm_club_activity_community
+		pm_club_activity_exchange
+		pm_club_activity_network
 	}
 }
 
-pmg_club_support = {
+pmg_club_operation = {
 	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
 	ai_selection = most_productive
 	production_methods = {
-		pm_club_support_illegal
-		pm_club_support_autonomy
-		pm_club_support_advisor
-		pm_club_support_strict
-		pm_club_support_coordination
+		pm_club_operation_member_run
+		pm_club_operation_advised
+		pm_club_operation_certified
+		pm_club_operation_integrated
 	}
 }

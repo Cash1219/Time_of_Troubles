@@ -1,5 +1,5 @@
-tot_character_growth_weekly_update = {
-	set_variable = { name = tot_club_growth_bonus value = 0 }
+tot_character_growth_monthly_update = {
+	tot_character_growth_clear_legacy_club_theme_effect = yes
 	set_variable = { name = tot_character_growth_country_cost_mult value = 0 }
 	if = {
 		limit = { modifier:country_tot_character_growth_cost_mult_add != 0 }
@@ -8,8 +8,6 @@ tot_character_growth_weekly_update = {
 			value = modifier:country_tot_character_growth_cost_mult_add
 		}
 	}
-	tot_character_growth_refresh_club_bonus = yes
-
 	every_scope_character = {
 		limit = {
 			is_character_alive = yes
@@ -27,35 +25,18 @@ tot_character_growth_weekly_update = {
 			}
 		}
 
-		set_variable = { name = tot_character_growth_weekly_gain value = 10 }
+		set_variable = { name = tot_character_growth_weekly_gain value = 40 }
 		if = {
 			limit = {
 				is_ruler_of_own_country = yes
 			}
-			change_variable = { name = tot_character_growth_weekly_gain add = 3 }
+			change_variable = { name = tot_character_growth_weekly_gain add = 12 }
 		}
 		if = {
 			limit = {
 				is_interest_group_leader = yes
 			}
-			change_variable = { name = tot_character_growth_weekly_gain add = 3 }
-		}
-		if = {
-			limit = { root.var:tot_club_growth_bonus > 0 }
-			change_variable = { name = tot_character_growth_weekly_gain add = root.var:tot_club_growth_bonus }
-		}
-		if = {
-			limit = { root = { tot_club_capacity_deficit_ratio < 0 } }
-			change_variable = {
-				name = tot_character_growth_weekly_gain
-				multiply = {
-					value = 1
-					add = {
-						value = root.tot_club_capacity_deficit_ratio
-						multiply = 0.20
-					}
-				}
-			}
+			change_variable = { name = tot_character_growth_weekly_gain add = 12 }
 		}
 		change_variable = { name = tot_character_growth_exp add = var:tot_character_growth_weekly_gain }
 		tot_character_growth_refresh_cost = yes
@@ -63,7 +44,27 @@ tot_character_growth_weekly_update = {
 	}
 }
 
+# Legacy theme modifiers are deliberately removed once after loading old saves.
+tot_character_growth_clear_legacy_club_theme_effect = {
+	set_variable = { name = tot_club_growth_bonus value = 0 }
+	set_variable = { name = tot_club_total_count value = 0 }
+	set_variable = { name = tot_club_theme_count value = 0 }
+	set_variable = { name = tot_club_theme_active_count value = 0 }
+	if = { limit = { has_modifier = tot_club_capacity_surplus_modifier } remove_modifier = tot_club_capacity_surplus_modifier }
+	if = { limit = { has_modifier = tot_club_focus_literature_modifier } remove_modifier = tot_club_focus_literature_modifier }
+	if = { limit = { has_modifier = tot_club_focus_athletics_modifier } remove_modifier = tot_club_focus_athletics_modifier }
+	if = { limit = { has_modifier = tot_club_focus_music_modifier } remove_modifier = tot_club_focus_music_modifier }
+	if = { limit = { has_modifier = tot_club_focus_drama_modifier } remove_modifier = tot_club_focus_drama_modifier }
+	if = { limit = { has_modifier = tot_club_focus_art_modifier } remove_modifier = tot_club_focus_art_modifier }
+}
+
+# Compatibility entry point for the retired journal and legacy theme buttons.
 tot_character_growth_refresh_club_bonus = {
+	tot_character_growth_clear_legacy_club_theme_effect = yes
+}
+
+# Kept temporarily for save compatibility only. No code should call this effect.
+tot_character_growth_refresh_club_bonus_legacy_disabled = {
 	if = {
 		limit = { has_modifier = tot_club_capacity_surplus_modifier }
 		remove_modifier = tot_club_capacity_surplus_modifier

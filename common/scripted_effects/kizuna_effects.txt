@@ -1,4 +1,4 @@
-
+﻿
 update_kizuna = {
     if = {
         limit = {
@@ -1122,7 +1122,7 @@ tot_sync_band_hq_investment_flags = {
 	}
 }
 
-tot_gourmet_weekly_update = {
+tot_gourmet_monthly_update = {
 	if = {
 		limit = { NOT = { has_variable = tot_gourmet_progress } }
 		set_variable = { name = tot_gourmet_progress value = 0 }
@@ -1135,55 +1135,55 @@ tot_gourmet_weekly_update = {
 		root = {
 			change_variable = {
 				name = tot_gourmet_progress
-				add = 3
+				add = { value = 3 multiply = 4 }
 			}
 		}
 	}
 	if = {
 		limit = { has_variable = tot_gourmet_invest_grain market.mg:grain = { market_goods_sell_orders >= 50 } }
-		change_variable = { name = tot_gourmet_progress add = 5 }
+		change_variable = { name = tot_gourmet_progress add = { value = 5 multiply = 4 } }
 	}
 	if = {
 		limit = { has_variable = tot_gourmet_invest_meat market.mg:meat = { market_goods_sell_orders >= 50 } }
-		change_variable = { name = tot_gourmet_progress add = 5 }
+		change_variable = { name = tot_gourmet_progress add = { value = 5 multiply = 4 } }
 	}
 	if = {
 		limit = { has_variable = tot_gourmet_invest_fish market.mg:fish = { market_goods_sell_orders >= 50 } }
-		change_variable = { name = tot_gourmet_progress add = 5 }
+		change_variable = { name = tot_gourmet_progress add = { value = 5 multiply = 4 } }
 	}
 	if = {
 		limit = { has_variable = tot_gourmet_invest_fruit market.mg:fruit = { market_goods_sell_orders >= 50 } }
-		change_variable = { name = tot_gourmet_progress add = 5 }
+		change_variable = { name = tot_gourmet_progress add = { value = 5 multiply = 4 } }
 	}
 	if = {
 		limit = { has_variable = tot_gourmet_invest_groceries market.mg:groceries = { market_goods_sell_orders >= 50 } }
-		change_variable = { name = tot_gourmet_progress add = 5 }
+		change_variable = { name = tot_gourmet_progress add = { value = 5 multiply = 4 } }
 	}
 	if = {
 		limit = { has_variable = tot_gourmet_invest_tea market.mg:tea = { market_goods_sell_orders >= 50 } }
-		change_variable = { name = tot_gourmet_progress add = 5 }
+		change_variable = { name = tot_gourmet_progress add = { value = 5 multiply = 4 } }
 	}
 	if = {
 		limit = { has_variable = tot_gourmet_invest_coffee market.mg:coffee = { market_goods_sell_orders >= 50 } }
-		change_variable = { name = tot_gourmet_progress add = 5 }
+		change_variable = { name = tot_gourmet_progress add = { value = 5 multiply = 4 } }
 	}
 	if = {
 		limit = { has_variable = tot_gourmet_invest_luxury_drinks market.mg:luxury_drinks = { market_goods_sell_orders >= 50 } }
-		change_variable = { name = tot_gourmet_progress add = 5 }
+		change_variable = { name = tot_gourmet_progress add = { value = 5 multiply = 4 } }
 	}
 	if = {
 		limit = { has_variable = tot_gourmet_invest_luxury_foods market.mg:luxury_foods = { market_goods_sell_orders >= 50 } }
-		change_variable = { name = tot_gourmet_progress add = 5 }
+		change_variable = { name = tot_gourmet_progress add = { value = 5 multiply = 4 } }
 	}
 
-	if = { limit = { tot_gourmet_variety_count_value >= 2 } change_variable = { name = tot_gourmet_progress add = 3 } }
-	if = { limit = { tot_gourmet_variety_count_value >= 3 } change_variable = { name = tot_gourmet_progress add = 3 } }
-	if = { limit = { tot_gourmet_variety_count_value >= 4 } change_variable = { name = tot_gourmet_progress add = 3 } }
-	if = { limit = { tot_gourmet_variety_count_value >= 5 } change_variable = { name = tot_gourmet_progress add = 3 } }
-	if = { limit = { tot_gourmet_variety_count_value >= 6 } change_variable = { name = tot_gourmet_progress add = 3 } }
-	if = { limit = { tot_gourmet_variety_count_value >= 7 } change_variable = { name = tot_gourmet_progress add = 3 } }
-	if = { limit = { tot_gourmet_variety_count_value >= 8 } change_variable = { name = tot_gourmet_progress add = 3 } }
-	if = { limit = { tot_gourmet_variety_count_value >= 9 } change_variable = { name = tot_gourmet_progress add = 3 } }
+	if = { limit = { tot_gourmet_variety_count_value >= 2 } change_variable = { name = tot_gourmet_progress add = { value = 3 multiply = 4 } } }
+	if = { limit = { tot_gourmet_variety_count_value >= 3 } change_variable = { name = tot_gourmet_progress add = { value = 3 multiply = 4 } } }
+	if = { limit = { tot_gourmet_variety_count_value >= 4 } change_variable = { name = tot_gourmet_progress add = { value = 3 multiply = 4 } } }
+	if = { limit = { tot_gourmet_variety_count_value >= 5 } change_variable = { name = tot_gourmet_progress add = { value = 3 multiply = 4 } } }
+	if = { limit = { tot_gourmet_variety_count_value >= 6 } change_variable = { name = tot_gourmet_progress add = { value = 3 multiply = 4 } } }
+	if = { limit = { tot_gourmet_variety_count_value >= 7 } change_variable = { name = tot_gourmet_progress add = { value = 3 multiply = 4 } } }
+	if = { limit = { tot_gourmet_variety_count_value >= 8 } change_variable = { name = tot_gourmet_progress add = { value = 3 multiply = 4 } } }
+	if = { limit = { tot_gourmet_variety_count_value >= 9 } change_variable = { name = tot_gourmet_progress add = { value = 3 multiply = 4 } } }
 
 	tot_gourmet_check_rewards = yes
 	update_kizuna = yes
@@ -1288,7 +1288,7 @@ update_kon_kizuna = {
 		}
 		if = {
 			limit = { kon_kizuna_number == 1 }
-			je:je_kizuna_gui = {
+			root = {
 				remove_modifier = kon_kizuna_modifier_1
 				remove_modifier = kon_kizuna_modifier_2
 				remove_modifier = kon_kizuna_modifier_3
@@ -1300,7 +1300,7 @@ update_kon_kizuna = {
 		}
 		if = {
 			limit = { kon_kizuna_number == 2 }
-			je:je_kizuna_gui = {
+			root = {
 				remove_modifier = kon_kizuna_modifier_1
 				remove_modifier = kon_kizuna_modifier_2
 				remove_modifier = kon_kizuna_modifier_3
@@ -1312,7 +1312,7 @@ update_kon_kizuna = {
 		}
 		if = {
 			limit = { kon_kizuna_number == 3 }
-			je:je_kizuna_gui = {
+			root = {
 				remove_modifier = kon_kizuna_modifier_1
 				remove_modifier = kon_kizuna_modifier_2
 				remove_modifier = kon_kizuna_modifier_3
@@ -1324,7 +1324,7 @@ update_kon_kizuna = {
 		}
 		if = {
 			limit = { kon_kizuna_number == 4 }
-			je:je_kizuna_gui = {
+			root = {
 				remove_modifier = kon_kizuna_modifier_1
 				remove_modifier = kon_kizuna_modifier_2
 				remove_modifier = kon_kizuna_modifier_3
@@ -1336,7 +1336,7 @@ update_kon_kizuna = {
 		}
 		if = {
 			limit = { kon_kizuna_number == 5 }
-			je:je_kizuna_gui = {
+			root = {
 				remove_modifier = kon_kizuna_modifier_1
 				remove_modifier = kon_kizuna_modifier_2
 				remove_modifier = kon_kizuna_modifier_3
@@ -1348,7 +1348,7 @@ update_kon_kizuna = {
 		}
 		if = {
 			limit = { kon_kizuna_number == 6 }
-			je:je_kizuna_gui = {
+			root = {
 				remove_modifier = kon_kizuna_modifier_1
 				remove_modifier = kon_kizuna_modifier_2
 				remove_modifier = kon_kizuna_modifier_3
@@ -4626,7 +4626,7 @@ update_tot_kizuna_profession_specialty_groups = {
 }
 
 update_tot_kizuna_faction_default_modifiers = {
-	je:je_kizuna_gui = {
+	root = {
 		remove_modifier = tot_kizuna_faction_tier_2_modifier
 		remove_modifier = tot_kizuna_faction_tier_3_modifier
 		remove_modifier = tot_kizuna_faction_tier_4_modifier
@@ -4656,7 +4656,7 @@ update_tot_kizuna_faction_default_modifiers = {
 				tot_kizuna_019_number >= 2
 			}
 		}
-		je:je_kizuna_gui = { add_modifier = tot_kizuna_faction_tier_2_modifier }
+		root = { add_modifier = tot_kizuna_faction_tier_2_modifier }
 	}
 
 	if = {
@@ -4682,7 +4682,7 @@ update_tot_kizuna_faction_default_modifiers = {
 				tot_kizuna_019_number >= 3
 			}
 		}
-		je:je_kizuna_gui = { add_modifier = tot_kizuna_faction_tier_3_modifier }
+		root = { add_modifier = tot_kizuna_faction_tier_3_modifier }
 	}
 
 	if = {
@@ -4708,7 +4708,7 @@ update_tot_kizuna_faction_default_modifiers = {
 				tot_kizuna_019_number >= 4
 			}
 		}
-		je:je_kizuna_gui = { add_modifier = tot_kizuna_faction_tier_4_modifier }
+		root = { add_modifier = tot_kizuna_faction_tier_4_modifier }
 	}
 
 	if = {
@@ -4734,7 +4734,7 @@ update_tot_kizuna_faction_default_modifiers = {
 				tot_kizuna_019_number >= 5
 			}
 		}
-		je:je_kizuna_gui = { add_modifier = tot_kizuna_faction_tier_5_modifier }
+		root = { add_modifier = tot_kizuna_faction_tier_5_modifier }
 	}
 }
 
@@ -4767,51 +4767,51 @@ tot_band_initialize_axes = {
 }
 
 # BEGIN GENERATED TOT BAND PER BAND
-tot_band_weekly_update = {
+tot_band_monthly_update = {
 	tot_band_initialize_axes = yes
 	tot_sync_band_hq_investment_flags = yes
 	tot_sync_band_hq_route_bonuses = yes
 	if = { limit = { has_variable = tot_band_weekly_event_locked } remove_variable = tot_band_weekly_event_locked }
 	if = { limit = { var:tot_band_limit >= 1 NOT = { has_variable = tot_band_1_creative_progress } } set_variable = { name = tot_band_1_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 1 NOT = { has_variable = tot_band_1_creation_progress } } set_variable = { name = tot_band_1_creation_progress value = 0 } }
-	if = { limit = { var:tot_band_limit >= 1 } change_variable = { name = tot_band_1_creative_progress add = band_1_kizuna_creation_weekly_gain_value } }
-	if = { limit = { var:tot_band_limit >= 1 } change_variable = { name = tot_band_1_creation_progress add = band_1_kizuna_creation_weekly_gain_value } }
+	if = { limit = { var:tot_band_limit >= 1 } change_variable = { name = tot_band_1_creative_progress add = { value = band_1_kizuna_creation_weekly_gain_value multiply = 4 } } }
+	if = { limit = { var:tot_band_limit >= 1 } change_variable = { name = tot_band_1_creation_progress add = { value = band_1_kizuna_creation_weekly_gain_value multiply = 4 } } }
 	if = { limit = { var:tot_band_limit >= 2 NOT = { has_variable = tot_band_2_creative_progress } } set_variable = { name = tot_band_2_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 2 NOT = { has_variable = tot_band_2_creation_progress } } set_variable = { name = tot_band_2_creation_progress value = 0 } }
-	if = { limit = { var:tot_band_limit >= 2 } change_variable = { name = tot_band_2_creative_progress add = band_2_kizuna_creation_weekly_gain_value } }
-	if = { limit = { var:tot_band_limit >= 2 } change_variable = { name = tot_band_2_creation_progress add = band_2_kizuna_creation_weekly_gain_value } }
+	if = { limit = { var:tot_band_limit >= 2 } change_variable = { name = tot_band_2_creative_progress add = { value = band_2_kizuna_creation_weekly_gain_value multiply = 4 } } }
+	if = { limit = { var:tot_band_limit >= 2 } change_variable = { name = tot_band_2_creation_progress add = { value = band_2_kizuna_creation_weekly_gain_value multiply = 4 } } }
 	if = { limit = { var:tot_band_limit >= 3 NOT = { has_variable = tot_band_3_creative_progress } } set_variable = { name = tot_band_3_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 3 NOT = { has_variable = tot_band_3_creation_progress } } set_variable = { name = tot_band_3_creation_progress value = 0 } }
-	if = { limit = { var:tot_band_limit >= 3 } change_variable = { name = tot_band_3_creative_progress add = band_3_kizuna_creation_weekly_gain_value } }
-	if = { limit = { var:tot_band_limit >= 3 } change_variable = { name = tot_band_3_creation_progress add = band_3_kizuna_creation_weekly_gain_value } }
+	if = { limit = { var:tot_band_limit >= 3 } change_variable = { name = tot_band_3_creative_progress add = { value = band_3_kizuna_creation_weekly_gain_value multiply = 4 } } }
+	if = { limit = { var:tot_band_limit >= 3 } change_variable = { name = tot_band_3_creation_progress add = { value = band_3_kizuna_creation_weekly_gain_value multiply = 4 } } }
 	if = { limit = { var:tot_band_limit >= 4 NOT = { has_variable = tot_band_4_creative_progress } } set_variable = { name = tot_band_4_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 4 NOT = { has_variable = tot_band_4_creation_progress } } set_variable = { name = tot_band_4_creation_progress value = 0 } }
-	if = { limit = { var:tot_band_limit >= 4 } change_variable = { name = tot_band_4_creative_progress add = band_4_kizuna_creation_weekly_gain_value } }
-	if = { limit = { var:tot_band_limit >= 4 } change_variable = { name = tot_band_4_creation_progress add = band_4_kizuna_creation_weekly_gain_value } }
+	if = { limit = { var:tot_band_limit >= 4 } change_variable = { name = tot_band_4_creative_progress add = { value = band_4_kizuna_creation_weekly_gain_value multiply = 4 } } }
+	if = { limit = { var:tot_band_limit >= 4 } change_variable = { name = tot_band_4_creation_progress add = { value = band_4_kizuna_creation_weekly_gain_value multiply = 4 } } }
 	if = { limit = { var:tot_band_limit >= 5 NOT = { has_variable = tot_band_5_creative_progress } } set_variable = { name = tot_band_5_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 5 NOT = { has_variable = tot_band_5_creation_progress } } set_variable = { name = tot_band_5_creation_progress value = 0 } }
-	if = { limit = { var:tot_band_limit >= 5 } change_variable = { name = tot_band_5_creative_progress add = band_5_kizuna_creation_weekly_gain_value } }
-	if = { limit = { var:tot_band_limit >= 5 } change_variable = { name = tot_band_5_creation_progress add = band_5_kizuna_creation_weekly_gain_value } }
+	if = { limit = { var:tot_band_limit >= 5 } change_variable = { name = tot_band_5_creative_progress add = { value = band_5_kizuna_creation_weekly_gain_value multiply = 4 } } }
+	if = { limit = { var:tot_band_limit >= 5 } change_variable = { name = tot_band_5_creation_progress add = { value = band_5_kizuna_creation_weekly_gain_value multiply = 4 } } }
 	if = { limit = { var:tot_band_limit >= 6 NOT = { has_variable = tot_band_6_creative_progress } } set_variable = { name = tot_band_6_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 6 NOT = { has_variable = tot_band_6_creation_progress } } set_variable = { name = tot_band_6_creation_progress value = 0 } }
-	if = { limit = { var:tot_band_limit >= 6 } change_variable = { name = tot_band_6_creative_progress add = band_6_kizuna_creation_weekly_gain_value } }
-	if = { limit = { var:tot_band_limit >= 6 } change_variable = { name = tot_band_6_creation_progress add = band_6_kizuna_creation_weekly_gain_value } }
+	if = { limit = { var:tot_band_limit >= 6 } change_variable = { name = tot_band_6_creative_progress add = { value = band_6_kizuna_creation_weekly_gain_value multiply = 4 } } }
+	if = { limit = { var:tot_band_limit >= 6 } change_variable = { name = tot_band_6_creation_progress add = { value = band_6_kizuna_creation_weekly_gain_value multiply = 4 } } }
 	if = { limit = { var:tot_band_limit >= 7 NOT = { has_variable = tot_band_7_creative_progress } } set_variable = { name = tot_band_7_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 7 NOT = { has_variable = tot_band_7_creation_progress } } set_variable = { name = tot_band_7_creation_progress value = 0 } }
-	if = { limit = { var:tot_band_limit >= 7 } change_variable = { name = tot_band_7_creative_progress add = band_7_kizuna_creation_weekly_gain_value } }
-	if = { limit = { var:tot_band_limit >= 7 } change_variable = { name = tot_band_7_creation_progress add = band_7_kizuna_creation_weekly_gain_value } }
+	if = { limit = { var:tot_band_limit >= 7 } change_variable = { name = tot_band_7_creative_progress add = { value = band_7_kizuna_creation_weekly_gain_value multiply = 4 } } }
+	if = { limit = { var:tot_band_limit >= 7 } change_variable = { name = tot_band_7_creation_progress add = { value = band_7_kizuna_creation_weekly_gain_value multiply = 4 } } }
 	if = { limit = { var:tot_band_limit >= 8 NOT = { has_variable = tot_band_8_creative_progress } } set_variable = { name = tot_band_8_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 8 NOT = { has_variable = tot_band_8_creation_progress } } set_variable = { name = tot_band_8_creation_progress value = 0 } }
-	if = { limit = { var:tot_band_limit >= 8 } change_variable = { name = tot_band_8_creative_progress add = band_8_kizuna_creation_weekly_gain_value } }
-	if = { limit = { var:tot_band_limit >= 8 } change_variable = { name = tot_band_8_creation_progress add = band_8_kizuna_creation_weekly_gain_value } }
+	if = { limit = { var:tot_band_limit >= 8 } change_variable = { name = tot_band_8_creative_progress add = { value = band_8_kizuna_creation_weekly_gain_value multiply = 4 } } }
+	if = { limit = { var:tot_band_limit >= 8 } change_variable = { name = tot_band_8_creation_progress add = { value = band_8_kizuna_creation_weekly_gain_value multiply = 4 } } }
 	if = { limit = { var:tot_band_limit >= 9 NOT = { has_variable = tot_band_9_creative_progress } } set_variable = { name = tot_band_9_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 9 NOT = { has_variable = tot_band_9_creation_progress } } set_variable = { name = tot_band_9_creation_progress value = 0 } }
-	if = { limit = { var:tot_band_limit >= 9 } change_variable = { name = tot_band_9_creative_progress add = band_9_kizuna_creation_weekly_gain_value } }
-	if = { limit = { var:tot_band_limit >= 9 } change_variable = { name = tot_band_9_creation_progress add = band_9_kizuna_creation_weekly_gain_value } }
+	if = { limit = { var:tot_band_limit >= 9 } change_variable = { name = tot_band_9_creative_progress add = { value = band_9_kizuna_creation_weekly_gain_value multiply = 4 } } }
+	if = { limit = { var:tot_band_limit >= 9 } change_variable = { name = tot_band_9_creation_progress add = { value = band_9_kizuna_creation_weekly_gain_value multiply = 4 } } }
 	if = { limit = { var:tot_band_limit >= 10 NOT = { has_variable = tot_band_10_creative_progress } } set_variable = { name = tot_band_10_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 10 NOT = { has_variable = tot_band_10_creation_progress } } set_variable = { name = tot_band_10_creation_progress value = 0 } }
-	if = { limit = { var:tot_band_limit >= 10 } change_variable = { name = tot_band_10_creative_progress add = band_10_kizuna_creation_weekly_gain_value } }
-	if = { limit = { var:tot_band_limit >= 10 } change_variable = { name = tot_band_10_creation_progress add = band_10_kizuna_creation_weekly_gain_value } }
+	if = { limit = { var:tot_band_limit >= 10 } change_variable = { name = tot_band_10_creative_progress add = { value = band_10_kizuna_creation_weekly_gain_value multiply = 4 } } }
+	if = { limit = { var:tot_band_limit >= 10 } change_variable = { name = tot_band_10_creation_progress add = { value = band_10_kizuna_creation_weekly_gain_value multiply = 4 } } }
 	if = { limit = { var:tot_band_limit >= 1 } tot_band_process_creative_event_1 = yes }
 	if = { limit = { var:tot_band_limit >= 2 } tot_band_process_creative_event_2 = yes }
 	if = { limit = { var:tot_band_limit >= 3 } tot_band_process_creative_event_3 = yes }
@@ -5056,6 +5056,8 @@ tot_band_10_check_rewards = {
 	}}
 
 # END GENERATED TOT BAND PER BAND
+
+
 
 
 

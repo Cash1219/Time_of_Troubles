@@ -46,3 +46,23 @@ tot_club_capacity_deficit_ratio = {
 	min = -1
 	max = 0
 }
+
+tot_cabinet_seats = {
+	value = 2
+	add = modifier:country_tot_cabinet_seats_add
+	min = 0
+}
+
+tot_cabinet_seats_usage = {
+	value = modifier:country_tot_cabinet_seats_usage_add
+	min = 0
+}
+
+tot_cabinet_seats_free = {
+	value = tot_cabinet_seats
+	add = {
+		value = tot_cabinet_seats_usage
+		multiply = -1
+	}
+	min = 0
+}

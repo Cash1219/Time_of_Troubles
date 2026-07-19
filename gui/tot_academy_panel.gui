@@ -35,6 +35,13 @@
 					using = fontsize_medium
 					align = left|nobaseline
 				}
+
+				textbox = {
+					size = { 260 14 }
+					text = "TOT_CHARACTER_CABINET_SEATS"
+					using = fontsize_very_small
+					align = left|nobaseline
+				}
 			}
 		}
 	}
@@ -107,6 +114,22 @@
 		}
 	}
 
+	# Kept adjacent to the core slot template so the honorary cards are registered
+	# before the minister panel instantiates them.
+	type tot_character_honorary_slot = widget {
+		size = { 332 108 }
+		background = { using = entry_bg_simple }
+		block "selected_overlay" {}
+		vbox = {
+			margin = { 9 6 }
+			spacing = 2
+			textbox = { size = { 310 17 } using = fontsize_small default_format = "#v" align = left|nobaseline block "slot_title" { text = "TOT_HONORARY_CLUB_ADVISER" } }
+			textbox = { size = { 310 15 } using = fontsize_very_small align = left|nobaseline elide = right block "slot_effects" { text = "TOT_HONORARY_CLUB_ADVISER_EFFECT" } }
+			widget = { size = { 310 20 } block "holder_content" {} }
+			hbox = { parentanchor = hcenter spacing = 8 block "select_button" {} block "remove_button" {} }
+		}
+	}
+
 	type tot_character_candidate_item = widget {
 		datacontext = "[Scope.GetCharacter]"
 
@@ -146,7 +169,8 @@
 				widget = {
 					visible = "[Character.GetInterestGroup.IsValid]"
 					size = { 38 38 }
-					position = { -5 65 }
+					parentanchor = bottom|left
+					position = { -7 -5 }
 					datacontext = "[Character.GetInterestGroup]"
 
 					icon = {
@@ -161,9 +185,9 @@
 				}
 
 				widget = {
-					visible = "[Character.GetIdeology.IsValid]"
 					size = { 38 38 }
-					position = { 70 65 }
+					parentanchor = bottom|right
+					position = { 7 -5 }
 					datacontext = "[Character.GetIdeology]"
 
 					icon = {
@@ -216,6 +240,7 @@
 					}
 
 					hbox = {
+						visible = no
 						size = { 794 36 }
 						spacing = 8
 
@@ -271,7 +296,6 @@
 							}
 
 							widget = {
-								visible = "[Character.GetIdeology.IsValid]"
 									size = { 320 36 }
 								datacontext = "[Character.GetIdeology]"
 
@@ -300,7 +324,7 @@
 							}
 
 							textbox = {
-								visible = "[Not(Character.GetIdeology.IsValid)]"
+								visible = no
 								size = { 320 16 }
 								parentanchor = center
 								text = "-"
@@ -358,6 +382,7 @@ window = {
 	state = {
 		name = refresh_character_panel
 		trigger_on_create = yes
+		on_finish = "[GetVariableSystem.Set( 'tot_character_system_page', 'ministers' )]"
 		on_finish = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'student_council' )]"
 		on_finish = "[GetVariableSystem.Set( 'tot_character_filters', 'yes' )]"
 		on_finish = "[GetScriptedGui('tot_character_filter_default').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
@@ -391,6 +416,56 @@ window = {
 		}
 
 		widget = {
+			size = { 1510 38 }
+			tab_buttons = {
+				size = { 1400 38 }
+				blockoverride "first_button" { text = "TOT_CHARACTER_TAB_MINISTERS" }
+				blockoverride "first_button_selected" { text = "TOT_CHARACTER_TAB_MINISTERS" }
+				blockoverride "first_button_tooltip" { tooltip = "TOT_CHARACTER_TAB_MINISTERS" }
+				blockoverride "first_button_click" { onclick = "[GetVariableSystem.Set( 'tot_character_system_page', 'ministers' )]" }
+				blockoverride "first_button_visibility" { visible = "[GetVariableSystem.HasValue( 'tot_character_system_page', 'ministers' )]" }
+				blockoverride "first_button_visibility_checked" { visible = "[Not(GetVariableSystem.HasValue( 'tot_character_system_page', 'ministers' ))]" }
+
+				blockoverride "second_button" { text = "TOT_CHARACTER_TAB_GROWTH" }
+				blockoverride "second_button_selected" { text = "TOT_CHARACTER_TAB_GROWTH" }
+				blockoverride "second_button_tooltip" { tooltip = "TOT_CHARACTER_TAB_GROWTH" }
+				blockoverride "second_button_click" { onclick = "[GetVariableSystem.Set( 'tot_character_system_page', 'growth' )]" }
+				blockoverride "second_button_visibility" { visible = "[GetVariableSystem.HasValue( 'tot_character_system_page', 'growth' )]" }
+				blockoverride "second_button_visibility_checked" { visible = "[Not(GetVariableSystem.HasValue( 'tot_character_system_page', 'growth' ))]" }
+
+				blockoverride "third_button" { text = "TOT_CHARACTER_TAB_BONDS" }
+				blockoverride "third_button_selected" { text = "TOT_CHARACTER_TAB_BONDS" }
+				blockoverride "third_button_tooltip" { tooltip = "TOT_CHARACTER_TAB_BONDS" }
+				blockoverride "third_button_click" { onclick = "[GetVariableSystem.Set( 'tot_character_system_page', 'bonds' )]" }
+				blockoverride "third_button_visibility" { visible = "[GetVariableSystem.HasValue( 'tot_character_system_page', 'bonds' )]" }
+				blockoverride "third_button_visibility_checked" { visible = "[Not(GetVariableSystem.HasValue( 'tot_character_system_page', 'bonds' ))]" }
+
+				blockoverride "fourth_button" { text = "TOT_CHARACTER_TAB_BANDS" }
+				blockoverride "fourth_button_selected" { text = "TOT_CHARACTER_TAB_BANDS" }
+				blockoverride "fourth_button_tooltip" { tooltip = "TOT_CHARACTER_TAB_BANDS" }
+				blockoverride "fourth_button_click" { onclick = "[GetVariableSystem.Set( 'tot_character_system_page', 'bands' )]" }
+				blockoverride "fourth_button_visibility" { visible = "[GetVariableSystem.HasValue( 'tot_character_system_page', 'bands' )]" }
+				blockoverride "fourth_button_visibility_checked" { visible = "[Not(GetVariableSystem.HasValue( 'tot_character_system_page', 'bands' ))]" }
+
+				blockoverride "fifth_button_visibility" { visible = no }
+				blockoverride "fifth_button_visibility_checked" { visible = no }
+			}
+
+			button_standard = {
+				parentanchor = right|vcenter
+				size = { 94 28 }
+				text = "TOT_CHARACTER_SYSTEM_REFRESH"
+				tooltip = "TOT_CHARACTER_SYSTEM_REFRESH_TOOLTIP"
+				enabled = "[GetScriptedGui('tot_character_system_refresh').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				onclick = "[GetScriptedGui('tot_character_system_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			}
+		}
+
+		widget = {
+			size = { 1510 700 }
+
+		widget = {
+			visible = "[GetVariableSystem.HasValue( 'tot_character_system_page', 'ministers' )]"
 			size = { 1510 44 }
 
 			widget = {
@@ -402,10 +477,13 @@ window = {
 					parentanchor = hcenter|vcenter
 				}
 			}
+
 		}
 
 		widget = {
+			visible = "[GetVariableSystem.HasValue( 'tot_character_system_page', 'ministers' )]"
 			size = { 1510 644 }
+			position = { 0 52 }
 
 			hbox = {
 				spacing = 12
@@ -428,8 +506,20 @@ window = {
 							align = left|nobaseline
 						}
 
-						scrollbox = {
-							size = { 352 600 }
+						hbox = {
+							size = { 332 28 }
+							spacing = 4
+							button = { visible = "[Not(GetVariableSystem.HasValue( 'tot_character_minister_category', 'honorary' ))]" using = default_button_primary size = { 164 28 } text = "TOT_CHARACTER_MINISTER_CORE_TAB" onclick = "[GetVariableSystem.Set( 'tot_character_minister_category', 'core' )]" }
+							button = { visible = "[GetVariableSystem.HasValue( 'tot_character_minister_category', 'honorary' )]" using = default_button size = { 164 28 } text = "TOT_CHARACTER_MINISTER_CORE_TAB" onclick = "[GetVariableSystem.Set( 'tot_character_minister_category', 'core' )]" }
+							button = { visible = "[GetVariableSystem.HasValue( 'tot_character_minister_category', 'honorary' )]" using = default_button_primary size = { 164 28 } text = "TOT_CHARACTER_MINISTER_HONORARY_TAB" onclick = "[GetVariableSystem.Set( 'tot_character_minister_category', 'honorary' )]" }
+							button = { visible = "[Not(GetVariableSystem.HasValue( 'tot_character_minister_category', 'honorary' ))]" using = default_button size = { 164 28 } text = "TOT_CHARACTER_MINISTER_HONORARY_TAB" onclick = "[GetVariableSystem.Set( 'tot_character_minister_category', 'honorary' )]" }
+						}
+
+						widget = {
+							size = { 352 550 }
+							scrollbox = {
+								visible = "[Not(GetVariableSystem.HasValue( 'tot_character_minister_category', 'honorary' ))]"
+								size = { 352 550 }
 
 							blockoverride "scrollbox_content" {
 								vbox = {
@@ -524,7 +614,6 @@ window = {
 														}
 
 														widget = {
-															visible = "[Character.GetIdeology.IsValid]"
 															size = { 20 20 }
 															datacontext = "[Character.GetIdeology]"
 
@@ -662,7 +751,6 @@ window = {
 														}
 
 														widget = {
-															visible = "[Character.GetIdeology.IsValid]"
 															size = { 20 20 }
 															datacontext = "[Character.GetIdeology]"
 
@@ -748,7 +836,7 @@ window = {
 														parentanchor = vcenter
 														spacing = 5
 														widget = { visible = "[Character.GetInterestGroup.IsValid]" size = { 20 20 } datacontext = "[Character.GetInterestGroup]" icon = { parentanchor = center texture = "[InterestGroup.GetTexture]" size = { 20 20 } tooltipwidget = { FancyTooltip_IG = {} } } }
-														widget = { visible = "[Character.GetIdeology.IsValid]" size = { 20 20 } datacontext = "[Character.GetIdeology]" icon = { parentanchor = center texture = "[Ideology.GetTexture]" size = { 20 20 } tooltipwidget = { FancyTooltip_Ideology = {} } } }
+														widget = { size = { 20 20 } datacontext = "[Character.GetIdeology]" icon = { parentanchor = center texture = "[Ideology.GetTexture]" size = { 20 20 } tooltipwidget = { FancyTooltip_Ideology = {} } } }
 													}
 												}
 											}
@@ -773,7 +861,7 @@ window = {
 													spacing = 8
 													widget = { size = { 54 54 } background = { texture = "gfx/interface/icons/character_icons/character_frame.dds" size = { 50 50 } parentanchor = center } character_portrait_small2 = { parentanchor = center blockoverride "show_hat" {} blockoverride "highlight" {} blockoverride "rank_icon" {} } }
 													vbox = { size = { 188 52 } parentanchor = vcenter spacing = 2 textbox = { size = { 188 18 } raw_text = "#BOLD [Character.GetFullNameNoFormatting]#!" using = fontsize_small align = left|nobaseline elide = right } textbox = { size = { 188 14 } raw_text = "[Character.GetPrimaryRoleTitle]" using = fontsize_very_small align = left|nobaseline elide = right } }
-													hbox = { parentanchor = vcenter spacing = 5 widget = { visible = "[Character.GetInterestGroup.IsValid]" size = { 20 20 } datacontext = "[Character.GetInterestGroup]" icon = { parentanchor = center texture = "[InterestGroup.GetTexture]" size = { 20 20 } tooltipwidget = { FancyTooltip_IG = {} } } } widget = { visible = "[Character.GetIdeology.IsValid]" size = { 20 20 } datacontext = "[Character.GetIdeology]" icon = { parentanchor = center texture = "[Ideology.GetTexture]" size = { 20 20 } tooltipwidget = { FancyTooltip_Ideology = {} } } } }
+													hbox = { parentanchor = vcenter spacing = 5 widget = { visible = "[Character.GetInterestGroup.IsValid]" size = { 20 20 } datacontext = "[Character.GetInterestGroup]" icon = { parentanchor = center texture = "[InterestGroup.GetTexture]" size = { 20 20 } tooltipwidget = { FancyTooltip_IG = {} } } } widget = { size = { 20 20 } datacontext = "[Character.GetIdeology]" icon = { parentanchor = center texture = "[Ideology.GetTexture]" size = { 20 20 } tooltipwidget = { FancyTooltip_Ideology = {} } } } }
 												}
 											}
 											widget = { visible = "[Not(GetScriptedGui('tot_has_propaganda_minister').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" size = { 296 54 } textbox = { size = { 260 18 } parentanchor = center text = "TOT_CHARACTER_SLOT_EMPTY" using = fontsize_small align = center|nobaseline } }
@@ -797,13 +885,41 @@ window = {
 													spacing = 8
 													widget = { size = { 54 54 } background = { texture = "gfx/interface/icons/character_icons/character_frame.dds" size = { 50 50 } parentanchor = center } character_portrait_small2 = { parentanchor = center blockoverride "show_hat" {} blockoverride "highlight" {} blockoverride "rank_icon" {} } }
 													vbox = { size = { 188 52 } parentanchor = vcenter spacing = 2 textbox = { size = { 188 18 } raw_text = "#BOLD [Character.GetFullNameNoFormatting]#!" using = fontsize_small align = left|nobaseline elide = right } textbox = { size = { 188 14 } raw_text = "[Character.GetPrimaryRoleTitle]" using = fontsize_very_small align = left|nobaseline elide = right } }
-													hbox = { parentanchor = vcenter spacing = 5 widget = { visible = "[Character.GetInterestGroup.IsValid]" size = { 20 20 } datacontext = "[Character.GetInterestGroup]" icon = { parentanchor = center texture = "[InterestGroup.GetTexture]" size = { 20 20 } tooltipwidget = { FancyTooltip_IG = {} } } } widget = { visible = "[Character.GetIdeology.IsValid]" size = { 20 20 } datacontext = "[Character.GetIdeology]" icon = { parentanchor = center texture = "[Ideology.GetTexture]" size = { 20 20 } tooltipwidget = { FancyTooltip_Ideology = {} } } } }
+													hbox = { parentanchor = vcenter spacing = 5 widget = { visible = "[Character.GetInterestGroup.IsValid]" size = { 20 20 } datacontext = "[Character.GetInterestGroup]" icon = { parentanchor = center texture = "[InterestGroup.GetTexture]" size = { 20 20 } tooltipwidget = { FancyTooltip_IG = {} } } } widget = { size = { 20 20 } datacontext = "[Character.GetIdeology]" icon = { parentanchor = center texture = "[Ideology.GetTexture]" size = { 20 20 } tooltipwidget = { FancyTooltip_Ideology = {} } } } }
 												}
 											}
 											widget = { visible = "[Not(GetScriptedGui('tot_has_chief_of_staff').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" size = { 296 54 } textbox = { size = { 260 18 } parentanchor = center text = "TOT_CHARACTER_SLOT_EMPTY" using = fontsize_small align = center|nobaseline } }
 										}
 										blockoverride "select_button" { button_standard = { size = { 96 30 } text = "TOT_CHARACTER_SLOT_SELECT" onclick = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'chief_of_staff' )]" } }
 										blockoverride "remove_button" { button_standard = { visible = "[GetScriptedGui('tot_has_chief_of_staff').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 96 30 } text = "TOT_CHARACTER_SLOT_REMOVE" enabled = "[GetScriptedGui('tot_remove_chief_of_staff').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_remove_chief_of_staff').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } }
+									}
+
+
+								}
+							}
+						}
+							scrollbox = {
+								visible = "[GetVariableSystem.HasValue( 'tot_character_minister_category', 'honorary' )]"
+								size = { 352 550 }
+								blockoverride "scrollbox_content" {
+									vbox = {
+										spacing = 6
+										textbox = { size = { 330 22 } text = "TOT_CHARACTER_HONORARY_HEADER" using = fontsize_medium align = left|nobaseline }
+									tot_character_honorary_slot = { blockoverride "slot_title" { text = "TOT_HONORARY_CLUB_ADVISER" } blockoverride "slot_effects" { text = "TOT_HONORARY_CLUB_ADVISER_EFFECT" } blockoverride "holder_content" { textbox = { size = { 300 18 } text = "TOT_HONORARY_CAPACITY" using = fontsize_very_small align = left|nobaseline } } blockoverride "select_button" { button_standard = { size = { 96 25 } text = "TOT_CHARACTER_SLOT_SELECT" onclick = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'club_adviser' )]" } } blockoverride "remove_button" { button_standard = { visible = "[GetScriptedGui('tot_has_honorary_club_adviser').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 96 25 } text = "TOT_CHARACTER_SLOT_REMOVE" onclick = "[GetScriptedGui('tot_remove_honorary_club_adviser').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } } }
+									tot_character_honorary_slot = { blockoverride "slot_title" { text = "TOT_HONORARY_TRAINING_ADVISER" } blockoverride "slot_effects" { text = "TOT_HONORARY_TRAINING_ADVISER_EFFECT" } blockoverride "holder_content" { textbox = { size = { 300 18 } text = "TOT_HONORARY_CAPACITY" using = fontsize_very_small align = left|nobaseline } } blockoverride "select_button" { button_standard = { size = { 96 25 } text = "TOT_CHARACTER_SLOT_SELECT" onclick = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'training_adviser' )]" } } blockoverride "remove_button" { button_standard = { visible = "[GetScriptedGui('tot_has_honorary_training_adviser').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 96 25 } text = "TOT_CHARACTER_SLOT_REMOVE" onclick = "[GetScriptedGui('tot_remove_honorary_training_adviser').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } } }
+									tot_character_honorary_slot = { blockoverride "slot_title" { text = "TOT_HONORARY_STAGE_ADVISER" } blockoverride "slot_effects" { text = "TOT_HONORARY_STAGE_ADVISER_EFFECT" } blockoverride "holder_content" { textbox = { size = { 300 18 } text = "TOT_HONORARY_CAPACITY" using = fontsize_very_small align = left|nobaseline } } blockoverride "select_button" { button_standard = { size = { 96 25 } text = "TOT_CHARACTER_SLOT_SELECT" onclick = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'stage_adviser' )]" } } blockoverride "remove_button" { button_standard = { visible = "[GetScriptedGui('tot_has_honorary_stage_adviser').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 96 25 } text = "TOT_CHARACTER_SLOT_REMOVE" onclick = "[GetScriptedGui('tot_remove_honorary_stage_adviser').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } } }
+									tot_character_honorary_slot = { blockoverride "slot_title" { text = "TOT_HONORARY_ARTS_ADVISER" } blockoverride "slot_effects" { text = "TOT_HONORARY_ARTS_ADVISER_EFFECT" } blockoverride "holder_content" { textbox = { size = { 300 18 } text = "TOT_HONORARY_CAPACITY" using = fontsize_very_small align = left|nobaseline } } blockoverride "select_button" { button_standard = { size = { 96 25 } text = "TOT_CHARACTER_SLOT_SELECT" onclick = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'arts_adviser' )]" } } blockoverride "remove_button" { button_standard = { visible = "[GetScriptedGui('tot_has_honorary_arts_adviser').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 96 25 } text = "TOT_CHARACTER_SLOT_REMOVE" onclick = "[GetScriptedGui('tot_remove_honorary_arts_adviser').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } } }
+									tot_character_honorary_slot = { blockoverride "slot_title" { text = "TOT_HONORARY_BAND_ADVISER" } blockoverride "slot_effects" { text = "TOT_HONORARY_BAND_ADVISER_EFFECT" } blockoverride "holder_content" { textbox = { size = { 300 18 } text = "TOT_HONORARY_CAPACITY" using = fontsize_very_small align = left|nobaseline } } blockoverride "select_button" { button_standard = { size = { 96 25 } text = "TOT_CHARACTER_SLOT_SELECT" onclick = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'band_adviser' )]" } } blockoverride "remove_button" { button_standard = { visible = "[GetScriptedGui('tot_has_honorary_band_adviser').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 96 25 } text = "TOT_CHARACTER_SLOT_REMOVE" onclick = "[GetScriptedGui('tot_remove_honorary_band_adviser').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } } }
+									tot_character_honorary_slot = { blockoverride "slot_title" { text = "TOT_HONORARY_PUBLISHING_ADVISER" } blockoverride "slot_effects" { text = "TOT_HONORARY_PUBLISHING_ADVISER_EFFECT" } blockoverride "holder_content" { textbox = { size = { 300 18 } text = "TOT_HONORARY_CAPACITY" using = fontsize_very_small align = left|nobaseline } } blockoverride "select_button" { button_standard = { size = { 96 25 } text = "TOT_CHARACTER_SLOT_SELECT" onclick = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'publishing_adviser' )]" } } blockoverride "remove_button" { button_standard = { visible = "[GetScriptedGui('tot_has_honorary_publishing_adviser').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 96 25 } text = "TOT_CHARACTER_SLOT_REMOVE" onclick = "[GetScriptedGui('tot_remove_honorary_publishing_adviser').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } } }
+									tot_character_honorary_slot = { blockoverride "slot_title" { text = "TOT_HONORARY_BROADCAST_ADVISER" } blockoverride "slot_effects" { text = "TOT_HONORARY_BROADCAST_ADVISER_EFFECT" } blockoverride "holder_content" { textbox = { size = { 300 18 } text = "TOT_HONORARY_CAPACITY" using = fontsize_very_small align = left|nobaseline } } blockoverride "select_button" { button_standard = { size = { 96 25 } text = "TOT_CHARACTER_SLOT_SELECT" onclick = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'broadcast_adviser' )]" } } blockoverride "remove_button" { button_standard = { visible = "[GetScriptedGui('tot_has_honorary_broadcast_adviser').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 96 25 } text = "TOT_CHARACTER_SLOT_REMOVE" onclick = "[GetScriptedGui('tot_remove_honorary_broadcast_adviser').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } } }
+									tot_character_honorary_slot = { blockoverride "slot_title" { text = "TOT_HONORARY_EVENTS_ADVISER" } blockoverride "slot_effects" { text = "TOT_HONORARY_EVENTS_ADVISER_EFFECT" } blockoverride "holder_content" { textbox = { size = { 300 18 } text = "TOT_HONORARY_CAPACITY" using = fontsize_very_small align = left|nobaseline } } blockoverride "select_button" { button_standard = { size = { 96 25 } text = "TOT_CHARACTER_SLOT_SELECT" onclick = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'events_adviser' )]" } } blockoverride "remove_button" { button_standard = { visible = "[GetScriptedGui('tot_has_honorary_events_adviser').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 96 25 } text = "TOT_CHARACTER_SLOT_REMOVE" onclick = "[GetScriptedGui('tot_remove_honorary_events_adviser').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } } }
+									tot_character_honorary_slot = { blockoverride "slot_title" { text = "TOT_HONORARY_ETIQUETTE_ADVISER" } blockoverride "slot_effects" { text = "TOT_HONORARY_ETIQUETTE_ADVISER_EFFECT" } blockoverride "holder_content" { textbox = { size = { 300 18 } text = "TOT_HONORARY_CAPACITY" using = fontsize_very_small align = left|nobaseline } } blockoverride "select_button" { button_standard = { size = { 96 25 } text = "TOT_CHARACTER_SLOT_SELECT" onclick = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'etiquette_adviser' )]" } } blockoverride "remove_button" { button_standard = { visible = "[GetScriptedGui('tot_has_honorary_etiquette_adviser').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 96 25 } text = "TOT_CHARACTER_SLOT_REMOVE" onclick = "[GetScriptedGui('tot_remove_honorary_etiquette_adviser').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } } }
+									tot_character_honorary_slot = { blockoverride "slot_title" { text = "TOT_HONORARY_CULTURE_ADVISER" } blockoverride "slot_effects" { text = "TOT_HONORARY_CULTURE_ADVISER_EFFECT" } blockoverride "holder_content" { textbox = { size = { 300 18 } text = "TOT_HONORARY_CAPACITY" using = fontsize_very_small align = left|nobaseline } } blockoverride "select_button" { button_standard = { size = { 96 25 } text = "TOT_CHARACTER_SLOT_SELECT" onclick = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'culture_adviser' )]" } } blockoverride "remove_button" { button_standard = { visible = "[GetScriptedGui('tot_has_honorary_culture_adviser').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 96 25 } text = "TOT_CHARACTER_SLOT_REMOVE" onclick = "[GetScriptedGui('tot_remove_honorary_culture_adviser').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } } }
+									tot_character_honorary_slot = { blockoverride "slot_title" { text = "TOT_HONORARY_LIFE_ADVISER" } blockoverride "slot_effects" { text = "TOT_HONORARY_LIFE_ADVISER_EFFECT" } blockoverride "holder_content" { textbox = { size = { 300 18 } text = "TOT_HONORARY_CAPACITY" using = fontsize_very_small align = left|nobaseline } } blockoverride "select_button" { button_standard = { size = { 96 25 } text = "TOT_CHARACTER_SLOT_SELECT" onclick = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'life_adviser' )]" } } blockoverride "remove_button" { button_standard = { visible = "[GetScriptedGui('tot_has_honorary_life_adviser').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 96 25 } text = "TOT_CHARACTER_SLOT_REMOVE" onclick = "[GetScriptedGui('tot_remove_honorary_life_adviser').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } } }
+									tot_character_honorary_slot = { blockoverride "slot_title" { text = "TOT_HONORARY_HEALTH_ADVISER" } blockoverride "slot_effects" { text = "TOT_HONORARY_HEALTH_ADVISER_EFFECT" } blockoverride "holder_content" { textbox = { size = { 300 18 } text = "TOT_HONORARY_CAPACITY" using = fontsize_very_small align = left|nobaseline } } blockoverride "select_button" { button_standard = { size = { 96 25 } text = "TOT_CHARACTER_SLOT_SELECT" onclick = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'health_adviser' )]" } } blockoverride "remove_button" { button_standard = { visible = "[GetScriptedGui('tot_has_honorary_health_adviser').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 96 25 } text = "TOT_CHARACTER_SLOT_REMOVE" onclick = "[GetScriptedGui('tot_remove_honorary_health_adviser').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } } }
+									tot_character_honorary_slot = { blockoverride "slot_title" { text = "TOT_HONORARY_LOCAL_ADVISER" } blockoverride "slot_effects" { text = "TOT_HONORARY_LOCAL_ADVISER_EFFECT" } blockoverride "holder_content" { textbox = { size = { 300 18 } text = "TOT_HONORARY_CAPACITY" using = fontsize_very_small align = left|nobaseline } } blockoverride "select_button" { button_standard = { size = { 96 25 } text = "TOT_CHARACTER_SLOT_SELECT" onclick = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'local_adviser' )]" } } blockoverride "remove_button" { button_standard = { visible = "[GetScriptedGui('tot_has_honorary_local_adviser').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 96 25 } text = "TOT_CHARACTER_SLOT_REMOVE" onclick = "[GetScriptedGui('tot_remove_honorary_local_adviser').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } } }
+									tot_character_honorary_slot = { blockoverride "slot_title" { text = "TOT_HONORARY_COMMERCE_ADVISER" } blockoverride "slot_effects" { text = "TOT_HONORARY_COMMERCE_ADVISER_EFFECT" } blockoverride "holder_content" { textbox = { size = { 300 18 } text = "TOT_HONORARY_CAPACITY" using = fontsize_very_small align = left|nobaseline } } blockoverride "select_button" { button_standard = { size = { 96 25 } text = "TOT_CHARACTER_SLOT_SELECT" onclick = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'commerce_adviser' )]" } } blockoverride "remove_button" { button_standard = { visible = "[GetScriptedGui('tot_has_honorary_commerce_adviser').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 96 25 } text = "TOT_CHARACTER_SLOT_REMOVE" onclick = "[GetScriptedGui('tot_remove_honorary_commerce_adviser').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } } }
+									tot_character_honorary_slot = { blockoverride "slot_title" { text = "TOT_HONORARY_LOGISTICS_ADVISER" } blockoverride "slot_effects" { text = "TOT_HONORARY_LOGISTICS_ADVISER_EFFECT" } blockoverride "holder_content" { textbox = { size = { 300 18 } text = "TOT_HONORARY_CAPACITY" using = fontsize_very_small align = left|nobaseline } } blockoverride "select_button" { button_standard = { size = { 96 25 } text = "TOT_CHARACTER_SLOT_SELECT" onclick = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'logistics_adviser' )]" } } blockoverride "remove_button" { button_standard = { visible = "[GetScriptedGui('tot_has_honorary_logistics_adviser').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 96 25 } text = "TOT_CHARACTER_SLOT_REMOVE" onclick = "[GetScriptedGui('tot_remove_honorary_logistics_adviser').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } } }
 									}
 								}
 							}
@@ -1098,9 +1214,24 @@ window = {
 														}
 													}
 												}
-												blockoverride "appoint_hint" {
-													text = "TOT_CHARACTER_ASSIGN_CURRENT"
-												}
+											widget = { visible = "[GetVariableSystem.HasValue('tot_character_minister_slot','club_adviser')]" size = { 132 34 } button_standard = { text = "TOT_STUDENT_COUNCIL_APPOINT" size = { 120 32 } parentanchor = hcenter enabled = "[GetScriptedGui('tot_appoint_honorary_club_adviser').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_appoint_honorary_club_adviser').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } }
+											widget = { visible = "[GetVariableSystem.HasValue('tot_character_minister_slot','training_adviser')]" size = { 132 34 } button_standard = { text = "TOT_STUDENT_COUNCIL_APPOINT" size = { 120 32 } parentanchor = hcenter enabled = "[GetScriptedGui('tot_appoint_honorary_training_adviser').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_appoint_honorary_training_adviser').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } }
+											widget = { visible = "[GetVariableSystem.HasValue('tot_character_minister_slot','stage_adviser')]" size = { 132 34 } button_standard = { text = "TOT_STUDENT_COUNCIL_APPOINT" size = { 120 32 } parentanchor = hcenter enabled = "[GetScriptedGui('tot_appoint_honorary_stage_adviser').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_appoint_honorary_stage_adviser').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } }
+											widget = { visible = "[GetVariableSystem.HasValue('tot_character_minister_slot','arts_adviser')]" size = { 132 34 } button_standard = { text = "TOT_STUDENT_COUNCIL_APPOINT" size = { 120 32 } parentanchor = hcenter enabled = "[GetScriptedGui('tot_appoint_honorary_arts_adviser').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_appoint_honorary_arts_adviser').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } }
+											widget = { visible = "[GetVariableSystem.HasValue('tot_character_minister_slot','band_adviser')]" size = { 132 34 } button_standard = { text = "TOT_STUDENT_COUNCIL_APPOINT" size = { 120 32 } parentanchor = hcenter enabled = "[GetScriptedGui('tot_appoint_honorary_band_adviser').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_appoint_honorary_band_adviser').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } }
+											widget = { visible = "[GetVariableSystem.HasValue('tot_character_minister_slot','publishing_adviser')]" size = { 132 34 } button_standard = { text = "TOT_STUDENT_COUNCIL_APPOINT" size = { 120 32 } parentanchor = hcenter enabled = "[GetScriptedGui('tot_appoint_honorary_publishing_adviser').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_appoint_honorary_publishing_adviser').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } }
+											widget = { visible = "[GetVariableSystem.HasValue('tot_character_minister_slot','broadcast_adviser')]" size = { 132 34 } button_standard = { text = "TOT_STUDENT_COUNCIL_APPOINT" size = { 120 32 } parentanchor = hcenter enabled = "[GetScriptedGui('tot_appoint_honorary_broadcast_adviser').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_appoint_honorary_broadcast_adviser').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } }
+											widget = { visible = "[GetVariableSystem.HasValue('tot_character_minister_slot','events_adviser')]" size = { 132 34 } button_standard = { text = "TOT_STUDENT_COUNCIL_APPOINT" size = { 120 32 } parentanchor = hcenter enabled = "[GetScriptedGui('tot_appoint_honorary_events_adviser').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_appoint_honorary_events_adviser').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } }
+											widget = { visible = "[GetVariableSystem.HasValue('tot_character_minister_slot','etiquette_adviser')]" size = { 132 34 } button_standard = { text = "TOT_STUDENT_COUNCIL_APPOINT" size = { 120 32 } parentanchor = hcenter enabled = "[GetScriptedGui('tot_appoint_honorary_etiquette_adviser').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_appoint_honorary_etiquette_adviser').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } }
+											widget = { visible = "[GetVariableSystem.HasValue('tot_character_minister_slot','culture_adviser')]" size = { 132 34 } button_standard = { text = "TOT_STUDENT_COUNCIL_APPOINT" size = { 120 32 } parentanchor = hcenter enabled = "[GetScriptedGui('tot_appoint_honorary_culture_adviser').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_appoint_honorary_culture_adviser').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } }
+											widget = { visible = "[GetVariableSystem.HasValue('tot_character_minister_slot','life_adviser')]" size = { 132 34 } button_standard = { text = "TOT_STUDENT_COUNCIL_APPOINT" size = { 120 32 } parentanchor = hcenter enabled = "[GetScriptedGui('tot_appoint_honorary_life_adviser').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_appoint_honorary_life_adviser').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } }
+											widget = { visible = "[GetVariableSystem.HasValue('tot_character_minister_slot','health_adviser')]" size = { 132 34 } button_standard = { text = "TOT_STUDENT_COUNCIL_APPOINT" size = { 120 32 } parentanchor = hcenter enabled = "[GetScriptedGui('tot_appoint_honorary_health_adviser').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_appoint_honorary_health_adviser').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } }
+											widget = { visible = "[GetVariableSystem.HasValue('tot_character_minister_slot','local_adviser')]" size = { 132 34 } button_standard = { text = "TOT_STUDENT_COUNCIL_APPOINT" size = { 120 32 } parentanchor = hcenter enabled = "[GetScriptedGui('tot_appoint_honorary_local_adviser').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_appoint_honorary_local_adviser').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } }
+											widget = { visible = "[GetVariableSystem.HasValue('tot_character_minister_slot','commerce_adviser')]" size = { 132 34 } button_standard = { text = "TOT_STUDENT_COUNCIL_APPOINT" size = { 120 32 } parentanchor = hcenter enabled = "[GetScriptedGui('tot_appoint_honorary_commerce_adviser').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_appoint_honorary_commerce_adviser').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } }
+											widget = { visible = "[GetVariableSystem.HasValue('tot_character_minister_slot','logistics_adviser')]" size = { 132 34 } button_standard = { text = "TOT_STUDENT_COUNCIL_APPOINT" size = { 120 32 } parentanchor = hcenter enabled = "[GetScriptedGui('tot_appoint_honorary_logistics_adviser').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_appoint_honorary_logistics_adviser').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } }
+										blockoverride "appoint_hint" {
+											text = "TOT_CHARACTER_ASSIGN_CURRENT"
+										}
 										}
 									}
 								}
@@ -1110,5 +1241,40 @@ window = {
 				}
 			}
 		}
+
+			widget = {
+				visible = "[GetVariableSystem.HasValue( 'tot_character_system_page', 'growth' )]"
+				size = { 1510 700 }
+				position = { 0 0 }
+				background = { using = entry_bg_fancy }
+
+				tot_character_growth_page = {
+					position = { 24 18 }
+				}
+			}
+
+			widget = {
+				visible = "[GetVariableSystem.HasValue( 'tot_character_system_page', 'bonds' )]"
+				size = { 1510 700 }
+				position = { 0 0 }
+				background = { using = entry_bg_fancy }
+
+				tot_kizuna_page = {
+					position = { 24 18 }
+				}
+			}
+
+			widget = {
+				visible = "[GetVariableSystem.HasValue( 'tot_character_system_page', 'bands' )]"
+				size = { 1510 700 }
+				position = { 0 0 }
+				background = { using = entry_bg_fancy }
+
+				tot_band_page = {
+					position = { 24 18 }
+				}
+			}
+		}
 	}
+
 }

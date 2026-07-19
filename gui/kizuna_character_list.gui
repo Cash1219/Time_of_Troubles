@@ -683,8 +683,8 @@
 
 
 }
-flowcontainer = {
-	name = "widget_je_kizuna_character_list"
+types tot_kizuna_page_types {
+	type tot_kizuna_page = flowcontainer {
 	ignoreinvisible = yes
 	direction = vertical
 	spacing = 8
@@ -724,7 +724,7 @@ flowcontainer = {
 	}
 
 	scrollbox = {
-		size = { 540 720 }
+		size = { 540 600 }
 		blockoverride "scrollbox_content" {
 			flowcontainer = {
 				direction = vertical
@@ -801,7 +801,7 @@ flowcontainer = {
 							fixedgridbox = {
 								name = "kon_kizuna_character_list"
 								visible = "[GetVariableSystem.Exists('kon_kizuna_toggle')]" #樱高轻音部角色列表
-								datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('kon_kizuna_list')]"
+								datamodel = "[GetPlayer.MakeScope.GetList('kon_kizuna_list')]"
 								addcolumn = 500
 								addrow = 148
 								background = {
@@ -884,9 +884,9 @@ flowcontainer = {
 		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_1_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_1_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_1_members')]" addcolumn = 500 addrow = 164 item = { tot_band_1_member_character = {} } }
+		fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_1_members')]" addcolumn = 500 addrow = 164 item = { tot_band_1_member_character = {} } }
 		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_1_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_1_candidate_character = {} } } } }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_1_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_1_candidate_character = {} } } } }
 	}
 }
 
@@ -908,9 +908,9 @@ flowcontainer = {
 		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_2_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_2_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_2_members')]" addcolumn = 500 addrow = 164 item = { tot_band_2_member_character = {} } }
+		fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_2_members')]" addcolumn = 500 addrow = 164 item = { tot_band_2_member_character = {} } }
 		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_2_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_2_candidate_character = {} } } } }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_2_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_2_candidate_character = {} } } } }
 	}
 }
 
@@ -932,9 +932,9 @@ flowcontainer = {
 		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_3_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_3_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_3_members')]" addcolumn = 500 addrow = 164 item = { tot_band_3_member_character = {} } }
+		fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_3_members')]" addcolumn = 500 addrow = 164 item = { tot_band_3_member_character = {} } }
 		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_3_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_3_candidate_character = {} } } } }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_3_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_3_candidate_character = {} } } } }
 	}
 }
 
@@ -956,9 +956,9 @@ flowcontainer = {
 		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_4_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_4_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_4_members')]" addcolumn = 500 addrow = 164 item = { tot_band_4_member_character = {} } }
+		fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_4_members')]" addcolumn = 500 addrow = 164 item = { tot_band_4_member_character = {} } }
 		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_4_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_4_candidate_character = {} } } } }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_4_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_4_candidate_character = {} } } } }
 	}
 }
 
@@ -980,9 +980,9 @@ flowcontainer = {
 		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_5_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_5_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_5_members')]" addcolumn = 500 addrow = 164 item = { tot_band_5_member_character = {} } }
+		fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_5_members')]" addcolumn = 500 addrow = 164 item = { tot_band_5_member_character = {} } }
 		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_5_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_5_candidate_character = {} } } } }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_5_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_5_candidate_character = {} } } } }
 	}
 }
 
@@ -1004,9 +1004,9 @@ flowcontainer = {
 		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_6_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_6_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_6_members')]" addcolumn = 500 addrow = 164 item = { tot_band_6_member_character = {} } }
+		fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_6_members')]" addcolumn = 500 addrow = 164 item = { tot_band_6_member_character = {} } }
 		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_6_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_6_candidate_character = {} } } } }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_6_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_6_candidate_character = {} } } } }
 	}
 }
 
@@ -1028,9 +1028,9 @@ flowcontainer = {
 		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_7_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_7_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_7_members')]" addcolumn = 500 addrow = 164 item = { tot_band_7_member_character = {} } }
+		fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_7_members')]" addcolumn = 500 addrow = 164 item = { tot_band_7_member_character = {} } }
 		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_7_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_7_candidate_character = {} } } } }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_7_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_7_candidate_character = {} } } } }
 	}
 }
 
@@ -1052,9 +1052,9 @@ flowcontainer = {
 		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_8_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_8_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_8_members')]" addcolumn = 500 addrow = 164 item = { tot_band_8_member_character = {} } }
+		fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_8_members')]" addcolumn = 500 addrow = 164 item = { tot_band_8_member_character = {} } }
 		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_8_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_8_candidate_character = {} } } } }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_8_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_8_candidate_character = {} } } } }
 	}
 }
 
@@ -1076,9 +1076,9 @@ flowcontainer = {
 		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_9_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_9_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_9_members')]" addcolumn = 500 addrow = 164 item = { tot_band_9_member_character = {} } }
+		fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_9_members')]" addcolumn = 500 addrow = 164 item = { tot_band_9_member_character = {} } }
 		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_9_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_9_candidate_character = {} } } } }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_9_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_9_candidate_character = {} } } } }
 	}
 }
 
@@ -1100,9 +1100,9 @@ flowcontainer = {
 		default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_10_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 		button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_10_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 		textbox = { text = "TOT_BAND_MEMBERS_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_10_members')]" addcolumn = 500 addrow = 164 item = { tot_band_10_member_character = {} } }
+		fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_10_members')]" addcolumn = 500 addrow = 164 item = { tot_band_10_member_character = {} } }
 		textbox = { text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
-		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_band_10_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_10_candidate_character = {} } } } }
+		scrollbox = { size = { 540 260 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_10_candidates')]" addcolumn = 500 addrow = 164 item = { tot_band_10_candidate_character = {} } } } }
 	}
 }
 flowcontainer = {
@@ -1141,7 +1141,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_001_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_001_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_001_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -1183,7 +1183,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_002_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_002_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_002_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -1225,7 +1225,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_003_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_003_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_003_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -1267,7 +1267,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_004_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_004_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_004_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -1309,7 +1309,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_005_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_005_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_005_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -1351,7 +1351,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_006_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_006_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_006_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -1393,7 +1393,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_007_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_007_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_007_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -1435,7 +1435,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_008_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_008_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_008_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -1477,7 +1477,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_009_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_009_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_009_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -1519,7 +1519,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_010_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_010_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_010_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -1561,7 +1561,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_012_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_012_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_012_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -1603,7 +1603,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_013_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_013_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_013_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -1645,7 +1645,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_014_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_014_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_014_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -1687,7 +1687,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_015_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_015_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_015_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -1729,7 +1729,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_016_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_016_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_016_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -1771,7 +1771,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_017_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_017_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_017_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -1813,7 +1813,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_018_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_018_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_018_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -1855,7 +1855,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_019_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_019_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_019_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -1898,7 +1898,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_020_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_020_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_020_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -1940,7 +1940,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_021_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_021_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_021_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -1982,7 +1982,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_022_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_022_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_022_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -2024,7 +2024,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_023_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_023_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_023_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -2066,7 +2066,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_024_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_024_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_024_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -2108,7 +2108,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_025_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_025_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_025_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -2150,7 +2150,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_026_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_026_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_026_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -2192,7 +2192,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_027_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_027_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_027_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -2234,7 +2234,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_028_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_028_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_028_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -2276,7 +2276,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_029_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_029_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_029_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -2318,7 +2318,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_030_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_030_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_030_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -2360,7 +2360,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_031_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_031_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_031_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -2402,7 +2402,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_032_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_032_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_032_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -2444,7 +2444,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_033_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_033_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_033_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -2486,7 +2486,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_034_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_034_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_034_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -2528,7 +2528,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_035_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_035_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_035_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -2570,7 +2570,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_036_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_036_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_036_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -2612,7 +2612,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_037_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_037_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_037_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -2754,7 +2754,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_038_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_038_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_038_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -2796,7 +2796,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_039_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_039_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_039_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -2838,7 +2838,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_040_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_040_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_040_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -2880,7 +2880,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_041_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_041_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_041_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -2922,7 +2922,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_042_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_042_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_042_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -2964,7 +2964,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_043_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_043_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_043_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -3006,7 +3006,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_044_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_044_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_044_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -3048,7 +3048,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_045_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_045_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_045_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -3090,7 +3090,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_046_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_046_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_046_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -3132,7 +3132,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_047_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_047_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_047_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -3174,7 +3174,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_048_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_048_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_048_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -3216,7 +3216,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_049_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_049_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_049_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -3258,7 +3258,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_050_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_050_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_050_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -3300,7 +3300,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_051_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_051_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_051_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -3342,7 +3342,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_052_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_052_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_052_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -3384,7 +3384,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_053_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_053_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_053_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -3426,7 +3426,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_054_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_054_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_054_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -3468,7 +3468,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_055_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_055_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_055_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -3510,7 +3510,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_056_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_056_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_056_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -3552,7 +3552,7 @@ flowcontainer = {
 					}
 					fixedgridbox = {
 						visible = "[GetVariableSystem.Exists('tot_kizuna_057_toggle')]"
-						datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('tot_kizuna_057_display_list')]"
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_057_display_list')]"
 						addcolumn = 500
 						addrow = 148
 						item = { kizuna_character_widget = {} }
@@ -3562,6 +3562,9 @@ flowcontainer = {
 		}
 	}
 }
+}
+
+
 
 
 

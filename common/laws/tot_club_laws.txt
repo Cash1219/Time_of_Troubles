@@ -8,8 +8,7 @@ law_no_club_management = {
 		law_no_schools
 	}
 
-	modifier = {
-	}
+	modifier = { building_club_throughput_add = -0.20 }
 }
 
 law_club_autonomy = {
@@ -46,6 +45,7 @@ law_club_advisor_guidance = {
 	modifier = {
 		country_institution_cost_institution_club_management_mult = 0.10
 		country_institution_club_management_max_investment_add = 3
+		building_club_throughput_add = 0.05
 	}
 
 	institution = institution_club_management
@@ -67,6 +67,7 @@ law_club_strict_admission = {
 	modifier = {
 		country_institution_cost_institution_club_management_mult = 0.00
 		country_institution_club_management_max_investment_add = 3
+		building_club_throughput_add = 0.10
 	}
 
 	institution = institution_club_management
@@ -88,6 +89,7 @@ law_club_school_coordination = {
 	modifier = {
 		country_institution_cost_institution_club_management_mult = 0.20
 		country_institution_club_management_max_investment_add = 3
+		building_club_throughput_add = 0.05
 	}
 
 	institution = institution_club_management

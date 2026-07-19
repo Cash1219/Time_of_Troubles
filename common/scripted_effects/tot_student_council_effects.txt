@@ -112,6 +112,22 @@ tot_refresh_student_council_candidates_effect = {
 		if = { limit = { has_modifier = tot_chief_of_staff_modifier } remove_modifier = tot_chief_of_staff_modifier }
 	}
 
+	tot_refresh_honorary_office_effect = { SLOT = club_adviser }
+	tot_refresh_honorary_office_effect = { SLOT = training_adviser }
+	tot_refresh_honorary_office_effect = { SLOT = stage_adviser }
+	tot_refresh_honorary_office_effect = { SLOT = arts_adviser }
+	tot_refresh_honorary_office_effect = { SLOT = band_adviser }
+	tot_refresh_honorary_office_effect = { SLOT = publishing_adviser }
+	tot_refresh_honorary_office_effect = { SLOT = broadcast_adviser }
+	tot_refresh_honorary_office_effect = { SLOT = events_adviser }
+	tot_refresh_honorary_office_effect = { SLOT = etiquette_adviser }
+	tot_refresh_honorary_office_effect = { SLOT = culture_adviser }
+	tot_refresh_honorary_office_effect = { SLOT = life_adviser }
+	tot_refresh_honorary_office_effect = { SLOT = health_adviser }
+	tot_refresh_honorary_office_effect = { SLOT = local_adviser }
+	tot_refresh_honorary_office_effect = { SLOT = commerce_adviser }
+	tot_refresh_honorary_office_effect = { SLOT = logistics_adviser }
+
 	if = {
 		limit = {
 			has_variable_list = tot_student_council_candidates
@@ -135,6 +151,7 @@ tot_refresh_student_council_candidates_effect = {
 			NOT = { has_role = character_role_tot_education_minister }
 			NOT = { has_role = character_role_tot_propaganda_minister }
 			NOT = { has_role = character_role_tot_chief_of_staff }
+			NOT = { has_role = character_role_tot_honorary_official }
 			# Filters are evaluated while building the list, not hidden afterwards in the GUI.
 			OR = {
 				scope:tot_student_council_country = {
@@ -174,6 +191,7 @@ tot_refresh_student_council_candidates_effect = {
 							has_role = character_role_tot_education_minister
 							has_role = character_role_tot_propaganda_minister
 							has_role = character_role_tot_chief_of_staff
+							has_role = character_role_tot_honorary_official
 						}
 					}
 				}
@@ -250,10 +268,13 @@ tot_appoint_student_council_president_effect = {
 					has_role = character_role_tot_education_minister
 					has_role = character_role_tot_propaganda_minister
 					has_role = character_role_tot_chief_of_staff
+					has_role = character_role_tot_honorary_official
 				}
 			}
 			owner ?= {
 				is_player = yes
+				OR = { tot_cabinet_seats_free >= 1 has_variable = tot_student_council_president }
+				OR = { tot_club_capacity_free >= 30 has_variable = tot_student_council_president }
 			}
 		}
 
@@ -324,9 +345,7 @@ tot_appoint_discipline_minister_effect = {
 					has_role = character_role_tot_chief_of_staff
 				}
 			}
-			owner ?= {
-				is_player = yes
-			}
+			owner ?= { is_player = yes OR = { tot_cabinet_seats_free >= 1 has_variable = tot_discipline_minister } OR = { tot_club_capacity_free >= 30 has_variable = tot_discipline_minister } }
 		}
 
 		save_temporary_scope_as = tot_selected_discipline_minister
@@ -376,9 +395,10 @@ tot_appoint_education_minister_effect = {
 					has_role = character_role_tot_education_minister
 					has_role = character_role_tot_propaganda_minister
 					has_role = character_role_tot_chief_of_staff
+					has_role = character_role_tot_honorary_official
 				}
 			}
-			owner ?= { is_player = yes }
+			owner ?= { is_player = yes OR = { tot_cabinet_seats_free >= 1 has_variable = tot_education_minister } OR = { tot_club_capacity_free >= 30 has_variable = tot_education_minister } }
 		}
 		save_temporary_scope_as = tot_selected_education_minister
 		owner ?= {
@@ -417,9 +437,10 @@ tot_appoint_propaganda_minister_effect = {
 					has_role = character_role_tot_education_minister
 					has_role = character_role_tot_propaganda_minister
 					has_role = character_role_tot_chief_of_staff
+					has_role = character_role_tot_honorary_official
 				}
 			}
-			owner ?= { is_player = yes }
+			owner ?= { is_player = yes OR = { tot_cabinet_seats_free >= 1 has_variable = tot_propaganda_minister } OR = { tot_club_capacity_free >= 30 has_variable = tot_propaganda_minister } }
 		}
 		save_temporary_scope_as = tot_selected_propaganda_minister
 		owner ?= {
@@ -458,9 +479,10 @@ tot_appoint_chief_of_staff_effect = {
 					has_role = character_role_tot_education_minister
 					has_role = character_role_tot_propaganda_minister
 					has_role = character_role_tot_chief_of_staff
+					has_role = character_role_tot_honorary_official
 				}
 			}
-			owner ?= { is_player = yes }
+			owner ?= { is_player = yes OR = { tot_cabinet_seats_free >= 1 has_variable = tot_chief_of_staff } OR = { tot_club_capacity_free >= 30 has_variable = tot_chief_of_staff } }
 		}
 		save_temporary_scope_as = tot_selected_chief_of_staff
 		owner ?= {
