@@ -8,6 +8,10 @@ tot_clear_honorary_office_effect = {
 				remove_character_role = character_role_tot_honorary_official
 			}
 		}
+		var:tot_honorary_$SLOT$ ?= {
+			if = { limit = { is_historical = yes } root = { change_variable = { name = tot_office_capacity_usage add = -16 } } }
+			if = { limit = { is_historical = no } root = { change_variable = { name = tot_office_capacity_usage add = -20 } } }
+		}
 		remove_variable = tot_honorary_$SLOT$
 	}
 	if = {
@@ -17,12 +21,13 @@ tot_clear_honorary_office_effect = {
 }
 
 tot_refresh_honorary_office_effect = {
+	save_temporary_scope_as = tot_honorary_country
 	if = {
 		limit = {
 			has_variable = tot_honorary_$SLOT$
 			OR = {
 				NOT = { var:tot_honorary_$SLOT$ ?= { is_character_alive = yes } }
-				var:tot_honorary_$SLOT$ ?= { NOT = { owner = root } }
+				var:tot_honorary_$SLOT$ ?= { NOT = { owner = scope:tot_honorary_country } }
 			}
 		}
 		tot_clear_honorary_office_effect = { SLOT = $SLOT$ }
@@ -48,16 +53,22 @@ tot_appoint_honorary_office_effect = {
 			}
 			owner ?= {
 				is_player = yes
-				OR = { tot_club_capacity_free >= 10 has_variable = tot_honorary_$SLOT$ }
+				tot_honorary_office_capacity_available = { SLOT = $SLOT$ }
 			}
 		}
-		save_temporary_scope_as = tot_selected_honorary_office
+		save_scope_as = tot_selected_honorary_office
 		owner ?= {
 			tot_clear_honorary_office_effect = { SLOT = $SLOT$ }
 			set_variable = { name = tot_honorary_$SLOT$ value = scope:tot_selected_honorary_office }
 			add_modifier = { name = tot_honorary_$SLOT$_modifier }
 		}
 		add_character_role = character_role_tot_honorary_official
+		tot_add_honorary_office_maintenance_effect = yes
 		owner ?= { tot_refresh_student_council_candidates_effect = yes }
 	}
+}
+
+tot_add_honorary_office_maintenance_effect = {
+	if = { limit = { is_historical = yes } owner ?= { change_variable = { name = tot_office_capacity_usage add = 16 } } }
+	if = { limit = { is_historical = no } owner ?= { change_variable = { name = tot_office_capacity_usage add = 20 } } }
 }

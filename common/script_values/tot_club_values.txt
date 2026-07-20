@@ -9,8 +9,14 @@ tot_club_capacity = {
 	add = tot_club_capacity_from_innovation
 }
 
+tot_office_capacity_usage = {
+	value = var:tot_office_capacity_usage
+	min = 0
+}
+
 tot_club_capacity_usage = {
 	value = modifier:country_tot_club_capacity_usage_add
+	add = tot_office_capacity_usage
 	min = 0
 }
 

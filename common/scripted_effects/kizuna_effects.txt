@@ -16,7 +16,39 @@ update_kizuna = {
 		tot_sync_band_hq_investment_flags = yes
 		tot_sync_band_hq_route_bonuses = yes
 		tot_assign_unbound_band_hq_slots_effect = yes
-		tot_ensure_default_story_band_members_effect = yes
+		# Default line-ups are created by the one-time campaign setup effect.
+		if = {
+			limit = { this = c:GBDP NOT = { has_variable = tot_story_band_lineup_initialized } }
+			tot_setup_default_story_bands_effect = yes
+		}
+		# Recover saves opened during the short-lived repeated-default migration.
+		if = {
+			limit = {
+				this = c:GBDP
+				has_variable = tot_story_band_defaults_applied
+				NOT = { has_variable = tot_story_band_defaults_recovery_done }
+				NOT = { any_scope_character = { has_variable = tot_band_id } }
+			}
+			remove_variable = tot_story_band_defaults_applied
+			remove_variable = tot_story_band_startup_done
+			tot_setup_default_story_bands_effect = yes
+			set_variable = { name = tot_story_band_defaults_recovery_done value = 1 }
+		}
+		if = {
+			limit = {
+				this = c:GBDP
+				has_variable = tot_story_band_lineup_initialized
+				NOT = { has_variable = tot_story_band_lineup_recovery_done }
+				NOT = { any_scope_character = { has_variable = tot_band_id } }
+			}
+			remove_variable = tot_story_band_lineup_initialized
+			set_variable = { name = tot_story_band_lineup_recovery_done value = 1 }
+			tot_setup_default_story_bands_effect = yes
+		}
+		if = {
+			limit = { this = c:GBDP has_variable = tot_story_band_lineup_initialized }
+			tot_fix_gbdp_starting_band_roles_effect = yes
+		}
 		update_kon_kizuna = yes
 		update_band_kizuna = yes
 		update_tot_kizuna_groups = yes
@@ -855,7 +887,7 @@ tot_ensure_default_story_band_members_effect = {
 			limit = { state_region = s:STATE_ISTRIA any_scope_building = { is_building_type = building_band_headquarter } }
 			set_variable = { name = tot_band_hq_slot value = 3 }
 		}
-		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Kasumi_trait } save_scope_as = tot_band_member tot_appoint_band_1_vocalist_effect = yes tot_appoint_band_1_guitarist_effect = yes }
+		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Kasumi_trait } save_scope_as = tot_band_member tot_appoint_band_1_vocalist_effect = yes }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Tae_trait } save_scope_as = tot_band_member tot_appoint_band_1_guitarist_effect = yes }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Rimi_trait } save_scope_as = tot_band_member tot_appoint_band_1_bassist_effect = yes }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Arisa_trait } save_scope_as = tot_band_member tot_appoint_band_1_keyboardist_effect = yes }
@@ -865,10 +897,10 @@ tot_ensure_default_story_band_members_effect = {
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Imai_Lisa_trait } save_scope_as = tot_band_member tot_appoint_band_2_bassist_effect = yes }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Shirokane_Rinko_trait } save_scope_as = tot_band_member tot_appoint_band_2_keyboardist_effect = yes }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Udagawa_Ako_trait } save_scope_as = tot_band_member tot_appoint_band_2_drummer_effect = yes }
-		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Wakana_Rei_trait } save_scope_as = tot_band_member tot_appoint_band_3_vocalist_effect = yes tot_appoint_band_3_bassist_effect = yes }
+		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Wakana_Rei_trait } save_scope_as = tot_band_member tot_appoint_band_3_bassist_effect = yes }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Asahi_Rokka_trait } save_scope_as = tot_band_member tot_appoint_band_3_guitarist_effect = yes }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Tamade_Chiyu_trait } save_scope_as = tot_band_member tot_appoint_band_3_keyboardist_effect = yes }
-		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Nyubara_Reona_trait } save_scope_as = tot_band_member tot_appoint_band_3_keyboardist_effect = yes }
+		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Nyubara_Reona_trait } save_scope_as = tot_band_member tot_appoint_band_3_vocalist_effect = yes }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Sato_Masuki_trait } save_scope_as = tot_band_member tot_appoint_band_3_drummer_effect = yes }
 	}
 	if = {
@@ -1364,12 +1396,9 @@ update_band_kizuna = {
 		limit = { NOT = { has_variable = tot_band_limit } }
 		set_variable = { name = tot_band_limit value = 1 }
 	}
-	if = { limit = { NOT = { has_variable = tot_band_1_member_limit } } set_variable = { name = tot_band_1_member_limit value = 5 } }
-	if = { limit = { NOT = { has_variable = tot_band_2_member_limit } } set_variable = { name = tot_band_2_member_limit value = 5 } }
-	if = { limit = { NOT = { has_variable = tot_band_3_member_limit } } set_variable = { name = tot_band_3_member_limit value = 5 } }
-	if = { limit = { has_variable = tot_band_1_member_limit var:tot_band_1_member_limit < 1 } set_variable = { name = tot_band_1_member_limit value = 1 } }
-	if = { limit = { has_variable = tot_band_2_member_limit var:tot_band_2_member_limit < 1 } set_variable = { name = tot_band_2_member_limit value = 1 } }
-	if = { limit = { has_variable = tot_band_3_member_limit var:tot_band_3_member_limit < 1 } set_variable = { name = tot_band_3_member_limit value = 1 } }
+	remove_variable = tot_band_1_member_limit
+	remove_variable = tot_band_2_member_limit
+	remove_variable = tot_band_3_member_limit
 	if = { limit = { NOT = { has_variable = tot_band_1_name } } set_variable = { name = tot_band_1_name value = 0 } }
 	if = { limit = { NOT = { has_variable = tot_band_2_name } } set_variable = { name = tot_band_2_name value = 0 } }
 	if = { limit = { NOT = { has_variable = tot_band_3_name } } set_variable = { name = tot_band_3_name value = 0 } }
@@ -3047,6 +3076,40 @@ tot_setup_default_kon_band_effect = {
 	}
 }
 
+# Repair only the former duplicate-role opening line-up. This is inert after a
+# correct setup, so later player changes are not routinely overwritten.
+tot_fix_gbdp_starting_band_roles_effect = {
+	if = {
+		limit = {
+			this = c:GBDP
+			OR = {
+				any_scope_character = { has_trait = tot_Bang_Kasumi_trait has_variable = tot_band_role_guitarist }
+				any_scope_character = { has_trait = tot_Wakana_Rei_trait has_variable = tot_band_role_vocalist }
+				any_scope_character = { has_trait = tot_Nyubara_Reona_trait has_variable = tot_band_role_keyboardist }
+			}
+		}
+		every_scope_character = {
+			limit = { owner = root OR = { has_trait = tot_Bang_Kasumi_trait has_trait = tot_Bang_Tae_trait has_trait = tot_Bang_Rimi_trait has_trait = tot_Bang_Arisa_trait has_trait = tot_Bang_Saya_trait has_trait = tot_Minato_Yukina_trait has_trait = tot_Hikawa_Sayo_trait has_trait = tot_Imai_Lisa_trait has_trait = tot_Shirokane_Rinko_trait has_trait = tot_Udagawa_Ako_trait has_trait = tot_Wakana_Rei_trait has_trait = tot_Asahi_Rokka_trait has_trait = tot_Tamade_Chiyu_trait has_trait = tot_Nyubara_Reona_trait has_trait = tot_Sato_Masuki_trait } }
+			tot_clear_band_member_effect = yes
+		}
+		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Kasumi_trait } save_scope_as = tot_band_member tot_appoint_band_1_vocalist_effect = yes }
+		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Tae_trait } save_scope_as = tot_band_member tot_appoint_band_1_guitarist_effect = yes }
+		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Rimi_trait } save_scope_as = tot_band_member tot_appoint_band_1_bassist_effect = yes }
+		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Arisa_trait } save_scope_as = tot_band_member tot_appoint_band_1_keyboardist_effect = yes }
+		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Saya_trait } save_scope_as = tot_band_member tot_appoint_band_1_drummer_effect = yes }
+		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Minato_Yukina_trait } save_scope_as = tot_band_member tot_appoint_band_2_vocalist_effect = yes }
+		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Hikawa_Sayo_trait } save_scope_as = tot_band_member tot_appoint_band_2_guitarist_effect = yes }
+		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Imai_Lisa_trait } save_scope_as = tot_band_member tot_appoint_band_2_bassist_effect = yes }
+		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Shirokane_Rinko_trait } save_scope_as = tot_band_member tot_appoint_band_2_keyboardist_effect = yes }
+		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Udagawa_Ako_trait } save_scope_as = tot_band_member tot_appoint_band_2_drummer_effect = yes }
+		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Nyubara_Reona_trait } save_scope_as = tot_band_member tot_appoint_band_3_vocalist_effect = yes }
+		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Asahi_Rokka_trait } save_scope_as = tot_band_member tot_appoint_band_3_guitarist_effect = yes }
+		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Wakana_Rei_trait } save_scope_as = tot_band_member tot_appoint_band_3_bassist_effect = yes }
+		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Tamade_Chiyu_trait } save_scope_as = tot_band_member tot_appoint_band_3_keyboardist_effect = yes }
+		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Sato_Masuki_trait } save_scope_as = tot_band_member tot_appoint_band_3_drummer_effect = yes }
+	}
+}
+
 tot_setup_default_story_bands_effect = {
 	if = {
 		limit = { this = c:AFTG NOT = { has_variable = tot_story_band_startup_done } }
@@ -3088,7 +3151,7 @@ tot_setup_default_story_bands_effect = {
 		update_kizuna = yes
 	}
 	if = {
-		limit = { this = c:GBDP NOT = { has_variable = tot_story_band_startup_done } }
+		limit = { this = c:GBDP NOT = { has_variable = tot_story_band_lineup_initialized } }
 		set_variable = { name = tot_story_band_startup_done value = 1 }
 		activate_law = law_type:law_artistic_freedom
 		set_variable = { name = tot_band_limit value = 3 }
@@ -3098,7 +3161,7 @@ tot_setup_default_story_bands_effect = {
 		every_scope_state = { limit = { state_region = s:STATE_VENETIA any_scope_building = { is_building_type = building_band_headquarter } } set_variable = { name = tot_band_hq_slot value = 1 } }
 		every_scope_state = { limit = { state_region = s:STATE_LOMBARDY any_scope_building = { is_building_type = building_band_headquarter } } set_variable = { name = tot_band_hq_slot value = 2 } }
 		every_scope_state = { limit = { state_region = s:STATE_ISTRIA any_scope_building = { is_building_type = building_band_headquarter } } set_variable = { name = tot_band_hq_slot value = 3 } }
-		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Kasumi_trait } save_scope_as = tot_band_member tot_appoint_band_1_vocalist_effect = yes tot_appoint_band_1_guitarist_effect = yes }
+		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Kasumi_trait } save_scope_as = tot_band_member tot_appoint_band_1_vocalist_effect = yes }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Tae_trait } save_scope_as = tot_band_member tot_appoint_band_1_guitarist_effect = yes }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Rimi_trait } save_scope_as = tot_band_member tot_appoint_band_1_bassist_effect = yes }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Arisa_trait } save_scope_as = tot_band_member tot_appoint_band_1_keyboardist_effect = yes }
@@ -3108,12 +3171,21 @@ tot_setup_default_story_bands_effect = {
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Imai_Lisa_trait } save_scope_as = tot_band_member tot_appoint_band_2_bassist_effect = yes }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Shirokane_Rinko_trait } save_scope_as = tot_band_member tot_appoint_band_2_keyboardist_effect = yes }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Udagawa_Ako_trait } save_scope_as = tot_band_member tot_appoint_band_2_drummer_effect = yes }
-		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Wakana_Rei_trait } save_scope_as = tot_band_member tot_appoint_band_3_vocalist_effect = yes tot_appoint_band_3_bassist_effect = yes }
+		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Wakana_Rei_trait } save_scope_as = tot_band_member tot_appoint_band_3_bassist_effect = yes }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Asahi_Rokka_trait } save_scope_as = tot_band_member tot_appoint_band_3_guitarist_effect = yes }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Tamade_Chiyu_trait } save_scope_as = tot_band_member tot_appoint_band_3_keyboardist_effect = yes }
-		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Nyubara_Reona_trait } save_scope_as = tot_band_member tot_appoint_band_3_keyboardist_effect = yes }
+		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Nyubara_Reona_trait } save_scope_as = tot_band_member tot_appoint_band_3_vocalist_effect = yes }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Sato_Masuki_trait } save_scope_as = tot_band_member tot_appoint_band_3_drummer_effect = yes }
-		update_kizuna = yes
+		# Characters are not always available during the first startup callback.
+		# Do not lock the one-time setup until all three starting line-ups can exist.
+		if = {
+			limit = {
+				any_scope_character = { has_trait = tot_Bang_Kasumi_trait }
+				any_scope_character = { has_trait = tot_Minato_Yukina_trait }
+				any_scope_character = { has_trait = tot_Wakana_Rei_trait }
+			}
+			set_variable = { name = tot_story_band_lineup_initialized value = 1 }
+		}
 	}
 	if = {
 		limit = { this = c:IDMS NOT = { has_variable = tot_story_band_startup_done } }

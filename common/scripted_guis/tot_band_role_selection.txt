@@ -5,34 +5,6 @@ tot_band_1_select_role_vocalist = {
 	is_valid = { var:tot_band_limit >= 1 }
 }
 
-tot_band_1_set_member_limit_4 = {
-	scope = country
-	effect = { set_variable = { name = tot_band_1_member_limit value = 4 } update_kizuna = yes }
-	is_shown = { var:tot_band_limit >= 1 }
-	is_valid = { var:tot_band_limit >= 1 }
-}
-
-tot_band_1_set_member_limit_5 = {
-	scope = country
-	effect = { set_variable = { name = tot_band_1_member_limit value = 5 } update_kizuna = yes }
-	is_shown = { var:tot_band_limit >= 1 }
-	is_valid = { var:tot_band_limit >= 1 }
-}
-
-tot_band_1_member_limit_4_selected = {
-	scope = country
-	effect = { }
-	is_shown = { has_variable = tot_band_1_member_limit var:tot_band_1_member_limit = 4 }
-	is_valid = { var:tot_band_limit >= 1 }
-}
-
-tot_band_1_member_limit_5_selected = {
-	scope = country
-	effect = { }
-	is_shown = { OR = { NOT = { has_variable = tot_band_1_member_limit } AND = { has_variable = tot_band_1_member_limit var:tot_band_1_member_limit = 5 } } }
-	is_valid = { var:tot_band_limit >= 1 }
-}
-
 tot_band_1_role_vocalist_selected = {
 	scope = country
 	effect = { }
@@ -132,11 +104,13 @@ tot_band_1_assign_selected_role = {
 					var:tot_band_reward_points_total >= 1
 				}
 			}
-			OR = {
-				NOT = { has_variable = tot_band_1_member_count }
-				NOT = { has_variable = tot_band_1_member_limit }
-				var:tot_band_1_member_count < var:tot_band_1_member_limit
-				prev = { has_variable = tot_band_id var:tot_band_id = 1 }
+			custom_tooltip = {
+				text = TOT_BAND_RULE_MAX_MEMBERS
+				OR = {
+					NOT = { has_variable = tot_band_1_member_count }
+					var:tot_band_1_member_count < 5
+					prev = { has_variable = tot_band_id var:tot_band_id = 1 }
+				}
 			}
 			if = {
 				limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 1 var:tot_band_selected_role = 1 } }
@@ -241,34 +215,6 @@ tot_band_2_select_role_vocalist = {
 	scope = country
 	effect = { every_scope_state = { limit = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 } set_variable = { name = tot_band_selected_role value = 1 } } update_kizuna = yes }
 	is_shown = { var:tot_band_limit >= 2 }
-	is_valid = { var:tot_band_limit >= 2 }
-}
-
-tot_band_2_set_member_limit_4 = {
-	scope = country
-	effect = { set_variable = { name = tot_band_2_member_limit value = 4 } update_kizuna = yes }
-	is_shown = { var:tot_band_limit >= 2 }
-	is_valid = { var:tot_band_limit >= 2 }
-}
-
-tot_band_2_set_member_limit_5 = {
-	scope = country
-	effect = { set_variable = { name = tot_band_2_member_limit value = 5 } update_kizuna = yes }
-	is_shown = { var:tot_band_limit >= 2 }
-	is_valid = { var:tot_band_limit >= 2 }
-}
-
-tot_band_2_member_limit_4_selected = {
-	scope = country
-	effect = { }
-	is_shown = { has_variable = tot_band_2_member_limit var:tot_band_2_member_limit = 4 }
-	is_valid = { var:tot_band_limit >= 2 }
-}
-
-tot_band_2_member_limit_5_selected = {
-	scope = country
-	effect = { }
-	is_shown = { OR = { NOT = { has_variable = tot_band_2_member_limit } AND = { has_variable = tot_band_2_member_limit var:tot_band_2_member_limit = 5 } } }
 	is_valid = { var:tot_band_limit >= 2 }
 }
 
@@ -454,11 +400,13 @@ tot_band_2_assign_selected_role = {
 					var:tot_band_reward_points_total >= 1
 				}
 			}
-			OR = {
-				NOT = { has_variable = tot_band_2_member_count }
-				NOT = { has_variable = tot_band_2_member_limit }
-				var:tot_band_2_member_count < var:tot_band_2_member_limit
-				prev = { has_variable = tot_band_id var:tot_band_id = 2 }
+			custom_tooltip = {
+				text = TOT_BAND_RULE_MAX_MEMBERS
+				OR = {
+					NOT = { has_variable = tot_band_2_member_count }
+					var:tot_band_2_member_count < 5
+					prev = { has_variable = tot_band_id var:tot_band_id = 2 }
+				}
 			}
 			if = {
 				limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 2 var:tot_band_selected_role = 1 } }
@@ -566,34 +514,6 @@ tot_band_3_select_role_vocalist = {
 	is_valid = { var:tot_band_limit >= 3 }
 }
 
-tot_band_3_set_member_limit_4 = {
-	scope = country
-	effect = { set_variable = { name = tot_band_3_member_limit value = 4 } update_kizuna = yes }
-	is_shown = { var:tot_band_limit >= 3 }
-	is_valid = { var:tot_band_limit >= 3 }
-}
-
-tot_band_3_set_member_limit_5 = {
-	scope = country
-	effect = { set_variable = { name = tot_band_3_member_limit value = 5 } update_kizuna = yes }
-	is_shown = { var:tot_band_limit >= 3 }
-	is_valid = { var:tot_band_limit >= 3 }
-}
-
-tot_band_3_member_limit_4_selected = {
-	scope = country
-	effect = { }
-	is_shown = { has_variable = tot_band_3_member_limit var:tot_band_3_member_limit = 4 }
-	is_valid = { var:tot_band_limit >= 3 }
-}
-
-tot_band_3_member_limit_5_selected = {
-	scope = country
-	effect = { }
-	is_shown = { OR = { NOT = { has_variable = tot_band_3_member_limit } AND = { has_variable = tot_band_3_member_limit var:tot_band_3_member_limit = 5 } } }
-	is_valid = { var:tot_band_limit >= 3 }
-}
-
 tot_band_3_role_vocalist_selected = {
 	scope = country
 	effect = { }
@@ -693,11 +613,13 @@ tot_band_3_assign_selected_role = {
 					var:tot_band_reward_points_total >= 1
 				}
 			}
-			OR = {
-				NOT = { has_variable = tot_band_3_member_count }
-				NOT = { has_variable = tot_band_3_member_limit }
-				var:tot_band_3_member_count < var:tot_band_3_member_limit
-				prev = { has_variable = tot_band_id var:tot_band_id = 3 }
+			custom_tooltip = {
+				text = TOT_BAND_RULE_MAX_MEMBERS
+				OR = {
+					NOT = { has_variable = tot_band_3_member_count }
+					var:tot_band_3_member_count < 5
+					prev = { has_variable = tot_band_id var:tot_band_id = 3 }
+				}
 			}
 			if = {
 				limit = { any_scope_state = { has_variable = tot_band_hq_slot var:tot_band_hq_slot = 3 var:tot_band_selected_role = 1 } }

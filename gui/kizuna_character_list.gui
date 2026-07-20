@@ -239,13 +239,14 @@
 	}
 
 	type tot_band_candidate_character_base = widget {
-		size = { 470 124 }
+		# Match the character-system candidate cards: one readable row per candidate.
+		size = { 900 124 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
-		background = { using = entry_bg_simple }
+		background = { using = entry_bg_fancy }
 		flowcontainer = {
 			margin = { 10 8 }
-			spacing = 10
+			spacing = 12
 			widget = {
 				size = { 92 92 }
 				background = {
@@ -263,8 +264,8 @@
 			flowcontainer = {
 				direction = vertical
 				spacing = 3
-				size = { 160 104 }
-				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_small size = { 160 22 } align = left|nobaseline elide = right }
+				size = { 560 104 }
+				textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 560 24 } align = left|nobaseline elide = right }
 				flowcontainer = {
 					spacing = 3
 					icon = { visible = "[GetScriptedGui('tot_band_character_is_vocalist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 20 20 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_vocal.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
@@ -273,8 +274,37 @@
 					icon = { visible = "[GetScriptedGui('tot_band_character_is_keyboardist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 20 20 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_keyboard.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
 					icon = { visible = "[GetScriptedGui('tot_band_character_is_drummer').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 20 20 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_drums.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
 				}
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" size = { 160 18 } using = fontsize_very_small align = left|nobaseline elide = right }
-				textbox = { visible = "[GetScriptedGui('tot_band_character_has_specialty').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" raw_text = "特长：[Character.GetCustom('tot_band_specialty_summary')]" size = { 160 16 } using = fontsize_very_small align = left|nobaseline elide = right }
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" size = { 560 18 } using = fontsize_small align = left|nobaseline elide = right }
+				textbox = { visible = "[GetScriptedGui('tot_band_character_has_specialty').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" raw_text = "特长：[Character.GetCustom('tot_band_specialty_summary')]" size = { 560 16 } using = fontsize_very_small align = left|nobaseline elide = right }
+				widget = {
+					size = { 560 20 }
+					hbox = {
+						spacing = 8
+						widget = {
+						visible = "[Character.GetInterestGroup.IsValid]"
+						size = { 268 20 }
+						background = { using = entry_bg_simple }
+						datacontext = "[Character.GetInterestGroup]"
+						hbox = {
+							parentanchor = center
+							spacing = 5
+							icon = { size = { 18 18 } texture = "[InterestGroup.GetTexture]" tooltipwidget = { FancyTooltip_IG = {} } }
+							textbox = { size = { 235 16 } raw_text = "[InterestGroup.GetNameNoFormatting]" using = fontsize_very_small align = left|nobaseline elide = right }
+						}
+					}
+						widget = {
+						size = { 268 20 }
+						background = { using = entry_bg_simple }
+						datacontext = "[Character.GetIdeology]"
+						hbox = {
+							parentanchor = center
+							spacing = 5
+							icon = { size = { 18 18 } texture = "[Ideology.GetTexture]" tooltipwidget = { FancyTooltip_Ideology = {} } }
+							textbox = { size = { 235 16 } raw_text = "[Ideology.GetNameNoFormatting]" using = fontsize_very_small align = left|nobaseline elide = right }
+						}
+						}
+					}
+				}
 			}
 			block "appoint_buttons" {
 				flowcontainer = {
@@ -319,13 +349,14 @@
 	type tot_band_10_candidate_character = tot_band_candidate_character_base { blockoverride "appoint_buttons" { flowcontainer = { direction = vertical spacing = 3 size = { 192 104 } flowcontainer = { spacing = 3 button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_VOCAL_TEXT" onclick = "[GetScriptedGui('tot_band_10_select_role_vocalist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_10_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_vocal.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_GUITAR_TEXT" onclick = "[GetScriptedGui('tot_band_10_select_role_guitarist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_10_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_guitar_center.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } flowcontainer = { spacing = 3 button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_BASS_TEXT" onclick = "[GetScriptedGui('tot_band_10_select_role_bassist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_10_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_bass.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_KEYBOARD_TEXT" onclick = "[GetScriptedGui('tot_band_10_select_role_keyboardist').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_10_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_keyboard.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } button = { using = default_button size = { 94 26 } text = "TOT_BAND_ROLE_DRUM_TEXT" onclick = "[GetScriptedGui('tot_band_10_select_role_drummer').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)][GetScriptedGui('tot_band_10_assign_selected_role').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" icon = { parentanchor = left|vcenter position = { 7 0 } size = { 16 16 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_drums.dds" } tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" } } } }
 
 	type tot_band_role_slot_portrait = widget {
-		size = { 96 124 }
+		size = { 96 164 }
 		datacontext = "[Scope.AccessCharacter]"
 		visible = "[Character.IsValid]"
 
 		background = { using = entry_bg_simple }
 
 		flowcontainer = {
+			parentanchor = hcenter
 			direction = vertical
 			spacing = 2
 			margin = { 4 4 }
@@ -365,13 +396,14 @@
 	}
 
 	type tot_band_role_slot_vocal_portrait = widget {
-		size = { 96 124 }
+		size = { 96 164 }
 		datacontext = "[Scope.AccessCharacter]"
 		visible = "[Character.IsValid]"
 
 		background = { using = entry_bg_simple }
 
 		flowcontainer = {
+			parentanchor = hcenter
 			direction = vertical
 			spacing = 2
 			margin = { 4 4 }
@@ -418,13 +450,14 @@
 	}
 
 	type tot_band_role_slot_guitar_portrait = widget {
-		size = { 96 124 }
+		size = { 96 164 }
 		datacontext = "[Scope.AccessCharacter]"
 		visible = "[Character.IsValid]"
 
 		background = { using = entry_bg_simple }
 
 		flowcontainer = {
+			parentanchor = hcenter
 			direction = vertical
 			spacing = 2
 			margin = { 4 4 }
@@ -471,13 +504,14 @@
 	}
 
 	type tot_band_role_slot_bass_portrait = widget {
-		size = { 96 124 }
+		size = { 96 164 }
 		datacontext = "[Scope.AccessCharacter]"
 		visible = "[Character.IsValid]"
 
 		background = { using = entry_bg_simple }
 
 		flowcontainer = {
+			parentanchor = hcenter
 			direction = vertical
 			spacing = 2
 			margin = { 4 4 }
@@ -524,13 +558,14 @@
 	}
 
 	type tot_band_role_slot_keyboard_portrait = widget {
-		size = { 96 124 }
+		size = { 96 164 }
 		datacontext = "[Scope.AccessCharacter]"
 		visible = "[Character.IsValid]"
 
 		background = { using = entry_bg_simple }
 
 		flowcontainer = {
+			parentanchor = hcenter
 			direction = vertical
 			spacing = 2
 			margin = { 4 4 }
@@ -577,13 +612,14 @@
 	}
 
 	type tot_band_role_slot_drum_portrait = widget {
-		size = { 96 124 }
+		size = { 96 164 }
 		datacontext = "[Scope.AccessCharacter]"
 		visible = "[Character.IsValid]"
 
 		background = { using = entry_bg_simple }
 
 		flowcontainer = {
+			parentanchor = hcenter
 			direction = vertical
 			spacing = 2
 			margin = { 4 4 }
@@ -630,9 +666,10 @@
 	}
 
 	type tot_band_role_slot_empty = widget {
-		size = { 96 124 }
+		size = { 96 164 }
 		background = { using = entry_bg_simple }
 		flowcontainer = {
+			parentanchor = hcenter
 			direction = vertical
 			spacing = 4
 			margin = { 6 6 }

@@ -1,4 +1,64 @@
+tot_clear_core_office_maintenance_effect = {
+	if = {
+		limit = { has_variable = tot_$SLOT$ }
+		var:tot_$SLOT$ ?= {
+			if = { limit = { is_historical = yes } root = { change_variable = { name = tot_office_capacity_usage add = -40 } } }
+			if = { limit = { is_historical = no } root = { change_variable = { name = tot_office_capacity_usage add = -50 } } }
+		}
+	}
+}
+
+tot_add_core_office_maintenance_effect = {
+	if = { limit = { is_historical = yes } owner ?= { change_variable = { name = tot_office_capacity_usage add = 40 } } }
+	if = { limit = { is_historical = no } owner ?= { change_variable = { name = tot_office_capacity_usage add = 50 } } }
+}
+
+tot_recalculate_honorary_office_maintenance_effect = {
+	if = {
+		limit = { has_variable = tot_honorary_$SLOT$ }
+		var:tot_honorary_$SLOT$ ?= {
+			if = { limit = { is_historical = yes } root = { change_variable = { name = tot_office_capacity_usage add = 16 } } }
+			if = { limit = { is_historical = no } root = { change_variable = { name = tot_office_capacity_usage add = 20 } } }
+		}
+	}
+}
+
+tot_recalculate_office_capacity_usage_effect = {
+	set_variable = { name = tot_office_capacity_usage value = 0 }
+	tot_recalculate_core_office_maintenance_effect = { SLOT = student_council_president }
+	tot_recalculate_core_office_maintenance_effect = { SLOT = discipline_minister }
+	tot_recalculate_core_office_maintenance_effect = { SLOT = education_minister }
+	tot_recalculate_core_office_maintenance_effect = { SLOT = propaganda_minister }
+	tot_recalculate_core_office_maintenance_effect = { SLOT = chief_of_staff }
+	tot_recalculate_honorary_office_maintenance_effect = { SLOT = club_adviser }
+	tot_recalculate_honorary_office_maintenance_effect = { SLOT = training_adviser }
+	tot_recalculate_honorary_office_maintenance_effect = { SLOT = stage_adviser }
+	tot_recalculate_honorary_office_maintenance_effect = { SLOT = arts_adviser }
+	tot_recalculate_honorary_office_maintenance_effect = { SLOT = band_adviser }
+	tot_recalculate_honorary_office_maintenance_effect = { SLOT = publishing_adviser }
+	tot_recalculate_honorary_office_maintenance_effect = { SLOT = broadcast_adviser }
+	tot_recalculate_honorary_office_maintenance_effect = { SLOT = events_adviser }
+	tot_recalculate_honorary_office_maintenance_effect = { SLOT = etiquette_adviser }
+	tot_recalculate_honorary_office_maintenance_effect = { SLOT = culture_adviser }
+	tot_recalculate_honorary_office_maintenance_effect = { SLOT = life_adviser }
+	tot_recalculate_honorary_office_maintenance_effect = { SLOT = health_adviser }
+	tot_recalculate_honorary_office_maintenance_effect = { SLOT = local_adviser }
+	tot_recalculate_honorary_office_maintenance_effect = { SLOT = commerce_adviser }
+	tot_recalculate_honorary_office_maintenance_effect = { SLOT = logistics_adviser }
+}
+
+tot_recalculate_core_office_maintenance_effect = {
+	if = {
+		limit = { has_variable = tot_$SLOT$ }
+		var:tot_$SLOT$ ?= {
+			if = { limit = { is_historical = yes } root = { change_variable = { name = tot_office_capacity_usage add = 40 } } }
+			if = { limit = { is_historical = no } root = { change_variable = { name = tot_office_capacity_usage add = 50 } } }
+		}
+	}
+}
+
 tot_refresh_student_council_candidates_effect = {
+	tot_recalculate_office_capacity_usage_effect = yes
 	save_temporary_scope_as = tot_student_council_country
 
 	if = {
@@ -25,6 +85,7 @@ tot_refresh_student_council_candidates_effect = {
 				remove_character_role = character_role_tot_student_council_president
 			}
 		}
+		tot_clear_core_office_maintenance_effect = { SLOT = student_council_president }
 		remove_variable = tot_student_council_president
 		if = {
 			limit = {
@@ -274,7 +335,7 @@ tot_appoint_student_council_president_effect = {
 			owner ?= {
 				is_player = yes
 				OR = { tot_cabinet_seats_free >= 1 has_variable = tot_student_council_president }
-				OR = { tot_club_capacity_free >= 30 has_variable = tot_student_council_president }
+				tot_core_office_capacity_available = { SLOT = student_council_president }
 			}
 		}
 
@@ -292,6 +353,7 @@ tot_appoint_student_council_president_effect = {
 		}
 
 		add_character_role = character_role_tot_student_council_president
+		tot_add_core_office_maintenance_effect = yes
 
 		owner ?= {
 			tot_refresh_student_council_candidates_effect = yes
@@ -312,6 +374,7 @@ tot_clear_discipline_minister_effect = {
 				remove_character_role = character_role_tot_discipline_minister
 			}
 		}
+		tot_clear_core_office_maintenance_effect = { SLOT = discipline_minister }
 		remove_variable = tot_discipline_minister
 	}
 
@@ -345,7 +408,7 @@ tot_appoint_discipline_minister_effect = {
 					has_role = character_role_tot_chief_of_staff
 				}
 			}
-			owner ?= { is_player = yes OR = { tot_cabinet_seats_free >= 1 has_variable = tot_discipline_minister } OR = { tot_club_capacity_free >= 30 has_variable = tot_discipline_minister } }
+			owner ?= { is_player = yes OR = { tot_cabinet_seats_free >= 1 has_variable = tot_discipline_minister } tot_core_office_capacity_available = { SLOT = discipline_minister } }
 		}
 
 		save_temporary_scope_as = tot_selected_discipline_minister
@@ -362,6 +425,7 @@ tot_appoint_discipline_minister_effect = {
 		}
 
 		add_character_role = character_role_tot_discipline_minister
+		tot_add_core_office_maintenance_effect = yes
 
 		owner ?= {
 			tot_refresh_student_council_candidates_effect = yes
@@ -375,6 +439,7 @@ tot_clear_education_minister_effect = {
 		var:tot_education_minister ?= {
 			if = { limit = { has_role = character_role_tot_education_minister } remove_character_role = character_role_tot_education_minister }
 		}
+		tot_clear_core_office_maintenance_effect = { SLOT = education_minister }
 		remove_variable = tot_education_minister
 	}
 	if = { limit = { has_modifier = tot_education_minister_modifier } remove_modifier = tot_education_minister_modifier }
@@ -398,7 +463,7 @@ tot_appoint_education_minister_effect = {
 					has_role = character_role_tot_honorary_official
 				}
 			}
-			owner ?= { is_player = yes OR = { tot_cabinet_seats_free >= 1 has_variable = tot_education_minister } OR = { tot_club_capacity_free >= 30 has_variable = tot_education_minister } }
+			owner ?= { is_player = yes OR = { tot_cabinet_seats_free >= 1 has_variable = tot_education_minister } tot_core_office_capacity_available = { SLOT = education_minister } }
 		}
 		save_temporary_scope_as = tot_selected_education_minister
 		owner ?= {
@@ -407,6 +472,7 @@ tot_appoint_education_minister_effect = {
 			add_modifier = { name = tot_education_minister_modifier }
 		}
 		add_character_role = character_role_tot_education_minister
+		tot_add_core_office_maintenance_effect = yes
 		owner ?= { tot_refresh_student_council_candidates_effect = yes }
 	}
 }
@@ -417,6 +483,7 @@ tot_clear_propaganda_minister_effect = {
 		var:tot_propaganda_minister ?= {
 			if = { limit = { has_role = character_role_tot_propaganda_minister } remove_character_role = character_role_tot_propaganda_minister }
 		}
+		tot_clear_core_office_maintenance_effect = { SLOT = propaganda_minister }
 		remove_variable = tot_propaganda_minister
 	}
 	if = { limit = { has_modifier = tot_propaganda_minister_modifier } remove_modifier = tot_propaganda_minister_modifier }
@@ -440,7 +507,7 @@ tot_appoint_propaganda_minister_effect = {
 					has_role = character_role_tot_honorary_official
 				}
 			}
-			owner ?= { is_player = yes OR = { tot_cabinet_seats_free >= 1 has_variable = tot_propaganda_minister } OR = { tot_club_capacity_free >= 30 has_variable = tot_propaganda_minister } }
+			owner ?= { is_player = yes OR = { tot_cabinet_seats_free >= 1 has_variable = tot_propaganda_minister } tot_core_office_capacity_available = { SLOT = propaganda_minister } }
 		}
 		save_temporary_scope_as = tot_selected_propaganda_minister
 		owner ?= {
@@ -449,6 +516,7 @@ tot_appoint_propaganda_minister_effect = {
 			add_modifier = { name = tot_propaganda_minister_modifier }
 		}
 		add_character_role = character_role_tot_propaganda_minister
+		tot_add_core_office_maintenance_effect = yes
 		owner ?= { tot_refresh_student_council_candidates_effect = yes }
 	}
 }
@@ -459,6 +527,7 @@ tot_clear_chief_of_staff_effect = {
 		var:tot_chief_of_staff ?= {
 			if = { limit = { has_role = character_role_tot_chief_of_staff } remove_character_role = character_role_tot_chief_of_staff }
 		}
+		tot_clear_core_office_maintenance_effect = { SLOT = chief_of_staff }
 		remove_variable = tot_chief_of_staff
 	}
 	if = { limit = { has_modifier = tot_chief_of_staff_modifier } remove_modifier = tot_chief_of_staff_modifier }
@@ -482,7 +551,7 @@ tot_appoint_chief_of_staff_effect = {
 					has_role = character_role_tot_honorary_official
 				}
 			}
-			owner ?= { is_player = yes OR = { tot_cabinet_seats_free >= 1 has_variable = tot_chief_of_staff } OR = { tot_club_capacity_free >= 30 has_variable = tot_chief_of_staff } }
+			owner ?= { is_player = yes OR = { tot_cabinet_seats_free >= 1 has_variable = tot_chief_of_staff } tot_core_office_capacity_available = { SLOT = chief_of_staff } }
 		}
 		save_temporary_scope_as = tot_selected_chief_of_staff
 		owner ?= {
@@ -491,6 +560,7 @@ tot_appoint_chief_of_staff_effect = {
 			add_modifier = { name = tot_chief_of_staff_modifier }
 		}
 		add_character_role = character_role_tot_chief_of_staff
+		tot_add_core_office_maintenance_effect = yes
 		owner ?= { tot_refresh_student_council_candidates_effect = yes }
 	}
 }
