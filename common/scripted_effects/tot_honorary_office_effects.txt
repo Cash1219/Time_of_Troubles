@@ -1,5 +1,6 @@
 # All honorary offices share a character role, but each country slot retains its own holder and modifier.
 tot_clear_honorary_office_effect = {
+	save_temporary_scope_as = tot_honorary_clear_country
 	if = {
 		limit = { has_variable = tot_honorary_$SLOT$ }
 		var:tot_honorary_$SLOT$ ?= {
@@ -9,8 +10,8 @@ tot_clear_honorary_office_effect = {
 			}
 		}
 		var:tot_honorary_$SLOT$ ?= {
-			if = { limit = { is_historical = yes } root = { change_variable = { name = tot_office_capacity_usage add = -16 } } }
-			if = { limit = { is_historical = no } root = { change_variable = { name = tot_office_capacity_usage add = -20 } } }
+			if = { limit = { is_historical = yes } scope:tot_honorary_clear_country = { change_variable = { name = tot_office_capacity_usage add = { value = -16 multiply = tot_honorary_office_maintenance_multiplier } } } }
+			if = { limit = { is_historical = no } scope:tot_honorary_clear_country = { change_variable = { name = tot_office_capacity_usage add = { value = -20 multiply = tot_honorary_office_maintenance_multiplier } } } }
 		}
 		remove_variable = tot_honorary_$SLOT$
 	}
@@ -51,10 +52,8 @@ tot_appoint_honorary_office_effect = {
 					has_role = character_role_tot_chief_of_staff
 				}
 			}
-			owner ?= {
-				is_player = yes
-				tot_honorary_office_capacity_available = { SLOT = $SLOT$ }
-			}
+			owner ?= { is_player = yes }
+			tot_honorary_office_capacity_available = { SLOT = $SLOT$ }
 		}
 		save_scope_as = tot_selected_honorary_office
 		owner ?= {
@@ -69,6 +68,6 @@ tot_appoint_honorary_office_effect = {
 }
 
 tot_add_honorary_office_maintenance_effect = {
-	if = { limit = { is_historical = yes } owner ?= { change_variable = { name = tot_office_capacity_usage add = 16 } } }
-	if = { limit = { is_historical = no } owner ?= { change_variable = { name = tot_office_capacity_usage add = 20 } } }
+	if = { limit = { is_historical = yes } owner ?= { change_variable = { name = tot_office_capacity_usage add = { value = 16 multiply = tot_honorary_office_maintenance_multiplier } } } }
+	if = { limit = { is_historical = no } owner ?= { change_variable = { name = tot_office_capacity_usage add = { value = 20 multiply = tot_honorary_office_maintenance_multiplier } } } }
 }

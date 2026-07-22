@@ -14,6 +14,7 @@ COUNTRIES = {
 		activate_law = law_type:law_national_supremacy
 
 		ig:ig_landowners ?= {
+			remove_ruling_interest_group = yes
 			remove_ideology = ideology_paternalistic
 			remove_ideology = ideology_patriarchal
 			remove_ideology = ideology_hierarchic
@@ -23,6 +24,7 @@ COUNTRIES = {
 			set_interest_group_name = ig_landowners_band
 		}
 		ig:ig_devout ?= {
+			add_ruling_interest_group = yes
 			remove_ideology = ideology_pious
 			remove_ideology = ideology_moralist
 			remove_ideology = ideology_patriarchal
@@ -31,6 +33,7 @@ COUNTRIES = {
 			set_interest_group_name = ig_devout_band
 		}
 		ig:ig_armed_forces ?= {
+			remove_ruling_interest_group = yes
 			remove_ideology = ideology_jingoist
 			remove_ideology = ideology_loyalist
 			remove_ideology = ideology_patriotic
@@ -39,6 +42,7 @@ COUNTRIES = {
 			set_interest_group_name = ig_armed_forces_band
 		}
 		ig:ig_industrialists ?= {
+			remove_ruling_interest_group = yes
 			remove_ideology = ideology_plutocratic
 			remove_ideology = ideology_laissez_faire
 			remove_ideology = ideology_individualist
@@ -47,6 +51,7 @@ COUNTRIES = {
 			set_interest_group_name = ig_industrialists_band
 		}
 		ig:ig_petty_bourgeoisie ?= {
+			add_ruling_interest_group = yes
 			remove_ideology = ideology_reactionary
 			remove_ideology = ideology_meritocratic
 			remove_ideology = ideology_patriotic
@@ -55,6 +60,7 @@ COUNTRIES = {
 			set_interest_group_name = ig_petty_bourgeoisie_band
 		}
 		ig:ig_rural_folk ?= {
+			add_ruling_interest_group = yes
 			remove_ideology = ideology_agrarian
 			remove_ideology = ideology_particularist
 			remove_ideology = ideology_isolationist
@@ -63,6 +69,7 @@ COUNTRIES = {
 			set_interest_group_name = ig_rural_folk_band
 		}
 		ig:ig_trade_unions ?= {
+			add_ruling_interest_group = yes
 			remove_ideology = ideology_proletarian
 			remove_ideology = ideology_egalitarian
 			remove_ideology = ideology_populist
@@ -73,6 +80,7 @@ COUNTRIES = {
 			set_interest_group_name = ig_trade_unions_band
 		}
 		ig:ig_intelligentsia ?= {
+			add_ruling_interest_group = yes
 			remove_ideology = ideology_liberal
 			remove_ideology = ideology_anti_clerical
 			remove_ideology = ideology_republican

@@ -14,6 +14,46 @@ tot_office_capacity_usage = {
 	min = 0
 }
 
+tot_core_office_maintenance_multiplier = {
+	value = 1
+	add = modifier:country_tot_core_office_maintenance_mult
+}
+
+tot_honorary_office_maintenance_multiplier = {
+	value = 1
+	add = modifier:country_tot_honorary_office_maintenance_mult
+}
+
+tot_core_office_maintenance_historical = {
+	value = 40
+	multiply = tot_core_office_maintenance_multiplier
+}
+
+tot_core_office_maintenance_standard = {
+	value = 50
+	multiply = tot_core_office_maintenance_multiplier
+}
+
+tot_core_office_maintenance_difference = {
+	value = 10
+	multiply = tot_core_office_maintenance_multiplier
+}
+
+tot_honorary_office_maintenance_historical = {
+	value = 16
+	multiply = tot_honorary_office_maintenance_multiplier
+}
+
+tot_honorary_office_maintenance_standard = {
+	value = 20
+	multiply = tot_honorary_office_maintenance_multiplier
+}
+
+tot_honorary_office_maintenance_difference = {
+	value = 4
+	multiply = tot_honorary_office_maintenance_multiplier
+}
+
 tot_club_capacity_usage = {
 	value = modifier:country_tot_club_capacity_usage_add
 	add = tot_office_capacity_usage

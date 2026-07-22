@@ -1,29 +1,31 @@
 tot_clear_core_office_maintenance_effect = {
+	save_temporary_scope_as = tot_core_clear_country
 	if = {
 		limit = { has_variable = tot_$SLOT$ }
 		var:tot_$SLOT$ ?= {
-			if = { limit = { is_historical = yes } root = { change_variable = { name = tot_office_capacity_usage add = -40 } } }
-			if = { limit = { is_historical = no } root = { change_variable = { name = tot_office_capacity_usage add = -50 } } }
+			if = { limit = { is_historical = yes } scope:tot_core_clear_country = { change_variable = { name = tot_office_capacity_usage add = { value = -40 multiply = tot_core_office_maintenance_multiplier } } } }
+			if = { limit = { is_historical = no } scope:tot_core_clear_country = { change_variable = { name = tot_office_capacity_usage add = { value = -50 multiply = tot_core_office_maintenance_multiplier } } } }
 		}
 	}
 }
 
 tot_add_core_office_maintenance_effect = {
-	if = { limit = { is_historical = yes } owner ?= { change_variable = { name = tot_office_capacity_usage add = 40 } } }
-	if = { limit = { is_historical = no } owner ?= { change_variable = { name = tot_office_capacity_usage add = 50 } } }
+	if = { limit = { is_historical = yes } owner ?= { change_variable = { name = tot_office_capacity_usage add = { value = 40 multiply = tot_core_office_maintenance_multiplier } } } }
+	if = { limit = { is_historical = no } owner ?= { change_variable = { name = tot_office_capacity_usage add = { value = 50 multiply = tot_core_office_maintenance_multiplier } } } }
 }
 
 tot_recalculate_honorary_office_maintenance_effect = {
 	if = {
 		limit = { has_variable = tot_honorary_$SLOT$ }
 		var:tot_honorary_$SLOT$ ?= {
-			if = { limit = { is_historical = yes } root = { change_variable = { name = tot_office_capacity_usage add = 16 } } }
-			if = { limit = { is_historical = no } root = { change_variable = { name = tot_office_capacity_usage add = 20 } } }
+			if = { limit = { is_historical = yes } scope:tot_office_capacity_recalc_country = { change_variable = { name = tot_office_capacity_usage add = { value = 16 multiply = tot_honorary_office_maintenance_multiplier } } } }
+			if = { limit = { is_historical = no } scope:tot_office_capacity_recalc_country = { change_variable = { name = tot_office_capacity_usage add = { value = 20 multiply = tot_honorary_office_maintenance_multiplier } } } }
 		}
 	}
 }
 
 tot_recalculate_office_capacity_usage_effect = {
+	save_temporary_scope_as = tot_office_capacity_recalc_country
 	set_variable = { name = tot_office_capacity_usage value = 0 }
 	tot_recalculate_core_office_maintenance_effect = { SLOT = student_council_president }
 	tot_recalculate_core_office_maintenance_effect = { SLOT = discipline_minister }
@@ -51,8 +53,8 @@ tot_recalculate_core_office_maintenance_effect = {
 	if = {
 		limit = { has_variable = tot_$SLOT$ }
 		var:tot_$SLOT$ ?= {
-			if = { limit = { is_historical = yes } root = { change_variable = { name = tot_office_capacity_usage add = 40 } } }
-			if = { limit = { is_historical = no } root = { change_variable = { name = tot_office_capacity_usage add = 50 } } }
+			if = { limit = { is_historical = yes } scope:tot_office_capacity_recalc_country = { change_variable = { name = tot_office_capacity_usage add = { value = 40 multiply = tot_core_office_maintenance_multiplier } } } }
+			if = { limit = { is_historical = no } scope:tot_office_capacity_recalc_country = { change_variable = { name = tot_office_capacity_usage add = { value = 50 multiply = tot_core_office_maintenance_multiplier } } } }
 		}
 	}
 }
@@ -300,6 +302,7 @@ tot_clear_student_council_president_effect = {
 				remove_character_role = character_role_tot_student_council_president
 			}
 		}
+		tot_clear_core_office_maintenance_effect = { SLOT = student_council_president }
 		remove_variable = tot_student_council_president
 	}
 
@@ -332,11 +335,8 @@ tot_appoint_student_council_president_effect = {
 					has_role = character_role_tot_honorary_official
 				}
 			}
-			owner ?= {
-				is_player = yes
-				OR = { tot_cabinet_seats_free >= 1 has_variable = tot_student_council_president }
-				tot_core_office_capacity_available = { SLOT = student_council_president }
-			}
+			owner ?= { is_player = yes }
+			tot_core_office_capacity_available = { SLOT = student_council_president }
 		}
 
 		save_temporary_scope_as = tot_selected_student_council_president
@@ -408,7 +408,8 @@ tot_appoint_discipline_minister_effect = {
 					has_role = character_role_tot_chief_of_staff
 				}
 			}
-			owner ?= { is_player = yes OR = { tot_cabinet_seats_free >= 1 has_variable = tot_discipline_minister } tot_core_office_capacity_available = { SLOT = discipline_minister } }
+			owner ?= { is_player = yes }
+			tot_core_office_capacity_available = { SLOT = discipline_minister }
 		}
 
 		save_temporary_scope_as = tot_selected_discipline_minister
@@ -463,7 +464,8 @@ tot_appoint_education_minister_effect = {
 					has_role = character_role_tot_honorary_official
 				}
 			}
-			owner ?= { is_player = yes OR = { tot_cabinet_seats_free >= 1 has_variable = tot_education_minister } tot_core_office_capacity_available = { SLOT = education_minister } }
+			owner ?= { is_player = yes }
+			tot_core_office_capacity_available = { SLOT = education_minister }
 		}
 		save_temporary_scope_as = tot_selected_education_minister
 		owner ?= {
@@ -507,7 +509,8 @@ tot_appoint_propaganda_minister_effect = {
 					has_role = character_role_tot_honorary_official
 				}
 			}
-			owner ?= { is_player = yes OR = { tot_cabinet_seats_free >= 1 has_variable = tot_propaganda_minister } tot_core_office_capacity_available = { SLOT = propaganda_minister } }
+			owner ?= { is_player = yes }
+			tot_core_office_capacity_available = { SLOT = propaganda_minister }
 		}
 		save_temporary_scope_as = tot_selected_propaganda_minister
 		owner ?= {
@@ -551,7 +554,8 @@ tot_appoint_chief_of_staff_effect = {
 					has_role = character_role_tot_honorary_official
 				}
 			}
-			owner ?= { is_player = yes OR = { tot_cabinet_seats_free >= 1 has_variable = tot_chief_of_staff } tot_core_office_capacity_available = { SLOT = chief_of_staff } }
+			owner ?= { is_player = yes }
+			tot_core_office_capacity_available = { SLOT = chief_of_staff }
 		}
 		save_temporary_scope_as = tot_selected_chief_of_staff
 		owner ?= {

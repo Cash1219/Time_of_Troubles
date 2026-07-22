@@ -1,7 +1,7 @@
 tot_core_office_capacity_available = {
 	OR = {
-		AND = { is_historical = yes owner ?= { tot_club_capacity_free >= 40 } }
-		AND = { is_historical = no owner ?= { tot_club_capacity_free >= 50 } }
+		AND = { is_historical = yes owner ?= { tot_club_capacity_free >= tot_core_office_maintenance_historical } }
+		AND = { is_historical = no owner ?= { tot_club_capacity_free >= tot_core_office_maintenance_standard } }
 		# Replacing a holder is allowed only when their released maintenance covers the new holder.
 		AND = {
 			is_historical = yes
@@ -18,7 +18,7 @@ tot_core_office_capacity_available = {
 		AND = {
 			is_historical = no
 			owner ?= {
-				tot_club_capacity_free >= 10
+				tot_club_capacity_free >= tot_core_office_maintenance_difference
 				has_variable = tot_$SLOT$
 				var:tot_$SLOT$ ?= { is_historical = yes }
 			}
@@ -28,8 +28,8 @@ tot_core_office_capacity_available = {
 
 tot_honorary_office_capacity_available = {
 	OR = {
-		AND = { is_historical = yes owner ?= { tot_club_capacity_free >= 16 } }
-		AND = { is_historical = no owner ?= { tot_club_capacity_free >= 20 } }
+		AND = { is_historical = yes owner ?= { tot_club_capacity_free >= tot_honorary_office_maintenance_historical } }
+		AND = { is_historical = no owner ?= { tot_club_capacity_free >= tot_honorary_office_maintenance_standard } }
 		# Honorary replacements follow the same net-cost check as core offices.
 		AND = {
 			is_historical = yes
@@ -46,7 +46,7 @@ tot_honorary_office_capacity_available = {
 		AND = {
 			is_historical = no
 			owner ?= {
-				tot_club_capacity_free >= 4
+				tot_club_capacity_free >= tot_honorary_office_maintenance_difference
 				has_variable = tot_honorary_$SLOT$
 				var:tot_honorary_$SLOT$ ?= { is_historical = yes }
 			}

@@ -432,7 +432,7 @@ types tot_character_growth_page_types {
 	}
 
 	textbox = {
-		visible = "[And(GetVariableSystem.HasValue( 'tot_character_growth_page', 'governor' ), Not(GetScriptedGui('tot_character_growth_has_selected_governor_state').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+		visible = "[And(GetVariableSystem.HasValue( 'tot_character_growth_page', 'governor' ), Not(GetScriptedGui('tot_character_growth_has_selected_governor_state').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 		text = "TOT_CHARACTER_GROWTH_SELECT_STATE_FIRST"
 		size = { 520 38 }
 		align = center|nobaseline

@@ -18,6 +18,10 @@ tot_character_system_refresh = {
 		tot_band_initialize_axes = yes
 		update_kizuna = yes
 		tot_refresh_student_council_candidates_effect = yes
+		if = {
+			limit = { has_variable = tot_character_codex_selection var:tot_character_codex_selection = 8 }
+			tot_character_codex_refresh_bang_dream_effect = yes
+		}
 	}
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }
@@ -213,12 +217,8 @@ tot_appoint_student_council_president = {
 		owner ?= {
 			is_player = yes
 			custom_tooltip = {
-				text = TOT_CABINET_SEAT_REQUIRED
-				OR = { tot_cabinet_seats_free >= 1 has_variable = tot_student_council_president }
-			}
-			custom_tooltip = {
 				text = TOT_CHARACTER_CAPACITY_CORE_REQUIRED
-				tot_core_office_capacity_available = { SLOT = student_council_president }
+				always = yes
 			}
 		}
 	}
@@ -244,9 +244,8 @@ tot_appoint_student_council_president = {
 		}
 		owner ?= {
 			is_player = yes
-			custom_tooltip = { text = TOT_CABINET_SEAT_REQUIRED OR = { tot_cabinet_seats_free >= 1 has_variable = tot_student_council_president } }
-			custom_tooltip = { text = TOT_CHARACTER_CAPACITY_CORE_REQUIRED tot_core_office_capacity_available = { SLOT = student_council_president } }
 		}
+		custom_tooltip = { text = TOT_CHARACTER_CAPACITY_CORE_REQUIRED tot_core_office_capacity_available = { SLOT = student_council_president } }
 	}
 }
 
@@ -268,8 +267,6 @@ tot_appoint_discipline_minister = {
 		}
 		owner ?= {
 			is_player = yes
-			custom_tooltip = { text = TOT_CABINET_SEAT_REQUIRED OR = { tot_cabinet_seats_free >= 1 has_variable = tot_discipline_minister } }
-			custom_tooltip = { text = TOT_CHARACTER_CAPACITY_CORE_REQUIRED tot_core_office_capacity_available = { SLOT = discipline_minister } }
 		}
 	}
 	is_valid = {
@@ -294,9 +291,8 @@ tot_appoint_discipline_minister = {
 		}
 		owner ?= {
 			is_player = yes
-			custom_tooltip = { text = TOT_CABINET_SEAT_REQUIRED OR = { tot_cabinet_seats_free >= 1 has_variable = tot_discipline_minister } }
-			custom_tooltip = { text = TOT_CHARACTER_CAPACITY_CORE_REQUIRED tot_core_office_capacity_available = { SLOT = discipline_minister } }
 		}
+		custom_tooltip = { text = TOT_CHARACTER_CAPACITY_CORE_REQUIRED tot_core_office_capacity_available = { SLOT = discipline_minister } }
 	}
 }
 
@@ -311,7 +307,7 @@ tot_appoint_education_minister = {
 		NOT = { OR = { has_role = character_role_tot_student_council_president has_role = character_role_tot_discipline_minister has_role = character_role_tot_education_minister has_role = character_role_tot_propaganda_minister has_role = character_role_tot_chief_of_staff } }
 		owner ?= { is_player = yes }
 	}
-	is_valid = { is_character_alive = yes owner ?= { is_player = yes custom_tooltip = { text = TOT_CABINET_SEAT_REQUIRED OR = { tot_cabinet_seats_free >= 1 has_variable = tot_education_minister } } } custom_tooltip = { text = TOT_CHARACTER_CAPACITY_CORE_REQUIRED tot_core_office_capacity_available = { SLOT = education_minister } } }
+	is_valid = { is_character_alive = yes owner ?= { is_player = yes } custom_tooltip = { text = TOT_CHARACTER_CAPACITY_CORE_REQUIRED tot_core_office_capacity_available = { SLOT = education_minister } } }
 }
 
 tot_appoint_propaganda_minister = {
@@ -325,7 +321,7 @@ tot_appoint_propaganda_minister = {
 		NOT = { OR = { has_role = character_role_tot_student_council_president has_role = character_role_tot_discipline_minister has_role = character_role_tot_education_minister has_role = character_role_tot_propaganda_minister has_role = character_role_tot_chief_of_staff } }
 		owner ?= { is_player = yes }
 	}
-	is_valid = { is_character_alive = yes owner ?= { is_player = yes custom_tooltip = { text = TOT_CABINET_SEAT_REQUIRED OR = { tot_cabinet_seats_free >= 1 has_variable = tot_propaganda_minister } } } custom_tooltip = { text = TOT_CHARACTER_CAPACITY_CORE_REQUIRED tot_core_office_capacity_available = { SLOT = propaganda_minister } } }
+	is_valid = { is_character_alive = yes owner ?= { is_player = yes } custom_tooltip = { text = TOT_CHARACTER_CAPACITY_CORE_REQUIRED tot_core_office_capacity_available = { SLOT = propaganda_minister } } }
 }
 
 tot_appoint_chief_of_staff = {
@@ -339,7 +335,7 @@ tot_appoint_chief_of_staff = {
 		NOT = { OR = { has_role = character_role_tot_student_council_president has_role = character_role_tot_discipline_minister has_role = character_role_tot_education_minister has_role = character_role_tot_propaganda_minister has_role = character_role_tot_chief_of_staff } }
 		owner ?= { is_player = yes }
 	}
-	is_valid = { is_character_alive = yes owner ?= { is_player = yes custom_tooltip = { text = TOT_CABINET_SEAT_REQUIRED OR = { tot_cabinet_seats_free >= 1 has_variable = tot_chief_of_staff } } } custom_tooltip = { text = TOT_CHARACTER_CAPACITY_CORE_REQUIRED tot_core_office_capacity_available = { SLOT = chief_of_staff } } }
+	is_valid = { is_character_alive = yes owner ?= { is_player = yes } custom_tooltip = { text = TOT_CHARACTER_CAPACITY_CORE_REQUIRED tot_core_office_capacity_available = { SLOT = chief_of_staff } } }
 }
 
 tot_remove_student_council_president = {

@@ -14,10 +14,10 @@ CHARACTERS = {
 			culture = cu:french
 			traits = {
 				tot_Kirara_Chino_trait # tot_Kirara_Chino_trait
-				tot_group_sheet_001_trait # 法兰西阵线
-				tot_group_sheet_010_trait # 芳文社
+				tot_group_sheet_106_trait
+				tot_group_sheet_010_trait
 				tot_group_sheet_031_trait # 烹饪师
-				tot_group_sheet_047_trait # 傀儡师
+				tot_group_sheet_090_trait # 努力家
 			}
 		}
 		create_character = {
@@ -32,10 +32,10 @@ CHARACTERS = {
 			culture = cu:french
 			traits = {
 				tot_Kirara_Maika_trait # tot_Kirara_Maika_trait
-				tot_group_sheet_001_trait # 法兰西阵线
-				tot_group_sheet_010_trait # 芳文社
-				tot_group_sheet_031_trait # 烹饪师
-				tot_group_sheet_041_trait # 愉悦犯
+				tot_group_sheet_106_trait
+				tot_group_sheet_010_trait
+				tot_group_sheet_032_trait # 勤务者
+				tot_group_sheet_090_trait # 努力家
 			}
 		}
 		create_character = {
@@ -51,9 +51,9 @@ CHARACTERS = {
 			culture = cu:french
 			traits = {
 				tot_Kirara_Kokoa_trait # tot_Kirara_Kokoa_trait
-				tot_group_sheet_001_trait # 法兰西阵线
-				tot_group_sheet_010_trait # 芳文社
-				tot_group_sheet_031_trait # 烹饪师
+				tot_group_sheet_106_trait
+				tot_group_sheet_010_trait
+				tot_group_sheet_032_trait # 勤务者
 				tot_group_sheet_049_trait # 元气
 			}
 		}
@@ -70,7 +70,11 @@ CHARACTERS = {
 			culture = cu:french
 			traits = {
 				tot_Kirara_Kaho_trait # tot_Kirara_Kaho_trait
-			}
+				tot_group_sheet_106_trait
+				tot_group_sheet_010_trait
+				tot_group_sheet_032_trait # 勤务者
+				tot_group_sheet_049_trait # 元气
+}
 		}
 		create_character = {
 			historical = yes
@@ -85,28 +89,10 @@ CHARACTERS = {
 			culture = cu:french
 			traits = {
 				tot_Kirara_Sharo_trait # tot_Kirara_Sharo_trait
-				tot_group_sheet_001_trait # 法兰西阵线
-				tot_group_sheet_010_trait # 芳文社
-				tot_group_sheet_031_trait # 烹饪师
-				tot_group_sheet_045_trait # 天才
-			}
-		}
-		create_character = {
-			historical = yes
-			first_name = "Sakuranomiya"
-			last_name = "Maika"
-			female = yes
-			ig_leader = yes
-			ideology = ideology_market_liberal
-			interest_group = ig_rural_folk
-			#religion = rel:catholic
-			culture = cu:french
-			traits = {
-				tot_Kirara_Maika_trait # tot_Kirara_Maika_trait
-				tot_group_sheet_001_trait # 法兰西阵线
-				tot_group_sheet_010_trait # 芳文社
-				tot_group_sheet_031_trait # 烹饪师
-				tot_group_sheet_041_trait # 愉悦犯
+				tot_group_sheet_106_trait
+				tot_group_sheet_010_trait
+				tot_group_sheet_032_trait # 勤务者
+				tot_group_sheet_090_trait # 努力家
 			}
 		}
 	}

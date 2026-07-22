@@ -1,4 +1,4 @@
-﻿CHARACTERS = {
+CHARACTERS = {
 	c:BAV ?= {
 		create_character = {
 				historical = yes
@@ -14,13 +14,10 @@
 				culture = cu:south_german
 				traits = {
 					tot_Mhs_Illyasviel_trait # tot_Mhs_Illyasviel_trait
-					tot_group_sheet_002_trait # 鍦ｄ笁涓€鏁欎細
 					tot_group_sheet_020_trait # 榄旀硶甯?
 					tot_group_sheet_048_trait # 濉戦€犺€?
-					tot_group_sheet_003_trait # 缃楅┈鍗忕害
-					tot_group_sheet_021_trait # 鏂楀＋
-					tot_group_sheet_050_trait # 鍚歌楝?
-				}
+									tot_group_sheet_017_trait
+}
 			}
 		create_character = {
 				historical = yes
@@ -35,10 +32,10 @@
 				culture = cu:south_german
 				traits = {
 					tot_Mhs_Miyu_trait # tot_Mhs_Miyu_trait
-					tot_group_sheet_002_trait # 鍦ｄ笁涓€鏁欎細
 					tot_group_sheet_020_trait # 榄旀硶甯?
 					tot_group_sheet_045_trait # 澶╂墠
-				}
+									tot_group_sheet_017_trait
+}
 			}
 		create_character = {
 			historical = yes
@@ -53,7 +50,10 @@
 			culture = cu:north_german
 			traits = {
 				tot_Mhs_Chloe_trait # tot_Mhs_Chloe_trait
-			}
+				tot_group_sheet_017_trait # 旧约魔法少女
+				tot_group_sheet_020_trait # 魔法师
+				tot_group_sheet_021_trait # 斗士
+}
 		}
 		create_character = {
 			historical = yes
@@ -125,7 +125,10 @@
 			culture = cu:north_german
 			traits = {
 				tot_Mhs_Miku_trait # tot_Mhs_Miku_trait
-			}
+				tot_group_sheet_017_trait # 旧约魔法少女
+				tot_group_sheet_031_trait # 烹饪师
+				tot_group_sheet_090_trait # 努力家
+}
 		}
 	}
 }

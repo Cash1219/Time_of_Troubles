@@ -846,6 +846,19 @@ tot_band_has_free_capacity_trigger = {
 	}
 }
 
+# A band slot is operational only while at least one headquarters is bound to it.
+# The country list is rebuilt by update_band_kizuna every refresh.
+tot_band_1_has_bound_headquarter_trigger = { scope = country has_variable_list = tot_band_1_hq_buildings }
+tot_band_2_has_bound_headquarter_trigger = { scope = country has_variable_list = tot_band_2_hq_buildings }
+tot_band_3_has_bound_headquarter_trigger = { scope = country has_variable_list = tot_band_3_hq_buildings }
+tot_band_4_has_bound_headquarter_trigger = { scope = country has_variable_list = tot_band_4_hq_buildings }
+tot_band_5_has_bound_headquarter_trigger = { scope = country has_variable_list = tot_band_5_hq_buildings }
+tot_band_6_has_bound_headquarter_trigger = { scope = country has_variable_list = tot_band_6_hq_buildings }
+tot_band_7_has_bound_headquarter_trigger = { scope = country has_variable_list = tot_band_7_hq_buildings }
+tot_band_8_has_bound_headquarter_trigger = { scope = country has_variable_list = tot_band_8_hq_buildings }
+tot_band_9_has_bound_headquarter_trigger = { scope = country has_variable_list = tot_band_9_hq_buildings }
+tot_band_10_has_bound_headquarter_trigger = { scope = country has_variable_list = tot_band_10_hq_buildings }
+
 tot_band_hq_state_build_allowed_trigger = {
 	owner ?= {
 		is_player = yes

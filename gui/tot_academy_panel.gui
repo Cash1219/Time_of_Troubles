@@ -128,21 +128,70 @@
 	# before the minister panel instantiates them.
 	type tot_character_honorary_slot = widget {
 		size = { 332 176 }
-		background = { using = entry_bg_fancy }
+
+		background = {
+			using = entry_bg_fancy
+		}
+
 		block "selected_overlay" {}
+
 		vbox = {
 			margin = { 10 8 }
 			spacing = 3
-			textbox = { size = { 308 18 } using = fontsize_medium default_format = "#v" align = left|nobaseline block "slot_title" { text = "TOT_HONORARY_CLUB_ADVISER" } }
-			textbox = { size = { 308 35 } using = fontsize_very_small using = entry_bg_simple default_format = "#P" align = left multiline = yes margin = { 6 1 } block "slot_effects" { text = "TOT_HONORARY_CLUB_ADVISER_EFFECT" } }
-			widget = { size = { 308 60 } background = { using = dark_area } block "holder_content" {} }
-			hbox = { parentanchor = hcenter spacing = 8 block "select_button" {} block "remove_button" {} }
+
+			textbox = {
+				size = { 308 18 }
+				using = fontsize_medium
+				default_format = "#v"
+				align = left|nobaseline
+				block "slot_title" { text = "TOT_HONORARY_CLUB_ADVISER" }
+			}
+
+			textbox = {
+				size = { 308 15 }
+				using = fontsize_very_small
+				align = left|nobaseline
+				elide = right
+				block "slot_hint" { text = "TOT_HONORARY_SLOT_HINT" }
+			}
+
+			textbox = {
+				size = { 308 14 }
+				text = "TOT_HONORARY_CAPACITY"
+				using = fontsize_very_small
+				align = left|nobaseline
+				tooltip = "TOT_CHARACTER_CAPACITY_HONORARY_REQUIRED"
+			}
+
+			textbox = {
+				size = { 308 28 }
+				using = fontsize_very_small
+				using = entry_bg_simple
+				default_format = "#P"
+				align = left
+				multiline = yes
+				margin = { 6 1 }
+				block "slot_effects" { text = "TOT_HONORARY_CLUB_ADVISER_EFFECT" }
+			}
+
+			widget = {
+				size = { 308 54 }
+				background = { using = dark_area }
+				block "holder_content" {}
+			}
+
+			hbox = {
+				parentanchor = hcenter
+				spacing = 8
+				block "select_button" {}
+				block "remove_button" {}
+			}
 		}
 	}
 
 	type tot_character_honorary_holder = widget {
 		datacontext = "[Scope.GetCharacter]"
-		size = { 308 60 }
+		size = { 308 54 }
 		hbox = {
 			parentanchor = center
 			spacing = 8
@@ -152,12 +201,26 @@
 				character_portrait_small2 = { parentanchor = center blockoverride "show_hat" {} blockoverride "highlight" {} blockoverride "rank_icon" {} }
 			}
 			vbox = {
-				size = { 232 50 }
+				size = { 188 52 }
 				parentanchor = vcenter
-				spacing = 3
-				textbox = { size = { 232 18 } raw_text = "#BOLD [Character.GetFullNameNoFormatting]#!" using = fontsize_small align = left|nobaseline elide = right }
-				textbox = { size = { 232 14 } raw_text = "[Character.GetPrimaryRoleTitle]" using = fontsize_very_small align = left|nobaseline elide = right }
-				textbox = { size = { 232 14 } text = "TOT_HONORARY_CAPACITY" using = fontsize_very_small align = left|nobaseline }
+				spacing = 2
+				textbox = { size = { 188 18 } raw_text = "#BOLD [Character.GetFullNameNoFormatting]#!" using = fontsize_small align = left|nobaseline elide = right }
+				textbox = { size = { 188 14 } raw_text = "[Character.GetPrimaryRoleTitle]" using = fontsize_very_small align = left|nobaseline elide = right }
+			}
+			hbox = {
+				parentanchor = vcenter
+				spacing = 5
+				widget = {
+					visible = "[Character.GetInterestGroup.IsValid]"
+					size = { 20 20 }
+					datacontext = "[Character.GetInterestGroup]"
+					icon = { parentanchor = center texture = "[InterestGroup.GetTexture]" size = { 20 20 } tooltipwidget = { FancyTooltip_IG = {} } }
+				}
+				widget = {
+					size = { 20 20 }
+					datacontext = "[Character.GetIdeology]"
+					icon = { parentanchor = center texture = "[Ideology.GetTexture]" size = { 20 20 } tooltipwidget = { FancyTooltip_Ideology = {} } }
+				}
 			}
 		}
 	}

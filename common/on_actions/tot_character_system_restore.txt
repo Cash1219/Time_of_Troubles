@@ -1,6 +1,19 @@
 ﻿on_game_started = {
 	effect = {
-		every_country = {
+			every_country = {
+			if = {
+				limit = { NOT = { has_variable = tot_band_limit } }
+				set_variable = { name = tot_band_limit value = 1 }
+			}
+			if = {
+				limit = { var:tot_band_limit < 1 }
+				set_variable = { name = tot_band_limit value = 1 }
+			}
+			tot_setup_default_kon_band_effect = yes
+			tot_setup_default_story_bands_effect = yes
+			tot_ensure_default_band_hq_slots_effect = yes
+			tot_ensure_default_story_band_members_effect = yes
+			update_kizuna = yes
 			if = {
 				limit = { has_journal_entry = je_tot_club_gui }
 				remove_journal_entry = je_tot_club_gui
@@ -27,20 +40,25 @@
 				}
 				add_journal_entry = { type = je_tot_goods_workshop_program }
 			}
-		}
-		every_country = {
-			tot_setup_default_kon_band_effect = yes
-			tot_setup_default_story_bands_effect = yes
-			tot_ensure_default_band_hq_slots_effect = yes
-			tot_band_initialize_axes = yes
-			update_kizuna = yes
-			tot_refresh_student_council_candidates_effect = yes
 		}
 	}
 }
 on_game_started_after_lobby = {
 	effect = {
-		every_country = {
+			every_country = {
+			if = {
+				limit = { NOT = { has_variable = tot_band_limit } }
+				set_variable = { name = tot_band_limit value = 1 }
+			}
+			if = {
+				limit = { var:tot_band_limit < 1 }
+				set_variable = { name = tot_band_limit value = 1 }
+			}
+			tot_setup_default_kon_band_effect = yes
+			tot_setup_default_story_bands_effect = yes
+			tot_ensure_default_band_hq_slots_effect = yes
+			tot_ensure_default_story_band_members_effect = yes
+			update_kizuna = yes
 			if = {
 				limit = { has_journal_entry = je_tot_club_gui }
 				remove_journal_entry = je_tot_club_gui
@@ -67,14 +85,6 @@ on_game_started_after_lobby = {
 				}
 				add_journal_entry = { type = je_tot_goods_workshop_program }
 			}
-		}
-		every_country = {
-			tot_setup_default_kon_band_effect = yes
-			tot_setup_default_story_bands_effect = yes
-			tot_ensure_default_band_hq_slots_effect = yes
-			tot_band_initialize_axes = yes
-			update_kizuna = yes
-			tot_refresh_student_council_candidates_effect = yes
 		}
 	}
 }
@@ -108,6 +118,8 @@ on_monthly_pulse_country = {
 			add_journal_entry = { type = je_tot_goods_workshop_program }
 		}
 		tot_band_initialize_axes = yes
+		tot_ensure_default_band_hq_slots_effect = yes
+		tot_ensure_default_story_band_members_effect = yes
 		update_kizuna = yes
 		tot_refresh_student_council_candidates_effect = yes
 		tot_character_growth_refresh = yes

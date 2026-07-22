@@ -1,4 +1,4 @@
-﻿# NOTE: "Pasha" is a title, not a name. However, due to some Ottoman Turkish names lacking a last name, it is used in place of one
+# NOTE: "Pasha" is a title, not a name. However, due to some Ottoman Turkish names lacking a last name, it is used in place of one
 
 CHARACTERS = {
 	c:ROM ?= {
@@ -6,68 +6,84 @@ CHARACTERS = {
 			historical = yes
 			first_name = "Iseri"
 			last_name = "Nina"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			ig_leader = yes
 			ruler = yes
-			ideology = ideology_rock
+			ideology = ideology_rock_leader
 			interest_group = ig_devout
 			#religion = rel:orthodox
 			culture = cu:romanian
 			traits = {
 				tot_Gbc_Nina_trait # tot_Gbc_Nina_trait
+				tot_group_sheet_086_trait
+
+				tot_group_sheet_029_trait
+				tot_group_sheet_056_trait
 			}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Kawaragi"
 			last_name = "Momoka"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			ig_leader = yes
-			ideology = ideology_rock
+			ideology = ideology_rock_leader
 			interest_group = ig_armed_forces
 			#religion = rel:orthodox
 			culture = cu:romanian
 			traits = {
 				tot_Gbc_Momoka_trait # tot_Gbc_Momoka_trait
+				tot_group_sheet_086_trait
+
+				tot_group_sheet_025_trait
+				tot_group_sheet_052_trait
 			}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Awa"
 			last_name = "Subaru"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			ig_leader = yes
-			ideology = ideology_free_creation
+			ideology = ideology_free_creation_leader
 			interest_group = ig_intelligentsia
 			#religion = rel:orthodox
 			culture = cu:romanian
 			traits = {
 				tot_Gbc_Subaru_trait # tot_Gbc_Subaru_trait
+				tot_group_sheet_086_trait
+
+				tot_group_sheet_028_trait
+				tot_group_sheet_044_trait
 			}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Ebizuka"
 			last_name = "Tomo"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			ig_leader = yes
-			ideology = ideology_production_floor
+			ideology = ideology_production_floor_leader
 			interest_group = ig_petty_bourgeoisie
 			#religion = rel:orthodox
 			culture = cu:romanian
 			traits = {
 				tot_Gbc_Tomo_trait # tot_Gbc_Tomo_trait
+				tot_group_sheet_086_trait
+
+				tot_group_sheet_032_trait
+				tot_group_sheet_055_trait
 			}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Rupa"
 			last_name = "Rupa"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			ig_leader = yes
 			ideology = ideology_bond_keeper
@@ -76,58 +92,71 @@ CHARACTERS = {
 			culture = cu:romanian
 			traits = {
 				tot_Gbc_Rupa_trait # tot_Gbc_Rupa_trait
+				tot_group_sheet_086_trait
+
+				tot_group_sheet_032_trait
+				tot_group_sheet_044_trait
 			}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Tatsumi"
 			last_name = "Kotaro"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			#ig_leader = yes
 			ig_leader = yes
-			ideology = ideology_agency_management
+			ideology = ideology_agency_management_leader
 			interest_group = ig_industrialists
 			religion = rel:starbeat
 			culture = cu:bandori
 			traits = {
 				tot_Tatsumi_Kotaro_trait # tot_Tatsumi_Kotaro_trait
-			}
+							tot_group_sheet_080_trait
+				tot_group_sheet_103_trait
+				tot_group_sheet_025_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Minamoto"
 			last_name = "Sakura"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			#ig_leader = yes
-			ideology = ideology_hometown_support
+			ideology = ideology_hometown_support_leader
 			interest_group = ig_petty_bourgeoisie
 			religion = rel:starbeat
 			culture = cu:bandori
 			traits = {
 				tot_Minamoto_Sakura_trait # tot_Minamoto_Sakura_trait
-			}
+							tot_group_sheet_080_trait
+				tot_group_sheet_104_trait
+				tot_group_sheet_090_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Nikaido2"
 			last_name = "Saki"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			#ig_leader = yes
-			ideology = ideology_stage_supremacy
+			ideology = ideology_stage_supremacy_leader
 			interest_group = ig_armed_forces
 			religion = rel:starbeat
 			culture = cu:bandori
 			traits = {
 				tot_Nikaido_Saki_trait # tot_Nikaido_Saki_trait
-			}
+							tot_group_sheet_080_trait
+				tot_group_sheet_104_trait
+				tot_group_sheet_021_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Mizuno"
 			last_name = "Ai"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			#ig_leader = yes
 			ideology = ideology_popularity_first
@@ -136,146 +165,173 @@ CHARACTERS = {
 			culture = cu:bandori
 			traits = {
 				tot_Mizuno_Ai_trait # tot_Mizuno_Ai_trait
-			}
+							tot_group_sheet_080_trait
+				tot_group_sheet_104_trait
+				tot_group_sheet_090_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Konno"
 			last_name = "Junko"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			#ig_leader = yes
-			ideology = ideology_idol_worship
+			ideology = ideology_idol_worship_leader
 			interest_group = ig_trade_unions
 			religion = rel:starbeat
 			culture = cu:bandori
 			traits = {
 				tot_Konno_Junko_trait # tot_Konno_Junko_trait
-			}
+							tot_group_sheet_080_trait
+				tot_group_sheet_104_trait
+				tot_group_sheet_090_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Giri"
 			last_name = "Yu"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			#ig_leader = yes
 			ig_leader = yes
-			ideology = ideology_stage_reform
+			ideology = ideology_stage_reform_leader
 			interest_group = ig_landowners
 			#religion = rel:sunni
 			culture = cu:romanian
 			traits = {
 				tot_Yu_Giri_trait # tot_Yu_Giri_trait
-			}
+							tot_group_sheet_080_trait
+				tot_group_sheet_104_trait
+				tot_group_sheet_022_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Hoshikawa"
 			last_name = "Lily"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			#ig_leader = yes
 			ig_leader = yes
-			ideology = ideology_hometown_support
+			ideology = ideology_hometown_support_leader
 			interest_group = ig_rural_folk
 			#religion = rel:sunni
 			culture = cu:romanian
 			traits = {
 				tot_Hoshikawa_Lily_trait # tot_Hoshikawa_Lily_trait
-			}
+							tot_group_sheet_080_trait
+				tot_group_sheet_104_trait
+				tot_group_sheet_045_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Yamada"
 			last_name = "Tae"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			#ig_leader = yes
-			ideology = ideology_rock
+			ideology = ideology_rock_leader
 			interest_group = ig_devout
 			#religion = rel:sunni
 			culture = cu:romanian
 			traits = {
 				tot_Yamada_Tae_trait # tot_Yamada_Tae_trait
-			}
+							tot_group_sheet_080_trait
+				tot_group_sheet_104_trait
+				tot_group_sheet_038_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Maruyama"
 			last_name = "Aya"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			#ig_leader = yes
-			ideology = ideology_kirakira
+			ideology = ideology_kirakira_leader
 			interest_group = ig_petty_bourgeoisie
 			#religion = rel:sunni
 			culture = cu:romanian
 			traits = {
 				tot_Maruyama_Aya_trait # tot_Maruyama_Aya_trait
-			}
+							tot_group_sheet_008_trait
+				tot_group_sheet_023_trait
+				tot_group_sheet_090_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Hikawa2"
 			last_name = "Hina"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			#ig_leader = yes
-			ideology = ideology_free_creation
+			ideology = ideology_free_creation_leader
 			interest_group = ig_intelligentsia
 			#religion = rel:sunni
 			culture = cu:romanian
 			traits = {
 				tot_Hikawa_Hina_trait # tot_Hikawa_Hina_trait
-			}
+							tot_group_sheet_008_trait
+				tot_group_sheet_052_trait
+				tot_group_sheet_045_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Yamato2"
 			last_name = "Maya"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			#ig_leader = yes
-			ideology = ideology_production_floor
+			ideology = ideology_production_floor_leader
 			interest_group = ig_trade_unions
 			#religion = rel:sunni
 			culture = cu:romanian
 			traits = {
 				tot_Yamato_Maya_trait # tot_Yamato_Maya_trait
-			}
+							tot_group_sheet_008_trait
+				tot_group_sheet_054_trait
+				tot_group_sheet_090_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Wakamiya"
 			last_name = "Eve"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			#ig_leader = yes
-			ideology = ideology_discipline_first
+			ideology = ideology_discipline_first_leader
 			interest_group = ig_armed_forces
 			#religion = rel:sunni
 			culture = cu:romanian
 			traits = {
 				tot_Wakamiya_Eve_trait # tot_Wakamiya_Eve_trait
-			}
+							tot_group_sheet_008_trait
+				tot_group_sheet_055_trait
+				tot_group_sheet_105_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Shirasagi"
 			last_name = "Chisato"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			#ig_leader = yes
-			ideology = ideology_agency_management
+			ideology = ideology_agency_management_leader
 			interest_group = ig_industrialists
 			#religion = rel:sunni
 			culture = cu:romanian
 			traits = {
 				tot_Shirasagi_Chisato_trait # tot_Shirasagi_Chisato_trait
-				tot_group_sheet_001_trait # 娉曞叞瑗块樀绾?
-				tot_group_sheet_024_trait # 骞曞悗鎿嶇旱鑰?
-				tot_group_sheet_045_trait # 澶╂墠
+				tot_group_sheet_008_trait
+				tot_group_sheet_053_trait
+				tot_group_sheet_092_trait
 			}
 		}
 	}

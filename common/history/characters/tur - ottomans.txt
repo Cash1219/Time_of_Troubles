@@ -1,89 +1,83 @@
-﻿# NOTE: "Pasha" is a title, not a name. However, due to some Ottoman Turkish names lacking a last name, it is used in place of one
-
 CHARACTERS = {
 	c:AVMJ ?= {
-			create_character = {
-				historical = yes
-				first_name = "Togawa"
-				last_name = "Sakiko"
-				birth_date = 1816.1.1 
-				female = yes
-				ruler = yes
-				ig_leader = yes
-				ideology = ideology_agency_management
-				interest_group = ig_industrialists
-				religion = rel:starbeat
-				culture = cu:bandori
-				traits = {
-					tot_Bang_Sakiko_trait # tot_Bang_Sakiko_trait
-				
-					tot_group_sheet_008_trait # 閭﹀鍒?
-					tot_group_sheet_027_trait # 璐㈤榾
-					tot_group_sheet_055_trait # 閿洏鎵?
+		create_character = {
+			historical = yes
+			first_name = "Togawa"
+			last_name = "Sakiko"
+			birth_date = 1816.1.1
+			female = yes
+			ruler = yes
+			ig_leader = yes
+			ideology = ideology_agency_management_leader
+			interest_group = ig_industrialists
+			religion = rel:starbeat
+			culture = cu:bandori
+			traits = {
+				tot_Bang_Sakiko_trait
+				tot_group_sheet_008_trait
+				tot_group_sheet_027_trait
+				tot_group_sheet_055_trait
 			}
 		}
-			create_character = {
-				historical = yes
-				first_name = "Wakaba"
-				last_name = "Mutsumi"
-				birth_date = 1816.1.1 
-				female = yes
-				ig_leader = yes
-				ideology = ideology_hometown_support
-				interest_group = ig_rural_folk
-				religion = rel:starbeat
-				culture = cu:bandori
-				traits = {
-					tot_Bang_Mutsumi_trait # tot_Bang_Mutsumi_trait
-				
-					tot_group_sheet_008_trait # 閭﹀鍒?
-					tot_group_sheet_027_trait # 璐㈤榾
-					tot_group_sheet_052_trait # 鍚変粬鎵?
+		create_character = {
+			historical = yes
+			first_name = "Wakaba"
+			last_name = "Mutsumi"
+			birth_date = 1816.1.1
+			female = yes
+			ig_leader = yes
+			ideology = ideology_hometown_support_leader
+			interest_group = ig_rural_folk
+			religion = rel:starbeat
+			culture = cu:bandori
+			traits = {
+				tot_Bang_Mutsumi_trait
+				tot_group_sheet_008_trait
+				tot_group_sheet_030_trait
+				tot_group_sheet_052_trait
 			}
-			}
-			create_character = {
-				historical = yes
-				first_name = "Yahata"
-				last_name = "Umiri"
-				birth_date = 1816.1.1 
-				female = yes
-				ig_leader = yes
-				ideology = ideology_merit_stage
-				interest_group = ig_armed_forces
-				religion = rel:starbeat
-				culture = cu:bandori
-				traits = {
-					tot_Bang_Umiri_trait # tot_Bang_Umiri_trait
-				
-					tot_group_sheet_008_trait # 閭﹀鍒?
-					tot_group_sheet_024_trait # 骞曞悗鎿嶇旱鑰?
-					tot_group_sheet_053_trait # 璐濇柉鎵?
+		}
+		create_character = {
+			historical = yes
+			first_name = "Yahata"
+			last_name = "Umiri"
+			birth_date = 1816.1.1
+			female = yes
+			ig_leader = yes
+			ideology = ideology_merit_stage_leader
+			interest_group = ig_armed_forces
+			religion = rel:starbeat
+			culture = cu:bandori
+			traits = {
+				tot_Bang_Umiri_trait
+				tot_group_sheet_008_trait
+				tot_group_sheet_096_trait
+				tot_group_sheet_053_trait
 			}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Misumi"
 			last_name = "Uika"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			ig_leader = yes
-			ideology = ideology_idol_worship
+			ideology = ideology_idol_worship_leader
 			interest_group = ig_petty_bourgeoisie
 			religion = rel:starbeat
 			culture = cu:bandori
 			traits = {
-				tot_Bang_Uika_trait # tot_Bang_Uika_trait
-			
-				tot_group_sheet_008_trait # 閭﹀鍒?
-				tot_group_sheet_023_trait # 鍋跺儚
-				tot_group_sheet_056_trait # 涓诲敱
+				tot_Bang_Uika_trait
+				tot_group_sheet_008_trait
+				tot_group_sheet_023_trait
+				tot_group_sheet_056_trait
 			}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Yutenji"
 			last_name = "Nyamu"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			ig_leader = yes
 			ideology = ideology_popularity_first
@@ -91,10 +85,10 @@ CHARACTERS = {
 			religion = rel:starbeat
 			culture = cu:bandori
 			traits = {
-				tot_Bang_Nyamu_trait # tot_Bang_Nyamu_trait
-				tot_group_sheet_008_trait # 閭﹀鍒?
-				tot_group_sheet_025_trait # 鍒涗綔鑰?
-				tot_group_sheet_054_trait # 榧撴墜
+				tot_Bang_Nyamu_trait
+				tot_group_sheet_008_trait
+				tot_group_sheet_025_trait
+				tot_group_sheet_054_trait
 			}
 		}
 	}

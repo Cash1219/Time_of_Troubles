@@ -1,4 +1,4 @@
-get_is_in_government_type = {
+﻿get_is_in_government_type = {
 	scope = character
 	effect = {}
 	is_shown = {
@@ -26,7 +26,11 @@ tot_kizuna_character_active = {
 tot_kizuna_refresh = {
 	scope = country
 	effect = {
+		# Keep in-panel actions equivalent to the character system's explicit refresh.
+		tot_character_growth_refresh = yes
+		tot_band_initialize_axes = yes
 		update_kizuna = yes
+		tot_refresh_student_council_candidates_effect = yes
 	}
 	is_shown = {
 		is_player = yes
@@ -34,6 +38,51 @@ tot_kizuna_refresh = {
 	is_valid = {
 		is_player = yes
 	}
+}
+
+tot_band_open_refresh = {
+	scope = country
+	effect = {
+		# Rebuild display lists only. Do not recreate a starting line-up after removal.
+		tot_ensure_default_band_hq_slots_effect = yes
+		tot_ensure_default_story_band_members_effect = yes
+		tot_band_initialize_axes = yes
+		update_kizuna = yes
+		tot_refresh_student_council_candidates_effect = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+
+tot_band_initialize_management_page = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_page value = management }
+		set_variable = { name = tot_band_selected value = 1 }
+		tot_band_open_refresh = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+
+tot_band_set_management_page = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_page value = management }
+		tot_band_open_refresh = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+
+tot_band_set_shop_page = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_band_page value = shop }
+		tot_kizuna_refresh = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
 }
 
 tot_band_hq_state_unbound = {
@@ -280,6 +329,7 @@ tot_kizuna_select_faction_tab = {
 		remove_variable = tot_kizuna_tab_profession
 		remove_variable = tot_kizuna_tab_specialty
 		set_variable = { name = tot_kizuna_tab_faction value = 1 }
+		set_variable = { name = tot_kizuna_page value = faction }
 	}
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }
@@ -290,6 +340,7 @@ tot_kizuna_select_profession_tab = {
 		remove_variable = tot_kizuna_tab_faction
 		remove_variable = tot_kizuna_tab_specialty
 		set_variable = { name = tot_kizuna_tab_profession value = 1 }
+		set_variable = { name = tot_kizuna_page value = profession }
 	}
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }
@@ -300,6 +351,7 @@ tot_kizuna_select_specialty_tab = {
 		remove_variable = tot_kizuna_tab_faction
 		remove_variable = tot_kizuna_tab_profession
 		set_variable = { name = tot_kizuna_tab_specialty value = 1 }
+		set_variable = { name = tot_kizuna_page value = specialty }
 	}
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }
@@ -830,6 +882,28 @@ tot_band_has_limit = {
 	is_valid = { has_variable = tot_band_limit }
 }
 
+tot_band_no_headquarters = {
+	scope = country
+	effect = { }
+	is_shown = {
+		NOT = {
+			OR = {
+				has_variable_list = tot_band_1_hq_buildings
+				has_variable_list = tot_band_2_hq_buildings
+				has_variable_list = tot_band_3_hq_buildings
+				has_variable_list = tot_band_4_hq_buildings
+				has_variable_list = tot_band_5_hq_buildings
+				has_variable_list = tot_band_6_hq_buildings
+				has_variable_list = tot_band_7_hq_buildings
+				has_variable_list = tot_band_8_hq_buildings
+				has_variable_list = tot_band_9_hq_buildings
+				has_variable_list = tot_band_10_hq_buildings
+			}
+		}
+	}
+	is_valid = { always = no }
+}
+
 tot_band_1_unlocked = {
 	scope = country
 	effect = {}
@@ -840,8 +914,8 @@ tot_band_1_unlocked = {
 tot_band_1_created = {
 	scope = country
 	effect = {}
-	is_shown = { has_variable = tot_band_1_created }
-	is_valid = { has_variable = tot_band_1_created }
+	is_shown = { has_variable = tot_band_1_created has_variable_list = tot_band_1_hq_buildings }
+	is_valid = { has_variable = tot_band_1_created has_variable_list = tot_band_1_hq_buildings }
 }
 
 tot_band_1_not_created = {
@@ -853,17 +927,9 @@ tot_band_1_not_created = {
 
 tot_band_1_create = {
 	scope = country
-	effect = {
-		set_variable = { name = tot_band_1_created value = 1 }
-		if = {
-			limit = { NOT = { has_variable = tot_band_1_name } }
-			set_variable = { name = tot_band_1_name value = 5 }
-		}
-		tot_ensure_band_headquarter_effect = yes
-		update_kizuna = yes
-	}
-	is_shown = { is_player = yes var:tot_band_limit >= 1 }
-	is_valid = { is_player = yes var:tot_band_limit >= 1 }
+	effect = { }
+	is_shown = { always = no }
+	is_valid = { always = no }
 }
 
 tot_band_1_appoint_character = {
@@ -874,11 +940,11 @@ tot_band_1_appoint_character = {
 	}
 	is_shown = {
 		is_character_alive = yes
-		owner ?= { is_player = yes var:tot_band_limit >= 1 }
+		owner ?= { is_player = yes var:tot_band_limit >= 1 has_variable_list = tot_band_1_hq_buildings }
 	}
 	is_valid = {
 		is_character_alive = yes
-		owner ?= { is_player = yes var:tot_band_limit >= 1 }
+		owner ?= { is_player = yes var:tot_band_limit >= 1 has_variable_list = tot_band_1_hq_buildings }
 	}
 }
 
@@ -892,8 +958,8 @@ tot_band_2_unlocked = {
 tot_band_2_created = {
 	scope = country
 	effect = {}
-	is_shown = { has_variable = tot_band_2_created }
-	is_valid = { has_variable = tot_band_2_created }
+	is_shown = { has_variable = tot_band_2_created has_variable_list = tot_band_2_hq_buildings }
+	is_valid = { has_variable = tot_band_2_created has_variable_list = tot_band_2_hq_buildings }
 }
 
 tot_band_2_not_created = {
@@ -905,17 +971,9 @@ tot_band_2_not_created = {
 
 tot_band_2_create = {
 	scope = country
-	effect = {
-		set_variable = { name = tot_band_2_created value = 1 }
-		if = {
-			limit = { NOT = { has_variable = tot_band_2_name } }
-			set_variable = { name = tot_band_2_name value = 5 }
-		}
-		tot_ensure_band_headquarter_effect = yes
-		update_kizuna = yes
-	}
-	is_shown = { is_player = yes var:tot_band_limit >= 2 }
-	is_valid = { is_player = yes var:tot_band_limit >= 2 }
+	effect = { }
+	is_shown = { always = no }
+	is_valid = { always = no }
 }
 
 tot_band_2_appoint_character = {
@@ -926,11 +984,11 @@ tot_band_2_appoint_character = {
 	}
 	is_shown = {
 		is_character_alive = yes
-		owner ?= { is_player = yes var:tot_band_limit >= 2 }
+		owner ?= { is_player = yes var:tot_band_limit >= 2 has_variable_list = tot_band_2_hq_buildings }
 	}
 	is_valid = {
 		is_character_alive = yes
-		owner ?= { is_player = yes var:tot_band_limit >= 2 }
+		owner ?= { is_player = yes var:tot_band_limit >= 2 has_variable_list = tot_band_2_hq_buildings }
 	}
 }
 
@@ -944,8 +1002,8 @@ tot_band_3_unlocked = {
 tot_band_3_created = {
 	scope = country
 	effect = {}
-	is_shown = { has_variable = tot_band_3_created }
-	is_valid = { has_variable = tot_band_3_created }
+	is_shown = { has_variable = tot_band_3_created has_variable_list = tot_band_3_hq_buildings }
+	is_valid = { has_variable = tot_band_3_created has_variable_list = tot_band_3_hq_buildings }
 }
 
 tot_band_3_not_created = {
@@ -957,17 +1015,9 @@ tot_band_3_not_created = {
 
 tot_band_3_create = {
 	scope = country
-	effect = {
-		set_variable = { name = tot_band_3_created value = 1 }
-		if = {
-			limit = { NOT = { has_variable = tot_band_3_name } }
-			set_variable = { name = tot_band_3_name value = 5 }
-		}
-		tot_ensure_band_headquarter_effect = yes
-		update_kizuna = yes
-	}
-	is_shown = { is_player = yes var:tot_band_limit >= 3 }
-	is_valid = { is_player = yes var:tot_band_limit >= 3 }
+	effect = { }
+	is_shown = { always = no }
+	is_valid = { always = no }
 }
 
 tot_band_3_appoint_character = {
@@ -978,11 +1028,11 @@ tot_band_3_appoint_character = {
 	}
 	is_shown = {
 		is_character_alive = yes
-		owner ?= { is_player = yes var:tot_band_limit >= 3 }
+		owner ?= { is_player = yes var:tot_band_limit >= 3 has_variable_list = tot_band_3_hq_buildings }
 	}
 	is_valid = {
 		is_character_alive = yes
-		owner ?= { is_player = yes var:tot_band_limit >= 3 }
+		owner ?= { is_player = yes var:tot_band_limit >= 3 has_variable_list = tot_band_3_hq_buildings }
 	}
 }
 
@@ -1165,7 +1215,9 @@ tot_band_remove_character = {
 	scope = character
 	effect = {
 		tot_clear_band_member_effect = yes
-		owner ?= { update_kizuna = yes }
+		owner ?= {
+			update_kizuna = yes
+		}
 	}
 	is_shown = { is_character_alive = yes has_variable = tot_band_id }
 	is_valid = { is_character_alive = yes has_variable = tot_band_id }
@@ -2486,6 +2538,462 @@ tot_kizuna_057_show = {
 		}
 	}
 	is_valid = {}
+}
+tot_kizuna_059_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_059_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_060_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_060_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_061_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_061_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_062_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_062_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_063_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_063_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_064_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_064_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_065_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_065_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_066_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_066_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_067_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_067_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_068_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_068_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_069_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_069_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_070_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_070_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_071_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_071_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_072_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_072_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_073_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_073_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_074_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_074_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_075_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_075_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_076_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_076_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_077_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_077_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_078_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_078_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_080_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_080_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_081_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_081_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_082_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_082_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_083_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_083_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_084_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_084_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_085_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_085_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_086_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = {
+			has_trait = tot_group_sheet_086_trait
+		}
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_087_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = { has_trait = tot_group_sheet_087_trait }
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_088_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = { has_trait = tot_group_sheet_088_trait }
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_089_show = {
+	scope = country
+	effect = {
+	}
+	is_shown = {
+		any_scope_character = { has_trait = tot_group_sheet_089_trait }
+	}
+	is_valid = {
+	}
+}
+tot_kizuna_090_show = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_character = { has_trait = tot_group_sheet_090_trait } }
+	is_valid = { }
+}
+tot_kizuna_091_show = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_character = { has_trait = tot_group_sheet_091_trait } }
+	is_valid = { }
+}
+tot_kizuna_092_show = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_character = { has_trait = tot_group_sheet_092_trait } }
+	is_valid = { }
+}
+tot_kizuna_093_show = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_character = { has_trait = tot_group_sheet_093_trait } }
+	is_valid = { }
+}
+tot_kizuna_094_show = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_character = { has_trait = tot_group_sheet_094_trait } }
+	is_valid = { }
+}
+tot_kizuna_095_show = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_character = { has_trait = tot_group_sheet_095_trait } }
+	is_valid = { }
+}
+tot_kizuna_096_show = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_character = { has_trait = tot_group_sheet_096_trait } }
+	is_valid = { }
+}
+tot_kizuna_097_show = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_character = { has_trait = tot_group_sheet_097_trait } }
+	is_valid = { }
+}
+tot_kizuna_098_show = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_character = { has_trait = tot_group_sheet_098_trait } }
+	is_valid = { }
+}
+tot_kizuna_099_show = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_character = { has_trait = tot_group_sheet_099_trait } }
+	is_valid = { }
+}
+tot_kizuna_100_show = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_character = { has_trait = tot_group_sheet_100_trait } }
+	is_valid = { }
+}
+tot_kizuna_101_show = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_character = { has_trait = tot_group_sheet_101_trait } }
+	is_valid = { }
+}
+tot_kizuna_102_show = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_character = { has_trait = tot_group_sheet_102_trait } }
+	is_valid = { }
+}
+tot_kizuna_103_show = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_character = { has_trait = tot_group_sheet_103_trait } }
+	is_valid = { }
+}
+tot_kizuna_104_show = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_character = { has_trait = tot_group_sheet_104_trait } }
+	is_valid = { }
+}
+tot_kizuna_105_show = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_character = { has_trait = tot_group_sheet_105_trait } }
+	is_valid = { }
+}
+tot_kizuna_106_show = {
+	scope = country
+	effect = { }
+	is_shown = { any_scope_character = { has_trait = tot_group_sheet_106_trait } }
+	is_valid = { }
 }
 # END GENERATED TOT KIZUNA GROUP SCRIPTED GUIS
 # BEGIN GENERATED TOT BAND PER BAND

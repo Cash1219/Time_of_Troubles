@@ -6,23 +6,27 @@ CHARACTERS = {
 			historical = yes
 			first_name = "Mitake"
 			last_name = "Ran"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			ruler = yes
 			ig_leader = yes
-			ideology = ideology_free_creation
+			ideology = ideology_free_creation_leader
 			interest_group = ig_landowners
 			religion = rel:starbeat
 			culture = cu:bandori
 			traits = {
 				tot_Bang_Ran_trait # tot_Bang_Ran_trait
+
+					tot_group_sheet_008_trait
+				tot_group_sheet_030_trait
+				tot_group_sheet_052_trait
 			}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Aoba"
 			last_name = "Moca"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			ig_leader = yes
 			ideology = ideology_bond_keeper
@@ -31,14 +35,17 @@ CHARACTERS = {
 			culture = cu:bandori
 			traits = {
 				tot_Bang_Moca_trait # tot_Bang_Moca_trait
-			
-			}
+
+							tot_group_sheet_008_trait
+							tot_group_sheet_052_trait
+							tot_group_sheet_038_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Uehara"
 			last_name = "Himari"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			ig_leader = yes
 			ideology = ideology_bond_keeper
@@ -47,38 +54,47 @@ CHARACTERS = {
 			culture = cu:bandori
 			traits = {
 				tot_Bang_Himari_trait # tot_Bang_Himari_trait
-			
-			}
+
+							tot_group_sheet_008_trait
+							tot_group_sheet_053_trait
+							tot_group_sheet_085_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Hazawa"
 			last_name = "Tsugumi"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			ig_leader = yes
-			ideology = ideology_club_autonomy
+			ideology = ideology_club_autonomy_leader
 			interest_group = ig_petty_bourgeoisie
 			religion = rel:starbeat
 			culture = cu:bandori
 			traits = {
 				tot_Bang_Tsugumi_trait # tot_Bang_Tsugumi_trait
-			}
+							tot_group_sheet_008_trait
+							tot_group_sheet_055_trait
+							tot_group_sheet_032_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Udagawa"
 			last_name = "Tomoe"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			ig_leader = yes
-			ideology = ideology_discipline_first
+			ideology = ideology_discipline_first_leader
 			interest_group = ig_armed_forces
 			religion = rel:starbeat
 			culture = cu:bandori
 			traits = {
 				tot_Bang_Tomoe_trait # tot_Bang_Tomoe_trait
-			}
-		}	
+							tot_group_sheet_008_trait
+							tot_group_sheet_054_trait
+							tot_group_sheet_037_trait
+}
+		}
 	}
 }

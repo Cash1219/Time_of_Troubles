@@ -1,4 +1,4 @@
-﻿# NOTE: "Pasha" is a title, not a name. However, due to some Ottoman Turkish names lacking a last name, it is used in place of one
+# NOTE: "Pasha" is a title, not a name. However, due to some Ottoman Turkish names lacking a last name, it is used in place of one
 
 CHARACTERS = {
 	c:MUS ?= {
@@ -6,37 +6,45 @@ CHARACTERS = {
 			historical = yes
 			first_name = "Kosaka"
 			last_name = "Honoka"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			ruler = yes
-			ideology = ideology_kirakira
+			ideology = ideology_kirakira_leader
 			interest_group = ig_armed_forces
 			#religion = rel:protestant
 			culture = cu:lovelive_mu
 			traits = {
 				tot_LL_Honoka_trait # tot_LL_Honoka_trait
-			}
+
+				tot_group_sheet_049_trait
+				tot_group_sheet_085_trait
+							tot_group_sheet_060_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Sonoda"
 			last_name = "Umi"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			heir = yes
-			ideology = ideology_discipline_first
+			ideology = ideology_discipline_first_leader
 			interest_group = ig_armed_forces
 			#religion = rel:protestant
 			culture = cu:lovelive_mu
 			traits = {
 				tot_LL_Umi_trait # tot_LL_Umi_trait
-			}
+
+				tot_group_sheet_036_trait
+				tot_group_sheet_044_trait
+							tot_group_sheet_060_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Minami"
 			last_name = "Kotori2"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			ig_leader = yes
 			ideology = ideology_bond_keeper
@@ -45,88 +53,112 @@ CHARACTERS = {
 			culture = cu:lovelive_mu
 			traits = {
 				tot_LL_Kotori_trait # tot_LL_Kotori_trait
-			}
+
+				tot_group_sheet_032_trait
+				tot_group_sheet_025_trait
+							tot_group_sheet_060_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Koizumi"
 			last_name = "Hanayo"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			ig_leader = yes
-			ideology = ideology_hometown_support
+			ideology = ideology_hometown_support_leader
 			interest_group = ig_rural_folk
 			#religion = rel:protestant
 			culture = cu:lovelive_mu
 			traits = {
 				tot_LL_Hanayo_trait # tot_LL_Hanayo_trait
-			}
+
+				tot_group_sheet_030_trait
+				tot_group_sheet_038_trait
+							tot_group_sheet_060_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Hoshizora"
 			last_name = "Rin"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			ig_leader = yes
-			ideology = ideology_youth_pacesetter
+			ideology = ideology_youth_pacesetter_leader
 			interest_group = ig_trade_unions
 			#religion = rel:protestant
 			culture = cu:lovelive_mu
 			traits = {
 				tot_LL_Rin_trait # tot_LL_Rin_trait
-			}
+
+				tot_group_sheet_049_trait
+				tot_group_sheet_021_trait
+							tot_group_sheet_060_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Nishikino"
 			last_name = "Maki"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			ig_leader = yes
-			ideology = ideology_free_creation
+			ideology = ideology_free_creation_leader
 			interest_group = ig_industrialists
 			#religion = rel:protestant
 			culture = cu:lovelive_mu
 			traits = {
 				tot_LL_Maki_trait # tot_LL_Maki_trait
-			}
+
+				tot_group_sheet_027_trait
+				tot_group_sheet_025_trait
+							tot_group_sheet_060_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Ayase"
 			last_name = "Eli"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			ig_leader = yes
-			ideology = ideology_academy_council
+			ideology = ideology_academy_council_leader
 			interest_group = ig_intelligentsia
 			#religion = rel:protestant
 			culture = cu:lovelive_mu
 			traits = {
 				tot_LL_Eli_trait # tot_LL_Eli_trait
-			}
+
+				tot_group_sheet_037_trait
+				tot_group_sheet_044_trait
+							tot_group_sheet_060_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Yazawa"
 			last_name = "Nico"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			ig_leader = yes
-			ideology = ideology_idol_worship
+			ideology = ideology_idol_worship_leader
 			interest_group = ig_petty_bourgeoisie
 			#religion = rel:protestant
 			culture = cu:lovelive_mu
 			traits = {
 				tot_LL_Nico_trait # tot_LL_Nico_trait
-			}
+
+				tot_group_sheet_025_trait
+				tot_group_sheet_085_trait
+							tot_group_sheet_060_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Tojo"
 			last_name = "Nozomi"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			ig_leader = yes
 			ideology = ideology_bond_keeper
@@ -135,22 +167,30 @@ CHARACTERS = {
 			culture = cu:lovelive_mu
 			traits = {
 				tot_LL_Nozomi_trait # tot_LL_Nozomi_trait
-			}
+
+				tot_group_sheet_029_trait
+				tot_group_sheet_044_trait
+							tot_group_sheet_060_trait
+}
 		}
 		create_character = {
 			historical = yes
 			first_name = "Kira"
 			last_name = "Tsubasa"
-			birth_date = 1816.1.1 
+			birth_date = 1816.1.1
 			female = yes
 			ig_leader = yes
-			ideology = ideology_academy_prestige
+			ideology = ideology_academy_prestige_leader
 			interest_group = ig_landowners
 			#religion = rel:protestant
 			culture = cu:lovelive_mu
 			traits = {
 				tot_LL_Tsubasa_trait # tot_LL_Tsubasa_trait
-			}
-		}	
+
+				tot_group_sheet_025_trait
+				tot_group_sheet_044_trait
+							tot_group_sheet_060_trait
+}
+		}
 	}
 }
