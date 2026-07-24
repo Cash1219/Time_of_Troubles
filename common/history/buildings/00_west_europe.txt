@@ -51,12 +51,38 @@
 					building={
 						type="building_textile_mill"
 						country="c:OOAR"
-						levels=3
+						levels=7
 						region="STATE_SVEALAND"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms"  }
+			}
+			create_building={
+				building="building_furniture_manufactory"
+				add_ownership={
+					building={
+						type="building_furniture_manufactory"
+						country="c:OOAR"
+						levels=4
+						region="STATE_SVEALAND"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_handcrafted_furniture" "pm_no_luxuries" "pm_automation_disabled" }
+			}
+			create_building={
+				building="building_food_industry"
+				add_ownership={
+					building={
+						type="building_food_industry"
+						country="c:OOAR"
+						levels=3
+						region="STATE_SVEALAND"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_bakery" "pm_disabled_canning" "pm_manual_dough_processing" "pm_pot_stills" }
 			}
 			create_building={
 				building="building_iron_mine"
@@ -186,11 +212,24 @@
 					}
 					country={
 						country="c:OOAR"
-						levels=1
+						levels=4
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled"  }
+			}
+			create_building={
+				building="building_furniture_manufactory"
+				add_ownership={
+					building={
+						type="building_furniture_manufactory"
+						country="c:OOAR"
+						levels=2
+						region="STATE_GOTALAND"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_handcrafted_furniture" "pm_no_luxuries" "pm_automation_disabled" }
 			}
 			create_building={
 				building="building_iron_mine"
@@ -319,7 +358,7 @@
 					building={
 						type="building_tooling_workshop"
 						country="c:OOAR"
-						levels=1
+						levels=4
 						region="STATE_SCANIA"
 					}
 				}
@@ -342,11 +381,24 @@
 				add_ownership={
 					country={
 						country="c:OOAR"
-						levels=1
+						levels=3
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_muskets" "pm_automation_disabled"  }
+			}
+			create_building={
+				building="building_artillery_foundry"
+				add_ownership={
+					building={
+						type="building_artillery_foundry"
+						country="c:OOAR"
+						levels=1
+						region="STATE_SCANIA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_cannons" "pm_automation_disabled" }
 			}
 			create_building={
 				building="building_rye_farm"

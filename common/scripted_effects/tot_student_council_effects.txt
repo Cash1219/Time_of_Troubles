@@ -205,6 +205,15 @@ tot_refresh_student_council_candidates_effect = {
 			is_ruler_of_own_country = no
 			is_heir_of_own_country = no
 			is_interest_group_leader = no
+			# Nazarick's rear-area attendants are not normal minister candidates.
+			NOT = {
+				OR = {
+					has_trait = tot_Victim_Ainz_trait
+					has_trait = tot_Nigredo_Ainz_trait
+					has_trait = tot_Pestonya_Ainz_trait
+					has_trait = tot_Aureole_Omega_trait
+				}
+			}
 			NOT = {
 				has_role = character_role_tot_student_council_president
 			}

@@ -89,34 +89,7 @@ je_fra_queen_pk_food_introducing_cake_technology = { #引进蛋糕技术
 		add_technology_progress = { progress = 2000 technology = fractional_distillation }
 	}
 }
-je_fra_queen_pk_food_control_grain_prices = { #控制粮价
-	name = je_fra_queen_pk_food_control_grain_prices
-	desc = je_fra_queen_pk_food_control_grain_prices_desc
-
-	visible = { 
-		always = yes
-	}
-	
-
-	ai_chance = {
-		base = 0
-	}
-
-	possible = {
-		institution_investment_level = {
-			institution = institution_anti_speculation
-			value >= 3
-		}
-	}
-
-	effect = {
-		add_modifier = {
-			name = modifier_fra_speculation_crime
-			years = -1
-		}
-	
-	}
-}
+# 废案：控制粮价按钮原本依赖已移除的反投机机构，现已隐藏。
 je_fra_queen_pk_food_agricultural_products = { #增加农副产物
 	name = je_fra_queen_pk_food_agricultural_products
 	desc = je_fra_queen_pk_food_agricultural_products_desc

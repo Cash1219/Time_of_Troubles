@@ -1,4 +1,4 @@
-tot_refresh_student_council_candidates = {
+﻿tot_refresh_student_council_candidates = {
 	scope = country
 	effect = {
 		tot_refresh_student_council_candidates_effect = yes
@@ -18,10 +18,6 @@ tot_character_system_refresh = {
 		tot_band_initialize_axes = yes
 		update_kizuna = yes
 		tot_refresh_student_council_candidates_effect = yes
-		if = {
-			limit = { has_variable = tot_character_codex_selection var:tot_character_codex_selection = 8 }
-			tot_character_codex_refresh_bang_dream_effect = yes
-		}
 	}
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }

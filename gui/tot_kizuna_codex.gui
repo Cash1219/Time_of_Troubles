@@ -1,0 +1,934 @@
+types tot_kizuna_codex_types {
+	type tot_kizuna_codex_character = widget {
+		size = { 530 128 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+		using = entry_bg_fancy
+
+		tooltipwidget = {
+			FancyTooltip_Character = {}
+		}
+
+		hbox = {
+			margin = { 12 8 }
+			spacing = 12
+
+			widget = {
+				size = { 96 108 }
+
+				character_portrait_large = {
+					parentanchor = center
+					blockoverride "show_hat" {}
+					blockoverride "highlight" {}
+					blockoverride "rank_icon" {}
+				}
+
+				ig_button = {
+					visible = "[Character.GetInterestGroup.IsValid]"
+					datacontext = "[Character.GetInterestGroup]"
+					parentanchor = bottom|left
+					block "ig_button_size" { size = { 32 32 } }
+					using = tooltip_ws
+					blockoverride "in_government_icon" {}
+				}
+
+				icon = {
+					datacontext = "[Character.GetIdeology]"
+					parentanchor = bottom|right
+					size = { 32 32 }
+					texture = "[Ideology.GetTexture]"
+					tooltipwidget = { FancyTooltip_Ideology = {} }
+				}
+			}
+
+			vbox = {
+				size = { 398 108 }
+				parentanchor = vcenter
+				position = { 0 -4 }
+				spacing = 4
+
+				hbox = {
+					size = { 398 52 }
+					spacing = 8
+
+					vbox = {
+						size = { 300 50 }
+						spacing = 2
+						textbox = {
+							size = { 300 26 }
+							raw_text = "#BOLD [Character.GetFullNameNoFormatting]#!"
+							using = fontsize_large
+							align = left|nobaseline
+							elide = right
+						}
+						textbox = {
+							size = { 300 18 }
+							raw_text = "#title [Character.GetPrimaryRoleTitle]#!"
+							using = fontsize_small
+							align = left|nobaseline
+							elide = right
+						}
+					}
+
+					vbox = {
+						size = { 90 52 }
+						spacing = 1
+						small_flag_no_interact = {
+							datacontext = "[Character.GetCountry]"
+							parentanchor = top|hcenter
+							blockoverride "tooltip" {}
+						}
+						textbox = {
+							size = { 90 18 }
+							raw_text = "[Character.GetCountry.GetNameNoFormatting]"
+							using = fontsize_small
+							align = center|nobaseline
+							elide = right
+						}
+					}
+				}
+			}
+		}
+	}
+
+	type tot_kizuna_codex_page = widget {
+		size = { 1420 630 }
+		background = { using = entry_bg_fancy }
+
+		vbox = {
+			margin = { 18 16 }
+			spacing = 12
+
+			hbox = {
+				size = { 1384 42 }
+				textbox = {
+					size = { 980 36 }
+					text = "TOT_CHARACTER_CODEX_HEADER"
+					using = fontsize_xl
+					align = left|nobaseline
+				}
+				button_standard = {
+					size = { 260 30 }
+					parentanchor = right
+					text = "TOT_CHARACTER_CODEX_MANUAL_REFRESH"
+					tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+					onclick = "[GetScriptedGui('tot_character_codex_scan_selected').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				}
+			}
+
+			hbox = {
+				size = { 1384 542 }
+				spacing = 14
+
+				vbox = {
+					size = { 250 542 }
+					spacing = 8
+					background = { using = dark_area }
+					textbox = {
+						size = { 226 24 }
+						margin = { 12 10 }
+						text = "TOT_CHARACTER_CODEX_GROUPS"
+						using = fontsize_medium
+						align = left|nobaseline
+					}
+						scrollbox = {
+							size = { 226 486 }
+							blockoverride "scrollbox_content" {
+								vbox = {
+								direction = vertical
+								spacing = 4
+								textbox = {
+									size = { 226 24 }
+									text = "TOT_CHARACTER_CODEX_GROUPS_FACTIONS"
+									using = fontsize_small
+									align = left|nobaseline
+								}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_001_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_001').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_002_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_002').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_003_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_003').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_004_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_004').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_005_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_005').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_006_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_006').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_007_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_007').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_008_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_008').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_009_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_009').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_010_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_010').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_011_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_011').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_012_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_012').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_013_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_013').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_014_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_014').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_015_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_015').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_016_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_016').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_017_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_017').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_018_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_018').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_019_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_019').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									textbox = {
+										size = { 226 24 }
+										text = "TOT_CHARACTER_CODEX_GROUPS_OTHER"
+										using = fontsize_small
+										align = left|nobaseline
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_020_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_020').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_021_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_021').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_022_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_022').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_023_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_023').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_024_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_024').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_025_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_025').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_026_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_026').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_027_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_027').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_028_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_028').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_029_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_029').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_030_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_030').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_031_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_031').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_032_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_032').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_033_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_033').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_034_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_034').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_035_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_035').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_036_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_036').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_037_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_037').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_038_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_038').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_039_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_039').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_040_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_040').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_041_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_041').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_042_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_042').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_043_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_043').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_044_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_044').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_045_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_045').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_046_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_046').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_047_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_047').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_048_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_048').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_049_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_049').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_050_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_050').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_051_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_051').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_052_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_052').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_053_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_053').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_054_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_054').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_055_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_055').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_056_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_056').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_057_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_057').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_058_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_058').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_059_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_059').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_060_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_060').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_061_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_061').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_062_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_062').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_063_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_063').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_064_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_064').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_065_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_065').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_066_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_066').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_067_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_067').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_068_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_068').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_069_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_069').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_070_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_070').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_071_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_071').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_072_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_072').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_073_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_073').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_074_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_074').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_075_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_075').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_076_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_076').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_077_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_077').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_078_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_078').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_079_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_079').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_080_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_080').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_081_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_081').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_082_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_082').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_083_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_083').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_084_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_084').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_085_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_085').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_086_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_086').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_087_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_087').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_088_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_088').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_089_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_089').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_090_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_090').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_091_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_091').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_092_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_092').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_093_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_093').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_094_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_094').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_095_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_095').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_096_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_096').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_097_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_097').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_098_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_098').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_099_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_099').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_100_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_100').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_101_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_101').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_102_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_102').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_103_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_103').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_104_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_104').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_105_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_105').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+									button = {
+										using = default_button_primary
+										size = { 226 34 }
+										text = "tot_group_sheet_106_trait"
+										onclick = "[GetScriptedGui('tot_character_codex_select_106').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
+									}
+								}
+							}
+						}
+				}
+
+				vbox = {
+					size = { 1120 542 }
+					spacing = 8
+					hbox = {
+						size = { 1120 28 }
+						spacing = 8
+						textbox = {
+							size = { 1050 28 }
+						raw_text = "[AccessPlayer.GetCustom('tot_character_codex_selected_trait')]的历史角色"
+							using = fontsize_large
+							align = left|nobaseline
+						}
+						textbox = {
+							size = { 62 28 }
+							raw_text = "#v [GetPlayer.MakeScope.Var('tot_character_codex_result_count').GetValue|0]#!"
+							using = fontsize_large
+							align = right|nobaseline
+						}
+					}
+					scrollbox = {
+						size = { 1120 500 }
+						blockoverride "scrollbox_content" {
+								fixedgridbox = {
+									datamodel = "[GetPlayer.MakeScope.GetList('tot_character_codex_results')]"
+									addcolumn = 548
+									addrow = 136
+									datamodel_wrap = 2
+								item = { tot_kizuna_codex_character = {} }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

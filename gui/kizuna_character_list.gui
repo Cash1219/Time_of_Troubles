@@ -1,4 +1,4 @@
-types kizuna_list_type #角色列表
+﻿types kizuna_list_type #角色列表
 {
 	type kizuna_character_widget = flowcontainer {
 		direction = vertical
@@ -202,8 +202,24 @@ types kizuna_list_type #角色列表
 					blockoverride "show_hat" {}
 					blockoverride "highlight" {}
 					blockoverride "rank_icon" {}
+					blockoverride "additional_icons" {}
 				}
-			}
+				widget = {
+					visible = "[Character.GetInterestGroup.IsValid]"
+					parentanchor = bottom|left
+					position = { -10 2 }
+					size = { 44 44 }
+					datacontext = "[Character.GetInterestGroup]"
+					icon = { parentanchor = center size = { 42 42 } texture = "[InterestGroup.GetTexture]" tooltipwidget = { FancyTooltip_IG = {} } }
+				}
+				widget = {
+					parentanchor = bottom|right
+					position = { 10 2 }
+					size = { 44 44 }
+					datacontext = "[Character.GetIdeology]"
+					icon = { parentanchor = center size = { 42 42 } texture = "[Ideology.GetTexture]" tooltipwidget = { FancyTooltip_Ideology = {} } }
+				}
+				}
 			flowcontainer = {
 				direction = vertical
 				spacing = 4
@@ -238,7 +254,7 @@ types kizuna_list_type #角色列表
 
 	type tot_band_candidate_character_base = widget {
 		# Match the character-system candidate cards: one readable row per candidate.
-		size = { 900 124 }
+		size = { 900 136 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 		background = { using = entry_bg_fancy }
@@ -246,58 +262,45 @@ types kizuna_list_type #角色列表
 			margin = { 10 8 }
 			spacing = 12
 			widget = {
-				size = { 92 92 }
-				character_portrait_small2 = {
+					size = { 116 116 }
+				character_portrait_large = {
 					parentanchor = center
 					blockoverride "show_hat" {}
 					blockoverride "highlight" {}
 					blockoverride "rank_icon" {}
+					blockoverride "additional_icons" {}
+				}
+				widget = {
+					visible = "[Character.GetInterestGroup.IsValid]"
+					parentanchor = bottom|left
+					position = { -10 2 }
+					size = { 44 44 }
+					datacontext = "[Character.GetInterestGroup]"
+					icon = { parentanchor = center size = { 42 42 } texture = "[InterestGroup.GetTexture]" tooltipwidget = { FancyTooltip_IG = {} } }
+				}
+				widget = {
+					parentanchor = bottom|right
+					position = { 10 2 }
+					size = { 44 44 }
+					datacontext = "[Character.GetIdeology]"
+					icon = { parentanchor = center size = { 42 42 } texture = "[Ideology.GetTexture]" tooltipwidget = { FancyTooltip_Ideology = {} } }
 				}
 			}
 				flowcontainer = {
 					direction = vertical
 					spacing = 3
-					textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 560 24 } align = left|nobaseline elide = right }
+					textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 540 24 } align = left|nobaseline elide = right }
 				flowcontainer = {
 					spacing = 3
-					icon = { visible = "[GetScriptedGui('tot_band_character_is_vocalist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 20 20 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_vocal.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-					icon = { visible = "[GetScriptedGui('tot_band_character_is_guitarist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 20 20 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_guitar_center.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-					icon = { visible = "[GetScriptedGui('tot_band_character_is_bassist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 20 20 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_bass.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-					icon = { visible = "[GetScriptedGui('tot_band_character_is_keyboardist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 20 20 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_keyboard.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-					icon = { visible = "[GetScriptedGui('tot_band_character_is_drummer').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 20 20 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_drums.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
-					icon = { visible = "[GetScriptedGui('tot_band_character_is_dj').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 20 20 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_keyboard.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+					icon = { visible = "[GetScriptedGui('tot_band_character_is_vocalist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 28 28 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_vocal.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+					icon = { visible = "[GetScriptedGui('tot_band_character_is_guitarist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 28 28 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_guitar_center.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+					icon = { visible = "[GetScriptedGui('tot_band_character_is_bassist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 28 28 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_bass.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+					icon = { visible = "[GetScriptedGui('tot_band_character_is_keyboardist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 28 28 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_keyboard.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+					icon = { visible = "[GetScriptedGui('tot_band_character_is_drummer').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 28 28 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_drums.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
+					icon = { visible = "[GetScriptedGui('tot_band_character_is_dj').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 28 28 } texture = "gfx/interface/icons/band_role_icons/tot_band_role_keyboard.dds" tooltip = "TOT_BAND_ROLE_SUMMARY_TOOLTIP" }
 				}
-				textbox = { text = "[Character.GetPrimaryRoleTitle]" size = { 560 18 } using = fontsize_small align = left|nobaseline elide = right }
-				textbox = { visible = "[GetScriptedGui('tot_band_character_has_specialty').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" raw_text = "特长：[Character.GetCustom('tot_band_specialty_summary')]" size = { 560 16 } using = fontsize_very_small align = left|nobaseline elide = right }
-				widget = {
-					size = { 560 20 }
-					hbox = {
-						spacing = 8
-						widget = {
-						visible = "[Character.GetInterestGroup.IsValid]"
-						size = { 268 20 }
-						background = { using = entry_bg_simple }
-						datacontext = "[Character.GetInterestGroup]"
-						hbox = {
-							parentanchor = center
-							spacing = 5
-							icon = { size = { 18 18 } texture = "[InterestGroup.GetTexture]" tooltipwidget = { FancyTooltip_IG = {} } }
-							textbox = { size = { 235 16 } raw_text = "[InterestGroup.GetNameNoFormatting]" using = fontsize_very_small align = left|nobaseline elide = right }
-						}
-					}
-						widget = {
-						size = { 268 20 }
-						background = { using = entry_bg_simple }
-						datacontext = "[Character.GetIdeology]"
-						hbox = {
-							parentanchor = center
-							spacing = 5
-							icon = { size = { 18 18 } texture = "[Ideology.GetTexture]" tooltipwidget = { FancyTooltip_Ideology = {} } }
-							textbox = { size = { 235 16 } raw_text = "[Ideology.GetNameNoFormatting]" using = fontsize_very_small align = left|nobaseline elide = right }
-						}
-						}
-					}
-				}
+				textbox = { text = "[Character.GetPrimaryRoleTitle]" size = { 540 20 } using = fontsize_small align = left|nobaseline elide = right }
+				textbox = { visible = "[GetScriptedGui('tot_band_character_has_specialty').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" raw_text = "特长：[Character.GetCustom('tot_band_specialty_summary')]" size = { 540 22 } using = fontsize_small align = left|nobaseline elide = right }
 			}
 			block "appoint_buttons" {
 				button_standard = {
@@ -786,8 +789,23 @@ types kizuna_list_type #角色列表
 			spacing = 10
 			block "role_button" { widget = { size = { 84 116 } } }
 			widget = {
-				size = { 110 110 }
-				character_portrait_large = { parentanchor = center blockoverride "show_hat" {} blockoverride "highlight" {} blockoverride "rank_icon" {} }
+				 size = { 110 110 }
+				character_portrait_large = { parentanchor = center blockoverride "show_hat" {} blockoverride "highlight" {} blockoverride "rank_icon" {} blockoverride "additional_icons" {} }
+				widget = {
+					visible = "[Character.GetInterestGroup.IsValid]"
+					parentanchor = bottom|left
+					position = { -7 2 }
+					size = { 38 38 }
+					datacontext = "[Character.GetInterestGroup]"
+					icon = { parentanchor = center size = { 36 36 } texture = "[InterestGroup.GetTexture]" tooltipwidget = { FancyTooltip_IG = {} } }
+				}
+				widget = {
+					parentanchor = bottom|right
+					position = { 7 2 }
+					size = { 38 38 }
+					datacontext = "[Character.GetIdeology]"
+					icon = { parentanchor = center size = { 36 36 } texture = "[Ideology.GetTexture]" tooltipwidget = { FancyTooltip_Ideology = {} } }
+				}
 			}
 			vbox = {
 				size = { 200 110 }
@@ -795,19 +813,6 @@ types kizuna_list_type #角色列表
 				textbox = { size = { 200 26 } text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium align = left|nobaseline elide = right }
 				block "role_summary" { textbox = { size = { 200 22 } text = "TOT_BAND_ROLE_NONE" using = fontsize_small align = left|nobaseline } }
 				textbox = { visible = "[GetScriptedGui('tot_band_character_has_specialty').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 200 18 } raw_text = "特长：[Character.GetCustom('tot_band_specialty_summary')]" using = fontsize_very_small align = left|nobaseline elide = right }
-				widget = {
-					size = { 200 20 }
-					visible = "[Character.GetInterestGroup.IsValid]"
-					background = { using = entry_bg_simple }
-					datacontext = "[Character.GetInterestGroup]"
-					hbox = { parentanchor = vcenter spacing = 4 icon = { size = { 18 18 } texture = "[InterestGroup.GetTexture]" tooltipwidget = { FancyTooltip_IG = {} } } textbox = { size = { 174 16 } raw_text = "[InterestGroup.GetNameNoFormatting]" using = fontsize_very_small align = left|nobaseline elide = right } }
-				}
-				widget = {
-					size = { 200 20 }
-					background = { using = entry_bg_simple }
-					datacontext = "[Character.GetIdeology]"
-					hbox = { parentanchor = vcenter spacing = 4 icon = { size = { 18 18 } texture = "[Ideology.GetTexture]" tooltipwidget = { FancyTooltip_Ideology = {} } } textbox = { size = { 174 16 } raw_text = "[Ideology.GetNameNoFormatting]" using = fontsize_very_small align = left|nobaseline elide = right } }
-				}
 			}
 			vbox = {
 				size = { 70 110 }
@@ -907,6 +912,7 @@ type tot_band_10_role_slot_dj_row = tot_band_role_member_row_keyboard { blockove
 }
 types tot_kizuna_page_types {
 	type tot_kizuna_page = flowcontainer {
+	size = { 1420 630 }
 	ignoreinvisible = yes
 	direction = vertical
 	spacing = 8
@@ -4876,11 +4882,11 @@ flowcontainer = {
 
 	widget = {
 		visible = "[GetVariableSystem.HasValue( 'tot_kizuna_page', 'codex' )]"
+		size = { 1420 630 }
 		tot_kizuna_codex_page = {}
 	}
 }
 }
-
 
 
 

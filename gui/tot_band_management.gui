@@ -1,4 +1,4 @@
-types tot_band_page_types
+﻿types tot_band_page_types
 {
 	 type tot_band_page = widget {
 	size = { 1460 680 }
@@ -63,16 +63,26 @@ types tot_band_page_types
 				direction = vertical
 				spacing = 3
 				textbox = { visible = "[GetScriptedGui('tot_band_no_headquarters').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 500 42 } text = "TOT_BAND_BUILD_HQ_FIRST_HINT" using = fontsize_small align = left|nobaseline multiline = yes }
-				button_standard = { visible = "[GetScriptedGui('tot_band_1_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 500 27 } text = "TOT_BAND_1_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '1' )]" }
-				button_standard = { visible = "[GetScriptedGui('tot_band_2_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 500 27 } text = "TOT_BAND_2_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '2' )]" }
-				button_standard = { visible = "[GetScriptedGui('tot_band_3_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 500 27 } text = "TOT_BAND_3_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '3' )]" }
-				button_standard = { visible = "[GetScriptedGui('tot_band_4_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 500 27 } text = "TOT_BAND_4_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '4' )]" }
-				button_standard = { visible = "[GetScriptedGui('tot_band_5_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 500 27 } text = "TOT_BAND_5_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '5' )]" }
-				button_standard = { visible = "[GetScriptedGui('tot_band_6_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 500 27 } text = "TOT_BAND_6_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '6' )]" }
-				button_standard = { visible = "[GetScriptedGui('tot_band_7_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 500 27 } text = "TOT_BAND_7_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '7' )]" }
-				button_standard = { visible = "[GetScriptedGui('tot_band_8_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 500 27 } text = "TOT_BAND_8_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '8' )]" }
-				button_standard = { visible = "[GetScriptedGui('tot_band_9_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 500 27 } text = "TOT_BAND_9_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '9' )]" }
-				button_standard = { visible = "[GetScriptedGui('tot_band_10_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 500 27 } text = "TOT_BAND_10_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '10' )]" }
+				button = { visible = "[And(GetScriptedGui('tot_band_1_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), GetVariableSystem.HasValue( 'tot_band_selected', '1' ))]" using = default_button_primary size = { 500 27 } text = "TOT_BAND_1_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '1' )]" }
+				button = { visible = "[And(GetScriptedGui('tot_band_1_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), Not(GetVariableSystem.HasValue( 'tot_band_selected', '1' )))]" using = default_button size = { 500 27 } text = "TOT_BAND_1_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '1' )]" }
+				button = { visible = "[And(GetScriptedGui('tot_band_2_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), GetVariableSystem.HasValue( 'tot_band_selected', '2' ))]" using = default_button_primary size = { 500 27 } text = "TOT_BAND_2_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '2' )]" }
+				button = { visible = "[And(GetScriptedGui('tot_band_2_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), Not(GetVariableSystem.HasValue( 'tot_band_selected', '2' )))]" using = default_button size = { 500 27 } text = "TOT_BAND_2_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '2' )]" }
+				button = { visible = "[And(GetScriptedGui('tot_band_3_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), GetVariableSystem.HasValue( 'tot_band_selected', '3' ))]" using = default_button_primary size = { 500 27 } text = "TOT_BAND_3_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '3' )]" }
+				button = { visible = "[And(GetScriptedGui('tot_band_3_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), Not(GetVariableSystem.HasValue( 'tot_band_selected', '3' )))]" using = default_button size = { 500 27 } text = "TOT_BAND_3_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '3' )]" }
+				button = { visible = "[And(GetScriptedGui('tot_band_4_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), GetVariableSystem.HasValue( 'tot_band_selected', '4' ))]" using = default_button_primary size = { 500 27 } text = "TOT_BAND_4_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '4' )]" }
+				button = { visible = "[And(GetScriptedGui('tot_band_4_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), Not(GetVariableSystem.HasValue( 'tot_band_selected', '4' )))]" using = default_button size = { 500 27 } text = "TOT_BAND_4_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '4' )]" }
+				button = { visible = "[And(GetScriptedGui('tot_band_5_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), GetVariableSystem.HasValue( 'tot_band_selected', '5' ))]" using = default_button_primary size = { 500 27 } text = "TOT_BAND_5_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '5' )]" }
+				button = { visible = "[And(GetScriptedGui('tot_band_5_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), Not(GetVariableSystem.HasValue( 'tot_band_selected', '5' )))]" using = default_button size = { 500 27 } text = "TOT_BAND_5_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '5' )]" }
+				button = { visible = "[And(GetScriptedGui('tot_band_6_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), GetVariableSystem.HasValue( 'tot_band_selected', '6' ))]" using = default_button_primary size = { 500 27 } text = "TOT_BAND_6_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '6' )]" }
+				button = { visible = "[And(GetScriptedGui('tot_band_6_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), Not(GetVariableSystem.HasValue( 'tot_band_selected', '6' )))]" using = default_button size = { 500 27 } text = "TOT_BAND_6_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '6' )]" }
+				button = { visible = "[And(GetScriptedGui('tot_band_7_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), GetVariableSystem.HasValue( 'tot_band_selected', '7' ))]" using = default_button_primary size = { 500 27 } text = "TOT_BAND_7_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '7' )]" }
+				button = { visible = "[And(GetScriptedGui('tot_band_7_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), Not(GetVariableSystem.HasValue( 'tot_band_selected', '7' )))]" using = default_button size = { 500 27 } text = "TOT_BAND_7_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '7' )]" }
+				button = { visible = "[And(GetScriptedGui('tot_band_8_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), GetVariableSystem.HasValue( 'tot_band_selected', '8' ))]" using = default_button_primary size = { 500 27 } text = "TOT_BAND_8_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '8' )]" }
+				button = { visible = "[And(GetScriptedGui('tot_band_8_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), Not(GetVariableSystem.HasValue( 'tot_band_selected', '8' )))]" using = default_button size = { 500 27 } text = "TOT_BAND_8_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '8' )]" }
+				button = { visible = "[And(GetScriptedGui('tot_band_9_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), GetVariableSystem.HasValue( 'tot_band_selected', '9' ))]" using = default_button_primary size = { 500 27 } text = "TOT_BAND_9_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '9' )]" }
+				button = { visible = "[And(GetScriptedGui('tot_band_9_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), Not(GetVariableSystem.HasValue( 'tot_band_selected', '9' )))]" using = default_button size = { 500 27 } text = "TOT_BAND_9_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '9' )]" }
+				button = { visible = "[And(GetScriptedGui('tot_band_10_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), GetVariableSystem.HasValue( 'tot_band_selected', '10' ))]" using = default_button_primary size = { 500 27 } text = "TOT_BAND_10_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '10' )]" }
+				button = { visible = "[And(GetScriptedGui('tot_band_10_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), Not(GetVariableSystem.HasValue( 'tot_band_selected', '10' )))]" using = default_button size = { 500 27 } text = "TOT_BAND_10_HEADER" onclick = "[GetVariableSystem.Set( 'tot_band_selected', '10' )]" }
 			}
 		}
 	}
@@ -104,7 +114,7 @@ types tot_band_page_types
 						spacing = 4
 						textbox = { visible = "[GetScriptedGui('tot_band_1_not_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 500 42 } text = "TOT_BAND_BUILD_HQ_FIRST_HINT" using = fontsize_small align = left|nobaseline multiline = yes }
 						flowcontainer = {
-							visible = "[GetScriptedGui('tot_band_1_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							visible = no
 							direction = vertical
 							spacing = 4
 							textbox = { size = { 500 24 } text = "TOT_BAND_CREATION_PROGRESS_LABEL" using = fontsize_medium align = center|nobaseline tooltip = "band_1_kizuna_creative_progress_tooltip" }
@@ -224,7 +234,7 @@ types tot_band_page_types
 						spacing = 4
 						textbox = { visible = "[GetScriptedGui('tot_band_2_not_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 500 42 } text = "TOT_BAND_BUILD_HQ_FIRST_HINT" using = fontsize_small align = left|nobaseline multiline = yes }
 						flowcontainer = {
-							visible = "[GetScriptedGui('tot_band_2_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							visible = no
 							direction = vertical
 							spacing = 4
 							textbox = { size = { 500 24 } text = "TOT_BAND_CREATION_PROGRESS_LABEL" using = fontsize_medium align = center|nobaseline tooltip = "band_2_kizuna_creative_progress_tooltip" }
@@ -343,7 +353,7 @@ types tot_band_page_types
 						spacing = 4
 						textbox = { visible = "[GetScriptedGui('tot_band_3_not_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 500 42 } text = "TOT_BAND_BUILD_HQ_FIRST_HINT" using = fontsize_small align = left|nobaseline multiline = yes }
 						flowcontainer = {
-							visible = "[GetScriptedGui('tot_band_3_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							visible = no
 							direction = vertical
 							spacing = 4
 							textbox = { size = { 500 24 } text = "TOT_BAND_CREATION_PROGRESS_LABEL" using = fontsize_medium align = center|nobaseline tooltip = "band_3_kizuna_creative_progress_tooltip" }
@@ -463,6 +473,7 @@ types tot_band_page_types
 						default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_4_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 						button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_4_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 						flowcontainer = {
+							visible = no
 							direction = vertical
 							spacing = 4
 																					textbox = { size = { 500 24 } text = "TOT_BAND_CREATION_PROGRESS_LABEL" using = fontsize_medium align = center|nobaseline tooltip = "band_4_kizuna_creative_progress_tooltip" }
@@ -521,6 +532,7 @@ types tot_band_page_types
 						default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_5_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 						button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_5_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 						flowcontainer = {
+							visible = no
 							direction = vertical
 							spacing = 4
 																					textbox = { size = { 500 24 } text = "TOT_BAND_CREATION_PROGRESS_LABEL" using = fontsize_medium align = center|nobaseline tooltip = "band_5_kizuna_creative_progress_tooltip" }
@@ -579,6 +591,7 @@ types tot_band_page_types
 						default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_6_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 						button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_6_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 						flowcontainer = {
+							visible = no
 							direction = vertical
 							spacing = 4
 																					textbox = { size = { 500 24 } text = "TOT_BAND_CREATION_PROGRESS_LABEL" using = fontsize_medium align = center|nobaseline tooltip = "band_6_kizuna_creative_progress_tooltip" }
@@ -637,6 +650,7 @@ types tot_band_page_types
 						default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_7_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 						button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_7_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 						flowcontainer = {
+							visible = no
 							direction = vertical
 							spacing = 4
 																					textbox = { size = { 500 24 } text = "TOT_BAND_CREATION_PROGRESS_LABEL" using = fontsize_medium align = center|nobaseline tooltip = "band_7_kizuna_creative_progress_tooltip" }
@@ -694,6 +708,7 @@ types tot_band_page_types
 						spacing = 4
 						default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_8_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 						button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_8_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+						widget = { visible = no
 						textbox = { size = { 500 24 } text = "TOT_BAND_CREATION_PROGRESS_LABEL" using = fontsize_medium align = center|nobaseline tooltip = "band_8_kizuna_creative_progress_tooltip" }
 						default_progressbar_horizontal = {
 							size = { 500 24 }
@@ -722,6 +737,7 @@ types tot_band_page_types
 							textbox = { text = "TOT_BAND_TIER_5_STATUS" parentanchor = top|right position = { 0 0 } size = { 40 24 } using = fontsize_small align = center|nobaseline tooltip = "TOT_BAND_TIER_5_TOOLTIP" }
 						}
 						textbox = { size = { 500 56 } text = "TOT_BAND_8_INVESTMENT_SUMMARY" using = fontsize_small align = left|nobaseline multiline = yes tooltip = "band_8_kizuna_creation_progress_tooltip" }
+						}
 						textbox = { visible = no text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
 # 						scrollbox = { size = { 480 384 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_8_candidates')]" addcolumn = 480 addrow = 170 item = { tot_band_8_candidate_character = {} } } } }
 					}
@@ -745,6 +761,7 @@ types tot_band_page_types
 						spacing = 4
 						default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_9_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 						button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_9_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+						widget = { visible = no
 						textbox = { size = { 500 24 } text = "TOT_BAND_CREATION_PROGRESS_LABEL" using = fontsize_medium align = center|nobaseline tooltip = "band_9_kizuna_creative_progress_tooltip" }
 						default_progressbar_horizontal = {
 							size = { 500 24 }
@@ -773,6 +790,7 @@ types tot_band_page_types
 							textbox = { text = "TOT_BAND_TIER_5_STATUS" parentanchor = top|right position = { 0 0 } size = { 40 24 } using = fontsize_small align = center|nobaseline tooltip = "TOT_BAND_TIER_5_TOOLTIP" }
 						}
 						textbox = { size = { 500 56 } text = "TOT_BAND_9_INVESTMENT_SUMMARY" using = fontsize_small align = left|nobaseline multiline = yes tooltip = "band_9_kizuna_creation_progress_tooltip" }
+						}
 						textbox = { visible = no text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
 # 						scrollbox = { size = { 480 384 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_9_candidates')]" addcolumn = 480 addrow = 170 item = { tot_band_9_candidate_character = {} } } } }
 					}
@@ -796,6 +814,7 @@ types tot_band_page_types
 						spacing = 4
 						default_header_clean = { size = { 500 76 } blockoverride "text" { text = "TOT_BAND_10_NAME_LABEL" using = fontsize_large default_format = "#medium" } tooltip = "TOT_BAND_NAME_TOOLTIP" }
 						button_standard = { size = { 500 34 } text = "TOT_BAND_CHOOSE_NAME" onclick = "[GetScriptedGui('tot_band_10_choose_name').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+						widget = { visible = no
 						textbox = { size = { 500 24 } text = "TOT_BAND_CREATION_PROGRESS_LABEL" using = fontsize_medium align = center|nobaseline tooltip = "band_10_kizuna_creative_progress_tooltip" }
 						default_progressbar_horizontal = {
 							size = { 500 24 }
@@ -824,6 +843,7 @@ types tot_band_page_types
 							textbox = { text = "TOT_BAND_TIER_5_STATUS" parentanchor = top|right position = { 0 0 } size = { 40 24 } using = fontsize_small align = center|nobaseline tooltip = "TOT_BAND_TIER_5_TOOLTIP" }
 						}
 						textbox = { size = { 500 56 } text = "TOT_BAND_10_INVESTMENT_SUMMARY" using = fontsize_small align = left|nobaseline multiline = yes tooltip = "band_10_kizuna_creation_progress_tooltip" }
+						}
 						textbox = { visible = no text = "TOT_BAND_CANDIDATES_LABEL" size = { 500 28 } using = fontsize_medium align = left|nobaseline }
 # 						scrollbox = { size = { 480 384 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_10_candidates')]" addcolumn = 480 addrow = 170 item = { tot_band_10_candidate_character = {} } } } }
 					}
@@ -835,126 +855,135 @@ types tot_band_page_types
 
 	widget = {
 		position = { 535 5 }
-		size = { 925 78 }
+		size = { 925 70 }
 		visible = "[Or(GetVariableSystem.HasValue( 'tot_band_page', 'management' ), Not(GetVariableSystem.HasValue( 'tot_band_page', 'shop' )))]"
 		background = { using = dark_area }
-		textbox = { position = { 12 9 } size = { 150 22 } text = "TOT_BAND_RIGHT_PROGRESS_SUMMARY" using = fontsize_small align = left|nobaseline }
+		textbox = { position = { 12 8 } size = { 170 24 } visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '1' ), GetScriptedGui('tot_band_1_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" text = "TOT_BAND_1_LEVEL_TITLE" using = fontsize_medium align = left|nobaseline }
+		textbox = { position = { 12 8 } size = { 170 24 } visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '2' ), GetScriptedGui('tot_band_2_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" text = "TOT_BAND_2_LEVEL_TITLE" using = fontsize_medium align = left|nobaseline }
+		textbox = { position = { 12 8 } size = { 170 24 } visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '3' ), GetScriptedGui('tot_band_3_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" text = "TOT_BAND_3_LEVEL_TITLE" using = fontsize_medium align = left|nobaseline }
+		textbox = { position = { 12 8 } size = { 170 24 } visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '4' ), GetScriptedGui('tot_band_4_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" text = "TOT_BAND_4_LEVEL_TITLE" using = fontsize_medium align = left|nobaseline }
+		textbox = { position = { 12 8 } size = { 170 24 } visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '5' ), GetScriptedGui('tot_band_5_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" text = "TOT_BAND_5_LEVEL_TITLE" using = fontsize_medium align = left|nobaseline }
+		textbox = { position = { 12 8 } size = { 170 24 } visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '6' ), GetScriptedGui('tot_band_6_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" text = "TOT_BAND_6_LEVEL_TITLE" using = fontsize_medium align = left|nobaseline }
+		textbox = { position = { 12 8 } size = { 170 24 } visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '7' ), GetScriptedGui('tot_band_7_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" text = "TOT_BAND_7_LEVEL_TITLE" using = fontsize_medium align = left|nobaseline }
+		textbox = { position = { 12 8 } size = { 170 24 } visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '8' ), GetScriptedGui('tot_band_8_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" text = "TOT_BAND_8_LEVEL_TITLE" using = fontsize_medium align = left|nobaseline }
+		textbox = { position = { 12 8 } size = { 170 24 } visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '9' ), GetScriptedGui('tot_band_9_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" text = "TOT_BAND_9_LEVEL_TITLE" using = fontsize_medium align = left|nobaseline }
+		textbox = { position = { 12 8 } size = { 170 24 } visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '10' ), GetScriptedGui('tot_band_10_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" text = "TOT_BAND_10_LEVEL_TITLE" using = fontsize_medium align = left|nobaseline }
 		flowcontainer = {
-			position = { 12 38 }
+			position = { 12 34 }
 			visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '1' ), GetScriptedGui('tot_band_1_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
 			direction = horizontal
 			spacing = 10
 			textbox = { size = { 180 24 } text = "TOT_BAND_1_PROGRESS_LEVEL_TEXT" using = fontsize_small align = left|nobaseline }
 			default_progressbar_horizontal = {
-				size = { 650 22 }
+				size = { 700 22 }
 				blockoverride "values" { value = "[AccessPlayer.MakeScope.ScriptValue('band_1_kizuna_creation_progress_bar_value')]" min = 0 max = 100 }
 				tooltip = "band_1_kizuna_creation_progress_tooltip"
 			}
 		}
 		flowcontainer = {
-			position = { 12 38 }
+			position = { 12 34 }
 			visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '2' ), GetScriptedGui('tot_band_2_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
 			direction = horizontal
 			spacing = 10
 			textbox = { size = { 180 24 } text = "TOT_BAND_2_PROGRESS_LEVEL_TEXT" using = fontsize_small align = left|nobaseline }
 			default_progressbar_horizontal = {
-				size = { 650 22 }
+				size = { 700 22 }
 				blockoverride "values" { value = "[AccessPlayer.MakeScope.ScriptValue('band_2_kizuna_creation_progress_bar_value')]" min = 0 max = 100 }
 				tooltip = "band_2_kizuna_creation_progress_tooltip"
 			}
 		}
 		flowcontainer = {
-			position = { 12 38 }
+			position = { 12 34 }
 			visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '3' ), GetScriptedGui('tot_band_3_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
 			direction = horizontal
 			spacing = 10
 			textbox = { size = { 180 24 } text = "TOT_BAND_3_PROGRESS_LEVEL_TEXT" using = fontsize_small align = left|nobaseline }
 			default_progressbar_horizontal = {
-				size = { 650 22 }
+				size = { 700 22 }
 				blockoverride "values" { value = "[AccessPlayer.MakeScope.ScriptValue('band_3_kizuna_creation_progress_bar_value')]" min = 0 max = 100 }
 				tooltip = "band_3_kizuna_creation_progress_tooltip"
 			}
 		}
 		flowcontainer = {
-			position = { 12 38 }
+			position = { 12 34 }
 			visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '4' ), GetScriptedGui('tot_band_4_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
 			direction = horizontal
 			spacing = 10
 			textbox = { size = { 180 24 } text = "TOT_BAND_4_PROGRESS_LEVEL_TEXT" using = fontsize_small align = left|nobaseline }
 			default_progressbar_horizontal = {
-				size = { 650 22 }
+				size = { 700 22 }
 				blockoverride "values" { value = "[AccessPlayer.MakeScope.ScriptValue('band_4_kizuna_creation_progress_bar_value')]" min = 0 max = 100 }
 				tooltip = "band_4_kizuna_creation_progress_tooltip"
 			}
 		}
 		flowcontainer = {
-			position = { 12 38 }
+			position = { 12 34 }
 			visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '5' ), GetScriptedGui('tot_band_5_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
 			direction = horizontal
 			spacing = 10
 			textbox = { size = { 180 24 } text = "TOT_BAND_5_PROGRESS_LEVEL_TEXT" using = fontsize_small align = left|nobaseline }
 			default_progressbar_horizontal = {
-				size = { 650 22 }
+				size = { 700 22 }
 				blockoverride "values" { value = "[AccessPlayer.MakeScope.ScriptValue('band_5_kizuna_creation_progress_bar_value')]" min = 0 max = 100 }
 				tooltip = "band_5_kizuna_creation_progress_tooltip"
 			}
 		}
 		flowcontainer = {
-			position = { 12 38 }
+			position = { 12 34 }
 			visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '6' ), GetScriptedGui('tot_band_6_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
 			direction = horizontal
 			spacing = 10
 			textbox = { size = { 180 24 } text = "TOT_BAND_6_PROGRESS_LEVEL_TEXT" using = fontsize_small align = left|nobaseline }
 			default_progressbar_horizontal = {
-				size = { 650 22 }
+				size = { 700 22 }
 				blockoverride "values" { value = "[AccessPlayer.MakeScope.ScriptValue('band_6_kizuna_creation_progress_bar_value')]" min = 0 max = 100 }
 				tooltip = "band_6_kizuna_creation_progress_tooltip"
 			}
 		}
 		flowcontainer = {
-			position = { 12 38 }
+			position = { 12 34 }
 			visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '7' ), GetScriptedGui('tot_band_7_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
 			direction = horizontal
 			spacing = 10
 			textbox = { size = { 180 24 } text = "TOT_BAND_7_PROGRESS_LEVEL_TEXT" using = fontsize_small align = left|nobaseline }
 			default_progressbar_horizontal = {
-				size = { 650 22 }
+				size = { 700 22 }
 				blockoverride "values" { value = "[AccessPlayer.MakeScope.ScriptValue('band_7_kizuna_creation_progress_bar_value')]" min = 0 max = 100 }
 				tooltip = "band_7_kizuna_creation_progress_tooltip"
 			}
 		}
 		flowcontainer = {
-			position = { 12 38 }
+			position = { 12 34 }
 			visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '8' ), GetScriptedGui('tot_band_8_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
 			direction = horizontal
 			spacing = 10
 			textbox = { size = { 180 24 } text = "TOT_BAND_8_PROGRESS_LEVEL_TEXT" using = fontsize_small align = left|nobaseline }
 			default_progressbar_horizontal = {
-				size = { 650 22 }
+				size = { 700 22 }
 				blockoverride "values" { value = "[AccessPlayer.MakeScope.ScriptValue('band_8_kizuna_creation_progress_bar_value')]" min = 0 max = 100 }
 				tooltip = "band_8_kizuna_creation_progress_tooltip"
 			}
 		}
 		flowcontainer = {
-			position = { 12 38 }
+			position = { 12 34 }
 			visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '9' ), GetScriptedGui('tot_band_9_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
 			direction = horizontal
 			spacing = 10
 			textbox = { size = { 180 24 } text = "TOT_BAND_9_PROGRESS_LEVEL_TEXT" using = fontsize_small align = left|nobaseline }
 			default_progressbar_horizontal = {
-				size = { 650 22 }
+				size = { 700 22 }
 				blockoverride "values" { value = "[AccessPlayer.MakeScope.ScriptValue('band_9_kizuna_creation_progress_bar_value')]" min = 0 max = 100 }
 				tooltip = "band_9_kizuna_creation_progress_tooltip"
 			}
 		}
 		flowcontainer = {
-			position = { 12 38 }
+			position = { 12 34 }
 			visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '10' ), GetScriptedGui('tot_band_10_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
 			direction = horizontal
 			spacing = 10
 			textbox = { size = { 180 24 } text = "TOT_BAND_10_PROGRESS_LEVEL_TEXT" using = fontsize_small align = left|nobaseline }
 			default_progressbar_horizontal = {
-				size = { 650 22 }
+				size = { 700 22 }
 				blockoverride "values" { value = "[AccessPlayer.MakeScope.ScriptValue('band_10_kizuna_creation_progress_bar_value')]" min = 0 max = 100 }
 				tooltip = "band_10_kizuna_creation_progress_tooltip"
 			}
@@ -962,126 +991,126 @@ types tot_band_page_types
 	}
 
 	widget = {
-		position = { 535 83 }
-		size = { 925 30 }
+		position = { 535 75 }
+		size = { 925 32 }
 		visible = "[Or(GetVariableSystem.HasValue( 'tot_band_page', 'management' ), Not(GetVariableSystem.HasValue( 'tot_band_page', 'shop' )))]"
 		background = { using = dark_area }
 		flowcontainer = {
-		position = { 12 3 }
+		position = { 12 4 }
 		visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '1' ), GetScriptedGui('tot_band_1_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
 		direction = horizontal
 		spacing = 10
-		textbox = { size = { 180 24 } text = "TOT_BAND_1_CREATIVE_PROGRESS_TEXT" using = fontsize_small align = left|nobaseline }
+		textbox = { size = { 220 24 } text = "TOT_BAND_1_CREATIVE_PROGRESS_TEXT" using = fontsize_small align = left|nobaseline }
 		default_progressbar_horizontal = {
-			size = { 650 22 }
+			size = { 680 22 }
 			blockoverride "values" { value = "[AccessPlayer.MakeScope.Var('tot_band_1_creative_progress').GetValue]" min = 0 max = 1000 }
 			tooltip = "band_1_kizuna_creative_progress_tooltip"
 		}
 	}
 	flowcontainer = {
-		position = { 12 3 }
+		position = { 12 4 }
 		visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '2' ), GetScriptedGui('tot_band_2_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
 		direction = horizontal
 		spacing = 10
-		textbox = { size = { 180 24 } text = "TOT_BAND_2_CREATIVE_PROGRESS_TEXT" using = fontsize_small align = left|nobaseline }
+		textbox = { size = { 220 24 } text = "TOT_BAND_2_CREATIVE_PROGRESS_TEXT" using = fontsize_small align = left|nobaseline }
 		default_progressbar_horizontal = {
-			size = { 650 22 }
+			size = { 680 22 }
 			blockoverride "values" { value = "[AccessPlayer.MakeScope.Var('tot_band_2_creative_progress').GetValue]" min = 0 max = 1000 }
 			tooltip = "band_2_kizuna_creative_progress_tooltip"
 		}
 	}
 	flowcontainer = {
-		position = { 12 3 }
+		position = { 12 4 }
 		visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '3' ), GetScriptedGui('tot_band_3_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
 		direction = horizontal
 		spacing = 10
-		textbox = { size = { 180 24 } text = "TOT_BAND_3_CREATIVE_PROGRESS_TEXT" using = fontsize_small align = left|nobaseline }
+		textbox = { size = { 220 24 } text = "TOT_BAND_3_CREATIVE_PROGRESS_TEXT" using = fontsize_small align = left|nobaseline }
 		default_progressbar_horizontal = {
-			size = { 650 22 }
+			size = { 680 22 }
 			blockoverride "values" { value = "[AccessPlayer.MakeScope.Var('tot_band_3_creative_progress').GetValue]" min = 0 max = 1000 }
 			tooltip = "band_3_kizuna_creative_progress_tooltip"
 		}
 	}
 	flowcontainer = {
-		position = { 12 3 }
+		position = { 12 4 }
 		visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '4' ), GetScriptedGui('tot_band_4_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
 		direction = horizontal
 		spacing = 10
-		textbox = { size = { 180 24 } text = "TOT_BAND_4_CREATIVE_PROGRESS_TEXT" using = fontsize_small align = left|nobaseline }
+		textbox = { size = { 220 24 } text = "TOT_BAND_4_CREATIVE_PROGRESS_TEXT" using = fontsize_small align = left|nobaseline }
 		default_progressbar_horizontal = {
-			size = { 650 22 }
+			size = { 680 22 }
 			blockoverride "values" { value = "[AccessPlayer.MakeScope.Var('tot_band_4_creative_progress').GetValue]" min = 0 max = 1000 }
 			tooltip = "band_4_kizuna_creative_progress_tooltip"
 		}
 	}
 	flowcontainer = {
-		position = { 12 3 }
+		position = { 12 4 }
 		visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '5' ), GetScriptedGui('tot_band_5_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
 		direction = horizontal
 		spacing = 10
-		textbox = { size = { 180 24 } text = "TOT_BAND_5_CREATIVE_PROGRESS_TEXT" using = fontsize_small align = left|nobaseline }
+		textbox = { size = { 220 24 } text = "TOT_BAND_5_CREATIVE_PROGRESS_TEXT" using = fontsize_small align = left|nobaseline }
 		default_progressbar_horizontal = {
-			size = { 650 22 }
+			size = { 680 22 }
 			blockoverride "values" { value = "[AccessPlayer.MakeScope.Var('tot_band_5_creative_progress').GetValue]" min = 0 max = 1000 }
 			tooltip = "band_5_kizuna_creative_progress_tooltip"
 		}
 	}
 	flowcontainer = {
-		position = { 12 3 }
+		position = { 12 4 }
 		visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '6' ), GetScriptedGui('tot_band_6_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
 		direction = horizontal
 		spacing = 10
-		textbox = { size = { 180 24 } text = "TOT_BAND_6_CREATIVE_PROGRESS_TEXT" using = fontsize_small align = left|nobaseline }
+		textbox = { size = { 220 24 } text = "TOT_BAND_6_CREATIVE_PROGRESS_TEXT" using = fontsize_small align = left|nobaseline }
 		default_progressbar_horizontal = {
-			size = { 650 22 }
+			size = { 680 22 }
 			blockoverride "values" { value = "[AccessPlayer.MakeScope.Var('tot_band_6_creative_progress').GetValue]" min = 0 max = 1000 }
 			tooltip = "band_6_kizuna_creative_progress_tooltip"
 		}
 	}
 	flowcontainer = {
-		position = { 12 3 }
+		position = { 12 4 }
 		visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '7' ), GetScriptedGui('tot_band_7_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
 		direction = horizontal
 		spacing = 10
-		textbox = { size = { 180 24 } text = "TOT_BAND_7_CREATIVE_PROGRESS_TEXT" using = fontsize_small align = left|nobaseline }
+		textbox = { size = { 220 24 } text = "TOT_BAND_7_CREATIVE_PROGRESS_TEXT" using = fontsize_small align = left|nobaseline }
 		default_progressbar_horizontal = {
-			size = { 650 22 }
+			size = { 680 22 }
 			blockoverride "values" { value = "[AccessPlayer.MakeScope.Var('tot_band_7_creative_progress').GetValue]" min = 0 max = 1000 }
 			tooltip = "band_7_kizuna_creative_progress_tooltip"
 		}
 	}
 	flowcontainer = {
-		position = { 12 3 }
+		position = { 12 4 }
 		visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '8' ), GetScriptedGui('tot_band_8_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
 		direction = horizontal
 		spacing = 10
-		textbox = { size = { 180 24 } text = "TOT_BAND_8_CREATIVE_PROGRESS_TEXT" using = fontsize_small align = left|nobaseline }
+		textbox = { size = { 220 24 } text = "TOT_BAND_8_CREATIVE_PROGRESS_TEXT" using = fontsize_small align = left|nobaseline }
 		default_progressbar_horizontal = {
-			size = { 650 22 }
+			size = { 680 22 }
 			blockoverride "values" { value = "[AccessPlayer.MakeScope.Var('tot_band_8_creative_progress').GetValue]" min = 0 max = 1000 }
 			tooltip = "band_8_kizuna_creative_progress_tooltip"
 		}
 	}
 	flowcontainer = {
-		position = { 12 3 }
+		position = { 12 4 }
 		visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '9' ), GetScriptedGui('tot_band_9_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
 		direction = horizontal
 		spacing = 10
-		textbox = { size = { 180 24 } text = "TOT_BAND_9_CREATIVE_PROGRESS_TEXT" using = fontsize_small align = left|nobaseline }
+		textbox = { size = { 220 24 } text = "TOT_BAND_9_CREATIVE_PROGRESS_TEXT" using = fontsize_small align = left|nobaseline }
 		default_progressbar_horizontal = {
-			size = { 650 22 }
+			size = { 680 22 }
 			blockoverride "values" { value = "[AccessPlayer.MakeScope.Var('tot_band_9_creative_progress').GetValue]" min = 0 max = 1000 }
 			tooltip = "band_9_kizuna_creative_progress_tooltip"
 		}
 	}
 	flowcontainer = {
-		position = { 12 3 }
+		position = { 12 4 }
 		visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '10' ), GetScriptedGui('tot_band_10_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
 		direction = horizontal
 		spacing = 10
-		textbox = { size = { 180 24 } text = "TOT_BAND_10_CREATIVE_PROGRESS_TEXT" using = fontsize_small align = left|nobaseline }
+		textbox = { size = { 220 24 } text = "TOT_BAND_10_CREATIVE_PROGRESS_TEXT" using = fontsize_small align = left|nobaseline }
 		default_progressbar_horizontal = {
-			size = { 650 22 }
+			size = { 680 22 }
 			blockoverride "values" { value = "[AccessPlayer.MakeScope.Var('tot_band_10_creative_progress').GetValue]" min = 0 max = 1000 }
 			tooltip = "band_10_kizuna_creative_progress_tooltip"
 		}
@@ -1089,9 +1118,9 @@ types tot_band_page_types
 	}
 	# Recruitment is the lower-right work area.
 	scrollbox = {
-		position = { 535 118 }
+		position = { 535 113 }
 		visible = "[Or(GetVariableSystem.HasValue( 'tot_band_page', 'management' ), Not(GetVariableSystem.HasValue( 'tot_band_page', 'shop' )))]"
-		size = { 925 562 }
+		size = { 925 567 }
 		blockoverride "scrollbox_content" {
 			flowcontainer = {
 				direction = vertical
@@ -1104,7 +1133,7 @@ types tot_band_page_types
 					flowcontainer = { spacing = 4 button = { visible = "[GetScriptedGui('tot_band_1_filter_all_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 108 28 } onclick = "[GetScriptedGui('tot_band_1_filter_all').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_ALL" } button = { visible = "[Not(GetScriptedGui('tot_band_1_filter_all_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 108 28 } onclick = "[GetScriptedGui('tot_band_1_filter_all').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_ALL" } button = { visible = "[GetScriptedGui('tot_band_1_filter_historical_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 108 28 } onclick = "[GetScriptedGui('tot_band_1_filter_historical').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_HISTORICAL" } button = { visible = "[Not(GetScriptedGui('tot_band_1_filter_historical_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 108 28 } onclick = "[GetScriptedGui('tot_band_1_filter_historical').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_HISTORICAL" } button = { visible = "[GetScriptedGui('tot_band_1_filter_any_specialty_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 118 28 } onclick = "[GetScriptedGui('tot_band_1_filter_any_specialty').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_ANY_SPECIALTY" } button = { visible = "[Not(GetScriptedGui('tot_band_1_filter_any_specialty_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 118 28 } onclick = "[GetScriptedGui('tot_band_1_filter_any_specialty').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_ANY_SPECIALTY" } }
 					flowcontainer = { spacing = 4 button = { visible = "[GetScriptedGui('tot_band_1_filter_vocal_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 108 28 } onclick = "[GetScriptedGui('tot_band_1_filter_vocal').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_VOCAL" } button = { visible = "[Not(GetScriptedGui('tot_band_1_filter_vocal_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 108 28 } onclick = "[GetScriptedGui('tot_band_1_filter_vocal').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_VOCAL" } button = { visible = "[GetScriptedGui('tot_band_1_filter_guitar_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 108 28 } onclick = "[GetScriptedGui('tot_band_1_filter_guitar').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_GUITAR" } button = { visible = "[Not(GetScriptedGui('tot_band_1_filter_guitar_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 108 28 } onclick = "[GetScriptedGui('tot_band_1_filter_guitar').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_GUITAR" } button = { visible = "[GetScriptedGui('tot_band_1_filter_bass_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 108 28 } onclick = "[GetScriptedGui('tot_band_1_filter_bass').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_BASS" } button = { visible = "[Not(GetScriptedGui('tot_band_1_filter_bass_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 108 28 } onclick = "[GetScriptedGui('tot_band_1_filter_bass').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_BASS" } button = { visible = "[GetScriptedGui('tot_band_1_filter_keyboard_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 108 28 } onclick = "[GetScriptedGui('tot_band_1_filter_keyboard').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_KEYBOARD" } button = { visible = "[Not(GetScriptedGui('tot_band_1_filter_keyboard_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 108 28 } onclick = "[GetScriptedGui('tot_band_1_filter_keyboard').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_KEYBOARD" } button = { visible = "[GetScriptedGui('tot_band_1_filter_drum_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 108 28 } onclick = "[GetScriptedGui('tot_band_1_filter_drum').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_DRUM" } button = { visible = "[Not(GetScriptedGui('tot_band_1_filter_drum_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 108 28 } onclick = "[GetScriptedGui('tot_band_1_filter_drum').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_DRUM" }
 						button = { visible = "[GetScriptedGui('tot_band_1_filter_dj_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 108 28 } onclick = "[GetScriptedGui('tot_band_1_filter_dj').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_DJ" } button = { visible = "[Not(GetScriptedGui('tot_band_1_filter_dj_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 108 28 } onclick = "[GetScriptedGui('tot_band_1_filter_dj').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_DJ" } }
-					fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_1_candidates')]" addcolumn = 900 addrow = 132 item = { tot_band_1_candidate_character_selected = {} } }
+					fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_1_candidates')]" addcolumn = 900 addrow = 144 item = { tot_band_1_candidate_character_selected = {} } }
 				}
 				flowcontainer = {
 					visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '2' ), GetScriptedGui('tot_band_2_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
@@ -1113,7 +1142,7 @@ types tot_band_page_types
 					textbox = { text = "TOT_BAND_2_SELECTED_ROLE_TEXT" size = { 900 22 } using = fontsize_small align = left|nobaseline }
 					textbox = { raw_text = "当前筛选：[AccessPlayer.GetCustom('tot_band_2_candidate_filter_loc')]" size = { 900 22 } using = fontsize_small align = left|nobaseline }
 					flowcontainer = { spacing = 4 button = { visible = "[GetScriptedGui('tot_band_2_filter_all_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 130 28 } onclick = "[GetScriptedGui('tot_band_2_filter_all').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_ALL" } button = { visible = "[Not(GetScriptedGui('tot_band_2_filter_all_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 130 28 } onclick = "[GetScriptedGui('tot_band_2_filter_all').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_ALL" } button = { visible = "[GetScriptedGui('tot_band_2_filter_any_specialty_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 130 28 } onclick = "[GetScriptedGui('tot_band_2_filter_any_specialty').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_ANY_SPECIALTY" } button = { visible = "[Not(GetScriptedGui('tot_band_2_filter_any_specialty_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 130 28 } onclick = "[GetScriptedGui('tot_band_2_filter_any_specialty').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_ANY_SPECIALTY" } button = { visible = "[GetScriptedGui('tot_band_2_filter_historical_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 130 28 } onclick = "[GetScriptedGui('tot_band_2_filter_historical').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_HISTORICAL" } button = { visible = "[Not(GetScriptedGui('tot_band_2_filter_historical_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 130 28 } onclick = "[GetScriptedGui('tot_band_2_filter_historical').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_HISTORICAL" } }
-					fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_2_candidates')]" addcolumn = 900 addrow = 132 item = { tot_band_2_candidate_character_selected = {} } }
+					fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_2_candidates')]" addcolumn = 900 addrow = 144 item = { tot_band_2_candidate_character_selected = {} } }
 				}
 				flowcontainer = {
 					visible = "[And(GetVariableSystem.HasValue( 'tot_band_selected', '3' ), GetScriptedGui('tot_band_3_created').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
@@ -1122,15 +1151,15 @@ types tot_band_page_types
 					textbox = { text = "TOT_BAND_3_SELECTED_ROLE_TEXT" size = { 900 22 } using = fontsize_small align = left|nobaseline }
 					textbox = { raw_text = "当前筛选：[AccessPlayer.GetCustom('tot_band_3_candidate_filter_loc')]" size = { 900 22 } using = fontsize_small align = left|nobaseline }
 					flowcontainer = { spacing = 4 button = { visible = "[GetScriptedGui('tot_band_3_filter_all_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 130 28 } onclick = "[GetScriptedGui('tot_band_3_filter_all').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_ALL" } button = { visible = "[Not(GetScriptedGui('tot_band_3_filter_all_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 130 28 } onclick = "[GetScriptedGui('tot_band_3_filter_all').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_ALL" } button = { visible = "[GetScriptedGui('tot_band_3_filter_any_specialty_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 130 28 } onclick = "[GetScriptedGui('tot_band_3_filter_any_specialty').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_ANY_SPECIALTY" } button = { visible = "[Not(GetScriptedGui('tot_band_3_filter_any_specialty_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 130 28 } onclick = "[GetScriptedGui('tot_band_3_filter_any_specialty').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_ANY_SPECIALTY" } button = { visible = "[GetScriptedGui('tot_band_3_filter_historical_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 130 28 } onclick = "[GetScriptedGui('tot_band_3_filter_historical').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_HISTORICAL" } button = { visible = "[Not(GetScriptedGui('tot_band_3_filter_historical_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 130 28 } onclick = "[GetScriptedGui('tot_band_3_filter_historical').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" text = "TOT_BAND_FILTER_HISTORICAL" } }
-					fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_3_candidates')]" addcolumn = 900 addrow = 132 item = { tot_band_3_candidate_character_selected = {} } }
+					fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_3_candidates')]" addcolumn = 900 addrow = 144 item = { tot_band_3_candidate_character_selected = {} } }
 				}
-				flowcontainer = { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '4' )]" direction = vertical spacing = 4 default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_4_NAME_LABEL" using = fontsize_medium default_format = "#medium" } } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_4_candidates')]" addcolumn = 900 addrow = 132 item = { tot_band_4_candidate_character = {} } } }
-				flowcontainer = { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '5' )]" direction = vertical spacing = 4 default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_5_NAME_LABEL" using = fontsize_medium default_format = "#medium" } } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_5_candidates')]" addcolumn = 900 addrow = 132 item = { tot_band_5_candidate_character = {} } } }
-				flowcontainer = { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '6' )]" direction = vertical spacing = 4 default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_6_NAME_LABEL" using = fontsize_medium default_format = "#medium" } } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_6_candidates')]" addcolumn = 900 addrow = 132 item = { tot_band_6_candidate_character = {} } } }
-				flowcontainer = { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '7' )]" direction = vertical spacing = 4 default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_7_NAME_LABEL" using = fontsize_medium default_format = "#medium" } } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_7_candidates')]" addcolumn = 900 addrow = 132 item = { tot_band_7_candidate_character = {} } } }
-				flowcontainer = { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '8' )]" direction = vertical spacing = 4 default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_8_NAME_LABEL" using = fontsize_medium default_format = "#medium" } } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_8_candidates')]" addcolumn = 900 addrow = 132 item = { tot_band_8_candidate_character = {} } } }
-				flowcontainer = { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '9' )]" direction = vertical spacing = 4 default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_9_NAME_LABEL" using = fontsize_medium default_format = "#medium" } } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_9_candidates')]" addcolumn = 900 addrow = 132 item = { tot_band_9_candidate_character = {} } } }
-				flowcontainer = { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '10' )]" direction = vertical spacing = 4 default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_10_NAME_LABEL" using = fontsize_medium default_format = "#medium" } } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_10_candidates')]" addcolumn = 900 addrow = 132 item = { tot_band_10_candidate_character = {} } } }
+				flowcontainer = { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '4' )]" direction = vertical spacing = 4 default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_4_NAME_LABEL" using = fontsize_medium default_format = "#medium" } } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_4_candidates')]" addcolumn = 900 addrow = 144 item = { tot_band_4_candidate_character = {} } } }
+				flowcontainer = { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '5' )]" direction = vertical spacing = 4 default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_5_NAME_LABEL" using = fontsize_medium default_format = "#medium" } } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_5_candidates')]" addcolumn = 900 addrow = 144 item = { tot_band_5_candidate_character = {} } } }
+				flowcontainer = { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '6' )]" direction = vertical spacing = 4 default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_6_NAME_LABEL" using = fontsize_medium default_format = "#medium" } } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_6_candidates')]" addcolumn = 900 addrow = 144 item = { tot_band_6_candidate_character = {} } } }
+				flowcontainer = { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '7' )]" direction = vertical spacing = 4 default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_7_NAME_LABEL" using = fontsize_medium default_format = "#medium" } } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_7_candidates')]" addcolumn = 900 addrow = 144 item = { tot_band_7_candidate_character = {} } } }
+				flowcontainer = { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '8' )]" direction = vertical spacing = 4 default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_8_NAME_LABEL" using = fontsize_medium default_format = "#medium" } } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_8_candidates')]" addcolumn = 900 addrow = 144 item = { tot_band_8_candidate_character = {} } } }
+				flowcontainer = { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '9' )]" direction = vertical spacing = 4 default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_9_NAME_LABEL" using = fontsize_medium default_format = "#medium" } } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_9_candidates')]" addcolumn = 900 addrow = 144 item = { tot_band_9_candidate_character = {} } } }
+				flowcontainer = { visible = "[GetVariableSystem.HasValue( 'tot_band_selected', '10' )]" direction = vertical spacing = 4 default_header_clean = { size = { 900 42 } blockoverride "text" { text = "TOT_BAND_10_NAME_LABEL" using = fontsize_medium default_format = "#medium" } } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_band_10_candidates')]" addcolumn = 900 addrow = 144 item = { tot_band_10_candidate_character = {} } } }
 			}
 		}
 	}

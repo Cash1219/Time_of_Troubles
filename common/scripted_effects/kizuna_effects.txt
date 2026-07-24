@@ -4,7 +4,6 @@ update_kizuna = {
 	# Do not create a free roster for countries without a headquarters.
 	if = { limit = { NOT = { has_variable = tot_band_limit } } set_variable = { name = tot_band_limit value = 1 } }
 	if = { limit = { var:tot_band_limit < 1 } set_variable = { name = tot_band_limit value = 1 } }
-	if = { limit = { NOT = { has_variable = tot_character_codex_result_count } } set_variable = { name = tot_character_codex_result_count value = 0 } }
 	if = { limit = { NOT = { has_variable = tot_band_1_selected_role } } set_variable = { name = tot_band_1_selected_role value = 1 } }
 	if = { limit = { NOT = { has_variable = tot_band_2_selected_role } } set_variable = { name = tot_band_2_selected_role value = 1 } }
 	if = { limit = { NOT = { has_variable = tot_band_3_selected_role } } set_variable = { name = tot_band_3_selected_role value = 1 } }
@@ -5244,6 +5243,9 @@ tot_band_monthly_update = {
 	tot_band_initialize_axes = yes
 	tot_sync_band_hq_investment_flags = yes
 	tot_sync_band_hq_route_bonuses = yes
+	# Rebuild headquarters lists before applying the monthly gain.
+	# This prevents a newly created or restored band from missing its first update.
+	update_kizuna = yes
 	if = { limit = { has_variable = tot_band_weekly_event_locked } remove_variable = tot_band_weekly_event_locked }
 	if = { limit = { var:tot_band_limit >= 1 NOT = { has_variable = tot_band_1_creative_progress } } set_variable = { name = tot_band_1_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 1 NOT = { has_variable = tot_band_1_creation_progress } } set_variable = { name = tot_band_1_creation_progress value = 0 } }
@@ -5295,7 +5297,6 @@ tot_band_monthly_update = {
 	if = { limit = { var:tot_band_limit >= 8 } tot_band_process_creative_event_8 = yes }
 	if = { limit = { var:tot_band_limit >= 9 } tot_band_process_creative_event_9 = yes }
 	if = { limit = { var:tot_band_limit >= 10 } tot_band_process_creative_event_10 = yes }
-	update_kizuna = yes
 }
 
 tot_band_1_check_rewards = {
