@@ -1,0 +1,26 @@
+tot_kizuna_counted_character = {
+	OR = {
+		is_ruler_of_own_country = yes
+		is_heir_of_own_country = yes
+		AND = {
+			is_interest_group_leader = yes
+			interest_group ?= {
+				is_in_government = yes
+			}
+		}
+		AND = {
+			NOT = {
+				interest_group ?= {
+					is_in_government = yes
+				}
+			}
+			OR = {
+				has_role = character_role_tot_student_council_president
+				has_role = character_role_tot_discipline_minister
+				has_role = character_role_tot_education_minister
+				has_role = character_role_tot_propaganda_minister
+				has_role = character_role_tot_chief_of_staff
+			}
+		}
+	}
+}

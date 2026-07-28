@@ -428,13 +428,8 @@ invite_subject_character = {
 	clicksound = "event:/SFX/UI/Military/command_grant"
 
 	potential = {
-		is_in_exile_pool = no
-		is_in_void = no
-		is_ruler_of_own_country = no
-		is_heir_of_own_country = no
-		owner ?= {
-			is_subject_of = scope:actor
-		}
+		# Recruitment is handled from the subject tab in the character codex.
+		always = no
 	}
 
 	show_requirements = yes
@@ -447,6 +442,9 @@ invite_subject_character = {
 	}
 
 	effect = {
+		owner ?= {
+			add_liberty_desire = 50
+		}
 		transfer_character = scope:actor
 	}
 

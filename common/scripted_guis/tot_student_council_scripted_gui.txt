@@ -206,7 +206,6 @@ tot_appoint_student_council_president = {
 		is_character_alive = yes
 		is_ruler_of_own_country = no
 		is_heir_of_own_country = no
-		is_interest_group_leader = no
 		NOT = {
 			has_role = character_role_tot_student_council_president
 		}
@@ -227,10 +226,6 @@ tot_appoint_student_council_president = {
 		custom_tooltip = {
 			text = TOT_STUDENT_COUNCIL_NOT_HEIR
 			is_heir_of_own_country = no
-		}
-		custom_tooltip = {
-			text = TOT_STUDENT_COUNCIL_NOT_INTEREST_GROUP_LEADER
-			is_interest_group_leader = no
 		}
 		custom_tooltip = {
 			text = TOT_STUDENT_COUNCIL_NOT_ALREADY_ASSIGNED
@@ -254,7 +249,6 @@ tot_appoint_discipline_minister = {
 		is_character_alive = yes
 		is_ruler_of_own_country = no
 		is_heir_of_own_country = no
-		is_interest_group_leader = no
 		NOT = {
 			has_role = character_role_tot_student_council_president
 		}
@@ -276,10 +270,6 @@ tot_appoint_discipline_minister = {
 			is_heir_of_own_country = no
 		}
 		custom_tooltip = {
-			text = TOT_STUDENT_COUNCIL_NOT_INTEREST_GROUP_LEADER
-			is_interest_group_leader = no
-		}
-		custom_tooltip = {
 			text = TOT_DISCIPLINE_MINISTER_NOT_ALREADY_ASSIGNED
 			NOT = {
 				has_role = character_role_tot_discipline_minister
@@ -299,7 +289,6 @@ tot_appoint_education_minister = {
 		is_character_alive = yes
 		is_ruler_of_own_country = no
 		is_heir_of_own_country = no
-		is_interest_group_leader = no
 		NOT = { OR = { has_role = character_role_tot_student_council_president has_role = character_role_tot_discipline_minister has_role = character_role_tot_education_minister has_role = character_role_tot_propaganda_minister has_role = character_role_tot_chief_of_staff } }
 		owner ?= { is_player = yes }
 	}
@@ -313,7 +302,6 @@ tot_appoint_propaganda_minister = {
 		is_character_alive = yes
 		is_ruler_of_own_country = no
 		is_heir_of_own_country = no
-		is_interest_group_leader = no
 		NOT = { OR = { has_role = character_role_tot_student_council_president has_role = character_role_tot_discipline_minister has_role = character_role_tot_education_minister has_role = character_role_tot_propaganda_minister has_role = character_role_tot_chief_of_staff } }
 		owner ?= { is_player = yes }
 	}
@@ -327,7 +315,6 @@ tot_appoint_chief_of_staff = {
 		is_character_alive = yes
 		is_ruler_of_own_country = no
 		is_heir_of_own_country = no
-		is_interest_group_leader = no
 		NOT = { OR = { has_role = character_role_tot_student_council_president has_role = character_role_tot_discipline_minister has_role = character_role_tot_education_minister has_role = character_role_tot_propaganda_minister has_role = character_role_tot_chief_of_staff } }
 		owner ?= { is_player = yes }
 	}

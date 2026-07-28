@@ -2,6 +2,12 @@
 	s:STATE_SVEALAND={
 		region_state:OOAR={
 			create_building={
+				building="building_railway"
+				add_ownership={ country={ country="c:OOAR" levels=1 } }
+				reserves=1
+				activate_production_methods={ "pm_early_trains" "pm_wooden_passenger_carriages" }
+			}
+			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
@@ -169,6 +175,12 @@
 	s:STATE_GOTALAND={
 		region_state:OOAR={
 			create_building={
+				building="building_railway"
+				add_ownership={ country={ country="c:OOAR" levels=1 } }
+				reserves=1
+				activate_production_methods={ "pm_early_trains" "pm_wooden_passenger_carriages" }
+			}
+			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
@@ -318,6 +330,12 @@
 	s:STATE_SCANIA={
 		region_state:OOAR={
 			create_building={
+				building="building_railway"
+				add_ownership={ country={ country="c:OOAR" levels=1 } }
+				reserves=1
+				activate_production_methods={ "pm_early_trains" "pm_wooden_passenger_carriages" }
+			}
+			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
@@ -464,6 +482,12 @@
 	}
 	s:STATE_NORRLAND={
 		region_state:OOAR={
+			create_building={
+				building="building_railway"
+				add_ownership={ country={ country="c:OOAR" levels=1 } }
+				reserves=1
+				activate_production_methods={ "pm_early_trains" "pm_wooden_passenger_carriages" }
+			}
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -6397,7 +6421,7 @@
 					building={
 						type="building_fishing_wharf"
 						country="c:PRU"
-						levels=3
+						levels=5
 						region="STATE_POMERANIA"
 					}
 				}
@@ -6423,7 +6447,7 @@
 					building={
 						type="building_manor_house"
 						country="c:PRU"
-						levels=3
+						levels=5
 						region="STATE_POMERANIA"
 					}
 				}

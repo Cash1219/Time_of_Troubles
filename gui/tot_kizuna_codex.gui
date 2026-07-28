@@ -1,6 +1,6 @@
-types tot_kizuna_codex_types {
+﻿types tot_kizuna_codex_types {
 	type tot_kizuna_codex_character = widget {
-		size = { 530 128 }
+		size = { 350 128 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 		using = entry_bg_fancy
@@ -10,11 +10,11 @@ types tot_kizuna_codex_types {
 		}
 
 		hbox = {
-			margin = { 12 8 }
-			spacing = 12
+			margin = { 10 8 }
+			spacing = 8
 
 			widget = {
-				size = { 96 108 }
+				size = { 108 112 }
 
 				character_portrait_large = {
 					parentanchor = center
@@ -27,7 +27,7 @@ types tot_kizuna_codex_types {
 					visible = "[Character.GetInterestGroup.IsValid]"
 					datacontext = "[Character.GetInterestGroup]"
 					parentanchor = bottom|left
-					block "ig_button_size" { size = { 32 32 } }
+					block "ig_button_size" { size = { 42 42 } }
 					using = tooltip_ws
 					blockoverride "in_government_icon" {}
 				}
@@ -35,51 +35,70 @@ types tot_kizuna_codex_types {
 				icon = {
 					datacontext = "[Character.GetIdeology]"
 					parentanchor = bottom|right
-					size = { 32 32 }
+				size = { 42 42 }
 					texture = "[Ideology.GetTexture]"
 					tooltipwidget = { FancyTooltip_Ideology = {} }
 				}
 			}
 
 			vbox = {
-				size = { 398 108 }
+				size = { 214 108 }
 				parentanchor = vcenter
-				position = { 0 -4 }
 				spacing = 4
 
 				hbox = {
-					size = { 398 52 }
-					spacing = 8
+					size = { 214 108 }
+					spacing = 4
 
 					vbox = {
-						size = { 300 50 }
-						spacing = 2
+						size = { 150 108 }
+						spacing = 4
+
 						textbox = {
-							size = { 300 26 }
+							size = { 150 28 }
+							position = { 8 0 }
 							raw_text = "#BOLD [Character.GetFullNameNoFormatting]#!"
 							using = fontsize_large
 							align = left|nobaseline
 							elide = right
 						}
+
 						textbox = {
-							size = { 300 18 }
+							size = { 150 20 }
 							raw_text = "#title [Character.GetPrimaryRoleTitle]#!"
 							using = fontsize_small
 							align = left|nobaseline
 							elide = right
 						}
+
+						button_standard = {
+							size = { 140 28 }
+							text = "TOT_CHARACTER_CODEX_RECRUIT_SUBJECT"
+							visible = "[And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_recruit_subject').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_subject_character', Character.MakeScope).End))]"
+							enabled = "[GetScriptedGui('tot_character_codex_recruit_subject').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_subject_character', Character.MakeScope).End)]"
+							onclick = "[GetScriptedGui('tot_character_codex_recruit_subject').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_subject_character', Character.MakeScope).End)]"
+							tooltip = "[GetScriptedGui('tot_character_codex_recruit_subject').IsValidTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_subject_character', Character.MakeScope).End)]"
+						}
 					}
 
 					vbox = {
-						size = { 90 52 }
-						spacing = 1
-						small_flag_no_interact = {
-							datacontext = "[Character.GetCountry]"
-							parentanchor = top|hcenter
-							blockoverride "tooltip" {}
+						size = { 60 108 }
+						parentanchor = vcenter
+						spacing = 2
+
+						widget = {
+							size = { 60 58 }
+							small_flag_no_interact = {
+								datacontext = "[Character.GetCountry]"
+								parentanchor = center
+								size = { 48 32 }
+								blockoverride "tooltip" {}
+							}
 						}
+
 						textbox = {
-							size = { 90 18 }
+							size = { 60 28 }
+							position = { 0 -6 }
 							raw_text = "[Character.GetCountry.GetNameNoFormatting]"
 							using = fontsize_small
 							align = center|nobaseline
@@ -104,6 +123,14 @@ types tot_kizuna_codex_types {
 				textbox = {
 					size = { 980 36 }
 					text = "TOT_CHARACTER_CODEX_HEADER"
+					visible = "[Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'))]"
+					using = fontsize_xl
+					align = left|nobaseline
+				}
+				textbox = {
+					size = { 980 36 }
+					text = "TOT_CHARACTER_SUBJECT_HEADER"
+					visible = "[GetVariableSystem.HasValue('tot_kizuna_page', 'subject')]"
 					using = fontsize_xl
 					align = left|nobaseline
 				}
@@ -121,773 +148,1011 @@ types tot_kizuna_codex_types {
 				spacing = 14
 
 				vbox = {
-					size = { 250 542 }
+					size = { 220 542 }
 					spacing = 8
 					background = { using = dark_area }
-					textbox = {
-						size = { 226 24 }
-						margin = { 12 10 }
-						text = "TOT_CHARACTER_CODEX_GROUPS"
-						using = fontsize_medium
-						align = left|nobaseline
+					vbox = {
+						size = { 196 28 }
+						visible = "[Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'))]"
+						margin = { 12 6 }
+						hbox = {
+							size = { 196 28 }
+							spacing = 2
+							button_tab = {
+								size = { 64 28 }
+								text = "TOT_CHARACTER_CODEX_SCOPE_HOME"
+								down = "[GetScriptedGui('tot_character_codex_scope_home_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								onclick = "[GetScriptedGui('tot_character_codex_scope_home').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							}
+							button_tab = {
+								size = { 64 28 }
+								text = "TOT_CHARACTER_CODEX_SCOPE_BLOC"
+								down = "[GetScriptedGui('tot_character_codex_scope_bloc_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								onclick = "[GetScriptedGui('tot_character_codex_scope_bloc').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							}
+							button_tab = {
+								size = { 64 28 }
+								text = "TOT_CHARACTER_CODEX_SCOPE_OTHER"
+								down = "[GetScriptedGui('tot_character_codex_scope_other_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								onclick = "[GetScriptedGui('tot_character_codex_scope_other').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							}
+							button_tab = {
+								size = { 64 28 }
+								visible = no
+							}
+						}
 					}
 						scrollbox = {
-							size = { 226 486 }
+							size = { 196 482 }
 							blockoverride "scrollbox_content" {
 								vbox = {
 								direction = vertical
 								spacing = 4
 								textbox = {
-									size = { 226 24 }
+									size = { 196 24 }
 									text = "TOT_CHARACTER_CODEX_GROUPS_FACTIONS"
+									visible = "[GetScriptedGui('tot_character_codex_scope_bloc_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 									using = fontsize_small
 									align = left|nobaseline
 								}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_001_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_001_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_001_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_001').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_001').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_001').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
-									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_002_trait"
+					button = {
+						using = default_button
+						size = { 196 34 }
+						text = "tot_kizuna_002_codex_display"
+						down = "[GetScriptedGui('tot_character_codex_select_002_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_002').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_002').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_002').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_003_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_003_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_003_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_003').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_003').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_003').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_004_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_004_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_004_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_004').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_004').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_004').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_005_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_005_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_005_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_005').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_005').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_005').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_006_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_006_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_006_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_006').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_006').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_006').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_007_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_007_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_007_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_007').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_007').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_007').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_008_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_008_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_008_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_008').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_008').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_008').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_009_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_009_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_009_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_009').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_009').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_009').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_010_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_010_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_010_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_010').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_010').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_010').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_011_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_011_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_011_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_011').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_011').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_011').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_012_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_012_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_012_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_012').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_012').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_012').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_013_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_013_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_013_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_013').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_013').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_013').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_014_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_014_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_014_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_014').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_014').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_014').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_015_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_015_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_015_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_015').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_015').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_015').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_016_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_016_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_016_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_016').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_016').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_016').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_017_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_017_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_017_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_017').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_017').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_017').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_018_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_018_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_018_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_018').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_018').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_018').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_019_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_019_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_019_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_019').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_019').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_019').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									textbox = {
-										size = { 226 24 }
+										size = { 196 24 }
 										text = "TOT_CHARACTER_CODEX_GROUPS_OTHER"
+										visible = "[GetScriptedGui('tot_character_codex_scope_other_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										using = fontsize_small
 										align = left|nobaseline
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_020_trait"
+						using = default_button
+						size = { 196 34 }
+						text = "tot_kizuna_020_codex_display"
+						down = "[GetScriptedGui('tot_character_codex_select_020_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_020').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_020').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_020').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_021_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_021_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_021_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_021').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_021').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_021').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_022_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_022_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_022_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_022').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_022').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_022').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_023_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_023_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_023_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_023').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_023').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_023').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_024_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_024_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_024_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_024').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_024').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_024').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_025_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_025_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_025_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_025').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_025').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_025').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_026_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_026_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_026_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_026').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_026').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_026').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_027_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_027_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_027_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_027').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_027').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_027').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_028_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_028_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_028_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_028').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_028').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_028').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_029_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_029_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_029_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_029').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_029').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_029').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_030_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_030_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_030_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_030').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_030').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_030').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_031_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_031_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_031_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_031').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_031').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_031').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_032_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_032_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_032_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_032').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_032').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_032').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_033_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_033_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_033_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_033').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_033').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_033').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_034_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_034_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_034_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_034').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_034').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_034').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_035_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_035_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_035_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_035').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_035').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_035').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_036_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_036_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_036_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_036').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_036').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_036').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_037_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_037_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_037_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_037').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_037').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_037').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_038_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_038_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_038_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_038').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_038').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_038').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_039_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_039_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_039_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_039').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_039').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_039').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_040_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_040_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_040_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_040').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_040').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_040').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_041_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_041_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_041_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_041').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_041').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_041').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_042_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_042_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_042_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_042').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_042').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_042').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_043_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_043_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_043_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_043').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_043').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_043').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_044_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_044_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_044_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_044').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_044').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_044').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_045_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_045_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_045_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_045').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_045').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_045').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_046_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_046_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_046_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_046').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_046').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_046').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_047_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_047_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_047_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_047').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_047').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_047').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_048_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_048_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_048_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_048').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_048').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_048').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_049_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_049_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_049_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_049').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_049').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_049').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_050_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_050_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_050_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_050').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_050').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_050').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_051_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_051_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_051_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_051').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_051').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_051').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_052_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_052_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_052_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_052').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_052').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_052').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_053_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_053_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_053_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_053').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_053').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_053').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_054_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_054_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_054_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_054').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_054').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_054').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_055_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_055_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_055_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_055').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_055').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_055').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_056_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_056_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_056_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_056').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_056').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_056').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_057_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_057_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_057_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_057').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_057').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_057').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_058_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_058_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_058_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_058').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_058').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_058').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_059_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_059_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_059_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_059').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_059').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_059').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_060_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_060_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_060_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_060').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_060').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_060').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_061_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_061_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_061_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_061').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_061').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_061').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_062_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_062_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_062_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_062').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_062').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_062').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_063_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_063_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_063_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_063').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_063').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_063').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_064_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_064_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_064_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_064').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_064').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_064').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_065_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_065_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_065_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_065').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_065').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_065').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_066_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_066_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_066_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_066').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_066').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_066').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_067_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_067_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_067_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_067').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_067').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_067').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_068_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_068_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_068_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_068').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_068').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_068').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_069_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_069_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_069_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_069').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_069').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_069').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_070_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_070_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_070_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_070').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_070').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_070').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_071_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_071_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_071_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_071').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_071').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_071').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_072_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_072_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_072_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_072').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_072').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_072').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_073_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_073_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_073_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_073').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_073').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_073').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_074_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_074_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_074_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_074').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_074').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_074').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_075_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_075_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_075_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_075').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_075').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_075').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_076_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_076_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_076_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_076').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_076').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_076').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_077_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_077_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_077_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_077').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_077').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_077').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_078_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_078_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_078_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_078').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_078').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_078').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_079_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_079_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_079_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_079').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_079').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_079').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_080_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_080_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_080_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_080').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_080').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_080').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_081_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_081_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_081_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_081').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_081').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_081').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_082_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_082_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_082_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_082').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_082').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_082').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_083_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_083_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_083_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_083').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_083').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_083').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_084_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_084_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_084_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_084').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_084').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_084').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_085_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_085_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_085_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_085').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_085').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_085').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_086_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_086_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_086_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_086').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_086').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_086').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_087_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_087_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_087_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_087').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_087').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_087').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_088_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_088_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_088_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_088').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_088').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_088').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_089_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_089_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_089_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_089').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_089').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_089').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_090_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_090_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_090_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_090').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_090').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_090').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_091_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_091_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_091_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_091').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_091').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_091').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_092_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_092_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_092_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_092').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_092').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_092').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_093_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_093_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_093_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_093').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_093').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_093').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_094_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_094_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_094_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_094').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_094').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_094').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_095_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_095_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_095_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_095').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_095').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_095').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_096_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_096_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_096_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_096').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_096').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_096').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_097_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_097_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_097_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_097').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_097').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_097').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_098_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_098_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_098_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_098').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_098').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_098').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_099_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_099_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_099_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_099').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_099').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_099').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_100_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_100_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_100_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_100').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_100').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_100').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_101_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_101_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_101_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_101').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_101').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_101').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_102_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_102_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_102_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_102').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_102').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_102').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_103_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_103_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_103_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_103').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_103').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_103').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_104_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_104_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_104_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_104').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_104').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_104').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_105_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_105_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_105_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_105').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_105').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_105').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
 									button = {
-										using = default_button_primary
-										size = { 226 34 }
-										text = "tot_group_sheet_106_trait"
+										using = default_button
+										size = { 196 34 }
+										text = "tot_kizuna_106_codex_display"
+										down = "[GetScriptedGui('tot_character_codex_select_106_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Or(And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_show_subject_106').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), And(Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject')), GetScriptedGui('tot_character_codex_show_106').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 										onclick = "[GetScriptedGui('tot_character_codex_select_106').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										tooltip = "TOT_CHARACTER_CODEX_SCAN_GROUP"
 									}
@@ -897,32 +1162,33 @@ types tot_kizuna_codex_types {
 				}
 
 				vbox = {
-					size = { 1120 542 }
+					size = { 1150 542 }
 					spacing = 8
 					hbox = {
-						size = { 1120 28 }
+						size = { 1150 28 }
 						spacing = 8
 						textbox = {
 							size = { 1050 28 }
-						raw_text = "[AccessPlayer.GetCustom('tot_character_codex_selected_trait')]的历史角色"
+                            text = "TOT_CHARACTER_CODEX_RESULTS_CURRENT"
 							using = fontsize_large
 							align = left|nobaseline
 						}
 						textbox = {
 							size = { 62 28 }
-							raw_text = "#v [GetPlayer.MakeScope.Var('tot_character_codex_result_count').GetValue|0]#!"
+							text = "TOT_CHARACTER_CODEX_RESULT_COUNT"
 							using = fontsize_large
 							align = right|nobaseline
 						}
 					}
 					scrollbox = {
-						size = { 1120 500 }
+						size = { 1150 500 }
 						blockoverride "scrollbox_content" {
-								fixedgridbox = {
-									datamodel = "[GetPlayer.MakeScope.GetList('tot_character_codex_results')]"
-									addcolumn = 548
-									addrow = 136
-									datamodel_wrap = 2
+							fixedgridbox = {
+								datamodel = "[GetPlayer.MakeScope.GetList('tot_character_codex_results')]"
+								addcolumn = 364
+								addrow = 136
+								flipdirection = yes
+								datamodel_wrap = 3
 								item = { tot_kizuna_codex_character = {} }
 							}
 						}

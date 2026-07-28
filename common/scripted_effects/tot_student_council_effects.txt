@@ -24,9 +24,47 @@ tot_recalculate_honorary_office_maintenance_effect = {
 	}
 }
 
+tot_apply_core_office_government_bonus_effect = {
+	if = {
+		limit = {
+			has_variable = tot_$SLOT$
+			var:tot_$SLOT$ ?= {
+				interest_group ?= {
+					is_in_government = yes
+				}
+			}
+		}
+		var:tot_$SLOT$ ?= {
+			save_temporary_scope_as = tot_core_bonus_holder
+			set_variable = {
+				name = tot_core_office_government_bonus_multiplier
+				value = tot_core_office_government_bonus_multiplier
+			}
+		}
+		add_modifier = {
+			name = $MODIFIER$
+			multiplier = scope:tot_core_bonus_holder.var:tot_core_office_government_bonus_multiplier
+		}
+	}
+}
+
+tot_recalculate_core_office_government_bonuses_effect = {
+	remove_modifier = tot_student_council_president_government_bonus
+	remove_modifier = tot_discipline_minister_government_bonus
+	remove_modifier = tot_education_minister_government_bonus
+	remove_modifier = tot_propaganda_minister_government_bonus
+	remove_modifier = tot_chief_of_staff_government_bonus
+	tot_apply_core_office_government_bonus_effect = { SLOT = student_council_president MODIFIER = tot_student_council_president_government_bonus }
+	tot_apply_core_office_government_bonus_effect = { SLOT = discipline_minister MODIFIER = tot_discipline_minister_government_bonus }
+	tot_apply_core_office_government_bonus_effect = { SLOT = education_minister MODIFIER = tot_education_minister_government_bonus }
+	tot_apply_core_office_government_bonus_effect = { SLOT = propaganda_minister MODIFIER = tot_propaganda_minister_government_bonus }
+	tot_apply_core_office_government_bonus_effect = { SLOT = chief_of_staff MODIFIER = tot_chief_of_staff_government_bonus }
+}
+
 tot_recalculate_office_capacity_usage_effect = {
 	save_temporary_scope_as = tot_office_capacity_recalc_country
 	set_variable = { name = tot_office_capacity_usage value = 0 }
+	tot_recalculate_core_office_government_bonuses_effect = yes
 	tot_recalculate_core_office_maintenance_effect = { SLOT = student_council_president }
 	tot_recalculate_core_office_maintenance_effect = { SLOT = discipline_minister }
 	tot_recalculate_core_office_maintenance_effect = { SLOT = education_minister }
@@ -204,7 +242,6 @@ tot_refresh_student_council_candidates_effect = {
 			is_character_alive = yes
 			is_ruler_of_own_country = no
 			is_heir_of_own_country = no
-			is_interest_group_leader = no
 			# Nazarick's rear-area attendants are not normal minister candidates.
 			NOT = {
 				OR = {
@@ -323,6 +360,7 @@ tot_clear_student_council_president_effect = {
 	}
 
 	tot_refresh_student_council_candidates_effect = yes
+	update_kizuna = yes
 }
 
 tot_appoint_student_council_president_effect = {
@@ -331,7 +369,6 @@ tot_appoint_student_council_president_effect = {
 			is_character_alive = yes
 			is_ruler_of_own_country = no
 			is_heir_of_own_country = no
-			is_interest_group_leader = no
 			NOT = {
 				has_role = character_role_tot_student_council_president
 			}
@@ -366,6 +403,7 @@ tot_appoint_student_council_president_effect = {
 
 		owner ?= {
 			tot_refresh_student_council_candidates_effect = yes
+			update_kizuna = yes
 		}
 	}
 }
@@ -395,6 +433,7 @@ tot_clear_discipline_minister_effect = {
 	}
 
 	tot_refresh_student_council_candidates_effect = yes
+	update_kizuna = yes
 }
 
 tot_appoint_discipline_minister_effect = {
@@ -403,7 +442,6 @@ tot_appoint_discipline_minister_effect = {
 			is_character_alive = yes
 			is_ruler_of_own_country = no
 			is_heir_of_own_country = no
-			is_interest_group_leader = no
 			NOT = {
 				has_role = character_role_tot_student_council_president
 			}
@@ -439,6 +477,7 @@ tot_appoint_discipline_minister_effect = {
 
 		owner ?= {
 			tot_refresh_student_council_candidates_effect = yes
+			update_kizuna = yes
 		}
 	}
 }
@@ -454,6 +493,7 @@ tot_clear_education_minister_effect = {
 	}
 	if = { limit = { has_modifier = tot_education_minister_modifier } remove_modifier = tot_education_minister_modifier }
 	tot_refresh_student_council_candidates_effect = yes
+	update_kizuna = yes
 }
 
 tot_appoint_education_minister_effect = {
@@ -462,7 +502,6 @@ tot_appoint_education_minister_effect = {
 			is_character_alive = yes
 			is_ruler_of_own_country = no
 			is_heir_of_own_country = no
-			is_interest_group_leader = no
 			NOT = {
 				OR = {
 					has_role = character_role_tot_student_council_president
@@ -484,7 +523,10 @@ tot_appoint_education_minister_effect = {
 		}
 		add_character_role = character_role_tot_education_minister
 		tot_add_core_office_maintenance_effect = yes
-		owner ?= { tot_refresh_student_council_candidates_effect = yes }
+		owner ?= {
+			tot_refresh_student_council_candidates_effect = yes
+			update_kizuna = yes
+		}
 	}
 }
 
@@ -499,6 +541,7 @@ tot_clear_propaganda_minister_effect = {
 	}
 	if = { limit = { has_modifier = tot_propaganda_minister_modifier } remove_modifier = tot_propaganda_minister_modifier }
 	tot_refresh_student_council_candidates_effect = yes
+	update_kizuna = yes
 }
 
 tot_appoint_propaganda_minister_effect = {
@@ -507,7 +550,6 @@ tot_appoint_propaganda_minister_effect = {
 			is_character_alive = yes
 			is_ruler_of_own_country = no
 			is_heir_of_own_country = no
-			is_interest_group_leader = no
 			NOT = {
 				OR = {
 					has_role = character_role_tot_student_council_president
@@ -529,7 +571,10 @@ tot_appoint_propaganda_minister_effect = {
 		}
 		add_character_role = character_role_tot_propaganda_minister
 		tot_add_core_office_maintenance_effect = yes
-		owner ?= { tot_refresh_student_council_candidates_effect = yes }
+		owner ?= {
+			tot_refresh_student_council_candidates_effect = yes
+			update_kizuna = yes
+		}
 	}
 }
 
@@ -544,6 +589,7 @@ tot_clear_chief_of_staff_effect = {
 	}
 	if = { limit = { has_modifier = tot_chief_of_staff_modifier } remove_modifier = tot_chief_of_staff_modifier }
 	tot_refresh_student_council_candidates_effect = yes
+	update_kizuna = yes
 }
 
 tot_appoint_chief_of_staff_effect = {
@@ -552,7 +598,6 @@ tot_appoint_chief_of_staff_effect = {
 			is_character_alive = yes
 			is_ruler_of_own_country = no
 			is_heir_of_own_country = no
-			is_interest_group_leader = no
 			NOT = {
 				OR = {
 					has_role = character_role_tot_student_council_president
@@ -574,6 +619,9 @@ tot_appoint_chief_of_staff_effect = {
 		}
 		add_character_role = character_role_tot_chief_of_staff
 		tot_add_core_office_maintenance_effect = yes
-		owner ?= { tot_refresh_student_council_candidates_effect = yes }
+		owner ?= {
+			tot_refresh_student_council_candidates_effect = yes
+			update_kizuna = yes
+		}
 	}
 }

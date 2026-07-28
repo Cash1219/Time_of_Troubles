@@ -10,6 +10,7 @@
 
 			# subjects are automatically part of the bloc
 		}
+		power_bloc = { add_cohesion_number = 100 }
 		
 	}
 	c:FRA ?= {
@@ -22,6 +23,7 @@
 			principle = principle_internal_trade_1
 			member = c:ALS
 		}
+		power_bloc = { add_cohesion_number = 100 }
 		
 	}
 	c:SKD ?= {
@@ -37,6 +39,7 @@
 			member = c:ADL
 			member = c:MOR
 		}
+		power_bloc = { add_cohesion_number = 100 }
 		
 	}
 	c:MUS ?= {
@@ -52,6 +55,7 @@
 			member = c:NJS
 			
 		}
+		power_bloc = { add_cohesion_number = 100 }
 		
 
 			
@@ -71,6 +75,7 @@
 			member = c:AVMJ
 			
 		}
+		power_bloc = { add_cohesion_number = 100 }
 
 			
 	}
@@ -88,6 +93,7 @@
 			#member = c:HAR
 			member = c:STLI
 		}
+		power_bloc = { add_cohesion_number = 100 }
 		
 
 			
@@ -104,6 +110,7 @@
 		
 			member = c:PAP
 		}
+		power_bloc = { add_cohesion_number = 100 }
 		
 
 			
@@ -129,6 +136,7 @@
 			member = c:STRW
 			member = c:GERW
 		}
+		power_bloc = { add_cohesion_number = 100 }
 		if = {
 			limit = {
 				has_dlc_feature = power_bloc_features
@@ -150,6 +158,7 @@
 			# Habsburg leaders in Italy and Italian states held up by direct Austrian intervention
 			member = c:GOD
 		}
+		power_bloc = { add_cohesion_number = 100 }
 		if = {
 			limit = {
 				has_dlc_feature = power_bloc_features
@@ -172,6 +181,7 @@
 			member = c:ELZ
 			member = c:DAL
 		}
+		power_bloc = { add_cohesion_number = 100 }
 		if = {
 			limit = {
 				has_dlc_feature = power_bloc_features
@@ -197,6 +207,7 @@
 			member = c:DEZR
 			member = c:MOSL
 		}
+		power_bloc = { add_cohesion_number = 100 }
 	}
 	c:IDMS ?= {
 		create_power_bloc = {
@@ -209,6 +220,7 @@
 			principle = principle_vassalization_1
 			member = c:GKMS
 		}
+		power_bloc = { add_cohesion_number = 100 }
 	}
 	c:PRU ?= {
 		create_power_bloc = {
@@ -228,6 +240,12 @@
 
 			# Steuerverein- separate from the Zollverein. Would include HAN, BRA, OLD
 		}
+		power_bloc = { add_cohesion_number = 100 }
 		
 	}
+
+	# Vanilla blocs not replaced by ToT still begin fully cohesive.
+	c:AUS ?= { power_bloc = { add_cohesion_number = 100 } }
+	c:RUS ?= { power_bloc = { add_cohesion_number = 100 } }
+	c:TUR ?= { power_bloc = { add_cohesion_number = 100 } }
 }

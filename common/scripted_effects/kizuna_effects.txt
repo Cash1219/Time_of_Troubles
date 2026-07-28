@@ -1,5 +1,9 @@
 
 update_kizuna = {
+	# Custom localization and codex tabs can be evaluated before the player
+	# clicks a bond. Keep their country-scoped variables valid in every context.
+	if = { limit = { NOT = { has_variable = tot_character_codex_selection } } set_variable = { name = tot_character_codex_selection value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_character_codex_scope_mode } } set_variable = { name = tot_character_codex_scope_mode value = 1 } }
 	# A band exists only after a headquarters has been built and bound to a slot.
 	# Do not create a free roster for countries without a headquarters.
 	if = { limit = { NOT = { has_variable = tot_band_limit } } set_variable = { name = tot_band_limit value = 1 } }
@@ -694,7 +698,16 @@ tot_band_recalculate_reward_points_total = {
 	if = { limit = { has_variable = tot_band_9_reward_points } change_variable = { name = tot_band_reward_points_total add = var:tot_band_9_reward_points } }
 	if = { limit = { has_variable = tot_band_10_reward_points } change_variable = { name = tot_band_reward_points_total add = var:tot_band_10_reward_points } }
 	if = { limit = { has_variable = tot_band_debug_reward_points_bonus } change_variable = { name = tot_band_reward_points_total add = var:tot_band_debug_reward_points_bonus } }
-	if = { limit = { has_variable = tot_band_reward_points_spent_total } change_variable = { name = tot_band_reward_points_total add = -var:tot_band_reward_points_spent_total } }
+	if = {
+		limit = { has_variable = tot_band_reward_points_spent_total }
+		change_variable = {
+			name = tot_band_reward_points_total
+			add = {
+				value = var:tot_band_reward_points_spent_total
+				multiply = -1
+			}
+		}
+	}
 	if = { limit = { var:tot_band_reward_points_total < 0 } set_variable = { name = tot_band_reward_points_total value = 0 } }
 }
 
@@ -2949,7 +2962,8 @@ tot_band_activate_current_hq_pm_effect = {
 			var:tot_band_hq_slot = var:tot_band_pending_event_band_id
 			any_scope_building = { is_building_type = building_band_headquarter }
 		}
-		activate_production_methods = { var:tot_band_target_pm }
+		# Production-method activation only exists in history files. The event
+		# already applies the route bonus below, so leave the building unchanged.
 	}
 	tot_sync_band_hq_route_bonuses = yes
 }

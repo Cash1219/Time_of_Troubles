@@ -1,0 +1,3925 @@
+﻿# Codex directory visibility: current/subject use owned historical characters; faction/other use the global category.
+
+tot_character_codex_show_001 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_001_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_001_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_002 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_002_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_002_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_003 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_003_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_003_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_004 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_004_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_004_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_005 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_005_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_005_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_006 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_006_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_006_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_007 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_007_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_007_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_008 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_008_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_008_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_009 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_009_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_009_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_010 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_010_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_010_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_011 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_011_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_011_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_012 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_012_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_012_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_013 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_013_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_013_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_014 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_014_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_014_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_015 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_015_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_015_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_016 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_016_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_016_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_017 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_017_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_017_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_018 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_018_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_018_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_019 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_019_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_019_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_020 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_020_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_020_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_021 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_021_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_021_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_022 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_022_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_022_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_023 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_023_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_023_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_024 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_024_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_024_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_025 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_025_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_025_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_026 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_026_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_026_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_027 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_027_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_027_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_028 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_028_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_028_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_029 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_029_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_029_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_030 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_030_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_030_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_031 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_031_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_031_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_032 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_032_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_032_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_033 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_033_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_033_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_034 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_034_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_034_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_035 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_035_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_035_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_036 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_036_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_036_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_037 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_037_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_037_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_038 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_038_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_038_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_039 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_039_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_039_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_040 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_040_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_040_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_041 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_041_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_041_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_042 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_042_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_042_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_043 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_043_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_043_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_044 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_044_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_044_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_045 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_045_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_045_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_046 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_046_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_046_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_047 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_047_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_047_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_048 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_048_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_048_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_049 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_049_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_049_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_050 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_050_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_050_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_051 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_051_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_051_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_052 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_052_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_052_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_053 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_053_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_053_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_054 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_054_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_054_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_055 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_055_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_055_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_056 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_056_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_056_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_057 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_057_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_057_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_058 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_058_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_058_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_059 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_059_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_059_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_060 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_060_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_060_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_061 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_061_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_061_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_062 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_062_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_062_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_063 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_063_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_063_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_064 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_064_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_064_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_065 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_065_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_065_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_066 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_066_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_066_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_067 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_067_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_067_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_068 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_068_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_068_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_069 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_069_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_069_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_070 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_070_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_070_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_071 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_071_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_071_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_072 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_072_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_072_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_073 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_073_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_073_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_074 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_074_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_074_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_075 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_075_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_075_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_076 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_076_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_076_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_077 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_077_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_077_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_078 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_078_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_078_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_079 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_079_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_079_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_080 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_080_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_080_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_081 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_081_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_081_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_082 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_082_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_082_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_083 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_083_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_083_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_084 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_084_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_084_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_085 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_085_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_085_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_086 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_086_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_086_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_087 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_087_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_087_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_088 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_088_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_088_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_089 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_089_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_089_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_090 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_090_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_090_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_091 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_091_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_091_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_092 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_092_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_092_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_093 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_093_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_093_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_094 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_094_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_094_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_095 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_095_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_095_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_096 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_096_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_096_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_097 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_097_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_097_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_098 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_098_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_098_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_099 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_099_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_099_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_100 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_100_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_100_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_101 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_101_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_101_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_102 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_102_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_102_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_103 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_103_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_103_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_104 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_104_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_104_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_105 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_105_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_105_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 4 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_106 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = {
+				OR = { NOT = { has_variable = tot_character_codex_scope_mode } var:tot_character_codex_scope_mode = 1 }
+				any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_106_trait }
+			}
+			AND = {
+				var:tot_character_codex_scope_mode = 2
+				any_country = { is_subject_of = root any_scope_character = { is_character_alive = yes is_historical = yes is_in_void = no is_in_exile_pool = no has_trait = tot_group_sheet_106_trait } }
+			}
+			AND = { var:tot_character_codex_scope_mode = 3 }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+# Subject-page directory visibility: only bonds represented among direct subjects.
+tot_character_codex_show_subject_001 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_001_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_002 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_002_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_003 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_003_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_004 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_004_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_005 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_005_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_006 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_006_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_007 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_007_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_008 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_008_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_009 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_009_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_010 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_010_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_011 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_011_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_012 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_012_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_013 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_013_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_014 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_014_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_015 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_015_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_016 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_016_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_017 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_017_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_018 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_018_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_019 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_019_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_020 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_020_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_021 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_021_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_022 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_022_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_023 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_023_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_024 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_024_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_025 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_025_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_026 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_026_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_027 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_027_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_028 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_028_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_029 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_029_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_030 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_030_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_031 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_031_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_032 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_032_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_033 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_033_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_034 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_034_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_035 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_035_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_036 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_036_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_037 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_037_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_038 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_038_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_039 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_039_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_040 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_040_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_041 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_041_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_042 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_042_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_043 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_043_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_044 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_044_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_045 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_045_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_046 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_046_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_047 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_047_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_048 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_048_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_049 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_049_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_050 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_050_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_051 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_051_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_052 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_052_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_053 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_053_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_054 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_054_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_055 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_055_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_056 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_056_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_057 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_057_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_058 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_058_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_059 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_059_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_060 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_060_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_061 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_061_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_062 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_062_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_063 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_063_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_064 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_064_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_065 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_065_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_066 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_066_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_067 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_067_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_068 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_068_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_069 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_069_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_070 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_070_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_071 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_071_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_072 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_072_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_073 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_073_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_074 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_074_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_075 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_075_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_076 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_076_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_077 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_077_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_078 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_078_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_079 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_079_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_080 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_080_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_081 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_081_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_082 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_082_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_083 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_083_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_084 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_084_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_085 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_085_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_086 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_086_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_087 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_087_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_088 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_088_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_089 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_089_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_090 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_090_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_091 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_091_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_092 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_092_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_093 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_093_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_094 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_094_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_095 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_095_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_096 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_096_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_097 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_097_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_098 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_098_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_099 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_099_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_100 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_100_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_101 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_101_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_102 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_102_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_103 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_103_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_104 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_104_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_105 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_105_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_show_subject_106 = {
+	scope = country
+	effect = { }
+	is_shown = {
+		any_country = {
+			is_subject_of = root
+			any_scope_character = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+				has_trait = tot_group_sheet_106_trait
+			}
+		}
+	}
+	is_valid = { always = yes }
+}
+

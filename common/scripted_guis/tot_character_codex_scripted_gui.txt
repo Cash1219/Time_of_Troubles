@@ -13,6 +13,135 @@ tot_character_codex_scan_selected = {
 	is_valid = { is_player = yes }
 }
 
+# This is deliberately a country-scoped GUI action. The card passes the
+# selected character as a named scope, while root remains the player country.
+tot_character_codex_recruit_subject = {
+	scope = country
+	effect = {
+		scope:tot_subject_character = {
+			owner ?= { add_liberty_desire = 50 }
+			transfer_character = root
+		}
+		tot_character_codex_scan_selected_effect = yes
+	}
+	is_shown = {
+		is_player = yes
+		scope:tot_subject_character = {
+			is_character_alive = yes
+			is_in_void = no
+			is_in_exile_pool = no
+			is_ruler_of_own_country = no
+			is_heir_of_own_country = no
+			owner ?= { is_subject_of = root }
+		}
+	}
+	is_valid = {
+		is_player = yes
+		scope:tot_subject_character = {
+			is_character_alive = yes
+			is_in_void = no
+			is_in_exile_pool = no
+			is_ruler_of_own_country = no
+			is_heir_of_own_country = no
+			owner ?= {
+				is_subject_of = root
+				custom_tooltip = {
+					text = TOT_CHARACTER_CODEX_RECRUIT_SUBJECT_LIBERTY_REQUIREMENT
+					liberty_desire <= 50
+				}
+			}
+		}
+	}
+}
+
+# The codex keeps its last selected bond while these controls change the
+# left-hand directory category. Only the subject category narrows the scan.
+tot_character_codex_scope_home = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_character_codex_scope_mode value = 1 }
+		if = {
+			limit = { has_variable = tot_character_codex_selection }
+			tot_character_codex_scan_selected_effect = yes
+		}
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+
+tot_character_codex_scope_subject = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_character_codex_scope_mode value = 2 }
+		set_variable = { name = tot_character_codex_result_count value = 0 }
+		if = {
+			limit = { has_variable_list = tot_character_codex_results }
+			clear_variable_list = tot_character_codex_results
+		}
+		if = {
+			limit = { has_variable = tot_character_codex_selection }
+			tot_character_codex_scan_selected_effect = yes
+		}
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+
+tot_character_codex_scope_bloc = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_character_codex_scope_mode value = 3 }
+		if = {
+			limit = { has_variable = tot_character_codex_selection }
+			tot_character_codex_scan_selected_effect = yes
+		}
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+
+tot_character_codex_scope_other = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_character_codex_scope_mode value = 4 }
+		if = {
+			limit = { has_variable = tot_character_codex_selection }
+			tot_character_codex_scan_selected_effect = yes
+		}
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+
+tot_character_codex_scope_home_active = {
+	scope = country
+	is_shown = {
+		OR = {
+			NOT = { has_variable = tot_character_codex_scope_mode }
+			var:tot_character_codex_scope_mode = 1
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_character_codex_scope_subject_active = {
+	scope = country
+	is_shown = { var:tot_character_codex_scope_mode = 2 }
+	is_valid = { always = yes }
+}
+
+tot_character_codex_scope_bloc_active = {
+	scope = country
+	is_shown = { var:tot_character_codex_scope_mode = 3 }
+	is_valid = { always = yes }
+}
+
+tot_character_codex_scope_other_active = {
+	scope = country
+	is_shown = { var:tot_character_codex_scope_mode = 4 }
+	is_valid = { always = yes }
+}
+
 tot_character_codex_select_001 = {
 	scope = country
 	effect = {
@@ -1071,4 +1200,641 @@ tot_character_codex_select_106 = {
 	}
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }
+}
+
+# GUI highlight checks for the currently selected codex bond.
+tot_character_codex_select_001_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 1 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_002_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 2 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_003_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 3 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_004_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 4 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_005_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 5 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_006_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 6 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_007_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 7 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_008_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 8 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_009_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 9 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_010_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 10 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_011_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 11 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_012_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 12 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_013_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 13 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_014_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 14 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_015_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 15 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_016_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 16 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_017_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 17 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_018_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 18 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_019_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 19 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_020_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 20 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_021_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 21 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_022_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 22 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_023_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 23 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_024_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 24 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_025_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 25 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_026_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 26 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_027_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 27 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_028_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 28 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_029_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 29 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_030_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 30 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_031_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 31 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_032_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 32 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_033_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 33 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_034_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 34 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_035_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 35 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_036_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 36 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_037_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 37 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_038_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 38 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_039_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 39 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_040_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 40 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_041_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 41 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_042_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 42 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_043_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 43 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_044_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 44 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_045_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 45 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_046_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 46 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_047_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 47 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_048_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 48 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_049_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 49 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_050_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 50 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_051_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 51 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_052_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 52 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_053_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 53 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_054_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 54 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_055_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 55 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_056_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 56 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_057_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 57 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_058_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 58 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_059_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 59 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_060_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 60 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_061_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 61 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_062_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 62 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_063_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 63 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_064_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 64 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_065_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 65 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_066_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 66 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_067_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 67 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_068_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 68 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_069_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 69 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_070_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 70 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_071_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 71 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_072_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 72 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_073_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 73 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_074_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 74 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_075_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 75 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_076_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 76 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_077_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 77 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_078_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 78 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_079_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 79 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_080_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 80 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_081_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 81 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_082_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 82 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_083_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 83 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_084_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 84 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_085_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 85 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_086_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 86 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_087_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 87 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_088_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 88 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_089_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 89 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_090_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 90 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_091_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 91 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_092_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 92 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_093_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 93 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_094_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 94 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_095_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 95 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_096_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 96 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_097_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 97 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_098_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 98 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_099_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 99 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_100_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 100 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_101_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 101 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_102_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 102 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_103_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 103 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_104_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 104 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_105_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 105 }
+	 is_valid = { always = yes }
+}
+
+tot_character_codex_select_106_active = {
+	 scope = country
+	 is_shown = { var:tot_character_codex_selection = 106 }
+	 is_valid = { always = yes }
 }

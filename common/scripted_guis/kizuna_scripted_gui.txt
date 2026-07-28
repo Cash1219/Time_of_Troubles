@@ -20,6 +20,20 @@ tot_kizuna_character_active = {
 					is_in_government = yes
 				}
 			}
+			AND = {
+				NOT = {
+					interest_group ?= {
+						is_in_government = yes
+					}
+				}
+				OR = {
+					has_role = character_role_tot_student_council_president
+					has_role = character_role_tot_discipline_minister
+					has_role = character_role_tot_education_minister
+					has_role = character_role_tot_propaganda_minister
+					has_role = character_role_tot_chief_of_staff
+				}
+			}
 		}
 	}
 }
@@ -57,9 +71,12 @@ tot_band_open_refresh = {
 tot_band_initialize_management_page = {
 	scope = country
 	effect = {
-		set_variable = { name = tot_band_page value = management }
 		set_variable = { name = tot_band_selected value = 1 }
-		tot_band_open_refresh = yes
+		tot_ensure_default_band_hq_slots_effect = yes
+		tot_ensure_default_story_band_members_effect = yes
+		tot_band_initialize_axes = yes
+		update_kizuna = yes
+		tot_refresh_student_council_candidates_effect = yes
 	}
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }
@@ -68,8 +85,11 @@ tot_band_initialize_management_page = {
 tot_band_set_management_page = {
 	scope = country
 	effect = {
-		set_variable = { name = tot_band_page value = management }
-		tot_band_open_refresh = yes
+		tot_ensure_default_band_hq_slots_effect = yes
+		tot_ensure_default_story_band_members_effect = yes
+		tot_band_initialize_axes = yes
+		update_kizuna = yes
+		tot_refresh_student_council_candidates_effect = yes
 	}
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }
@@ -78,8 +98,10 @@ tot_band_set_management_page = {
 tot_band_set_shop_page = {
 	scope = country
 	effect = {
-		set_variable = { name = tot_band_page value = shop }
-		tot_kizuna_refresh = yes
+		tot_character_growth_refresh = yes
+		tot_band_initialize_axes = yes
+		update_kizuna = yes
+		tot_refresh_student_council_candidates_effect = yes
 	}
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }
@@ -329,7 +351,6 @@ tot_kizuna_select_faction_tab = {
 		remove_variable = tot_kizuna_tab_profession
 		remove_variable = tot_kizuna_tab_specialty
 		set_variable = { name = tot_kizuna_tab_faction value = 1 }
-		set_variable = { name = tot_kizuna_page value = faction }
 	}
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }
@@ -340,7 +361,6 @@ tot_kizuna_select_profession_tab = {
 		remove_variable = tot_kizuna_tab_faction
 		remove_variable = tot_kizuna_tab_specialty
 		set_variable = { name = tot_kizuna_tab_profession value = 1 }
-		set_variable = { name = tot_kizuna_page value = profession }
 	}
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }
@@ -351,7 +371,6 @@ tot_kizuna_select_specialty_tab = {
 		remove_variable = tot_kizuna_tab_faction
 		remove_variable = tot_kizuna_tab_profession
 		set_variable = { name = tot_kizuna_tab_specialty value = 1 }
-		set_variable = { name = tot_kizuna_page value = specialty }
 	}
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }
