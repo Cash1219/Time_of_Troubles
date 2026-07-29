@@ -1204,7 +1204,7 @@ tot_character_codex_scan_subject_selected_effect = {
 	}
 
 	every_country = {
-		limit = { is_subject_of = scope:tot_character_codex_owner }
+		limit = { is_subject_of = root }
 		every_scope_character = {
 			limit = {
 				is_character_alive = yes
