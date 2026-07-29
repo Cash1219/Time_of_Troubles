@@ -1203,8 +1203,7 @@ tot_character_codex_scan_subject_all_effect = {
 		clear_variable_list = tot_character_codex_results
 	}
 
-	every_country = {
-		limit = { is_subject_of = root }
+	every_subject_or_below = {
 		every_scope_character = {
 			limit = {
 				is_character_alive = yes

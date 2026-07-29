@@ -148,7 +148,8 @@
 				spacing = 14
 
 				vbox = {
-					size = { 220 542 }
+				visible = "[Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'))]"
+				size = { 220 542 }
 					spacing = 8
 					background = { using = dark_area }
 					vbox = {
