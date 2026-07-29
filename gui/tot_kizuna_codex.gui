@@ -74,7 +74,7 @@
 						button_standard = {
 							size = { 140 28 }
 							text = "TOT_CHARACTER_CODEX_RECRUIT_SUBJECT"
-							visible = "[And(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'), GetScriptedGui('tot_character_codex_recruit_subject').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_subject_character', Character.MakeScope).End))]"
+							visible = "[GetVariableSystem.HasValue('tot_kizuna_page', 'subject')]"
 							enabled = "[GetScriptedGui('tot_character_codex_recruit_subject').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_subject_character', Character.MakeScope).End)]"
 							onclick = "[GetScriptedGui('tot_character_codex_recruit_subject').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_subject_character', Character.MakeScope).End)]"
 							tooltip = "[GetScriptedGui('tot_character_codex_recruit_subject').IsValidTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_subject_character', Character.MakeScope).End)]"

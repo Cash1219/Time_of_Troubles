@@ -24,17 +24,7 @@ tot_character_codex_recruit_subject = {
 		}
 		tot_character_codex_scan_selected_effect = yes
 	}
-	is_shown = {
-		is_player = yes
-		scope:tot_subject_character = {
-			is_character_alive = yes
-			is_in_void = no
-			is_in_exile_pool = no
-			is_ruler_of_own_country = no
-			is_heir_of_own_country = no
-			owner ?= { is_subject_of = root }
-		}
-	}
+	is_shown = { is_player = yes }
 	is_valid = {
 		is_player = yes
 		scope:tot_subject_character = {
