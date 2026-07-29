@@ -3,7 +3,7 @@
 tot_character_codex_scan_selected_effect = {
 	if = {
 		limit = { var:tot_character_codex_scope_mode = 2 }
-		tot_character_codex_scan_subject_selected_effect = yes
+		tot_character_codex_scan_subject_all_effect = yes
 	}
 	else = {
 		tot_character_codex_scan_global_selected_effect = yes
@@ -1195,6 +1195,31 @@ tot_character_codex_scan_global_selected_effect = {
 	}
 }
 
+tot_character_codex_scan_subject_all_effect = {
+	save_temporary_scope_as = tot_character_codex_owner
+	set_variable = { name = tot_character_codex_result_count value = 0 }
+	if = {
+		limit = { has_variable_list = tot_character_codex_results }
+		clear_variable_list = tot_character_codex_results
+	}
+
+	every_country = {
+		limit = { is_subject_of = root }
+		every_scope_character = {
+			limit = {
+				is_character_alive = yes
+				is_historical = yes
+				is_in_void = no
+				is_in_exile_pool = no
+			}
+			save_scope_as = tot_character_codex_entry
+			scope:tot_character_codex_owner = {
+			add_to_variable_list = { name = tot_character_codex_results target = scope:tot_character_codex_entry }
+			change_variable = { name = tot_character_codex_result_count add = 1 }
+		}
+		}
+	}
+}
 tot_character_codex_scan_subject_selected_effect = {
 	save_temporary_scope_as = tot_character_codex_owner
 	set_variable = { name = tot_character_codex_result_count value = 0 }

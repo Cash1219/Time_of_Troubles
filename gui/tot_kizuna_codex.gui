@@ -77,7 +77,7 @@
 							visible = "[GetVariableSystem.HasValue('tot_kizuna_page', 'subject')]"
 							enabled = "[GetScriptedGui('tot_character_codex_recruit_subject').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_subject_character', Character.MakeScope).End)]"
 							onclick = "[GetScriptedGui('tot_character_codex_recruit_subject').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_subject_character', Character.MakeScope).End)]"
-							tooltip = "[GetScriptedGui('tot_character_codex_recruit_subject').IsValidTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_subject_character', Character.MakeScope).End)]"
+							tooltip = "TOT_CHARACTER_CODEX_RECRUIT_SUBJECT_TOOLTIP"
 						}
 					}
 

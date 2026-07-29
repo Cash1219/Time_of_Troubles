@@ -63,15 +63,7 @@ tot_character_codex_scope_subject = {
 	scope = country
 	effect = {
 		set_variable = { name = tot_character_codex_scope_mode value = 2 }
-		set_variable = { name = tot_character_codex_result_count value = 0 }
-		if = {
-			limit = { has_variable_list = tot_character_codex_results }
-			clear_variable_list = tot_character_codex_results
-		}
-		if = {
-			limit = { has_variable = tot_character_codex_selection }
-			tot_character_codex_scan_selected_effect = yes
-		}
+		tot_character_codex_scan_subject_all_effect = yes
 	}
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }
