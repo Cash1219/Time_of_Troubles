@@ -1,0 +1,55 @@
+tot_special_units_recruit_guard_effect = {
+	if = {
+		limit = {
+			tot_idol_guard_unit_free_capacity >= $VALUE$
+		}
+		create_military_formation = {
+			type = army
+			hq_region = root.capital.region
+			name = tot_idol_guard_formation
+			combat_unit = {
+				type = unit_type:combat_unit_type_tot_idol_guard
+				service_type = regular
+				state_region = root.capital.state_region
+				count = $VALUE$
+			}
+		}
+	}
+}
+
+tot_special_units_recruit_knight_effect = {
+	if = {
+		limit = {
+			tot_idol_knight_unit_free_capacity >= $VALUE$
+		}
+		create_military_formation = {
+			type = army
+			hq_region = root.capital.region
+			name = tot_idol_knight_formation
+			combat_unit = {
+				type = unit_type:combat_unit_type_tot_idol_knight
+				service_type = regular
+				state_region = root.capital.state_region
+				count = $VALUE$
+			}
+		}
+	}
+}
+
+tot_special_units_recruit_guard_to_capacity_effect = {
+	set_variable = { name = tot_special_units_guard_batch value = tot_idol_guard_unit_free_capacity }
+	if = {
+		limit = { var:tot_special_units_guard_batch > 0 }
+		tot_special_units_recruit_guard_effect = { VALUE = var:tot_special_units_guard_batch }
+	}
+	remove_variable = tot_special_units_guard_batch
+}
+
+tot_special_units_recruit_knight_to_capacity_effect = {
+	set_variable = { name = tot_special_units_knight_batch value = tot_idol_knight_unit_free_capacity }
+	if = {
+		limit = { var:tot_special_units_knight_batch > 0 }
+		tot_special_units_recruit_knight_effect = { VALUE = var:tot_special_units_knight_batch }
+	}
+	remove_variable = tot_special_units_knight_batch
+}

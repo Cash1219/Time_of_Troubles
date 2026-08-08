@@ -1,0 +1,41 @@
+namespace = tot_music_competition
+
+# Scheduled by the competition state itself, not by the GUI. A single queued
+# event advances the active stage every seven days and schedules its successor.
+tot_music_competition.1 = {
+	type = country_event
+	hidden = yes
+
+	immediate = {
+		remove_variable = tot_music_competition_weekly_tick_scheduled
+		remove_variable = tot_music_competition_next_tick
+		if = {
+			limit = {
+				NOT = { has_variable = tot_music_competition_completed }
+				OR = {
+					has_variable = tot_music_competition_stage
+					has_variable = tot_music_competition_registration_open
+					has_variable = tot_music_competition_preparation_open
+				}
+			}
+			tot_music_competition_progress_week_effect = yes
+			tot_music_competition_schedule_weekly_tick_effect = yes
+		}
+	}
+}
+
+# A single, season-start registration pass for AI countries. It deliberately
+# uses real created band slots and never runs from a monthly player action.
+tot_music_competition.2 = {
+	type = country_event
+	hidden = yes
+
+	immediate = {
+		remove_variable = tot_music_competition_ai_registration_pending
+		if = {
+			limit = { has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_stage } NOT = { has_variable = tot_music_competition_ai_registration_completed } }
+			tot_music_competition_run_ai_registration_effect = yes
+			set_variable = { name = tot_music_competition_ai_registration_completed value = 1 }
+		}
+	}
+}

@@ -1,0 +1,712 @@
+﻿tot_music_competition_select_band = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_music_competition_track value = 1 }
+		if = { limit = { NOT = { has_variable = tot_music_competition_band_registration_count } } set_variable = { name = tot_music_competition_band_registration_count value = 0 } }
+		if = {
+			limit = { NOT = { has_variable = tot_music_competition_band_id } }
+			if = { limit = { has_variable = tot_band_1_created } set_variable = { name = tot_music_competition_band_id value = 1 } set_variable = { name = tot_music_competition_cancel_band_id value = 1 } }
+			else_if = { limit = { has_variable = tot_band_2_created } set_variable = { name = tot_music_competition_band_id value = 2 } set_variable = { name = tot_music_competition_cancel_band_id value = 2 } }
+			else_if = { limit = { has_variable = tot_band_3_created } set_variable = { name = tot_music_competition_band_id value = 3 } set_variable = { name = tot_music_competition_cancel_band_id value = 3 } }
+			else_if = { limit = { has_variable = tot_band_4_created } set_variable = { name = tot_music_competition_band_id value = 4 } set_variable = { name = tot_music_competition_cancel_band_id value = 4 } }
+			else_if = { limit = { has_variable = tot_band_5_created } set_variable = { name = tot_music_competition_band_id value = 5 } set_variable = { name = tot_music_competition_cancel_band_id value = 5 } }
+		}
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+
+tot_music_competition_initialize = {
+	scope = country
+			effect = {
+			# Existing saves that had already reached the old closed-registration state
+			# enter the new six-month preparation state rather than reopening entries.
+			if = {
+				limit = {
+					has_variable = tot_music_competition_registered
+					NOT = { has_variable = tot_music_competition_stage }
+					has_variable = tot_music_competition_registration_closed
+					NOT = { has_variable = tot_music_competition_preparation_open }
+				}
+				set_variable = { name = tot_music_competition_preparation_open value = 1 }
+				set_variable = { name = tot_music_competition_preparation_months value = 0 }
+				set_variable = { name = tot_music_competition_preparation_deadline months = 6 }
+				set_variable = { name = tot_music_competition_preparation_days_remaining value = 182 }
+			}
+			# Registration and the actual competition are separate states. Older
+			# saves without a stage are migrated into the new registration window.
+			if = {
+				limit = {
+					has_variable = tot_music_competition_registered
+					NOT = { has_variable = tot_music_competition_stage }
+					NOT = { has_variable = tot_music_competition_registration_closed }
+					NOT = { has_variable = tot_music_competition_registration_open }
+				}
+			set_variable = { name = tot_music_competition_registration_open value = 1 }
+			set_variable = { name = tot_music_competition_registration_months value = 0 }
+			set_variable = { name = tot_music_competition_registration_deadline months = 12 }
+			set_variable = { name = tot_music_competition_season_start_deadline months = 18 }
+			set_variable = { name = tot_music_competition_registration_days_remaining value = 365 }
+			remove_variable = tot_music_competition_registration_waiting_for_minimum
+		}
+		# Give pre-deadline saves a real remaining-time variable so the GUI can
+		# display the calendar date rather than only a month counter.
+		if = { limit = { has_variable = tot_music_competition_registered has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_deadline } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 0 } set_variable = { name = tot_music_competition_registration_deadline months = 12 } }
+		if = { limit = { has_variable = tot_music_competition_registered has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_deadline } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 1 } set_variable = { name = tot_music_competition_registration_deadline months = 11 } }
+		if = { limit = { has_variable = tot_music_competition_registered has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_deadline } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 2 } set_variable = { name = tot_music_competition_registration_deadline months = 10 } }
+		if = { limit = { has_variable = tot_music_competition_registered has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_deadline } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 3 } set_variable = { name = tot_music_competition_registration_deadline months = 9 } }
+		if = { limit = { has_variable = tot_music_competition_registered has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_deadline } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 4 } set_variable = { name = tot_music_competition_registration_deadline months = 8 } }
+		if = { limit = { has_variable = tot_music_competition_registered has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_deadline } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 5 } set_variable = { name = tot_music_competition_registration_deadline months = 7 } }
+		if = { limit = { has_variable = tot_music_competition_registered has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_deadline } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 6 } set_variable = { name = tot_music_competition_registration_deadline months = 6 } }
+		if = { limit = { has_variable = tot_music_competition_registered has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_deadline } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 7 } set_variable = { name = tot_music_competition_registration_deadline months = 5 } }
+		if = { limit = { has_variable = tot_music_competition_registered has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_deadline } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 8 } set_variable = { name = tot_music_competition_registration_deadline months = 4 } }
+		if = { limit = { has_variable = tot_music_competition_registered has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_deadline } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 9 } set_variable = { name = tot_music_competition_registration_deadline months = 3 } }
+		if = { limit = { has_variable = tot_music_competition_registered has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_deadline } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 10 } set_variable = { name = tot_music_competition_registration_deadline months = 2 } }
+		if = { limit = { has_variable = tot_music_competition_registered has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_deadline } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 11 } set_variable = { name = tot_music_competition_registration_deadline months = 1 } }
+		# Old active saves did not record a calendar deadline for the qualifying phase.
+		if = { limit = { has_variable = tot_music_competition_stage var:tot_music_competition_stage = 1 NOT = { has_variable = tot_music_competition_qualifying_deadline } } set_variable = { name = tot_music_competition_qualifying_deadline weeks = 26 } }
+		if = { limit = { has_variable = tot_music_competition_stage var:tot_music_competition_stage = 2 NOT = { has_variable = tot_music_competition_final_deadline } } set_variable = { name = tot_music_competition_final_deadline weeks = 26 } }
+		# Convert pre-countdown saves once. The monthly counter provides a stable
+		# approximation; all new seasons use the exact weekly counter from day one.
+		if = { limit = { has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_days_remaining } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 0 } set_variable = { name = tot_music_competition_registration_days_remaining value = 365 } }
+		if = { limit = { has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_days_remaining } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 1 } set_variable = { name = tot_music_competition_registration_days_remaining value = 335 } }
+		if = { limit = { has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_days_remaining } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 2 } set_variable = { name = tot_music_competition_registration_days_remaining value = 305 } }
+		if = { limit = { has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_days_remaining } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 3 } set_variable = { name = tot_music_competition_registration_days_remaining value = 275 } }
+		if = { limit = { has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_days_remaining } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 4 } set_variable = { name = tot_music_competition_registration_days_remaining value = 245 } }
+		if = { limit = { has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_days_remaining } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 5 } set_variable = { name = tot_music_competition_registration_days_remaining value = 215 } }
+		if = { limit = { has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_days_remaining } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 6 } set_variable = { name = tot_music_competition_registration_days_remaining value = 185 } }
+		if = { limit = { has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_days_remaining } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 7 } set_variable = { name = tot_music_competition_registration_days_remaining value = 155 } }
+		if = { limit = { has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_days_remaining } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 8 } set_variable = { name = tot_music_competition_registration_days_remaining value = 125 } }
+		if = { limit = { has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_days_remaining } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 9 } set_variable = { name = tot_music_competition_registration_days_remaining value = 95 } }
+		if = { limit = { has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_days_remaining } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 10 } set_variable = { name = tot_music_competition_registration_days_remaining value = 65 } }
+		if = { limit = { has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_days_remaining } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months = 11 } set_variable = { name = tot_music_competition_registration_days_remaining value = 35 } }
+		if = { limit = { has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_days_remaining } has_variable = tot_music_competition_registration_months var:tot_music_competition_registration_months >= 12 } set_variable = { name = tot_music_competition_registration_days_remaining value = 0 } }
+		if = { limit = { has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_registration_days_remaining } NOT = { has_variable = tot_music_competition_registration_months } } set_variable = { name = tot_music_competition_registration_days_remaining value = 365 } }
+		if = { limit = { has_variable = tot_music_competition_preparation_open NOT = { has_variable = tot_music_competition_preparation_days_remaining } } set_variable = { name = tot_music_competition_preparation_days_remaining value = 182 } }
+		if = { limit = { has_variable = tot_music_competition_stage var:tot_music_competition_stage = 1 NOT = { has_variable = tot_music_competition_qualifying_days_remaining } } set_variable = { name = tot_music_competition_qualifying_days_remaining value = 182 } }
+		if = { limit = { has_variable = tot_music_competition_stage var:tot_music_competition_stage = 2 NOT = { has_variable = tot_music_competition_final_days_remaining } } set_variable = { name = tot_music_competition_final_days_remaining value = 182 } }
+		# Apply elapsed phase boundaries immediately when this panel is opened.
+		if = { limit = { has_variable = tot_music_competition_registration_open has_variable = tot_music_competition_registration_days_remaining var:tot_music_competition_registration_days_remaining <= 0 } tot_music_competition_start_if_ready_effect = yes }
+		if = { limit = { has_variable = tot_music_competition_preparation_open has_variable = tot_music_competition_preparation_days_remaining var:tot_music_competition_preparation_days_remaining <= 0 } tot_music_competition_begin_after_preparation_effect = yes }
+		# Recover an old season that reached an elapsed boundary with a stale stop flag.
+		if = {
+			limit = {
+				has_variable = tot_music_competition_completed
+				OR = {
+					AND = { has_variable = tot_music_competition_registration_open has_variable = tot_music_competition_registration_days_remaining var:tot_music_competition_registration_days_remaining <= 0 }
+					AND = { has_variable = tot_music_competition_preparation_open has_variable = tot_music_competition_preparation_days_remaining var:tot_music_competition_preparation_days_remaining <= 0 }
+				}
+			}
+			remove_variable = tot_music_competition_completed
+			remove_variable = tot_music_competition_weekly_tick_scheduled
+			remove_variable = tot_music_competition_next_tick
+			tot_music_competition_start_if_ready_effect = yes
+			tot_music_competition_begin_after_preparation_effect = yes
+		}
+		# The original final phase only ran a timer. Complete its bracket once when
+		# opening an affected save, even though that timer already marked the season done.
+		if = {
+			limit = {
+				has_variable = tot_music_competition_stage
+				var:tot_music_competition_stage = 2
+				has_variable = tot_music_competition_completed
+				has_variable = tot_music_competition_track
+				var:tot_music_competition_track = 1
+				NOT = { has_variable = tot_music_competition_final_champion_resolved }
+			}
+			tot_music_competition_resolve_band_final_effect = yes
+		}
+		# Versioned recovery for saves made while the old scheduler could leave a
+		# stale flag behind. It runs once, then normal weekly event chaining owns
+		# the timer without re-scheduling on every panel open.
+		if = {
+			limit = {
+				NOT = { has_variable = tot_music_competition_tick_recovery_v2 }
+				OR = {
+					has_variable = tot_music_competition_registration_open
+					has_variable = tot_music_competition_preparation_open
+					has_variable = tot_music_competition_stage
+				}
+			}
+			remove_variable = tot_music_competition_weekly_tick_scheduled
+			remove_variable = tot_music_competition_next_tick
+			set_variable = { name = tot_music_competition_tick_recovery_v2 value = 1 }
+		}
+		tot_music_competition_schedule_weekly_tick_effect = yes
+			if = {
+				limit = { NOT = { has_variable = tot_music_competition_track } }
+				set_variable = { name = tot_music_competition_track value = 1 }
+			}
+			if = {
+				limit = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 NOT = { has_variable = tot_music_competition_band_id } }
+				if = { limit = { has_variable = tot_band_1_created } set_variable = { name = tot_music_competition_band_id value = 1 } }
+				else_if = { limit = { has_variable = tot_band_2_created } set_variable = { name = tot_music_competition_band_id value = 2 } }
+				else_if = { limit = { has_variable = tot_band_3_created } set_variable = { name = tot_music_competition_band_id value = 3 } }
+				else_if = { limit = { has_variable = tot_band_4_created } set_variable = { name = tot_music_competition_band_id value = 4 } }
+				else_if = { limit = { has_variable = tot_band_5_created } set_variable = { name = tot_music_competition_band_id value = 5 } }
+			}
+			if = {
+				limit = {
+					has_variable = tot_music_competition_track
+					var:tot_music_competition_track = 1
+					has_variable = tot_music_competition_band_id
+					OR = {
+						AND = { var:tot_music_competition_band_id = 1 NOT = { has_variable = tot_band_1_created } }
+						AND = { var:tot_music_competition_band_id = 2 NOT = { has_variable = tot_band_2_created } }
+						AND = { var:tot_music_competition_band_id = 3 NOT = { has_variable = tot_band_3_created } }
+						AND = { var:tot_music_competition_band_id = 4 NOT = { has_variable = tot_band_4_created } }
+						AND = { var:tot_music_competition_band_id = 5 NOT = { has_variable = tot_band_5_created } }
+					}
+				}
+				remove_variable = tot_music_competition_band_id
+				if = { limit = { has_variable = tot_band_1_created } set_variable = { name = tot_music_competition_band_id value = 1 } }
+				else_if = { limit = { has_variable = tot_band_2_created } set_variable = { name = tot_music_competition_band_id value = 2 } }
+				else_if = { limit = { has_variable = tot_band_3_created } set_variable = { name = tot_music_competition_band_id value = 3 } }
+				else_if = { limit = { has_variable = tot_band_4_created } set_variable = { name = tot_music_competition_band_id value = 4 } }
+				else_if = { limit = { has_variable = tot_band_5_created } set_variable = { name = tot_music_competition_band_id value = 5 } }
+			}
+			# Older saves selected a band without persisting the withdrawal target.
+			# Re-sync it once when the panel opens so cancellation always targets the
+			# highlighted band rather than a stale last selection.
+			if = { limit = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 1 } set_variable = { name = tot_music_competition_cancel_band_id value = 1 } }
+			if = { limit = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 2 } set_variable = { name = tot_music_competition_cancel_band_id value = 2 } }
+			if = { limit = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 3 } set_variable = { name = tot_music_competition_cancel_band_id value = 3 } }
+			if = { limit = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 4 } set_variable = { name = tot_music_competition_cancel_band_id value = 4 } }
+			if = { limit = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 5 } set_variable = { name = tot_music_competition_cancel_band_id value = 5 } }
+		# Upgrade already-registered saves made before first-round match lists existed.
+		if = {
+			limit = {
+				has_variable = tot_music_competition_registered
+				has_variable = tot_music_competition_round
+				var:tot_music_competition_round = 1
+			}
+			if = { limit = { NOT = { has_variable = tot_music_competition_stage } } set_variable = { name = tot_music_competition_stage value = 1 } }
+			tot_music_competition_build_field_effect = yes
+		}
+		# The field is rebuilt by registration/cancellation and phase transitions.
+		# Do not rebuild it just because the panel was opened again: that made a
+		# valid public roster look as if it had been reset.
+		# Rebuild the opening knockout seeds whenever an unplayed band final is opened.
+		# This also repairs finals created by the earlier, unseeded bracket code.
+		if = {
+			limit = {
+				has_variable = tot_music_competition_track
+				var:tot_music_competition_track = 1
+				has_variable = tot_music_competition_stage
+				var:tot_music_competition_stage = 2
+				has_variable = tot_music_competition_round
+				var:tot_music_competition_round = 0
+			}
+			tot_music_competition_build_qualified_band_field_effect = yes
+		}
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+
+tot_music_competition_select_idol_solo = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_music_competition_track value = 2 }
+		tot_music_competition_rebuild_idol_candidates_effect = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+
+tot_music_competition_select_band_1 = { scope = country effect = { set_variable = { name = tot_music_competition_track value = 1 } set_variable = { name = tot_music_competition_band_id value = 1 } set_variable = { name = tot_music_competition_cancel_band_id value = 1 } } is_shown = { has_variable = tot_band_1_created } is_valid = { always = yes } }
+tot_music_competition_select_band_2 = { scope = country effect = { set_variable = { name = tot_music_competition_track value = 1 } set_variable = { name = tot_music_competition_band_id value = 2 } set_variable = { name = tot_music_competition_cancel_band_id value = 2 } } is_shown = { has_variable = tot_band_2_created } is_valid = { always = yes } }
+tot_music_competition_select_band_3 = { scope = country effect = { set_variable = { name = tot_music_competition_track value = 1 } set_variable = { name = tot_music_competition_band_id value = 3 } set_variable = { name = tot_music_competition_cancel_band_id value = 3 } } is_shown = { has_variable = tot_band_3_created } is_valid = { always = yes } }
+tot_music_competition_select_band_4 = { scope = country effect = { set_variable = { name = tot_music_competition_track value = 1 } set_variable = { name = tot_music_competition_band_id value = 4 } set_variable = { name = tot_music_competition_cancel_band_id value = 4 } } is_shown = { has_variable = tot_band_4_created } is_valid = { always = yes } }
+tot_music_competition_select_band_5 = { scope = country effect = { set_variable = { name = tot_music_competition_track value = 1 } set_variable = { name = tot_music_competition_band_id value = 5 } set_variable = { name = tot_music_competition_cancel_band_id value = 5 } } is_shown = { has_variable = tot_band_5_created } is_valid = { always = yes } }
+
+tot_music_competition_band_1_selected = { scope = country effect = { } is_shown = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 1 } is_valid = { always = yes } }
+tot_music_competition_band_2_selected = { scope = country effect = { } is_shown = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 2 } is_valid = { always = yes } }
+tot_music_competition_band_3_selected = { scope = country effect = { } is_shown = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 3 } is_valid = { always = yes } }
+tot_music_competition_band_4_selected = { scope = country effect = { } is_shown = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 4 } is_valid = { always = yes } }
+tot_music_competition_band_5_selected = { scope = country effect = { } is_shown = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 5 } is_valid = { always = yes } }
+tot_music_competition_band_selected = { scope = country effect = { } is_shown = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 has_variable = tot_music_competition_band_id OR = { var:tot_music_competition_band_id = 1 var:tot_music_competition_band_id = 2 var:tot_music_competition_band_id = 3 var:tot_music_competition_band_id = 4 var:tot_music_competition_band_id = 5 } } is_valid = { always = yes } }
+
+tot_music_competition_band_ready = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			AND = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 1 has_variable = tot_band_1_created }
+			AND = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 2 has_variable = tot_band_2_created }
+			AND = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 3 has_variable = tot_band_3_created }
+			AND = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 4 has_variable = tot_band_4_created }
+			AND = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 5 has_variable = tot_band_5_created }
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_music_competition_refresh_idol_candidates = {
+	scope = country
+	effect = { tot_music_competition_rebuild_idol_candidates_effect = yes }
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+
+tot_music_competition_register_selected_band = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_music_competition_band_registration_count } } set_variable = { name = tot_music_competition_band_registration_count value = 0 } }
+		if = {
+			limit = {
+				OR = {
+					NOT = { has_variable = tot_music_competition_band_id }
+					AND = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 1 OR = { NOT = { has_variable = tot_band_1_created } has_variable = tot_music_competition_band_1_registered } }
+					AND = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 2 OR = { NOT = { has_variable = tot_band_2_created } has_variable = tot_music_competition_band_2_registered } }
+					AND = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 3 OR = { NOT = { has_variable = tot_band_3_created } has_variable = tot_music_competition_band_3_registered } }
+					AND = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 4 OR = { NOT = { has_variable = tot_band_4_created } has_variable = tot_music_competition_band_4_registered } }
+					AND = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 5 OR = { NOT = { has_variable = tot_band_5_created } has_variable = tot_music_competition_band_5_registered } }
+				}
+			}
+			remove_variable = tot_music_competition_band_id
+			if = { limit = { has_variable = tot_band_1_created NOT = { has_variable = tot_music_competition_band_1_registered } } set_variable = { name = tot_music_competition_band_id value = 1 } }
+			else_if = { limit = { has_variable = tot_band_2_created NOT = { has_variable = tot_music_competition_band_2_registered } } set_variable = { name = tot_music_competition_band_id value = 2 } }
+			else_if = { limit = { has_variable = tot_band_3_created NOT = { has_variable = tot_music_competition_band_3_registered } } set_variable = { name = tot_music_competition_band_id value = 3 } }
+			else_if = { limit = { has_variable = tot_band_4_created NOT = { has_variable = tot_music_competition_band_4_registered } } set_variable = { name = tot_music_competition_band_id value = 4 } }
+			else_if = { limit = { has_variable = tot_band_5_created NOT = { has_variable = tot_music_competition_band_5_registered } } set_variable = { name = tot_music_competition_band_id value = 5 } }
+		}
+		set_variable = { name = tot_music_competition_registered value = 1 }
+		if = { limit = { NOT = { has_variable = tot_music_competition_registration_open } } set_variable = { name = tot_music_competition_registration_open value = 1 } set_variable = { name = tot_music_competition_registration_months value = 0 } set_variable = { name = tot_music_competition_registration_deadline months = 12 } set_variable = { name = tot_music_competition_season_start_deadline months = 18 } set_variable = { name = tot_music_competition_registration_days_remaining value = 365 } tot_music_competition_schedule_ai_registration_effect = yes }
+		tot_music_competition_schedule_weekly_tick_effect = yes
+		if = { limit = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 1 NOT = { has_variable = tot_music_competition_band_1_registered } } set_variable = { name = tot_music_competition_band_1_registered value = 1 } }
+		if = { limit = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 2 NOT = { has_variable = tot_music_competition_band_2_registered } } set_variable = { name = tot_music_competition_band_2_registered value = 1 } }
+		if = { limit = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 3 NOT = { has_variable = tot_music_competition_band_3_registered } } set_variable = { name = tot_music_competition_band_3_registered value = 1 } }
+		if = { limit = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 4 NOT = { has_variable = tot_music_competition_band_4_registered } } set_variable = { name = tot_music_competition_band_4_registered value = 1 } }
+		if = { limit = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 5 NOT = { has_variable = tot_music_competition_band_5_registered } } set_variable = { name = tot_music_competition_band_5_registered value = 1 } }
+		if = { limit = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 1 } set_variable = { name = tot_music_competition_band_1_score value = 0 } }
+		if = { limit = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 2 } set_variable = { name = tot_music_competition_band_2_score value = 0 } }
+		if = { limit = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 3 } set_variable = { name = tot_music_competition_band_3_score value = 0 } }
+		if = { limit = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 4 } set_variable = { name = tot_music_competition_band_4_score value = 0 } }
+		if = { limit = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 5 } set_variable = { name = tot_music_competition_band_5_score value = 0 } }
+		change_variable = { name = tot_music_competition_band_registration_count add = 1 }
+		set_variable = { name = tot_music_competition_band_registered value = 1 }
+		set_variable = { name = tot_music_competition_registered value = 1 }
+		tot_music_competition_build_field_effect = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		has_variable = tot_music_competition_registration_open
+		NOT = { has_variable = tot_music_competition_stage }
+		NOT = { has_variable = tot_music_competition_completed }
+		OR = {
+			NOT = { has_variable = tot_music_competition_band_registration_count }
+			AND = { has_variable = tot_music_competition_band_registration_count var:tot_music_competition_band_registration_count < 3 }
+		}
+		OR = {
+			AND = { has_variable = tot_band_1_created NOT = { has_variable = tot_music_competition_band_1_registered } }
+			AND = { has_variable = tot_band_2_created NOT = { has_variable = tot_music_competition_band_2_registered } }
+			AND = { has_variable = tot_band_3_created NOT = { has_variable = tot_music_competition_band_3_registered } }
+			AND = { has_variable = tot_band_4_created NOT = { has_variable = tot_music_competition_band_4_registered } }
+			AND = { has_variable = tot_band_5_created NOT = { has_variable = tot_music_competition_band_5_registered } }
+		}
+	}
+}
+
+tot_music_competition_select_idol_representative = {
+	scope = character
+	effect = {
+		save_scope_as = tot_music_competition_selected_character
+		owner ?= { set_variable = { name = tot_music_competition_idol_representative value = scope:tot_music_competition_selected_character } }
+	}
+	is_shown = { is_character_alive = yes }
+	is_valid = {
+		is_character_alive = yes
+		is_historical = yes
+		owner ?= { is_player = yes }
+	}
+}
+
+tot_music_competition_has_idol_representative = {
+	scope = country
+	effect = { }
+	is_shown = {
+		has_variable = tot_music_competition_idol_representative
+		var:tot_music_competition_idol_representative ?= { is_character_alive = yes owner = root }
+	}
+	is_valid = { always = yes }
+}
+
+tot_music_competition_select_idol_group = {
+	scope = country
+	effect = {
+		set_variable = { name = tot_music_competition_track value = 3 }
+		tot_music_competition_rebuild_idol_candidates_effect = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+
+tot_music_competition_select_acting_solo = {
+	scope = country
+	effect = { set_variable = { name = tot_music_competition_track value = 4 } }
+	is_shown = { always = no }
+	is_valid = { always = no }
+}
+
+tot_music_competition_select_acting_group = {
+	scope = country
+	effect = { set_variable = { name = tot_music_competition_track value = 5 } }
+	is_shown = { always = no }
+	is_valid = { always = no }
+}
+
+tot_music_competition_track_1_selected = { scope = country effect = { } is_shown = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 } is_valid = { always = yes } }
+tot_music_competition_track_2_selected = { scope = country effect = { } is_shown = { has_variable = tot_music_competition_track var:tot_music_competition_track = 2 } is_valid = { always = yes } }
+tot_music_competition_track_3_selected = { scope = country effect = { } is_shown = { has_variable = tot_music_competition_track var:tot_music_competition_track = 3 } is_valid = { always = yes } }
+tot_music_competition_track_4_selected = { scope = country effect = { } is_shown = { has_variable = tot_music_competition_track var:tot_music_competition_track = 4 } is_valid = { always = yes } }
+tot_music_competition_track_5_selected = { scope = country effect = { } is_shown = { has_variable = tot_music_competition_track var:tot_music_competition_track = 5 } is_valid = { always = yes } }
+
+	tot_music_competition_register = {
+	scope = country
+	effect = {
+		if = { limit = { NOT = { has_variable = tot_music_competition_track } } set_variable = { name = tot_music_competition_track value = 1 } }
+		if = { limit = { has_variable = tot_music_competition_track OR = { var:tot_music_competition_track = 2 var:tot_music_competition_track = 3 } } tot_music_competition_rebuild_idol_candidates_effect = yes }
+		if = { limit = { NOT = { has_variable = tot_music_competition_band_registration_count } } set_variable = { name = tot_music_competition_band_registration_count value = 0 } }
+		if = {
+			limit = {
+				has_variable = tot_music_competition_track
+				var:tot_music_competition_track = 1
+				OR = {
+					NOT = { has_variable = tot_music_competition_band_id }
+					AND = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 1 NOT = { has_variable = tot_band_1_created } }
+					AND = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 2 NOT = { has_variable = tot_band_2_created } }
+					AND = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 3 NOT = { has_variable = tot_band_3_created } }
+					AND = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 4 NOT = { has_variable = tot_band_4_created } }
+					AND = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 5 NOT = { has_variable = tot_band_5_created } }
+				}
+			}
+			if = { limit = { has_variable = tot_band_1_created } set_variable = { name = tot_music_competition_band_id value = 1 } }
+			else_if = { limit = { has_variable = tot_band_2_created } set_variable = { name = tot_music_competition_band_id value = 2 } }
+			else_if = { limit = { has_variable = tot_band_3_created } set_variable = { name = tot_music_competition_band_id value = 3 } }
+			else_if = { limit = { has_variable = tot_band_4_created } set_variable = { name = tot_music_competition_band_id value = 4 } }
+			else_if = { limit = { has_variable = tot_band_5_created } set_variable = { name = tot_music_competition_band_id value = 5 } }
+		}
+		if = { limit = { has_variable = tot_music_competition_track has_variable = tot_music_competition_band_id var:tot_music_competition_track = 1 var:tot_music_competition_band_id = 1 } set_variable = { name = tot_music_competition_band_1_registered value = 1 } }
+		if = { limit = { has_variable = tot_music_competition_track has_variable = tot_music_competition_band_id var:tot_music_competition_track = 1 var:tot_music_competition_band_id = 2 } set_variable = { name = tot_music_competition_band_2_registered value = 1 } }
+		if = { limit = { has_variable = tot_music_competition_track has_variable = tot_music_competition_band_id var:tot_music_competition_track = 1 var:tot_music_competition_band_id = 3 } set_variable = { name = tot_music_competition_band_3_registered value = 1 } }
+		if = { limit = { has_variable = tot_music_competition_track has_variable = tot_music_competition_band_id var:tot_music_competition_track = 1 var:tot_music_competition_band_id = 4 } set_variable = { name = tot_music_competition_band_4_registered value = 1 } }
+		if = { limit = { has_variable = tot_music_competition_track has_variable = tot_music_competition_band_id var:tot_music_competition_track = 1 var:tot_music_competition_band_id = 5 } set_variable = { name = tot_music_competition_band_5_registered value = 1 } }
+		if = { limit = { has_variable = tot_music_competition_track has_variable = tot_music_competition_band_id var:tot_music_competition_track = 1 var:tot_music_competition_band_id = 1 } set_variable = { name = tot_music_competition_band_1_score value = 0 } }
+		if = { limit = { has_variable = tot_music_competition_track has_variable = tot_music_competition_band_id var:tot_music_competition_track = 1 var:tot_music_competition_band_id = 2 } set_variable = { name = tot_music_competition_band_2_score value = 0 } }
+		if = { limit = { has_variable = tot_music_competition_track has_variable = tot_music_competition_band_id var:tot_music_competition_track = 1 var:tot_music_competition_band_id = 3 } set_variable = { name = tot_music_competition_band_3_score value = 0 } }
+		if = { limit = { has_variable = tot_music_competition_track has_variable = tot_music_competition_band_id var:tot_music_competition_track = 1 var:tot_music_competition_band_id = 4 } set_variable = { name = tot_music_competition_band_4_score value = 0 } }
+		if = { limit = { has_variable = tot_music_competition_track has_variable = tot_music_competition_band_id var:tot_music_competition_track = 1 var:tot_music_competition_band_id = 5 } set_variable = { name = tot_music_competition_band_5_score value = 0 } }
+		if = { limit = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 } set_variable = { name = tot_music_competition_band_registered value = 1 } }
+		if = { limit = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 } change_variable = { name = tot_music_competition_band_registration_count add = 1 } }
+		if = { limit = { has_variable = tot_music_competition_track var:tot_music_competition_track = 2 } set_variable = { name = tot_music_competition_idol_solo_registered value = 1 } }
+		if = { limit = { has_variable = tot_music_competition_track var:tot_music_competition_track = 3 } set_variable = { name = tot_music_competition_idol_group_registered value = 1 } }
+		if = { limit = { has_variable = tot_music_competition_track var:tot_music_competition_track = 4 } set_variable = { name = tot_music_competition_acting_solo_registered value = 1 } }
+		if = { limit = { has_variable = tot_music_competition_track var:tot_music_competition_track = 5 } set_variable = { name = tot_music_competition_acting_group_registered value = 1 } }
+		set_variable = { name = tot_music_competition_registered value = 1 }
+		if = { limit = { NOT = { has_variable = tot_music_competition_registration_open } } set_variable = { name = tot_music_competition_registration_open value = 1 } set_variable = { name = tot_music_competition_registration_months value = 0 } set_variable = { name = tot_music_competition_registration_deadline months = 12 } set_variable = { name = tot_music_competition_season_start_deadline months = 18 } set_variable = { name = tot_music_competition_registration_days_remaining value = 365 } tot_music_competition_schedule_ai_registration_effect = yes }
+		tot_music_competition_schedule_weekly_tick_effect = yes
+		tot_music_competition_build_field_effect = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		NOT = { has_variable = tot_music_competition_registered }
+		has_variable = tot_music_competition_track
+		OR = {
+			AND = {
+				var:tot_music_competition_track = 1
+				OR = {
+					has_variable = tot_band_1_created
+					has_variable = tot_band_2_created
+					has_variable = tot_band_3_created
+					has_variable = tot_band_4_created
+					has_variable = tot_band_5_created
+				}
+			}
+			AND = { var:tot_music_competition_track = 2 has_variable = tot_music_competition_idol_representative }
+			AND = {
+				var:tot_music_competition_track = 3
+				has_variable = tot_music_competition_idol_candidate_count
+				var:tot_music_competition_idol_candidate_count >= 2
+			}
+			AND = { var:tot_music_competition_track = 4 }
+			AND = { var:tot_music_competition_track = 5 }
+		}
+	}
+}
+
+tot_music_competition_is_registered = {
+	scope = country
+	effect = { }
+	is_shown = {
+		OR = {
+			has_variable = tot_music_competition_band_registered
+			has_variable = tot_music_competition_idol_solo_registered
+			has_variable = tot_music_competition_idol_group_registered
+			has_variable = tot_music_competition_acting_solo_registered
+			has_variable = tot_music_competition_acting_group_registered
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_music_competition_registration_open = {
+	scope = country
+	effect = { }
+	is_shown = {
+		has_variable = tot_music_competition_registered
+		has_variable = tot_music_competition_registration_open
+		NOT = { has_variable = tot_music_competition_stage }
+	}
+	is_valid = { always = yes }
+}
+
+tot_music_competition_registration_deadline_active = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_music_competition_registration_open has_variable = tot_music_competition_registration_deadline has_variable = tot_music_competition_registration_days_remaining var:tot_music_competition_registration_days_remaining > 0 }
+	is_valid = { always = yes }
+}
+
+tot_music_competition_registration_closed = {
+	scope = country
+	effect = { }
+	is_shown = {
+		has_variable = tot_music_competition_registered
+		has_variable = tot_music_competition_registration_closed
+		NOT = { has_variable = tot_music_competition_stage }
+	}
+	is_valid = { always = yes }
+}
+
+tot_music_competition_preparation_open = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_music_competition_preparation_open NOT = { has_variable = tot_music_competition_stage } }
+	is_valid = { always = yes }
+}
+
+tot_music_competition_is_qualifying = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_music_competition_stage var:tot_music_competition_stage = 1 }
+	is_valid = { always = yes }
+}
+
+tot_music_competition_is_final = {
+	scope = country
+	effect = { }
+	is_shown = { has_variable = tot_music_competition_stage var:tot_music_competition_stage = 2 }
+	is_valid = { always = yes }
+}
+
+# Lets saves that reached the final before the score-seeding fix rebuild their
+# opening bracket. Lock it once the knockout phase has started.
+tot_music_competition_reseed_final = {
+	scope = country
+	effect = {
+		tot_music_competition_build_qualified_band_field_effect = yes
+	}
+	is_shown = {
+		is_player = yes
+		has_variable = tot_music_competition_stage
+		var:tot_music_competition_stage = 2
+		has_variable = tot_music_competition_track
+		var:tot_music_competition_track = 1
+	}
+	is_valid = {
+		is_player = yes
+		has_variable = tot_music_competition_stage
+		var:tot_music_competition_stage = 2
+		has_variable = tot_music_competition_round
+		var:tot_music_competition_round = 0
+	}
+}
+
+tot_music_competition_cancel = {
+	scope = country
+	effect = {
+		# Withdrawing is per entry. It must never reset the shared season or erase
+		# other countries' registrations.
+		if = { limit = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 has_variable = tot_music_competition_cancel_band_id var:tot_music_competition_cancel_band_id = 1 } remove_variable = tot_music_competition_band_1_registered remove_variable = tot_music_competition_band_1_score remove_variable = tot_music_competition_band_1_raw_score }
+		if = { limit = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 has_variable = tot_music_competition_cancel_band_id var:tot_music_competition_cancel_band_id = 2 } remove_variable = tot_music_competition_band_2_registered remove_variable = tot_music_competition_band_2_score remove_variable = tot_music_competition_band_2_raw_score }
+		if = { limit = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 has_variable = tot_music_competition_cancel_band_id var:tot_music_competition_cancel_band_id = 3 } remove_variable = tot_music_competition_band_3_registered remove_variable = tot_music_competition_band_3_score remove_variable = tot_music_competition_band_3_raw_score }
+		if = { limit = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 has_variable = tot_music_competition_cancel_band_id var:tot_music_competition_cancel_band_id = 4 } remove_variable = tot_music_competition_band_4_registered remove_variable = tot_music_competition_band_4_score remove_variable = tot_music_competition_band_4_raw_score }
+		if = { limit = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 has_variable = tot_music_competition_cancel_band_id var:tot_music_competition_cancel_band_id = 5 } remove_variable = tot_music_competition_band_5_registered remove_variable = tot_music_competition_band_5_score remove_variable = tot_music_competition_band_5_raw_score }
+		if = { limit = { has_variable = tot_music_competition_track var:tot_music_competition_track = 2 } remove_variable = tot_music_competition_idol_solo_registered remove_variable = tot_music_competition_idol_score remove_variable = tot_music_competition_idol_raw_score }
+		if = { limit = { has_variable = tot_music_competition_track var:tot_music_competition_track = 3 } remove_variable = tot_music_competition_idol_group_registered remove_variable = tot_music_competition_idol_group_score remove_variable = tot_music_competition_idol_group_raw_score }
+		if = { limit = { has_variable = tot_music_competition_track var:tot_music_competition_track = 4 } remove_variable = tot_music_competition_acting_solo_registered }
+		if = { limit = { has_variable = tot_music_competition_track var:tot_music_competition_track = 5 } remove_variable = tot_music_competition_acting_group_registered }
+		if = { limit = { has_variable = tot_music_competition_band_registration_count var:tot_music_competition_band_registration_count > 0 has_variable = tot_music_competition_track var:tot_music_competition_track = 1 } change_variable = { name = tot_music_competition_band_registration_count add = -1 } }
+		if = {
+			limit = {
+				NOT = { has_variable = tot_music_competition_band_1_registered }
+				NOT = { has_variable = tot_music_competition_band_2_registered }
+				NOT = { has_variable = tot_music_competition_band_3_registered }
+				NOT = { has_variable = tot_music_competition_band_4_registered }
+				NOT = { has_variable = tot_music_competition_band_5_registered }
+			}
+			remove_variable = tot_music_competition_band_registered
+		}
+		if = {
+			limit = {
+				NOT = { has_variable = tot_music_competition_band_registered }
+				NOT = { has_variable = tot_music_competition_idol_solo_registered }
+				NOT = { has_variable = tot_music_competition_idol_group_registered }
+				NOT = { has_variable = tot_music_competition_acting_solo_registered }
+				NOT = { has_variable = tot_music_competition_acting_group_registered }
+			}
+			remove_variable = tot_music_competition_registered
+		}
+		tot_music_competition_build_field_effect = yes
+
+		# Retained only as inactive save-era code. The old global reset made one
+		# country's withdrawal erase every participant.
+		if = { limit = { always = no }
+		remove_variable = tot_music_competition_registered
+		remove_variable = tot_music_competition_registration_open
+		remove_variable = tot_music_competition_registration_closed
+		remove_variable = tot_music_competition_registration_months
+		remove_variable = tot_music_competition_registration_deadline
+		remove_variable = tot_music_competition_season_start_deadline
+		remove_variable = tot_music_competition_preparation_open
+		remove_variable = tot_music_competition_preparation_months
+		remove_variable = tot_music_competition_preparation_deadline
+		remove_variable = tot_music_competition_qualifying_deadline
+		remove_variable = tot_music_competition_round
+		remove_variable = tot_music_competition_score
+		remove_variable = tot_music_competition_stage
+		remove_variable = tot_music_competition_qualified_slots
+		remove_variable = tot_music_competition_participants
+		remove_variable = tot_music_competition_completed
+		remove_variable = tot_music_competition_prize_money
+		remove_variable = tot_music_competition_band_id
+		remove_variable = tot_music_competition_band_registered
+		remove_variable = tot_music_competition_band_registration_count
+		remove_variable = tot_music_competition_band_1_registered
+		remove_variable = tot_music_competition_band_2_registered
+		remove_variable = tot_music_competition_band_3_registered
+		remove_variable = tot_music_competition_band_4_registered
+		remove_variable = tot_music_competition_band_5_registered
+		remove_variable = tot_music_competition_band_1_score
+		remove_variable = tot_music_competition_band_2_score
+		remove_variable = tot_music_competition_band_3_score
+		remove_variable = tot_music_competition_band_4_score
+		remove_variable = tot_music_competition_band_5_score
+		remove_variable = tot_music_competition_band_1_raw_score
+		remove_variable = tot_music_competition_band_2_raw_score
+		remove_variable = tot_music_competition_band_3_raw_score
+		remove_variable = tot_music_competition_band_4_raw_score
+		remove_variable = tot_music_competition_band_5_raw_score
+		remove_variable = tot_music_competition_band_1_performance
+		remove_variable = tot_music_competition_band_2_performance
+		remove_variable = tot_music_competition_band_3_performance
+		remove_variable = tot_music_competition_band_4_performance
+		remove_variable = tot_music_competition_band_5_performance
+		remove_variable = tot_music_competition_band_1_multiplier
+		remove_variable = tot_music_competition_band_2_multiplier
+		remove_variable = tot_music_competition_band_3_multiplier
+		remove_variable = tot_music_competition_band_4_multiplier
+		remove_variable = tot_music_competition_band_5_multiplier
+		remove_variable = tot_music_competition_band_1_mastery_bonus
+		remove_variable = tot_music_competition_band_2_mastery_bonus
+		remove_variable = tot_music_competition_band_3_mastery_bonus
+		remove_variable = tot_music_competition_band_4_mastery_bonus
+		remove_variable = tot_music_competition_band_5_mastery_bonus
+		remove_variable = tot_music_competition_idol_score
+		remove_variable = tot_music_competition_idol_raw_score
+		remove_variable = tot_music_competition_idol_performance
+		remove_variable = tot_music_competition_idol_multiplier
+		remove_variable = tot_music_competition_idol_group_score
+		remove_variable = tot_music_competition_idol_group_raw_score
+		remove_variable = tot_music_competition_idol_group_performance
+		remove_variable = tot_music_competition_idol_group_multiplier
+		remove_variable = tot_music_competition_idol_candidate_count
+		remove_variable = tot_music_competition_idol_representative
+		remove_variable = tot_music_competition_event_modifier
+		remove_variable = tot_music_competition_idol_solo_registered
+		remove_variable = tot_music_competition_idol_group_registered
+		remove_variable = tot_music_competition_acting_solo_registered
+		remove_variable = tot_music_competition_acting_group_registered
+		if = { limit = { has_variable_list = tot_music_competition_field } clear_variable_list = tot_music_competition_field }
+		if = { limit = { has_variable_list = tot_music_competition_band_1_field } clear_variable_list = tot_music_competition_band_1_field }
+		if = { limit = { has_variable_list = tot_music_competition_band_2_field } clear_variable_list = tot_music_competition_band_2_field }
+		if = { limit = { has_variable_list = tot_music_competition_band_3_field } clear_variable_list = tot_music_competition_band_3_field }
+		if = { limit = { has_variable_list = tot_music_competition_band_4_field } clear_variable_list = tot_music_competition_band_4_field }
+		if = { limit = { has_variable_list = tot_music_competition_band_5_field } clear_variable_list = tot_music_competition_band_5_field }
+		if = { limit = { has_variable_list = tot_music_competition_match_01 } clear_variable_list = tot_music_competition_match_01 }
+		if = { limit = { has_variable_list = tot_music_competition_match_02 } clear_variable_list = tot_music_competition_match_02 }
+		if = { limit = { has_variable_list = tot_music_competition_match_03 } clear_variable_list = tot_music_competition_match_03 }
+		if = { limit = { has_variable_list = tot_music_competition_match_04 } clear_variable_list = tot_music_competition_match_04 }
+		if = { limit = { has_variable_list = tot_music_competition_match_05 } clear_variable_list = tot_music_competition_match_05 }
+		if = { limit = { has_variable_list = tot_music_competition_match_06 } clear_variable_list = tot_music_competition_match_06 }
+		if = { limit = { has_variable_list = tot_music_competition_match_07 } clear_variable_list = tot_music_competition_match_07 }
+		if = { limit = { has_variable_list = tot_music_competition_match_08 } clear_variable_list = tot_music_competition_match_08 }
+		if = { limit = { has_variable_list = tot_music_competition_qualified_idol_field } clear_variable_list = tot_music_competition_qualified_idol_field }
+		if = { limit = { has_variable_list = tot_music_competition_idol_candidates } clear_variable_list = tot_music_competition_idol_candidates }
+		every_country = {
+			remove_variable = tot_music_competition_band_registered
+			remove_variable = tot_music_competition_band_registration_count
+			remove_variable = tot_music_competition_band_1_registered
+			remove_variable = tot_music_competition_band_2_registered
+			remove_variable = tot_music_competition_band_3_registered
+			remove_variable = tot_music_competition_band_4_registered
+			remove_variable = tot_music_competition_band_5_registered
+			remove_variable = tot_music_competition_band_1_score
+			remove_variable = tot_music_competition_band_2_score
+			remove_variable = tot_music_competition_band_3_score
+			remove_variable = tot_music_competition_band_4_score
+			remove_variable = tot_music_competition_band_5_score
+			remove_variable = tot_music_competition_band_1_raw_score
+			remove_variable = tot_music_competition_band_2_raw_score
+			remove_variable = tot_music_competition_band_3_raw_score
+			remove_variable = tot_music_competition_band_4_raw_score
+			remove_variable = tot_music_competition_band_5_raw_score
+			remove_variable = tot_music_competition_band_1_performance
+			remove_variable = tot_music_competition_band_2_performance
+			remove_variable = tot_music_competition_band_3_performance
+			remove_variable = tot_music_competition_band_4_performance
+			remove_variable = tot_music_competition_band_5_performance
+			remove_variable = tot_music_competition_band_1_multiplier
+			remove_variable = tot_music_competition_band_2_multiplier
+			remove_variable = tot_music_competition_band_3_multiplier
+			remove_variable = tot_music_competition_band_4_multiplier
+			remove_variable = tot_music_competition_band_5_multiplier
+			remove_variable = tot_music_competition_band_1_mastery_bonus
+			remove_variable = tot_music_competition_band_2_mastery_bonus
+			remove_variable = tot_music_competition_band_3_mastery_bonus
+			remove_variable = tot_music_competition_band_4_mastery_bonus
+			remove_variable = tot_music_competition_band_5_mastery_bonus
+			remove_variable = tot_music_competition_idol_qualified
+			remove_variable = tot_music_competition_idol_score
+			remove_variable = tot_music_competition_idol_raw_score
+			remove_variable = tot_music_competition_idol_group_score
+			remove_variable = tot_music_competition_idol_group_raw_score
+			remove_variable = tot_music_competition_event_modifier
+			if = { limit = { has_variable_list = tot_music_competition_idol_candidates } clear_variable_list = tot_music_competition_idol_candidates }
+		}
+		}
+	}
+	is_shown = { is_player = yes has_variable = tot_music_competition_registered has_variable = tot_music_competition_registration_open has_variable = tot_music_competition_registration_days_remaining var:tot_music_competition_registration_days_remaining > 0 NOT = { has_variable = tot_music_competition_stage } }
+	is_valid = {
+		is_player = yes
+		has_variable = tot_music_competition_registered
+		has_variable = tot_music_competition_registration_open
+		has_variable = tot_music_competition_registration_days_remaining
+		var:tot_music_competition_registration_days_remaining > 0
+		NOT = { has_variable = tot_music_competition_stage }
+		OR = {
+			AND = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 has_variable = tot_music_competition_cancel_band_id var:tot_music_competition_cancel_band_id = 1 has_variable = tot_music_competition_band_1_registered }
+			AND = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 has_variable = tot_music_competition_cancel_band_id var:tot_music_competition_cancel_band_id = 2 has_variable = tot_music_competition_band_2_registered }
+			AND = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 has_variable = tot_music_competition_cancel_band_id var:tot_music_competition_cancel_band_id = 3 has_variable = tot_music_competition_band_3_registered }
+			AND = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 has_variable = tot_music_competition_cancel_band_id var:tot_music_competition_cancel_band_id = 4 has_variable = tot_music_competition_band_4_registered }
+			AND = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 has_variable = tot_music_competition_cancel_band_id var:tot_music_competition_cancel_band_id = 5 has_variable = tot_music_competition_band_5_registered }
+			AND = { has_variable = tot_music_competition_track var:tot_music_competition_track = 2 has_variable = tot_music_competition_idol_solo_registered }
+			AND = { has_variable = tot_music_competition_track var:tot_music_competition_track = 3 has_variable = tot_music_competition_idol_group_registered }
+			AND = { has_variable = tot_music_competition_track var:tot_music_competition_track = 4 has_variable = tot_music_competition_acting_solo_registered }
+			AND = { has_variable = tot_music_competition_track var:tot_music_competition_track = 5 has_variable = tot_music_competition_acting_group_registered }
+		}
+	}
+}

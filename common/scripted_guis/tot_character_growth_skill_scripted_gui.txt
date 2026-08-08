@@ -1,0 +1,270 @@
+tot_character_growth_select_progress_character = {
+	scope = character
+	effect = {
+		owner ?= {
+			set_variable = { name = tot_character_growth_selected_progress_character value = prev }
+		}
+	}
+	is_shown = { is_character_alive = yes historical = yes owner ?= { is_player = yes } }
+	is_valid = { is_character_alive = yes historical = yes owner ?= { is_player = yes } }
+}
+
+tot_character_growth_has_selected_progress_character = {
+	scope = country
+	effect = {}
+	is_shown = {
+		has_variable = tot_character_growth_selected_progress_character
+		var:tot_character_growth_selected_progress_character ?= { is_character_alive = yes }
+	}
+	is_valid = {
+		has_variable = tot_character_growth_selected_progress_character
+		var:tot_character_growth_selected_progress_character ?= { is_character_alive = yes }
+	}
+}
+
+tot_character_growth_upgrade_guitarist = {
+	scope = character
+	effect = {
+		change_variable = { name = tot_character_growth_skill_points add = -1 }
+		if = { limit = { NOT = { has_variable = tot_character_growth_guitarist_mastery } } set_variable = { name = tot_character_growth_guitarist_mastery value = 1 } }
+		else = { change_variable = { name = tot_character_growth_guitarist_mastery add = 1 } }
+	}
+	is_shown = { OR = { has_trait = tot_guitarist_trait has_trait = tot_is_guitarist_trait } }
+	is_valid = {
+		OR = { has_trait = tot_guitarist_trait has_trait = tot_is_guitarist_trait }
+		has_variable = tot_character_growth_skill_points
+		var:tot_character_growth_skill_points >= 1
+		OR = { NOT = { has_variable = tot_character_growth_guitarist_mastery } var:tot_character_growth_guitarist_mastery < 5 }
+	}
+}
+tot_character_growth_upgrade_bassist = {
+	scope = character
+	effect = {
+		change_variable = { name = tot_character_growth_skill_points add = -1 }
+		if = { limit = { NOT = { has_variable = tot_character_growth_bassist_mastery } } set_variable = { name = tot_character_growth_bassist_mastery value = 1 } }
+		else = { change_variable = { name = tot_character_growth_bassist_mastery add = 1 } }
+	}
+	is_shown = { OR = { has_trait = tot_bassist_trait has_trait = tot_is_bassist_trait } }
+	is_valid = {
+		OR = { has_trait = tot_bassist_trait has_trait = tot_is_bassist_trait }
+		has_variable = tot_character_growth_skill_points
+		var:tot_character_growth_skill_points >= 1
+		OR = { NOT = { has_variable = tot_character_growth_bassist_mastery } var:tot_character_growth_bassist_mastery < 5 }
+	}
+}
+tot_character_growth_upgrade_keyboardist = {
+	scope = character
+	effect = {
+		change_variable = { name = tot_character_growth_skill_points add = -1 }
+		if = { limit = { NOT = { has_variable = tot_character_growth_keyboardist_mastery } } set_variable = { name = tot_character_growth_keyboardist_mastery value = 1 } }
+		else = { change_variable = { name = tot_character_growth_keyboardist_mastery add = 1 } }
+	}
+	is_shown = { OR = { has_trait = tot_keyboardist_trait has_trait = tot_is_keyboardist_trait } }
+	is_valid = {
+		OR = { has_trait = tot_keyboardist_trait has_trait = tot_is_keyboardist_trait }
+		has_variable = tot_character_growth_skill_points
+		var:tot_character_growth_skill_points >= 1
+		OR = { NOT = { has_variable = tot_character_growth_keyboardist_mastery } var:tot_character_growth_keyboardist_mastery < 5 }
+	}
+}
+tot_character_growth_upgrade_dj = {
+	scope = character
+	effect = {
+		change_variable = { name = tot_character_growth_skill_points add = -1 }
+		if = { limit = { NOT = { has_variable = tot_character_growth_dj_mastery } } set_variable = { name = tot_character_growth_dj_mastery value = 1 } }
+		else = { change_variable = { name = tot_character_growth_dj_mastery add = 1 } }
+	}
+	is_shown = { OR = { has_trait = tot_dj_trait has_trait = tot_is_dj_trait } }
+	is_valid = {
+		OR = { has_trait = tot_dj_trait has_trait = tot_is_dj_trait }
+		has_variable = tot_character_growth_skill_points
+		var:tot_character_growth_skill_points >= 1
+		OR = { NOT = { has_variable = tot_character_growth_dj_mastery } var:tot_character_growth_dj_mastery < 5 }
+	}
+}
+tot_character_growth_upgrade_drummer = {
+	scope = character
+	effect = {
+		change_variable = { name = tot_character_growth_skill_points add = -1 }
+		if = { limit = { NOT = { has_variable = tot_character_growth_drummer_mastery } } set_variable = { name = tot_character_growth_drummer_mastery value = 1 } }
+		else = { change_variable = { name = tot_character_growth_drummer_mastery add = 1 } }
+	}
+	is_shown = { OR = { has_trait = tot_drummer_trait has_trait = tot_is_drummer_trait } }
+	is_valid = {
+		OR = { has_trait = tot_drummer_trait has_trait = tot_is_drummer_trait }
+		has_variable = tot_character_growth_skill_points
+		var:tot_character_growth_skill_points >= 1
+		OR = { NOT = { has_variable = tot_character_growth_drummer_mastery } var:tot_character_growth_drummer_mastery < 5 }
+	}
+}
+tot_character_growth_upgrade_vocalist = {
+	scope = character
+	effect = {
+		change_variable = { name = tot_character_growth_skill_points add = -1 }
+		if = { limit = { NOT = { has_variable = tot_character_growth_vocalist_mastery } } set_variable = { name = tot_character_growth_vocalist_mastery value = 1 } }
+		else = { change_variable = { name = tot_character_growth_vocalist_mastery add = 1 } }
+	}
+	is_shown = { OR = { has_trait = tot_lead_vocalist_trait has_trait = tot_is_lead_vocalist_trait has_trait = tot_is_supper_lead_vocalist_trait } }
+	is_valid = {
+		OR = { has_trait = tot_lead_vocalist_trait has_trait = tot_is_lead_vocalist_trait has_trait = tot_is_supper_lead_vocalist_trait }
+		has_variable = tot_character_growth_skill_points
+		var:tot_character_growth_skill_points >= 1
+		OR = { NOT = { has_variable = tot_character_growth_vocalist_mastery } var:tot_character_growth_vocalist_mastery < 5 }
+	}
+}
+
+tot_character_growth_buy_random_trait = {
+	scope = character
+	effect = {
+		change_variable = { name = tot_character_growth_skill_points add = -2 }
+		tot_character_growth_grant_random_kizuna_trait = yes
+		owner ?= { update_kizuna = yes }
+	}
+	is_shown = { is_character_alive = yes historical = yes owner ?= { is_player = yes } }
+	is_valid = {
+		is_character_alive = yes
+		historical = yes
+		owner ?= { is_player = yes }
+		has_variable = tot_character_growth_skill_points
+		var:tot_character_growth_skill_points >= 2
+		tot_character_growth_has_available_random_trait = yes
+	}
+}
+
+tot_special_units_guard_available = {
+	scope = country
+	effect = {}
+	is_shown = { has_law = law_type:law_idol_guard_army }
+	is_valid = { has_law = law_type:law_idol_guard_army }
+}
+
+tot_special_units_knight_available = {
+	scope = country
+	effect = {}
+	is_shown = { has_law = law_type:law_idol_guard_army }
+	is_valid = { has_law = law_type:law_idol_guard_army }
+}
+
+tot_special_units_select_guard = {
+	scope = country
+	effect = { set_variable = { name = tot_special_units_selected_type value = 1 } }
+	is_shown = { has_law = law_type:law_idol_guard_army }
+	is_valid = { has_law = law_type:law_idol_guard_army }
+}
+
+tot_special_units_select_knight = {
+	scope = country
+	effect = { set_variable = { name = tot_special_units_selected_type value = 2 } }
+	is_shown = { has_law = law_type:law_idol_guard_army }
+	is_valid = { has_law = law_type:law_idol_guard_army }
+}
+
+tot_special_units_guard_selected = {
+	scope = country
+	effect = {}
+	is_shown = {
+		has_law = law_type:law_idol_guard_army
+		OR = {
+			NOT = { has_variable = tot_special_units_selected_type }
+			var:tot_special_units_selected_type = 1
+		}
+	}
+	is_valid = { always = yes }
+}
+
+tot_special_units_knight_selected = {
+	scope = country
+	effect = {}
+	is_shown = {
+		has_law = law_type:law_idol_guard_army
+		has_variable = tot_special_units_selected_type
+		var:tot_special_units_selected_type = 2
+	}
+	is_valid = { always = yes }
+}
+
+tot_special_units_recruit_guard = {
+	scope = country
+	effect = { tot_special_units_recruit_guard_effect = { VALUE = 1 } }
+	is_shown = { has_law = law_type:law_idol_guard_army }
+	is_valid = {
+		has_law = law_type:law_idol_guard_army
+		custom_tooltip = {
+			text = TOT_SPECIAL_UNITS_RECRUIT_GUARD_CAPACITY
+			tot_idol_guard_unit_free_capacity >= 1
+		}
+	}
+}
+
+tot_special_units_recruit_guard_5 = {
+	scope = country
+	effect = { tot_special_units_recruit_guard_effect = { VALUE = 5 } }
+	is_shown = { has_law = law_type:law_idol_guard_army }
+	is_valid = {
+		has_law = law_type:law_idol_guard_army
+		custom_tooltip = { text = TOT_SPECIAL_UNITS_RECRUIT_GUARD_5_CAPACITY tot_idol_guard_unit_free_capacity >= 5 }
+	}
+}
+
+tot_special_units_recruit_guard_10 = {
+	scope = country
+	effect = { tot_special_units_recruit_guard_effect = { VALUE = 10 } }
+	is_shown = { has_law = law_type:law_idol_guard_army }
+	is_valid = {
+		has_law = law_type:law_idol_guard_army
+		custom_tooltip = { text = TOT_SPECIAL_UNITS_RECRUIT_GUARD_10_CAPACITY tot_idol_guard_unit_free_capacity >= 10 }
+	}
+}
+
+tot_special_units_recruit_guard_max = {
+	scope = country
+	effect = { tot_special_units_recruit_guard_to_capacity_effect = yes }
+	is_shown = { has_law = law_type:law_idol_guard_army }
+	is_valid = {
+		has_law = law_type:law_idol_guard_army
+		custom_tooltip = { text = TOT_SPECIAL_UNITS_RECRUIT_GUARD_CAPACITY tot_idol_guard_unit_free_capacity >= 1 }
+	}
+}
+
+tot_special_units_recruit_knight = {
+	scope = country
+	effect = { tot_special_units_recruit_knight_effect = { VALUE = 1 } }
+	is_shown = { has_law = law_type:law_idol_guard_army }
+	is_valid = {
+		has_law = law_type:law_idol_guard_army
+		custom_tooltip = {
+			text = TOT_SPECIAL_UNITS_RECRUIT_KNIGHT_CAPACITY
+			tot_idol_knight_unit_free_capacity >= 1
+		}
+	}
+}
+
+tot_special_units_recruit_knight_5 = {
+	scope = country
+	effect = { tot_special_units_recruit_knight_effect = { VALUE = 5 } }
+	is_shown = { has_law = law_type:law_idol_guard_army }
+	is_valid = {
+		has_law = law_type:law_idol_guard_army
+		custom_tooltip = { text = TOT_SPECIAL_UNITS_RECRUIT_KNIGHT_5_CAPACITY tot_idol_knight_unit_free_capacity >= 5 }
+	}
+}
+
+tot_special_units_recruit_knight_10 = {
+	scope = country
+	effect = { tot_special_units_recruit_knight_effect = { VALUE = 10 } }
+	is_shown = { has_law = law_type:law_idol_guard_army }
+	is_valid = {
+		has_law = law_type:law_idol_guard_army
+		custom_tooltip = { text = TOT_SPECIAL_UNITS_RECRUIT_KNIGHT_10_CAPACITY tot_idol_knight_unit_free_capacity >= 10 }
+	}
+}
+
+tot_special_units_recruit_knight_max = {
+	scope = country
+	effect = { tot_special_units_recruit_knight_to_capacity_effect = yes }
+	is_shown = { has_law = law_type:law_idol_guard_army }
+	is_valid = {
+		has_law = law_type:law_idol_guard_army
+		custom_tooltip = { text = TOT_SPECIAL_UNITS_RECRUIT_KNIGHT_CAPACITY tot_idol_knight_unit_free_capacity >= 1 }
+	}
+}

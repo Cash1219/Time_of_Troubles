@@ -20,12 +20,6 @@ update_kizuna = {
 	if = { limit = { NOT = { has_variable = tot_band_10_selected_role } } set_variable = { name = tot_band_10_selected_role value = 1 } }
     if = {
         limit = {
-            has_variable_list = kon_kizuna_list
-        }
-        clear_variable_list = kon_kizuna_list
-    }
-    if = {
-        limit = {
             has_variable_list = band_kizuna_list
         }
         clear_variable_list = band_kizuna_list
@@ -36,14 +30,28 @@ update_kizuna = {
 		tot_assign_unbound_band_hq_slots_effect = yes
 		# Starting line-ups are initialized once during campaign setup, never during
 		# a player refresh. A player may freely replace every original member.
-		update_kon_kizuna = yes
 		update_band_kizuna = yes
+		tot_migrate_legacy_kon_kizuna_effect = yes
 		update_tot_kizuna_groups = yes
 		update_tot_kizuna_profession_specialty_groups = yes
 		update_tot_kizuna_faction_default_modifiers = yes
 		update_tot_kizuna_faction_stacked_modifiers = yes
 		tot_sync_investment_buy_orders = yes
 		tot_band_recalculate_reward_points_total = yes
+}
+
+# One-time save migration after retiring the bespoke K-ON bond effects.
+tot_migrate_legacy_kon_kizuna_effect = {
+	if = {
+		limit = { NOT = { has_variable = tot_legacy_kon_kizuna_migrated } }
+		remove_modifier = kon_kizuna_modifier_1
+		remove_modifier = kon_kizuna_modifier_2
+		remove_modifier = kon_kizuna_modifier_3
+		remove_modifier = kon_kizuna_modifier_4
+		remove_modifier = kon_kizuna_modifier_5
+		remove_modifier = kon_kizuna_modifier_6
+		set_variable = { name = tot_legacy_kon_kizuna_migrated value = 1 }
+	}
 }
 
 tot_band_clear_annex_inherit_temp_effect = {
@@ -3663,6 +3671,10 @@ update_tot_kizuna_groups = {
 		clear_variable_list = tot_kizuna_010_list
 	}
 	if = {
+		limit = { has_variable_list = tot_kizuna_011_list }
+		clear_variable_list = tot_kizuna_011_list
+	}
+	if = {
 		limit = { has_variable_list = tot_kizuna_012_list }
 		clear_variable_list = tot_kizuna_012_list
 	}
@@ -3975,6 +3987,18 @@ update_tot_kizuna_groups = {
 		root = {
 			add_to_variable_list = {
 				name = tot_kizuna_010_list
+				target = prev
+			}
+		}
+	}
+	every_scope_character = {
+		limit = {
+			has_trait = tot_group_sheet_011_trait
+			is_character_alive = yes
+		}
+		root = {
+			add_to_variable_list = {
+				name = tot_kizuna_011_list
 				target = prev
 			}
 		}
@@ -5024,6 +5048,7 @@ update_tot_kizuna_faction_default_modifiers = {
 				tot_kizuna_008_number >= 2
 				tot_kizuna_009_number >= 2
 				tot_kizuna_010_number >= 2
+				tot_kizuna_011_number >= 2
 				tot_kizuna_012_number >= 2
 				tot_kizuna_013_number >= 2
 				tot_kizuna_014_number >= 2
@@ -5077,6 +5102,7 @@ update_tot_kizuna_faction_default_modifiers = {
 				tot_kizuna_008_number >= 3
 				tot_kizuna_009_number >= 3
 				tot_kizuna_010_number >= 3
+				tot_kizuna_011_number >= 3
 				tot_kizuna_012_number >= 3
 				tot_kizuna_013_number >= 3
 				tot_kizuna_014_number >= 3
@@ -5130,6 +5156,7 @@ update_tot_kizuna_faction_default_modifiers = {
 				tot_kizuna_008_number >= 4
 				tot_kizuna_009_number >= 4
 				tot_kizuna_010_number >= 4
+				tot_kizuna_011_number >= 4
 				tot_kizuna_012_number >= 4
 				tot_kizuna_013_number >= 4
 				tot_kizuna_014_number >= 4
@@ -5183,6 +5210,7 @@ update_tot_kizuna_faction_default_modifiers = {
 				tot_kizuna_008_number >= 5
 				tot_kizuna_009_number >= 5
 				tot_kizuna_010_number >= 5
+				tot_kizuna_011_number >= 5
 				tot_kizuna_012_number >= 5
 				tot_kizuna_013_number >= 5
 				tot_kizuna_014_number >= 5
@@ -5264,43 +5292,33 @@ tot_band_monthly_update = {
 	if = { limit = { var:tot_band_limit >= 1 NOT = { has_variable = tot_band_1_creative_progress } } set_variable = { name = tot_band_1_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 1 NOT = { has_variable = tot_band_1_creation_progress } } set_variable = { name = tot_band_1_creation_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 1 has_variable = tot_band_1_created has_variable_list = tot_band_1_hq_buildings } change_variable = { name = tot_band_1_creative_progress add = { value = band_1_kizuna_creation_weekly_gain_value multiply = 4 } } }
-	if = { limit = { var:tot_band_limit >= 1 has_variable = tot_band_1_created has_variable_list = tot_band_1_hq_buildings } change_variable = { name = tot_band_1_creation_progress add = { value = band_1_kizuna_creation_weekly_gain_value multiply = 4 } } }
 	if = { limit = { var:tot_band_limit >= 2 NOT = { has_variable = tot_band_2_creative_progress } } set_variable = { name = tot_band_2_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 2 NOT = { has_variable = tot_band_2_creation_progress } } set_variable = { name = tot_band_2_creation_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 2 has_variable = tot_band_2_created has_variable_list = tot_band_2_hq_buildings } change_variable = { name = tot_band_2_creative_progress add = { value = band_2_kizuna_creation_weekly_gain_value multiply = 4 } } }
-	if = { limit = { var:tot_band_limit >= 2 has_variable = tot_band_2_created has_variable_list = tot_band_2_hq_buildings } change_variable = { name = tot_band_2_creation_progress add = { value = band_2_kizuna_creation_weekly_gain_value multiply = 4 } } }
 	if = { limit = { var:tot_band_limit >= 3 NOT = { has_variable = tot_band_3_creative_progress } } set_variable = { name = tot_band_3_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 3 NOT = { has_variable = tot_band_3_creation_progress } } set_variable = { name = tot_band_3_creation_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 3 has_variable = tot_band_3_created has_variable_list = tot_band_3_hq_buildings } change_variable = { name = tot_band_3_creative_progress add = { value = band_3_kizuna_creation_weekly_gain_value multiply = 4 } } }
-	if = { limit = { var:tot_band_limit >= 3 has_variable = tot_band_3_created has_variable_list = tot_band_3_hq_buildings } change_variable = { name = tot_band_3_creation_progress add = { value = band_3_kizuna_creation_weekly_gain_value multiply = 4 } } }
 	if = { limit = { var:tot_band_limit >= 4 NOT = { has_variable = tot_band_4_creative_progress } } set_variable = { name = tot_band_4_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 4 NOT = { has_variable = tot_band_4_creation_progress } } set_variable = { name = tot_band_4_creation_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 4 has_variable = tot_band_4_created has_variable_list = tot_band_4_hq_buildings } change_variable = { name = tot_band_4_creative_progress add = { value = band_4_kizuna_creation_weekly_gain_value multiply = 4 } } }
-	if = { limit = { var:tot_band_limit >= 4 has_variable = tot_band_4_created has_variable_list = tot_band_4_hq_buildings } change_variable = { name = tot_band_4_creation_progress add = { value = band_4_kizuna_creation_weekly_gain_value multiply = 4 } } }
 	if = { limit = { var:tot_band_limit >= 5 NOT = { has_variable = tot_band_5_creative_progress } } set_variable = { name = tot_band_5_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 5 NOT = { has_variable = tot_band_5_creation_progress } } set_variable = { name = tot_band_5_creation_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 5 has_variable = tot_band_5_created has_variable_list = tot_band_5_hq_buildings } change_variable = { name = tot_band_5_creative_progress add = { value = band_5_kizuna_creation_weekly_gain_value multiply = 4 } } }
-	if = { limit = { var:tot_band_limit >= 5 has_variable = tot_band_5_created has_variable_list = tot_band_5_hq_buildings } change_variable = { name = tot_band_5_creation_progress add = { value = band_5_kizuna_creation_weekly_gain_value multiply = 4 } } }
 	if = { limit = { var:tot_band_limit >= 6 NOT = { has_variable = tot_band_6_creative_progress } } set_variable = { name = tot_band_6_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 6 NOT = { has_variable = tot_band_6_creation_progress } } set_variable = { name = tot_band_6_creation_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 6 has_variable = tot_band_6_created has_variable_list = tot_band_6_hq_buildings } change_variable = { name = tot_band_6_creative_progress add = { value = band_6_kizuna_creation_weekly_gain_value multiply = 4 } } }
-	if = { limit = { var:tot_band_limit >= 6 has_variable = tot_band_6_created has_variable_list = tot_band_6_hq_buildings } change_variable = { name = tot_band_6_creation_progress add = { value = band_6_kizuna_creation_weekly_gain_value multiply = 4 } } }
 	if = { limit = { var:tot_band_limit >= 7 NOT = { has_variable = tot_band_7_creative_progress } } set_variable = { name = tot_band_7_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 7 NOT = { has_variable = tot_band_7_creation_progress } } set_variable = { name = tot_band_7_creation_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 7 has_variable = tot_band_7_created has_variable_list = tot_band_7_hq_buildings } change_variable = { name = tot_band_7_creative_progress add = { value = band_7_kizuna_creation_weekly_gain_value multiply = 4 } } }
-	if = { limit = { var:tot_band_limit >= 7 has_variable = tot_band_7_created has_variable_list = tot_band_7_hq_buildings } change_variable = { name = tot_band_7_creation_progress add = { value = band_7_kizuna_creation_weekly_gain_value multiply = 4 } } }
 	if = { limit = { var:tot_band_limit >= 8 NOT = { has_variable = tot_band_8_creative_progress } } set_variable = { name = tot_band_8_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 8 NOT = { has_variable = tot_band_8_creation_progress } } set_variable = { name = tot_band_8_creation_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 8 has_variable = tot_band_8_created has_variable_list = tot_band_8_hq_buildings } change_variable = { name = tot_band_8_creative_progress add = { value = band_8_kizuna_creation_weekly_gain_value multiply = 4 } } }
-	if = { limit = { var:tot_band_limit >= 8 has_variable = tot_band_8_created has_variable_list = tot_band_8_hq_buildings } change_variable = { name = tot_band_8_creation_progress add = { value = band_8_kizuna_creation_weekly_gain_value multiply = 4 } } }
 	if = { limit = { var:tot_band_limit >= 9 NOT = { has_variable = tot_band_9_creative_progress } } set_variable = { name = tot_band_9_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 9 NOT = { has_variable = tot_band_9_creation_progress } } set_variable = { name = tot_band_9_creation_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 9 has_variable = tot_band_9_created has_variable_list = tot_band_9_hq_buildings } change_variable = { name = tot_band_9_creative_progress add = { value = band_9_kizuna_creation_weekly_gain_value multiply = 4 } } }
-	if = { limit = { var:tot_band_limit >= 9 has_variable = tot_band_9_created has_variable_list = tot_band_9_hq_buildings } change_variable = { name = tot_band_9_creation_progress add = { value = band_9_kizuna_creation_weekly_gain_value multiply = 4 } } }
 	if = { limit = { var:tot_band_limit >= 10 NOT = { has_variable = tot_band_10_creative_progress } } set_variable = { name = tot_band_10_creative_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 10 NOT = { has_variable = tot_band_10_creation_progress } } set_variable = { name = tot_band_10_creation_progress value = 0 } }
 	if = { limit = { var:tot_band_limit >= 10 has_variable = tot_band_10_created has_variable_list = tot_band_10_hq_buildings } change_variable = { name = tot_band_10_creative_progress add = { value = band_10_kizuna_creation_weekly_gain_value multiply = 4 } } }
-	if = { limit = { var:tot_band_limit >= 10 has_variable = tot_band_10_created has_variable_list = tot_band_10_hq_buildings } change_variable = { name = tot_band_10_creation_progress add = { value = band_10_kizuna_creation_weekly_gain_value multiply = 4 } } }
 	if = { limit = { var:tot_band_limit >= 1 } tot_band_process_creative_event_1 = yes }
 	if = { limit = { var:tot_band_limit >= 2 } tot_band_process_creative_event_2 = yes }
 	if = { limit = { var:tot_band_limit >= 3 } tot_band_process_creative_event_3 = yes }

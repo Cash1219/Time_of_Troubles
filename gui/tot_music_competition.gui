@@ -1,0 +1,1423 @@
+﻿types tot_music_competition_types
+{
+	type tot_music_competition_country_entry = widget {
+		datacontext = "[Scope.GetCountry]"
+		size = { 220 14 }
+		hbox = {
+			margin = { 2 0 }
+			spacing = 8
+			small_flag_no_interact = { parentanchor = vcenter blockoverride "tooltip" {} }
+			textbox = { size = { 190 14 } raw_text = "[Country.GetNameNoFormatting]" using = fontsize_very_small align = left|nobaseline elide = right }
+		}
+	}
+
+	type tot_music_competition_idol_solo_entry = widget {
+		datacontext = "[Scope.GetCountry]"
+		size = { 244 30 }
+		using = entry_bg_simple
+		hbox = {
+			margin = { 4 3 }
+			spacing = 10
+			small_flag_no_interact = { parentanchor = vcenter blockoverride "tooltip" {} }
+			vbox = {
+				size = { 202 24 }
+				textbox = { size = { 202 12 } raw_text = "[Country.GetNameNoFormatting]" using = fontsize_very_small align = left|nobaseline elide = right }
+				textbox = { size = { 202 12 } raw_text = "[Country.MakeScope.Var('tot_music_competition_idol_raw_score').GetValue|0]" using = fontsize_very_small align = left|nobaseline }
+			}
+		}
+	}
+
+	type tot_music_competition_idol_group_entry = widget {
+		datacontext = "[Scope.GetCountry]"
+		size = { 244 30 }
+		using = entry_bg_simple
+		hbox = {
+			margin = { 4 3 }
+			spacing = 10
+			small_flag_no_interact = { parentanchor = vcenter blockoverride "tooltip" {} }
+			vbox = {
+				size = { 202 24 }
+				textbox = { size = { 202 12 } raw_text = "[Country.GetNameNoFormatting]" using = fontsize_very_small align = left|nobaseline elide = right }
+				textbox = { size = { 202 12 } raw_text = "[Country.MakeScope.Var('tot_music_competition_idol_group_raw_score').GetValue|0]" using = fontsize_very_small align = left|nobaseline }
+			}
+		}
+	}
+
+	type tot_music_competition_band_1_entry = widget {
+		datacontext = "[Scope.GetCountry]"
+		size = { 190 18 }
+		using = entry_bg_simple
+		hbox = {
+			margin = { 3 1 }
+			spacing = 8
+			small_flag_no_interact = { parentanchor = vcenter blockoverride "tooltip" {} }
+			textbox = { size = { 158 18 } raw_text = "[Country.GetCustom('tot_band_1_name_loc')] [Country.MakeScope.Var('tot_music_competition_band_1_raw_score').GetValue|0]分" using = fontsize_very_small align = left|nobaseline elide = right }
+		}
+	}
+
+	type tot_music_competition_band_2_entry = widget {
+		datacontext = "[Scope.GetCountry]"
+		size = { 190 18 }
+		using = entry_bg_simple
+		hbox = {
+			margin = { 3 1 }
+			spacing = 8
+			small_flag_no_interact = { parentanchor = vcenter blockoverride "tooltip" {} }
+			textbox = { size = { 158 18 } raw_text = "[Country.GetCustom('tot_band_2_name_loc')] [Country.MakeScope.Var('tot_music_competition_band_2_raw_score').GetValue|0]分" using = fontsize_very_small align = left|nobaseline elide = right }
+		}
+	}
+
+	type tot_music_competition_band_3_entry = widget {
+		datacontext = "[Scope.GetCountry]"
+		size = { 190 18 }
+		using = entry_bg_simple
+		hbox = {
+			margin = { 3 1 }
+			spacing = 8
+			small_flag_no_interact = { parentanchor = vcenter blockoverride "tooltip" {} }
+			textbox = { size = { 158 18 } raw_text = "[Country.GetCustom('tot_band_3_name_loc')] [Country.MakeScope.Var('tot_music_competition_band_3_raw_score').GetValue|0]分" using = fontsize_very_small align = left|nobaseline elide = right }
+		}
+	}
+
+	type tot_music_competition_band_4_entry = widget {
+		datacontext = "[Scope.GetCountry]"
+		size = { 190 18 }
+		using = entry_bg_simple
+		hbox = {
+			margin = { 3 1 }
+			spacing = 8
+			small_flag_no_interact = { parentanchor = vcenter blockoverride "tooltip" {} }
+			textbox = { size = { 158 18 } raw_text = "[Country.GetCustom('tot_band_4_name_loc')] [Country.MakeScope.Var('tot_music_competition_band_4_raw_score').GetValue|0]分" using = fontsize_very_small align = left|nobaseline elide = right }
+		}
+	}
+
+	type tot_music_competition_band_5_entry = widget {
+		datacontext = "[Scope.GetCountry]"
+		size = { 190 18 }
+		using = entry_bg_simple
+		hbox = {
+			margin = { 3 1 }
+			spacing = 8
+			small_flag_no_interact = { parentanchor = vcenter blockoverride "tooltip" {} }
+			textbox = { size = { 158 18 } raw_text = "[Country.GetCustom('tot_band_5_name_loc')] [Country.MakeScope.Var('tot_music_competition_band_5_raw_score').GetValue|0]分" using = fontsize_very_small align = left|nobaseline elide = right }
+		}
+	}
+
+	type tot_music_competition_band_1_field_entry = widget {
+		datacontext = "[Scope.GetCountry]"
+		size = { 206 80 }
+		using = entry_bg_fancy
+			hbox = {
+				margin = { 4 4 }
+				spacing = 14
+				widget = { size = { 50 72 } small_flag_no_interact = { parentanchor = center size = { 30 20 } blockoverride "tooltip" {} } }
+				vbox = {
+					size = { 134 72 }
+					textbox = { size = { 134 28 } raw_text = "[Country.GetCustom('tot_band_1_name_loc')]" using = fontsize_very_small align = left|nobaseline elide = right }
+					textbox = { size = { 134 16 } text = "TOT_MUSIC_COMPETITION_SCORE_LABEL" using = fontsize_very_small align = left|nobaseline }
+					textbox = { size = { 134 20 } raw_text = "[Country.MakeScope.Var('tot_music_competition_band_1_raw_score').GetValue|0]" using = fontsize_very_small align = left|nobaseline }
+			}
+		}
+	}
+
+	type tot_music_competition_band_2_field_entry = widget {
+		datacontext = "[Scope.GetCountry]"
+		size = { 206 80 }
+		using = entry_bg_fancy
+			hbox = {
+				margin = { 4 4 }
+				spacing = 14
+				widget = { size = { 50 72 } small_flag_no_interact = { parentanchor = center size = { 30 20 } blockoverride "tooltip" {} } }
+				vbox = {
+					size = { 134 72 }
+					textbox = { size = { 134 28 } raw_text = "[Country.GetCustom('tot_band_2_name_loc')]" using = fontsize_very_small align = left|nobaseline elide = right }
+					textbox = { size = { 134 16 } text = "TOT_MUSIC_COMPETITION_SCORE_LABEL" using = fontsize_very_small align = left|nobaseline }
+					textbox = { size = { 134 20 } raw_text = "[Country.MakeScope.Var('tot_music_competition_band_2_raw_score').GetValue|0]" using = fontsize_very_small align = left|nobaseline }
+			}
+		}
+	}
+
+	type tot_music_competition_band_3_field_entry = widget {
+		datacontext = "[Scope.GetCountry]"
+		size = { 206 80 }
+		using = entry_bg_fancy
+			hbox = {
+				margin = { 4 4 }
+				spacing = 14
+				widget = { size = { 50 72 } small_flag_no_interact = { parentanchor = center size = { 30 20 } blockoverride "tooltip" {} } }
+				vbox = {
+					size = { 134 72 }
+					textbox = { size = { 134 28 } raw_text = "[Country.GetCustom('tot_band_3_name_loc')]" using = fontsize_very_small align = left|nobaseline elide = right }
+					textbox = { size = { 134 16 } text = "TOT_MUSIC_COMPETITION_SCORE_LABEL" using = fontsize_very_small align = left|nobaseline }
+					textbox = { size = { 134 20 } raw_text = "[Country.MakeScope.Var('tot_music_competition_band_3_raw_score').GetValue|0]" using = fontsize_very_small align = left|nobaseline }
+			}
+		}
+	}
+
+	type tot_music_competition_band_4_field_entry = widget {
+		datacontext = "[Scope.GetCountry]"
+		size = { 206 80 }
+		using = entry_bg_fancy
+			hbox = {
+				margin = { 4 4 }
+				spacing = 14
+				widget = { size = { 50 72 } small_flag_no_interact = { parentanchor = center size = { 30 20 } blockoverride "tooltip" {} } }
+				vbox = {
+					size = { 134 72 }
+					textbox = { size = { 134 28 } raw_text = "[Country.GetCustom('tot_band_4_name_loc')]" using = fontsize_very_small align = left|nobaseline elide = right }
+					textbox = { size = { 134 16 } text = "TOT_MUSIC_COMPETITION_SCORE_LABEL" using = fontsize_very_small align = left|nobaseline }
+					textbox = { size = { 134 20 } raw_text = "[Country.MakeScope.Var('tot_music_competition_band_4_raw_score').GetValue|0]" using = fontsize_very_small align = left|nobaseline }
+			}
+		}
+	}
+
+	type tot_music_competition_band_5_field_entry = widget {
+		datacontext = "[Scope.GetCountry]"
+		size = { 206 80 }
+		using = entry_bg_fancy
+			hbox = {
+				margin = { 4 4 }
+				spacing = 14
+				widget = { size = { 50 72 } small_flag_no_interact = { parentanchor = center size = { 30 20 } blockoverride "tooltip" {} } }
+				vbox = {
+					size = { 134 72 }
+					textbox = { size = { 134 28 } raw_text = "[Country.GetCustom('tot_band_5_name_loc')]" using = fontsize_very_small align = left|nobaseline elide = right }
+					textbox = { size = { 134 16 } text = "TOT_MUSIC_COMPETITION_SCORE_LABEL" using = fontsize_very_small align = left|nobaseline }
+					textbox = { size = { 134 20 } raw_text = "[Country.MakeScope.Var('tot_music_competition_band_5_raw_score').GetValue|0]" using = fontsize_very_small align = left|nobaseline }
+			}
+		}
+	}
+
+	type tot_music_competition_display_slot_01 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_01_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_01_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_01_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_01_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_01_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_02 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_02_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_02_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_02_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_02_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_02_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_03 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_03_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_03_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_03_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_03_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_03_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_04 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_04_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_04_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_04_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_04_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_04_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_05 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_05_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_05_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_05_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_05_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_05_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_06 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_06_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_06_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_06_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_06_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_06_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_07 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_07_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_07_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_07_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_07_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_07_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_08 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_08_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_08_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_08_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_08_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_08_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_09 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_09_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_09_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_09_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_09_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_09_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_10 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_10_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_10_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_10_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_10_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_10_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_11 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_11_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_11_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_11_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_11_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_11_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_12 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_12_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_12_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_12_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_12_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_12_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_13 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_13_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_13_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_13_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_13_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_13_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_14 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_14_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_14_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_14_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_14_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_14_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_15 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_15_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_15_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_15_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_15_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_15_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_16 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_16_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_16_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_16_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_16_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_16_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_17 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_17_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_17_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_17_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_17_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_17_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_18 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_18_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_18_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_18_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_18_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_18_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_19 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_19_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_19_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_19_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_19_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_19_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_20 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_20_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_20_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_20_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_20_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_20_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_21 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_21_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_21_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_21_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_21_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_21_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_22 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_22_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_22_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_22_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_22_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_22_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_23 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_23_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_23_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_23_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_23_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_23_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_24 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_24_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_24_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_24_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_24_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_24_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_25 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_25_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_25_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_25_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_25_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_25_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_26 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_26_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_26_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_26_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_26_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_26_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_27 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_27_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_27_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_27_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_27_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_27_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_28 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_28_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_28_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_28_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_28_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_28_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_29 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_29_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_29_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_29_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_29_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_29_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_30 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_30_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_30_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_30_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_30_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_30_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_31 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_31_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_31_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_31_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_31_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_31_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_32 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_32_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_32_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_32_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_32_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_32_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_33 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_33_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_33_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_33_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_33_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_33_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_34 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_34_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_34_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_34_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_34_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_34_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_35 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_35_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_35_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_35_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_35_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_35_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_36 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_36_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_36_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_36_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_36_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_36_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_37 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_37_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_37_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_37_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_37_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_37_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_38 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_38_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_38_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_38_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_38_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_38_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_39 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_39_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_39_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_39_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_39_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_39_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_40 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_40_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_40_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_40_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_40_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_40_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_41 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_41_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_41_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_41_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_41_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_41_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_42 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_42_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_42_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_42_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_42_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_42_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_43 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_43_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_43_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_43_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_43_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_43_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_44 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_44_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_44_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_44_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_44_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_44_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_45 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_45_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_45_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_45_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_45_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_45_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_46 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_46_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_46_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_46_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_46_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_46_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_47 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_47_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_47_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_47_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_47_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_47_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_48 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_48_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_48_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_48_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_48_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_48_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_49 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_49_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_49_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_49_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_49_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_49_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_50 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_50_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_50_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_50_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_50_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_50_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_51 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_51_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_51_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_51_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_51_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_51_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_52 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_52_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_52_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_52_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_52_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_52_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_53 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_53_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_53_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_53_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_53_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_53_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_54 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_54_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_54_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_54_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_54_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_54_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_55 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_55_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_55_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_55_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_55_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_55_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_56 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_56_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_56_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_56_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_56_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_56_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_57 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_57_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_57_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_57_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_57_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_57_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_58 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_58_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_58_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_58_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_58_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_58_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_59 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_59_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_59_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_59_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_59_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_59_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_60 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_60_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_60_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_60_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_60_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_60_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_61 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_61_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_61_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_61_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_61_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_61_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_62 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_62_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_62_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_62_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_62_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_62_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_63 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_63_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_63_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_63_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_63_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_63_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_display_slot_64 = widget {
+		size = { 206 80 }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_64_band_1')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_1_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_64_band_2')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_2_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_64_band_3')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_3_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_64_band_4')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_4_field_entry = {} } }
+		fixedgridbox = { position = { 0 0 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_display_slot_64_band_5')]" addcolumn = 206 addrow = 80 datamodel_wrap = 1 item = { tot_music_competition_band_5_field_entry = {} } }
+	}
+
+	type tot_music_competition_match_01_entries = widget {
+		size = { 198 38 }
+		widget = { position = { 0 0 } size = { 198 18 } using = entry_bg_fancy }
+		widget = { position = { 0 20 } size = { 198 18 } using = entry_bg_fancy }
+		flowcontainer = {
+			position = { 4 2 }
+			size = { 190 36 }
+			direction = vertical
+			spacing = 0
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_01_band_1')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_1_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_01_band_2')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_2_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_01_band_3')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_3_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_01_band_4')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_4_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_01_band_5')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_5_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_02_band_1')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_1_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_02_band_2')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_2_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_02_band_3')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_3_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_02_band_4')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_4_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_02_band_5')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_5_entry = {} } }
+		}
+	}
+
+	type tot_music_competition_match_02_entries = widget {
+		size = { 198 38 }
+		widget = { position = { 0 0 } size = { 198 18 } using = entry_bg_fancy }
+		widget = { position = { 0 20 } size = { 198 18 } using = entry_bg_fancy }
+		flowcontainer = {
+			position = { 4 2 }
+			size = { 190 36 }
+			direction = vertical
+			spacing = 0
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_03_band_1')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_1_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_03_band_2')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_2_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_03_band_3')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_3_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_03_band_4')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_4_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_03_band_5')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_5_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_04_band_1')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_1_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_04_band_2')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_2_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_04_band_3')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_3_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_04_band_4')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_4_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_04_band_5')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_5_entry = {} } }
+		}
+	}
+
+	type tot_music_competition_match_03_entries = widget {
+		size = { 198 38 }
+		widget = { position = { 0 0 } size = { 198 18 } using = entry_bg_fancy }
+		widget = { position = { 0 20 } size = { 198 18 } using = entry_bg_fancy }
+		flowcontainer = {
+			position = { 4 2 }
+			size = { 190 36 }
+			direction = vertical
+			spacing = 0
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_05_band_1')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_1_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_05_band_2')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_2_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_05_band_3')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_3_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_05_band_4')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_4_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_05_band_5')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_5_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_06_band_1')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_1_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_06_band_2')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_2_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_06_band_3')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_3_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_06_band_4')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_4_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_06_band_5')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_5_entry = {} } }
+		}
+	}
+
+	type tot_music_competition_match_04_entries = widget {
+		size = { 198 38 }
+		widget = { position = { 0 0 } size = { 198 18 } using = entry_bg_fancy }
+		widget = { position = { 0 20 } size = { 198 18 } using = entry_bg_fancy }
+		flowcontainer = {
+			position = { 4 2 }
+			size = { 190 36 }
+			direction = vertical
+			spacing = 0
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_07_band_1')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_1_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_07_band_2')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_2_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_07_band_3')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_3_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_07_band_4')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_4_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_07_band_5')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_5_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_08_band_1')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_1_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_08_band_2')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_2_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_08_band_3')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_3_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_08_band_4')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_4_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_08_band_5')]" addcolumn = 190 addrow = 18 item = { tot_music_competition_band_5_entry = {} } }
+		}
+	}
+
+	type tot_music_competition_match_05_entries = widget {
+		size = { 198 38 }
+		widget = { position = { 0 0 } size = { 198 18 } using = entry_bg_fancy }
+		widget = { position = { 0 20 } size = { 198 18 } using = entry_bg_fancy }
+		flowcontainer = {
+			position = { 4 2 }
+			size = { 190 36 }
+			direction = vertical
+			spacing = 0
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_match_05_band_1')]" addcolumn = 220 addrow = 20 item = { tot_music_competition_band_1_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_match_05_band_2')]" addcolumn = 220 addrow = 20 item = { tot_music_competition_band_2_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_match_05_band_3')]" addcolumn = 220 addrow = 20 item = { tot_music_competition_band_3_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_match_05_band_4')]" addcolumn = 220 addrow = 20 item = { tot_music_competition_band_4_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_match_05_band_5')]" addcolumn = 220 addrow = 20 item = { tot_music_competition_band_5_entry = {} } }
+		}
+	}
+
+	type tot_music_competition_match_06_entries = widget {
+		size = { 198 38 }
+		widget = { position = { 0 0 } size = { 198 18 } using = entry_bg_fancy }
+		widget = { position = { 0 20 } size = { 198 18 } using = entry_bg_fancy }
+		flowcontainer = {
+			position = { 4 2 }
+			size = { 190 36 }
+			direction = vertical
+			spacing = 0
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_match_06_band_1')]" addcolumn = 220 addrow = 20 item = { tot_music_competition_band_1_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_match_06_band_2')]" addcolumn = 220 addrow = 20 item = { tot_music_competition_band_2_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_match_06_band_3')]" addcolumn = 220 addrow = 20 item = { tot_music_competition_band_3_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_match_06_band_4')]" addcolumn = 220 addrow = 20 item = { tot_music_competition_band_4_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_match_06_band_5')]" addcolumn = 220 addrow = 20 item = { tot_music_competition_band_5_entry = {} } }
+		}
+	}
+
+	type tot_music_competition_match_07_entries = widget {
+		size = { 198 38 }
+		widget = { position = { 0 0 } size = { 198 18 } using = entry_bg_fancy }
+		widget = { position = { 0 20 } size = { 198 18 } using = entry_bg_fancy }
+		flowcontainer = {
+			position = { 4 2 }
+			size = { 190 36 }
+			direction = vertical
+			spacing = 0
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_match_07_band_1')]" addcolumn = 220 addrow = 20 item = { tot_music_competition_band_1_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_match_07_band_2')]" addcolumn = 220 addrow = 20 item = { tot_music_competition_band_2_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_match_07_band_3')]" addcolumn = 220 addrow = 20 item = { tot_music_competition_band_3_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_match_07_band_4')]" addcolumn = 220 addrow = 20 item = { tot_music_competition_band_4_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_match_07_band_5')]" addcolumn = 220 addrow = 20 item = { tot_music_competition_band_5_entry = {} } }
+		}
+	}
+
+	type tot_music_competition_match_08_entries = widget {
+		size = { 198 38 }
+		widget = { position = { 0 0 } size = { 198 18 } using = entry_bg_fancy }
+		widget = { position = { 0 20 } size = { 198 18 } using = entry_bg_fancy }
+		flowcontainer = {
+			position = { 4 2 }
+			size = { 190 36 }
+			direction = vertical
+			spacing = 0
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_match_08_band_1')]" addcolumn = 220 addrow = 20 item = { tot_music_competition_band_1_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_match_08_band_2')]" addcolumn = 220 addrow = 20 item = { tot_music_competition_band_2_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_match_08_band_3')]" addcolumn = 220 addrow = 20 item = { tot_music_competition_band_3_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_match_08_band_4')]" addcolumn = 220 addrow = 20 item = { tot_music_competition_band_4_entry = {} } }
+			fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_match_08_band_5')]" addcolumn = 220 addrow = 20 item = { tot_music_competition_band_5_entry = {} } }
+		}
+	}
+
+	type tot_music_competition_idol_candidate = widget {
+		datacontext = "[Scope.GetCharacter]"
+		size = { 338 64 }
+		using = entry_bg_simple
+		hbox = {
+			margin = { 6 4 }
+			spacing = 7
+			widget = { size = { 54 54 } background = { texture = "gfx/interface/icons/character_icons/character_frame.dds" size = { 50 50 } parentanchor = center } character_portrait_small2 = { parentanchor = center blockoverride "show_hat" {} blockoverride "highlight" {} blockoverride "rank_icon" {} } }
+			vbox = {
+				size = { 170 54 }
+				parentanchor = vcenter
+				textbox = { size = { 170 18 } raw_text = "#BOLD [Character.GetFullNameNoFormatting]#!" using = fontsize_small align = left|nobaseline elide = right }
+				textbox = { size = { 170 14 } raw_text = "[Character.GetPrimaryRoleTitle]" using = fontsize_very_small align = left|nobaseline elide = right }
+			}
+			button_standard = { parentanchor = vcenter size = { 88 28 } text = "TOT_MUSIC_COMPETITION_SELECT_REPRESENTATIVE" enabled = "[GetScriptedGui('tot_music_competition_select_idol_representative').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_music_competition_select_idol_representative').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" }
+		}
+	}
+
+	type tot_music_competition_bracket_slot = widget {
+		size = { 214 34 }
+		using = entry_bg_fancy
+		textbox = { parentanchor = center size = { 204 18 } text = "TOT_MUSIC_COMPETITION_PENDING_WINNER" using = fontsize_very_small align = center|nobaseline elide = right }
+	}
+	type tot_music_competition_final_seed_01 = widget {
+		size = { 214 22 }
+		using = entry_bg_fancy
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_01_band_1')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_1_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_01_band_2')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_2_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_01_band_3')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_3_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_01_band_4')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_4_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_01_band_5')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_5_entry = {} } }
+	}
+
+	type tot_music_competition_final_seed_02 = widget {
+		size = { 214 22 }
+		using = entry_bg_fancy
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_02_band_1')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_1_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_02_band_2')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_2_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_02_band_3')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_3_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_02_band_4')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_4_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_02_band_5')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_5_entry = {} } }
+	}
+
+	type tot_music_competition_final_seed_03 = widget {
+		size = { 214 22 }
+		using = entry_bg_fancy
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_03_band_1')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_1_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_03_band_2')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_2_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_03_band_3')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_3_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_03_band_4')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_4_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_03_band_5')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_5_entry = {} } }
+	}
+
+	type tot_music_competition_final_seed_04 = widget {
+		size = { 214 22 }
+		using = entry_bg_fancy
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_04_band_1')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_1_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_04_band_2')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_2_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_04_band_3')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_3_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_04_band_4')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_4_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_04_band_5')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_5_entry = {} } }
+	}
+
+	type tot_music_competition_final_seed_05 = widget {
+		size = { 214 22 }
+		using = entry_bg_fancy
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_05_band_1')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_1_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_05_band_2')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_2_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_05_band_3')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_3_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_05_band_4')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_4_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_05_band_5')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_5_entry = {} } }
+	}
+
+	type tot_music_competition_final_seed_06 = widget {
+		size = { 214 22 }
+		using = entry_bg_fancy
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_06_band_1')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_1_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_06_band_2')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_2_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_06_band_3')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_3_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_06_band_4')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_4_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_06_band_5')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_5_entry = {} } }
+	}
+
+	type tot_music_competition_final_seed_07 = widget {
+		size = { 214 22 }
+		using = entry_bg_fancy
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_07_band_1')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_1_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_07_band_2')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_2_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_07_band_3')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_3_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_07_band_4')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_4_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_07_band_5')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_5_entry = {} } }
+	}
+
+	type tot_music_competition_final_seed_08 = widget {
+		size = { 214 22 }
+		using = entry_bg_fancy
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_08_band_1')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_1_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_08_band_2')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_2_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_08_band_3')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_3_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_08_band_4')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_4_entry = {} } }
+		fixedgridbox = { position = { 10 1 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_slot_08_band_5')]" addcolumn = 190 addrow = 18 datamodel_wrap = 1 item = { tot_music_competition_band_5_entry = {} } }
+	}
+
+	type tot_music_competition_final_four_01 = widget {
+		size = { 214 22 }
+		using = entry_bg_fancy
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_four_01_band_1')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_1_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_four_01_band_2')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_2_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_four_01_band_3')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_3_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_four_01_band_4')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_4_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_four_01_band_5')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_5_entry = {} } }
+	}
+
+	type tot_music_competition_final_four_02 = widget {
+		size = { 214 22 }
+		using = entry_bg_fancy
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_four_02_band_1')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_1_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_four_02_band_2')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_2_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_four_02_band_3')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_3_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_four_02_band_4')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_4_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_four_02_band_5')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_5_entry = {} } }
+	}
+
+	type tot_music_competition_final_four_03 = widget {
+		size = { 214 22 }
+		using = entry_bg_fancy
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_four_03_band_1')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_1_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_four_03_band_2')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_2_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_four_03_band_3')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_3_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_four_03_band_4')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_4_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_four_03_band_5')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_5_entry = {} } }
+	}
+
+	type tot_music_competition_final_four_04 = widget {
+		size = { 214 22 }
+		using = entry_bg_fancy
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_four_04_band_1')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_1_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_four_04_band_2')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_2_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_four_04_band_3')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_3_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_four_04_band_4')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_4_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_four_04_band_5')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_5_entry = {} } }
+	}
+
+	type tot_music_competition_final_two_01 = widget {
+		size = { 214 22 }
+		using = entry_bg_fancy
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_two_01_band_1')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_1_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_two_01_band_2')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_2_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_two_01_band_3')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_3_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_two_01_band_4')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_4_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_two_01_band_5')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_5_entry = {} } }
+	}
+
+	type tot_music_competition_final_two_02 = widget {
+		size = { 214 22 }
+		using = entry_bg_fancy
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_two_02_band_1')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_1_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_two_02_band_2')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_2_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_two_02_band_3')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_3_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_two_02_band_4')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_4_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_two_02_band_5')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_5_entry = {} } }
+	}
+
+	type tot_music_competition_final_champion = widget {
+		size = { 214 22 }
+		using = entry_bg_fancy
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_champion_band_1')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_1_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_champion_band_2')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_2_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_champion_band_3')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_3_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_champion_band_4')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_4_entry = {} } }
+		fixedgridbox = { position = { 10 2 } datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_final_champion_band_5')]" addcolumn = 190 addrow = 20 datamodel_wrap = 1 item = { tot_music_competition_band_5_entry = {} } }
+	}
+
+	type tot_music_competition_page = widget {
+		size = { 1480 640 }
+		ignoreinvisible = yes
+		state = {
+			name = initialize_music_competition
+			trigger_on_create = yes
+			on_finish = "[GetScriptedGui('tot_music_competition_initialize').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		}
+
+		vbox = {
+			# Keep a small bottom buffer inside the 640px activity sub-page.
+			spacing = 7
+			textbox = { size = { 1480 30 } text = "TOT_MUSIC_COMPETITION_TITLE" using = fontsize_large align = left|nobaseline }
+			textbox = { size = { 1480 34 } text = "TOT_MUSIC_COMPETITION_INTRO" using = fontsize_small align = left|nobaseline multiline = yes }
+
+			hbox = {
+				spacing = 8
+				button = { visible = "[GetScriptedGui('tot_music_competition_track_1_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 170 32 } text = "TOT_MUSIC_COMPETITION_BAND" onclick = "[GetScriptedGui('tot_music_competition_select_band').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+				button = { visible = "[Not(GetScriptedGui('tot_music_competition_track_1_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 170 32 } text = "TOT_MUSIC_COMPETITION_BAND" onclick = "[GetScriptedGui('tot_music_competition_select_band').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+				button = { visible = "[GetScriptedGui('tot_music_competition_track_2_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 170 32 } text = "TOT_MUSIC_COMPETITION_IDOL_SOLO" onclick = "[GetScriptedGui('tot_music_competition_select_idol_solo').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+				button = { visible = "[Not(GetScriptedGui('tot_music_competition_track_2_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 170 32 } text = "TOT_MUSIC_COMPETITION_IDOL_SOLO" onclick = "[GetScriptedGui('tot_music_competition_select_idol_solo').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+				button = { visible = "[GetScriptedGui('tot_music_competition_track_3_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 170 32 } text = "TOT_MUSIC_COMPETITION_IDOL_GROUP" onclick = "[GetScriptedGui('tot_music_competition_select_idol_group').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+				button = { visible = "[Not(GetScriptedGui('tot_music_competition_track_3_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 170 32 } text = "TOT_MUSIC_COMPETITION_IDOL_GROUP" onclick = "[GetScriptedGui('tot_music_competition_select_idol_group').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+			}
+
+			hbox = {
+				spacing = 6
+				button = { visible = "[Or(GetVariableSystem.HasValue('tot_music_competition_view', 'qualifying'), Not(GetScriptedGui('tot_music_competition_is_final').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]" using = default_button_primary size = { 150 28 } text = "TOT_MUSIC_COMPETITION_VIEW_QUALIFYING" onclick = "[GetVariableSystem.Set( 'tot_music_competition_view', 'qualifying' )]" }
+				button = { visible = "[And(Not(GetVariableSystem.HasValue('tot_music_competition_view', 'qualifying')), GetScriptedGui('tot_music_competition_is_final').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 150 28 } text = "TOT_MUSIC_COMPETITION_VIEW_QUALIFYING" onclick = "[GetVariableSystem.Set( 'tot_music_competition_view', 'qualifying' )]" }
+				button = { visible = "[And(GetVariableSystem.HasValue('tot_music_competition_view', 'final'), GetScriptedGui('tot_music_competition_is_final').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button_primary size = { 150 28 } text = "TOT_MUSIC_COMPETITION_VIEW_FINAL" onclick = "[GetVariableSystem.Set( 'tot_music_competition_view', 'final' )]" }
+				button = { visible = "[And(Not(GetVariableSystem.HasValue('tot_music_competition_view', 'final')), GetScriptedGui('tot_music_competition_is_final').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 150 28 } text = "TOT_MUSIC_COMPETITION_VIEW_FINAL" onclick = "[GetVariableSystem.Set( 'tot_music_competition_view', 'final' )]" }
+			}
+
+			hbox = {
+				spacing = 12
+				widget = {
+						size = { 380 484 }
+					using = entry_bg_fancy
+					vbox = {
+						margin = { 12 12 }
+						spacing = 6
+						textbox = { size = { 350 24 } text = "TOT_MUSIC_COMPETITION_REGISTRATION" using = fontsize_medium align = left|nobaseline }
+						textbox = { size = { 350 60 } text = "TOT_MUSIC_COMPETITION_QUALIFICATION" using = fontsize_small align = left|nobaseline multiline = yes }
+						textbox = { visible = "[Not(GetScriptedGui('tot_music_competition_is_registered').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" size = { 350 44 } text = "TOT_MUSIC_COMPETITION_NOT_REGISTERED" using = fontsize_small align = left|nobaseline multiline = yes }
+						textbox = { visible = "[GetScriptedGui('tot_music_competition_is_registered').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 350 44 } text = "TOT_MUSIC_COMPETITION_REGISTERED" using = fontsize_small align = left|nobaseline multiline = yes }
+						button_standard = { visible = "[And(Not(GetScriptedGui('tot_music_competition_is_registered').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), Not(GetScriptedGui('tot_music_competition_track_1_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]" size = { 350 34 } text = "TOT_MUSIC_COMPETITION_REGISTER" enabled = "[GetScriptedGui('tot_music_competition_register').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_MUSIC_COMPETITION_REGISTER_TOOLTIP" onclick = "[GetScriptedGui('tot_music_competition_register').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+						button_standard = { visible = "[And(Not(GetScriptedGui('tot_music_competition_is_registered').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), GetScriptedGui('tot_music_competition_track_1_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" size = { 350 34 } text = "TOT_MUSIC_COMPETITION_REGISTER_SELECTED_BAND" enabled = "[GetScriptedGui('tot_music_competition_register').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_MUSIC_COMPETITION_REGISTER_SELECTED_BAND_TOOLTIP" onclick = "[GetScriptedGui('tot_music_competition_register').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+						button_standard = { visible = "[And(GetScriptedGui('tot_music_competition_is_registered').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), GetScriptedGui('tot_music_competition_track_1_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" size = { 350 34 } text = "TOT_MUSIC_COMPETITION_REGISTER_SELECTED_BAND" enabled = "[GetScriptedGui('tot_music_competition_register_selected_band').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_MUSIC_COMPETITION_REGISTER_SELECTED_BAND_TOOLTIP" onclick = "[GetScriptedGui('tot_music_competition_register_selected_band').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+						button_standard = { visible = "[And(And(GetScriptedGui('tot_music_competition_is_registered').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), GetScriptedGui('tot_music_competition_band_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), GetScriptedGui('tot_music_competition_cancel').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" size = { 350 34 } text = "TOT_MUSIC_COMPETITION_CANCEL" enabled = "[GetScriptedGui('tot_music_competition_cancel').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_music_competition_cancel').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+						button_standard = { visible = "[And(And(GetScriptedGui('tot_music_competition_is_registered').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), Not(GetScriptedGui('tot_music_competition_band_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))), GetScriptedGui('tot_music_competition_cancel').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" size = { 350 34 } text = "TOT_MUSIC_COMPETITION_CANCEL" enabled = "[GetScriptedGui('tot_music_competition_cancel').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_music_competition_cancel').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+						textbox = { visible = "[GetScriptedGui('tot_music_competition_track_1_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 350 20 } text = "TOT_MUSIC_COMPETITION_BAND_REPRESENTATIVE" using = fontsize_small align = left|nobaseline }
+						scrollbox = {
+							visible = "[GetScriptedGui('tot_music_competition_track_1_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							size = { 350 148 }
+							blockoverride "scrollbox_content" {
+								flowcontainer = {
+									direction = vertical
+									spacing = 3
+							button = { visible = "[And(GetScriptedGui('tot_music_competition_band_1_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), GetScriptedGui('tot_music_competition_select_band_1').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button_primary size = { 350 26 } text = "TOT_BAND_1_HEADER" onclick = "[GetScriptedGui('tot_music_competition_select_band_1').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+							button_standard = { visible = "[And(Not(GetScriptedGui('tot_music_competition_band_1_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), GetScriptedGui('tot_music_competition_select_band_1').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" size = { 350 26 } text = "TOT_BAND_1_HEADER" onclick = "[GetScriptedGui('tot_music_competition_select_band_1').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+							button = { visible = "[And(GetScriptedGui('tot_music_competition_band_2_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), GetScriptedGui('tot_music_competition_select_band_2').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button_primary size = { 350 26 } text = "TOT_BAND_2_HEADER" onclick = "[GetScriptedGui('tot_music_competition_select_band_2').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+							button_standard = { visible = "[And(Not(GetScriptedGui('tot_music_competition_band_2_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), GetScriptedGui('tot_music_competition_select_band_2').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" size = { 350 26 } text = "TOT_BAND_2_HEADER" onclick = "[GetScriptedGui('tot_music_competition_select_band_2').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+							button = { visible = "[And(GetScriptedGui('tot_music_competition_band_3_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), GetScriptedGui('tot_music_competition_select_band_3').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button_primary size = { 350 26 } text = "TOT_BAND_3_HEADER" onclick = "[GetScriptedGui('tot_music_competition_select_band_3').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+							button_standard = { visible = "[And(Not(GetScriptedGui('tot_music_competition_band_3_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), GetScriptedGui('tot_music_competition_select_band_3').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" size = { 350 26 } text = "TOT_BAND_3_HEADER" onclick = "[GetScriptedGui('tot_music_competition_select_band_3').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+							button = { visible = "[And(GetScriptedGui('tot_music_competition_band_4_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), GetScriptedGui('tot_music_competition_select_band_4').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button_primary size = { 350 26 } text = "TOT_BAND_4_HEADER" onclick = "[GetScriptedGui('tot_music_competition_select_band_4').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+							button_standard = { visible = "[And(Not(GetScriptedGui('tot_music_competition_band_4_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), GetScriptedGui('tot_music_competition_select_band_4').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" size = { 350 26 } text = "TOT_BAND_4_HEADER" onclick = "[GetScriptedGui('tot_music_competition_select_band_4').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+							button = { visible = "[And(GetScriptedGui('tot_music_competition_band_5_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), GetScriptedGui('tot_music_competition_select_band_5').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button_primary size = { 350 26 } text = "TOT_BAND_5_HEADER" onclick = "[GetScriptedGui('tot_music_competition_select_band_5').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+							button_standard = { visible = "[And(Not(GetScriptedGui('tot_music_competition_band_5_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), GetScriptedGui('tot_music_competition_select_band_5').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" size = { 350 26 } text = "TOT_BAND_5_HEADER" onclick = "[GetScriptedGui('tot_music_competition_select_band_5').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+								}
+							}
+						}
+						flowcontainer = {
+							visible = "[GetScriptedGui('tot_music_competition_track_2_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							direction = vertical
+							spacing = 3
+							textbox = { size = { 350 20 } text = "TOT_MUSIC_COMPETITION_IDOL_REPRESENTATIVE" using = fontsize_small align = left|nobaseline }
+							button_standard = { size = { 350 24 } text = "TOT_MUSIC_COMPETITION_REFRESH_CANDIDATES" onclick = "[GetScriptedGui('tot_music_competition_refresh_idol_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+							scrollbox = { size = { 350 170 } blockoverride "scrollbox_content" { fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_idol_candidates')]" addcolumn = 338 addrow = 68 item = { tot_music_competition_idol_candidate = {} } } } }
+						}
+						flowcontainer = {
+							visible = "[GetScriptedGui('tot_music_competition_track_3_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							direction = vertical
+							spacing = 6
+							textbox = { size = { 350 20 } text = "TOT_MUSIC_COMPETITION_IDOL_GROUP_ROSTER" using = fontsize_small align = left|nobaseline }
+							textbox = { size = { 350 44 } text = "TOT_MUSIC_COMPETITION_IDOL_GROUP_DESCRIPTION" using = fontsize_small align = left|nobaseline multiline = yes }
+							flowcontainer = {
+								direction = horizontal
+								spacing = 6
+								textbox = { size = { 150 20 } text = "TOT_MUSIC_COMPETITION_IDOL_GROUP_COUNT" using = fontsize_small align = left|nobaseline }
+								textbox = { size = { 60 20 } raw_text = "[GetPlayer.MakeScope.Var('tot_music_competition_idol_candidate_count').GetValue|0]" using = fontsize_small align = left|nobaseline }
+							}
+							button_standard = { size = { 350 24 } text = "TOT_MUSIC_COMPETITION_REFRESH_CANDIDATES" onclick = "[GetScriptedGui('tot_music_competition_refresh_idol_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+						}
+					}
+				}
+
+				widget = {
+						size = { 1088 484 }
+					using = entry_bg_fancy
+					vbox = {
+						margin = { 12 12 }
+						spacing = 4
+						textbox = { size = { 1062 22 } text = "TOT_MUSIC_COMPETITION_BRACKET" using = fontsize_medium align = left|nobaseline }
+						textbox = { size = { 1062 18 } text = "TOT_MUSIC_COMPETITION_FORMAT" using = fontsize_small align = left|nobaseline }
+						textbox = { size = { 1062 38 } text = "TOT_MUSIC_COMPETITION_TIMELINE" using = fontsize_small align = left|nobaseline multiline = yes }
+						vbox = {
+							visible = "[GetScriptedGui('tot_music_competition_registration_deadline_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							size = { 1062 54 }
+							textbox = { size = { 1062 18 } text = "TOT_MUSIC_COMPETITION_REGISTRATION_DEADLINE" using = fontsize_small align = left|nobaseline }
+							textbox = { size = { 1062 18 } text = "TOT_MUSIC_COMPETITION_CURRENT_START_PENDING" using = fontsize_small align = left|nobaseline }
+						textbox = { size = { 1062 18 } text = "TOT_MUSIC_COMPETITION_PREVIOUS_START_NONE" using = fontsize_small align = left|nobaseline }
+					}
+					vbox = {
+						visible = "[GetScriptedGui('tot_music_competition_preparation_open').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						size = { 1062 36 }
+						textbox = { size = { 1062 18 } text = "TOT_MUSIC_COMPETITION_REGISTRATION_CLOSED" using = fontsize_small align = left|nobaseline }
+						textbox = { size = { 1062 18 } text = "TOT_MUSIC_COMPETITION_PREPARATION_DEADLINE" using = fontsize_small align = left|nobaseline }
+					}
+						hbox = {
+							visible = "[GetScriptedGui('tot_music_competition_is_qualifying').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							size = { 1062 18 }
+						textbox = { size = { 780 18 } text = "TOT_MUSIC_COMPETITION_QUALIFYING_DEADLINE" using = fontsize_small align = left|nobaseline }
+						textbox = { size = { 240 18 } raw_text = "[GetPlayer.MakeScope.Var('tot_music_competition_round').GetValue|0] / 26" using = fontsize_small align = right|nobaseline }
+					}
+					hbox = {
+						visible = "[GetScriptedGui('tot_music_competition_is_final').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						size = { 1062 18 }
+						textbox = { size = { 780 18 } text = "TOT_MUSIC_COMPETITION_FINAL_DEADLINE" using = fontsize_small align = left|nobaseline }
+						textbox = { size = { 240 18 } raw_text = "[GetPlayer.MakeScope.Var('tot_music_competition_round').GetValue|0] / 26" using = fontsize_small align = right|nobaseline }
+					}
+						widget = {
+								visible = "[Or(GetVariableSystem.HasValue('tot_music_competition_view', 'qualifying'), Not(GetScriptedGui('tot_music_competition_is_final').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
+							size = { 1062 296 }
+							textbox = { position = { 0 0 } size = { 1062 20 } text = "TOT_MUSIC_COMPETITION_QUALIFYING" using = fontsize_small align = left|nobaseline }
+							textbox = { position = { 0 22 } size = { 1062 28 } text = "TOT_MUSIC_COMPETITION_QUALIFYING_DESCRIPTION" using = fontsize_small align = left|nobaseline multiline = yes }
+							widget = {
+								visible = "[GetScriptedGui('tot_music_competition_track_1_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							position = { 0 54 }
+							size = { 1062 240 }
+							scrollbox = {
+								size = { 1062 240 }
+								blockoverride "scrollbox_content" {
+									vbox = {
+										position = { 0 0 }
+										spacing = 4
+									hbox = {
+										spacing = 4
+										tot_music_competition_display_slot_01 = {}
+										tot_music_competition_display_slot_02 = {}
+										tot_music_competition_display_slot_03 = {}
+										tot_music_competition_display_slot_04 = {}
+										tot_music_competition_display_slot_05 = {}
+									}
+									hbox = {
+										spacing = 4
+										tot_music_competition_display_slot_06 = {}
+										tot_music_competition_display_slot_07 = {}
+										tot_music_competition_display_slot_08 = {}
+										tot_music_competition_display_slot_09 = {}
+										tot_music_competition_display_slot_10 = {}
+									}
+									hbox = {
+										spacing = 4
+										tot_music_competition_display_slot_11 = {}
+										tot_music_competition_display_slot_12 = {}
+										tot_music_competition_display_slot_13 = {}
+										tot_music_competition_display_slot_14 = {}
+										tot_music_competition_display_slot_15 = {}
+									}
+									hbox = {
+										spacing = 4
+										tot_music_competition_display_slot_16 = {}
+										tot_music_competition_display_slot_17 = {}
+										tot_music_competition_display_slot_18 = {}
+										tot_music_competition_display_slot_19 = {}
+										tot_music_competition_display_slot_20 = {}
+									}
+									hbox = {
+										spacing = 4
+										tot_music_competition_display_slot_21 = {}
+										tot_music_competition_display_slot_22 = {}
+										tot_music_competition_display_slot_23 = {}
+										tot_music_competition_display_slot_24 = {}
+										tot_music_competition_display_slot_25 = {}
+									}
+									hbox = {
+										spacing = 4
+										tot_music_competition_display_slot_26 = {}
+										tot_music_competition_display_slot_27 = {}
+										tot_music_competition_display_slot_28 = {}
+										tot_music_competition_display_slot_29 = {}
+										tot_music_competition_display_slot_30 = {}
+									}
+									hbox = {
+										spacing = 4
+										tot_music_competition_display_slot_31 = {}
+										tot_music_competition_display_slot_32 = {}
+										tot_music_competition_display_slot_33 = {}
+										tot_music_competition_display_slot_34 = {}
+										tot_music_competition_display_slot_35 = {}
+									}
+									hbox = {
+										spacing = 4
+										tot_music_competition_display_slot_36 = {}
+										tot_music_competition_display_slot_37 = {}
+										tot_music_competition_display_slot_38 = {}
+										tot_music_competition_display_slot_39 = {}
+										tot_music_competition_display_slot_40 = {}
+									}
+									hbox = {
+										spacing = 4
+										tot_music_competition_display_slot_41 = {}
+										tot_music_competition_display_slot_42 = {}
+										tot_music_competition_display_slot_43 = {}
+										tot_music_competition_display_slot_44 = {}
+										tot_music_competition_display_slot_45 = {}
+									}
+									hbox = {
+										spacing = 4
+										tot_music_competition_display_slot_46 = {}
+										tot_music_competition_display_slot_47 = {}
+										tot_music_competition_display_slot_48 = {}
+										tot_music_competition_display_slot_49 = {}
+										tot_music_competition_display_slot_50 = {}
+									}
+									hbox = {
+										spacing = 4
+										tot_music_competition_display_slot_51 = {}
+										tot_music_competition_display_slot_52 = {}
+										tot_music_competition_display_slot_53 = {}
+										tot_music_competition_display_slot_54 = {}
+										tot_music_competition_display_slot_55 = {}
+									}
+									hbox = {
+										spacing = 4
+										tot_music_competition_display_slot_56 = {}
+										tot_music_competition_display_slot_57 = {}
+										tot_music_competition_display_slot_58 = {}
+										tot_music_competition_display_slot_59 = {}
+										tot_music_competition_display_slot_60 = {}
+									}
+									hbox = {
+										spacing = 4
+										tot_music_competition_display_slot_61 = {}
+										tot_music_competition_display_slot_62 = {}
+										tot_music_competition_display_slot_63 = {}
+										tot_music_competition_display_slot_64 = {}
+									}
+									}
+									}
+								}
+							}
+							widget = {
+								visible = "[Not(GetScriptedGui('tot_music_competition_track_1_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+								position = { 0 54 }
+								size = { 1042 240 }
+								using = entry_bg_simple
+								widget = {
+									visible = "[GetScriptedGui('tot_music_competition_track_2_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									position = { 8 8 }
+									fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_field')]" addcolumn = 250 addrow = 34 item = { tot_music_competition_idol_solo_entry = {} } }
+								}
+								widget = {
+									visible = "[GetScriptedGui('tot_music_competition_track_3_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									position = { 8 8 }
+									fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_field')]" addcolumn = 250 addrow = 34 item = { tot_music_competition_idol_group_entry = {} } }
+								}
+								widget = {
+									visible = "[And(Not(GetScriptedGui('tot_music_competition_track_2_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), Not(GetScriptedGui('tot_music_competition_track_3_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
+									position = { 8 8 }
+									fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_field')]" addcolumn = 250 addrow = 30 item = { tot_music_competition_country_entry = {} } }
+								}
+							}
+						}
+						widget = {
+							visible = "[And(And(GetVariableSystem.HasValue('tot_music_competition_view', 'final'), GetScriptedGui('tot_music_competition_is_final').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), GetScriptedGui('tot_music_competition_track_1_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+							size = { 1062 296 }
+							textbox = { position = { 0 0 } size = { 1062 22 } text = "TOT_MUSIC_COMPETITION_VIEW_FINAL" using = fontsize_small align = left|nobaseline }
+							textbox = { position = { 0 26 } size = { 1062 18 } text = "TOT_MUSIC_COMPETITION_QUALIFIED_TEAMS" using = fontsize_very_small align = left|nobaseline }
+							hbox = {
+								visible = no
+								position = { 0 48 }
+								spacing = 4
+								vbox = { size = { 190 76 } textbox = { size = { 190 18 } text = "TOT_BAND_1_HEADER" using = fontsize_very_small align = center|nobaseline } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_qualified_band_1')]" addcolumn = 190 addrow = 24 datamodel_wrap = 1 item = { tot_music_competition_band_1_entry = {} } } }
+								vbox = { size = { 190 76 } textbox = { size = { 190 18 } text = "TOT_BAND_2_HEADER" using = fontsize_very_small align = center|nobaseline } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_qualified_band_2')]" addcolumn = 190 addrow = 24 datamodel_wrap = 1 item = { tot_music_competition_band_2_entry = {} } } }
+								vbox = { size = { 190 76 } textbox = { size = { 190 18 } text = "TOT_BAND_3_HEADER" using = fontsize_very_small align = center|nobaseline } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_qualified_band_3')]" addcolumn = 190 addrow = 24 datamodel_wrap = 1 item = { tot_music_competition_band_3_entry = {} } } }
+								vbox = { size = { 190 76 } textbox = { size = { 190 18 } text = "TOT_BAND_4_HEADER" using = fontsize_very_small align = center|nobaseline } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_qualified_band_4')]" addcolumn = 190 addrow = 24 datamodel_wrap = 1 item = { tot_music_competition_band_4_entry = {} } } }
+								vbox = { size = { 190 76 } textbox = { size = { 190 18 } text = "TOT_BAND_5_HEADER" using = fontsize_very_small align = center|nobaseline } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_qualified_band_5')]" addcolumn = 190 addrow = 24 datamodel_wrap = 1 item = { tot_music_competition_band_5_entry = {} } } }
+							}
+							textbox = { position = { 0 48 } size = { 210 18 } text = "TOT_MUSIC_COMPETITION_ROUND_8" using = fontsize_very_small align = center|nobaseline }
+							textbox = { position = { 270 48 } size = { 210 18 } text = "TOT_MUSIC_COMPETITION_ROUND_4" using = fontsize_very_small align = center|nobaseline }
+							textbox = { position = { 540 48 } size = { 210 18 } text = "TOT_MUSIC_COMPETITION_ROUND_2" using = fontsize_very_small align = center|nobaseline }
+							textbox = { position = { 810 48 } size = { 210 18 } text = "TOT_MUSIC_COMPETITION_CHAMPION" using = fontsize_very_small align = center|nobaseline }
+							tot_music_competition_final_seed_01 = { position = { 0 64 } }
+							tot_music_competition_final_seed_02 = { position = { 0 90 } }
+							tot_music_competition_final_seed_03 = { position = { 0 116 } }
+							tot_music_competition_final_seed_04 = { position = { 0 142 } }
+							tot_music_competition_final_seed_05 = { position = { 0 168 } }
+							tot_music_competition_final_seed_06 = { position = { 0 194 } }
+							tot_music_competition_final_seed_07 = { position = { 0 220 } }
+							tot_music_competition_final_seed_08 = { position = { 0 246 } }
+							tot_music_competition_final_four_01 = { position = { 270 76 } }
+							tot_music_competition_final_four_02 = { position = { 270 128 } }
+							tot_music_competition_final_four_03 = { position = { 270 180 } }
+							tot_music_competition_final_four_04 = { position = { 270 232 } }
+							tot_music_competition_final_two_01 = { position = { 540 102 } }
+							tot_music_competition_final_two_02 = { position = { 540 206 } }
+							tot_music_competition_final_champion = { position = { 810 154 } }
+						}
+						widget = {
+							visible = "[And(And(GetVariableSystem.HasValue('tot_music_competition_view', 'final'), GetScriptedGui('tot_music_competition_is_final').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)), Or(GetScriptedGui('tot_music_competition_track_2_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), GetScriptedGui('tot_music_competition_track_3_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
+							size = { 1062 296 }
+							textbox = { position = { 0 0 } size = { 1062 22 } text = "TOT_MUSIC_COMPETITION_VIEW_FINAL" using = fontsize_small align = left|nobaseline }
+							textbox = { position = { 0 26 } size = { 1062 18 } text = "TOT_MUSIC_COMPETITION_QUALIFIED_TEAMS" using = fontsize_very_small align = left|nobaseline }
+							widget = { position = { 0 48 } size = { 1042 240 } using = entry_bg_simple
+								widget = { visible = "[GetScriptedGui('tot_music_competition_track_2_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" position = { 8 8 } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_qualified_idol_field')]" addcolumn = 250 addrow = 34 item = { tot_music_competition_idol_solo_entry = {} } } }
+								widget = { visible = "[GetScriptedGui('tot_music_competition_track_3_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" position = { 8 8 } fixedgridbox = { datamodel = "[GetPlayer.MakeScope.GetList('tot_music_competition_qualified_idol_field')]" addcolumn = 250 addrow = 34 item = { tot_music_competition_idol_group_entry = {} } } }
+							}
+						}
+						textbox = { visible = "[Not(GetScriptedGui('tot_music_competition_is_registered').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" size = { 1030 22 } text = "TOT_MUSIC_COMPETITION_WAITING" using = fontsize_small align = center|nobaseline }
+						textbox = { visible = "[GetScriptedGui('tot_music_competition_is_qualifying').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 1030 22 } text = "TOT_MUSIC_COMPETITION_AUTO_QUALIFYING" using = fontsize_small align = center|nobaseline }
+						textbox = { visible = "[GetScriptedGui('tot_music_competition_is_final').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" size = { 1030 22 } text = "TOT_MUSIC_COMPETITION_AUTO_FINAL" using = fontsize_small align = center|nobaseline }
+					}
+				}
+			}
+		}
+	}
+}

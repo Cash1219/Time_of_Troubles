@@ -1,7 +1,7 @@
 ﻿types tot_band_page_types
 {
 	 type tot_band_page = widget {
-	size = { 1460 680 }
+	 size = { 1480 680 }
 	ignoreinvisible = yes
 
 	state = {
@@ -19,14 +19,41 @@
 		trigger_on_create = yes
 		# Build story bands and headquarters before this page binds its roster lists.
 		on_finish = "[GetScriptedGui('tot_band_initialize_management_page').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-		on_finish = "[GetVariableSystem.Set( 'tot_band_page', 'management' )]"
+		on_finish = "[GetVariableSystem.Set( 'tot_band_page', 'management' )][GetVariableSystem.Set( 'tot_character_activity_tab', 'bands' )]"
 	}
 
-	flowcontainer = {
-		# Keep the active band, roster and filters as the top, central work area.
-		position = { 0 0 }
-		direction = vertical
-		spacing = 8
+	widget = {
+		size = { 520 38 }
+		tab_buttons = {
+			blockoverride "first_button" { text = "TOT_CHARACTER_ACTIVITY_TAB_BANDS" }
+			blockoverride "first_button_selected" { text = "TOT_CHARACTER_ACTIVITY_TAB_BANDS" }
+			blockoverride "first_button_tooltip" { tooltip = "TOT_CHARACTER_ACTIVITY_TAB_BANDS" }
+			blockoverride "first_button_click" { onclick = "[GetVariableSystem.Set( 'tot_character_activity_tab', 'bands' )]" }
+			blockoverride "first_button_visibility" { visible = "[GetVariableSystem.HasValue( 'tot_character_activity_tab', 'bands' )]" }
+			blockoverride "first_button_visibility_checked" { visible = "[Not(GetVariableSystem.HasValue( 'tot_character_activity_tab', 'bands' ))]" }
+			blockoverride "second_button" { text = "TOT_CHARACTER_ACTIVITY_TAB_COMPETITIONS" }
+			blockoverride "second_button_selected" { text = "TOT_CHARACTER_ACTIVITY_TAB_COMPETITIONS" }
+			blockoverride "second_button_tooltip" { tooltip = "TOT_CHARACTER_ACTIVITY_TAB_COMPETITIONS" }
+			blockoverride "second_button_click" { onclick = "[GetVariableSystem.Set( 'tot_character_activity_tab', 'competitions' )]" }
+			blockoverride "second_button_visibility" { visible = "[GetVariableSystem.HasValue( 'tot_character_activity_tab', 'competitions' )]" }
+			blockoverride "second_button_visibility_checked" { visible = "[Not(GetVariableSystem.HasValue( 'tot_character_activity_tab', 'competitions' ))]" }
+			blockoverride "third_button_visibility" { visible = no }
+			blockoverride "third_button_visibility_checked" { visible = no }
+			blockoverride "fourth_button_visibility" { visible = no }
+			blockoverride "fourth_button_visibility_checked" { visible = no }
+			blockoverride "fifth_button_visibility" { visible = no }
+			blockoverride "fifth_button_visibility_checked" { visible = no }
+		}
+	}
+
+	widget = {
+		size = { 1480 640 }
+		position = { 0 40 }
+		visible = "[GetVariableSystem.HasValue( 'tot_character_activity_tab', 'bands' )]"
+		flowcontainer = {
+			# Keep the active band, roster and filters as the top, central work area.
+			direction = vertical
+			spacing = 8
 	widget = {
 		size = { 520 38 }
 		tab_buttons = {
@@ -90,7 +117,7 @@
 	scrollbox = {
 		position = { 0 295 }
 		visible = "[Or(GetVariableSystem.HasValue( 'tot_band_page', 'management' ), Not(GetVariableSystem.HasValue( 'tot_band_page', 'shop' )))]"
-		size = { 520 385 }
+		size = { 520 345 }
 		blockoverride "scrollbox_content" {
 			flowcontainer = {
 				direction = vertical
@@ -1120,7 +1147,7 @@
 	scrollbox = {
 		position = { 535 113 }
 		visible = "[Or(GetVariableSystem.HasValue( 'tot_band_page', 'management' ), Not(GetVariableSystem.HasValue( 'tot_band_page', 'shop' )))]"
-		size = { 925 567 }
+		size = { 925 527 }
 		blockoverride "scrollbox_content" {
 			flowcontainer = {
 				direction = vertical
@@ -1167,7 +1194,7 @@
 	scrollbox = {
 		visible = "[GetVariableSystem.HasValue( 'tot_band_page', 'shop' )]"
 		position = { 0 120 }
-		size = { 1460 560 }
+		size = { 1460 520 }
 		blockoverride "scrollbox_content" {
 			flowcontainer = {
 				direction = vertical
@@ -1230,6 +1257,14 @@
 				}
 			}
 		}
+		}
+	}
+
+	widget = {
+		visible = "[GetVariableSystem.HasValue( 'tot_character_activity_tab', 'competitions' )]"
+		position = { 0 40 }
+		size = { 1480 640 }
+		tot_music_competition_page = {}
 	}
 }
 }

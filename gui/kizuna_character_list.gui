@@ -1057,7 +1057,7 @@ types tot_kizuna_page_types {
 				blockoverride "fifth_button" { text = "KIZUNA_TAB_SUBJECT" }
 				blockoverride "fifth_button_selected" { text = "KIZUNA_TAB_SUBJECT" }
 				blockoverride "fifth_button_tooltip" { tooltip = "KIZUNA_TAB_SUBJECT" }
-				blockoverride "fifth_button_click" { onclick = "[GetVariableSystem.Set( 'tot_kizuna_page', 'subject' )][GetScriptedGui('tot_character_codex_scope_subject').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+				blockoverride "fifth_button_click" { onclick = "[GetVariableSystem.Set( 'tot_kizuna_page', 'subject' )][GetScriptedGui('tot_subject_character_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 				blockoverride "fifth_button_visibility" { visible = "[GetVariableSystem.HasValue( 'tot_kizuna_page', 'subject' )]" }
 				blockoverride "fifth_button_visibility_checked" { visible = "[Not(GetVariableSystem.HasValue( 'tot_kizuna_page', 'subject' ))]" }
 		}
@@ -1080,21 +1080,21 @@ types tot_kizuna_page_types {
                                 spacing = 4
                                 textbox = { size = { 236 26 } text = "KIZUNA_TAB_FACTION" using = fontsize_medium align = left|nobaseline }
                         widget = {
-                            visible = "[GetScriptedGui('kon_kizuna_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                            visible = "[GetScriptedGui('tot_kizuna_011_show').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
                             size = { 236 34 }
                             button = {
-                                visible = "[GetVariableSystem.HasValue( 'tot_kizuna_selected', 'kon' )]"
+                                visible = "[GetVariableSystem.HasValue( 'tot_kizuna_selected', '011' )]"
                                 using = default_button_primary
                                 size = { 236 34 }
-                                text = "ig_petty_bourgeoisie_htt"
-                                onclick = "[GetVariableSystem.Set( 'tot_kizuna_selected', 'kon' )]"
+                                text = "tot_kizuna_011_display"
+                                onclick = "[GetVariableSystem.Set( 'tot_kizuna_selected', '011' )]"
                             }
                             button = {
-                                visible = "[Not(GetVariableSystem.HasValue( 'tot_kizuna_selected', 'kon' ))]"
+                                visible = "[Not(GetVariableSystem.HasValue( 'tot_kizuna_selected', '011' ))]"
                                 using = default_button
                                 size = { 236 34 }
-                                text = "ig_petty_bourgeoisie_htt"
-                                onclick = "[GetVariableSystem.Set( 'tot_kizuna_selected', 'kon' )]"
+                                text = "tot_kizuna_011_display"
+                                onclick = "[GetVariableSystem.Set( 'tot_kizuna_selected', '011' )]"
                             }
                         }
                         widget = {
@@ -2977,91 +2977,40 @@ types tot_kizuna_page_types {
 					direction = vertical
 	
 						flowcontainer = {
-							visible = "[GetVariableSystem.HasValue( 'tot_kizuna_selected', 'kon' )]"
+							visible = "[GetVariableSystem.HasValue( 'tot_kizuna_selected', '011' )]"
 							direction = vertical
-		
-							section_header_button = {
-								blockoverride "layout" {
-									size = { 520 38 }
-			
+							default_header_clean = {
+								visible = "[GetVariableSystem.HasValue( 'tot_kizuna_selected', '011' )]"
+								size = { 1040 58 }
+								blockoverride "text" {
+									text = "tot_kizuna_011_header"
+									autoresize = yes
+									multiline = yes
+									using = fontsize_xl
+									default_format = "#medium"
 								}
-			
-								blockoverride "left_text" {
-									text = "#v 轻音部#!"
-								}
-								blockoverride "onclick" {
-									onclick = "[GetVariableSystem.Toggle('kon_kizuna_toggle')]"
-								}
-								blockoverride "onclick_showmore" {
-			
-									visible = "[Not(GetVariableSystem.HasValue( 'tot_kizuna_selected', 'kon' ))]"
-								}
-								blockoverride "onclick_showless" {
-									visible = "[GetVariableSystem.HasValue( 'tot_kizuna_selected', 'kon' )]"
-								}
-				
+								tooltip = "tot_kizuna_011_tooltip"
 							}
-		
-								default_header_clean = {
-										name = "kon_kizuna_show" #樱高轻音部计数
-										visible = "[GetVariableSystem.HasValue( 'tot_kizuna_selected', 'kon' )]"
-										size = { 1040 76 }
-					
-										blockoverride "text" {
-						
-											icon = {
-													texture = "gfx/interface/icons/religion_icons/starbeat.dds"
-													size = { 50 50 }
-													position = { -50 -10 }
-												}
-							
-											raw_text = "樱高轻音部 [AccessPlayer.MakeScope.ScriptValue('kon_kizuna_number')|=+D]"
-											autoresize = yes
-											multiline = yes
-											using = fontsize_xl
-											default_format = "#medium"
-										}
-										tooltip = "kon_kizuna_tooltip"		
-				
-									}
-				
-									default_header_clean = {
-										name = "kon_kizuna_modifier" #樱高轻音部修正
-										visible = "[GetVariableSystem.HasValue( 'tot_kizuna_selected', 'kon' )]"
-										size = { 500 200 }
-					
-										blockoverride "text" {
-						
-											raw_text = "kon_kizuna_modifier_text"
-											autoresize = yes
-											multiline = yes
-											using = fontsize_xl
-											default_format = "#medium"
-						
-										}
-							
-									}
+							default_header_clean = {
+								visible = "[GetVariableSystem.HasValue( 'tot_kizuna_selected', '011' )]"
+								size = { 1040 132 }
+								blockoverride "text" {
+									text = "tot_kizuna_011_modifier_text"
+									autoresize = yes
+									multiline = yes
+									fontsize = 15
+									fontsize_min = 12
+									default_format = "#medium"
+								}
+							}
 							fixedgridbox = {
-								name = "kon_kizuna_character_list"
-								visible = "[GetVariableSystem.HasValue( 'tot_kizuna_selected', 'kon' )]" #樱高轻音部角色列表
-								datamodel = "[GetPlayer.MakeScope.GetList('kon_kizuna_list')]"
+								visible = "[GetVariableSystem.HasValue( 'tot_kizuna_selected', '011' )]"
+								datamodel = "[GetPlayer.MakeScope.GetList('tot_kizuna_011_list')]"
 								addcolumn = 355
 								addrow = 136
 								flipdirection = yes
 								datamodel_wrap = 3
-								background = {
-									texture = "gfx/interface/tooltip/tooltip_title_bg.dds"
-									color = { 0.69 0.47 0.33 1 }
-									alpha = 0.4
-
-									modify_texture = {
-										using = texture_velvet
-									}
-								}
-								item = {
-									kizuna_character_widget = {}
-				
-								}
+								item = { tot_kizuna_domestic_character = {} }
 							}
 						}
 							section_header_button = {
@@ -7116,7 +7065,7 @@ flowcontainer = {
 	widget = {
 		visible = "[GetVariableSystem.HasValue( 'tot_kizuna_page', 'subject' )]"
 		size = { 1420 630 }
-		tot_kizuna_codex_page = {}
+		tot_subject_character_page = {}
 	}
 }
 }

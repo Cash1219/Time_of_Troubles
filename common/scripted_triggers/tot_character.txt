@@ -859,6 +859,21 @@ tot_band_8_has_bound_headquarter_trigger = { scope = country has_variable_list =
 tot_band_9_has_bound_headquarter_trigger = { scope = country has_variable_list = tot_band_9_hq_buildings }
 tot_band_10_has_bound_headquarter_trigger = { scope = country has_variable_list = tot_band_10_hq_buildings }
 
+tot_has_operational_band_trigger = {
+	OR = {
+		AND = { has_variable = tot_band_1_created tot_band_1_has_bound_headquarter_trigger = yes }
+		AND = { has_variable = tot_band_2_created tot_band_2_has_bound_headquarter_trigger = yes }
+		AND = { has_variable = tot_band_3_created tot_band_3_has_bound_headquarter_trigger = yes }
+		AND = { has_variable = tot_band_4_created tot_band_4_has_bound_headquarter_trigger = yes }
+		AND = { has_variable = tot_band_5_created tot_band_5_has_bound_headquarter_trigger = yes }
+		AND = { has_variable = tot_band_6_created tot_band_6_has_bound_headquarter_trigger = yes }
+		AND = { has_variable = tot_band_7_created tot_band_7_has_bound_headquarter_trigger = yes }
+		AND = { has_variable = tot_band_8_created tot_band_8_has_bound_headquarter_trigger = yes }
+		AND = { has_variable = tot_band_9_created tot_band_9_has_bound_headquarter_trigger = yes }
+		AND = { has_variable = tot_band_10_created tot_band_10_has_bound_headquarter_trigger = yes }
+	}
+}
+
 tot_band_hq_state_build_allowed_trigger = {
 	owner ?= {
 		is_player = yes

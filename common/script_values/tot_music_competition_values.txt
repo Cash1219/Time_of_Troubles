@@ -1,0 +1,108 @@
+# Music competition scoring values.
+# The game keeps the visible score as an integer, while the raw performance
+# and multiplier are stored separately for the activity panel and rewards.
+
+tot_music_competition_band_1_multiplier_value = {
+	value = 1
+	if = { limit = { has_variable = tot_band_1_creation_progress } add = { value = band_1_kizuna_current_level_value multiply = 0.4 } }
+	if = { limit = { has_variable = tot_band_1_member_count var:tot_band_1_member_count >= 2 } add = 0.25 }
+	if = { limit = { has_variable = tot_band_1_member_count var:tot_band_1_member_count >= 3 } add = 0.25 }
+	if = { limit = { has_variable = tot_band_1_member_count var:tot_band_1_member_count >= 4 } add = 0.25 }
+	if = { limit = { has_variable = tot_band_1_member_count var:tot_band_1_member_count >= 5 } add = 0.25 }
+	if = { limit = { has_variable = tot_band_1_member_count var:tot_band_1_member_count >= 6 } add = 0.25 }
+	if = { limit = { has_variable = tot_music_competition_band_1_mastery_bonus } add = var:tot_music_competition_band_1_mastery_bonus }
+	if = { limit = { has_variable = tot_music_competition_event_modifier } add = var:tot_music_competition_event_modifier }
+	max = 5
+}
+
+tot_music_competition_band_2_multiplier_value = {
+	value = 1
+	if = { limit = { has_variable = tot_band_2_creation_progress } add = { value = band_2_kizuna_current_level_value multiply = 0.4 } }
+	if = { limit = { has_variable = tot_band_2_member_count var:tot_band_2_member_count >= 2 } add = 0.25 }
+	if = { limit = { has_variable = tot_band_2_member_count var:tot_band_2_member_count >= 3 } add = 0.25 }
+	if = { limit = { has_variable = tot_band_2_member_count var:tot_band_2_member_count >= 4 } add = 0.25 }
+	if = { limit = { has_variable = tot_band_2_member_count var:tot_band_2_member_count >= 5 } add = 0.25 }
+	if = { limit = { has_variable = tot_band_2_member_count var:tot_band_2_member_count >= 6 } add = 0.25 }
+	if = { limit = { has_variable = tot_music_competition_band_2_mastery_bonus } add = var:tot_music_competition_band_2_mastery_bonus }
+	if = { limit = { has_variable = tot_music_competition_event_modifier } add = var:tot_music_competition_event_modifier }
+	max = 5
+}
+
+tot_music_competition_band_3_multiplier_value = {
+	value = 1
+	if = { limit = { has_variable = tot_band_3_creation_progress } add = { value = band_3_kizuna_current_level_value multiply = 0.4 } }
+	if = { limit = { has_variable = tot_band_3_member_count var:tot_band_3_member_count >= 2 } add = 0.25 }
+	if = { limit = { has_variable = tot_band_3_member_count var:tot_band_3_member_count >= 3 } add = 0.25 }
+	if = { limit = { has_variable = tot_band_3_member_count var:tot_band_3_member_count >= 4 } add = 0.25 }
+	if = { limit = { has_variable = tot_band_3_member_count var:tot_band_3_member_count >= 5 } add = 0.25 }
+	if = { limit = { has_variable = tot_band_3_member_count var:tot_band_3_member_count >= 6 } add = 0.25 }
+	if = { limit = { has_variable = tot_music_competition_band_3_mastery_bonus } add = var:tot_music_competition_band_3_mastery_bonus }
+	if = { limit = { has_variable = tot_music_competition_event_modifier } add = var:tot_music_competition_event_modifier }
+	max = 5
+}
+
+tot_music_competition_band_4_multiplier_value = {
+	value = 1
+	if = { limit = { has_variable = tot_band_4_creation_progress } add = { value = band_4_kizuna_current_level_value multiply = 0.4 } }
+	if = { limit = { has_variable = tot_band_4_member_count var:tot_band_4_member_count >= 2 } add = 0.25 }
+	if = { limit = { has_variable = tot_band_4_member_count var:tot_band_4_member_count >= 3 } add = 0.25 }
+	if = { limit = { has_variable = tot_band_4_member_count var:tot_band_4_member_count >= 4 } add = 0.25 }
+	if = { limit = { has_variable = tot_band_4_member_count var:tot_band_4_member_count >= 5 } add = 0.25 }
+	if = { limit = { has_variable = tot_band_4_member_count var:tot_band_4_member_count >= 6 } add = 0.25 }
+	if = { limit = { has_variable = tot_music_competition_band_4_mastery_bonus } add = var:tot_music_competition_band_4_mastery_bonus }
+	if = { limit = { has_variable = tot_music_competition_event_modifier } add = var:tot_music_competition_event_modifier }
+	max = 5
+}
+
+tot_music_competition_band_5_multiplier_value = {
+	value = 1
+	if = { limit = { has_variable = tot_band_5_creation_progress } add = { value = band_5_kizuna_current_level_value multiply = 0.4 } }
+	if = { limit = { has_variable = tot_band_5_member_count var:tot_band_5_member_count >= 2 } add = 0.25 }
+	if = { limit = { has_variable = tot_band_5_member_count var:tot_band_5_member_count >= 3 } add = 0.25 }
+	if = { limit = { has_variable = tot_band_5_member_count var:tot_band_5_member_count >= 4 } add = 0.25 }
+	if = { limit = { has_variable = tot_band_5_member_count var:tot_band_5_member_count >= 5 } add = 0.25 }
+	if = { limit = { has_variable = tot_band_5_member_count var:tot_band_5_member_count >= 6 } add = 0.25 }
+	if = { limit = { has_variable = tot_music_competition_band_5_mastery_bonus } add = var:tot_music_competition_band_5_mastery_bonus }
+	if = { limit = { has_variable = tot_music_competition_event_modifier } add = var:tot_music_competition_event_modifier }
+	max = 5
+}
+
+# Idol events deliberately use a separate progression track from bands.  An
+# idol's own level and idol-specific traits matter in the solo event; a group
+# gains strength from the number of prepared historical idols it can field.
+tot_music_competition_idol_solo_multiplier_value = {
+	value = 1
+	if = {
+		limit = { has_variable = tot_music_competition_idol_representative }
+		var:tot_music_competition_idol_representative ?= {
+			if = { limit = { has_trait = tot_group_sheet_023_trait } add = 0.9 }
+			if = { limit = { has_trait = tot_group_sheet_060_trait } add = 0.6 }
+			if = { limit = { has_trait = tot_group_sheet_056_trait } add = 0.2 }
+			if = {
+				limit = { has_variable = tot_character_growth_level }
+				add = { value = var:tot_character_growth_level multiply = 0.4 }
+			}
+		}
+	}
+	if = { limit = { has_variable = tot_music_competition_event_modifier } add = var:tot_music_competition_event_modifier }
+	max = 7
+}
+
+tot_music_competition_idol_group_multiplier_value = {
+	value = 1
+	if = { limit = { has_variable = tot_music_competition_idol_candidate_count var:tot_music_competition_idol_candidate_count >= 2 } add = 0.35 }
+	if = { limit = { has_variable = tot_music_competition_idol_candidate_count var:tot_music_competition_idol_candidate_count >= 3 } add = 0.35 }
+	if = { limit = { has_variable = tot_music_competition_idol_candidate_count var:tot_music_competition_idol_candidate_count >= 4 } add = 0.35 }
+	if = { limit = { has_variable = tot_music_competition_idol_candidate_count var:tot_music_competition_idol_candidate_count >= 5 } add = 0.35 }
+	if = { limit = { has_variable = tot_music_competition_idol_candidate_count var:tot_music_competition_idol_candidate_count >= 6 } add = 0.2 }
+	if = { limit = { has_variable = tot_music_competition_event_modifier } add = var:tot_music_competition_event_modifier }
+	max = 5
+}
+
+tot_music_competition_band_1_rank_score_value = { value = var:tot_music_competition_band_1_raw_score divide = 40 round = yes min = 0 max = 54 }
+tot_music_competition_band_2_rank_score_value = { value = var:tot_music_competition_band_2_raw_score divide = 40 round = yes min = 0 max = 54 }
+tot_music_competition_band_3_rank_score_value = { value = var:tot_music_competition_band_3_raw_score divide = 40 round = yes min = 0 max = 54 }
+tot_music_competition_band_4_rank_score_value = { value = var:tot_music_competition_band_4_raw_score divide = 40 round = yes min = 0 max = 54 }
+tot_music_competition_band_5_rank_score_value = { value = var:tot_music_competition_band_5_raw_score divide = 40 round = yes min = 0 max = 54 }
+tot_music_competition_idol_solo_rank_score_value = { value = var:tot_music_competition_idol_raw_score divide = 60 round = yes min = 0 max = 54 }
+tot_music_competition_idol_group_rank_score_value = { value = var:tot_music_competition_idol_group_raw_score divide = 40 round = yes min = 0 max = 54 }

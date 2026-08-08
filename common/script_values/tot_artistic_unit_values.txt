@@ -1,0 +1,125 @@
+tot_special_unit_ratio = {
+	value = modifier:country_tot_special_unit_ratio_add
+	min = 0
+	max = 1
+}
+
+tot_idol_guard_unit_ratio = {
+	value = modifier:country_tot_idol_guard_unit_ratio_add
+	min = 0
+	max = 1
+}
+
+tot_idol_knight_unit_ratio = {
+	value = modifier:country_tot_idol_knight_unit_ratio_add
+	min = 0
+	max = 1
+}
+
+tot_special_units_total_army_units = {
+	value = 0
+	every_military_formation = {
+		limit = { is_army = yes }
+		add = num_units
+	}
+}
+
+tot_idol_guard_unit_capacity = {
+	value = tot_special_units_total_army_units
+	multiply = tot_idol_guard_unit_ratio
+	round = yes
+	min = 0
+}
+
+tot_idol_guard_unit_free_capacity = {
+	value = tot_idol_guard_unit_capacity
+	subtract = tot_idol_guard_unit_deployed
+	min = 0
+}
+
+tot_idol_knight_unit_capacity = {
+	value = tot_special_units_total_army_units
+	multiply = tot_idol_knight_unit_ratio
+	round = yes
+	min = 0
+}
+
+tot_idol_knight_unit_free_capacity = {
+	value = tot_idol_knight_unit_capacity
+	subtract = tot_idol_knight_unit_deployed
+	min = 0
+}
+
+tot_special_unit_deployed = {
+	value = {
+		every_military_formation = {
+			limit = { is_army = yes }
+			every_combat_unit = {
+				limit = {
+					OR = {
+						has_unit_type = unit_type:combat_unit_type_tot_idol_guard
+						has_unit_type = unit_type:combat_unit_type_tot_idol_knight
+					}
+				}
+				add = 1
+			}
+		}
+	}
+}
+
+tot_idol_guard_unit_deployed = {
+	value = {
+		every_military_formation = {
+			limit = { is_army = yes }
+			every_combat_unit = {
+				limit = { has_unit_type = unit_type:combat_unit_type_tot_idol_guard }
+				add = 1
+			}
+		}
+	}
+}
+
+
+tot_idol_knight_unit_deployed = {
+	value = {
+		every_military_formation = {
+			limit = { is_army = yes }
+			every_combat_unit = {
+				limit = { has_unit_type = unit_type:combat_unit_type_tot_idol_knight }
+				add = 1
+			}
+		}
+	}
+}
+
+tot_idol_guard_offense_value = {
+	value = 20
+	if = { limit = { has_technology_researched = general_staff } add = 2 }
+	if = { limit = { has_technology_researched = trench_works } add = 4 }
+	if = { limit = { has_technology_researched = nco_training } add = 7 }
+	if = { limit = { has_technology_researched = mobile_armor } add = 7 }
+}
+
+tot_idol_guard_defense_value = {
+	value = 30
+	if = { limit = { has_technology_researched = general_staff } add = 2 }
+	if = { limit = { has_technology_researched = trench_works } add = 4 }
+	if = { limit = { has_technology_researched = nco_training } add = 7 }
+	if = { limit = { has_technology_researched = mobile_armor } add = 7 }
+}
+
+tot_idol_knight_offense_value = {
+	value = 30
+	if = { limit = { has_technology_researched = general_staff } add = 1 }
+	if = { limit = { has_technology_researched = trench_works } add = 3 }
+	if = { limit = { has_technology_researched = nco_training } add = 5 }
+	if = { limit = { has_technology_researched = mobile_armor } add = 4 }
+}
+
+tot_idol_knight_defense_value = {
+	value = 25
+	if = { limit = { has_technology_researched = general_staff } add = 1 }
+	if = { limit = { has_technology_researched = trench_works } add = 3 }
+	if = { limit = { has_technology_researched = nco_training } add = 5 }
+	if = { limit = { has_technology_researched = mobile_armor } add = 4 }
+}

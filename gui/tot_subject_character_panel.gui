@@ -1,0 +1,142 @@
+types tot_subject_character_types {
+	type tot_subject_character_card = widget {
+		size = { 426 154 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+		background = { using = entry_bg_fancy }
+
+		tooltipwidget = {
+			FancyTooltip_Character = {}
+		}
+
+		hbox = {
+			margin = { 10 8 }
+			spacing = 10
+
+			widget = {
+				size = { 112 136 }
+
+				character_portrait_large = {
+					parentanchor = center
+					blockoverride "show_hat" {}
+					blockoverride "highlight" {}
+					blockoverride "rank_icon" {}
+				}
+
+				ig_button = {
+					visible = "[Character.GetInterestGroup.IsValid]"
+					datacontext = "[Character.GetInterestGroup]"
+					parentanchor = bottom|left
+					block "ig_button_size" { size = { 42 42 } }
+					using = tooltip_ws
+					blockoverride "in_government_icon" {}
+				}
+
+				icon = {
+					datacontext = "[Character.GetIdeology]"
+					parentanchor = bottom|right
+					size = { 42 42 }
+					texture = "[Ideology.GetTexture]"
+					tooltipwidget = { FancyTooltip_Ideology = {} }
+				}
+			}
+
+			vbox = {
+				size = { 286 136 }
+				parentanchor = vcenter
+				spacing = 4
+
+				textbox = {
+					size = { 286 26 }
+					raw_text = "#BOLD [Character.GetFullNameNoFormatting]#!"
+					using = fontsize_large
+					align = left|nobaseline
+					elide = right
+				}
+
+				textbox = {
+					size = { 286 20 }
+					raw_text = "#title [Character.GetPrimaryRoleTitle]#!"
+					using = fontsize_small
+					align = left|nobaseline
+					elide = right
+				}
+
+				textbox = {
+					size = { 286 20 }
+					raw_text = "[Character.GetCountry.GetNameNoFormatting]"
+					using = fontsize_small
+					align = left|nobaseline
+					elide = right
+				}
+
+				button_standard = {
+					size = { 142 32 }
+					text = "TOT_CHARACTER_CODEX_RECRUIT_SUBJECT"
+					enabled = "[GetScriptedGui('tot_subject_character_recruit').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_subject_character', Character.MakeScope).End)]"
+					onclick = "[GetScriptedGui('tot_subject_character_recruit').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_subject_character', Character.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('tot_subject_character_recruit').IsValidTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_subject_character', Character.MakeScope).End)]"
+				}
+			}
+		}
+	}
+
+	type tot_subject_character_page = widget {
+		size = { 1420 630 }
+		background = { using = entry_bg_fancy }
+
+		state = {
+			name = refresh_subject_characters
+			trigger_on_create = yes
+			on_finish = "[GetScriptedGui('tot_subject_character_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		}
+
+		vbox = {
+			margin = { 18 16 }
+			spacing = 10
+
+			hbox = {
+					size = { 1384 38 }
+					textbox = {
+						size = { 1020 34 }
+					text = "TOT_CHARACTER_SUBJECT_HEADER"
+					using = fontsize_xl
+					align = left|nobaseline
+				}
+				textbox = {
+					size = { 70 34 }
+					raw_text = "[GetPlayer.MakeScope.Var('tot_subject_character_result_count').GetValue|0]/[GetPlayer.MakeScope.Var('tot_subject_country_count').GetValue|0]"
+					using = fontsize_large
+					align = right|nobaseline
+				}
+					button_standard = {
+						size = { 260 30 }
+						text = "TOT_CHARACTER_CODEX_MANUAL_REFRESH"
+					tooltip = "TOT_CHARACTER_SUBJECT_REFRESH_TOOLTIP"
+					onclick = "[GetScriptedGui('tot_subject_character_refresh').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				}
+			}
+
+			textbox = {
+				size = { 1384 34 }
+				text = "TOT_CHARACTER_SUBJECT_PAGE_DESC"
+				using = fontsize_small
+				align = left|nobaseline
+			}
+
+			scrollbox = {
+				size = { 1384 510 }
+				blockoverride "scrollbox_content" {
+					fixedgridbox = {
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_subject_character_results')]"
+						addcolumn = 448
+						addrow = 164
+						datamodel_wrap = 3
+						flipdirection = yes
+						item = { tot_subject_character_card = {} }
+					}
+				}
+			}
+		}
+	}
+}

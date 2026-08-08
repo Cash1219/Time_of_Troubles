@@ -1,0 +1,63 @@
+amendment_tot_stage_guard_mercenary = {
+	parent = law_idol_guard_army
+
+	allowed_laws = {
+		law_idol_guard_army
+	}
+
+	modifier = {
+		interest_group_ig_armed_forces_pol_str_mult = 0.50
+		building_training_rate_mult = -0.25
+		country_military_goods_cost_mult = 0.20
+	}
+
+	possible = {
+		has_law_or_variant = law_type:law_idol_guard_army
+	}
+
+	would_sponsor = {
+		is_interest_group_type = ig_armed_forces
+	}
+
+	ai_will_revoke = {
+		always = no
+	}
+
+	can_repeal = {
+		legitimacy >= legitimacy_to_repeal_amendment
+	}
+
+	amendment_activism_multiplier = 0.5
+}
+
+amendment_tot_stage_guard_fanatic_fans = {
+	parent = law_idol_guard_army
+
+	allowed_laws = {
+		law_idol_guard_army
+	}
+
+	modifier = {
+		country_clergymen_pol_str_mult = 0.50
+		building_training_rate_mult = -0.25
+		military_formation_mobilization_speed_mult = -0.20
+	}
+
+	possible = {
+		has_law_or_variant = law_type:law_idol_guard_army
+	}
+
+	would_sponsor = {
+		is_interest_group_type = ig_devout
+	}
+
+	ai_will_revoke = {
+		always = no
+	}
+
+	can_repeal = {
+		legitimacy >= legitimacy_to_repeal_amendment
+	}
+
+	amendment_activism_multiplier = 0.5
+}

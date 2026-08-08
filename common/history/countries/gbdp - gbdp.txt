@@ -93,6 +93,17 @@ COUNTRIES = {
 			add_ideology = ideology_free_creation
 			set_interest_group_name = ig_intelligentsia_band
 		}
+		activate_law = law_type:law_idol_guard_army
+		active_law:lawgroup_army_model ?= {
+			add_amendment = {
+				type = amendment_tot_stage_guard_mercenary
+				sponsor = PREV.ig:ig_armed_forces
+			}
+			add_amendment = {
+				type = amendment_tot_stage_guard_fanatic_fans
+				sponsor = PREV.ig:ig_devout
+			}
+		}
 		add_journal_entry = { type = je_tot_idol_succession_crisis }
 		set_variable = { name = tot_idol_crisis_ll_score value = 0 }
 		set_variable = { name = tot_idol_crisis_imas_score value = 0 }

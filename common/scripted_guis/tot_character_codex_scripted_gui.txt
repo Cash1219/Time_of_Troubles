@@ -13,6 +13,44 @@ tot_character_codex_scan_selected = {
 	is_valid = { is_player = yes }
 }
 
+# Subject management has its own list and refresh action. It intentionally does
+# not share the codex selection or result variables.
+tot_subject_character_refresh = {
+	scope = country
+	effect = { tot_subject_character_refresh_effect = yes }
+	is_shown = { is_player = yes }
+	is_valid = { is_player = yes }
+}
+
+tot_subject_character_recruit = {
+	scope = country
+	effect = {
+		scope:tot_subject_character = {
+			owner ?= { add_liberty_desire = 50 }
+			transfer_character = root
+		}
+		tot_subject_character_refresh_effect = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		scope:tot_subject_character = {
+			is_character_alive = yes
+			is_in_void = no
+			is_in_exile_pool = no
+			is_ruler_of_own_country = no
+			is_heir_of_own_country = no
+			owner ?= {
+				is_subject_of = root
+				custom_tooltip = {
+					text = TOT_CHARACTER_CODEX_RECRUIT_SUBJECT_LIBERTY_REQUIREMENT
+					liberty_desire <= 50
+				}
+			}
+		}
+	}
+}
+
 # This is deliberately a country-scoped GUI action. The card passes the
 # selected character as a named scope, while root remains the player country.
 tot_character_codex_recruit_subject = {

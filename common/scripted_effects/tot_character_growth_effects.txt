@@ -326,11 +326,11 @@ tot_character_growth_refresh_cost = {
 	}
 
 	if = {
-		limit = { tot_character_growth_acquired_traits_count_value > 0 }
+		limit = { has_variable = tot_character_growth_level }
 		change_variable = {
 			name = tot_character_growth_current_cost
 			add = {
-				value = tot_character_growth_acquired_traits_count_value
+				value = var:tot_character_growth_level
 				multiply = 3000
 			}
 		}
@@ -394,7 +394,6 @@ tot_character_growth_check_level_up = {
 			has_variable = tot_character_growth_current_cost
 			var:tot_character_growth_exp >= var:tot_character_growth_current_cost
 			historical = yes
-			tot_character_growth_has_available_random_trait = yes
 		}
 
 		change_variable = {
@@ -404,11 +403,15 @@ tot_character_growth_check_level_up = {
 				multiply = -1
 			}
 		}
-		tot_character_growth_grant_random_kizuna_trait = yes
-		tot_character_growth_refresh_cost = yes
-		owner ?= {
-			update_kizuna = yes
+		change_variable = {
+			name = tot_character_growth_level
+			add = 1
 		}
+		change_variable = {
+			name = tot_character_growth_skill_points
+			add = 1
+		}
+		tot_character_growth_refresh_cost = yes
 	}
 }
 

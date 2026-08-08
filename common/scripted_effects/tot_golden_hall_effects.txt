@@ -1,256 +1,146 @@
-tot_golden_hall_add_major_score = {
+tot_golden_hall_add_crisis_score = {
 	if = {
-		limit = {
-			OR = {
-				c:MUS ?= root
-				c:AQO ?= root
-				c:NJS ?= root
-			}
-		}
+		limit = { var:tot_golden_hall_contract_faction = 1 }
 		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
-			}
-			change_variable = { name = tot_idol_crisis_ll_score add = 3 }
+			limit = { tot_golden_hall_crisis_participant_trigger = yes }
+			change_variable = { name = tot_idol_crisis_ll_score add = $VALUE$ }
 		}
 	}
 	if = {
-		limit = {
-			OR = {
-				c:IDMS ?= root
-				c:GKMS ?= root
-			}
-		}
+		limit = { var:tot_golden_hall_contract_faction = 2 }
 		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
-			}
-			change_variable = { name = tot_idol_crisis_imas_score add = 3 }
+			limit = { tot_golden_hall_crisis_participant_trigger = yes }
+			change_variable = { name = tot_idol_crisis_imas_score add = $VALUE$ }
 		}
 	}
 	if = {
-		limit = { c:GBDP ?= root }
+		limit = { var:tot_golden_hall_contract_faction = 3 }
 		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
-			}
-			change_variable = { name = tot_idol_crisis_gbdp_score add = 3 }
+			limit = { tot_golden_hall_crisis_participant_trigger = yes }
+			change_variable = { name = tot_idol_crisis_gbdp_score add = $VALUE$ }
 		}
 	}
 	if = {
-		limit = { c:HTT ?= root }
+		limit = { var:tot_golden_hall_contract_faction = 4 }
 		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
-			}
-			change_variable = { name = tot_idol_crisis_htt_score add = 3 }
+			limit = { tot_golden_hall_crisis_participant_trigger = yes }
+			change_variable = { name = tot_idol_crisis_htt_score add = $VALUE$ }
 		}
 	}
 	if = {
-		limit = { c:PRU ?= root }
+		limit = { var:tot_golden_hall_contract_faction = 5 }
 		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
-			}
-			change_variable = { name = tot_idol_crisis_ger_score add = 3 }
+			limit = { tot_golden_hall_crisis_participant_trigger = yes }
+			change_variable = { name = tot_idol_crisis_ger_score add = $VALUE$ }
 		}
 	}
 }
 
-tot_golden_hall_add_minor_score = {
-	if = {
-		limit = {
-			OR = {
-				c:MUS ?= root
-				c:AQO ?= root
-				c:NJS ?= root
-			}
+tot_golden_hall_add_progress = {
+	s:STATE_AUSTRIA = {
+		add_building_level = {
+			building = building_tot_golden_hall_construction_site
+			level = $VALUE$
 		}
-		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
-			}
-			change_variable = { name = tot_idol_crisis_ll_score add = 2 }
-		}
+		owner = { change_variable = { name = tot_golden_hall_progress add = $VALUE$ } }
 	}
 	if = {
-		limit = {
-			OR = {
-				c:IDMS ?= root
-				c:GKMS ?= root
-			}
-		}
+		limit = { has_variable = tot_golden_hall_crisis_participant }
+		tot_golden_hall_add_crisis_score = { VALUE = $VALUE$ }
 		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
-			}
-			change_variable = { name = tot_idol_crisis_imas_score add = 2 }
+			limit = { tot_golden_hall_crisis_participant_trigger = yes }
+			change_variable = { name = tot_golden_hall_progress add = $VALUE$ }
 		}
 	}
-	if = {
-		limit = { c:GBDP ?= root }
-		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
+	tot_golden_hall_check_completion = yes
+}
+
+tot_golden_hall_process_contracts = {
+	# This effect is called from a journal entry's country scope. Preserve the
+	# country currently being checked so a capital-state loop cannot fall back
+	# to the journal holder and credit its faction for another country's work.
+	save_temporary_scope_as = tot_golden_hall_contractor
+	every_scope_state = {
+		limit = { is_capital = yes }
+		if = {
+			limit = { has_building = building_tot_golden_hall_small_contract }
+			remove_building = building_tot_golden_hall_small_contract
+			scope:tot_golden_hall_contractor = {
+				if = { limit = { OR = { c:MUS ?= this c:AQO ?= this c:NJS ?= this } } set_variable = { name = tot_golden_hall_contract_faction value = 1 } }
+				if = { limit = { OR = { c:IDMS ?= this c:GKMS ?= this } } set_variable = { name = tot_golden_hall_contract_faction value = 2 } }
+				if = { limit = { c:GBDP ?= this } set_variable = { name = tot_golden_hall_contract_faction value = 3 } }
+				if = { limit = { c:HTT ?= this } set_variable = { name = tot_golden_hall_contract_faction value = 4 } }
+				if = { limit = { c:PRU ?= this } set_variable = { name = tot_golden_hall_contract_faction value = 5 } }
+				tot_golden_hall_add_progress = { VALUE = 1 }
+				remove_variable = tot_golden_hall_contract_faction
 			}
-			change_variable = { name = tot_idol_crisis_gbdp_score add = 2 }
 		}
-	}
-	if = {
-		limit = { c:HTT ?= root }
-		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
+		if = {
+			limit = { has_building = building_tot_golden_hall_large_contract }
+			remove_building = building_tot_golden_hall_large_contract
+			scope:tot_golden_hall_contractor = {
+				if = { limit = { OR = { c:MUS ?= this c:AQO ?= this c:NJS ?= this } } set_variable = { name = tot_golden_hall_contract_faction value = 1 } }
+				if = { limit = { OR = { c:IDMS ?= this c:GKMS ?= this } } set_variable = { name = tot_golden_hall_contract_faction value = 2 } }
+				if = { limit = { c:GBDP ?= this } set_variable = { name = tot_golden_hall_contract_faction value = 3 } }
+				if = { limit = { c:HTT ?= this } set_variable = { name = tot_golden_hall_contract_faction value = 4 } }
+				if = { limit = { c:PRU ?= this } set_variable = { name = tot_golden_hall_contract_faction value = 5 } }
+				tot_golden_hall_add_progress = { VALUE = 3 }
+				remove_variable = tot_golden_hall_contract_faction
 			}
-			change_variable = { name = tot_idol_crisis_htt_score add = 2 }
-		}
-	}
-	if = {
-		limit = { c:PRU ?= root }
-		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
-			}
-			change_variable = { name = tot_idol_crisis_ger_score add = 2 }
 		}
 	}
 }
 
-tot_golden_hall_check_core_completion = {
+tot_golden_hall_check_completion = {
 	if = {
-		limit = {
-			var:tot_golden_hall_built < 1
-			var:tot_golden_hall_facade_progress >= 5
-			var:tot_golden_hall_stair_progress >= 5
-			var:tot_golden_hall_mainhall_progress >= 5
-			var:tot_golden_hall_ceiling_progress >= 5
-			var:tot_golden_hall_stage_progress >= 5
-		}
-		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
-			}
-			set_variable = { name = tot_golden_hall_built value = 1 }
-			change_variable = { name = tot_idol_crisis_tension add = -35 }
-			change_variable = { name = tot_idol_crisis_compromise_score add = 15 }
-		}
+		limit = { NOT = { has_variable = tot_golden_hall_built } }
 		s:STATE_AUSTRIA = {
 			if = {
-				limit = { NOT = { has_building = building_tot_golden_hall_monument } }
-				create_building = {
-					building = building_tot_golden_hall_monument
-					level = 1
-					reserves = 1
+				limit = {
+					any_scope_building = {
+						is_building_type = building_tot_golden_hall_construction_site
+						level >= 31
+					}
+				}
+				remove_building = building_tot_golden_hall_construction_site
+				if = {
+					limit = { NOT = { has_building = building_tot_golden_hall_monument } }
+					create_building = {
+						building = building_tot_golden_hall_monument
+						level = 1
+						reserves = 1
+					}
+				}
+				add_building_level = {
+					building = building_stage
+					level = 5
+				}
+				owner = {
+					set_variable = { name = tot_golden_hall_built value = 1 }
+					add_modifier = { name = modifier_tot_golden_hall_complete_owner years = 10 }
+				}
+				every_country = {
+					limit = { tot_golden_hall_crisis_participant_trigger = yes }
+					set_variable = { name = tot_golden_hall_built value = 1 }
+					change_variable = { name = tot_idol_crisis_tension add = -35 }
+					change_variable = { name = tot_idol_crisis_compromise_score add = 15 }
 				}
 			}
-			add_building_level = {
-				building = building_stage
-				level = 5
-			}
 		}
-		every_scope_state = {
-			limit = { state_region = s:STATE_AUSTRIA }
-			owner = {
-				add_modifier = { name = modifier_tot_golden_hall_complete_owner years = 10 }
+	}
+}
+
+tot_golden_hall_create_site = {
+	s:STATE_AUSTRIA = {
+		if = {
+			limit = {
+				NOT = { has_building = building_tot_golden_hall_construction_site }
+				NOT = { has_building = building_tot_golden_hall_monument }
+			}
+			create_building = {
+				building = building_tot_golden_hall_construction_site
+				level = 1
+				reserves = 1
 			}
 		}
 	}
@@ -258,38 +148,15 @@ tot_golden_hall_check_core_completion = {
 
 tot_golden_hall_handoff_to_vienna_owner = {
 	if = {
-		limit = {
-			var:tot_golden_hall_built < 1
-			OR = {
-				var:tot_golden_hall_facade_progress > 0
-				var:tot_golden_hall_stair_progress > 0
-				var:tot_golden_hall_mainhall_progress > 0
-				var:tot_golden_hall_ceiling_progress > 0
-				var:tot_golden_hall_stage_progress > 0
-				var:tot_golden_hall_acoustics_progress > 0
-				var:tot_golden_hall_backstage_progress > 0
-				var:tot_golden_hall_ticketing_progress > 0
-				var:tot_golden_hall_vip_progress > 0
-				var:tot_golden_hall_reception_progress > 0
-			}
-		}
-		every_scope_state = {
-			limit = { state_region = s:STATE_AUSTRIA }
-			owner = {
-				set_variable = { name = tot_golden_hall_built value = root.var:tot_golden_hall_built }
-				set_variable = { name = tot_golden_hall_facade_progress value = root.var:tot_golden_hall_facade_progress }
-				set_variable = { name = tot_golden_hall_stair_progress value = root.var:tot_golden_hall_stair_progress }
-				set_variable = { name = tot_golden_hall_mainhall_progress value = root.var:tot_golden_hall_mainhall_progress }
-				set_variable = { name = tot_golden_hall_ceiling_progress value = root.var:tot_golden_hall_ceiling_progress }
-				set_variable = { name = tot_golden_hall_stage_progress value = root.var:tot_golden_hall_stage_progress }
-				set_variable = { name = tot_golden_hall_acoustics_progress value = root.var:tot_golden_hall_acoustics_progress }
-				set_variable = { name = tot_golden_hall_backstage_progress value = root.var:tot_golden_hall_backstage_progress }
-				set_variable = { name = tot_golden_hall_ticketing_progress value = root.var:tot_golden_hall_ticketing_progress }
-				set_variable = { name = tot_golden_hall_vip_progress value = root.var:tot_golden_hall_vip_progress }
-				set_variable = { name = tot_golden_hall_reception_progress value = root.var:tot_golden_hall_reception_progress }
-				if = {
-					limit = { NOT = { has_journal_entry = je_tot_golden_hall_continuation } }
-					add_journal_entry = { type = je_tot_golden_hall_continuation }
+		limit = { NOT = { has_variable = tot_golden_hall_built } }
+		s:STATE_AUSTRIA = {
+			if = {
+				limit = { has_building = building_tot_golden_hall_construction_site }
+				owner = {
+					if = {
+						limit = { NOT = { has_journal_entry = je_tot_golden_hall_continuation } }
+						add_journal_entry = { type = je_tot_golden_hall_continuation }
+					}
 				}
 			}
 		}
@@ -298,18 +165,7 @@ tot_golden_hall_handoff_to_vienna_owner = {
 
 tot_idol_succession_cleanup_effect = {
 	every_country = {
-		limit = {
-			OR = {
-				c:MUS ?= this
-				c:AQO ?= this
-				c:NJS ?= this
-				c:IDMS ?= this
-				c:GKMS ?= this
-				c:GBDP ?= this
-				c:HTT ?= this
-				c:PRU ?= this
-			}
-		}
+		limit = { tot_golden_hall_crisis_participant_trigger = yes }
 		if = { limit = { has_journal_entry = je_tot_golden_hall_project } remove_journal_entry = je_tot_golden_hall_project }
 		if = { limit = { has_journal_entry = je_tot_ll_publication_program } remove_journal_entry = je_tot_ll_publication_program }
 		if = { limit = { has_journal_entry = je_tot_imas_publication_program } remove_journal_entry = je_tot_imas_publication_program }
@@ -321,6 +177,7 @@ tot_idol_succession_cleanup_effect = {
 		if = { limit = { has_variable = tot_idol_crisis_htt_score } remove_variable = tot_idol_crisis_htt_score }
 		if = { limit = { has_variable = tot_idol_crisis_tension } remove_variable = tot_idol_crisis_tension }
 		if = { limit = { has_variable = tot_idol_crisis_compromise_score } remove_variable = tot_idol_crisis_compromise_score }
+		if = { limit = { has_variable = tot_golden_hall_crisis_participant } remove_variable = tot_golden_hall_crisis_participant }
 		if = { limit = { has_variable = tot_ll_publication_paper } remove_variable = tot_ll_publication_paper }
 		if = { limit = { has_variable = tot_ll_publication_academy } remove_variable = tot_ll_publication_academy }
 		if = { limit = { has_variable = tot_ll_publication_stage } remove_variable = tot_ll_publication_stage }

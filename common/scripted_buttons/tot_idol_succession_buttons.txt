@@ -1,472 +1,28 @@
-je_tot_golden_hall_facade_button = {
-	name = je_tot_golden_hall_facade_button
-	desc = je_tot_golden_hall_facade_button_desc
-
-	visible = {
-		OR = {
-			has_journal_entry = je_tot_golden_hall_project
-			has_journal_entry = je_tot_golden_hall_continuation
-		}
-	}
-
-	possible = {
-		NOT = { has_modifier = modifier_tot_golden_hall_facade_cooldown }
-		var:tot_golden_hall_facade_progress < 5
-	}
-
-	effect = {
-		add_treasury = -50000
-		add_modifier = { name = modifier_tot_golden_hall_facade_orders years = 3 }
-		add_modifier = { name = modifier_tot_golden_hall_facade_benefit years = 3 }
-		add_modifier = { name = modifier_tot_golden_hall_facade_cooldown years = 3 }
-		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
-			}
-			change_variable = { name = tot_golden_hall_facade_progress add = 1 }
-		}
-		tot_golden_hall_add_major_score = yes
-		tot_golden_hall_check_core_completion = yes
-	}
-
-	ai_chance = { base = 0 }
-}
-
-je_tot_golden_hall_stair_button = {
-	name = je_tot_golden_hall_stair_button
-	desc = je_tot_golden_hall_stair_button_desc
-
-	visible = {
-		OR = {
-			has_journal_entry = je_tot_golden_hall_project
-			has_journal_entry = je_tot_golden_hall_continuation
-		}
-	}
-
-	possible = {
-		NOT = { has_modifier = modifier_tot_golden_hall_stair_cooldown }
-		var:tot_golden_hall_stair_progress < 5
-	}
-
-	effect = {
-		add_treasury = -50000
-		add_modifier = { name = modifier_tot_golden_hall_stair_orders years = 3 }
-		add_modifier = { name = modifier_tot_golden_hall_stair_benefit years = 3 }
-		add_modifier = { name = modifier_tot_golden_hall_stair_cooldown years = 3 }
-		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
-			}
-			change_variable = { name = tot_golden_hall_stair_progress add = 1 }
-		}
-		tot_golden_hall_add_major_score = yes
-		tot_golden_hall_check_core_completion = yes
-	}
-
-	ai_chance = { base = 0 }
-}
-
-je_tot_golden_hall_mainhall_button = {
-	name = je_tot_golden_hall_mainhall_button
-	desc = je_tot_golden_hall_mainhall_button_desc
-
-	visible = {
-		OR = {
-			has_journal_entry = je_tot_golden_hall_project
-			has_journal_entry = je_tot_golden_hall_continuation
-		}
-	}
-
-	possible = {
-		NOT = { has_modifier = modifier_tot_golden_hall_mainhall_cooldown }
-		var:tot_golden_hall_mainhall_progress < 5
-	}
-
-	effect = {
-		add_treasury = -50000
-		add_modifier = { name = modifier_tot_golden_hall_mainhall_orders years = 3 }
-		add_modifier = { name = modifier_tot_golden_hall_mainhall_benefit years = 3 }
-		add_modifier = { name = modifier_tot_golden_hall_mainhall_cooldown years = 3 }
-		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
-			}
-			change_variable = { name = tot_golden_hall_mainhall_progress add = 1 }
-		}
-		tot_golden_hall_add_major_score = yes
-		tot_golden_hall_check_core_completion = yes
-	}
-
-	ai_chance = { base = 0 }
-}
-
-je_tot_golden_hall_ceiling_button = {
-	name = je_tot_golden_hall_ceiling_button
-	desc = je_tot_golden_hall_ceiling_button_desc
-
-	visible = {
-		OR = {
-			has_journal_entry = je_tot_golden_hall_project
-			has_journal_entry = je_tot_golden_hall_continuation
-		}
-	}
-
-	possible = {
-		NOT = { has_modifier = modifier_tot_golden_hall_ceiling_cooldown }
-		var:tot_golden_hall_ceiling_progress < 5
-	}
-
-	effect = {
-		add_treasury = -50000
-		add_modifier = { name = modifier_tot_golden_hall_ceiling_orders years = 3 }
-		add_modifier = { name = modifier_tot_golden_hall_ceiling_benefit years = 3 }
-		add_modifier = { name = modifier_tot_golden_hall_ceiling_cooldown years = 3 }
-		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
-			}
-			change_variable = { name = tot_golden_hall_ceiling_progress add = 1 }
-		}
-		tot_golden_hall_add_major_score = yes
-		tot_golden_hall_check_core_completion = yes
-	}
-
-	ai_chance = { base = 0 }
-}
-
-je_tot_golden_hall_stage_button = {
-	name = je_tot_golden_hall_stage_button
-	desc = je_tot_golden_hall_stage_button_desc
-
-	visible = {
-		OR = {
-			has_journal_entry = je_tot_golden_hall_project
-			has_journal_entry = je_tot_golden_hall_continuation
-		}
-	}
-
-	possible = {
-		NOT = { has_modifier = modifier_tot_golden_hall_stage_cooldown }
-		var:tot_golden_hall_stage_progress < 5
-	}
-
-	effect = {
-		add_treasury = -50000
-		add_modifier = { name = modifier_tot_golden_hall_stage_orders years = 3 }
-		add_modifier = { name = modifier_tot_golden_hall_stage_benefit years = 3 }
-		add_modifier = { name = modifier_tot_golden_hall_stage_cooldown years = 3 }
-		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
-			}
-			change_variable = { name = tot_golden_hall_stage_progress add = 1 }
-		}
-		tot_golden_hall_add_major_score = yes
-		tot_golden_hall_check_core_completion = yes
-	}
-
-	ai_chance = { base = 0 }
-}
-
-je_tot_golden_hall_acoustics_button = {
-	name = je_tot_golden_hall_acoustics_button
-	desc = je_tot_golden_hall_acoustics_button_desc
-
-	visible = {
-		OR = {
-			has_journal_entry = je_tot_golden_hall_project
-			has_journal_entry = je_tot_golden_hall_continuation
-		}
-	}
-
-	possible = {
-		NOT = { has_modifier = modifier_tot_golden_hall_acoustics_cooldown }
-		var:tot_golden_hall_acoustics_progress < 5
-	}
-
-	effect = {
-		add_treasury = -50000
-		add_modifier = { name = modifier_tot_golden_hall_acoustics_orders years = 3 }
-		add_modifier = { name = modifier_tot_golden_hall_acoustics_benefit years = 3 }
-		add_modifier = { name = modifier_tot_golden_hall_acoustics_cooldown years = 3 }
-		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
-			}
-			change_variable = { name = tot_golden_hall_acoustics_progress add = 1 }
-		}
-		tot_golden_hall_add_minor_score = yes
-	}
-
-	ai_chance = { base = 0 }
-}
-
-je_tot_golden_hall_backstage_button = {
-	name = je_tot_golden_hall_backstage_button
-	desc = je_tot_golden_hall_backstage_button_desc
-
-	visible = {
-		OR = {
-			has_journal_entry = je_tot_golden_hall_project
-			has_journal_entry = je_tot_golden_hall_continuation
-		}
-	}
-
-	possible = {
-		NOT = { has_modifier = modifier_tot_golden_hall_backstage_cooldown }
-		var:tot_golden_hall_backstage_progress < 5
-	}
-
-	effect = {
-		add_treasury = -50000
-		add_modifier = { name = modifier_tot_golden_hall_backstage_orders years = 3 }
-		add_modifier = { name = modifier_tot_golden_hall_backstage_benefit years = 3 }
-		add_modifier = { name = modifier_tot_golden_hall_backstage_cooldown years = 3 }
-		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
-			}
-			change_variable = { name = tot_golden_hall_backstage_progress add = 1 }
-		}
-		tot_golden_hall_add_minor_score = yes
-	}
-
-	ai_chance = { base = 0 }
-}
-
-je_tot_golden_hall_ticketing_button = {
-	name = je_tot_golden_hall_ticketing_button
-	desc = je_tot_golden_hall_ticketing_button_desc
-
-	visible = {
-		OR = {
-			has_journal_entry = je_tot_golden_hall_project
-			has_journal_entry = je_tot_golden_hall_continuation
-		}
-	}
-
-	possible = {
-		NOT = { has_modifier = modifier_tot_golden_hall_ticketing_cooldown }
-		var:tot_golden_hall_ticketing_progress < 5
-	}
-
-	effect = {
-		add_treasury = -50000
-		add_modifier = { name = modifier_tot_golden_hall_ticketing_orders years = 3 }
-		add_modifier = { name = modifier_tot_golden_hall_ticketing_benefit years = 3 }
-		add_modifier = { name = modifier_tot_golden_hall_ticketing_cooldown years = 3 }
-		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
-			}
-			change_variable = { name = tot_golden_hall_ticketing_progress add = 1 }
-		}
-		tot_golden_hall_add_minor_score = yes
-	}
-
-	ai_chance = { base = 0 }
-}
-
-je_tot_golden_hall_vip_button = {
-	name = je_tot_golden_hall_vip_button
-	desc = je_tot_golden_hall_vip_button_desc
-
-	visible = {
-		OR = {
-			has_journal_entry = je_tot_golden_hall_project
-			has_journal_entry = je_tot_golden_hall_continuation
-		}
-	}
-
-	possible = {
-		NOT = { has_modifier = modifier_tot_golden_hall_vip_cooldown }
-		var:tot_golden_hall_vip_progress < 5
-	}
-
-	effect = {
-		add_treasury = -50000
-		add_modifier = { name = modifier_tot_golden_hall_vip_orders years = 3 }
-		add_modifier = { name = modifier_tot_golden_hall_vip_benefit years = 3 }
-		add_modifier = { name = modifier_tot_golden_hall_vip_cooldown years = 3 }
-		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
-			}
-			change_variable = { name = tot_golden_hall_vip_progress add = 1 }
-		}
-		tot_golden_hall_add_minor_score = yes
-	}
-
-	ai_chance = { base = 0 }
-}
-
-je_tot_golden_hall_reception_button = {
-	name = je_tot_golden_hall_reception_button
-	desc = je_tot_golden_hall_reception_button_desc
-
-	visible = {
-		OR = {
-			has_journal_entry = je_tot_golden_hall_project
-			has_journal_entry = je_tot_golden_hall_continuation
-		}
-	}
-
-	possible = {
-		NOT = { has_modifier = modifier_tot_golden_hall_reception_cooldown }
-		var:tot_golden_hall_reception_progress < 5
-	}
-
-	effect = {
-		add_treasury = -50000
-		add_modifier = { name = modifier_tot_golden_hall_reception_orders years = 3 }
-		add_modifier = { name = modifier_tot_golden_hall_reception_benefit years = 3 }
-		add_modifier = { name = modifier_tot_golden_hall_reception_cooldown years = 3 }
-		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
-			}
-			change_variable = { name = tot_golden_hall_reception_progress add = 1 }
-		}
-		tot_golden_hall_add_minor_score = yes
-	}
-
-	ai_chance = { base = 0 }
-}
+# The Golden Hall now advances through temporary capital construction contracts.
+# Its old direct-investment buttons were intentionally removed.
 
 je_tot_ll_stage_network_button = {
 	name = je_tot_ll_stage_network_button
 	desc = je_tot_ll_stage_network_button_desc
 
-	visible = {
-		has_journal_entry = je_tot_ll_publication_program
-	}
-
+	visible = { has_journal_entry = je_tot_ll_publication_program }
 	possible = {
 		NOT = { has_variable = tot_ll_industry_stage_ready }
 		any_scope_state = {
 			state_region = s:STATE_CENTRAL_HUNGARY
 			owner = root
-			any_scope_building = {
-				is_building_type = building_stage
-				level >= 4
-			}
-			any_scope_building = {
-				is_building_type = building_university
-				level >= 4
-			}
+			any_scope_building = { is_building_type = building_stage level >= 4 }
+			any_scope_building = { is_building_type = building_university level >= 4 }
 		}
 	}
-
 	effect = {
 		set_variable = { name = tot_ll_industry_stage_ready value = 1 }
 		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
-			}
+			limit = { tot_golden_hall_crisis_participant_trigger = yes }
 			change_variable = { name = tot_idol_crisis_ll_score add = 3 }
 			change_variable = { name = tot_idol_crisis_compromise_score add = 1 }
 		}
 	}
-
 	ai_chance = { base = 0 }
 }
 
@@ -474,46 +30,24 @@ je_tot_ll_pilgrimage_transit_button = {
 	name = je_tot_ll_pilgrimage_transit_button
 	desc = je_tot_ll_pilgrimage_transit_button_desc
 
-	visible = {
-		has_journal_entry = je_tot_ll_publication_program
-	}
-
+	visible = { has_journal_entry = je_tot_ll_publication_program }
 	possible = {
 		NOT = { has_variable = tot_ll_industry_transit_ready }
 		any_scope_state = {
 			state_region = s:STATE_DALMATIA
 			owner = root
-			any_scope_building = {
-				is_building_type = building_port
-				level >= 3
-			}
-			any_scope_building = {
-				is_building_type = building_stage
-				level >= 3
-			}
+			any_scope_building = { is_building_type = building_port level >= 3 }
+			any_scope_building = { is_building_type = building_stage level >= 3 }
 		}
 	}
-
 	effect = {
 		set_variable = { name = tot_ll_industry_transit_ready value = 1 }
 		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
-			}
+			limit = { tot_golden_hall_crisis_participant_trigger = yes }
 			change_variable = { name = tot_idol_crisis_ll_score add = 3 }
 			change_variable = { name = tot_idol_crisis_compromise_score add = 1 }
 		}
 	}
-
 	ai_chance = { base = 0 }
 }
 
@@ -521,50 +55,25 @@ je_tot_imas_agency_network_button = {
 	name = je_tot_imas_agency_network_button
 	desc = je_tot_imas_agency_network_button_desc
 
-	visible = {
-		has_journal_entry = je_tot_imas_publication_program
-	}
-
+	visible = { has_journal_entry = je_tot_imas_publication_program }
 	possible = {
 		NOT = { has_variable = tot_imas_industry_agency_ready }
 		any_scope_state = {
 			state_region = s:STATE_AUSTRIA
 			owner = root
-			any_scope_building = {
-				is_building_type = building_stage
-				level >= 4
-			}
-			any_scope_building = {
-				is_building_type = building_paper_mill
-				level >= 3
-			}
-			any_scope_building = {
-				is_building_type = building_trade_center
-				level >= 1
-			}
+			any_scope_building = { is_building_type = building_stage level >= 4 }
+			any_scope_building = { is_building_type = building_paper_mill level >= 3 }
+			any_scope_building = { is_building_type = building_trade_center level >= 1 }
 		}
 	}
-
 	effect = {
 		set_variable = { name = tot_imas_industry_agency_ready value = 1 }
 		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
-			}
+			limit = { tot_golden_hall_crisis_participant_trigger = yes }
 			change_variable = { name = tot_idol_crisis_imas_score add = 3 }
 			change_variable = { name = tot_idol_crisis_compromise_score add = 1 }
 		}
 	}
-
 	ai_chance = { base = 0 }
 }
 
@@ -572,59 +81,28 @@ je_tot_imas_training_system_button = {
 	name = je_tot_imas_training_system_button
 	desc = je_tot_imas_training_system_button_desc
 
-	visible = {
-		has_journal_entry = je_tot_imas_publication_program
-	}
-
+	visible = { has_journal_entry = je_tot_imas_publication_program }
 	possible = {
 		NOT = { has_variable = tot_imas_industry_training_ready }
+		any_scope_state = { state_region = s:STATE_BOHEMIA owner = root }
+		any_scope_state = { state_region = s:STATE_MORAVIA owner = root }
 		any_scope_state = {
 			state_region = s:STATE_BOHEMIA
-			owner = root
+			any_scope_building = { is_building_type = building_university level >= 4 }
+			any_scope_building = { is_building_type = building_tooling_workshop level >= 4 }
 		}
 		any_scope_state = {
 			state_region = s:STATE_MORAVIA
-			owner = root
-		}
-		any_scope_state = {
-			state_region = s:STATE_BOHEMIA
-			any_scope_building = {
-				is_building_type = building_university
-				level >= 4
-			}
-			any_scope_building = {
-				is_building_type = building_tooling_workshop
-				level >= 4
-			}
-		}
-		any_scope_state = {
-			state_region = s:STATE_MORAVIA
-			any_scope_building = {
-				is_building_type = building_university
-				level >= 2
-			}
+			any_scope_building = { is_building_type = building_university level >= 2 }
 		}
 	}
-
 	effect = {
 		set_variable = { name = tot_imas_industry_training_ready value = 1 }
 		every_country = {
-			limit = {
-				OR = {
-					c:MUS ?= this
-					c:AQO ?= this
-					c:NJS ?= this
-					c:IDMS ?= this
-					c:GKMS ?= this
-					c:GBDP ?= this
-					c:HTT ?= this
-					c:PRU ?= this
-				}
-			}
+			limit = { tot_golden_hall_crisis_participant_trigger = yes }
 			change_variable = { name = tot_idol_crisis_imas_score add = 3 }
 			change_variable = { name = tot_idol_crisis_compromise_score add = 1 }
 		}
 	}
-
 	ai_chance = { base = 0 }
 }

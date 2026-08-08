@@ -1,0 +1,25 @@
+tot_golden_hall_crisis_participant_trigger = {
+	OR = {
+		c:MUS ?= root
+		c:AQO ?= root
+		c:NJS ?= root
+		c:IDMS ?= root
+		c:GKMS ?= root
+		c:GBDP ?= root
+		c:HTT ?= root
+		c:PRU ?= root
+	}
+}
+
+tot_golden_hall_contract_available_trigger = {
+	OR = {
+		has_variable = tot_golden_hall_crisis_participant
+		any_scope_state = {
+			state_region = s:STATE_AUSTRIA
+			any_scope_building = {
+				is_building_type = building_tot_golden_hall_construction_site
+				level < 31
+			}
+		}
+	}
+}

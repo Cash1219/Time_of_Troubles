@@ -535,12 +535,12 @@ window = {
 				blockoverride "third_button_visibility" { visible = "[GetVariableSystem.HasValue( 'tot_character_system_page', 'bonds' )]" }
 				blockoverride "third_button_visibility_checked" { visible = "[Not(GetVariableSystem.HasValue( 'tot_character_system_page', 'bonds' ))]" }
 
-				blockoverride "fourth_button" { text = "TOT_CHARACTER_TAB_BANDS" }
-				blockoverride "fourth_button_selected" { text = "TOT_CHARACTER_TAB_BANDS" }
-				blockoverride "fourth_button_tooltip" { tooltip = "TOT_CHARACTER_TAB_BANDS" }
-				blockoverride "fourth_button_click" { onclick = "[GetVariableSystem.Set( 'tot_character_system_page', 'bands' )]" }
-				blockoverride "fourth_button_visibility" { visible = "[GetVariableSystem.HasValue( 'tot_character_system_page', 'bands' )]" }
-				blockoverride "fourth_button_visibility_checked" { visible = "[Not(GetVariableSystem.HasValue( 'tot_character_system_page', 'bands' ))]" }
+				blockoverride "fourth_button" { text = "TOT_CHARACTER_TAB_ACTIVITIES" }
+				blockoverride "fourth_button_selected" { text = "TOT_CHARACTER_TAB_ACTIVITIES" }
+				blockoverride "fourth_button_tooltip" { tooltip = "TOT_CHARACTER_TAB_ACTIVITIES" }
+				blockoverride "fourth_button_click" { onclick = "[GetVariableSystem.Set( 'tot_character_system_page', 'activities' )][GetVariableSystem.Set( 'tot_character_activity_tab', 'bands' )]" }
+				blockoverride "fourth_button_visibility" { visible = "[GetVariableSystem.HasValue( 'tot_character_system_page', 'activities' )]" }
+				blockoverride "fourth_button_visibility_checked" { visible = "[Not(GetVariableSystem.HasValue( 'tot_character_system_page', 'activities' ))]" }
 
 				blockoverride "fifth_button_visibility" { visible = no }
 				blockoverride "fifth_button_visibility_checked" { visible = no }
@@ -601,21 +601,19 @@ window = {
 							align = left|nobaseline
 						}
 
-							hbox = {
-								size = { 332 28 }
-								spacing = 4
-								button = { visible = "[Not(Or(GetVariableSystem.HasValue( 'tot_character_minister_category', 'executive' ), GetVariableSystem.HasValue( 'tot_character_minister_category', 'honorary' )))]" using = default_button_primary size = { 108 28 } text = "TOT_CHARACTER_MINISTER_CORE_TAB" onclick = "[GetVariableSystem.Set( 'tot_character_minister_category', 'core' )]" }
-								button = { visible = "[Or(GetVariableSystem.HasValue( 'tot_character_minister_category', 'executive' ), GetVariableSystem.HasValue( 'tot_character_minister_category', 'honorary' ))]" using = default_button size = { 108 28 } text = "TOT_CHARACTER_MINISTER_CORE_TAB" onclick = "[GetVariableSystem.Set( 'tot_character_minister_category', 'core' )]" }
-								button = { visible = "[GetVariableSystem.HasValue( 'tot_character_minister_category', 'executive' )]" using = default_button_primary size = { 108 28 } text = "TOT_CHARACTER_MINISTER_EXECUTIVE_TAB" onclick = "[GetVariableSystem.Set( 'tot_character_minister_category', 'executive' )]" }
-								button = { visible = "[Not(GetVariableSystem.HasValue( 'tot_character_minister_category', 'executive' ))]" using = default_button size = { 108 28 } text = "TOT_CHARACTER_MINISTER_EXECUTIVE_TAB" onclick = "[GetVariableSystem.Set( 'tot_character_minister_category', 'executive' )]" }
-								button = { visible = "[GetVariableSystem.HasValue( 'tot_character_minister_category', 'honorary' )]" using = default_button_primary size = { 108 28 } text = "TOT_CHARACTER_MINISTER_HONORARY_TAB" onclick = "[GetVariableSystem.Set( 'tot_character_minister_category', 'honorary' )]" }
-								button = { visible = "[Not(GetVariableSystem.HasValue( 'tot_character_minister_category', 'honorary' ))]" using = default_button size = { 108 28 } text = "TOT_CHARACTER_MINISTER_HONORARY_TAB" onclick = "[GetVariableSystem.Set( 'tot_character_minister_category', 'honorary' )]" }
-							}
+						hbox = {
+							size = { 332 28 }
+							spacing = 4
+							button = { visible = "[Not(GetVariableSystem.HasValue( 'tot_character_minister_category', 'honorary' ))]" using = default_button_primary size = { 164 28 } text = "TOT_CHARACTER_MINISTER_CORE_TAB" onclick = "[GetVariableSystem.Set( 'tot_character_minister_category', 'core' )]" }
+							button = { visible = "[GetVariableSystem.HasValue( 'tot_character_minister_category', 'honorary' )]" using = default_button size = { 164 28 } text = "TOT_CHARACTER_MINISTER_CORE_TAB" onclick = "[GetVariableSystem.Set( 'tot_character_minister_category', 'core' )]" }
+							button = { visible = "[GetVariableSystem.HasValue( 'tot_character_minister_category', 'honorary' )]" using = default_button_primary size = { 164 28 } text = "TOT_CHARACTER_MINISTER_HONORARY_TAB" onclick = "[GetVariableSystem.Set( 'tot_character_minister_category', 'honorary' )]" }
+							button = { visible = "[Not(GetVariableSystem.HasValue( 'tot_character_minister_category', 'honorary' ))]" using = default_button size = { 164 28 } text = "TOT_CHARACTER_MINISTER_HONORARY_TAB" onclick = "[GetVariableSystem.Set( 'tot_character_minister_category', 'honorary' )]" }
+						}
 
 						widget = {
 							size = { 352 550 }
 							scrollbox = {
-								visible = "[Not(Or(GetVariableSystem.HasValue( 'tot_character_minister_category', 'executive' ), GetVariableSystem.HasValue( 'tot_character_minister_category', 'honorary' )))]"
+								visible = "[Not(GetVariableSystem.HasValue( 'tot_character_minister_category', 'honorary' ))]"
 								size = { 352 550 }
 
 							blockoverride "scrollbox_content" {
@@ -1001,17 +999,6 @@ window = {
 							}
 						}
 							scrollbox = {
-								visible = "[GetVariableSystem.HasValue( 'tot_character_minister_category', 'executive' )]"
-								size = { 352 550 }
-								blockoverride "scrollbox_content" {
-									vbox = {
-										spacing = 10
-										textbox = { size = { 330 24 } text = "TOT_CHARACTER_EXECUTIVE_HEADER" using = fontsize_medium align = left|nobaseline }
-										textbox = { size = { 330 72 } text = "TOT_CHARACTER_EXECUTIVE_DESC" using = fontsize_small align = left|top }
-									}
-								}
-							}
-							scrollbox = {
 								visible = "[GetVariableSystem.HasValue( 'tot_character_minister_category', 'honorary' )]"
 								size = { 352 550 }
 								blockoverride "scrollbox_content" {
@@ -1383,7 +1370,7 @@ window = {
 			}
 
 			widget = {
-				visible = "[GetVariableSystem.HasValue( 'tot_character_system_page', 'bands' )]"
+				visible = "[Or(GetVariableSystem.HasValue( 'tot_character_system_page', 'activities' ), GetVariableSystem.HasValue( 'tot_character_system_page', 'bands' ))]"
 				size = { 1510 700 }
 				position = { 0 0 }
 				background = { using = entry_bg_fancy }
@@ -1392,6 +1379,7 @@ window = {
 					position = { 24 18 }
 				}
 			}
+
 		}
 	}
 

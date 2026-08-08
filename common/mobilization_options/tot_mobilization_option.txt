@@ -1,5 +1,5 @@
-﻿mobilization_option_magic_weapon = { #附魔武器
-	texture = "gfx/interface/icons/mobilization_options/basic_supplies.dds"
+mobilization_option_military_band = {
+	texture = "gfx/interface/icons/goods_icons/musical_instrument.dds"
 	possible = {
 		always = yes
 	}
@@ -16,23 +16,58 @@
 		}
 	}
 	upkeep_modifier = {
-		goods_input_grain_add = 0.5
-	}
-	upkeep_modifier_unscaled = {
-        goods_input_small_arms_mult = 0.25
-        goods_input_artillery_mult = 0.25
-		goods_input_ammunition_mult = 0.25
-        goods_input_oil_mult = 0.25
-        goods_input_radios_mult = 0.25
-        goods_input_tanks_mult = 0.25
+		goods_input_musical_instrument_add = 0.5
 	}
 	
 	unit_modifier = {
-		# empty on purpose - this is the minimum mobilization cost
+		unit_morale_recovery_mult = 0.1
 	}
 	ai_weight = {
 		value = 1
 	}
 
-	group = magic
+	group = military_band
+}
+
+mobilization_option_national_band_tour = {
+	texture = "gfx/interface/icons/goods_icons/performance.dds"
+
+	possible = {
+		custom_tooltip = {
+			text = mobilization_option_national_band_tour_requires_band_tt
+			tot_has_operational_band_trigger = yes
+		}
+		market ?= {
+			mg:musical_instrument ?= { has_potential_supply = yes }
+			mg:performance ?= { has_potential_supply = yes }
+		}
+	}
+
+	on_deactivate_while_mobilized = {
+		custom_tooltip = {
+			text = mobilization_option_it_hurts_morale_when_you_remove_supplies_while_in_combat_tt
+			every_combat_unit = {
+				add_morale = {
+					value = morale
+					multiply = -0.5
+				}
+			}
+		}
+	}
+
+	upkeep_modifier = {
+		goods_input_musical_instrument_add = 1
+		goods_input_performance_add = 0.5
+	}
+
+	unit_modifier = {
+		unit_morale_recovery_mult = 0.1
+		unit_offense_mult = 0.05
+	}
+
+	ai_weight = {
+		value = 1
+	}
+
+	group = national_band_tour
 }

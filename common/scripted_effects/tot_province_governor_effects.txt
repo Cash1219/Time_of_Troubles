@@ -12,6 +12,73 @@ tot_update_province_governor_candidates = {
 			NOT = {
 				has_role = character_role_tot_province_governor
 			}
+			OR = {
+				owner = {
+					NOT = { has_variable = tot_governor_candidate_duty_filter }
+				}
+				owner = {
+					var:tot_governor_candidate_duty_filter = 0
+				}
+				AND = {
+					owner = {
+						var:tot_governor_candidate_duty_filter = 1
+					}
+					OR = {
+						has_role = character_role_general
+						has_role = character_role_admiral
+						has_role = character_role_executive
+						has_role = character_role_magnate
+						has_role = character_role_agitator
+						has_role = character_role_tot_student_council_president
+						has_role = character_role_tot_discipline_minister
+						has_role = character_role_tot_education_minister
+						has_role = character_role_tot_propaganda_minister
+						has_role = character_role_tot_chief_of_staff
+						has_role = character_role_tot_honorary_official
+					}
+				}
+				AND = {
+					owner = {
+						var:tot_governor_candidate_duty_filter = 2
+					}
+					NOT = {
+						OR = {
+							has_role = character_role_general
+							has_role = character_role_admiral
+							has_role = character_role_executive
+							has_role = character_role_magnate
+							has_role = character_role_agitator
+							has_role = character_role_tot_student_council_president
+							has_role = character_role_tot_discipline_minister
+							has_role = character_role_tot_education_minister
+							has_role = character_role_tot_propaganda_minister
+							has_role = character_role_tot_chief_of_staff
+							has_role = character_role_tot_honorary_official
+						}
+					}
+				}
+			}
+			# Keep the governor page's filters separate from the minister candidate filters.
+			OR = {
+				owner = {
+					NOT = { has_variable = tot_governor_candidate_filter }
+				}
+				owner = {
+					var:tot_governor_candidate_filter = 0
+				}
+				AND = {
+					owner = {
+						var:tot_governor_candidate_filter = 1
+					}
+					is_historical = yes
+				}
+				AND = {
+					owner = {
+						var:tot_governor_candidate_filter = 2
+					}
+					is_historical = no
+				}
+			}
 		}
 		owner = {
 			add_to_variable_list = {
@@ -24,6 +91,15 @@ tot_update_province_governor_candidates = {
 
 tot_character_growth_refresh = {
 	tot_update_province_governor_candidates = yes
+
+	# Migrate existing governors into the new classification system on the next UI refresh.
+	every_scope_state = {
+		limit = {
+			owner ?= { is_player = yes }
+			has_variable = tot_province_governor
+		}
+		tot_apply_province_governor_type_modifier = yes
+	}
 
 	if = {
 		limit = {
@@ -45,6 +121,15 @@ tot_character_growth_refresh = {
 				name = tot_character_growth_exp
 				value = 0
 			}
+		}
+		if = {
+			limit = { NOT = { has_variable = tot_character_growth_level } }
+			# Old saves used gained-trait count as the implicit level, so retain their current progress tier.
+			set_variable = { name = tot_character_growth_level value = tot_character_growth_acquired_traits_count_value }
+		}
+		if = {
+			limit = { NOT = { has_variable = tot_character_growth_skill_points } }
+			set_variable = { name = tot_character_growth_skill_points value = 0 }
 		}
 		owner = {
 			add_to_variable_list = {
@@ -116,8 +201,37 @@ tot_clear_state_governor = {
 		remove_modifier = tot_province_governor_modifier
 	}
 
+	remove_modifier = tot_province_governor_administration_modifier
+	remove_modifier = tot_province_governor_finance_modifier
+	remove_modifier = tot_province_governor_industry_modifier
+	remove_modifier = tot_province_governor_education_modifier
+	remove_modifier = tot_province_governor_military_modifier
+	remove_variable = tot_province_governor_type
+
 	owner ?= {
 		tot_update_province_governor_candidates = yes
+	}
+}
+
+# Each province has one governor and one selected administrative direction.
+tot_apply_province_governor_type_modifier = {
+	remove_modifier = tot_province_governor_administration_modifier
+	remove_modifier = tot_province_governor_finance_modifier
+	remove_modifier = tot_province_governor_industry_modifier
+	remove_modifier = tot_province_governor_education_modifier
+	remove_modifier = tot_province_governor_military_modifier
+
+	if = {
+		limit = { has_variable = tot_province_governor }
+		if = {
+			limit = { NOT = { has_variable = tot_province_governor_type } }
+			set_variable = { name = tot_province_governor_type value = 0 }
+		}
+		if = { limit = { var:tot_province_governor_type = 0 } add_modifier = { name = tot_province_governor_administration_modifier } }
+		if = { limit = { var:tot_province_governor_type = 1 } add_modifier = { name = tot_province_governor_finance_modifier } }
+		if = { limit = { var:tot_province_governor_type = 2 } add_modifier = { name = tot_province_governor_industry_modifier } }
+		if = { limit = { var:tot_province_governor_type = 3 } add_modifier = { name = tot_province_governor_education_modifier } }
+		if = { limit = { var:tot_province_governor_type = 4 } add_modifier = { name = tot_province_governor_military_modifier } }
 	}
 }
 
@@ -164,6 +278,7 @@ tot_appoint_province_governor_effect = {
 			add_modifier = {
 				name = tot_province_governor_modifier
 			}
+			tot_apply_province_governor_type_modifier = yes
 			set_variable = {
 				name = tot_province_governor_replace_cooldown
 				years = 10
@@ -232,6 +347,7 @@ tot_appoint_selected_province_governor_effect = {
 			add_modifier = {
 				name = tot_province_governor_modifier
 			}
+			tot_apply_province_governor_type_modifier = yes
 			set_variable = {
 				name = tot_province_governor_replace_cooldown
 				years = 10

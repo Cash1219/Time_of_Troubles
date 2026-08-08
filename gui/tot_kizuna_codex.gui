@@ -1179,13 +1179,36 @@
 							text = "TOT_CHARACTER_CODEX_RESULT_COUNT"
 							using = fontsize_large
 							align = right|nobaseline
+							visible = "[Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'))]"
+						}
+						textbox = {
+							size = { 62 28 }
+							text = "TOT_CHARACTER_CODEX_SUBJECT_RESULT_COUNT"
+							using = fontsize_large
+							align = right|nobaseline
+							visible = "[GetVariableSystem.HasValue('tot_kizuna_page', 'subject')]"
 						}
 					}
 					scrollbox = {
 						size = { 1150 500 }
+						visible = "[Not(GetVariableSystem.HasValue('tot_kizuna_page', 'subject'))]"
 						blockoverride "scrollbox_content" {
 							fixedgridbox = {
 								datamodel = "[GetPlayer.MakeScope.GetList('tot_character_codex_results')]"
+								addcolumn = 364
+								addrow = 136
+								flipdirection = yes
+								datamodel_wrap = 3
+								item = { tot_kizuna_codex_character = {} }
+							}
+						}
+					}
+					scrollbox = {
+						size = { 1150 500 }
+						visible = "[GetVariableSystem.HasValue('tot_kizuna_page', 'subject')]"
+						blockoverride "scrollbox_content" {
+							fixedgridbox = {
+								datamodel = "[GetPlayer.MakeScope.GetList('tot_character_codex_subject_results')]"
 								addcolumn = 364
 								addrow = 136
 								flipdirection = yes

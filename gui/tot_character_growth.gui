@@ -1,4 +1,4 @@
-﻿types tot_character_growth_types
+types tot_character_growth_types
 {
 	type tot_character_growth_governor_state = widget {
 		size = { 520 116 }
@@ -89,8 +89,8 @@
 				text = "TOT_CHARACTER_GROWTH_SELECT_STATE"
 				onclick = "[GetScriptedGui('tot_character_growth_select_governor_state').Execute(GuiScope.SetRoot(State.MakeScope).End)]"
 				tooltip = "TOT_CHARACTER_GROWTH_SELECT_STATE_TOOLTIP"
+					}
 			}
-		}
 	}
 
 	type tot_character_growth_candidate = widget {
@@ -99,7 +99,7 @@
 		visible = "[Scope.GetCharacter.IsValid]"
 
 		background = {
-			using = entry_bg_simple
+			using = entry_bg_fancy
 		}
 
 		flowcontainer = {
@@ -157,55 +157,244 @@
 		}
 	}
 
+	# Compact province row for the executive tab's left-hand appointment list.
+	type tot_character_executive_governor_state = widget {
+		size = { 320 112 }
+		datacontext = "[Scope.GetState]"
+		visible = "[Scope.GetState.IsValid]"
+		background = { using = entry_bg_fancy }
+
+		flowcontainer = {
+			margin = { 10 8 }
+			spacing = 8
+			widget = {
+				size = { 60 92 }
+				character_portrait_small2 = {
+					visible = "[GetScriptedGui('tot_remove_province_governor').IsShown(GuiScope.SetRoot(State.MakeScope).End)]"
+					datacontext = "[State.MakeScope.Var('tot_province_governor').GetCharacter]"
+					parentanchor = center
+					blockoverride "show_hat" {}
+					blockoverride "highlight" {}
+					blockoverride "rank_icon" {}
+				}
+				icon = {
+					visible = "[Not(GetScriptedGui('tot_remove_province_governor').IsShown(GuiScope.SetRoot(State.MakeScope).End))]"
+					texture = "gfx/interface/icons/generic_icons/red_cross.dds"
+					size = { 36 36 }
+					parentanchor = center
+				}
+			}
+			flowcontainer = {
+				direction = vertical
+				spacing = 2
+				size = { 144 92 }
+				textbox = { text = "[State.GetNameNoFormatting]" default_format = "#v" using = fontsize_small size = { 144 22 } align = left|nobaseline elide = right }
+				textbox = { visible = "[GetScriptedGui('tot_remove_province_governor').IsShown(GuiScope.SetRoot(State.MakeScope).End)]" datacontext = "[State.MakeScope.Var('tot_province_governor').GetCharacter]" text = "[Character.GetFullNameNoFormatting]" using = fontsize_very_small size = { 144 18 } align = left|nobaseline elide = right }
+				textbox = { visible = "[Not(GetScriptedGui('tot_remove_province_governor').IsShown(GuiScope.SetRoot(State.MakeScope).End))]" text = "TOT_PROVINCE_GOVERNOR_EMPTY" using = fontsize_very_small size = { 144 18 } align = left|nobaseline elide = right }
+				textbox = { text = "TOT_PROVINCE_GOVERNOR_EFFECTS" using = fontsize_very_small size = { 144 34 } align = left|nobaseline multiline = yes }
+			}
+			button_standard = {
+				parentanchor = vcenter
+				size = { 70 34 }
+				text = "TOT_CHARACTER_GROWTH_SELECT_STATE"
+				onclick = "[GetScriptedGui('tot_character_growth_select_governor_state').Execute(GuiScope.SetRoot(State.MakeScope).End)]"
+				tooltip = "TOT_CHARACTER_GROWTH_SELECT_STATE_TOOLTIP"
+			}
+		}
+	}
+
+	type tot_character_governor_management = widget {
+		size = { 1124 588 }
+
+		vbox = {
+			spacing = 6
+			textbox = { size = { 1124 26 } text = "TOT_CHARACTER_EXECUTIVE_CANDIDATES" using = fontsize_large align = left|nobaseline }
+			textbox = { visible = "[Not(GetScriptedGui('tot_character_growth_has_selected_governor_state').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" size = { 1124 554 } text = "TOT_CHARACTER_GROWTH_SELECT_STATE_FIRST" using = fontsize_medium align = center|nobaseline }
+			widget = {
+				visible = "[GetScriptedGui('tot_character_growth_has_selected_governor_state').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				size = { 1124 38 }
+				hbox = {
+					spacing = 6
+					textbox = { size = { 132 32 } text = "TOT_PROVINCE_GOVERNOR_TYPE" using = fontsize_small align = left|vcenter|nobaseline }
+					button = { visible = "[GetScriptedGui('tot_selected_governor_type_administration').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 186 32 } text = "TOT_PROVINCE_GOVERNOR_TYPE_ADMINISTRATION" onclick = "[GetScriptedGui('tot_set_selected_governor_type_administration').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_PROVINCE_GOVERNOR_TYPE_ADMINISTRATION_TOOLTIP" }
+					button = { visible = "[Not(GetScriptedGui('tot_selected_governor_type_administration').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 186 32 } text = "TOT_PROVINCE_GOVERNOR_TYPE_ADMINISTRATION" onclick = "[GetScriptedGui('tot_set_selected_governor_type_administration').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_PROVINCE_GOVERNOR_TYPE_ADMINISTRATION_TOOLTIP" }
+					button = { visible = "[GetScriptedGui('tot_selected_governor_type_finance').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 186 32 } text = "TOT_PROVINCE_GOVERNOR_TYPE_FINANCE" onclick = "[GetScriptedGui('tot_set_selected_governor_type_finance').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_PROVINCE_GOVERNOR_TYPE_FINANCE_TOOLTIP" }
+					button = { visible = "[Not(GetScriptedGui('tot_selected_governor_type_finance').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 186 32 } text = "TOT_PROVINCE_GOVERNOR_TYPE_FINANCE" onclick = "[GetScriptedGui('tot_set_selected_governor_type_finance').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_PROVINCE_GOVERNOR_TYPE_FINANCE_TOOLTIP" }
+					button = { visible = "[GetScriptedGui('tot_selected_governor_type_industry').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 186 32 } text = "TOT_PROVINCE_GOVERNOR_TYPE_INDUSTRY" onclick = "[GetScriptedGui('tot_set_selected_governor_type_industry').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_PROVINCE_GOVERNOR_TYPE_INDUSTRY_TOOLTIP" }
+					button = { visible = "[Not(GetScriptedGui('tot_selected_governor_type_industry').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 186 32 } text = "TOT_PROVINCE_GOVERNOR_TYPE_INDUSTRY" onclick = "[GetScriptedGui('tot_set_selected_governor_type_industry').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_PROVINCE_GOVERNOR_TYPE_INDUSTRY_TOOLTIP" }
+					button = { visible = "[GetScriptedGui('tot_selected_governor_type_education').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 186 32 } text = "TOT_PROVINCE_GOVERNOR_TYPE_EDUCATION" onclick = "[GetScriptedGui('tot_set_selected_governor_type_education').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_PROVINCE_GOVERNOR_TYPE_EDUCATION_TOOLTIP" }
+					button = { visible = "[Not(GetScriptedGui('tot_selected_governor_type_education').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 186 32 } text = "TOT_PROVINCE_GOVERNOR_TYPE_EDUCATION" onclick = "[GetScriptedGui('tot_set_selected_governor_type_education').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_PROVINCE_GOVERNOR_TYPE_EDUCATION_TOOLTIP" }
+					button = { visible = "[GetScriptedGui('tot_selected_governor_type_military').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = default_button_primary size = { 186 32 } text = "TOT_PROVINCE_GOVERNOR_TYPE_MILITARY" onclick = "[GetScriptedGui('tot_set_selected_governor_type_military').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_PROVINCE_GOVERNOR_TYPE_MILITARY_TOOLTIP" }
+					button = { visible = "[Not(GetScriptedGui('tot_selected_governor_type_military').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" using = default_button size = { 186 32 } text = "TOT_PROVINCE_GOVERNOR_TYPE_MILITARY" onclick = "[GetScriptedGui('tot_set_selected_governor_type_military').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "TOT_PROVINCE_GOVERNOR_TYPE_MILITARY_TOOLTIP" }
+				}
+			}
+			widget = {
+				visible = "[GetScriptedGui('tot_character_growth_has_selected_governor_state').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				size = { 1124 38 }
+				building_browser_filter_line = {
+					parentanchor = hcenter
+					blockoverride "line_background" {}
+					blockoverride "line_size" { size = { 1098 38 } }
+					blockoverride "filter_line_label" { text = "TOT_CHARACTER_FILTER_DUTY" }
+					blockoverride "filter_line_buttons" {
+						building_browser_filter_line_button = {
+							text = "ALL"
+							align = hcenter
+							blockoverride "line_button_onclick" { onclick = "[GetScriptedGui('tot_governor_candidate_duty_filter_all').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+							blockoverride "line_button_icon_texture" { visible = no }
+							blockoverride "line_button_selected" { visible = "[GetScriptedGui('tot_governor_candidate_duty_filter_all_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+						}
+						building_browser_filter_line_button = {
+							text = "TOT_CHARACTER_FILTER_SPECIAL_DUTY"
+							align = hcenter
+							blockoverride "line_button_onclick" { onclick = "[GetScriptedGui('tot_governor_candidate_duty_filter_special').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+							blockoverride "line_button_icon_texture" { visible = no }
+							blockoverride "line_button_selected" { visible = "[GetScriptedGui('tot_governor_candidate_duty_filter_special_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+						}
+						building_browser_filter_line_button = {
+							text = "TOT_CHARACTER_FILTER_NO_DUTY"
+							align = hcenter
+							blockoverride "line_button_onclick" { onclick = "[GetScriptedGui('tot_governor_candidate_duty_filter_none').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+							blockoverride "line_button_icon_texture" { visible = no }
+							blockoverride "line_button_selected" { visible = "[GetScriptedGui('tot_governor_candidate_duty_filter_none_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+						}
+					}
+				}
+			}
+			widget = {
+				visible = "[GetScriptedGui('tot_character_growth_has_selected_governor_state').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				size = { 1124 38 }
+				building_browser_filter_line = {
+					parentanchor = hcenter
+					blockoverride "line_background" {}
+					blockoverride "line_size" { size = { 1098 38 } }
+					blockoverride "filter_line_label" { text = "FILTER_HISTORICAL" }
+					blockoverride "filter_line_buttons" {
+						building_browser_filter_line_button = {
+							text = "ALL"
+							align = hcenter
+							blockoverride "line_button_onclick" { onclick = "[GetScriptedGui('tot_governor_candidate_filter_all').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+							blockoverride "line_button_icon_texture" { visible = no }
+							blockoverride "line_button_selected" { visible = "[GetScriptedGui('tot_governor_candidate_filter_all_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+						}
+						building_browser_filter_line_button = {
+							text = "HISTORICAL_FILTER_NAME"
+							align = hcenter
+							blockoverride "line_button_onclick" { onclick = "[GetScriptedGui('tot_governor_candidate_filter_historical').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+							blockoverride "line_button_icon_texture" { visible = no }
+							blockoverride "line_button_selected" { visible = "[GetScriptedGui('tot_governor_candidate_filter_historical_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+						}
+						building_browser_filter_line_button = {
+							text = "NON_HISTORICAL_FILTER_NAME"
+							align = hcenter
+							blockoverride "line_button_onclick" { onclick = "[GetScriptedGui('tot_governor_candidate_filter_non_historical').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+							blockoverride "line_button_icon_texture" { visible = no }
+							blockoverride "line_button_selected" { visible = "[GetScriptedGui('tot_governor_candidate_filter_non_historical_selected').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
+						}
+					}
+				}
+			}
+			scrollbox = {
+				visible = "[GetScriptedGui('tot_character_growth_has_selected_governor_state').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				size = { 1124 422 }
+				blockoverride "scrollbox_content" {
+					fixedgridbox = {
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_province_governor_candidates')]"
+						addcolumn = 1124
+						addrow = 132
+						item = {
+							tot_character_candidate_item = {
+								blockoverride "candidate_action_block" {
+									button_standard = {
+										size = { 120 32 }
+										text = "TOT_PROVINCE_GOVERNOR_APPOINT"
+										enabled = "[GetScriptedGui('tot_appoint_selected_province_governor').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+										onclick = "[GetScriptedGui('tot_appoint_selected_province_governor').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+										onclick = "[GetScriptedGui('tot_refresh_character_growth').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										tooltip = "[GetScriptedGui('tot_appoint_selected_province_governor').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+									}
+								}
+								blockoverride "appoint_hint" { text = "TOT_CHARACTER_GOVERNOR_APPOINT_HINT" }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
 	type tot_character_growth_progress_character = widget {
-		size = { 500 136 }
+		size = { 520 154 }
 		datacontext = "[Scope.GetCharacter]"
 		visible = "[Scope.GetCharacter.IsValid]"
 
 		background = {
-			using = entry_bg_simple
+			using = entry_bg_fancy
 		}
 
-		flowcontainer = {
-			margin = { 12 10 }
-			spacing = 12
+		widget = {
+			size = { 496 130 }
 
-			character_portrait_medium = {}
+			flowcontainer = {
+				margin = { 12 12 }
+				spacing = 10
 
 			widget = {
-				size = { 58 58 }
-				margin_top = 8
+				size = { 72 124 }
+				character_portrait_medium = {
+					parentanchor = center
+					blockoverride "show_hat" {}
+					blockoverride "highlight" {}
+					blockoverride "rank_icon" {}
+				}
+			}
+
+			widget = {
+				size = { 78 124 }
 				tooltip = "TOT_CHARACTER_GROWTH_EXP_TOOLTIP"
 
 				background = {
-					texture = "gfx/interface/backgrounds/round_button_bg.dds"
+					using = entry_bg_simple
 				}
 
-				round_progress_default = {
-					size = { 52 52 }
-					parentanchor = center
-					value = "[Character.MakeScope.ScriptValue('tot_character_growth_exp_progress_value')]"
+				textbox = {
+					text = "TOT_CHARACTER_GROWTH_EXP_LABEL"
+					using = fontsize_small
+					size = { 70 20 }
+					parentanchor = top|hcenter
+					align = center|nobaseline
 				}
 
 				textbox = {
 					text = "[Character.MakeScope.Var('tot_character_growth_exp').GetValue|0]"
 					using = fontsize_small
-					size = { 52 22 }
+					size = { 70 24 }
 					parentanchor = center
 					align = center|nobaseline
+				}
+
+				default_progressbar_horizontal = {
+					size = { 62 12 }
+					parentanchor = bottom|hcenter
+					position = { 0 -16 }
+					blockoverride "values" {
+						value = "[Character.MakeScope.ScriptValue('tot_character_growth_exp_progress_value')]"
+						min = 0
+						max = 1
+					}
 				}
 			}
 
 			flowcontainer = {
 				direction = vertical
-				spacing = 5
-				minimumsize = { 316 108 }
+				spacing = 4
+				size = { 310 126 }
 
 				textbox = {
 					text = "[Character.GetFullNameNoFormatting]"
 					default_format = "#v"
 					using = fontsize_medium
-					size = { 316 28 }
+					size = { 310 27 }
 					align = left|nobaseline
 					elide = right
 				}
@@ -213,37 +402,271 @@
 				textbox = {
 					text = "[Character.GetPrimaryRoleTitle]"
 					using = fontsize_small
-					size = { 316 20 }
+					size = { 310 19 }
 					align = left|nobaseline
 					elide = right
 				}
 
 				textbox = {
+					text = "TOT_CHARACTER_GROWTH_LEVEL_AND_POINTS"
+					using = fontsize_small
+					size = { 310 19 }
+					align = left|nobaseline
+				}
+
+				textbox = {
 					text = "TOT_CHARACTER_GROWTH_EXP_PROGRESS"
 					using = fontsize_small
-					size = { 316 20 }
+					size = { 310 19 }
 					align = left|nobaseline
+					elide = right
 					tooltip = "TOT_CHARACTER_GROWTH_EXP_TOOLTIP"
 				}
 
 				textbox = {
 					text = "TOT_CHARACTER_GROWTH_CURRENT_REQUIREMENT"
 					using = fontsize_small
-					fontsize = 13
-					size = { 316 20 }
+					size = { 310 19 }
 					align = left|nobaseline
 					elide = right
 					tooltip = "TOT_CHARACTER_GROWTH_EXP_TOOLTIP"
 				}
+			}
 
-				textbox = {
-					text = "TOT_CHARACTER_GROWTH_EXP_STAGE_COSTS"
-					using = fontsize_small
-					fontsize = 13
-					size = { 316 20 }
-					align = left|nobaseline
-					elide = right
-					tooltip = "TOT_CHARACTER_GROWTH_EXP_TOOLTIP"
+			}
+
+			button = {
+				size = { 496 130 }
+				parentanchor = center
+				alwaystransparent = yes
+				enabled = "[GetScriptedGui('tot_character_growth_select_progress_character').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+				onclick = "[GetScriptedGui('tot_character_growth_select_progress_character').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+				onclick = "[GetScriptedGui('tot_refresh_character_growth').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			}
+		}
+	}
+
+	type tot_character_growth_progress_character_wide = widget {
+		size = { 1420 162 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+		background = { using = entry_bg_fancy }
+
+		hbox = {
+			margin = { 12 10 }
+			size = { 1400 142 }
+			spacing = 14
+
+			widget = {
+				size = { 520 142 }
+				flowcontainer = {
+					margin = { 8 5 }
+					spacing = 10
+					widget = {
+						size = { 72 124 }
+						character_portrait_medium = {
+							parentanchor = center
+							blockoverride "show_hat" {}
+							blockoverride "highlight" {}
+							blockoverride "rank_icon" {}
+						}
+					}
+					widget = {
+						size = { 58 124 }
+						tooltip = "TOT_CHARACTER_GROWTH_EXP_TOOLTIP"
+						round_progress_default = {
+							size = { 52 52 }
+							parentanchor = vcenter
+							value = "[Character.MakeScope.ScriptValue('tot_character_growth_exp_progress_value')]"
+						}
+						textbox = {
+							text = "[Character.MakeScope.Var('tot_character_growth_exp').GetValue|0]"
+							using = fontsize_small
+							size = { 52 22 }
+							parentanchor = vcenter
+							align = center|nobaseline
+						}
+					}
+					flowcontainer = {
+						direction = vertical
+						spacing = 4
+						size = { 350 126 }
+						textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_medium size = { 350 27 } align = left|nobaseline elide = right }
+						textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 350 19 } align = left|nobaseline elide = right }
+						textbox = { text = "TOT_CHARACTER_GROWTH_LEVEL_AND_POINTS" using = fontsize_small size = { 350 19 } align = left|nobaseline }
+						textbox = { text = "TOT_CHARACTER_GROWTH_EXP_PROGRESS" using = fontsize_small size = { 350 19 } align = left|nobaseline elide = right tooltip = "TOT_CHARACTER_GROWTH_EXP_TOOLTIP" }
+						textbox = { text = "TOT_CHARACTER_GROWTH_CURRENT_REQUIREMENT" using = fontsize_small size = { 350 19 } align = left|nobaseline elide = right tooltip = "TOT_CHARACTER_GROWTH_EXP_TOOLTIP" }
+					}
+				}
+			}
+
+			widget = {
+				size = { 650 142 }
+				vbox = {
+					spacing = 2
+					textbox = { text = "TOT_CHARACTER_GROWTH_INSTRUMENT_MASTERY" using = fontsize_medium size = { 650 18 } align = left|nobaseline tooltip = "TOT_CHARACTER_GROWTH_INSTRUMENT_MASTERY_TOOLTIP" }
+					flowcontainer = {
+						direction = horizontal
+						size = { 650 32 }
+						spacing = 4
+						widget = { visible = "[GetScriptedGui('tot_character_growth_upgrade_guitarist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 126 30 } background = { using = entry_bg_simple } hbox = { margin = { 2 1 } spacing = 2 button_standard = { size = { 26 26 } raw_text = "+" fontsize = 20 enabled = "[GetScriptedGui('tot_character_growth_upgrade_guitarist').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_character_growth_upgrade_guitarist').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" tooltip = "[GetScriptedGui('tot_character_growth_upgrade_guitarist').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]" } textbox = { text = "TOT_CHARACTER_GROWTH_GUITARIST_COMPACT" using = fontsize_small size = { 90 26 } align = left|nobaseline elide = right } } }
+						widget = { visible = "[GetScriptedGui('tot_character_growth_upgrade_bassist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 126 30 } background = { using = entry_bg_simple } hbox = { margin = { 2 1 } spacing = 2 button_standard = { size = { 26 26 } raw_text = "+" fontsize = 20 enabled = "[GetScriptedGui('tot_character_growth_upgrade_bassist').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_character_growth_upgrade_bassist').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" tooltip = "[GetScriptedGui('tot_character_growth_upgrade_bassist').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]" } textbox = { text = "TOT_CHARACTER_GROWTH_BASSIST_COMPACT" using = fontsize_small size = { 90 26 } align = left|nobaseline elide = right } } }
+						widget = { visible = "[GetScriptedGui('tot_character_growth_upgrade_keyboardist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 126 30 } background = { using = entry_bg_simple } hbox = { margin = { 2 1 } spacing = 2 button_standard = { size = { 26 26 } raw_text = "+" fontsize = 20 enabled = "[GetScriptedGui('tot_character_growth_upgrade_keyboardist').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_character_growth_upgrade_keyboardist').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" tooltip = "[GetScriptedGui('tot_character_growth_upgrade_keyboardist').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]" } textbox = { text = "TOT_CHARACTER_GROWTH_KEYBOARDIST_COMPACT" using = fontsize_small size = { 90 26 } align = left|nobaseline elide = right } } }
+						widget = { visible = "[GetScriptedGui('tot_character_growth_upgrade_dj').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 126 30 } background = { using = entry_bg_simple } hbox = { margin = { 2 1 } spacing = 2 button_standard = { size = { 26 26 } raw_text = "+" fontsize = 20 enabled = "[GetScriptedGui('tot_character_growth_upgrade_dj').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_character_growth_upgrade_dj').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" tooltip = "[GetScriptedGui('tot_character_growth_upgrade_dj').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]" } textbox = { text = "TOT_CHARACTER_GROWTH_DJ_COMPACT" using = fontsize_small size = { 90 26 } align = left|nobaseline elide = right } } }
+						widget = { visible = "[GetScriptedGui('tot_character_growth_upgrade_drummer').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 126 30 } background = { using = entry_bg_simple } hbox = { margin = { 2 1 } spacing = 2 button_standard = { size = { 26 26 } raw_text = "+" fontsize = 20 enabled = "[GetScriptedGui('tot_character_growth_upgrade_drummer').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_character_growth_upgrade_drummer').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" tooltip = "[GetScriptedGui('tot_character_growth_upgrade_drummer').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]" } textbox = { text = "TOT_CHARACTER_GROWTH_DRUMMER_COMPACT" using = fontsize_small size = { 90 26 } align = left|nobaseline elide = right } } }
+					}
+					flowcontainer = {
+						direction = horizontal
+						size = { 650 28 }
+						spacing = 4
+						widget = { visible = "[GetScriptedGui('tot_character_growth_upgrade_vocalist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 126 26 } background = { using = entry_bg_simple } hbox = { margin = { 2 0 } spacing = 2 button_standard = { size = { 26 26 } raw_text = "+" fontsize = 20 enabled = "[GetScriptedGui('tot_character_growth_upgrade_vocalist').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_character_growth_upgrade_vocalist').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" tooltip = "[GetScriptedGui('tot_character_growth_upgrade_vocalist').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]" } textbox = { text = "TOT_CHARACTER_GROWTH_VOCALIST_COMPACT" using = fontsize_small size = { 90 26 } align = left|nobaseline elide = right } } }
+					}
+					fixedgridbox = {
+						size = { 650 56 }
+						datamodel = "[Character.AccessTraits]"
+						addcolumn = 130
+						addrow = 28
+						flipdirection = yes
+						datamodel_wrap = 5
+						item = {
+							widget = {
+								size = { 128 24 }
+								background = { using = entry_bg_simple }
+								tooltipwidget = { FancyTooltip_CharacterTrait = {} }
+								hbox = {
+									margin = { 3 0 }
+									spacing = 2
+									icon = { size = { 22 22 } parentanchor = vcenter texture = "[CharacterTrait.GetTexture]" }
+									textbox = { text = "[CharacterTrait.GetNameNoFormatting]" using = fontsize_small size = { 94 22 } parentanchor = vcenter align = left|nobaseline elide = right }
+								}
+							}
+						}
+					}
+				}
+			}
+
+			widget = {
+				size = { 200 142 }
+				vbox = {
+					button_standard = { size = { 194 118 } raw_text = "+" fontsize = 42 enabled = "[GetScriptedGui('tot_character_growth_buy_random_trait').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_character_growth_buy_random_trait').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" tooltip = "[GetScriptedGui('tot_character_growth_buy_random_trait').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]" }
+				}
+			}
+		}
+	}
+
+	type tot_character_growth_skill_detail = widget {
+		size = { 884 630 }
+		datacontext = "[GetPlayer.MakeScope.Var('tot_character_growth_selected_progress_character').GetCharacter]"
+		hbox = {
+			size = { 884 630 }
+			spacing = 14
+
+			widget = {
+				size = { 588 630 }
+				background = { using = entry_bg_fancy }
+
+				vbox = {
+					margin = { 14 14 }
+					spacing = 7
+
+					widget = {
+						size = { 560 82 }
+						hbox = {
+							size = { 560 82 }
+							spacing = 12
+							widget = {
+								size = { 82 82 }
+								background = { texture = "gfx/interface/icons/character_icons/character_frame.dds" size = { 76 76 } parentanchor = center }
+								character_portrait_large = {
+									parentanchor = center
+									blockoverride "show_hat" {}
+									blockoverride "highlight" {}
+									blockoverride "rank_icon" {}
+								}
+							}
+							widget = {
+								size = { 466 82 }
+								vbox = {
+									size = { 466 82 }
+									spacing = 4
+									textbox = { text = "[Character.GetFullNameNoFormatting]" default_format = "#v" using = fontsize_large size = { 466 24 } align = left|nobaseline elide = right }
+									textbox = { text = "[Character.GetPrimaryRoleTitle]" using = fontsize_small size = { 466 16 } align = left|nobaseline elide = right }
+									textbox = { text = "TOT_CHARACTER_GROWTH_DETAIL_SUMMARY" using = fontsize_small size = { 466 17 } align = left|nobaseline }
+									textbox = { text = "TOT_CHARACTER_GROWTH_DETAIL_EXP" using = fontsize_small size = { 466 17 } align = left|nobaseline tooltip = "TOT_CHARACTER_GROWTH_EXP_TOOLTIP" }
+								}
+							}
+						}
+					}
+
+					textbox = { text = "TOT_CHARACTER_GROWTH_ALL_TRAITS" using = fontsize_medium size = { 560 22 } align = left|nobaseline }
+					scrollbox = {
+						size = { 560 200 }
+						blockoverride "scrollbox_content" {
+							dynamicgridbox = {
+								datamodel = "[Character.AccessTraits]"
+								datamodel_wrap = 2
+								item = {
+									widget = {
+										size = { 272 48 }
+										background = { using = entry_bg_simple }
+										tooltipwidget = { FancyTooltip_CharacterTrait = {} }
+										hbox = {
+											margin = { 8 3 }
+											spacing = 8
+											icon = { size = { 28 40 } parentanchor = vcenter texture = "[CharacterTrait.GetTexture]" }
+											textbox = { text = "[CharacterTrait.GetNameNoFormatting]" using = fontsize_small size = { 220 36 } parentanchor = vcenter align = left|nobaseline elide = right multiline = yes }
+										}
+									}
+								}
+							}
+						}
+					}
+					textbox = { text = "TOT_CHARACTER_GROWTH_INSTRUMENT_MASTERY" using = fontsize_medium size = { 560 22 } align = left|nobaseline tooltip = "TOT_CHARACTER_GROWTH_INSTRUMENT_MASTERY_TOOLTIP" }
+					flowcontainer = {
+						size = { 560 166 }
+						direction = vertical
+						spacing = 4
+						widget = { visible = "[GetScriptedGui('tot_character_growth_upgrade_guitarist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 560 24 } background = { using = entry_bg_simple } textbox = { text = "TOT_CHARACTER_GROWTH_MASTERY_GUITARIST" using = fontsize_small size = { 544 22 } margin = { 8 1 } align = left|nobaseline } }
+						widget = { visible = "[GetScriptedGui('tot_character_growth_upgrade_bassist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 560 24 } background = { using = entry_bg_simple } textbox = { text = "TOT_CHARACTER_GROWTH_MASTERY_BASSIST" using = fontsize_small size = { 544 22 } margin = { 8 1 } align = left|nobaseline } }
+						widget = { visible = "[GetScriptedGui('tot_character_growth_upgrade_keyboardist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 560 24 } background = { using = entry_bg_simple } textbox = { text = "TOT_CHARACTER_GROWTH_MASTERY_KEYBOARDIST" using = fontsize_small size = { 544 22 } margin = { 8 1 } align = left|nobaseline } }
+						widget = { visible = "[GetScriptedGui('tot_character_growth_upgrade_dj').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 560 24 } background = { using = entry_bg_simple } textbox = { text = "TOT_CHARACTER_GROWTH_MASTERY_DJ" using = fontsize_small size = { 544 22 } margin = { 8 1 } align = left|nobaseline } }
+						widget = { visible = "[GetScriptedGui('tot_character_growth_upgrade_drummer').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 560 24 } background = { using = entry_bg_simple } textbox = { text = "TOT_CHARACTER_GROWTH_MASTERY_DRUMMER" using = fontsize_small size = { 544 22 } margin = { 8 1 } align = left|nobaseline } }
+						widget = { visible = "[GetScriptedGui('tot_character_growth_upgrade_vocalist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 560 24 } background = { using = entry_bg_simple } textbox = { text = "TOT_CHARACTER_GROWTH_MASTERY_VOCALIST" using = fontsize_small size = { 544 22 } margin = { 8 1 } align = left|nobaseline } }
+					}
+					textbox = { text = "TOT_CHARACTER_GROWTH_SKILL_RULES" using = fontsize_small size = { 560 42 } align = left|nobaseline multiline = yes }
+				}
+			}
+
+			widget = {
+				size = { 282 630 }
+				background = { using = entry_bg_fancy }
+
+				vbox = {
+					margin = { 14 14 }
+					spacing = 8
+					textbox = { text = "TOT_CHARACTER_GROWTH_SKILL_PANEL" using = fontsize_medium size = { 254 24 } align = center|nobaseline }
+					widget = {
+						size = { 254 62 }
+						background = { using = entry_bg_simple }
+						textbox = { text = "TOT_CHARACTER_GROWTH_SKILL_POINTS" using = fontsize_small size = { 244 20 } parentanchor = top|hcenter align = center|nobaseline }
+						textbox = { text = "[Character.MakeScope.ScriptValue('tot_character_growth_skill_points_value')|0]" default_format = "#v" using = fontsize_large size = { 244 30 } parentanchor = bottom|hcenter align = center|nobaseline }
+					}
+					textbox = { text = "TOT_CHARACTER_GROWTH_RANDOM_TRAIT" using = fontsize_small size = { 254 40 } align = center|nobaseline multiline = yes }
+					button_standard = {
+						size = { 254 36 }
+						text = "TOT_CHARACTER_GROWTH_RANDOM_TRAIT_BUTTON"
+						enabled = "[GetScriptedGui('tot_character_growth_buy_random_trait').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+						onclick = "[GetScriptedGui('tot_character_growth_buy_random_trait').Execute(GuiScope.SetRoot(Character.MakeScope).End)]"
+						tooltip = "[GetScriptedGui('tot_character_growth_buy_random_trait').IsValidTooltip(GuiScope.SetRoot(Character.MakeScope).End)]"
+					}
+					textbox = { text = "TOT_CHARACTER_GROWTH_INSTRUMENT_MASTERY" using = fontsize_medium size = { 254 22 } align = center|nobaseline tooltip = "TOT_CHARACTER_GROWTH_INSTRUMENT_MASTERY_TOOLTIP" }
+
+					widget = { visible = "[GetScriptedGui('tot_character_growth_upgrade_guitarist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 254 62 } background = { using = entry_bg_simple } textbox = { text = "TOT_CHARACTER_GROWTH_MASTERY_GUITARIST" using = fontsize_small size = { 244 25 } parentanchor = top|hcenter align = center|nobaseline } button_standard = { size = { 238 30 } parentanchor = bottom|hcenter text = "TOT_CHARACTER_GROWTH_MASTERY_UPGRADE" enabled = "[GetScriptedGui('tot_character_growth_upgrade_guitarist').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_character_growth_upgrade_guitarist').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" tooltip = "TOT_CHARACTER_GROWTH_MASTERY_UPGRADE_TOOLTIP" } }
+					widget = { visible = "[GetScriptedGui('tot_character_growth_upgrade_bassist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 254 62 } background = { using = entry_bg_simple } textbox = { text = "TOT_CHARACTER_GROWTH_MASTERY_BASSIST" using = fontsize_small size = { 244 25 } parentanchor = top|hcenter align = center|nobaseline } button_standard = { size = { 238 30 } parentanchor = bottom|hcenter text = "TOT_CHARACTER_GROWTH_MASTERY_UPGRADE" enabled = "[GetScriptedGui('tot_character_growth_upgrade_bassist').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_character_growth_upgrade_bassist').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" tooltip = "TOT_CHARACTER_GROWTH_MASTERY_UPGRADE_TOOLTIP" } }
+					widget = { visible = "[GetScriptedGui('tot_character_growth_upgrade_keyboardist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 254 62 } background = { using = entry_bg_simple } textbox = { text = "TOT_CHARACTER_GROWTH_MASTERY_KEYBOARDIST" using = fontsize_small size = { 244 25 } parentanchor = top|hcenter align = center|nobaseline } button_standard = { size = { 238 30 } parentanchor = bottom|hcenter text = "TOT_CHARACTER_GROWTH_MASTERY_UPGRADE" enabled = "[GetScriptedGui('tot_character_growth_upgrade_keyboardist').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_character_growth_upgrade_keyboardist').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" tooltip = "TOT_CHARACTER_GROWTH_MASTERY_UPGRADE_TOOLTIP" } }
+					widget = { visible = "[GetScriptedGui('tot_character_growth_upgrade_dj').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 254 62 } background = { using = entry_bg_simple } textbox = { text = "TOT_CHARACTER_GROWTH_MASTERY_DJ" using = fontsize_small size = { 244 25 } parentanchor = top|hcenter align = center|nobaseline } button_standard = { size = { 238 30 } parentanchor = bottom|hcenter text = "TOT_CHARACTER_GROWTH_MASTERY_UPGRADE" enabled = "[GetScriptedGui('tot_character_growth_upgrade_dj').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_character_growth_upgrade_dj').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" tooltip = "TOT_CHARACTER_GROWTH_MASTERY_UPGRADE_TOOLTIP" } }
+					widget = { visible = "[GetScriptedGui('tot_character_growth_upgrade_drummer').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 254 62 } background = { using = entry_bg_simple } textbox = { text = "TOT_CHARACTER_GROWTH_MASTERY_DRUMMER" using = fontsize_small size = { 244 25 } parentanchor = top|hcenter align = center|nobaseline } button_standard = { size = { 238 30 } parentanchor = bottom|hcenter text = "TOT_CHARACTER_GROWTH_MASTERY_UPGRADE" enabled = "[GetScriptedGui('tot_character_growth_upgrade_drummer').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_character_growth_upgrade_drummer').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" tooltip = "TOT_CHARACTER_GROWTH_MASTERY_UPGRADE_TOOLTIP" } }
+					widget = { visible = "[GetScriptedGui('tot_character_growth_upgrade_vocalist').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]" size = { 254 62 } background = { using = entry_bg_simple } textbox = { text = "TOT_CHARACTER_GROWTH_MASTERY_VOCALIST" using = fontsize_small size = { 244 25 } parentanchor = top|hcenter align = center|nobaseline } button_standard = { size = { 238 30 } parentanchor = bottom|hcenter text = "TOT_CHARACTER_GROWTH_MASTERY_UPGRADE" enabled = "[GetScriptedGui('tot_character_growth_upgrade_vocalist').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" onclick = "[GetScriptedGui('tot_character_growth_upgrade_vocalist').Execute(GuiScope.SetRoot(Character.MakeScope).End)]" tooltip = "TOT_CHARACTER_GROWTH_MASTERY_UPGRADE_TOOLTIP" } }
 				}
 			}
 		}
@@ -355,31 +778,28 @@ types tot_character_growth_page_types {
 	state = {
 		name = refresh_character_growth
 		trigger_on_create = yes
-		on_finish = "[GetVariableSystem.Set( 'tot_character_growth_page', 'governor' )]"
+		on_finish = "[GetVariableSystem.Set( 'tot_character_growth_page', 'progress' )]"
 		on_finish = "[GetScriptedGui('tot_refresh_character_growth').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 	}
 
 	widget = {
 		size = { 520 38 }
 		tab_buttons = {
-			blockoverride "first_button" { text = "TOT_CHARACTER_GROWTH_TAB_GOVERNOR" }
-			blockoverride "first_button_selected" { text = "TOT_CHARACTER_GROWTH_TAB_GOVERNOR" }
-			blockoverride "first_button_tooltip" { tooltip = "TOT_CHARACTER_GROWTH_TAB_GOVERNOR" }
+			blockoverride "first_button" { text = "TOT_CHARACTER_GROWTH_TAB_PROGRESS" }
+			blockoverride "first_button_selected" { text = "TOT_CHARACTER_GROWTH_TAB_PROGRESS" }
+			blockoverride "first_button_tooltip" { tooltip = "TOT_CHARACTER_GROWTH_TAB_PROGRESS" }
 			blockoverride "first_button_click" {
-				onclick = "[GetVariableSystem.Set( 'tot_character_growth_page', 'governor' )]"
-				onclick = "[GetScriptedGui('tot_refresh_character_growth').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-			}
-			blockoverride "first_button_visibility" { visible = "[GetVariableSystem.HasValue( 'tot_character_growth_page', 'governor' )]" }
-			blockoverride "first_button_visibility_checked" { visible = "[Not(GetVariableSystem.HasValue( 'tot_character_growth_page', 'governor' ))]" }
-			blockoverride "second_button" { text = "TOT_CHARACTER_GROWTH_TAB_PROGRESS" }
-			blockoverride "second_button_selected" { text = "TOT_CHARACTER_GROWTH_TAB_PROGRESS" }
-			blockoverride "second_button_tooltip" { tooltip = "TOT_CHARACTER_GROWTH_TAB_PROGRESS" }
-			blockoverride "second_button_click" {
 				onclick = "[GetVariableSystem.Set( 'tot_character_growth_page', 'progress' )]"
 				onclick = "[GetScriptedGui('tot_refresh_character_growth').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 			}
-			blockoverride "second_button_visibility" { visible = "[GetVariableSystem.HasValue( 'tot_character_growth_page', 'progress' )]" }
-			blockoverride "second_button_visibility_checked" { visible = "[Not(GetVariableSystem.HasValue( 'tot_character_growth_page', 'progress' ))]" }
+			blockoverride "first_button_visibility" { visible = "[GetVariableSystem.HasValue( 'tot_character_growth_page', 'progress' )]" }
+			blockoverride "first_button_visibility_checked" { visible = "[Not(GetVariableSystem.HasValue( 'tot_character_growth_page', 'progress' ))]" }
+			blockoverride "second_button" { text = "TOT_CHARACTER_GROWTH_TAB_SPECIAL_UNITS" }
+			blockoverride "second_button_selected" { text = "TOT_CHARACTER_GROWTH_TAB_SPECIAL_UNITS" }
+			blockoverride "second_button_tooltip" { tooltip = "TOT_CHARACTER_GROWTH_TAB_SPECIAL_UNITS" }
+			blockoverride "second_button_click" { onclick = "[GetVariableSystem.Set( 'tot_character_growth_page', 'special_units' )]" }
+			blockoverride "second_button_visibility" { visible = "[GetVariableSystem.HasValue( 'tot_character_growth_page', 'special_units' )]" }
+			blockoverride "second_button_visibility_checked" { visible = "[Not(GetVariableSystem.HasValue( 'tot_character_growth_page', 'special_units' ))]" }
 			blockoverride "third_button_visibility" { visible = no }
 			blockoverride "third_button_visibility_checked" { visible = no }
 			blockoverride "fourth_button_visibility" { visible = no }
@@ -389,91 +809,101 @@ types tot_character_growth_page_types {
 		}
 	}
 
-	textbox = {
-		visible = "[GetVariableSystem.HasValue( 'tot_character_growth_page', 'governor' )]"
-		text = "TOT_PROVINCE_GOVERNOR_LIMIT_STATUS"
-		size = { 520 26 }
-		align = center|nobaseline
-		using = fontsize_medium
-		tooltip_enabled = yes
-		tooltip = "TOT_PROVINCE_GOVERNOR_LIMIT_TOOLTIP"
-	}
-
-	scrollbox = {
-		visible = "[GetVariableSystem.HasValue( 'tot_character_growth_page', 'governor' )]"
-		size = { 540 170 }
-
-		blockoverride "scrollbox_content" {
-			fixedgridbox = {
-				datamodel = "[GetPlayer.MakeScope.GetList('tot_character_growth_governor_states')]"
-				addcolumn = 520
-				addrow = 124
-
-				item = {
-					tot_character_growth_governor_state = {}
-				}
-			}
-		}
-	}
-
 	widget = {
-		visible = "[And(GetVariableSystem.HasValue( 'tot_character_growth_page', 'governor' ), GetScriptedGui('tot_character_growth_has_selected_governor_state').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
-		size = { 520 152 }
+		size = { 1440 640 }
 
-		fixedgridbox = {
-			datamodel = "[GetPlayer.MakeScope.GetList('tot_character_growth_selected_governor_state_list')]"
-			addcolumn = 520
-			addrow = 152
+		hbox = {
+			size = { 1440 640 }
+			spacing = 18
+			ignoreinvisible = yes
 
-			item = {
-				tot_character_growth_selected_governor_state = {}
+		widget = {
+			visible = "[GetVariableSystem.HasValue( 'tot_character_growth_page', 'governor' )]"
+			size = { 536 640 }
+
+			textbox = {
+				visible = "[GetVariableSystem.HasValue( 'tot_character_growth_page', 'governor' )]"
+				text = "TOT_PROVINCE_GOVERNOR_LIMIT_STATUS"
+				size = { 520 26 }
+				align = center|nobaseline
+				using = fontsize_medium
+				tooltip_enabled = yes
+				tooltip = "TOT_PROVINCE_GOVERNOR_LIMIT_TOOLTIP"
 			}
+
+			scrollbox = {
+				visible = "[GetVariableSystem.HasValue( 'tot_character_growth_page', 'governor' )]"
+				size = { 536 170 }
+				blockoverride "scrollbox_content" {
+					fixedgridbox = {
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_character_growth_governor_states')]"
+						addcolumn = 520
+						addrow = 124
+						item = { tot_character_growth_governor_state = {} }
+					}
+				}
+			}
+
+			widget = {
+				visible = "[And(GetVariableSystem.HasValue( 'tot_character_growth_page', 'governor' ), GetScriptedGui('tot_character_growth_has_selected_governor_state').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+				size = { 520 152 }
+				fixedgridbox = {
+					datamodel = "[GetPlayer.MakeScope.GetList('tot_character_growth_selected_governor_state_list')]"
+					addcolumn = 520
+					addrow = 152
+					item = { tot_character_growth_selected_governor_state = {} }
+				}
+			}
+
+			textbox = {
+				visible = "[And(GetVariableSystem.HasValue( 'tot_character_growth_page', 'governor' ), Not(GetScriptedGui('tot_character_growth_has_selected_governor_state').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
+				text = "TOT_CHARACTER_GROWTH_SELECT_STATE_FIRST"
+				size = { 520 38 }
+				align = center|nobaseline
+				using = fontsize_medium
+			}
+
+			scrollbox = {
+				visible = "[And(GetVariableSystem.HasValue( 'tot_character_growth_page', 'governor' ), GetScriptedGui('tot_character_growth_selected_governor_state_needs_appointment').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+				size = { 536 230 }
+				blockoverride "scrollbox_content" {
+					fixedgridbox = {
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_province_governor_candidates')]"
+						addcolumn = 500
+						addrow = 132
+						item = { tot_character_growth_candidate = {} }
+					}
+				}
+			}
+
 		}
-	}
 
-	textbox = {
-		visible = "[And(GetVariableSystem.HasValue( 'tot_character_growth_page', 'governor' ), Not(GetScriptedGui('tot_character_growth_has_selected_governor_state').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
-		text = "TOT_CHARACTER_GROWTH_SELECT_STATE_FIRST"
-		size = { 520 38 }
-		align = center|nobaseline
-		using = fontsize_medium
-	}
-
-	scrollbox = {
-		visible = "[And(GetVariableSystem.HasValue( 'tot_character_growth_page', 'governor' ), GetScriptedGui('tot_character_growth_selected_governor_state_needs_appointment').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
-		size = { 540 230 }
-
-		blockoverride "scrollbox_content" {
-			fixedgridbox = {
-				 datamodel = "[GetPlayer.MakeScope.GetList('tot_province_governor_candidates')]"
-				addcolumn = 500
-				addrow = 132
-
-				item = {
-					tot_character_growth_candidate = {}
+		widget = {
+			visible = "[GetVariableSystem.HasValue( 'tot_character_growth_page', 'progress' )]"
+			size = { 1440 640 }
+			scrollbox = {
+				size = { 1440 640 }
+				blockoverride "scrollbox_content" {
+					fixedgridbox = {
+						datamodel = "[GetPlayer.MakeScope.GetList('tot_character_growth_characters')]"
+						addcolumn = 1420
+						addrow = 166
+						item = { tot_character_growth_progress_character_wide = {} }
+					}
 				}
 			}
 		}
+
+		widget = {
+			visible = "[GetVariableSystem.HasValue( 'tot_character_growth_page', 'special_units' )]"
+			size = { 1440 640 }
+			tot_special_units_page = {}
+		}
+		}
 	}
-
-	scrollbox = {
-		visible = "[GetVariableSystem.HasValue( 'tot_character_growth_page', 'progress' )]"
-		size = { 540 600 }
-
-		blockoverride "scrollbox_content" {
-			fixedgridbox = {
-				datamodel = "[GetPlayer.MakeScope.GetList('tot_character_growth_characters')]"
-				addcolumn = 500
-				addrow = 138
-
-				item = {
-					tot_character_growth_progress_character = {}
-				}
-			}
-		}
-		}
 	}
 }
+
 
 
 

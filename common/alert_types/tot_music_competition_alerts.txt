@@ -1,0 +1,34 @@
+tot_music_competition_registration_needed = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/can_establish_company.dds"
+
+	valid = {
+		has_variable = tot_music_competition_registration_open
+		NOT = { has_variable = tot_music_competition_stage }
+		NOT = { has_variable = tot_music_competition_band_registered }
+		OR = {
+			has_variable = tot_band_1_created
+			has_variable = tot_band_2_created
+			has_variable = tot_band_3_created
+			has_variable = tot_band_4_created
+			has_variable = tot_band_5_created
+		}
+	}
+
+	type = important_action
+	color = green
+	alert_group = tot_music_competition
+}
+
+tot_music_competition_in_progress = {
+	script_context = player_country
+	texture = "gfx/interface/icons/alert_icons/formable_possible.dds"
+
+	valid = {
+		has_variable = tot_music_competition_stage
+		NOT = { has_variable = tot_music_competition_completed }
+	}
+
+	type = alert
+	color = green
+}

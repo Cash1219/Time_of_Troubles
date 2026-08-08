@@ -103,9 +103,9 @@ tot_character_growth_current_cost_value = {
 	}
 
 	if = {
-		limit = { tot_character_growth_acquired_traits_count_value > 0 }
+		limit = { has_variable = tot_character_growth_level }
 		add = {
-			value = tot_character_growth_acquired_traits_count_value
+			value = var:tot_character_growth_level
 			multiply = 3000
 		}
 	}
@@ -150,14 +150,55 @@ tot_character_growth_next_cost_text_value = {
 	}
 
 	if = {
-		limit = { tot_character_growth_acquired_traits_count_value > 0 }
+		limit = { has_variable = tot_character_growth_level }
 		add = {
-			value = tot_character_growth_acquired_traits_count_value
+			value = var:tot_character_growth_level
 			multiply = 3000
 		}
 	}
 
 	min = 1
+}
+
+tot_character_growth_level_value = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_character_growth_level }
+		add = var:tot_character_growth_level
+	}
+}
+
+tot_character_growth_skill_points_value = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_character_growth_skill_points }
+		add = var:tot_character_growth_skill_points
+	}
+}
+
+tot_character_growth_guitarist_mastery_value = {
+	value = 0
+	if = { limit = { has_variable = tot_character_growth_guitarist_mastery } add = var:tot_character_growth_guitarist_mastery }
+}
+tot_character_growth_bassist_mastery_value = {
+	value = 0
+	if = { limit = { has_variable = tot_character_growth_bassist_mastery } add = var:tot_character_growth_bassist_mastery }
+}
+tot_character_growth_keyboardist_mastery_value = {
+	value = 0
+	if = { limit = { has_variable = tot_character_growth_keyboardist_mastery } add = var:tot_character_growth_keyboardist_mastery }
+}
+tot_character_growth_dj_mastery_value = {
+	value = 0
+	if = { limit = { has_variable = tot_character_growth_dj_mastery } add = var:tot_character_growth_dj_mastery }
+}
+tot_character_growth_drummer_mastery_value = {
+	value = 0
+	if = { limit = { has_variable = tot_character_growth_drummer_mastery } add = var:tot_character_growth_drummer_mastery }
+}
+tot_character_growth_vocalist_mastery_value = {
+	value = 0
+	if = { limit = { has_variable = tot_character_growth_vocalist_mastery } add = var:tot_character_growth_vocalist_mastery }
 }
 
 tot_character_growth_weekly_gain_value = {

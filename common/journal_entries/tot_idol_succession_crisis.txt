@@ -91,45 +91,19 @@ je_tot_idol_succession_crisis = {
 		scope:journal_entry = { add_involved_country = c:GBDP }
 		scope:journal_entry = { add_involved_country = c:HTT }
 		scope:journal_entry = { add_involved_country = c:PRU }
-		if = {
-			limit = { NOT = { has_variable = tot_idol_crisis_ll_score } }
+		every_country = {
+			limit = { tot_golden_hall_crisis_participant_trigger = yes }
+			set_variable = { name = tot_golden_hall_crisis_participant value = 1 }
 			set_variable = { name = tot_idol_crisis_ll_score value = 0 }
-		}
-		if = {
-			limit = { NOT = { has_variable = tot_idol_crisis_imas_score } }
 			set_variable = { name = tot_idol_crisis_imas_score value = 0 }
-		}
-		if = {
-			limit = { NOT = { has_variable = tot_idol_crisis_gbdp_score } }
 			set_variable = { name = tot_idol_crisis_gbdp_score value = 0 }
-		}
-		if = {
-			limit = { NOT = { has_variable = tot_idol_crisis_ger_score } }
 			set_variable = { name = tot_idol_crisis_ger_score value = 0 }
-		}
-		if = {
-			limit = { NOT = { has_variable = tot_idol_crisis_htt_score } }
 			set_variable = { name = tot_idol_crisis_htt_score value = 0 }
-		}
-		if = {
-			limit = { NOT = { has_variable = tot_idol_crisis_tension } }
 			set_variable = { name = tot_idol_crisis_tension value = 20 }
-		}
-		if = {
-			limit = { NOT = { has_variable = tot_idol_crisis_compromise_score } }
 			set_variable = { name = tot_idol_crisis_compromise_score value = 30 }
+			set_variable = { name = tot_golden_hall_progress value = 0 }
 		}
-		if = { limit = { NOT = { has_variable = tot_golden_hall_built } } set_variable = { name = tot_golden_hall_built value = 0 } }
-		if = { limit = { NOT = { has_variable = tot_golden_hall_facade_progress } } set_variable = { name = tot_golden_hall_facade_progress value = 0 } }
-		if = { limit = { NOT = { has_variable = tot_golden_hall_stair_progress } } set_variable = { name = tot_golden_hall_stair_progress value = 0 } }
-		if = { limit = { NOT = { has_variable = tot_golden_hall_mainhall_progress } } set_variable = { name = tot_golden_hall_mainhall_progress value = 0 } }
-		if = { limit = { NOT = { has_variable = tot_golden_hall_ceiling_progress } } set_variable = { name = tot_golden_hall_ceiling_progress value = 0 } }
-		if = { limit = { NOT = { has_variable = tot_golden_hall_stage_progress } } set_variable = { name = tot_golden_hall_stage_progress value = 0 } }
-		if = { limit = { NOT = { has_variable = tot_golden_hall_acoustics_progress } } set_variable = { name = tot_golden_hall_acoustics_progress value = 0 } }
-		if = { limit = { NOT = { has_variable = tot_golden_hall_backstage_progress } } set_variable = { name = tot_golden_hall_backstage_progress value = 0 } }
-		if = { limit = { NOT = { has_variable = tot_golden_hall_ticketing_progress } } set_variable = { name = tot_golden_hall_ticketing_progress value = 0 } }
-		if = { limit = { NOT = { has_variable = tot_golden_hall_vip_progress } } set_variable = { name = tot_golden_hall_vip_progress value = 0 } }
-		if = { limit = { NOT = { has_variable = tot_golden_hall_reception_progress } } set_variable = { name = tot_golden_hall_reception_progress value = 0 } }
+		tot_golden_hall_create_site = yes
 		scope:journal_entry = {
 			set_bar_progress = {
 				name = je_tot_idol_crisis_tension_bar
@@ -156,6 +130,10 @@ je_tot_idol_succession_crisis = {
 
 	on_monthly_pulse = {
 		effect = {
+			every_country = {
+				limit = { tot_golden_hall_crisis_participant_trigger = yes }
+				tot_golden_hall_process_contracts = yes
+			}
 			scope:journal_entry = {
 				set_bar_progress = {
 					name = je_tot_idol_crisis_tension_bar
@@ -194,16 +172,6 @@ je_tot_golden_hall_project = {
 	icon = "gfx/interface/icons/building_icons/building_stage.dds"
 	group = je_group_tot_idol_succession
 	should_be_pinned_by_default = yes
-	scripted_button = je_tot_golden_hall_facade_button
-	scripted_button = je_tot_golden_hall_stair_button
-	scripted_button = je_tot_golden_hall_mainhall_button
-	scripted_button = je_tot_golden_hall_ceiling_button
-	scripted_button = je_tot_golden_hall_stage_button
-	scripted_button = je_tot_golden_hall_acoustics_button
-	scripted_button = je_tot_golden_hall_backstage_button
-	scripted_button = je_tot_golden_hall_ticketing_button
-	scripted_button = je_tot_golden_hall_vip_button
-	scripted_button = je_tot_golden_hall_reception_button
 	possible = {
 		has_journal_entry = je_tot_idol_succession_crisis
 	}
@@ -397,26 +365,10 @@ je_tot_golden_hall_continuation = {
 	icon = "gfx/interface/icons/building_icons/building_stage.dds"
 	group = je_group_tot_idol_succession
 	should_be_pinned_by_default = yes
-	scripted_button = je_tot_golden_hall_facade_button
-	scripted_button = je_tot_golden_hall_stair_button
-	scripted_button = je_tot_golden_hall_mainhall_button
-	scripted_button = je_tot_golden_hall_ceiling_button
-	scripted_button = je_tot_golden_hall_stage_button
-	scripted_button = je_tot_golden_hall_acoustics_button
-	scripted_button = je_tot_golden_hall_backstage_button
-	scripted_button = je_tot_golden_hall_ticketing_button
-	scripted_button = je_tot_golden_hall_vip_button
-	scripted_button = je_tot_golden_hall_reception_button
 	possible = {
 		NOT = { has_journal_entry = je_tot_idol_succession_crisis }
-		var:tot_golden_hall_built < 1
-		OR = {
-			var:tot_golden_hall_facade_progress > 0
-			var:tot_golden_hall_stair_progress > 0
-			var:tot_golden_hall_mainhall_progress > 0
-			var:tot_golden_hall_ceiling_progress > 0
-			var:tot_golden_hall_stage_progress > 0
-		}
+		NOT = { has_variable = tot_golden_hall_built }
+		s:STATE_AUSTRIA = { has_building = building_tot_golden_hall_construction_site }
 		any_scope_state = {
 			state_region = s:STATE_AUSTRIA
 			owner = root
@@ -431,5 +383,8 @@ je_tot_golden_hall_continuation = {
 				trigger = { always = yes }
 			}
 		}
+	}
+	on_monthly_pulse = {
+		effect = { tot_golden_hall_process_contracts = yes }
 	}
 }
