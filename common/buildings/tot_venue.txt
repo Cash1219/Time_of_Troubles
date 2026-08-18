@@ -1,0 +1,79 @@
+# 游乐场 / 水族馆 / 动物园
+
+building_amusement_park = {
+	buildable = yes
+	expandable = yes
+	downsizeable = yes
+	building_group = bg_arts
+	icon = "gfx/interface/icons/building_icons/building_amusement_park.dds"
+	city_type = city
+	levels_per_mesh = 5
+	ai_nationalization_desire = -0.25
+
+	unlocking_technologies = {
+		romanticism
+	}
+
+	production_method_groups = {
+		pmg_amusement_ground
+		pmg_amusement_ride
+		pmg_amusement_shop
+	}
+
+	required_construction = construction_cost_medium
+	ownership_type = self
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_monuments.dds"
+	ai_value = { value = 200 }
+}
+
+building_aquarium = {
+	buildable = yes
+	expandable = yes
+	downsizeable = yes
+	building_group = bg_arts
+	icon = "gfx/interface/icons/building_icons/building_aquarium.dds"
+	city_type = city
+	levels_per_mesh = 5
+	ai_nationalization_desire = -0.25
+
+	unlocking_technologies = {
+		romanticism
+	}
+
+	production_method_groups = {
+		pmg_aquarium_ground
+		pmg_aquarium_animal_type
+		pmg_aquarium_program
+	}
+
+	required_construction = construction_cost_medium
+	ownership_type = self
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_monuments.dds"
+	ai_value = { value = 200 }
+}
+
+building_zoo = {
+	buildable = yes
+	expandable = yes
+	downsizeable = yes
+	building_group = bg_arts
+	icon = "gfx/interface/icons/building_icons/building_zoo.dds"
+	city_type = city
+	levels_per_mesh = 5
+	ai_nationalization_desire = -0.25
+
+	unlocking_technologies = {
+		romanticism
+	}
+
+	production_method_groups = {
+		pmg_zoo_ground
+		pmg_zoo_animal_type
+		pmg_zoo_interaction
+	}
+
+	required_construction = construction_cost_medium
+	ownership_type = self
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_monuments.dds"
+	ai_value = { value = 200 }
+}

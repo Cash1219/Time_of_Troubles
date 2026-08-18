@@ -5,9 +5,9 @@ pm_goods_doll_doll = { #玩偶
 	texture = "gfx/interface/icons/production_method_icons/pm_goods_doll_doll.dds"
 	building_modifiers = {
 			workforce_scaled = {
-				goods_input_fabric_add = 5		#*20=100
+				goods_input_fabric_add = 15		#*20=300
 				goods_input_dye_add = 5		#*40=200
-				goods_output_omocha_add = 20		#*60=1200
+				goods_output_omocha_add = 15		#*60=900
 			}
 		level_scaled = {
 			building_employment_shopkeepers_add = 100
@@ -22,9 +22,10 @@ pm_goods_doll_pillow = { #抱枕
 	}
 	building_modifiers = {
 			workforce_scaled = {
-				goods_input_fabric_add = 15		#*20=300
-				goods_input_dye_add = 5		#*40=200
-				goods_output_omocha_add = 50		#*60=3000
+				goods_input_fabric_add = 30		#*20=600
+				goods_input_dye_add = 10		#*40=400
+				goods_input_services_add = 10		#*30=300
+				goods_output_omocha_add = 35		#*60=2100
 			}
 		level_scaled = {
 			building_employment_shopkeepers_add = 100
@@ -40,9 +41,10 @@ pm_goods_doll_custom = { #定制玩偶
 	}
 	building_modifiers = {
 			workforce_scaled = {
-				goods_input_fabric_add = 10		#*20=200
-				goods_input_dye_add = 5		#*40=200
-				goods_output_omocha_add = 30		#*60=1800
+				goods_input_fabric_add = 20		#*20=400
+				goods_input_dye_add = 10		#*40=400
+				goods_input_services_add = 5		#*30=150
+				goods_output_omocha_add = 25		#*60=1500
 			}
 		level_scaled = {
 			building_employment_shopkeepers_add = 100
@@ -58,8 +60,8 @@ pm_goods_jewelry_badge = { #角色徽章
 	texture = "gfx/interface/icons/production_method_icons/pm_goods_jewelry_badge.dds"
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_iron_add = 10		#*40=400
-			goods_output_omocha_add = 20		#*60=1200
+			goods_input_iron_add = 15		#*40=600
+			goods_output_omocha_add = 15		#*60=900
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 100
@@ -74,10 +76,10 @@ pm_goods_doll_iron = { #等身抱枕
 	}
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_fabric_add = 20		#*20=400
-			goods_input_dye_add = 10		#*40=400
+			goods_input_fabric_add = 35		#*20=700
+			goods_input_dye_add = 15		#*40=600
 			goods_input_luxury_clothes_add = 10		#*60=600
-			goods_output_omocha_add = 70		#*60=4200
+			goods_output_omocha_add = 50		#*60=3000
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 200
@@ -93,9 +95,9 @@ pm_goods_jewelry_pendant = { #挂件
 	}
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_glass_add = 10		#*40=400
-			goods_input_tools_add = 5		#*40=200
-			goods_output_omocha_add = 30		#*60=1800
+			goods_input_glass_add = 15		#*40=600
+			goods_input_tools_add = 10		#*40=400
+			goods_output_omocha_add = 25		#*60=1500
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 100
@@ -111,9 +113,9 @@ pm_goods_jewelry_stand = { #立牌
 	}
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_glass_add = 10		#*40=400
-			goods_input_tools_add = 10		#*40=400
-			goods_output_omocha_add = 50		#*60=3000
+			goods_input_glass_add = 20		#*40=800
+			goods_input_tools_add = 15		#*40=600
+			goods_output_omocha_add = 35		#*60=2100
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 100
@@ -129,11 +131,11 @@ pm_goods_jewelry_premium = { #高端收藏手办
 	}
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_glass_add = 15		#*40=600
-			goods_input_tools_add = 15		#*40=600
+			goods_input_glass_add = 20		#*40=800
+			goods_input_tools_add = 20		#*40=800
 			goods_input_luxury_clothes_add = 10		#*60=600
 			goods_input_services_add = 10		#*30=300
-			goods_output_omocha_add = 70		#*60=4200
+			goods_output_omocha_add = 60		#*60=3600
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 200
@@ -149,8 +151,8 @@ pm_goods_print_seal = { #色纸
 	texture = "gfx/interface/icons/production_method_icons/pm_goods_print_seal.dds"
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_paper_add = 10		#*30=300
-			goods_input_dye_add = 5		#*40=200
+			goods_input_paper_add = 15		#*30=450
+			goods_input_dye_add = 10		#*40=400
 			goods_output_omocha_add = 20		#*60=1200
 		}
 		level_scaled = {
@@ -166,8 +168,8 @@ pm_goods_print_card = { #卡牌
 	}
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_paper_add = 15		#*30=450
-			goods_input_dye_add = 10		#*40=400
+			goods_input_paper_add = 20		#*30=600
+			goods_input_dye_add = 15		#*40=600
 			goods_output_omocha_add = 30		#*60=1800
 		}
 		level_scaled = {
@@ -184,9 +186,9 @@ pm_goods_print_post = { #海报
 	}
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_paper_add = 20		#*30=600
-			goods_input_dye_add = 15		#*40=600
-			goods_output_omocha_add = 50		#*60=3000
+			goods_input_paper_add = 25		#*30=750
+			goods_input_dye_add = 20		#*40=800
+			goods_output_omocha_add = 40		#*60=2400
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 100
@@ -205,7 +207,7 @@ pm_goods_print_art = { #画作
 			goods_input_paper_add = 25		#*30=750
 			goods_input_dye_add = 20		#*40=800
 			goods_input_fine_art_add = 5		#*200=1000
-			goods_output_omocha_add = 70		#*60=4200
+			goods_output_omocha_add = 65		#*60=3900
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 200
@@ -221,8 +223,8 @@ pm_goods_garage_lego = { #木制积木
 	texture = "gfx/interface/icons/production_method_icons/pm_goods_garage_lego.dds"
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_wood_add = 20		#*20=400
-			goods_output_omocha_add = 20		#*60=1200
+			goods_input_wood_add = 25		#*20=500
+			goods_output_omocha_add = 15		#*60=900
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 100
@@ -238,9 +240,9 @@ pm_goods_garage_gundam = { #拼装模型
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_iron_add = 15		#*40=600
-			goods_input_tools_add = 15		#*40=600
+			goods_input_tools_add = 10		#*40=400
 			goods_input_steel_add = 10		#*50=500
-			goods_output_omocha_add = 50		#*60=3000
+			goods_output_omocha_add = 40		#*60=2400
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 100
@@ -256,9 +258,9 @@ pm_goods_garage_military_model = { #手办
 	}
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_glass_add = 10		#*40=400
+			goods_input_glass_add = 15		#*40=600
 			goods_input_tools_add = 10		#*40=400
-			goods_output_omocha_add = 30		#*60=1800
+			goods_output_omocha_add = 25		#*60=1500
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 100
@@ -274,10 +276,10 @@ pm_goods_garage_motor = { #电动玩具
 	}
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_engines_add = 10		#*60=600
+			goods_input_engines_add = 15		#*60=900
 			goods_input_tools_add = 10		#*40=400
-			goods_input_electricity_add = 10		#*30=300
-			goods_output_omocha_add = 70		#*60=4200
+			goods_input_electricity_add = 15		#*30=450
+			goods_output_omocha_add = 50		#*60=3000
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 200
