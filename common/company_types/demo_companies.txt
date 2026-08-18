@@ -1,15 +1,13 @@
 ﻿company_stella_cafe = {
     flavored_company = yes
-    preferred_headquarters = { STATE_WESTERN_CUBA }
+    preferred_headquarters = { STATE_CENTRAL_HUNGARY }
     building_types = {
         building_kissaten
         building_coffee_plantation
-        building_sugar_plantation
         building_tea_plantation
-        building_banana_plantation
     }
     extension_building_types = {
-        building_livestock_ranch
+        building_sugar_plantation
         building_food_industry
     }
     potential = {
@@ -20,7 +18,7 @@
     }
     possible = {
         any_scope_state = {
-            state_region = s:STATE_WESTERN_CUBA
+            is_in_geographic_region = geographic_region_danubia_old
             any_scope_building = {
                 is_building_type = building_kissaten
                 level >= 5
@@ -35,14 +33,14 @@
 	}
     ai_will_do = {
         any_scope_state = {
-            state_region = s:STATE_WESTERN_CUBA
+            is_in_geographic_region = geographic_region_danubia_old
         }
     }
     ai_construction_targets = {
         building_kissaten = {
             level = 5
             state_trigger = {
-                state_region = s:STATE_WESTERN_CUBA
+                is_in_geographic_region = geographic_region_danubia_old
             }
         }
     }
@@ -54,13 +52,12 @@ company_homura = {
     flavored_company = yes
     preferred_headquarters = { STATE_CENTRAL_HUNGARY }
     building_types = {
-        building_kissaten
         building_food_industry
         building_wheat_farm
         building_sugar_plantation
     }
     extension_building_types = {
-        building_banana_plantation
+        building_kissaten
         building_livestock_ranch
     }
     potential = {
@@ -71,7 +68,7 @@ company_homura = {
     }
     possible = {
         any_scope_state = {
-            state_region = s:STATE_CENTRAL_HUNGARY
+            is_in_geographic_region = geographic_region_danubia_old
             any_scope_building = {
                 is_building_type = building_kissaten
                 level >= 5
@@ -86,14 +83,14 @@ company_homura = {
 	}
     ai_will_do = {
         any_scope_state = {
-            state_region = s:STATE_CENTRAL_HUNGARY
+            is_in_geographic_region = geographic_region_danubia_old
         }
     }
     ai_construction_targets = {
         building_kissaten = {
             level = 5
             state_trigger = {
-                state_region = s:STATE_CENTRAL_HUNGARY
+                is_in_geographic_region = geographic_region_danubia_old
             }
         }
     }
@@ -106,6 +103,12 @@ company_minalinsky = {
     preferred_headquarters = { STATE_CENTRAL_HUNGARY }
     building_types = {
         building_kissaten
+        building_entertainment_press
+        building_textile_mill
+    }
+    extension_building_types = {
+        building_food_industry
+        building_goods
     }
     potential = {
 
@@ -115,7 +118,7 @@ company_minalinsky = {
     }
     possible = {
         any_scope_state = {
-            state_region = s:STATE_CENTRAL_HUNGARY
+            is_in_geographic_region = geographic_region_danubia_old
             any_scope_building = {
                 is_building_type = building_kissaten
                 level >= 5
@@ -130,14 +133,14 @@ company_minalinsky = {
 	}
     ai_will_do = {
         any_scope_state = {
-            state_region = s:STATE_CENTRAL_HUNGARY
+            is_in_geographic_region = geographic_region_danubia_old
         }
     }
     ai_construction_targets = {
         building_kissaten = {
             level = 5
             state_trigger = {
-                state_region = s:STATE_CENTRAL_HUNGARY
+                is_in_geographic_region = geographic_region_danubia_old
             }
         }
     }
@@ -149,7 +152,13 @@ company_otonokisaka = {
     flavored_company = yes
     preferred_headquarters = { STATE_CENTRAL_HUNGARY }
     building_types = {
-        building_university
+        building_stage
+        building_paper_mill
+        building_goods
+    }
+    extension_building_types = {
+        building_musical_instrument
+        building_food_industry
     }
     potential = {
 
@@ -159,9 +168,9 @@ company_otonokisaka = {
     }
     possible = {
         any_scope_state = {
-            state_region = s:STATE_CENTRAL_HUNGARY
+            is_in_geographic_region = geographic_region_danubia_old
             any_scope_building = {
-                is_building_type = building_university
+                is_building_type = building_stage
                 level >= 5
             }
         }
@@ -171,14 +180,14 @@ company_otonokisaka = {
     }
     ai_will_do = {
         any_scope_state = {
-            state_region = s:STATE_CENTRAL_HUNGARY
+            is_in_geographic_region = geographic_region_danubia_old
         }
     }
     ai_construction_targets = {
-        building_university = {
+        building_stage = {
             level = 5
             state_trigger = {
-                state_region = s:STATE_CENTRAL_HUNGARY
+                is_in_geographic_region = geographic_region_danubia_old
             }
         }
     }
@@ -194,6 +203,10 @@ company_otonokisaka_kyuudoubu = {
         building_munition_plant
         building_artillery_foundry
     }
+    extension_building_types = {
+        building_steel_mill
+        building_tooling_workshop
+    }
     potential = {
 
     }
@@ -202,7 +215,7 @@ company_otonokisaka_kyuudoubu = {
     }
     possible = {
         any_scope_state = {
-            state_region = s:STATE_CENTRAL_HUNGARY
+            is_in_geographic_region = geographic_region_danubia_old
             any_scope_building = {
                 is_building_type = building_arms_industry
                 level >= 5
@@ -217,14 +230,14 @@ company_otonokisaka_kyuudoubu = {
 	}
     ai_will_do = {
         any_scope_state = {
-            state_region = s:STATE_CENTRAL_HUNGARY
+            is_in_geographic_region = geographic_region_danubia_old
         }
     }
     ai_construction_targets = {
         building_arms_industry = {
             level = 5
             state_trigger = {
-                state_region = s:STATE_CENTRAL_HUNGARY
+                is_in_geographic_region = geographic_region_danubia_old
             }
         }
     }
@@ -236,8 +249,13 @@ company_otonokisaka_idolbu = {
     flavored_company = yes
     preferred_headquarters = { STATE_CENTRAL_HUNGARY }
     building_types = {
-        building_art_academy
-        building_university
+        building_stage
+        building_entertainment_press
+        building_textile_mill
+    }
+    extension_building_types = {
+        building_musical_instrument
+        building_goods
     }
     potential = {
 
@@ -247,9 +265,9 @@ company_otonokisaka_idolbu = {
     }
     possible = {
         any_scope_state = {
-            state_region = s:STATE_CENTRAL_HUNGARY
+            is_in_geographic_region = geographic_region_danubia_old
             any_scope_building = {
-                is_building_type = building_art_academy
+                is_building_type = building_stage
                 level >= 5
             }
         }
@@ -262,14 +280,14 @@ company_otonokisaka_idolbu = {
 	}
     ai_will_do = {
         any_scope_state = {
-            state_region = s:STATE_CENTRAL_HUNGARY
+            is_in_geographic_region = geographic_region_danubia_old
         }
     }
     ai_construction_targets = {
-        building_art_academy = {
+        building_stage = {
             level = 5
             state_trigger = {
-                state_region = s:STATE_CENTRAL_HUNGARY
+                is_in_geographic_region = geographic_region_danubia_old
             }
         }
     }
@@ -283,6 +301,11 @@ company_otonokisaka_zoo = {
     building_types = {
         building_livestock_ranch
         building_wheat_farm
+        building_chemical_plant
+    }
+    extension_building_types = {
+        building_tooling_workshop
+        building_food_industry
     }
     potential = {
 
@@ -292,7 +315,7 @@ company_otonokisaka_zoo = {
     }
     possible = {
         any_scope_state = {
-            state_region = s:STATE_CENTRAL_HUNGARY
+            is_in_geographic_region = geographic_region_danubia_old
             any_scope_building = {
                 is_building_type = building_livestock_ranch
                 level >= 5
@@ -304,14 +327,14 @@ company_otonokisaka_zoo = {
     }
     ai_will_do = {
         any_scope_state = {
-            state_region = s:STATE_CENTRAL_HUNGARY
+            is_in_geographic_region = geographic_region_danubia_old
         }
     }
     ai_construction_targets = {
         building_livestock_ranch = {
             level = 5
             state_trigger = {
-                state_region = s:STATE_CENTRAL_HUNGARY
+                is_in_geographic_region = geographic_region_danubia_old
             }
         }
     }
@@ -323,49 +346,13 @@ company_nishikino_byouin = {
     flavored_company = yes
     preferred_headquarters = { STATE_CENTRAL_HUNGARY }
     building_types = {
-        building_urban_center
+        building_cotton_plantation
+        building_tooling_workshop
         building_opium_plantation
     }
-    potential = {
-
-    }
-    attainable = {
-
-    }
-    possible = {
-        any_scope_state = {
-            state_region = s:STATE_CENTRAL_HUNGARY
-            any_scope_building = {
-                is_building_type = building_urban_center
-                level >= 5
-            }
-        }
-    }
-    prosperity_modifier = {
-
-    }
-    ai_will_do = {
-        any_scope_state = {
-            state_region = s:STATE_CENTRAL_HUNGARY
-        }
-    }
-    ai_construction_targets = {
-        building_urban_center = {
-            level = 5
-            state_trigger = {
-                state_region = s:STATE_CENTRAL_HUNGARY
-            }
-        }
-    }
-    ai_weight = {
-        value = 5
-    }
-}
-company_otonokisaka_shinpi = {
-    flavored_company = yes
-    preferred_headquarters = { STATE_CENTRAL_HUNGARY }
-    building_types = {
-        building_paper_mill
+    extension_building_types = {
+        building_wheat_farm
+        building_livestock_ranch
     }
     potential = {
 
@@ -375,9 +362,9 @@ company_otonokisaka_shinpi = {
     }
     possible = {
         any_scope_state = {
-            state_region = s:STATE_CENTRAL_HUNGARY
+            is_in_geographic_region = geographic_region_danubia_old
             any_scope_building = {
-                is_building_type = building_paper_mill
+                is_building_type = building_cotton_plantation
                 level >= 5
             }
         }
@@ -387,14 +374,14 @@ company_otonokisaka_shinpi = {
     }
     ai_will_do = {
         any_scope_state = {
-            state_region = s:STATE_CENTRAL_HUNGARY
+            is_in_geographic_region = geographic_region_danubia_old
         }
     }
     ai_construction_targets = {
-        building_paper_mill = {
+        building_cotton_plantation = {
             level = 5
             state_trigger = {
-                state_region = s:STATE_CENTRAL_HUNGARY
+                is_in_geographic_region = geographic_region_danubia_old
             }
         }
     }

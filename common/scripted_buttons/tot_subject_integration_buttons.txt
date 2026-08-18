@@ -1,0 +1,194 @@
+tot_subject_development_common_1_button = {
+	name = tot_subject_development_common_1_button
+	desc = tot_subject_development_common_1_button_desc
+	visible = { is_involved_in_journal_entry = je_tot_idol_subject_development NOT = { has_variable = tot_subject_development_common_1_done } }
+	possible = { tot_subject_development_common_1_trigger = yes }
+	effect = {
+		set_variable = tot_subject_development_common_1_done
+		change_variable = { name = tot_subject_development_common_completed add = 1 }
+		change_variable = { name = tot_subject_development_score add = 1 }
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_2_button = {
+	name = tot_subject_development_common_2_button
+	desc = tot_subject_development_common_2_button_desc
+	visible = { is_involved_in_journal_entry = je_tot_idol_subject_development NOT = { has_variable = tot_subject_development_common_2_done } }
+	possible = { tot_subject_development_common_2_trigger = yes }
+	effect = {
+		set_variable = tot_subject_development_common_2_done
+		change_variable = { name = tot_subject_development_common_completed add = 1 }
+		change_variable = { name = tot_subject_development_score add = 1 }
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_3_button = {
+	name = tot_subject_development_common_3_button
+	desc = tot_subject_development_common_3_button_desc
+	visible = { is_involved_in_journal_entry = je_tot_idol_subject_development NOT = { has_variable = tot_subject_development_common_3_done } }
+	possible = { tot_subject_development_common_3_trigger = yes }
+	effect = {
+		set_variable = tot_subject_development_common_3_done
+		change_variable = { name = tot_subject_development_common_completed add = 1 }
+		change_variable = { name = tot_subject_development_score add = 1 }
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_4_button = {
+	name = tot_subject_development_common_4_button
+	desc = tot_subject_development_common_4_button_desc
+	visible = { is_involved_in_journal_entry = je_tot_idol_subject_development NOT = { has_variable = tot_subject_development_common_4_done } }
+	possible = { tot_subject_development_common_4_trigger = yes }
+	effect = {
+		set_variable = tot_subject_development_common_4_done
+		change_variable = { name = tot_subject_development_common_completed add = 1 }
+		change_variable = { name = tot_subject_development_score add = 1 }
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_5_button = {
+	name = tot_subject_development_common_5_button
+	desc = tot_subject_development_common_5_button_desc
+	visible = { is_involved_in_journal_entry = je_tot_idol_subject_development NOT = { has_variable = tot_subject_development_common_5_done } }
+	possible = { tot_subject_development_common_5_trigger = yes }
+	effect = {
+		set_variable = tot_subject_development_common_5_done
+		change_variable = { name = tot_subject_development_common_completed add = 1 }
+		change_variable = { name = tot_subject_development_score add = 1 }
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_1_button = {
+	name = tot_subject_development_overlord_1_button
+	desc = tot_subject_development_overlord_1_button_desc
+	visible = { has_variable = tot_subject_development_overlord_member NOT = { has_variable = tot_subject_development_overlord_1_done } }
+	possible = { tot_subject_development_overlord_1_trigger = yes }
+	effect = {
+		set_variable = tot_subject_development_overlord_1_done
+		change_variable = { name = tot_subject_development_overlord_completed add = 1 }
+		change_variable = { name = tot_subject_development_score add = 1 }
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_2_button = {
+	name = tot_subject_development_overlord_2_button
+	desc = tot_subject_development_overlord_2_button_desc
+	visible = { has_variable = tot_subject_development_overlord_member NOT = { has_variable = tot_subject_development_overlord_2_done } }
+	possible = { tot_subject_development_overlord_2_trigger = yes }
+	effect = {
+		set_variable = tot_subject_development_overlord_2_done
+		change_variable = { name = tot_subject_development_overlord_completed add = 1 }
+		change_variable = { name = tot_subject_development_score add = 1 }
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_3_button = {
+	name = tot_subject_development_overlord_3_button
+	desc = tot_subject_development_overlord_3_button_desc
+	visible = { has_variable = tot_subject_development_overlord_member NOT = { has_variable = tot_subject_development_overlord_3_done } }
+	possible = { tot_subject_development_overlord_3_trigger = yes }
+	effect = {
+		set_variable = tot_subject_development_overlord_3_done
+		change_variable = { name = tot_subject_development_overlord_completed add = 1 }
+		change_variable = { name = tot_subject_development_score add = 1 }
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_4_button = {
+	name = tot_subject_development_overlord_4_button
+	desc = tot_subject_development_overlord_4_button_desc
+	visible = { has_variable = tot_subject_development_overlord_member NOT = { has_variable = tot_subject_development_overlord_4_done } }
+	possible = { tot_subject_development_overlord_4_trigger = yes }
+	effect = {
+		set_variable = tot_subject_development_overlord_4_done
+		change_variable = { name = tot_subject_development_overlord_completed add = 1 }
+		change_variable = { name = tot_subject_development_score add = 1 }
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_1_button = {
+	name = tot_subject_development_national_1_button
+	desc = {
+		first_valid = {
+			triggered_desc = { trigger = { c:AQO ?= this } desc = tot_subject_development_national_1_AQO_desc }
+			triggered_desc = { trigger = { c:NJS ?= this } desc = tot_subject_development_national_1_NJS_desc }
+			triggered_desc = { trigger = { c:GKMS ?= this } desc = tot_subject_development_national_1_GKMS_desc }
+			triggered_desc = { trigger = { c:AVMJ ?= this } desc = tot_subject_development_national_1_AVMJ_desc }
+			triggered_desc = { trigger = { c:MYG ?= this } desc = tot_subject_development_national_1_MYG_desc }
+			triggered_desc = { trigger = { c:AFTG ?= this } desc = tot_subject_development_national_1_AFTG_desc }
+			triggered_desc = { trigger = { c:HHWO ?= this } desc = tot_subject_development_national_1_HHWO_desc }
+			triggered_desc = { trigger = { c:UKR ?= this } desc = tot_subject_development_national_1_UKR_desc }
+			triggered_desc = { trigger = { c:ROM ?= this } desc = tot_subject_development_national_1_ROM_desc }
+			triggered_desc = { trigger = { always = yes } desc = tot_subject_development_national_1_button_desc }
+		}
+	}
+	visible = { has_variable = tot_subject_development_member is_involved_in_journal_entry = je_tot_idol_subject_development NOT = { has_variable = tot_subject_development_national_1_done } }
+	possible = { tot_subject_development_national_1_trigger = yes }
+	effect = {
+		set_variable = tot_subject_development_national_1_done
+		change_variable = { name = tot_subject_development_national_completed add = 1 }
+		change_variable = { name = tot_subject_development_score add = 1 }
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_2_button = {
+	name = tot_subject_development_national_2_button
+	desc = {
+		first_valid = {
+			triggered_desc = { trigger = { c:AQO ?= this } desc = tot_subject_development_national_2_AQO_desc }
+			triggered_desc = { trigger = { c:NJS ?= this } desc = tot_subject_development_national_2_NJS_desc }
+			triggered_desc = { trigger = { c:GKMS ?= this } desc = tot_subject_development_national_2_GKMS_desc }
+			triggered_desc = { trigger = { c:AVMJ ?= this } desc = tot_subject_development_national_2_AVMJ_desc }
+			triggered_desc = { trigger = { c:MYG ?= this } desc = tot_subject_development_national_2_MYG_desc }
+			triggered_desc = { trigger = { c:AFTG ?= this } desc = tot_subject_development_national_2_AFTG_desc }
+			triggered_desc = { trigger = { c:HHWO ?= this } desc = tot_subject_development_national_2_HHWO_desc }
+			triggered_desc = { trigger = { c:UKR ?= this } desc = tot_subject_development_national_2_UKR_desc }
+			triggered_desc = { trigger = { c:ROM ?= this } desc = tot_subject_development_national_2_ROM_desc }
+			triggered_desc = { trigger = { always = yes } desc = tot_subject_development_national_2_button_desc }
+		}
+	}
+	visible = { has_variable = tot_subject_development_member is_involved_in_journal_entry = je_tot_idol_subject_development NOT = { has_variable = tot_subject_development_national_2_done } }
+	possible = { tot_subject_development_national_2_trigger = yes }
+	effect = {
+		set_variable = tot_subject_development_national_2_done
+		change_variable = { name = tot_subject_development_national_completed add = 1 }
+		change_variable = { name = tot_subject_development_score add = 1 }
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_3_button = {
+	name = tot_subject_development_national_3_button
+	desc = {
+		first_valid = {
+			triggered_desc = { trigger = { c:AQO ?= this } desc = tot_subject_development_national_3_AQO_desc }
+			triggered_desc = { trigger = { c:NJS ?= this } desc = tot_subject_development_national_3_NJS_desc }
+			triggered_desc = { trigger = { c:GKMS ?= this } desc = tot_subject_development_national_3_GKMS_desc }
+			triggered_desc = { trigger = { c:AVMJ ?= this } desc = tot_subject_development_national_3_AVMJ_desc }
+			triggered_desc = { trigger = { c:MYG ?= this } desc = tot_subject_development_national_3_MYG_desc }
+			triggered_desc = { trigger = { c:AFTG ?= this } desc = tot_subject_development_national_3_AFTG_desc }
+			triggered_desc = { trigger = { c:HHWO ?= this } desc = tot_subject_development_national_3_HHWO_desc }
+			triggered_desc = { trigger = { c:UKR ?= this } desc = tot_subject_development_national_3_UKR_desc }
+			triggered_desc = { trigger = { c:ROM ?= this } desc = tot_subject_development_national_3_ROM_desc }
+			triggered_desc = { trigger = { always = yes } desc = tot_subject_development_national_3_button_desc }
+		}
+	}
+	visible = { has_variable = tot_subject_development_member is_involved_in_journal_entry = je_tot_idol_subject_development NOT = { has_variable = tot_subject_development_national_3_done } }
+	possible = { tot_subject_development_national_3_trigger = yes }
+	effect = {
+		set_variable = tot_subject_development_national_3_done
+		change_variable = { name = tot_subject_development_national_completed add = 1 }
+		change_variable = { name = tot_subject_development_score add = 1 }
+	}
+	ai_chance = { value = 100 }
+}

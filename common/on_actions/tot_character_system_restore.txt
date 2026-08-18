@@ -1,6 +1,15 @@
 ﻿on_game_started = {
 	effect = {
 			every_country = {
+			tot_cleanup_idol_political_setup_effect = yes
+			if = {
+				limit = {
+					tot_subject_development_overlord_trigger = yes
+					NOT = { has_variable = tot_subject_development_finished }
+					NOT = { has_journal_entry = je_tot_idol_subject_development }
+				}
+				add_journal_entry = { type = je_tot_idol_subject_development }
+			}
 			if = {
 				limit = { NOT = { has_variable = tot_band_limit } }
 				set_variable = { name = tot_band_limit value = 1 }
@@ -14,6 +23,10 @@
 			tot_ensure_default_band_hq_slots_effect = yes
 			tot_ensure_default_story_band_members_effect = yes
 			update_kizuna = yes
+			if = {
+				limit = { is_player = yes }
+				tot_music_competition_ensure_registration_cycle_effect = yes
+			}
 			if = { limit = { NOT = { has_variable = tot_music_competition_track } } set_variable = { name = tot_music_competition_track value = 1 } }
 			if = {
 				limit = { has_journal_entry = je_tot_club_gui }
@@ -47,6 +60,15 @@
 on_game_started_after_lobby = {
 	effect = {
 			every_country = {
+			tot_cleanup_idol_political_setup_effect = yes
+			if = {
+				limit = {
+					tot_subject_development_overlord_trigger = yes
+					NOT = { has_variable = tot_subject_development_finished }
+					NOT = { has_journal_entry = je_tot_idol_subject_development }
+				}
+				add_journal_entry = { type = je_tot_idol_subject_development }
+			}
 			if = {
 				limit = { NOT = { has_variable = tot_band_limit } }
 				set_variable = { name = tot_band_limit value = 1 }
@@ -91,8 +113,17 @@ on_game_started_after_lobby = {
 	}
 }
 
-on_monthly_pulse_country = {
+	on_monthly_pulse_country = {
 	effect = {
+		tot_cleanup_idol_political_setup_effect = yes
+		if = {
+			limit = {
+				tot_subject_development_overlord_trigger = yes
+				NOT = { has_variable = tot_subject_development_finished }
+				NOT = { has_journal_entry = je_tot_idol_subject_development }
+			}
+			add_journal_entry = { type = je_tot_idol_subject_development }
+		}
 		if = {
 			limit = { has_journal_entry = je_tot_club_gui }
 			remove_journal_entry = je_tot_club_gui
@@ -129,7 +160,20 @@ on_monthly_pulse_country = {
 		tot_band_monthly_update = yes
 		tot_gourmet_monthly_update = yes
 		tot_music_competition_clear_invalid_band_entries_effect = yes
-		if = { limit = { is_player = yes } tot_music_competition_ensure_registration_cycle_effect = yes }
+		# The player country owns the season state. This also repairs saves made
+		# while the brief Vienna-host implementation was active.
+		if = {
+			limit = { is_player = yes }
+			tot_music_competition_ensure_registration_cycle_effect = yes
+			if = {
+				limit = { has_variable = tot_music_competition_registration_open }
+				tot_music_competition_build_field_effect = yes
+				tot_music_competition_schedule_ai_registration_effect = yes
+				tot_music_competition_start_if_ready_effect = yes
+			}
+			if = { limit = { has_variable = tot_music_competition_preparation_open } tot_music_competition_begin_after_preparation_effect = yes }
+			tot_music_competition_schedule_weekly_tick_effect = yes
+		}
 		# Keep the public registration field current without requiring the player to
 		# reopen the panel. Do not rebuild during scored stages, where rebuilding
 		# would replace the active qualifying and final display lists.
@@ -138,8 +182,8 @@ on_monthly_pulse_country = {
 				is_player = yes
 				has_variable = tot_music_competition_registration_open
 			}
-			tot_music_competition_schedule_ai_registration_effect = yes
 			tot_music_competition_build_field_effect = yes
+			tot_music_competition_schedule_ai_registration_effect = yes
 			if = { limit = { NOT = { has_variable = tot_music_competition_registration_months } } set_variable = { name = tot_music_competition_registration_months value = 0 } }
 			change_variable = { name = tot_music_competition_registration_months add = 1 }
 			tot_music_competition_start_if_ready_effect = yes
@@ -159,7 +203,17 @@ on_monthly_pulse_country = {
 			limit = { is_player = yes has_variable = tot_music_competition_stage NOT = { has_variable = tot_music_competition_completed } }
 			if = { limit = { var:tot_music_competition_stage = 1 NOT = { has_variable = tot_music_competition_qualifying_deadline } } set_variable = { name = tot_music_competition_qualifying_deadline weeks = 26 } }
 			if = { limit = { var:tot_music_competition_stage = 2 NOT = { has_variable = tot_music_competition_final_deadline } } set_variable = { name = tot_music_competition_final_deadline weeks = 26 } }
-			tot_music_competition_schedule_weekly_tick_effect = yes
+			if = {
+				limit = {
+					var:tot_music_competition_stage = 2
+					OR = {
+						AND = { has_variable = tot_music_competition_final_days_remaining var:tot_music_competition_final_days_remaining <= 0 }
+						AND = { has_variable = tot_music_competition_round var:tot_music_competition_round >= 26 }
+					}
+				}
+				tot_music_competition_finish_final_effect = yes
+			}
+			else = { tot_music_competition_schedule_weekly_tick_effect = yes }
 		}
 	}
 }

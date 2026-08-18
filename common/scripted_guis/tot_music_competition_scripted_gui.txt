@@ -12,8 +12,8 @@
 			else_if = { limit = { has_variable = tot_band_5_created } set_variable = { name = tot_music_competition_band_id value = 5 } set_variable = { name = tot_music_competition_cancel_band_id value = 5 } }
 		}
 	}
-	is_shown = { is_player = yes }
-	is_valid = { is_player = yes }
+	is_shown = { always = no }
+	is_valid = { always = no }
 }
 
 tot_music_competition_initialize = {
@@ -27,6 +27,7 @@ tot_music_competition_initialize = {
 					NOT = { has_variable = tot_music_competition_stage }
 					has_variable = tot_music_competition_registration_closed
 					NOT = { has_variable = tot_music_competition_preparation_open }
+					NOT = { has_variable = tot_music_competition_spectator_view }
 				}
 				set_variable = { name = tot_music_competition_preparation_open value = 1 }
 				set_variable = { name = tot_music_competition_preparation_months value = 0 }
@@ -41,6 +42,8 @@ tot_music_competition_initialize = {
 					NOT = { has_variable = tot_music_competition_stage }
 					NOT = { has_variable = tot_music_competition_registration_closed }
 					NOT = { has_variable = tot_music_competition_registration_open }
+					NOT = { has_variable = tot_music_competition_public_registration_open }
+					NOT = { has_variable = tot_music_competition_spectator_view }
 				}
 			set_variable = { name = tot_music_competition_registration_open value = 1 }
 			set_variable = { name = tot_music_competition_registration_months value = 0 }
@@ -103,8 +106,62 @@ tot_music_competition_initialize = {
 			tot_music_competition_start_if_ready_effect = yes
 			tot_music_competition_begin_after_preparation_effect = yes
 		}
+		# Older builds resolved the champion one week early. Remove that stale result
+		# from any active save, even if it has already received a prior migration flag.
+		if = {
+			limit = {
+				has_variable = tot_music_competition_track
+				var:tot_music_competition_track = 1
+				has_variable = tot_music_competition_stage
+				var:tot_music_competition_stage = 2
+				NOT = { has_variable = tot_music_competition_completed }
+				has_variable = tot_music_competition_final_champion_resolved
+				has_variable = tot_music_competition_round
+				var:tot_music_competition_round < 26
+			}
+			remove_variable = tot_music_competition_final_champion_resolved
+			tot_music_competition_clear_final_slot_effect = { SLOT = tot_music_competition_final_champion }
+		}
 		# The original final phase only ran a timer. Complete its bracket once when
 		# opening an affected save, even though that timer already marked the season done.
+		if = {
+			limit = {
+				NOT = { has_variable = tot_music_competition_final_timing_v2 }
+				has_variable = tot_music_competition_track
+				var:tot_music_competition_track = 1
+				has_variable = tot_music_competition_stage
+				var:tot_music_competition_stage = 2
+				NOT = { has_variable = tot_music_competition_completed }
+			}
+			# Old builds resolved a champion before the final week. Keep the earlier bracket
+			# results, but suppress that premature champion until the season ends.
+			if = {
+				limit = {
+					has_variable = tot_music_competition_final_champion_resolved
+					has_variable = tot_music_competition_round
+					var:tot_music_competition_round < 26
+				}
+				remove_variable = tot_music_competition_final_champion_resolved
+				tot_music_competition_clear_final_slot_effect = { SLOT = tot_music_competition_final_champion }
+			}
+			set_variable = { name = tot_music_competition_final_timing_v2 value = 1 }
+		}
+		# The first bracket version advanced only the left-side winners, dropping
+		# the winners of matches two and four. Rebuild any in-progress band final
+		# once from its existing seeded field with the pairwise score comparison.
+		if = {
+			limit = {
+				NOT = { has_variable = tot_music_competition_final_match_logic_v2 }
+				has_variable = tot_music_competition_track
+				var:tot_music_competition_track = 1
+				has_variable = tot_music_competition_stage
+				var:tot_music_competition_stage = 2
+				NOT = { has_variable = tot_music_competition_completed }
+			}
+			tot_music_competition_clear_final_bracket_effect = yes
+			set_variable = { name = tot_music_competition_final_match_logic_v2 value = 1 }
+			tot_music_competition_resolve_band_final_effect = yes
+		}
 		if = {
 			limit = {
 				has_variable = tot_music_competition_stage
@@ -115,6 +172,20 @@ tot_music_competition_initialize = {
 				NOT = { has_variable = tot_music_competition_final_champion_resolved }
 			}
 			tot_music_competition_resolve_band_final_effect = yes
+		}
+		# Finish stalled legacy finals as soon as the player opens the activity page.
+		if = {
+			limit = {
+				has_variable = tot_music_competition_stage
+				var:tot_music_competition_stage = 2
+				NOT = { has_variable = tot_music_competition_completed }
+				has_variable = tot_music_competition_final_days_remaining
+				OR = {
+					var:tot_music_competition_final_days_remaining <= 0
+					AND = { has_variable = tot_music_competition_round var:tot_music_competition_round >= 26 }
+				}
+			}
+			tot_music_competition_finish_final_effect = yes
 		}
 		# Versioned recovery for saves made while the old scheduler could leave a
 		# stale flag behind. It runs once, then normal weekly event chaining owns
@@ -132,8 +203,7 @@ tot_music_competition_initialize = {
 			remove_variable = tot_music_competition_next_tick
 			set_variable = { name = tot_music_competition_tick_recovery_v2 value = 1 }
 		}
-		tot_music_competition_schedule_weekly_tick_effect = yes
-			if = {
+		if = {
 				limit = { NOT = { has_variable = tot_music_competition_track } }
 				set_variable = { name = tot_music_competition_track value = 1 }
 			}
@@ -186,6 +256,19 @@ tot_music_competition_initialize = {
 		# The field is rebuilt by registration/cancellation and phase transitions.
 		# Do not rebuild it just because the panel was opened again: that made a
 		# valid public roster look as if it had been reset.
+		# Recover display slots from the registered teams if a previous GUI parse
+		# failure left an active qualifying screen blank. Scores stay untouched.
+		if = {
+			limit = {
+				has_variable = tot_music_competition_track
+				var:tot_music_competition_track = 1
+				has_variable = tot_music_competition_stage
+				var:tot_music_competition_stage = 1
+				NOT = { has_variable = tot_music_competition_completed }
+				NOT = { has_variable_list = tot_music_competition_display_slot_01_band_1 }
+			}
+			tot_music_competition_build_band_team_field_effect = yes
+		}
 		# Rebuild the opening knockout seeds whenever an unplayed band final is opened.
 		# This also repairs finals created by the earlier, unseeded bracket code.
 		if = {
@@ -199,7 +282,18 @@ tot_music_competition_initialize = {
 			}
 			tot_music_competition_build_qualified_band_field_effect = yes
 		}
-	}
+		# Opening the page can initialize a fresh save, but never redirects the
+		# season to Vienna or overwrites this player's registered teams.
+		tot_music_competition_ensure_registration_cycle_effect = yes
+		if = {
+			limit = { has_variable = tot_music_competition_registration_open }
+			# AI registration is delayed so opening this page at game start cannot
+			# immediately populate the field.
+			tot_music_competition_schedule_ai_registration_effect = yes
+			tot_music_competition_build_field_effect = yes
+			tot_music_competition_start_if_ready_effect = yes
+		}
+		}
 	is_shown = { is_player = yes }
 	is_valid = { is_player = yes }
 }
@@ -210,8 +304,8 @@ tot_music_competition_select_idol_solo = {
 		set_variable = { name = tot_music_competition_track value = 2 }
 		tot_music_competition_rebuild_idol_candidates_effect = yes
 	}
-	is_shown = { is_player = yes }
-	is_valid = { is_player = yes }
+	is_shown = { always = no }
+	is_valid = { always = no }
 }
 
 tot_music_competition_select_band_1 = { scope = country effect = { set_variable = { name = tot_music_competition_track value = 1 } set_variable = { name = tot_music_competition_band_id value = 1 } set_variable = { name = tot_music_competition_cancel_band_id value = 1 } } is_shown = { has_variable = tot_band_1_created } is_valid = { always = yes } }
@@ -272,8 +366,6 @@ tot_music_competition_register_selected_band = {
 			else_if = { limit = { has_variable = tot_band_5_created NOT = { has_variable = tot_music_competition_band_5_registered } } set_variable = { name = tot_music_competition_band_id value = 5 } }
 		}
 		set_variable = { name = tot_music_competition_registered value = 1 }
-		if = { limit = { NOT = { has_variable = tot_music_competition_registration_open } } set_variable = { name = tot_music_competition_registration_open value = 1 } set_variable = { name = tot_music_competition_registration_months value = 0 } set_variable = { name = tot_music_competition_registration_deadline months = 12 } set_variable = { name = tot_music_competition_season_start_deadline months = 18 } set_variable = { name = tot_music_competition_registration_days_remaining value = 365 } tot_music_competition_schedule_ai_registration_effect = yes }
-		tot_music_competition_schedule_weekly_tick_effect = yes
 		if = { limit = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 1 NOT = { has_variable = tot_music_competition_band_1_registered } } set_variable = { name = tot_music_competition_band_1_registered value = 1 } }
 		if = { limit = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 2 NOT = { has_variable = tot_music_competition_band_2_registered } } set_variable = { name = tot_music_competition_band_2_registered value = 1 } }
 		if = { limit = { has_variable = tot_music_competition_band_id var:tot_music_competition_band_id = 3 NOT = { has_variable = tot_music_competition_band_3_registered } } set_variable = { name = tot_music_competition_band_3_registered value = 1 } }
@@ -288,12 +380,24 @@ tot_music_competition_register_selected_band = {
 		set_variable = { name = tot_music_competition_band_registered value = 1 }
 		set_variable = { name = tot_music_competition_registered value = 1 }
 		tot_music_competition_build_field_effect = yes
+		s:STATE_AUSTRIA = { owner = { tot_music_competition_build_field_effect = yes } }
 	}
 	is_shown = { is_player = yes }
 	is_valid = {
 		is_player = yes
-		has_variable = tot_music_competition_registration_open
+		s:STATE_AUSTRIA = {
+			owner = {
+				has_variable = tot_music_competition_global_host
+				has_variable = tot_music_competition_registration_open
+				has_variable = tot_music_competition_registration_days_remaining
+				OR = {
+					var:tot_music_competition_registration_days_remaining > 0
+					has_variable = tot_music_competition_registration_waiting_for_minimum
+				}
+			}
+		}
 		NOT = { has_variable = tot_music_competition_stage }
+		NOT = { has_variable = tot_music_competition_preparation_open }
 		NOT = { has_variable = tot_music_competition_completed }
 		OR = {
 			NOT = { has_variable = tot_music_competition_band_registration_count }
@@ -339,8 +443,8 @@ tot_music_competition_select_idol_group = {
 		set_variable = { name = tot_music_competition_track value = 3 }
 		tot_music_competition_rebuild_idol_candidates_effect = yes
 	}
-	is_shown = { is_player = yes }
-	is_valid = { is_player = yes }
+	is_shown = { always = no }
+	is_valid = { always = no }
 }
 
 tot_music_competition_select_acting_solo = {
@@ -405,14 +509,27 @@ tot_music_competition_track_5_selected = { scope = country effect = { } is_shown
 		if = { limit = { has_variable = tot_music_competition_track var:tot_music_competition_track = 4 } set_variable = { name = tot_music_competition_acting_solo_registered value = 1 } }
 		if = { limit = { has_variable = tot_music_competition_track var:tot_music_competition_track = 5 } set_variable = { name = tot_music_competition_acting_group_registered value = 1 } }
 		set_variable = { name = tot_music_competition_registered value = 1 }
-		if = { limit = { NOT = { has_variable = tot_music_competition_registration_open } } set_variable = { name = tot_music_competition_registration_open value = 1 } set_variable = { name = tot_music_competition_registration_months value = 0 } set_variable = { name = tot_music_competition_registration_deadline months = 12 } set_variable = { name = tot_music_competition_season_start_deadline months = 18 } set_variable = { name = tot_music_competition_registration_days_remaining value = 365 } tot_music_competition_schedule_ai_registration_effect = yes }
-		tot_music_competition_schedule_weekly_tick_effect = yes
+		# The host owns the registration calendar. Entrants only store their team.
 		tot_music_competition_build_field_effect = yes
+		s:STATE_AUSTRIA = { owner = { tot_music_competition_build_field_effect = yes } }
 	}
 	is_shown = { is_player = yes }
 	is_valid = {
 		is_player = yes
 		NOT = { has_variable = tot_music_competition_registered }
+		s:STATE_AUSTRIA = {
+			owner = {
+				has_variable = tot_music_competition_global_host
+				has_variable = tot_music_competition_registration_open
+				has_variable = tot_music_competition_registration_days_remaining
+				OR = {
+					var:tot_music_competition_registration_days_remaining > 0
+					has_variable = tot_music_competition_registration_waiting_for_minimum
+				}
+			}
+		}
+		NOT = { has_variable = tot_music_competition_preparation_open }
+		NOT = { has_variable = tot_music_competition_stage }
 		has_variable = tot_music_competition_track
 		OR = {
 			AND = {
@@ -455,18 +572,29 @@ tot_music_competition_is_registered = {
 tot_music_competition_registration_open = {
 	scope = country
 	effect = { }
-	is_shown = {
-		has_variable = tot_music_competition_registered
-		has_variable = tot_music_competition_registration_open
-		NOT = { has_variable = tot_music_competition_stage }
-	}
+	is_shown = { has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_stage } NOT = { has_variable = tot_music_competition_preparation_open } }
 	is_valid = { always = yes }
 }
 
 tot_music_competition_registration_deadline_active = {
 	scope = country
 	effect = { }
-	is_shown = { has_variable = tot_music_competition_registration_open has_variable = tot_music_competition_registration_deadline has_variable = tot_music_competition_registration_days_remaining var:tot_music_competition_registration_days_remaining > 0 }
+	is_shown = { has_variable = tot_music_competition_registration_open has_variable = tot_music_competition_registration_days_remaining var:tot_music_competition_registration_days_remaining > 0 NOT = { has_variable = tot_music_competition_stage } NOT = { has_variable = tot_music_competition_preparation_open } }
+	is_valid = { always = yes }
+}
+
+tot_music_competition_waiting_for_minimum = {
+	scope = country
+	effect = { }
+	is_shown = {
+		has_variable = tot_music_competition_registration_open
+		has_variable = tot_music_competition_registration_days_remaining
+		var:tot_music_competition_registration_days_remaining <= 0
+		has_variable = tot_music_competition_registration_waiting_for_minimum
+		has_variable = tot_music_competition_participants
+		var:tot_music_competition_participants < 8
+		NOT = { has_variable = tot_music_competition_preparation_open }
+	}
 	is_valid = { always = yes }
 }
 
@@ -499,6 +627,42 @@ tot_music_competition_is_final = {
 	scope = country
 	effect = { }
 	is_shown = { has_variable = tot_music_competition_stage var:tot_music_competition_stage = 2 }
+	is_valid = { always = yes }
+}
+
+tot_music_competition_final_quarterfinal_resolved = {
+	scope = country
+	effect = { }
+	is_shown = {
+		has_variable = tot_music_competition_stage
+		var:tot_music_competition_stage = 2
+		has_variable = tot_music_competition_round
+		var:tot_music_competition_round >= 8
+	}
+	is_valid = { always = yes }
+}
+
+tot_music_competition_final_semifinal_resolved = {
+	scope = country
+	effect = { }
+	is_shown = {
+		has_variable = tot_music_competition_stage
+		var:tot_music_competition_stage = 2
+		has_variable = tot_music_competition_round
+		var:tot_music_competition_round >= 16
+	}
+	is_valid = { always = yes }
+}
+
+tot_music_competition_final_champion_resolved = {
+	scope = country
+	effect = { }
+	is_shown = {
+		has_variable = tot_music_competition_stage
+		var:tot_music_competition_stage = 2
+		has_variable = tot_music_competition_round
+		var:tot_music_competition_round >= 26
+	}
 	is_valid = { always = yes }
 }
 
@@ -561,6 +725,7 @@ tot_music_competition_cancel = {
 			remove_variable = tot_music_competition_registered
 		}
 		tot_music_competition_build_field_effect = yes
+		s:STATE_AUSTRIA = { owner = { tot_music_competition_build_field_effect = yes } }
 
 		# Retained only as inactive save-era code. The old global reset made one
 		# country's withdrawal erase every participant.
@@ -689,13 +854,11 @@ tot_music_competition_cancel = {
 		}
 		}
 	}
-	is_shown = { is_player = yes has_variable = tot_music_competition_registered has_variable = tot_music_competition_registration_open has_variable = tot_music_competition_registration_days_remaining var:tot_music_competition_registration_days_remaining > 0 NOT = { has_variable = tot_music_competition_stage } }
+	is_shown = { is_player = yes has_variable = tot_music_competition_registered s:STATE_AUSTRIA = { owner = { has_variable = tot_music_competition_global_host has_variable = tot_music_competition_registration_open OR = { var:tot_music_competition_registration_days_remaining > 0 has_variable = tot_music_competition_registration_waiting_for_minimum } } } NOT = { has_variable = tot_music_competition_stage } }
 	is_valid = {
 		is_player = yes
 		has_variable = tot_music_competition_registered
-		has_variable = tot_music_competition_registration_open
-		has_variable = tot_music_competition_registration_days_remaining
-		var:tot_music_competition_registration_days_remaining > 0
+		s:STATE_AUSTRIA = { owner = { has_variable = tot_music_competition_global_host has_variable = tot_music_competition_registration_open OR = { var:tot_music_competition_registration_days_remaining > 0 has_variable = tot_music_competition_registration_waiting_for_minimum } } }
 		NOT = { has_variable = tot_music_competition_stage }
 		OR = {
 			AND = { has_variable = tot_music_competition_track var:tot_music_competition_track = 1 has_variable = tot_music_competition_cancel_band_id var:tot_music_competition_cancel_band_id = 1 has_variable = tot_music_competition_band_1_registered }

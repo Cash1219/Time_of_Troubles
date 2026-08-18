@@ -1,0 +1,60 @@
+je_tot_avmj_debt_crisis = {
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+	group = je_group_tot_idol_succession
+	should_be_pinned_by_default = yes
+	can_revolution_inherit = yes
+	weight = 10000
+
+	is_shown_in_lobby = { c:AVMJ ?= this }
+	should_be_involved = {
+		OR = {
+			c:AVMJ ?= this
+			c:HTT ?= this
+			c:GBDP ?= this
+			c:MYG ?= this
+			c:NRHD ?= this
+		}
+	}
+	is_shown_when_not_involved = { always = no }
+	possible = { c:AVMJ ?= this }
+
+	scripted_button = je_tot_avmj_repay_50000
+	scripted_button = je_tot_avmj_repay_250000
+	scripted_button = je_tot_avmj_sell_5_htt
+	scripted_button = je_tot_avmj_sell_5_gbdp
+	scripted_button = je_tot_avmj_sell_5_mygo
+	scripted_button = je_tot_avmj_sell_5_nrhd
+	scripted_button = je_tot_avmj_sell_investment_rights
+	scripted_button = je_tot_avmj_sell_autonomy_rights
+
+	immediate = {
+		set_variable = { name = tot_avmj_debt_months_active value = 0 }
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			change_variable = { name = tot_avmj_debt_months_active add = 1 }
+			tot_avmj_debt_monthly_process = yes
+		}
+	}
+
+	complete = {
+		custom_tooltip = {
+			text = je_tot_avmj_debt_crisis_complete_tt
+			var:tot_avmj_debt_principal <= 0
+		}
+	}
+
+	on_complete = {
+		remove_modifier = tot_avmj_debt_burden
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_tot_avmj_debt_crisis_status
+				trigger = { always = yes }
+			}
+		}
+	}
+}

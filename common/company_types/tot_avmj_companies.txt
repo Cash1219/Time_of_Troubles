@@ -1,0 +1,153 @@
+# AVMJ's companies are real Victoria 3 company entities. Foreign influence is
+# tracked separately by the debt journal through GDP ownership and share claims.
+
+tot_company_toyokawa_group = {
+	icon = "gfx/interface/icons/company_icons/fra_company_lycoreco_cafe.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+
+	flavored_company = yes
+	preferred_headquarters = { STATE_ANKARA }
+
+	building_types = {
+		building_stage
+		building_entertainment_press
+		building_musical_instrument
+	}
+	extension_building_types = {
+		building_motor_industry
+		building_steel_mill
+		building_railway
+	}
+
+	possible = {
+		c:AVMJ ?= this
+	}
+
+	prosperity_modifier = {
+		country_authority_add = 25
+	}
+
+	ai_will_do = {
+		c:AVMJ ?= this
+	}
+	ai_construction_targets = {
+		building_stage = {
+			level = 5
+			state_trigger = { state_region = s:STATE_ANKARA }
+		}
+		building_entertainment_press = {
+			level = 5
+			state_trigger = { state_region = s:STATE_ANKARA }
+		}
+		building_musical_instrument = {
+			level = 3
+			state_trigger = { state_region = s:STATE_ANKARA }
+		}
+		building_motor_industry = {
+			level = 3
+			state_trigger = { state_region = s:STATE_ANKARA }
+		}
+		building_steel_mill = {
+			level = 3
+			state_trigger = { state_region = s:STATE_ANKARA }
+		}
+		building_railway = {
+			level = 3
+			state_trigger = { state_region = s:STATE_ANKARA }
+		}
+	}
+	ai_weight = { value = 8 }
+}
+
+tot_company_avemujica_agency = {
+	icon = "gfx/interface/icons/company_icons/fra_company_lycoreco_cafe.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+
+	flavored_company = yes
+	preferred_headquarters = { STATE_ANKARA }
+
+	building_types = {
+		building_stage
+		building_entertainment_press
+		building_musical_instrument
+	}
+	extension_building_types = {
+		building_textile_mill
+	}
+
+	possible = {
+		c:AVMJ ?= this
+	}
+
+	prosperity_modifier = {
+		country_influence_add = 25
+	}
+
+	ai_will_do = {
+		c:AVMJ ?= this
+	}
+	ai_construction_targets = {
+		building_stage = {
+			level = 5
+			state_trigger = { state_region = s:STATE_ANKARA }
+		}
+		building_musical_instrument = {
+			level = 3
+			state_trigger = { state_region = s:STATE_ANKARA }
+		}
+		building_textile_mill = {
+			level = 3
+			state_trigger = { state_region = s:STATE_ANKARA }
+		}
+	}
+	ai_weight = { value = 8 }
+}
+
+tot_company_sumimi_agency = {
+	icon = "gfx/interface/icons/company_icons/fra_company_stella_cafe.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+
+	flavored_company = yes
+	preferred_headquarters = { STATE_ANKARA }
+
+	building_types = {
+		building_stage
+		building_entertainment_press
+		building_goods
+	}
+	extension_building_types = {
+		building_food_industry
+		building_textile_mill
+	}
+
+	possible = {
+		c:AVMJ ?= this
+	}
+
+	prosperity_modifier = {
+		state_radicals_from_sol_change_mult = -0.05
+	}
+
+	ai_will_do = {
+		c:AVMJ ?= this
+	}
+	ai_construction_targets = {
+		building_stage = {
+			level = 3
+			state_trigger = { state_region = s:STATE_ANKARA }
+		}
+		building_entertainment_press = {
+			level = 5
+			state_trigger = { state_region = s:STATE_ANKARA }
+		}
+		building_food_industry = {
+			level = 3
+			state_trigger = { state_region = s:STATE_ANKARA }
+		}
+		building_textile_mill = {
+			level = 3
+			state_trigger = { state_region = s:STATE_ANKARA }
+		}
+	}
+	ai_weight = { value = 6 }
+}

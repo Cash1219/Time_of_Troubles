@@ -172,6 +172,12 @@
  je_fra_queen_pk_progress_bar_name: "女皇对决"
  je_fra_queen_pk_progress_bar_mary_desc: "玛丽派优势"
  je_fra_queen_pk_progress_bar_mia_desc: "米娅派优势"
+ je_fra_godess_election: "圣女大选"
+ je_fra_godess_election_desc: "法兰西各地的信众与政治势力正在推举新的圣女。选举结果将影响宗教权威与国家内部的政治平衡。"
+ je_fra_godess_election_reason: "圣女大选既是宗教仪式，也是各派争夺影响力的公开竞争。法兰西必须决定由谁代表新的神圣传统。"
+ je_fra_coffee_politics: "咖啡政治"
+ je_fra_coffee_politics_desc: "咖啡贸易正在催生新的商人集团与政治网络。支持其中一家企业可以扩大经济合作，但也会让其逐步影响国家决策。"
+ je_fra_coffee_politics_reason: "咖啡风尚让贸易商人在殖民地、港口和城市之间建立起跨国网络。谁能控制咖啡贸易，谁就能把商业利润转化为政治影响力。"
  #粮食对决
  je_fra_queen_pk_food: "对决：面粉暴动" #粮食对决
  je_fra_queen_pk_food_reason: "法兰西的农业在稳定时期产量丰富，长期以来一直是欧洲最强大的农业国之一。然而，尽管农业生产繁荣，民众却未能真正受益于这一丰收的成果。食物价格始终被商人操控，他们以此谋取私利。在前王时期，由于粮食短缺引发了“面粉暴动”，这一事件最终成为革命的导火索。玛丽与米娅提出了两种应对方案：一种是发展加工食品产业，另一种则是通过囤积粮食来控制粮价。\n省份会触发[GetHarvestConditionType('grain_speculator').GetName][concept_harvest_condition]，可以通过建筑[GetBuildingType('building_barn').GetName]和提高落实投机罪等级来降低[GetHarvestConditionType('grain_speculator').GetName][concept_harvest_condition]出现频率和损失。"

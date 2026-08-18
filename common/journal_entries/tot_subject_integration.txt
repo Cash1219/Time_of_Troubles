@@ -1,0 +1,191 @@
+je_tot_idol_subject_development = {
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	group = je_group_tot_idol_succession
+	should_be_pinned_by_default = yes
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	weight = 10000
+	timeout = 3650
+
+	scripted_button = tot_subject_development_common_1_button
+	scripted_button = tot_subject_development_common_2_button
+	scripted_button = tot_subject_development_common_3_button
+	scripted_button = tot_subject_development_common_4_button
+	scripted_button = tot_subject_development_common_5_button
+	scripted_button = tot_subject_development_overlord_1_button
+	scripted_button = tot_subject_development_overlord_2_button
+	scripted_button = tot_subject_development_overlord_3_button
+	scripted_button = tot_subject_development_overlord_4_button
+	scripted_button = tot_subject_development_national_1_button
+	scripted_button = tot_subject_development_national_2_button
+	scripted_button = tot_subject_development_national_3_button
+
+	is_shown_when_inactive = {
+		OR = {
+			has_variable = tot_subject_development_overlord_member
+			has_variable = tot_subject_development_member
+		}
+	}
+
+	should_be_involved = {
+		OR = {
+			has_variable = tot_subject_development_overlord_member
+			has_variable = tot_subject_development_member
+		}
+		NOT = { has_variable = tot_subject_development_finished }
+	}
+
+	possible = {
+		OR = {
+			has_variable = tot_subject_development_overlord_member
+			has_variable = tot_subject_development_member
+		}
+	}
+
+	immediate = {
+		set_variable = { name = tot_subject_development_overlord_member value = 1 }
+		set_variable = { name = tot_subject_development_common_completed value = 0 }
+		set_variable = { name = tot_subject_development_overlord_completed value = 0 }
+		set_variable = { name = tot_subject_development_score value = 0 }
+		scope:journal_entry = { add_involved_country = ROOT }
+		every_direct_subject = {
+			limit = {
+				OR = {
+					c:AQO ?= this
+					c:NJS ?= this
+					c:GKMS ?= this
+					c:AVMJ ?= this
+					c:MYG ?= this
+					c:AFTG ?= this
+					c:HHWO ?= this
+					c:UKR ?= this
+					c:ROM ?= this
+				}
+			}
+			set_variable = { name = tot_subject_development_member value = 1 }
+			set_variable = { name = tot_subject_development_common_completed value = 0 }
+			set_variable = { name = tot_subject_development_national_completed value = 0 }
+			set_variable = { name = tot_subject_development_score value = 0 }
+			change_subject_type = subject_type_idol_development_protectorate
+			scope:journal_entry = { add_involved_country = PREV }
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			every_direct_subject = {
+				limit = {
+					OR = {
+						c:AQO ?= this
+						c:NJS ?= this
+						c:GKMS ?= this
+						c:AVMJ ?= this
+						c:MYG ?= this
+						c:AFTG ?= this
+						c:HHWO ?= this
+						c:UKR ?= this
+						c:ROM ?= this
+					}
+					NOT = { has_variable = tot_subject_development_member }
+				}
+				if = {
+					limit = { NOT = { is_involved_in_journal_entry = je_tot_idol_subject_development } }
+					scope:journal_entry = { add_involved_country = PREV }
+				}
+				set_variable = { name = tot_subject_development_member value = 1 }
+				set_variable = { name = tot_subject_development_common_completed value = 0 }
+				set_variable = { name = tot_subject_development_national_completed value = 0 }
+				set_variable = { name = tot_subject_development_score value = 0 }
+				change_subject_type = subject_type_idol_development_protectorate
+			}
+		}
+	}
+
+	complete = { var:tot_subject_development_score >= 5 }
+
+	fail = {
+		scope:journal_entry = {
+			any_scope_je_involved = {
+				has_variable = tot_subject_development_member
+				var:tot_subject_development_score >= 5
+			}
+		}
+	}
+
+	on_complete = {
+		set_variable = tot_subject_development_finished
+		add_modifier = {
+			name = modifier_tot_subject_development_overlord_winner
+			days = long_modifier_time
+		}
+		custom_tooltip = tot_subject_development_overlord_winner_tt
+		scope:journal_entry = {
+			every_scope_je_involved = {
+				limit = { has_variable = tot_subject_development_member }
+				if = {
+					limit = { c:AVMJ ?= this }
+					change_subject_type = subject_type_company_protectorate
+				}
+				else = { change_subject_type = subject_type_puppet }
+				add_liberty_desire = -10
+				set_variable = tot_subject_development_finished
+				remove_variable = tot_subject_development_member
+			}
+		}
+	}
+
+	on_fail = {
+		set_variable = tot_subject_development_finished
+		add_modifier = {
+			name = modifier_tot_subject_development_overlord_loser
+			days = normal_modifier_time
+		}
+		custom_tooltip = tot_subject_development_subject_winner_tt
+		scope:journal_entry = {
+			every_scope_je_involved = {
+				limit = { has_variable = tot_subject_development_member }
+				if = {
+					limit = { var:tot_subject_development_score >= 5 }
+					change_subject_type = subject_type_dominion
+					add_liberty_desire = -10
+					add_modifier = {
+						name = modifier_tot_subject_development_subject_winner
+						days = long_modifier_time
+					}
+				}
+				else = {
+					if = { limit = { c:AVMJ ?= this } change_subject_type = subject_type_company_protectorate }
+					else = { change_subject_type = subject_type_protectorate }
+					add_liberty_desire = 10
+				}
+				set_variable = tot_subject_development_finished
+				remove_variable = tot_subject_development_member
+			}
+		}
+	}
+
+	on_timeout = {
+		set_variable = tot_subject_development_finished
+		add_modifier = {
+			name = modifier_tot_subject_development_timeout
+			days = normal_modifier_time
+		}
+		scope:journal_entry = {
+			every_scope_je_involved = {
+				limit = { has_variable = tot_subject_development_member }
+				if = { limit = { c:AVMJ ?= this } change_subject_type = subject_type_company_protectorate }
+				else = { change_subject_type = subject_type_protectorate }
+				set_variable = tot_subject_development_finished
+				remove_variable = tot_subject_development_member
+			}
+		}
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_tot_idol_subject_development_status
+				trigger = { always = yes }
+			}
+		}
+	}
+}

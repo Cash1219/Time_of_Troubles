@@ -876,10 +876,9 @@ tot_ensure_default_story_band_members_effect = {
 	if = {
 		limit = { this = c:HHWO NOT = { has_variable = tot_band_1_story_roster_initialized } }
 		if = { limit = { NOT = { has_variable = tot_story_band_startup_done } } set_variable = { name = tot_story_band_startup_done value = 1 } }
-		if = { limit = { NOT = { has_variable = tot_band_limit } } set_variable = { name = tot_band_limit value = 2 } }
-		if = { limit = { var:tot_band_limit < 2 } set_variable = { name = tot_band_limit value = 2 } }
+		if = { limit = { NOT = { has_variable = tot_band_limit } } set_variable = { name = tot_band_limit value = 1 } }
+		if = { limit = { var:tot_band_limit < 1 } set_variable = { name = tot_band_limit value = 1 } }
 		if = { limit = { NOT = { has_variable = tot_band_1_created } } set_variable = { name = tot_band_1_created value = 1 } }
-		if = { limit = { NOT = { has_variable = tot_band_2_created } } set_variable = { name = tot_band_2_created value = 1 } }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Kokoro_trait } save_scope_as = tot_band_member tot_appoint_band_1_vocalist_effect = yes }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Kaoru_trait } save_scope_as = tot_band_member tot_appoint_band_1_guitarist_effect = yes }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Hagumi_trait } save_scope_as = tot_band_member tot_appoint_band_1_bassist_effect = yes }
@@ -3443,16 +3442,11 @@ tot_setup_default_story_bands_effect = {
 		limit = { this = c:HHWO NOT = { has_variable = tot_story_band_startup_done } }
 		set_variable = { name = tot_story_band_startup_done value = 1 }
 		activate_law = law_type:law_artistic_freedom
-		set_variable = { name = tot_band_limit value = 2 }
+		set_variable = { name = tot_band_limit value = 1 }
 		set_variable = { name = tot_band_1_created value = 1 }
-		set_variable = { name = tot_band_2_created value = 1 }
 		every_scope_state = {
 			limit = { state_region = s:STATE_DISTRICT_OF_COLUMBIA any_scope_building = { is_building_type = building_band_headquarter } }
 			set_variable = { name = tot_band_hq_slot value = 1 }
-		}
-		every_scope_state = {
-			limit = { state_region = s:STATE_PENNSYLVANIA any_scope_building = { is_building_type = building_band_headquarter } }
-			set_variable = { name = tot_band_hq_slot value = 2 }
 		}
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Kokoro_trait } save_scope_as = tot_band_member tot_appoint_band_1_vocalist_effect = yes }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Kaoru_trait } save_scope_as = tot_band_member tot_appoint_band_1_guitarist_effect = yes }
@@ -3460,6 +3454,35 @@ tot_setup_default_story_bands_effect = {
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Kanon_trait } save_scope_as = tot_band_member tot_appoint_band_1_keyboardist_effect = yes }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Misaki_trait } save_scope_as = tot_band_member tot_appoint_band_1_drummer_effect = yes }
 		# Global history setup has no country root. Monthly country updates handle the first calculation.
+	}
+	# Repair saves created while HHWO incorrectly received a second starting band.
+	if = {
+		limit = { this = c:HHWO NOT = { has_variable = tot_hhwo_single_band_repaired } }
+		set_variable = { name = tot_hhwo_single_band_repaired value = 1 }
+		set_variable = { name = tot_band_limit value = 1 }
+		remove_variable = tot_band_2_created
+		remove_variable = tot_band_2_name
+		remove_variable = tot_band_2_level
+		remove_variable = tot_band_2_experience
+		remove_variable = tot_band_2_progress
+		remove_variable = tot_band_2_creative_progress
+		remove_variable = tot_band_2_creation_progress
+		remove_variable = tot_music_competition_band_2_registered
+		remove_variable = tot_music_competition_band_2_score
+		every_scope_state = {
+			limit = { state_region = s:STATE_PENNSYLVANIA }
+			remove_variable = tot_band_hq_slot
+		}
+		every_scope_character = {
+			limit = { has_variable = tot_band_id var:tot_band_id = 2 }
+			remove_variable = tot_band_id
+			remove_variable = tot_band_role_vocalist
+			remove_variable = tot_band_role_guitarist
+			remove_variable = tot_band_role_bassist
+			remove_variable = tot_band_role_keyboardist
+			remove_variable = tot_band_role_drummer
+			remove_variable = tot_band_role_dj
+		}
 	}
 	if = {
 		limit = { this = c:GBDP NOT = { has_variable = tot_story_band_lineup_initialized } }

@@ -13,13 +13,71 @@ tot_golden_hall_crisis_participant_trigger = {
 
 tot_golden_hall_contract_available_trigger = {
 	OR = {
-		has_variable = tot_golden_hall_crisis_participant
-		any_scope_state = {
-			state_region = s:STATE_AUSTRIA
-			any_scope_building = {
-				is_building_type = building_tot_golden_hall_construction_site
-				level < 31
+		AND = {
+			has_variable = tot_golden_hall_crisis_participant
+			any_scope_state = {
+				state_region = s:STATE_AUSTRIA
+				any_scope_building = {
+					is_building_type = building_tot_golden_hall_construction_site
+					level < 31
+				}
 			}
+		}
+		AND = {
+			has_journal_entry = je_tot_golden_hall_continuation
+			any_scope_state = {
+				state_region = s:STATE_AUSTRIA
+				owner = root
+				any_scope_building = {
+					is_building_type = building_tot_golden_hall_construction_site
+					level < 31
+				}
+			}
+		}
+	}
+}
+
+tot_golden_hall_naming_contract_available_trigger = {
+	has_variable = tot_golden_hall_crisis_participant
+	NOT = { has_variable = tot_golden_hall_naming_done }
+	OR = {
+		AND = {
+			OR = { c:MUS ?= root c:AQO ?= root c:NJS ?= root }
+			NOT = {
+				OR = {
+					c:MUS = { any_scope_state = { is_capital = yes has_building = building_tot_golden_hall_naming_contract } }
+					c:AQO = { any_scope_state = { is_capital = yes has_building = building_tot_golden_hall_naming_contract } }
+					c:NJS = { any_scope_state = { is_capital = yes has_building = building_tot_golden_hall_naming_contract } }
+				}
+			}
+		}
+		AND = {
+			OR = { c:IDMS ?= root c:GKMS ?= root }
+			NOT = {
+				OR = {
+					c:IDMS = { any_scope_state = { is_capital = yes has_building = building_tot_golden_hall_naming_contract } }
+					c:GKMS = { any_scope_state = { is_capital = yes has_building = building_tot_golden_hall_naming_contract } }
+				}
+			}
+		}
+		AND = {
+			c:GBDP ?= root
+			NOT = { c:GBDP = { any_scope_state = { is_capital = yes has_building = building_tot_golden_hall_naming_contract } } }
+		}
+		AND = {
+			c:HTT ?= root
+			NOT = { c:HTT = { any_scope_state = { is_capital = yes has_building = building_tot_golden_hall_naming_contract } } }
+		}
+		AND = {
+			c:PRU ?= root
+			NOT = { c:PRU = { any_scope_state = { is_capital = yes has_building = building_tot_golden_hall_naming_contract } } }
+		}
+	}
+	any_scope_state = {
+		state_region = s:STATE_AUSTRIA
+		any_scope_building = {
+			is_building_type = building_tot_golden_hall_construction_site
+			level < 31
 		}
 	}
 }

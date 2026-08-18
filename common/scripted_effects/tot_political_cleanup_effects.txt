@@ -1,0 +1,10 @@
+tot_cleanup_idol_political_setup_effect = {
+	if = {
+		limit = { tot_is_idol_country = yes }
+		every_interest_group = {
+			remove_ideology = ideology_pro_slavery
+			remove_ideology = ideology_pro_slavery_colonial
+			remove_ideology = ideology_mercantile
+		}
+	}
+}

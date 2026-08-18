@@ -343,6 +343,98 @@ tot_band_shop_buy_influence_buff = {
 		var:tot_band_reward_points_total >= 5
 	}
 }
+tot_band_shop_buy_special_unit_ratio = {
+	scope = country
+	effect = {
+		if = {
+			limit = {
+				has_variable = tot_band_reward_points_total
+				var:tot_band_reward_points_total >= 5
+				OR = {
+					NOT = { has_variable = tot_band_shop_special_unit_ratio_purchases }
+					AND = {
+						has_variable = tot_band_shop_special_unit_ratio_purchases
+						var:tot_band_shop_special_unit_ratio_purchases < 10
+					}
+				}
+			}
+			if = { limit = { NOT = { has_variable = tot_band_shop_special_unit_ratio_purchases } } set_variable = { name = tot_band_shop_special_unit_ratio_purchases value = 0 } }
+			if = { limit = { NOT = { has_variable = tot_band_reward_points_spent_total } } set_variable = { name = tot_band_reward_points_spent_total value = 0 } }
+			change_variable = { name = tot_band_reward_points_spent_total add = 5 }
+			if = { limit = { var:tot_band_shop_special_unit_ratio_purchases = 0 } add_modifier = { name = tot_band_shop_special_unit_ratio_1_modifier } }
+		if = { limit = { var:tot_band_shop_special_unit_ratio_purchases = 1 } add_modifier = { name = tot_band_shop_special_unit_ratio_2_modifier } }
+		if = { limit = { var:tot_band_shop_special_unit_ratio_purchases = 2 } add_modifier = { name = tot_band_shop_special_unit_ratio_3_modifier } }
+		if = { limit = { var:tot_band_shop_special_unit_ratio_purchases = 3 } add_modifier = { name = tot_band_shop_special_unit_ratio_4_modifier } }
+		if = { limit = { var:tot_band_shop_special_unit_ratio_purchases = 4 } add_modifier = { name = tot_band_shop_special_unit_ratio_5_modifier } }
+		if = { limit = { var:tot_band_shop_special_unit_ratio_purchases = 5 } add_modifier = { name = tot_band_shop_special_unit_ratio_6_modifier } }
+		if = { limit = { var:tot_band_shop_special_unit_ratio_purchases = 6 } add_modifier = { name = tot_band_shop_special_unit_ratio_7_modifier } }
+		if = { limit = { var:tot_band_shop_special_unit_ratio_purchases = 7 } add_modifier = { name = tot_band_shop_special_unit_ratio_8_modifier } }
+		if = { limit = { var:tot_band_shop_special_unit_ratio_purchases = 8 } add_modifier = { name = tot_band_shop_special_unit_ratio_9_modifier } }
+		if = { limit = { var:tot_band_shop_special_unit_ratio_purchases = 9 } add_modifier = { name = tot_band_shop_special_unit_ratio_10_modifier } }
+		change_variable = { name = tot_band_shop_special_unit_ratio_purchases add = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		has_variable = tot_band_reward_points_total
+		var:tot_band_reward_points_total >= 5
+		OR = {
+			NOT = { has_variable = tot_band_shop_special_unit_ratio_purchases }
+			AND = {
+				has_variable = tot_band_shop_special_unit_ratio_purchases
+				var:tot_band_shop_special_unit_ratio_purchases < 10
+			}
+		}
+	}
+}
+tot_band_shop_buy_special_unit_combat = {
+	scope = country
+	effect = {
+		if = {
+			limit = {
+				has_variable = tot_band_reward_points_total
+				var:tot_band_reward_points_total >= 10
+				OR = {
+					NOT = { has_variable = tot_band_shop_special_unit_combat_purchases }
+					AND = {
+						has_variable = tot_band_shop_special_unit_combat_purchases
+						var:tot_band_shop_special_unit_combat_purchases < 10
+					}
+				}
+			}
+			if = { limit = { NOT = { has_variable = tot_band_shop_special_unit_combat_purchases } } set_variable = { name = tot_band_shop_special_unit_combat_purchases value = 0 } }
+			if = { limit = { NOT = { has_variable = tot_band_reward_points_spent_total } } set_variable = { name = tot_band_reward_points_spent_total value = 0 } }
+			change_variable = { name = tot_band_reward_points_spent_total add = 10 }
+			if = { limit = { var:tot_band_shop_special_unit_combat_purchases = 0 } add_modifier = { name = tot_band_shop_special_unit_combat_1_modifier } }
+			if = { limit = { var:tot_band_shop_special_unit_combat_purchases = 1 } add_modifier = { name = tot_band_shop_special_unit_combat_2_modifier } }
+			if = { limit = { var:tot_band_shop_special_unit_combat_purchases = 2 } add_modifier = { name = tot_band_shop_special_unit_combat_3_modifier } }
+			if = { limit = { var:tot_band_shop_special_unit_combat_purchases = 3 } add_modifier = { name = tot_band_shop_special_unit_combat_4_modifier } }
+			if = { limit = { var:tot_band_shop_special_unit_combat_purchases = 4 } add_modifier = { name = tot_band_shop_special_unit_combat_5_modifier } }
+			if = { limit = { var:tot_band_shop_special_unit_combat_purchases = 5 } add_modifier = { name = tot_band_shop_special_unit_combat_6_modifier } }
+			if = { limit = { var:tot_band_shop_special_unit_combat_purchases = 6 } add_modifier = { name = tot_band_shop_special_unit_combat_7_modifier } }
+			if = { limit = { var:tot_band_shop_special_unit_combat_purchases = 7 } add_modifier = { name = tot_band_shop_special_unit_combat_8_modifier } }
+			if = { limit = { var:tot_band_shop_special_unit_combat_purchases = 8 } add_modifier = { name = tot_band_shop_special_unit_combat_9_modifier } }
+			if = { limit = { var:tot_band_shop_special_unit_combat_purchases = 9 } add_modifier = { name = tot_band_shop_special_unit_combat_10_modifier } }
+			change_variable = { name = tot_band_shop_special_unit_combat_purchases add = 1 }
+		}
+		update_kizuna = yes
+	}
+	is_shown = { is_player = yes }
+	is_valid = {
+		is_player = yes
+		has_variable = tot_band_reward_points_total
+		var:tot_band_reward_points_total >= 10
+		OR = {
+			NOT = { has_variable = tot_band_shop_special_unit_combat_purchases }
+			AND = {
+				has_variable = tot_band_shop_special_unit_combat_purchases
+				var:tot_band_shop_special_unit_combat_purchases < 10
+			}
+		}
+	}
+}
 tot_band_hq_state_bind_9 = { scope = state effect = { owner ?= { set_variable = { name = tot_band_9_created value = 1 } if = { limit = { NOT = { has_variable = tot_band_9_name } } set_variable = { name = tot_band_9_name value = 5 } } root = { set_variable = { name = tot_band_hq_slot value = 9 } } update_kizuna = yes } } is_shown = { owner ?= { is_player = yes } any_scope_building = { is_building_type = building_band_headquarter } NOT = { has_variable = tot_band_hq_slot } } is_valid = { owner ?= { is_player = yes tot_band_limit_value >= 9 NOT = { has_variable = tot_band_9_created } } any_scope_building = { is_building_type = building_band_headquarter } NOT = { has_variable = tot_band_hq_slot } } }
 tot_band_hq_state_bind_10 = { scope = state effect = { owner ?= { set_variable = { name = tot_band_10_created value = 1 } if = { limit = { NOT = { has_variable = tot_band_10_name } } set_variable = { name = tot_band_10_name value = 5 } } root = { set_variable = { name = tot_band_hq_slot value = 10 } } update_kizuna = yes } } is_shown = { owner ?= { is_player = yes } any_scope_building = { is_building_type = building_band_headquarter } NOT = { has_variable = tot_band_hq_slot } } is_valid = { owner ?= { is_player = yes tot_band_limit_value >= 10 NOT = { has_variable = tot_band_10_created } } any_scope_building = { is_building_type = building_band_headquarter } NOT = { has_variable = tot_band_hq_slot } } }
 tot_kizuna_select_faction_tab = {

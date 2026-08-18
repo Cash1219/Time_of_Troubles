@@ -26,6 +26,9 @@ fra_company_stella_cafe = {
 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
 	
 	flavored_company = yes
+	potential = {
+		always = no
+	}
 	
 	building_types = {  
 		building_banana_plantation
@@ -52,6 +55,9 @@ fra_company_rabbit_house = {
 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
 	
 	flavored_company = yes
+	potential = {
+		always = no
+	}
 
 	building_types = {  
 		building_coffee_plantation
@@ -78,6 +84,9 @@ fra_company_lycoreco_cafe = {
 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
 	
 	flavored_company = yes
+	potential = {
+		always = no
+	}
 
 	building_types = {  
 		building_arms_industry
@@ -104,6 +113,9 @@ fra_company_stile_cafe = {
 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
 	
 	flavored_company = yes
+	potential = {
+		always = no
+	}
 
 	building_types = {  
 		building_coffee_plantation
@@ -128,6 +140,9 @@ fra_company_black_cat_cafe = {
 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
 	
 	flavored_company = yes
+	potential = {
+		always = no
+	}
 
 	building_types = {  
 		building_coffee_plantation
@@ -147,36 +162,14 @@ fra_company_black_cat_cafe = {
 		state_radicals_from_sol_change_mult = -0.05
 	}	
 }
-fra_company_aaa_defender = { 
-	icon = "gfx/interface/icons/company_icons/fra_company_aaa_defender.dds"
-	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
-	
-	flavored_company = yes
-
-	building_types = {  
-		building_shipyards
-		#building_military_shipyards
-	}
-	extension_building_types = {
-		building_silk_plantation
-	}
-	possible = { 
-		c:FRA ?= this
-		
-	}
-	ai_weight = {
-		value = 3 
-	}
-	prosperity_modifier = {
-		unit_navy_offense_mult = 0.05
-		unit_navy_defense_mult = 0.05
-	}	
-}
 fra_company_eagle_jump = { 
 	icon = "gfx/interface/icons/company_icons/fra_company_eagle_jump.dds"
 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
 	
 	flavored_company = yes
+	potential = {
+		always = no
+	}
 
 	building_types = {  
 		building_shipyards

@@ -1198,6 +1198,7 @@
 		blockoverride "scrollbox_content" {
 			flowcontainer = {
 				direction = vertical
+				layoutpolicy_horizontal = preferred
 				spacing = 6
 				default_header_clean = {
 					size = { 500 76 }
@@ -1254,6 +1255,40 @@
 					using = fontsize_small
 					align = left|nobaseline
 					multiline = yes
+				}
+				flowcontainer = {
+					direction = horizontal
+					spacing = 10
+					icon = { size = { 36 36 } texture = "gfx/interface/icons/generic_icons/unused/army_navy_shield.dds" }
+					flowcontainer = {
+						direction = vertical
+						spacing = 2
+						button_standard = {
+							size = { 440 42 }
+							text = "TOT_BAND_SHOP_SPECIAL_UNIT_RATIO"
+							onclick = "[GetScriptedGui('tot_band_shop_buy_special_unit_ratio').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "[GetScriptedGui('tot_band_shop_buy_special_unit_ratio').IsValidTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						}
+						textbox = { size = { 440 58 } text = "TOT_BAND_SHOP_SPECIAL_UNIT_RATIO_DESC" using = fontsize_small align = left|nobaseline multiline = yes }
+						textbox = { size = { 440 24 } raw_text = "已兑换：[AccessPlayer.MakeScope.Var('tot_band_shop_special_unit_ratio_purchases').GetValue|0]/10" using = fontsize_small align = left|nobaseline }
+					}
+				}
+				flowcontainer = {
+					direction = horizontal
+					spacing = 10
+					icon = { size = { 36 36 } texture = "gfx/interface/icons/generic_icons/unused/unit_attack.dds" }
+					flowcontainer = {
+						direction = vertical
+						spacing = 2
+						button_standard = {
+							size = { 440 42 }
+							text = "TOT_BAND_SHOP_SPECIAL_UNIT_COMBAT"
+							onclick = "[GetScriptedGui('tot_band_shop_buy_special_unit_combat').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							tooltip = "[GetScriptedGui('tot_band_shop_buy_special_unit_combat').IsValidTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						}
+						textbox = { size = { 440 58 } text = "TOT_BAND_SHOP_SPECIAL_UNIT_COMBAT_DESC" using = fontsize_small align = left|nobaseline multiline = yes }
+						textbox = { size = { 440 24 } raw_text = "已兑换：[AccessPlayer.MakeScope.Var('tot_band_shop_special_unit_combat_purchases').GetValue|0]/10" using = fontsize_small align = left|nobaseline }
+					}
 				}
 			}
 		}

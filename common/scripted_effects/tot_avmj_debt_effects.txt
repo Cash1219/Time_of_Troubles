@@ -1,0 +1,219 @@
+tot_avmj_setup_debt = {
+	if = {
+		limit = { NOT = { has_variable = tot_avmj_debt_principal } }
+		set_variable = { name = tot_avmj_debt_principal value = 1680000 }
+		set_variable = { name = tot_avmj_debt_repaid value = 0 }
+		set_variable = { name = tot_avmj_debt_gdp_repaid value = 0 }
+		set_variable = { name = tot_avmj_state_share value = 35 }
+		set_variable = { name = tot_avmj_htt_share value = 40 }
+		set_variable = { name = tot_avmj_gbdp_share value = 15 }
+		set_variable = { name = tot_avmj_mygo_share value = 5 }
+		set_variable = { name = tot_avmj_nrhd_share value = 0 }
+		set_variable = { name = tot_avmj_controlled_by value = 1 }
+		set_variable = { name = tot_avmj_investment_rights_sold value = 0 }
+		set_variable = { name = tot_avmj_autonomy_rights_sold value = 0 }
+
+		every_country = {
+			limit = {
+				OR = {
+					this = c:HTT
+					this = c:GBDP
+					this = c:MYG
+					this = c:NRHD
+				}
+			}
+			set_variable = { name = tot_avmj_gdp_claim value = 0 }
+		}
+
+		add_modifier = { name = tot_avmj_debt_burden }
+		add_journal_entry = { type = je_tot_avmj_debt_crisis }
+	}
+}
+
+tot_avmj_process_gdp_claims = {
+	# Native foreign investment is converted into a one-time debt claim at
+	# the following ownership thresholds. The investment itself remains native.
+	every_country = {
+		limit = {
+			OR = {
+				this = c:HTT
+				this = c:GBDP
+				this = c:MYG
+				this = c:NRHD
+			}
+		}
+
+		if = {
+			limit = {
+				var:tot_avmj_gdp_claim < 5
+				gdp_ownership_ratio = { target = ROOT value >= 0.05 }
+			}
+			set_variable = { name = tot_avmj_gdp_claim value = 5 }
+			ROOT = {
+				if = {
+					limit = { var:tot_avmj_debt_principal >= 84000 }
+					change_variable = { name = tot_avmj_debt_principal add = -84000 }
+					change_variable = { name = tot_avmj_debt_gdp_repaid add = 84000 }
+				}
+				else = { set_variable = { name = tot_avmj_debt_principal value = 0 } }
+			}
+		}
+		if = {
+			limit = {
+				var:tot_avmj_gdp_claim < 10
+				gdp_ownership_ratio = { target = ROOT value >= 0.10 }
+			}
+			set_variable = { name = tot_avmj_gdp_claim value = 10 }
+			ROOT = {
+				if = {
+					limit = { var:tot_avmj_debt_principal >= 84000 }
+					change_variable = { name = tot_avmj_debt_principal add = -84000 }
+					change_variable = { name = tot_avmj_debt_gdp_repaid add = 84000 }
+				}
+				else = { set_variable = { name = tot_avmj_debt_principal value = 0 } }
+			}
+		}
+		if = {
+			limit = {
+				var:tot_avmj_gdp_claim < 20
+				gdp_ownership_ratio = { target = ROOT value >= 0.20 }
+			}
+			set_variable = { name = tot_avmj_gdp_claim value = 20 }
+			ROOT = {
+				if = {
+					limit = { var:tot_avmj_debt_principal >= 168000 }
+					change_variable = { name = tot_avmj_debt_principal add = -168000 }
+					change_variable = { name = tot_avmj_debt_gdp_repaid add = 168000 }
+				}
+				else = { set_variable = { name = tot_avmj_debt_principal value = 0 } }
+			}
+		}
+		if = {
+			limit = {
+				var:tot_avmj_gdp_claim < 30
+				gdp_ownership_ratio = { target = ROOT value >= 0.30 }
+			}
+			set_variable = { name = tot_avmj_gdp_claim value = 30 }
+			ROOT = {
+				if = {
+					limit = { var:tot_avmj_debt_principal >= 168000 }
+					change_variable = { name = tot_avmj_debt_principal add = -168000 }
+					change_variable = { name = tot_avmj_debt_gdp_repaid add = 168000 }
+				}
+				else = { set_variable = { name = tot_avmj_debt_principal value = 0 } }
+			}
+		}
+		if = {
+			limit = {
+				var:tot_avmj_gdp_claim < 40
+				gdp_ownership_ratio = { target = ROOT value >= 0.40 }
+			}
+			set_variable = { name = tot_avmj_gdp_claim value = 40 }
+			ROOT = {
+				if = {
+					limit = { var:tot_avmj_debt_principal >= 168000 }
+					change_variable = { name = tot_avmj_debt_principal add = -168000 }
+					change_variable = { name = tot_avmj_debt_gdp_repaid add = 168000 }
+				}
+				else = { set_variable = { name = tot_avmj_debt_principal value = 0 } }
+			}
+		}
+		if = {
+			limit = {
+				var:tot_avmj_gdp_claim < 50
+				gdp_ownership_ratio = { target = ROOT value >= 0.50 }
+			}
+			set_variable = { name = tot_avmj_gdp_claim value = 50 }
+			ROOT = {
+				if = {
+					limit = { var:tot_avmj_debt_principal >= 168000 }
+					change_variable = { name = tot_avmj_debt_principal add = -168000 }
+					change_variable = { name = tot_avmj_debt_gdp_repaid add = 168000 }
+				}
+				else = { set_variable = { name = tot_avmj_debt_principal value = 0 } }
+			}
+		}
+	}
+}
+
+tot_avmj_refresh_control = {
+	if = {
+		limit = { has_modifier = tot_avmj_control_state }
+		remove_modifier = tot_avmj_control_state
+	}
+	if = {
+		limit = { has_modifier = tot_avmj_control_htt }
+		remove_modifier = tot_avmj_control_htt
+	}
+	if = {
+		limit = { has_modifier = tot_avmj_control_gbdp }
+		remove_modifier = tot_avmj_control_gbdp
+	}
+	if = {
+		limit = { has_modifier = tot_avmj_control_mygo }
+		remove_modifier = tot_avmj_control_mygo
+	}
+	if = {
+		limit = { has_modifier = tot_avmj_control_nrhd }
+		remove_modifier = tot_avmj_control_nrhd
+	}
+
+	set_variable = { name = tot_avmj_controlled_by value = 0 }
+	if = {
+		limit = {
+			var:tot_avmj_htt_share > var:tot_avmj_state_share
+			var:tot_avmj_htt_share > var:tot_avmj_gbdp_share
+			var:tot_avmj_htt_share > var:tot_avmj_mygo_share
+			var:tot_avmj_htt_share > var:tot_avmj_nrhd_share
+		}
+		set_variable = { name = tot_avmj_controlled_by value = 1 }
+		add_modifier = { name = tot_avmj_control_htt }
+	}
+	else_if = {
+		limit = {
+			var:tot_avmj_gbdp_share > var:tot_avmj_state_share
+			var:tot_avmj_gbdp_share > var:tot_avmj_htt_share
+			var:tot_avmj_gbdp_share > var:tot_avmj_mygo_share
+			var:tot_avmj_gbdp_share > var:tot_avmj_nrhd_share
+		}
+		set_variable = { name = tot_avmj_controlled_by value = 2 }
+		add_modifier = { name = tot_avmj_control_gbdp }
+	}
+	else_if = {
+		limit = {
+			var:tot_avmj_mygo_share > var:tot_avmj_state_share
+			var:tot_avmj_mygo_share > var:tot_avmj_htt_share
+			var:tot_avmj_mygo_share > var:tot_avmj_gbdp_share
+			var:tot_avmj_mygo_share > var:tot_avmj_nrhd_share
+		}
+		set_variable = { name = tot_avmj_controlled_by value = 3 }
+		add_modifier = { name = tot_avmj_control_mygo }
+	}
+	else_if = {
+		limit = {
+			var:tot_avmj_nrhd_share > var:tot_avmj_state_share
+			var:tot_avmj_nrhd_share > var:tot_avmj_htt_share
+			var:tot_avmj_nrhd_share > var:tot_avmj_gbdp_share
+			var:tot_avmj_nrhd_share > var:tot_avmj_mygo_share
+		}
+		set_variable = { name = tot_avmj_controlled_by value = 4 }
+		add_modifier = { name = tot_avmj_control_nrhd }
+	}
+	else = {
+		add_modifier = { name = tot_avmj_control_state }
+	}
+}
+
+tot_avmj_debt_monthly_process = {
+	if = {
+		limit = { var:tot_avmj_debt_principal > 0 }
+		add_treasury = { value = tot_avmj_monthly_interest_value multiply = -1 }
+	}
+	tot_avmj_process_gdp_claims = yes
+	tot_avmj_refresh_control = yes
+	if = {
+		limit = { var:tot_avmj_debt_principal <= 0 }
+		set_variable = { name = tot_avmj_debt_principal value = 0 }
+		if = { limit = { has_journal_entry = je_tot_avmj_debt_crisis } remove_journal_entry = je_tot_avmj_debt_crisis }
+	}
+}

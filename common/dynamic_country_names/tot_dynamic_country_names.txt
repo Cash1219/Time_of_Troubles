@@ -1,0 +1,127 @@
+IDEP = {
+	dynamic_country_name = {
+		name = dyn_c_tot_great_lovelive_empire
+		adjective = dyn_c_tot_great_lovelive_empire_adj
+
+		is_main_tag_only = yes
+		priority = 20
+
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				OR = {
+					was_formed_from = MUS
+					was_formed_from = AQO
+					was_formed_from = NJS
+				}
+				country_has_monarchy_law = yes
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_tot_great_lovelive_republic
+		adjective = dyn_c_tot_great_lovelive_republic_adj
+
+		is_main_tag_only = yes
+		priority = 20
+
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				OR = {
+					was_formed_from = MUS
+					was_formed_from = AQO
+					was_formed_from = NJS
+				}
+				OR = {
+					has_law_or_variant = law_type:law_parliamentary_republic
+					has_law_or_variant = law_type:law_presidential_republic
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_tot_great_lovelive_commune
+		adjective = dyn_c_tot_great_lovelive_commune_adj
+
+		is_main_tag_only = yes
+		priority = 20
+
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				OR = {
+					was_formed_from = MUS
+					was_formed_from = AQO
+					was_formed_from = NJS
+				}
+				has_law_or_variant = law_type:law_council_republic
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_tot_great_lovelive_theocracy
+		adjective = dyn_c_tot_great_lovelive_theocracy_adj
+
+		is_main_tag_only = yes
+		priority = 20
+
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				OR = {
+					was_formed_from = MUS
+					was_formed_from = AQO
+					was_formed_from = NJS
+				}
+				has_law_or_variant = law_type:law_theocracy
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_tot_great_lovelive
+		adjective = dyn_c_tot_great_lovelive_adj
+
+		is_main_tag_only = yes
+		priority = 10
+
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				OR = {
+					was_formed_from = MUS
+					was_formed_from = AQO
+					was_formed_from = NJS
+				}
+			}
+		}
+	}
+
+	# Keep the generic successor name independent of the current government.
+	dynamic_country_name = {
+		name = dyn_c_tot_idol_country
+		adjective = dyn_c_tot_idol_country_adj
+
+		is_main_tag_only = yes
+		priority = 0
+
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+IDEF = {
+	# This route is the broader shining-state formation, so it has its own default name.
+	dynamic_country_name = {
+		name = dyn_c_tot_shining_country
+		adjective = dyn_c_tot_shining_country_adj
+
+		is_main_tag_only = yes
+		priority = 0
+
+		trigger = {
+			always = yes
+		}
+	}
+}

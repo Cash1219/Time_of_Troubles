@@ -11,6 +11,7 @@ tot_music_competition.1 = {
 		remove_variable = tot_music_competition_next_tick
 		if = {
 			limit = {
+				is_player = yes
 				NOT = { has_variable = tot_music_competition_completed }
 				OR = {
 					has_variable = tot_music_competition_stage
@@ -33,9 +34,83 @@ tot_music_competition.2 = {
 	immediate = {
 		remove_variable = tot_music_competition_ai_registration_pending
 		if = {
-			limit = { has_variable = tot_music_competition_registration_open NOT = { has_variable = tot_music_competition_stage } NOT = { has_variable = tot_music_competition_ai_registration_completed } }
-			tot_music_competition_run_ai_registration_effect = yes
-			set_variable = { name = tot_music_competition_ai_registration_completed value = 1 }
+			limit = {
+				has_variable = tot_music_competition_registration_open
+				NOT = { has_variable = tot_music_competition_stage }
+				OR = {
+					NOT = { has_variable = tot_music_competition_participants }
+					AND = {
+						has_variable = tot_music_competition_participants
+						var:tot_music_competition_participants < 8
+					}
+				}
+			}
+				every_country = { tot_music_competition_ai_band_registration = yes }
+			tot_music_competition_build_field_effect = yes
+		}
+	}
+}
+
+tot_music_competition.3 = {
+	type = country_event
+	title = tot_music_competition_award_title
+	desc = tot_music_competition_award_desc
+
+	option = {
+		name = tot_music_competition_award_option
+	}
+}
+
+# The event is queued when a final is completed. Registered, still-valid bands
+# remain enrolled for the next edition; dissolved bands are removed by the
+# regular monthly validation before the new registration period is shown.
+tot_music_competition.4 = {
+	type = country_event
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = { has_variable = tot_music_competition_completed }
+			every_country = {
+				remove_variable = tot_music_competition_band_1_score
+				remove_variable = tot_music_competition_band_2_score
+				remove_variable = tot_music_competition_band_3_score
+				remove_variable = tot_music_competition_band_4_score
+				remove_variable = tot_music_competition_band_5_score
+				remove_variable = tot_music_competition_band_1_top_sixteen_awarded
+				remove_variable = tot_music_competition_band_2_top_sixteen_awarded
+				remove_variable = tot_music_competition_band_3_top_sixteen_awarded
+				remove_variable = tot_music_competition_band_4_top_sixteen_awarded
+				remove_variable = tot_music_competition_band_5_top_sixteen_awarded
+				remove_variable = tot_music_competition_band_1_final_reward_paid
+				remove_variable = tot_music_competition_band_2_final_reward_paid
+				remove_variable = tot_music_competition_band_3_final_reward_paid
+				remove_variable = tot_music_competition_band_4_final_reward_paid
+				remove_variable = tot_music_competition_band_5_final_reward_paid
+				remove_variable = tot_music_competition_band_1_raw_score
+				remove_variable = tot_music_competition_band_2_raw_score
+				remove_variable = tot_music_competition_band_3_raw_score
+				remove_variable = tot_music_competition_band_4_raw_score
+				remove_variable = tot_music_competition_band_5_raw_score
+				tot_music_competition_clear_invalid_band_entries_effect = yes
+			}
+			remove_variable = tot_music_competition_completed
+			remove_variable = tot_music_competition_award_announced
+			remove_variable = tot_music_competition_stage
+			remove_variable = tot_music_competition_round
+			remove_variable = tot_music_competition_final_deadline
+			remove_variable = tot_music_competition_final_days_remaining
+			remove_variable = tot_music_competition_next_registration_days_remaining
+			remove_variable = tot_music_competition_registration_waiting_for_minimum
+			set_variable = { name = tot_music_competition_registration_open value = 1 }
+			set_variable = { name = tot_music_competition_registration_months value = 0 }
+			set_variable = { name = tot_music_competition_registration_deadline months = 12 }
+			set_variable = { name = tot_music_competition_season_start_deadline months = 18 }
+			set_variable = { name = tot_music_competition_registration_days_remaining value = 365 }
+			tot_music_competition_clear_final_bracket_effect = yes
+			tot_music_competition_build_field_effect = yes
+			tot_music_competition_schedule_ai_registration_effect = yes
+			tot_music_competition_schedule_weekly_tick_effect = yes
 		}
 	}
 }

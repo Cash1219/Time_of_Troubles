@@ -20,7 +20,8 @@ types tot_special_units_types
 
 				# Keep both unit choices in one stable list.
 				widget = {
-					size = { 300 598 }
+					size = { 300 224 }
+					layoutpolicy_vertical = preferred
 					background = { using = entry_bg_fancy }
 					vbox = {
 						margin = { 14 14 }
@@ -32,7 +33,7 @@ types tot_special_units_types
 							align = left|nobaseline
 						}
 						widget = {
-							size = { 272 180 }
+							size = { 272 128 }
 							background = { using = entry_bg_simple }
 							vbox = {
 								margin = { 8 8 }
@@ -40,14 +41,14 @@ types tot_special_units_types
 								button = {
 									visible = "[GetScriptedGui('tot_special_units_guard_available').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 									using = default_button_primary
-									size = { 256 52 }
+									size = { 256 48 }
 									text = "TOT_SPECIAL_UNITS_GUARD_TITLE"
 									onclick = "[GetScriptedGui('tot_special_units_select_guard').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 								}
 								button = {
 									visible = "[GetScriptedGui('tot_special_units_knight_available').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 									using = default_button_primary
-									size = { 256 52 }
+									size = { 256 48 }
 									text = "TOT_SPECIAL_UNITS_KNIGHT_TITLE"
 									onclick = "[GetScriptedGui('tot_special_units_select_knight').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 								}
@@ -75,7 +76,12 @@ types tot_special_units_types
 							margin = { 22 18 }
 							spacing = 12
 							textbox = { size = { 1042 34 } text = "TOT_SPECIAL_UNITS_GUARD_TITLE" using = fontsize_large align = left|nobaseline }
-							textbox = { size = { 1042 34 } text = "TOT_SPECIAL_UNITS_GUARD_DESC" using = fontsize_small align = left|nobaseline multiline = yes }
+							hbox = {
+								size = { 1042 100 }
+								spacing = 14
+								icon = { size = { 100 100 } texture = "gfx/unit_illustrations/combat_unit_type_tot_idol_guard.dds" }
+								textbox = { size = { 928 100 } text = "TOT_SPECIAL_UNITS_GUARD_DESC" using = fontsize_small align = left|vcenter multiline = yes }
+							}
 
 							hbox = {
 								size = { 1042 112 }
@@ -131,8 +137,7 @@ types tot_special_units_types
 								button_standard = { size = { 190 48 } text = "TOT_SPECIAL_UNITS_RECRUIT_GUARD_10" enabled = "[GetScriptedGui('tot_special_units_recruit_guard_10').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_special_units_recruit_guard_10').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "[GetScriptedGui('tot_special_units_recruit_guard_10').IsValidTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 								button_standard = { size = { 220 48 } text = "TOT_SPECIAL_UNITS_RECRUIT_GUARD_MAX" enabled = "[GetScriptedGui('tot_special_units_recruit_guard_max').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_special_units_recruit_guard_max').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "[GetScriptedGui('tot_special_units_recruit_guard_max').IsValidTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 			}
-			textbox = { size = { 1042 88 } text = "TOT_SPECIAL_UNITS_RULES" using = fontsize_small align = left|nobaseline multiline = yes }
-		}
+						}
 		}
 
 					widget = {
@@ -142,7 +147,12 @@ types tot_special_units_types
 							margin = { 22 18 }
 							spacing = 12
 							textbox = { size = { 1042 34 } text = "TOT_SPECIAL_UNITS_KNIGHT_TITLE" using = fontsize_large align = left|nobaseline }
-							textbox = { size = { 1042 34 } text = "TOT_SPECIAL_UNITS_KNIGHT_DESC" using = fontsize_small align = left|nobaseline multiline = yes }
+							hbox = {
+								size = { 1042 100 }
+								spacing = 14
+								icon = { size = { 100 100 } texture = "gfx/unit_illustrations/combat_unit_type_tot_idol_knight.dds" }
+								textbox = { size = { 928 100 } text = "TOT_SPECIAL_UNITS_KNIGHT_DESC" using = fontsize_small align = left|vcenter multiline = yes }
+							}
 
 							hbox = {
 								size = { 1042 112 }
@@ -198,8 +208,7 @@ types tot_special_units_types
 								button_standard = { size = { 190 48 } text = "TOT_SPECIAL_UNITS_RECRUIT_KNIGHT_10" enabled = "[GetScriptedGui('tot_special_units_recruit_knight_10').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_special_units_recruit_knight_10').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "[GetScriptedGui('tot_special_units_recruit_knight_10').IsValidTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 								button_standard = { size = { 220 48 } text = "TOT_SPECIAL_UNITS_RECRUIT_KNIGHT_MAX" enabled = "[GetScriptedGui('tot_special_units_recruit_knight_max').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_special_units_recruit_knight_max').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" tooltip = "[GetScriptedGui('tot_special_units_recruit_knight_max').IsValidTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" }
 			}
-			textbox = { size = { 1042 88 } text = "TOT_SPECIAL_UNITS_RULES" using = fontsize_small align = left|nobaseline multiline = yes }
-		}
+						}
 		}
 				}
 			}

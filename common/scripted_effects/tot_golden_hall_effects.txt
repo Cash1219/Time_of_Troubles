@@ -40,19 +40,41 @@ tot_golden_hall_add_progress = {
 	s:STATE_AUSTRIA = {
 		add_building_level = {
 			building = building_tot_golden_hall_construction_site
-			level = $VALUE$
+			level = $PROGRESS$
 		}
-		owner = { change_variable = { name = tot_golden_hall_progress add = $VALUE$ } }
+		owner = { change_variable = { name = tot_golden_hall_progress add = $PROGRESS$ } }
 	}
 	if = {
 		limit = { has_variable = tot_golden_hall_crisis_participant }
-		tot_golden_hall_add_crisis_score = { VALUE = $VALUE$ }
+		tot_golden_hall_add_crisis_score = { VALUE = $SCORE$ }
 		every_country = {
 			limit = { tot_golden_hall_crisis_participant_trigger = yes }
-			change_variable = { name = tot_golden_hall_progress add = $VALUE$ }
+			change_variable = { name = tot_golden_hall_progress add = $PROGRESS$ }
 		}
 	}
 	tot_golden_hall_check_completion = yes
+}
+
+tot_golden_hall_set_contractor_faction = {
+	if = { limit = { OR = { c:MUS ?= this c:AQO ?= this c:NJS ?= this } } set_variable = { name = tot_golden_hall_contract_faction value = 1 } }
+	if = { limit = { OR = { c:IDMS ?= this c:GKMS ?= this } } set_variable = { name = tot_golden_hall_contract_faction value = 2 } }
+	if = { limit = { c:GBDP ?= this } set_variable = { name = tot_golden_hall_contract_faction value = 3 } }
+	if = { limit = { c:HTT ?= this } set_variable = { name = tot_golden_hall_contract_faction value = 4 } }
+	if = { limit = { c:PRU ?= this } set_variable = { name = tot_golden_hall_contract_faction value = 5 } }
+}
+
+tot_golden_hall_mark_naming_complete = {
+	if = {
+		limit = { var:tot_golden_hall_contract_faction = 1 }
+		every_country = { limit = { OR = { c:MUS ?= this c:AQO ?= this c:NJS ?= this } } set_variable = { name = tot_golden_hall_naming_done value = 1 } }
+	}
+	if = {
+		limit = { var:tot_golden_hall_contract_faction = 2 }
+		every_country = { limit = { OR = { c:IDMS ?= this c:GKMS ?= this } } set_variable = { name = tot_golden_hall_naming_done value = 1 } }
+	}
+	if = { limit = { var:tot_golden_hall_contract_faction = 3 } set_variable = { name = tot_golden_hall_naming_done value = 1 } }
+	if = { limit = { var:tot_golden_hall_contract_faction = 4 } set_variable = { name = tot_golden_hall_naming_done value = 1 } }
+	if = { limit = { var:tot_golden_hall_contract_faction = 5 } set_variable = { name = tot_golden_hall_naming_done value = 1 } }
 }
 
 tot_golden_hall_process_contracts = {
@@ -66,12 +88,8 @@ tot_golden_hall_process_contracts = {
 			limit = { has_building = building_tot_golden_hall_small_contract }
 			remove_building = building_tot_golden_hall_small_contract
 			scope:tot_golden_hall_contractor = {
-				if = { limit = { OR = { c:MUS ?= this c:AQO ?= this c:NJS ?= this } } set_variable = { name = tot_golden_hall_contract_faction value = 1 } }
-				if = { limit = { OR = { c:IDMS ?= this c:GKMS ?= this } } set_variable = { name = tot_golden_hall_contract_faction value = 2 } }
-				if = { limit = { c:GBDP ?= this } set_variable = { name = tot_golden_hall_contract_faction value = 3 } }
-				if = { limit = { c:HTT ?= this } set_variable = { name = tot_golden_hall_contract_faction value = 4 } }
-				if = { limit = { c:PRU ?= this } set_variable = { name = tot_golden_hall_contract_faction value = 5 } }
-				tot_golden_hall_add_progress = { VALUE = 1 }
+				tot_golden_hall_set_contractor_faction = yes
+				tot_golden_hall_add_progress = { PROGRESS = 1 SCORE = 1 }
 				remove_variable = tot_golden_hall_contract_faction
 			}
 		}
@@ -79,13 +97,24 @@ tot_golden_hall_process_contracts = {
 			limit = { has_building = building_tot_golden_hall_large_contract }
 			remove_building = building_tot_golden_hall_large_contract
 			scope:tot_golden_hall_contractor = {
-				if = { limit = { OR = { c:MUS ?= this c:AQO ?= this c:NJS ?= this } } set_variable = { name = tot_golden_hall_contract_faction value = 1 } }
-				if = { limit = { OR = { c:IDMS ?= this c:GKMS ?= this } } set_variable = { name = tot_golden_hall_contract_faction value = 2 } }
-				if = { limit = { c:GBDP ?= this } set_variable = { name = tot_golden_hall_contract_faction value = 3 } }
-				if = { limit = { c:HTT ?= this } set_variable = { name = tot_golden_hall_contract_faction value = 4 } }
-				if = { limit = { c:PRU ?= this } set_variable = { name = tot_golden_hall_contract_faction value = 5 } }
-				tot_golden_hall_add_progress = { VALUE = 3 }
+				tot_golden_hall_set_contractor_faction = yes
+				tot_golden_hall_add_progress = { PROGRESS = 2 SCORE = 3 }
+				add_modifier = { name = modifier_tot_golden_hall_stage_expansion years = 5 }
 				remove_variable = tot_golden_hall_contract_faction
+			}
+		}
+		if = {
+			limit = { has_building = building_tot_golden_hall_naming_contract }
+			remove_building = building_tot_golden_hall_naming_contract
+			scope:tot_golden_hall_contractor = {
+				if = {
+					limit = { NOT = { has_variable = tot_golden_hall_naming_done } }
+					tot_golden_hall_set_contractor_faction = yes
+					tot_golden_hall_add_progress = { PROGRESS = 4 SCORE = 7 }
+					tot_golden_hall_mark_naming_complete = yes
+					add_modifier = { name = modifier_tot_golden_hall_naming_prestige years = 10 }
+					remove_variable = tot_golden_hall_contract_faction
+				}
 			}
 		}
 	}

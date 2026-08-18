@@ -1,0 +1,248 @@
+je_tot_avmj_repay_50000 = {
+	name = je_tot_avmj_repay_50000
+	desc = je_tot_avmj_repay_50000_desc
+	visible = { has_journal_entry = je_tot_avmj_debt_crisis }
+	possible = {
+		var:tot_avmj_debt_principal >= 50000
+		gold_reserves >= 50000
+	}
+	effect = {
+		add_treasury = -50000
+		change_variable = { name = tot_avmj_debt_principal add = -50000 }
+		change_variable = { name = tot_avmj_debt_repaid add = 50000 }
+	}
+	ai_chance = { base = 0 }
+}
+
+je_tot_avmj_repay_250000 = {
+	name = je_tot_avmj_repay_250000
+	desc = je_tot_avmj_repay_250000_desc
+	visible = { has_journal_entry = je_tot_avmj_debt_crisis }
+	possible = {
+		var:tot_avmj_debt_principal >= 250000
+		gold_reserves >= 250000
+	}
+	effect = {
+		add_treasury = -250000
+		change_variable = { name = tot_avmj_debt_principal add = -250000 }
+		change_variable = { name = tot_avmj_debt_repaid add = 250000 }
+	}
+	ai_chance = { base = 0 }
+}
+
+je_tot_avmj_sell_5_htt = {
+	name = je_tot_avmj_sell_5_htt
+	desc = je_tot_avmj_sell_5_htt_desc
+	visible = { has_journal_entry = je_tot_avmj_debt_crisis }
+	possible = {
+		var:tot_avmj_state_share >= 5
+		var:tot_avmj_debt_principal >= 84000
+		c:HTT ?= { is_country_alive = yes gold_reserves >= 84000 }
+	}
+	effect = {
+		c:HTT = {
+			add_treasury = -84000
+			change_variable = { name = tot_avmj_htt_share add = 5 }
+		}
+		add_treasury = 84000
+		change_variable = { name = tot_avmj_state_share add = -5 }
+		change_variable = { name = tot_avmj_debt_principal add = -84000 }
+		change_variable = { name = tot_avmj_debt_repaid add = 84000 }
+		tot_avmj_refresh_control = yes
+	}
+	ai_chance = { base = 0 }
+}
+
+je_tot_avmj_sell_5_gbdp = {
+	name = je_tot_avmj_sell_5_gbdp
+	desc = je_tot_avmj_sell_5_gbdp_desc
+	visible = { has_journal_entry = je_tot_avmj_debt_crisis }
+	possible = {
+		var:tot_avmj_state_share >= 5
+		var:tot_avmj_debt_principal >= 84000
+		c:GBDP ?= { is_country_alive = yes gold_reserves >= 84000 }
+	}
+	effect = {
+		c:GBDP = {
+			add_treasury = -84000
+			change_variable = { name = tot_avmj_gbdp_share add = 5 }
+		}
+		add_treasury = 84000
+		change_variable = { name = tot_avmj_state_share add = -5 }
+		change_variable = { name = tot_avmj_debt_principal add = -84000 }
+		change_variable = { name = tot_avmj_debt_repaid add = 84000 }
+		tot_avmj_refresh_control = yes
+	}
+	ai_chance = { base = 0 }
+}
+
+je_tot_avmj_sell_5_mygo = {
+	name = je_tot_avmj_sell_5_mygo
+	desc = je_tot_avmj_sell_5_mygo_desc
+	visible = { has_journal_entry = je_tot_avmj_debt_crisis }
+	possible = {
+		var:tot_avmj_state_share >= 5
+		var:tot_avmj_debt_principal >= 84000
+		c:MYG ?= { is_country_alive = yes gold_reserves >= 84000 }
+	}
+	effect = {
+		c:MYG = {
+			add_treasury = -84000
+			change_variable = { name = tot_avmj_mygo_share add = 5 }
+		}
+		add_treasury = 84000
+		change_variable = { name = tot_avmj_state_share add = -5 }
+		change_variable = { name = tot_avmj_debt_principal add = -84000 }
+		change_variable = { name = tot_avmj_debt_repaid add = 84000 }
+		tot_avmj_refresh_control = yes
+	}
+	ai_chance = { base = 0 }
+}
+
+je_tot_avmj_sell_5_nrhd = {
+	name = je_tot_avmj_sell_5_nrhd
+	desc = je_tot_avmj_sell_5_nrhd_desc
+	visible = { has_journal_entry = je_tot_avmj_debt_crisis }
+	possible = {
+		var:tot_avmj_state_share >= 5
+		var:tot_avmj_debt_principal >= 84000
+		c:NRHD ?= { is_country_alive = yes gold_reserves >= 84000 }
+	}
+	effect = {
+		c:NRHD = {
+			add_treasury = -84000
+			change_variable = { name = tot_avmj_nrhd_share add = 5 }
+		}
+		add_treasury = 84000
+		change_variable = { name = tot_avmj_state_share add = -5 }
+		change_variable = { name = tot_avmj_debt_principal add = -84000 }
+		change_variable = { name = tot_avmj_debt_repaid add = 84000 }
+		tot_avmj_refresh_control = yes
+	}
+	ai_chance = { base = 0 }
+}
+
+je_tot_avmj_sell_investment_rights = {
+	name = je_tot_avmj_sell_investment_rights
+	desc = je_tot_avmj_sell_investment_rights_desc
+	visible = { has_journal_entry = je_tot_avmj_debt_crisis }
+	possible = {
+		var:tot_avmj_investment_rights_sold = 0
+		var:tot_avmj_state_share >= 10
+		var:tot_avmj_debt_principal >= 250000
+	}
+	effect = {
+		set_variable = { name = tot_avmj_investment_rights_sold value = 1 }
+		change_variable = { name = tot_avmj_state_share add = -10 }
+		change_variable = { name = tot_avmj_debt_principal add = -250000 }
+		change_variable = { name = tot_avmj_debt_repaid add = 250000 }
+
+		# Open the native investment system instead of simulating investment with a button.
+		# Each treaty is directed from AVMJ (the host) to the investor.
+		if = {
+			limit = {
+				c:HTT ?= {
+					is_country_alive = yes
+					NOT = { has_treaty_foreign_investment_rights_with = { TARGET = c:AVMJ } }
+				}
+			}
+			create_treaty = {
+				first_country = c:AVMJ
+				second_country = c:HTT
+				is_draft = no
+				binding_period = { years = 25 }
+				articles_to_create = {
+					{
+						article = foreign_investment_rights
+						source_country = c:AVMJ
+						target_country = c:HTT
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				c:GBDP ?= {
+					is_country_alive = yes
+					NOT = { has_treaty_foreign_investment_rights_with = { TARGET = c:AVMJ } }
+				}
+			}
+			create_treaty = {
+				first_country = c:AVMJ
+				second_country = c:GBDP
+				is_draft = no
+				binding_period = { years = 25 }
+				articles_to_create = {
+					{
+						article = foreign_investment_rights
+						source_country = c:AVMJ
+						target_country = c:GBDP
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				c:MYG ?= {
+					is_country_alive = yes
+					NOT = { has_treaty_foreign_investment_rights_with = { TARGET = c:AVMJ } }
+				}
+			}
+			create_treaty = {
+				first_country = c:AVMJ
+				second_country = c:MYG
+				is_draft = no
+				binding_period = { years = 25 }
+				articles_to_create = {
+					{
+						article = foreign_investment_rights
+						source_country = c:AVMJ
+						target_country = c:MYG
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				c:NRHD ?= {
+					is_country_alive = yes
+					NOT = { has_treaty_foreign_investment_rights_with = { TARGET = c:AVMJ } }
+				}
+			}
+			create_treaty = {
+				first_country = c:AVMJ
+				second_country = c:NRHD
+				is_draft = no
+				binding_period = { years = 25 }
+				articles_to_create = {
+					{
+						article = foreign_investment_rights
+						source_country = c:AVMJ
+						target_country = c:NRHD
+					}
+				}
+			}
+		}
+		tot_avmj_refresh_control = yes
+	}
+	ai_chance = { base = 0 }
+}
+
+je_tot_avmj_sell_autonomy_rights = {
+	name = je_tot_avmj_sell_autonomy_rights
+	desc = je_tot_avmj_sell_autonomy_rights_desc
+	visible = { has_journal_entry = je_tot_avmj_debt_crisis }
+	possible = {
+		var:tot_avmj_autonomy_rights_sold = 0
+		var:tot_avmj_debt_principal >= 400000
+		is_subject_of = c:HTT
+	}
+	effect = {
+		set_variable = { name = tot_avmj_autonomy_rights_sold value = 1 }
+		change_variable = { name = tot_avmj_debt_principal add = -400000 }
+		change_variable = { name = tot_avmj_debt_repaid add = 400000 }
+		change_variable = { name = tot_avmj_htt_share add = 10 }
+		tot_avmj_refresh_control = yes
+	}
+	ai_chance = { base = 0 }
+}
