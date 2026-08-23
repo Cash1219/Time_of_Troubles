@@ -50,12 +50,12 @@ tot_company_aftg_mitake_gardening = {
 
 	building_types = {
 		building_wheat_farm
-		building_vineyard
-		building_food_industry
+		building_paper_mill
+		building_glassworks
 	}
 	extension_building_types = {
-		building_livestock_ranch
 		building_chemical_plant
+		building_furniture_manufactory
 	}
 
 	possible = {
@@ -64,27 +64,27 @@ tot_company_aftg_mitake_gardening = {
 			any_scope_building = {
 				OR = {
 					is_building_type = building_wheat_farm
-					is_building_type = building_vineyard
-					is_building_type = building_food_industry
+					is_building_type = building_paper_mill
+					is_building_type = building_glassworks
 				}
 				level >= 5
 			}
 		}
 	}
-	prosperity_modifier = { interest_group_ig_rural_folk_approval_add = 2 }
+	prosperity_modifier = { state_education_access_add = 0.1 }
 	possible_prestige_goods = { tot_company_aftg_mitake_gardening_prestige_good }
 	ai_will_do = { }
 	ai_construction_targets = {
 		building_wheat_farm = { level = 5 state_trigger = { state_region = s:STATE_OROMIA } }
-		building_vineyard = { level = 5 state_trigger = { state_region = s:STATE_OROMIA } }
-		building_food_industry = { level = 5 state_trigger = { state_region = s:STATE_OROMIA } }
-		building_livestock_ranch = { level = 3 state_trigger = { state_region = s:STATE_OROMIA } }
+		building_paper_mill = { level = 5 state_trigger = { state_region = s:STATE_OROMIA } }
+		building_glassworks = { level = 5 state_trigger = { state_region = s:STATE_OROMIA } }
 		building_chemical_plant = { level = 3 state_trigger = { state_region = s:STATE_OROMIA } }
+		building_furniture_manufactory = { level = 3 state_trigger = { state_region = s:STATE_OROMIA } }
 	}
 	ai_weight = { value = 8 }
 }
 
-tot_company_aftg_udagawa_taiko = {
+tot_company_aftg_shotengai_taiko = {
 	icon = "gfx/interface/icons/company_icons/fra_company_lycoreco_cafe.dds"
 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
 	flavored_company = yes
@@ -93,7 +93,7 @@ tot_company_aftg_udagawa_taiko = {
 	building_types = {
 		building_stage
 		building_musical_instrument
-		building_band_headquarter
+		building_club
 	}
 	extension_building_types = {
 		building_entertainment_press
@@ -107,19 +107,19 @@ tot_company_aftg_udagawa_taiko = {
 				OR = {
 					is_building_type = building_stage
 					is_building_type = building_musical_instrument
-					is_building_type = building_band_headquarter
+					is_building_type = building_club
 				}
 				level >= 5
 			}
 		}
 	}
 	prosperity_modifier = { country_prestige_add = 2 }
-	possible_prestige_goods = { tot_company_aftg_udagawa_taiko_prestige_good }
+	possible_prestige_goods = { tot_company_aftg_shotengai_taiko_prestige_good }
 	ai_will_do = { }
 	ai_construction_targets = {
 		building_stage = { level = 5 state_trigger = { state_region = s:STATE_OROMIA } }
 		building_musical_instrument = { level = 5 state_trigger = { state_region = s:STATE_OROMIA } }
-		building_band_headquarter = { level = 5 state_trigger = { state_region = s:STATE_OROMIA } }
+		building_club = { level = 5 state_trigger = { state_region = s:STATE_OROMIA } }
 		building_entertainment_press = { level = 3 state_trigger = { state_region = s:STATE_OROMIA } }
 		building_goods = { level = 3 state_trigger = { state_region = s:STATE_OROMIA } }
 	}
