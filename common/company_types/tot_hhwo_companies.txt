@@ -1,0 +1,127 @@
+# HHWO (Hello, Happy World!) companies
+
+tot_company_hhwo_tsurumaki_group = {
+	icon = "gfx/interface/icons/company_icons/fra_company_stella_cafe.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_NEW_YORK }
+
+	building_types = {
+		building_financial_district
+		building_amusement_park
+		building_stage
+	}
+	extension_building_types = {
+		building_trade_center
+		building_entertainment_press
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NEW_YORK
+			any_scope_building = {
+				OR = {
+					is_building_type = building_financial_district
+					is_building_type = building_amusement_park
+					is_building_type = building_stage
+				}
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = { country_influence_add = 25 }
+	possible_prestige_goods = { tot_company_hhwo_tsurumaki_group_prestige_good }
+	ai_will_do = { }
+	ai_construction_targets = {
+		building_financial_district = { level = 5 state_trigger = { state_region = s:STATE_NEW_YORK } }
+		building_amusement_park = { level = 5 state_trigger = { state_region = s:STATE_NEW_YORK } }
+		building_stage = { level = 5 state_trigger = { state_region = s:STATE_NEW_YORK } }
+		building_trade_center = { level = 3 state_trigger = { state_region = s:STATE_NEW_YORK } }
+		building_entertainment_press = { level = 3 state_trigger = { state_region = s:STATE_NEW_YORK } }
+	}
+	ai_weight = { value = 8 }
+}
+
+tot_company_hhwo_kitazawa_butcher = {
+	icon = "gfx/interface/icons/company_icons/fra_company_rabbit_house.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_NEW_YORK }
+
+	building_types = {
+		building_livestock_ranch
+		building_food_industry
+		building_wheat_farm
+	}
+	extension_building_types = {
+		building_chemical_plant
+		building_kissaten
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NEW_YORK
+			any_scope_building = {
+				OR = {
+					is_building_type = building_livestock_ranch
+					is_building_type = building_food_industry
+					is_building_type = building_wheat_farm
+				}
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = { interest_group_ig_rural_folk_approval_add = 2 }
+	possible_prestige_goods = { tot_company_hhwo_kitazawa_butcher_prestige_good }
+	ai_will_do = { }
+	ai_construction_targets = {
+		building_livestock_ranch = { level = 5 state_trigger = { state_region = s:STATE_NEW_YORK } }
+		building_food_industry = { level = 5 state_trigger = { state_region = s:STATE_NEW_YORK } }
+		building_wheat_farm = { level = 5 state_trigger = { state_region = s:STATE_NEW_YORK } }
+		building_chemical_plant = { level = 3 state_trigger = { state_region = s:STATE_NEW_YORK } }
+		building_kissaten = { level = 3 state_trigger = { state_region = s:STATE_NEW_YORK } }
+	}
+	ai_weight = { value = 8 }
+}
+
+tot_company_hhwo_smile_ship = {
+	icon = "gfx/interface/icons/company_icons/fra_company_lycoreco_cafe.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_NEW_YORK }
+
+	building_types = {
+		building_port
+		building_shipyard
+		building_railway
+	}
+	extension_building_types = {
+		building_stage
+		building_entertainment_press
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NEW_YORK
+			any_scope_building = {
+				OR = {
+					is_building_type = building_port
+					is_building_type = building_shipyard
+					is_building_type = building_railway
+				}
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = { country_navy_goods_cost_mult = -0.15 }
+	possible_prestige_goods = { tot_company_hhwo_smile_ship_prestige_good }
+	ai_will_do = { }
+	ai_construction_targets = {
+		building_port = { level = 5 state_trigger = { state_region = s:STATE_NEW_YORK } }
+		building_shipyard = { level = 5 state_trigger = { state_region = s:STATE_NEW_YORK } }
+		building_railway = { level = 5 state_trigger = { state_region = s:STATE_NEW_YORK } }
+		building_stage = { level = 3 state_trigger = { state_region = s:STATE_NEW_YORK } }
+		building_entertainment_press = { level = 3 state_trigger = { state_region = s:STATE_NEW_YORK } }
+	}
+	ai_weight = { value = 8 }
+}

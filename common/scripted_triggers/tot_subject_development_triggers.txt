@@ -302,7 +302,7 @@ tot_subject_development_overlord_3_ROM_trigger = {
 
 # 属国特色目标：已配置公司的每家公司各有一个主建筑。只检查该国拥有的建筑总等级，
 # 不检查建筑是否由对应公司持有；这是为了兼容科技尚未解锁公司槽位的开局阶段。
-# GKMS、AFTG、HHWO、UKR、ROM 的三家公司待按原作风味确定后再替换占位目标。
+# 各属国的三项特色目标均对应其三家公司的主要建筑；只检查国家建筑总等级。
 
 tot_subject_development_national_1_AQO_trigger = {
 	OR = {
@@ -413,27 +413,51 @@ tot_subject_development_national_3_MYG_trigger = {
 }
 
 tot_subject_development_national_1_AFTG_trigger = {
-	country_has_building_type_levels = { target = bt:building_coffee_plantation value >= 10 }
+	OR = {
+		country_has_building_type_levels = { target = bt:building_coffee_plantation value >= 10 }
+		country_has_building_type_levels = { target = bt:building_kissaten value >= 10 }
+		country_has_building_type_levels = { target = bt:building_food_industry value >= 10 }
+	}
 }
 
 tot_subject_development_national_2_AFTG_trigger = {
-	country_has_building_type_levels = { target = bt:building_food_industry value >= 3 } country_has_building_type_levels = { target = bt:building_coffee_plantation value >= 10 }
+	OR = {
+		country_has_building_type_levels = { target = bt:building_wheat_farm value >= 10 }
+		country_has_building_type_levels = { target = bt:building_vineyard value >= 10 }
+		country_has_building_type_levels = { target = bt:building_food_industry value >= 10 }
+	}
 }
 
 tot_subject_development_national_3_AFTG_trigger = {
-	gdp >= 3000000 average_sol >= 12
+	OR = {
+		country_has_building_type_levels = { target = bt:building_stage value >= 10 }
+		country_has_building_type_levels = { target = bt:building_musical_instrument value >= 10 }
+		country_has_building_type_levels = { target = bt:building_band_headquarter value >= 10 }
+	}
 }
 
 tot_subject_development_national_1_HHWO_trigger = {
-	country_has_building_type_levels = { target = bt:building_port value >= 8 }
+	OR = {
+		country_has_building_type_levels = { target = bt:building_financial_district value >= 10 }
+		country_has_building_type_levels = { target = bt:building_amusement_park value >= 10 }
+		country_has_building_type_levels = { target = bt:building_stage value >= 10 }
+	}
 }
 
 tot_subject_development_national_2_HHWO_trigger = {
-	country_has_building_type_levels = { target = bt:building_logging_camp value >= 10 } country_has_building_type_levels = { target = bt:building_port value >= 8 }
+	OR = {
+		country_has_building_type_levels = { target = bt:building_livestock_ranch value >= 10 }
+		country_has_building_type_levels = { target = bt:building_food_industry value >= 10 }
+		country_has_building_type_levels = { target = bt:building_wheat_farm value >= 10 }
+	}
 }
 
 tot_subject_development_national_3_HHWO_trigger = {
-	literacy_rate >= 0.50 gdp >= 5000000
+	OR = {
+		country_has_building_type_levels = { target = bt:building_port value >= 10 }
+		country_has_building_type_levels = { target = bt:building_shipyard value >= 10 }
+		country_has_building_type_levels = { target = bt:building_railway value >= 10 }
+	}
 }
 
 tot_subject_development_national_1_UKR_trigger = {
