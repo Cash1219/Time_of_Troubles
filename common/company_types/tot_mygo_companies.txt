@@ -1,0 +1,88 @@
+# MYGO（迷子公司）独特公司
+
+tot_company_myg_anno_tokyo = {
+	icon = "gfx/interface/icons/company_icons/fra_company_lycoreco_cafe.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_ALEPPO }
+	building_types = { building_stage building_entertainment_press building_musical_instrument }
+	extension_building_types = { building_goods building_paper_mill }
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_ALEPPO
+			any_scope_building = {
+				OR = { is_building_type = building_stage is_building_type = building_entertainment_press is_building_type = building_musical_instrument }
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = { country_prestige_add = 2 }
+	possible_prestige_goods = { tot_company_myg_anno_prestige_good }
+	ai_will_do = { }
+	ai_construction_targets = {
+		building_stage = { level = 5 state_trigger = { state_region = s:STATE_ALEPPO } }
+		building_entertainment_press = { level = 5 state_trigger = { state_region = s:STATE_ALEPPO } }
+		building_musical_instrument = { level = 5 state_trigger = { state_region = s:STATE_ALEPPO } }
+		building_goods = { level = 3 state_trigger = { state_region = s:STATE_ALEPPO } }
+		building_paper_mill = { level = 3 state_trigger = { state_region = s:STATE_ALEPPO } }
+	}
+	ai_weight = { value = 8 }
+}
+
+tot_company_myg_nagasaki_group = {
+	icon = "gfx/interface/icons/company_icons/fra_company_stella_cafe.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_ALEPPO }
+	building_types = { building_tea_plantation building_textile_mill building_food_industry }
+	extension_building_types = { building_goods building_kissaten }
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_ALEPPO
+			any_scope_building = {
+				OR = { is_building_type = building_tea_plantation is_building_type = building_textile_mill is_building_type = building_food_industry }
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = { state_migration_pull_mult = 0.1 }
+	possible_prestige_goods = { tot_company_myg_nagasaki_prestige_good }
+	ai_will_do = { }
+	ai_construction_targets = {
+		building_tea_plantation = { level = 5 state_trigger = { state_region = s:STATE_ALEPPO } }
+		building_textile_mill = { level = 5 state_trigger = { state_region = s:STATE_ALEPPO } }
+		building_food_industry = { level = 5 state_trigger = { state_region = s:STATE_ALEPPO } }
+		building_goods = { level = 3 state_trigger = { state_region = s:STATE_ALEPPO } }
+		building_kissaten = { level = 3 state_trigger = { state_region = s:STATE_ALEPPO } }
+	}
+	ai_weight = { value = 8 }
+}
+
+tot_company_myg_aleppo_astronomical = {
+	icon = "gfx/interface/icons/company_icons/fra_company_stella_cafe.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_ALEPPO }
+	building_types = { building_club building_glassworks building_paper_mill }
+	extension_building_types = { building_tooling_workshop building_publisher }
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_ALEPPO
+			any_scope_building = {
+				OR = { is_building_type = building_club is_building_type = building_glassworks is_building_type = building_paper_mill }
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = { country_weekly_innovation_max_add = 5 }
+	possible_prestige_goods = { tot_company_myg_aleppo_prestige_good }
+	ai_will_do = { }
+	ai_construction_targets = {
+		building_club = { level = 5 state_trigger = { state_region = s:STATE_ALEPPO } }
+		building_glassworks = { level = 5 state_trigger = { state_region = s:STATE_ALEPPO } }
+		building_paper_mill = { level = 5 state_trigger = { state_region = s:STATE_ALEPPO } }
+		building_tooling_workshop = { level = 3 state_trigger = { state_region = s:STATE_ALEPPO } }
+		building_publisher = { level = 3 state_trigger = { state_region = s:STATE_ALEPPO } }
+	}
+	ai_weight = { value = 8 }
+}

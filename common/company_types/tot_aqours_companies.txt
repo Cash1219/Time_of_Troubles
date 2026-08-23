@@ -1,0 +1,208 @@
+﻿# AQO（Aqours）独特公司
+
+tot_company_aqours_mikan = {
+	icon = "gfx/interface/icons/company_icons/fra_company_lycoreco_cafe.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+
+	flavored_company = yes
+	preferred_headquarters = { STATE_DALMATIA }
+
+	building_types = {
+		building_wheat_farm
+		building_food_industry
+		building_chemical_plant
+	}
+	extension_building_types = {
+		building_livestock_ranch
+		building_vineyard
+	}
+
+	possible = {
+		any_scope_state = {
+			is_in_geographic_region = geographic_region_balkans_old
+			any_scope_building = {
+				OR = {
+					is_building_type = building_wheat_farm
+					is_building_type = building_food_industry
+					is_building_type = building_chemical_plant
+				}
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		state_migration_pull_mult = 0.2
+		interest_group_ig_rural_folk_approval_add = 2
+	}
+
+	possible_prestige_goods = {
+		company_aqours_mikan_prestige_good
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			is_in_geographic_region = geographic_region_balkans_old
+		}
+	}
+	ai_construction_targets = {
+		building_wheat_farm = {
+			level = 5
+			state_trigger = { is_in_geographic_region = geographic_region_balkans_old }
+		}
+		building_food_industry = {
+			level = 3
+			state_trigger = { is_in_geographic_region = geographic_region_balkans_old }
+		}
+		building_chemical_plant = {
+			level = 3
+			state_trigger = { is_in_geographic_region = geographic_region_balkans_old }
+		}
+		building_livestock_ranch = {
+			level = 3
+			state_trigger = { is_in_geographic_region = geographic_region_balkans_old }
+		}
+		building_vineyard = {
+			level = 3
+			state_trigger = { is_in_geographic_region = geographic_region_balkans_old }
+		}
+	}
+	ai_weight = { value = 8 }
+}
+
+tot_company_aqours_diving = {
+	icon = "gfx/interface/icons/company_icons/fra_company_stella_cafe.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+
+	flavored_company = yes
+	preferred_headquarters = { STATE_DALMATIA }
+
+	building_types = {
+		building_textile_mill
+		building_fishing_wharf
+		building_shipyard
+	}
+	extension_building_types = {
+		building_tooling_workshop
+		building_motor_industry
+	}
+
+	possible = {
+		any_scope_state = {
+			is_in_geographic_region = geographic_region_balkans_old
+			any_scope_building = {
+				OR = {
+					is_building_type = building_textile_mill
+					is_building_type = building_fishing_wharf
+					is_building_type = building_shipyard
+				}
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		country_navy_goods_cost_mult = -0.15
+	}
+
+	possible_prestige_goods = {
+		company_aqours_diving_prestige_good
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			is_in_geographic_region = geographic_region_balkans_old
+		}
+	}
+	ai_construction_targets = {
+		building_textile_mill = {
+			level = 5
+			state_trigger = { is_in_geographic_region = geographic_region_balkans_old }
+		}
+		building_fishing_wharf = {
+			level = 5
+			state_trigger = { is_in_geographic_region = geographic_region_balkans_old }
+		}
+		building_shipyard = {
+			level = 3
+			state_trigger = { is_in_geographic_region = geographic_region_balkans_old }
+		}
+		building_tooling_workshop = {
+			level = 3
+			state_trigger = { is_in_geographic_region = geographic_region_balkans_old }
+		}
+		building_motor_industry = {
+			level = 3
+			state_trigger = { is_in_geographic_region = geographic_region_balkans_old }
+		}
+	}
+	ai_weight = { value = 8 }
+}
+
+tot_company_aqours_uranohoshi = {
+	icon = "gfx/interface/icons/company_icons/fra_company_stella_cafe.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+
+	flavored_company = yes
+	preferred_headquarters = { STATE_DALMATIA }
+
+	building_types = {
+		building_entertainment_press
+		building_stage
+		building_aquarium
+	}
+	possible_prestige_goods = {
+		company_aqours_uranohoshi_prestige_good
+	}
+	extension_building_types = {
+		building_musical_instrument
+		building_paper_mill
+	}
+
+	possible = {
+		any_scope_state = {
+			is_in_geographic_region = geographic_region_balkans_old
+			any_scope_building = {
+				OR = {
+					is_building_type = building_entertainment_press
+					is_building_type = building_stage
+					is_building_type = building_aquarium
+				}
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		state_education_access_add = 0.2
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			is_in_geographic_region = geographic_region_balkans_old
+		}
+	}
+	ai_construction_targets = {
+		building_entertainment_press = {
+			level = 5
+			state_trigger = { is_in_geographic_region = geographic_region_balkans_old }
+		}
+		building_stage = {
+			level = 5
+			state_trigger = { is_in_geographic_region = geographic_region_balkans_old }
+		}
+		building_aquarium = {
+			level = 3
+			state_trigger = { is_in_geographic_region = geographic_region_balkans_old }
+		}
+		building_musical_instrument = {
+			level = 3
+			state_trigger = { is_in_geographic_region = geographic_region_balkans_old }
+		}
+		building_paper_mill = {
+			level = 3
+			state_trigger = { is_in_geographic_region = geographic_region_balkans_old }
+		}
+	}
+	ai_weight = { value = 8 }
+}

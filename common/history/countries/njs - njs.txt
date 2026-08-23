@@ -1,5 +1,10 @@
 COUNTRIES = {
 	c:NJS ?= {
+		add_company = company_type:tot_company_njs_club
+		company:tot_company_njs_club = {
+			set_company_establishment_date = 1829.1.1
+			set_company_state_region = s:STATE_SLOVAKIA
+		}
 		effect_starting_technology_tier_2_tech = yes
 		effect_starting_politics_conservative = yes
 		ig:ig_industrialists ?= {

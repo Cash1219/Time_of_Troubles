@@ -1,181 +1,2678 @@
-je_tot_idol_subject_development = {
+# 二偶企划发展竞赛: one JE per affiliate (added via its country history), overlord hardcoded as co-participant
+je_tot_idol_subject_development_AQO = {
 	icon = "gfx/interface/icons/event_icons/event_scales.dds"
-	group = je_group_tot_idol_succession
-	should_be_pinned_by_default = yes
-	should_be_pinned_by_default_uninvolved_or_context = yes
+	group = je_group_global_international_situations
+	should_be_pinned_by_default_involved = yes
+	should_be_pinned_by_default_uninvolved_or_context = no
 	weight = 10000
 	timeout = 3650
 
-	scripted_button = tot_subject_development_common_1_button
-	scripted_button = tot_subject_development_common_2_button
-	scripted_button = tot_subject_development_common_3_button
-	scripted_button = tot_subject_development_common_4_button
-	scripted_button = tot_subject_development_common_5_button
-	scripted_button = tot_subject_development_overlord_1_button
-	scripted_button = tot_subject_development_overlord_2_button
-	scripted_button = tot_subject_development_overlord_3_button
-	scripted_button = tot_subject_development_overlord_4_button
-	scripted_button = tot_subject_development_national_1_button
-	scripted_button = tot_subject_development_national_2_button
-	scripted_button = tot_subject_development_national_3_button
-
-	is_shown_when_inactive = {
-		OR = {
-			has_variable = tot_subject_development_overlord_member
-			has_variable = tot_subject_development_member
-		}
-	}
-
 	should_be_involved = {
 		OR = {
-			has_variable = tot_subject_development_overlord_member
-			has_variable = tot_subject_development_member
+			c:AQO ?= this
+			c:MUS ?= this
 		}
-		NOT = { has_variable = tot_subject_development_finished }
+	}
+	should_show_when_not_involved = {
+		always = no
 	}
 
-	possible = {
-		OR = {
-			has_variable = tot_subject_development_overlord_member
-			has_variable = tot_subject_development_member
-		}
-	}
+
+	scripted_button = tot_subject_development_common_1_AQO_button
+	scripted_button = tot_subject_development_common_2_AQO_button
+	scripted_button = tot_subject_development_common_3_AQO_button
+	scripted_button = tot_subject_development_common_4_AQO_button
+	scripted_button = tot_subject_development_common_5_AQO_button
+	scripted_button = tot_subject_development_overlord_1_AQO_button
+	scripted_button = tot_subject_development_overlord_2_AQO_button
+	scripted_button = tot_subject_development_overlord_3_AQO_button
+	scripted_button = tot_subject_development_national_1_AQO_button
+	scripted_button = tot_subject_development_national_2_AQO_button
+	scripted_button = tot_subject_development_national_3_AQO_button
 
 	immediate = {
-		set_variable = { name = tot_subject_development_overlord_member value = 1 }
-		set_variable = { name = tot_subject_development_common_completed value = 0 }
-		set_variable = { name = tot_subject_development_overlord_completed value = 0 }
-		set_variable = { name = tot_subject_development_score value = 0 }
-		scope:journal_entry = { add_involved_country = ROOT }
-		every_direct_subject = {
-			limit = {
-				OR = {
-					c:AQO ?= this
-					c:NJS ?= this
-					c:GKMS ?= this
-					c:AVMJ ?= this
-					c:MYG ?= this
-					c:AFTG ?= this
-					c:HHWO ?= this
-					c:UKR ?= this
-					c:ROM ?= this
-				}
-			}
-			set_variable = { name = tot_subject_development_member value = 1 }
-			set_variable = { name = tot_subject_development_common_completed value = 0 }
-			set_variable = { name = tot_subject_development_national_completed value = 0 }
-			set_variable = { name = tot_subject_development_score value = 0 }
-			change_subject_type = subject_type_idol_development_protectorate
-			scope:journal_entry = { add_involved_country = PREV }
+		c:AQO ?= {
+			set_variable = tot_subject_development_AQO_member
+			save_scope_as = tot_subject_development_subject
+		}
+		c:MUS ?= {
+			set_variable = tot_subject_development_AQO_overlord_member
+			save_scope_as = tot_subject_development_overlord
 		}
 	}
 
 	on_monthly_pulse = {
 		effect = {
-			every_direct_subject = {
-				limit = {
-					OR = {
-						c:AQO ?= this
-						c:NJS ?= this
-						c:GKMS ?= this
-						c:AVMJ ?= this
-						c:MYG ?= this
-						c:AFTG ?= this
-						c:HHWO ?= this
-						c:UKR ?= this
-						c:ROM ?= this
+			c:AQO ?= {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_AQO_gdp_goal } }
+					set_variable = {
+						name = tot_subject_development_AQO_gdp_goal
+						value = {
+							value = gdp
+							multiply = 1.5
+						}
 					}
-					NOT = { has_variable = tot_subject_development_member }
 				}
 				if = {
-					limit = { NOT = { is_involved_in_journal_entry = je_tot_idol_subject_development } }
-					scope:journal_entry = { add_involved_country = PREV }
+					limit = { NOT = { has_variable = tot_subject_development_AQO_member } }
+					set_variable = tot_subject_development_AQO_member
+					save_scope_as = tot_subject_development_subject
 				}
-				set_variable = { name = tot_subject_development_member value = 1 }
-				set_variable = { name = tot_subject_development_common_completed value = 0 }
-				set_variable = { name = tot_subject_development_national_completed value = 0 }
-				set_variable = { name = tot_subject_development_score value = 0 }
-				change_subject_type = subject_type_idol_development_protectorate
+			}
+			c:MUS ?= {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_AQO_overlord_member } }
+					set_variable = tot_subject_development_AQO_overlord_member
+					save_scope_as = tot_subject_development_overlord
+				}
+			}
+			scope:journal_entry = {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_AQO_inited } }
+					set_variable = tot_subject_development_AQO_inited
+					set_variable = { name = tot_subject_development_AQO_common_completed_subject value = 0 }
+					set_variable = { name = tot_subject_development_AQO_common_completed_overlord value = 0 }
+					set_variable = { name = tot_subject_development_AQO_overlord_completed value = 0 }
+					set_variable = { name = tot_subject_development_AQO_national_completed value = 0 }
+					set_variable = { name = tot_subject_development_AQO_subject_score value = 0 }
+					set_variable = { name = tot_subject_development_AQO_overlord_score value = 0 }
+				}
+				if = {
+					limit = {
+						NOT = {
+							any_scope_je_involved = {
+								has_variable = tot_subject_development_AQO_overlord_member
+							}
+						}
+					}
+					add_involved_country = c:MUS
+				}
 			}
 		}
 	}
 
-	complete = { var:tot_subject_development_score >= 5 }
+	complete = {
+		scope:journal_entry = {
+			has_variable = tot_subject_development_AQO_inited
+			var:tot_subject_development_AQO_subject_score >= 5
+			var:tot_subject_development_AQO_subject_score > var:tot_subject_development_AQO_overlord_score
+		}
+	}
 
 	fail = {
 		scope:journal_entry = {
-			any_scope_je_involved = {
-				has_variable = tot_subject_development_member
-				var:tot_subject_development_score >= 5
-			}
+			has_variable = tot_subject_development_AQO_inited
+			var:tot_subject_development_AQO_overlord_score >= 5
+			var:tot_subject_development_AQO_overlord_score > var:tot_subject_development_AQO_subject_score
 		}
 	}
 
 	on_complete = {
-		set_variable = tot_subject_development_finished
-		add_modifier = {
-			name = modifier_tot_subject_development_overlord_winner
-			days = long_modifier_time
-		}
-		custom_tooltip = tot_subject_development_overlord_winner_tt
 		scope:journal_entry = {
+			set_variable = tot_subject_development_AQO_finished
+			custom_tooltip = tot_subject_development_subject_winner_tt
 			every_scope_je_involved = {
-				limit = { has_variable = tot_subject_development_member }
 				if = {
-					limit = { c:AVMJ ?= this }
-					change_subject_type = subject_type_company_protectorate
+					limit = { has_variable = tot_subject_development_AQO_member }
+					change_subject_type = subject_type_dominion
+					add_liberty_desire = 10
+					add_modifier = {
+						name = modifier_tot_subject_development_subject_winner
+						days = long_modifier_time
+					}
+					add_modifier = {
+						name = modifier_tot_subject_development_participant
+						days = normal_modifier_time
+					}
+					set_variable = tot_subject_development_AQO_finished
+					remove_variable = tot_subject_development_AQO_member
 				}
-				else = { change_subject_type = subject_type_puppet }
-				add_liberty_desire = -10
-				set_variable = tot_subject_development_finished
-				remove_variable = tot_subject_development_member
+				else = {
+					if = {
+						limit = { has_variable = tot_subject_development_AQO_overlord_member }
+						add_modifier = {
+							name = modifier_tot_subject_development_overlord_loser
+							days = normal_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_AQO_finished
+						remove_variable = tot_subject_development_AQO_overlord_member
+					}
+				}
 			}
 		}
 	}
 
 	on_fail = {
-		set_variable = tot_subject_development_finished
-		add_modifier = {
-			name = modifier_tot_subject_development_overlord_loser
-			days = normal_modifier_time
-		}
-		custom_tooltip = tot_subject_development_subject_winner_tt
 		scope:journal_entry = {
+			set_variable = tot_subject_development_AQO_finished
+			custom_tooltip = tot_subject_development_overlord_winner_tt
 			every_scope_je_involved = {
-				limit = { has_variable = tot_subject_development_member }
 				if = {
-					limit = { var:tot_subject_development_score >= 5 }
-					change_subject_type = subject_type_dominion
+					limit = { has_variable = tot_subject_development_AQO_member }
+					change_subject_type = subject_type_puppet
 					add_liberty_desire = -10
 					add_modifier = {
-						name = modifier_tot_subject_development_subject_winner
-						days = long_modifier_time
+						name = modifier_tot_subject_development_participant
+						days = normal_modifier_time
 					}
+					set_variable = tot_subject_development_AQO_finished
+					remove_variable = tot_subject_development_AQO_member
 				}
 				else = {
-					if = { limit = { c:AVMJ ?= this } change_subject_type = subject_type_company_protectorate }
-					else = { change_subject_type = subject_type_protectorate }
-					add_liberty_desire = 10
+					if = {
+						limit = { has_variable = tot_subject_development_AQO_overlord_member }
+						add_modifier = {
+							name = modifier_tot_subject_development_overlord_winner
+							days = long_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_AQO_finished
+						remove_variable = tot_subject_development_AQO_overlord_member
+					}
 				}
-				set_variable = tot_subject_development_finished
-				remove_variable = tot_subject_development_member
 			}
 		}
 	}
 
 	on_timeout = {
-		set_variable = tot_subject_development_finished
-		add_modifier = {
-			name = modifier_tot_subject_development_timeout
-			days = normal_modifier_time
-		}
 		scope:journal_entry = {
+			set_variable = tot_subject_development_AQO_finished
+			custom_tooltip = tot_subject_development_timeout_tt
+			if = {
+				limit = { var:tot_subject_development_AQO_subject_score > var:tot_subject_development_AQO_overlord_score }
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_AQO_member }
+						change_subject_type = subject_type_dominion
+						add_liberty_desire = 10
+						add_modifier = {
+							name = modifier_tot_subject_development_subject_winner
+							days = long_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_AQO_finished
+						remove_variable = tot_subject_development_AQO_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_AQO_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_overlord_loser
+								days = normal_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_AQO_finished
+							remove_variable = tot_subject_development_AQO_overlord_member
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { var:tot_subject_development_AQO_overlord_score > var:tot_subject_development_AQO_subject_score }
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_AQO_member }
+						change_subject_type = subject_type_puppet
+						add_liberty_desire = -10
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_AQO_finished
+						remove_variable = tot_subject_development_AQO_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_AQO_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_overlord_winner
+								days = long_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_AQO_finished
+							remove_variable = tot_subject_development_AQO_overlord_member
+						}
+					}
+				}
+			}
+			else = {
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_AQO_member }
+						change_subject_type = subject_type_protectorate
+						add_modifier = {
+							name = modifier_tot_subject_development_timeout
+							days = normal_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_AQO_finished
+						remove_variable = tot_subject_development_AQO_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_AQO_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_timeout
+								days = normal_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_AQO_finished
+							remove_variable = tot_subject_development_AQO_overlord_member
+						}
+					}
+				}
+			}
+		}
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_tot_idol_subject_development_status
+				trigger = { always = yes }
+			}
+		}
+	}
+}
+je_tot_idol_subject_development_NJS = {
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	group = je_group_global_international_situations
+	should_be_pinned_by_default_involved = yes
+	should_be_pinned_by_default_uninvolved_or_context = no
+	weight = 10000
+	timeout = 3650
+
+	should_be_involved = {
+		OR = {
+			c:NJS ?= this
+			c:MUS ?= this
+		}
+	}
+	should_show_when_not_involved = {
+		always = no
+	}
+
+
+	scripted_button = tot_subject_development_common_1_NJS_button
+	scripted_button = tot_subject_development_common_2_NJS_button
+	scripted_button = tot_subject_development_common_3_NJS_button
+	scripted_button = tot_subject_development_common_4_NJS_button
+	scripted_button = tot_subject_development_common_5_NJS_button
+	scripted_button = tot_subject_development_overlord_1_NJS_button
+	scripted_button = tot_subject_development_overlord_2_NJS_button
+	scripted_button = tot_subject_development_overlord_3_NJS_button
+	scripted_button = tot_subject_development_national_1_NJS_button
+	scripted_button = tot_subject_development_national_2_NJS_button
+	scripted_button = tot_subject_development_national_3_NJS_button
+
+	immediate = {
+		c:NJS ?= {
+			set_variable = tot_subject_development_NJS_member
+			save_scope_as = tot_subject_development_subject
+		}
+		c:MUS ?= {
+			set_variable = tot_subject_development_NJS_overlord_member
+			save_scope_as = tot_subject_development_overlord
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			c:NJS ?= {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_NJS_gdp_goal } }
+					set_variable = {
+						name = tot_subject_development_NJS_gdp_goal
+						value = {
+							value = gdp
+							multiply = 1.5
+						}
+					}
+				}
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_NJS_member } }
+					set_variable = tot_subject_development_NJS_member
+					save_scope_as = tot_subject_development_subject
+				}
+			}
+			c:MUS ?= {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_NJS_overlord_member } }
+					set_variable = tot_subject_development_NJS_overlord_member
+					save_scope_as = tot_subject_development_overlord
+				}
+			}
+			scope:journal_entry = {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_NJS_inited } }
+					set_variable = tot_subject_development_NJS_inited
+					set_variable = { name = tot_subject_development_NJS_common_completed_subject value = 0 }
+					set_variable = { name = tot_subject_development_NJS_common_completed_overlord value = 0 }
+					set_variable = { name = tot_subject_development_NJS_overlord_completed value = 0 }
+					set_variable = { name = tot_subject_development_NJS_national_completed value = 0 }
+					set_variable = { name = tot_subject_development_NJS_subject_score value = 0 }
+					set_variable = { name = tot_subject_development_NJS_overlord_score value = 0 }
+				}
+				if = {
+					limit = {
+						NOT = {
+							any_scope_je_involved = {
+								has_variable = tot_subject_development_NJS_overlord_member
+							}
+						}
+					}
+					add_involved_country = c:MUS
+				}
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = {
+			has_variable = tot_subject_development_NJS_inited
+			var:tot_subject_development_NJS_subject_score >= 5
+			var:tot_subject_development_NJS_subject_score > var:tot_subject_development_NJS_overlord_score
+		}
+	}
+
+	fail = {
+		scope:journal_entry = {
+			has_variable = tot_subject_development_NJS_inited
+			var:tot_subject_development_NJS_overlord_score >= 5
+			var:tot_subject_development_NJS_overlord_score > var:tot_subject_development_NJS_subject_score
+		}
+	}
+
+	on_complete = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_NJS_finished
+			custom_tooltip = tot_subject_development_subject_winner_tt
 			every_scope_je_involved = {
-				limit = { has_variable = tot_subject_development_member }
-				if = { limit = { c:AVMJ ?= this } change_subject_type = subject_type_company_protectorate }
-				else = { change_subject_type = subject_type_protectorate }
-				set_variable = tot_subject_development_finished
-				remove_variable = tot_subject_development_member
+				if = {
+					limit = { has_variable = tot_subject_development_NJS_member }
+					change_subject_type = subject_type_dominion
+					add_liberty_desire = 10
+					add_modifier = {
+						name = modifier_tot_subject_development_subject_winner
+						days = long_modifier_time
+					}
+					add_modifier = {
+						name = modifier_tot_subject_development_participant
+						days = normal_modifier_time
+					}
+					set_variable = tot_subject_development_NJS_finished
+					remove_variable = tot_subject_development_NJS_member
+				}
+				else = {
+					if = {
+						limit = { has_variable = tot_subject_development_NJS_overlord_member }
+						add_modifier = {
+							name = modifier_tot_subject_development_overlord_loser
+							days = normal_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_NJS_finished
+						remove_variable = tot_subject_development_NJS_overlord_member
+					}
+				}
+			}
+		}
+	}
+
+	on_fail = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_NJS_finished
+			custom_tooltip = tot_subject_development_overlord_winner_tt
+			every_scope_je_involved = {
+				if = {
+					limit = { has_variable = tot_subject_development_NJS_member }
+					change_subject_type = subject_type_puppet
+					add_liberty_desire = -10
+					add_modifier = {
+						name = modifier_tot_subject_development_participant
+						days = normal_modifier_time
+					}
+					set_variable = tot_subject_development_NJS_finished
+					remove_variable = tot_subject_development_NJS_member
+				}
+				else = {
+					if = {
+						limit = { has_variable = tot_subject_development_NJS_overlord_member }
+						add_modifier = {
+							name = modifier_tot_subject_development_overlord_winner
+							days = long_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_NJS_finished
+						remove_variable = tot_subject_development_NJS_overlord_member
+					}
+				}
+			}
+		}
+	}
+
+	on_timeout = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_NJS_finished
+			custom_tooltip = tot_subject_development_timeout_tt
+			if = {
+				limit = { var:tot_subject_development_NJS_subject_score > var:tot_subject_development_NJS_overlord_score }
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_NJS_member }
+						change_subject_type = subject_type_dominion
+						add_liberty_desire = 10
+						add_modifier = {
+							name = modifier_tot_subject_development_subject_winner
+							days = long_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_NJS_finished
+						remove_variable = tot_subject_development_NJS_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_NJS_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_overlord_loser
+								days = normal_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_NJS_finished
+							remove_variable = tot_subject_development_NJS_overlord_member
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { var:tot_subject_development_NJS_overlord_score > var:tot_subject_development_NJS_subject_score }
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_NJS_member }
+						change_subject_type = subject_type_puppet
+						add_liberty_desire = -10
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_NJS_finished
+						remove_variable = tot_subject_development_NJS_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_NJS_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_overlord_winner
+								days = long_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_NJS_finished
+							remove_variable = tot_subject_development_NJS_overlord_member
+						}
+					}
+				}
+			}
+			else = {
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_NJS_member }
+						change_subject_type = subject_type_protectorate
+						add_modifier = {
+							name = modifier_tot_subject_development_timeout
+							days = normal_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_NJS_finished
+						remove_variable = tot_subject_development_NJS_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_NJS_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_timeout
+								days = normal_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_NJS_finished
+							remove_variable = tot_subject_development_NJS_overlord_member
+						}
+					}
+				}
+			}
+		}
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_tot_idol_subject_development_status
+				trigger = { always = yes }
+			}
+		}
+	}
+}
+je_tot_idol_subject_development_GKMS = {
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	group = je_group_global_international_situations
+	should_be_pinned_by_default_involved = yes
+	should_be_pinned_by_default_uninvolved_or_context = no
+	weight = 10000
+	timeout = 3650
+
+	should_be_involved = {
+		OR = {
+			c:GKMS ?= this
+			c:IDMS ?= this
+		}
+	}
+	should_show_when_not_involved = {
+		always = no
+	}
+
+
+	scripted_button = tot_subject_development_common_1_GKMS_button
+	scripted_button = tot_subject_development_common_2_GKMS_button
+	scripted_button = tot_subject_development_common_3_GKMS_button
+	scripted_button = tot_subject_development_common_4_GKMS_button
+	scripted_button = tot_subject_development_common_5_GKMS_button
+	scripted_button = tot_subject_development_overlord_1_GKMS_button
+	scripted_button = tot_subject_development_overlord_2_GKMS_button
+	scripted_button = tot_subject_development_overlord_3_GKMS_button
+	scripted_button = tot_subject_development_national_1_GKMS_button
+	scripted_button = tot_subject_development_national_2_GKMS_button
+	scripted_button = tot_subject_development_national_3_GKMS_button
+
+	immediate = {
+		c:GKMS ?= {
+			set_variable = tot_subject_development_GKMS_member
+			save_scope_as = tot_subject_development_subject
+		}
+		c:IDMS ?= {
+			set_variable = tot_subject_development_GKMS_overlord_member
+			save_scope_as = tot_subject_development_overlord
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			c:GKMS ?= {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_GKMS_gdp_goal } }
+					set_variable = {
+						name = tot_subject_development_GKMS_gdp_goal
+						value = {
+							value = gdp
+							multiply = 1.5
+						}
+					}
+				}
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_GKMS_member } }
+					set_variable = tot_subject_development_GKMS_member
+					save_scope_as = tot_subject_development_subject
+				}
+			}
+			c:IDMS ?= {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_GKMS_overlord_member } }
+					set_variable = tot_subject_development_GKMS_overlord_member
+					save_scope_as = tot_subject_development_overlord
+				}
+			}
+			scope:journal_entry = {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_GKMS_inited } }
+					set_variable = tot_subject_development_GKMS_inited
+					set_variable = { name = tot_subject_development_GKMS_common_completed_subject value = 0 }
+					set_variable = { name = tot_subject_development_GKMS_common_completed_overlord value = 0 }
+					set_variable = { name = tot_subject_development_GKMS_overlord_completed value = 0 }
+					set_variable = { name = tot_subject_development_GKMS_national_completed value = 0 }
+					set_variable = { name = tot_subject_development_GKMS_subject_score value = 0 }
+					set_variable = { name = tot_subject_development_GKMS_overlord_score value = 0 }
+				}
+				if = {
+					limit = {
+						NOT = {
+							any_scope_je_involved = {
+								has_variable = tot_subject_development_GKMS_overlord_member
+							}
+						}
+					}
+					add_involved_country = c:IDMS
+				}
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = {
+			has_variable = tot_subject_development_GKMS_inited
+			var:tot_subject_development_GKMS_subject_score >= 5
+			var:tot_subject_development_GKMS_subject_score > var:tot_subject_development_GKMS_overlord_score
+		}
+	}
+
+	fail = {
+		scope:journal_entry = {
+			has_variable = tot_subject_development_GKMS_inited
+			var:tot_subject_development_GKMS_overlord_score >= 5
+			var:tot_subject_development_GKMS_overlord_score > var:tot_subject_development_GKMS_subject_score
+		}
+	}
+
+	on_complete = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_GKMS_finished
+			custom_tooltip = tot_subject_development_subject_winner_tt
+			every_scope_je_involved = {
+				if = {
+					limit = { has_variable = tot_subject_development_GKMS_member }
+					change_subject_type = subject_type_dominion
+					add_liberty_desire = 10
+					add_modifier = {
+						name = modifier_tot_subject_development_subject_winner
+						days = long_modifier_time
+					}
+					add_modifier = {
+						name = modifier_tot_subject_development_participant
+						days = normal_modifier_time
+					}
+					set_variable = tot_subject_development_GKMS_finished
+					remove_variable = tot_subject_development_GKMS_member
+				}
+				else = {
+					if = {
+						limit = { has_variable = tot_subject_development_GKMS_overlord_member }
+						add_modifier = {
+							name = modifier_tot_subject_development_overlord_loser
+							days = normal_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_GKMS_finished
+						remove_variable = tot_subject_development_GKMS_overlord_member
+					}
+				}
+			}
+		}
+	}
+
+	on_fail = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_GKMS_finished
+			custom_tooltip = tot_subject_development_overlord_winner_tt
+			every_scope_je_involved = {
+				if = {
+					limit = { has_variable = tot_subject_development_GKMS_member }
+					change_subject_type = subject_type_puppet
+					add_liberty_desire = -10
+					add_modifier = {
+						name = modifier_tot_subject_development_participant
+						days = normal_modifier_time
+					}
+					set_variable = tot_subject_development_GKMS_finished
+					remove_variable = tot_subject_development_GKMS_member
+				}
+				else = {
+					if = {
+						limit = { has_variable = tot_subject_development_GKMS_overlord_member }
+						add_modifier = {
+							name = modifier_tot_subject_development_overlord_winner
+							days = long_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_GKMS_finished
+						remove_variable = tot_subject_development_GKMS_overlord_member
+					}
+				}
+			}
+		}
+	}
+
+	on_timeout = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_GKMS_finished
+			custom_tooltip = tot_subject_development_timeout_tt
+			if = {
+				limit = { var:tot_subject_development_GKMS_subject_score > var:tot_subject_development_GKMS_overlord_score }
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_GKMS_member }
+						change_subject_type = subject_type_dominion
+						add_liberty_desire = 10
+						add_modifier = {
+							name = modifier_tot_subject_development_subject_winner
+							days = long_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_GKMS_finished
+						remove_variable = tot_subject_development_GKMS_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_GKMS_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_overlord_loser
+								days = normal_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_GKMS_finished
+							remove_variable = tot_subject_development_GKMS_overlord_member
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { var:tot_subject_development_GKMS_overlord_score > var:tot_subject_development_GKMS_subject_score }
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_GKMS_member }
+						change_subject_type = subject_type_puppet
+						add_liberty_desire = -10
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_GKMS_finished
+						remove_variable = tot_subject_development_GKMS_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_GKMS_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_overlord_winner
+								days = long_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_GKMS_finished
+							remove_variable = tot_subject_development_GKMS_overlord_member
+						}
+					}
+				}
+			}
+			else = {
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_GKMS_member }
+						change_subject_type = subject_type_protectorate
+						add_modifier = {
+							name = modifier_tot_subject_development_timeout
+							days = normal_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_GKMS_finished
+						remove_variable = tot_subject_development_GKMS_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_GKMS_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_timeout
+								days = normal_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_GKMS_finished
+							remove_variable = tot_subject_development_GKMS_overlord_member
+						}
+					}
+				}
+			}
+		}
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_tot_idol_subject_development_status
+				trigger = { always = yes }
+			}
+		}
+	}
+}
+je_tot_idol_subject_development_AVMJ = {
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	group = je_group_global_international_situations
+	should_be_pinned_by_default_involved = yes
+	should_be_pinned_by_default_uninvolved_or_context = no
+	weight = 10000
+	timeout = 3650
+
+	should_be_involved = {
+		OR = {
+			c:AVMJ ?= this
+			c:HTT ?= this
+		}
+	}
+	should_show_when_not_involved = {
+		always = no
+	}
+
+
+	scripted_button = tot_subject_development_common_1_AVMJ_button
+	scripted_button = tot_subject_development_common_2_AVMJ_button
+	scripted_button = tot_subject_development_common_3_AVMJ_button
+	scripted_button = tot_subject_development_common_4_AVMJ_button
+	scripted_button = tot_subject_development_common_5_AVMJ_button
+	scripted_button = tot_subject_development_overlord_1_AVMJ_button
+	scripted_button = tot_subject_development_overlord_2_AVMJ_button
+	scripted_button = tot_subject_development_overlord_3_AVMJ_button
+	scripted_button = tot_subject_development_national_1_AVMJ_button
+	scripted_button = tot_subject_development_national_2_AVMJ_button
+	scripted_button = tot_subject_development_national_3_AVMJ_button
+
+	immediate = {
+		c:AVMJ ?= {
+			set_variable = tot_subject_development_AVMJ_member
+			save_scope_as = tot_subject_development_subject
+		}
+		c:HTT ?= {
+			set_variable = tot_subject_development_AVMJ_overlord_member
+			save_scope_as = tot_subject_development_overlord
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			c:AVMJ ?= {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_AVMJ_gdp_goal } }
+					set_variable = {
+						name = tot_subject_development_AVMJ_gdp_goal
+						value = {
+							value = gdp
+							multiply = 1.5
+						}
+					}
+				}
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_AVMJ_member } }
+					set_variable = tot_subject_development_AVMJ_member
+					save_scope_as = tot_subject_development_subject
+				}
+			}
+			c:HTT ?= {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_AVMJ_overlord_member } }
+					set_variable = tot_subject_development_AVMJ_overlord_member
+					save_scope_as = tot_subject_development_overlord
+				}
+			}
+			scope:journal_entry = {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_AVMJ_inited } }
+					set_variable = tot_subject_development_AVMJ_inited
+					set_variable = { name = tot_subject_development_AVMJ_common_completed_subject value = 0 }
+					set_variable = { name = tot_subject_development_AVMJ_common_completed_overlord value = 0 }
+					set_variable = { name = tot_subject_development_AVMJ_overlord_completed value = 0 }
+					set_variable = { name = tot_subject_development_AVMJ_national_completed value = 0 }
+					set_variable = { name = tot_subject_development_AVMJ_subject_score value = 0 }
+					set_variable = { name = tot_subject_development_AVMJ_overlord_score value = 0 }
+				}
+				if = {
+					limit = {
+						NOT = {
+							any_scope_je_involved = {
+								has_variable = tot_subject_development_AVMJ_overlord_member
+							}
+						}
+					}
+					add_involved_country = c:HTT
+				}
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = {
+			has_variable = tot_subject_development_AVMJ_inited
+			var:tot_subject_development_AVMJ_subject_score >= 5
+			var:tot_subject_development_AVMJ_subject_score > var:tot_subject_development_AVMJ_overlord_score
+		}
+	}
+
+	fail = {
+		scope:journal_entry = {
+			has_variable = tot_subject_development_AVMJ_inited
+			var:tot_subject_development_AVMJ_overlord_score >= 5
+			var:tot_subject_development_AVMJ_overlord_score > var:tot_subject_development_AVMJ_subject_score
+		}
+	}
+
+	on_complete = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_AVMJ_finished
+			custom_tooltip = tot_subject_development_subject_winner_tt
+			every_scope_je_involved = {
+				if = {
+					limit = { has_variable = tot_subject_development_AVMJ_member }
+					change_subject_type = subject_type_dominion
+					add_liberty_desire = 10
+					add_modifier = {
+						name = modifier_tot_subject_development_subject_winner
+						days = long_modifier_time
+					}
+					add_modifier = {
+						name = modifier_tot_subject_development_participant
+						days = normal_modifier_time
+					}
+					set_variable = tot_subject_development_AVMJ_finished
+					remove_variable = tot_subject_development_AVMJ_member
+				}
+				else = {
+					if = {
+						limit = { has_variable = tot_subject_development_AVMJ_overlord_member }
+						add_modifier = {
+							name = modifier_tot_subject_development_overlord_loser
+							days = normal_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_AVMJ_finished
+						remove_variable = tot_subject_development_AVMJ_overlord_member
+					}
+				}
+			}
+		}
+	}
+
+	on_fail = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_AVMJ_finished
+			custom_tooltip = tot_subject_development_overlord_winner_tt
+			every_scope_je_involved = {
+				if = {
+					limit = { has_variable = tot_subject_development_AVMJ_member }
+					change_subject_type = subject_type_puppet
+					add_liberty_desire = -10
+					add_modifier = {
+						name = modifier_tot_subject_development_participant
+						days = normal_modifier_time
+					}
+					set_variable = tot_subject_development_AVMJ_finished
+					remove_variable = tot_subject_development_AVMJ_member
+				}
+				else = {
+					if = {
+						limit = { has_variable = tot_subject_development_AVMJ_overlord_member }
+						add_modifier = {
+							name = modifier_tot_subject_development_overlord_winner
+							days = long_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_AVMJ_finished
+						remove_variable = tot_subject_development_AVMJ_overlord_member
+					}
+				}
+			}
+		}
+	}
+
+	on_timeout = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_AVMJ_finished
+			custom_tooltip = tot_subject_development_timeout_tt
+			if = {
+				limit = { var:tot_subject_development_AVMJ_subject_score > var:tot_subject_development_AVMJ_overlord_score }
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_AVMJ_member }
+						change_subject_type = subject_type_dominion
+						add_liberty_desire = 10
+						add_modifier = {
+							name = modifier_tot_subject_development_subject_winner
+							days = long_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_AVMJ_finished
+						remove_variable = tot_subject_development_AVMJ_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_AVMJ_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_overlord_loser
+								days = normal_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_AVMJ_finished
+							remove_variable = tot_subject_development_AVMJ_overlord_member
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { var:tot_subject_development_AVMJ_overlord_score > var:tot_subject_development_AVMJ_subject_score }
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_AVMJ_member }
+						change_subject_type = subject_type_puppet
+						add_liberty_desire = -10
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_AVMJ_finished
+						remove_variable = tot_subject_development_AVMJ_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_AVMJ_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_overlord_winner
+								days = long_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_AVMJ_finished
+							remove_variable = tot_subject_development_AVMJ_overlord_member
+						}
+					}
+				}
+			}
+			else = {
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_AVMJ_member }
+						change_subject_type = subject_type_protectorate
+						add_modifier = {
+							name = modifier_tot_subject_development_timeout
+							days = normal_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_AVMJ_finished
+						remove_variable = tot_subject_development_AVMJ_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_AVMJ_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_timeout
+								days = normal_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_AVMJ_finished
+							remove_variable = tot_subject_development_AVMJ_overlord_member
+						}
+					}
+				}
+			}
+		}
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_tot_idol_subject_development_status
+				trigger = { always = yes }
+			}
+		}
+	}
+}
+
+je_tot_idol_subject_development_MYG = {
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	group = je_group_global_international_situations
+	should_be_pinned_by_default_involved = yes
+	should_be_pinned_by_default_uninvolved_or_context = no
+	weight = 10000
+	timeout = 3650
+
+	should_be_involved = {
+		OR = {
+			c:MYG ?= this
+			c:HTT ?= this
+		}
+	}
+	should_show_when_not_involved = {
+		always = no
+	}
+
+
+	scripted_button = tot_subject_development_common_1_MYG_button
+	scripted_button = tot_subject_development_common_2_MYG_button
+	scripted_button = tot_subject_development_common_3_MYG_button
+	scripted_button = tot_subject_development_common_4_MYG_button
+	scripted_button = tot_subject_development_common_5_MYG_button
+	scripted_button = tot_subject_development_overlord_1_MYG_button
+	scripted_button = tot_subject_development_overlord_2_MYG_button
+	scripted_button = tot_subject_development_overlord_3_MYG_button
+	scripted_button = tot_subject_development_national_1_MYG_button
+	scripted_button = tot_subject_development_national_2_MYG_button
+	scripted_button = tot_subject_development_national_3_MYG_button
+
+	immediate = {
+		c:MYG ?= {
+			set_variable = tot_subject_development_MYG_member
+			save_scope_as = tot_subject_development_subject
+		}
+		c:HTT ?= {
+			set_variable = tot_subject_development_MYG_overlord_member
+			save_scope_as = tot_subject_development_overlord
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			c:MYG ?= {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_MYG_gdp_goal } }
+					set_variable = {
+						name = tot_subject_development_MYG_gdp_goal
+						value = {
+							value = gdp
+							multiply = 1.5
+						}
+					}
+				}
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_MYG_member } }
+					set_variable = tot_subject_development_MYG_member
+					save_scope_as = tot_subject_development_subject
+				}
+			}
+			c:HTT ?= {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_MYG_overlord_member } }
+					set_variable = tot_subject_development_MYG_overlord_member
+					save_scope_as = tot_subject_development_overlord
+				}
+			}
+			scope:journal_entry = {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_MYG_inited } }
+					set_variable = tot_subject_development_MYG_inited
+					set_variable = { name = tot_subject_development_MYG_common_completed_subject value = 0 }
+					set_variable = { name = tot_subject_development_MYG_common_completed_overlord value = 0 }
+					set_variable = { name = tot_subject_development_MYG_overlord_completed value = 0 }
+					set_variable = { name = tot_subject_development_MYG_national_completed value = 0 }
+					set_variable = { name = tot_subject_development_MYG_subject_score value = 0 }
+					set_variable = { name = tot_subject_development_MYG_overlord_score value = 0 }
+				}
+				if = {
+					limit = {
+						NOT = {
+							any_scope_je_involved = {
+								has_variable = tot_subject_development_MYG_overlord_member
+							}
+						}
+					}
+					add_involved_country = c:HTT
+				}
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = {
+			has_variable = tot_subject_development_MYG_inited
+			var:tot_subject_development_MYG_subject_score >= 5
+			var:tot_subject_development_MYG_subject_score > var:tot_subject_development_MYG_overlord_score
+		}
+	}
+
+	fail = {
+		scope:journal_entry = {
+			has_variable = tot_subject_development_MYG_inited
+			var:tot_subject_development_MYG_overlord_score >= 5
+			var:tot_subject_development_MYG_overlord_score > var:tot_subject_development_MYG_subject_score
+		}
+	}
+
+	on_complete = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_MYG_finished
+			custom_tooltip = tot_subject_development_subject_winner_tt
+			every_scope_je_involved = {
+				if = {
+					limit = { has_variable = tot_subject_development_MYG_member }
+					change_subject_type = subject_type_dominion
+					add_liberty_desire = 10
+					add_modifier = {
+						name = modifier_tot_subject_development_subject_winner
+						days = long_modifier_time
+					}
+					add_modifier = {
+						name = modifier_tot_subject_development_participant
+						days = normal_modifier_time
+					}
+					set_variable = tot_subject_development_MYG_finished
+					remove_variable = tot_subject_development_MYG_member
+				}
+				else = {
+					if = {
+						limit = { has_variable = tot_subject_development_MYG_overlord_member }
+						add_modifier = {
+							name = modifier_tot_subject_development_overlord_loser
+							days = normal_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_MYG_finished
+						remove_variable = tot_subject_development_MYG_overlord_member
+					}
+				}
+			}
+		}
+	}
+
+	on_fail = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_MYG_finished
+			custom_tooltip = tot_subject_development_overlord_winner_tt
+			every_scope_je_involved = {
+				if = {
+					limit = { has_variable = tot_subject_development_MYG_member }
+					change_subject_type = subject_type_puppet
+					add_liberty_desire = -10
+					add_modifier = {
+						name = modifier_tot_subject_development_participant
+						days = normal_modifier_time
+					}
+					set_variable = tot_subject_development_MYG_finished
+					remove_variable = tot_subject_development_MYG_member
+				}
+				else = {
+					if = {
+						limit = { has_variable = tot_subject_development_MYG_overlord_member }
+						add_modifier = {
+							name = modifier_tot_subject_development_overlord_winner
+							days = long_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_MYG_finished
+						remove_variable = tot_subject_development_MYG_overlord_member
+					}
+				}
+			}
+		}
+	}
+
+	on_timeout = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_MYG_finished
+			custom_tooltip = tot_subject_development_timeout_tt
+			if = {
+				limit = { var:tot_subject_development_MYG_subject_score > var:tot_subject_development_MYG_overlord_score }
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_MYG_member }
+						change_subject_type = subject_type_dominion
+						add_liberty_desire = 10
+						add_modifier = {
+							name = modifier_tot_subject_development_subject_winner
+							days = long_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_MYG_finished
+						remove_variable = tot_subject_development_MYG_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_MYG_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_overlord_loser
+								days = normal_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_MYG_finished
+							remove_variable = tot_subject_development_MYG_overlord_member
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { var:tot_subject_development_MYG_overlord_score > var:tot_subject_development_MYG_subject_score }
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_MYG_member }
+						change_subject_type = subject_type_puppet
+						add_liberty_desire = -10
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_MYG_finished
+						remove_variable = tot_subject_development_MYG_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_MYG_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_overlord_winner
+								days = long_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_MYG_finished
+							remove_variable = tot_subject_development_MYG_overlord_member
+						}
+					}
+				}
+			}
+			else = {
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_MYG_member }
+						change_subject_type = subject_type_protectorate
+						add_modifier = {
+							name = modifier_tot_subject_development_timeout
+							days = normal_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_MYG_finished
+						remove_variable = tot_subject_development_MYG_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_MYG_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_timeout
+								days = normal_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_MYG_finished
+							remove_variable = tot_subject_development_MYG_overlord_member
+						}
+					}
+				}
+			}
+		}
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_tot_idol_subject_development_status
+				trigger = { always = yes }
+			}
+		}
+	}
+}
+
+je_tot_idol_subject_development_AFTG = {
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	group = je_group_global_international_situations
+	should_be_pinned_by_default_involved = yes
+	should_be_pinned_by_default_uninvolved_or_context = no
+	weight = 10000
+	timeout = 3650
+
+	should_be_involved = {
+		OR = {
+			c:AFTG ?= this
+			c:GBDP ?= this
+		}
+	}
+	should_show_when_not_involved = {
+		always = no
+	}
+
+
+	scripted_button = tot_subject_development_common_1_AFTG_button
+	scripted_button = tot_subject_development_common_2_AFTG_button
+	scripted_button = tot_subject_development_common_3_AFTG_button
+	scripted_button = tot_subject_development_common_4_AFTG_button
+	scripted_button = tot_subject_development_common_5_AFTG_button
+	scripted_button = tot_subject_development_overlord_1_AFTG_button
+	scripted_button = tot_subject_development_overlord_2_AFTG_button
+	scripted_button = tot_subject_development_overlord_3_AFTG_button
+	scripted_button = tot_subject_development_national_1_AFTG_button
+	scripted_button = tot_subject_development_national_2_AFTG_button
+	scripted_button = tot_subject_development_national_3_AFTG_button
+
+	immediate = {
+		c:AFTG ?= {
+			set_variable = tot_subject_development_AFTG_member
+			save_scope_as = tot_subject_development_subject
+		}
+		c:GBDP ?= {
+			set_variable = tot_subject_development_AFTG_overlord_member
+			save_scope_as = tot_subject_development_overlord
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			c:AFTG ?= {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_AFTG_gdp_goal } }
+					set_variable = {
+						name = tot_subject_development_AFTG_gdp_goal
+						value = {
+							value = gdp
+							multiply = 1.5
+						}
+					}
+				}
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_AFTG_member } }
+					set_variable = tot_subject_development_AFTG_member
+					save_scope_as = tot_subject_development_subject
+				}
+			}
+			c:GBDP ?= {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_AFTG_overlord_member } }
+					set_variable = tot_subject_development_AFTG_overlord_member
+					save_scope_as = tot_subject_development_overlord
+				}
+			}
+			scope:journal_entry = {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_AFTG_inited } }
+					set_variable = tot_subject_development_AFTG_inited
+					set_variable = { name = tot_subject_development_AFTG_common_completed_subject value = 0 }
+					set_variable = { name = tot_subject_development_AFTG_common_completed_overlord value = 0 }
+					set_variable = { name = tot_subject_development_AFTG_overlord_completed value = 0 }
+					set_variable = { name = tot_subject_development_AFTG_national_completed value = 0 }
+					set_variable = { name = tot_subject_development_AFTG_subject_score value = 0 }
+					set_variable = { name = tot_subject_development_AFTG_overlord_score value = 0 }
+				}
+				if = {
+					limit = {
+						NOT = {
+							any_scope_je_involved = {
+								has_variable = tot_subject_development_AFTG_overlord_member
+							}
+						}
+					}
+					add_involved_country = c:GBDP
+				}
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = {
+			has_variable = tot_subject_development_AFTG_inited
+			var:tot_subject_development_AFTG_subject_score >= 5
+			var:tot_subject_development_AFTG_subject_score > var:tot_subject_development_AFTG_overlord_score
+		}
+	}
+
+	fail = {
+		scope:journal_entry = {
+			has_variable = tot_subject_development_AFTG_inited
+			var:tot_subject_development_AFTG_overlord_score >= 5
+			var:tot_subject_development_AFTG_overlord_score > var:tot_subject_development_AFTG_subject_score
+		}
+	}
+
+	on_complete = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_AFTG_finished
+			custom_tooltip = tot_subject_development_subject_winner_tt
+			every_scope_je_involved = {
+				if = {
+					limit = { has_variable = tot_subject_development_AFTG_member }
+					change_subject_type = subject_type_dominion
+					add_liberty_desire = 10
+					add_modifier = {
+						name = modifier_tot_subject_development_subject_winner
+						days = long_modifier_time
+					}
+					add_modifier = {
+						name = modifier_tot_subject_development_participant
+						days = normal_modifier_time
+					}
+					set_variable = tot_subject_development_AFTG_finished
+					remove_variable = tot_subject_development_AFTG_member
+				}
+				else = {
+					if = {
+						limit = { has_variable = tot_subject_development_AFTG_overlord_member }
+						add_modifier = {
+							name = modifier_tot_subject_development_overlord_loser
+							days = normal_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_AFTG_finished
+						remove_variable = tot_subject_development_AFTG_overlord_member
+					}
+				}
+			}
+		}
+	}
+
+	on_fail = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_AFTG_finished
+			custom_tooltip = tot_subject_development_overlord_winner_tt
+			every_scope_je_involved = {
+				if = {
+					limit = { has_variable = tot_subject_development_AFTG_member }
+					change_subject_type = subject_type_puppet
+					add_liberty_desire = -10
+					add_modifier = {
+						name = modifier_tot_subject_development_participant
+						days = normal_modifier_time
+					}
+					set_variable = tot_subject_development_AFTG_finished
+					remove_variable = tot_subject_development_AFTG_member
+				}
+				else = {
+					if = {
+						limit = { has_variable = tot_subject_development_AFTG_overlord_member }
+						add_modifier = {
+							name = modifier_tot_subject_development_overlord_winner
+							days = long_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_AFTG_finished
+						remove_variable = tot_subject_development_AFTG_overlord_member
+					}
+				}
+			}
+		}
+	}
+
+	on_timeout = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_AFTG_finished
+			custom_tooltip = tot_subject_development_timeout_tt
+			if = {
+				limit = { var:tot_subject_development_AFTG_subject_score > var:tot_subject_development_AFTG_overlord_score }
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_AFTG_member }
+						change_subject_type = subject_type_dominion
+						add_liberty_desire = 10
+						add_modifier = {
+							name = modifier_tot_subject_development_subject_winner
+							days = long_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_AFTG_finished
+						remove_variable = tot_subject_development_AFTG_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_AFTG_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_overlord_loser
+								days = normal_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_AFTG_finished
+							remove_variable = tot_subject_development_AFTG_overlord_member
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { var:tot_subject_development_AFTG_overlord_score > var:tot_subject_development_AFTG_subject_score }
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_AFTG_member }
+						change_subject_type = subject_type_puppet
+						add_liberty_desire = -10
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_AFTG_finished
+						remove_variable = tot_subject_development_AFTG_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_AFTG_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_overlord_winner
+								days = long_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_AFTG_finished
+							remove_variable = tot_subject_development_AFTG_overlord_member
+						}
+					}
+				}
+			}
+			else = {
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_AFTG_member }
+						change_subject_type = subject_type_protectorate
+						add_modifier = {
+							name = modifier_tot_subject_development_timeout
+							days = normal_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_AFTG_finished
+						remove_variable = tot_subject_development_AFTG_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_AFTG_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_timeout
+								days = normal_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_AFTG_finished
+							remove_variable = tot_subject_development_AFTG_overlord_member
+						}
+					}
+				}
+			}
+		}
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_tot_idol_subject_development_status
+				trigger = { always = yes }
+			}
+		}
+	}
+}
+
+je_tot_idol_subject_development_HHWO = {
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	group = je_group_global_international_situations
+	should_be_pinned_by_default_involved = yes
+	should_be_pinned_by_default_uninvolved_or_context = no
+	weight = 10000
+	timeout = 3650
+
+	should_be_involved = {
+		OR = {
+			c:HHWO ?= this
+			c:GBDP ?= this
+		}
+	}
+	should_show_when_not_involved = {
+		always = no
+	}
+
+
+	scripted_button = tot_subject_development_common_1_HHWO_button
+	scripted_button = tot_subject_development_common_2_HHWO_button
+	scripted_button = tot_subject_development_common_3_HHWO_button
+	scripted_button = tot_subject_development_common_4_HHWO_button
+	scripted_button = tot_subject_development_common_5_HHWO_button
+	scripted_button = tot_subject_development_overlord_1_HHWO_button
+	scripted_button = tot_subject_development_overlord_2_HHWO_button
+	scripted_button = tot_subject_development_overlord_3_HHWO_button
+	scripted_button = tot_subject_development_national_1_HHWO_button
+	scripted_button = tot_subject_development_national_2_HHWO_button
+	scripted_button = tot_subject_development_national_3_HHWO_button
+
+	immediate = {
+		c:HHWO ?= {
+			set_variable = tot_subject_development_HHWO_member
+			save_scope_as = tot_subject_development_subject
+		}
+		c:GBDP ?= {
+			set_variable = tot_subject_development_HHWO_overlord_member
+			save_scope_as = tot_subject_development_overlord
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			c:HHWO ?= {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_HHWO_gdp_goal } }
+					set_variable = {
+						name = tot_subject_development_HHWO_gdp_goal
+						value = {
+							value = gdp
+							multiply = 1.5
+						}
+					}
+				}
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_HHWO_member } }
+					set_variable = tot_subject_development_HHWO_member
+					save_scope_as = tot_subject_development_subject
+				}
+			}
+			c:GBDP ?= {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_HHWO_overlord_member } }
+					set_variable = tot_subject_development_HHWO_overlord_member
+					save_scope_as = tot_subject_development_overlord
+				}
+			}
+			scope:journal_entry = {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_HHWO_inited } }
+					set_variable = tot_subject_development_HHWO_inited
+					set_variable = { name = tot_subject_development_HHWO_common_completed_subject value = 0 }
+					set_variable = { name = tot_subject_development_HHWO_common_completed_overlord value = 0 }
+					set_variable = { name = tot_subject_development_HHWO_overlord_completed value = 0 }
+					set_variable = { name = tot_subject_development_HHWO_national_completed value = 0 }
+					set_variable = { name = tot_subject_development_HHWO_subject_score value = 0 }
+					set_variable = { name = tot_subject_development_HHWO_overlord_score value = 0 }
+				}
+				if = {
+					limit = {
+						NOT = {
+							any_scope_je_involved = {
+								has_variable = tot_subject_development_HHWO_overlord_member
+							}
+						}
+					}
+					add_involved_country = c:GBDP
+				}
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = {
+			has_variable = tot_subject_development_HHWO_inited
+			var:tot_subject_development_HHWO_subject_score >= 5
+			var:tot_subject_development_HHWO_subject_score > var:tot_subject_development_HHWO_overlord_score
+		}
+	}
+
+	fail = {
+		scope:journal_entry = {
+			has_variable = tot_subject_development_HHWO_inited
+			var:tot_subject_development_HHWO_overlord_score >= 5
+			var:tot_subject_development_HHWO_overlord_score > var:tot_subject_development_HHWO_subject_score
+		}
+	}
+
+	on_complete = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_HHWO_finished
+			custom_tooltip = tot_subject_development_subject_winner_tt
+			every_scope_je_involved = {
+				if = {
+					limit = { has_variable = tot_subject_development_HHWO_member }
+					change_subject_type = subject_type_dominion
+					add_liberty_desire = 10
+					add_modifier = {
+						name = modifier_tot_subject_development_subject_winner
+						days = long_modifier_time
+					}
+					add_modifier = {
+						name = modifier_tot_subject_development_participant
+						days = normal_modifier_time
+					}
+					set_variable = tot_subject_development_HHWO_finished
+					remove_variable = tot_subject_development_HHWO_member
+				}
+				else = {
+					if = {
+						limit = { has_variable = tot_subject_development_HHWO_overlord_member }
+						add_modifier = {
+							name = modifier_tot_subject_development_overlord_loser
+							days = normal_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_HHWO_finished
+						remove_variable = tot_subject_development_HHWO_overlord_member
+					}
+				}
+			}
+		}
+	}
+
+	on_fail = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_HHWO_finished
+			custom_tooltip = tot_subject_development_overlord_winner_tt
+			every_scope_je_involved = {
+				if = {
+					limit = { has_variable = tot_subject_development_HHWO_member }
+					change_subject_type = subject_type_puppet
+					add_liberty_desire = -10
+					add_modifier = {
+						name = modifier_tot_subject_development_participant
+						days = normal_modifier_time
+					}
+					set_variable = tot_subject_development_HHWO_finished
+					remove_variable = tot_subject_development_HHWO_member
+				}
+				else = {
+					if = {
+						limit = { has_variable = tot_subject_development_HHWO_overlord_member }
+						add_modifier = {
+							name = modifier_tot_subject_development_overlord_winner
+							days = long_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_HHWO_finished
+						remove_variable = tot_subject_development_HHWO_overlord_member
+					}
+				}
+			}
+		}
+	}
+
+	on_timeout = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_HHWO_finished
+			custom_tooltip = tot_subject_development_timeout_tt
+			if = {
+				limit = { var:tot_subject_development_HHWO_subject_score > var:tot_subject_development_HHWO_overlord_score }
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_HHWO_member }
+						change_subject_type = subject_type_dominion
+						add_liberty_desire = 10
+						add_modifier = {
+							name = modifier_tot_subject_development_subject_winner
+							days = long_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_HHWO_finished
+						remove_variable = tot_subject_development_HHWO_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_HHWO_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_overlord_loser
+								days = normal_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_HHWO_finished
+							remove_variable = tot_subject_development_HHWO_overlord_member
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { var:tot_subject_development_HHWO_overlord_score > var:tot_subject_development_HHWO_subject_score }
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_HHWO_member }
+						change_subject_type = subject_type_puppet
+						add_liberty_desire = -10
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_HHWO_finished
+						remove_variable = tot_subject_development_HHWO_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_HHWO_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_overlord_winner
+								days = long_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_HHWO_finished
+							remove_variable = tot_subject_development_HHWO_overlord_member
+						}
+					}
+				}
+			}
+			else = {
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_HHWO_member }
+						change_subject_type = subject_type_protectorate
+						add_modifier = {
+							name = modifier_tot_subject_development_timeout
+							days = normal_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_HHWO_finished
+						remove_variable = tot_subject_development_HHWO_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_HHWO_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_timeout
+								days = normal_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_HHWO_finished
+							remove_variable = tot_subject_development_HHWO_overlord_member
+						}
+					}
+				}
+			}
+		}
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_tot_idol_subject_development_status
+				trigger = { always = yes }
+			}
+		}
+	}
+}
+
+je_tot_idol_subject_development_UKR = {
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	group = je_group_global_international_situations
+	should_be_pinned_by_default_involved = yes
+	should_be_pinned_by_default_uninvolved_or_context = no
+	weight = 10000
+	timeout = 3650
+
+	should_be_involved = {
+		OR = {
+			c:UKR ?= this
+			c:HTT ?= this
+		}
+	}
+	should_show_when_not_involved = {
+		always = no
+	}
+
+
+	scripted_button = tot_subject_development_common_1_UKR_button
+	scripted_button = tot_subject_development_common_2_UKR_button
+	scripted_button = tot_subject_development_common_3_UKR_button
+	scripted_button = tot_subject_development_common_4_UKR_button
+	scripted_button = tot_subject_development_common_5_UKR_button
+	scripted_button = tot_subject_development_overlord_1_UKR_button
+	scripted_button = tot_subject_development_overlord_2_UKR_button
+	scripted_button = tot_subject_development_overlord_3_UKR_button
+	scripted_button = tot_subject_development_national_1_UKR_button
+	scripted_button = tot_subject_development_national_2_UKR_button
+	scripted_button = tot_subject_development_national_3_UKR_button
+
+	immediate = {
+		c:UKR ?= {
+			set_variable = tot_subject_development_UKR_member
+			save_scope_as = tot_subject_development_subject
+		}
+		c:HTT ?= {
+			set_variable = tot_subject_development_UKR_overlord_member
+			save_scope_as = tot_subject_development_overlord
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			c:UKR ?= {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_UKR_gdp_goal } }
+					set_variable = {
+						name = tot_subject_development_UKR_gdp_goal
+						value = {
+							value = gdp
+							multiply = 1.5
+						}
+					}
+				}
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_UKR_member } }
+					set_variable = tot_subject_development_UKR_member
+					save_scope_as = tot_subject_development_subject
+				}
+			}
+			c:HTT ?= {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_UKR_overlord_member } }
+					set_variable = tot_subject_development_UKR_overlord_member
+					save_scope_as = tot_subject_development_overlord
+				}
+			}
+			scope:journal_entry = {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_UKR_inited } }
+					set_variable = tot_subject_development_UKR_inited
+					set_variable = { name = tot_subject_development_UKR_common_completed_subject value = 0 }
+					set_variable = { name = tot_subject_development_UKR_common_completed_overlord value = 0 }
+					set_variable = { name = tot_subject_development_UKR_overlord_completed value = 0 }
+					set_variable = { name = tot_subject_development_UKR_national_completed value = 0 }
+					set_variable = { name = tot_subject_development_UKR_subject_score value = 0 }
+					set_variable = { name = tot_subject_development_UKR_overlord_score value = 0 }
+				}
+				if = {
+					limit = {
+						NOT = {
+							any_scope_je_involved = {
+								has_variable = tot_subject_development_UKR_overlord_member
+							}
+						}
+					}
+					add_involved_country = c:HTT
+				}
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = {
+			has_variable = tot_subject_development_UKR_inited
+			var:tot_subject_development_UKR_subject_score >= 5
+			var:tot_subject_development_UKR_subject_score > var:tot_subject_development_UKR_overlord_score
+		}
+	}
+
+	fail = {
+		scope:journal_entry = {
+			has_variable = tot_subject_development_UKR_inited
+			var:tot_subject_development_UKR_overlord_score >= 5
+			var:tot_subject_development_UKR_overlord_score > var:tot_subject_development_UKR_subject_score
+		}
+	}
+
+	on_complete = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_UKR_finished
+			custom_tooltip = tot_subject_development_subject_winner_tt
+			every_scope_je_involved = {
+				if = {
+					limit = { has_variable = tot_subject_development_UKR_member }
+					change_subject_type = subject_type_dominion
+					add_liberty_desire = 10
+					add_modifier = {
+						name = modifier_tot_subject_development_subject_winner
+						days = long_modifier_time
+					}
+					add_modifier = {
+						name = modifier_tot_subject_development_participant
+						days = normal_modifier_time
+					}
+					set_variable = tot_subject_development_UKR_finished
+					remove_variable = tot_subject_development_UKR_member
+				}
+				else = {
+					if = {
+						limit = { has_variable = tot_subject_development_UKR_overlord_member }
+						add_modifier = {
+							name = modifier_tot_subject_development_overlord_loser
+							days = normal_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_UKR_finished
+						remove_variable = tot_subject_development_UKR_overlord_member
+					}
+				}
+			}
+		}
+	}
+
+	on_fail = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_UKR_finished
+			custom_tooltip = tot_subject_development_overlord_winner_tt
+			every_scope_je_involved = {
+				if = {
+					limit = { has_variable = tot_subject_development_UKR_member }
+					change_subject_type = subject_type_puppet
+					add_liberty_desire = -10
+					add_modifier = {
+						name = modifier_tot_subject_development_participant
+						days = normal_modifier_time
+					}
+					set_variable = tot_subject_development_UKR_finished
+					remove_variable = tot_subject_development_UKR_member
+				}
+				else = {
+					if = {
+						limit = { has_variable = tot_subject_development_UKR_overlord_member }
+						add_modifier = {
+							name = modifier_tot_subject_development_overlord_winner
+							days = long_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_UKR_finished
+						remove_variable = tot_subject_development_UKR_overlord_member
+					}
+				}
+			}
+		}
+	}
+
+	on_timeout = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_UKR_finished
+			custom_tooltip = tot_subject_development_timeout_tt
+			if = {
+				limit = { var:tot_subject_development_UKR_subject_score > var:tot_subject_development_UKR_overlord_score }
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_UKR_member }
+						change_subject_type = subject_type_dominion
+						add_liberty_desire = 10
+						add_modifier = {
+							name = modifier_tot_subject_development_subject_winner
+							days = long_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_UKR_finished
+						remove_variable = tot_subject_development_UKR_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_UKR_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_overlord_loser
+								days = normal_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_UKR_finished
+							remove_variable = tot_subject_development_UKR_overlord_member
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { var:tot_subject_development_UKR_overlord_score > var:tot_subject_development_UKR_subject_score }
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_UKR_member }
+						change_subject_type = subject_type_puppet
+						add_liberty_desire = -10
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_UKR_finished
+						remove_variable = tot_subject_development_UKR_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_UKR_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_overlord_winner
+								days = long_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_UKR_finished
+							remove_variable = tot_subject_development_UKR_overlord_member
+						}
+					}
+				}
+			}
+			else = {
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_UKR_member }
+						change_subject_type = subject_type_protectorate
+						add_modifier = {
+							name = modifier_tot_subject_development_timeout
+							days = normal_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_UKR_finished
+						remove_variable = tot_subject_development_UKR_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_UKR_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_timeout
+								days = normal_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_UKR_finished
+							remove_variable = tot_subject_development_UKR_overlord_member
+						}
+					}
+				}
+			}
+		}
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_tot_idol_subject_development_status
+				trigger = { always = yes }
+			}
+		}
+	}
+}
+
+je_tot_idol_subject_development_ROM = {
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	group = je_group_global_international_situations
+	should_be_pinned_by_default_involved = yes
+	should_be_pinned_by_default_uninvolved_or_context = no
+	weight = 10000
+	timeout = 3650
+
+	should_be_involved = {
+		OR = {
+			c:ROM ?= this
+			c:HTT ?= this
+		}
+	}
+	should_show_when_not_involved = {
+		always = no
+	}
+
+
+	scripted_button = tot_subject_development_common_1_ROM_button
+	scripted_button = tot_subject_development_common_2_ROM_button
+	scripted_button = tot_subject_development_common_3_ROM_button
+	scripted_button = tot_subject_development_common_4_ROM_button
+	scripted_button = tot_subject_development_common_5_ROM_button
+	scripted_button = tot_subject_development_overlord_1_ROM_button
+	scripted_button = tot_subject_development_overlord_2_ROM_button
+	scripted_button = tot_subject_development_overlord_3_ROM_button
+	scripted_button = tot_subject_development_national_1_ROM_button
+	scripted_button = tot_subject_development_national_2_ROM_button
+	scripted_button = tot_subject_development_national_3_ROM_button
+
+	immediate = {
+		c:ROM ?= {
+			set_variable = tot_subject_development_ROM_member
+			save_scope_as = tot_subject_development_subject
+		}
+		c:HTT ?= {
+			set_variable = tot_subject_development_ROM_overlord_member
+			save_scope_as = tot_subject_development_overlord
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			c:ROM ?= {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_ROM_gdp_goal } }
+					set_variable = {
+						name = tot_subject_development_ROM_gdp_goal
+						value = {
+							value = gdp
+							multiply = 1.5
+						}
+					}
+				}
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_ROM_member } }
+					set_variable = tot_subject_development_ROM_member
+					save_scope_as = tot_subject_development_subject
+				}
+			}
+			c:HTT ?= {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_ROM_overlord_member } }
+					set_variable = tot_subject_development_ROM_overlord_member
+					save_scope_as = tot_subject_development_overlord
+				}
+			}
+			scope:journal_entry = {
+				if = {
+					limit = { NOT = { has_variable = tot_subject_development_ROM_inited } }
+					set_variable = tot_subject_development_ROM_inited
+					set_variable = { name = tot_subject_development_ROM_common_completed_subject value = 0 }
+					set_variable = { name = tot_subject_development_ROM_common_completed_overlord value = 0 }
+					set_variable = { name = tot_subject_development_ROM_overlord_completed value = 0 }
+					set_variable = { name = tot_subject_development_ROM_national_completed value = 0 }
+					set_variable = { name = tot_subject_development_ROM_subject_score value = 0 }
+					set_variable = { name = tot_subject_development_ROM_overlord_score value = 0 }
+				}
+				if = {
+					limit = {
+						NOT = {
+							any_scope_je_involved = {
+								has_variable = tot_subject_development_ROM_overlord_member
+							}
+						}
+					}
+					add_involved_country = c:HTT
+				}
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = {
+			has_variable = tot_subject_development_ROM_inited
+			var:tot_subject_development_ROM_subject_score >= 5
+			var:tot_subject_development_ROM_subject_score > var:tot_subject_development_ROM_overlord_score
+		}
+	}
+
+	fail = {
+		scope:journal_entry = {
+			has_variable = tot_subject_development_ROM_inited
+			var:tot_subject_development_ROM_overlord_score >= 5
+			var:tot_subject_development_ROM_overlord_score > var:tot_subject_development_ROM_subject_score
+		}
+	}
+
+	on_complete = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_ROM_finished
+			custom_tooltip = tot_subject_development_subject_winner_tt
+			every_scope_je_involved = {
+				if = {
+					limit = { has_variable = tot_subject_development_ROM_member }
+					change_subject_type = subject_type_dominion
+					add_liberty_desire = 10
+					add_modifier = {
+						name = modifier_tot_subject_development_subject_winner
+						days = long_modifier_time
+					}
+					add_modifier = {
+						name = modifier_tot_subject_development_participant
+						days = normal_modifier_time
+					}
+					set_variable = tot_subject_development_ROM_finished
+					remove_variable = tot_subject_development_ROM_member
+				}
+				else = {
+					if = {
+						limit = { has_variable = tot_subject_development_ROM_overlord_member }
+						add_modifier = {
+							name = modifier_tot_subject_development_overlord_loser
+							days = normal_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_ROM_finished
+						remove_variable = tot_subject_development_ROM_overlord_member
+					}
+				}
+			}
+		}
+	}
+
+	on_fail = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_ROM_finished
+			custom_tooltip = tot_subject_development_overlord_winner_tt
+			every_scope_je_involved = {
+				if = {
+					limit = { has_variable = tot_subject_development_ROM_member }
+					change_subject_type = subject_type_puppet
+					add_liberty_desire = -10
+					add_modifier = {
+						name = modifier_tot_subject_development_participant
+						days = normal_modifier_time
+					}
+					set_variable = tot_subject_development_ROM_finished
+					remove_variable = tot_subject_development_ROM_member
+				}
+				else = {
+					if = {
+						limit = { has_variable = tot_subject_development_ROM_overlord_member }
+						add_modifier = {
+							name = modifier_tot_subject_development_overlord_winner
+							days = long_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_ROM_finished
+						remove_variable = tot_subject_development_ROM_overlord_member
+					}
+				}
+			}
+		}
+	}
+
+	on_timeout = {
+		scope:journal_entry = {
+			set_variable = tot_subject_development_ROM_finished
+			custom_tooltip = tot_subject_development_timeout_tt
+			if = {
+				limit = { var:tot_subject_development_ROM_subject_score > var:tot_subject_development_ROM_overlord_score }
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_ROM_member }
+						change_subject_type = subject_type_dominion
+						add_liberty_desire = 10
+						add_modifier = {
+							name = modifier_tot_subject_development_subject_winner
+							days = long_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_ROM_finished
+						remove_variable = tot_subject_development_ROM_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_ROM_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_overlord_loser
+								days = normal_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_ROM_finished
+							remove_variable = tot_subject_development_ROM_overlord_member
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { var:tot_subject_development_ROM_overlord_score > var:tot_subject_development_ROM_subject_score }
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_ROM_member }
+						change_subject_type = subject_type_puppet
+						add_liberty_desire = -10
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_ROM_finished
+						remove_variable = tot_subject_development_ROM_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_ROM_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_overlord_winner
+								days = long_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_ROM_finished
+							remove_variable = tot_subject_development_ROM_overlord_member
+						}
+					}
+				}
+			}
+			else = {
+				every_scope_je_involved = {
+					if = {
+						limit = { has_variable = tot_subject_development_ROM_member }
+						change_subject_type = subject_type_protectorate
+						add_modifier = {
+							name = modifier_tot_subject_development_timeout
+							days = normal_modifier_time
+						}
+						add_modifier = {
+							name = modifier_tot_subject_development_participant
+							days = normal_modifier_time
+						}
+						set_variable = tot_subject_development_ROM_finished
+						remove_variable = tot_subject_development_ROM_member
+					}
+					else = {
+						if = {
+							limit = { has_variable = tot_subject_development_ROM_overlord_member }
+							add_modifier = {
+								name = modifier_tot_subject_development_timeout
+								days = normal_modifier_time
+							}
+							add_modifier = {
+								name = modifier_tot_subject_development_participant
+								days = normal_modifier_time
+							}
+							set_variable = tot_subject_development_ROM_finished
+							remove_variable = tot_subject_development_ROM_overlord_member
+						}
+					}
+				}
 			}
 		}
 	}

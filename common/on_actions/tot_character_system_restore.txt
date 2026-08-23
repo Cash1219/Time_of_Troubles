@@ -3,14 +3,6 @@
 			every_country = {
 			tot_cleanup_idol_political_setup_effect = yes
 			if = {
-				limit = {
-					tot_subject_development_overlord_trigger = yes
-					NOT = { has_variable = tot_subject_development_finished }
-					NOT = { has_journal_entry = je_tot_idol_subject_development }
-				}
-				add_journal_entry = { type = je_tot_idol_subject_development }
-			}
-			if = {
 				limit = { NOT = { has_variable = tot_band_limit } }
 				set_variable = { name = tot_band_limit value = 1 }
 			}
@@ -62,14 +54,6 @@ on_game_started_after_lobby = {
 			every_country = {
 			tot_cleanup_idol_political_setup_effect = yes
 			if = {
-				limit = {
-					tot_subject_development_overlord_trigger = yes
-					NOT = { has_variable = tot_subject_development_finished }
-					NOT = { has_journal_entry = je_tot_idol_subject_development }
-				}
-				add_journal_entry = { type = je_tot_idol_subject_development }
-			}
-			if = {
 				limit = { NOT = { has_variable = tot_band_limit } }
 				set_variable = { name = tot_band_limit value = 1 }
 			}
@@ -115,15 +99,12 @@ on_game_started_after_lobby = {
 
 	on_monthly_pulse_country = {
 	effect = {
-		tot_cleanup_idol_political_setup_effect = yes
+		# Debt repayment must run in the country root scope, once per month.
 		if = {
-			limit = {
-				tot_subject_development_overlord_trigger = yes
-				NOT = { has_variable = tot_subject_development_finished }
-				NOT = { has_journal_entry = je_tot_idol_subject_development }
-			}
-			add_journal_entry = { type = je_tot_idol_subject_development }
+			limit = { c:AVMJ ?= this has_journal_entry = je_tot_avmj_debt_crisis }
+			tot_avmj_debt_monthly_process = yes
 		}
+		tot_cleanup_idol_political_setup_effect = yes
 		if = {
 			limit = { has_journal_entry = je_tot_club_gui }
 			remove_journal_entry = je_tot_club_gui

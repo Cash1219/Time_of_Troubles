@@ -37,8 +37,12 @@
 			blockoverride "second_button_click" { onclick = "[GetVariableSystem.Set( 'tot_character_activity_tab', 'competitions' )]" }
 			blockoverride "second_button_visibility" { visible = "[GetVariableSystem.HasValue( 'tot_character_activity_tab', 'competitions' )]" }
 			blockoverride "second_button_visibility_checked" { visible = "[Not(GetVariableSystem.HasValue( 'tot_character_activity_tab', 'competitions' ))]" }
-			blockoverride "third_button_visibility" { visible = no }
-			blockoverride "third_button_visibility_checked" { visible = no }
+			blockoverride "third_button" { text = "TOT_CHARACTER_ACTIVITY_TAB_DEBT" }
+			blockoverride "third_button_selected" { text = "TOT_CHARACTER_ACTIVITY_TAB_DEBT" }
+			blockoverride "third_button_tooltip" { tooltip = "TOT_CHARACTER_ACTIVITY_TAB_DEBT" }
+			blockoverride "third_button_click" { onclick = "[GetVariableSystem.Set( 'tot_character_activity_tab', 'debt' )]" }
+			blockoverride "third_button_visibility" { visible = "[And(GetScriptedGui('tot_avmj_debt_activity_available').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), GetVariableSystem.HasValue( 'tot_character_activity_tab', 'debt' ))]" }
+			blockoverride "third_button_visibility_checked" { visible = "[And(GetScriptedGui('tot_avmj_debt_activity_available').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End), Not(GetVariableSystem.HasValue( 'tot_character_activity_tab', 'debt' )))]" }
 			blockoverride "fourth_button_visibility" { visible = no }
 			blockoverride "fourth_button_visibility_checked" { visible = no }
 			blockoverride "fifth_button_visibility" { visible = no }
@@ -1300,6 +1304,13 @@
 		position = { 0 40 }
 		size = { 1480 640 }
 		tot_music_competition_page = {}
+	}
+
+	widget = {
+		visible = "[GetVariableSystem.HasValue( 'tot_character_activity_tab', 'debt' )]"
+		position = { 0 40 }
+		size = { 1480 640 }
+		tot_avmj_debt_activity_page = {}
 	}
 }
 }

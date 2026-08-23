@@ -1,138 +1,461 @@
-tot_subject_development_overlord_trigger = {
-	tot_is_idol_country = yes
-	is_subject = no
-	any_direct_subject = {
-		OR = {
-			c:AQO ?= this
-			c:NJS ?= this
-			c:GKMS ?= this
-			c:AVMJ ?= this
-			c:MYG ?= this
-			c:AFTG ?= this
-			c:HHWO ?= this
-			c:UKR ?= this
-			c:ROM ?= this
+# 二偶企划发展竞赛触发器
+
+tot_subject_development_can_start_trigger = {
+	is_subject_type = subject_type_plan_affiliate
+	overlord = {
+		tot_is_idol_country = yes
+	}
+}
+# 共同目标（双方通用）
+
+tot_subject_development_common_1_trigger = {
+	country_has_building_type_levels = { target = bt:building_stage value >= 2 }
+	country_has_building_type_levels = { target = bt:building_musical_instrument value >= 2 }
+	country_has_building_type_levels = { target = bt:building_club value >= 2 }
+}
+
+tot_subject_development_common_2_trigger = {
+	gdp >= 3000000
+}
+
+tot_subject_development_common_3_trigger = {
+	OR = {
+		country_has_building_type_levels = { target = bt:building_university value >= 5 }
+		literacy_rate > 0.35
+	}
+}
+
+tot_subject_development_common_4_trigger = {
+	OR = {
+		country_has_building_type_levels = { target = bt:building_government_administration value >= 20 }
+		country_has_building_type_levels = { target = bt:building_railway value >= 5 }
+		country_has_building_type_levels = { target = bt:building_club value >= 10 }
+	}
+}
+
+tot_subject_development_common_5_trigger = {
+	OR = {
+		average_sol >= 12
+		market_capital.market = {
+			mg:grain = {
+				NOT = { market_goods_pricier > 0 }
+			}
 		}
 	}
 }
 
-tot_subject_development_common_1_trigger = {
-	country_has_building_type_levels = { building = building_stage value >= 3 }
-	country_has_building_type_levels = { building = building_musical_instrument value >= 3 }
-	country_has_building_type_levels = { building = building_club value >= 3 }
-	any_scope_building = {
-		is_building_type = building_stage
-		occupancy >= 0.75
-		cash_reserves_ratio > 0.5
-		weekly_profit > 0
-		is_subsidized = no
-	}
-	any_scope_building = {
-		is_building_type = building_musical_instrument
-		occupancy >= 0.75
-		cash_reserves_ratio > 0.5
-		weekly_profit > 0
-		is_subsidized = no
-	}
-	any_scope_building = {
-		is_building_type = building_club
-		occupancy >= 0.75
-		cash_reserves_ratio > 0.5
-		weekly_profit > 0
-		is_subsidized = no
+# 宗主目标。每个日志使用独立变量，避免同一宗主参加多个日志时串线。
+
+
+
+tot_subject_development_overlord_1_AQO_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_AQO_member
+			relations:root >= 50
+		}
 	}
 }
 
-tot_subject_development_common_2_trigger = {
-	gdp >= 5000000
-	average_sol >= 13
-}
-
-tot_subject_development_common_3_trigger = {
-	literacy_rate >= 0.40
-	country_has_building_type_levels = { building = building_university value >= 2 }
-}
-
-tot_subject_development_common_4_trigger = {
-	country_has_building_type_levels = { building = building_railway value >= 4 }
-	country_has_building_type_levels = { building = building_government_administration value >= 3 }
-}
-
-tot_subject_development_common_5_trigger = {
-	country_has_building_type_levels = { building = building_food_industry value >= 5 }
-	country_has_building_type_levels = { building = building_tooling_workshop value >= 3 }
-}
-
-tot_subject_development_overlord_1_trigger = {
-	has_variable = tot_subject_development_overlord_member
-	every_direct_subject = {
-		limit = { has_variable = tot_subject_development_member }
-		relations:root >= 50
+tot_subject_development_overlord_2_AQO_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_AQO_member
+			liberty_desire <= 35
+		}
 	}
 }
 
-tot_subject_development_overlord_2_trigger = {
-	has_variable = tot_subject_development_overlord_member
-	every_direct_subject = {
-		limit = { has_variable = tot_subject_development_member }
-		liberty_desire <= 35
+tot_subject_development_overlord_3_AQO_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_AQO_member
+			has_variable = tot_subject_development_AQO_gdp_goal
+			gdp >= var:tot_subject_development_AQO_gdp_goal
+		}
 	}
 }
 
-tot_subject_development_overlord_3_trigger = {
-	has_variable = tot_subject_development_overlord_member
-	every_direct_subject = {
-		limit = { has_variable = tot_subject_development_member }
-		gdp >= 1500000
+tot_subject_development_overlord_1_NJS_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_NJS_member
+			relations:root >= 50
+		}
 	}
 }
 
-tot_subject_development_overlord_4_trigger = {
-	has_variable = tot_subject_development_overlord_member
-	every_direct_subject = {
-		limit = { has_variable = tot_subject_development_member }
-		average_sol >= 12
+tot_subject_development_overlord_2_NJS_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_NJS_member
+			liberty_desire <= 35
+		}
 	}
 }
 
-tot_subject_development_national_1_trigger = {
+tot_subject_development_overlord_3_NJS_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_NJS_member
+			has_variable = tot_subject_development_NJS_gdp_goal
+			gdp >= var:tot_subject_development_NJS_gdp_goal
+		}
+	}
+}
+
+tot_subject_development_overlord_1_GKMS_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_GKMS_member
+			relations:root >= 50
+		}
+	}
+}
+
+tot_subject_development_overlord_2_GKMS_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_GKMS_member
+			liberty_desire <= 35
+		}
+	}
+}
+
+tot_subject_development_overlord_3_GKMS_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_GKMS_member
+			has_variable = tot_subject_development_GKMS_gdp_goal
+			gdp >= var:tot_subject_development_GKMS_gdp_goal
+		}
+	}
+}
+
+tot_subject_development_overlord_1_AVMJ_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_AVMJ_member
+			relations:root >= 50
+		}
+	}
+}
+
+tot_subject_development_overlord_2_AVMJ_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_AVMJ_member
+			liberty_desire <= 35
+		}
+	}
+}
+
+tot_subject_development_overlord_3_AVMJ_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_AVMJ_member
+			has_variable = tot_subject_development_AVMJ_gdp_goal
+			gdp >= var:tot_subject_development_AVMJ_gdp_goal
+		}
+	}
+}
+
+tot_subject_development_overlord_1_MYG_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_MYG_member
+			relations:root >= 50
+		}
+	}
+}
+
+tot_subject_development_overlord_2_MYG_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_MYG_member
+			liberty_desire <= 35
+		}
+	}
+}
+
+tot_subject_development_overlord_3_MYG_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_MYG_member
+			has_variable = tot_subject_development_MYG_gdp_goal
+			gdp >= var:tot_subject_development_MYG_gdp_goal
+		}
+	}
+}
+
+tot_subject_development_overlord_1_AFTG_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_AFTG_member
+			relations:root >= 50
+		}
+	}
+}
+
+tot_subject_development_overlord_2_AFTG_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_AFTG_member
+			liberty_desire <= 35
+		}
+	}
+}
+
+tot_subject_development_overlord_3_AFTG_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_AFTG_member
+			has_variable = tot_subject_development_AFTG_gdp_goal
+			gdp >= var:tot_subject_development_AFTG_gdp_goal
+		}
+	}
+}
+
+tot_subject_development_overlord_1_HHWO_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_HHWO_member
+			relations:root >= 50
+		}
+	}
+}
+
+tot_subject_development_overlord_2_HHWO_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_HHWO_member
+			liberty_desire <= 35
+		}
+	}
+}
+
+tot_subject_development_overlord_3_HHWO_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_HHWO_member
+			has_variable = tot_subject_development_HHWO_gdp_goal
+			gdp >= var:tot_subject_development_HHWO_gdp_goal
+		}
+	}
+}
+
+tot_subject_development_overlord_1_UKR_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_UKR_member
+			relations:root >= 50
+		}
+	}
+}
+
+tot_subject_development_overlord_2_UKR_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_UKR_member
+			liberty_desire <= 35
+		}
+	}
+}
+
+tot_subject_development_overlord_3_UKR_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_UKR_member
+			has_variable = tot_subject_development_UKR_gdp_goal
+			gdp >= var:tot_subject_development_UKR_gdp_goal
+		}
+	}
+}
+
+tot_subject_development_overlord_1_ROM_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_ROM_member
+			relations:root >= 50
+		}
+	}
+}
+
+tot_subject_development_overlord_2_ROM_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_ROM_member
+			liberty_desire <= 35
+		}
+	}
+}
+
+tot_subject_development_overlord_3_ROM_trigger = {
+	scope:journal_entry = {
+		any_scope_je_involved = {
+			has_variable = tot_subject_development_ROM_member
+			has_variable = tot_subject_development_ROM_gdp_goal
+			gdp >= var:tot_subject_development_ROM_gdp_goal
+		}
+	}
+}
+
+# 属国特色目标：已配置公司的每家公司各有一个主建筑。只检查该国拥有的建筑总等级，
+# 不检查建筑是否由对应公司持有；这是为了兼容科技尚未解锁公司槽位的开局阶段。
+# GKMS、AFTG、HHWO、UKR、ROM 的三家公司待按原作风味确定后再替换占位目标。
+
+tot_subject_development_national_1_AQO_trigger = {
 	OR = {
-		AND = { c:AQO ?= this country_has_building_type_levels = { building = building_naval_base value >= 5 } }
-		AND = { c:NJS ?= this country_has_building_type_levels = { building = building_railway value >= 4 } }
-		AND = { c:GKMS ?= this country_has_building_type_levels = { building = building_university value >= 3 } }
-		AND = { c:AVMJ ?= this country_has_building_type_levels = { building = building_food_industry value >= 5 } }
-		AND = { c:MYG ?= this country_has_building_type_levels = { building = building_stage value >= 5 } }
-		AND = { c:AFTG ?= this country_has_building_type_levels = { building = building_coffee_plantation value >= 10 } }
-		AND = { c:HHWO ?= this country_has_building_type_levels = { building = building_port value >= 8 } }
-		AND = { c:UKR ?= this country_has_building_type_levels = { building = building_wheat_farm value >= 15 } }
-		AND = { c:ROM ?= this country_has_building_type_levels = { building = building_stage value >= 5 } }
+		country_has_building_type_levels = { target = bt:building_wheat_farm value >= 10 }
+		country_has_building_type_levels = { target = bt:building_food_industry value >= 10 }
+		country_has_building_type_levels = { target = bt:building_chemical_plant value >= 10 }
 	}
 }
 
-tot_subject_development_national_2_trigger = {
+tot_subject_development_national_2_AQO_trigger = {
 	OR = {
-		AND = { c:AQO ?= country_has_building_type_levels = { building = building_railway value >= 3 } country_has_building_type_levels = { building = building_port value >= 5 } }
-		AND = { c:NJS ?= country_has_building_type_levels = { building = building_railway value >= 6 } country_has_building_type_levels = { building = building_government_administration value >= 4 } }
-		AND = { c:GKMS ?= country_has_building_type_levels = { building = building_university value >= 5 } average_sol >= 15 }
-		AND = { c:AVMJ ?= country_has_building_type_levels = { building = building_tooling_workshop value >= 3 } country_has_building_type_levels = { building = building_motor_industry value >= 1 } }
-		AND = { c:MYG ?= country_has_building_type_levels = { building = building_musical_instrument value >= 5 } country_has_building_type_levels = { building = building_club value >= 5 } }
-		AND = { c:AFTG ?= country_has_building_type_levels = { building = building_food_industry value >= 3 } country_has_building_type_levels = { building = building_coffee_plantation value >= 10 } }
-		AND = { c:HHWO ?= country_has_building_type_levels = { building = building_logging_camp value >= 10 } country_has_building_type_levels = { building = building_port value >= 8 } }
-		AND = { c:UKR ?= country_has_building_type_levels = { building = building_wheat_farm value >= 10 } country_has_building_type_levels = { building = building_railway value >= 5 } }
-		AND = { c:ROM ?= country_has_building_type_levels = { building = building_stage value >= 5 } country_has_building_type_levels = { building = building_port value >= 3 } }
+		country_has_building_type_levels = { target = bt:building_textile_mill value >= 10 }
+		country_has_building_type_levels = { target = bt:building_fishing_wharf value >= 10 }
+		country_has_building_type_levels = { target = bt:building_shipyard value >= 10 }
 	}
 }
 
-tot_subject_development_national_3_trigger = {
+tot_subject_development_national_3_AQO_trigger = {
 	OR = {
-		AND = { c:AQO ?= this literacy_rate >= 0.40 average_sol >= 13 }
-		AND = { c:NJS ?= this literacy_rate >= 0.45 gdp >= 3000000 }
-		AND = { c:GKMS ?= this literacy_rate >= 0.60 average_sol >= 15 }
-		AND = { c:AVMJ ?= this average_sol >= 13 gdp >= 3000000 }
-		AND = { c:MYG ?= this average_sol >= 14 literacy_rate >= 0.45 }
-		AND = { c:AFTG ?= this gdp >= 3000000 average_sol >= 12 }
-		AND = { c:HHWO ?= this literacy_rate >= 0.50 gdp >= 5000000 }
-		AND = { c:UKR ?= this average_sol >= 12 gdp >= 2000000 }
-		AND = { c:ROM ?= this average_sol >= 13 literacy_rate >= 0.40 }
+		country_has_building_type_levels = { target = bt:building_entertainment_press value >= 10 }
+		country_has_building_type_levels = { target = bt:building_stage value >= 10 }
+		country_has_building_type_levels = { target = bt:building_aquarium value >= 10 }
 	}
+}
+
+tot_subject_development_national_1_NJS_trigger = {
+	OR = {
+		country_has_building_type_levels = { target = bt:building_stage value >= 10 }
+		country_has_building_type_levels = { target = bt:building_entertainment_press value >= 10 }
+		country_has_building_type_levels = { target = bt:building_musical_instrument value >= 10 }
+	}
+}
+
+tot_subject_development_national_2_NJS_trigger = {
+	OR = {
+		country_has_building_type_levels = { target = bt:building_paper_mill value >= 10 }
+		country_has_building_type_levels = { target = bt:building_tooling_workshop value >= 10 }
+		country_has_building_type_levels = { target = bt:building_publisher value >= 10 }
+	}
+}
+
+tot_subject_development_national_3_NJS_trigger = {
+	OR = {
+		country_has_building_type_levels = { target = bt:building_amusement_park value >= 10 }
+		country_has_building_type_levels = { target = bt:building_textile_mill value >= 10 }
+		country_has_building_type_levels = { target = bt:building_stage value >= 10 }
+	}
+}
+
+tot_subject_development_national_1_GKMS_trigger = {
+	country_has_building_type_levels = { target = bt:building_university value >= 3 }
+}
+
+tot_subject_development_national_2_GKMS_trigger = {
+	country_has_building_type_levels = { target = bt:building_university value >= 5 } average_sol >= 15
+}
+
+tot_subject_development_national_3_GKMS_trigger = {
+	literacy_rate >= 0.60 average_sol >= 15
+}
+
+tot_subject_development_national_1_AVMJ_trigger = {
+	OR = {
+		country_has_building_type_levels = { target = bt:building_motor_industry value >= 10 }
+		country_has_building_type_levels = { target = bt:building_steel_mill value >= 10 }
+		country_has_building_type_levels = { target = bt:building_tooling_workshop value >= 10 }
+	}
+}
+
+tot_subject_development_national_2_AVMJ_trigger = {
+	OR = {
+		country_has_building_type_levels = { target = bt:building_stage value >= 10 }
+		country_has_building_type_levels = { target = bt:building_textile_mill value >= 10 }
+		country_has_building_type_levels = { target = bt:building_goods value >= 10 }
+	}
+}
+
+tot_subject_development_national_3_AVMJ_trigger = {
+	OR = {
+		country_has_building_type_levels = { target = bt:building_food_industry value >= 10 }
+		country_has_building_type_levels = { target = bt:building_goods value >= 10 }
+		country_has_building_type_levels = { target = bt:building_stage value >= 10 }
+	}
+}
+
+tot_subject_development_national_1_MYG_trigger = {
+	OR = {
+		country_has_building_type_levels = { target = bt:building_stage value >= 10 }
+		country_has_building_type_levels = { target = bt:building_entertainment_press value >= 10 }
+		country_has_building_type_levels = { target = bt:building_musical_instrument value >= 10 }
+	}
+}
+
+tot_subject_development_national_2_MYG_trigger = {
+	OR = {
+		country_has_building_type_levels = { target = bt:building_tea_plantation value >= 10 }
+		country_has_building_type_levels = { target = bt:building_textile_mill value >= 10 }
+		country_has_building_type_levels = { target = bt:building_food_industry value >= 10 }
+	}
+}
+
+tot_subject_development_national_3_MYG_trigger = {
+	OR = {
+		country_has_building_type_levels = { target = bt:building_club value >= 10 }
+		country_has_building_type_levels = { target = bt:building_glassworks value >= 10 }
+		country_has_building_type_levels = { target = bt:building_paper_mill value >= 10 }
+	}
+}
+
+tot_subject_development_national_1_AFTG_trigger = {
+	country_has_building_type_levels = { target = bt:building_coffee_plantation value >= 10 }
+}
+
+tot_subject_development_national_2_AFTG_trigger = {
+	country_has_building_type_levels = { target = bt:building_food_industry value >= 3 } country_has_building_type_levels = { target = bt:building_coffee_plantation value >= 10 }
+}
+
+tot_subject_development_national_3_AFTG_trigger = {
+	gdp >= 3000000 average_sol >= 12
+}
+
+tot_subject_development_national_1_HHWO_trigger = {
+	country_has_building_type_levels = { target = bt:building_port value >= 8 }
+}
+
+tot_subject_development_national_2_HHWO_trigger = {
+	country_has_building_type_levels = { target = bt:building_logging_camp value >= 10 } country_has_building_type_levels = { target = bt:building_port value >= 8 }
+}
+
+tot_subject_development_national_3_HHWO_trigger = {
+	literacy_rate >= 0.50 gdp >= 5000000
+}
+
+tot_subject_development_national_1_UKR_trigger = {
+	country_has_building_type_levels = { target = bt:building_wheat_farm value >= 15 }
+}
+
+tot_subject_development_national_2_UKR_trigger = {
+	country_has_building_type_levels = { target = bt:building_wheat_farm value >= 10 } country_has_building_type_levels = { target = bt:building_railway value >= 5 }
+}
+
+tot_subject_development_national_3_UKR_trigger = {
+	average_sol >= 12 gdp >= 2000000
+}
+
+tot_subject_development_national_1_ROM_trigger = {
+	country_has_building_type_levels = { target = bt:building_stage value >= 5 }
+}
+
+tot_subject_development_national_2_ROM_trigger = {
+	country_has_building_type_levels = { target = bt:building_stage value >= 5 } country_has_building_type_levels = { target = bt:building_port value >= 3 }
+}
+
+tot_subject_development_national_3_ROM_trigger = {
+	average_sol >= 13 literacy_rate >= 0.40
 }

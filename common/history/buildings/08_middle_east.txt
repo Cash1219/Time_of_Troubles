@@ -616,13 +616,13 @@
 		}
 	}
 	s:STATE_ALEPPO={
-		region_state:ALPP={
+		region_state:MYG={
 			create_building={
 				building="building_glassworks"
 				add_ownership={
 					building={
 						type="building_glassworks"
-						country="c:ALPP"
+						country="c:MYG"
 						levels=1
 						region="STATE_ALEPPO"
 					}
@@ -635,7 +635,7 @@
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:ALPP"
+						country="c:MYG"
 						levels=1
 						region="STATE_ALEPPO"
 					}
@@ -648,7 +648,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:ALPP"
+						country="c:MYG"
 						levels=1
 						region="STATE_ALEPPO"
 					}
@@ -661,7 +661,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:ALPP"
+						country="c:MYG"
 						levels=1
 						region="STATE_ALEPPO"
 					}
@@ -670,10 +670,22 @@
 				activate_production_methods={ "pm_simple_farming"  "pm_tools_disabled" "pm_citrus_orchards" }
 			}
 			create_building={
+				building="building_textile_mill"
+				add_ownership={
+					company={
+						type=tot_company_myg_nagasaki_group
+						country="c:MYG"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_handsewn_clothes" "pm_traditional_looms" "pm_no_luxury_clothes" }
+			}
+			create_building={
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:ALPP"
+						country="c:MYG"
 						levels=1
 					}
 				}
@@ -1770,19 +1782,6 @@
 				activate_production_methods={ "default_building_tobacco_plantation" "pm_road_carts"  }
 			}
 			create_building={
-				building="building_tea_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:AVMJ"
-						levels=2
-						region="STATE_KONYA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts"  }
-			}
-			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
 					building={
@@ -1872,19 +1871,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
-			}
-			create_building={
-				building="building_tea_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:AVMJ"
-						levels=5
-						region="STATE_KASTAMONU"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts"  }
 			}
 			create_building={
 				building="building_fishing_wharf"
@@ -1978,23 +1964,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated"  }
-			}
-			create_building={
-				building="building_tea_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:AVMJ"
-						levels=1
-						region="STATE_DIYARBAKIR"
-					}
-					country={
-						country="c:NRHD"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts"  }
 			}
 			create_building={
 				building="building_tobacco_plantation"
@@ -2120,19 +2089,6 @@
 				activate_production_methods={ "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated"  }
 			}
 			create_building={
-				building="building_tea_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:AVMJ"
-						levels=1
-						region="STATE_ADANA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts"  }
-			}
-			create_building={
 				building="building_port"
 				add_ownership={
 					country={
@@ -2230,23 +2186,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated"  }
-			}
-			create_building={
-				building="building_tea_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:AVMJ"
-						levels=2
-						region="STATE_TRABZON"
-					}
-					country={
-						country="c:MYG"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts"  }
 			}
 			create_building={
 				building="building_logging_camp"
@@ -2366,19 +2305,6 @@
 				activate_production_methods={ "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated"  }
 			}
 			create_building={
-				building="building_tea_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:AVMJ"
-						levels=1
-						region="STATE_ERZURUM"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts"  }
-			}
-			create_building={
 				building="building_paper_mill"
 				add_ownership={
 					building={
@@ -2487,15 +2413,10 @@
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:AVMJ"
-						levels=1
-						region="STATE_ANKARA"
-					}
-					country={
-						country="c:HTT"
-						levels=1
+					company={
+						type=tot_company_myg_nagasaki_group
+						country="c:MYG"
+						levels=5
 					}
 				}
 				reserves=1
@@ -2517,7 +2438,7 @@
 				building="building_entertainment_press"
 				add_ownership={
 					company={
-						type=tot_company_toyokawa_group
+						type=tot_company_avemujica_agency
 						country="c:AVMJ"
 						levels=5
 					}
@@ -2634,11 +2555,10 @@
 			create_building={
 				building="building_motor_industry"
 				add_ownership={
-					building={
-						type="building_financial_district"
+					company={
+						type=tot_company_toyokawa_group
 						country="c:AVMJ"
-						levels=1
-						region="STATE_ANKARA"
+						levels=5
 					}
 				}
 				reserves=1

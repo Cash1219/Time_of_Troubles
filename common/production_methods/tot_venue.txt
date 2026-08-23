@@ -257,7 +257,7 @@ pm_aquarium_ground_marine = {
 		workforce_scaled = {
 			goods_input_glass_add = 15
 			goods_input_steel_add = 5
-			goods_output_exhibition_add = 20
+			goods_output_exhibition_add = 15
 		}
 	}
 }
@@ -278,7 +278,7 @@ pm_aquarium_ground_tunnel = {
 			goods_input_glass_add = 15
 			goods_input_steel_add = 10
 			goods_input_electricity_add = 15
-			goods_output_exhibition_add = 30
+			goods_output_exhibition_add = 25
 		}
 	}
 }
@@ -299,7 +299,7 @@ pm_aquarium_ground_mega = {
 			goods_input_glass_add = 20
 			goods_input_steel_add = 15
 			goods_input_electricity_add = 20
-			goods_output_exhibition_add = 45
+			goods_output_exhibition_add = 40
 		}
 	}
 }
@@ -337,7 +337,7 @@ pm_aquarium_type_marine = {
 			goods_input_fish_add = 20
 			goods_input_grain_add = 10
 			goods_input_services_add = 10
-			goods_output_exhibition_add = 20
+			goods_output_exhibition_add = 15
 		}
 	}
 }
@@ -358,7 +358,7 @@ pm_aquarium_type_reef = {
 			goods_input_fish_add = 25
 			goods_input_grain_add = 20
 			goods_input_services_add = 20
-			goods_output_exhibition_add = 35
+			goods_output_exhibition_add = 25
 		}
 	}
 }
@@ -379,7 +379,7 @@ pm_aquarium_type_mammal = {
 			goods_input_fish_add = 35
 			goods_input_grain_add = 25
 			goods_input_services_add = 30
-			goods_output_exhibition_add = 50
+			goods_output_exhibition_add = 35
 		}
 	}
 }
@@ -413,12 +413,10 @@ pm_aquarium_program_feeding = {
 			building_employment_machinists_add = 100
 		}
 		workforce_scaled = {
-			goods_input_paper_add = 5
-			goods_input_publications_add = 5
 			goods_input_fish_add = 10
 			goods_input_grain_add = 5
-			goods_input_services_add = 10
-			goods_output_exhibition_add = 20
+			goods_input_services_add = 5
+			goods_output_animal_performance_add = 10
 		}
 	}
 }
@@ -435,14 +433,11 @@ pm_aquarium_program_night = {
 			building_employment_machinists_add = 200
 		}
 		workforce_scaled = {
-			goods_input_paper_add = 5
-			goods_input_publications_add = 5
 			goods_input_fish_add = 10
 			goods_input_grain_add = 5
 			goods_input_services_add = 10
-			goods_input_electricity_add = 15
-			goods_input_luxury_drinks_add = 5
-			goods_output_exhibition_add = 35
+			goods_input_electricity_add = 10
+			goods_output_animal_performance_add = 15
 		}
 	}
 }
@@ -460,16 +455,12 @@ pm_aquarium_program_concert = {
 			building_employment_engineers_add = 100
 		}
 		workforce_scaled = {
-			goods_input_paper_add = 5
-			goods_input_publications_add = 5
 			goods_input_fish_add = 10
 			goods_input_grain_add = 5
 			goods_input_services_add = 10
 			goods_input_electricity_add = 15
 			goods_input_luxury_drinks_add = 5
-			goods_input_entertainment_publications_add = 10
-			goods_input_musical_instrument_add = 5
-			goods_output_exhibition_add = 50
+			goods_output_animal_performance_add = 30
 		}
 	}
 }
@@ -486,7 +477,7 @@ pm_zoo_ground_pen = {
 		workforce_scaled = {
 			goods_input_fabric_add = 10
 			goods_input_wood_add = 10
-			goods_output_animal_performance_add = 10
+			goods_output_exhibition_add = 10
 		}
 	}
 }
@@ -502,7 +493,7 @@ pm_zoo_ground_park = {
 		workforce_scaled = {
 			goods_input_wood_add = 10
 			goods_input_iron_add = 10
-			goods_output_animal_performance_add = 15
+			goods_output_exhibition_add = 15
 		}
 	}
 }
@@ -523,7 +514,7 @@ pm_zoo_ground_stadium = {
 			goods_input_steel_add = 15
 			goods_input_fabric_add = 10
 			goods_input_electricity_add = 15
-			goods_output_animal_performance_add = 25
+			goods_output_exhibition_add = 25
 		}
 	}
 }
@@ -544,7 +535,7 @@ pm_zoo_ground_eco = {
 			goods_input_steel_add = 20
 			goods_input_electricity_add = 20
 			goods_input_services_add = 15
-			goods_output_animal_performance_add = 40
+			goods_output_exhibition_add = 35
 		}
 	}
 }
@@ -561,7 +552,7 @@ pm_zoo_type_small = {
 		workforce_scaled = {
 			goods_input_grain_add = 15
 			goods_input_services_add = 10
-			goods_output_animal_performance_add = 10
+			goods_output_exhibition_add = 10
 		}
 	}
 }
@@ -581,7 +572,7 @@ pm_zoo_type_predator = {
 			goods_input_grain_add = 20
 			goods_input_meat_add = 15
 			goods_input_services_add = 10
-			goods_output_animal_performance_add = 20
+			goods_output_exhibition_add = 15
 		}
 	}
 }
@@ -601,7 +592,7 @@ pm_zoo_type_large = {
 			goods_input_grain_add = 30
 			goods_input_meat_add = 20
 			goods_input_services_add = 20
-			goods_output_animal_performance_add = 35
+			goods_output_exhibition_add = 25
 		}
 	}
 }
@@ -622,7 +613,7 @@ pm_zoo_type_star = {
 			goods_input_meat_add = 20
 			goods_input_services_add = 20
 			goods_input_omocha_add = 10
-			goods_output_animal_performance_add = 50
+			goods_output_exhibition_add = 35
 		}
 	}
 }
@@ -638,7 +629,7 @@ pm_zoo_interaction_basic = {
 		}
 		workforce_scaled = {
 			goods_input_services_add = 10
-			goods_output_animal_performance_add = 5
+			goods_output_exhibition_add = 10
 		}
 	}
 }
@@ -702,7 +693,7 @@ pm_zoo_interaction_grand = {
 			goods_input_meat_add = 10
 			goods_input_services_add = 15
 			goods_input_electricity_add = 10
-			goods_output_animal_performance_add = 25
+			goods_output_animal_performance_add = 40
 		}
 	}
 }

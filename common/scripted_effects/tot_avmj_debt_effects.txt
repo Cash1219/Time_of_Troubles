@@ -1,219 +1,477 @@
+﻿# AVMJ debt ledger. The five claims are stored as concrete outstanding amounts.
+# Interest accrues monthly; selected repayment is collected monthly and settled at the four-year assembly.
+
 tot_avmj_setup_debt = {
 	if = {
-		limit = { NOT = { has_variable = tot_avmj_debt_principal } }
+		limit = { NOT = { has_variable = tot_avmj_ledger_version } }
+		set_variable = { name = tot_avmj_ledger_version value = 2 }
+		set_variable = { name = tot_avmj_initial_principal value = 1680000 }
 		set_variable = { name = tot_avmj_debt_principal value = 1680000 }
 		set_variable = { name = tot_avmj_debt_repaid value = 0 }
-		set_variable = { name = tot_avmj_debt_gdp_repaid value = 0 }
-		set_variable = { name = tot_avmj_state_share value = 35 }
-		set_variable = { name = tot_avmj_htt_share value = 40 }
-		set_variable = { name = tot_avmj_gbdp_share value = 15 }
-		set_variable = { name = tot_avmj_mygo_share value = 5 }
-		set_variable = { name = tot_avmj_nrhd_share value = 0 }
+		set_variable = { name = tot_avmj_debt_forgiven value = 0 }
+		set_variable = { name = tot_avmj_monthly_interest_payment value = 5880 }
+		set_variable = { name = tot_avmj_interest_due value = 0 }
+		set_variable = { name = tot_avmj_interest_paid value = 0 }
+		set_variable = { name = tot_avmj_interest_arrears_congresses value = 0 }
+		set_variable = { name = tot_avmj_debt_months_active value = 0 }
+		set_variable = { name = tot_avmj_months_until_assembly value = 48 }
+		set_variable = { name = tot_avmj_assembly_open value = 0 }
+		set_variable = { name = tot_avmj_actual_interest_payment value = 0 }
+		set_variable = { name = tot_avmj_interest_payment_choice value = 0 }
+		set_variable = { name = tot_avmj_repayment_amount value = 0 }
+		set_variable = { name = tot_avmj_actual_principal_payment value = 0 }
+		set_variable = { name = tot_avmj_debt_fund value = 0 }
+		set_variable = { name = tot_avmj_last_monthly_repayment value = 0 }
+		set_variable = { name = tot_avmj_repayment_level value = 0 }
+		set_variable = { name = tot_avmj_expected_interest value = 0 }
+		set_variable = { name = tot_avmj_assembly_fund_paid value = 0 }
+		set_variable = { name = tot_avmj_last_assembly_fund value = 0 }
+		set_variable = { name = tot_avmj_last_assembly_interest value = 0 }
+		set_variable = { name = tot_avmj_last_assembly_principal value = 0 }
+		set_variable = { name = tot_avmj_last_assembly_surplus value = 0 }
+		set_variable = { name = tot_avmj_last_assembly_shortfall value = 0 }
+		set_variable = { name = tot_avmj_creditor_pressure value = 0 }
+		set_variable = { name = tot_avmj_debt_stage value = 4 }
+
+		# Outstanding principal claims: 336,000 / 840,000 / 252,000 / 168,000 / 84,000.
+		set_variable = { name = tot_avmj_domestic_claim value = 336000 }
+		set_variable = { name = tot_avmj_htt_claim value = 840000 }
+		set_variable = { name = tot_avmj_gbdp_claim value = 252000 }
+		set_variable = { name = tot_avmj_mygo_claim value = 168000 }
+		set_variable = { name = tot_avmj_nrhd_claim value = 84000 }
+		set_variable = { name = tot_avmj_htt_original_claim value = 840000 }
+		set_variable = { name = tot_avmj_gbdp_original_claim value = 252000 }
+		set_variable = { name = tot_avmj_mygo_original_claim value = 168000 }
+		set_variable = { name = tot_avmj_nrhd_original_claim value = 84000 }
+		set_variable = { name = tot_avmj_mygo_claim_holder value = 0 }
+		set_variable = { name = tot_avmj_htt_claim_holder value = 0 }
+		set_variable = { name = tot_avmj_gbdp_claim_holder value = 0 }
+		set_variable = { name = tot_avmj_nrhd_claim_holder value = 0 }
+
+		set_variable = { name = tot_avmj_domestic_interest_paid value = 0 }
+		set_variable = { name = tot_avmj_htt_interest_paid value = 0 }
+		set_variable = { name = tot_avmj_gbdp_interest_paid value = 0 }
+		set_variable = { name = tot_avmj_mygo_interest_paid value = 0 }
+		set_variable = { name = tot_avmj_nrhd_interest_paid value = 0 }
+		set_variable = { name = tot_avmj_domestic_principal_paid value = 0 }
+		set_variable = { name = tot_avmj_htt_principal_paid value = 0 }
+		set_variable = { name = tot_avmj_gbdp_principal_paid value = 0 }
+		set_variable = { name = tot_avmj_mygo_principal_paid value = 0 }
+		set_variable = { name = tot_avmj_nrhd_principal_paid value = 0 }
 		set_variable = { name = tot_avmj_controlled_by value = 1 }
-		set_variable = { name = tot_avmj_investment_rights_sold value = 0 }
-		set_variable = { name = tot_avmj_autonomy_rights_sold value = 0 }
-
-		every_country = {
-			limit = {
-				OR = {
-					this = c:HTT
-					this = c:GBDP
-					this = c:MYG
-					this = c:NRHD
-				}
-			}
-			set_variable = { name = tot_avmj_gdp_claim value = 0 }
-		}
-
+		set_variable = { name = tot_avmj_htt_privilege_level value = 0 }
+		set_variable = { name = tot_avmj_gbdp_privilege_level value = 0 }
+		set_variable = { name = tot_avmj_mygo_privilege_level value = 0 }
+		set_variable = { name = tot_avmj_nrhd_privilege_level value = 0 }
 		add_modifier = { name = tot_avmj_debt_burden }
 		add_journal_entry = { type = je_tot_avmj_debt_crisis }
 	}
+
+	# Repair variables if a country was created outside its normal history block.
+	if = { limit = { NOT = { has_variable = tot_avmj_interest_due } } set_variable = { name = tot_avmj_interest_due value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_avmj_months_until_assembly } } set_variable = { name = tot_avmj_months_until_assembly value = 48 } }
+	if = { limit = { NOT = { has_variable = tot_avmj_assembly_open } } set_variable = { name = tot_avmj_assembly_open value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_avmj_interest_arrears_congresses } } set_variable = { name = tot_avmj_interest_arrears_congresses value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_avmj_debt_fund } } set_variable = { name = tot_avmj_debt_fund value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_avmj_last_monthly_repayment } } set_variable = { name = tot_avmj_last_monthly_repayment value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_avmj_repayment_level } } set_variable = { name = tot_avmj_repayment_level value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_avmj_expected_interest } } set_variable = { name = tot_avmj_expected_interest value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_avmj_assembly_fund_paid } } set_variable = { name = tot_avmj_assembly_fund_paid value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_avmj_last_assembly_fund } } set_variable = { name = tot_avmj_last_assembly_fund value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_avmj_last_assembly_interest } } set_variable = { name = tot_avmj_last_assembly_interest value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_avmj_last_assembly_principal } } set_variable = { name = tot_avmj_last_assembly_principal value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_avmj_last_assembly_surplus } } set_variable = { name = tot_avmj_last_assembly_surplus value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_avmj_last_assembly_shortfall } } set_variable = { name = tot_avmj_last_assembly_shortfall value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_avmj_creditor_pressure } } set_variable = { name = tot_avmj_creditor_pressure value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_avmj_mygo_claim_holder } } set_variable = { name = tot_avmj_mygo_claim_holder value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_avmj_htt_claim_holder } } set_variable = { name = tot_avmj_htt_claim_holder value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_avmj_gbdp_claim_holder } } set_variable = { name = tot_avmj_gbdp_claim_holder value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_avmj_nrhd_claim_holder } } set_variable = { name = tot_avmj_nrhd_claim_holder value = 0 } }
+	c:HTT = { save_scope_as = tot_avmj_htt_country }
+	c:GBDP = { save_scope_as = tot_avmj_gbdp_country }
+	c:MYG = { save_scope_as = tot_avmj_mygo_country }
+	c:NRHD = { save_scope_as = tot_avmj_nrhd_country }
+	tot_avmj_refresh_creditor_gui_lists = yes
 }
 
-tot_avmj_process_gdp_claims = {
-	# Native foreign investment is converted into a one-time debt claim at
-	# the following ownership thresholds. The investment itself remains native.
-	every_country = {
-		limit = {
-			OR = {
-				this = c:HTT
-				this = c:GBDP
-				this = c:MYG
-				this = c:NRHD
-			}
-		}
-
-		if = {
-			limit = {
-				var:tot_avmj_gdp_claim < 5
-				gdp_ownership_ratio = { target = ROOT value >= 0.05 }
-			}
-			set_variable = { name = tot_avmj_gdp_claim value = 5 }
-			ROOT = {
-				if = {
-					limit = { var:tot_avmj_debt_principal >= 84000 }
-					change_variable = { name = tot_avmj_debt_principal add = -84000 }
-					change_variable = { name = tot_avmj_debt_gdp_repaid add = 84000 }
-				}
-				else = { set_variable = { name = tot_avmj_debt_principal value = 0 } }
-			}
-		}
-		if = {
-			limit = {
-				var:tot_avmj_gdp_claim < 10
-				gdp_ownership_ratio = { target = ROOT value >= 0.10 }
-			}
-			set_variable = { name = tot_avmj_gdp_claim value = 10 }
-			ROOT = {
-				if = {
-					limit = { var:tot_avmj_debt_principal >= 84000 }
-					change_variable = { name = tot_avmj_debt_principal add = -84000 }
-					change_variable = { name = tot_avmj_debt_gdp_repaid add = 84000 }
-				}
-				else = { set_variable = { name = tot_avmj_debt_principal value = 0 } }
-			}
-		}
-		if = {
-			limit = {
-				var:tot_avmj_gdp_claim < 20
-				gdp_ownership_ratio = { target = ROOT value >= 0.20 }
-			}
-			set_variable = { name = tot_avmj_gdp_claim value = 20 }
-			ROOT = {
-				if = {
-					limit = { var:tot_avmj_debt_principal >= 168000 }
-					change_variable = { name = tot_avmj_debt_principal add = -168000 }
-					change_variable = { name = tot_avmj_debt_gdp_repaid add = 168000 }
-				}
-				else = { set_variable = { name = tot_avmj_debt_principal value = 0 } }
-			}
-		}
-		if = {
-			limit = {
-				var:tot_avmj_gdp_claim < 30
-				gdp_ownership_ratio = { target = ROOT value >= 0.30 }
-			}
-			set_variable = { name = tot_avmj_gdp_claim value = 30 }
-			ROOT = {
-				if = {
-					limit = { var:tot_avmj_debt_principal >= 168000 }
-					change_variable = { name = tot_avmj_debt_principal add = -168000 }
-					change_variable = { name = tot_avmj_debt_gdp_repaid add = 168000 }
-				}
-				else = { set_variable = { name = tot_avmj_debt_principal value = 0 } }
-			}
-		}
-		if = {
-			limit = {
-				var:tot_avmj_gdp_claim < 40
-				gdp_ownership_ratio = { target = ROOT value >= 0.40 }
-			}
-			set_variable = { name = tot_avmj_gdp_claim value = 40 }
-			ROOT = {
-				if = {
-					limit = { var:tot_avmj_debt_principal >= 168000 }
-					change_variable = { name = tot_avmj_debt_principal add = -168000 }
-					change_variable = { name = tot_avmj_debt_gdp_repaid add = 168000 }
-				}
-				else = { set_variable = { name = tot_avmj_debt_principal value = 0 } }
-			}
-		}
-		if = {
-			limit = {
-				var:tot_avmj_gdp_claim < 50
-				gdp_ownership_ratio = { target = ROOT value >= 0.50 }
-			}
-			set_variable = { name = tot_avmj_gdp_claim value = 50 }
-			ROOT = {
-				if = {
-					limit = { var:tot_avmj_debt_principal >= 168000 }
-					change_variable = { name = tot_avmj_debt_principal add = -168000 }
-					change_variable = { name = tot_avmj_debt_gdp_repaid add = 168000 }
-				}
-				else = { set_variable = { name = tot_avmj_debt_principal value = 0 } }
-			}
+tot_avmj_transfer_mygo_claim = {
+	if = {
+		limit = { var:tot_avmj_mygo_claim_holder = 0 }
+		set_variable = { name = tot_avmj_mygo_claim_holder value = 1 }
+		add_modifier = { name = tot_avmj_aleppo_chamber }
+		# The company is the visible local successor for the former MYGO claim.
+		add_company = company_type:tot_company_aleppo_chamber
+		company:tot_company_aleppo_chamber = {
+			set_company_establishment_date = 1836.1.1
+			set_company_state_region = s:STATE_ALEPPO
 		}
 	}
 }
 
-tot_avmj_refresh_control = {
+tot_avmj_update_creditor_holders = {
+	c:HTT = { save_scope_as = tot_avmj_htt_country }
+	c:GBDP = { save_scope_as = tot_avmj_gbdp_country }
+	c:MYG = { save_scope_as = tot_avmj_mygo_country }
+	c:NRHD = { save_scope_as = tot_avmj_nrhd_country }
+	tot_avmj_refresh_creditor_gui_lists = yes
 	if = {
-		limit = { has_modifier = tot_avmj_control_state }
-		remove_modifier = tot_avmj_control_state
+		limit = { NOT = { c:MYG ?= { is_country_alive = yes } } var:tot_avmj_mygo_claim_holder = 0 }
+		tot_avmj_transfer_mygo_claim = yes
 	}
-	if = {
-		limit = { has_modifier = tot_avmj_control_htt }
-		remove_modifier = tot_avmj_control_htt
-	}
-	if = {
-		limit = { has_modifier = tot_avmj_control_gbdp }
-		remove_modifier = tot_avmj_control_gbdp
-	}
-	if = {
-		limit = { has_modifier = tot_avmj_control_mygo }
-		remove_modifier = tot_avmj_control_mygo
-	}
-	if = {
-		limit = { has_modifier = tot_avmj_control_nrhd }
-		remove_modifier = tot_avmj_control_nrhd
-	}
+	if = { limit = { NOT = { c:HTT ?= { is_country_alive = yes } } var:tot_avmj_htt_claim_holder = 0 } set_variable = { name = tot_avmj_htt_claim_holder value = 1 } }
+	if = { limit = { NOT = { c:GBDP ?= { is_country_alive = yes } } var:tot_avmj_gbdp_claim_holder = 0 } set_variable = { name = tot_avmj_gbdp_claim_holder value = 1 } }
+	if = { limit = { NOT = { c:NRHD ?= { is_country_alive = yes } } var:tot_avmj_nrhd_claim_holder = 0 } set_variable = { name = tot_avmj_nrhd_claim_holder value = 1 } }
+}
 
-	set_variable = { name = tot_avmj_controlled_by value = 0 }
+# The GUI consumes actual country scopes from these one-seat lists. This avoids
+# falling back to the AVMJ root context when drawing creditor portraits.
+tot_avmj_refresh_creditor_gui_lists = {
+	save_scope_as = tot_avmj_gui_debt_source
+	if = { limit = { has_variable_list = tot_avmj_htt_creditor } clear_variable_list = tot_avmj_htt_creditor }
+	if = { limit = { has_variable_list = tot_avmj_gbdp_creditor } clear_variable_list = tot_avmj_gbdp_creditor }
+	if = { limit = { has_variable_list = tot_avmj_mygo_creditor } clear_variable_list = tot_avmj_mygo_creditor }
+	if = { limit = { has_variable_list = tot_avmj_nrhd_creditor } clear_variable_list = tot_avmj_nrhd_creditor }
+	c:HTT = { save_temporary_scope_as = tot_avmj_gui_htt }
+	c:GBDP = { save_temporary_scope_as = tot_avmj_gui_gbdp }
+	c:MYG = { save_temporary_scope_as = tot_avmj_gui_mygo }
+	c:NRHD = { save_temporary_scope_as = tot_avmj_gui_nrhd }
+	add_to_variable_list = { name = tot_avmj_htt_creditor target = scope:tot_avmj_gui_htt }
+	add_to_variable_list = { name = tot_avmj_gbdp_creditor target = scope:tot_avmj_gui_gbdp }
+	add_to_variable_list = { name = tot_avmj_mygo_creditor target = scope:tot_avmj_gui_mygo }
+	add_to_variable_list = { name = tot_avmj_nrhd_creditor target = scope:tot_avmj_gui_nrhd }
+	c:HTT = { tot_avmj_copy_gui_state_to_creditor = yes }
+	c:GBDP = { tot_avmj_copy_gui_state_to_creditor = yes }
+	c:MYG = { tot_avmj_copy_gui_state_to_creditor = yes }
+	c:NRHD = { tot_avmj_copy_gui_state_to_creditor = yes }
+}
+
+tot_avmj_copy_gui_state_to_creditor = {
+	set_variable = { name = tot_avmj_debt_principal value = scope:tot_avmj_gui_debt_source.var:tot_avmj_debt_principal }
+	set_variable = { name = tot_avmj_interest_due value = scope:tot_avmj_gui_debt_source.var:tot_avmj_interest_due }
+	set_variable = { name = tot_avmj_debt_fund value = scope:tot_avmj_gui_debt_source.var:tot_avmj_debt_fund }
+	set_variable = { name = tot_avmj_months_until_assembly value = scope:tot_avmj_gui_debt_source.var:tot_avmj_months_until_assembly }
+	set_variable = { name = tot_avmj_domestic_claim value = scope:tot_avmj_gui_debt_source.var:tot_avmj_domestic_claim }
+	set_variable = { name = tot_avmj_htt_claim value = scope:tot_avmj_gui_debt_source.var:tot_avmj_htt_claim }
+	set_variable = { name = tot_avmj_gbdp_claim value = scope:tot_avmj_gui_debt_source.var:tot_avmj_gbdp_claim }
+	set_variable = { name = tot_avmj_mygo_claim value = scope:tot_avmj_gui_debt_source.var:tot_avmj_mygo_claim }
+	set_variable = { name = tot_avmj_nrhd_claim value = scope:tot_avmj_gui_debt_source.var:tot_avmj_nrhd_claim }
+	set_variable = { name = tot_avmj_last_assembly_interest value = scope:tot_avmj_gui_debt_source.var:tot_avmj_last_assembly_interest }
+	set_variable = { name = tot_avmj_last_assembly_principal value = scope:tot_avmj_gui_debt_source.var:tot_avmj_last_assembly_principal }
+	set_variable = { name = tot_avmj_last_assembly_shortfall value = scope:tot_avmj_gui_debt_source.var:tot_avmj_last_assembly_shortfall }
+	set_variable = { name = tot_avmj_last_monthly_repayment value = scope:tot_avmj_gui_debt_source.var:tot_avmj_last_monthly_repayment }
+	set_variable = { name = tot_avmj_repayment_level value = scope:tot_avmj_gui_debt_source.var:tot_avmj_repayment_level }
+	set_variable = { name = tot_avmj_htt_privilege_level value = scope:tot_avmj_gui_debt_source.var:tot_avmj_htt_privilege_level }
+	set_variable = { name = tot_avmj_gbdp_privilege_level value = scope:tot_avmj_gui_debt_source.var:tot_avmj_gbdp_privilege_level }
+	set_variable = { name = tot_avmj_mygo_privilege_level value = scope:tot_avmj_gui_debt_source.var:tot_avmj_mygo_privilege_level }
+	set_variable = { name = tot_avmj_nrhd_privilege_level value = scope:tot_avmj_gui_debt_source.var:tot_avmj_nrhd_privilege_level }
+	set_variable = { name = tot_avmj_mygo_claim_holder value = scope:tot_avmj_gui_debt_source.var:tot_avmj_mygo_claim_holder }
+	if = { limit = { has_variable_list = tot_avmj_htt_creditor } clear_variable_list = tot_avmj_htt_creditor }
+	if = { limit = { has_variable_list = tot_avmj_gbdp_creditor } clear_variable_list = tot_avmj_gbdp_creditor }
+	if = { limit = { has_variable_list = tot_avmj_mygo_creditor } clear_variable_list = tot_avmj_mygo_creditor }
+	if = { limit = { has_variable_list = tot_avmj_nrhd_creditor } clear_variable_list = tot_avmj_nrhd_creditor }
+	add_to_variable_list = { name = tot_avmj_htt_creditor target = scope:tot_avmj_gui_htt }
+	add_to_variable_list = { name = tot_avmj_gbdp_creditor target = scope:tot_avmj_gui_gbdp }
+	add_to_variable_list = { name = tot_avmj_mygo_creditor target = scope:tot_avmj_gui_mygo }
+	add_to_variable_list = { name = tot_avmj_nrhd_creditor target = scope:tot_avmj_gui_nrhd }
+}
+
+tot_avmj_distribute_interest = {
+	save_scope_as = tot_avmj_debt_payer
+	change_variable = { name = tot_avmj_interest_paid add = var:tot_avmj_actual_interest_payment }
+	change_variable = { name = tot_avmj_domestic_interest_paid add = { value = var:tot_avmj_actual_interest_payment multiply = 0.20 } }
+	change_variable = { name = tot_avmj_htt_interest_paid add = { value = var:tot_avmj_actual_interest_payment multiply = 0.50 } }
+	change_variable = { name = tot_avmj_gbdp_interest_paid add = { value = var:tot_avmj_actual_interest_payment multiply = 0.15 } }
+	change_variable = { name = tot_avmj_mygo_interest_paid add = { value = var:tot_avmj_actual_interest_payment multiply = 0.10 } }
+	change_variable = { name = tot_avmj_nrhd_interest_paid add = { value = var:tot_avmj_actual_interest_payment multiply = 0.05 } }
+	if = { limit = { var:tot_avmj_htt_claim_holder = 0 c:HTT ?= { is_country_alive = yes } } c:HTT = { add_treasury = { value = scope:tot_avmj_debt_payer.var:tot_avmj_actual_interest_payment multiply = 0.50 } } }
+	if = { limit = { var:tot_avmj_gbdp_claim_holder = 0 c:GBDP ?= { is_country_alive = yes } } c:GBDP = { add_treasury = { value = scope:tot_avmj_debt_payer.var:tot_avmj_actual_interest_payment multiply = 0.15 } } }
+	if = { limit = { var:tot_avmj_mygo_claim_holder = 0 c:MYG ?= { is_country_alive = yes } } c:MYG = { add_treasury = { value = scope:tot_avmj_debt_payer.var:tot_avmj_actual_interest_payment multiply = 0.10 } } }
+	if = { limit = { var:tot_avmj_nrhd_claim_holder = 0 c:NRHD ?= { is_country_alive = yes } } c:NRHD = { add_treasury = { value = scope:tot_avmj_debt_payer.var:tot_avmj_actual_interest_payment multiply = 0.05 } } }
+}
+
+tot_avmj_distribute_principal = {
+	save_scope_as = tot_avmj_debt_payer
+	change_variable = { name = tot_avmj_debt_repaid add = var:tot_avmj_actual_principal_payment }
+	change_variable = { name = tot_avmj_domestic_claim add = { value = var:tot_avmj_actual_principal_payment multiply = -0.20 } }
+	change_variable = { name = tot_avmj_htt_claim add = { value = var:tot_avmj_actual_principal_payment multiply = -0.50 } }
+	change_variable = { name = tot_avmj_gbdp_claim add = { value = var:tot_avmj_actual_principal_payment multiply = -0.15 } }
+	change_variable = { name = tot_avmj_mygo_claim add = { value = var:tot_avmj_actual_principal_payment multiply = -0.10 } }
+	change_variable = { name = tot_avmj_nrhd_claim add = { value = var:tot_avmj_actual_principal_payment multiply = -0.05 } }
+	change_variable = { name = tot_avmj_domestic_principal_paid add = { value = var:tot_avmj_actual_principal_payment multiply = 0.20 } }
+	change_variable = { name = tot_avmj_htt_principal_paid add = { value = var:tot_avmj_actual_principal_payment multiply = 0.50 } }
+	change_variable = { name = tot_avmj_gbdp_principal_paid add = { value = var:tot_avmj_actual_principal_payment multiply = 0.15 } }
+	change_variable = { name = tot_avmj_mygo_principal_paid add = { value = var:tot_avmj_actual_principal_payment multiply = 0.10 } }
+	change_variable = { name = tot_avmj_nrhd_principal_paid add = { value = var:tot_avmj_actual_principal_payment multiply = 0.05 } }
+	if = { limit = { var:tot_avmj_htt_claim_holder = 0 c:HTT ?= { is_country_alive = yes } } c:HTT = { add_treasury = { value = scope:tot_avmj_debt_payer.var:tot_avmj_actual_principal_payment multiply = 0.50 } } }
+	if = { limit = { var:tot_avmj_gbdp_claim_holder = 0 c:GBDP ?= { is_country_alive = yes } } c:GBDP = { add_treasury = { value = scope:tot_avmj_debt_payer.var:tot_avmj_actual_principal_payment multiply = 0.15 } } }
+	if = { limit = { var:tot_avmj_mygo_claim_holder = 0 c:MYG ?= { is_country_alive = yes } } c:MYG = { add_treasury = { value = scope:tot_avmj_debt_payer.var:tot_avmj_actual_principal_payment multiply = 0.10 } } }
+	if = { limit = { var:tot_avmj_nrhd_claim_holder = 0 c:NRHD ?= { is_country_alive = yes } } c:NRHD = { add_treasury = { value = scope:tot_avmj_debt_payer.var:tot_avmj_actual_principal_payment multiply = 0.05 } } }
+}
+
+tot_avmj_debt_contribute_low = {
+	set_variable = { name = tot_avmj_repayment_level value = 1 }
+	remove_modifier = tot_avmj_debt_low_repayment
+	remove_modifier = tot_avmj_debt_high_repayment
+	remove_modifier = tot_avmj_debt_maximum_repayment
+}
+tot_avmj_debt_contribute_modest = {
+	set_variable = { name = tot_avmj_repayment_level value = 2 }
+	remove_modifier = tot_avmj_debt_low_repayment
+	remove_modifier = tot_avmj_debt_high_repayment
+	remove_modifier = tot_avmj_debt_maximum_repayment
+}
+tot_avmj_debt_contribute_standard = {
+	set_variable = { name = tot_avmj_repayment_level value = 3 }
+	remove_modifier = tot_avmj_debt_low_repayment
+	remove_modifier = tot_avmj_debt_high_repayment
+	remove_modifier = tot_avmj_debt_maximum_repayment
+}
+tot_avmj_debt_contribute_high = {
+	set_variable = { name = tot_avmj_repayment_level value = 4 }
+	remove_modifier = tot_avmj_debt_low_repayment
+	remove_modifier = tot_avmj_debt_high_repayment
+	remove_modifier = tot_avmj_debt_maximum_repayment
+}
+tot_avmj_debt_contribute_maximum = {
+	set_variable = { name = tot_avmj_repayment_level value = 5 }
+	remove_modifier = tot_avmj_debt_low_repayment
+	remove_modifier = tot_avmj_debt_high_repayment
+	remove_modifier = tot_avmj_debt_maximum_repayment
+}
+
+# The selected level is collected once per month. A payment is added to the
+# fund only in the same branch that removes it from AVMJ's treasury.
+tot_avmj_collect_monthly_repayment = {
+	set_variable = { name = tot_avmj_last_monthly_repayment value = 0 }
 	if = {
-		limit = {
-			var:tot_avmj_htt_share > var:tot_avmj_state_share
-			var:tot_avmj_htt_share > var:tot_avmj_gbdp_share
-			var:tot_avmj_htt_share > var:tot_avmj_mygo_share
-			var:tot_avmj_htt_share > var:tot_avmj_nrhd_share
-		}
-		set_variable = { name = tot_avmj_controlled_by value = 1 }
-		add_modifier = { name = tot_avmj_control_htt }
+		limit = { var:tot_avmj_repayment_level = 1 gold_reserves >= 1000 }
+		add_treasury = -1000
+		change_variable = { name = tot_avmj_debt_fund add = 1000 }
+		set_variable = { name = tot_avmj_last_monthly_repayment value = 1000 }
 	}
 	else_if = {
-		limit = {
-			var:tot_avmj_gbdp_share > var:tot_avmj_state_share
-			var:tot_avmj_gbdp_share > var:tot_avmj_htt_share
-			var:tot_avmj_gbdp_share > var:tot_avmj_mygo_share
-			var:tot_avmj_gbdp_share > var:tot_avmj_nrhd_share
-		}
-		set_variable = { name = tot_avmj_controlled_by value = 2 }
-		add_modifier = { name = tot_avmj_control_gbdp }
+		limit = { var:tot_avmj_repayment_level = 2 gold_reserves >= 2500 }
+		add_treasury = -2500
+		change_variable = { name = tot_avmj_debt_fund add = 2500 }
+		set_variable = { name = tot_avmj_last_monthly_repayment value = 2500 }
 	}
 	else_if = {
-		limit = {
-			var:tot_avmj_mygo_share > var:tot_avmj_state_share
-			var:tot_avmj_mygo_share > var:tot_avmj_htt_share
-			var:tot_avmj_mygo_share > var:tot_avmj_gbdp_share
-			var:tot_avmj_mygo_share > var:tot_avmj_nrhd_share
-		}
-		set_variable = { name = tot_avmj_controlled_by value = 3 }
-		add_modifier = { name = tot_avmj_control_mygo }
+		limit = { var:tot_avmj_repayment_level = 3 gold_reserves >= 5000 }
+		add_treasury = -5000
+		change_variable = { name = tot_avmj_debt_fund add = 5000 }
+		set_variable = { name = tot_avmj_last_monthly_repayment value = 5000 }
 	}
 	else_if = {
-		limit = {
-			var:tot_avmj_nrhd_share > var:tot_avmj_state_share
-			var:tot_avmj_nrhd_share > var:tot_avmj_htt_share
-			var:tot_avmj_nrhd_share > var:tot_avmj_gbdp_share
-			var:tot_avmj_nrhd_share > var:tot_avmj_mygo_share
-		}
-		set_variable = { name = tot_avmj_controlled_by value = 4 }
-		add_modifier = { name = tot_avmj_control_nrhd }
+		limit = { var:tot_avmj_repayment_level = 4 gold_reserves >= 10000 }
+		add_treasury = -10000
+		change_variable = { name = tot_avmj_debt_fund add = 10000 }
+		set_variable = { name = tot_avmj_last_monthly_repayment value = 10000 }
 	}
-	else = {
-		add_modifier = { name = tot_avmj_control_state }
+	else_if = {
+		limit = { var:tot_avmj_repayment_level = 5 gold_reserves >= 20000 }
+		add_treasury = -20000
+		change_variable = { name = tot_avmj_debt_fund add = 20000 }
+		set_variable = { name = tot_avmj_last_monthly_repayment value = 20000 }
+	}
+	if = { limit = { var:tot_avmj_repayment_level = 1 } add_modifier = { name = tot_avmj_debt_low_repayment months = 2 } }
+	if = { limit = { var:tot_avmj_repayment_level = 4 } add_modifier = { name = tot_avmj_debt_high_repayment months = 2 } }
+	if = { limit = { var:tot_avmj_repayment_level = 5 } add_modifier = { name = tot_avmj_debt_maximum_repayment months = 2 } }
+}
+
+tot_avmj_raise_creditor_privileges = {
+	if = { limit = { var:tot_avmj_htt_claim > 0 var:tot_avmj_htt_privilege_level < 5 } change_variable = { name = tot_avmj_htt_privilege_level add = 1 } }
+	if = { limit = { var:tot_avmj_gbdp_claim > 0 var:tot_avmj_gbdp_privilege_level < 5 } change_variable = { name = tot_avmj_gbdp_privilege_level add = 1 } }
+	if = { limit = { var:tot_avmj_mygo_claim > 0 var:tot_avmj_mygo_privilege_level < 5 } change_variable = { name = tot_avmj_mygo_privilege_level add = 1 } }
+	if = { limit = { var:tot_avmj_nrhd_claim > 0 var:tot_avmj_nrhd_privilege_level < 5 } change_variable = { name = tot_avmj_nrhd_privilege_level add = 1 } }
+	tot_avmj_apply_creditor_privileges = yes
+}
+
+# Privilege levels are cumulative and are represented by real diplomatic
+# treaties. The creditor is the source of each directed article; AVMJ is the
+# target. Existing articles are left alone so this effect is safe on every
+# monthly pulse and also repairs a treaty after it expires.
+tot_avmj_apply_creditor_privileges = {
+	save_scope_as = tot_avmj_debt_owner
+	if = {
+		limit = { var:tot_avmj_htt_claim > 0 var:tot_avmj_htt_privilege_level >= 1 c:HTT ?= { is_country_alive = yes } }
+		if = {
+			limit = { NOT = { any_scope_treaty = { binds = c:HTT any_scope_article = { has_type = transit_rights source_country = c:HTT } } } }
+			create_treaty = {
+				first_country = c:AVMJ
+				second_country = c:HTT
+				is_draft = no
+				binding_period = { years = 10 }
+				articles_to_create = { { article = transit_rights source_country = c:HTT target_country = c:AVMJ } }
+			}
+		}
+	}
+	if = {
+		limit = { var:tot_avmj_htt_claim > 0 var:tot_avmj_htt_privilege_level >= 2 c:HTT ?= { is_country_alive = yes } }
+		if = {
+			limit = { NOT = { any_scope_treaty = { binds = c:HTT any_scope_article = { has_type = military_access source_country = c:HTT } } } }
+			create_treaty = {
+				first_country = c:AVMJ
+				second_country = c:HTT
+				is_draft = no
+				binding_period = { years = 10 }
+				articles_to_create = { { article = military_access source_country = c:HTT target_country = c:AVMJ } }
+			}
+		}
+	}
+	if = {
+		limit = { var:tot_avmj_htt_claim > 0 var:tot_avmj_htt_privilege_level >= 3 c:HTT ?= { is_country_alive = yes } }
+		if = {
+			limit = { NOT = { any_scope_treaty = { binds = c:HTT any_scope_article = { has_type = trade_privilege source_country = c:HTT } } } }
+			create_treaty = {
+				first_country = c:AVMJ
+				second_country = c:HTT
+				is_draft = no
+				binding_period = { years = 10 }
+				articles_to_create = { { article = trade_privilege source_country = c:HTT target_country = c:AVMJ } }
+			}
+		}
+	}
+	if = {
+		limit = { var:tot_avmj_htt_claim > 0 var:tot_avmj_htt_privilege_level >= 4 c:HTT ?= { is_country_alive = yes } }
+		if = {
+			limit = { NOT = { any_scope_treaty = { binds = c:HTT any_scope_article = { has_type = foreign_investment_rights source_country = c:HTT } } } }
+			create_treaty = {
+				first_country = c:AVMJ
+				second_country = c:HTT
+				is_draft = no
+				binding_period = { years = 10 }
+				articles_to_create = { { article = foreign_investment_rights source_country = c:HTT target_country = c:AVMJ } }
+			}
+		}
+	}
+	c:HTT = { if = { limit = { scope:tot_avmj_debt_owner.var:tot_avmj_htt_privilege_level >= 5 } add_modifier = tot_avmj_creditor_asset_control } }
+
+	if = {
+		limit = { var:tot_avmj_gbdp_claim > 0 var:tot_avmj_gbdp_privilege_level >= 1 c:GBDP ?= { is_country_alive = yes } }
+		if = { limit = { NOT = { any_scope_treaty = { binds = c:GBDP any_scope_article = { has_type = transit_rights source_country = c:GBDP } } } } create_treaty = { first_country = c:AVMJ second_country = c:GBDP is_draft = no binding_period = { years = 10 } articles_to_create = { { article = transit_rights source_country = c:GBDP target_country = c:AVMJ } } } }
+	}
+	if = {
+		limit = { var:tot_avmj_gbdp_claim > 0 var:tot_avmj_gbdp_privilege_level >= 2 c:GBDP ?= { is_country_alive = yes } }
+		if = { limit = { NOT = { any_scope_treaty = { binds = c:GBDP any_scope_article = { has_type = military_access source_country = c:GBDP } } } } create_treaty = { first_country = c:AVMJ second_country = c:GBDP is_draft = no binding_period = { years = 10 } articles_to_create = { { article = military_access source_country = c:GBDP target_country = c:AVMJ } } } }
+	}
+	if = {
+		limit = { var:tot_avmj_gbdp_claim > 0 var:tot_avmj_gbdp_privilege_level >= 3 c:GBDP ?= { is_country_alive = yes } }
+		if = { limit = { NOT = { any_scope_treaty = { binds = c:GBDP any_scope_article = { has_type = trade_privilege source_country = c:GBDP } } } } create_treaty = { first_country = c:AVMJ second_country = c:GBDP is_draft = no binding_period = { years = 10 } articles_to_create = { { article = trade_privilege source_country = c:GBDP target_country = c:AVMJ } } } }
+	}
+	if = {
+		limit = { var:tot_avmj_gbdp_claim > 0 var:tot_avmj_gbdp_privilege_level >= 4 c:GBDP ?= { is_country_alive = yes } }
+		if = { limit = { NOT = { any_scope_treaty = { binds = c:GBDP any_scope_article = { has_type = foreign_investment_rights source_country = c:GBDP } } } } create_treaty = { first_country = c:AVMJ second_country = c:GBDP is_draft = no binding_period = { years = 10 } articles_to_create = { { article = foreign_investment_rights source_country = c:GBDP target_country = c:AVMJ } } } }
+	}
+	c:GBDP = { if = { limit = { scope:tot_avmj_debt_owner.var:tot_avmj_gbdp_privilege_level >= 5 } add_modifier = tot_avmj_creditor_asset_control } }
+
+	if = {
+		limit = { var:tot_avmj_mygo_claim > 0 var:tot_avmj_mygo_claim_holder = 0 var:tot_avmj_mygo_privilege_level >= 1 c:MYG ?= { is_country_alive = yes } }
+		if = { limit = { NOT = { any_scope_treaty = { binds = c:MYG any_scope_article = { has_type = transit_rights source_country = c:MYG } } } } create_treaty = { first_country = c:AVMJ second_country = c:MYG is_draft = no binding_period = { years = 10 } articles_to_create = { { article = transit_rights source_country = c:MYG target_country = c:AVMJ } } } }
+	}
+	if = {
+		limit = { var:tot_avmj_mygo_claim > 0 var:tot_avmj_mygo_claim_holder = 0 var:tot_avmj_mygo_privilege_level >= 2 c:MYG ?= { is_country_alive = yes } }
+		if = { limit = { NOT = { any_scope_treaty = { binds = c:MYG any_scope_article = { has_type = military_access source_country = c:MYG } } } } create_treaty = { first_country = c:AVMJ second_country = c:MYG is_draft = no binding_period = { years = 10 } articles_to_create = { { article = military_access source_country = c:MYG target_country = c:AVMJ } } } }
+	}
+	if = {
+		limit = { var:tot_avmj_mygo_claim > 0 var:tot_avmj_mygo_claim_holder = 0 var:tot_avmj_mygo_privilege_level >= 3 c:MYG ?= { is_country_alive = yes } }
+		if = { limit = { NOT = { any_scope_treaty = { binds = c:MYG any_scope_article = { has_type = trade_privilege source_country = c:MYG } } } } create_treaty = { first_country = c:AVMJ second_country = c:MYG is_draft = no binding_period = { years = 10 } articles_to_create = { { article = trade_privilege source_country = c:MYG target_country = c:AVMJ } } } }
+	}
+	if = {
+		limit = { var:tot_avmj_mygo_claim > 0 var:tot_avmj_mygo_claim_holder = 0 var:tot_avmj_mygo_privilege_level >= 4 c:MYG ?= { is_country_alive = yes } }
+		if = { limit = { NOT = { any_scope_treaty = { binds = c:MYG any_scope_article = { has_type = foreign_investment_rights source_country = c:MYG } } } } create_treaty = { first_country = c:AVMJ second_country = c:MYG is_draft = no binding_period = { years = 10 } articles_to_create = { { article = foreign_investment_rights source_country = c:MYG target_country = c:AVMJ } } } }
+	}
+	c:MYG = { if = { limit = { scope:tot_avmj_debt_owner.var:tot_avmj_mygo_privilege_level >= 5 } add_modifier = tot_avmj_creditor_asset_control } }
+
+	if = {
+		limit = { var:tot_avmj_nrhd_claim > 0 var:tot_avmj_nrhd_privilege_level >= 1 c:NRHD ?= { is_country_alive = yes } }
+		if = { limit = { NOT = { any_scope_treaty = { binds = c:NRHD any_scope_article = { has_type = transit_rights source_country = c:NRHD } } } } create_treaty = { first_country = c:AVMJ second_country = c:NRHD is_draft = no binding_period = { years = 10 } articles_to_create = { { article = transit_rights source_country = c:NRHD target_country = c:AVMJ } } } }
+	}
+	if = {
+		limit = { var:tot_avmj_nrhd_claim > 0 var:tot_avmj_nrhd_privilege_level >= 2 c:NRHD ?= { is_country_alive = yes } }
+		if = { limit = { NOT = { any_scope_treaty = { binds = c:NRHD any_scope_article = { has_type = military_access source_country = c:NRHD } } } } create_treaty = { first_country = c:AVMJ second_country = c:NRHD is_draft = no binding_period = { years = 10 } articles_to_create = { { article = military_access source_country = c:NRHD target_country = c:AVMJ } } } }
+	}
+	if = {
+		limit = { var:tot_avmj_nrhd_claim > 0 var:tot_avmj_nrhd_privilege_level >= 3 c:NRHD ?= { is_country_alive = yes } }
+		if = { limit = { NOT = { any_scope_treaty = { binds = c:NRHD any_scope_article = { has_type = trade_privilege source_country = c:NRHD } } } } create_treaty = { first_country = c:AVMJ second_country = c:NRHD is_draft = no binding_period = { years = 10 } articles_to_create = { { article = trade_privilege source_country = c:NRHD target_country = c:AVMJ } } } }
+	}
+	if = {
+		limit = { var:tot_avmj_nrhd_claim > 0 var:tot_avmj_nrhd_privilege_level >= 4 c:NRHD ?= { is_country_alive = yes } }
+		if = { limit = { NOT = { any_scope_treaty = { binds = c:NRHD any_scope_article = { has_type = foreign_investment_rights source_country = c:NRHD } } } } create_treaty = { first_country = c:AVMJ second_country = c:NRHD is_draft = no binding_period = { years = 10 } articles_to_create = { { article = foreign_investment_rights source_country = c:NRHD target_country = c:AVMJ } } } }
+	}
+	c:NRHD = { if = { limit = { scope:tot_avmj_debt_owner.var:tot_avmj_nrhd_privilege_level >= 5 } add_modifier = tot_avmj_creditor_asset_control } }
+}
+
+tot_avmj_settle_assembly = {
+	set_variable = { name = tot_avmj_expected_interest value = var:tot_avmj_interest_due }
+	set_variable = { name = tot_avmj_last_assembly_fund value = var:tot_avmj_debt_fund }
+	set_variable = { name = tot_avmj_actual_interest_payment value = var:tot_avmj_debt_fund }
+	if = { limit = { var:tot_avmj_actual_interest_payment > var:tot_avmj_interest_due } set_variable = { name = tot_avmj_actual_interest_payment value = var:tot_avmj_interest_due } }
+	set_variable = { name = tot_avmj_last_assembly_interest value = var:tot_avmj_actual_interest_payment }
+	set_variable = { name = tot_avmj_last_assembly_shortfall value = var:tot_avmj_interest_due }
+	change_variable = { name = tot_avmj_last_assembly_shortfall add = { value = var:tot_avmj_actual_interest_payment multiply = -1 } }
+	change_variable = { name = tot_avmj_debt_fund add = { value = var:tot_avmj_actual_interest_payment multiply = -1 } }
+	change_variable = { name = tot_avmj_interest_due add = { value = var:tot_avmj_actual_interest_payment multiply = -1 } }
+	if = { limit = { var:tot_avmj_actual_interest_payment > 0 } tot_avmj_distribute_interest = yes }
+
+	set_variable = { name = tot_avmj_actual_principal_payment value = var:tot_avmj_debt_fund }
+	if = { limit = { var:tot_avmj_actual_principal_payment > var:tot_avmj_debt_principal } set_variable = { name = tot_avmj_actual_principal_payment value = var:tot_avmj_debt_principal } }
+	set_variable = { name = tot_avmj_last_assembly_principal value = var:tot_avmj_actual_principal_payment }
+	change_variable = { name = tot_avmj_debt_fund add = { value = var:tot_avmj_actual_principal_payment multiply = -1 } }
+	change_variable = { name = tot_avmj_debt_principal add = { value = var:tot_avmj_actual_principal_payment multiply = -1 } }
+	if = { limit = { var:tot_avmj_actual_principal_payment > 0 } tot_avmj_distribute_principal = yes }
+
+	set_variable = { name = tot_avmj_last_assembly_surplus value = var:tot_avmj_debt_fund }
+	if = { limit = { var:tot_avmj_last_assembly_shortfall > 0 } change_variable = { name = tot_avmj_interest_arrears_congresses add = 1 } add_modifier = { name = tot_avmj_interest_arrears } set_variable = { name = tot_avmj_creditor_pressure value = 1 } }
+	else = { set_variable = { name = tot_avmj_interest_arrears_congresses value = 0 } if = { limit = { has_modifier = tot_avmj_interest_arrears } remove_modifier = tot_avmj_interest_arrears } set_variable = { name = tot_avmj_creditor_pressure value = 0 } }
+	set_variable = { name = tot_avmj_debt_fund value = 0 }
+}
+
+tot_avmj_finish_assembly = {
+	set_variable = { name = tot_avmj_assembly_open value = 0 }
+	set_variable = { name = tot_avmj_debt_months_active value = 0 }
+	set_variable = { name = tot_avmj_months_until_assembly value = 48 }
+	tot_avmj_update_creditor_holders = yes
+	tot_avmj_update_debt_stage = yes
+}
+
+tot_avmj_update_debt_stage = {
+	if = {
+		limit = { var:tot_avmj_debt_principal <= 0 var:tot_avmj_debt_stage > 0 }
+		set_variable = { name = tot_avmj_debt_stage value = 0 }
+		trigger_event = { id = tot_avmj_debt.4 days = 0 popup = yes }
+	}
+	else_if = {
+		limit = { var:tot_avmj_debt_principal <= 420000 var:tot_avmj_debt_stage > 1 }
+		set_variable = { name = tot_avmj_debt_stage value = 1 }
+		trigger_event = { id = tot_avmj_debt.3 days = 0 popup = yes }
+	}
+	else_if = {
+		limit = { var:tot_avmj_debt_principal <= 840000 var:tot_avmj_debt_stage > 2 }
+		set_variable = { name = tot_avmj_debt_stage value = 2 }
+		trigger_event = { id = tot_avmj_debt.2 days = 0 popup = yes }
+	}
+	else_if = {
+		limit = { var:tot_avmj_debt_principal <= 1260000 var:tot_avmj_debt_stage > 3 }
+		set_variable = { name = tot_avmj_debt_stage value = 3 }
+		trigger_event = { id = tot_avmj_debt.1 days = 0 popup = yes }
 	}
 }
 
 tot_avmj_debt_monthly_process = {
+	tot_avmj_setup_debt = yes
+	tot_avmj_update_creditor_holders = yes
+	tot_avmj_apply_creditor_privileges = yes
 	if = {
 		limit = { var:tot_avmj_debt_principal > 0 }
-		add_treasury = { value = tot_avmj_monthly_interest_value multiply = -1 }
+		tot_avmj_collect_monthly_repayment = yes
+		change_variable = { name = tot_avmj_interest_due add = var:tot_avmj_monthly_interest_payment }
+		change_variable = { name = tot_avmj_debt_months_active add = 1 }
+		change_variable = { name = tot_avmj_months_until_assembly add = -1 }
+		if = {
+			limit = { var:tot_avmj_debt_months_active >= 48 var:tot_avmj_assembly_open = 0 }
+			set_variable = { name = tot_avmj_assembly_open value = 1 }
+			trigger_event = { id = tot_avmj_debt.8 days = 0 popup = yes }
+		}
 	}
-	tot_avmj_process_gdp_claims = yes
-	tot_avmj_refresh_control = yes
-	if = {
-		limit = { var:tot_avmj_debt_principal <= 0 }
-		set_variable = { name = tot_avmj_debt_principal value = 0 }
-		if = { limit = { has_journal_entry = je_tot_avmj_debt_crisis } remove_journal_entry = je_tot_avmj_debt_crisis }
-	}
+	tot_avmj_refresh_creditor_gui_lists = yes
 }

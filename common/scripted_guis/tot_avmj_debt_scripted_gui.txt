@@ -1,0 +1,64 @@
+tot_avmj_debt_activity_available = {
+	scope = country
+	effect = {}
+	is_shown = {
+		c:AVMJ ?= { has_journal_entry = je_tot_avmj_debt_crisis }
+		OR = {
+			c:AVMJ ?= this
+			AND = { var:tot_avmj_htt_claim > 0 c:HTT ?= this }
+			AND = { var:tot_avmj_gbdp_claim > 0 c:GBDP ?= this }
+			AND = { var:tot_avmj_mygo_claim > 0 var:tot_avmj_mygo_claim_holder = 0 c:MYG ?= this }
+			AND = { var:tot_avmj_nrhd_claim > 0 c:NRHD ?= this }
+		}
+	}
+	is_valid = { is_player = yes }
+}
+
+tot_avmj_mygo_claim_active = {
+	scope = country
+	effect = {}
+	is_shown = { var:tot_avmj_mygo_claim_holder = 0 }
+	is_valid = { always = yes }
+}
+
+tot_avmj_mygo_claim_transferred = {
+	scope = country
+	effect = {}
+	is_shown = { var:tot_avmj_mygo_claim_holder = 1 }
+	is_valid = { always = yes }
+}
+
+tot_avmj_debt_pay_low = {
+	 scope = country
+	effect = { tot_avmj_debt_contribute_low = yes }
+	is_shown = { c:AVMJ ?= this has_journal_entry = je_tot_avmj_debt_crisis }
+	is_valid = { is_player = yes var:tot_avmj_debt_principal > 0 }
+}
+
+tot_avmj_debt_pay_modest = {
+	scope = country
+	effect = { tot_avmj_debt_contribute_modest = yes }
+	is_shown = { c:AVMJ ?= this has_journal_entry = je_tot_avmj_debt_crisis }
+	is_valid = { is_player = yes var:tot_avmj_debt_principal > 0 }
+}
+
+tot_avmj_debt_pay_standard = {
+	scope = country
+	effect = { tot_avmj_debt_contribute_standard = yes }
+	is_shown = { c:AVMJ ?= this has_journal_entry = je_tot_avmj_debt_crisis }
+	is_valid = { is_player = yes var:tot_avmj_debt_principal > 0 }
+}
+
+tot_avmj_debt_pay_high = {
+	scope = country
+	effect = { tot_avmj_debt_contribute_high = yes }
+	is_shown = { c:AVMJ ?= this has_journal_entry = je_tot_avmj_debt_crisis }
+	is_valid = { is_player = yes var:tot_avmj_debt_principal > 0 }
+}
+
+tot_avmj_debt_pay_maximum = {
+	scope = country
+	effect = { tot_avmj_debt_contribute_maximum = yes }
+	is_shown = { c:AVMJ ?= this has_journal_entry = je_tot_avmj_debt_crisis }
+	is_valid = { is_player = yes var:tot_avmj_debt_principal > 0 }
+}

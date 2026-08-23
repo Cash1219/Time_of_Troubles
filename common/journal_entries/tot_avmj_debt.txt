@@ -9,33 +9,33 @@ je_tot_avmj_debt_crisis = {
 	should_be_involved = {
 		OR = {
 			c:AVMJ ?= this
-			c:HTT ?= this
-			c:GBDP ?= this
-			c:MYG ?= this
-			c:NRHD ?= this
+			AND = { c:AVMJ ?= { var:tot_avmj_htt_claim > 0 } c:HTT ?= this }
+			AND = { c:AVMJ ?= { var:tot_avmj_gbdp_claim > 0 } c:GBDP ?= this }
+			AND = { c:AVMJ ?= { var:tot_avmj_mygo_claim > 0 var:tot_avmj_mygo_claim_holder = 0 } c:MYG ?= this }
+			AND = { c:AVMJ ?= { var:tot_avmj_nrhd_claim > 0 } c:NRHD ?= this }
 		}
 	}
-	is_shown_when_not_involved = { always = no }
-	possible = { c:AVMJ ?= this }
-
-	scripted_button = je_tot_avmj_repay_50000
-	scripted_button = je_tot_avmj_repay_250000
-	scripted_button = je_tot_avmj_sell_5_htt
-	scripted_button = je_tot_avmj_sell_5_gbdp
-	scripted_button = je_tot_avmj_sell_5_mygo
-	scripted_button = je_tot_avmj_sell_5_nrhd
-	scripted_button = je_tot_avmj_sell_investment_rights
-	scripted_button = je_tot_avmj_sell_autonomy_rights
+	should_show_when_not_involved = {
+		OR = {
+			c:AVMJ ?= this
+			AND = { c:AVMJ ?= { var:tot_avmj_htt_claim > 0 } c:HTT ?= this }
+			AND = { c:AVMJ ?= { var:tot_avmj_gbdp_claim > 0 } c:GBDP ?= this }
+			AND = { c:AVMJ ?= { var:tot_avmj_mygo_claim > 0 var:tot_avmj_mygo_claim_holder = 0 } c:MYG ?= this }
+			AND = { c:AVMJ ?= { var:tot_avmj_nrhd_claim > 0 } c:NRHD ?= this }
+		}
+	}
+	possible = {
+		OR = {
+			c:AVMJ ?= this
+			AND = { c:AVMJ ?= { var:tot_avmj_htt_claim > 0 } c:HTT ?= this }
+			AND = { c:AVMJ ?= { var:tot_avmj_gbdp_claim > 0 } c:GBDP ?= this }
+			AND = { c:AVMJ ?= { var:tot_avmj_mygo_claim > 0 var:tot_avmj_mygo_claim_holder = 0 } c:MYG ?= this }
+			AND = { c:AVMJ ?= { var:tot_avmj_nrhd_claim > 0 } c:NRHD ?= this }
+		}
+	}
 
 	immediate = {
-		set_variable = { name = tot_avmj_debt_months_active value = 0 }
-	}
-
-	on_monthly_pulse = {
-		effect = {
-			change_variable = { name = tot_avmj_debt_months_active add = 1 }
-			tot_avmj_debt_monthly_process = yes
-		}
+		tot_avmj_setup_debt = yes
 	}
 
 	complete = {
@@ -51,6 +51,10 @@ je_tot_avmj_debt_crisis = {
 
 	status_desc = {
 		first_valid = {
+			triggered_desc = {
+				desc = je_tot_avmj_debt_crisis_status_chamber
+				trigger = { var:tot_avmj_mygo_claim_holder = 1 }
+			}
 			triggered_desc = {
 				desc = je_tot_avmj_debt_crisis_status
 				trigger = { always = yes }

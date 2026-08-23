@@ -5,6 +5,10 @@ on_country_annexed = {
 		scope:target ?= {
 			save_scope_as = tot_annexed_country
 		}
+		if = {
+			limit = { scope:target ?= c:MYG c:AVMJ ?= { is_country_alive = yes } }
+			c:AVMJ = { tot_avmj_transfer_mygo_claim = yes }
+		}
 		trigger_event = {
 			id = tot_annex.1
 			days = 0

@@ -1,0 +1,82 @@
+﻿namespace = tot_avmj_debt
+
+tot_avmj_debt.1 = {
+	type = country_event
+	title = tot_avmj_debt.1.t
+	desc = tot_avmj_debt.1.d
+	trigger = { c:AVMJ ?= this has_journal_entry = je_tot_avmj_debt_crisis var:tot_avmj_debt_stage = 3 }
+	option = { name = tot_avmj_debt.1.a }
+}
+
+tot_avmj_debt.2 = {
+	type = country_event
+	title = tot_avmj_debt.2.t
+	desc = tot_avmj_debt.2.d
+	trigger = { c:AVMJ ?= this has_journal_entry = je_tot_avmj_debt_crisis var:tot_avmj_debt_stage = 2 }
+	option = { name = tot_avmj_debt.2.a }
+}
+
+tot_avmj_debt.3 = {
+	type = country_event
+	title = tot_avmj_debt.3.t
+	desc = tot_avmj_debt.3.d
+	trigger = { c:AVMJ ?= this has_journal_entry = je_tot_avmj_debt_crisis var:tot_avmj_debt_stage = 1 }
+	option = { name = tot_avmj_debt.3.a }
+}
+
+tot_avmj_debt.4 = {
+	type = country_event
+	title = tot_avmj_debt.4.t
+	desc = tot_avmj_debt.4.d
+	trigger = { c:AVMJ ?= this var:tot_avmj_debt_stage = 0 var:tot_avmj_debt_principal <= 0 }
+	option = {
+		name = tot_avmj_debt.4.htt
+		trigger = { c:HTT ?= { is_country_alive = yes } has_variable = tot_avmj_htt_original_claim }
+		effect = {
+			set_variable = { name = tot_avmj_htt_integration_path value = 1 }
+			c:HTT = { annex = c:AVMJ }
+		}
+	}
+	option = {
+		name = tot_avmj_debt.4.a
+	}
+}
+
+# The shareholder assembly distributes the accumulated debt fund.
+tot_avmj_debt.8 = {
+	type = country_event
+	title = tot_avmj_debt.8.t
+	desc = tot_avmj_debt.8.d
+	trigger = { c:AVMJ ?= this has_journal_entry = je_tot_avmj_debt_crisis var:tot_avmj_assembly_open = 1 }
+	option = {
+		name = tot_avmj_debt.8.resolve
+		effect = {
+			tot_avmj_settle_assembly = yes
+			tot_avmj_finish_assembly = yes
+			if = { limit = { var:tot_avmj_last_assembly_shortfall > 0 } trigger_event = { id = tot_avmj_debt.10 days = 0 popup = yes } }
+		}
+	}
+}
+
+tot_avmj_debt.10 = {
+	type = country_event
+	title = tot_avmj_debt.10.t
+	desc = tot_avmj_debt.10.d
+	trigger = { c:AVMJ ?= this has_journal_entry = je_tot_avmj_debt_crisis var:tot_avmj_last_assembly_shortfall > 0 }
+	option = {
+		name = tot_avmj_debt.10.concede
+		 effect = {
+			set_variable = { name = tot_avmj_creditor_pressure value = 0 }
+			tot_avmj_raise_creditor_privileges = yes
+			add_modifier = { name = tot_avmj_creditor_concession months = 48 }
+		}
+	}
+	option = {
+		name = tot_avmj_debt.10.resist
+		effect = {
+			set_variable = { name = tot_avmj_creditor_pressure value = 2 }
+			tot_avmj_raise_creditor_privileges = yes
+			add_modifier = { name = tot_avmj_creditor_default months = 48 }
+		}
+	}
+}

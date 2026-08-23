@@ -1,194 +1,3788 @@
-tot_subject_development_common_1_button = {
-	name = tot_subject_development_common_1_button
-	desc = tot_subject_development_common_1_button_desc
-	visible = { is_involved_in_journal_entry = je_tot_idol_subject_development NOT = { has_variable = tot_subject_development_common_1_done } }
-	possible = { tot_subject_development_common_1_trigger = yes }
-	effect = {
-		set_variable = tot_subject_development_common_1_done
-		change_variable = { name = tot_subject_development_common_completed add = 1 }
-		change_variable = { name = tot_subject_development_score add = 1 }
-	}
-	ai_chance = { value = 100 }
-}
+# 二偶企划发展竞赛按钮（通用，进度按各自日志实例存储）
 
-tot_subject_development_common_2_button = {
-	name = tot_subject_development_common_2_button
-	desc = tot_subject_development_common_2_button_desc
-	visible = { is_involved_in_journal_entry = je_tot_idol_subject_development NOT = { has_variable = tot_subject_development_common_2_done } }
-	possible = { tot_subject_development_common_2_trigger = yes }
-	effect = {
-		set_variable = tot_subject_development_common_2_done
-		change_variable = { name = tot_subject_development_common_completed add = 1 }
-		change_variable = { name = tot_subject_development_score add = 1 }
-	}
-	ai_chance = { value = 100 }
-}
-
-tot_subject_development_common_3_button = {
-	name = tot_subject_development_common_3_button
-	desc = tot_subject_development_common_3_button_desc
-	visible = { is_involved_in_journal_entry = je_tot_idol_subject_development NOT = { has_variable = tot_subject_development_common_3_done } }
-	possible = { tot_subject_development_common_3_trigger = yes }
-	effect = {
-		set_variable = tot_subject_development_common_3_done
-		change_variable = { name = tot_subject_development_common_completed add = 1 }
-		change_variable = { name = tot_subject_development_score add = 1 }
-	}
-	ai_chance = { value = 100 }
-}
-
-tot_subject_development_common_4_button = {
-	name = tot_subject_development_common_4_button
-	desc = tot_subject_development_common_4_button_desc
-	visible = { is_involved_in_journal_entry = je_tot_idol_subject_development NOT = { has_variable = tot_subject_development_common_4_done } }
-	possible = { tot_subject_development_common_4_trigger = yes }
-	effect = {
-		set_variable = tot_subject_development_common_4_done
-		change_variable = { name = tot_subject_development_common_completed add = 1 }
-		change_variable = { name = tot_subject_development_score add = 1 }
-	}
-	ai_chance = { value = 100 }
-}
-
-tot_subject_development_common_5_button = {
-	name = tot_subject_development_common_5_button
-	desc = tot_subject_development_common_5_button_desc
-	visible = { is_involved_in_journal_entry = je_tot_idol_subject_development NOT = { has_variable = tot_subject_development_common_5_done } }
-	possible = { tot_subject_development_common_5_trigger = yes }
-	effect = {
-		set_variable = tot_subject_development_common_5_done
-		change_variable = { name = tot_subject_development_common_completed add = 1 }
-		change_variable = { name = tot_subject_development_score add = 1 }
-	}
-	ai_chance = { value = 100 }
-}
-
-tot_subject_development_overlord_1_button = {
-	name = tot_subject_development_overlord_1_button
-	desc = tot_subject_development_overlord_1_button_desc
-	visible = { has_variable = tot_subject_development_overlord_member NOT = { has_variable = tot_subject_development_overlord_1_done } }
-	possible = { tot_subject_development_overlord_1_trigger = yes }
-	effect = {
-		set_variable = tot_subject_development_overlord_1_done
-		change_variable = { name = tot_subject_development_overlord_completed add = 1 }
-		change_variable = { name = tot_subject_development_score add = 1 }
-	}
-	ai_chance = { value = 100 }
-}
-
-tot_subject_development_overlord_2_button = {
-	name = tot_subject_development_overlord_2_button
-	desc = tot_subject_development_overlord_2_button_desc
-	visible = { has_variable = tot_subject_development_overlord_member NOT = { has_variable = tot_subject_development_overlord_2_done } }
-	possible = { tot_subject_development_overlord_2_trigger = yes }
-	effect = {
-		set_variable = tot_subject_development_overlord_2_done
-		change_variable = { name = tot_subject_development_overlord_completed add = 1 }
-		change_variable = { name = tot_subject_development_score add = 1 }
-	}
-	ai_chance = { value = 100 }
-}
-
-tot_subject_development_overlord_3_button = {
-	name = tot_subject_development_overlord_3_button
-	desc = tot_subject_development_overlord_3_button_desc
-	visible = { has_variable = tot_subject_development_overlord_member NOT = { has_variable = tot_subject_development_overlord_3_done } }
-	possible = { tot_subject_development_overlord_3_trigger = yes }
-	effect = {
-		set_variable = tot_subject_development_overlord_3_done
-		change_variable = { name = tot_subject_development_overlord_completed add = 1 }
-		change_variable = { name = tot_subject_development_score add = 1 }
-	}
-	ai_chance = { value = 100 }
-}
-
-tot_subject_development_overlord_4_button = {
-	name = tot_subject_development_overlord_4_button
-	desc = tot_subject_development_overlord_4_button_desc
-	visible = { has_variable = tot_subject_development_overlord_member NOT = { has_variable = tot_subject_development_overlord_4_done } }
-	possible = { tot_subject_development_overlord_4_trigger = yes }
-	effect = {
-		set_variable = tot_subject_development_overlord_4_done
-		change_variable = { name = tot_subject_development_overlord_completed add = 1 }
-		change_variable = { name = tot_subject_development_score add = 1 }
-	}
-	ai_chance = { value = 100 }
-}
-
-tot_subject_development_national_1_button = {
-	name = tot_subject_development_national_1_button
-	desc = {
-		first_valid = {
-			triggered_desc = { trigger = { c:AQO ?= this } desc = tot_subject_development_national_1_AQO_desc }
-			triggered_desc = { trigger = { c:NJS ?= this } desc = tot_subject_development_national_1_NJS_desc }
-			triggered_desc = { trigger = { c:GKMS ?= this } desc = tot_subject_development_national_1_GKMS_desc }
-			triggered_desc = { trigger = { c:AVMJ ?= this } desc = tot_subject_development_national_1_AVMJ_desc }
-			triggered_desc = { trigger = { c:MYG ?= this } desc = tot_subject_development_national_1_MYG_desc }
-			triggered_desc = { trigger = { c:AFTG ?= this } desc = tot_subject_development_national_1_AFTG_desc }
-			triggered_desc = { trigger = { c:HHWO ?= this } desc = tot_subject_development_national_1_HHWO_desc }
-			triggered_desc = { trigger = { c:UKR ?= this } desc = tot_subject_development_national_1_UKR_desc }
-			triggered_desc = { trigger = { c:ROM ?= this } desc = tot_subject_development_national_1_ROM_desc }
-			triggered_desc = { trigger = { always = yes } desc = tot_subject_development_national_1_button_desc }
+tot_subject_development_common_1_AQO_button = {
+	name = tot_subject_development_common_1_AQO_button
+	desc = tot_subject_development_common_1_AQO_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AQO_member
+			has_variable = tot_subject_development_AQO_overlord_member
 		}
 	}
-	visible = { has_variable = tot_subject_development_member is_involved_in_journal_entry = je_tot_idol_subject_development NOT = { has_variable = tot_subject_development_national_1_done } }
-	possible = { tot_subject_development_national_1_trigger = yes }
+	possible = {
+		tot_subject_development_common_1_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_AQO_member
+			has_variable = tot_subject_development_AQO_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_AQO_common_1_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AQO_common_1_reward
+	}
 	effect = {
-		set_variable = tot_subject_development_national_1_done
-		change_variable = { name = tot_subject_development_national_completed add = 1 }
-		change_variable = { name = tot_subject_development_score add = 1 }
+		if = {
+			limit = { has_variable = tot_subject_development_AQO_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AQO_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_AQO_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AQO_common_1_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_AQO_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AQO_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_AQO_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AQO_common_1_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+tot_subject_development_common_2_AQO_button = {
+	name = tot_subject_development_common_2_AQO_button
+	desc = tot_subject_development_common_2_AQO_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AQO_member
+			has_variable = tot_subject_development_AQO_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_2_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_AQO_member
+			has_variable = tot_subject_development_AQO_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_AQO_common_2_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AQO_common_2_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_AQO_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AQO_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_AQO_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AQO_common_2_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_AQO_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AQO_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_AQO_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AQO_common_2_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+tot_subject_development_common_3_AQO_button = {
+	name = tot_subject_development_common_3_AQO_button
+	desc = tot_subject_development_common_3_AQO_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AQO_member
+			has_variable = tot_subject_development_AQO_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_3_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_AQO_member
+			has_variable = tot_subject_development_AQO_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_AQO_common_3_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AQO_common_3_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_AQO_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AQO_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_AQO_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AQO_common_3_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_AQO_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AQO_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_AQO_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AQO_common_3_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+tot_subject_development_common_4_AQO_button = {
+	name = tot_subject_development_common_4_AQO_button
+	desc = tot_subject_development_common_4_AQO_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AQO_member
+			has_variable = tot_subject_development_AQO_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_4_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_AQO_member
+			has_variable = tot_subject_development_AQO_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_AQO_common_4_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AQO_common_4_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_AQO_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AQO_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_AQO_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AQO_common_4_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_AQO_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AQO_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_AQO_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AQO_common_4_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+tot_subject_development_common_5_AQO_button = {
+	name = tot_subject_development_common_5_AQO_button
+	desc = tot_subject_development_common_5_AQO_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AQO_member
+			has_variable = tot_subject_development_AQO_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_5_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_AQO_member
+			has_variable = tot_subject_development_AQO_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_AQO_common_5_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AQO_common_5_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_AQO_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AQO_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_AQO_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AQO_common_5_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_AQO_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AQO_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_AQO_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AQO_common_5_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+tot_subject_development_overlord_1_AQO_button = {
+	name = tot_subject_development_overlord_1_AQO_button
+	desc = tot_subject_development_overlord_1_AQO_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AQO_member
+			has_variable = tot_subject_development_AQO_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_AQO_overlord_member
+		tot_subject_development_overlord_1_AQO_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_AQO_overlord_1_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AQO_overlord_1_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_AQO_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_AQO_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_AQO_overlord_1_reward
+			days = 3650
+		}
 	}
 	ai_chance = { value = 100 }
 }
 
-tot_subject_development_national_2_button = {
-	name = tot_subject_development_national_2_button
-	desc = {
-		first_valid = {
-			triggered_desc = { trigger = { c:AQO ?= this } desc = tot_subject_development_national_2_AQO_desc }
-			triggered_desc = { trigger = { c:NJS ?= this } desc = tot_subject_development_national_2_NJS_desc }
-			triggered_desc = { trigger = { c:GKMS ?= this } desc = tot_subject_development_national_2_GKMS_desc }
-			triggered_desc = { trigger = { c:AVMJ ?= this } desc = tot_subject_development_national_2_AVMJ_desc }
-			triggered_desc = { trigger = { c:MYG ?= this } desc = tot_subject_development_national_2_MYG_desc }
-			triggered_desc = { trigger = { c:AFTG ?= this } desc = tot_subject_development_national_2_AFTG_desc }
-			triggered_desc = { trigger = { c:HHWO ?= this } desc = tot_subject_development_national_2_HHWO_desc }
-			triggered_desc = { trigger = { c:UKR ?= this } desc = tot_subject_development_national_2_UKR_desc }
-			triggered_desc = { trigger = { c:ROM ?= this } desc = tot_subject_development_national_2_ROM_desc }
-			triggered_desc = { trigger = { always = yes } desc = tot_subject_development_national_2_button_desc }
+tot_subject_development_overlord_2_AQO_button = {
+	name = tot_subject_development_overlord_2_AQO_button
+	desc = tot_subject_development_overlord_2_AQO_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AQO_member
+			has_variable = tot_subject_development_AQO_overlord_member
 		}
 	}
-	visible = { has_variable = tot_subject_development_member is_involved_in_journal_entry = je_tot_idol_subject_development NOT = { has_variable = tot_subject_development_national_2_done } }
-	possible = { tot_subject_development_national_2_trigger = yes }
+	possible = {
+		has_variable = tot_subject_development_AQO_overlord_member
+		tot_subject_development_overlord_2_AQO_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_AQO_overlord_2_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AQO_overlord_2_reward
+	}
 	effect = {
-		set_variable = tot_subject_development_national_2_done
-		change_variable = { name = tot_subject_development_national_completed add = 1 }
-		change_variable = { name = tot_subject_development_score add = 1 }
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_AQO_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_AQO_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_AQO_overlord_2_reward
+			days = 3650
+		}
 	}
 	ai_chance = { value = 100 }
 }
 
-tot_subject_development_national_3_button = {
-	name = tot_subject_development_national_3_button
-	desc = {
-		first_valid = {
-			triggered_desc = { trigger = { c:AQO ?= this } desc = tot_subject_development_national_3_AQO_desc }
-			triggered_desc = { trigger = { c:NJS ?= this } desc = tot_subject_development_national_3_NJS_desc }
-			triggered_desc = { trigger = { c:GKMS ?= this } desc = tot_subject_development_national_3_GKMS_desc }
-			triggered_desc = { trigger = { c:AVMJ ?= this } desc = tot_subject_development_national_3_AVMJ_desc }
-			triggered_desc = { trigger = { c:MYG ?= this } desc = tot_subject_development_national_3_MYG_desc }
-			triggered_desc = { trigger = { c:AFTG ?= this } desc = tot_subject_development_national_3_AFTG_desc }
-			triggered_desc = { trigger = { c:HHWO ?= this } desc = tot_subject_development_national_3_HHWO_desc }
-			triggered_desc = { trigger = { c:UKR ?= this } desc = tot_subject_development_national_3_UKR_desc }
-			triggered_desc = { trigger = { c:ROM ?= this } desc = tot_subject_development_national_3_ROM_desc }
-			triggered_desc = { trigger = { always = yes } desc = tot_subject_development_national_3_button_desc }
+tot_subject_development_overlord_3_AQO_button = {
+	name = tot_subject_development_overlord_3_AQO_button
+	desc = tot_subject_development_overlord_3_AQO_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AQO_member
+			has_variable = tot_subject_development_AQO_overlord_member
 		}
 	}
-	visible = { has_variable = tot_subject_development_member is_involved_in_journal_entry = je_tot_idol_subject_development NOT = { has_variable = tot_subject_development_national_3_done } }
-	possible = { tot_subject_development_national_3_trigger = yes }
+	possible = {
+		has_variable = tot_subject_development_AQO_overlord_member
+		tot_subject_development_overlord_3_AQO_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_AQO_overlord_3_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AQO_overlord_3_reward
+	}
 	effect = {
-		set_variable = tot_subject_development_national_3_done
-		change_variable = { name = tot_subject_development_national_completed add = 1 }
-		change_variable = { name = tot_subject_development_score add = 1 }
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_AQO_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_AQO_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_AQO_overlord_3_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+
+tot_subject_development_common_1_NJS_button = {
+	name = tot_subject_development_common_1_NJS_button
+	desc = tot_subject_development_common_1_NJS_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_NJS_member
+			has_variable = tot_subject_development_NJS_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_1_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_NJS_member
+			has_variable = tot_subject_development_NJS_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_NJS_common_1_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_NJS_common_1_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_NJS_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_NJS_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_NJS_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_NJS_common_1_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_NJS_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_NJS_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_NJS_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_NJS_common_1_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_2_NJS_button = {
+	name = tot_subject_development_common_2_NJS_button
+	desc = tot_subject_development_common_2_NJS_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_NJS_member
+			has_variable = tot_subject_development_NJS_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_2_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_NJS_member
+			has_variable = tot_subject_development_NJS_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_NJS_common_2_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_NJS_common_2_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_NJS_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_NJS_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_NJS_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_NJS_common_2_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_NJS_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_NJS_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_NJS_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_NJS_common_2_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_3_NJS_button = {
+	name = tot_subject_development_common_3_NJS_button
+	desc = tot_subject_development_common_3_NJS_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_NJS_member
+			has_variable = tot_subject_development_NJS_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_3_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_NJS_member
+			has_variable = tot_subject_development_NJS_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_NJS_common_3_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_NJS_common_3_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_NJS_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_NJS_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_NJS_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_NJS_common_3_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_NJS_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_NJS_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_NJS_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_NJS_common_3_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_4_NJS_button = {
+	name = tot_subject_development_common_4_NJS_button
+	desc = tot_subject_development_common_4_NJS_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_NJS_member
+			has_variable = tot_subject_development_NJS_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_4_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_NJS_member
+			has_variable = tot_subject_development_NJS_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_NJS_common_4_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_NJS_common_4_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_NJS_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_NJS_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_NJS_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_NJS_common_4_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_NJS_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_NJS_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_NJS_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_NJS_common_4_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_5_NJS_button = {
+	name = tot_subject_development_common_5_NJS_button
+	desc = tot_subject_development_common_5_NJS_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_NJS_member
+			has_variable = tot_subject_development_NJS_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_5_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_NJS_member
+			has_variable = tot_subject_development_NJS_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_NJS_common_5_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_NJS_common_5_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_NJS_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_NJS_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_NJS_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_NJS_common_5_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_NJS_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_NJS_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_NJS_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_NJS_common_5_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_1_NJS_button = {
+	name = tot_subject_development_overlord_1_NJS_button
+	desc = tot_subject_development_overlord_1_NJS_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_NJS_member
+			has_variable = tot_subject_development_NJS_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_NJS_overlord_member
+		tot_subject_development_overlord_1_NJS_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_NJS_overlord_1_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_NJS_overlord_1_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_NJS_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_NJS_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_NJS_overlord_1_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_2_NJS_button = {
+	name = tot_subject_development_overlord_2_NJS_button
+	desc = tot_subject_development_overlord_2_NJS_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_NJS_member
+			has_variable = tot_subject_development_NJS_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_NJS_overlord_member
+		tot_subject_development_overlord_2_NJS_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_NJS_overlord_2_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_NJS_overlord_2_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_NJS_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_NJS_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_NJS_overlord_2_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_3_NJS_button = {
+	name = tot_subject_development_overlord_3_NJS_button
+	desc = tot_subject_development_overlord_3_NJS_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_NJS_member
+			has_variable = tot_subject_development_NJS_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_NJS_overlord_member
+		tot_subject_development_overlord_3_NJS_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_NJS_overlord_3_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_NJS_overlord_3_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_NJS_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_NJS_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_NJS_overlord_3_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+
+tot_subject_development_common_1_GKMS_button = {
+	name = tot_subject_development_common_1_GKMS_button
+	desc = tot_subject_development_common_1_GKMS_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_GKMS_member
+			has_variable = tot_subject_development_GKMS_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_1_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_GKMS_member
+			has_variable = tot_subject_development_GKMS_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_GKMS_common_1_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_GKMS_common_1_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_GKMS_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_GKMS_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_GKMS_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_GKMS_common_1_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_GKMS_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_GKMS_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_GKMS_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_GKMS_common_1_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_2_GKMS_button = {
+	name = tot_subject_development_common_2_GKMS_button
+	desc = tot_subject_development_common_2_GKMS_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_GKMS_member
+			has_variable = tot_subject_development_GKMS_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_2_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_GKMS_member
+			has_variable = tot_subject_development_GKMS_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_GKMS_common_2_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_GKMS_common_2_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_GKMS_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_GKMS_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_GKMS_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_GKMS_common_2_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_GKMS_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_GKMS_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_GKMS_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_GKMS_common_2_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_3_GKMS_button = {
+	name = tot_subject_development_common_3_GKMS_button
+	desc = tot_subject_development_common_3_GKMS_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_GKMS_member
+			has_variable = tot_subject_development_GKMS_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_3_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_GKMS_member
+			has_variable = tot_subject_development_GKMS_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_GKMS_common_3_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_GKMS_common_3_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_GKMS_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_GKMS_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_GKMS_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_GKMS_common_3_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_GKMS_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_GKMS_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_GKMS_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_GKMS_common_3_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_4_GKMS_button = {
+	name = tot_subject_development_common_4_GKMS_button
+	desc = tot_subject_development_common_4_GKMS_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_GKMS_member
+			has_variable = tot_subject_development_GKMS_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_4_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_GKMS_member
+			has_variable = tot_subject_development_GKMS_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_GKMS_common_4_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_GKMS_common_4_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_GKMS_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_GKMS_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_GKMS_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_GKMS_common_4_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_GKMS_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_GKMS_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_GKMS_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_GKMS_common_4_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_5_GKMS_button = {
+	name = tot_subject_development_common_5_GKMS_button
+	desc = tot_subject_development_common_5_GKMS_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_GKMS_member
+			has_variable = tot_subject_development_GKMS_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_5_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_GKMS_member
+			has_variable = tot_subject_development_GKMS_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_GKMS_common_5_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_GKMS_common_5_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_GKMS_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_GKMS_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_GKMS_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_GKMS_common_5_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_GKMS_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_GKMS_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_GKMS_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_GKMS_common_5_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_1_GKMS_button = {
+	name = tot_subject_development_overlord_1_GKMS_button
+	desc = tot_subject_development_overlord_1_GKMS_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_GKMS_member
+			has_variable = tot_subject_development_GKMS_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_GKMS_overlord_member
+		tot_subject_development_overlord_1_GKMS_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_GKMS_overlord_1_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_GKMS_overlord_1_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_GKMS_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_GKMS_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_GKMS_overlord_1_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_2_GKMS_button = {
+	name = tot_subject_development_overlord_2_GKMS_button
+	desc = tot_subject_development_overlord_2_GKMS_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_GKMS_member
+			has_variable = tot_subject_development_GKMS_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_GKMS_overlord_member
+		tot_subject_development_overlord_2_GKMS_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_GKMS_overlord_2_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_GKMS_overlord_2_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_GKMS_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_GKMS_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_GKMS_overlord_2_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_3_GKMS_button = {
+	name = tot_subject_development_overlord_3_GKMS_button
+	desc = tot_subject_development_overlord_3_GKMS_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_GKMS_member
+			has_variable = tot_subject_development_GKMS_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_GKMS_overlord_member
+		tot_subject_development_overlord_3_GKMS_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_GKMS_overlord_3_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_GKMS_overlord_3_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_GKMS_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_GKMS_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_GKMS_overlord_3_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+
+tot_subject_development_common_1_AVMJ_button = {
+	name = tot_subject_development_common_1_AVMJ_button
+	desc = tot_subject_development_common_1_AVMJ_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AVMJ_member
+			has_variable = tot_subject_development_AVMJ_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_1_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_AVMJ_member
+			has_variable = tot_subject_development_AVMJ_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_AVMJ_common_1_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AVMJ_common_1_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_AVMJ_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AVMJ_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_AVMJ_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AVMJ_common_1_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_AVMJ_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AVMJ_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_AVMJ_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AVMJ_common_1_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_2_AVMJ_button = {
+	name = tot_subject_development_common_2_AVMJ_button
+	desc = tot_subject_development_common_2_AVMJ_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AVMJ_member
+			has_variable = tot_subject_development_AVMJ_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_2_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_AVMJ_member
+			has_variable = tot_subject_development_AVMJ_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_AVMJ_common_2_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AVMJ_common_2_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_AVMJ_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AVMJ_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_AVMJ_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AVMJ_common_2_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_AVMJ_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AVMJ_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_AVMJ_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AVMJ_common_2_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_3_AVMJ_button = {
+	name = tot_subject_development_common_3_AVMJ_button
+	desc = tot_subject_development_common_3_AVMJ_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AVMJ_member
+			has_variable = tot_subject_development_AVMJ_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_3_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_AVMJ_member
+			has_variable = tot_subject_development_AVMJ_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_AVMJ_common_3_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AVMJ_common_3_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_AVMJ_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AVMJ_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_AVMJ_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AVMJ_common_3_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_AVMJ_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AVMJ_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_AVMJ_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AVMJ_common_3_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_4_AVMJ_button = {
+	name = tot_subject_development_common_4_AVMJ_button
+	desc = tot_subject_development_common_4_AVMJ_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AVMJ_member
+			has_variable = tot_subject_development_AVMJ_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_4_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_AVMJ_member
+			has_variable = tot_subject_development_AVMJ_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_AVMJ_common_4_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AVMJ_common_4_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_AVMJ_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AVMJ_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_AVMJ_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AVMJ_common_4_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_AVMJ_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AVMJ_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_AVMJ_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AVMJ_common_4_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_5_AVMJ_button = {
+	name = tot_subject_development_common_5_AVMJ_button
+	desc = tot_subject_development_common_5_AVMJ_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AVMJ_member
+			has_variable = tot_subject_development_AVMJ_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_5_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_AVMJ_member
+			has_variable = tot_subject_development_AVMJ_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_AVMJ_common_5_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AVMJ_common_5_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_AVMJ_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AVMJ_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_AVMJ_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AVMJ_common_5_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_AVMJ_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AVMJ_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_AVMJ_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AVMJ_common_5_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_1_AVMJ_button = {
+	name = tot_subject_development_overlord_1_AVMJ_button
+	desc = tot_subject_development_overlord_1_AVMJ_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AVMJ_member
+			has_variable = tot_subject_development_AVMJ_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_AVMJ_overlord_member
+		tot_subject_development_overlord_1_AVMJ_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_AVMJ_overlord_1_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AVMJ_overlord_1_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_AVMJ_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_AVMJ_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_AVMJ_overlord_1_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_2_AVMJ_button = {
+	name = tot_subject_development_overlord_2_AVMJ_button
+	desc = tot_subject_development_overlord_2_AVMJ_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AVMJ_member
+			has_variable = tot_subject_development_AVMJ_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_AVMJ_overlord_member
+		tot_subject_development_overlord_2_AVMJ_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_AVMJ_overlord_2_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AVMJ_overlord_2_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_AVMJ_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_AVMJ_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_AVMJ_overlord_2_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_3_AVMJ_button = {
+	name = tot_subject_development_overlord_3_AVMJ_button
+	desc = tot_subject_development_overlord_3_AVMJ_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AVMJ_member
+			has_variable = tot_subject_development_AVMJ_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_AVMJ_overlord_member
+		tot_subject_development_overlord_3_AVMJ_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_AVMJ_overlord_3_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AVMJ_overlord_3_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_AVMJ_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_AVMJ_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_AVMJ_overlord_3_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+
+tot_subject_development_common_1_MYG_button = {
+	name = tot_subject_development_common_1_MYG_button
+	desc = tot_subject_development_common_1_MYG_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_MYG_member
+			has_variable = tot_subject_development_MYG_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_1_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_MYG_member
+			has_variable = tot_subject_development_MYG_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_MYG_common_1_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_MYG_common_1_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_MYG_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_MYG_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_MYG_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_MYG_common_1_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_MYG_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_MYG_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_MYG_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_MYG_common_1_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_2_MYG_button = {
+	name = tot_subject_development_common_2_MYG_button
+	desc = tot_subject_development_common_2_MYG_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_MYG_member
+			has_variable = tot_subject_development_MYG_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_2_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_MYG_member
+			has_variable = tot_subject_development_MYG_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_MYG_common_2_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_MYG_common_2_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_MYG_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_MYG_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_MYG_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_MYG_common_2_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_MYG_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_MYG_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_MYG_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_MYG_common_2_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_3_MYG_button = {
+	name = tot_subject_development_common_3_MYG_button
+	desc = tot_subject_development_common_3_MYG_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_MYG_member
+			has_variable = tot_subject_development_MYG_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_3_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_MYG_member
+			has_variable = tot_subject_development_MYG_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_MYG_common_3_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_MYG_common_3_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_MYG_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_MYG_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_MYG_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_MYG_common_3_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_MYG_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_MYG_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_MYG_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_MYG_common_3_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_4_MYG_button = {
+	name = tot_subject_development_common_4_MYG_button
+	desc = tot_subject_development_common_4_MYG_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_MYG_member
+			has_variable = tot_subject_development_MYG_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_4_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_MYG_member
+			has_variable = tot_subject_development_MYG_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_MYG_common_4_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_MYG_common_4_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_MYG_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_MYG_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_MYG_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_MYG_common_4_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_MYG_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_MYG_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_MYG_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_MYG_common_4_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_5_MYG_button = {
+	name = tot_subject_development_common_5_MYG_button
+	desc = tot_subject_development_common_5_MYG_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_MYG_member
+			has_variable = tot_subject_development_MYG_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_5_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_MYG_member
+			has_variable = tot_subject_development_MYG_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_MYG_common_5_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_MYG_common_5_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_MYG_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_MYG_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_MYG_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_MYG_common_5_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_MYG_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_MYG_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_MYG_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_MYG_common_5_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_1_MYG_button = {
+	name = tot_subject_development_overlord_1_MYG_button
+	desc = tot_subject_development_overlord_1_MYG_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_MYG_member
+			has_variable = tot_subject_development_MYG_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_MYG_overlord_member
+		tot_subject_development_overlord_1_MYG_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_MYG_overlord_1_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_MYG_overlord_1_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_MYG_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_MYG_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_MYG_overlord_1_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_2_MYG_button = {
+	name = tot_subject_development_overlord_2_MYG_button
+	desc = tot_subject_development_overlord_2_MYG_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_MYG_member
+			has_variable = tot_subject_development_MYG_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_MYG_overlord_member
+		tot_subject_development_overlord_2_MYG_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_MYG_overlord_2_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_MYG_overlord_2_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_MYG_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_MYG_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_MYG_overlord_2_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_3_MYG_button = {
+	name = tot_subject_development_overlord_3_MYG_button
+	desc = tot_subject_development_overlord_3_MYG_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_MYG_member
+			has_variable = tot_subject_development_MYG_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_MYG_overlord_member
+		tot_subject_development_overlord_3_MYG_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_MYG_overlord_3_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_MYG_overlord_3_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_MYG_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_MYG_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_MYG_overlord_3_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+
+tot_subject_development_common_1_AFTG_button = {
+	name = tot_subject_development_common_1_AFTG_button
+	desc = tot_subject_development_common_1_AFTG_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AFTG_member
+			has_variable = tot_subject_development_AFTG_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_1_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_AFTG_member
+			has_variable = tot_subject_development_AFTG_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_AFTG_common_1_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AFTG_common_1_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_AFTG_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AFTG_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_AFTG_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AFTG_common_1_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_AFTG_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AFTG_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_AFTG_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AFTG_common_1_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_2_AFTG_button = {
+	name = tot_subject_development_common_2_AFTG_button
+	desc = tot_subject_development_common_2_AFTG_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AFTG_member
+			has_variable = tot_subject_development_AFTG_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_2_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_AFTG_member
+			has_variable = tot_subject_development_AFTG_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_AFTG_common_2_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AFTG_common_2_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_AFTG_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AFTG_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_AFTG_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AFTG_common_2_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_AFTG_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AFTG_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_AFTG_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AFTG_common_2_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_3_AFTG_button = {
+	name = tot_subject_development_common_3_AFTG_button
+	desc = tot_subject_development_common_3_AFTG_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AFTG_member
+			has_variable = tot_subject_development_AFTG_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_3_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_AFTG_member
+			has_variable = tot_subject_development_AFTG_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_AFTG_common_3_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AFTG_common_3_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_AFTG_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AFTG_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_AFTG_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AFTG_common_3_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_AFTG_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AFTG_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_AFTG_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AFTG_common_3_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_4_AFTG_button = {
+	name = tot_subject_development_common_4_AFTG_button
+	desc = tot_subject_development_common_4_AFTG_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AFTG_member
+			has_variable = tot_subject_development_AFTG_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_4_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_AFTG_member
+			has_variable = tot_subject_development_AFTG_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_AFTG_common_4_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AFTG_common_4_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_AFTG_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AFTG_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_AFTG_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AFTG_common_4_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_AFTG_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AFTG_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_AFTG_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AFTG_common_4_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_5_AFTG_button = {
+	name = tot_subject_development_common_5_AFTG_button
+	desc = tot_subject_development_common_5_AFTG_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AFTG_member
+			has_variable = tot_subject_development_AFTG_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_5_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_AFTG_member
+			has_variable = tot_subject_development_AFTG_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_AFTG_common_5_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AFTG_common_5_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_AFTG_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AFTG_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_AFTG_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AFTG_common_5_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_AFTG_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_AFTG_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_AFTG_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_AFTG_common_5_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_1_AFTG_button = {
+	name = tot_subject_development_overlord_1_AFTG_button
+	desc = tot_subject_development_overlord_1_AFTG_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AFTG_member
+			has_variable = tot_subject_development_AFTG_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_AFTG_overlord_member
+		tot_subject_development_overlord_1_AFTG_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_AFTG_overlord_1_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AFTG_overlord_1_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_AFTG_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_AFTG_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_AFTG_overlord_1_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_2_AFTG_button = {
+	name = tot_subject_development_overlord_2_AFTG_button
+	desc = tot_subject_development_overlord_2_AFTG_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AFTG_member
+			has_variable = tot_subject_development_AFTG_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_AFTG_overlord_member
+		tot_subject_development_overlord_2_AFTG_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_AFTG_overlord_2_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AFTG_overlord_2_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_AFTG_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_AFTG_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_AFTG_overlord_2_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_3_AFTG_button = {
+	name = tot_subject_development_overlord_3_AFTG_button
+	desc = tot_subject_development_overlord_3_AFTG_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AFTG_member
+			has_variable = tot_subject_development_AFTG_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_AFTG_overlord_member
+		tot_subject_development_overlord_3_AFTG_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_AFTG_overlord_3_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_AFTG_overlord_3_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_AFTG_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_AFTG_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_AFTG_overlord_3_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+
+tot_subject_development_common_1_HHWO_button = {
+	name = tot_subject_development_common_1_HHWO_button
+	desc = tot_subject_development_common_1_HHWO_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_HHWO_member
+			has_variable = tot_subject_development_HHWO_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_1_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_HHWO_member
+			has_variable = tot_subject_development_HHWO_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_HHWO_common_1_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_HHWO_common_1_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_HHWO_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_HHWO_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_HHWO_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_HHWO_common_1_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_HHWO_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_HHWO_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_HHWO_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_HHWO_common_1_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_2_HHWO_button = {
+	name = tot_subject_development_common_2_HHWO_button
+	desc = tot_subject_development_common_2_HHWO_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_HHWO_member
+			has_variable = tot_subject_development_HHWO_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_2_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_HHWO_member
+			has_variable = tot_subject_development_HHWO_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_HHWO_common_2_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_HHWO_common_2_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_HHWO_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_HHWO_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_HHWO_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_HHWO_common_2_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_HHWO_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_HHWO_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_HHWO_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_HHWO_common_2_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_3_HHWO_button = {
+	name = tot_subject_development_common_3_HHWO_button
+	desc = tot_subject_development_common_3_HHWO_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_HHWO_member
+			has_variable = tot_subject_development_HHWO_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_3_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_HHWO_member
+			has_variable = tot_subject_development_HHWO_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_HHWO_common_3_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_HHWO_common_3_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_HHWO_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_HHWO_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_HHWO_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_HHWO_common_3_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_HHWO_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_HHWO_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_HHWO_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_HHWO_common_3_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_4_HHWO_button = {
+	name = tot_subject_development_common_4_HHWO_button
+	desc = tot_subject_development_common_4_HHWO_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_HHWO_member
+			has_variable = tot_subject_development_HHWO_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_4_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_HHWO_member
+			has_variable = tot_subject_development_HHWO_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_HHWO_common_4_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_HHWO_common_4_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_HHWO_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_HHWO_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_HHWO_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_HHWO_common_4_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_HHWO_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_HHWO_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_HHWO_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_HHWO_common_4_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_5_HHWO_button = {
+	name = tot_subject_development_common_5_HHWO_button
+	desc = tot_subject_development_common_5_HHWO_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_HHWO_member
+			has_variable = tot_subject_development_HHWO_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_5_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_HHWO_member
+			has_variable = tot_subject_development_HHWO_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_HHWO_common_5_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_HHWO_common_5_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_HHWO_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_HHWO_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_HHWO_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_HHWO_common_5_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_HHWO_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_HHWO_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_HHWO_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_HHWO_common_5_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_1_HHWO_button = {
+	name = tot_subject_development_overlord_1_HHWO_button
+	desc = tot_subject_development_overlord_1_HHWO_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_HHWO_member
+			has_variable = tot_subject_development_HHWO_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_HHWO_overlord_member
+		tot_subject_development_overlord_1_HHWO_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_HHWO_overlord_1_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_HHWO_overlord_1_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_HHWO_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_HHWO_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_HHWO_overlord_1_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_2_HHWO_button = {
+	name = tot_subject_development_overlord_2_HHWO_button
+	desc = tot_subject_development_overlord_2_HHWO_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_HHWO_member
+			has_variable = tot_subject_development_HHWO_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_HHWO_overlord_member
+		tot_subject_development_overlord_2_HHWO_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_HHWO_overlord_2_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_HHWO_overlord_2_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_HHWO_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_HHWO_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_HHWO_overlord_2_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_3_HHWO_button = {
+	name = tot_subject_development_overlord_3_HHWO_button
+	desc = tot_subject_development_overlord_3_HHWO_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_HHWO_member
+			has_variable = tot_subject_development_HHWO_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_HHWO_overlord_member
+		tot_subject_development_overlord_3_HHWO_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_HHWO_overlord_3_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_HHWO_overlord_3_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_HHWO_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_HHWO_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_HHWO_overlord_3_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+
+tot_subject_development_common_1_UKR_button = {
+	name = tot_subject_development_common_1_UKR_button
+	desc = tot_subject_development_common_1_UKR_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_UKR_member
+			has_variable = tot_subject_development_UKR_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_1_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_UKR_member
+			has_variable = tot_subject_development_UKR_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_UKR_common_1_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_UKR_common_1_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_UKR_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_UKR_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_UKR_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_UKR_common_1_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_UKR_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_UKR_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_UKR_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_UKR_common_1_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_2_UKR_button = {
+	name = tot_subject_development_common_2_UKR_button
+	desc = tot_subject_development_common_2_UKR_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_UKR_member
+			has_variable = tot_subject_development_UKR_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_2_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_UKR_member
+			has_variable = tot_subject_development_UKR_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_UKR_common_2_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_UKR_common_2_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_UKR_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_UKR_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_UKR_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_UKR_common_2_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_UKR_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_UKR_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_UKR_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_UKR_common_2_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_3_UKR_button = {
+	name = tot_subject_development_common_3_UKR_button
+	desc = tot_subject_development_common_3_UKR_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_UKR_member
+			has_variable = tot_subject_development_UKR_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_3_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_UKR_member
+			has_variable = tot_subject_development_UKR_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_UKR_common_3_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_UKR_common_3_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_UKR_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_UKR_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_UKR_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_UKR_common_3_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_UKR_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_UKR_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_UKR_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_UKR_common_3_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_4_UKR_button = {
+	name = tot_subject_development_common_4_UKR_button
+	desc = tot_subject_development_common_4_UKR_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_UKR_member
+			has_variable = tot_subject_development_UKR_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_4_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_UKR_member
+			has_variable = tot_subject_development_UKR_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_UKR_common_4_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_UKR_common_4_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_UKR_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_UKR_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_UKR_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_UKR_common_4_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_UKR_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_UKR_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_UKR_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_UKR_common_4_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_5_UKR_button = {
+	name = tot_subject_development_common_5_UKR_button
+	desc = tot_subject_development_common_5_UKR_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_UKR_member
+			has_variable = tot_subject_development_UKR_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_5_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_UKR_member
+			has_variable = tot_subject_development_UKR_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_UKR_common_5_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_UKR_common_5_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_UKR_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_UKR_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_UKR_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_UKR_common_5_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_UKR_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_UKR_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_UKR_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_UKR_common_5_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_1_UKR_button = {
+	name = tot_subject_development_overlord_1_UKR_button
+	desc = tot_subject_development_overlord_1_UKR_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_UKR_member
+			has_variable = tot_subject_development_UKR_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_UKR_overlord_member
+		tot_subject_development_overlord_1_UKR_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_UKR_overlord_1_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_UKR_overlord_1_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_UKR_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_UKR_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_UKR_overlord_1_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_2_UKR_button = {
+	name = tot_subject_development_overlord_2_UKR_button
+	desc = tot_subject_development_overlord_2_UKR_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_UKR_member
+			has_variable = tot_subject_development_UKR_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_UKR_overlord_member
+		tot_subject_development_overlord_2_UKR_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_UKR_overlord_2_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_UKR_overlord_2_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_UKR_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_UKR_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_UKR_overlord_2_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_3_UKR_button = {
+	name = tot_subject_development_overlord_3_UKR_button
+	desc = tot_subject_development_overlord_3_UKR_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_UKR_member
+			has_variable = tot_subject_development_UKR_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_UKR_overlord_member
+		tot_subject_development_overlord_3_UKR_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_UKR_overlord_3_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_UKR_overlord_3_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_UKR_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_UKR_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_UKR_overlord_3_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+
+tot_subject_development_common_1_ROM_button = {
+	name = tot_subject_development_common_1_ROM_button
+	desc = tot_subject_development_common_1_ROM_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_ROM_member
+			has_variable = tot_subject_development_ROM_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_1_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_ROM_member
+			has_variable = tot_subject_development_ROM_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_ROM_common_1_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_ROM_common_1_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_ROM_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_ROM_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_ROM_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_ROM_common_1_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_ROM_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_ROM_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_ROM_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_ROM_common_1_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_2_ROM_button = {
+	name = tot_subject_development_common_2_ROM_button
+	desc = tot_subject_development_common_2_ROM_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_ROM_member
+			has_variable = tot_subject_development_ROM_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_2_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_ROM_member
+			has_variable = tot_subject_development_ROM_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_ROM_common_2_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_ROM_common_2_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_ROM_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_ROM_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_ROM_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_ROM_common_2_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_ROM_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_ROM_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_ROM_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_ROM_common_2_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_3_ROM_button = {
+	name = tot_subject_development_common_3_ROM_button
+	desc = tot_subject_development_common_3_ROM_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_ROM_member
+			has_variable = tot_subject_development_ROM_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_3_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_ROM_member
+			has_variable = tot_subject_development_ROM_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_ROM_common_3_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_ROM_common_3_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_ROM_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_ROM_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_ROM_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_ROM_common_3_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_ROM_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_ROM_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_ROM_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_ROM_common_3_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_4_ROM_button = {
+	name = tot_subject_development_common_4_ROM_button
+	desc = tot_subject_development_common_4_ROM_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_ROM_member
+			has_variable = tot_subject_development_ROM_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_4_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_ROM_member
+			has_variable = tot_subject_development_ROM_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_ROM_common_4_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_ROM_common_4_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_ROM_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_ROM_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_ROM_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_ROM_common_4_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_ROM_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_ROM_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_ROM_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_ROM_common_4_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_common_5_ROM_button = {
+	name = tot_subject_development_common_5_ROM_button
+	desc = tot_subject_development_common_5_ROM_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_ROM_member
+			has_variable = tot_subject_development_ROM_overlord_member
+		}
+	}
+	possible = {
+		tot_subject_development_common_5_trigger = yes
+		OR = {
+			has_variable = tot_subject_development_ROM_member
+			has_variable = tot_subject_development_ROM_overlord_member
+		}
+		NOT = { has_modifier = modifier_tot_subject_development_ROM_common_5_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_ROM_common_5_reward
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tot_subject_development_ROM_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_ROM_common_completed_subject add = 1 }
+				change_variable = { name = tot_subject_development_ROM_subject_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_ROM_common_5_reward
+				days = 3650
+			}
+		}
+		else_if = {
+			limit = { has_variable = tot_subject_development_ROM_overlord_member }
+			scope:journal_entry = {
+				change_variable = { name = tot_subject_development_ROM_common_completed_overlord add = 1 }
+				change_variable = { name = tot_subject_development_ROM_overlord_score add = 1 }
+			}
+			add_modifier = {
+				name = modifier_tot_subject_development_ROM_common_5_reward
+				days = 3650
+			}
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_1_ROM_button = {
+	name = tot_subject_development_overlord_1_ROM_button
+	desc = tot_subject_development_overlord_1_ROM_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_ROM_member
+			has_variable = tot_subject_development_ROM_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_ROM_overlord_member
+		tot_subject_development_overlord_1_ROM_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_ROM_overlord_1_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_ROM_overlord_1_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_ROM_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_ROM_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_ROM_overlord_1_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_2_ROM_button = {
+	name = tot_subject_development_overlord_2_ROM_button
+	desc = tot_subject_development_overlord_2_ROM_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_ROM_member
+			has_variable = tot_subject_development_ROM_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_ROM_overlord_member
+		tot_subject_development_overlord_2_ROM_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_ROM_overlord_2_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_ROM_overlord_2_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_ROM_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_ROM_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_ROM_overlord_2_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_overlord_3_ROM_button = {
+	name = tot_subject_development_overlord_3_ROM_button
+	desc = tot_subject_development_overlord_3_ROM_button_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_ROM_member
+			has_variable = tot_subject_development_ROM_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_ROM_overlord_member
+		tot_subject_development_overlord_3_ROM_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_ROM_overlord_3_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_ROM_overlord_3_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_ROM_overlord_completed add = 1 }
+			change_variable = { name = tot_subject_development_ROM_overlord_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_ROM_overlord_3_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+
+tot_subject_development_national_1_AQO_button = {
+	name = tot_subject_development_national_1_AQO_button
+	desc = tot_subject_development_national_1_AQO_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AQO_member
+			has_variable = tot_subject_development_AQO_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_AQO_member
+		tot_subject_development_national_1_AQO_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_1_AQO_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_1_AQO_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_AQO_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_AQO_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_1_AQO_reward
+			days = 3650
+		}
+	}
+	if = {
+		limit = { NOT = { has_company = company_type:tot_company_aqours_mikan } }
+		add_company = company_type:tot_company_aqours_mikan
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_2_AQO_button = {
+	name = tot_subject_development_national_2_AQO_button
+	desc = tot_subject_development_national_2_AQO_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AQO_member
+			has_variable = tot_subject_development_AQO_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_AQO_member
+		tot_subject_development_national_2_AQO_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_2_AQO_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_2_AQO_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_AQO_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_AQO_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_2_AQO_reward
+			days = 3650
+		}
+	}
+	if = {
+		limit = { NOT = { has_company = company_type:tot_company_aqours_diving } }
+		add_company = company_type:tot_company_aqours_diving
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_3_AQO_button = {
+	name = tot_subject_development_national_3_AQO_button
+	desc = tot_subject_development_national_3_AQO_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AQO_member
+			has_variable = tot_subject_development_AQO_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_AQO_member
+		tot_subject_development_national_3_AQO_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_3_AQO_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_3_AQO_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_AQO_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_AQO_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_3_AQO_reward
+			days = 3650
+		}
+	}
+	if = {
+		limit = { NOT = { has_company = company_type:tot_company_aqours_uranohoshi } }
+		add_company = company_type:tot_company_aqours_uranohoshi
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_1_NJS_button = {
+	name = tot_subject_development_national_1_NJS_button
+	desc = tot_subject_development_national_1_NJS_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_NJS_member
+			has_variable = tot_subject_development_NJS_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_NJS_member
+		tot_subject_development_national_1_NJS_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_1_NJS_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_1_NJS_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_NJS_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_NJS_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_1_NJS_reward
+			days = 3650
+		}
+	}
+	if = {
+		limit = { NOT = { has_company = company_type:tot_company_njs_club } }
+		add_company = company_type:tot_company_njs_club
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_2_NJS_button = {
+	name = tot_subject_development_national_2_NJS_button
+	desc = tot_subject_development_national_2_NJS_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_NJS_member
+			has_variable = tot_subject_development_NJS_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_NJS_member
+		tot_subject_development_national_2_NJS_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_2_NJS_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_2_NJS_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_NJS_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_NJS_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_2_NJS_reward
+			days = 3650
+		}
+	}
+	if = {
+		limit = { NOT = { has_company = company_type:tot_company_njs_rina } }
+		add_company = company_type:tot_company_njs_rina
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_3_NJS_button = {
+	name = tot_subject_development_national_3_NJS_button
+	desc = tot_subject_development_national_3_NJS_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_NJS_member
+			has_variable = tot_subject_development_NJS_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_NJS_member
+		tot_subject_development_national_3_NJS_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_3_NJS_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_3_NJS_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_NJS_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_NJS_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_3_NJS_reward
+			days = 3650
+		}
+	}
+	if = {
+		limit = { NOT = { has_company = company_type:tot_company_njs_ayumu } }
+		add_company = company_type:tot_company_njs_ayumu
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_1_GKMS_button = {
+	name = tot_subject_development_national_1_GKMS_button
+	desc = tot_subject_development_national_1_GKMS_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_GKMS_member
+			has_variable = tot_subject_development_GKMS_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_GKMS_member
+		tot_subject_development_national_1_GKMS_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_1_GKMS_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_1_GKMS_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_GKMS_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_GKMS_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_1_GKMS_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_2_GKMS_button = {
+	name = tot_subject_development_national_2_GKMS_button
+	desc = tot_subject_development_national_2_GKMS_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_GKMS_member
+			has_variable = tot_subject_development_GKMS_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_GKMS_member
+		tot_subject_development_national_2_GKMS_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_2_GKMS_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_2_GKMS_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_GKMS_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_GKMS_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_2_GKMS_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_3_GKMS_button = {
+	name = tot_subject_development_national_3_GKMS_button
+	desc = tot_subject_development_national_3_GKMS_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_GKMS_member
+			has_variable = tot_subject_development_GKMS_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_GKMS_member
+		tot_subject_development_national_3_GKMS_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_3_GKMS_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_3_GKMS_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_GKMS_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_GKMS_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_3_GKMS_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_1_AVMJ_button = {
+	name = tot_subject_development_national_1_AVMJ_button
+	desc = tot_subject_development_national_1_AVMJ_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AVMJ_member
+			has_variable = tot_subject_development_AVMJ_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_AVMJ_member
+		tot_subject_development_national_1_AVMJ_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_1_AVMJ_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_1_AVMJ_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_AVMJ_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_AVMJ_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_1_AVMJ_reward
+			days = 3650
+		}
+	}
+	if = {
+		limit = { NOT = { has_company = company_type:tot_company_toyokawa_group } }
+		add_company = company_type:tot_company_toyokawa_group
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_2_AVMJ_button = {
+	name = tot_subject_development_national_2_AVMJ_button
+	desc = tot_subject_development_national_2_AVMJ_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AVMJ_member
+			has_variable = tot_subject_development_AVMJ_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_AVMJ_member
+		tot_subject_development_national_2_AVMJ_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_2_AVMJ_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_2_AVMJ_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_AVMJ_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_AVMJ_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_2_AVMJ_reward
+			days = 3650
+		}
+	}
+	if = {
+		limit = { NOT = { has_company = company_type:tot_company_avemujica_agency } }
+		add_company = company_type:tot_company_avemujica_agency
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_3_AVMJ_button = {
+	name = tot_subject_development_national_3_AVMJ_button
+	desc = tot_subject_development_national_3_AVMJ_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AVMJ_member
+			has_variable = tot_subject_development_AVMJ_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_AVMJ_member
+		tot_subject_development_national_3_AVMJ_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_3_AVMJ_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_3_AVMJ_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_AVMJ_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_AVMJ_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_3_AVMJ_reward
+			days = 3650
+		}
+	}
+	if = {
+		limit = { NOT = { has_company = company_type:tot_company_sumimi_agency } }
+		add_company = company_type:tot_company_sumimi_agency
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_1_MYG_button = {
+	name = tot_subject_development_national_1_MYG_button
+	desc = tot_subject_development_national_1_MYG_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_MYG_member
+			has_variable = tot_subject_development_MYG_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_MYG_member
+		tot_subject_development_national_1_MYG_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_1_MYG_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_1_MYG_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_MYG_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_MYG_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_1_MYG_reward
+			days = 3650
+		}
+	}
+	if = {
+		limit = { NOT = { has_company = company_type:tot_company_myg_nagasaki_group } }
+		add_company = company_type:tot_company_myg_nagasaki_group
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_2_MYG_button = {
+	name = tot_subject_development_national_2_MYG_button
+	desc = tot_subject_development_national_2_MYG_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_MYG_member
+			has_variable = tot_subject_development_MYG_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_MYG_member
+		tot_subject_development_national_2_MYG_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_2_MYG_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_2_MYG_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_MYG_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_MYG_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_2_MYG_reward
+			days = 3650
+		}
+	}
+	if = {
+		limit = { NOT = { has_company = company_type:tot_company_myg_anno_tokyo } }
+		add_company = company_type:tot_company_myg_anno_tokyo
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_3_MYG_button = {
+	name = tot_subject_development_national_3_MYG_button
+	desc = tot_subject_development_national_3_MYG_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_MYG_member
+			has_variable = tot_subject_development_MYG_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_MYG_member
+		tot_subject_development_national_3_MYG_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_3_MYG_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_3_MYG_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_MYG_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_MYG_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_3_MYG_reward
+			days = 3650
+		}
+	}
+	if = {
+		limit = { NOT = { has_company = company_type:tot_company_myg_aleppo_astronomical } }
+		add_company = company_type:tot_company_myg_aleppo_astronomical
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_1_AFTG_button = {
+	name = tot_subject_development_national_1_AFTG_button
+	desc = tot_subject_development_national_1_AFTG_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AFTG_member
+			has_variable = tot_subject_development_AFTG_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_AFTG_member
+		tot_subject_development_national_1_AFTG_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_1_AFTG_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_1_AFTG_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_AFTG_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_AFTG_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_1_AFTG_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_2_AFTG_button = {
+	name = tot_subject_development_national_2_AFTG_button
+	desc = tot_subject_development_national_2_AFTG_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AFTG_member
+			has_variable = tot_subject_development_AFTG_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_AFTG_member
+		tot_subject_development_national_2_AFTG_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_2_AFTG_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_2_AFTG_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_AFTG_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_AFTG_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_2_AFTG_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_3_AFTG_button = {
+	name = tot_subject_development_national_3_AFTG_button
+	desc = tot_subject_development_national_3_AFTG_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_AFTG_member
+			has_variable = tot_subject_development_AFTG_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_AFTG_member
+		tot_subject_development_national_3_AFTG_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_3_AFTG_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_3_AFTG_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_AFTG_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_AFTG_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_3_AFTG_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_1_HHWO_button = {
+	name = tot_subject_development_national_1_HHWO_button
+	desc = tot_subject_development_national_1_HHWO_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_HHWO_member
+			has_variable = tot_subject_development_HHWO_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_HHWO_member
+		tot_subject_development_national_1_HHWO_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_1_HHWO_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_1_HHWO_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_HHWO_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_HHWO_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_1_HHWO_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_2_HHWO_button = {
+	name = tot_subject_development_national_2_HHWO_button
+	desc = tot_subject_development_national_2_HHWO_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_HHWO_member
+			has_variable = tot_subject_development_HHWO_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_HHWO_member
+		tot_subject_development_national_2_HHWO_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_2_HHWO_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_2_HHWO_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_HHWO_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_HHWO_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_2_HHWO_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_3_HHWO_button = {
+	name = tot_subject_development_national_3_HHWO_button
+	desc = tot_subject_development_national_3_HHWO_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_HHWO_member
+			has_variable = tot_subject_development_HHWO_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_HHWO_member
+		tot_subject_development_national_3_HHWO_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_3_HHWO_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_3_HHWO_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_HHWO_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_HHWO_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_3_HHWO_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_1_UKR_button = {
+	name = tot_subject_development_national_1_UKR_button
+	desc = tot_subject_development_national_1_UKR_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_UKR_member
+			has_variable = tot_subject_development_UKR_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_UKR_member
+		tot_subject_development_national_1_UKR_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_1_UKR_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_1_UKR_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_UKR_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_UKR_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_1_UKR_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_2_UKR_button = {
+	name = tot_subject_development_national_2_UKR_button
+	desc = tot_subject_development_national_2_UKR_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_UKR_member
+			has_variable = tot_subject_development_UKR_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_UKR_member
+		tot_subject_development_national_2_UKR_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_2_UKR_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_2_UKR_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_UKR_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_UKR_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_2_UKR_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_3_UKR_button = {
+	name = tot_subject_development_national_3_UKR_button
+	desc = tot_subject_development_national_3_UKR_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_UKR_member
+			has_variable = tot_subject_development_UKR_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_UKR_member
+		tot_subject_development_national_3_UKR_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_3_UKR_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_3_UKR_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_UKR_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_UKR_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_3_UKR_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_1_ROM_button = {
+	name = tot_subject_development_national_1_ROM_button
+	desc = tot_subject_development_national_1_ROM_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_ROM_member
+			has_variable = tot_subject_development_ROM_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_ROM_member
+		tot_subject_development_national_1_ROM_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_1_ROM_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_1_ROM_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_ROM_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_ROM_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_1_ROM_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_2_ROM_button = {
+	name = tot_subject_development_national_2_ROM_button
+	desc = tot_subject_development_national_2_ROM_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_ROM_member
+			has_variable = tot_subject_development_ROM_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_ROM_member
+		tot_subject_development_national_2_ROM_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_2_ROM_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_2_ROM_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_ROM_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_ROM_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_2_ROM_reward
+			days = 3650
+		}
+	}
+	ai_chance = { value = 100 }
+}
+
+tot_subject_development_national_3_ROM_button = {
+	name = tot_subject_development_national_3_ROM_button
+	desc = tot_subject_development_national_3_ROM_desc
+	visible = {
+		OR = {
+			has_variable = tot_subject_development_ROM_member
+			has_variable = tot_subject_development_ROM_overlord_member
+		}
+	}
+	possible = {
+		has_variable = tot_subject_development_ROM_member
+		tot_subject_development_national_3_ROM_trigger = yes
+		NOT = { has_modifier = modifier_tot_subject_development_national_3_ROM_reward }
+	}
+	selected = {
+		has_modifier = modifier_tot_subject_development_national_3_ROM_reward
+	}
+	effect = {
+		scope:journal_entry = {
+			change_variable = { name = tot_subject_development_ROM_national_completed add = 1 }
+			change_variable = { name = tot_subject_development_ROM_subject_score add = 1 }
+		}
+		add_modifier = {
+			name = modifier_tot_subject_development_national_3_ROM_reward
+			days = 3650
+		}
 	}
 	ai_chance = { value = 100 }
 }
