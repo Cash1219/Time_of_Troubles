@@ -461,25 +461,25 @@ tot_subject_development_national_3_HHWO_trigger = {
 }
 
 tot_subject_development_national_1_UKR_trigger = {
-	country_has_building_type_levels = { target = bt:building_wheat_farm value >= 15 }
+	country_has_building_type_levels = { target = bt:building_stage value >= 10 }
 }
 
 tot_subject_development_national_2_UKR_trigger = {
-	country_has_building_type_levels = { target = bt:building_wheat_farm value >= 10 } country_has_building_type_levels = { target = bt:building_railway value >= 5 }
+	country_has_building_type_levels = { target = bt:building_musical_instrument value >= 10 }
 }
 
 tot_subject_development_national_3_UKR_trigger = {
-	average_sol >= 12 gdp >= 2000000
+	country_has_building_type_levels = { target = bt:building_kissaten value >= 10 }
 }
 
 tot_subject_development_national_1_ROM_trigger = {
-	country_has_building_type_levels = { target = bt:building_stage value >= 5 }
+	country_has_building_type_levels = { target = bt:building_stage value >= 10 }
 }
 
 tot_subject_development_national_2_ROM_trigger = {
-	country_has_building_type_levels = { target = bt:building_stage value >= 5 } country_has_building_type_levels = { target = bt:building_port value >= 3 }
+	country_has_building_type_levels = { target = bt:building_musical_instrument value >= 10 }
 }
 
 tot_subject_development_national_3_ROM_trigger = {
-	average_sol >= 13 literacy_rate >= 0.40
+	country_has_building_type_levels = { target = bt:building_food_industry value >= 10 }
 }

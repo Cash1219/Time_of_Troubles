@@ -1,0 +1,264 @@
+# UKR companies
+
+tot_company_ukr_starry = {
+	icon = "gfx/interface/icons/company_icons/fra_company_lycoreco_cafe.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_KIEV }
+	building_types = { building_stage building_musical_instrument building_club }
+	extension_building_types = { building_goods building_textile_mill }
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_KIEV
+			any_scope_building = {
+				OR = { is_building_type = building_stage is_building_type = building_musical_instrument is_building_type = building_club }
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = { country_prestige_add = 2 }
+	possible_prestige_goods = { tot_company_ukr_starry_prestige_good }
+	ai_will_do = { }
+	ai_construction_targets = {
+		building_stage = { level = 5 state_trigger = { state_region = s:STATE_KIEV } }
+		building_musical_instrument = { level = 5 state_trigger = { state_region = s:STATE_KIEV } }
+		building_club = { level = 5 state_trigger = { state_region = s:STATE_KIEV } }
+		building_goods = { level = 3 state_trigger = { state_region = s:STATE_KIEV } }
+		building_textile_mill = { level = 3 state_trigger = { state_region = s:STATE_KIEV } }
+	}
+	ai_weight = { value = 8 }
+}
+
+tot_company_ukr_guitar_hero = {
+	icon = "gfx/interface/icons/company_icons/fra_company_stella_cafe.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_KIEV }
+	building_types = { building_stage building_musical_instrument building_club }
+	extension_building_types = { building_goods building_textile_mill }
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_KIEV
+			any_scope_building = {
+				OR = { is_building_type = building_stage is_building_type = building_musical_instrument is_building_type = building_club }
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = { country_influence_add = 15 }
+	possible_prestige_goods = { tot_company_ukr_guitar_hero_prestige_good }
+	ai_will_do = { }
+	ai_construction_targets = {
+		building_stage = { level = 5 state_trigger = { state_region = s:STATE_KIEV } }
+		building_musical_instrument = { level = 5 state_trigger = { state_region = s:STATE_KIEV } }
+		building_club = { level = 5 state_trigger = { state_region = s:STATE_KIEV } }
+		building_goods = { level = 3 state_trigger = { state_region = s:STATE_KIEV } }
+		building_textile_mill = { level = 3 state_trigger = { state_region = s:STATE_KIEV } }
+	}
+	ai_weight = { value = 8 }
+}
+
+tot_company_ukr_kita_kissaten = {
+	icon = "gfx/interface/icons/company_icons/fra_company_lycoreco_cafe.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_KIEV }
+	building_types = { building_kissaten building_textile_mill building_wheat_farm }
+	extension_building_types = { building_livestock_ranch building_food_industry }
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_KIEV
+			any_scope_building = {
+				OR = { is_building_type = building_kissaten is_building_type = building_textile_mill is_building_type = building_wheat_farm }
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = { state_migration_pull_mult = 0.1 }
+	possible_prestige_goods = { tot_company_ukr_kita_kissaten_prestige_good }
+	ai_will_do = { }
+	ai_construction_targets = {
+		building_kissaten = { level = 5 state_trigger = { state_region = s:STATE_KIEV } }
+		building_textile_mill = { level = 5 state_trigger = { state_region = s:STATE_KIEV } }
+		building_wheat_farm = { level = 5 state_trigger = { state_region = s:STATE_KIEV } }
+		building_livestock_ranch = { level = 3 state_trigger = { state_region = s:STATE_KIEV } }
+		building_food_industry = { level = 3 state_trigger = { state_region = s:STATE_KIEV } }
+	}
+	ai_weight = { value = 8 }
+}
+
+# ROM companies
+
+tot_company_rom_pastel_palettes = {
+	icon = "gfx/interface/icons/company_icons/fra_company_stella_cafe.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_WALLACHIA }
+	building_types = { building_stage building_textile_mill building_kissaten }
+	extension_building_types = { building_musical_instrument building_entertainment_press }
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_WALLACHIA
+			any_scope_building = {
+				OR = { is_building_type = building_stage is_building_type = building_textile_mill is_building_type = building_kissaten }
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = { country_influence_add = 20 }
+	possible_prestige_goods = { tot_company_rom_pastel_palettes_prestige_good }
+	ai_will_do = { }
+	ai_construction_targets = {
+		building_stage = { level = 5 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_textile_mill = { level = 5 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_kissaten = { level = 5 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_musical_instrument = { level = 3 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_entertainment_press = { level = 3 state_trigger = { state_region = s:STATE_WALLACHIA } }
+	}
+	ai_weight = { value = 8 }
+}
+
+tot_company_rom_franchouchou = {
+	icon = "gfx/interface/icons/company_icons/fra_company_lycoreco_cafe.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_WALLACHIA }
+	building_types = { building_stage building_food_industry building_wheat_farm }
+	extension_building_types = { building_livestock_ranch building_chemical_plant }
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_WALLACHIA
+			any_scope_building = {
+				OR = { is_building_type = building_stage is_building_type = building_food_industry is_building_type = building_wheat_farm }
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = { state_migration_pull_mult = 0.15 }
+	possible_prestige_goods = { tot_company_rom_franchouchou_prestige_good }
+	ai_will_do = { }
+	ai_construction_targets = {
+		building_stage = { level = 5 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_food_industry = { level = 5 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_wheat_farm = { level = 5 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_livestock_ranch = { level = 3 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_chemical_plant = { level = 3 state_trigger = { state_region = s:STATE_WALLACHIA } }
+	}
+	ai_weight = { value = 8 }
+}
+
+tot_company_rom_togenashi_togeari = {
+	icon = "gfx/interface/icons/company_icons/fra_company_stella_cafe.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_WALLACHIA }
+	building_types = { building_stage building_musical_instrument building_motor_industry }
+	extension_building_types = { building_steel_mill building_club }
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_WALLACHIA
+			any_scope_building = {
+				OR = { is_building_type = building_stage is_building_type = building_musical_instrument is_building_type = building_motor_industry }
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = { country_prestige_add = 2 }
+	possible_prestige_goods = { tot_company_rom_togenashi_togeari_prestige_good }
+	ai_will_do = { }
+	ai_construction_targets = {
+		building_stage = { level = 5 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_musical_instrument = { level = 5 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_motor_industry = { level = 5 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_steel_mill = { level = 3 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_club = { level = 3 state_trigger = { state_region = s:STATE_WALLACHIA } }
+	}
+	ai_weight = { value = 8 }
+}
+
+tot_company_rom_maruyama_auto = {
+	icon = "gfx/interface/icons/company_icons/fra_company_stella_cafe.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_WALLACHIA }
+	building_types = { building_motor_industry building_steel_mill building_tooling_workshop }
+	extension_building_types = { building_oil_rig building_iron_mine }
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_WALLACHIA
+			any_scope_building = {
+				OR = { is_building_type = building_motor_industry is_building_type = building_steel_mill is_building_type = building_tooling_workshop }
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = { country_influence_add = 15 }
+	possible_prestige_goods = { tot_company_rom_maruyama_auto_prestige_good }
+	ai_will_do = { }
+	ai_construction_targets = {
+		building_motor_industry = { level = 5 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_steel_mill = { level = 5 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_tooling_workshop = { level = 5 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_oil_rig = { level = 3 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_iron_mine = { level = 3 state_trigger = { state_region = s:STATE_WALLACHIA } }
+	}
+	ai_weight = { value = 8 }
+}
+
+tot_company_rom_yoshinoya = {
+	icon = "gfx/interface/icons/company_icons/fra_company_lycoreco_cafe.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_WALLACHIA }
+	building_types = { building_kissaten building_livestock_ranch building_wheat_farm }
+	extension_building_types = { building_food_industry building_fishing_wharf }
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_WALLACHIA
+			any_scope_building = {
+				OR = { is_building_type = building_kissaten is_building_type = building_livestock_ranch is_building_type = building_wheat_farm }
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = { state_migration_pull_mult = 0.1 }
+	possible_prestige_goods = { tot_company_rom_yoshinoya_prestige_good }
+	ai_will_do = { }
+	ai_construction_targets = {
+		building_kissaten = { level = 5 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_livestock_ranch = { level = 5 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_wheat_farm = { level = 5 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_food_industry = { level = 3 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_fishing_wharf = { level = 3 state_trigger = { state_region = s:STATE_WALLACHIA } }
+	}
+	ai_weight = { value = 8 }
+}
+
+tot_company_rom_bushido_armory = {
+	icon = "gfx/interface/icons/company_icons/fra_company_stella_cafe.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_WALLACHIA }
+	building_types = { building_arms_industry building_steel_mill building_artillery_foundry }
+	extension_building_types = { building_munition_plant building_iron_mine }
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_WALLACHIA
+			any_scope_building = {
+				OR = { is_building_type = building_arms_industry is_building_type = building_steel_mill is_building_type = building_artillery_foundry }
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = { country_influence_add = 20 }
+	possible_prestige_goods = { tot_company_rom_bushido_armory_prestige_good }
+	ai_will_do = { }
+	ai_construction_targets = {
+		building_arms_industry = { level = 5 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_steel_mill = { level = 5 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_artillery_foundry = { level = 5 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_munition_plant = { level = 3 state_trigger = { state_region = s:STATE_WALLACHIA } }
+		building_iron_mine = { level = 3 state_trigger = { state_region = s:STATE_WALLACHIA } }
+	}
+	ai_weight = { value = 8 }
+}
