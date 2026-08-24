@@ -236,12 +236,23 @@
 					building={
 						type="building_food_industry"
 						country="c:STLI"
-						levels=1
+						levels=5
 						region="STATE_PIEDMONT"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_bakery" "pm_disabled_canning"  "pm_manual_dough_processing" "pm_pot_stills" }
+			}
+			create_building={
+				building="building_stage"
+				add_ownership={
+					country={
+						country="c:STLI"
+						levels=3
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_stage_operation_public" "pm_stage_scale_small" "pm_stage_merchandising_none" "pm_stage_media_none" }
 			}
 			create_building={
 				building="building_university"
@@ -310,7 +321,7 @@
 					building={
 						type="building_manor_house"
 						country="c:STLI"
-						levels=5
+						levels=10
 						region="STATE_PIEDMONT"
 					}
 				}
@@ -323,7 +334,7 @@
 					building={
 						type="building_manor_house"
 						country="c:STLI"
-						levels=5
+						levels=10
 						region="STATE_PIEDMONT"
 					}
 				}
@@ -1923,7 +1934,7 @@
 					building={
 						type="building_manor_house"
 						country="c:GBDP"
-						levels=2
+						levels=10
 						region="STATE_VENETIA"
 					}
 				}
@@ -1971,12 +1982,51 @@
 					building={
 						type="building_financial_district"
 						country="c:GBDP"
-						levels=2
+						levels=3
 						region="STATE_VENETIA"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_publisher_main_general_wood" "pm_publisher_comprehensive_publishing" }
+			}
+			create_building={
+				building="building_sulfur_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:GBDP"
+						levels=5
+						region="STATE_VENETIA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_sulfur_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_chemical_plant"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:GBDP"
+						levels=5
+						region="STATE_VENETIA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_artificial_fertilizers" }
+			}
+			create_building={
+				building="building_food_industry"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:GBDP"
+						levels=3
+						region="STATE_VENETIA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_bakery" "pm_disabled_canning" "pm_manual_dough_processing" }
 			}
 			create_building={
 				building="building_entertainment_press"
