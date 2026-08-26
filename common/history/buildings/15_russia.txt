@@ -1613,6 +1613,19 @@
 	s:STATE_ROSTOV={
 		region_state:UMA={
 			create_building={
+				building="building_wheat_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:UMA"
+						levels=10
+						region="STATE_ROSTOV"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_soil_enriching_farming" "pm_no_secondary" "pm_tools_disabled" }
+			}
+			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
 				add_ownership={
@@ -1839,7 +1852,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled"  }
+				activate_production_methods={ "pm_soil_enriching_farming" "pm_no_secondary" "pm_tools_disabled"  }
 			}
 			create_building={
 				building="building_livestock_ranch"
@@ -1951,7 +1964,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_simple_farming"  "pm_tools_disabled" "pm_no_secondary" }
+				activate_production_methods={ "pm_soil_enriching_farming"  "pm_tools_disabled" "pm_no_secondary" }
 			}
 		}
 		region_state:UMA = {
@@ -2376,6 +2389,19 @@
 	}
 	s:STATE_STAVROPOL={
 		region_state:UMA={
+			create_building={
+				building="building_wheat_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:UMA"
+						levels=10
+						region="STATE_STAVROPOL"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_soil_enriching_farming" "pm_no_secondary" "pm_tools_disabled" }
+			}
 		}
 	}
 	s:STATE_CHUVASHIA={

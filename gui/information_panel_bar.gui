@@ -8,7 +8,7 @@
 @military_position = 200
 @power_bloc_position = 250
 
-@academy_position = 300
+@character_position = 700
 @spacing_widget_1_position = 350
 @spacing_widget_size = 20
 
@@ -132,7 +132,7 @@ types information_panel_bar_types {
 
 				icon = {
 					texture = "gfx/interface/main_hud/sidebar_skin_bg_5.dds"
-					size = { 50 128 }
+					size = { 50 208 }
 
 					using = hud_shiny_effect
 				}
@@ -208,10 +208,10 @@ types information_panel_bar_types {
 				}
 
 
-				### ACADEMY
+				### CHARACTERS
 				sidebar_label_button = {
 					enabled = "[GetMetaPlayer.GetPlayedOrObservedCountry.IsValid]"
-					position = { -100 @academy_position }
+					position = { -100 @character_position }
 					blockoverride "onclick" {
 						onclick = "[GetVariableSystem.Set( 'tot_character_minister_slot', 'student_council' )]"
 						onclick = "[GetScriptedGui('tot_refresh_student_council_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
@@ -219,13 +219,13 @@ types information_panel_bar_types {
 					}
 				}
 				sidebar_label_text = {
-					position = { -100 @academy_position }
+					position = { -100 @character_position }
 					text = "TOT_CHARACTER_PANEL_LABEL"
 				}
 				widget = {
 					name = "tutorial_highlight_tot_academy"
 					enabled = "[GetMetaPlayer.GetPlayedOrObservedCountry.IsValid]"
-					position = { 0 @academy_position }
+					position = { 0 @character_position }
 					using = clickthrough_blocker
 					using = sidebar_button_size
 					using = selected_sidepanel_animation
@@ -234,7 +234,7 @@ types information_panel_bar_types {
 					}
 					sidepanel_button_big = {
 						blockoverride "icon" {
-							texture = "gfx/interface/icons/building_icons/building_university.dds"
+							texture = "gfx/interface/main_hud/tot_character_btn.dds"
 						}
 						blockoverride "button_selected" {
 							visible = "[GetVariableSystem.Exists('tot_character_panel_visible')]"
@@ -245,7 +245,7 @@ types information_panel_bar_types {
 					}
 				}
 				sidebar_tooltip_area = {
-					position = { 0 @academy_position }
+					position = { 0 @character_position }
 					tooltip = "TOT_CHARACTER_PANEL_BUTTON_TOOLTIP"
 				}
 

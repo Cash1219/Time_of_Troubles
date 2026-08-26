@@ -131,6 +131,8 @@ tot_avmj_refresh_creditor_gui_lists = {
 	if = { limit = { has_variable_list = tot_avmj_gbdp_creditor } clear_variable_list = tot_avmj_gbdp_creditor }
 	if = { limit = { has_variable_list = tot_avmj_mygo_creditor } clear_variable_list = tot_avmj_mygo_creditor }
 	if = { limit = { has_variable_list = tot_avmj_nrhd_creditor } clear_variable_list = tot_avmj_nrhd_creditor }
+	if = { limit = { has_variable_list = tot_avmj_debtor } clear_variable_list = tot_avmj_debtor }
+	c:AVMJ = { save_temporary_scope_as = tot_avmj_gui_debtor }
 	c:HTT = { save_temporary_scope_as = tot_avmj_gui_htt }
 	c:GBDP = { save_temporary_scope_as = tot_avmj_gui_gbdp }
 	c:MYG = { save_temporary_scope_as = tot_avmj_gui_mygo }
@@ -139,6 +141,7 @@ tot_avmj_refresh_creditor_gui_lists = {
 	add_to_variable_list = { name = tot_avmj_gbdp_creditor target = scope:tot_avmj_gui_gbdp }
 	add_to_variable_list = { name = tot_avmj_mygo_creditor target = scope:tot_avmj_gui_mygo }
 	add_to_variable_list = { name = tot_avmj_nrhd_creditor target = scope:tot_avmj_gui_nrhd }
+	add_to_variable_list = { name = tot_avmj_debtor target = scope:tot_avmj_gui_debtor }
 	c:HTT = { tot_avmj_copy_gui_state_to_creditor = yes }
 	c:GBDP = { tot_avmj_copy_gui_state_to_creditor = yes }
 	c:MYG = { tot_avmj_copy_gui_state_to_creditor = yes }
@@ -173,6 +176,7 @@ tot_avmj_copy_gui_state_to_creditor = {
 	add_to_variable_list = { name = tot_avmj_gbdp_creditor target = scope:tot_avmj_gui_gbdp }
 	add_to_variable_list = { name = tot_avmj_mygo_creditor target = scope:tot_avmj_gui_mygo }
 	add_to_variable_list = { name = tot_avmj_nrhd_creditor target = scope:tot_avmj_gui_nrhd }
+	add_to_variable_list = { name = tot_avmj_debtor target = scope:tot_avmj_gui_debtor }
 }
 
 tot_avmj_distribute_interest = {

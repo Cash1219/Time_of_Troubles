@@ -8,9 +8,9 @@ pm_amusement_ground_fair = {
 			building_employment_shopkeepers_add = 200
 		}
 		workforce_scaled = {
-			goods_input_fabric_add = 5
-			goods_input_wood_add = 5
-			goods_output_experience_add = 10
+			goods_input_fabric_add = 10
+			goods_input_wood_add = 20
+			goods_output_experience_add = 25
 		}
 	}
 }
@@ -19,14 +19,14 @@ pm_amusement_ground_garden = {
 	texture = "gfx/interface/icons/production_method_icons/pm_amusement_ground_garden.dds"
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 1500
+			building_employment_laborers_add = 1650
 			building_employment_shopkeepers_add = 200
-			building_employment_machinists_add = 300
+			building_employment_machinists_add = 150
 		}
 		workforce_scaled = {
-			goods_input_wood_add = 5
-			goods_input_iron_add = 5
-			goods_output_experience_add = 15
+			goods_input_wood_add = 10
+			goods_input_glass_add = 15
+			goods_output_experience_add = 30
 		}
 	}
 }
@@ -38,15 +38,15 @@ pm_amusement_ground_electric = {
 	}
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 1200
-			building_employment_shopkeepers_add = 200
-			building_employment_machinists_add = 500
-			building_employment_engineers_add = 100
+			building_employment_laborers_add = 1500
+			building_employment_shopkeepers_add = 150
+			building_employment_machinists_add = 350
 		}
 		workforce_scaled = {
-			goods_input_steel_add = 10
-			goods_input_wood_add = 5
-			goods_output_experience_add = 25
+			goods_input_steel_add = 15
+			goods_input_wood_add = 10
+			goods_input_electricity_add = 10
+			goods_output_experience_add = 45
 		}
 	}
 }
@@ -58,15 +58,15 @@ pm_amusement_ground_dream = {
 	}
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 900
-			building_employment_shopkeepers_add = 200
-			building_employment_machinists_add = 700
+			building_employment_laborers_add = 1300
+			building_employment_machinists_add = 500
 			building_employment_engineers_add = 200
 		}
 		workforce_scaled = {
 			goods_input_steel_add = 15
-			goods_input_electricity_add = 15
-			goods_output_experience_add = 45
+			goods_input_electricity_add = 20
+			goods_input_engines_add = 5
+			goods_output_experience_add = 60
 		}
 	}
 }
@@ -81,9 +81,9 @@ pm_amusement_ride_carousel = {
 			building_employment_shopkeepers_add = 200
 		}
 		workforce_scaled = {
-			goods_input_wood_add = 5
-			goods_input_fabric_add = 5
-			goods_output_experience_add = 10
+			goods_input_wood_add = 15
+			goods_input_fabric_add = 20
+			goods_output_experience_add = 25
 		}
 	}
 }
@@ -95,14 +95,14 @@ pm_amusement_ride_coaster = {
 	}
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 1300
-			building_employment_shopkeepers_add = 100
-			building_employment_machinists_add = 600
+			building_employment_laborers_add = 1600
+			building_employment_shopkeepers_add = 200
+			building_employment_machinists_add = 200
 		}
 		workforce_scaled = {
-			goods_input_iron_add = 10
-			goods_input_tools_add = 5
-			goods_output_experience_add = 25
+			goods_input_iron_add = 15
+			goods_input_tools_add = 10
+			goods_output_experience_add = 35
 		}
 	}
 }
@@ -114,16 +114,15 @@ pm_amusement_ride_neon = {
 	}
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 900
-			building_employment_shopkeepers_add = 100
-			building_employment_machinists_add = 700
-			building_employment_engineers_add = 300
+			building_employment_laborers_add = 1450
+			building_employment_shopkeepers_add = 200
+			building_employment_machinists_add = 350
 		}
 		workforce_scaled = {
-			goods_input_steel_add = 10
+			goods_input_steel_add = 15
 			goods_input_tools_add = 10
 			goods_input_electricity_add = 15
-			goods_output_experience_add = 50
+			goods_output_experience_add = 60
 		}
 	}
 }
@@ -135,16 +134,15 @@ pm_amusement_ride_ferris = {
 	}
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 600
-			building_employment_shopkeepers_add = 100
-			building_employment_machinists_add = 900
-			building_employment_engineers_add = 400
+			building_employment_laborers_add = 1300
+			building_employment_machinists_add = 400
+			building_employment_engineers_add = 300
 		}
 		workforce_scaled = {
-			goods_input_steel_add = 15
-			goods_input_engines_add = 5
-			goods_input_electricity_add = 20
-			goods_output_experience_add = 70
+			goods_input_steel_add = 20
+			goods_input_engines_add = 10
+			goods_input_electricity_add = 25
+			goods_output_experience_add = 85
 		}
 	}
 }
@@ -155,13 +153,12 @@ pm_amusement_shop_stall = {
 	texture = "gfx/interface/icons/production_method_icons/pm_amusement_shop_stall.dds"
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 700
-			building_employment_shopkeepers_add = 300
+			building_employment_laborers_add = 750
+			building_employment_shopkeepers_add = 250
 		}
 		workforce_scaled = {
-			goods_input_services_add = 5
-			goods_input_luxury_foods_add = 5
-			goods_output_experience_add = 15
+			goods_input_omocha_add = 10
+			goods_output_experience_add = 20
 		}
 	}
 }
@@ -173,15 +170,12 @@ pm_amusement_shop_souvenir = {
 	}
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 300
-			building_employment_shopkeepers_add = 600
-			building_employment_clerks_add = 100
+			building_employment_laborers_add = 700
+			building_employment_shopkeepers_add = 300
 		}
 		workforce_scaled = {
-			goods_input_services_add = 5
-			goods_input_omocha_add = 5
-			goods_input_paper_add = 5
-			goods_output_experience_add = 25
+			goods_input_omocha_add = 15
+			goods_output_experience_add = 30
 		}
 	}
 }
@@ -193,15 +187,14 @@ pm_amusement_shop_limited = {
 	}
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 200
-			building_employment_shopkeepers_add = 700
+			building_employment_laborers_add = 650
+			building_employment_shopkeepers_add = 250
 			building_employment_clerks_add = 100
 		}
 		workforce_scaled = {
-			goods_input_services_add = 10
-			goods_input_omocha_add = 10
-			goods_input_entertainment_publications_add = 5
-			goods_output_experience_add = 40
+			goods_input_omocha_add = 15
+			goods_input_entertainment_publications_add = 10
+			goods_output_experience_add = 55
 		}
 	}
 }
@@ -213,50 +206,48 @@ pm_amusement_shop_collab = {
 	}
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 100
-			building_employment_shopkeepers_add = 700
-			building_employment_clerks_add = 100
-			building_employment_machinists_add = 100
+			building_employment_laborers_add = 600
+			building_employment_shopkeepers_add = 200
+			building_employment_clerks_add = 200
 		}
 		workforce_scaled = {
-			goods_input_services_add = 10
-			goods_input_omocha_add = 15
-			goods_input_games_add = 5
-			goods_output_experience_add = 60
+			goods_input_omocha_add = 20
+			goods_input_entertainment_publications_add = 15
+			goods_output_experience_add = 75
 		}
 	}
 }
 
-# 水族馆 - 展馆场地线
+# 水族馆 - 场地线
 
 pm_aquarium_ground_tank = {
 	texture = "gfx/interface/icons/production_method_icons/pm_aquarium_ground_tank.dds"
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 1800
-			building_employment_shopkeepers_add = 200
+			building_employment_laborers_add = 850
+			building_employment_shopkeepers_add = 100
+			building_employment_machinists_add = 50
 		}
 		workforce_scaled = {
 			goods_input_glass_add = 10
-			goods_output_exhibition_add = 10
+			goods_input_wood_add = 10
+			goods_output_exhibition_add = 15
 		}
 	}
 }
 
 pm_aquarium_ground_marine = {
 	texture = "gfx/interface/icons/production_method_icons/pm_aquarium_ground_marine.dds"
-	unlocking_technologies = {
-		crystal_glass
-	}
+	unlocking_technologies = { crystal_glass }
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 1500
-			building_employment_shopkeepers_add = 200
-			building_employment_machinists_add = 300
+			building_employment_laborers_add = 800
+			building_employment_shopkeepers_add = 100
+			building_employment_machinists_add = 100
 		}
 		workforce_scaled = {
-			goods_input_glass_add = 15
-			goods_input_steel_add = 5
+			goods_input_glass_add = 10
+			goods_input_iron_add = 5
 			goods_output_exhibition_add = 15
 		}
 	}
@@ -264,59 +255,51 @@ pm_aquarium_ground_marine = {
 
 pm_aquarium_ground_tunnel = {
 	texture = "gfx/interface/icons/production_method_icons/pm_aquarium_ground_tunnel.dds"
-	unlocking_technologies = {
-		steel_frame_buildings
-	}
+	unlocking_technologies = { steel_frame_buildings }
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 1100
-			building_employment_shopkeepers_add = 200
-			building_employment_machinists_add = 500
-			building_employment_engineers_add = 200
+			building_employment_laborers_add = 750
+			building_employment_shopkeepers_add = 100
+			building_employment_machinists_add = 150
 		}
 		workforce_scaled = {
-			goods_input_glass_add = 15
+			goods_input_glass_add = 10
 			goods_input_steel_add = 10
-			goods_input_electricity_add = 15
-			goods_output_exhibition_add = 25
+			goods_output_exhibition_add = 20
 		}
 	}
 }
 
 pm_aquarium_ground_mega = {
 	texture = "gfx/interface/icons/production_method_icons/pm_aquarium_ground_mega.dds"
-	unlocking_technologies = {
-		elevator
-	}
+	unlocking_technologies = { elevator }
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 800
-			building_employment_shopkeepers_add = 300
-			building_employment_machinists_add = 700
-			building_employment_engineers_add = 200
+			building_employment_laborers_add = 700
+			building_employment_shopkeepers_add = 100
+			building_employment_machinists_add = 200
 		}
 		workforce_scaled = {
 			goods_input_glass_add = 20
-			goods_input_steel_add = 15
-			goods_input_electricity_add = 20
-			goods_output_exhibition_add = 40
+			goods_input_electricity_add = 10
+			goods_output_exhibition_add = 30
 		}
 	}
 }
 
-# 水族馆 - 动物类型线（海洋哺乳动物档为未来动物表演挂载点）
+# 水族馆 - 动物类型线
 
 pm_aquarium_type_freshwater = {
 	texture = "gfx/interface/icons/production_method_icons/pm_aquarium_type_freshwater.dds"
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 1800
-			building_employment_shopkeepers_add = 200
+			building_employment_laborers_add = 850
+			building_employment_shopkeepers_add = 100
+			building_employment_clerks_add = 50
 		}
 		workforce_scaled = {
-			goods_input_fish_add = 5
-			goods_input_grain_add = 5
-			goods_input_services_add = 10
+			goods_input_fish_add = 10
+			goods_input_grain_add = 10
 			goods_output_exhibition_add = 10
 		}
 	}
@@ -324,19 +307,16 @@ pm_aquarium_type_freshwater = {
 
 pm_aquarium_type_marine = {
 	texture = "gfx/interface/icons/production_method_icons/pm_aquarium_type_marine.dds"
-	unlocking_technologies = {
-		realism
-	}
+	unlocking_technologies = { realism }
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 1500
-			building_employment_shopkeepers_add = 200
-			building_employment_machinists_add = 300
+			building_employment_laborers_add = 800
+			building_employment_shopkeepers_add = 100
+			building_employment_machinists_add = 100
 		}
 		workforce_scaled = {
-			goods_input_fish_add = 20
-			goods_input_grain_add = 10
-			goods_input_services_add = 10
+			goods_input_fish_add = 15
+			goods_input_meat_add = 10
 			goods_output_exhibition_add = 15
 		}
 	}
@@ -344,140 +324,194 @@ pm_aquarium_type_marine = {
 
 pm_aquarium_type_reef = {
 	texture = "gfx/interface/icons/production_method_icons/pm_aquarium_type_reef.dds"
-	unlocking_technologies = {
-		electrical_generation
-	}
+	unlocking_technologies = { electrical_generation }
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 1100
-			building_employment_shopkeepers_add = 200
-			building_employment_machinists_add = 500
-			building_employment_engineers_add = 200
+			building_employment_laborers_add = 750
+			building_employment_shopkeepers_add = 100
+			building_employment_machinists_add = 150
 		}
 		workforce_scaled = {
-			goods_input_fish_add = 25
-			goods_input_grain_add = 20
-			goods_input_services_add = 20
-			goods_output_exhibition_add = 25
+			goods_input_fish_add = 20
+			goods_input_groceries_add = 15
+			goods_output_animal_performance_add = 20
 		}
 	}
 }
 
 pm_aquarium_type_mammal = {
 	texture = "gfx/interface/icons/production_method_icons/pm_aquarium_type_mammal.dds"
-	unlocking_technologies = {
-		steel_frame_buildings
-	}
+	unlocking_technologies = { steel_frame_buildings }
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 800
-			building_employment_shopkeepers_add = 300
-			building_employment_machinists_add = 700
-			building_employment_engineers_add = 200
+			building_employment_laborers_add = 700
+			building_employment_shopkeepers_add = 50
+			building_employment_machinists_add = 250
 		}
 		workforce_scaled = {
-			goods_input_fish_add = 35
-			goods_input_grain_add = 25
-			goods_input_services_add = 30
-			goods_output_exhibition_add = 35
+			goods_input_fish_add = 30
+			goods_input_groceries_add = 15
+			goods_output_animal_performance_add = 25
 		}
 	}
 }
 
-# 水族馆 - 附加项目线
-
-pm_aquarium_program_guide = {
-	texture = "gfx/interface/icons/production_method_icons/pm_aquarium_program_guide.dds"
-	building_modifiers = {
-		level_scaled = {
-			building_employment_laborers_add = 600
-			building_employment_clerks_add = 400
-		}
-		workforce_scaled = {
-			goods_input_paper_add = 5
-			goods_input_publications_add = 5
-			goods_output_exhibition_add = 10
-		}
-	}
-}
+# 水族馆 - 互动线
 
 pm_aquarium_program_feeding = {
 	texture = "gfx/interface/icons/production_method_icons/pm_aquarium_program_feeding.dds"
-	unlocking_technologies = {
-		modern_sewerage
-	}
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 500
-			building_employment_shopkeepers_add = 400
-			building_employment_machinists_add = 100
+			building_employment_laborers_add = 850
+			building_employment_shopkeepers_add = 100
+			building_employment_clerks_add = 50
 		}
 		workforce_scaled = {
-			goods_input_fish_add = 10
-			goods_input_grain_add = 5
-			goods_input_services_add = 5
-			goods_output_animal_performance_add = 10
-		}
-	}
-}
-
-pm_aquarium_program_night = {
-	texture = "gfx/interface/icons/production_method_icons/pm_aquarium_program_night.dds"
-	unlocking_technologies = {
-		electrical_generation
-	}
-	building_modifiers = {
-		level_scaled = {
-			building_employment_laborers_add = 300
-			building_employment_shopkeepers_add = 500
-			building_employment_machinists_add = 200
-		}
-		workforce_scaled = {
-			goods_input_fish_add = 10
-			goods_input_grain_add = 5
+			goods_input_fish_add = 5
 			goods_input_services_add = 10
-			goods_input_electricity_add = 10
-			goods_output_animal_performance_add = 15
+			goods_output_animal_performance_add = 10
 		}
 	}
 }
 
 pm_aquarium_program_concert = {
 	texture = "gfx/interface/icons/production_method_icons/pm_aquarium_program_concert.dds"
-	unlocking_technologies = {
-		film
-	}
+	unlocking_technologies = { modern_sewerage }
 	building_modifiers = {
 		level_scaled = {
-			building_employment_clerks_add = 300
-			building_employment_shopkeepers_add = 400
-			building_employment_machinists_add = 200
-			building_employment_engineers_add = 100
+			building_employment_laborers_add = 800
+			building_employment_shopkeepers_add = 100
+			building_employment_machinists_add = 100
 		}
 		workforce_scaled = {
-			goods_input_fish_add = 10
-			goods_input_grain_add = 5
+			goods_input_fish_add = 15
+			goods_input_services_add = 5
+			goods_output_animal_performance_add = 10
+		}
+	}
+}
+
+pm_aquarium_program_show = {
+	texture = "gfx/interface/icons/production_method_icons/pm_aquarium_program_show.dds"
+	unlocking_technologies = { electrical_generation }
+	building_modifiers = {
+		level_scaled = {
+			building_employment_laborers_add = 750
+			building_employment_shopkeepers_add = 100
+			building_employment_machinists_add = 150
+		}
+		workforce_scaled = {
+			goods_input_fish_add = 15
+			goods_input_groceries_add = 5
 			goods_input_services_add = 10
-			goods_input_electricity_add = 15
-			goods_input_luxury_drinks_add = 5
+			goods_output_animal_performance_add = 20
+		}
+	}
+}
+
+pm_aquarium_program_theater = {
+	texture = "gfx/interface/icons/production_method_icons/pm_aquarium_program_theater.dds"
+	unlocking_technologies = { mass_communication }
+	building_modifiers = {
+		level_scaled = {
+			building_employment_laborers_add = 700
+			building_employment_shopkeepers_add = 100
+			building_employment_machinists_add = 200
+		}
+		workforce_scaled = {
+			goods_input_fish_add = 20
+			goods_input_groceries_add = 10
+			goods_input_services_add = 20
 			goods_output_animal_performance_add = 30
 		}
 	}
 }
 
-# 动物园 - 园区场地线
+# 水族馆 - 科普线
+
+pm_aquarium_program_guide = {
+	texture = "gfx/interface/icons/production_method_icons/pm_aquarium_program_guide.dds"
+	building_modifiers = {
+		level_scaled = {
+			building_employment_laborers_add = 800
+			building_employment_clerks_add = 150
+			building_employment_academics_add = 50
+		}
+		workforce_scaled = {
+			goods_input_publications_add = 5
+			goods_input_services_add = 10
+			goods_output_exhibition_add = 15
+		}
+	}
+}
+
+pm_aquarium_program_night = {
+	texture = "gfx/interface/icons/production_method_icons/pm_aquarium_program_night.dds"
+	unlocking_technologies = { realism }
+	building_modifiers = {
+		level_scaled = {
+			building_employment_laborers_add = 750
+			building_employment_clerks_add = 150
+			building_employment_academics_add = 100
+		}
+		workforce_scaled = {
+			goods_input_publications_add = 5
+			goods_input_services_add = 10
+			goods_output_exhibition_add = 15
+		}
+	}
+}
+
+pm_aquarium_program_research = {
+	texture = "gfx/interface/icons/production_method_icons/pm_aquarium_program_research.dds"
+	unlocking_technologies = { electrical_generation }
+	building_modifiers = {
+		level_scaled = {
+			building_employment_laborers_add = 700
+			building_employment_clerks_add = 150
+			building_employment_academics_add = 150
+		}
+		workforce_scaled = {
+			goods_input_publications_add = 5
+			goods_input_services_add = 10
+			goods_input_entertainment_publications_add = 10
+			goods_output_exhibition_add = 25
+		}
+	}
+}
+
+pm_aquarium_program_documentary = {
+	texture = "gfx/interface/icons/production_method_icons/pm_aquarium_program_documentary.dds"
+	unlocking_technologies = { mass_communication }
+	building_modifiers = {
+		level_scaled = {
+			building_employment_laborers_add = 650
+			building_employment_clerks_add = 150
+			building_employment_academics_add = 200
+		}
+		workforce_scaled = {
+			goods_input_publications_add = 5
+			goods_input_services_add = 10
+			goods_input_entertainment_publications_add = 10
+			goods_output_exhibition_add = 25
+		}
+	}
+}
+
+# 动物园 - 场地线
 
 pm_zoo_ground_pen = {
 	texture = "gfx/interface/icons/production_method_icons/pm_zoo_ground_pen.dds"
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 1800
-			building_employment_shopkeepers_add = 200
+			building_employment_laborers_add = 850
+			building_employment_shopkeepers_add = 100
+			building_employment_machinists_add = 50
 		}
 		workforce_scaled = {
-			goods_input_fabric_add = 10
-			goods_input_wood_add = 10
-			goods_output_exhibition_add = 10
+			goods_input_fabric_add = 15
+			goods_input_wood_add = 15
+			goods_output_exhibition_add = 15
 		}
 	}
 }
@@ -486,13 +520,14 @@ pm_zoo_ground_park = {
 	texture = "gfx/interface/icons/production_method_icons/pm_zoo_ground_park.dds"
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 1500
-			building_employment_shopkeepers_add = 200
-			building_employment_machinists_add = 300
+			building_employment_laborers_add = 800
+			building_employment_shopkeepers_add = 100
+			building_employment_machinists_add = 100
 		}
 		workforce_scaled = {
-			goods_input_wood_add = 10
-			goods_input_iron_add = 10
+			goods_input_wood_add = 15
+			goods_input_iron_add = 5
+			goods_input_fabric_add = 5
 			goods_output_exhibition_add = 15
 		}
 	}
@@ -500,20 +535,17 @@ pm_zoo_ground_park = {
 
 pm_zoo_ground_stadium = {
 	texture = "gfx/interface/icons/production_method_icons/pm_zoo_ground_stadium.dds"
-	unlocking_technologies = {
-		steel_frame_buildings
-	}
+	unlocking_technologies = { steel_frame_buildings }
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 1100
-			building_employment_shopkeepers_add = 300
-			building_employment_machinists_add = 500
-			building_employment_engineers_add = 100
+			building_employment_laborers_add = 750
+			building_employment_shopkeepers_add = 100
+			building_employment_machinists_add = 150
 		}
 		workforce_scaled = {
 			goods_input_steel_add = 15
-			goods_input_fabric_add = 10
-			goods_input_electricity_add = 15
+			goods_input_electricity_add = 5
+			goods_input_services_add = 5
 			goods_output_exhibition_add = 25
 		}
 	}
@@ -521,21 +553,18 @@ pm_zoo_ground_stadium = {
 
 pm_zoo_ground_eco = {
 	texture = "gfx/interface/icons/production_method_icons/pm_zoo_ground_eco.dds"
-	unlocking_technologies = {
-		elevator
-	}
+	unlocking_technologies = { elevator }
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 800
-			building_employment_shopkeepers_add = 300
-			building_employment_machinists_add = 700
-			building_employment_engineers_add = 200
+			building_employment_laborers_add = 700
+			building_employment_shopkeepers_add = 100
+			building_employment_machinists_add = 200
 		}
 		workforce_scaled = {
-			goods_input_steel_add = 20
-			goods_input_electricity_add = 20
+			goods_input_steel_add = 10
+			goods_input_electricity_add = 10
 			goods_input_services_add = 15
-			goods_output_exhibition_add = 35
+			goods_output_exhibition_add = 30
 		}
 	}
 }
@@ -546,32 +575,32 @@ pm_zoo_type_small = {
 	texture = "gfx/interface/icons/production_method_icons/pm_zoo_type_small.dds"
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 1800
-			building_employment_shopkeepers_add = 200
+			building_employment_laborers_add = 850
+			building_employment_shopkeepers_add = 100
+			building_employment_clerks_add = 50
 		}
 		workforce_scaled = {
-			goods_input_grain_add = 15
+			goods_input_grain_add = 10
+			goods_input_meat_add = 5
 			goods_input_services_add = 10
-			goods_output_exhibition_add = 10
+			goods_output_exhibition_add = 15
 		}
 	}
 }
 
 pm_zoo_type_predator = {
 	texture = "gfx/interface/icons/production_method_icons/pm_zoo_type_predator.dds"
-	unlocking_technologies = {
-		realism
-	}
+	unlocking_technologies = { realism }
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 1500
-			building_employment_shopkeepers_add = 200
-			building_employment_machinists_add = 300
+			building_employment_laborers_add = 800
+			building_employment_shopkeepers_add = 100
+			building_employment_machinists_add = 100
 		}
 		workforce_scaled = {
-			goods_input_grain_add = 20
-			goods_input_meat_add = 15
-			goods_input_services_add = 10
+			goods_input_grain_add = 10
+			goods_input_meat_add = 10
+			goods_input_services_add = 5
 			goods_output_exhibition_add = 15
 		}
 	}
@@ -579,75 +608,67 @@ pm_zoo_type_predator = {
 
 pm_zoo_type_large = {
 	texture = "gfx/interface/icons/production_method_icons/pm_zoo_type_large.dds"
-	unlocking_technologies = {
-		corporate_charters
-	}
+	unlocking_technologies = { corporate_charters }
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 1200
-			building_employment_shopkeepers_add = 300
-			building_employment_machinists_add = 500
+			building_employment_laborers_add = 750
+			building_employment_shopkeepers_add = 100
+			building_employment_machinists_add = 150
 		}
 		workforce_scaled = {
-			goods_input_grain_add = 30
-			goods_input_meat_add = 20
-			goods_input_services_add = 20
-			goods_output_exhibition_add = 25
+			goods_input_groceries_add = 10
+			goods_input_services_add = 10
+			goods_output_animal_performance_add = 15
 		}
 	}
 }
 
 pm_zoo_type_star = {
 	texture = "gfx/interface/icons/production_method_icons/pm_zoo_type_star.dds"
-	unlocking_technologies = {
-		mass_communication
-	}
+	unlocking_technologies = { mass_communication }
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 900
-			building_employment_shopkeepers_add = 400
-			building_employment_machinists_add = 700
+			building_employment_laborers_add = 700
+			building_employment_shopkeepers_add = 50
+			building_employment_machinists_add = 250
 		}
 		workforce_scaled = {
-			goods_input_grain_add = 35
-			goods_input_meat_add = 20
-			goods_input_services_add = 20
-			goods_input_omocha_add = 10
-			goods_output_exhibition_add = 35
+			goods_input_groceries_add = 20
+			goods_input_services_add = 15
+			goods_output_animal_performance_add = 25
 		}
 	}
 }
 
-# 动物园 - 动物互动线
+# 动物园 - 互动线
 
 pm_zoo_interaction_basic = {
 	texture = "gfx/interface/icons/production_method_icons/pm_zoo_interaction_basic.dds"
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 700
-			building_employment_shopkeepers_add = 300
+			building_employment_laborers_add = 850
+			building_employment_shopkeepers_add = 100
+			building_employment_clerks_add = 50
 		}
 		workforce_scaled = {
+			goods_input_grain_add = 5
 			goods_input_services_add = 10
-			goods_output_exhibition_add = 10
+			goods_output_animal_performance_add = 10
 		}
 	}
 }
 
 pm_zoo_interaction_feeding = {
 	texture = "gfx/interface/icons/production_method_icons/pm_zoo_interaction_feeding.dds"
-	unlocking_technologies = {
-		modern_sewerage
-	}
+	unlocking_technologies = { modern_sewerage }
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 500
-			building_employment_shopkeepers_add = 300
-			building_employment_machinists_add = 200
+			building_employment_laborers_add = 800
+			building_employment_shopkeepers_add = 100
+			building_employment_machinists_add = 100
 		}
 		workforce_scaled = {
-			goods_input_grain_add = 10
-			goods_input_meat_add = 5
+			goods_input_groceries_add = 10
 			goods_input_services_add = 5
 			goods_output_animal_performance_add = 10
 		}
@@ -656,21 +677,17 @@ pm_zoo_interaction_feeding = {
 
 pm_zoo_interaction_show = {
 	texture = "gfx/interface/icons/production_method_icons/pm_zoo_interaction_show.dds"
-	unlocking_technologies = {
-		corporate_charters
-	}
+	unlocking_technologies = { corporate_charters }
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 300
-			building_employment_shopkeepers_add = 400
-			building_employment_machinists_add = 200
-			building_employment_engineers_add = 100
+			building_employment_laborers_add = 750
+			building_employment_shopkeepers_add = 100
+			building_employment_machinists_add = 150
 		}
 		workforce_scaled = {
-			goods_input_grain_add = 10
-			goods_input_meat_add = 10
+			goods_input_groceries_add = 15
 			goods_input_services_add = 10
-			goods_input_fabric_add = 10
+			goods_input_electricity_add = 5
 			goods_output_animal_performance_add = 20
 		}
 	}
@@ -678,22 +695,89 @@ pm_zoo_interaction_show = {
 
 pm_zoo_interaction_grand = {
 	texture = "gfx/interface/icons/production_method_icons/pm_zoo_interaction_grand.dds"
-	unlocking_technologies = {
-		film
-	}
+	unlocking_technologies = { mass_communication }
 	building_modifiers = {
 		level_scaled = {
-			building_employment_laborers_add = 200
-			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 700
+			building_employment_shopkeepers_add = 100
 			building_employment_machinists_add = 200
-			building_employment_engineers_add = 100
 		}
 		workforce_scaled = {
-			goods_input_grain_add = 15
-			goods_input_meat_add = 10
+			goods_input_groceries_add = 20
 			goods_input_services_add = 15
-			goods_input_electricity_add = 10
-			goods_output_animal_performance_add = 40
+			goods_input_electricity_add = 5
+			goods_output_animal_performance_add = 30
+		}
+	}
+}
+
+# 动物园 - 科普线
+
+pm_zoo_education_guide = {
+	texture = "gfx/interface/icons/production_method_icons/pm_zoo_education_guide.dds"
+	building_modifiers = {
+		level_scaled = {
+			building_employment_laborers_add = 800
+			building_employment_clerks_add = 150
+			building_employment_academics_add = 50
+		}
+		workforce_scaled = {
+			goods_input_publications_add = 5
+			goods_input_services_add = 10
+			goods_output_exhibition_add = 15
+		}
+	}
+}
+
+pm_zoo_education_natural_history = {
+	texture = "gfx/interface/icons/production_method_icons/pm_zoo_education_natural_history.dds"
+	unlocking_technologies = { realism }
+	building_modifiers = {
+		level_scaled = {
+			building_employment_laborers_add = 750
+			building_employment_clerks_add = 150
+			building_employment_academics_add = 100
+		}
+		workforce_scaled = {
+			goods_input_publications_add = 5
+			goods_input_services_add = 10
+			goods_output_exhibition_add = 15
+		}
+	}
+}
+
+pm_zoo_education_conservation = {
+	texture = "gfx/interface/icons/production_method_icons/pm_zoo_education_conservation.dds"
+	unlocking_technologies = { electrical_generation }
+	building_modifiers = {
+		level_scaled = {
+			building_employment_laborers_add = 700
+			building_employment_clerks_add = 150
+			building_employment_academics_add = 150
+		}
+		workforce_scaled = {
+			goods_input_publications_add = 5
+			goods_input_services_add = 10
+			goods_input_entertainment_publications_add = 10
+			goods_output_exhibition_add = 25
+		}
+	}
+}
+
+pm_zoo_education_documentary = {
+	texture = "gfx/interface/icons/production_method_icons/pm_zoo_education_documentary.dds"
+	unlocking_technologies = { mass_communication }
+	building_modifiers = {
+		level_scaled = {
+			building_employment_laborers_add = 650
+			building_employment_clerks_add = 150
+			building_employment_academics_add = 200
+		}
+		workforce_scaled = {
+			goods_input_publications_add = 5
+			goods_input_services_add = 10
+			goods_input_entertainment_publications_add = 10
+			goods_output_exhibition_add = 25
 		}
 	}
 }

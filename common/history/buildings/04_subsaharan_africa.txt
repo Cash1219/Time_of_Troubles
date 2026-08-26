@@ -1151,7 +1151,7 @@
 					building={
 						type="building_manor_house"
 						country="c:AFTG"
-						levels=1
+						levels=5
 						region="STATE_OROMIA"
 					}
 				}
@@ -1211,7 +1211,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:GBDP"
+						country="c:AFTG"
 						levels=3
 						region="STATE_GONDER"
 					}
@@ -1472,6 +1472,19 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_no_organization" }
+			}
+			create_building={
+				building="building_coffee_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:AFTG"
+						levels=5
+						region="STATE_AMHARA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "coffee_plantation_dry_process" "pm_road_carts" }
 			}
 		}
 	}

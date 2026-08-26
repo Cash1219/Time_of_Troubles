@@ -789,9 +789,9 @@ tot_ensure_default_band_hq_slots_effect = {
 		}
 	}
 	if = {
-		limit = { this = c:MYG any_scope_state = { state_region = s:STATE_CYPRUS any_scope_building = { is_building_type = building_band_headquarter } } }
+		limit = { this = c:MYG any_scope_state = { state_region = s:STATE_ALEPPO any_scope_building = { is_building_type = building_band_headquarter } } }
 		every_scope_state = {
-			limit = { state_region = s:STATE_CYPRUS any_scope_building = { is_building_type = building_band_headquarter } NOT = { has_variable = tot_band_hq_slot } }
+			limit = { state_region = s:STATE_ALEPPO any_scope_building = { is_building_type = building_band_headquarter } NOT = { has_variable = tot_band_hq_slot } }
 			set_variable = { name = tot_band_hq_slot value = 1 }
 			if = { limit = { NOT = { has_variable = tot_band_candidate_filter } } set_variable = { name = tot_band_candidate_filter value = 1 } }
 			if = { limit = { NOT = { has_variable = tot_band_selected_role } } set_variable = { name = tot_band_selected_role value = 1 } }
@@ -3541,7 +3541,7 @@ tot_setup_default_story_bands_effect = {
 		activate_law = law_type:law_artistic_freedom
 		set_variable = { name = tot_band_limit value = 1 }
 		set_variable = { name = tot_band_1_created value = 1 }
-		every_scope_state = { limit = { state_region = s:STATE_CYPRUS any_scope_building = { is_building_type = building_band_headquarter } } set_variable = { name = tot_band_hq_slot value = 1 } }
+		every_scope_state = { limit = { state_region = s:STATE_ALEPPO any_scope_building = { is_building_type = building_band_headquarter } } set_variable = { name = tot_band_hq_slot value = 1 } }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Tomori_trait } save_scope_as = tot_band_member tot_appoint_band_1_vocalist_effect = yes }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Anon_trait } save_scope_as = tot_band_member tot_appoint_band_1_guitarist_effect = yes }
 		every_scope_character = { limit = { is_character_alive = yes has_trait = tot_Bang_Rana_trait } save_scope_as = tot_band_member tot_appoint_band_1_guitarist_effect = yes }

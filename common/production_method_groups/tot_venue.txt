@@ -62,15 +62,27 @@ pmg_aquarium_animal_type = {
 	}
 }
 
-pmg_aquarium_program = {
+pmg_aquarium_interaction = {
+	texture = "gfx/interface/icons/production_method_icons/pmg_aquarium_program.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_aquarium_program_feeding
+		pm_aquarium_program_concert
+		pm_aquarium_program_show
+		pm_aquarium_program_theater
+	}
+}
+
+pmg_aquarium_education = {
 	texture = "gfx/interface/icons/production_method_icons/pmg_aquarium_program.dds"
 	ai_selection = most_productive
 
 	production_methods = {
 		pm_aquarium_program_guide
-		pm_aquarium_program_feeding
 		pm_aquarium_program_night
-		pm_aquarium_program_concert
+		pm_aquarium_program_research
+		pm_aquarium_program_documentary
 	}
 }
 
@@ -109,5 +121,17 @@ pmg_zoo_interaction = {
 		pm_zoo_interaction_feeding
 		pm_zoo_interaction_show
 		pm_zoo_interaction_grand
+	}
+}
+
+pmg_zoo_education = {
+	texture = "gfx/interface/icons/production_method_icons/pmg_zoo_interaction.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_zoo_education_guide
+		pm_zoo_education_natural_history
+		pm_zoo_education_conservation
+		pm_zoo_education_documentary
 	}
 }
