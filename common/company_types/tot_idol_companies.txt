@@ -1,85 +1,7 @@
-﻿company_stella_cafe = {
-	flavored_company = yes
-	preferred_headquarters = { STATE_CENTRAL_HUNGARY }
 
-	building_types = {
-		building_kissaten
-		building_coffee_plantation
-		building_tea_plantation
-	}
-	extension_building_types = {
-		building_sugar_plantation
-		building_food_industry
-	}
-
-	potential = {
-
-	}
-	attainable = {
-
-	}
-	possible = {
-		any_scope_state = {
-			is_in_geographic_region = geographic_region_danubia_old
-			any_scope_building = {
-				OR = {
-					is_building_type = building_kissaten
-					is_building_type = building_coffee_plantation
-					is_building_type = building_tea_plantation
-				}
-				level >= 5
-			}
-		}
-	}
-	prosperity_modifier = {
-		state_migration_pull_mult = 0.1
-	}
-	possible_prestige_goods = {
-		company_stella_cafe_prestige_good
-	}
-	ai_will_do = {
-		any_scope_state = {
-			is_in_geographic_region = geographic_region_danubia_old
-		}
-	}
-	ai_construction_targets = {
-		building_kissaten = {
-			level = 5
-			state_trigger = {
-				is_in_geographic_region = geographic_region_danubia_old
-			}
-		}
-		building_coffee_plantation = {
-			level = 5
-			state_trigger = {
-				is_in_geographic_region = geographic_region_danubia_old
-			}
-		}
-		building_tea_plantation = {
-			level = 5
-			state_trigger = {
-				is_in_geographic_region = geographic_region_danubia_old
-			}
-		}
-		building_sugar_plantation = {
-			level = 3
-			state_trigger = {
-				is_in_geographic_region = geographic_region_danubia_old
-			}
-		}
-		building_food_industry = {
-			level = 3
-			state_trigger = {
-				is_in_geographic_region = geographic_region_danubia_old
-			}
-		}
-	}
-	ai_weight = {
-		value = 5
-	}
-}
-
-company_homura = {
+tot_company_homura = {
+	icon = "gfx/interface/icons/company_icons/tot_company_homura.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_houmura.dds"
 	flavored_company = yes
 	preferred_headquarters = { STATE_CENTRAL_HUNGARY }
 
@@ -89,7 +11,7 @@ company_homura = {
 		building_sugar_plantation
 	}
 	extension_building_types = {
-		building_kissaten
+		building_banana_plantation
 		building_livestock_ranch
 	}
 
@@ -113,10 +35,10 @@ company_homura = {
 		}
 	}
 	prosperity_modifier = {
-		country_prestige_add = 2
+		building_food_industry_throughput_add = 0.10
 	}
 	possible_prestige_goods = {
-		company_homura_prestige_good
+		tot_company_homura_prestige_good
 	}
 	ai_will_do = {
 		any_scope_state = {
@@ -142,7 +64,7 @@ company_homura = {
 				is_in_geographic_region = geographic_region_danubia_old
 			}
 		}
-		building_kissaten = {
+		building_banana_plantation = {
 			level = 3
 			state_trigger = {
 				is_in_geographic_region = geographic_region_danubia_old
@@ -160,18 +82,20 @@ company_homura = {
 	}
 }
 
-company_minalinsky = {
+tot_company_minalinsky = {
+	icon = "gfx/interface/icons/company_icons/tot_company_minalinsky.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_minalinsky.dds"
 	flavored_company = yes
 	preferred_headquarters = { STATE_CENTRAL_HUNGARY }
 
 	building_types = {
 		building_kissaten
-		building_entertainment_press
+		building_goods
 		building_food_industry
 	}
 	extension_building_types = {
-		building_textile_mill
-		building_goods
+		building_sugar_plantation
+		building_coffee_plantation
 	}
 
 	potential = {
@@ -186,7 +110,7 @@ company_minalinsky = {
 			any_scope_building = {
 				OR = {
 					is_building_type = building_kissaten
-					is_building_type = building_entertainment_press
+					is_building_type = building_goods
 					is_building_type = building_food_industry
 				}
 				level >= 5
@@ -194,10 +118,11 @@ company_minalinsky = {
 		}
 	}
 	prosperity_modifier = {
-		state_migration_pull_mult = 0.1
+		building_kissaten_throughput_add = 0.10
+		state_loyalists_from_political_movements_mult = 0.05
 	}
 	possible_prestige_goods = {
-		company_minalinsky_prestige_good
+		tot_company_minalinsky_prestige_good
 	}
 	ai_will_do = {
 		any_scope_state = {
@@ -211,7 +136,7 @@ company_minalinsky = {
 				is_in_geographic_region = geographic_region_danubia_old
 			}
 		}
-		building_entertainment_press = {
+		building_goods = {
 			level = 5
 			state_trigger = {
 				is_in_geographic_region = geographic_region_danubia_old
@@ -223,13 +148,13 @@ company_minalinsky = {
 				is_in_geographic_region = geographic_region_danubia_old
 			}
 		}
-		building_textile_mill = {
+		building_sugar_plantation = {
 			level = 3
 			state_trigger = {
 				is_in_geographic_region = geographic_region_danubia_old
 			}
 		}
-		building_goods = {
+		building_coffee_plantation = {
 			level = 3
 			state_trigger = {
 				is_in_geographic_region = geographic_region_danubia_old
@@ -241,18 +166,20 @@ company_minalinsky = {
 	}
 }
 
-company_otonokisaka = {
+tot_company_otonokisaka = {
+	icon = "gfx/interface/icons/company_icons/tot_company_otonokisaka.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_otonokisaka.dds"
 	flavored_company = yes
 	preferred_headquarters = { STATE_CENTRAL_HUNGARY }
 
 	building_types = {
 		building_stage
-		building_paper_mill
+		building_club
 		building_goods
 	}
 	extension_building_types = {
 		building_musical_instrument
-		building_food_industry
+		building_paper_mill
 	}
 
 	potential = {
@@ -267,7 +194,7 @@ company_otonokisaka = {
 			any_scope_building = {
 				OR = {
 					is_building_type = building_stage
-					is_building_type = building_paper_mill
+					is_building_type = building_club
 					is_building_type = building_goods
 				}
 				level >= 5
@@ -276,9 +203,10 @@ company_otonokisaka = {
 	}
 	prosperity_modifier = {
 		state_education_access_add = 0.1
+		country_institution_cost_institution_schools_mult = -0.1
 	}
 	possible_prestige_goods = {
-		company_otonokisaka_prestige_good
+		tot_company_otonokisaka_prestige_good
 	}
 	ai_will_do = {
 		any_scope_state = {
@@ -292,7 +220,7 @@ company_otonokisaka = {
 				is_in_geographic_region = geographic_region_danubia_old
 			}
 		}
-		building_paper_mill = {
+		building_club = {
 			level = 5
 			state_trigger = {
 				is_in_geographic_region = geographic_region_danubia_old
@@ -310,7 +238,7 @@ company_otonokisaka = {
 				is_in_geographic_region = geographic_region_danubia_old
 			}
 		}
-		building_food_industry = {
+		building_paper_mill = {
 			level = 3
 			state_trigger = {
 				is_in_geographic_region = geographic_region_danubia_old
@@ -322,7 +250,9 @@ company_otonokisaka = {
 	}
 }
 
-company_otonokisaka_kyuudoubu = {
+tot_company_otonokisaka_kyuudoubu = {
+	icon = "gfx/interface/icons/company_icons/tot_company_otonokisaka_kyuudoubu.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_arrow.dds"
 	flavored_company = yes
 	preferred_headquarters = { STATE_CENTRAL_HUNGARY }
 
@@ -332,8 +262,8 @@ company_otonokisaka_kyuudoubu = {
 		building_artillery_foundry
 	}
 	extension_building_types = {
-		building_steel_mill
-		building_tooling_workshop
+		building_logging_camp
+		building_iron_mine
 	}
 
 	potential = {
@@ -356,10 +286,11 @@ company_otonokisaka_kyuudoubu = {
 		}
 	}
 	prosperity_modifier = {
-		country_authority_add = 10
+		unit_army_offense_mult = 0.1
+		building_arms_industry_throughput_add = 0.1
 	}
 	possible_prestige_goods = {
-		company_otonokisaka_kyuudoubu_prestige_good
+		tot_company_otonokisaka_kyuudoubu_prestige_good
 	}
 	ai_will_do = {
 		any_scope_state = {
@@ -385,13 +316,13 @@ company_otonokisaka_kyuudoubu = {
 				is_in_geographic_region = geographic_region_danubia_old
 			}
 		}
-		building_steel_mill = {
+		building_logging_camp = {
 			level = 3
 			state_trigger = {
 				is_in_geographic_region = geographic_region_danubia_old
 			}
 		}
-		building_tooling_workshop = {
+		building_iron_mine = {
 			level = 3
 			state_trigger = {
 				is_in_geographic_region = geographic_region_danubia_old
@@ -403,7 +334,9 @@ company_otonokisaka_kyuudoubu = {
 	}
 }
 
-company_otonokisaka_idolbu = {
+tot_company_otonokisaka_idolbu = {
+	icon = "gfx/interface/icons/company_icons/tot_company_otonokisaka_idolbu.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
 	flavored_company = yes
 	preferred_headquarters = { STATE_CENTRAL_HUNGARY }
 
@@ -440,7 +373,7 @@ company_otonokisaka_idolbu = {
 		state_education_access_add = 0.1
 	}
 	possible_prestige_goods = {
-		company_otonokisaka_idolbu_prestige_good
+		tot_company_otonokisaka_idolbu_prestige_good
 	}
 	ai_will_do = {
 		any_scope_state = {
@@ -484,17 +417,19 @@ company_otonokisaka_idolbu = {
 	}
 }
 
-company_otonokisaka_zoo = {
+tot_company_otonokisaka_zoo = {
+	icon = "gfx/interface/icons/company_icons/tot_company_otonokisaka_zoo.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_alpaca.dds"
 	flavored_company = yes
 	preferred_headquarters = { STATE_CENTRAL_HUNGARY }
 
 	building_types = {
 		building_zoo
 		building_livestock_ranch
-		building_textile_mill
+		building_goods
 	}
 	extension_building_types = {
-		building_tooling_workshop
+		building_textile_mill
 		building_food_industry
 	}
 
@@ -511,17 +446,18 @@ company_otonokisaka_zoo = {
 				OR = {
 					is_building_type = building_zoo
 					is_building_type = building_livestock_ranch
-					is_building_type = building_textile_mill
+					is_building_type = building_goods
 				}
 				level >= 5
 			}
 		}
 	}
 	prosperity_modifier = {
-		state_migration_pull_mult = 0.15
+		interest_group_ig_rural_folk_approval_add = 2
+		building_zoo_throughput_add = 0.10
 	}
 	possible_prestige_goods = {
-		company_otonokisaka_zoo_prestige_good
+		tot_company_otonokisaka_zoo_prestige_good
 	}
 	ai_will_do = {
 		any_scope_state = {
@@ -541,13 +477,13 @@ company_otonokisaka_zoo = {
 				is_in_geographic_region = geographic_region_danubia_old
 			}
 		}
-		building_textile_mill = {
+		building_goods = {
 			level = 5
 			state_trigger = {
 				is_in_geographic_region = geographic_region_danubia_old
 			}
 		}
-		building_tooling_workshop = {
+		building_textile_mill = {
 			level = 3
 			state_trigger = {
 				is_in_geographic_region = geographic_region_danubia_old
@@ -565,18 +501,20 @@ company_otonokisaka_zoo = {
 	}
 }
 
-company_nishikino_byouin = {
+tot_company_nishikino_byouin = {
+	icon = "gfx/interface/icons/company_icons/tot_company_nishikino_byouin.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_byouin.dds"
 	flavored_company = yes
 	preferred_headquarters = { STATE_CENTRAL_HUNGARY }
 
 	building_types = {
 		building_cotton_plantation
-		building_food_industry
+		building_publisher
 		building_opium_plantation
 	}
 	extension_building_types = {
 		building_tooling_workshop
-		building_wheat_farm
+		building_food_industry
 	}
 
 	potential = {
@@ -591,7 +529,7 @@ company_nishikino_byouin = {
 			any_scope_building = {
 				OR = {
 					is_building_type = building_cotton_plantation
-					is_building_type = building_food_industry
+					is_building_type = building_publisher
 					is_building_type = building_opium_plantation
 				}
 				level >= 5
@@ -599,10 +537,11 @@ company_nishikino_byouin = {
 		}
 	}
 	prosperity_modifier = {
-		country_prestige_add = 2
+		state_bureaucracy_population_base_cost_factor_mult = -0.1
+		country_influence_mult = 0.1
 	}
 	possible_prestige_goods = {
-		company_nishikino_byouin_prestige_good
+		tot_company_nishikino_byouin_prestige_good
 	}
 	ai_will_do = {
 		any_scope_state = {
@@ -616,7 +555,7 @@ company_nishikino_byouin = {
 				is_in_geographic_region = geographic_region_danubia_old
 			}
 		}
-		building_food_industry = {
+		building_publisher = {
 			level = 5
 			state_trigger = {
 				is_in_geographic_region = geographic_region_danubia_old
@@ -634,7 +573,7 @@ company_nishikino_byouin = {
 				is_in_geographic_region = geographic_region_danubia_old
 			}
 		}
-		building_wheat_farm = {
+		building_food_industry = {
 			level = 3
 			state_trigger = {
 				is_in_geographic_region = geographic_region_danubia_old

@@ -2497,8 +2497,7 @@
 			create_building={
 				building="building_goods"
 				add_ownership={
-					company={
-						type=tot_company_sumimi_agency
+					country={
 						country="c:AVMJ"
 						levels=5
 					}
@@ -2509,13 +2508,10 @@
 			create_building={
 				building="building_food_industry"
 				add_ownership={
-					country={
-						country="c:HTT"
-						levels=3
-					}
-					country={
-						country="c:MYG"
-						levels=2
+					company={
+						type=tot_company_sumimi_agency
+						country="c:AVMJ"
+						levels=5
 					}
 				}
 				reserves=1

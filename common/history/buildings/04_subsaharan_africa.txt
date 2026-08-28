@@ -1148,15 +1148,26 @@
 			create_building={
 				building="building_coffee_plantation"
 				add_ownership={
-					building={
-						type="building_manor_house"
+					company={
+						type=tot_company_aftg_hazawa_cafe
 						country="c:AFTG"
 						levels=5
-						region="STATE_OROMIA"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "coffee_plantation_dry_process" "pm_road_carts"  }
+			}
+			create_building={
+				building="building_kissaten"
+				add_ownership={
+					company={
+						type=tot_company_aftg_hazawa_cafe
+						country="c:AFTG"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_kissaten_coffee_coffee" "pm_kissaten_tea_null" "pm_kissaten_sweet_null" "pm_kissaten_food_null" "pm_kissaten_server_waitress" "pm_kissaten_tool_table" }
 			}
 			create_building={
 				building="building_logging_camp"

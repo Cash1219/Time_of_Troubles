@@ -8,21 +8,20 @@
 @military_position = 200
 @power_bloc_position = 250
 
-@character_position = 700
-@spacing_widget_1_position = 350
+@character_position = 620
+@spacing_widget_1_position = 300
 @spacing_widget_size = 20
 
-@diplomatic_position = 380
-@technology_position = 420
-@society_position = 460
-@population_position = 500
-@journal_position = 540
-@companies_position = 580
+@diplomatic_position = 320
+@technology_position = 360
+@society_position = 400
+@population_position = 440
+@journal_position = 480
+@companies_position = 520
 
-@maplist_position = 640
+@maplist_position = 580
 
-
-@spacing_widget_2_position = 620
+@spacing_widget_2_position = 560
 
 
 
@@ -132,7 +131,7 @@ types information_panel_bar_types {
 
 				icon = {
 					texture = "gfx/interface/main_hud/sidebar_skin_bg_5.dds"
-					size = { 50 208 }
+					size = { 50 128 }
 
 					using = hud_shiny_effect
 				}
@@ -209,7 +208,7 @@ types information_panel_bar_types {
 
 
 				### CHARACTERS
-				sidebar_label_button = {
+				sidebar_label_button_small = {
 					enabled = "[GetMetaPlayer.GetPlayedOrObservedCountry.IsValid]"
 					position = { -100 @character_position }
 					blockoverride "onclick" {
@@ -218,7 +217,7 @@ types information_panel_bar_types {
 						onclick = "[GetVariableSystem.Toggle('tot_character_panel_visible')]"
 					}
 				}
-				sidebar_label_text = {
+				sidebar_label_text_small = {
 					position = { -100 @character_position }
 					text = "TOT_CHARACTER_PANEL_LABEL"
 				}
@@ -227,14 +226,17 @@ types information_panel_bar_types {
 					enabled = "[GetMetaPlayer.GetPlayedOrObservedCountry.IsValid]"
 					position = { 0 @character_position }
 					using = clickthrough_blocker
-					using = sidebar_button_size
-					using = selected_sidepanel_animation
+					using = sidebar_button_size_small
+					using = selected_sidepanel_animation_small
+					
 					blockoverride "selected_visibility" {
 						visible = "[GetVariableSystem.Exists('tot_character_panel_visible')]"
 					}
-					sidepanel_button_big = {
+					sidepanel_button_small = {
+						
 						blockoverride "icon" {
 							texture = "gfx/interface/main_hud/tot_character_btn.dds"
+							
 						}
 						blockoverride "button_selected" {
 							visible = "[GetVariableSystem.Exists('tot_character_panel_visible')]"
@@ -244,7 +246,7 @@ types information_panel_bar_types {
 						onclick = "[GetVariableSystem.Toggle('tot_character_panel_visible')]"
 					}
 				}
-				sidebar_tooltip_area = {
+				sidebar_tooltip_area_small = {
 					position = { 0 @character_position }
 					tooltip = "TOT_CHARACTER_PANEL_BUTTON_TOOLTIP"
 				}

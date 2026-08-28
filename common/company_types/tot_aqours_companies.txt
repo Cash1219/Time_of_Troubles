@@ -1,8 +1,8 @@
-﻿# AQO（Aqours）独特公司
+# AQO（Aqours）独特公司
 
 tot_company_aqours_mikan = {
-	icon = "gfx/interface/icons/company_icons/fra_company_lycoreco_cafe.dds"
-	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+	icon = "gfx/interface/icons/company_icons/tot_company_aqours_mikan.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_farm_wheat.dds"
 
 	flavored_company = yes
 	preferred_headquarters = { STATE_DALMATIA }
@@ -37,7 +37,7 @@ tot_company_aqours_mikan = {
 	}
 
 	possible_prestige_goods = {
-		company_aqours_mikan_prestige_good
+		tot_company_aqours_mikan_prestige_good
 	}
 
 	ai_will_do = {
@@ -71,8 +71,8 @@ tot_company_aqours_mikan = {
 }
 
 tot_company_aqours_diving = {
-	icon = "gfx/interface/icons/company_icons/fra_company_stella_cafe.dds"
-	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+	icon = "gfx/interface/icons/company_icons/tot_company_aqours_diving.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_harbor_shipbuilding.dds"
 
 	flavored_company = yes
 	preferred_headquarters = { STATE_DALMATIA }
@@ -106,7 +106,7 @@ tot_company_aqours_diving = {
 	}
 
 	possible_prestige_goods = {
-		company_aqours_diving_prestige_good
+		tot_company_aqours_diving_prestige_good
 	}
 
 	ai_will_do = {
@@ -140,19 +140,19 @@ tot_company_aqours_diving = {
 }
 
 tot_company_aqours_uranohoshi = {
-	icon = "gfx/interface/icons/company_icons/fra_company_stella_cafe.dds"
-	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+	icon = "gfx/interface/icons/company_icons/tot_company_aqours_uranohoshi.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_uranohoshi.dds"
 
 	flavored_company = yes
 	preferred_headquarters = { STATE_DALMATIA }
 
 	building_types = {
-		building_entertainment_press
+		building_club
 		building_stage
 		building_aquarium
 	}
 	possible_prestige_goods = {
-		company_aqours_uranohoshi_prestige_good
+		tot_company_aqours_uranohoshi_prestige_good
 	}
 	extension_building_types = {
 		building_musical_instrument
@@ -164,7 +164,7 @@ tot_company_aqours_uranohoshi = {
 			is_in_geographic_region = geographic_region_balkans_old
 			any_scope_building = {
 				OR = {
-					is_building_type = building_entertainment_press
+					is_building_type = building_club
 					is_building_type = building_stage
 					is_building_type = building_aquarium
 				}
@@ -174,7 +174,8 @@ tot_company_aqours_uranohoshi = {
 	}
 
 	prosperity_modifier = {
-		state_education_access_add = 0.2
+		state_education_access_add = 0.1
+		country_institution_cost_institution_schools_mult = -0.1
 	}
 
 	ai_will_do = {
@@ -183,7 +184,7 @@ tot_company_aqours_uranohoshi = {
 		}
 	}
 	ai_construction_targets = {
-		building_entertainment_press = {
+		building_club = {
 			level = 5
 			state_trigger = { is_in_geographic_region = geographic_region_balkans_old }
 		}

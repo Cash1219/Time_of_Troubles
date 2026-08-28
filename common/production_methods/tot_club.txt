@@ -202,12 +202,13 @@ pm_club_activity_community = {
 	is_default = yes
 	building_modifiers = {
 		level_scaled = {
-			building_employment_clerks_add = 200
-			building_employment_laborers_add = 200
+			building_employment_laborers_add = 600
+			building_employment_clerks_add = 300
 		}
 		workforce_scaled = {
-			goods_input_services_add = 5
-			goods_output_experience_add = 10
+			goods_input_services_add = 10		#*30=300
+			goods_input_paper_add = 5		#*30=150
+			goods_output_experience_add = 15	#*40=600
 		}
 	}
 	country_modifiers = {

@@ -187,15 +187,26 @@
 			create_building={
 				building="building_textile_mill"
 				add_ownership={
-					building={
-						type="building_financial_district"
+					company={
+						type=tot_company_hhwo_tsurumaki_group
 						country="c:HHWO"
 						levels=5
-						region="STATE_NEW_YORK"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_dye_workshops" "pm_no_luxury_clothes" "pm_traditional_looms"  }
+			}
+			create_building={
+				building="building_stage"
+				add_ownership={
+					company={
+						type=tot_company_hhwo_tsurumaki_group
+						country="c:HHWO"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_stage_operation_public" "pm_stage_scale_small" "pm_stage_merchandising_none" "pm_stage_media_none" }
 			}
 			create_building={
 				building="building_furniture_manufactory"

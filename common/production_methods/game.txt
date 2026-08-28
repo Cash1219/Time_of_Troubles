@@ -182,9 +182,12 @@ pm_game_operation_base = { #仅本体
 	texture = "gfx/interface/icons/production_method_icons/pm_game_operation_base.dds"
 	building_modifiers = {
 		workforce_scaled = {
-			goods_output_experience_add = 10
+			goods_input_services_add = 10		#*30=300
+			goods_input_paper_add = 5		#*30=150
+			goods_output_experience_add = 15	#*40=600
 		}
 		level_scaled = {
+			building_employment_laborers_add = 1000
 			building_employment_clerks_add = 500
 		}
 	}

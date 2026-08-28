@@ -5306,11 +5306,61 @@
 				activate_production_methods={ "pm_simple_farming" "pm_citrus_orchards" "pm_tools_disabled"  }
 			}
 			create_building={
+				building="building_glassworks"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:AQO"
+						levels=3
+						region="STATE_DALMATIA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_forest_glass" "pm_manual_glassblowing" "pm_ceramics" }
+			}
+			create_building={
+				building="building_publisher"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:AQO"
+						levels=3
+						region="STATE_DALMATIA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_publisher_main_general_wood" "pm_publisher_comprehensive_publishing" }
+			}
+			create_building={
+				building="building_government_administration"
+				add_ownership={
+					country={
+						country="c:AQO"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_hereditary_bureaucrats" "pm_religious_bureaucrats" }
+			}
+			create_building={
+				building="building_trade_center"
+				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:AQO"
+						levels=2
+						region="STATE_DALMATIA"
+					}
+				}
+				reserves=1
+			}
+			create_building={
 				building="building_port"
 				add_ownership={
 					country={
 						country="c:AQO"
-						levels=1
+						levels=3
 					}
 				}
 				reserves=1
@@ -5340,7 +5390,7 @@
 				reserves=1
 			}
 			create_building={
-				building="building_entertainment_press"
+				building="building_aquarium"
 				add_ownership={
 					company={
 						type=tot_company_aqours_uranohoshi
@@ -5349,7 +5399,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_ent_press_main_manga" "pm_ent_press_distribution_local" "pm_automation_disabled" }
+				activate_production_methods={ "pm_aquarium_ground_tank" "pm_aquarium_type_freshwater" "pm_aquarium_program_feeding" "pm_aquarium_program_guide" }
 			}
 		}
 	}

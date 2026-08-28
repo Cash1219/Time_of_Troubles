@@ -1,4 +1,4 @@
-﻿# All global modifiers are here.  They are applied from certain game-features.
+# All global modifiers are here.  They are applied from certain game-features.
 #
 # Effects are fully scriptable here.
 #these names can NOT be removed or changed, as the code uses them....
@@ -79,6 +79,7 @@ base_values = {
 
 	country_max_unassigned_generals_add = 3
 	country_max_unassigned_admirals_add = 3
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
 }
 
 # Scales with a country's global prestige rank, so at 20/100 this is multiplied by 0.8x, 50/100 by 0.5x, etc
@@ -86,6 +87,7 @@ base_values = {
 prestige_ranking = {
 	country_company_throughput_bonus_add = 0.1
 	country_company_construction_efficiency_bonus_add = 0.1
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
 }
 
 # Scales with a country's prestige rank compared against TOP_PRESTIGE_RANK_BONUS_THRESHOLD
@@ -93,21 +95,25 @@ prestige_ranking = {
 top_prestige_ranking = {
 	country_company_throughput_bonus_add = 0.1
 	country_company_construction_efficiency_bonus_add = 0.1
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
 }
 
 character_base_values = {
 	character_health_add = 1	# Must be != 0. Even better if it's > 0
 	character_loyalty_add = 50
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
 }
 
 # Applied to characters with the noble flag
 character_noble = {
 	character_prominence_add = 5
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
 }
 
 # Applied to historical characters
 character_historical = {
 	character_prominence_add = 10
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
 }
 
 coastal_state = {
@@ -213,6 +219,7 @@ commander_battle_end_loss = {
 
 opposition_agitator_popularity = {
 	character_popularity_add = 1
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
 }
 
 in_default = {
@@ -239,6 +246,7 @@ declared_bankruptcy = {
 incorporated_state = {
 	state_allow_assimilation_without_presence_bool = yes
 	state_allow_conversion_without_presence_bool = yes
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
 }
 
 unincorporated_state = {
@@ -329,6 +337,7 @@ tax_modifier_low = {
 }
 
 tax_modifier_medium = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
 }
 
 tax_modifier_high = {
@@ -368,6 +377,7 @@ government_wages_low = {
 }
 
 government_wages_medium = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
 }
 
 government_wages_high = {
@@ -405,6 +415,7 @@ military_wages_low = {
 }
 
 military_wages_medium = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
 }
 
 military_wages_high = {
@@ -436,6 +447,7 @@ country_supply_ship_construction_ratio_low = {
 
 country_supply_ship_construction_ratio_medium = {
 	country_supply_ship_construction_ratio_add = 0.50
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
 }
 
 country_supply_ship_construction_ratio_high = {
@@ -453,12 +465,14 @@ prestige_goods_supply_army = {
 	unit_army_offense_mult = 0.15
 	unit_army_defense_mult = 0.15
 	unit_morale_recovery_mult = 0.25
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
 }
 
 prestige_goods_supply_navy = {
 	ship_hull_damage_mult = 0.1
 	ship_crew_damage_mult = 0.1
 	ship_armor_mult = 0.1
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
 }
 
 insurrectionary_ig = {
@@ -514,6 +528,7 @@ prominence_ig_modifier = {
 # Applied to Magnates, scales against the revenue of their holding
 holding_revenue_magnate_scale = {
 	character_prominence_add = 50
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
 }
 
 debug_ig_approval = {
@@ -704,19 +719,24 @@ country_rivalry = {
 }
 
 # Infamy modifiers, applied from current infamy level
-infamy_reputable = {}
+infamy_reputable = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+}
 
 infamy_infamous = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
 	country_radicals_from_conquest_mult = 0.25
 	country_support_separatism_resistance_mult = -0.1
 }
 
 infamy_notorious = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
 	country_radicals_from_conquest_mult = 0.5
 	country_support_separatism_resistance_mult = -0.25
 }
 
 infamy_pariah = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
 	country_radicals_from_conquest_mult = 1.0
 	country_support_separatism_resistance_mult = -0.5
 }
@@ -807,6 +827,7 @@ country_gdp = {
 # COUNTRY_GDP_CONSTRUCTION_MODIFIER_BASE_MULTIPLIER is added to this before the scaling effect
 # Clamped by COUNTRY_GDP_CONSTRUCTION_MODIFIER_MAX_MULTIPLIER
 country_gdp_construction = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
 	country_construction_add = 10
 }
 
@@ -907,6 +928,7 @@ blockaded = {
 }
 
 battle_occupation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
 	unit_occupation_mult = 1.0
 }
 
@@ -934,19 +956,23 @@ repudiated_obligation = {
 }
 
 base_army_attrition = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
 	military_formation_attrition_risk_add = 0.1
 }
 
 base_navy_attrition = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
 	military_formation_attrition_risk_add = 0.1
 }
 
 formation_attrition_at_home_hq = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
 	military_formation_attrition_risk_mult = -0.5
 }
 
 # This is multiplied with country_authority_per_subject_add and the number of direct subjects of the country
 country_authority_per_subject = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
 	country_authority_add = 1.0
 }
 

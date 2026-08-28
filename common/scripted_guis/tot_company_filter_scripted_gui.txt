@@ -1,0 +1,53 @@
+# Exact ToT company-type membership for the company panel filter.
+tot_is_mod_company_type = {
+	scope = company_type
+	effect = { }
+	is_shown = {
+		OR = {
+			this = company_type:tot_company_stella_cafe
+			this = company_type:tot_company_homura
+			this = company_type:tot_company_minalinsky
+			this = company_type:tot_company_otonokisaka
+			this = company_type:tot_company_otonokisaka_kyuudoubu
+			this = company_type:tot_company_otonokisaka_idolbu
+			this = company_type:tot_company_otonokisaka_zoo
+			this = company_type:tot_company_nishikino_byouin
+			this = company_type:tot_company_louisiana_crown
+			this = company_type:tot_company_stella_cafe
+			this = company_type:tot_company_rabbit_house
+			this = company_type:tot_company_lycoreco_cafe
+			this = company_type:tot_company_stile_cafe
+			this = company_type:tot_company_black_cat_cafe
+			this = company_type:tot_company_eagle_jump
+			this = company_type:tot_company_aftg_hazawa_cafe
+			this = company_type:tot_company_aftg_mitake_gardening
+			this = company_type:tot_company_aftg_shotengai_taiko
+			this = company_type:tot_company_aqours_mikan
+			this = company_type:tot_company_aqours_diving
+			this = company_type:tot_company_aqours_uranohoshi
+			this = company_type:tot_company_toyokawa_group
+			this = company_type:tot_company_avemujica_agency
+			this = company_type:tot_company_sumimi_agency
+			this = company_type:tot_company_aleppo_chamber
+			this = company_type:tot_company_hhwo_tsurumaki_group
+			this = company_type:tot_company_hhwo_kitazawa_butcher
+			this = company_type:tot_company_hhwo_smile_ship
+			this = company_type:tot_company_myg_anno_tokyo
+			this = company_type:tot_company_myg_nagasaki_group
+			this = company_type:tot_company_myg_aleppo_astronomical
+			this = company_type:tot_company_njs_club
+			this = company_type:tot_company_njs_rina
+			this = company_type:tot_company_njs_ayumu
+			this = company_type:tot_company_ukr_starry
+			this = company_type:tot_company_ukr_guitar_hero
+			this = company_type:tot_company_ukr_kita_kissaten
+			this = company_type:tot_company_rom_pastel_palettes
+			this = company_type:tot_company_rom_franchouchou
+			this = company_type:tot_company_rom_togenashi_togeari
+			this = company_type:tot_company_rom_maruyama_auto
+			this = company_type:tot_company_rom_yoshinoya
+			this = company_type:tot_company_rom_bushido_armory
+		}
+	}
+	is_valid = { always = yes }
+}
