@@ -336,14 +336,14 @@ tot_company_otonokisaka_kyuudoubu = {
 
 tot_company_otonokisaka_idolbu = {
 	icon = "gfx/interface/icons/company_icons/tot_company_otonokisaka_idolbu.dds"
-	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_niconiconi.dds"
 	flavored_company = yes
 	preferred_headquarters = { STATE_CENTRAL_HUNGARY }
 
 	building_types = {
 		building_stage
 		building_entertainment_press
-		building_textile_mill
+		building_club
 	}
 	extension_building_types = {
 		building_musical_instrument
@@ -363,14 +363,15 @@ tot_company_otonokisaka_idolbu = {
 				OR = {
 					is_building_type = building_stage
 					is_building_type = building_entertainment_press
-					is_building_type = building_textile_mill
+					is_building_type = building_club
 				}
 				level >= 5
 			}
 		}
 	}
 	prosperity_modifier = {
-		state_education_access_add = 0.1
+		country_influence_mult = 0.1
+		country_authority_mult = 0.1
 	}
 	possible_prestige_goods = {
 		tot_company_otonokisaka_idolbu_prestige_good
@@ -393,7 +394,7 @@ tot_company_otonokisaka_idolbu = {
 				is_in_geographic_region = geographic_region_danubia_old
 			}
 		}
-		building_textile_mill = {
+		building_club = {
 			level = 5
 			state_trigger = {
 				is_in_geographic_region = geographic_region_danubia_old
@@ -483,7 +484,7 @@ tot_company_otonokisaka_zoo = {
 				is_in_geographic_region = geographic_region_danubia_old
 			}
 		}
-		building_textile_mill = {
+		building_club = {
 			level = 3
 			state_trigger = {
 				is_in_geographic_region = geographic_region_danubia_old

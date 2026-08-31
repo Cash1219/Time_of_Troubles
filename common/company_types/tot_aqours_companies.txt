@@ -2,7 +2,7 @@
 
 tot_company_aqours_mikan = {
 	icon = "gfx/interface/icons/company_icons/tot_company_aqours_mikan.dds"
-	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_farm_wheat.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_mikan.dds"
 
 	flavored_company = yes
 	preferred_headquarters = { STATE_DALMATIA }
@@ -72,7 +72,7 @@ tot_company_aqours_mikan = {
 
 tot_company_aqours_diving = {
 	icon = "gfx/interface/icons/company_icons/tot_company_aqours_diving.dds"
-	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_harbor_shipbuilding.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_kanan.dds"
 
 	flavored_company = yes
 	preferred_headquarters = { STATE_DALMATIA }
@@ -102,7 +102,8 @@ tot_company_aqours_diving = {
 	}
 
 	prosperity_modifier = {
-		country_navy_goods_cost_mult = -0.15
+		country_navy_goods_cost_mult = -0.1
+		unit_navy_offense_mult = 0.1
 	}
 
 	possible_prestige_goods = {

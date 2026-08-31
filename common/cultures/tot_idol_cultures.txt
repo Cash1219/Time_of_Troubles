@@ -2,8 +2,8 @@ lovelive_mu = {
 	color = { 71 112 80 }
 	religion = kiseki
 	heritage = heritage_idol_danubian
-	language = language_lovelive
-	obsessions = { meat }
+	language = language_hungarian
+	obsessions = { omocha }
 	traditions = { }
 	name_format = last_first
 	male_common_first_names = { Andras Bela Ferenc Gabor Istvan Janos Jozsef Laszlo Miklos Peter Sandor }
@@ -17,8 +17,8 @@ lovelive_aqo = {
 	color = hsv{ 0.66 0.06 0.74 }
 	religion = kiseki
 	heritage = heritage_idol_danubian
-	language = language_lovelive
-	obsessions = { tobacco }
+	language = language_south_slavic
+	obsessions = { fish }
 	traditions = { }
 	male_common_first_names = { Andrija Antun Franjo Ivan Josip Juraj Luka Marin Marko Nikola Petar Stjepan Tomislav }
 	female_common_first_names = { Aleksandra Ana Ivana Jelica Marija Marijana Tereza }
@@ -31,8 +31,8 @@ lovelive_niji = {
 	color = hsv{ 0.50 0.32 0.79 }
 	religion = kiseki
 	heritage = heritage_idol_danubian
-	language = language_lovelive
-	obsessions = { liquor }
+	language = language_west_slavic
+	obsessions = { performance }
 	traditions = { }
 	male_common_first_names = { Andrej Juraj Karol Martin Matej Michal Mikulas Milan Pavol Peter Stefan Tomas Vladimir }
 	female_common_first_names = { Anna Edita Elena Jana Judita Kristina Ludmila Margita Olga Terezia Viera }
@@ -45,7 +45,7 @@ imas_765 = {
 	color = hsv{ 0.50 0.43 0.45 }
 	religion = starbeat
 	heritage = heritage_idol_danubian
-	language = language_imas
+	language = language_germanophone
 	obsessions = { meat }
 	traditions = { }
 	male_common_first_names = { Albert Anton Eduard Ernst Franz Heinrich Johann Joseph Karl Leopold Ludwig Maximilian Otto Rudolf Wilhelm }
@@ -59,12 +59,108 @@ imas_gakuen = {
 	color = hsv{ 0.66 0.32 0.99 }
 	religion = starbeat
 	heritage = heritage_idol_danubian
-	language = language_imas
+	language = language_west_slavic
 	obsessions = { liquor }
 	traditions = { }
 	male_common_first_names = { Alexander Alois Antonin Bedrich Emanuel Emil Frantisek Jaroslav Jiri Josef Karel Mikulas Otakar Pavel Petr Tomas Vaclav }
 	female_common_first_names = { Anna Eleonora Ivana Karolina Katerina Klara Olga Renata Tereza Zuzana }
 	common_last_names = { Dvorak Gajda Kafka Koller Kucera Moravec Neruda Novak Novotny Svoboda Vesely }
+	ethnicities = { 1 = caucasian }
+	graphics = european
+}
+
+tot_htt = {
+	color = { 147 82 173 }
+	religion = starbeat
+	heritage = heritage_band_empire
+	language = language_greek
+	obsessions = { wine }
+	traditions = { }
+	male_common_first_names = { Alexandros Andreas Dimitrios Georgios Ioannis Konstantinos Leonidas Nikolaos Panagiotis Petros Theodoros Vasilios }
+	female_common_first_names = { Alexandra Angeliki Anna Anastasia Eleni Eirini Katerina Konstantina Maria Sofia Theodora }
+	common_last_names = { Andreou Dimitriou Georgiadis Ioannidis Karalis Konstantinou Nikolaidis Papadopoulos Petropoulos Stavridis Theodoridis Vasilakis }
+	ethnicities = { 1 = caucasian }
+	graphics = balkan
+}
+
+tot_ukr = {
+	color = { 62 90 240 }
+	religion = kiseki
+	heritage = heritage_band_empire
+	language = language_east_slavic
+	obsessions = { liquor }
+	traditions = { }
+	male_common_first_names = { Andriy Anton Bohdan Danylo Dmitro Ivan Mykola Oleksandr Oleh Petro Roman Sergiy Viktor Volodymyr Yuriy }
+	female_common_first_names = { Darya Hanna Kateryna Lyudmyla Maria Natalia Nina Olena Olga Polina Ruslana Tetiana Ulyana Viktoriia Xenia }
+	common_last_names = { Andriienko Bondarenko Hrytsenko Ivanenko Kovalenko Kravchenko Melnyk Petrenko Shevchenko Tkachenko Tymoshenko Yatsenko }
+	ethnicities = { 1 = slavic }
+	graphics = european
+}
+
+tot_rom = {
+	color = { 217 14 44 }
+	religion = starbeat
+	heritage = heritage_band_empire
+	language = language_eastern_romance
+	obsessions = { wine }
+	traditions = { }
+	male_common_first_names = { Adrian Alexandru Andrei Bogdan Carol Constantin Daniel Dumitru Eugen Gheorghe Ion Mihai Mircea Nicolae Petru Radu Sergiu Stefan Teodor Victor Vlad }
+	female_common_first_names = { Adela Ana Daria Elena Elisabeta Iulia Maria Natalia Oana Raluca Simona Sofia Teodora Victoria }
+	common_last_names = { Alexandrescu Angelescu Antonescu Dumitrescu Florescu Georgescu Ionescu Marinescu Popescu Radu Romanescu Stanescu Stoica Tudor }
+	ethnicities = { 1 = caucasian }
+	graphics = balkan
+}
+
+tot_avmj = {
+	color = { 160 16 75 }
+	religion = starbeat
+	heritage = heritage_idol_danubian
+	language = language_oghuz
+	obsessions = { coffee }
+	traditions = { tradition_bandori_branch }
+	male_common_first_names = { Ahmet Ali Arif Cemal Enver Halil Hasan Ibrahim Iskender Kemal Mehmet Murat Mustafa Osman Rauf Selim Suleyman Yusuf Ziya }
+	female_common_first_names = { Ayse Aylin Elif Emine Esra Fatma Hande Hatice Leyla Merve Nermin Nese Selin Sema Zeynep }
+	common_last_names = { Akbas Aydin Demir Ercan Kaya Koc Ozdemir Sahin Tan Tunc Yalcin Yavuz }
+	ethnicities = { 1 = arab 2 = caucasian 3 = slavic }
+	graphics = arabic
+}
+
+tot_myg = {
+	color = { 160 16 75 }
+	religion = starbeat
+	heritage = heritage_band_empire
+	language = language_arabic
+	obsessions = { coffee }
+	traditions = { tradition_bandori_branch }
+	male_common_first_names = { Ahmad Ali Elias Fadi Faris Hassan Ibrahim Karim Khaled Maher Mustafa Nabil Omar Rami Sami Tarek Youssef Ziad }
+	female_common_first_names = { Aisha Amal Dalia Farah Hala Huda Lina Mariam Nadia Nour Rania Rana Salma Samar Yasmin }
+	common_last_names = { Abbas Ahmad Alami Darwish Haddad Hamdan Hassan Khalil Mansour Nasser Saad Saleh Salim Shami Youssef }
+	ethnicities = { 1 = arab 2 = caucasian }
+	graphics = arabic
+}
+
+tot_aftg = {
+	color = { 210 120 72 }
+	religion = starbeat
+	heritage = heritage_abyssinian
+	language = language_galla
+	traditions = { tradition_bandori_branch }
+	male_common_first_names = { Ali Beka Dawud Firisa Gugsa Jifar Kumsaa Lemma Umar Yusuf }
+	female_common_first_names = { Aisha Gumiti Hirut Kefey Limmiti Mariyam }
+	common_last_names = { Abebe Bekele Gemeda Gobena Ibrahim Jillo Mohammed Rashid }
+	ethnicities = { 1 = east_african }
+	graphics = african
+}
+
+tot_hhwo = {
+	color = { 247 170 92 }
+	religion = starbeat
+	heritage = heritage_north_american_settler
+	language = language_anglophone
+	traditions = { tradition_bandori_branch }
+	male_common_first_names = { Andrew Charles George James John Michael Robert Thomas William }
+	female_common_first_names = { Alice Anna Charlotte Emily Grace Mary Michelle Sarah Victoria }
+	common_last_names = { Adams Brown Clark Davis Johnson Miller Smith Taylor Williams }
 	ethnicities = { 1 = caucasian }
 	graphics = european
 }

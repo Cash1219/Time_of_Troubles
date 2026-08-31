@@ -1,4 +1,4 @@
-﻿POPS = {
+POPS = {
 	s:STATE_DISTRICT_OF_COLUMBIA = {
 		# total population of DC in 1830 was 30261, and 33745 in 1840. 32003 serves as a workable average.
 		# + Fairfax County, VA. Total pop in 1830 was 9204, 5203 free/4001 slaves
@@ -6,16 +6,16 @@
 		# Number of actual pops adjusted from historical research to better fit the buildings
 		region_state:HHWO = {
 			create_pop = {
-				culture = yankee
+				culture = tot_hhwo
 				size = 27544
 			}
 			create_pop = {
-				culture = dixie
+				culture = tot_hhwo
 				size = 86263
 			}
 			create_pop = {
 				pop_type = slaves
-				culture = afro_american
+				culture = tot_hhwo
 				size = 7818
 			}
 		}
@@ -56,29 +56,29 @@
 	s:STATE_NEW_YORK = {
 		region_state:HHWO = {
 			create_pop = {
-				culture = yankee
+				culture = tot_hhwo
 				size = 2135000
 			}
 			create_pop = {
-				culture = yankee
+				culture = tot_hhwo
 				religion = jewish
 				size = 2000
 			}
 			create_pop = {
-				culture = yankee
+				culture = tot_hhwo
 				religion = catholic
 				size = 39996
 			}
 			create_pop = {
-				culture = afro_american
+				culture = tot_hhwo
 				size = 20004
 			}
 			create_pop = {
-				culture = irish
+				culture = tot_hhwo
 				size = 16000
 			}
 			create_pop = {
-				culture = iroquoian
+				culture = tot_hhwo
 				size = 8000
 			}
 		}
@@ -86,21 +86,21 @@
 	s:STATE_VIRGINIA = { # population of VA proper minus Fairfax County, which had its population figures added to DC to inflate the pop count there
 		region_state:HHWO = {
 			create_pop = {
-				culture = dixie
+				culture = tot_hhwo
 				size = 423597
 			}
 			create_pop = {
-				culture = dixie
+				culture = tot_hhwo
 				religion = catholic
 				size = 48000
 			}
 			create_pop = {
-				culture = afro_american
+				culture = tot_hhwo
 				size = 35120
 			}
 			create_pop = {
 				pop_type = slaves
-				culture = afro_american
+				culture = tot_hhwo
 				size = 312079
 			}
 		}
@@ -753,20 +753,20 @@
 	s:STATE_WEST_VIRGINIA = {
 		region_state:HHWO = {
 			create_pop = {
-				culture = dixie
+				culture = tot_hhwo
 				size = 160916
 			}
 			create_pop = {
 				pop_type = slaves
-				culture = afro_american
+				culture = tot_hhwo
 				size = 18081 # 17673 slaves in WV's counties in 1830, 18488 slaves in 1840
 			}
 			create_pop = {
-				culture = afro_american
+				culture = tot_hhwo
 				size = 1808 # don't have easy numbers for WV's free non-white population, but ~10% of the enslaved population seems to roughly track
 			}
 			create_pop = {
-				culture = dixie
+				culture = tot_hhwo
 				religion = catholic
 				size = 28000
 			}
@@ -779,20 +779,20 @@
 			# minus 42176 free/38242 slaves that have been ceded to DC to inflate its pop figure
 			# aim for 535947 pops for Mega-Maryland (Megaland?) in total
 			create_pop = {
-				culture = dixie
+				culture = tot_hhwo
 				size = 251997
 			}
 			# Maryland: 52938 free in 1830, 62078 free in 1840
 			# Delaware: 15855 free in 1830, 16919 free in 1840
 			create_pop = {
-				culture = afro_american
+				culture = tot_hhwo
 				size = 48541
 			}
 			# Maryland: 102994 in 1830, 89737 in 1840
 			# Delaware: 3292 in 1830, 2605 in 1840
 			create_pop = {
 				pop_type = slaves
-				culture = afro_american
+				culture = tot_hhwo
 				size = 58467
 			}
 		}
@@ -801,18 +801,18 @@
 	s:STATE_DELAWARE = {
 		region_state:HHWO = {
 			create_pop = {
-				culture = dixie
+				culture = tot_hhwo
 				size = 77000
 			}
 
 			create_pop = {
-					culture = afro_american
+					culture = tot_hhwo
 					size = 16919
 			}
 
 			create_pop = {
 					pop_type = slaves
-					culture = afro_american
+					culture = tot_hhwo
 					size = 2605
 			}
 		}
@@ -821,25 +821,25 @@
 	s:STATE_PENNSYLVANIA = {
 		region_state:HHWO = {
 			create_pop = {
-				culture = yankee
+				culture = tot_hhwo
 				size = 1250496
 			}
 			create_pop = {
-				culture = yankee
+				culture = tot_hhwo
 				religion = jewish
 				size = 2000
 			}
 			create_pop = {
-				culture = yankee
+				culture = tot_hhwo
 				religion = catholic
 				size = 144008
 			}
 			create_pop = {
-				culture = irish
+				culture = tot_hhwo
 				size = 59800
 			}
 			create_pop = {
-				culture = afro_american
+				culture = tot_hhwo
 				size = 43996
 			}
 		}
@@ -847,16 +847,16 @@
 	s:STATE_NEW_JERSEY = {
 		region_state:HHWO = {
 			create_pop = {
-				culture = yankee
+				culture = tot_hhwo
 				size = 303200
 			}
 			create_pop = {
-				culture = yankee
+				culture = tot_hhwo
 				religion = catholic
 				size = 27996
 			}
 			create_pop = {
-				culture = afro_american
+				culture = tot_hhwo
 				size = 15996
 			}
 		}
