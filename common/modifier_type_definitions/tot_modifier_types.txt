@@ -1,4 +1,13 @@
 ﻿#原版拓展
+building_group_bg_entertainment_throughput_add={
+	decimals=0
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
 goods_input_coffee_add={
 	decimals=1
 	color=good
@@ -692,6 +701,15 @@ country_tot_band_creative_success_weight_add = { #乐队创作成功率权重
 	}
 }
 
+country_tot_band_creation_output_mult = { #乐队创作产出倍率
+	decimals=0
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
 country_tot_band_reward_points_add = { #乐队额外奖励点
 	decimals=0
 	color=good
@@ -894,6 +912,39 @@ goods_input_animal_performance_add={
 	}
 }
 goods_input_animal_performance_mult={
+	decimals=1
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_output_ornamental_plants_add={
+	decimals=1
+	color=good
+	percent=no
+	game_data={
+		ai_value=0
+	}
+}
+goods_output_ornamental_plants_mult={
+	decimals=1
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+goods_input_ornamental_plants_add={
+	decimals=1
+	color=bad
+	percent=no
+	game_data={
+		ai_value=0
+	}
+}
+goods_input_ornamental_plants_mult={
 	decimals=1
 	color=bad
 	percent=yes

@@ -219,6 +219,10 @@ band_kizuna_creation_weekly_gain_value = {
 	value = band_kizuna_creation_base_gain_value
 	add = band_kizuna_resource_effective_weekly_gain_value
 	divide = 2
+	multiply = {
+		value = 1
+		add = modifier:country_tot_band_creation_output_mult
+	}
 }
 
 band_kizuna_resource_effective_weekly_gain_value = {
@@ -2643,6 +2647,10 @@ band_1_kizuna_creation_weekly_gain_value = {
 	add = band_1_kizuna_resource_effective_weekly_gain_value
 	if = { limit = { has_variable = tot_band_1_weekly_bonus } add = var:tot_band_1_weekly_bonus }
 	divide = 2
+	multiply = {
+		value = 1
+		add = modifier:country_tot_band_creation_output_mult
+	}
 }
 
 band_1_kizuna_creation_progress_bar_value = {
@@ -2727,6 +2735,10 @@ band_2_kizuna_creation_weekly_gain_value = {
 	add = band_2_kizuna_resource_effective_weekly_gain_value
 	if = { limit = { has_variable = tot_band_2_weekly_bonus } add = var:tot_band_2_weekly_bonus }
 	divide = 2
+	multiply = {
+		value = 1
+		add = modifier:country_tot_band_creation_output_mult
+	}
 }
 
 band_2_kizuna_creation_progress_bar_value = {
@@ -2811,6 +2823,10 @@ band_3_kizuna_creation_weekly_gain_value = {
 	add = band_3_kizuna_resource_effective_weekly_gain_value
 	if = { limit = { has_variable = tot_band_3_weekly_bonus } add = var:tot_band_3_weekly_bonus }
 	divide = 2
+	multiply = {
+		value = 1
+		add = modifier:country_tot_band_creation_output_mult
+	}
 }
 
 band_3_kizuna_creation_progress_bar_value = {
@@ -2934,6 +2950,10 @@ band_4_kizuna_creation_weekly_gain_value = {
 	divide = 200
 	if = { limit = { has_variable = tot_band_4_weekly_bonus } add = var:tot_band_4_weekly_bonus }
 	divide = 2
+	multiply = {
+		value = 1
+		add = modifier:country_tot_band_creation_output_mult
+	}
 }
 
 band_4_kizuna_creation_progress_bar_value = {
@@ -3057,6 +3077,10 @@ band_5_kizuna_creation_weekly_gain_value = {
 	divide = 200
 	if = { limit = { has_variable = tot_band_5_weekly_bonus } add = var:tot_band_5_weekly_bonus }
 	divide = 2
+	multiply = {
+		value = 1
+		add = modifier:country_tot_band_creation_output_mult
+	}
 }
 
 band_5_kizuna_creation_progress_bar_value = {
@@ -3180,6 +3204,10 @@ band_6_kizuna_creation_weekly_gain_value = {
 	divide = 200
 	if = { limit = { has_variable = tot_band_6_weekly_bonus } add = var:tot_band_6_weekly_bonus }
 	divide = 2
+	multiply = {
+		value = 1
+		add = modifier:country_tot_band_creation_output_mult
+	}
 }
 
 band_6_kizuna_creation_progress_bar_value = {
@@ -3303,6 +3331,10 @@ band_7_kizuna_creation_weekly_gain_value = {
 	divide = 200
 	if = { limit = { has_variable = tot_band_7_weekly_bonus } add = var:tot_band_7_weekly_bonus }
 	divide = 2
+	multiply = {
+		value = 1
+		add = modifier:country_tot_band_creation_output_mult
+	}
 }
 
 band_7_kizuna_creation_progress_bar_value = {
@@ -3426,6 +3458,10 @@ band_8_kizuna_creation_weekly_gain_value = {
 	divide = 200
 	if = { limit = { has_variable = tot_band_8_weekly_bonus } add = var:tot_band_8_weekly_bonus }
 	divide = 2
+	multiply = {
+		value = 1
+		add = modifier:country_tot_band_creation_output_mult
+	}
 }
 
 band_8_kizuna_creation_progress_bar_value = {
@@ -3549,6 +3585,10 @@ band_9_kizuna_creation_weekly_gain_value = {
 	divide = 200
 	if = { limit = { has_variable = tot_band_9_weekly_bonus } add = var:tot_band_9_weekly_bonus }
 	divide = 2
+	multiply = {
+		value = 1
+		add = modifier:country_tot_band_creation_output_mult
+	}
 }
 
 band_9_kizuna_creation_progress_bar_value = {
@@ -3672,6 +3712,10 @@ band_10_kizuna_creation_weekly_gain_value = {
 	divide = 200
 	if = { limit = { has_variable = tot_band_10_weekly_bonus } add = var:tot_band_10_weekly_bonus }
 	divide = 2
+	multiply = {
+		value = 1
+		add = modifier:country_tot_band_creation_output_mult
+	}
 }
 
 band_10_kizuna_creation_progress_bar_value = {

@@ -59,6 +59,18 @@ pmg_ent_press_distribution = { #发行渠道
 	}
 }
 
+pmg_automation_building_entertainment_press = { #自动化
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	ai_selection = most_profitable
+
+	production_methods = {
+		pm_tot_ent_press_automation_disabled
+		pm_tot_ent_press_automation_watertube
+		pm_tot_ent_press_automation_rotary
+		pm_tot_ent_press_automation_assembly
+	}
+}
+
 pmg_game_traditional_dev = { #桌游开发
 	texture = "gfx/interface/icons/production_method_icons/pmg_game_traditional_dev.dds"
 	ai_selection = most_profitable

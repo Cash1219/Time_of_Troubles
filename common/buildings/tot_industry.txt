@@ -1,4 +1,5 @@
 ﻿building_barn = {
+	# 暂时废案：粮仓暂不纳入当前版本；当前定义仅为测试占位，后续重做后再启用。
 	expandable = no
 	ownership_type = no_ownership
 	building_group = bg_private_infrastructure	
@@ -116,7 +117,7 @@ building_entertainment_press = { #娱乐传媒社
 	production_method_groups = {
 		pmg_ent_press_main #娱乐刊物
 		pmg_ent_press_distribution #发行渠道
-		pmg_automation_building_tooling_workshop #自动化
+		pmg_automation_building_entertainment_press #自动化
 	}
 
 	required_construction = construction_cost_high

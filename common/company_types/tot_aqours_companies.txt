@@ -9,12 +9,12 @@ tot_company_aqours_mikan = {
 
 	building_types = {
 		building_wheat_farm
-		building_food_industry
-		building_chemical_plant
+		building_botanical_garden
+		building_banana_plantation
 	}
 	extension_building_types = {
 		building_livestock_ranch
-		building_vineyard
+		building_chemical_plant
 	}
 
 	possible = {
@@ -23,8 +23,8 @@ tot_company_aqours_mikan = {
 			any_scope_building = {
 				OR = {
 					is_building_type = building_wheat_farm
-					is_building_type = building_food_industry
-					is_building_type = building_chemical_plant
+					is_building_type = building_botanical_garden
+					is_building_type = building_banana_plantation
 				}
 				level >= 5
 			}
@@ -50,11 +50,11 @@ tot_company_aqours_mikan = {
 			level = 5
 			state_trigger = { is_in_geographic_region = geographic_region_balkans_old }
 		}
-		building_food_industry = {
+		building_botanical_garden = {
 			level = 3
 			state_trigger = { is_in_geographic_region = geographic_region_balkans_old }
 		}
-		building_chemical_plant = {
+		building_banana_plantation = {
 			level = 3
 			state_trigger = { is_in_geographic_region = geographic_region_balkans_old }
 		}
@@ -62,7 +62,7 @@ tot_company_aqours_mikan = {
 			level = 3
 			state_trigger = { is_in_geographic_region = geographic_region_balkans_old }
 		}
-		building_vineyard = {
+		building_chemical_plant = {
 			level = 3
 			state_trigger = { is_in_geographic_region = geographic_region_balkans_old }
 		}

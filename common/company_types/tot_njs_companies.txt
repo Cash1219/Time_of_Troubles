@@ -2,7 +2,7 @@
 
 tot_company_njs_club = {
 	icon = "gfx/interface/icons/company_icons/tot_company_njs_club.dds"
-	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_nijisaki.dds"
 
 	flavored_company = yes
 	preferred_headquarters = { STATE_SLOVAKIA }
@@ -36,6 +36,7 @@ tot_company_njs_club = {
 
 	prosperity_modifier = {
 		state_education_access_add = 0.1
+		country_institution_cost_institution_schools_mult = -0.1
 	}
 
 	ai_will_do = {
@@ -70,7 +71,7 @@ tot_company_njs_club = {
 
 tot_company_njs_rina = {
 	icon = "gfx/interface/icons/company_icons/tot_company_njs_rina.dds"
-	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_rina.dds"
 
 	flavored_company = yes
 	preferred_headquarters = { STATE_SLOVAKIA }
@@ -139,19 +140,19 @@ tot_company_njs_rina = {
 
 tot_company_njs_ayumu = {
 	icon = "gfx/interface/icons/company_icons/tot_company_njs_ayumu.dds"
-	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_park.dds"
 
 	flavored_company = yes
 	preferred_headquarters = { STATE_SLOVAKIA }
 
 	building_types = {
 		building_amusement_park
-		building_textile_mill
+		building_goods
 		building_stage
 	}
 	extension_building_types = {
 		building_kissaten
-		building_entertainment_press
+		building_textile_mill
 	}
 
 	possible = {
@@ -160,7 +161,7 @@ tot_company_njs_ayumu = {
 			any_scope_building = {
 				OR = {
 					is_building_type = building_amusement_park
-					is_building_type = building_textile_mill
+					is_building_type = building_goods
 					is_building_type = building_stage
 				}
 				level >= 5
@@ -169,7 +170,8 @@ tot_company_njs_ayumu = {
 	}
 
 	prosperity_modifier = {
-		state_migration_pull_mult = 0.15
+		state_standard_of_living_add = 1
+		country_legitimacy_base_add = 5
 	}
 
 	possible_prestige_goods = {
@@ -186,7 +188,7 @@ tot_company_njs_ayumu = {
 			level = 5
 			state_trigger = { is_in_geographic_region = geographic_region_danubia_old }
 		}
-		building_textile_mill = {
+		building_goods = {
 			level = 5
 			state_trigger = { is_in_geographic_region = geographic_region_danubia_old }
 		}
@@ -198,7 +200,7 @@ tot_company_njs_ayumu = {
 			level = 3
 			state_trigger = { is_in_geographic_region = geographic_region_danubia_old }
 		}
-		building_entertainment_press = {
+		building_textile_mill = {
 			level = 3
 			state_trigger = { is_in_geographic_region = geographic_region_danubia_old }
 		}

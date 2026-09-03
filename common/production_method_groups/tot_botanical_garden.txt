@@ -1,0 +1,37 @@
+# Botanical garden production lines
+
+pmg_botanical_garden_ornamental = {
+	texture = "gfx/interface/icons/production_method_icons/orchards.dds"
+	ai_selection = most_profitable
+
+	production_methods = {
+		pm_botanical_garden_ornamental_basic
+		pm_botanical_garden_ornamental_formal
+		pm_botanical_garden_ornamental_greenhouse
+		pm_botanical_garden_ornamental_conservatory
+	}
+}
+
+pmg_botanical_garden_experience = {
+	texture = "gfx/interface/icons/production_method_icons/unused/public_parks.dds"
+	ai_selection = most_profitable
+
+	production_methods = {
+		pm_botanical_garden_experience_basic
+		pm_botanical_garden_experience_formal
+		pm_botanical_garden_experience_educational
+		pm_botanical_garden_experience_research
+	}
+}
+
+pmg_botanical_garden_fruit = {
+	texture = "gfx/interface/icons/production_method_icons/orchards.dds"
+	ai_selection = most_profitable
+
+	production_methods = {
+		pm_botanical_garden_fruit_basic
+		pm_botanical_garden_fruit_landscaped
+		pm_botanical_garden_fruit_glasshouse
+		pm_botanical_garden_fruit_controlled
+	}
+}
