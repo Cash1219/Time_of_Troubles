@@ -31,7 +31,7 @@ pm_botanical_garden_bonsai = {
 	}
 }
 
-pm_botanical_garden_ikebana_greenhouse = {
+pm_botanical_garden_glasshouse_flowers = {
 	texture = "gfx/interface/icons/production_method_icons/orchards.dds"
 	unlocking_technologies = { steel_frame_buildings }
 	building_modifiers = {
@@ -85,7 +85,7 @@ pm_botanical_garden_courtyard_fruit_trees = {
 			goods_input_wood_add = 5
 			goods_input_fertilizer_add = 10
 			goods_output_fruit_add = 10
-			goods_output_ornamental_plants_add = 5
+			goods_output_ornamental_plants_add = -5
 		}
 		level_scaled = {
 			building_employment_laborers_add = 250
@@ -103,7 +103,7 @@ pm_botanical_garden_grafted_fruit_trees = {
 			goods_input_fertilizer_add = 15
 			goods_input_tools_add = 5
 			goods_output_fruit_add = 20
-			goods_output_ornamental_plants_add = 10
+			goods_output_ornamental_plants_add = -10
 		}
 		level_scaled = {
 			building_employment_laborers_add = 250
@@ -122,87 +122,11 @@ pm_botanical_garden_greenhouse_fruit_trees = {
 			goods_input_glass_add = 5
 			goods_input_tools_add = 5
 			goods_output_fruit_add = 25
-			goods_output_ornamental_plants_add = 15
+			goods_output_ornamental_plants_add = -15
 		}
 		level_scaled = {
 			building_employment_laborers_add = 250
 			building_employment_farmers_add = 250
-		}
-	}
-}
-
-# Optional private leisure line. It represents household and invited guests,
-# never public admission.
-pm_botanical_garden_private_activities_none = {
-	texture = "gfx/interface/icons/production_method_icons/unused/public_parks.dds"
-	is_default = yes
-	ai_weight = 0.1
-}
-
-pm_botanical_garden_private_flower_viewing = {
-	texture = "gfx/interface/icons/production_method_icons/unused/public_parks.dds"
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_ornamental_plants_add = 5
-			goods_input_services_add = 5
-			goods_output_experience_add = 15
-		}
-		level_scaled = { building_employment_laborers_add = 250 }
-	}
-}
-
-pm_botanical_garden_bonsai_gathering = {
-	texture = "gfx/interface/icons/production_method_icons/unused/public_parks.dds"
-	unlocking_technologies = { urban_planning }
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_ornamental_plants_add = 10
-			goods_input_services_add = 10
-			goods_input_furniture_add = 5
-			goods_output_experience_add = 35
-		}
-		level_scaled = {
-			building_employment_laborers_add = 300
-			building_employment_clerks_add = 200
-		}
-	}
-}
-
-pm_botanical_garden_ikebana_study = {
-	texture = "gfx/interface/icons/production_method_icons/unused/public_parks.dds"
-	unlocking_technologies = { realism }
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_ornamental_plants_add = 15
-			goods_input_services_add = 15
-			goods_input_furniture_add = 5
-			goods_input_paper_add = 5
-			goods_output_experience_add = 60
-		}
-		level_scaled = {
-			building_employment_laborers_add = 300
-			building_employment_clerks_add = 200
-		}
-	}
-}
-
-pm_botanical_garden_garden_soiree = {
-	texture = "gfx/interface/icons/production_method_icons/unused/public_parks.dds"
-	unlocking_technologies = { camera }
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_ornamental_plants_add = 20
-			goods_input_services_add = 20
-			goods_input_furniture_add = 5
-			goods_input_paper_add = 5
-			goods_input_luxury_furniture_add = 5
-			goods_input_luxury_clothes_add = 5
-			goods_input_musical_instrument_add = 5
-			goods_output_experience_add = 110
-		}
-		level_scaled = {
-			building_employment_laborers_add = 300
-			building_employment_clerks_add = 250
 		}
 	}
 }

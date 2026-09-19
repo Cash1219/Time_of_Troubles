@@ -1,5 +1,5 @@
-# Private estate gardens have a mandatory cultivation line and two optional
-# additions: ornamental fruit trees and private leisure activities.
+# Private estate gardens have a mandatory flower-cultivation line and one
+# optional fruit-tree line. Fruit trees trade part of the flower beds for fruit.
 pmg_botanical_garden_cultivation = {
 	texture = "gfx/interface/icons/production_method_icons/orchards.dds"
 	ai_selection = most_profitable
@@ -7,7 +7,7 @@ pmg_botanical_garden_cultivation = {
 	production_methods = {
 		pm_botanical_garden_nursery
 		pm_botanical_garden_bonsai
-		pm_botanical_garden_ikebana_greenhouse
+		pm_botanical_garden_glasshouse_flowers
 		pm_botanical_garden_rare_greenhouse
 	}
 }
@@ -21,18 +21,5 @@ pmg_botanical_garden_fruit_trees = {
 		pm_botanical_garden_courtyard_fruit_trees
 		pm_botanical_garden_grafted_fruit_trees
 		pm_botanical_garden_greenhouse_fruit_trees
-	}
-}
-
-pmg_botanical_garden_private_activities = {
-	texture = "gfx/interface/icons/production_method_icons/unused/public_parks.dds"
-	ai_selection = most_profitable
-
-	production_methods = {
-		pm_botanical_garden_private_activities_none
-		pm_botanical_garden_private_flower_viewing
-		pm_botanical_garden_bonsai_gathering
-		pm_botanical_garden_ikebana_study
-		pm_botanical_garden_garden_soiree
 	}
 }
