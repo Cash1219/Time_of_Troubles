@@ -1,0 +1,67 @@
+# The tavern has two alcohol menus, two food menus, a guest-service line,
+# and a separate equipment line. Equipment improves the whole establishment.
+pmg_izakaya_drinks = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	ai_selection = most_profitable
+	production_methods = {
+		pm_izakaya_drinks_null
+		pm_izakaya_kanzake
+		pm_izakaya_umeshu_wine
+		pm_izakaya_banquet_cocktails
+	}
+}
+
+pmg_izakaya_cellar = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	ai_selection = most_profitable
+	production_methods = {
+		pm_izakaya_cellar_null
+		pm_izakaya_fruit_wine
+		pm_izakaya_spiced_wine
+		pm_izakaya_tea_cocktail
+	}
+}
+
+pmg_izakaya_appetizers = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_profitable
+	production_methods = {
+		pm_izakaya_appetizers_null
+		pm_izakaya_pickles_dried_fish
+		pm_izakaya_braised_pork_oden
+		pm_izakaya_sashimi_roast_platter
+	}
+}
+
+pmg_izakaya_grill = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	ai_selection = most_profitable
+	production_methods = {
+		pm_izakaya_grill_null
+		pm_izakaya_charcoal_chicken_skewers
+		pm_izakaya_coal_grilled_beef
+		pm_izakaya_hearth_land_sea_grill
+	}
+}
+
+pmg_izakaya_hospitality = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_profitable
+	production_methods = {
+		pm_izakaya_hospitality_null
+		pm_izakaya_standing_counter
+		pm_izakaya_tatami_seating
+		pm_izakaya_banquet_room
+	}
+}
+
+pmg_izakaya_kitchen = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	ai_selection = most_profitable
+	production_methods = {
+		pm_izakaya_kitchen_null
+		pm_izakaya_cast_iron_stove
+		pm_izakaya_steam_kitchen
+		pm_izakaya_electric_kitchen
+	}
+}

@@ -1,0 +1,33 @@
+pmg_religious_center_assembly = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_profitable
+	production_methods = {
+		pm_religious_center_daily_assembly
+		pm_religious_center_public_instruction
+		pm_religious_center_city_celebration
+	}
+}
+
+# These are mutually exclusive expressions of a country's faith, not technology tiers.
+pmg_religious_center_rites = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_ownership.dds"
+	ai_selection = most_profitable
+	production_methods = {
+		pm_religious_center_common_rites
+		pm_religious_center_trinity_rite
+		pm_religious_center_starbeat_rite
+		pm_religious_center_kiseki_rite
+	}
+}
+
+# Technology improves access, comfort, and the circulation of ritual knowledge;
+# it does not replace the faith's underlying rite.
+pmg_religious_center_facilities = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	ai_selection = most_profitable
+	production_methods = {
+		pm_religious_center_traditional_facilities
+		pm_religious_center_printed_liturgy
+		pm_religious_center_electric_facilities
+	}
+}

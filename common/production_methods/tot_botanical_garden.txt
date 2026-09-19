@@ -1,218 +1,208 @@
-# Ornamental plant line
-pm_botanical_garden_ornamental_basic = {
+# Mandatory cultivation line
+pm_botanical_garden_nursery = {
 	texture = "gfx/interface/icons/production_method_icons/orchards.dds"
 	is_default = yes
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_wood_add = 5
-			goods_input_fertilizer_add = 5
-			goods_output_ornamental_plants_add = 15
-		}
-		level_scaled = {
-			building_employment_laborers_add = 1400
-			building_employment_shopkeepers_add = 200
-		}
-	}
-}
-
-pm_botanical_garden_ornamental_formal = {
-	texture = "gfx/interface/icons/production_method_icons/orchards.dds"
-	unlocking_technologies = { urban_planning }
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_wood_add = 5
-			goods_input_fertilizer_add = 10
-			goods_input_glass_add = 5
-			goods_output_ornamental_plants_add = 25
-		}
-		level_scaled = {
-			building_employment_laborers_add = 1300
-			building_employment_shopkeepers_add = 200
-			building_employment_clerks_add = 100
-		}
-	}
-}
-
-pm_botanical_garden_ornamental_greenhouse = {
-	texture = "gfx/interface/icons/production_method_icons/orchards.dds"
-	unlocking_technologies = { steel_frame_buildings }
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_wood_add = 5
-			goods_input_fertilizer_add = 10
-			goods_input_glass_add = 10
-			goods_input_tools_add = 5
-			goods_output_ornamental_plants_add = 35
-		}
-		level_scaled = {
-			building_employment_laborers_add = 1200
-			building_employment_shopkeepers_add = 200
-			building_employment_machinists_add = 100
-			building_employment_engineers_add = 100
-		}
-	}
-}
-
-pm_botanical_garden_ornamental_conservatory = {
-	texture = "gfx/interface/icons/production_method_icons/orchards.dds"
-	unlocking_technologies = { electrical_generation }
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_wood_add = 5
 			goods_input_fertilizer_add = 15
-			goods_input_glass_add = 10
-			goods_input_tools_add = 5
-			goods_input_electricity_add = 5
-			goods_output_ornamental_plants_add = 45
+			goods_output_ornamental_plants_add = 15
 		}
 		level_scaled = {
-			building_employment_laborers_add = 1100
-			building_employment_shopkeepers_add = 200
-			building_employment_machinists_add = 150
-			building_employment_engineers_add = 150
-		}
-	}
-	required_input_goods = electricity
-}
-
-# Garden experience line
-pm_botanical_garden_experience_basic = {
-	texture = "gfx/interface/icons/production_method_icons/unused/public_parks.dds"
-	is_default = yes
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_services_add = 10
-			goods_output_experience_add = 15
-		}
-		level_scaled = {
-			building_employment_laborers_add = 1400
-			building_employment_shopkeepers_add = 200
+			building_employment_laborers_add = 3000
+			building_employment_farmers_add = 1000
 		}
 	}
 }
 
-pm_botanical_garden_experience_formal = {
-	texture = "gfx/interface/icons/production_method_icons/unused/public_parks.dds"
-	unlocking_technologies = { urban_planning }
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_services_add = 15
-			goods_input_paper_add = 5
-			goods_output_experience_add = 25
-		}
-		level_scaled = {
-			building_employment_laborers_add = 1300
-			building_employment_shopkeepers_add = 200
-			building_employment_clerks_add = 100
-		}
-	}
-}
-
-pm_botanical_garden_experience_educational = {
-	texture = "gfx/interface/icons/production_method_icons/unused/public_parks.dds"
-	unlocking_technologies = { realism }
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_services_add = 20
-			goods_input_publications_add = 5
-			goods_output_experience_add = 35
-		}
-		level_scaled = {
-			building_employment_laborers_add = 1200
-			building_employment_shopkeepers_add = 200
-			building_employment_clerks_add = 100
-			building_employment_academics_add = 100
-		}
-	}
-}
-
-pm_botanical_garden_experience_research = {
-	texture = "gfx/interface/icons/production_method_icons/unused/public_parks.dds"
-	unlocking_technologies = { camera }
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_services_add = 25
-			goods_input_publications_add = 10
-			goods_input_electricity_add = 5
-			goods_output_experience_add = 45
-		}
-		level_scaled = {
-			building_employment_laborers_add = 1100
-			building_employment_shopkeepers_add = 200
-			building_employment_clerks_add = 150
-			building_employment_academics_add = 150
-		}
-	}
-	required_input_goods = electricity
-}
-
-# Fruit cultivation line
-pm_botanical_garden_fruit_basic = {
-	texture = "gfx/interface/icons/production_method_icons/orchards.dds"
-	is_default = yes
-	building_modifiers = {
-		workforce_scaled = {
-			goods_input_fertilizer_add = 10
-			goods_output_fruit_add = 25
-		}
-		level_scaled = {
-			building_employment_farmers_add = 1400
-			building_employment_laborers_add = 200
-		}
-	}
-}
-
-pm_botanical_garden_fruit_landscaped = {
+pm_botanical_garden_bonsai = {
 	texture = "gfx/interface/icons/production_method_icons/orchards.dds"
 	unlocking_technologies = { intensive_agriculture }
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_fertilizer_add = 15
-			goods_input_wood_add = 5
-			goods_output_fruit_add = 35
+			goods_input_wood_add = 10
+			goods_input_fertilizer_add = 20
+			goods_output_ornamental_plants_add = 25
 		}
 		level_scaled = {
-			building_employment_farmers_add = 1300
-			building_employment_laborers_add = 200
-			building_employment_clerks_add = 100
+			building_employment_laborers_add = 2750
+			building_employment_farmers_add = 1250
 		}
 	}
 }
 
-pm_botanical_garden_fruit_glasshouse = {
+pm_botanical_garden_ikebana_greenhouse = {
 	texture = "gfx/interface/icons/production_method_icons/orchards.dds"
 	unlocking_technologies = { steel_frame_buildings }
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_fertilizer_add = 15
-			goods_input_wood_add = 5
+			goods_input_wood_add = 10
+			goods_input_fertilizer_add = 25
 			goods_input_glass_add = 5
-			goods_output_fruit_add = 45
+			goods_output_ornamental_plants_add = 35
 		}
 		level_scaled = {
-			building_employment_farmers_add = 1200
-			building_employment_laborers_add = 300
-			building_employment_clerks_add = 100
+			building_employment_laborers_add = 2500
+			building_employment_farmers_add = 1250
+			building_employment_machinists_add = 250
 		}
 	}
 }
 
-pm_botanical_garden_fruit_controlled = {
+pm_botanical_garden_rare_greenhouse = {
 	texture = "gfx/interface/icons/production_method_icons/orchards.dds"
 	unlocking_technologies = { electrical_generation }
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_fertilizer_add = 15
+			goods_input_wood_add = 10
+			goods_input_fertilizer_add = 25
 			goods_input_glass_add = 10
+			goods_input_tools_add = 5
 			goods_input_electricity_add = 5
-			goods_output_fruit_add = 55
+			goods_output_ornamental_plants_add = 50
 		}
 		level_scaled = {
-			building_employment_farmers_add = 1100
-			building_employment_laborers_add = 300
-			building_employment_machinists_add = 100
-			building_employment_engineers_add = 100
+			building_employment_laborers_add = 1750
+			building_employment_farmers_add = 1250
+			building_employment_machinists_add = 500
+			building_employment_engineers_add = 500
 		}
 	}
 	required_input_goods = electricity
+}
+
+# Optional fruit-tree line
+pm_botanical_garden_fruit_trees_none = {
+	texture = "gfx/interface/icons/production_method_icons/orchards.dds"
+	is_default = yes
+	ai_weight = 0.1
+}
+
+pm_botanical_garden_courtyard_fruit_trees = {
+	texture = "gfx/interface/icons/production_method_icons/orchards.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_wood_add = 5
+			goods_input_fertilizer_add = 10
+			goods_output_fruit_add = 10
+			goods_output_ornamental_plants_add = 5
+		}
+		level_scaled = {
+			building_employment_laborers_add = 250
+			building_employment_farmers_add = 250
+		}
+	}
+}
+
+pm_botanical_garden_grafted_fruit_trees = {
+	texture = "gfx/interface/icons/production_method_icons/orchards.dds"
+	unlocking_technologies = { intensive_agriculture }
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_wood_add = 5
+			goods_input_fertilizer_add = 15
+			goods_input_tools_add = 5
+			goods_output_fruit_add = 20
+			goods_output_ornamental_plants_add = 10
+		}
+		level_scaled = {
+			building_employment_laborers_add = 250
+			building_employment_farmers_add = 250
+		}
+	}
+}
+
+pm_botanical_garden_greenhouse_fruit_trees = {
+	texture = "gfx/interface/icons/production_method_icons/orchards.dds"
+	unlocking_technologies = { steel_frame_buildings }
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_wood_add = 5
+			goods_input_fertilizer_add = 20
+			goods_input_glass_add = 5
+			goods_input_tools_add = 5
+			goods_output_fruit_add = 25
+			goods_output_ornamental_plants_add = 15
+		}
+		level_scaled = {
+			building_employment_laborers_add = 250
+			building_employment_farmers_add = 250
+		}
+	}
+}
+
+# Optional private leisure line. It represents household and invited guests,
+# never public admission.
+pm_botanical_garden_private_activities_none = {
+	texture = "gfx/interface/icons/production_method_icons/unused/public_parks.dds"
+	is_default = yes
+	ai_weight = 0.1
+}
+
+pm_botanical_garden_private_flower_viewing = {
+	texture = "gfx/interface/icons/production_method_icons/unused/public_parks.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_ornamental_plants_add = 5
+			goods_input_services_add = 5
+			goods_output_experience_add = 15
+		}
+		level_scaled = { building_employment_laborers_add = 250 }
+	}
+}
+
+pm_botanical_garden_bonsai_gathering = {
+	texture = "gfx/interface/icons/production_method_icons/unused/public_parks.dds"
+	unlocking_technologies = { urban_planning }
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_ornamental_plants_add = 10
+			goods_input_services_add = 10
+			goods_input_furniture_add = 5
+			goods_output_experience_add = 35
+		}
+		level_scaled = {
+			building_employment_laborers_add = 300
+			building_employment_clerks_add = 200
+		}
+	}
+}
+
+pm_botanical_garden_ikebana_study = {
+	texture = "gfx/interface/icons/production_method_icons/unused/public_parks.dds"
+	unlocking_technologies = { realism }
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_ornamental_plants_add = 15
+			goods_input_services_add = 15
+			goods_input_furniture_add = 5
+			goods_input_paper_add = 5
+			goods_output_experience_add = 60
+		}
+		level_scaled = {
+			building_employment_laborers_add = 300
+			building_employment_clerks_add = 200
+		}
+	}
+}
+
+pm_botanical_garden_garden_soiree = {
+	texture = "gfx/interface/icons/production_method_icons/unused/public_parks.dds"
+	unlocking_technologies = { camera }
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_ornamental_plants_add = 20
+			goods_input_services_add = 20
+			goods_input_furniture_add = 5
+			goods_input_paper_add = 5
+			goods_input_luxury_furniture_add = 5
+			goods_input_luxury_clothes_add = 5
+			goods_input_musical_instrument_add = 5
+			goods_output_experience_add = 110
+		}
+		level_scaled = {
+			building_employment_laborers_add = 300
+			building_employment_clerks_add = 250
+		}
+	}
 }

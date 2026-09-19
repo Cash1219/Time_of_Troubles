@@ -1,0 +1,24 @@
+# Experimental public religious building. Local clergy remain represented by urban centers;
+# this building represents a larger, player-built religious and community complex.
+building_religious_center = {
+	buildable = yes
+	expandable = yes
+	downsizeable = yes
+	building_group = bg_entertainment
+	icon = "gfx/interface/icons/building_icons/building_arts_academy.dds"
+	city_type = city
+	levels_per_mesh = 5
+
+	ai_nationalization_desire = -0.25
+
+	production_method_groups = {
+		pmg_religious_center_assembly
+		pmg_religious_center_rites
+		pmg_religious_center_facilities
+	}
+
+	required_construction = construction_cost_medium
+	ownership_type = self
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_light_industry.dds"
+	ai_value = { value = 150 }
+}
