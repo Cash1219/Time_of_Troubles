@@ -2,182 +2,49 @@ types tot_avmj_debt_activity_types
 {
 	type tot_avmj_debt_creditor_card = widget {
 		datacontext = "[Scope.GetCountry]"
-		size = { 280 180 }
+		size = { 280 150 }
 		using = entry_bg_fancy
 		vbox = {
 			margin = { 10 8 }
 			spacing = 3
 			hbox = {
 				spacing = 7
-				widget = {
-				size = { 74 74 }
-					character_portrait_medium = {
-						datacontext = "[Country.GetRuler]"
-						blockoverride "show_hat" {}
-						blockoverride "rank_icon" {}
-						blockoverride "additional_icons" {}
-					}
-				}
+				widget = { size = { 62 62 } character_portrait_medium = { datacontext = "[Country.GetRuler]" blockoverride "show_hat" {} blockoverride "rank_icon" {} } }
 				vbox = {
-					size = { 188 76 }
-					spacing = 2
+					size = { 188 62 }
 					textbox = { size = { 188 22 } text = "[Country.GetName]" using = fontsize_small align = left|nobaseline elide = right }
-					widget = { size = { 188 30 } small_flag_no_interact = { datacontext = "[Country.Self]" parentanchor = left|top } }
+					widget = { size = { 188 30 } small_flag_no_interact = { parentanchor = left|top } }
 				}
 			}
-			block "card_claim" { textbox = { size = { 260 21 } text = "TOT_AVMJ_DEBT_CREDITOR" using = fontsize_small align = left|nobaseline } }
-			block "card_privilege" { textbox = { size = { 260 19 } text = "TOT_AVMJ_DEBT_PRIVILEGE" using = fontsize_small align = left|nobaseline } }
-			block "card_progress" {
-				default_progressbar_horizontal = {
-					size = { 260 18 }
-					blockoverride "values" { min = 0 max = 5 }
-				}
-			}
+			block "card_claim" { textbox = { size = { 260 20 } text = "TOT_AVMJ_DEBT_CREDITOR" using = fontsize_small align = left|nobaseline } }
+			block "card_privilege" { textbox = { size = { 260 20 } text = "TOT_AVMJ_DEBT_PRIVILEGE" using = fontsize_small align = left|nobaseline } }
+			block "card_progress" { default_progressbar_horizontal = { size = { 260 18 } blockoverride "values" { min = 0 max = 5 } } }
 		}
 	}
 
 	type tot_avmj_debt_activity_page = widget {
-		size = { 1480 600 }
+		size = { 1480 790 }
 		ignoreinvisible = yes
 		vbox = {
 			spacing = 5
 			textbox = { size = { 1480 24 } text = "TOT_AVMJ_DEBT_ACTIVITY_TITLE" using = fontsize_large align = left|nobaseline }
 			textbox = { size = { 1480 28 } text = "TOT_AVMJ_DEBT_ACTIVITY_DESC" using = fontsize_small align = left|nobaseline multiline = yes }
-
 			widget = {
-				size = { 1480 190 }
+				size = { 1480 160 }
 				using = entry_bg_fancy
 				hbox = {
 					parentanchor = center
 					spacing = 8
-					fixedgridbox = {
-						size = { 280 180 }
-						datamodel = "[GetPlayer.MakeScope.GetList('tot_avmj_debtor')]"
-						addcolumn = 280
-						addrow = 180
-						datamodel_wrap = 1
-						item = { tot_avmj_debt_creditor_card = {
-							blockoverride "card_claim" { textbox = { size = { 260 21 } raw_text = "债务余额：[GetPlayer.MakeScope.Var('tot_avmj_debt_principal').GetValue|0]" using = fontsize_small align = left|nobaseline } }
-							blockoverride "card_privilege" { textbox = { size = { 260 19 } raw_text = "当前还款档位：[GetPlayer.MakeScope.Var('tot_avmj_repayment_level').GetValue|0]/5" using = fontsize_small align = left|nobaseline } }
-							blockoverride "card_progress" { default_progressbar_horizontal = { size = { 260 18 } blockoverride "values" { value = "[GetPlayer.MakeScope.Var('tot_avmj_repayment_level').GetValue]" min = 0 max = 5 } } }
-						} }
-					}
-					fixedgridbox = {
-						size = { 280 180 }
-						datamodel = "[GetPlayer.MakeScope.GetList('tot_avmj_htt_creditor')]"
-						addcolumn = 280
-						addrow = 180
-						datamodel_wrap = 1
-						item = { tot_avmj_debt_creditor_card = {
-							blockoverride "card_claim" { textbox = { size = { 260 21 } raw_text = "债权：[GetPlayer.MakeScope.Var('tot_avmj_htt_claim').GetValue|0]" using = fontsize_small align = left|nobaseline } }
-							blockoverride "card_privilege" { textbox = { size = { 260 19 } raw_text = "特权等级：[GetPlayer.MakeScope.Var('tot_avmj_htt_privilege_level').GetValue|0]/5" using = fontsize_small align = left|nobaseline } }
-							blockoverride "card_progress" { default_progressbar_horizontal = { size = { 260 18 } blockoverride "values" { value = "[GetPlayer.MakeScope.Var('tot_avmj_htt_privilege_level').GetValue]" min = 0 max = 5 } } }
-						} }
-					}
-					fixedgridbox = {
-						size = { 280 180 }
-						datamodel = "[GetPlayer.MakeScope.GetList('tot_avmj_gbdp_creditor')]"
-						addcolumn = 280
-						addrow = 180
-						datamodel_wrap = 1
-						item = { tot_avmj_debt_creditor_card = {
-							blockoverride "card_claim" { textbox = { size = { 260 21 } raw_text = "债权：[GetPlayer.MakeScope.Var('tot_avmj_gbdp_claim').GetValue|0]" using = fontsize_small align = left|nobaseline } }
-							blockoverride "card_privilege" { textbox = { size = { 260 19 } raw_text = "特权等级：[GetPlayer.MakeScope.Var('tot_avmj_gbdp_privilege_level').GetValue|0]/5" using = fontsize_small align = left|nobaseline } }
-							blockoverride "card_progress" { default_progressbar_horizontal = { size = { 260 18 } blockoverride "values" { value = "[GetPlayer.MakeScope.Var('tot_avmj_gbdp_privilege_level').GetValue]" min = 0 max = 5 } } }
-						} }
-					}
-					fixedgridbox = {
-						size = { 280 180 }
-						visible = "[GetScriptedGui('tot_avmj_mygo_claim_active').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-						addcolumn = 280
-						addrow = 180
-						datamodel = "[GetPlayer.MakeScope.GetList('tot_avmj_mygo_creditor')]"
-						datamodel_wrap = 1
-						item = { tot_avmj_debt_creditor_card = {
-							blockoverride "card_claim" { textbox = { size = { 260 21 } raw_text = "债权：[GetPlayer.MakeScope.Var('tot_avmj_mygo_claim').GetValue|0]" using = fontsize_small align = left|nobaseline } }
-							blockoverride "card_privilege" { textbox = { size = { 260 19 } raw_text = "特权等级：[GetPlayer.MakeScope.Var('tot_avmj_mygo_privilege_level').GetValue|0]/5" using = fontsize_small align = left|nobaseline } }
-							blockoverride "card_progress" { default_progressbar_horizontal = { size = { 260 18 } blockoverride "values" { value = "[GetPlayer.MakeScope.Var('tot_avmj_mygo_privilege_level').GetValue]" min = 0 max = 5 } } }
-						} }
-					}
-					widget = {
-						size = { 280 180 }
-						visible = "[GetScriptedGui('tot_avmj_mygo_claim_transferred').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-						using = entry_bg_fancy
-						vbox = {
-							margin = { 10 10 }
-							spacing = 3
-							textbox = { size = { 260 22 } text = "TOT_AVMJ_DEBT_ALEPPO_CHAMBER" using = fontsize_small align = left|nobaseline }
-							textbox = { size = { 260 21 } raw_text = "债权：[GetPlayer.MakeScope.Var('tot_avmj_mygo_claim').GetValue|0]" using = fontsize_small align = left|nobaseline }
-							textbox = { size = { 260 19 } raw_text = "特权等级：[GetPlayer.MakeScope.Var('tot_avmj_mygo_privilege_level').GetValue|0]/5" using = fontsize_small align = left|nobaseline }
-							default_progressbar_horizontal = { size = { 260 18 } blockoverride "values" { value = "[GetPlayer.MakeScope.Var('tot_avmj_mygo_privilege_level').GetValue]" min = 0 max = 5 } }
-						}
-					}
-					fixedgridbox = {
-						size = { 280 180 }
-						datamodel = "[GetPlayer.MakeScope.GetList('tot_avmj_nrhd_creditor')]"
-						addcolumn = 280
-						addrow = 180
-						datamodel_wrap = 1
-						item = { tot_avmj_debt_creditor_card = {
-							blockoverride "card_claim" { textbox = { size = { 260 21 } raw_text = "债权：[GetPlayer.MakeScope.Var('tot_avmj_nrhd_claim').GetValue|0]" using = fontsize_small align = left|nobaseline } }
-							blockoverride "card_privilege" { textbox = { size = { 260 19 } raw_text = "特权等级：[GetPlayer.MakeScope.Var('tot_avmj_nrhd_privilege_level').GetValue|0]/5" using = fontsize_small align = left|nobaseline } }
-							blockoverride "card_progress" { default_progressbar_horizontal = { size = { 260 18 } blockoverride "values" { value = "[GetPlayer.MakeScope.Var('tot_avmj_nrhd_privilege_level').GetValue]" min = 0 max = 5 } } }
-						} }
-					}
+					fixedgridbox = { size = { 280 150 } datamodel = "[GetPlayer.MakeScope.GetList('tot_avmj_domestic_creditor')]" addcolumn = 280 addrow = 150 datamodel_wrap = 1 item = { tot_avmj_debt_creditor_card = { blockoverride "card_claim" { textbox = { size = { 260 20 } text = "TOT_AVMJ_DEBT_LOCAL_CREDITOR" using = fontsize_small align = left|nobaseline } } blockoverride "card_privilege" { textbox = { size = { 260 20 } raw_text = "特权等级：[GetPlayer.MakeScope.Var('tot_avmj_domestic_privilege_level').GetValue|0]/5" using = fontsize_small align = left|nobaseline } } blockoverride "card_progress" { default_progressbar_horizontal = { size = { 260 18 } blockoverride "values" { value = "[GetPlayer.MakeScope.Var('tot_avmj_domestic_privilege_level').GetValue]" min = 0 max = 5 } } } } } }
+					fixedgridbox = { size = { 280 150 } datamodel = "[GetPlayer.MakeScope.GetList('tot_avmj_htt_creditor')]" addcolumn = 280 addrow = 150 datamodel_wrap = 1 item = { tot_avmj_debt_creditor_card = { blockoverride "card_claim" { textbox = { size = { 260 20 } raw_text = "债权：[GetPlayer.MakeScope.Var('tot_avmj_htt_claim').GetValue|0]" using = fontsize_small align = left|nobaseline } } blockoverride "card_privilege" { textbox = { size = { 260 20 } raw_text = "特权等级：[GetPlayer.MakeScope.Var('tot_avmj_htt_privilege_level').GetValue|0]/5" using = fontsize_small align = left|nobaseline } } blockoverride "card_progress" { default_progressbar_horizontal = { size = { 260 18 } blockoverride "values" { value = "[GetPlayer.MakeScope.Var('tot_avmj_htt_privilege_level').GetValue]" min = 0 max = 5 } } } } } }
+					fixedgridbox = { size = { 280 150 } datamodel = "[GetPlayer.MakeScope.GetList('tot_avmj_gbdp_creditor')]" addcolumn = 280 addrow = 150 datamodel_wrap = 1 item = { tot_avmj_debt_creditor_card = { blockoverride "card_claim" { textbox = { size = { 260 20 } raw_text = "债权：[GetPlayer.MakeScope.Var('tot_avmj_gbdp_claim').GetValue|0]" using = fontsize_small align = left|nobaseline } } blockoverride "card_privilege" { textbox = { size = { 260 20 } raw_text = "特权等级：[GetPlayer.MakeScope.Var('tot_avmj_gbdp_privilege_level').GetValue|0]/5" using = fontsize_small align = left|nobaseline } } blockoverride "card_progress" { default_progressbar_horizontal = { size = { 260 18 } blockoverride "values" { value = "[GetPlayer.MakeScope.Var('tot_avmj_gbdp_privilege_level').GetValue]" min = 0 max = 5 } } } } } }
+					fixedgridbox = { size = { 280 150 } datamodel = "[GetPlayer.MakeScope.GetList('tot_avmj_mygo_creditor')]" addcolumn = 280 addrow = 150 datamodel_wrap = 1 item = { tot_avmj_debt_creditor_card = { blockoverride "card_claim" { textbox = { size = { 260 20 } raw_text = "债权：[GetPlayer.MakeScope.Var('tot_avmj_mygo_claim').GetValue|0]" using = fontsize_small align = left|nobaseline } } blockoverride "card_privilege" { textbox = { size = { 260 20 } raw_text = "特权等级：[GetPlayer.MakeScope.Var('tot_avmj_mygo_privilege_level').GetValue|0]/5" using = fontsize_small align = left|nobaseline } } blockoverride "card_progress" { default_progressbar_horizontal = { size = { 260 18 } blockoverride "values" { value = "[GetPlayer.MakeScope.Var('tot_avmj_mygo_privilege_level').GetValue]" min = 0 max = 5 } } } } } }
+					fixedgridbox = { size = { 280 150 } datamodel = "[GetPlayer.MakeScope.GetList('tot_avmj_nrhd_creditor')]" addcolumn = 280 addrow = 150 datamodel_wrap = 1 item = { tot_avmj_debt_creditor_card = { blockoverride "card_claim" { textbox = { size = { 260 20 } raw_text = "债权：[GetPlayer.MakeScope.Var('tot_avmj_nrhd_claim').GetValue|0]" using = fontsize_small align = left|nobaseline } } blockoverride "card_privilege" { textbox = { size = { 260 20 } raw_text = "特权等级：[GetPlayer.MakeScope.Var('tot_avmj_nrhd_privilege_level').GetValue|0]/5" using = fontsize_small align = left|nobaseline } } blockoverride "card_progress" { default_progressbar_horizontal = { size = { 260 18 } blockoverride "values" { value = "[GetPlayer.MakeScope.Var('tot_avmj_nrhd_privilege_level').GetValue]" min = 0 max = 5 } } } } } }
 				}
 			}
-
-			widget = {
-				size = { 1480 150 }
-				using = entry_bg_fancy
-				vbox = {
-					margin = { 12 7 }
-					spacing = 3
-					textbox = { size = { 1450 20 } text = "TOT_AVMJ_DEBT_LEDGER" using = fontsize_medium align = left|nobaseline }
-					hbox = {
-						spacing = 14
-						textbox = { size = { 350 18 } raw_text = "剩余本金：[GetPlayer.MakeScope.Var('tot_avmj_debt_principal').GetValue|0]" using = fontsize_small align = left|nobaseline }
-						textbox = { size = { 350 18 } raw_text = "累计应付利息：[GetPlayer.MakeScope.Var('tot_avmj_interest_due').GetValue|0]" using = fontsize_small align = left|nobaseline }
-						textbox = { size = { 350 18 } raw_text = "债务资金池：[GetPlayer.MakeScope.Var('tot_avmj_debt_fund').GetValue|0]" using = fontsize_small align = left|nobaseline }
-						textbox = { size = { 350 18 } raw_text = "距离股东大会：[GetPlayer.MakeScope.Var('tot_avmj_months_until_assembly').GetValue|0]个月" using = fontsize_small align = left|nobaseline }
-					}
-					hbox = {
-						spacing = 14
-						textbox = { size = { 280 18 } raw_text = "国内债权：[GetPlayer.MakeScope.Var('tot_avmj_domestic_claim').GetValue|0]" using = fontsize_small align = left|nobaseline }
-						textbox = { size = { 280 18 } raw_text = "HTT债权：[GetPlayer.MakeScope.Var('tot_avmj_htt_claim').GetValue|0]" using = fontsize_small align = left|nobaseline }
-						textbox = { size = { 280 18 } raw_text = "GBDP债权：[GetPlayer.MakeScope.Var('tot_avmj_gbdp_claim').GetValue|0]" using = fontsize_small align = left|nobaseline }
-						textbox = { size = { 280 18 } raw_text = "MYG债权：[GetPlayer.MakeScope.Var('tot_avmj_mygo_claim').GetValue|0]" using = fontsize_small align = left|nobaseline }
-						textbox = { size = { 280 18 } raw_text = "NRHD债权：[GetPlayer.MakeScope.Var('tot_avmj_nrhd_claim').GetValue|0]" using = fontsize_small align = left|nobaseline }
-					}
-					hbox = {
-						spacing = 14
-						textbox = { size = { 280 18 } raw_text = "上次支付利息：[GetPlayer.MakeScope.Var('tot_avmj_last_assembly_interest').GetValue|0]" using = fontsize_small align = left|nobaseline }
-						textbox = { size = { 280 18 } raw_text = "上次偿还本金：[GetPlayer.MakeScope.Var('tot_avmj_last_assembly_principal').GetValue|0]" using = fontsize_small align = left|nobaseline }
-						textbox = { size = { 280 18 } raw_text = "上次短缺：[GetPlayer.MakeScope.Var('tot_avmj_last_assembly_shortfall').GetValue|0]" using = fontsize_small align = left|nobaseline }
-						textbox = { size = { 280 18 } raw_text = "上月实际入池：[GetPlayer.MakeScope.Var('tot_avmj_last_monthly_repayment').GetValue|0]" using = fontsize_small align = left|nobaseline }
-						textbox = { size = { 280 18 } raw_text = "当前档位：[GetPlayer.MakeScope.Var('tot_avmj_repayment_level').GetValue|0]/5" using = fontsize_small align = left|nobaseline }
-					}
-				}
-			}
-
-			widget = {
-				size = { 1480 145 }
-				visible = "[GetScriptedGui('tot_avmj_debt_pay_low').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-				using = entry_bg_fancy
-				vbox = {
-					margin = { 12 7 }
-					spacing = 3
-					textbox = { size = { 1450 20 } text = "TOT_AVMJ_DEBT_REPAYMENT_LEVEL" using = fontsize_medium align = left|nobaseline }
-					hbox = {
-						spacing = 7
-						vbox = { size = { 280 100 } button_standard = { size = { 280 34 } text = "TOT_AVMJ_DEBT_PAY_LOW" enabled = "[GetScriptedGui('tot_avmj_debt_pay_low').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_avmj_debt_pay_low').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } textbox = { size = { 280 48 } text = "TOT_AVMJ_DEBT_PAY_LOW_EFFECT" using = fontsize_small align = center|nobaseline multiline = yes } }
-						vbox = { size = { 280 100 } button_standard = { size = { 280 34 } text = "TOT_AVMJ_DEBT_PAY_MODEST" enabled = "[GetScriptedGui('tot_avmj_debt_pay_modest').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_avmj_debt_pay_modest').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } textbox = { size = { 280 48 } text = "TOT_AVMJ_DEBT_PAY_MODEST_EFFECT" using = fontsize_small align = center|nobaseline multiline = yes } }
-						vbox = { size = { 280 100 } button_standard = { size = { 280 34 } text = "TOT_AVMJ_DEBT_PAY_STANDARD" enabled = "[GetScriptedGui('tot_avmj_debt_pay_standard').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_avmj_debt_pay_standard').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } textbox = { size = { 280 48 } text = "TOT_AVMJ_DEBT_PAY_STANDARD_EFFECT" using = fontsize_small align = center|nobaseline multiline = yes } }
-						vbox = { size = { 280 100 } button_standard = { size = { 280 34 } text = "TOT_AVMJ_DEBT_PAY_HIGH" enabled = "[GetScriptedGui('tot_avmj_debt_pay_high').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_avmj_debt_pay_high').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } textbox = { size = { 280 48 } text = "TOT_AVMJ_DEBT_PAY_HIGH_EFFECT" using = fontsize_small align = center|nobaseline multiline = yes } }
-						vbox = { size = { 280 100 } button_standard = { size = { 280 34 } text = "TOT_AVMJ_DEBT_PAY_MAXIMUM" enabled = "[GetScriptedGui('tot_avmj_debt_pay_maximum').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" onclick = "[GetScriptedGui('tot_avmj_debt_pay_maximum').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } textbox = { size = { 280 48 } text = "TOT_AVMJ_DEBT_PAY_MAXIMUM_EFFECT" using = fontsize_small align = center|nobaseline multiline = yes } }
-					}
-				}
-			}
+			widget = { size = { 1480 115 } using = entry_bg_fancy vbox = { margin = { 12 8 } spacing = 4 textbox = { size = { 1450 20 } text = "TOT_AVMJ_DEBT_LEDGER" using = fontsize_medium align = left|nobaseline } hbox = { spacing = 20 textbox = { size = { 340 20 } raw_text = "剩余本金：[GetPlayer.MakeScope.Var('tot_avmj_debt_principal').GetValue|0]" using = fontsize_small } textbox = { size = { 340 20 } raw_text = "累计应付利息：[GetPlayer.MakeScope.Var('tot_avmj_interest_due').GetValue|0]" using = fontsize_small } textbox = { size = { 340 20 } raw_text = "债务资金池：[GetPlayer.MakeScope.Var('tot_avmj_debt_fund').GetValue|0]" using = fontsize_small } textbox = { size = { 340 20 } raw_text = "下次自动结算：[GetPlayer.MakeScope.Var('tot_avmj_months_until_assembly').GetValue|0]个月" using = fontsize_small } } hbox = { spacing = 20 textbox = { size = { 340 20 } raw_text = "本期偿还本金：[GetPlayer.MakeScope.Var('tot_avmj_last_assembly_principal').GetValue|0]" using = fontsize_small } textbox = { size = { 340 20 } raw_text = "本期利息：[GetPlayer.MakeScope.Var('tot_avmj_last_assembly_interest').GetValue|0]" using = fontsize_small } textbox = { size = { 340 20 } raw_text = "利息短缺：[GetPlayer.MakeScope.Var('tot_avmj_last_assembly_shortfall').GetValue|0]" using = fontsize_small } } } }
+			widget = { size = { 1480 170 } using = entry_bg_fancy hbox = { margin = { 12 8 } spacing = 16 vbox = { size = { 710 150 } textbox = { size = { 700 22 } text = "TOT_AVMJ_DEBT_EVENT_HISTORY" using = fontsize_medium align = left|nobaseline } textbox = { size = { 700 50 } text = "TOT_AVMJ_DEBT_EVENT_NONE" using = fontsize_small multiline = yes visible = "[GetScriptedGui('tot_avmj_debt_rita_event_pending').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } textbox = { size = { 700 85 } text = "TOT_AVMJ_DEBT_EVENT_RITA_RENEWED" using = fontsize_small multiline = yes visible = "[GetScriptedGui('tot_avmj_debt_rita_event_renewed').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } textbox = { size = { 700 85 } text = "TOT_AVMJ_DEBT_EVENT_RITA_RETURNED" using = fontsize_small multiline = yes visible = "[GetScriptedGui('tot_avmj_debt_rita_event_returned').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } } vbox = { size = { 710 150 } textbox = { size = { 700 22 } text = "TOT_AVMJ_DEBT_EVENT_UPCOMING" using = fontsize_medium align = left|nobaseline } textbox = { size = { 700 85 } text = "TOT_AVMJ_DEBT_EVENT_RITA_CONTRACT" using = fontsize_small multiline = yes visible = "[GetScriptedGui('tot_avmj_debt_rita_event_pending').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } textbox = { size = { 700 85 } text = "TOT_AVMJ_DEBT_EVENT_RITA_STRUGGLE" using = fontsize_small multiline = yes visible = "[GetScriptedGui('tot_avmj_debt_rita_event_renewed').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } } } }
+			widget = { size = { 1480 135 } visible = "[GetScriptedGui('tot_avmj_debt_pay_low').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" using = entry_bg_fancy vbox = { margin = { 12 8 } spacing = 4 textbox = { size = { 1450 20 } text = "TOT_AVMJ_DEBT_REPAYMENT_LEVEL" using = fontsize_medium align = left|nobaseline } textbox = { size = { 1450 20 } text = "TOT_AVMJ_DEBT_CONTRIBUTIONS_DESC" using = fontsize_small align = left|nobaseline } hbox = { spacing = 10 button_standard = { size = { 300 35 } text = "TOT_AVMJ_DEBT_PAY_LOW" onclick = "[GetScriptedGui('tot_avmj_debt_pay_low').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } button_standard = { size = { 300 35 } text = "TOT_AVMJ_DEBT_PAY_STANDARD" onclick = "[GetScriptedGui('tot_avmj_debt_pay_standard').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } button_standard = { size = { 300 35 } text = "TOT_AVMJ_DEBT_PAY_HIGH" onclick = "[GetScriptedGui('tot_avmj_debt_pay_high').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" } } } }
 		}
 	}
 }

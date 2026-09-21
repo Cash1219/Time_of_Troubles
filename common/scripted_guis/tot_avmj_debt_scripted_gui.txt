@@ -62,3 +62,23 @@ tot_avmj_debt_pay_maximum = {
 	is_shown = { c:AVMJ ?= this has_journal_entry = je_tot_avmj_debt_crisis }
 	is_valid = { is_player = yes var:tot_avmj_debt_principal > 0 }
 }
+
+
+tot_avmj_debt_rita_event_pending = {
+	scope = country
+	effect = {}
+	is_shown = { var:tot_avmj_event_rita_leadership_stage = 0 }
+	is_valid = { always = yes }
+}
+tot_avmj_debt_rita_event_renewed = {
+	scope = country
+	effect = {}
+	is_shown = { var:tot_avmj_event_rita_leadership_stage = 1 }
+	is_valid = { always = yes }
+}
+tot_avmj_debt_rita_event_returned = {
+	scope = country
+	effect = {}
+	is_shown = { var:tot_avmj_event_rita_leadership_stage = 2 }
+	is_valid = { always = yes }
+}

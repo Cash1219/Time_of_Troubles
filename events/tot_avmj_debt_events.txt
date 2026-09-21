@@ -1,82 +1,59 @@
 ﻿namespace = tot_avmj_debt
 
-tot_avmj_debt.1 = {
+# First debt-linked flavor event: South Italy must decide whether to retain
+# AVMJ's mercenary company after the three-year contract expires.
+tot_avmj_debt.20 = {
 	type = country_event
-	title = tot_avmj_debt.1.t
-	desc = tot_avmj_debt.1.d
-	trigger = { c:AVMJ ?= this has_journal_entry = je_tot_avmj_debt_crisis var:tot_avmj_debt_stage = 3 }
-	option = { name = tot_avmj_debt.1.a }
-}
-
-tot_avmj_debt.2 = {
-	type = country_event
-	title = tot_avmj_debt.2.t
-	desc = tot_avmj_debt.2.d
-	trigger = { c:AVMJ ?= this has_journal_entry = je_tot_avmj_debt_crisis var:tot_avmj_debt_stage = 2 }
-	option = { name = tot_avmj_debt.2.a }
-}
-
-tot_avmj_debt.3 = {
-	type = country_event
-	title = tot_avmj_debt.3.t
-	desc = tot_avmj_debt.3.d
-	trigger = { c:AVMJ ?= this has_journal_entry = je_tot_avmj_debt_crisis var:tot_avmj_debt_stage = 1 }
-	option = { name = tot_avmj_debt.3.a }
-}
-
-tot_avmj_debt.4 = {
-	type = country_event
-	title = tot_avmj_debt.4.t
-	desc = tot_avmj_debt.4.d
-	trigger = { c:AVMJ ?= this var:tot_avmj_debt_stage = 0 var:tot_avmj_debt_principal <= 0 }
+	title = tot_avmj_debt.20.t
+	desc = tot_avmj_debt.20.d
+	trigger = {
+		c:RITA ?= this
+		var:tot_rita_mutsumi_contract_stage = 0
+		var:tot_rita_mutsumi_contract_months <= 0
+	}
 	option = {
-		name = tot_avmj_debt.4.htt
-		trigger = { c:HTT ?= { is_country_alive = yes } has_variable = tot_avmj_htt_original_claim }
+		name = tot_avmj_debt.20.renew
+		trigger = { gold_reserves >= 50000 }
 		effect = {
-			set_variable = { name = tot_avmj_htt_integration_path value = 1 }
-			c:HTT = { annex = c:AVMJ }
+			add_treasury = -50000
+			set_variable = { name = tot_rita_mutsumi_contract_stage value = 1 }
+			add_modifier = { name = tot_rita_mutsumi_mercenary_contract years = 10 }
+			c:AVMJ ?= {
+				change_variable = { name = tot_avmj_htt_claim add = -100000 }
+				change_variable = { name = tot_avmj_gbdp_claim add = -50000 }
+				change_variable = { name = tot_avmj_debt_principal add = -150000 }
+				change_variable = { name = tot_avmj_debt_forgiven add = 150000 }
+				if = { limit = { var:tot_avmj_htt_privilege_level < 5 } change_variable = { name = tot_avmj_htt_privilege_level add = 1 } }
+				if = { limit = { var:tot_avmj_gbdp_privilege_level < 5 } change_variable = { name = tot_avmj_gbdp_privilege_level add = 1 } }
+				set_variable = { name = tot_avmj_event_rita_leadership_stage value = 1 }
+				tot_avmj_update_creditor_holders = yes
+			}
 		}
+		ai_chance = { base = 70 }
 	}
 	option = {
-		name = tot_avmj_debt.4.a
-	}
-}
-
-# The shareholder assembly distributes the accumulated debt fund.
-tot_avmj_debt.8 = {
-	type = country_event
-	title = tot_avmj_debt.8.t
-	desc = tot_avmj_debt.8.d
-	trigger = { c:AVMJ ?= this has_journal_entry = je_tot_avmj_debt_crisis var:tot_avmj_assembly_open = 1 }
-	option = {
-		name = tot_avmj_debt.8.resolve
+		name = tot_avmj_debt.20.return
 		effect = {
-			tot_avmj_settle_assembly = yes
-			tot_avmj_finish_assembly = yes
-			if = { limit = { var:tot_avmj_last_assembly_shortfall > 0 } trigger_event = { id = tot_avmj_debt.10 days = 0 popup = yes } }
+			set_variable = { name = tot_rita_mutsumi_contract_stage value = 2 }
+			if = { limit = { exists = scope:tot_rita_mutsumi } scope:tot_rita_mutsumi = { kill_character = yes } }
+			c:AVMJ ?= {
+				set_variable = { name = tot_avmj_event_rita_leadership_stage value = 2 }
+				create_character = {
+					historical = yes
+					first_name = "Wakaba"
+					last_name = "Mutsumi"
+					birth_date = 1816.1.1
+					female = yes
+					ig_leader = yes
+					is_general = yes
+					ideology = ideology_hometown_support_leader
+					interest_group = ig_rural_folk
+					religion = rel:starbeat
+					culture = cu:bandori
+					traits = { tot_Bang_Mutsumi_trait tot_group_sheet_008_trait tot_group_sheet_030_trait tot_group_sheet_052_trait }
+				}
+			}
 		}
-	}
-}
-
-tot_avmj_debt.10 = {
-	type = country_event
-	title = tot_avmj_debt.10.t
-	desc = tot_avmj_debt.10.d
-	trigger = { c:AVMJ ?= this has_journal_entry = je_tot_avmj_debt_crisis var:tot_avmj_last_assembly_shortfall > 0 }
-	option = {
-		name = tot_avmj_debt.10.concede
-		 effect = {
-			set_variable = { name = tot_avmj_creditor_pressure value = 0 }
-			tot_avmj_raise_creditor_privileges = yes
-			add_modifier = { name = tot_avmj_creditor_concession months = 48 }
-		}
-	}
-	option = {
-		name = tot_avmj_debt.10.resist
-		effect = {
-			set_variable = { name = tot_avmj_creditor_pressure value = 2 }
-			tot_avmj_raise_creditor_privileges = yes
-			add_modifier = { name = tot_avmj_creditor_default months = 48 }
-		}
+		ai_chance = { base = 30 }
 	}
 }

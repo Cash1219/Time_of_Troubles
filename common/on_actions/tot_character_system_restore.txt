@@ -99,6 +99,7 @@ on_game_started_after_lobby = {
 
 	on_monthly_pulse_country = {
 	effect = {
+		if = { limit = { this = c:RITA } tot_rita_mutsumi_leadership_monthly_process = yes }
 		# Debt repayment must run in the country root scope, once per month.
 		if = {
 			limit = { c:AVMJ ?= this has_journal_entry = je_tot_avmj_debt_crisis }

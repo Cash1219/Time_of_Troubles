@@ -59,6 +59,7 @@ tot_avmj_setup_debt = {
 		set_variable = { name = tot_avmj_mygo_principal_paid value = 0 }
 		set_variable = { name = tot_avmj_nrhd_principal_paid value = 0 }
 		set_variable = { name = tot_avmj_controlled_by value = 1 }
+		set_variable = { name = tot_avmj_domestic_privilege_level value = 0 }
 		set_variable = { name = tot_avmj_htt_privilege_level value = 0 }
 		set_variable = { name = tot_avmj_gbdp_privilege_level value = 0 }
 		set_variable = { name = tot_avmj_mygo_privilege_level value = 0 }
@@ -84,6 +85,8 @@ tot_avmj_setup_debt = {
 	if = { limit = { NOT = { has_variable = tot_avmj_last_assembly_shortfall } } set_variable = { name = tot_avmj_last_assembly_shortfall value = 0 } }
 	if = { limit = { NOT = { has_variable = tot_avmj_creditor_pressure } } set_variable = { name = tot_avmj_creditor_pressure value = 0 } }
 	if = { limit = { NOT = { has_variable = tot_avmj_mygo_claim_holder } } set_variable = { name = tot_avmj_mygo_claim_holder value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_avmj_domestic_privilege_level } } set_variable = { name = tot_avmj_domestic_privilege_level value = 0 } }
+	if = { limit = { NOT = { has_variable = tot_avmj_event_rita_leadership_stage } } set_variable = { name = tot_avmj_event_rita_leadership_stage value = 0 } }
 	if = { limit = { NOT = { has_variable = tot_avmj_htt_claim_holder } } set_variable = { name = tot_avmj_htt_claim_holder value = 0 } }
 	if = { limit = { NOT = { has_variable = tot_avmj_gbdp_claim_holder } } set_variable = { name = tot_avmj_gbdp_claim_holder value = 0 } }
 	if = { limit = { NOT = { has_variable = tot_avmj_nrhd_claim_holder } } set_variable = { name = tot_avmj_nrhd_claim_holder value = 0 } }
@@ -132,6 +135,7 @@ tot_avmj_refresh_creditor_gui_lists = {
 	if = { limit = { has_variable_list = tot_avmj_mygo_creditor } clear_variable_list = tot_avmj_mygo_creditor }
 	if = { limit = { has_variable_list = tot_avmj_nrhd_creditor } clear_variable_list = tot_avmj_nrhd_creditor }
 	if = { limit = { has_variable_list = tot_avmj_debtor } clear_variable_list = tot_avmj_debtor }
+	if = { limit = { has_variable_list = tot_avmj_domestic_creditor } clear_variable_list = tot_avmj_domestic_creditor }
 	c:AVMJ = { save_temporary_scope_as = tot_avmj_gui_debtor }
 	c:HTT = { save_temporary_scope_as = tot_avmj_gui_htt }
 	c:GBDP = { save_temporary_scope_as = tot_avmj_gui_gbdp }
@@ -142,6 +146,7 @@ tot_avmj_refresh_creditor_gui_lists = {
 	add_to_variable_list = { name = tot_avmj_mygo_creditor target = scope:tot_avmj_gui_mygo }
 	add_to_variable_list = { name = tot_avmj_nrhd_creditor target = scope:tot_avmj_gui_nrhd }
 	add_to_variable_list = { name = tot_avmj_debtor target = scope:tot_avmj_gui_debtor }
+	add_to_variable_list = { name = tot_avmj_domestic_creditor target = scope:tot_avmj_gui_debtor }
 	c:HTT = { tot_avmj_copy_gui_state_to_creditor = yes }
 	c:GBDP = { tot_avmj_copy_gui_state_to_creditor = yes }
 	c:MYG = { tot_avmj_copy_gui_state_to_creditor = yes }
@@ -163,6 +168,8 @@ tot_avmj_copy_gui_state_to_creditor = {
 	set_variable = { name = tot_avmj_last_assembly_shortfall value = scope:tot_avmj_gui_debt_source.var:tot_avmj_last_assembly_shortfall }
 	set_variable = { name = tot_avmj_last_monthly_repayment value = scope:tot_avmj_gui_debt_source.var:tot_avmj_last_monthly_repayment }
 	set_variable = { name = tot_avmj_repayment_level value = scope:tot_avmj_gui_debt_source.var:tot_avmj_repayment_level }
+	set_variable = { name = tot_avmj_domestic_privilege_level value = scope:tot_avmj_gui_debt_source.var:tot_avmj_domestic_privilege_level }
+	set_variable = { name = tot_avmj_event_rita_leadership_stage value = scope:tot_avmj_gui_debt_source.var:tot_avmj_event_rita_leadership_stage }
 	set_variable = { name = tot_avmj_htt_privilege_level value = scope:tot_avmj_gui_debt_source.var:tot_avmj_htt_privilege_level }
 	set_variable = { name = tot_avmj_gbdp_privilege_level value = scope:tot_avmj_gui_debt_source.var:tot_avmj_gbdp_privilege_level }
 	set_variable = { name = tot_avmj_mygo_privilege_level value = scope:tot_avmj_gui_debt_source.var:tot_avmj_mygo_privilege_level }
@@ -172,11 +179,13 @@ tot_avmj_copy_gui_state_to_creditor = {
 	if = { limit = { has_variable_list = tot_avmj_gbdp_creditor } clear_variable_list = tot_avmj_gbdp_creditor }
 	if = { limit = { has_variable_list = tot_avmj_mygo_creditor } clear_variable_list = tot_avmj_mygo_creditor }
 	if = { limit = { has_variable_list = tot_avmj_nrhd_creditor } clear_variable_list = tot_avmj_nrhd_creditor }
+	if = { limit = { has_variable_list = tot_avmj_domestic_creditor } clear_variable_list = tot_avmj_domestic_creditor }
 	add_to_variable_list = { name = tot_avmj_htt_creditor target = scope:tot_avmj_gui_htt }
 	add_to_variable_list = { name = tot_avmj_gbdp_creditor target = scope:tot_avmj_gui_gbdp }
 	add_to_variable_list = { name = tot_avmj_mygo_creditor target = scope:tot_avmj_gui_mygo }
 	add_to_variable_list = { name = tot_avmj_nrhd_creditor target = scope:tot_avmj_gui_nrhd }
 	add_to_variable_list = { name = tot_avmj_debtor target = scope:tot_avmj_gui_debtor }
+	add_to_variable_list = { name = tot_avmj_domestic_creditor target = scope:tot_avmj_gui_debtor }
 }
 
 tot_avmj_distribute_interest = {
@@ -282,18 +291,6 @@ tot_avmj_collect_monthly_repayment = {
 	if = { limit = { var:tot_avmj_repayment_level = 5 } add_modifier = { name = tot_avmj_debt_maximum_repayment months = 2 } }
 }
 
-tot_avmj_raise_creditor_privileges = {
-	if = { limit = { var:tot_avmj_htt_claim > 0 var:tot_avmj_htt_privilege_level < 5 } change_variable = { name = tot_avmj_htt_privilege_level add = 1 } }
-	if = { limit = { var:tot_avmj_gbdp_claim > 0 var:tot_avmj_gbdp_privilege_level < 5 } change_variable = { name = tot_avmj_gbdp_privilege_level add = 1 } }
-	if = { limit = { var:tot_avmj_mygo_claim > 0 var:tot_avmj_mygo_privilege_level < 5 } change_variable = { name = tot_avmj_mygo_privilege_level add = 1 } }
-	if = { limit = { var:tot_avmj_nrhd_claim > 0 var:tot_avmj_nrhd_privilege_level < 5 } change_variable = { name = tot_avmj_nrhd_privilege_level add = 1 } }
-	tot_avmj_apply_creditor_privileges = yes
-}
-
-# Privilege levels are cumulative and are represented by real diplomatic
-# treaties. The creditor is the source of each directed article; AVMJ is the
-# target. Existing articles are left alone so this effect is safe on every
-# monthly pulse and also repairs a treaty after it expires.
 tot_avmj_apply_creditor_privileges = {
 	save_scope_as = tot_avmj_debt_owner
 	if = {
@@ -439,25 +436,23 @@ tot_avmj_finish_assembly = {
 }
 
 tot_avmj_update_debt_stage = {
+	# Debt changes are recorded in the activity page. Flavor events, rather than
+	# generic remaining-balance popups, decide the political consequences.
+	if = { limit = { var:tot_avmj_debt_principal <= 0 } set_variable = { name = tot_avmj_debt_stage value = 0 } }
+}
+
+# South Italy's mercenary contract is the first debt-linked flavor line.
+tot_rita_mutsumi_leadership_monthly_process = {
 	if = {
-		limit = { var:tot_avmj_debt_principal <= 0 var:tot_avmj_debt_stage > 0 }
-		set_variable = { name = tot_avmj_debt_stage value = 0 }
-		trigger_event = { id = tot_avmj_debt.4 days = 0 popup = yes }
+		limit = { NOT = { has_variable = tot_rita_mutsumi_contract_months } }
+		set_variable = { name = tot_rita_mutsumi_contract_months value = 36 }
+		set_variable = { name = tot_rita_mutsumi_contract_stage value = 0 }
+		c:AVMJ ?= { set_variable = { name = tot_avmj_event_rita_leadership_stage value = 0 } }
 	}
-	else_if = {
-		limit = { var:tot_avmj_debt_principal <= 420000 var:tot_avmj_debt_stage > 1 }
-		set_variable = { name = tot_avmj_debt_stage value = 1 }
-		trigger_event = { id = tot_avmj_debt.3 days = 0 popup = yes }
-	}
-	else_if = {
-		limit = { var:tot_avmj_debt_principal <= 840000 var:tot_avmj_debt_stage > 2 }
-		set_variable = { name = tot_avmj_debt_stage value = 2 }
-		trigger_event = { id = tot_avmj_debt.2 days = 0 popup = yes }
-	}
-	else_if = {
-		limit = { var:tot_avmj_debt_principal <= 1260000 var:tot_avmj_debt_stage > 3 }
-		set_variable = { name = tot_avmj_debt_stage value = 3 }
-		trigger_event = { id = tot_avmj_debt.1 days = 0 popup = yes }
+	if = {
+		limit = { var:tot_rita_mutsumi_contract_stage = 0 var:tot_rita_mutsumi_contract_months > 0 }
+		change_variable = { name = tot_rita_mutsumi_contract_months add = -1 }
+		if = { limit = { var:tot_rita_mutsumi_contract_months <= 0 } trigger_event = { id = tot_avmj_debt.20 days = 0 popup = yes } }
 	}
 }
 
@@ -474,7 +469,8 @@ tot_avmj_debt_monthly_process = {
 		if = {
 			limit = { var:tot_avmj_debt_months_active >= 48 var:tot_avmj_assembly_open = 0 }
 			set_variable = { name = tot_avmj_assembly_open value = 1 }
-			trigger_event = { id = tot_avmj_debt.8 days = 0 popup = yes }
+			tot_avmj_settle_assembly = yes
+			tot_avmj_finish_assembly = yes
 		}
 	}
 	tot_avmj_refresh_creditor_gui_lists = yes

@@ -6,7 +6,6 @@ CHARACTERS = {
 			last_name = "Nero"
 			birth_date = 1816.1.1 
 			female = yes
-			ig_leader = yes
 			ruler = yes
 			ideology = ideology_royalist
 			interest_group = ig_landowners
@@ -28,8 +27,8 @@ CHARACTERS = {
 			birth_date = 1816.1.1 
 			female = yes
 			ig_leader = yes
+			interest_group = ig_intelligentsia
 			ideology = ideology_nihilist
-			interest_group = ig_industrialists
 			#religion = rel:catholic
 			culture = cu:south_italian
 			traits = {
@@ -46,8 +45,6 @@ CHARACTERS = {
 			last_name = "Suzuki"
 			birth_date = 1816.1.1 
 			female = yes
-			heir = yes
-			ig_leader = yes
 			ideology = ideology_jingoist_leader
 			interest_group = ig_armed_forces
 			#religion = rel:catholic
@@ -67,8 +64,8 @@ CHARACTERS = {
 			female = yes
 			ig_leader = yes
 			is_general = yes
-			ideology = ideology_jingoist_leader
 			interest_group = ig_armed_forces
+			ideology = ideology_jingoist_leader
 			#religion = rel:catholic
 			culture = cu:north_italian
 			traits = {
@@ -84,7 +81,6 @@ CHARACTERS = {
 			last_name = "Pepperoni"
 			birth_date = 1816.1.1 
 			female = yes
-			ig_leader = yes
 			is_general = yes
 			ideology = ideology_land_reformer
 			interest_group = ig_rural_folk
@@ -103,7 +99,6 @@ CHARACTERS = {
 			last_name = "Carpaccio"
 			birth_date = 1816.1.1 
 			female = yes
-			ig_leader = yes
 			is_general = yes
 			ideology = ideology_land_reformer
 			interest_group = ig_petty_bourgeoisie
@@ -122,7 +117,6 @@ CHARACTERS = {
 			last_name = "Miyamizu"
 			birth_date = 1816.1.1 
 			female = yes
-			ig_leader = yes
 			ideology = ideology_theocrat
 			interest_group = ig_devout
 			#religion = rel:catholic
@@ -140,7 +134,6 @@ CHARACTERS = {
 			last_name = "Miki2"
 			birth_date = 1816.1.1 
 			female = yes
-			ig_leader = yes
 			ideology = ideology_theocrat
 			interest_group = ig_trade_unions
 			#religion = rel:catholic
@@ -158,7 +151,6 @@ CHARACTERS = {
 			last_name = "Sayaka2"
 			birth_date = 1816.1.1 
 			female = yes
-			ig_leader = yes
 			ideology = ideology_theocrat
 			interest_group = ig_intelligentsia
 			#religion = rel:catholic
@@ -173,9 +165,10 @@ CHARACTERS = {
 			first_name = "NaN"
 			last_name = "Diavolo"
 			birth_date = 1816.1.1
+			ig_leader = yes
 			is_general = yes
-			ideology = ideology_authoritarian
 			interest_group = ig_landowners
+			ideology = ideology_authoritarian
 			culture = cu:south_italian
 			traits = {
 				tot_JoJo_Diavolo_trait
@@ -205,9 +198,10 @@ CHARACTERS = {
 			first_name = "Bruno"
 			last_name = "Bucciarati"
 			birth_date = 1816.1.1
+			ig_leader = yes
 			is_general = yes
+			interest_group = ig_petty_bourgeoisie
 			ideology = ideology_corporatist_leader
-			interest_group = ig_industrialists
 			culture = cu:south_italian
 			traits = {
 				tot_JoJo_Bucciarati_trait
@@ -296,6 +290,28 @@ CHARACTERS = {
 				tot_group_sheet_091_trait
 				tot_group_sheet_048_trait
 }
+		}
+
+		# AVMJ contracted Wakaba Mutsumi and her mercenary company to South Italy.
+		create_character = {
+			historical = yes
+			first_name = "Wakaba"
+			last_name = "Mutsumi"
+			birth_date = 1816.1.1
+			female = yes
+			save_scope_as = tot_rita_mutsumi
+			ig_leader = yes
+			is_general = yes
+			interest_group = ig_rural_folk
+			ideology = ideology_hometown_support_leader
+			religion = rel:starbeat
+			culture = cu:bandori
+			traits = {
+				tot_Bang_Mutsumi_trait
+				tot_group_sheet_008_trait
+				tot_group_sheet_030_trait
+				tot_group_sheet_052_trait
+			}
 		}
 
 	}
