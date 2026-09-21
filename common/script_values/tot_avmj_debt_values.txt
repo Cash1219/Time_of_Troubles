@@ -1,5 +1,251 @@
-tot_avmj_monthly_interest_value = {
-	value = var:tot_avmj_monthly_interest_payment
-	round = yes
+# Five separate filled/unfilled segments for each creditor privilege track.
+
+tot_avmj_domestic_privilege_segment_1 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_domestic_privilege_level var:tot_avmj_domestic_privilege_level >= 1 }
+		add = 1
+	}
 	min = 0
+	max = 1
+}
+
+tot_avmj_domestic_privilege_segment_2 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_domestic_privilege_level var:tot_avmj_domestic_privilege_level >= 2 }
+		add = 1
+	}
+	min = 0
+	max = 1
+}
+
+tot_avmj_domestic_privilege_segment_3 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_domestic_privilege_level var:tot_avmj_domestic_privilege_level >= 3 }
+		add = 1
+	}
+	min = 0
+	max = 1
+}
+
+tot_avmj_domestic_privilege_segment_4 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_domestic_privilege_level var:tot_avmj_domestic_privilege_level >= 4 }
+		add = 1
+	}
+	min = 0
+	max = 1
+}
+
+tot_avmj_domestic_privilege_segment_5 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_domestic_privilege_level var:tot_avmj_domestic_privilege_level >= 5 }
+		add = 1
+	}
+	min = 0
+	max = 1
+}
+
+tot_avmj_htt_privilege_segment_1 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_htt_privilege_level var:tot_avmj_htt_privilege_level >= 1 }
+		add = 1
+	}
+	min = 0
+	max = 1
+}
+
+tot_avmj_htt_privilege_segment_2 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_htt_privilege_level var:tot_avmj_htt_privilege_level >= 2 }
+		add = 1
+	}
+	min = 0
+	max = 1
+}
+
+tot_avmj_htt_privilege_segment_3 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_htt_privilege_level var:tot_avmj_htt_privilege_level >= 3 }
+		add = 1
+	}
+	min = 0
+	max = 1
+}
+
+tot_avmj_htt_privilege_segment_4 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_htt_privilege_level var:tot_avmj_htt_privilege_level >= 4 }
+		add = 1
+	}
+	min = 0
+	max = 1
+}
+
+tot_avmj_htt_privilege_segment_5 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_htt_privilege_level var:tot_avmj_htt_privilege_level >= 5 }
+		add = 1
+	}
+	min = 0
+	max = 1
+}
+
+tot_avmj_gbdp_privilege_segment_1 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_gbdp_privilege_level var:tot_avmj_gbdp_privilege_level >= 1 }
+		add = 1
+	}
+	min = 0
+	max = 1
+}
+
+tot_avmj_gbdp_privilege_segment_2 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_gbdp_privilege_level var:tot_avmj_gbdp_privilege_level >= 2 }
+		add = 1
+	}
+	min = 0
+	max = 1
+}
+
+tot_avmj_gbdp_privilege_segment_3 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_gbdp_privilege_level var:tot_avmj_gbdp_privilege_level >= 3 }
+		add = 1
+	}
+	min = 0
+	max = 1
+}
+
+tot_avmj_gbdp_privilege_segment_4 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_gbdp_privilege_level var:tot_avmj_gbdp_privilege_level >= 4 }
+		add = 1
+	}
+	min = 0
+	max = 1
+}
+
+tot_avmj_gbdp_privilege_segment_5 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_gbdp_privilege_level var:tot_avmj_gbdp_privilege_level >= 5 }
+		add = 1
+	}
+	min = 0
+	max = 1
+}
+
+tot_avmj_mygo_privilege_segment_1 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_mygo_privilege_level var:tot_avmj_mygo_privilege_level >= 1 }
+		add = 1
+	}
+	min = 0
+	max = 1
+}
+
+tot_avmj_mygo_privilege_segment_2 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_mygo_privilege_level var:tot_avmj_mygo_privilege_level >= 2 }
+		add = 1
+	}
+	min = 0
+	max = 1
+}
+
+tot_avmj_mygo_privilege_segment_3 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_mygo_privilege_level var:tot_avmj_mygo_privilege_level >= 3 }
+		add = 1
+	}
+	min = 0
+	max = 1
+}
+
+tot_avmj_mygo_privilege_segment_4 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_mygo_privilege_level var:tot_avmj_mygo_privilege_level >= 4 }
+		add = 1
+	}
+	min = 0
+	max = 1
+}
+
+tot_avmj_mygo_privilege_segment_5 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_mygo_privilege_level var:tot_avmj_mygo_privilege_level >= 5 }
+		add = 1
+	}
+	min = 0
+	max = 1
+}
+
+tot_avmj_nrhd_privilege_segment_1 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_nrhd_privilege_level var:tot_avmj_nrhd_privilege_level >= 1 }
+		add = 1
+	}
+	min = 0
+	max = 1
+}
+
+tot_avmj_nrhd_privilege_segment_2 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_nrhd_privilege_level var:tot_avmj_nrhd_privilege_level >= 2 }
+		add = 1
+	}
+	min = 0
+	max = 1
+}
+
+tot_avmj_nrhd_privilege_segment_3 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_nrhd_privilege_level var:tot_avmj_nrhd_privilege_level >= 3 }
+		add = 1
+	}
+	min = 0
+	max = 1
+}
+
+tot_avmj_nrhd_privilege_segment_4 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_nrhd_privilege_level var:tot_avmj_nrhd_privilege_level >= 4 }
+		add = 1
+	}
+	min = 0
+	max = 1
+}
+
+tot_avmj_nrhd_privilege_segment_5 = {
+	value = 0
+	if = {
+		limit = { has_variable = tot_avmj_nrhd_privilege_level var:tot_avmj_nrhd_privilege_level >= 5 }
+		add = 1
+	}
+	min = 0
+	max = 1
 }

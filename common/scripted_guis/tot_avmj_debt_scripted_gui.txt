@@ -1,19 +1,9 @@
 tot_avmj_debt_activity_available = {
 	scope = country
 	effect = {}
-	is_shown = {
-		c:AVMJ ?= { has_journal_entry = je_tot_avmj_debt_crisis }
-		OR = {
-			c:AVMJ ?= this
-			AND = { var:tot_avmj_htt_claim > 0 c:HTT ?= this }
-			AND = { var:tot_avmj_gbdp_claim > 0 c:GBDP ?= this }
-			AND = { var:tot_avmj_mygo_claim > 0 var:tot_avmj_mygo_claim_holder = 0 c:MYG ?= this }
-			AND = { var:tot_avmj_nrhd_claim > 0 c:NRHD ?= this }
-		}
-	}
+	is_shown = { c:AVMJ ?= this has_journal_entry = je_tot_avmj_debt_crisis }
 	is_valid = { is_player = yes }
 }
-
 tot_avmj_mygo_claim_active = {
 	scope = country
 	effect = {}
