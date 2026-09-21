@@ -1,0 +1,10 @@
+l_simp_chinese:
+ je_group_tot_south_italian: "南意大利权斗"
+ je_tot_rita_power_struggle: "南意大利的多方权斗"
+ je_tot_rita_power_struggle_desc: "尼禄的王权、本地军队领袖安丘比的声望，以及若叶睦所率雇佣兵的存在，正在重新塑造南意大利的政治平衡。当前版本只记录三方势力的基础盘面；续约、还债与后续权斗事件将直接改动这些进度。"
+ je_tot_rita_power_struggle_status: "#bold 当前权力格局#!\n尼禄的王权支持：#variable [ROOT.GetCountry.MakeScope.Var('tot_rita_power_struggle_nero_progress').GetValue|0]#!/100\n安丘比的本地军队影响：#variable [ROOT.GetCountry.MakeScope.Var('tot_rita_power_struggle_anzai_progress').GetValue|0]#!/100\n若叶睦的雇佣兵影响：#variable [ROOT.GetCountry.MakeScope.Var('tot_rita_power_struggle_mutsumi_progress').GetValue|0]#!/100\n\n三方后续会分别受雇佣契约、债务处置、利益集团支持与专属事件影响。若有一方掌握压倒性的利益集团力量，权斗将进入决定性阶段。"
+ je_tot_rita_power_struggle_complete_tt: "南意大利的权斗尚未结算。"
+ je_tot_rita_nero_influence_bar_name: "尼禄的王权"
+ je_tot_rita_anzai_influence_bar_name: "安丘比的本地势力"
+ je_tot_rita_mutsumi_influence_bar_name: "若叶睦的雇佣兵势力"
+ je_tot_rita_power_struggle_bar_desc: "影响力：#v [JournalEntry.GetCurrentBarProgress(ScriptedProgressBar.Self)|%]#!（[JournalEntry.GetCurrentBarValue(ScriptedProgressBar.Self)|1]/100）"

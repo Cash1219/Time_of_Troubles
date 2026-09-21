@@ -26,8 +26,7 @@ CHARACTERS = {
 			last_name = "Leonardo"
 			birth_date = 1816.1.1 
 			female = yes
-			ig_leader = yes
-			interest_group = ig_intelligentsia
+			interest_group = ig_industrialists
 			ideology = ideology_nihilist
 			#religion = rel:catholic
 			culture = cu:south_italian
@@ -117,6 +116,7 @@ CHARACTERS = {
 			last_name = "Miyamizu"
 			birth_date = 1816.1.1 
 			female = yes
+			ig_leader = yes
 			ideology = ideology_theocrat
 			interest_group = ig_devout
 			#religion = rel:catholic
@@ -198,7 +198,6 @@ CHARACTERS = {
 			first_name = "Bruno"
 			last_name = "Bucciarati"
 			birth_date = 1816.1.1
-			ig_leader = yes
 			is_general = yes
 			interest_group = ig_petty_bourgeoisie
 			ideology = ideology_corporatist_leader
@@ -312,6 +311,56 @@ CHARACTERS = {
 				tot_group_sheet_030_trait
 				tot_group_sheet_052_trait
 			}
+		}
+
+		# Siracusan political figures. Portrait traits are intentionally omitted until
+		# their dedicated artwork is available.
+		create_character = {
+			historical = yes
+			first_name = "Lavinia"
+			last_name = "Falcone"
+			birth_date = 1816.1.1
+			female = yes
+			ig_leader = yes
+			interest_group = ig_intelligentsia
+			ideology = ideology_humanitarian
+			culture = cu:south_italian
+			traits = { }
+		}
+		create_character = {
+			historical = yes
+			first_name = "Cellinia"
+			last_name = "Texas"
+			birth_date = 1816.1.1
+			female = yes
+			ig_leader = yes
+			interest_group = ig_industrialists
+			ideology = ideology_market_liberal
+			culture = cu:south_italian
+			traits = { }
+		}
+		create_character = {
+			historical = yes
+			first_name = "Leontuzzo"
+			last_name = "Bellone"
+			birth_date = 1816.1.1
+			ig_leader = yes
+			interest_group = ig_petty_bourgeoisie
+			ideology = ideology_corporatist_leader
+			culture = cu:south_italian
+			traits = { }
+		}
+		create_character = {
+			historical = yes
+			first_name = "Lappland"
+			last_name = "Saluzzo"
+			birth_date = 1816.1.1
+			female = yes
+			ig_leader = yes
+			interest_group = ig_trade_unions
+			ideology = ideology_radical
+			culture = cu:south_italian
+			traits = { }
 		}
 
 	}

@@ -4,6 +4,10 @@
 		effect_starting_politics_conservative = yes
 		set_variable = { name = tot_rita_mutsumi_contract_months value = 36 }
 		set_variable = { name = tot_rita_mutsumi_contract_stage value = 0 }
+		set_variable = { name = tot_rita_power_struggle_nero_progress value = 40 }
+		set_variable = { name = tot_rita_power_struggle_anzai_progress value = 35 }
+		set_variable = { name = tot_rita_power_struggle_mutsumi_progress value = 25 }
+		add_journal_entry = { type = je_tot_rita_power_struggle }
 		c:AVMJ ?= { set_variable = { name = tot_avmj_event_rita_leadership_stage value = 0 } }
 	}
 }

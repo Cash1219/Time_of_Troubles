@@ -1,0 +1,57 @@
+je_tot_rita_power_struggle = {
+	icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+	group = je_group_tot_south_italian
+	should_be_pinned_by_default = yes
+	can_revolution_inherit = yes
+	weight = 10000
+
+	is_shown_in_lobby = { c:RITA ?= this }
+	should_be_involved = { c:RITA ?= this }
+	should_show_when_not_involved = { always = no }
+	is_shown_when_inactive = { c:RITA ?= this }
+	possible = { c:RITA ?= this }
+
+	immediate = {
+		if = { limit = { NOT = { has_variable = tot_rita_power_struggle_nero_progress } } set_variable = { name = tot_rita_power_struggle_nero_progress value = 40 } }
+		if = { limit = { NOT = { has_variable = tot_rita_power_struggle_anzai_progress } } set_variable = { name = tot_rita_power_struggle_anzai_progress value = 35 } }
+		if = { limit = { NOT = { has_variable = tot_rita_power_struggle_mutsumi_progress } } set_variable = { name = tot_rita_power_struggle_mutsumi_progress value = 25 } }
+		scope:journal_entry = {
+			set_bar_progress = { name = je_tot_rita_nero_influence_bar value = root.var:tot_rita_power_struggle_nero_progress }
+			set_bar_progress = { name = je_tot_rita_anzai_influence_bar value = root.var:tot_rita_power_struggle_anzai_progress }
+			set_bar_progress = { name = je_tot_rita_mutsumi_influence_bar value = root.var:tot_rita_power_struggle_mutsumi_progress }
+		}
+	}
+
+	scripted_progress_bar = je_tot_rita_nero_influence_bar
+	scripted_progress_bar = je_tot_rita_anzai_influence_bar
+	scripted_progress_bar = je_tot_rita_mutsumi_influence_bar
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_tot_rita_power_struggle_status
+				trigger = { always = yes }
+			}
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			scope:journal_entry = {
+				set_bar_progress = { name = je_tot_rita_nero_influence_bar value = root.var:tot_rita_power_struggle_nero_progress }
+				set_bar_progress = { name = je_tot_rita_anzai_influence_bar value = root.var:tot_rita_power_struggle_anzai_progress }
+				set_bar_progress = { name = je_tot_rita_mutsumi_influence_bar value = root.var:tot_rita_power_struggle_mutsumi_progress }
+			}
+		}
+	}
+
+	complete = {
+		custom_tooltip = {
+			text = je_tot_rita_power_struggle_complete_tt
+			always = no
+		}
+	}
+
+	goal_add_value = { add = 100 }
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
