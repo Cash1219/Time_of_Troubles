@@ -1,33 +1,30 @@
 types tot_avmj_debt_activity_types
 {
 	type tot_avmj_debt_creditor_card = widget {
-		datacontext = "[Scope.GetCountry]"
-		size = { 280 150 }
-		using = entry_bg_fancy
-		vbox = {
-			margin = { 10 8 }
-			spacing = 3
-			hbox = {
-				spacing = 7
-				widget = {
-					size = { 62 62 }
-					character_portrait_medium = {
-						datacontext = "[Country.GetRuler]"
-						blockoverride "show_hat" {}
-						blockoverride "rank_icon" {}
-					}
-				}
-				vbox = {
-					size = { 188 62 }
-					textbox = { size = { 188 22 } text = "[Country.GetName]" using = fontsize_small align = left|nobaseline elide = right }
-					widget = { size = { 188 30 } small_flag_no_interact = { parentanchor = left|top } }
-				}
+	datacontext = "[Scope.GetCountry]"
+	size = { 280 150 }
+	using = entry_bg_fancy
+	hbox = {
+		margin = { 10 8 }
+		spacing = 14
+		widget = {
+			size = { 62 62 }
+			character_portrait_medium = {
+				datacontext = "[Country.GetRuler]"
+				blockoverride "show_hat" {}
+				blockoverride "rank_icon" {}
 			}
-			block "card_claim" { textbox = { size = { 260 20 } text = "TOT_AVMJ_DEBT_CREDITOR" using = fontsize_small align = left|nobaseline } }
-			block "card_privilege" { textbox = { size = { 260 20 } text = "TOT_AVMJ_DEBT_PRIVILEGE" using = fontsize_small align = left|nobaseline } }
-			block "card_progress" { default_progressbar_horizontal = { size = { 260 18 } blockoverride "values" { min = 0 max = 5 } } }
+		}
+		vbox = {
+			size = { 184 122 }
+			spacing = 3
+			textbox = { size = { 184 22 } text = "[Country.GetName]" using = fontsize_small align = left|nobaseline elide = right }
+			widget = { size = { 184 28 } small_flag_no_interact = { parentanchor = left|top } }
+			block "card_claim" { textbox = { size = { 184 20 } text = "TOT_AVMJ_DEBT_CREDITOR" using = fontsize_small align = right|nobaseline } }
+			block "card_progress" { default_progressbar_horizontal = { size = { 184 20 } blockoverride "values" { min = 0 max = 5 } } }
 		}
 	}
+}
 
 	type tot_avmj_debt_activity_page = widget {
 		size = { 1480 580 }
@@ -50,75 +47,69 @@ types tot_avmj_debt_activity_types
 					datamodel_wrap = 1
 					item = {
 						tot_avmj_debt_creditor_card = {
-							blockoverride "card_claim" { textbox = { size = { 260 20 } raw_text = "本地债权：[GetPlayer.MakeScope.Var('tot_avmj_domestic_claim').GetValue|0]" using = fontsize_small align = left|nobaseline } }
-							blockoverride "card_privilege" { textbox = { size = { 260 20 } raw_text = "特权等级：[GetPlayer.MakeScope.Var('tot_avmj_domestic_privilege_level').GetValue|0]/5" using = fontsize_small align = left|nobaseline } }
+							blockoverride "card_claim" { textbox = { size = { 184 20 } raw_text = "本地债权：[GetPlayer.MakeScope.Var('tot_avmj_domestic_claim').GetValue|0]" using = fontsize_small align = right|nobaseline } }
 							blockoverride "card_progress" {
 flowcontainer = {
-	size = { 260 23 }
-	spacing = 3
+	size = { 184 20 }
+	spacing =  1
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_domestic_privilege_segment_1')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "1" using = fontsize_small align = center|nobaseline }
 		}
 	}
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_domestic_privilege_segment_2')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "2" using = fontsize_small align = center|nobaseline }
 		}
 	}
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_domestic_privilege_segment_3')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "3" using = fontsize_small align = center|nobaseline }
 		}
 	}
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_domestic_privilege_segment_4')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "4" using = fontsize_small align = center|nobaseline }
 		}
 	}
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_domestic_privilege_segment_5')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "5" using = fontsize_small align = center|nobaseline }
 		}
 	}
 }
@@ -134,75 +125,69 @@ flowcontainer = {
 					datamodel_wrap = 1
 					item = {
 						tot_avmj_debt_creditor_card = {
-							blockoverride "card_claim" { textbox = { size = { 260 20 } raw_text = "债权：[GetPlayer.MakeScope.Var('tot_avmj_htt_claim').GetValue|0]" using = fontsize_small align = left|nobaseline } }
-							blockoverride "card_privilege" { textbox = { size = { 260 20 } raw_text = "特权等级：[GetPlayer.MakeScope.Var('tot_avmj_htt_privilege_level').GetValue|0]/5" using = fontsize_small align = left|nobaseline } }
+							blockoverride "card_claim" { textbox = { size = { 184 20 } raw_text = "债权：[GetPlayer.MakeScope.Var('tot_avmj_htt_claim').GetValue|0]" using = fontsize_small align = right|nobaseline } }
 							blockoverride "card_progress" {
 flowcontainer = {
-	size = { 260 23 }
-	spacing = 3
+	size = { 184 20 }
+	spacing =  1
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_htt_privilege_segment_1')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "1" using = fontsize_small align = center|nobaseline }
 		}
 	}
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_htt_privilege_segment_2')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "2" using = fontsize_small align = center|nobaseline }
 		}
 	}
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_htt_privilege_segment_3')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "3" using = fontsize_small align = center|nobaseline }
 		}
 	}
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_htt_privilege_segment_4')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "4" using = fontsize_small align = center|nobaseline }
 		}
 	}
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_htt_privilege_segment_5')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "5" using = fontsize_small align = center|nobaseline }
 		}
 	}
 }
@@ -218,75 +203,69 @@ flowcontainer = {
 					datamodel_wrap = 1
 					item = {
 						tot_avmj_debt_creditor_card = {
-							blockoverride "card_claim" { textbox = { size = { 260 20 } raw_text = "债权：[GetPlayer.MakeScope.Var('tot_avmj_gbdp_claim').GetValue|0]" using = fontsize_small align = left|nobaseline } }
-							blockoverride "card_privilege" { textbox = { size = { 260 20 } raw_text = "特权等级：[GetPlayer.MakeScope.Var('tot_avmj_gbdp_privilege_level').GetValue|0]/5" using = fontsize_small align = left|nobaseline } }
+							blockoverride "card_claim" { textbox = { size = { 184 20 } raw_text = "债权：[GetPlayer.MakeScope.Var('tot_avmj_gbdp_claim').GetValue|0]" using = fontsize_small align = right|nobaseline } }
 							blockoverride "card_progress" {
 flowcontainer = {
-	size = { 260 23 }
-	spacing = 3
+	size = { 184 20 }
+	spacing =  1
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_gbdp_privilege_segment_1')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "1" using = fontsize_small align = center|nobaseline }
 		}
 	}
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_gbdp_privilege_segment_2')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "2" using = fontsize_small align = center|nobaseline }
 		}
 	}
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_gbdp_privilege_segment_3')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "3" using = fontsize_small align = center|nobaseline }
 		}
 	}
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_gbdp_privilege_segment_4')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "4" using = fontsize_small align = center|nobaseline }
 		}
 	}
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_gbdp_privilege_segment_5')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "5" using = fontsize_small align = center|nobaseline }
 		}
 	}
 }
@@ -302,75 +281,69 @@ flowcontainer = {
 					datamodel_wrap = 1
 					item = {
 						tot_avmj_debt_creditor_card = {
-							blockoverride "card_claim" { textbox = { size = { 260 20 } raw_text = "债权：[GetPlayer.MakeScope.Var('tot_avmj_mygo_claim').GetValue|0]" using = fontsize_small align = left|nobaseline } }
-							blockoverride "card_privilege" { textbox = { size = { 260 20 } raw_text = "特权等级：[GetPlayer.MakeScope.Var('tot_avmj_mygo_privilege_level').GetValue|0]/5" using = fontsize_small align = left|nobaseline } }
+							blockoverride "card_claim" { textbox = { size = { 184 20 } raw_text = "债权：[GetPlayer.MakeScope.Var('tot_avmj_mygo_claim').GetValue|0]" using = fontsize_small align = right|nobaseline } }
 							blockoverride "card_progress" {
 flowcontainer = {
-	size = { 260 23 }
-	spacing = 3
+	size = { 184 20 }
+	spacing =  1
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_mygo_privilege_segment_1')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "1" using = fontsize_small align = center|nobaseline }
 		}
 	}
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_mygo_privilege_segment_2')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "2" using = fontsize_small align = center|nobaseline }
 		}
 	}
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_mygo_privilege_segment_3')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "3" using = fontsize_small align = center|nobaseline }
 		}
 	}
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_mygo_privilege_segment_4')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "4" using = fontsize_small align = center|nobaseline }
 		}
 	}
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_mygo_privilege_segment_5')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "5" using = fontsize_small align = center|nobaseline }
 		}
 	}
 }
@@ -386,75 +359,69 @@ flowcontainer = {
 					datamodel_wrap = 1
 					item = {
 						tot_avmj_debt_creditor_card = {
-							blockoverride "card_claim" { textbox = { size = { 260 20 } raw_text = "债权：[GetPlayer.MakeScope.Var('tot_avmj_nrhd_claim').GetValue|0]" using = fontsize_small align = left|nobaseline } }
-							blockoverride "card_privilege" { textbox = { size = { 260 20 } raw_text = "特权等级：[GetPlayer.MakeScope.Var('tot_avmj_nrhd_privilege_level').GetValue|0]/5" using = fontsize_small align = left|nobaseline } }
+							blockoverride "card_claim" { textbox = { size = { 184 20 } raw_text = "债权：[GetPlayer.MakeScope.Var('tot_avmj_nrhd_claim').GetValue|0]" using = fontsize_small align = right|nobaseline } }
 							blockoverride "card_progress" {
 flowcontainer = {
-	size = { 260 23 }
-	spacing = 3
+	size = { 184 20 }
+	spacing =  1
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_nrhd_privilege_segment_1')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "1" using = fontsize_small align = center|nobaseline }
 		}
 	}
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_nrhd_privilege_segment_2')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "2" using = fontsize_small align = center|nobaseline }
 		}
 	}
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_nrhd_privilege_segment_3')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "3" using = fontsize_small align = center|nobaseline }
 		}
 	}
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_nrhd_privilege_segment_4')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "4" using = fontsize_small align = center|nobaseline }
 		}
 	}
 	button = {
-		size = { 49 23 }
+		size = { 36 20 }
 		default_progressbar_horizontal = {
-			size = { 49 23 }
+			size = { 36 20 }
 			tooltip = "TOT_AVMJ_DEBT_PRIVILEGE_SEGMENT_TOOLTIP"
 			blockoverride "values" {
 				value = "[GetPlayer.MakeScope.ScriptValue('tot_avmj_nrhd_privilege_segment_5')]"
 				min = 0
 				max = 1
 			}
-			textbox = { parentanchor = center size = { 49 18 } text = "5" using = fontsize_small align = center|nobaseline }
 		}
 	}
 }

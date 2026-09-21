@@ -5,7 +5,25 @@ je_tot_avmj_debt_crisis = {
 	can_revolution_inherit = yes
 	weight = 10000
 
-	is_shown_in_lobby = { c:AVMJ ?= this }
+	is_shown_in_lobby = {
+		OR = {
+			c:AVMJ ?= this
+			AND = { c:AVMJ ?= { var:tot_avmj_htt_claim > 0 } c:HTT ?= this }
+			AND = { c:AVMJ ?= { var:tot_avmj_gbdp_claim > 0 } c:GBDP ?= this }
+			AND = { c:AVMJ ?= { var:tot_avmj_mygo_claim > 0 var:tot_avmj_mygo_claim_holder = 0 } c:MYG ?= this }
+			AND = { c:AVMJ ?= { var:tot_avmj_nrhd_claim > 0 } c:NRHD ?= this }
+		}
+	}
+
+	is_shown_when_inactive = {
+		OR = {
+			c:AVMJ ?= this
+			AND = { c:AVMJ ?= { var:tot_avmj_htt_claim > 0 } c:HTT ?= this }
+			AND = { c:AVMJ ?= { var:tot_avmj_gbdp_claim > 0 } c:GBDP ?= this }
+			AND = { c:AVMJ ?= { var:tot_avmj_mygo_claim > 0 var:tot_avmj_mygo_claim_holder = 0 } c:MYG ?= this }
+			AND = { c:AVMJ ?= { var:tot_avmj_nrhd_claim > 0 } c:NRHD ?= this }
+		}
+	}
 	should_be_involved = {
 		OR = {
 			c:AVMJ ?= this
