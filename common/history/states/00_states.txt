@@ -6077,7 +6077,7 @@ create_state = {
 			owned_provinces = { x15EED4 x3190C0 x637FEB x701040 x81A720 xB011C0 xE22202 xF29D08 }
 		}
 		create_state = {
-			country = c:CHRD
+			country = c:YKYM
 			owned_provinces = { x19C715 x322F47 x3CA2FC xA26E5F xAC762F xB090C0 xF01040 }
 		}
 		create_state = {
@@ -6110,6 +6110,10 @@ create_state = {
 			country = c:HITO
 			owned_provinces = { x205FEB x910F25 x9B2E00 xC02285 xCCB03E }
 		}
+		create_state = {
+			country = c:MFSR
+			owned_provinces = { x4942D2 }
+		}
 
 		add_homeland = cu:japanese
 		set_variable = { name = daimyo_chain_id value = 0 }
@@ -6117,10 +6121,14 @@ create_state = {
 	s:STATE_HOKUSHINETSU = {
 		create_state = {
 			country = c:HITO
-			owned_provinces = { x5A57C3 x779089 x88595F xB0D040 xD12DC5 xE76E8F }
+			owned_provinces = { x5A57C3 x779089 x88595F xD12DC5 xE76E8F }
 		}
 		create_state = {
-			country = c:HITO
+			country = c:YKMF
+			owned_provinces = { xB0D040 }
+		}
+		create_state = {
+			country = c:CHRD
 			owned_provinces = { xB5F9BD xEF90C0 }
 		}
 		create_state = {
@@ -6134,15 +6142,15 @@ create_state = {
 	s:STATE_KANSAI = {
 		create_state = {
 			country = c:HITO
-			owned_provinces = { x305040 x614287 xB03EF0 }
-		}
-		create_state = {
-			country = c:MFSR
-			owned_provinces = { x9E58B2 x70D040 }
+			owned_provinces = { x305040 x614287 x70D040 x9E58B2 }
 		}
 		create_state = {
 			country = c:YSSK
 			owned_provinces = { xB0D0C0 }
+		}
+		create_state = {
+			country = c:RDMK
+			owned_provinces = { xB03EF0 }
 		}
 
 		add_homeland = cu:japanese
@@ -6151,7 +6159,11 @@ create_state = {
 	s:STATE_KYOTO = {
 		create_state = {
 			country = c:RDMK
-			owned_provinces = { x705040 x879C25 x8EC4C9 x9BD7C1 }
+			owned_provinces = { x705040 x879C25 x8EC4C9 }
+		}
+		create_state = {
+			country = c:HAKR
+			owned_provinces = { x9BD7C1 }
 		}
 
 		add_homeland = cu:japanese
@@ -6191,16 +6203,8 @@ create_state = {
 			owned_provinces = { xB49AFB x89FD28 xC8AE5C x1151C0 }
 		}
 		create_state = {
-			country = c:YKMF
-			owned_provinces = { x77D64C }
-		}
-		create_state = {
 			country = c:EITR
-			owned_provinces = { xF05001 x715101 }
-		}
-		create_state = {
-			country = c:HITO
-			owned_provinces = { xA287B0 }
+			owned_provinces = { xF05001 x715101 xA287B0 }
 		}
 
 		add_homeland = cu:japanese
