@@ -1788,7 +1788,7 @@
 	}
 	s:STATE_KYOTO = {
 		# Ōmi, Tanba, Tango, and Tajima provinces
-		region_state:HRT = {
+		region_state:RDM = {
 			create_pop = {
 				culture = japanese
 				size = 1377948
@@ -1797,7 +1797,7 @@
 	}
 	s:STATE_KANTO = {
 		# Sagami, Musashi, Awa, Kazusa, Shimōsa, Hitachi, Kōzuke, and Shimotsuke provinces
-		region_state:GSK = {
+		region_state:HRT = {
 			create_pop = {
 				culture = japanese
 				size = 5004465
@@ -1836,10 +1836,16 @@
 				size = 2700000
 			}
 		}
-		region_state:RDM = {
+		region_state:GSK = {
 			create_pop = {
 				culture = japanese
-				size = 1492918
+				size = 300000
+			}
+		}
+		region_state:MFS = {
+			create_pop = {
+				culture = japanese
+				size = 792918
 			}
 		}
 	}
@@ -1854,7 +1860,7 @@
 	}
 	s:STATE_KYUSHU = {
 		# Chikuzen, Chikugo, Buzen, Bungo, Hizen, Higo, Hyūga, Ōsumi, Satsuma, Iki-shima, and Tsushima-jima provinces
-		region_state:EIT = {
+		region_state:CHT = {
 			create_pop = {
 				culture = japanese
 				size = 4137366
@@ -1882,7 +1888,7 @@
 	}
 	s:STATE_CHUGOKU = {
 		# Inaba, Hōki, Izumo, Iwami, Oki, Mimasaka, Bizen, Bitchū, Bingo, Aki, Suō, and Nagato provinces
-		region_state:CHT = {
+		region_state:EIT = {
 			create_pop = {
 				culture = japanese
 				size = 4077516
@@ -1891,7 +1897,7 @@
 	}
 	s:STATE_SHIKOKU = {
 		# Awa, Sanuki, Iyo, and Tosa provinces
-		region_state:CHT = {
+		region_state:EIT = {
 			create_pop = {
 				culture = japanese
 				size = 2319419
@@ -1925,7 +1931,7 @@
 	}
 	s:STATE_RYUKYU_ISLANDS = {
 		# Kingdom of Ryukyu. Complex simultaneous diplomatic relationship with Japan/Satsuma and China
-		region_state:EIT = {
+		region_state:CHT = {
 			create_pop = {
 				culture = ryukyuan
 				size = 162912
@@ -1947,7 +1953,7 @@
 			}
 		}
 		# Amami Islands, under direct Satsuma control
-		region_state:EIT = {
+		region_state:CHT = {
 			create_pop = {
 				culture = ryukyuan
 				size = 100241
