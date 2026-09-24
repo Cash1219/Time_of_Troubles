@@ -1764,46 +1764,46 @@
 	# Japanese population data is based off a 20% (Kito estimation) increase of available 1834 provincial census data. This increase is to offset the exclusion of ruling and exceptional classes. Total Japanese population fluctuated around this time, so no need to adjust upwards towards inferred 1836 levels.
 	s:STATE_TOHOKU = {
 		# Mutsu and Dewa provinces
-		region_state:YKM = {
+		region_state:MRYA = {
+			create_pop = {
+				culture = japanese
+				size = 1100000
+			}
+		}
+		region_state:YKYM = {
 			create_pop = {
 				culture = japanese
 				size = 1400000
 			}
 		}
-		region_state:MRY = {
+		region_state:CHRD = {
 			create_pop = {
 				culture = japanese
-				size = 1400000
-			}
-		}
-		region_state:KZM = {
-			create_pop = {
-				culture = japanese
-				size = 357725
+				size = 657725
 			}
 		}
 	}
 	s:STATE_HOKUSHINETSU = {
 		# Shinano, Wakasa, Echizen, Kaga, Noto, Etchū, Echigo, and Sado provinces
-		region_state:HRT = {
+		region_state:HITO = {
 			create_pop = {
 				culture = japanese
 				size = 1250000
 			}
 		}
-		region_state:CHT = {
+		region_state:HITO = {
 			create_pop = {
 				culture = japanese
 				size = 600000
 			}
 		}
-		region_state:GSK = {
+		region_state:HITO = {
 			create_pop = {
 				culture = japanese
 				size = 500000
 			}
 		}
-		region_state:HRT = {
+		region_state:HITO = {
 			create_pop = {
 				culture = japanese
 				size = 1788700
@@ -1812,7 +1812,7 @@
 	}
 	s:STATE_KYOTO = {
 		# Ōmi, Tanba, Tango, and Tajima provinces
-		region_state:RDM = {
+		region_state:RDMK = {
 			create_pop = {
 				culture = japanese
 				size = 1377948
@@ -1821,16 +1821,22 @@
 	}
 	s:STATE_KANTO = {
 		# Sagami, Musashi, Awa, Kazusa, Shimōsa, Hitachi, Kōzuke, and Shimotsuke provinces
-		region_state:EIT = {
+		region_state:HIGN = {
 			create_pop = {
 				culture = japanese
 				size = 5004465
 			}
 		}
-		region_state:EIT = {
+		region_state:BYKR = {
 			create_pop = {
 				culture = japanese
 				size = 1500000
+			}
+		}
+		region_state:KZNH = {
+			create_pop = {
+				culture = japanese
+				size = 300000
 			}
 		}
 		# TODO TODO PRCAL-42911
@@ -1860,7 +1866,7 @@
 	}
 	s:STATE_TOKAI = {
 		# Iga, Ise, Shima, Owari, Mikawa, Tōtōmi, Suruga, Kai, Izu, Mino, and Hida provinces
-		region_state:HRT = {
+		region_state:HITO = {
 			create_pop = {
 				culture = japanese
 				size = 2400000
@@ -1872,13 +1878,13 @@
 				size = 300000
 			}
 		}
-		region_state:GSK = {
+		region_state:HITO = {
 			create_pop = {
 				culture = japanese
 				size = 300000
 			}
 		}
-		region_state:MFS = {
+		region_state:MFSR = {
 			create_pop = {
 				culture = japanese
 				size = 792918
@@ -1887,7 +1893,7 @@
 	}
 	s:STATE_KANSAI = {
 		# Yamashiro, Yamato, Kawachi, Izumi, Settsu, Harima, Kii, and Awaji provinces
-		region_state:HRT = {
+		region_state:HITO = {
 			create_pop = {
 				culture = japanese
 				size = 3986882
@@ -1896,7 +1902,7 @@
 	}
 	s:STATE_KYUSHU = {
 		# Chikuzen, Chikugo, Buzen, Bungo, Hizen, Higo, Hyūga, Ōsumi, Satsuma, Iki-shima, and Tsushima-jima provinces
-		region_state:HKN = {
+		region_state:HIGN = {
 			create_pop = {
 				culture = japanese
 				size = 4137366
@@ -1924,10 +1930,22 @@
 	}
 	s:STATE_CHUGOKU = {
 		# Inaba, Hōki, Izumo, Iwami, Oki, Mimasaka, Bizen, Bitchū, Bingo, Aki, Suō, and Nagato provinces
-		region_state:HRT = {
+		region_state:HAKR = {
 			create_pop = {
 				culture = japanese
-				size = 4077516
+				size = 1400000
+			}
+		}
+		region_state:YKMF = {
+			create_pop = {
+				culture = japanese
+				size = 300000
+			}
+		}
+		region_state:HITO = {
+			create_pop = {
+				culture = japanese
+				size = 2377516
 			}
 		}
 	}
@@ -1936,7 +1954,13 @@
 		region_state:MTOU = {
 			create_pop = {
 				culture = japanese
-				size = 2319419
+				size = 319419
+			}
+		}
+		region_state:EITR = {
+			create_pop = {
+				culture = japanese
+				size = 2000000
 			}
 		}
 	}
@@ -1967,7 +1991,7 @@
 	}
 	s:STATE_RYUKYU_ISLANDS = {
 		# Kingdom of Ryukyu. Complex simultaneous diplomatic relationship with Japan/Satsuma and China
-		region_state:HKN = {
+		region_state:HIGN = {
 			create_pop = {
 				culture = ryukyuan
 				size = 162912
@@ -1989,7 +2013,7 @@
 			}
 		}
 		# Amami Islands, under direct Satsuma control
-		region_state:HKN = {
+		region_state:HIGN = {
 			create_pop = {
 				culture = ryukyuan
 				size = 100241
