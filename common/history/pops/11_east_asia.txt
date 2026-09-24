@@ -1,4 +1,4 @@
-POPS = {
+﻿POPS = {
 	s:STATE_DZUNGARIA = {
 		region_state:CHI = {
 			# Based off estimates by James Millward and Wang Xilong
@@ -1788,7 +1788,13 @@ POPS = {
 		region_state:HRT = {
 			create_pop = {
 				culture = japanese
-				size = 1850000
+				size = 1250000
+			}
+		}
+		region_state:CHT = {
+			create_pop = {
+				culture = japanese
+				size = 600000
 			}
 		}
 		region_state:GSK = {
@@ -1815,10 +1821,10 @@ POPS = {
 	}
 	s:STATE_KANTO = {
 		# Sagami, Musashi, Awa, Kazusa, Shimōsa, Hitachi, Kōzuke, and Shimotsuke provinces
-		region_state:HKN = {
+		region_state:EIT = {
 			create_pop = {
 				culture = japanese
-				size = 3504465
+				size = 5004465
 			}
 		}
 		region_state:EIT = {
@@ -1857,7 +1863,13 @@ POPS = {
 		region_state:HRT = {
 			create_pop = {
 				culture = japanese
-				size = 2700000
+				size = 2400000
+			}
+		}
+		region_state:YSSK = {
+			create_pop = {
+				culture = japanese
+				size = 300000
 			}
 		}
 		region_state:GSK = {
@@ -1884,7 +1896,7 @@ POPS = {
 	}
 	s:STATE_KYUSHU = {
 		# Chikuzen, Chikugo, Buzen, Bungo, Hizen, Higo, Hyūga, Ōsumi, Satsuma, Iki-shima, and Tsushima-jima provinces
-		region_state:CHT = {
+		region_state:HKN = {
 			create_pop = {
 				culture = japanese
 				size = 4137366
@@ -1921,7 +1933,7 @@ POPS = {
 	}
 	s:STATE_SHIKOKU = {
 		# Awa, Sanuki, Iyo, and Tosa provinces
-		region_state:YSS = {
+		region_state:MTOU = {
 			create_pop = {
 				culture = japanese
 				size = 2319419
@@ -1931,7 +1943,7 @@ POPS = {
 	# Numbers in the Japanese 'periphery' is derived partially from provincial Shogunal censuses, and partially from misc. secondary literature, like Howell's 'Capitalism from Within'
 	s:STATE_HOKKAIDO = {
 		# Ezochi ("Ainu-lands" - Matsumae Clan overlordship and indirect rule)
-		region_state:MTC = {
+		region_state:MKAI = {
 			create_pop = {
 				culture = ainu
 				size = 102
@@ -1942,7 +1954,7 @@ POPS = {
 			}
 		}
 		# Wajinchi ("Japanese-lands" - Matsumae Clan direct rule)
-		region_state:TEN = {
+		region_state:TENG = {
 			create_pop = {
 				culture = ainu
 				size = 29500
@@ -1955,7 +1967,7 @@ POPS = {
 	}
 	s:STATE_RYUKYU_ISLANDS = {
 		# Kingdom of Ryukyu. Complex simultaneous diplomatic relationship with Japan/Satsuma and China
-		region_state:CHT = {
+		region_state:HKN = {
 			create_pop = {
 				culture = ryukyuan
 				size = 162912
@@ -1977,7 +1989,7 @@ POPS = {
 			}
 		}
 		# Amami Islands, under direct Satsuma control
-		region_state:CHT = {
+		region_state:HKN = {
 			create_pop = {
 				culture = ryukyuan
 				size = 100241

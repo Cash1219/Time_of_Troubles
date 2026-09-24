@@ -1,4 +1,4 @@
-BUILDINGS={
+﻿BUILDINGS={
 	s:STATE_DZUNGARIA={
 		region_state:CHI={
 			create_building={
@@ -2109,13 +2109,13 @@ BUILDINGS={
 		}
 	}
 	s:STATE_HOKKAIDO={
-		region_state:MTC={
+		region_state:MKAI={
 			create_building={
 				building="building_fishing_wharf"
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:MTC"
+						country="c:MKAI"
 						levels=1
 						region="STATE_HOKKAIDO"
 					}
@@ -2124,13 +2124,13 @@ BUILDINGS={
 				activate_production_methods={ "pm_fishing_trawlers" "pm_unrefrigerated"  }
 			}
 		}
-		region_state:TEN={
+		region_state:TENG={
 			create_building={
 				building="building_fishing_wharf"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:TEN"
+						country="c:TENG"
 						levels=2
 						region="STATE_HOKKAIDO"
 					}
@@ -2351,13 +2351,13 @@ BUILDINGS={
 		}
 	}
 	s:STATE_KANTO={
-		region_state:HKN={
+		region_state:EIT={
 			create_building={
 				building="building_tooling_workshop"
 				add_ownership={
 					building={
 						type="building_tooling_workshop"
-						country="c:HKN"
+						country="c:EIT"
 						levels=1
 						region="STATE_KANTO"
 					}
@@ -2369,7 +2369,7 @@ BUILDINGS={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:HKN"
+						country="c:EIT"
 						levels=6
 					}
 				}
@@ -2380,7 +2380,7 @@ BUILDINGS={
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:HKN"
+						country="c:EIT"
 						levels=1
 					}
 				}
@@ -2392,7 +2392,7 @@ BUILDINGS={
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:HKN"
+						country="c:EIT"
 						levels=2
 						region="STATE_KANTO"
 					}
@@ -2405,7 +2405,7 @@ BUILDINGS={
 				add_ownership={
 					building={
 						type="building_furniture_manufactory"
-						country="c:HKN"
+						country="c:EIT"
 						levels=1
 						region="STATE_KANTO"
 					}
@@ -2417,7 +2417,7 @@ BUILDINGS={
 				building="building_construction_sector"
 				add_ownership={
 					country={
-						country="c:HKN"
+						country="c:EIT"
 						levels=1
 					}
 				}
@@ -2429,7 +2429,7 @@ BUILDINGS={
 				add_ownership={
 					building={
 						type="building_paper_mill"
-						country="c:HKN"
+						country="c:EIT"
 						levels=1
 						region="STATE_KANTO"
 					}
@@ -2442,7 +2442,7 @@ BUILDINGS={
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:HKN"
+						country="c:EIT"
 						levels=2
 						region="STATE_KANTO"
 					}
@@ -2455,7 +2455,7 @@ BUILDINGS={
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:HKN"
+						country="c:EIT"
 						levels=1
 						region="STATE_KANTO"
 					}
@@ -2468,7 +2468,7 @@ BUILDINGS={
 				add_ownership={
 					building={
 						type="building_tobacco_plantation"
-						country="c:HKN"
+						country="c:EIT"
 						levels=1
 						region="STATE_KANTO"
 					}
@@ -2481,7 +2481,7 @@ BUILDINGS={
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:HKN"
+						country="c:EIT"
 						levels=1
 						region="STATE_KANTO"
 					}
@@ -2494,7 +2494,7 @@ BUILDINGS={
 				add_ownership={
 					building={
 						type="building_logging_camp"
-						country="c:HKN"
+						country="c:EIT"
 						levels=3
 						region="STATE_KANTO"
 					}
@@ -2507,7 +2507,7 @@ BUILDINGS={
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:HKN"
+						country="c:EIT"
 						levels=3
 						region="STATE_KANTO"
 					}
@@ -2520,7 +2520,7 @@ BUILDINGS={
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:HKN"
+						country="c:EIT"
 						levels=2
 						region="STATE_KANTO"
 					}
@@ -2532,7 +2532,7 @@ BUILDINGS={
 				building="building_lead_mine"
 				add_ownership={
 					country={
-						country="c:HKN"
+						country="c:EIT"
 						levels=1
 					}
 				}
@@ -2923,12 +2923,12 @@ BUILDINGS={
 		}
 	}
 	s:STATE_KYUSHU={
-		region_state:CHT={
+		region_state:HKN={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-					country="c:CHT"
+					country="c:HKN"
 						levels=2
 					}
 				}
@@ -2939,7 +2939,7 @@ BUILDINGS={
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:CHT"
+						country="c:HKN"
 						levels=3
 					}
 				}
@@ -2951,7 +2951,7 @@ BUILDINGS={
 				add_ownership={
 					building={
 						type="building_tobacco_plantation"
-						country="c:CHT"
+						country="c:HKN"
 						levels=2
 						region="STATE_KYUSHU"
 					}
@@ -2964,7 +2964,7 @@ BUILDINGS={
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:CHT"
+						country="c:HKN"
 						levels=2
 						region="STATE_KYUSHU"
 					}
@@ -2977,7 +2977,7 @@ BUILDINGS={
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:CHT"
+						country="c:HKN"
 						levels=4
 						region="STATE_KYUSHU"
 					}
@@ -2990,7 +2990,7 @@ BUILDINGS={
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:CHT"
+						country="c:HKN"
 						levels=1
 						region="STATE_KYUSHU"
 					}
@@ -3004,13 +3004,13 @@ BUILDINGS={
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:CHT"
+						country="c:HKN"
 						levels=1
 						region="STATE_KYUSHU"
 					}
 					building={
 						type="building_financial_district"
-						country="c:CHT"
+						country="c:HKN"
 						levels=1
 						region="STATE_KYUSHU"
 					}
@@ -3020,13 +3020,13 @@ BUILDINGS={
 		}
 	}
 	s:STATE_RYUKYU_ISLANDS={
-		region_state:CHT={
+		region_state:HKN={
 			create_building={
 				building="building_sugar_plantation"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:CHT"
+						country="c:HKN"
 						levels=1
 						region="STATE_RYUKYU_ISLANDS"
 					}
@@ -3035,13 +3035,13 @@ BUILDINGS={
 				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts"  }
 			}
 		}
-		region_state:CHT={
+		region_state:HKN={
 			create_building={
 				building="building_rice_farm"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:CHT"
+						country="c:HKN"
 						levels=1
 						region="STATE_RYUKYU_ISLANDS"
 					}
@@ -3054,7 +3054,7 @@ BUILDINGS={
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:CHT"
+						country="c:HKN"
 						levels=1
 						region="STATE_RYUKYU_ISLANDS"
 					}
@@ -3066,7 +3066,7 @@ BUILDINGS={
 				building="building_naval_fortification"
 				add_ownership={
 					country={
-						country="c:CHT"
+						country="c:HKN"
 						levels=1
 					}
 				}
@@ -3169,12 +3169,12 @@ BUILDINGS={
 		}
 	}
 	s:STATE_SHIKOKU={
-		region_state:YSS={
+		region_state:MTOU={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-					country="c:YSS"
+					country="c:MTOU"
 						levels=1
 					}
 				}
@@ -3186,7 +3186,7 @@ BUILDINGS={
 				add_ownership={
 					building={
 						type="building_paper_mill"
-						country="c:YSS"
+						country="c:MTOU"
 						levels=1
 						region="STATE_SHIKOKU"
 					}
@@ -3199,7 +3199,7 @@ BUILDINGS={
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:YSS"
+						country="c:MTOU"
 						levels=1
 						region="STATE_SHIKOKU"
 					}
@@ -3212,7 +3212,7 @@ BUILDINGS={
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:YSS"
+						country="c:MTOU"
 						levels=1
 						region="STATE_SHIKOKU"
 					}
@@ -3225,7 +3225,7 @@ BUILDINGS={
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:YSS"
+						country="c:MTOU"
 						levels=2
 						region="STATE_SHIKOKU"
 					}
@@ -3238,7 +3238,7 @@ BUILDINGS={
 				add_ownership={
 					building={
 						type="building_logging_camp"
-						country="c:YSS"
+						country="c:MTOU"
 						levels=1
 						region="STATE_SHIKOKU"
 					}
@@ -3251,7 +3251,7 @@ BUILDINGS={
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:YSS"
+						country="c:MTOU"
 						levels=1
 						region="STATE_SHIKOKU"
 					}
