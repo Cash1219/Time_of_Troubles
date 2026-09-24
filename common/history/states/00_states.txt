@@ -6053,14 +6053,14 @@ create_state = {
 	}
 	s:STATE_HOKKAIDO = {
 		create_state = {
-			country = c:HKN
+			country = c:MTC
 			owned_provinces = {
 				x6275D4 x65D8B2 x5F2A24 x103C2B xEEB7F4 x413F60 x03E00D x86757A x420E86 xC85C0C x1E9A93 x70C55B x17C8CA x210B6E x85C158 x2090C0 x3EA37A x493B76 x9E56C2 xA011C0 x3974DA
 			}
 			state_type = unincorporated
 		}
 		create_state = {
-			country = c:HKN
+			country = c:MTC
 			owned_provinces = {
 				xA090C0 x40BDB8 xF17C01
 			}
@@ -6073,8 +6073,16 @@ create_state = {
 	}
 	s:STATE_TOHOKU = {
 		create_state = {
+			country = c:YKM
+			owned_provinces = { x15EED4 x3190C0 x637FEB x701040 x81A720 xB011C0 xE22202 xF29D08 }
+		}
+		create_state = {
+			country = c:MRY
+			owned_provinces = { x19C715 x1BAF33 x322F47 x3CA2FC xAC762F xB090C0 xBED026 xF01040 }
+		}
+		create_state = {
 			country = c:KZM
-			owned_provinces = { xE22202 xE0D080 xBC2AFE x3190C0 x15EED4 x81A720 xB011C0 xBED026 x1BAF33 x4C5533 xA26E5F xB090C0 xF29D08 x701040 x637FEB xAC762F xF01040 x322F47 x19C715 x3CA2FC }
+			owned_provinces = { x4C5533 xA26E5F xBC2AFE xE0D080 }
 		}
 
 		add_homeland = cu:japanese
@@ -6082,8 +6090,16 @@ create_state = {
 	}
 	s:STATE_KANTO = {
 		create_state = {
-			country = c:HRT
-			owned_provinces = { xEF9040 x478599 xF011C0 xB94331 x7010C0 x709040 xEAE893 x787CC4 x7090C0 xD350FB x800111 }
+			country = c:HKN
+			owned_provinces = { xEF9040 xF011C0 x7010C0 x709040 x7090C0 x800111 }
+		}
+		create_state = {
+			country = c:EIT
+			owned_provinces = { xD350FB xEAE893 x787CC4 xB94331 }
+		}
+		create_state = {
+			country = c:GSK
+			owned_provinces = { x478599 }
 		}
 		#create_state = { # TODO PRCAL-42911
 		#	country = c:MCR
@@ -6112,12 +6128,8 @@ create_state = {
 	}
 	s:STATE_HOKUSHINETSU = {
 		create_state = {
-			country = c:YKM
-			owned_provinces = { x5A57C3 x779089 xD12DC5 xEF90C0 }
-		}
-		create_state = {
-			country = c:MRY
-			owned_provinces = { x88595F xB050C0 xB0D040 xB5F9BD xE76E8F }
+			country = c:HRT
+			owned_provinces = { x5A57C3 x779089 x88595F xB050C0 xB0D040 xB5F9BD xD12DC5 xE76E8F xEF90C0 }
 		}
 
 		add_homeland = cu:japanese
@@ -6167,7 +6179,7 @@ create_state = {
 
 	s:STATE_CHUGOKU = {
 		create_state = {
-			country = c:EIT
+			country = c:HRT
 			owned_provinces = { xF05001 x715101 xB49AFB x89FD28 xC8AE5C xA287B0 x77D64C x1151C0 }
 		}
 
@@ -6176,7 +6188,7 @@ create_state = {
 	}
 	s:STATE_SHIKOKU = {
 		create_state = {
-			country = c:EIT
+			country = c:HRT
 			owned_provinces = { xF05040 x7C9BEB xEFD040 x90D040 x5D5512 }
 		}
 
