@@ -1,4 +1,14 @@
 ﻿POWER_BLOCS = {
+	c:GSK ?= {
+		create_power_bloc = {
+			name = GENSOKYO_BARRIER_NETWORK
+			map_color = { 232 66 91 }
+			founding_date = 1836.1.1
+			identity = identity_sovereign_empire
+			principle = principle_vassalization_1
+		}
+		power_bloc = { add_cohesion_number = 100 }
+	}
 	c:GBR ?= {
 		create_power_bloc = {
 			name = BRITISH_EMPIRE

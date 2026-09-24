@@ -10101,3 +10101,20 @@ entity = {
 	name = "tot_prophet_Rhodes_Lappland_Saluzzo_entity"
 	pdxmesh = "tot_prophet_Rhodes_Lappland_Saluzzo_mesh"
 }
+pdxmesh = {
+	name = "tot_prophet_Mystia_Lorelei_mesh"
+	file = "hm_prophet.mesh"
+	scale = 1.5
+	meshsettings = {
+		name = "prophet_shieldShape"
+		index = 0
+		texture_diffuse = "tot_prophet_Mystia_Lorelei_diffuse.dds"
+		texture_specular = "tot_prophet_Mystia_Lorelei_diffuse.dds"
+		shader = "portrait_attachment_alpha_to_coverage"
+		shader_file = "gfx/hmportrait.shader"
+	}
+}
+entity = {
+	name = "tot_prophet_Mystia_Lorelei_entity"
+	pdxmesh = "tot_prophet_Mystia_Lorelei_mesh"
+}

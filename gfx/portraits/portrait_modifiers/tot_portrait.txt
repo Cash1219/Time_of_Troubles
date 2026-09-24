@@ -12479,4 +12479,25 @@
 			}
 		}
 	}
+	just_Mystia_Lorelei = {
+		dna_modifiers = {
+			accessory = {
+				mode = replace
+				gene = totprops_1
+				template = tot_prophet_Mystia_Lorelei
+				value = 0.5
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				no_portrait_trigger = yes
+				exists = scope:character
+				scope:character = {
+			has_trait = tot_Mystia_Lorelei_trait
+				}
+			}
+		}
+	}
 
