@@ -16,7 +16,7 @@ tot_company_myg_anno_tokyo = {
 			}
 		}
 	}
-	prosperity_modifier = { state_shopkeepers_investment_pool_efficiency_mult = 0.20 }
+	prosperity_modifier = { country_tot_mod_company_bool = yes state_shopkeepers_investment_pool_efficiency_mult = 0.20 }
 	possible_prestige_goods = { tot_company_myg_anno_prestige_good }
 	ai_will_do = { }
 	ai_construction_targets = {
@@ -45,7 +45,7 @@ tot_company_myg_nagasaki_group = {
 			}
 		}
 	}
-	prosperity_modifier = { state_capitalists_investment_pool_efficiency_mult = 0.20 }
+	prosperity_modifier = { country_tot_mod_company_bool = yes state_capitalists_investment_pool_efficiency_mult = 0.20 }
 	possible_prestige_goods = { tot_company_myg_nagasaki_prestige_good }
 	ai_will_do = { }
 	ai_construction_targets = {
@@ -75,6 +75,7 @@ tot_company_myg_aleppo_astronomical = {
 		}
 	}
 	prosperity_modifier = {
+		country_tot_mod_company_bool = yes
 		building_stage_throughput_add = 0.20
 		country_tot_band_creation_output_mult = 0.20
 	}

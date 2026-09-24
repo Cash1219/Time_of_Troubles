@@ -29,7 +29,7 @@ tot_company_hhwo_tsurumaki_group = {
 			}
 		}
 	}
-	prosperity_modifier = { country_influence_add = 25 }
+	prosperity_modifier = { country_tot_mod_company_bool = yes country_influence_add = 25 }
 	possible_prestige_goods = { tot_company_hhwo_tsurumaki_group_prestige_good }
 	ai_will_do = { }
 	ai_construction_targets = {
@@ -71,7 +71,7 @@ tot_company_hhwo_kitazawa_butcher = {
 			}
 		}
 	}
-	prosperity_modifier = { interest_group_ig_rural_folk_approval_add = 2 }
+	prosperity_modifier = { country_tot_mod_company_bool = yes interest_group_ig_rural_folk_approval_add = 2 }
 	possible_prestige_goods = { tot_company_hhwo_kitazawa_butcher_prestige_good }
 	ai_will_do = { }
 	ai_construction_targets = {
@@ -113,7 +113,7 @@ tot_company_hhwo_smile_ship = {
 			}
 		}
 	}
-	prosperity_modifier = { country_navy_goods_cost_mult = -0.15 }
+	prosperity_modifier = { country_tot_mod_company_bool = yes country_navy_goods_cost_mult = -0.15 }
 	possible_prestige_goods = { tot_company_hhwo_smile_ship_prestige_good }
 	ai_will_do = { }
 	ai_construction_targets = {
