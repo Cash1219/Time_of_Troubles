@@ -1113,7 +1113,7 @@ s:STATE_ILLINOIS = {
 			country = c:EITR
 			owned_provinces = {
 
-				x086d7b x9afa6a xafec31 xb6943c
+				x086d7b x9afa6a xafec31
 
 			}
 		}
@@ -1122,9 +1122,7 @@ s:STATE_ILLINOIS = {
 			country = c:HAKR
 			owned_provinces = {
 
-				x20201c x2bd326 x3ac189 x3ade63 x562717 x5cac91 x68e6e2 x6b877d x75a793 x7e0df6 x821bc4 xaf3a01
-
-				xb01f74 xb9104e xbea265 xc41b96 xcfb449 xe02f70 xe7d61a xef1de2 xfdfb3f
+				x3ac189 x3ade63 x562717 x6b877d x75a793 x7e0df6 xaf3a01 xb9104e xbea265 xc41b96
 
 			}
 		}
@@ -1157,9 +1155,7 @@ s:STATE_ILLINOIS = {
 			country = c:MIST
 			owned_provinces = {
 
-				x045603 x234f3b x254626 x33409c x3354dd x37807c x3d22b3 x51e0d0 x53f27d x54f665 x628ce9 x6576a8
-
-				x6c0833 x6fb312 x7e02ed xaeffeb xba0d99 xcf4030 xeda242
+				x234f3b x254626 x6fb312 x7e02ed xba0d99 xeda242
 
 			}
 		}
@@ -1187,7 +1183,11 @@ s:STATE_ILLINOIS = {
 			country = c:RDMK
 			owned_provinces = {
 
-				x0e3317 x4ff662 x83b57f xd2ee80 xd65cbb xf22ca8
+				x045603 x0e3317 x20201c x2bd326 x33409c x3354dd x37807c x3d22b3 x4ff662 x51e0d0 x53f27d x54f665
+
+				x5cac91 x628ce9 x6576a8 x68e6e2 x6c0833 x821bc4 x83b57f xaeffeb xb01f74 xb6943c xcf4030 xcfb449
+
+				xd2ee80 xd65cbb xe02f70 xe7d61a xef1de2 xf22ca8 xfdfb3f
 
 			}
 		}
@@ -1403,53 +1403,25 @@ s:STATE_ILLINOIS = {
 			country = c:CHRD
 			owned_provinces = {
 
-				x000a74 x0387dd x0ada39 x0f611d x109d07 x11dfcf x1544d6 x1622ec x170d7b x1a3774 x1e1b36 x31b22c
+				x000a74 x034aed x0387dd x0515c9 x0a244b x0ada39 x0c8d77 x0ca414 x0f611d x0fb84c x109d07 x11dfcf
 
-				x365b98 x3e5829 x488015 x55e395 x668eae x6f472e x74d3e6 x799a39 x7c42a3 x7d830b x7fe76c x95b9be
+				x13fccf x14788a x1544d6 x1622ec x16ada2 x170d7b x1a3774 x1ad5e0 x1e1b36 x21c18c x239c93 x27b268
 
-				x95ebe6 xadb94a xba50d8 xbaa4be xbcf86d xc9e461 xd4afda xdac75b xe5cbe7 xf0ddf6
+				x31b22c x329f07 x3458ba x365b98 x36cf71 x3811bc x39a6c9 x39dbc4 x3b4ad8 x3e5829 x3facbe x4064e2
 
-			}
-		}
+				x413343 x45a37a x488015 x4c87b3 x4dad39 x502784 x540341 x54ae30 x55e395 x57bc85 x5a10aa x5c62a7
 
-		create_state = {
-			country = c:HIGN
-			owned_provinces = {
+				x5cdc4e x621622 x62317e x668eae x66eea6 x6e4619 x6eeb36 x6f472e x7091ec x74d3e6 x799a39 x7c42a3
 
-				x4064e2 x502784 x983247 xbd0f2c xc7963d xcbe0d5 xd471d4 xd67b75 xe5b909
+				x7d830b x7eebe6 x7fe76c x83a20f x847715 x854a14 x85a009 x9060cf x90df50 x95b9be x95ebe6 x971496
 
-			}
-		}
+				x983247 x9eb5bd xa0bad0 xa674b5 xadb94a xaf3598 xba50d8 xbaa4be xbcf86d xbd0f2c xc15f2d xc52b90
 
-		create_state = {
-			country = c:KAU
-			owned_provinces = {
+				xc53983 xc58f87 xc6d0a0 xc7963d xc9e461 xcbe0d5 xce802d xd0a0d0 xd18b39 xd471d4 xd4afda xd53092
 
-				x0a244b x54ae30 x62317e x7eebe6 x9060cf xa674b5 xc58f87 xd0a0d0 xeb1c69 xf21007
+				xd67b75 xd8fb8a xdaaaf4 xdac75b xe02385 xe5b909 xe5cbe7 xea6027 xeb1c69 xed145f xeef3b9 xf0ddf6
 
-			}
-		}
-
-		create_state = {
-			country = c:KZNH
-			owned_provinces = {
-
-				x0fb84c x16ada2 x7091ec xa0bad0 xaf3598 xeef3b9
-
-			}
-		}
-
-		create_state = {
-			country = c:RDMK
-			owned_provinces = {
-
-				x034aed x0515c9 x0c8d77 x0ca414 x13fccf x21c18c x239c93 x27b268 x329f07 x3458ba x36cf71 x3811bc
-
-				x39a6c9 x39dbc4 x3b4ad8 x413343 x45a37a x4dad39 x540341 x57bc85 x5a10aa x5c62a7 x5cdc4e x6e4619
-
-				x6eeb36 x83a20f x847715 x854a14 x85a009 x90df50 x971496 x9eb5bd xc15f2d xc52b90 xc53983 xce802d
-
-				xd53092 xdaaaf4 xea6027 xed145f xf11f8e xf683d5
+				xf11f8e xf19096 xf21007 xf683d5 xfa184f
 
 			}
 		}
@@ -1458,23 +1430,21 @@ s:STATE_ILLINOIS = {
 			country = c:SAS
 			owned_provinces = {
 
-				x04ffcf x056d19 x06eba8 x082f85 x0d95d3 x0f120f x10255f x11283a x11d74e x1202ab x13f69b x14788a
+				x04ffcf x056d19 x06eba8 x082f85 x0d95d3 x0f120f x10255f x11283a x11d74e x1202ab x13f69b x1bc7e5
 
-				x1ad5e0 x1bc7e5 x1be550 x2a72be x2ab1ca x2cedd8 x2dd2d5 x3138c1 x320892 x365482 x385e6b x3bef21
+				x1be550 x2a72be x2ab1ca x2cedd8 x2dd2d5 x3138c1 x320892 x365482 x385e6b x3bef21 x3df472 x3eadd5
 
-				x3df472 x3eadd5 x3facbe x46f3d1 x4b8a2b x4c87b3 x4ce2e1 x4ed3e7 x4fc069 x552f74 x55dd2e x56c7fa
+				x46f3d1 x4b8a2b x4ce2e1 x4ed3e7 x4fc069 x552f74 x55dd2e x56c7fa x5ad224 x5b668e x5d7e2a x5f3699
 
-				x5ad224 x5b668e x5d7e2a x5f3699 x621622 x62253a x658155 x65bb95 x667bd0 x66eea6 x6ae1b7 x6b189c
+				x62253a x658155 x65bb95 x667bd0 x6ae1b7 x6b189c x767440 x76fe54 x78527f x7bbc20 x7d6ae4 x7e80ae
 
-				x767440 x76fe54 x78527f x7bbc20 x7d6ae4 x7e80ae x7f5004 x81e539 x8f794b x9660af x980ffd x985058
+				x7f5004 x81e539 x8f794b x9660af x980ffd x985058 x994222 xa14937 xa26f58 xa70984 xa94b9b xb0fa82
 
-				x994222 xa14937 xa26f58 xa70984 xa94b9b xb0fa82 xb13e10 xb20855 xb4a4cb xb67ec8 xb6ef7d xba3367
+				xb13e10 xb20855 xb4a4cb xb67ec8 xb6ef7d xba3367 xbdfc34 xc0038f xc69f69 xc6bf06 xc79752 xccb60a
 
-				xbdfc34 xc0038f xc69f69 xc6bf06 xc6d0a0 xc79752 xccb60a xcd012b xce5663 xd05eac xd18b39 xd590f3
+				xcd012b xce5663 xd05eac xd590f3 xd5d3b9 xda95ef xdfddc7 xe0aca2 xe53516 xe7e1e0 xe7e32b xeb5a47
 
-				xd5d3b9 xd8fb8a xda95ef xdfddc7 xe02385 xe0aca2 xe53516 xe7e1e0 xe7e32b xeb5a47 xf01d20 xf19096
-
-				xf2d053 xf5f6e0 xf6d69d xf8a76f xf921ff xf95672 xfa184f xfe8162
+				xf01d20 xf2d053 xf5f6e0 xf6d69d xf8a76f xf921ff xf95672 xfe8162
 
 			}
 		}
@@ -1530,14 +1500,36 @@ s:STATE_ILLINOIS = {
 	s:STATE_NORTHERN_TERRITORY = {
 
 		create_state = {
-			country = c:MKAI
+			country = c:CHRD
 			owned_provinces = {
 
-				x053df1 x184431 x1b7dc9 x2e031d x3345d6 x59f241 x610097 x65aa63 x72e33a x73585f x7cf5fd x8a2ead
+				x01bf32 x02a1a2 x044521 x048dbf x053df1 x0628fd x0b16cd x0e41fd x1629d3 x1648a3 x184431 x19818e
 
-				xa12f44 xa4b8b3 xaf33f5 xb05ff0 xbc6ada xc0f9af xd90230 xdbcfd4 xdc5c1f xe1ef33 xf943b8 xf9805e
+				x1a0031 x1a8f1a x1b6f15 x1b7dc9 x1d1bc2 x2007b7 x22df3c x237938 x251e51 x272fae x274a30 x27e1a1
 
-				xfa63ab
+				x284a61 x2a1c9c x2a320f x2c0c71 x2e031d x30dcc6 x32e24b x32ecdb x3345d6 x35da70 x360826 x365248
+
+				x3741f7 x3f7fa7 x3f942c x422faa x466a3b x48e0b1 x496c63 x4f4743 x4f5308 x4f8dcc x4fd1ef x55d915
+
+				x59f241 x5b7e31 x5ccbb8 x610097 x61dbec x62251b x641326 x642906 x65aa63 x691d84 x6a150a x6b377f
+
+				x6bbd1b x6c71e5 x6c9d8a x6ec633 x6f014a x6f64ba x70b8fb x7260d1 x72e33a x73585f x742e21 x7538fa
+
+				x753df5 x7787b6 x7ba5c9 x7cf5fd x7ed764 x83b260 x8544df x889b16 x8a2ead x8f6654 x921743 x95b834
+
+				x994323 x9c6a14 x9c7217 x9ec099 x9f8fb6 xa111c7 xa12f44 xa3f0fe xa4b8b3 xa9c0eb xa9c949 xa9cd4e
+
+				xa9e6d1 xaa0a88 xae83e3 xaf33f5 xafb08d xb05ff0 xb2b040 xb6f2ef xb87182 xbbd87a xbc6315 xbc6ada
+
+				xc0f9af xc22623 xc4b15b xc9417b xcc3266 xcdf796 xcf0090 xcf9c8d xcff671 xd0ed38 xd40e0b xd40f63
+
+				xd63284 xd70795 xd8b060 xd90230 xd9d32d xdbcfd4 xdc3cfd xdc5c1f xdd8c68 xdf2102 xe0a589 xe0d57e
+
+				xe199d0 xe1ef33 xe5a5c5 xe81d8c xe85965 xe91bda xeb33e0 xeba4d4 xedab39 xee18d8 xeed0bd xeeefb7
+
+				xef2a2f xf0194e xf568ed xf596f4 xf5abf9 xf80313 xf943b8 xf9805e xfa3609 xfa63ab xfb6039 xfe32cd
+
+				xff6bd0 xff6cab xffe893
 
 			}
 		}
@@ -1546,41 +1538,19 @@ s:STATE_ILLINOIS = {
 			country = c:NSW
 			owned_provinces = {
 
-				x0063de x0193b4 x01bf32 x01cedd x02a1a2 x030668 x044521 x048dbf x0628fd x08102f x0b16cd x0e41fd
+				x0063de x0193b4 x01cedd x030668 x08102f x110166 x118272 x1bfd4a x1e3ba2 x1f3e04 x24eec6 x25cff8
 
-				x110166 x118272 x1629d3 x1648a3 x19818e x1a0031 x1a8f1a x1b6f15 x1bfd4a x1d1bc2 x1e3ba2 x1f3e04
+				x28da69 x2ca9b5 x2d0777 x33a988 x398edd x3aa830 x3dae2e x40a620 x496c3e x4d6e12 x500090 x54df60
 
-				x2007b7 x22df3c x237938 x24eec6 x251e51 x25cff8 x272fae x274a30 x27e1a1 x284a61 x28da69 x2a1c9c
+				x55703d x57e5ee x5bd3f0 x628954 x637f22 x69e2e6 x6aa092 x715d7f x71da68 x7382c7 x73fe0a x817d98
 
-				x2a320f x2c0c71 x2ca9b5 x2d0777 x30dcc6 x32e24b x32ecdb x33a988 x35da70 x360826 x365248 x3741f7
+				x8311d0 x835d35 x83f546 x8506fc x8690d0 x877637 x87ba64 x897c46 x8ff2e7 x906050 x93f030 x95c66b
 
-				x398edd x3aa830 x3dae2e x3f7fa7 x3f942c x40a620 x422faa x466a3b x48e0b1 x496c3e x496c63 x4d6e12
+				x967141 x9e719e xa17b7a xa42747 xa7bcbf xa84343 xa91087 xa9304e xab255e xb021d1 xb0d529 xb1d531
 
-				x4f4743 x4f5308 x4f8dcc x4fd1ef x500090 x54df60 x55703d x55d915 x57e5ee x5b7e31 x5bd3f0 x5ccbb8
+				xb1e766 xb24a68 xb403b8 xb5c844 xbd1087 xc46c16 xc6574d xc6d5a4 xc8c159 xc93259 xca9ecc xd4aabe
 
-				x61dbec x62251b x628954 x637f22 x641326 x642906 x691d84 x69e2e6 x6a150a x6aa092 x6b377f x6bbd1b
-
-				x6c9d8a x6ec633 x6f014a x6f64ba x70b8fb x715d7f x71da68 x7260d1 x7382c7 x73fe0a x742e21 x7538fa
-
-				x753df5 x7787b6 x7ba5c9 x7ed764 x817d98 x8311d0 x835d35 x83b260 x83f546 x8506fc x8544df x8690d0
-
-				x877637 x87ba64 x889b16 x897c46 x8f6654 x8ff2e7 x906050 x921743 x93f030 x95b834 x95c66b x967141
-
-				x994323 x9c6a14 x9c7217 x9e719e x9ec099 x9f8fb6 xa111c7 xa17b7a xa3f0fe xa42747 xa7bcbf xa84343
-
-				xa91087 xa9304e xa9c0eb xa9c949 xa9cd4e xa9e6d1 xaa0a88 xab255e xae83e3 xafb08d xb021d1 xb0d529
-
-				xb1d531 xb1e766 xb24a68 xb2b040 xb403b8 xb5c844 xb6f2ef xb87182 xbbd87a xbc6315 xbd1087 xc22623
-
-				xc46c16 xc4b15b xc6574d xc6d5a4 xc8c159 xc93259 xc9417b xca9ecc xcc3266 xcdf796 xcf0090 xcf9c8d
-
-				xcff671 xd0ed38 xd40e0b xd40f63 xd4aabe xd63284 xd70795 xd8b060 xd8b872 xd9d32d xdc3cfd xdd8c68
-
-				xdf2102 xe0a589 xe0d57e xe12fdc xe199d0 xe1d9b2 xe47449 xe5a5c5 xe81d8c xe85965 xe91bda xea5ace
-
-				xeb33e0 xeb8d6b xeba4d4 xedab39 xedce9b xee18d8 xeed0bd xeeefb7 xef2a2f xf0194e xf568ed xf596f4
-
-				xf5abf9 xf80151 xf80313 xfb6039 xfb6819 xff6bd0 xff6cab xffe893 xfffaea
+				xd8b872 xe12fdc xe1d9b2 xe47449 xea5ace xeb8d6b xedce9b xf80151 xfb6819 xfffaea
 
 			}
 		}
@@ -1593,11 +1563,11 @@ s:STATE_ILLINOIS = {
 
 				x3a562d x3f1f28 x4a900e x4df68a x5a6066 x5c075b x5d99ce x61195a x62c735 x64af7a x6592be x66158d
 
-				x68280d x6aed1d x6c71e5 x7d1765 x824886 x82b73a x8ba582 x959af8 xa894cd xab7482 xabca91 xaeded1
+				x68280d x6aed1d x7d1765 x824886 x82b73a x8ba582 x959af8 xa894cd xab7482 xabca91 xaeded1 xb35c41
 
-				xb35c41 xc132ad xc67eff xca91f3 xd09353 xd83a34 xdefe50 xe02c6d xe048d3 xe2b88c xe361c2 xec18b4
+				xc132ad xc67eff xca91f3 xd09353 xd83a34 xdefe50 xe02c6d xe048d3 xe2b88c xe361c2 xec18b4 xf73f36
 
-				xf73f36 xf89c75 xf96d7e xf9715f xfa3609 xfe32cd
+				xf89c75 xf96d7e xf9715f
 
 			}
 		}
