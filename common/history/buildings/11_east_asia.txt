@@ -2247,12 +2247,12 @@
 		}
 	}
 	s:STATE_HOKUSHINETSU={
-		region_state:HITO={
+		region_state:CHRD={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-					country="c:HITO"
+					country="c:CHRD"
 						levels=1
 					}
 				}
@@ -2264,7 +2264,7 @@
 				add_ownership={
 					building={
 						type="building_glassworks"
-						country="c:HITO"
+						country="c:CHRD"
 						levels=1
 						region="STATE_HOKUSHINETSU"
 					}
@@ -2277,7 +2277,7 @@
 				add_ownership={
 					building={
 						type="building_furniture_manufactory"
-						country="c:HITO"
+						country="c:CHRD"
 						levels=1
 						region="STATE_HOKUSHINETSU"
 					}
@@ -2289,7 +2289,7 @@
 				building="building_gold_mine"
 				add_ownership={
 					country={
-						country="c:HITO"
+						country="c:CHRD"
 						levels=1
 					}
 				}
@@ -2301,7 +2301,7 @@
 				add_ownership={
 					building={
 						type="building_logging_camp"
-						country="c:HITO"
+						country="c:CHRD"
 						levels=2
 						region="STATE_HOKUSHINETSU"
 					}
@@ -2314,7 +2314,7 @@
 				add_ownership={
 					building={
 						type="building_tobacco_plantation"
-						country="c:HITO"
+						country="c:CHRD"
 						levels=2
 						region="STATE_HOKUSHINETSU"
 					}
@@ -2327,7 +2327,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:HITO"
+						country="c:CHRD"
 						levels=4
 						region="STATE_HOKUSHINETSU"
 					}
@@ -2340,7 +2340,7 @@
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:HITO"
+						country="c:CHRD"
 						levels=1
 						region="STATE_HOKUSHINETSU"
 					}
@@ -2659,6 +2659,15 @@
 				activate_production_methods={ "pm_herring_meal_farming_building_rice_farm"  "pm_tools_disabled" "pm_fig_orchards_building_rice_farm" }
 			}
 		}
+		region_state:MIST={
+			create_building={
+				building="building_government_administration"
+				add_ownership={ country={ country="c:MIST" levels=1 } }
+				reserves=1
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_hereditary_bureaucrats" "pm_religious_bureaucrats" }
+			}
+		}
+
 	}
 	s:STATE_TOKAI={
 		region_state:HITO={
@@ -2754,12 +2763,12 @@
 		}
 	}
 	s:STATE_KANSAI={
-		region_state:HITO={
+		region_state:MYRN={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-					country="c:HITO"
+					country="c:MYRN"
 						levels=3
 					}
 				}
@@ -2771,7 +2780,7 @@
 				add_ownership={
 					building={
 						type="building_textile_mill"
-						country="c:HITO"
+						country="c:MYRN"
 						levels=3
 						region="STATE_KANSAI"
 					}
@@ -2784,7 +2793,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:HITO"
+						country="c:MYRN"
 						levels=1
 						region="STATE_KANSAI"
 					}
@@ -2797,7 +2806,7 @@
 				add_ownership={
 					building={
 						type="building_furniture_manufactory"
-						country="c:HITO"
+						country="c:MYRN"
 						levels=1
 						region="STATE_KANSAI"
 					}
@@ -2809,7 +2818,7 @@
 				building="building_construction_sector"
 				add_ownership={
 					country={
-						country="c:HITO"
+						country="c:MYRN"
 						levels=1
 					}
 				}
@@ -2821,7 +2830,7 @@
 				add_ownership={
 					building={
 						type="building_shipyard"
-						country="c:HITO"
+						country="c:MYRN"
 						levels=1
 						region="STATE_KANSAI"
 					}
@@ -2834,7 +2843,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:HITO"
+						country="c:MYRN"
 						levels=2
 						region="STATE_KANSAI"
 					}
@@ -2847,7 +2856,7 @@
 				add_ownership={
 					building={
 						type="building_tobacco_plantation"
-						country="c:HITO"
+						country="c:MYRN"
 						levels=1
 						region="STATE_KANSAI"
 					}
@@ -2860,7 +2869,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:HITO"
+						country="c:MYRN"
 						levels=1
 						region="STATE_KANSAI"
 					}
@@ -2873,7 +2882,7 @@
 				add_ownership={
 					building={
 						type="building_logging_camp"
-						country="c:HITO"
+						country="c:MYRN"
 						levels=2
 						region="STATE_KANSAI"
 					}
@@ -2886,7 +2895,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:HITO"
+						country="c:MYRN"
 						levels=2
 						region="STATE_KANSAI"
 					}
@@ -2899,7 +2908,7 @@
 				add_ownership={
 					building={
 						type="building_whaling_station"
-						country="c:HITO"
+						country="c:MYRN"
 						levels=1
 						region="STATE_KANSAI"
 					}
@@ -2912,7 +2921,7 @@
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:HITO"
+						country="c:MYRN"
 						levels=1
 						region="STATE_KANSAI"
 					}
