@@ -1,15 +1,24 @@
-# 幻想乡迁往澳大拉西亚：第一版领土分配
-本阶段只调整初始领土与首都州；人物、人口、建筑及州区重做留待版图确认后处理。西澳大利亚完全保留原状。
-分配直接读取原版 `13_australasia.txt` 的 `provinces` 表，再以原版城市、港口、农场、矿场、林场的省份作为空间锚点切分。所有纳入州的色码只出现一次。
-| 州区 | 国家及省份数 | 合计 |
-|---|---:|---:|
-| STATE_NEW_SOUTH_WALES | MFSR 44、HITO 48、MYRN 56、HAKR 37、YSSK 11 | 196 |
-| STATE_VICTORIA | MYRN 20、KZNH 29、EITR 13 | 62 |
-| STATE_TASMANIA | MTOU 21 | 21 |
-| STATE_QUEENSLAND | MRYA 195、YKYM 100、MIST 50、RDMK 22 | 367 |
-| STATE_SOUTH_AUSTRALIA | CHRD 136、KZNH 34、HIGN 35 | 205 |
-| STATE_NORTHERN_TERRITORY | CHRD 210、MKAI 13、YKYM 69 | 292 |
-| STATE_NORTH_ISLAND | BYKR 28、HIGN 5、YKMF 2 | 35 |
-| STATE_SOUTH_ISLAND | YKMF 25、BYKR 16、TENG 6 | 47 |
+# 幻想乡迁往澳大拉西亚：连续领土草案
 
-核验：八个州区共 `1225` 个原版省份；分配后 `1225` 个，重复 `0`，遗漏 `0`。
+本版仅从原有国家领土切出 18 块连续核心区；其余地区恢复原有归属。扩张不穿越原版不可通行荒漠／山地。
+
+- `HAKR`：22 个省份，锚点 `XFDFB3F`
+- `MIST`：12 个省份，锚点 `XB9104E`
+- `RDMK`：26 个省份，锚点 `X692E65`
+- `YKYM`：28 个省份，锚点 `XA70E88`
+- `MRYA`：20 个省份，锚点 `X57456E`
+- `HITO`：25 个省份，锚点 `X8B56F5`
+- `MFSR`：25 个省份，锚点 `X799B34`
+- `YSSK`：8 个省份，锚点 `X70E720`
+- `MYRN`：15 个省份，锚点 `X1BC4A6`
+- `EITR`：13 个省份，锚点 `XC21B54`
+- `KZNH`：25 个省份，锚点 `XCC9C60`
+- `CHRD`：30 个省份，锚点 `X6F472E`
+- `HIGN`：18 个省份，锚点 `X4064E2`
+- `MKAI`：25 个省份，锚点 `XE1EF33`
+- `MTOU`：19 个省份，锚点 `X4BBCDF`
+- `TENG`：18 个省份，锚点 `XD8C27E`
+- `BYKR`：18 个省份，锚点 `XC5AD14`
+- `YKMF`：16 个省份，锚点 `X1000F0`
+
+八个州区 `1225` 个省份均有且仅有一个拥有国；幻想乡核心区 `363` 个；不可通行省份未划入幻想乡。
