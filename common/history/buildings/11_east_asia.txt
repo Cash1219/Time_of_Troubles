@@ -2763,12 +2763,12 @@
 		}
 	}
 	s:STATE_KANSAI={
-		region_state:MYRN={
+		region_state:MFSR={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-					country="c:MYRN"
+					country="c:MFSR"
 						levels=3
 					}
 				}
@@ -2780,7 +2780,7 @@
 				add_ownership={
 					building={
 						type="building_textile_mill"
-						country="c:MYRN"
+						country="c:MFSR"
 						levels=3
 						region="STATE_KANSAI"
 					}
@@ -2793,7 +2793,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:MYRN"
+						country="c:MFSR"
 						levels=1
 						region="STATE_KANSAI"
 					}
@@ -2806,7 +2806,7 @@
 				add_ownership={
 					building={
 						type="building_furniture_manufactory"
-						country="c:MYRN"
+						country="c:MFSR"
 						levels=1
 						region="STATE_KANSAI"
 					}
@@ -2818,7 +2818,7 @@
 				building="building_construction_sector"
 				add_ownership={
 					country={
-						country="c:MYRN"
+						country="c:MFSR"
 						levels=1
 					}
 				}
@@ -2830,7 +2830,7 @@
 				add_ownership={
 					building={
 						type="building_shipyard"
-						country="c:MYRN"
+						country="c:MFSR"
 						levels=1
 						region="STATE_KANSAI"
 					}
@@ -2843,7 +2843,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:MYRN"
+						country="c:MFSR"
 						levels=2
 						region="STATE_KANSAI"
 					}
@@ -2856,7 +2856,7 @@
 				add_ownership={
 					building={
 						type="building_tobacco_plantation"
-						country="c:MYRN"
+						country="c:MFSR"
 						levels=1
 						region="STATE_KANSAI"
 					}
@@ -2869,7 +2869,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:MYRN"
+						country="c:MFSR"
 						levels=1
 						region="STATE_KANSAI"
 					}
@@ -2882,7 +2882,7 @@
 				add_ownership={
 					building={
 						type="building_logging_camp"
-						country="c:MYRN"
+						country="c:MFSR"
 						levels=2
 						region="STATE_KANSAI"
 					}
@@ -2895,7 +2895,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:MYRN"
+						country="c:MFSR"
 						levels=2
 						region="STATE_KANSAI"
 					}
@@ -2908,7 +2908,7 @@
 				add_ownership={
 					building={
 						type="building_whaling_station"
-						country="c:MYRN"
+						country="c:MFSR"
 						levels=1
 						region="STATE_KANSAI"
 					}
@@ -2921,7 +2921,7 @@
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:MYRN"
+						country="c:MFSR"
 						levels=1
 						region="STATE_KANSAI"
 					}
@@ -2930,12 +2930,12 @@
 				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated"  }
 			}
 		}
-		region_state:MYRN={
+		region_state:MFSR={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:MYRN"
+						country="c:MFSR"
 						levels=1
 					}
 				}
@@ -2943,6 +2943,15 @@
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_hereditary_bureaucrats" "pm_religious_bureaucrats" }
 			}
 		}
+		region_state:MYRN={
+			create_building={
+				building="building_government_administration"
+				add_ownership={ country={ country="c:MYRN" levels=1 } }
+				reserves=1
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_hereditary_bureaucrats" "pm_religious_bureaucrats" }
+			}
+		}
+
 	}
 	s:STATE_KYUSHU={
 		region_state:HIGN={

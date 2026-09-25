@@ -6106,18 +6106,24 @@ create_state = {
 	s:STATE_HOKUSHINETSU = {
 		create_state = {
 			country = c:CHRD
-			owned_provinces = { xB5F9BD xEF90C0 xE76E8F x5A57C3 x779089 x88595F xD12DC5 xB0D040 xB050C0 }
+			owned_provinces = { xB5F9BD xEF90C0 xE76E8F x779089  xD12DC5  xB050C0 }
 		}
-
+		create_state = {
+			country = c:RDMK
+			owned_provinces = { xB0D040 x88595F x5A57C3 }
+		}
 		add_homeland = cu:japanese
 		set_variable = { name = daimyo_chain_id value = 0 }
 	}
 	s:STATE_KANSAI = {
 		create_state = {
-			country = c:MYRN
-			owned_provinces = { x305040 x614287 x9E58B2 xB03EF0 xB0D0C0 x70D040 }
+			country = c:MFSR
+			owned_provinces = { x614287 x9E58B2 xB03EF0 xB0D0C0 x70D040 }
 		}
-
+		create_state = {
+			country = c:MYRN
+			owned_provinces = { x305040 }
+		}
 		add_homeland = cu:japanese
 		set_variable = { name = daimyo_chain_id value = 0 }
 	}
