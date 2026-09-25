@@ -1,5 +1,14 @@
 ﻿POWER_BLOCS = {
-
+	c:HAKR ?= {
+		create_power_bloc = {
+			name = GENSOKYO_BARRIER_NETWORK
+			map_color = { 232 66 91 }
+			founding_date = 1836.1.1
+			identity = identity_sovereign_empire
+			principle = principle_vassalization_1
+		}
+		power_bloc = { add_cohesion_number = 100 }
+	}
 	c:GBR ?= {
 		create_power_bloc = {
 			name = BRITISH_EMPIRE
@@ -12,7 +21,7 @@
 			# subjects are automatically part of the bloc
 		}
 		power_bloc = { add_cohesion_number = 100 }
-
+		
 	}
 	c:FRA ?= {
 		create_power_bloc = {
@@ -25,7 +34,7 @@
 			member = c:ALS
 		}
 		power_bloc = { add_cohesion_number = 100 }
-
+		
 	}
 	c:SKD ?= {
 		create_power_bloc = {
@@ -41,7 +50,7 @@
 			member = c:MOR
 		}
 		power_bloc = { add_cohesion_number = 100 }
-
+		
 	}
 	c:MUS ?= {
 		create_power_bloc = {
@@ -54,12 +63,12 @@
 			principle = principle_vassalization_1
 			member = c:AQO
 			member = c:NJS
-
+			
 		}
 		power_bloc = { add_cohesion_number = 100 }
+		
 
-
-
+			
 	}
 	c:HTT ?= {
 		create_power_bloc = {
@@ -74,11 +83,11 @@
 			member = c:UKR
 			member = c:MYG
 			member = c:AVMJ
-
+			
 		}
 		power_bloc = { add_cohesion_number = 100 }
 
-
+			
 	}
 	c:GBDP ?= {
 		create_power_bloc = {
@@ -89,15 +98,15 @@
 			founding_date = 1200.1.1
 			identity = identity_trade_league
 			principle = principle_internal_trade_1
-
+		
 			#member = c:CUB
 			#member = c:HAR
 			member = c:STLI
 		}
 		power_bloc = { add_cohesion_number = 100 }
+		
 
-
-
+			
 	}
 	c:RITA ?= {
 		create_power_bloc = {
@@ -108,13 +117,13 @@
 			founding_date = 1200.1.1
 			identity = identity_military_treaty_organization
 			principle = principle_defensive_cooperation_3
-
+		
 			member = c:PAP
 		}
 		power_bloc = { add_cohesion_number = 100 }
+		
 
-
-
+			
 	}
 	c:OOAR ?= {
 		create_power_bloc = {
@@ -145,7 +154,7 @@
 			}
 		}
 
-
+			
 	}
 	c:UMA ?= {
 		create_power_bloc = {
@@ -167,11 +176,11 @@
 			}
 		}
 
-
+			
 	}
 	c:ZYD ?= {
 		create_power_bloc = {
-			name = GAMINDUSTRI
+			name = GAMINDUSTRI 
 			map_color = { 87  130  199 }
 
 			founding_date = 1444.11.11
@@ -190,7 +199,7 @@
 			}
 		}
 
-
+			
 	}
 	c:KIVO ?= {
 		create_power_bloc = {
@@ -236,7 +245,7 @@
 			# Steuerverein- separate from the Zollverein. Would include HAN, BRA, OLD
 		}
 		power_bloc = { add_cohesion_number = 100 }
-
+		
 	}
 
 	# Vanilla blocs not replaced by ToT still begin fully cohesive.
