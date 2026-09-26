@@ -170,6 +170,27 @@
 			}
 		}
 	}
+	s:STATE_CHIREIDEN_CAPITAL = {
+		region_state:CHRD = {
+			create_pop = { culture = japanese size = 18000 }
+			create_pop = { culture = aborigine size = 4000 }
+		}
+	}
+
+	s:STATE_CHIREIDEN_OASIS = {
+		region_state:CHRD = {
+			create_pop = { culture = japanese size = 9000 }
+			create_pop = { culture = aborigine size = 3000 }
+		}
+	}
+
+	s:STATE_CHIREIDEN_GATE = {
+		region_state:CHRD = {
+			create_pop = { culture = japanese size = 4000 }
+			create_pop = { culture = aborigine size = 1000 }
+		}
+	}
+
 	s:STATE_SOUTH_AUSTRALIA = {
 		region_state:SAS = {
 			create_pop = {
