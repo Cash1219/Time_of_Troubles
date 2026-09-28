@@ -1,0 +1,107 @@
+{
+  "changed_provinces": 176,
+  "mainland_taken_from": {
+    "HITO": 13,
+    "EITR": 3
+  },
+  "country_populations": {
+    "TENG": 200000,
+    "HITO": 3300001,
+    "HAKR": 700000,
+    "YKYM": 2200000,
+    "MFSR": 700000,
+    "EITR": 650001,
+    "YSSK": 150000,
+    "KZNH": 500000,
+    "MIST": 149999,
+    "RDMK": 599999,
+    "MRYA": 1000000,
+    "CHRD": 2710000,
+    "MYRN": 500000,
+    "SHRM": 400000,
+    "BYKR": 1300000,
+    "KYTO": 500000,
+    "UKDO": 450000,
+    "RNGN": 700000,
+    "HIGN": 450000,
+    "YKMF": 350000,
+    "MKAI": 1300000,
+    "MTOU": 800000
+  },
+  "connectivity": {
+    "RDMK": [
+      29
+    ],
+    "MIST": [
+      8
+    ],
+    "HITO": [
+      135
+    ],
+    "EITR": [
+      17
+    ],
+    "KZNH": [
+      7
+    ],
+    "MTOU": [
+      82
+    ],
+    "CHRD": {
+      "mainland_connected": true,
+      "existing_kangaroo_island": [
+        "xC58F87",
+        "xD0A0D0"
+      ]
+    }
+  },
+  "total_population": 19610000,
+  "capitals": {
+    "RDMK": "STATE_TASMANIA",
+    "MIST": "STATE_VICTORIA",
+    "MTOU": "STATE_NORTH_ISLAND",
+    "TENG": "STATE_FIJI"
+  },
+  "game_launch": "not tested",
+  "resource_and_arable_changes": false,
+  "population_policy": "Existing residents stay in their states; mainland shares explicitly apportioned. No population added or deleted.",
+  "backup": "D:\\Users\\Administrator\\Documents\\Paradox Interactive\\Victoria 3\\mod\\ToT\\docs\\backups\\tasmania_before_20260928_223657",
+  "status": "applied; static checks passed; new-save validation pending",
+  "files": [
+    "common/history/states/00_states.txt",
+    "common/country_definitions/tot_countries.txt",
+    "common/history/pops/13_australasia.txt",
+    "common/history/buildings/13_australasia.txt"
+  ],
+  "original_sha256": {
+    "common/history/states/00_states.txt": "fa13f32af695005aae9154b62d484a422578d746c21062cd9d52a7decc424a3e",
+    "common/country_definitions/tot_countries.txt": "1779c2af62443122ac500e333abd3f346a02c864a4c98b9c89513b93290c54dd",
+    "common/history/pops/13_australasia.txt": "8de59ffea92a8f9539d074650f1b16621c4934c713a506aa389ca88f16b9b26b",
+    "common/history/buildings/13_australasia.txt": "8630c678bf2dded4e75180a437bad8fcc3a62dab01bd68b9fae90c3ed09e0ae3"
+  },
+  "passable_route_observation": {
+    "before_chireiden_components": [
+      34,
+      12,
+      1
+    ],
+    "after_chireiden_components": [
+      89,
+      12,
+      2,
+      1
+    ],
+    "note": "Alice Springs oasis and single Queensland outpost already lack a direct same-country passable province/adjacency route in the backup. No new mainland disconnection; Kangaroo Island naturally transfers from the old mansion."
+  },
+  "verified_checks": [
+    "frozen province manifest and unchanged state boundaries",
+    "unique complete ownership",
+    "valid relocated capitals",
+    "22 countries and preserved population total",
+    "all pop owner scopes valid",
+    "total arable 1100",
+    "contiguous mainland and existing sea links",
+    "backup integrity",
+    "no new inland passable disconnection"
+  ]
+}

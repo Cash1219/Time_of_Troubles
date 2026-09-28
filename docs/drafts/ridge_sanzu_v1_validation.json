@@ -1,0 +1,80 @@
+{
+  "backup": "D:\\Users\\Administrator\\Documents\\Paradox Interactive\\Victoria 3\\mod\\ToT\\docs\\backups\\ridge_sanzu_before_20260928_104315",
+  "provinces_changed": 174,
+  "connectivity": {
+    "UKDO": {
+      "before": 23,
+      "after": 64,
+      "components": [
+        64
+      ]
+    },
+    "RNGN": {
+      "before": 53,
+      "after": 135,
+      "components": [
+        135
+      ]
+    },
+    "MKAI": {
+      "before": 151,
+      "after": 159,
+      "components": [
+        156,
+        2,
+        1
+      ]
+    },
+    "HIGN": {
+      "before": 40,
+      "after": 38,
+      "components": [
+        38
+      ]
+    },
+    "CHRD": {
+      "before": 509,
+      "after": 513,
+      "components": [
+        513
+      ]
+    },
+    "YKYM": {
+      "before": 68,
+      "after": 107,
+      "components": [
+        107
+      ]
+    },
+    "MFSR": {
+      "before": 123,
+      "after": 82,
+      "components": [
+        82
+      ]
+    }
+  },
+  "checks": [
+    "province coverage",
+    "unique ownership",
+    "no new enclaves",
+    "valid capitals",
+    "western gate underground route",
+    "exact culture population totals preserved",
+    "WAS references removed in touched histories",
+    "original indexed river palette"
+  ],
+  "game_launch": "not tested",
+  "files": [
+    "common/history/states/00_states.txt",
+    "map_data/state_regions/tot_13_australasia_chireiden.txt",
+    "common/history/pops/13_australasia.txt",
+    "common/history/buildings/13_australasia.txt",
+    "common/strategic_regions/east_asia_strategic_regions.txt",
+    "localization/replace/simp_chinese/map/tot_chireiden_states_l_simp_chinese.yml",
+    "map_data/adjacencies.csv",
+    "common/history/diplomacy/00_subject_relationships.txt",
+    "common/history/military_formations/00_generated_formations.txt",
+    "map_data/rivers.png"
+  ]
+}

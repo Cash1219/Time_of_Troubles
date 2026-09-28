@@ -130,12 +130,12 @@
 		}
 	}
 	s:STATE_TASMANIA={
-		region_state:TAS={
+		region_state:RDMK={
 			create_building={
 				building="building_barrack"
 				add_ownership={
 					country={
-						country="c:TAS"
+						country="c:RDMK"
 						levels=1
 					}
 				}
@@ -147,7 +147,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:TAS"
+						country="c:RDMK"
 						levels=1
 						region="STATE_TASMANIA"
 					}
@@ -175,13 +175,13 @@
 		}
 	}
 	s:STATE_SOUTH_AUSTRALIA={
-		region_state:SAS={
+		region_state:CHRD={
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:SAS"
+						country="c:CHRD"
 						levels=1
 						region="STATE_SOUTH_AUSTRALIA"
 					}
@@ -193,7 +193,7 @@
 				building="building_barrack"
 				add_ownership={
 					country={
-						country="c:SAS"
+						country="c:CHRD"
 						levels=1
 					}
 				}
@@ -205,7 +205,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:SAS"
+						country="c:CHRD"
 						levels=1
 						region="STATE_SOUTH_AUSTRALIA"
 					}
@@ -214,13 +214,13 @@
 				activate_production_methods={ "pm_basic_port" }
 			}
 		}
-		region_state:KAU={
+		region_state:CHRD={
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:KAU"
+						country="c:CHRD"
 						levels=1
 						region="STATE_SOUTH_AUSTRALIA"
 					}
@@ -233,7 +233,7 @@
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:KAU"
+						country="c:CHRD"
 						levels=1
 						region="STATE_SOUTH_AUSTRALIA"
 					}
@@ -244,12 +244,12 @@
 		}
 	}
 	s:STATE_WESTERN_AUSTRALIA={
-		region_state:WAS={
+		region_state:UKDO={
 			create_building={
 				building="building_barrack"
 				add_ownership={
 					country={
-						country="c:WAS"
+						country="c:UKDO"
 						levels=1
 					}
 				}
@@ -261,7 +261,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:WAS"
+						country="c:UKDO"
 						levels=1
 						region="STATE_WESTERN_AUSTRALIA"
 					}
@@ -274,7 +274,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:WAS"
+						country="c:UKDO"
 						levels=1
 						region="STATE_WESTERN_AUSTRALIA"
 					}
@@ -299,26 +299,25 @@
 			}
 		}
 	}
-	s:STATE_NORTH_ISLAND={
-		region_state:UNT={
+
+	s:STATE_NORTH_ISLAND = {
+		region_state:MTOU = {
 			create_building={
 				building="building_barrack"
 				add_ownership={
 					country={
-						country="c:UNT"
+						country="c:MTOU"
 						levels=3
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_no_organization" }
 			}
-		}
-		region_state:NSW={
 			create_building={
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:NSW"
+						country="c:MTOU"
 						levels=1
 					}
 				}
@@ -326,13 +325,12 @@
 				activate_production_methods={ "pm_anchorage" }
 			}
 		}
-		region_state:NTO={
+	}
+
+	s:STATE_SOUTH_ISLAND = {
+		region_state:MTOU = {
 		}
 	}
-	s:STATE_SOUTH_ISLAND={
-		region_state:NTO={
-		}
-		region_state:NTU={
-		}
-	}
+
+
 }

@@ -1,0 +1,13 @@
+﻿# 恢复旧版幻想乡结界盟约；附庸自动进入博丽的阵营。
+POWER_BLOCS = {
+    c:HAKR ?= {
+        create_power_bloc = {
+            name = GENSOKYO_BARRIER_NETWORK
+            map_color = { 232 66 91 }
+            founding_date = 1836.1.1
+            identity = identity_sovereign_empire
+            principle = principle_vassalization_1
+        }
+        power_bloc = { add_cohesion_number = 100 }
+    }
+}
