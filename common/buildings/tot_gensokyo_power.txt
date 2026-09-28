@@ -1,0 +1,30 @@
+# Country-specific power prototypes. Electricity remains a local good.
+building_tot_kappa_power = {
+	building_group = bg_power
+	icon = "gfx/interface/icons/building_icons/power_plant.dds"
+	city_type = city
+	levels_per_mesh = 5
+	unlocking_technologies = { electrical_generation }
+	production_method_groups = { pmg_tot_kappa_power }
+	required_construction = construction_cost_medium
+	ownership_type = self
+	potential = { owner = c:YKYM }
+	possible = { owner = { NOT = { has_law_or_variant = law_type:law_industry_banned } } }
+	ai_value = 1000
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_monuments.dds"
+}
+
+building_tot_chireiden_fusion = {
+	building_group = bg_power
+	icon = "gfx/interface/icons/building_icons/power_plant.dds"
+	city_type = city
+	levels_per_mesh = 5
+	unlocking_technologies = { electrical_generation }
+	production_method_groups = { pmg_tot_chireiden_fusion }
+	required_construction = construction_cost_high
+	ownership_type = self
+	potential = { owner = c:CHRD }
+	possible = { owner = { NOT = { has_law_or_variant = law_type:law_industry_banned } } }
+	ai_value = 1000
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_monuments.dds"
+}
