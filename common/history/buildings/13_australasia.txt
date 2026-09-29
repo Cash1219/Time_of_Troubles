@@ -65,29 +65,31 @@ BUILDINGS={
 				add_ownership={
 					country={
 						country="c:MTOU"
-						levels=3
+						levels=2
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_no_organization" }
 			}
-			create_building={
-				building="building_port"
+		}
+
+		region_state:JNKF = {
+			create_building = {
+				building="building_barrack"
 				add_ownership={
 					country={
-						country="c:MTOU"
+						country="c:JNKF"
 						levels=1
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_anchorage" }
+				activate_production_methods={ "pm_no_organization" }
 			}
 		}
 	}
 
 	s:STATE_SOUTH_ISLAND = {
-		region_state:MTOU = {
-		}
+
 	}
 
 

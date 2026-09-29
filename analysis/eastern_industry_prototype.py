@@ -21,6 +21,7 @@ CHECKPOINT = '7be45d6'
 BACKUP_PREFIX = 'eastern_industry_before_'
 HISTORY_LABEL = 'Eastern industry test v1'
 ARABLE_ADDITIONS = {'VIC': ['building_opium_plantation']}
+POPULATION_SNAPSHOT = 'industry_resources_current_20260929.json'
 ALIASES = {
     'wheat': 'wheat_farm', 'ranch': 'livestock_ranch', 'cotton': 'cotton_plantation',
     'sugar': 'sugar_plantation', 'tea': 'tea_plantation', 'wine': 'vineyard',
@@ -138,7 +139,7 @@ def patch_state_resources(source):
 def main(apply=False):
     owners = ownership((ROOT / 'common/history/states/00_states.txt').read_text(encoding='utf-8-sig'))
     pairs = {tuple(value) for value in owners.values()}
-    population = json.loads((OUT / 'industry_resources_current_20260929.json').read_text(encoding='utf-8'))
+    population = json.loads((OUT / POPULATION_SNAPSHOT).read_text(encoding='utf-8'))
     bdefs, groups, pms = [definitions(d) for d in ('common/buildings', 'common/production_method_groups', 'common/production_methods')]
     techs = definitions('common/technology/technologies')
     starting = {k for k, body in techs.items() if re.search(r'\bera\s*=\s*era_1\b', body)}

@@ -1,4 +1,4 @@
-﻿POPS = {
+POPS = {
 	s:STATE_NEW_SOUTH_WALES = {
 		region_state:EITR = {
 			create_pop = { culture = aborigine size = 1876 }
@@ -229,15 +229,22 @@
 
 	s:STATE_NORTH_ISLAND = {
 		region_state:MTOU = {
-			create_pop = { culture = australian size = 1004 }
-			create_pop = { culture = japanese religion = shinto size = 306996 }
-			create_pop = { culture = maori size = 62000 }
-			create_pop = { culture = maori religion = protestant size = 30000 }
-		}
+			create_pop = { culture = australian size = 652 }
+			create_pop = { culture = japanese religion = shinto size = 199547 }
+			create_pop = { culture = maori size = 40300 }
+			create_pop = { culture = maori religion = protestant size = 19500 }
+				}
+
+		region_state:JNKF = {
+			create_pop = { culture = australian size = 352 }
+			create_pop = { culture = japanese religion = shinto size = 107449 }
+			create_pop = { culture = maori size = 21700 }
+			create_pop = { culture = maori religion = protestant size = 10500 }
+				}
 	}
 
 	s:STATE_SOUTH_ISLAND = {
-		region_state:MTOU = {
+		region_state:HCTI = {
 			create_pop = { culture = australian size = 428 }
 			create_pop = { culture = japanese religion = shinto size = 323572 }
 			create_pop = { culture = maori size = 76000 }

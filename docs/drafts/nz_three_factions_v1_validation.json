@@ -1,0 +1,5388 @@
+{
+  "applied": true,
+  "checkpoint": "2a5a25d",
+  "backup": "D:\\Users\\Administrator\\Documents\\Paradox Interactive\\Victoria 3\\mod\\ToT\\docs\\backups\\nz_economy_before_20260929_103513",
+  "plan": [
+    {
+      "tag": "HITO",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_wheat_farm",
+      "levels": 25,
+      "pms": [
+        "pm_simple_farming",
+        "pm_no_secondary",
+        "pm_tools_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 125000,
+      "goods_net": {
+        "grain": 500
+      }
+    },
+    {
+      "tag": "HITO",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_livestock_ranch",
+      "levels": 10,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 50000,
+      "goods_net": {
+        "meat": 100,
+        "fabric": 50
+      }
+    },
+    {
+      "tag": "HITO",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_cotton_plantation",
+      "levels": 7,
+      "pms": [
+        "default_building_cotton_plantation",
+        "default_labour",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 8000,
+      "total_jobs": 56000,
+      "goods_net": {
+        "fabric": 315
+      }
+    },
+    {
+      "tag": "HITO",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_sugar_plantation",
+      "levels": 2,
+      "pms": [
+        "default_building_sugar_plantation",
+        "ox_driven_rollers_sugar",
+        "slave_exploitation_sugar",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 10000,
+      "total_jobs": 20000,
+      "goods_net": {
+        "sugar": 130
+      }
+    },
+    {
+      "tag": "HITO",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_tea_plantation",
+      "levels": 2,
+      "pms": [
+        "default_building_tea_plantation",
+        "default_labour",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 7000,
+      "total_jobs": 14000,
+      "goods_net": {
+        "tea": 40
+      }
+    },
+    {
+      "tag": "HITO",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_vineyard",
+      "levels": 2,
+      "pms": [
+        "default_building_vineyard",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "wine": 40
+      }
+    },
+    {
+      "tag": "HITO",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_food_industry",
+      "levels": 5,
+      "pms": [
+        "pm_bakery",
+        "pm_disabled_canning",
+        "pm_disabled_distillery",
+        "pm_manual_dough_processing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 25000,
+      "goods_net": {
+        "grain": -200,
+        "groceries": 225
+      }
+    },
+    {
+      "tag": "HITO",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_textile_mill",
+      "levels": 4,
+      "pms": [
+        "pm_handsewn_clothes",
+        "pm_no_luxury_clothes",
+        "pm_traditional_looms"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 20000,
+      "goods_net": {
+        "fabric": -160,
+        "clothes": 180
+      }
+    },
+    {
+      "tag": "HITO",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_furniture_manufactory",
+      "levels": 2,
+      "pms": [
+        "pm_handcrafted_furniture",
+        "pm_no_luxuries",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "wood": -60,
+        "fabric": -20,
+        "furniture": 90
+      }
+    },
+    {
+      "tag": "HITO",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_paper_mill",
+      "levels": 1,
+      "pms": [
+        "pm_pulp_pressing",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "paper": 40
+      }
+    },
+    {
+      "tag": "HITO",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_logging_camp",
+      "levels": 3,
+      "pms": [
+        "pm_saw_mills",
+        "pm_no_hardwood",
+        "pm_no_equipment",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "tools": -15,
+        "wood": 180
+      }
+    },
+    {
+      "tag": "HITO",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_iron_mine",
+      "levels": 1,
+      "pms": [
+        "pm_atmospheric_engine_pump_building_iron_mine",
+        "pm_no_explosives",
+        "pm_no_steam_automation",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "tools": -10,
+        "coal": -10,
+        "iron": 40
+      }
+    },
+    {
+      "tag": "HITO",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_coal_mine",
+      "levels": 2,
+      "pms": [
+        "pm_atmospheric_engine_pump_building_coal_mine",
+        "pm_no_explosives",
+        "pm_no_steam_automation",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "tools": -20,
+        "coal": 80
+      }
+    },
+    {
+      "tag": "HITO",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_tooling_workshop",
+      "levels": 2,
+      "pms": [
+        "pm_steel",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "wood": -60,
+        "steel": -40,
+        "tools": 160
+      }
+    },
+    {
+      "tag": "HITO",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_government_administration",
+      "levels": 2,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 3000,
+      "goods_net": {
+        "paper": -20
+      }
+    },
+    {
+      "tag": "HITO",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_university",
+      "levels": 1,
+      "pms": [
+        "pm_scholastic_education",
+        "pm_religious_academia",
+        "pm_principle_freedom_of_movement_3"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "paper": -5
+      }
+    },
+    {
+      "tag": "HITO",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_construction_sector",
+      "levels": 2,
+      "pms": [
+        "pm_wooden_buildings"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 2000,
+      "goods_net": {
+        "fabric": -50,
+        "wood": -150
+      }
+    },
+    {
+      "tag": "HITO",
+      "state": "STATE_VICTORIA",
+      "building": "building_wheat_farm",
+      "levels": 8,
+      "pms": [
+        "pm_simple_farming",
+        "pm_no_secondary",
+        "pm_tools_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 40000,
+      "goods_net": {
+        "grain": 160
+      }
+    },
+    {
+      "tag": "HITO",
+      "state": "STATE_VICTORIA",
+      "building": "building_livestock_ranch",
+      "levels": 3,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "meat": 30,
+        "fabric": 15
+      }
+    },
+    {
+      "tag": "HITO",
+      "state": "STATE_VICTORIA",
+      "building": "building_food_industry",
+      "levels": 2,
+      "pms": [
+        "pm_bakery",
+        "pm_disabled_canning",
+        "pm_disabled_distillery",
+        "pm_manual_dough_processing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "grain": -80,
+        "groceries": 90
+      }
+    },
+    {
+      "tag": "HITO",
+      "state": "STATE_VICTORIA",
+      "building": "building_textile_mill",
+      "levels": 1,
+      "pms": [
+        "pm_handsewn_clothes",
+        "pm_no_luxury_clothes",
+        "pm_traditional_looms"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "fabric": -40,
+        "clothes": 45
+      }
+    },
+    {
+      "tag": "HITO",
+      "state": "STATE_VICTORIA",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_coal_mine",
+      "levels": 6,
+      "pms": [
+        "pm_atmospheric_engine_pump_building_coal_mine",
+        "pm_no_explosives",
+        "pm_no_steam_automation",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 30000,
+      "goods_net": {
+        "tools": -60,
+        "coal": 240
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_iron_mine",
+      "levels": 6,
+      "pms": [
+        "pm_atmospheric_engine_pump_building_iron_mine",
+        "pm_no_explosives",
+        "pm_no_steam_automation",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 30000,
+      "goods_net": {
+        "tools": -60,
+        "coal": -60,
+        "iron": 240
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_logging_camp",
+      "levels": 5,
+      "pms": [
+        "pm_electric_saw_mills",
+        "pm_no_hardwood",
+        "pm_no_equipment",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 25000,
+      "goods_net": {
+        "tools": -50,
+        "electricity": -25,
+        "wood": 500
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_tooling_workshop",
+      "levels": 3,
+      "pms": [
+        "pm_steel",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "wood": -90,
+        "steel": -60,
+        "tools": 240
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_steel_mill",
+      "levels": 3,
+      "pms": [
+        "pm_blister_steel_process",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "iron": -120,
+        "coal": -90,
+        "steel": 195
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_motor_industry",
+      "levels": 1,
+      "pms": [
+        "pm_steam_engines",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "steel": -30,
+        "engines": 40
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_paper_mill",
+      "levels": 1,
+      "pms": [
+        "pm_pulp_pressing",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "paper": 40
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_livestock_ranch",
+      "levels": 2,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "meat": 20,
+        "fabric": 10
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_textile_mill",
+      "levels": 1,
+      "pms": [
+        "pm_handsewn_clothes",
+        "pm_no_luxury_clothes",
+        "pm_traditional_looms"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "fabric": -40,
+        "clothes": 45
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_government_administration",
+      "levels": 2,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 3000,
+      "goods_net": {
+        "paper": -20
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_university",
+      "levels": 1,
+      "pms": [
+        "pm_scholastic_education",
+        "pm_religious_academia",
+        "pm_principle_freedom_of_movement_3"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "paper": -5
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_port",
+      "levels": 1,
+      "pms": [
+        "pm_basic_port"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "clippers": -6,
+        "merchant_marine": 9
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_construction_sector",
+      "levels": 1,
+      "pms": [
+        "pm_wooden_buildings"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "fabric": -25,
+        "wood": -75
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_tot_kappa_power",
+      "levels": 1,
+      "pms": [
+        "pm_tot_kappa_precision_generation"
+      ],
+      "jobs_per_level": 600,
+      "total_jobs": 600,
+      "goods_net": {
+        "engines": -3,
+        "coal": -4,
+        "wood": -3,
+        "tools": -1,
+        "electricity": 25
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_coal_mine",
+      "levels": 2,
+      "pms": [
+        "pm_atmospheric_engine_pump_building_coal_mine",
+        "pm_no_explosives",
+        "pm_no_steam_automation",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "tools": -20,
+        "coal": 80
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_iron_mine",
+      "levels": 1,
+      "pms": [
+        "pm_atmospheric_engine_pump_building_iron_mine",
+        "pm_no_explosives",
+        "pm_no_steam_automation",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "tools": -10,
+        "coal": -10,
+        "iron": 40
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_logging_camp",
+      "levels": 1,
+      "pms": [
+        "pm_saw_mills",
+        "pm_no_hardwood",
+        "pm_no_equipment",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "tools": -5,
+        "wood": 60
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_tooling_workshop",
+      "levels": 1,
+      "pms": [
+        "pm_steel",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "steel": -20,
+        "tools": 80
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_steel_mill",
+      "levels": 1,
+      "pms": [
+        "pm_blister_steel_process",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "iron": -40,
+        "coal": -30,
+        "steel": 65
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_livestock_ranch",
+      "levels": 2,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "meat": 20,
+        "fabric": 10
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_food_industry",
+      "levels": 1,
+      "pms": [
+        "pm_bakery",
+        "pm_disabled_canning",
+        "pm_disabled_distillery",
+        "pm_manual_dough_processing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "grain": -40,
+        "groceries": 45
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_textile_mill",
+      "levels": 1,
+      "pms": [
+        "pm_handsewn_clothes",
+        "pm_no_luxury_clothes",
+        "pm_traditional_looms"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "fabric": -40,
+        "clothes": 45
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "YKYM",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_port",
+      "levels": 1,
+      "pms": [
+        "pm_basic_port"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "clippers": -6,
+        "merchant_marine": 9
+      }
+    },
+    {
+      "tag": "MFSR",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_logging_camp",
+      "levels": 3,
+      "pms": [
+        "pm_saw_mills",
+        "pm_no_hardwood",
+        "pm_no_equipment",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "tools": -15,
+        "wood": 180
+      }
+    },
+    {
+      "tag": "MFSR",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_paper_mill",
+      "levels": 3,
+      "pms": [
+        "pm_pulp_pressing",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "wood": -90,
+        "paper": 120
+      }
+    },
+    {
+      "tag": "MFSR",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_furniture_manufactory",
+      "levels": 1,
+      "pms": [
+        "pm_handcrafted_furniture",
+        "pm_no_luxuries",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "fabric": -10,
+        "furniture": 45
+      }
+    },
+    {
+      "tag": "MFSR",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_botanical_garden",
+      "levels": 1,
+      "pms": [
+        "pm_botanical_garden_nursery",
+        "pm_botanical_garden_fruit_trees_none"
+      ],
+      "jobs_per_level": 4000,
+      "total_jobs": 4000,
+      "goods_net": {
+        "wood": -5,
+        "fertilizer": -15,
+        "ornamental_plants": 15
+      }
+    },
+    {
+      "tag": "MFSR",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_wheat_farm",
+      "levels": 1,
+      "pms": [
+        "pm_simple_farming",
+        "pm_no_secondary",
+        "pm_tools_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "grain": 20
+      }
+    },
+    {
+      "tag": "MFSR",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_livestock_ranch",
+      "levels": 1,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "meat": 10,
+        "fabric": 5
+      }
+    },
+    {
+      "tag": "MFSR",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_tooling_workshop",
+      "levels": 1,
+      "pms": [
+        "pm_steel",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "steel": -20,
+        "tools": 80
+      }
+    },
+    {
+      "tag": "MFSR",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "MFSR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_logging_camp",
+      "levels": 2,
+      "pms": [
+        "pm_saw_mills",
+        "pm_no_hardwood",
+        "pm_no_equipment",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "tools": -10,
+        "wood": 120
+      }
+    },
+    {
+      "tag": "MFSR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_paper_mill",
+      "levels": 1,
+      "pms": [
+        "pm_pulp_pressing",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "paper": 40
+      }
+    },
+    {
+      "tag": "MFSR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_furniture_manufactory",
+      "levels": 1,
+      "pms": [
+        "pm_handcrafted_furniture",
+        "pm_no_luxuries",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "fabric": -10,
+        "furniture": 45
+      }
+    },
+    {
+      "tag": "MFSR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_wheat_farm",
+      "levels": 1,
+      "pms": [
+        "pm_simple_farming",
+        "pm_no_secondary",
+        "pm_tools_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "grain": 20
+      }
+    },
+    {
+      "tag": "MFSR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_botanical_garden",
+      "levels": 1,
+      "pms": [
+        "pm_botanical_garden_nursery",
+        "pm_botanical_garden_fruit_trees_none"
+      ],
+      "jobs_per_level": 4000,
+      "total_jobs": 4000,
+      "goods_net": {
+        "wood": -5,
+        "fertilizer": -15,
+        "ornamental_plants": 15
+      }
+    },
+    {
+      "tag": "MFSR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_tooling_workshop",
+      "levels": 1,
+      "pms": [
+        "pm_steel",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "steel": -20,
+        "tools": 80
+      }
+    },
+    {
+      "tag": "MFSR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "MRYA",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_logging_camp",
+      "levels": 2,
+      "pms": [
+        "pm_saw_mills",
+        "pm_no_hardwood",
+        "pm_no_equipment",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "tools": -10,
+        "wood": 120
+      }
+    },
+    {
+      "tag": "MRYA",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_coal_mine",
+      "levels": 2,
+      "pms": [
+        "pm_atmospheric_engine_pump_building_coal_mine",
+        "pm_no_explosives",
+        "pm_no_steam_automation",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "tools": -20,
+        "coal": 80
+      }
+    },
+    {
+      "tag": "MRYA",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_iron_mine",
+      "levels": 1,
+      "pms": [
+        "pm_atmospheric_engine_pump_building_iron_mine",
+        "pm_no_explosives",
+        "pm_no_steam_automation",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "tools": -10,
+        "coal": -10,
+        "iron": 40
+      }
+    },
+    {
+      "tag": "MRYA",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_cotton_plantation",
+      "levels": 4,
+      "pms": [
+        "default_building_cotton_plantation",
+        "default_labour",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 8000,
+      "total_jobs": 32000,
+      "goods_net": {
+        "fabric": 180
+      }
+    },
+    {
+      "tag": "MRYA",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_sugar_plantation",
+      "levels": 2,
+      "pms": [
+        "default_building_sugar_plantation",
+        "ox_driven_rollers_sugar",
+        "slave_exploitation_sugar",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 10000,
+      "total_jobs": 20000,
+      "goods_net": {
+        "sugar": 130
+      }
+    },
+    {
+      "tag": "MRYA",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_livestock_ranch",
+      "levels": 4,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 20000,
+      "goods_net": {
+        "meat": 40,
+        "fabric": 20
+      }
+    },
+    {
+      "tag": "MRYA",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_tea_plantation",
+      "levels": 1,
+      "pms": [
+        "default_building_tea_plantation",
+        "default_labour",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 7000,
+      "total_jobs": 7000,
+      "goods_net": {
+        "tea": 20
+      }
+    },
+    {
+      "tag": "MRYA",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_wheat_farm",
+      "levels": 3,
+      "pms": [
+        "pm_simple_farming",
+        "pm_no_secondary",
+        "pm_tools_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "grain": 60
+      }
+    },
+    {
+      "tag": "MRYA",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_tooling_workshop",
+      "levels": 1,
+      "pms": [
+        "pm_steel",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "steel": -20,
+        "tools": 80
+      }
+    },
+    {
+      "tag": "MRYA",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_paper_mill",
+      "levels": 1,
+      "pms": [
+        "pm_pulp_pressing",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "paper": 40
+      }
+    },
+    {
+      "tag": "MRYA",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_religious_center",
+      "levels": 1,
+      "pms": [
+        "pm_religious_center_daily_assembly",
+        "pm_religious_center_common_rites",
+        "pm_religious_center_traditional_facilities"
+      ],
+      "jobs_per_level": 3600,
+      "total_jobs": 3600,
+      "goods_net": {
+        "paper": -5,
+        "services": -10,
+        "furniture": -5,
+        "clothes": -5,
+        "faith": 25
+      }
+    },
+    {
+      "tag": "MRYA",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_glassworks",
+      "levels": 1,
+      "pms": [
+        "pm_forest_glass",
+        "pm_disabled_ceramics",
+        "pm_manual_glassblowing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "glass": 30
+      }
+    },
+    {
+      "tag": "MRYA",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "MRYA",
+      "state": "STATE_QUEENSLAND",
+      "building": "building_port",
+      "levels": 1,
+      "pms": [
+        "pm_basic_port"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "clippers": -6,
+        "merchant_marine": 9
+      }
+    },
+    {
+      "tag": "HAKR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_port",
+      "levels": 2,
+      "pms": [
+        "pm_basic_port"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 2000,
+      "goods_net": {
+        "clippers": -12,
+        "merchant_marine": 18
+      }
+    },
+    {
+      "tag": "HAKR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_government_administration",
+      "levels": 2,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 3000,
+      "goods_net": {
+        "paper": -20
+      }
+    },
+    {
+      "tag": "HAKR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_university",
+      "levels": 1,
+      "pms": [
+        "pm_scholastic_education",
+        "pm_religious_academia",
+        "pm_principle_freedom_of_movement_3"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "paper": -5
+      }
+    },
+    {
+      "tag": "HAKR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_food_industry",
+      "levels": 3,
+      "pms": [
+        "pm_bakery",
+        "pm_disabled_canning",
+        "pm_disabled_distillery",
+        "pm_manual_dough_processing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "grain": -120,
+        "groceries": 135
+      }
+    },
+    {
+      "tag": "HAKR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_glassworks",
+      "levels": 1,
+      "pms": [
+        "pm_forest_glass",
+        "pm_disabled_ceramics",
+        "pm_manual_glassblowing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "glass": 30
+      }
+    },
+    {
+      "tag": "HAKR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_shipyard",
+      "levels": 2,
+      "pms": [
+        "pm_basic_shipbuilding"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "wood": -80,
+        "fabric": -40,
+        "clippers": 80
+      }
+    },
+    {
+      "tag": "HAKR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_tooling_workshop",
+      "levels": 2,
+      "pms": [
+        "pm_steel",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "wood": -60,
+        "steel": -40,
+        "tools": 160
+      }
+    },
+    {
+      "tag": "HAKR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_logging_camp",
+      "levels": 2,
+      "pms": [
+        "pm_saw_mills",
+        "pm_no_hardwood",
+        "pm_no_equipment",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "tools": -10,
+        "wood": 120
+      }
+    },
+    {
+      "tag": "HAKR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_fishing_wharf",
+      "levels": 1,
+      "pms": [
+        "pm_simple_fishing",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "fish": 25
+      }
+    },
+    {
+      "tag": "HAKR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_wheat_farm",
+      "levels": 2,
+      "pms": [
+        "pm_simple_farming",
+        "pm_no_secondary",
+        "pm_tools_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "grain": 40
+      }
+    },
+    {
+      "tag": "HAKR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_vineyard",
+      "levels": 1,
+      "pms": [
+        "default_building_vineyard",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wine": 20
+      }
+    },
+    {
+      "tag": "HAKR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_textile_mill",
+      "levels": 3,
+      "pms": [
+        "pm_handsewn_clothes",
+        "pm_no_luxury_clothes",
+        "pm_traditional_looms"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "fabric": -120,
+        "clothes": 135
+      }
+    },
+    {
+      "tag": "HAKR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_livestock_ranch",
+      "levels": 1,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "meat": 10,
+        "fabric": 5
+      }
+    },
+    {
+      "tag": "HAKR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_construction_sector",
+      "levels": 1,
+      "pms": [
+        "pm_wooden_buildings"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "fabric": -25,
+        "wood": -75
+      }
+    },
+    {
+      "tag": "HAKR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_religious_center",
+      "levels": 1,
+      "pms": [
+        "pm_religious_center_daily_assembly",
+        "pm_religious_center_common_rites",
+        "pm_religious_center_traditional_facilities"
+      ],
+      "jobs_per_level": 3600,
+      "total_jobs": 3600,
+      "goods_net": {
+        "paper": -5,
+        "services": -10,
+        "furniture": -5,
+        "clothes": -5,
+        "faith": 25
+      }
+    },
+    {
+      "tag": "HAKR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_furniture_manufactory",
+      "levels": 2,
+      "pms": [
+        "pm_handcrafted_furniture",
+        "pm_no_luxuries",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "wood": -60,
+        "fabric": -20,
+        "furniture": 90
+      }
+    },
+    {
+      "tag": "HAKR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_paper_mill",
+      "levels": 1,
+      "pms": [
+        "pm_pulp_pressing",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "paper": 40
+      }
+    },
+    {
+      "tag": "MYRN",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_wheat_farm",
+      "levels": 3,
+      "pms": [
+        "pm_simple_farming",
+        "pm_no_secondary",
+        "pm_tools_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "grain": 60
+      }
+    },
+    {
+      "tag": "MYRN",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_livestock_ranch",
+      "levels": 2,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "meat": 20,
+        "fabric": 10
+      }
+    },
+    {
+      "tag": "MYRN",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_cotton_plantation",
+      "levels": 1,
+      "pms": [
+        "default_building_cotton_plantation",
+        "default_labour",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 8000,
+      "total_jobs": 8000,
+      "goods_net": {
+        "fabric": 45
+      }
+    },
+    {
+      "tag": "MYRN",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_food_industry",
+      "levels": 1,
+      "pms": [
+        "pm_bakery",
+        "pm_disabled_canning",
+        "pm_disabled_distillery",
+        "pm_manual_dough_processing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "grain": -40,
+        "groceries": 45
+      }
+    },
+    {
+      "tag": "MYRN",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_logging_camp",
+      "levels": 1,
+      "pms": [
+        "pm_saw_mills",
+        "pm_no_hardwood",
+        "pm_no_equipment",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "tools": -5,
+        "wood": 60
+      }
+    },
+    {
+      "tag": "MYRN",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_botanical_garden",
+      "levels": 1,
+      "pms": [
+        "pm_botanical_garden_nursery",
+        "pm_botanical_garden_fruit_trees_none"
+      ],
+      "jobs_per_level": 4000,
+      "total_jobs": 4000,
+      "goods_net": {
+        "wood": -5,
+        "fertilizer": -15,
+        "ornamental_plants": 15
+      }
+    },
+    {
+      "tag": "MYRN",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_religious_center",
+      "levels": 1,
+      "pms": [
+        "pm_religious_center_daily_assembly",
+        "pm_religious_center_common_rites",
+        "pm_religious_center_traditional_facilities"
+      ],
+      "jobs_per_level": 3600,
+      "total_jobs": 3600,
+      "goods_net": {
+        "paper": -5,
+        "services": -10,
+        "furniture": -5,
+        "clothes": -5,
+        "faith": 25
+      }
+    },
+    {
+      "tag": "MYRN",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "EITR",
+      "state": "STATE_VICTORIA",
+      "building": "building_logging_camp",
+      "levels": 3,
+      "pms": [
+        "pm_saw_mills",
+        "pm_no_hardwood",
+        "pm_no_equipment",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "tools": -15,
+        "wood": 180
+      }
+    },
+    {
+      "tag": "EITR",
+      "state": "STATE_VICTORIA",
+      "building": "building_livestock_ranch",
+      "levels": 2,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "meat": 20,
+        "fabric": 10
+      }
+    },
+    {
+      "tag": "EITR",
+      "state": "STATE_VICTORIA",
+      "building": "building_wheat_farm",
+      "levels": 2,
+      "pms": [
+        "pm_simple_farming",
+        "pm_no_secondary",
+        "pm_tools_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "grain": 40
+      }
+    },
+    {
+      "tag": "EITR",
+      "state": "STATE_VICTORIA",
+      "building": "building_tea_plantation",
+      "levels": 1,
+      "pms": [
+        "default_building_tea_plantation",
+        "default_labour",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 7000,
+      "total_jobs": 7000,
+      "goods_net": {
+        "tea": 20
+      }
+    },
+    {
+      "tag": "EITR",
+      "state": "STATE_VICTORIA",
+      "building": "building_opium_plantation",
+      "levels": 2,
+      "pms": [
+        "default_building_opium_plantation",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "opium": 40
+      }
+    },
+    {
+      "tag": "EITR",
+      "state": "STATE_VICTORIA",
+      "building": "building_textile_mill",
+      "levels": 1,
+      "pms": [
+        "pm_handsewn_clothes",
+        "pm_no_luxury_clothes",
+        "pm_traditional_looms"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "fabric": -40,
+        "clothes": 45
+      }
+    },
+    {
+      "tag": "EITR",
+      "state": "STATE_VICTORIA",
+      "building": "building_botanical_garden",
+      "levels": 1,
+      "pms": [
+        "pm_botanical_garden_nursery",
+        "pm_botanical_garden_fruit_trees_none"
+      ],
+      "jobs_per_level": 4000,
+      "total_jobs": 4000,
+      "goods_net": {
+        "wood": -5,
+        "fertilizer": -15,
+        "ornamental_plants": 15
+      }
+    },
+    {
+      "tag": "EITR",
+      "state": "STATE_VICTORIA",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "EITR",
+      "state": "STATE_VICTORIA",
+      "building": "building_port",
+      "levels": 1,
+      "pms": [
+        "pm_basic_port"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "clippers": -6,
+        "merchant_marine": 9
+      }
+    },
+    {
+      "tag": "EITR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_botanical_garden",
+      "levels": 1,
+      "pms": [
+        "pm_botanical_garden_nursery",
+        "pm_botanical_garden_fruit_trees_none"
+      ],
+      "jobs_per_level": 4000,
+      "total_jobs": 4000,
+      "goods_net": {
+        "wood": -5,
+        "fertilizer": -15,
+        "ornamental_plants": 15
+      }
+    },
+    {
+      "tag": "EITR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_tea_plantation",
+      "levels": 1,
+      "pms": [
+        "default_building_tea_plantation",
+        "default_labour",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 7000,
+      "total_jobs": 7000,
+      "goods_net": {
+        "tea": 20
+      }
+    },
+    {
+      "tag": "EITR",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "RDMK",
+      "state": "STATE_TASMANIA",
+      "building": "building_logging_camp",
+      "levels": 3,
+      "pms": [
+        "pm_saw_mills",
+        "pm_no_hardwood",
+        "pm_no_equipment",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "tools": -15,
+        "wood": 180
+      }
+    },
+    {
+      "tag": "RDMK",
+      "state": "STATE_TASMANIA",
+      "building": "building_iron_mine",
+      "levels": 1,
+      "pms": [
+        "pm_atmospheric_engine_pump_building_iron_mine",
+        "pm_no_explosives",
+        "pm_no_steam_automation",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "tools": -10,
+        "coal": -10,
+        "iron": 40
+      }
+    },
+    {
+      "tag": "RDMK",
+      "state": "STATE_TASMANIA",
+      "building": "building_lead_mine",
+      "levels": 1,
+      "pms": [
+        "pm_atmospheric_engine_pump_building_lead_mine",
+        "pm_no_explosives",
+        "pm_no_steam_automation",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "tools": -10,
+        "coal": -10,
+        "lead": 40
+      }
+    },
+    {
+      "tag": "RDMK",
+      "state": "STATE_TASMANIA",
+      "building": "building_fishing_wharf",
+      "levels": 1,
+      "pms": [
+        "pm_simple_fishing",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "fish": 25
+      }
+    },
+    {
+      "tag": "RDMK",
+      "state": "STATE_TASMANIA",
+      "building": "building_wheat_farm",
+      "levels": 1,
+      "pms": [
+        "pm_simple_farming",
+        "pm_no_secondary",
+        "pm_tools_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "grain": 20
+      }
+    },
+    {
+      "tag": "RDMK",
+      "state": "STATE_TASMANIA",
+      "building": "building_opium_plantation",
+      "levels": 1,
+      "pms": [
+        "default_building_opium_plantation",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "opium": 20
+      }
+    },
+    {
+      "tag": "RDMK",
+      "state": "STATE_TASMANIA",
+      "building": "building_food_industry",
+      "levels": 1,
+      "pms": [
+        "pm_bakery",
+        "pm_disabled_canning",
+        "pm_pot_stills",
+        "pm_manual_dough_processing"
+      ],
+      "jobs_per_level": 5350,
+      "total_jobs": 5350,
+      "goods_net": {
+        "grain": -40,
+        "groceries": 15,
+        "sugar": -25,
+        "liquor": 60
+      }
+    },
+    {
+      "tag": "RDMK",
+      "state": "STATE_TASMANIA",
+      "building": "building_glassworks",
+      "levels": 1,
+      "pms": [
+        "pm_forest_glass",
+        "pm_disabled_ceramics",
+        "pm_manual_glassblowing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "glass": 30
+      }
+    },
+    {
+      "tag": "RDMK",
+      "state": "STATE_TASMANIA",
+      "building": "building_shipyard",
+      "levels": 1,
+      "pms": [
+        "pm_basic_shipbuilding"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -40,
+        "fabric": -20,
+        "clippers": 40
+      }
+    },
+    {
+      "tag": "RDMK",
+      "state": "STATE_TASMANIA",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "RDMK",
+      "state": "STATE_TASMANIA",
+      "building": "building_port",
+      "levels": 1,
+      "pms": [
+        "pm_basic_port"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "clippers": -6,
+        "merchant_marine": 9
+      }
+    },
+    {
+      "tag": "RDMK",
+      "state": "STATE_VICTORIA",
+      "building": "building_vineyard",
+      "levels": 2,
+      "pms": [
+        "default_building_vineyard",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "wine": 40
+      }
+    },
+    {
+      "tag": "RDMK",
+      "state": "STATE_VICTORIA",
+      "building": "building_food_industry",
+      "levels": 1,
+      "pms": [
+        "pm_bakery",
+        "pm_disabled_canning",
+        "pm_pot_stills",
+        "pm_manual_dough_processing"
+      ],
+      "jobs_per_level": 5350,
+      "total_jobs": 5350,
+      "goods_net": {
+        "grain": -40,
+        "groceries": 15,
+        "sugar": -25,
+        "liquor": 60
+      }
+    },
+    {
+      "tag": "RDMK",
+      "state": "STATE_VICTORIA",
+      "building": "building_logging_camp",
+      "levels": 1,
+      "pms": [
+        "pm_saw_mills",
+        "pm_no_hardwood",
+        "pm_no_equipment",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "tools": -5,
+        "wood": 60
+      }
+    },
+    {
+      "tag": "RDMK",
+      "state": "STATE_VICTORIA",
+      "building": "building_fishing_wharf",
+      "levels": 1,
+      "pms": [
+        "pm_simple_fishing",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "fish": 25
+      }
+    },
+    {
+      "tag": "RDMK",
+      "state": "STATE_VICTORIA",
+      "building": "building_livestock_ranch",
+      "levels": 2,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "meat": 20,
+        "fabric": 10
+      }
+    },
+    {
+      "tag": "RDMK",
+      "state": "STATE_VICTORIA",
+      "building": "building_textile_mill",
+      "levels": 1,
+      "pms": [
+        "pm_handsewn_clothes",
+        "pm_no_luxury_clothes",
+        "pm_traditional_looms"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "fabric": -40,
+        "clothes": 45
+      }
+    },
+    {
+      "tag": "RDMK",
+      "state": "STATE_VICTORIA",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "RDMK",
+      "state": "STATE_VICTORIA",
+      "building": "building_port",
+      "levels": 1,
+      "pms": [
+        "pm_basic_port"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "clippers": -6,
+        "merchant_marine": 9
+      }
+    },
+    {
+      "tag": "MIST",
+      "state": "STATE_VICTORIA",
+      "building": "building_fishing_wharf",
+      "levels": 1,
+      "pms": [
+        "pm_simple_fishing",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "fish": 25
+      }
+    },
+    {
+      "tag": "MIST",
+      "state": "STATE_VICTORIA",
+      "building": "building_livestock_ranch",
+      "levels": 1,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "meat": 10,
+        "fabric": 5
+      }
+    },
+    {
+      "tag": "MIST",
+      "state": "STATE_VICTORIA",
+      "building": "building_botanical_garden",
+      "levels": 1,
+      "pms": [
+        "pm_botanical_garden_nursery",
+        "pm_botanical_garden_fruit_trees_none"
+      ],
+      "jobs_per_level": 4000,
+      "total_jobs": 4000,
+      "goods_net": {
+        "wood": -5,
+        "fertilizer": -15,
+        "ornamental_plants": 15
+      }
+    },
+    {
+      "tag": "MIST",
+      "state": "STATE_VICTORIA",
+      "building": "building_food_industry",
+      "levels": 1,
+      "pms": [
+        "pm_bakery",
+        "pm_disabled_canning",
+        "pm_disabled_distillery",
+        "pm_manual_dough_processing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "grain": -40,
+        "groceries": 45
+      }
+    },
+    {
+      "tag": "MIST",
+      "state": "STATE_VICTORIA",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "MIST",
+      "state": "STATE_VICTORIA",
+      "building": "building_port",
+      "levels": 1,
+      "pms": [
+        "pm_basic_port"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "clippers": -6,
+        "merchant_marine": 9
+      }
+    },
+    {
+      "tag": "YSSK",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_izakaya",
+      "levels": 1,
+      "pms": [
+        "pm_izakaya_hearth_drinks",
+        "pm_izakaya_travelers_stew",
+        "pm_izakaya_communal_tables",
+        "pm_izakaya_brick_stoves"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "liquor": -10,
+        "wine": -5,
+        "luxury_drinks": 15,
+        "groceries": -15,
+        "meat": -10,
+        "fish": -5,
+        "luxury_foods": 20
+      }
+    },
+    {
+      "tag": "YSSK",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_food_industry",
+      "levels": 1,
+      "pms": [
+        "pm_bakery",
+        "pm_disabled_canning",
+        "pm_pot_stills",
+        "pm_manual_dough_processing"
+      ],
+      "jobs_per_level": 5350,
+      "total_jobs": 5350,
+      "goods_net": {
+        "grain": -40,
+        "groceries": 15,
+        "sugar": -25,
+        "liquor": 60
+      }
+    },
+    {
+      "tag": "YSSK",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_vineyard",
+      "levels": 1,
+      "pms": [
+        "default_building_vineyard",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wine": 20
+      }
+    },
+    {
+      "tag": "YSSK",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_wheat_farm",
+      "levels": 1,
+      "pms": [
+        "pm_simple_farming",
+        "pm_no_secondary",
+        "pm_tools_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "grain": 20
+      }
+    },
+    {
+      "tag": "YSSK",
+      "state": "STATE_NEW_SOUTH_WALES",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "KZNH",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_wheat_farm",
+      "levels": 2,
+      "pms": [
+        "pm_simple_farming",
+        "pm_no_secondary",
+        "pm_tools_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "grain": 40
+      }
+    },
+    {
+      "tag": "KZNH",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_vineyard",
+      "levels": 2,
+      "pms": [
+        "default_building_vineyard",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "wine": 40
+      }
+    },
+    {
+      "tag": "KZNH",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_livestock_ranch",
+      "levels": 1,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "meat": 10,
+        "fabric": 5
+      }
+    },
+    {
+      "tag": "KZNH",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_botanical_garden",
+      "levels": 3,
+      "pms": [
+        "pm_botanical_garden_nursery",
+        "pm_botanical_garden_fruit_trees_none"
+      ],
+      "jobs_per_level": 4000,
+      "total_jobs": 12000,
+      "goods_net": {
+        "wood": -15,
+        "fertilizer": -45,
+        "ornamental_plants": 45
+      }
+    },
+    {
+      "tag": "KZNH",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_chemical_plant",
+      "levels": 1,
+      "pms": [
+        "pm_artificial_fertilizers"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "sulfur": -30,
+        "iron": -10,
+        "fertilizer": 90
+      }
+    },
+    {
+      "tag": "KZNH",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_glassworks",
+      "levels": 1,
+      "pms": [
+        "pm_forest_glass",
+        "pm_disabled_ceramics",
+        "pm_manual_glassblowing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "glass": 30
+      }
+    },
+    {
+      "tag": "KZNH",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_food_industry",
+      "levels": 1,
+      "pms": [
+        "pm_bakery",
+        "pm_disabled_canning",
+        "pm_disabled_distillery",
+        "pm_manual_dough_processing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "grain": -40,
+        "groceries": 45
+      }
+    },
+    {
+      "tag": "KZNH",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "KZNH",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_port",
+      "levels": 1,
+      "pms": [
+        "pm_basic_port"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "clippers": -6,
+        "merchant_marine": 9
+      }
+    },
+    {
+      "tag": "SHRM",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_wheat_farm",
+      "levels": 2,
+      "pms": [
+        "pm_simple_farming",
+        "pm_no_secondary",
+        "pm_tools_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "grain": 40
+      }
+    },
+    {
+      "tag": "SHRM",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_vineyard",
+      "levels": 1,
+      "pms": [
+        "default_building_vineyard",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wine": 20
+      }
+    },
+    {
+      "tag": "SHRM",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_livestock_ranch",
+      "levels": 1,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "meat": 10,
+        "fabric": 5
+      }
+    },
+    {
+      "tag": "SHRM",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_glassworks",
+      "levels": 2,
+      "pms": [
+        "pm_forest_glass",
+        "pm_disabled_ceramics",
+        "pm_manual_glassblowing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "wood": -60,
+        "glass": 60
+      }
+    },
+    {
+      "tag": "SHRM",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_furniture_manufactory",
+      "levels": 1,
+      "pms": [
+        "pm_handcrafted_furniture",
+        "pm_no_luxuries",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "fabric": -10,
+        "furniture": 45
+      }
+    },
+    {
+      "tag": "SHRM",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_paper_mill",
+      "levels": 1,
+      "pms": [
+        "pm_pulp_pressing",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "paper": 40
+      }
+    },
+    {
+      "tag": "SHRM",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_religious_center",
+      "levels": 1,
+      "pms": [
+        "pm_religious_center_daily_assembly",
+        "pm_religious_center_common_rites",
+        "pm_religious_center_traditional_facilities"
+      ],
+      "jobs_per_level": 3600,
+      "total_jobs": 3600,
+      "goods_net": {
+        "paper": -5,
+        "services": -10,
+        "furniture": -5,
+        "clothes": -5,
+        "faith": 25
+      }
+    },
+    {
+      "tag": "SHRM",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "SHRM",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_port",
+      "levels": 1,
+      "pms": [
+        "pm_basic_port"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "clippers": -6,
+        "merchant_marine": 9
+      }
+    },
+    {
+      "tag": "CHRD",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_wheat_farm",
+      "levels": 5,
+      "pms": [
+        "pm_simple_farming",
+        "pm_no_secondary",
+        "pm_tools_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 25000,
+      "goods_net": {
+        "grain": 100
+      }
+    },
+    {
+      "tag": "CHRD",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_livestock_ranch",
+      "levels": 3,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "meat": 30,
+        "fabric": 15
+      }
+    },
+    {
+      "tag": "CHRD",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_iron_mine",
+      "levels": 3,
+      "pms": [
+        "pm_atmospheric_engine_pump_building_iron_mine",
+        "pm_no_explosives",
+        "pm_no_steam_automation",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "tools": -30,
+        "coal": -30,
+        "iron": 120
+      }
+    },
+    {
+      "tag": "CHRD",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_lead_mine",
+      "levels": 1,
+      "pms": [
+        "pm_atmospheric_engine_pump_building_lead_mine",
+        "pm_no_explosives",
+        "pm_no_steam_automation",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "tools": -10,
+        "coal": -10,
+        "lead": 40
+      }
+    },
+    {
+      "tag": "CHRD",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_sulfur_mine",
+      "levels": 2,
+      "pms": [
+        "pm_atmospheric_engine_pump_building_sulfur_mine",
+        "pm_no_explosives",
+        "pm_no_steam_automation",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "tools": -20,
+        "coal": -20,
+        "sulfur": 80
+      }
+    },
+    {
+      "tag": "CHRD",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_logging_camp",
+      "levels": 3,
+      "pms": [
+        "pm_electric_saw_mills",
+        "pm_no_hardwood",
+        "pm_no_equipment",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "tools": -30,
+        "electricity": -15,
+        "wood": 300
+      }
+    },
+    {
+      "tag": "CHRD",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_steel_mill",
+      "levels": 2,
+      "pms": [
+        "pm_blister_steel_process",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "iron": -80,
+        "coal": -60,
+        "steel": 130
+      }
+    },
+    {
+      "tag": "CHRD",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_tooling_workshop",
+      "levels": 2,
+      "pms": [
+        "pm_steel",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "wood": -60,
+        "steel": -40,
+        "tools": 160
+      }
+    },
+    {
+      "tag": "CHRD",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_chemical_plant",
+      "levels": 1,
+      "pms": [
+        "pm_artificial_fertilizers"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "sulfur": -30,
+        "iron": -10,
+        "fertilizer": 90
+      }
+    },
+    {
+      "tag": "CHRD",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_food_industry",
+      "levels": 2,
+      "pms": [
+        "pm_bakery",
+        "pm_disabled_canning",
+        "pm_disabled_distillery",
+        "pm_manual_dough_processing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "grain": -80,
+        "groceries": 90
+      }
+    },
+    {
+      "tag": "CHRD",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_government_administration",
+      "levels": 2,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 3000,
+      "goods_net": {
+        "paper": -20
+      }
+    },
+    {
+      "tag": "CHRD",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_port",
+      "levels": 1,
+      "pms": [
+        "pm_basic_port"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "clippers": -6,
+        "merchant_marine": 9
+      }
+    },
+    {
+      "tag": "CHRD",
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "building": "building_tot_chireiden_fusion",
+      "levels": 1,
+      "pms": [
+        "pm_tot_chireiden_fusion_generation"
+      ],
+      "jobs_per_level": 200,
+      "total_jobs": 200,
+      "goods_net": {
+        "engines": -2,
+        "tools": -2,
+        "steel": -1,
+        "electricity": 25
+      }
+    },
+    {
+      "tag": "CHRD",
+      "state": "STATE_CHIREIDEN_CAPITAL",
+      "building": "building_tooling_workshop",
+      "levels": 1,
+      "pms": [
+        "pm_steel",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "steel": -20,
+        "tools": 80
+      }
+    },
+    {
+      "tag": "CHRD",
+      "state": "STATE_CHIREIDEN_CAPITAL",
+      "building": "building_paper_mill",
+      "levels": 1,
+      "pms": [
+        "pm_pulp_pressing",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "paper": 40
+      }
+    },
+    {
+      "tag": "CHRD",
+      "state": "STATE_CHIREIDEN_CAPITAL",
+      "building": "building_motor_industry",
+      "levels": 1,
+      "pms": [
+        "pm_steam_engines",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "steel": -30,
+        "engines": 40
+      }
+    },
+    {
+      "tag": "CHRD",
+      "state": "STATE_CHIREIDEN_CAPITAL",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "BYKR",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_wheat_farm",
+      "levels": 14,
+      "pms": [
+        "pm_simple_farming",
+        "pm_no_secondary",
+        "pm_tools_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 70000,
+      "goods_net": {
+        "grain": 280
+      }
+    },
+    {
+      "tag": "BYKR",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_livestock_ranch",
+      "levels": 6,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 30000,
+      "goods_net": {
+        "meat": 60,
+        "fabric": 30
+      }
+    },
+    {
+      "tag": "BYKR",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_vineyard",
+      "levels": 4,
+      "pms": [
+        "default_building_vineyard",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 20000,
+      "goods_net": {
+        "wine": 80
+      }
+    },
+    {
+      "tag": "BYKR",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_cotton_plantation",
+      "levels": 4,
+      "pms": [
+        "default_building_cotton_plantation",
+        "default_labour",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 8000,
+      "total_jobs": 32000,
+      "goods_net": {
+        "fabric": 180
+      }
+    },
+    {
+      "tag": "BYKR",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_logging_camp",
+      "levels": 4,
+      "pms": [
+        "pm_saw_mills",
+        "pm_no_hardwood",
+        "pm_no_equipment",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 20000,
+      "goods_net": {
+        "tools": -20,
+        "wood": 240
+      }
+    },
+    {
+      "tag": "BYKR",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_fishing_wharf",
+      "levels": 2,
+      "pms": [
+        "pm_simple_fishing",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "fish": 50
+      }
+    },
+    {
+      "tag": "BYKR",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_food_industry",
+      "levels": 4,
+      "pms": [
+        "pm_bakery",
+        "pm_disabled_canning",
+        "pm_disabled_distillery",
+        "pm_manual_dough_processing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 20000,
+      "goods_net": {
+        "grain": -160,
+        "groceries": 180
+      }
+    },
+    {
+      "tag": "BYKR",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_textile_mill",
+      "levels": 2,
+      "pms": [
+        "pm_handsewn_clothes",
+        "pm_no_luxury_clothes",
+        "pm_traditional_looms"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "fabric": -80,
+        "clothes": 90
+      }
+    },
+    {
+      "tag": "BYKR",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_furniture_manufactory",
+      "levels": 1,
+      "pms": [
+        "pm_handcrafted_furniture",
+        "pm_no_luxuries",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "fabric": -10,
+        "furniture": 45
+      }
+    },
+    {
+      "tag": "BYKR",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_paper_mill",
+      "levels": 1,
+      "pms": [
+        "pm_pulp_pressing",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "paper": 40
+      }
+    },
+    {
+      "tag": "BYKR",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_tooling_workshop",
+      "levels": 1,
+      "pms": [
+        "pm_steel",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "steel": -20,
+        "tools": 80
+      }
+    },
+    {
+      "tag": "BYKR",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_government_administration",
+      "levels": 2,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 3000,
+      "goods_net": {
+        "paper": -20
+      }
+    },
+    {
+      "tag": "BYKR",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_port",
+      "levels": 2,
+      "pms": [
+        "pm_basic_port"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 2000,
+      "goods_net": {
+        "clippers": -12,
+        "merchant_marine": 18
+      }
+    },
+    {
+      "tag": "BYKR",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_university",
+      "levels": 1,
+      "pms": [
+        "pm_scholastic_education",
+        "pm_religious_academia",
+        "pm_principle_freedom_of_movement_3"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "paper": -5
+      }
+    },
+    {
+      "tag": "BYKR",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_construction_sector",
+      "levels": 1,
+      "pms": [
+        "pm_wooden_buildings"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "fabric": -25,
+        "wood": -75
+      }
+    },
+    {
+      "tag": "HIGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_wheat_farm",
+      "levels": 2,
+      "pms": [
+        "pm_simple_farming",
+        "pm_no_secondary",
+        "pm_tools_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "grain": 40
+      }
+    },
+    {
+      "tag": "HIGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_livestock_ranch",
+      "levels": 1,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "meat": 10,
+        "fabric": 5
+      }
+    },
+    {
+      "tag": "HIGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_fishing_wharf",
+      "levels": 1,
+      "pms": [
+        "pm_simple_fishing",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "fish": 25
+      }
+    },
+    {
+      "tag": "HIGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_logging_camp",
+      "levels": 2,
+      "pms": [
+        "pm_saw_mills",
+        "pm_no_hardwood",
+        "pm_no_equipment",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "tools": -10,
+        "wood": 120
+      }
+    },
+    {
+      "tag": "HIGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_paper_mill",
+      "levels": 2,
+      "pms": [
+        "pm_pulp_pressing",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "wood": -60,
+        "paper": 80
+      }
+    },
+    {
+      "tag": "HIGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_glassworks",
+      "levels": 1,
+      "pms": [
+        "pm_forest_glass",
+        "pm_disabled_ceramics",
+        "pm_manual_glassblowing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "glass": 30
+      }
+    },
+    {
+      "tag": "HIGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_tooling_workshop",
+      "levels": 1,
+      "pms": [
+        "pm_steel",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "steel": -20,
+        "tools": 80
+      }
+    },
+    {
+      "tag": "HIGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_food_industry",
+      "levels": 1,
+      "pms": [
+        "pm_bakery",
+        "pm_disabled_canning",
+        "pm_disabled_distillery",
+        "pm_manual_dough_processing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "grain": -40,
+        "groceries": 45
+      }
+    },
+    {
+      "tag": "HIGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_religious_center",
+      "levels": 1,
+      "pms": [
+        "pm_religious_center_daily_assembly",
+        "pm_religious_center_common_rites",
+        "pm_religious_center_traditional_facilities"
+      ],
+      "jobs_per_level": 3600,
+      "total_jobs": 3600,
+      "goods_net": {
+        "paper": -5,
+        "services": -10,
+        "furniture": -5,
+        "clothes": -5,
+        "faith": 25
+      }
+    },
+    {
+      "tag": "HIGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "HIGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_port",
+      "levels": 1,
+      "pms": [
+        "pm_basic_port"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "clippers": -6,
+        "merchant_marine": 9
+      }
+    },
+    {
+      "tag": "YKMF",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_wheat_farm",
+      "levels": 2,
+      "pms": [
+        "pm_simple_farming",
+        "pm_no_secondary",
+        "pm_tools_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "grain": 40
+      }
+    },
+    {
+      "tag": "YKMF",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_livestock_ranch",
+      "levels": 1,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "meat": 10,
+        "fabric": 5
+      }
+    },
+    {
+      "tag": "YKMF",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_vineyard",
+      "levels": 1,
+      "pms": [
+        "default_building_vineyard",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wine": 20
+      }
+    },
+    {
+      "tag": "YKMF",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_logging_camp",
+      "levels": 1,
+      "pms": [
+        "pm_saw_mills",
+        "pm_no_hardwood",
+        "pm_no_equipment",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "tools": -5,
+        "wood": 60
+      }
+    },
+    {
+      "tag": "YKMF",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_paper_mill",
+      "levels": 1,
+      "pms": [
+        "pm_pulp_pressing",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "paper": 40
+      }
+    },
+    {
+      "tag": "YKMF",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_glassworks",
+      "levels": 1,
+      "pms": [
+        "pm_forest_glass",
+        "pm_disabled_ceramics",
+        "pm_manual_glassblowing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "glass": 30
+      }
+    },
+    {
+      "tag": "YKMF",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_tooling_workshop",
+      "levels": 1,
+      "pms": [
+        "pm_steel",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "steel": -20,
+        "tools": 80
+      }
+    },
+    {
+      "tag": "YKMF",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_textile_mill",
+      "levels": 1,
+      "pms": [
+        "pm_handsewn_clothes",
+        "pm_no_luxury_clothes",
+        "pm_traditional_looms"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "fabric": -40,
+        "clothes": 45
+      }
+    },
+    {
+      "tag": "YKMF",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_food_industry",
+      "levels": 1,
+      "pms": [
+        "pm_bakery",
+        "pm_disabled_canning",
+        "pm_disabled_distillery",
+        "pm_manual_dough_processing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "grain": -40,
+        "groceries": 45
+      }
+    },
+    {
+      "tag": "YKMF",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "YKMF",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_port",
+      "levels": 1,
+      "pms": [
+        "pm_basic_port"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "clippers": -6,
+        "merchant_marine": 9
+      }
+    },
+    {
+      "tag": "KYTO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_coal_mine",
+      "levels": 3,
+      "pms": [
+        "pm_atmospheric_engine_pump_building_coal_mine",
+        "pm_no_explosives",
+        "pm_no_steam_automation",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "tools": -30,
+        "coal": 120
+      }
+    },
+    {
+      "tag": "KYTO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_iron_mine",
+      "levels": 2,
+      "pms": [
+        "pm_atmospheric_engine_pump_building_iron_mine",
+        "pm_no_explosives",
+        "pm_no_steam_automation",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "tools": -20,
+        "coal": -20,
+        "iron": 80
+      }
+    },
+    {
+      "tag": "KYTO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_logging_camp",
+      "levels": 2,
+      "pms": [
+        "pm_saw_mills",
+        "pm_no_hardwood",
+        "pm_no_equipment",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "tools": -10,
+        "wood": 120
+      }
+    },
+    {
+      "tag": "KYTO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_steel_mill",
+      "levels": 3,
+      "pms": [
+        "pm_blister_steel_process",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "iron": -120,
+        "coal": -90,
+        "steel": 195
+      }
+    },
+    {
+      "tag": "KYTO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_tooling_workshop",
+      "levels": 2,
+      "pms": [
+        "pm_steel",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "wood": -60,
+        "steel": -40,
+        "tools": 160
+      }
+    },
+    {
+      "tag": "KYTO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_food_industry",
+      "levels": 1,
+      "pms": [
+        "pm_bakery",
+        "pm_disabled_canning",
+        "pm_disabled_distillery",
+        "pm_manual_dough_processing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "grain": -40,
+        "groceries": 45
+      }
+    },
+    {
+      "tag": "KYTO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_vineyard",
+      "levels": 2,
+      "pms": [
+        "default_building_vineyard",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "wine": 40
+      }
+    },
+    {
+      "tag": "KYTO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_wheat_farm",
+      "levels": 2,
+      "pms": [
+        "pm_simple_farming",
+        "pm_no_secondary",
+        "pm_tools_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "grain": 40
+      }
+    },
+    {
+      "tag": "KYTO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_livestock_ranch",
+      "levels": 1,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "meat": 10,
+        "fabric": 5
+      }
+    },
+    {
+      "tag": "KYTO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_textile_mill",
+      "levels": 1,
+      "pms": [
+        "pm_handsewn_clothes",
+        "pm_no_luxury_clothes",
+        "pm_traditional_looms"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "fabric": -40,
+        "clothes": 45
+      }
+    },
+    {
+      "tag": "KYTO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "KYTO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_port",
+      "levels": 1,
+      "pms": [
+        "pm_basic_port"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "clippers": -6,
+        "merchant_marine": 9
+      }
+    },
+    {
+      "tag": "KYTO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_construction_sector",
+      "levels": 1,
+      "pms": [
+        "pm_wooden_buildings"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "fabric": -25,
+        "wood": -75
+      }
+    },
+    {
+      "tag": "RNGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_wheat_farm",
+      "levels": 5,
+      "pms": [
+        "pm_simple_farming",
+        "pm_no_secondary",
+        "pm_tools_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 25000,
+      "goods_net": {
+        "grain": 100
+      }
+    },
+    {
+      "tag": "RNGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_livestock_ranch",
+      "levels": 2,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "meat": 20,
+        "fabric": 10
+      }
+    },
+    {
+      "tag": "RNGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_cotton_plantation",
+      "levels": 2,
+      "pms": [
+        "default_building_cotton_plantation",
+        "default_labour",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 8000,
+      "total_jobs": 16000,
+      "goods_net": {
+        "fabric": 90
+      }
+    },
+    {
+      "tag": "RNGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_logging_camp",
+      "levels": 3,
+      "pms": [
+        "pm_saw_mills",
+        "pm_no_hardwood",
+        "pm_no_equipment",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "tools": -15,
+        "wood": 180
+      }
+    },
+    {
+      "tag": "RNGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_coal_mine",
+      "levels": 2,
+      "pms": [
+        "pm_atmospheric_engine_pump_building_coal_mine",
+        "pm_no_explosives",
+        "pm_no_steam_automation",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "tools": -20,
+        "coal": 80
+      }
+    },
+    {
+      "tag": "RNGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_iron_mine",
+      "levels": 2,
+      "pms": [
+        "pm_atmospheric_engine_pump_building_iron_mine",
+        "pm_no_explosives",
+        "pm_no_steam_automation",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "tools": -20,
+        "coal": -20,
+        "iron": 80
+      }
+    },
+    {
+      "tag": "RNGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_steel_mill",
+      "levels": 2,
+      "pms": [
+        "pm_blister_steel_process",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "iron": -80,
+        "coal": -60,
+        "steel": 130
+      }
+    },
+    {
+      "tag": "RNGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_tooling_workshop",
+      "levels": 2,
+      "pms": [
+        "pm_steel",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "wood": -60,
+        "steel": -40,
+        "tools": 160
+      }
+    },
+    {
+      "tag": "RNGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_furniture_manufactory",
+      "levels": 2,
+      "pms": [
+        "pm_handcrafted_furniture",
+        "pm_no_luxuries",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "wood": -60,
+        "fabric": -20,
+        "furniture": 90
+      }
+    },
+    {
+      "tag": "RNGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_glassworks",
+      "levels": 2,
+      "pms": [
+        "pm_forest_glass",
+        "pm_disabled_ceramics",
+        "pm_manual_glassblowing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "wood": -60,
+        "glass": 60
+      }
+    },
+    {
+      "tag": "RNGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_botanical_garden",
+      "levels": 1,
+      "pms": [
+        "pm_botanical_garden_nursery",
+        "pm_botanical_garden_fruit_trees_none"
+      ],
+      "jobs_per_level": 4000,
+      "total_jobs": 4000,
+      "goods_net": {
+        "wood": -5,
+        "fertilizer": -15,
+        "ornamental_plants": 15
+      }
+    },
+    {
+      "tag": "RNGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_food_industry",
+      "levels": 1,
+      "pms": [
+        "pm_bakery",
+        "pm_disabled_canning",
+        "pm_disabled_distillery",
+        "pm_manual_dough_processing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "grain": -40,
+        "groceries": 45
+      }
+    },
+    {
+      "tag": "RNGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "RNGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_university",
+      "levels": 1,
+      "pms": [
+        "pm_scholastic_education",
+        "pm_religious_academia",
+        "pm_principle_freedom_of_movement_3"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "paper": -5
+      }
+    },
+    {
+      "tag": "RNGN",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_port",
+      "levels": 1,
+      "pms": [
+        "pm_basic_port"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "clippers": -6,
+        "merchant_marine": 9
+      }
+    },
+    {
+      "tag": "UKDO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_logging_camp",
+      "levels": 3,
+      "pms": [
+        "pm_saw_mills",
+        "pm_no_hardwood",
+        "pm_no_equipment",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "tools": -15,
+        "wood": 180
+      }
+    },
+    {
+      "tag": "UKDO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_paper_mill",
+      "levels": 2,
+      "pms": [
+        "pm_pulp_pressing",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "wood": -60,
+        "paper": 80
+      }
+    },
+    {
+      "tag": "UKDO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_tooling_workshop",
+      "levels": 1,
+      "pms": [
+        "pm_steel",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "steel": -20,
+        "tools": 80
+      }
+    },
+    {
+      "tag": "UKDO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_glassworks",
+      "levels": 1,
+      "pms": [
+        "pm_forest_glass",
+        "pm_disabled_ceramics",
+        "pm_manual_glassblowing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "glass": 30
+      }
+    },
+    {
+      "tag": "UKDO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_botanical_garden",
+      "levels": 1,
+      "pms": [
+        "pm_botanical_garden_nursery",
+        "pm_botanical_garden_fruit_trees_none"
+      ],
+      "jobs_per_level": 4000,
+      "total_jobs": 4000,
+      "goods_net": {
+        "wood": -5,
+        "fertilizer": -15,
+        "ornamental_plants": 15
+      }
+    },
+    {
+      "tag": "UKDO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_wheat_farm",
+      "levels": 2,
+      "pms": [
+        "pm_simple_farming",
+        "pm_no_secondary",
+        "pm_tools_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "grain": 40
+      }
+    },
+    {
+      "tag": "UKDO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_livestock_ranch",
+      "levels": 2,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "meat": 20,
+        "fabric": 10
+      }
+    },
+    {
+      "tag": "UKDO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_cotton_plantation",
+      "levels": 1,
+      "pms": [
+        "default_building_cotton_plantation",
+        "default_labour",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 8000,
+      "total_jobs": 8000,
+      "goods_net": {
+        "fabric": 45
+      }
+    },
+    {
+      "tag": "UKDO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_vineyard",
+      "levels": 1,
+      "pms": [
+        "default_building_vineyard",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wine": 20
+      }
+    },
+    {
+      "tag": "UKDO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_food_industry",
+      "levels": 1,
+      "pms": [
+        "pm_bakery",
+        "pm_disabled_canning",
+        "pm_disabled_distillery",
+        "pm_manual_dough_processing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "grain": -40,
+        "groceries": 45
+      }
+    },
+    {
+      "tag": "UKDO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_textile_mill",
+      "levels": 1,
+      "pms": [
+        "pm_handsewn_clothes",
+        "pm_no_luxury_clothes",
+        "pm_traditional_looms"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "fabric": -40,
+        "clothes": 45
+      }
+    },
+    {
+      "tag": "UKDO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "UKDO",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_port",
+      "levels": 1,
+      "pms": [
+        "pm_basic_port"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "clippers": -6,
+        "merchant_marine": 9
+      }
+    },
+    {
+      "tag": "MKAI",
+      "state": "STATE_NORTHERN_TERRITORY",
+      "building": "building_logging_camp",
+      "levels": 5,
+      "pms": [
+        "pm_saw_mills",
+        "pm_no_hardwood",
+        "pm_no_equipment",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 25000,
+      "goods_net": {
+        "tools": -25,
+        "wood": 300
+      }
+    },
+    {
+      "tag": "MKAI",
+      "state": "STATE_NORTHERN_TERRITORY",
+      "building": "building_iron_mine",
+      "levels": 3,
+      "pms": [
+        "pm_atmospheric_engine_pump_building_iron_mine",
+        "pm_no_explosives",
+        "pm_no_steam_automation",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "tools": -30,
+        "coal": -30,
+        "iron": 120
+      }
+    },
+    {
+      "tag": "MKAI",
+      "state": "STATE_NORTHERN_TERRITORY",
+      "building": "building_maize_farm",
+      "levels": 3,
+      "pms": [
+        "pm_simple_farming",
+        "pm_no_secondary",
+        "pm_tools_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "grain": 60
+      }
+    },
+    {
+      "tag": "MKAI",
+      "state": "STATE_NORTHERN_TERRITORY",
+      "building": "building_livestock_ranch",
+      "levels": 4,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 20000,
+      "goods_net": {
+        "meat": 40,
+        "fabric": 20
+      }
+    },
+    {
+      "tag": "MKAI",
+      "state": "STATE_NORTHERN_TERRITORY",
+      "building": "building_cotton_plantation",
+      "levels": 3,
+      "pms": [
+        "default_building_cotton_plantation",
+        "default_labour",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 8000,
+      "total_jobs": 24000,
+      "goods_net": {
+        "fabric": 135
+      }
+    },
+    {
+      "tag": "MKAI",
+      "state": "STATE_NORTHERN_TERRITORY",
+      "building": "building_sugar_plantation",
+      "levels": 4,
+      "pms": [
+        "default_building_sugar_plantation",
+        "ox_driven_rollers_sugar",
+        "slave_exploitation_sugar",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 10000,
+      "total_jobs": 40000,
+      "goods_net": {
+        "sugar": 260
+      }
+    },
+    {
+      "tag": "MKAI",
+      "state": "STATE_NORTHERN_TERRITORY",
+      "building": "building_paper_mill",
+      "levels": 2,
+      "pms": [
+        "pm_pulp_pressing",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "wood": -60,
+        "paper": 80
+      }
+    },
+    {
+      "tag": "MKAI",
+      "state": "STATE_NORTHERN_TERRITORY",
+      "building": "building_tooling_workshop",
+      "levels": 2,
+      "pms": [
+        "pm_steel",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "wood": -60,
+        "steel": -40,
+        "tools": 160
+      }
+    },
+    {
+      "tag": "MKAI",
+      "state": "STATE_NORTHERN_TERRITORY",
+      "building": "building_textile_mill",
+      "levels": 3,
+      "pms": [
+        "pm_handsewn_clothes",
+        "pm_no_luxury_clothes",
+        "pm_traditional_looms"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "fabric": -120,
+        "clothes": 135
+      }
+    },
+    {
+      "tag": "MKAI",
+      "state": "STATE_NORTHERN_TERRITORY",
+      "building": "building_glassworks",
+      "levels": 1,
+      "pms": [
+        "pm_forest_glass",
+        "pm_disabled_ceramics",
+        "pm_manual_glassblowing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "glass": 30
+      }
+    },
+    {
+      "tag": "MKAI",
+      "state": "STATE_NORTHERN_TERRITORY",
+      "building": "building_food_industry",
+      "levels": 2,
+      "pms": [
+        "pm_bakery",
+        "pm_disabled_canning",
+        "pm_disabled_distillery",
+        "pm_manual_dough_processing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "grain": -80,
+        "groceries": 90
+      }
+    },
+    {
+      "tag": "MKAI",
+      "state": "STATE_NORTHERN_TERRITORY",
+      "building": "building_motor_industry",
+      "levels": 1,
+      "pms": [
+        "pm_steam_engines",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "steel": -30,
+        "engines": 40
+      }
+    },
+    {
+      "tag": "MKAI",
+      "state": "STATE_NORTHERN_TERRITORY",
+      "building": "building_shipyard",
+      "levels": 1,
+      "pms": [
+        "pm_basic_shipbuilding"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -40,
+        "fabric": -20,
+        "clippers": 40
+      }
+    },
+    {
+      "tag": "MKAI",
+      "state": "STATE_NORTHERN_TERRITORY",
+      "building": "building_government_administration",
+      "levels": 2,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 3000,
+      "goods_net": {
+        "paper": -20
+      }
+    },
+    {
+      "tag": "MKAI",
+      "state": "STATE_NORTHERN_TERRITORY",
+      "building": "building_port",
+      "levels": 2,
+      "pms": [
+        "pm_basic_port"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 2000,
+      "goods_net": {
+        "clippers": -12,
+        "merchant_marine": 18
+      }
+    },
+    {
+      "tag": "MKAI",
+      "state": "STATE_NORTHERN_TERRITORY",
+      "building": "building_university",
+      "levels": 1,
+      "pms": [
+        "pm_scholastic_education",
+        "pm_religious_academia",
+        "pm_principle_freedom_of_movement_3"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "paper": -5
+      }
+    },
+    {
+      "tag": "MKAI",
+      "state": "STATE_NORTHERN_TERRITORY",
+      "building": "building_construction_sector",
+      "levels": 1,
+      "pms": [
+        "pm_wooden_buildings"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "fabric": -25,
+        "wood": -75
+      }
+    },
+    {
+      "tag": "MKAI",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_logging_camp",
+      "levels": 1,
+      "pms": [
+        "pm_saw_mills",
+        "pm_no_hardwood",
+        "pm_no_equipment",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "tools": -5,
+        "wood": 60
+      }
+    },
+    {
+      "tag": "MKAI",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_paper_mill",
+      "levels": 1,
+      "pms": [
+        "pm_pulp_pressing",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "paper": 40
+      }
+    },
+    {
+      "tag": "MKAI",
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "MTOU",
+      "state": "STATE_NORTH_ISLAND",
+      "building": "building_wheat_farm",
+      "levels": 1,
+      "pms": [
+        "pm_simple_farming",
+        "pm_no_secondary",
+        "pm_tools_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "grain": 20
+      }
+    },
+    {
+      "tag": "MTOU",
+      "state": "STATE_NORTH_ISLAND",
+      "building": "building_livestock_ranch",
+      "levels": 1,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "meat": 10,
+        "fabric": 5
+      }
+    },
+    {
+      "tag": "MTOU",
+      "state": "STATE_NORTH_ISLAND",
+      "building": "building_logging_camp",
+      "levels": 2,
+      "pms": [
+        "pm_saw_mills",
+        "pm_no_hardwood",
+        "pm_no_equipment",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "tools": -10,
+        "wood": 120
+      }
+    },
+    {
+      "tag": "MTOU",
+      "state": "STATE_NORTH_ISLAND",
+      "building": "building_iron_mine",
+      "levels": 1,
+      "pms": [
+        "pm_atmospheric_engine_pump_building_iron_mine",
+        "pm_no_explosives",
+        "pm_no_steam_automation",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "tools": -10,
+        "coal": -10,
+        "iron": 40
+      }
+    },
+    {
+      "tag": "MTOU",
+      "state": "STATE_NORTH_ISLAND",
+      "building": "building_coal_mine",
+      "levels": 1,
+      "pms": [
+        "pm_atmospheric_engine_pump_building_coal_mine",
+        "pm_no_explosives",
+        "pm_no_steam_automation",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "tools": -10,
+        "coal": 40
+      }
+    },
+    {
+      "tag": "MTOU",
+      "state": "STATE_NORTH_ISLAND",
+      "building": "building_tooling_workshop",
+      "levels": 1,
+      "pms": [
+        "pm_steel",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "steel": -20,
+        "tools": 80
+      }
+    },
+    {
+      "tag": "MTOU",
+      "state": "STATE_NORTH_ISLAND",
+      "building": "building_paper_mill",
+      "levels": 1,
+      "pms": [
+        "pm_pulp_pressing",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "paper": 40
+      }
+    },
+    {
+      "tag": "MTOU",
+      "state": "STATE_NORTH_ISLAND",
+      "building": "building_glassworks",
+      "levels": 1,
+      "pms": [
+        "pm_forest_glass",
+        "pm_disabled_ceramics",
+        "pm_manual_glassblowing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "glass": 30
+      }
+    },
+    {
+      "tag": "MTOU",
+      "state": "STATE_NORTH_ISLAND",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "MTOU",
+      "state": "STATE_NORTH_ISLAND",
+      "building": "building_port",
+      "levels": 1,
+      "pms": [
+        "pm_basic_port"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "clippers": -6,
+        "merchant_marine": 9
+      }
+    },
+    {
+      "tag": "MTOU",
+      "state": "STATE_NORTH_ISLAND",
+      "building": "building_university",
+      "levels": 1,
+      "pms": [
+        "pm_scholastic_education",
+        "pm_religious_academia",
+        "pm_principle_freedom_of_movement_3"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "paper": -5
+      }
+    },
+    {
+      "tag": "JNKF",
+      "state": "STATE_NORTH_ISLAND",
+      "building": "building_wheat_farm",
+      "levels": 1,
+      "pms": [
+        "pm_simple_farming",
+        "pm_no_secondary",
+        "pm_tools_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "grain": 20
+      }
+    },
+    {
+      "tag": "JNKF",
+      "state": "STATE_NORTH_ISLAND",
+      "building": "building_livestock_ranch",
+      "levels": 1,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "meat": 10,
+        "fabric": 5
+      }
+    },
+    {
+      "tag": "JNKF",
+      "state": "STATE_NORTH_ISLAND",
+      "building": "building_logging_camp",
+      "levels": 1,
+      "pms": [
+        "pm_saw_mills",
+        "pm_no_hardwood",
+        "pm_no_equipment",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "tools": -5,
+        "wood": 60
+      }
+    },
+    {
+      "tag": "JNKF",
+      "state": "STATE_NORTH_ISLAND",
+      "building": "building_tooling_workshop",
+      "levels": 1,
+      "pms": [
+        "pm_steel",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "steel": -20,
+        "tools": 80
+      }
+    },
+    {
+      "tag": "JNKF",
+      "state": "STATE_NORTH_ISLAND",
+      "building": "building_glassworks",
+      "levels": 1,
+      "pms": [
+        "pm_forest_glass",
+        "pm_disabled_ceramics",
+        "pm_manual_glassblowing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "glass": 30
+      }
+    },
+    {
+      "tag": "JNKF",
+      "state": "STATE_NORTH_ISLAND",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "JNKF",
+      "state": "STATE_NORTH_ISLAND",
+      "building": "building_port",
+      "levels": 1,
+      "pms": [
+        "pm_basic_port"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "clippers": -6,
+        "merchant_marine": 9
+      }
+    },
+    {
+      "tag": "HCTI",
+      "state": "STATE_SOUTH_ISLAND",
+      "building": "building_wheat_farm",
+      "levels": 3,
+      "pms": [
+        "pm_simple_farming",
+        "pm_no_secondary",
+        "pm_tools_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "grain": 60
+      }
+    },
+    {
+      "tag": "HCTI",
+      "state": "STATE_SOUTH_ISLAND",
+      "building": "building_livestock_ranch",
+      "levels": 2,
+      "pms": [
+        "pm_open_air_stockyards",
+        "pm_simple_ranch",
+        "pm_standard_fences",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 10000,
+      "goods_net": {
+        "meat": 20,
+        "fabric": 10
+      }
+    },
+    {
+      "tag": "HCTI",
+      "state": "STATE_SOUTH_ISLAND",
+      "building": "building_logging_camp",
+      "levels": 3,
+      "pms": [
+        "pm_saw_mills",
+        "pm_no_hardwood",
+        "pm_no_equipment",
+        "pm_road_carts"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 15000,
+      "goods_net": {
+        "tools": -15,
+        "wood": 180
+      }
+    },
+    {
+      "tag": "HCTI",
+      "state": "STATE_SOUTH_ISLAND",
+      "building": "building_fishing_wharf",
+      "levels": 1,
+      "pms": [
+        "pm_simple_fishing",
+        "pm_unrefrigerated"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "fish": 25
+      }
+    },
+    {
+      "tag": "HCTI",
+      "state": "STATE_SOUTH_ISLAND",
+      "building": "building_tooling_workshop",
+      "levels": 1,
+      "pms": [
+        "pm_steel",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "steel": -20,
+        "tools": 80
+      }
+    },
+    {
+      "tag": "HCTI",
+      "state": "STATE_SOUTH_ISLAND",
+      "building": "building_paper_mill",
+      "levels": 1,
+      "pms": [
+        "pm_pulp_pressing",
+        "pm_automation_disabled"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "wood": -30,
+        "paper": 40
+      }
+    },
+    {
+      "tag": "HCTI",
+      "state": "STATE_SOUTH_ISLAND",
+      "building": "building_food_industry",
+      "levels": 1,
+      "pms": [
+        "pm_bakery",
+        "pm_disabled_canning",
+        "pm_disabled_distillery",
+        "pm_manual_dough_processing"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "grain": -40,
+        "groceries": 45
+      }
+    },
+    {
+      "tag": "HCTI",
+      "state": "STATE_SOUTH_ISLAND",
+      "building": "building_textile_mill",
+      "levels": 1,
+      "pms": [
+        "pm_handsewn_clothes",
+        "pm_no_luxury_clothes",
+        "pm_traditional_looms"
+      ],
+      "jobs_per_level": 5000,
+      "total_jobs": 5000,
+      "goods_net": {
+        "fabric": -40,
+        "clothes": 45
+      }
+    },
+    {
+      "tag": "HCTI",
+      "state": "STATE_SOUTH_ISLAND",
+      "building": "building_government_administration",
+      "levels": 1,
+      "pms": [
+        "pm_horizontal_drawer_cabinets",
+        "pm_hereditary_bureaucrats",
+        "pm_religious_bureaucrats"
+      ],
+      "jobs_per_level": 1500,
+      "total_jobs": 1500,
+      "goods_net": {
+        "paper": -10
+      }
+    },
+    {
+      "tag": "HCTI",
+      "state": "STATE_SOUTH_ISLAND",
+      "building": "building_port",
+      "levels": 1,
+      "pms": [
+        "pm_basic_port"
+      ],
+      "jobs_per_level": 1000,
+      "total_jobs": 1000,
+      "goods_net": {
+        "clippers": -6,
+        "merchant_marine": 9
+      }
+    }
+  ],
+  "jobs_by_country": {
+    "HITO": 452500,
+    "YKYM": 199100,
+    "MFSR": 91000,
+    "MRYA": 140100,
+    "HAKR": 115600,
+    "MYRN": 52100,
+    "EITR": 76000,
+    "RDMK": 100700,
+    "MIST": 21500,
+    "YSSK": 21850,
+    "KZNH": 54500,
+    "SHRM": 46100,
+    "CHRD": 140700,
+    "BYKR": 234000,
+    "HIGN": 61100,
+    "YKMF": 52500,
+    "KYTO": 98500,
+    "RNGN": 138500,
+    "UKDO": 84500,
+    "MKAI": 217500,
+    "MTOU": 48500,
+    "JNKF": 27500,
+    "HCTI": 67500
+  },
+  "net_goods_before_consumers_and_other_regions": {
+    "grain": 580,
+    "meat": 550,
+    "fabric": 75,
+    "sugar": 445,
+    "tea": 100,
+    "wine": 335,
+    "groceries": 1290,
+    "clothes": 920,
+    "wood": 777,
+    "furniture": 425,
+    "paper": 420,
+    "tools": 1407,
+    "coal": 136,
+    "iron": 380,
+    "steel": 84,
+    "electricity": 10,
+    "engines": 115,
+    "clippers": 16,
+    "merchant_marine": 216,
+    "fertilizer": 15,
+    "ornamental_plants": 165,
+    "services": -50,
+    "faith": 125,
+    "glass": 420,
+    "fish": 195,
+    "opium": 60,
+    "lead": 80,
+    "liquor": 170,
+    "luxury_drinks": 15,
+    "luxury_foods": 20,
+    "sulfur": 20
+  },
+  "jobs_by_region": [
+    {
+      "state": "STATE_NEW_SOUTH_WALES",
+      "tag": "HITO",
+      "jobs": 381000,
+      "population": 2560000
+    },
+    {
+      "state": "STATE_VICTORIA",
+      "tag": "HITO",
+      "jobs": 71500,
+      "population": 800001
+    },
+    {
+      "state": "STATE_QUEENSLAND",
+      "tag": "YKYM",
+      "jobs": 146600,
+      "population": 1650000
+    },
+    {
+      "state": "STATE_NEW_SOUTH_WALES",
+      "tag": "YKYM",
+      "jobs": 52500,
+      "population": 550000
+    },
+    {
+      "state": "STATE_QUEENSLAND",
+      "tag": "MFSR",
+      "jobs": 55500,
+      "population": 450000
+    },
+    {
+      "state": "STATE_NEW_SOUTH_WALES",
+      "tag": "MFSR",
+      "jobs": 35500,
+      "population": 225000
+    },
+    {
+      "state": "STATE_QUEENSLAND",
+      "tag": "MRYA",
+      "jobs": 140100,
+      "population": 1000000
+    },
+    {
+      "state": "STATE_NEW_SOUTH_WALES",
+      "tag": "HAKR",
+      "jobs": 115600,
+      "population": 605000
+    },
+    {
+      "state": "STATE_NEW_SOUTH_WALES",
+      "tag": "MYRN",
+      "jobs": 52100,
+      "population": 400000
+    },
+    {
+      "state": "STATE_VICTORIA",
+      "tag": "EITR",
+      "jobs": 63500,
+      "population": 600000
+    },
+    {
+      "state": "STATE_NEW_SOUTH_WALES",
+      "tag": "EITR",
+      "jobs": 12500,
+      "population": 110000
+    },
+    {
+      "state": "STATE_TASMANIA",
+      "tag": "RDMK",
+      "jobs": 57850,
+      "population": 350000
+    },
+    {
+      "state": "STATE_VICTORIA",
+      "tag": "RDMK",
+      "jobs": 42850,
+      "population": 350000
+    },
+    {
+      "state": "STATE_VICTORIA",
+      "tag": "MIST",
+      "jobs": 21500,
+      "population": 149999
+    },
+    {
+      "state": "STATE_NEW_SOUTH_WALES",
+      "tag": "YSSK",
+      "jobs": 21850,
+      "population": 150000
+    },
+    {
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "tag": "KZNH",
+      "jobs": 54500,
+      "population": 400000
+    },
+    {
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "tag": "SHRM",
+      "jobs": 46100,
+      "population": 500000
+    },
+    {
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "tag": "CHRD",
+      "jobs": 124200,
+      "population": 1500000
+    },
+    {
+      "state": "STATE_CHIREIDEN_CAPITAL",
+      "tag": "CHRD",
+      "jobs": 16500,
+      "population": 400000
+    },
+    {
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "tag": "BYKR",
+      "jobs": 234000,
+      "population": 1300000
+    },
+    {
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "tag": "HIGN",
+      "jobs": 61100,
+      "population": 450000
+    },
+    {
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "tag": "YKMF",
+      "jobs": 52500,
+      "population": 350000
+    },
+    {
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "tag": "KYTO",
+      "jobs": 98500,
+      "population": 500000
+    },
+    {
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "tag": "RNGN",
+      "jobs": 138500,
+      "population": 700000
+    },
+    {
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "tag": "UKDO",
+      "jobs": 84500,
+      "population": 450000
+    },
+    {
+      "state": "STATE_NORTHERN_TERRITORY",
+      "tag": "MKAI",
+      "jobs": 206000,
+      "population": 1180000
+    },
+    {
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "tag": "MKAI",
+      "jobs": 11500,
+      "population": 120000
+    },
+    {
+      "state": "STATE_NORTH_ISLAND",
+      "tag": "MTOU",
+      "jobs": 48500,
+      "population": 259999
+    },
+    {
+      "state": "STATE_NORTH_ISLAND",
+      "tag": "JNKF",
+      "jobs": 27500,
+      "population": 140001
+    },
+    {
+      "state": "STATE_SOUTH_ISLAND",
+      "tag": "HCTI",
+      "jobs": 67500,
+      "population": 400000
+    }
+  ],
+  "local_power": [
+    {
+      "state": "STATE_QUEENSLAND",
+      "tag": "YKYM",
+      "surplus": 0
+    },
+    {
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "tag": "CHRD",
+      "surplus": 10
+    }
+  ],
+  "removed_old_history_scopes": 6,
+  "preserved_military": [
+    {
+      "state": "STATE_TASMANIA",
+      "tag": "RDMK",
+      "building": "building_barrack"
+    },
+    {
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "tag": "CHRD",
+      "building": "building_barrack"
+    },
+    {
+      "state": "STATE_WESTERN_AUSTRALIA",
+      "tag": "UKDO",
+      "building": "building_barrack"
+    },
+    {
+      "state": "STATE_NORTH_ISLAND",
+      "tag": "MTOU",
+      "building": "building_barrack"
+    },
+    {
+      "state": "STATE_NORTH_ISLAND",
+      "tag": "JNKF",
+      "building": "building_barrack"
+    }
+  ],
+  "warning": "Static full-employment accounting; excludes urban centers, households, other regions, ownership-building employment, wages and prices. No in-game validation yet."
+}
