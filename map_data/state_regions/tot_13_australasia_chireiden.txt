@@ -103,11 +103,12 @@ STATE_NORTHERN_TERRITORY = {
     mine = "x3F942C"
     wood = "xA4B8B3"
     arable_land = 65
-    arable_resources = { "building_livestock_ranch" "building_cotton_plantation" }
+    arable_resources = { "building_sugar_plantation" "building_maize_farm" "building_livestock_ranch" "building_cotton_plantation" }
     capped_resources = {
-        building_logging_camp = 5
+        building_logging_camp = 16
         building_whaling_station = 2
         building_fishing_wharf = 6
+        building_iron_mine = 20
     }
     naval_exit_id = 3125
 }
@@ -124,13 +125,13 @@ STATE_WESTERN_AUSTRALIA = {
     mine = "x8D829F"
     wood = "x74551C"
     arable_land = 200
-    arable_resources = { "building_wheat_farm" "building_livestock_ranch" "building_vineyard" }
+    arable_resources = { "building_cotton_plantation" "building_wheat_farm" "building_livestock_ranch" "building_vineyard" }
     capped_resources = {
         building_coal_mine = 40
-        building_iron_mine = 30
-        building_logging_camp = 6
+        building_iron_mine = 48
+        building_logging_camp = 40
         building_whaling_station = 3
-        building_fishing_wharf = 9
+        building_fishing_wharf = 16
     }
     resource = {
         type = "building_gold_field"

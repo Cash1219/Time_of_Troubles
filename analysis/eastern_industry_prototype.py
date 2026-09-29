@@ -1,6 +1,6 @@
 """Build/validate an eastern economy prototype; --apply writes runtime files.
 
-No ownership, population or arable changes. Existing unrelated building history
+No ownership, population or arable acreage changes. Existing unrelated building history
 is retained. Historical colonies with no local land lose stale building scopes.
 """
 import collections
@@ -17,6 +17,10 @@ from west_coast_draft import ROOT, GAME, NAMES, close, ownership
 
 OUT = ROOT / 'docs/drafts'
 PREFIX = 'eastern_industry_v1'
+CHECKPOINT = '7be45d6'
+BACKUP_PREFIX = 'eastern_industry_before_'
+HISTORY_LABEL = 'Eastern industry test v1'
+ARABLE_ADDITIONS = {'VIC': ['building_opium_plantation']}
 ALIASES = {
     'wheat': 'wheat_farm', 'ranch': 'livestock_ranch', 'cotton': 'cotton_plantation',
     'sugar': 'sugar_plantation', 'tea': 'tea_plantation', 'wine': 'vineyard',
@@ -121,8 +125,9 @@ def patch_state_resources(source):
             updated = body[:cm.start()] + cap_text + body[cap_end:]
             break
         assert updated != body or key in RESOURCE_UPDATES
-        if key == 'VIC' and '"building_opium_plantation"' not in updated:
-            updated = re.sub(r'(arable_resources\s*=\s*\{)', r'\1 "building_opium_plantation"', updated, count=1)
+        for building in ARABLE_ADDITIONS.get(key, []):
+            if building not in list_block(updated, 'arable_resources'):
+                updated = re.sub(r'(arable_resources\s*=\s*\{)', r'\1 "' + building + '"', updated, count=1)
         opening = source.index('{', m.start())
         replacements.append((opening + 1, end - 1, updated))
     for start, end, value in reversed(replacements):
@@ -209,7 +214,7 @@ def main(apply=False):
     for start, end, replacement in reversed(removals):
         old = old[:start] + replacement + old[end:]
     old = '\n'.join(line.rstrip() for line in old.splitlines()) + '\n'
-    history = ['# Eastern industry test v1: generated from explicit current-owner plan.', 'BUILDINGS = {']
+    history = ['# ' + HISTORY_LABEL + ': generated from explicit current-owner plan.', 'BUILDINGS = {']
     for tag, skey, _ in PLAN:
         state = STATES[skey]
         history += ['\ts:{} = {{'.format(state), '\t\tregion_state:{} = {{'.format(tag)]
@@ -245,6 +250,9 @@ def main(apply=False):
         prime = set(list_block(after, 'prime_land'))
         provinces = set(list_block(after, 'provinces'))
         arable = int(re.search(r'\barable_land\s*=\s*(\d+)', after)[1])
+        for row in (r for r in selected if r['state'] == m[1]):
+            if row['building'].endswith(('_farm', '_plantation', '_ranch', '_vineyard')):
+                assert row['building'] in list_block(after, 'arable_resources'), (m[1], row['tag'], row['building'], 'not an allowed crop')
         for tag in {r['tag'] for r in selected if r['state'] == m[1]}:
             owned = {p for p, st in owners.items() if tuple(st) == (m[1], tag)}
             farm_levels = sum(r['levels'] for r in selected if r['state'] == m[1] and r['tag'] == tag and r['building'].endswith(('_farm', '_plantation', '_ranch', '_vineyard')))
@@ -257,7 +265,7 @@ def main(apply=False):
                 assert count <= limit, (m[1], tag, building, count, limit)
     backup = None
     if apply:
-        backup = ROOT / 'docs/backups' / ('eastern_industry_before_' + datetime.datetime.now().strftime('%Y%m%d_%H%M%S'))
+        backup = ROOT / 'docs/backups' / (BACKUP_PREFIX + datetime.datetime.now().strftime('%Y%m%d_%H%M%S'))
         backup.mkdir(parents=True)
         new_files = []
         support_files = [ROOT / p for p in ('common/buildings/tot_gensokyo_power.txt',
@@ -270,12 +278,12 @@ def main(apply=False):
                 shutil.copy2(path, dest)
             else:
                 new_files.append(str(path.relative_to(ROOT)))
-        new_files.extend(str(p.relative_to(ROOT)) for p in support_files)
+        new_files.extend(str(p.relative_to(ROOT)) for p in support_files if not p.exists())
         (backup / 'new_files.json').write_text(json.dumps(new_files, indent=2), encoding='utf-8')
         for path, text in files.items():
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(text, encoding='utf-8')
-    report = dict(applied=apply, checkpoint='7be45d6', backup=str(backup) if backup else None,
+    report = dict(applied=apply, checkpoint=CHECKPOINT, backup=str(backup) if backup else None,
         plan=selected, jobs_by_country=job_totals, net_goods_before_consumers_and_other_regions=dict(net),
         jobs_by_region=[dict(state=s, tag=t, jobs=n, population=population['population_by_state'][s][t]) for (s,t),n in regional_jobs.items()],
         local_power=[dict(state=s, tag=t, surplus=n) for (s,t),n in local_power.items()],
