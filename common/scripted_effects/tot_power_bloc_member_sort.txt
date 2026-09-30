@@ -1,0 +1,45 @@
+# Root is the viewing player; the selected bloc's host is passed by the GUI.
+# Rebuilt only on page entry or a sort click, without periodic global scans.
+tot_power_bloc_refresh_gdp_member_list = {
+    if = {
+        limit = { has_variable_list = tot_power_bloc_gdp_members }
+        clear_variable_list = tot_power_bloc_gdp_members
+    }
+    scope:tot_member_sort_host.power_bloc = {
+        ordered_power_bloc_member = {
+            order_by = {
+                value = gdp
+                multiply = root.var:tot_power_bloc_gdp_direction
+            }
+            save_temporary_scope_as = tot_member_sort_entry
+            root = {
+                add_to_variable_list = {
+                    name = tot_power_bloc_gdp_members
+                    target = scope:tot_member_sort_entry
+                }
+            }
+        }
+    }
+}
+
+tot_power_bloc_refresh_population_member_list = {
+    if = {
+        limit = { has_variable_list = tot_power_bloc_population_members }
+        clear_variable_list = tot_power_bloc_population_members
+    }
+    scope:tot_member_sort_host.power_bloc = {
+        ordered_power_bloc_member = {
+            order_by = {
+                value = total_population
+                multiply = root.var:tot_power_bloc_population_direction
+            }
+            save_temporary_scope_as = tot_member_sort_entry
+            root = {
+                add_to_variable_list = {
+                    name = tot_power_bloc_population_members
+                    target = scope:tot_member_sort_entry
+                }
+            }
+        }
+    }
+}

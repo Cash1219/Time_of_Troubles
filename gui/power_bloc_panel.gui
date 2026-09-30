@@ -1699,6 +1699,12 @@ types power_bloc_panel_types
 		using = default_list_position
 		spacing = 5
 
+		state = {
+			name = _show
+			on_start = "[GetScriptedGui('tot_power_bloc_members_gdp_desc').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_member_sort_host', PowerBloc.GetLeader.MakeScope).End)]"
+			on_start = "[GetVariableSystem.Set('tot_power_bloc_member_sort', 'gdp_desc')]"
+		}
+
 		default_header = {
 			using = default_list_position
 			blockoverride "text" {
@@ -1727,26 +1733,65 @@ types power_bloc_panel_types
 		flowcontainer = {
 			minimumsize = { @panel_width -1 }
 			parentanchor = hcenter
+			ignoreinvisible = yes
 
 			sort_button = {
-				size = { 150 30 }
+				size = { 100 30 }
 				text = "NAME"
 				tooltip = "POWER_BLOC_MEMBER_COUNTRY_NAME_HEADER_TOOLTIP"
 				onclick = "[PowerBloc.SortMembers('name')]"
+				onclick = "[GetVariableSystem.Set('tot_power_bloc_member_sort', 'native')]"
 			}
 
 			sort_button = {
-				size = { 200 30 }
+				size = { 100 30 }
 				text = "concept_prestige"
 				tooltip = "POWER_BLOC_MEMBER_PRESTIGE_HEADER_TOOLTIP"
 				onclick = "[PowerBloc.SortMembers('prestige')]"
+				onclick = "[GetVariableSystem.Set('tot_power_bloc_member_sort', 'native')]"
 			}
 
 			sort_button = {
-				size = { 200 30 }
+				visible = "[Not(GetVariableSystem.HasValue('tot_power_bloc_member_sort', 'gdp_desc'))]"
+				size = { 100 30 }
+				text = "TOT_POWER_BLOC_SORT_GDP_DESC"
+				tooltip = "TOT_POWER_BLOC_SORT_GDP_TOOLTIP"
+				onclick = "[GetScriptedGui('tot_power_bloc_members_gdp_desc').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_member_sort_host', PowerBloc.GetLeader.MakeScope).End)]"
+				onclick = "[GetVariableSystem.Set('tot_power_bloc_member_sort', 'gdp_desc')]"
+			}
+			sort_button = {
+				visible = "[GetVariableSystem.HasValue('tot_power_bloc_member_sort', 'gdp_desc')]"
+				size = { 100 30 }
+				text = "TOT_POWER_BLOC_SORT_GDP_ASC"
+				tooltip = "TOT_POWER_BLOC_SORT_GDP_TOOLTIP"
+				onclick = "[GetScriptedGui('tot_power_bloc_members_gdp_asc').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_member_sort_host', PowerBloc.GetLeader.MakeScope).End)]"
+				onclick = "[GetVariableSystem.Set('tot_power_bloc_member_sort', 'gdp_asc')]"
+			}
+
+			sort_button = {
+				visible = "[Not(GetVariableSystem.HasValue('tot_power_bloc_member_sort', 'population_desc'))]"
+				size = { 100 30 }
+				text = "TOT_POWER_BLOC_SORT_POPULATION_DESC"
+				tooltip = "TOT_POWER_BLOC_SORT_POPULATION_TOOLTIP"
+				onclick = "[GetScriptedGui('tot_power_bloc_members_population_desc').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_member_sort_host', PowerBloc.GetLeader.MakeScope).End)]"
+				onclick = "[GetVariableSystem.Set('tot_power_bloc_member_sort', 'population_desc')]"
+			}
+
+			sort_button = {
+				visible = "[GetVariableSystem.HasValue('tot_power_bloc_member_sort', 'population_desc')]"
+				size = { 100 30 }
+				text = "TOT_POWER_BLOC_SORT_POPULATION_ASC"
+				tooltip = "TOT_POWER_BLOC_SORT_POPULATION_TOOLTIP"
+				onclick = "[GetScriptedGui('tot_power_bloc_members_population_asc').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_member_sort_host', PowerBloc.GetLeader.MakeScope).End)]"
+				onclick = "[GetVariableSystem.Set('tot_power_bloc_member_sort', 'population_asc')]"
+			}
+
+			sort_button = {
+				size = { 140 30 }
 				text = "concept_power_bloc_leverage_advantage"
 				tooltip = "POWER_BLOC_MEMBER_LEVERAGE_HEADER_TOOLTIP"
 				onclick = "[PowerBloc.SortMembers('leverage_advantage')]"
+				onclick = "[GetVariableSystem.Set('tot_power_bloc_member_sort', 'native')]"
 			}
 		}
 
@@ -1760,7 +1805,7 @@ types power_bloc_panel_types
 		}
 
 		flowcontainer = {
-			visible = "[Not(IsDataModelEmpty(PowerBloc.GetMembers))]"
+			visible = "[And(Not(IsDataModelEmpty(PowerBloc.GetMembers)), GetVariableSystem.HasValue('tot_power_bloc_member_sort', 'native'))]"
 			direction = vertical
 			parentanchor = hcenter
 			datamodel = "[PowerBloc.GetMembers]"
@@ -1772,6 +1817,42 @@ types power_bloc_panel_types
 					visible = "[And( Not(PowerBloc.IsLeader(Country.Self)), Country.MatchesSearchQuery( PowerBlocPanel.GetMembersSearchBar.GetQuery ) )]"
 					direction = vertical
 
+					power_bloc_member_item = {}
+				}
+			}
+		}
+
+		# Includes the host in the GDP ranking, alongside the other members.
+		flowcontainer = {
+			visible = "[Or(GetVariableSystem.HasValue('tot_power_bloc_member_sort', 'gdp_desc'), GetVariableSystem.HasValue('tot_power_bloc_member_sort', 'gdp_asc'))]"
+			direction = vertical
+			parentanchor = hcenter
+			datamodel = "[GetPlayer.MakeScope.GetList('tot_power_bloc_gdp_members')]"
+			spacing = 5
+			ignoreinvisible = yes
+			item = {
+				flowcontainer = {
+					datacontext = "[Scope.GetCountry]"
+					visible = "[And(PowerBloc.IsMember(Country.Self), Country.MatchesSearchQuery(PowerBlocPanel.GetMembersSearchBar.GetQuery))]"
+					direction = vertical
+					power_bloc_member_item = {}
+				}
+			}
+		}
+
+		# Population ranking includes the host, like the GDP ranking.
+		flowcontainer = {
+			visible = "[Or(GetVariableSystem.HasValue('tot_power_bloc_member_sort', 'population_desc'), GetVariableSystem.HasValue('tot_power_bloc_member_sort', 'population_asc'))]"
+			direction = vertical
+			parentanchor = hcenter
+			datamodel = "[GetPlayer.MakeScope.GetList('tot_power_bloc_population_members')]"
+			spacing = 5
+			ignoreinvisible = yes
+			item = {
+				flowcontainer = {
+					datacontext = "[Scope.GetCountry]"
+					visible = "[And(PowerBloc.IsMember(Country.Self), Country.MatchesSearchQuery(PowerBlocPanel.GetMembersSearchBar.GetQuery))]"
+					direction = vertical
 					power_bloc_member_item = {}
 				}
 			}
@@ -1896,6 +1977,7 @@ types power_bloc_panel_types
 
 					### PRESTIGE
 					power_bloc_header_grid_item = {
+						size = { 80 30 }
 						using = tooltip_se
 						tooltip = "COUNTRY_PRESTIGE_BREAKDOWN"
 
@@ -1910,6 +1992,7 @@ types power_bloc_panel_types
 
 					### TOTAL GDP
 					power_bloc_header_grid_item = {
+						size = { 80 30 }
 						using = tooltip_se
 						using = GDP_tooltip_with_graph
 
@@ -1922,8 +2005,22 @@ types power_bloc_panel_types
 						}
 					}
 
+					### TOTAL POPULATION
+					power_bloc_header_grid_item = {
+						size = { 80 30 }
+						using = tooltip_se
+						using = population_tooltip_with_graph
+						blockoverride "text" {
+							raw_text = "#v [Country.GetTotalPopulation|D]#!"
+						}
+						blockoverride "icon" {
+							raw_text = "@population!"
+						}
+					}
+
 					### TOTAL NUMBER OF BATTALIONS
 					power_bloc_header_grid_item = {
+						size = { 80 30 }
 						using = tooltip_se
 						tooltip = "PANEL_MILITARY_ARMY_OVERVIEW_TOOLTIP"
 
@@ -2392,7 +2489,7 @@ types power_bloc_panel_types
 
 				# Button to remove the member from the power bloc
 				button_icon_round_action = {
-					visible = "[PowerBloc.IsLeader(GetPlayer.Self)]"
+					visible = "[And(PowerBloc.IsLeader(GetPlayer.Self), Not(PowerBloc.IsLeader(Country.Self)))]"
 					parentanchor = vcenter
 					size = { 28 28 }
 					onclick = "[PopupManager.AskConfirmation(PowerBloc.Kick(Country.Self))]"
@@ -2446,6 +2543,7 @@ types power_bloc_panel_types
 
 					### PRESTIGE
 					power_bloc_header_grid_item = {
+						size = { 80 30 }
 						using = tooltip_se
 						tooltip = "COUNTRY_PRESTIGE_BREAKDOWN"
 
@@ -2460,6 +2558,7 @@ types power_bloc_panel_types
 
 					### TOTAL GDP
 					power_bloc_header_grid_item = {
+						size = { 80 30 }
 						using = tooltip_se
 						using = GDP_tooltip_with_graph
 
@@ -2472,8 +2571,22 @@ types power_bloc_panel_types
 						}
 					}
 
+					### TOTAL POPULATION
+					power_bloc_header_grid_item = {
+						size = { 80 30 }
+						using = tooltip_se
+						using = population_tooltip_with_graph
+						blockoverride "text" {
+							raw_text = "#v [Country.GetTotalPopulation|D]#!"
+						}
+						blockoverride "icon" {
+							raw_text = "@population!"
+						}
+					}
+
 					### TOTAL NUMBER OF BATTALIONS
 					power_bloc_header_grid_item = {
+						size = { 80 30 }
 						using = tooltip_se
 						tooltip = "PANEL_MILITARY_ARMY_OVERVIEW_TOOLTIP"
 

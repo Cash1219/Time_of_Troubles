@@ -1,0 +1,17 @@
+# INACTIVE RESEARCH PROTOTYPE. Split these blocks into their respective folders.
+# common/power_bloc_principles/tot_gensokyo_charter.txt
+principle_tot_gensokyo_charter_1 = {
+    icon = "gfx/interface/icons/principles_icons/market_unification.dds"
+    background = "gfx/interface/icons/principles_icons/principle_tier_1.dds"
+    power_bloc_modifier = {}
+    leader_modifier = {}
+    member_modifier = {}
+    ai_weight = { value = 0 }
+}
+
+# common/power_bloc_principle_groups/tot_gensokyo_charter.txt
+principle_group_tot_gensokyo_charter = {
+    primary_for_identity = identity_tot_gensokyo_charter
+    unlocking_identity = identity_tot_gensokyo_charter
+    levels = { principle_tot_gensokyo_charter_1 }
+}

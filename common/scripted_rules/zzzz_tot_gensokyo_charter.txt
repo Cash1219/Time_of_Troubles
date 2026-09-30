@@ -1,0 +1,12 @@
+# Keep native qualification outside the charter; Yakumo is the initial host.
+REPLACE:can_lead_power_bloc = {
+    OR = {
+        country_rank >= rank_value:major_power
+        c:YKMF ?= this
+    }
+}
+# A small charter host must not make the community a weak rank-only bloc.
+REPLACE:is_weak_power_bloc = {
+    NOT = { has_identity = identity:identity_tot_gensokyo_charter }
+    power_bloc_is_weak = yes
+}

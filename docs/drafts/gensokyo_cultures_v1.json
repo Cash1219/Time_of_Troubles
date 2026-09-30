@@ -1,0 +1,694 @@
+{
+  "status": "applied; static validation passed; not game-tested",
+  "backup": "docs/backups/gensokyo_cultures_before_20260929_131703",
+  "checks": {
+    "population": 19610000,
+    "reclassified": 18452450,
+    "retained": 1157550,
+    "countries": 24,
+    "cultures": 12,
+    "population_by_state_owner_preserved": true,
+    "religion_by_state_owner_preserved": true,
+    "original_minorities_preserved": true,
+    "province_ownership_preserved": true,
+    "primary_cultures_valid": true,
+    "homelands_valid": true,
+    "culture_trait_localization_references_valid": true
+  },
+  "cultures": {
+    "tot_gensokyo_human": "幻想乡人类",
+    "tot_gensokyo_youkai": "幻想乡妖怪",
+    "tot_gensokyo_beast": "兽妖",
+    "tot_gensokyo_tengu": "天狗",
+    "tot_gensokyo_kappa": "河童",
+    "tot_gensokyo_fairy": "妖精",
+    "tot_gensokyo_rabbit": "兔族",
+    "tot_gensokyo_lunarian": "月人",
+    "tot_gensokyo_oni": "鬼族",
+    "tot_gensokyo_spirit": "幽冥亡灵",
+    "tot_gensokyo_animal_spirit": "兽灵",
+    "tot_gensokyo_celestial": "天人"
+  },
+  "countries": {
+    "HITO": {
+      "name": "人间之里",
+      "total": 3360001,
+      "primary": [
+        "tot_gensokyo_human"
+      ],
+      "cultures": {
+        "aborigine": 64394,
+        "australian": 56739,
+        "irish": 39039,
+        "tot_gensokyo_human": 3041408,
+        "tot_gensokyo_youkai": 86748,
+        "tot_gensokyo_fairy": 71579,
+        "scottish": 94
+      }
+    },
+    "HAKR": {
+      "name": "博丽",
+      "total": 605000,
+      "primary": [
+        "tot_gensokyo_human",
+        "tot_gensokyo_youkai"
+      ],
+      "cultures": {
+        "aborigine": 10315,
+        "australian": 10142,
+        "irish": 7577,
+        "tot_gensokyo_human": 375017,
+        "tot_gensokyo_youkai": 115390,
+        "tot_gensokyo_fairy": 57695,
+        "tot_gensokyo_beast": 28847,
+        "scottish": 17
+      }
+    },
+    "YKYM": {
+      "name": "妖怪之山",
+      "total": 2200000,
+      "primary": [
+        "tot_gensokyo_tengu",
+        "tot_gensokyo_kappa",
+        "tot_gensokyo_youkai"
+      ],
+      "cultures": {
+        "aborigine": 52616,
+        "australian": 14781,
+        "irish": 9881,
+        "tot_gensokyo_tengu": 850310,
+        "tot_gensokyo_kappa": 635572,
+        "tot_gensokyo_youkai": 318403,
+        "tot_gensokyo_beast": 212269,
+        "tot_gensokyo_human": 106135,
+        "scottish": 33
+      }
+    },
+    "MRYA": {
+      "name": "守矢",
+      "total": 1000000,
+      "primary": [
+        "tot_gensokyo_human",
+        "tot_gensokyo_tengu",
+        "tot_gensokyo_kappa"
+      ],
+      "cultures": {
+        "aborigine": 26205,
+        "australian": 3371,
+        "irish": 1815,
+        "tot_gensokyo_human": 387439,
+        "tot_gensokyo_tengu": 193719,
+        "tot_gensokyo_kappa": 145290,
+        "tot_gensokyo_youkai": 145290,
+        "tot_gensokyo_fairy": 96860,
+        "scottish": 11
+      }
+    },
+    "MFSR": {
+      "name": "魔法森林",
+      "total": 675000,
+      "primary": [
+        "tot_gensokyo_youkai",
+        "tot_gensokyo_fairy"
+      ],
+      "cultures": {
+        "aborigine": 15630,
+        "australian": 5289,
+        "irish": 3635,
+        "tot_gensokyo_youkai": 455304,
+        "tot_gensokyo_fairy": 130087,
+        "tot_gensokyo_human": 65044,
+        "scottish": 11
+      }
+    },
+    "EITR": {
+      "name": "永远亭",
+      "total": 710000,
+      "primary": [
+        "tot_gensokyo_rabbit",
+        "tot_gensokyo_human"
+      ],
+      "cultures": {
+        "aborigine": 17432,
+        "australian": 12210,
+        "irish": 6612,
+        "tot_gensokyo_rabbit": 500050,
+        "tot_gensokyo_human": 139991,
+        "tot_gensokyo_youkai": 33686,
+        "scottish": 19
+      }
+    },
+    "YSSK": {
+      "name": "夜雀食堂",
+      "total": 150000,
+      "primary": [
+        "tot_gensokyo_youkai",
+        "tot_gensokyo_human"
+      ],
+      "cultures": {
+        "aborigine": 2558,
+        "australian": 2515,
+        "irish": 1878,
+        "tot_gensokyo_youkai": 71522,
+        "tot_gensokyo_human": 42914,
+        "tot_gensokyo_fairy": 28609,
+        "scottish": 4
+      }
+    },
+    "MYRN": {
+      "name": "命莲寺",
+      "total": 400000,
+      "primary": [
+        "tot_gensokyo_human",
+        "tot_gensokyo_youkai"
+      ],
+      "cultures": {
+        "aborigine": 6821,
+        "australian": 6706,
+        "irish": 5009,
+        "tot_gensokyo_human": 171654,
+        "tot_gensokyo_youkai": 171654,
+        "tot_gensokyo_beast": 38145,
+        "scottish": 11
+      }
+    },
+    "SHRM": {
+      "name": "神灵庙",
+      "total": 500000,
+      "primary": [
+        "tot_gensokyo_human",
+        "tot_gensokyo_spirit"
+      ],
+      "cultures": {
+        "aborigine": 25487,
+        "australian": 1409,
+        "irish": 716,
+        "tot_gensokyo_human": 354244,
+        "tot_gensokyo_youkai": 70849,
+        "tot_gensokyo_spirit": 47233,
+        "scottish": 62
+      }
+    },
+    "KZNH": {
+      "name": "太阳花田",
+      "total": 400000,
+      "primary": [
+        "tot_gensokyo_youkai",
+        "tot_gensokyo_fairy"
+      ],
+      "cultures": {
+        "aborigine": 20389,
+        "australian": 1128,
+        "irish": 573,
+        "tot_gensokyo_fairy": 188930,
+        "tot_gensokyo_youkai": 132251,
+        "tot_gensokyo_human": 56679,
+        "scottish": 50
+      }
+    },
+    "RDMK": {
+      "name": "红魔馆",
+      "total": 700000,
+      "primary": [
+        "tot_gensokyo_youkai",
+        "tot_gensokyo_fairy",
+        "tot_gensokyo_human"
+      ],
+      "cultures": {
+        "aborigine": 9275,
+        "australian": 47246,
+        "irish": 3054,
+        "tot_gensokyo_fairy": 319047,
+        "tot_gensokyo_youkai": 224146,
+        "tot_gensokyo_human": 97223,
+        "scottish": 9
+      }
+    },
+    "MIST": {
+      "name": "冰之领地",
+      "total": 149999,
+      "primary": [
+        "tot_gensokyo_fairy"
+      ],
+      "cultures": {
+        "aborigine": 3889,
+        "australian": 2591,
+        "irish": 1308,
+        "tot_gensokyo_fairy": 113765,
+        "tot_gensokyo_youkai": 21331,
+        "tot_gensokyo_human": 7110,
+        "scottish": 5
+      }
+    },
+    "CHRD": {
+      "name": "地灵殿",
+      "total": 2710000,
+      "primary": [
+        "tot_gensokyo_youkai",
+        "tot_gensokyo_oni",
+        "tot_gensokyo_beast"
+      ],
+      "cultures": {
+        "aborigine": 85177,
+        "australian": 4314,
+        "irish": 2193,
+        "tot_gensokyo_youkai": 1093100,
+        "tot_gensokyo_oni": 519773,
+        "tot_gensokyo_beast": 410658,
+        "tot_gensokyo_spirit": 384829,
+        "tot_gensokyo_human": 209765,
+        "scottish": 191
+      }
+    },
+    "KYTO": {
+      "name": "旧都",
+      "total": 500000,
+      "primary": [
+        "tot_gensokyo_oni",
+        "tot_gensokyo_youkai"
+      ],
+      "cultures": {
+        "aborigine": 7807,
+        "australian": 919,
+        "irish": 495,
+        "tot_gensokyo_oni": 318982,
+        "tot_gensokyo_youkai": 98148,
+        "tot_gensokyo_spirit": 49074,
+        "tot_gensokyo_human": 24537,
+        "scottish": 38
+      }
+    },
+    "MKAI": {
+      "name": "魔界",
+      "total": 1300000,
+      "primary": [
+        "tot_gensokyo_youkai",
+        "tot_gensokyo_fairy"
+      ],
+      "cultures": {
+        "aborigine": 103796,
+        "australian": 3929,
+        "irish": 177,
+        "tot_gensokyo_youkai": 953667,
+        "tot_gensokyo_fairy": 178813,
+        "tot_gensokyo_human": 59604,
+        "scottish": 14
+      }
+    },
+    "BYKR": {
+      "name": "白玉楼",
+      "total": 1300000,
+      "primary": [
+        "tot_gensokyo_spirit"
+      ],
+      "cultures": {
+        "aborigine": 23161,
+        "australian": 2727,
+        "irish": 1468,
+        "tot_gensokyo_spirit": 1081651,
+        "tot_gensokyo_youkai": 127253,
+        "tot_gensokyo_human": 63627,
+        "scottish": 113
+      }
+    },
+    "HIGN": {
+      "name": "彼岸",
+      "total": 450000,
+      "primary": [
+        "tot_gensokyo_spirit",
+        "tot_gensokyo_youkai"
+      ],
+      "cultures": {
+        "aborigine": 9719,
+        "australian": 1144,
+        "irish": 616,
+        "tot_gensokyo_spirit": 350779,
+        "tot_gensokyo_oni": 43847,
+        "tot_gensokyo_youkai": 43847,
+        "scottish": 48
+      }
+    },
+    "YKMF": {
+      "name": "八云府",
+      "total": 350000,
+      "primary": [
+        "tot_gensokyo_youkai",
+        "tot_gensokyo_beast"
+      ],
+      "cultures": {
+        "aborigine": 4163,
+        "australian": 490,
+        "irish": 264,
+        "tot_gensokyo_youkai": 155278,
+        "tot_gensokyo_beast": 120772,
+        "tot_gensokyo_human": 51760,
+        "tot_gensokyo_fairy": 17253,
+        "scottish": 20
+      }
+    },
+    "RNGN": {
+      "name": "灵长园",
+      "total": 700000,
+      "primary": [
+        "tot_gensokyo_spirit",
+        "tot_gensokyo_animal_spirit"
+      ],
+      "cultures": {
+        "aborigine": 33249,
+        "australian": 3914,
+        "irish": 2107,
+        "tot_gensokyo_animal_spirit": 297256,
+        "tot_gensokyo_spirit": 231199,
+        "tot_gensokyo_youkai": 99085,
+        "tot_gensokyo_human": 33029,
+        "scottish": 161
+      }
+    },
+    "UKDO": {
+      "name": "后户之国",
+      "total": 450000,
+      "primary": [
+        "tot_gensokyo_youkai",
+        "tot_gensokyo_human",
+        "tot_gensokyo_fairy"
+      ],
+      "cultures": {
+        "aborigine": 17827,
+        "australian": 2099,
+        "irish": 1130,
+        "tot_gensokyo_youkai": 171543,
+        "tot_gensokyo_human": 150100,
+        "tot_gensokyo_fairy": 107214,
+        "scottish": 87
+      }
+    },
+    "MTOU": {
+      "name": "月都",
+      "total": 259999,
+      "primary": [
+        "tot_gensokyo_lunarian",
+        "tot_gensokyo_rabbit"
+      ],
+      "cultures": {
+        "australian": 652,
+        "tot_gensokyo_rabbit": 129706,
+        "tot_gensokyo_lunarian": 59864,
+        "tot_gensokyo_human": 9977,
+        "maori": 59800
+      }
+    },
+    "JNKF": {
+      "name": "纯狐阵营",
+      "total": 140001,
+      "primary": [
+        "tot_gensokyo_youkai",
+        "tot_gensokyo_fairy",
+        "tot_gensokyo_spirit"
+      ],
+      "cultures": {
+        "australian": 352,
+        "tot_gensokyo_fairy": 48352,
+        "tot_gensokyo_spirit": 32235,
+        "tot_gensokyo_youkai": 21490,
+        "tot_gensokyo_human": 5372,
+        "maori": 32200
+      }
+    },
+    "HCTI": {
+      "name": "赫卡提亚地狱",
+      "total": 400000,
+      "primary": [
+        "tot_gensokyo_youkai",
+        "tot_gensokyo_spirit",
+        "tot_gensokyo_oni"
+      ],
+      "cultures": {
+        "australian": 428,
+        "tot_gensokyo_spirit": 161786,
+        "tot_gensokyo_oni": 97072,
+        "tot_gensokyo_fairy": 48536,
+        "tot_gensokyo_youkai": 16178,
+        "maori": 76000
+      }
+    },
+    "TENG": {
+      "name": "天界",
+      "total": 200000,
+      "primary": [
+        "tot_gensokyo_celestial",
+        "tot_gensokyo_human"
+      ],
+      "cultures": {
+        "tot_gensokyo_celestial": 16900,
+        "tot_gensokyo_human": 5200,
+        "tot_gensokyo_youkai": 2600,
+        "tot_gensokyo_fairy": 1300,
+        "melanesian": 174000
+      }
+    }
+  },
+  "overrides": [
+    {
+      "state": "STATE_NEW_SOUTH_WALES",
+      "tag": "YKYM",
+      "weights": {
+        "tengu": 25,
+        "kappa": 45,
+        "youkai": 15,
+        "beast": 10,
+        "human": 5
+      }
+    },
+    {
+      "state": "STATE_QUEENSLAND",
+      "tag": "YKYM",
+      "weights": {
+        "tengu": 45,
+        "kappa": 25,
+        "youkai": 15,
+        "beast": 10,
+        "human": 5
+      }
+    },
+    {
+      "state": "STATE_NEW_SOUTH_WALES",
+      "tag": "HITO",
+      "weights": {
+        "human": 96,
+        "youkai": 2,
+        "fairy": 2
+      }
+    },
+    {
+      "state": "STATE_VICTORIA",
+      "tag": "HITO",
+      "weights": {
+        "human": 92,
+        "youkai": 5,
+        "fairy": 3
+      }
+    },
+    {
+      "state": "STATE_NEW_SOUTH_WALES",
+      "tag": "EITR",
+      "weights": {
+        "rabbit": 70,
+        "human": 25,
+        "youkai": 5
+      }
+    },
+    {
+      "state": "STATE_TASMANIA",
+      "tag": "RDMK",
+      "weights": {
+        "fairy": 55,
+        "youkai": 35,
+        "human": 10
+      }
+    },
+    {
+      "state": "STATE_VICTORIA",
+      "tag": "RDMK",
+      "weights": {
+        "fairy": 45,
+        "youkai": 35,
+        "human": 20
+      }
+    },
+    {
+      "state": "STATE_CHIREIDEN_CAPITAL",
+      "tag": "CHRD",
+      "weights": {
+        "youkai": 50,
+        "oni": 20,
+        "beast": 15,
+        "spirit": 10,
+        "human": 5
+      }
+    },
+    {
+      "state": "STATE_CHIREIDEN_OASIS",
+      "tag": "CHRD",
+      "weights": {
+        "youkai": 30,
+        "oni": 20,
+        "beast": 20,
+        "spirit": 15,
+        "human": 15
+      }
+    },
+    {
+      "state": "STATE_CHIREIDEN_GATE",
+      "tag": "CHRD",
+      "weights": {
+        "youkai": 35,
+        "oni": 15,
+        "beast": 15,
+        "spirit": 15,
+        "human": 20
+      }
+    },
+    {
+      "state": "STATE_CHIREIDEN_WEST_GATE",
+      "tag": "CHRD",
+      "weights": {
+        "youkai": 40,
+        "oni": 20,
+        "beast": 10,
+        "spirit": 20,
+        "human": 10
+      }
+    },
+    {
+      "state": "STATE_CHIREIDEN_NORTH_OASIS",
+      "tag": "CHRD",
+      "weights": {
+        "youkai": 25,
+        "oni": 25,
+        "beast": 20,
+        "spirit": 20,
+        "human": 10
+      }
+    },
+    {
+      "state": "STATE_CHIREIDEN_CAVERN_ZONE",
+      "tag": "CHRD",
+      "weights": {
+        "youkai": 40,
+        "oni": 30,
+        "beast": 20,
+        "spirit": 10
+      }
+    },
+    {
+      "state": "STATE_SOUTH_AUSTRALIA",
+      "tag": "CHRD",
+      "weights": {
+        "youkai": 45,
+        "oni": 20,
+        "beast": 15,
+        "spirit": 15,
+        "human": 5
+      }
+    }
+  ],
+  "unchanged_files": {
+    "map_data/adjacencies.csv": "c5a7a8da85e648f7165bf6777ce323c4863f911435e8977a5c1b2305b2cc5309",
+    "map_data/rivers.png": "cf489831b7d8aea0957dff4149fbb7e6fc81dde7626608bc181c23c4f57c86fa",
+    "map_data/state_regions/tot_00_west_europe.txt": "158d888683a965693b7dffe38b7428b256bc027446fece3a75c5091160264c08",
+    "map_data/state_regions/tot_13_australasia_chireiden.txt": "4b65680011eb89686afae901ea47941686e0d5664f82d286074f7322dbea1559",
+    "common/history/buildings/00_west_europe.txt": "2df7a3a1f4456d83f20240d5aa75efc2819bd066860672424c1649987470ec3b",
+    "common/history/buildings/01_south_europe.txt": "34789cef28c27250915e55c075ef891024155e9ca5bde5579cfdbcf267e6ae37",
+    "common/history/buildings/02_east_europe.txt": "88c30488dd14afd9ef4d1cc5b1c9ef3f5f6ac412cd7f9dad85d4de972dfffc77",
+    "common/history/buildings/03_north_africa.txt": "a2b3b17c5d300abe9be8a22f5a017dbcdfd7f8bdb6538c7a8c854a0c414ca479",
+    "common/history/buildings/04_subsaharan_africa.txt": "525e5be6355270b67c13a8ba7b2dc357f447570eca422038fa01a7532dfdba4a",
+    "common/history/buildings/05_north_america.txt": "3b3ad2fe0fa74c89c3241f443e3dae8598834f4f9e017c1257f727cea7b0a40d",
+    "common/history/buildings/06_central_america.txt": "b311c26af0b64ee4b51900d999eb257d72ae260eaa7723303152011f8d2042b4",
+    "common/history/buildings/07_south_america.txt": "3a145dc59b4efc92136ca68a515870151adb3de3e613657a2ea8d5500cd3a821",
+    "common/history/buildings/08_middle_east.txt": "dadfe1e634f1775c2b9002d7a23a110854551198ee6e808321c4f0071b65711f",
+    "common/history/buildings/09_central_asia.txt": "f88fb24c75602eaa2df688e8314dd0a76803e69fa826e5a3d6dc3c5fe9ee661b",
+    "common/history/buildings/10_india.txt": "6b5c87f650797d040276c7319f153606ebd5e3db37351a9cf833bb02880f55cf",
+    "common/history/buildings/11_east_asia.txt": "3ef71b1e027d928e744b58f05bbfff74b57e4c0076b32ab12b6f489e3d8d9a05",
+    "common/history/buildings/12_indonesia.txt": "05b17fa3964dd733598991f62c17f9899500d4dd618de132cbce81687922155f",
+    "common/history/buildings/13_australasia.txt": "904733d2ef2af0f90e904b0bea86654a4dae6ff94589fdbdfdb4a67745aeb30c",
+    "common/history/buildings/14_siberia.txt": "adbaca1c1304e294db4c2279174867d3759c6b76ad2250e14b0b91c290e7785f",
+    "common/history/buildings/15_russia.txt": "08d8d239718a1b73b4c535b0e14485dd84b77776af970d2e199df565517ddc71",
+    "common/history/buildings/tot_band_headquarters.txt": "e546db5841dee07f53944dcbc32b2598a989b2dc5f3619c2ab498ad7e33a7456",
+    "common/history/buildings/tot_gensokyo_eastern_industry.txt": "8aeb9f696a2f1aba2086842b1af3cf1668f63cf4d7472f7a7ea85a81759fca3f",
+    "common/buildings/tot_band_headquarters.txt": "900467b4c6c87a57079bd0adb0ad878d43d89756cfae1f16dae93f5cbb16fbf5",
+    "common/buildings/tot_botanical_garden.txt": "aa1890412d631d1aabd4cbfc92b73bfdb16fca36fa77af95416ec11de99c7729",
+    "common/buildings/tot_club.txt": "c9cc18e14107faf20fd0bb3fb797764594eb5f22f84e3d21dd99c4dd92ac37ce",
+    "common/buildings/tot_gensokyo_power.txt": "5fdca60130f64e32ab8cb322e7fc5be3aa75c1bd0faf3b2f80c2caae20220fd7",
+    "common/buildings/tot_golden_hall_contracts.txt": "2e7edfc2bb32dab180366c38bff35f52127b36278d5e6e5ae86a7a9f58718ba6",
+    "common/buildings/tot_industry.txt": "9dfa04a2b1ab0146436f4b89c3fc3d93c247823330d28e77179d8f852dc55c63",
+    "common/buildings/tot_izakaya.txt": "4da1ecbd7e091cbb8567137f06416da4a033b2f00b435f99997475033f5c4769",
+    "common/buildings/tot_mines.txt": "93d791b7e1d8829fb197e50982645a563c29dafc1ba273f63f71ff0f84f2ac5a",
+    "common/buildings/tot_monuments.txt": "5daff673153b23dd9119f4b3e19a43d2b02906d530a5685b3d5ee314dce2c246",
+    "common/buildings/tot_religious_center.txt": "d7a36d0c6728c87691e0963b60bf4bd6be35a52797b6cb3a5f5c2c4cf88ea95b",
+    "common/buildings/tot_stage.txt": "b2748e3dae3823654801c2d449e37acd8b5d0b4d4cd60400bb5af92316627aa8",
+    "common/buildings/tot_venue.txt": "adc4cfdaac408e3a3205a792c4f687e35777f0de34bb98507e1760e852693d61",
+    "common/production_methods/barn.txt": "401b91a45aa1e40f53ce66215860504f8287ffc68f6f15692461a3e613ab021c",
+    "common/production_methods/game.txt": "f9c0de618df9aa3f70fc46963b904a9aa4f6510c5d1d05cd016c66f311840863",
+    "common/production_methods/goods.txt": "a85572213ee2e6fb3837bda67f13d896412e2a19736e549d7110551e72782915",
+    "common/production_methods/kissaten.txt": "94f4966266e30f5e2ac47927460f39d9e75bceb3ffaa67fa5326072827fd1ec2",
+    "common/production_methods/musical_instrument.txt": "ada76132915d08b50855f26ddd4e693d4ff380cc37c6ae67e21c120bd98482e1",
+    "common/production_methods/publisher_press.txt": "81d3d449fe6c603c891f60a9b36ce3ab2fb65c130127f43ba0f4560475f0077a",
+    "common/production_methods/tot_band_headquarters.txt": "76fac54bbb516c5db28e52ba3561be5b53712e17252f6fc73aa0c22ed2ce3e36",
+    "common/production_methods/tot_botanical_garden.txt": "526446652e98c9142c51758522760cb9a1e8dd67aca854fcdc64818d9b1269d2",
+    "common/production_methods/tot_club.txt": "f1fdacc834c74ee503de0e4d9ae6b689465b5c478feebf14646488e14fc19eb1",
+    "common/production_methods/tot_gensokyo_power.txt": "26d37cdcaca200bfb85fe8d574a58d23aa6b846ec9c27f534b017abe0691ed11",
+    "common/production_methods/tot_golden_hall_contracts.txt": "a828740404a7c3852f1b9162f6fd25c163694ee5c291a8fe5f507f256f5fd45b",
+    "common/production_methods/tot_izakaya.txt": "fa5ebfee6e103116b043aa6e8d7ec4e6ddc734d0af98f25e9abc5ed0d6d3f304",
+    "common/production_methods/tot_mines.txt": "28e7b0bccdbd052a6f7a1ab003ec1594f76e032515deec68ee1645a24a7961b9",
+    "common/production_methods/tot_monuments.txt": "121aaa4d716ca1f97a789c4db58ef9819ccb0878188a936fbbab4982f89799b8",
+    "common/production_methods/tot_religious_center.txt": "cb00864d2d48131e4ea72fbf2395e2ad4909cb684a3a098d2b1b427f0c9154ae",
+    "common/production_methods/tot_stage.txt": "63b38c57f51013bc701a3fbdec3974d56470f7d51c7939e104c3aa378232911c",
+    "common/production_methods/tot_venue.txt": "707911f2869cb2c121a310de1aa2c9da937270f240a51970deb20727e96b7f62",
+    "common/production_method_groups/barn.txt": "6422a52cecd19d8ddb7c509fc679120edc0fc33e0652f9acaf1de7b450703abf",
+    "common/production_method_groups/goods.txt": "11de13b1363e040d15baa8f8128c60ac0d429a482fc5bbb3b0ca551b86e84165",
+    "common/production_method_groups/kissaten.txt": "9f27f43fffb182044117a574262233bc491b47cfe55684c47cb1d30047eb0b18",
+    "common/production_method_groups/pm_game_disc_era.dds": "d8c905da2417a09291622ab7a0f945949da5e4665337e62014904ba983cefa1c",
+    "common/production_method_groups/tot_band_headquarters.txt": "97526a41452bec1591ee8f25861e3ec14c5d85a6017a42ac87e3f3696509204e",
+    "common/production_method_groups/tot_botanical_garden.txt": "e22f09347fc4a76802a24546684d0534d19935622c7e5f9dd89af27d17fcc8c4",
+    "common/production_method_groups/tot_club.txt": "c346feb9b7eb780c0ed5eff4d16a3246ae0105bfa62b1fb65e911e1d4b6a2788",
+    "common/production_method_groups/tot_gensokyo_power.txt": "332d9b64676f1f7b653c48bd00f6162342a4c7527358021a3f44a8c5995311bd",
+    "common/production_method_groups/tot_golden_hall_contracts.txt": "74e827afbb60e7c70f74d15c647e5f3fd5f9f4493942d120f1e3754d62c5a715",
+    "common/production_method_groups/tot_industry_groups.txt": "66fb078dff26d2b9aaacdc6a3801d4df14210a50cc239ee0c4934c348df36da5",
+    "common/production_method_groups/tot_izakaya.txt": "b496e78168e337fe773eb251948a665ec4cbbe71d0d6c1fd16378937fd7135c2",
+    "common/production_method_groups/tot_mines.txt": "c2d3e1c947ca8a131c6e96239ad033b5d75aabe6f87300588c0a20291540c26e",
+    "common/production_method_groups/tot_monuments.txt": "27224313f19162ca0fb4f3aaf36bacb2d0fd5a267bb95c8c2e4ddb9ae05e610f",
+    "common/production_method_groups/tot_religious_center.txt": "bc613b60da93adf1698d82b697fdf9ce94bf7bf171b2c00ba594b34ad67fa9c3",
+    "common/production_method_groups/tot_stage.txt": "772609441cc7f30f8812add75211cf73a588bd18b47d88d645c48f6a1fa0d65f",
+    "common/production_method_groups/tot_venue.txt": "0239591a3ff0f92ca3cc242e83601d532ede5e4558b299925428a543f0013ec1",
+    "common/religions/religion.txt": "077b3ff472b2e1ffa740eccfc26a1107ecba3ff7b4e1b49225b866d9fab4249d",
+    "common/religions/tot_religion.txt": "3fa57c9786b76750a7c8dd9f4744080600049f6a0c81fce6bc98a21dadbcd9ba",
+    "common/history/diplomacy/00_subject_relationships.txt": "fde7d386ad70f9763e6da2631cf83e6dcf792df122818f7f504785954714b7b6",
+    "common/history/diplomacy/BUG_relationships.txt": "ce51f09ae03c6e5af6537c34a670b6b222eea5d9df62602bc5adc6c89d466fce",
+    "common/history/diplomacy/FRA_relationships.txt": "9578ce3eeba4725dc138e2fa8102423fbf7358dc866f5de74df968b09c509f79",
+    "common/history/diplomacy/tot_gensokyo_subjects.txt": "090de0b69e00808f896a3c6e9ebeecbfd4c907f2259360172c46f7bfd628365d",
+    "common/history/diplomacy/tot_starting_alliances.txt": "de2f15a6274b27ac4bd183bae0ca3517259ff04232ff120ec27a67bbc4c68e96",
+    "common/history/countries/tot_gensokyo_australasia.txt": "a3a52cfa66b03ba26509d9df5f50951c868bb7c9f4cbe3d318490745dd71f8e5"
+  },
+  "changed_files": [
+    "common/cultures/tot_gensokyo_cultures.txt",
+    "common/discrimination_traits/tot_gensokyo_cultures.txt",
+    "common/discrimination_trait_groups/tot_gensokyo_cultures.txt",
+    "localization/replace/simp_chinese/common/core/tot_gensokyo_cultures_l_simp_chinese.yml",
+    "localization/english/tot_gensokyo_cultures_l_english.yml",
+    "common/history/pops/12_indonesia.txt",
+    "common/history/pops/13_australasia.txt",
+    "common/country_definitions/tot_countries.txt",
+    "common/history/states/00_states.txt",
+    "common/history/characters/tot_gensokyo_nz.txt"
+  ],
+  "notes": [
+    "Percentages are scenario design, not canon census.",
+    "Only Japanese-culture Gensokyo cohorts are reclassified; other cultures retained.",
+    "Japanese cohorts without an explicit religion retain their old mahayana default.",
+    "New cultures have explicit homelands; normal homeland assimilation is blocked by native rules.",
+    "Human/youkai magician distinction uses existing human/youkai cultures; rabbits share one culture.",
+    "Junko and Hecatia use broad youkai community culture pending distinct divine character identity.",
+    "All culture name pools and portraits use the existing Japanese template; no new visual assets.",
+    "No production bonuses, obsessions or food taboos are added to the new cultures."
+  ]
+}

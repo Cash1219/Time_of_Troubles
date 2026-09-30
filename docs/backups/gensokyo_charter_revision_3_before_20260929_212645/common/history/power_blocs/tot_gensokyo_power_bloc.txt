@@ -1,0 +1,38 @@
+# Yakumo hosts the independent Gensokyo charter; Yukari is its national ruler.
+POWER_BLOCS = {
+	c:YKMF ?= {
+		create_power_bloc = {
+			name = GENSOKYO_BARRIER_NETWORK
+			map_color = { 126 88 156 }
+			founding_date = 1836.1.1
+			identity = identity_tot_gensokyo_charter
+			principle = principle_tot_gensokyo_boundary_1
+			principle = principle_tot_gensokyo_autonomy_1
+			principle = principle_tot_gensokyo_gods_1
+			member = c:HITO
+			member = c:HAKR
+			member = c:YKYM
+			member = c:MRYA
+			member = c:MFSR
+			member = c:EITR
+			member = c:YSSK
+			member = c:MYRN
+			member = c:SHRM
+			member = c:KZNH
+			member = c:RDMK
+			member = c:MIST
+			member = c:CHRD
+			member = c:KYTO
+			member = c:MKAI
+			member = c:BYKR
+			member = c:HIGN
+			member = c:RNGN
+			member = c:UKDO
+			member = c:MTOU
+			member = c:JNKF
+			member = c:HCTI
+			member = c:TENG
+		}
+		power_bloc = { add_cohesion_number = 100 }
+	}
+}

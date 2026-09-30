@@ -9,9 +9,10 @@ CHARACTERS = {
 			ruler = yes
 			ig_leader = yes
 			interest_group = ig_landowners
-			culture = cu:japanese
+			# Broad community identity; divine species is not represented by this culture.
+			culture = cu:tot_gensokyo_youkai
 			religion = rel:shinto
-			traits = { persistent }
+			traits = { persistent tot_group_sheet_019_trait }
 		}
 	}
 	c:HCTI ?= {
@@ -23,9 +24,10 @@ CHARACTERS = {
 			ruler = yes
 			ig_leader = yes
 			interest_group = ig_landowners
-			culture = cu:japanese
+			# Broad community identity; divine species is not represented by this culture.
+			culture = cu:tot_gensokyo_youkai
 			religion = rel:shinto
-			traits = { charismatic }
+			traits = { charismatic tot_group_sheet_019_trait }
 		}
 	}
 }

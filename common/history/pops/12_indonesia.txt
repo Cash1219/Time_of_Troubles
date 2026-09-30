@@ -1,4 +1,4 @@
-﻿POPS = {
+POPS = {
 	s:STATE_MALAYA = {
 		region_state:JOH = {
 			create_pop = {
@@ -1179,20 +1179,26 @@
 
 	s:STATE_FIJI = {
 		region_state:TENG = {
-			create_pop = { culture = japanese religion = shinto size = 18000 }
+			create_pop = { culture = tot_gensokyo_celestial religion = shinto size = 11700 }
+			create_pop = { culture = tot_gensokyo_human religion = shinto size = 3600 }
+			create_pop = { culture = tot_gensokyo_youkai religion = shinto size = 1800 }
+			create_pop = { culture = tot_gensokyo_fairy religion = shinto size = 900 }
 			create_pop = { culture = melanesian size = 82000 }
 		}
 	}
 
 	s:STATE_VANUATU = {
 		region_state:TENG = {
-			create_pop = { culture = japanese religion = shinto size = 8000 }
+			create_pop = { culture = tot_gensokyo_celestial religion = shinto size = 5200 }
+			create_pop = { culture = tot_gensokyo_human religion = shinto size = 1600 }
+			create_pop = { culture = tot_gensokyo_youkai religion = shinto size = 800 }
+			create_pop = { culture = tot_gensokyo_fairy religion = shinto size = 400 }
 			create_pop = { culture = melanesian size = 92000 }
 		}
 	}
 
 	s:STATE_KANAK = {
-		region_state:KNK = {
+		region_state:TENG = {
 			create_pop = {
 				culture = melanesian
 				size = 56004

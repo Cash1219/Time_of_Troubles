@@ -1,0 +1,38 @@
+# INACTIVE RESEARCH PROTOTYPE. HITO is an example market host, not an approved choice.
+# Replace the existing power-bloc history; do not append a second bloc.
+# First remove all 23 initial Gensokyo protectorate creations.
+# A scoped can_lead_power_bloc exception is required for the small-country host.
+POWER_BLOCS = {
+    c:HITO ?= {
+        create_power_bloc = {
+            name = GENSOKYO_BARRIER_NETWORK
+            map_color = { 232 66 91 }
+            founding_date = 1836.1.1
+            identity = identity_tot_gensokyo_charter
+            principle = principle_tot_gensokyo_charter_1
+            member = c:HAKR
+            member = c:BYKR
+            member = c:CHRD
+            member = c:EITR
+            member = c:HCTI
+            member = c:HIGN
+            member = c:JNKF
+            member = c:KYTO
+            member = c:KZNH
+            member = c:MFSR
+            member = c:MIST
+            member = c:MKAI
+            member = c:MRYA
+            member = c:MTOU
+            member = c:MYRN
+            member = c:RDMK
+            member = c:RNGN
+            member = c:SHRM
+            member = c:TENG
+            member = c:UKDO
+            member = c:YKMF
+            member = c:YKYM
+            member = c:YSSK
+        }
+    }
+}

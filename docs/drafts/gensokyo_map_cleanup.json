@@ -1,0 +1,601 @@
+{
+  "backup": "D:\\Users\\Administrator\\Documents\\Paradox Interactive\\Victoria 3\\mod\\ToT\\docs\\backups\\gensokyo_map_cleanup_before_20260930_003332",
+  "runtime_files": {
+    "common/history/states/00_states.txt": {
+      "before_sha256": "22e2bba8269b8ef6f2f55ca608811c87d631d5f30d305acfbdeee3c464b8802c",
+      "after_sha256": "a2c17406321ad823ca2ae5f2f7ea14600e31ab46056e2ee4b4804f0f42d54ec8"
+    },
+    "map_data/state_regions/tot_13_australasia_chireiden.txt": {
+      "before_sha256": "4b65680011eb89686afae901ea47941686e0d5664f82d286074f7322dbea1559",
+      "after_sha256": "103975d9f4aa6a2df02f060ca38aff9969916c59e60fb5bb255e46fc649475b5"
+    },
+    "common/history/pops/12_indonesia.txt": {
+      "before_sha256": "ef58eff34341d3f0f1ac2af5fbf4c2ff956d1689f2d572522ef9df3dfd4cd43e",
+      "after_sha256": "88c06e563d0e46831c7b28d4f8bd3ca31795adeb95a16c8cc839203777905472"
+    },
+    "common/history/buildings/12_indonesia.txt": {
+      "before_sha256": "05b17fa3964dd733598991f62c17f9899500d4dd618de132cbce81687922155f",
+      "after_sha256": "7a23e54b188565f12049e41ad7d0cd9dc610612143257318c536447641ea3a7b"
+    },
+    "common/history/buildings/tot_gensokyo_market_ports.txt": {
+      "before_sha256": "3981ba710aaa6d485bebf4a16be87437356763169bcd79a2efbee3e208e90d6c",
+      "after_sha256": "b2e3e70f025ea2b704bbd1bb83abc000698b5fccf415a3f02d733e1555b9fd03"
+    },
+    "common/state_traits/tot_gensokyo_terrain.txt": {
+      "before_sha256": null,
+      "after_sha256": "e68d35b391acf87e3ddab02568fbf11039ebab98a40f891bdadda146bca91dec"
+    },
+    "localization/replace/simp_chinese/map/tot_gensokyo_terrain_l_simp_chinese.yml": {
+      "before_sha256": null,
+      "after_sha256": "c6a37ec949fd3c6ca5442fc83d739f074b65a8d8ebff0c322d45cf0314c3a209"
+    },
+    "localization/english/tot_gensokyo_terrain_l_english.yml": {
+      "before_sha256": null,
+      "after_sha256": "f43faef32504f72d0c5dbc2558afd2d96d248de3876225ee073acbe68b2b7de9"
+    }
+  },
+  "ownership_changes": {
+    "x276C93": [
+      [
+        "STATE_NEW_SOUTH_WALES",
+        "HAKR"
+      ],
+      [
+        "STATE_NEW_SOUTH_WALES",
+        "YKYM"
+      ]
+    ],
+    "xD74DB9": [
+      [
+        "STATE_NEW_SOUTH_WALES",
+        "MFSR"
+      ],
+      [
+        "STATE_NEW_SOUTH_WALES",
+        "YKYM"
+      ]
+    ],
+    "xFD1F91": [
+      [
+        "STATE_NEW_SOUTH_WALES",
+        "MFSR"
+      ],
+      [
+        "STATE_NEW_SOUTH_WALES",
+        "YKYM"
+      ]
+    ],
+    "x2BEBD1": [
+      [
+        "STATE_KANAK",
+        "KNK"
+      ],
+      [
+        "STATE_KANAK",
+        "TENG"
+      ]
+    ],
+    "x302090": [
+      [
+        "STATE_KANAK",
+        "KNK"
+      ],
+      [
+        "STATE_KANAK",
+        "TENG"
+      ]
+    ],
+    "x665AAF": [
+      [
+        "STATE_KANAK",
+        "KNK"
+      ],
+      [
+        "STATE_KANAK",
+        "TENG"
+      ]
+    ]
+  },
+  "terrain_changes": {
+    "STATE_QUEENSLAND": {
+      "before": [
+        "state_trait_great_dividing_range"
+      ],
+      "after": []
+    },
+    "STATE_SOUTH_AUSTRALIA": {
+      "before": [
+        "state_trait_australian_desert",
+        "state_trait_copper_coast"
+      ],
+      "after": [
+        "state_trait_copper_coast"
+      ]
+    },
+    "STATE_NORTHERN_TERRITORY": {
+      "before": [
+        "state_trait_australian_desert"
+      ],
+      "after": []
+    },
+    "STATE_WESTERN_AUSTRALIA": {
+      "before": [
+        "state_trait_australian_desert"
+      ],
+      "after": []
+    },
+    "STATE_CHIREIDEN_CAPITAL": {
+      "before": [
+        "state_trait_dry"
+      ],
+      "after": []
+    },
+    "STATE_CHIREIDEN_OASIS": {
+      "before": [
+        "state_trait_dry"
+      ],
+      "after": []
+    },
+    "STATE_CHIREIDEN_GATE": {
+      "before": [
+        "state_trait_mountainous"
+      ],
+      "after": []
+    },
+    "STATE_CHIREIDEN_NORTH_OASIS": {
+      "before": [
+        "state_trait_dry"
+      ],
+      "after": []
+    },
+    "STATE_CHIREIDEN_CAVERN_ZONE": {
+      "before": [
+        "state_trait_dry",
+        "state_trait_australian_desert"
+      ],
+      "after": []
+    },
+    "STATE_NEW_SOUTH_WALES": {
+      "before": [
+        "state_trait_great_dividing_range",
+        "state_trait_murray_darling_basin",
+        "state_trait_natural_harbors"
+      ],
+      "after": [
+        "state_trait_murray_darling_basin",
+        "state_trait_natural_harbors"
+      ]
+    },
+    "STATE_TASMANIA": {
+      "before": [
+        "state_trait_tasmanian_rainforest"
+      ],
+      "after": [
+        "state_trait_tot_gensokyo_tasmanian_forest"
+      ]
+    },
+    "STATE_FIJI": {
+      "before": [
+        "state_trait_severe_malaria"
+      ],
+      "after": []
+    },
+    "STATE_VANUATU": {
+      "before": [
+        "state_trait_severe_malaria"
+      ],
+      "after": []
+    },
+    "STATE_KANAK": {
+      "before": [
+        "state_trait_new_caledonian_nickel",
+        "state_trait_severe_malaria"
+      ],
+      "after": [
+        "state_trait_new_caledonian_nickel"
+      ]
+    }
+  },
+  "homelands": {
+    "STATE_NEW_SOUTH_WALES": {
+      "kept": [
+        "tot_gensokyo_human"
+      ],
+      "removed": [
+        "australian",
+        "aborigine",
+        "tot_gensokyo_beast",
+        "tot_gensokyo_fairy",
+        "tot_gensokyo_kappa",
+        "tot_gensokyo_rabbit",
+        "tot_gensokyo_tengu",
+        "tot_gensokyo_youkai"
+      ],
+      "total_population": 4600000,
+      "shares": {
+        "australian": 0.016764565217391305,
+        "aborigine": 0.01705195652173913,
+        "tot_gensokyo_beast": 0.025965652173913042,
+        "tot_gensokyo_fairy": 0.038705,
+        "tot_gensokyo_human": 0.6537258695652174,
+        "tot_gensokyo_kappa": 0.05130956521739131,
+        "tot_gensokyo_rabbit": 0.015963043478260868,
+        "tot_gensokyo_tengu": 0.028505434782608696,
+        "tot_gensokyo_youkai": 0.13945847826086957
+      }
+    },
+    "STATE_VICTORIA": {
+      "kept": [
+        "tot_gensokyo_human"
+      ],
+      "removed": [
+        "australian",
+        "aborigine",
+        "tot_gensokyo_fairy",
+        "tot_gensokyo_rabbit",
+        "tot_gensokyo_youkai"
+      ],
+      "total_population": 1900000,
+      "shares": {
+        "australian": 0.01727578947368421,
+        "aborigine": 0.025926842105263158,
+        "tot_gensokyo_fairy": 0.15043947368421054,
+        "tot_gensokyo_human": 0.46578947368421053,
+        "tot_gensokyo_rabbit": 0.22453684210526315,
+        "tot_gensokyo_youkai": 0.10727894736842106
+      }
+    },
+    "STATE_TASMANIA": {
+      "kept": [
+        "tot_gensokyo_fairy",
+        "tot_gensokyo_youkai"
+      ],
+      "removed": [
+        "australian",
+        "aborigine",
+        "tot_gensokyo_human"
+      ],
+      "total_population": 350000,
+      "shares": {
+        "australian": 0.11771428571428572,
+        "aborigine": 0.0005714285714285715,
+        "tot_gensokyo_fairy": 0.4849428571428571,
+        "tot_gensokyo_human": 0.08817142857142857,
+        "tot_gensokyo_youkai": 0.3086
+      }
+    },
+    "STATE_QUEENSLAND": {
+      "kept": [],
+      "removed": [
+        "australian",
+        "aborigine",
+        "tot_gensokyo_beast",
+        "tot_gensokyo_fairy",
+        "tot_gensokyo_human",
+        "tot_gensokyo_kappa",
+        "tot_gensokyo_oni",
+        "tot_gensokyo_spirit",
+        "tot_gensokyo_tengu",
+        "tot_gensokyo_youkai"
+      ],
+      "total_population": 3101000,
+      "shares": {
+        "australian": 0.0033705256368913254,
+        "aborigine": 0.026204772653982585,
+        "tot_gensokyo_beast": 0.051600451467268625,
+        "tot_gensokyo_fairy": 0.059346662366978394,
+        "tot_gensokyo_human": 0.16478039342147693,
+        "tot_gensokyo_kappa": 0.17569751693002258,
+        "tot_gensokyo_oni": 7.80393421476943e-05,
+        "tot_gensokyo_spirit": 3.128023218316672e-05,
+        "tot_gensokyo_tengu": 0.29439019671073846,
+        "tot_gensokyo_youkai": 0.22267429861335053
+      }
+    },
+    "STATE_CHIREIDEN_CAPITAL": {
+      "kept": [
+        "tot_gensokyo_youkai"
+      ],
+      "removed": [
+        "australian",
+        "aborigine",
+        "tot_gensokyo_beast",
+        "tot_gensokyo_human",
+        "tot_gensokyo_oni",
+        "tot_gensokyo_spirit"
+      ],
+      "total_population": 400000,
+      "shares": {
+        "australian": 0.0,
+        "aborigine": 0.01,
+        "tot_gensokyo_beast": 0.1485,
+        "tot_gensokyo_human": 0.0495,
+        "tot_gensokyo_oni": 0.198,
+        "tot_gensokyo_spirit": 0.099,
+        "tot_gensokyo_youkai": 0.495
+      }
+    },
+    "STATE_CHIREIDEN_OASIS": {
+      "kept": [],
+      "removed": [
+        "australian",
+        "aborigine",
+        "tot_gensokyo_beast",
+        "tot_gensokyo_human",
+        "tot_gensokyo_oni",
+        "tot_gensokyo_spirit",
+        "tot_gensokyo_youkai"
+      ],
+      "total_population": 300000,
+      "shares": {
+        "australian": 0.0,
+        "aborigine": 0.01,
+        "tot_gensokyo_beast": 0.198,
+        "tot_gensokyo_human": 0.1485,
+        "tot_gensokyo_oni": 0.198,
+        "tot_gensokyo_spirit": 0.1485,
+        "tot_gensokyo_youkai": 0.297
+      }
+    },
+    "STATE_CHIREIDEN_CAVERN_ZONE": {
+      "kept": [
+        "tot_gensokyo_oni",
+        "tot_gensokyo_youkai"
+      ],
+      "removed": [
+        "australian",
+        "aborigine",
+        "tot_gensokyo_beast",
+        "tot_gensokyo_spirit"
+      ],
+      "total_population": 10000,
+      "shares": {
+        "australian": 0.0,
+        "aborigine": 0.0,
+        "tot_gensokyo_beast": 0.2,
+        "tot_gensokyo_oni": 0.3,
+        "tot_gensokyo_spirit": 0.1,
+        "tot_gensokyo_youkai": 0.4
+      }
+    },
+    "STATE_CHIREIDEN_GATE": {
+      "kept": [
+        "tot_gensokyo_youkai"
+      ],
+      "removed": [
+        "australian",
+        "aborigine",
+        "tot_gensokyo_beast",
+        "tot_gensokyo_human",
+        "tot_gensokyo_oni",
+        "tot_gensokyo_spirit"
+      ],
+      "total_population": 249000,
+      "shares": {
+        "australian": 0.0,
+        "aborigine": 0.004016064257028112,
+        "tot_gensokyo_beast": 0.1493975903614458,
+        "tot_gensokyo_human": 0.19919678714859437,
+        "tot_gensokyo_oni": 0.1493975903614458,
+        "tot_gensokyo_spirit": 0.1493975903614458,
+        "tot_gensokyo_youkai": 0.3485943775100402
+      }
+    },
+    "STATE_SOUTH_AUSTRALIA": {
+      "kept": [
+        "tot_gensokyo_youkai"
+      ],
+      "removed": [
+        "australian",
+        "aborigine",
+        "tot_gensokyo_beast",
+        "tot_gensokyo_fairy",
+        "tot_gensokyo_human",
+        "tot_gensokyo_oni",
+        "tot_gensokyo_spirit"
+      ],
+      "total_population": 2400000,
+      "shares": {
+        "australian": 0.0028195833333333332,
+        "aborigine": 0.050973333333333336,
+        "tot_gensokyo_beast": 0.08856083333333334,
+        "tot_gensokyo_fairy": 0.07872083333333334,
+        "tot_gensokyo_human": 0.20073833333333332,
+        "tot_gensokyo_oni": 0.11808125,
+        "tot_gensokyo_spirit": 0.10824125,
+        "tot_gensokyo_youkai": 0.35030791666666666
+      }
+    },
+    "STATE_WESTERN_AUSTRALIA": {
+      "kept": [
+        "tot_gensokyo_spirit"
+      ],
+      "removed": [
+        "australian",
+        "aborigine",
+        "tot_gensokyo_animal_spirit",
+        "tot_gensokyo_beast",
+        "tot_gensokyo_fairy",
+        "tot_gensokyo_human",
+        "tot_gensokyo_oni",
+        "tot_gensokyo_youkai"
+      ],
+      "total_population": 3870000,
+      "shares": {
+        "australian": 0.0030031007751937983,
+        "aborigine": 0.02550981912144703,
+        "tot_gensokyo_animal_spirit": 0.07681033591731266,
+        "tot_gensokyo_beast": 0.03120723514211886,
+        "tot_gensokyo_fairy": 0.036684754521963826,
+        "tot_gensokyo_human": 0.08498372093023256,
+        "tot_gensokyo_oni": 0.09375426356589148,
+        "tot_gensokyo_spirit": 0.4425589147286822,
+        "tot_gensokyo_youkai": 0.2037467700258398
+      }
+    },
+    "STATE_NORTHERN_TERRITORY": {
+      "kept": [
+        "tot_gensokyo_youkai"
+      ],
+      "removed": [
+        "australian",
+        "aborigine",
+        "tot_gensokyo_fairy",
+        "tot_gensokyo_human"
+      ],
+      "total_population": 1180000,
+      "shares": {
+        "australian": 0.0030508474576271187,
+        "aborigine": 0.08559237288135593,
+        "tot_gensokyo_fairy": 0.13670338983050848,
+        "tot_gensokyo_human": 0.04556779661016949,
+        "tot_gensokyo_youkai": 0.729085593220339
+      }
+    },
+    "STATE_CHIREIDEN_NORTH_OASIS": {
+      "kept": [],
+      "removed": [
+        "australian",
+        "aborigine",
+        "tot_gensokyo_beast",
+        "tot_gensokyo_human",
+        "tot_gensokyo_oni",
+        "tot_gensokyo_spirit",
+        "tot_gensokyo_youkai"
+      ],
+      "total_population": 150000,
+      "shares": {
+        "australian": 0.0,
+        "aborigine": 0.0,
+        "tot_gensokyo_beast": 0.2,
+        "tot_gensokyo_human": 0.1,
+        "tot_gensokyo_oni": 0.25,
+        "tot_gensokyo_spirit": 0.2,
+        "tot_gensokyo_youkai": 0.25
+      }
+    },
+    "STATE_NORTH_ISLAND": {
+      "kept": [
+        "tot_gensokyo_rabbit"
+      ],
+      "removed": [
+        "australian",
+        "maori",
+        "tot_gensokyo_fairy",
+        "tot_gensokyo_human",
+        "tot_gensokyo_lunarian",
+        "tot_gensokyo_spirit",
+        "tot_gensokyo_youkai"
+      ],
+      "total_population": 400000,
+      "shares": {
+        "australian": 0.00251,
+        "maori": 0.23,
+        "tot_gensokyo_fairy": 0.12088,
+        "tot_gensokyo_human": 0.0383725,
+        "tot_gensokyo_lunarian": 0.14966,
+        "tot_gensokyo_rabbit": 0.324265,
+        "tot_gensokyo_spirit": 0.0805875,
+        "tot_gensokyo_youkai": 0.053725
+      }
+    },
+    "STATE_SOUTH_ISLAND": {
+      "kept": [
+        "tot_gensokyo_spirit"
+      ],
+      "removed": [
+        "australian",
+        "maori",
+        "tot_gensokyo_fairy",
+        "tot_gensokyo_oni",
+        "tot_gensokyo_youkai"
+      ],
+      "total_population": 400000,
+      "shares": {
+        "australian": 0.00107,
+        "maori": 0.19,
+        "tot_gensokyo_fairy": 0.12134,
+        "tot_gensokyo_oni": 0.24268,
+        "tot_gensokyo_spirit": 0.404465,
+        "tot_gensokyo_youkai": 0.040445
+      }
+    },
+    "STATE_FIJI": {
+      "kept": [
+        "melanesian"
+      ],
+      "removed": [
+        "tot_gensokyo_celestial",
+        "tot_gensokyo_fairy",
+        "tot_gensokyo_human",
+        "tot_gensokyo_youkai"
+      ],
+      "total_population": 100000,
+      "shares": {
+        "melanesian": 0.82,
+        "tot_gensokyo_celestial": 0.117,
+        "tot_gensokyo_fairy": 0.009,
+        "tot_gensokyo_human": 0.036,
+        "tot_gensokyo_youkai": 0.018
+      }
+    },
+    "STATE_VANUATU": {
+      "kept": [
+        "melanesian"
+      ],
+      "removed": [
+        "tot_gensokyo_celestial",
+        "tot_gensokyo_fairy",
+        "tot_gensokyo_human",
+        "tot_gensokyo_youkai"
+      ],
+      "total_population": 100000,
+      "shares": {
+        "melanesian": 0.92,
+        "tot_gensokyo_celestial": 0.052,
+        "tot_gensokyo_fairy": 0.004,
+        "tot_gensokyo_human": 0.016,
+        "tot_gensokyo_youkai": 0.008
+      }
+    },
+    "STATE_KANAK": {
+      "kept": [
+        "melanesian"
+      ],
+      "removed": [],
+      "total_population": 56004,
+      "shares": {
+        "melanesian": 1.0
+      }
+    },
+    "STATE_CHIREIDEN_WEST_GATE": {
+      "kept": [
+        "tot_gensokyo_youkai"
+      ],
+      "removed": [
+        "aborigine",
+        "japanese",
+        "tot_gensokyo_beast",
+        "tot_gensokyo_human",
+        "tot_gensokyo_oni",
+        "tot_gensokyo_spirit"
+      ],
+      "total_population": 100000,
+      "shares": {
+        "aborigine": 0.00691,
+        "japanese": 0.0,
+        "tot_gensokyo_beast": 0.09918,
+        "tot_gensokyo_human": 0.09918,
+        "tot_gensokyo_oni": 0.19836,
+        "tot_gensokyo_spirit": 0.19836,
+        "tot_gensokyo_youkai": 0.39673
+      }
+    }
+  },
+  "homelands_removed": 101,
+  "homeland_threshold_percent": 30,
+  "new_port_levels": 1,
+  "population_moved_to_teng": 56004,
+  "terrain_scope": "State-trait penalties only; impassable provinces retained",
+  "status": "applied; static validation only"
+}
