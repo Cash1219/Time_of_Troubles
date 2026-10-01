@@ -59,7 +59,7 @@ def main():
     for tag,item in sorted(inventory.items(),key=lambda pair:(-pair[1]['levels'],pair[0])):
         lines.append('| '+item['name']+' | '+' | '.join(str(item['by_category'].get(cat,0)) for cat in CATEGORY_NAMES)+' | '+str(item['levels'])+' |')
     lines += ['| **总计** | '+' | '.join(str(totals.get(cat,0)) for cat in CATEGORY_NAMES)+' | **'+str(report['total_levels'])+'** |','',
-        '公共及基建包括行政、大学、建设部门、港口、铁路。特色包括植物园、宗教设施、居酒屋和两种特色电站。天界现有两个显式开局港口，其他自动生成建筑仍未计入。',
+        '公共及基建包括行政、大学、建设部门、港口、铁路。特色包括植物园、宗教设施、居酒屋和两种特色电站。自动生成建筑仍未计入。',
         '', '## 各国建筑明细','']
     for tag,item in sorted(inventory.items(),key=lambda pair:(-pair[1]['levels'],pair[0])):
         lines += ['### '+item['name']+'（'+tag+'）','',

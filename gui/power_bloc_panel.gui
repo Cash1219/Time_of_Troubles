@@ -1736,7 +1736,7 @@ types power_bloc_panel_types
 			ignoreinvisible = yes
 
 			sort_button = {
-				size = { 100 30 }
+				size = { 80 30 }
 				text = "NAME"
 				tooltip = "POWER_BLOC_MEMBER_COUNTRY_NAME_HEADER_TOOLTIP"
 				onclick = "[PowerBloc.SortMembers('name')]"
@@ -1744,7 +1744,7 @@ types power_bloc_panel_types
 			}
 
 			sort_button = {
-				size = { 100 30 }
+				size = { 80 30 }
 				text = "concept_prestige"
 				tooltip = "POWER_BLOC_MEMBER_PRESTIGE_HEADER_TOOLTIP"
 				onclick = "[PowerBloc.SortMembers('prestige')]"
@@ -1753,7 +1753,7 @@ types power_bloc_panel_types
 
 			sort_button = {
 				visible = "[Not(GetVariableSystem.HasValue('tot_power_bloc_member_sort', 'gdp_desc'))]"
-				size = { 100 30 }
+				size = { 80 30 }
 				text = "TOT_POWER_BLOC_SORT_GDP_DESC"
 				tooltip = "TOT_POWER_BLOC_SORT_GDP_TOOLTIP"
 				onclick = "[GetScriptedGui('tot_power_bloc_members_gdp_desc').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_member_sort_host', PowerBloc.GetLeader.MakeScope).End)]"
@@ -1761,7 +1761,7 @@ types power_bloc_panel_types
 			}
 			sort_button = {
 				visible = "[GetVariableSystem.HasValue('tot_power_bloc_member_sort', 'gdp_desc')]"
-				size = { 100 30 }
+				size = { 80 30 }
 				text = "TOT_POWER_BLOC_SORT_GDP_ASC"
 				tooltip = "TOT_POWER_BLOC_SORT_GDP_TOOLTIP"
 				onclick = "[GetScriptedGui('tot_power_bloc_members_gdp_asc').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_member_sort_host', PowerBloc.GetLeader.MakeScope).End)]"
@@ -1770,7 +1770,7 @@ types power_bloc_panel_types
 
 			sort_button = {
 				visible = "[Not(GetVariableSystem.HasValue('tot_power_bloc_member_sort', 'population_desc'))]"
-				size = { 100 30 }
+				size = { 80 30 }
 				text = "TOT_POWER_BLOC_SORT_POPULATION_DESC"
 				tooltip = "TOT_POWER_BLOC_SORT_POPULATION_TOOLTIP"
 				onclick = "[GetScriptedGui('tot_power_bloc_members_population_desc').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_member_sort_host', PowerBloc.GetLeader.MakeScope).End)]"
@@ -1779,11 +1779,28 @@ types power_bloc_panel_types
 
 			sort_button = {
 				visible = "[GetVariableSystem.HasValue('tot_power_bloc_member_sort', 'population_desc')]"
-				size = { 100 30 }
+				size = { 80 30 }
 				text = "TOT_POWER_BLOC_SORT_POPULATION_ASC"
 				tooltip = "TOT_POWER_BLOC_SORT_POPULATION_TOOLTIP"
 				onclick = "[GetScriptedGui('tot_power_bloc_members_population_asc').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_member_sort_host', PowerBloc.GetLeader.MakeScope).End)]"
 				onclick = "[GetVariableSystem.Set('tot_power_bloc_member_sort', 'population_asc')]"
+			}
+
+			sort_button = {
+				visible = "[Not(GetVariableSystem.HasValue('tot_power_bloc_member_sort', 'sol_desc'))]"
+				size = { 80 30 }
+				text = "TOT_POWER_BLOC_SORT_SOL_DESC"
+				tooltip = "TOT_POWER_BLOC_SORT_SOL_TOOLTIP"
+				onclick = "[GetScriptedGui('tot_power_bloc_members_sol_desc').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_member_sort_host', PowerBloc.GetLeader.MakeScope).End)]"
+				onclick = "[GetVariableSystem.Set('tot_power_bloc_member_sort', 'sol_desc')]"
+			}
+			sort_button = {
+				visible = "[GetVariableSystem.HasValue('tot_power_bloc_member_sort', 'sol_desc')]"
+				size = { 80 30 }
+				text = "TOT_POWER_BLOC_SORT_SOL_ASC"
+				tooltip = "TOT_POWER_BLOC_SORT_SOL_TOOLTIP"
+				onclick = "[GetScriptedGui('tot_power_bloc_members_sol_asc').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tot_member_sort_host', PowerBloc.GetLeader.MakeScope).End)]"
+				onclick = "[GetVariableSystem.Set('tot_power_bloc_member_sort', 'sol_asc')]"
 			}
 
 			sort_button = {
@@ -1846,6 +1863,24 @@ types power_bloc_panel_types
 			direction = vertical
 			parentanchor = hcenter
 			datamodel = "[GetPlayer.MakeScope.GetList('tot_power_bloc_population_members')]"
+			spacing = 5
+			ignoreinvisible = yes
+			item = {
+				flowcontainer = {
+					datacontext = "[Scope.GetCountry]"
+					visible = "[And(PowerBloc.IsMember(Country.Self), Country.MatchesSearchQuery(PowerBlocPanel.GetMembersSearchBar.GetQuery))]"
+					direction = vertical
+					power_bloc_member_item = {}
+				}
+			}
+		}
+
+		# Average living-standard ranking includes the host and respects search.
+		flowcontainer = {
+			visible = "[Or(GetVariableSystem.HasValue('tot_power_bloc_member_sort', 'sol_desc'), GetVariableSystem.HasValue('tot_power_bloc_member_sort', 'sol_asc'))]"
+			direction = vertical
+			parentanchor = hcenter
+			datamodel = "[GetPlayer.MakeScope.GetList('tot_power_bloc_sol_members')]"
 			spacing = 5
 			ignoreinvisible = yes
 			item = {
@@ -2069,6 +2104,18 @@ types power_bloc_panel_types
 								position = { -10 0 }
 								texture = "[Country.GetInfamyIconTexture]"
 							}
+						}
+					}
+
+					### AVERAGE STANDARD OF LIVING
+					power_bloc_header_grid_item = {
+						using = tooltip_se
+						using = average_standard_of_living_tooltip_with_graph
+						blockoverride "text" {
+							raw_text = "#v [Country.GetFormattedStandardOfLivingAll|v]#!"
+						}
+						blockoverride "icon" {
+							raw_text = "[LabelingHelper.GetIconForStandardOfLivingCFixedPoint(Country.GetAverageSoLByPopulation)|v]"
 						}
 					}
 
@@ -2641,6 +2688,18 @@ types power_bloc_panel_types
 								position = { -10 0 }
 								texture = "[Country.GetInfamyIconTexture]"
 							}
+						}
+					}
+
+					### AVERAGE STANDARD OF LIVING
+					power_bloc_header_grid_item = {
+						using = tooltip_se
+						using = average_standard_of_living_tooltip_with_graph
+						blockoverride "text" {
+							raw_text = "#v [Country.GetFormattedStandardOfLivingAll|v]#!"
+						}
+						blockoverride "icon" {
+							raw_text = "[LabelingHelper.GetIconForStandardOfLivingCFixedPoint(Country.GetAverageSoLByPopulation)|v]"
 						}
 					}
 

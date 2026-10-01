@@ -1,0 +1,193 @@
+﻿# Small standing forces and shared-market arms production for Gensokyo.
+BUILDINGS = {
+	s:STATE_QUEENSLAND = {
+		region_state:YKYM = {
+			create_building = {
+				building = "building_barrack"
+				activate_production_methods = { "pm_no_organization" }
+				add_ownership = { country = { country = "c:YKYM" levels = 5 } }
+				reserves = 1
+			}
+			create_building = {
+				building = "building_arms_industry"
+				activate_production_methods = { "pm_muskets" "pm_automation_disabled" }
+				add_ownership = { building = { type = "building_financial_district" country = "c:YKYM" levels = 1 region = "STATE_QUEENSLAND" } }
+				reserves = 1
+			}
+		}
+		region_state:MRYA = {
+			create_building = {
+				building = "building_barrack"
+				activate_production_methods = { "pm_no_organization" }
+				add_ownership = { country = { country = "c:MRYA" levels = 4 } }
+				reserves = 1
+			}
+		}
+		region_state:MFSR = {
+			create_building = {
+				building = "building_barrack"
+				activate_production_methods = { "pm_no_organization" }
+				add_ownership = { country = { country = "c:MFSR" levels = 2 } }
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_NEW_SOUTH_WALES = {
+		region_state:HAKR = {
+			create_building = {
+				building = "building_barrack"
+				activate_production_methods = { "pm_no_organization" }
+				add_ownership = { country = { country = "c:HAKR" levels = 5 } }
+				reserves = 1
+			}
+		}
+		region_state:HITO = {
+			create_building = {
+				building = "building_barrack"
+				activate_production_methods = { "pm_no_organization" }
+				add_ownership = { country = { country = "c:HITO" levels = 3 } }
+				reserves = 1
+			}
+		}
+		region_state:SHRM = {
+			create_building = {
+				building = "building_barrack"
+				activate_production_methods = { "pm_no_organization" }
+				add_ownership = { country = { country = "c:SHRM" levels = 2 } }
+				reserves = 1
+			}
+		}
+		region_state:MYRN = {
+			create_building = {
+				building = "building_barrack"
+				activate_production_methods = { "pm_no_organization" }
+				add_ownership = { country = { country = "c:MYRN" levels = 2 } }
+				reserves = 1
+			}
+		}
+		region_state:YSSK = {
+			create_building = {
+				building = "building_barrack"
+				activate_production_methods = { "pm_no_organization" }
+				add_ownership = { country = { country = "c:YSSK" levels = 1 } }
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_VICTORIA = {
+		region_state:EITR = {
+			create_building = {
+				building = "building_barrack"
+				activate_production_methods = { "pm_no_organization" }
+				add_ownership = { country = { country = "c:EITR" levels = 4 } }
+				reserves = 1
+			}
+		}
+		region_state:MIST = {
+			create_building = {
+				building = "building_barrack"
+				activate_production_methods = { "pm_no_organization" }
+				add_ownership = { country = { country = "c:MIST" levels = 1 } }
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_WESTERN_AUSTRALIA = {
+		region_state:BYKR = {
+			create_building = {
+				building = "building_barrack"
+				activate_production_methods = { "pm_no_organization" }
+				add_ownership = { country = { country = "c:BYKR" levels = 4 } }
+				reserves = 1
+			}
+		}
+		region_state:RNGN = {
+			create_building = {
+				building = "building_barrack"
+				activate_production_methods = { "pm_no_organization" }
+				add_ownership = { country = { country = "c:RNGN" levels = 3 } }
+				reserves = 1
+			}
+		}
+		region_state:HIGN = {
+			create_building = {
+				building = "building_barrack"
+				activate_production_methods = { "pm_no_organization" }
+				add_ownership = { country = { country = "c:HIGN" levels = 2 } }
+				reserves = 1
+			}
+		}
+		region_state:YKMF = {
+			create_building = {
+				building = "building_barrack"
+				activate_production_methods = { "pm_no_organization" }
+				add_ownership = { country = { country = "c:YKMF" levels = 2 } }
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_NORTHERN_TERRITORY = {
+		region_state:MKAI = {
+			create_building = {
+				building = "building_barrack"
+				activate_production_methods = { "pm_no_organization" }
+				add_ownership = { country = { country = "c:MKAI" levels = 4 } }
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_SOUTH_AUSTRALIA = {
+		region_state:KYTO = {
+			create_building = {
+				building = "building_barrack"
+				activate_production_methods = { "pm_no_organization" }
+				add_ownership = { country = { country = "c:KYTO" levels = 3 } }
+				reserves = 1
+			}
+			create_building = {
+				building = "building_artillery_foundry"
+				activate_production_methods = { "pm_cannons" "pm_automation_disabled" }
+				add_ownership = { building = { type = "building_financial_district" country = "c:KYTO" levels = 1 region = "STATE_SOUTH_AUSTRALIA" } }
+				reserves = 1
+			}
+		}
+		region_state:KZNH = {
+			create_building = {
+				building = "building_barrack"
+				activate_production_methods = { "pm_no_organization" }
+				add_ownership = { country = { country = "c:KZNH" levels = 1 } }
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_SOLOMON_ISLANDS = {
+		region_state:TENG = {
+			create_building = {
+				building = "building_barrack"
+				activate_production_methods = { "pm_no_organization" }
+				add_ownership = { country = { country = "c:TENG" levels = 2 } }
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_SOUTH_ISLAND = {
+		region_state:HCTI = {
+			create_building = {
+				building = "building_barrack"
+				activate_production_methods = { "pm_no_organization" }
+				add_ownership = { country = { country = "c:HCTI" levels = 3 } }
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_TASMANIA = {
+		region_state:RDMK = {
+			create_building = {
+				building = "building_arms_industry"
+				activate_production_methods = { "pm_muskets" "pm_automation_disabled" }
+				add_ownership = { building = { type = "building_financial_district" country = "c:RDMK" levels = 1 region = "STATE_TASMANIA" } }
+				reserves = 1
+			}
+		}
+	}
+}

@@ -51,3 +51,31 @@ tot_power_bloc_members_gdp_asc = {
         tot_power_bloc_refresh_gdp_member_list = yes
     }
 }
+
+tot_power_bloc_members_sol_desc = {
+    scope = country
+    is_shown = { is_player = yes }
+    is_valid = {
+        is_player = yes
+        exists = scope:tot_member_sort_host
+        scope:tot_member_sort_host = { exists = power_bloc }
+    }
+    effect = {
+        set_variable = { name = tot_power_bloc_sol_direction value = 1 }
+        tot_power_bloc_refresh_sol_member_list = yes
+    }
+}
+
+tot_power_bloc_members_sol_asc = {
+    scope = country
+    is_shown = { is_player = yes }
+    is_valid = {
+        is_player = yes
+        exists = scope:tot_member_sort_host
+        scope:tot_member_sort_host = { exists = power_bloc }
+    }
+    effect = {
+        set_variable = { name = tot_power_bloc_sol_direction value = -1 }
+        tot_power_bloc_refresh_sol_member_list = yes
+    }
+}

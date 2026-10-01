@@ -1,4 +1,4 @@
-# Gensokyo startup industry with New Zealand three factions: generated from explicit current-owner plan.
+﻿# Gensokyo startup industry with New Zealand three factions: generated from explicit current-owner plan.
 BUILDINGS = {
 	s:STATE_NEW_SOUTH_WALES = {
 		region_state:HITO = {
@@ -6,7 +6,7 @@ BUILDINGS = {
 				building = "building_wheat_farm"
 				activate_production_methods = { "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:HITO" levels = 25 region = "STATE_NEW_SOUTH_WALES" }
+					building = { type = "building_manor_house" country = "c:HITO" levels = 23 region = "STATE_NEW_SOUTH_WALES" }
 				}
 				reserves = 1
 			}
@@ -30,7 +30,7 @@ BUILDINGS = {
 				building = "building_sugar_plantation"
 				activate_production_methods = { "default_building_sugar_plantation" "ox_driven_rollers_sugar" "slave_exploitation_sugar" "pm_road_carts" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:HITO" levels = 2 region = "STATE_NEW_SOUTH_WALES" }
+					building = { type = "building_manor_house" country = "c:HITO" levels = 5 region = "STATE_NEW_SOUTH_WALES" }
 				}
 				reserves = 1
 			}
@@ -38,7 +38,7 @@ BUILDINGS = {
 				building = "building_tea_plantation"
 				activate_production_methods = { "default_building_tea_plantation" "default_labour" "pm_road_carts" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:HITO" levels = 2 region = "STATE_NEW_SOUTH_WALES" }
+					building = { type = "building_manor_house" country = "c:HITO" levels = 5 region = "STATE_NEW_SOUTH_WALES" }
 				}
 				reserves = 1
 			}
@@ -54,7 +54,7 @@ BUILDINGS = {
 				building = "building_food_industry"
 				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:HITO" levels = 5 region = "STATE_NEW_SOUTH_WALES" }
+					building = { type = "building_financial_district" country = "c:HITO" levels = 6 region = "STATE_NEW_SOUTH_WALES" }
 				}
 				reserves = 1
 			}
@@ -62,7 +62,7 @@ BUILDINGS = {
 				building = "building_textile_mill"
 				activate_production_methods = { "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:HITO" levels = 4 region = "STATE_NEW_SOUTH_WALES" }
+					building = { type = "building_financial_district" country = "c:HITO" levels = 5 region = "STATE_NEW_SOUTH_WALES" }
 				}
 				reserves = 1
 			}
@@ -70,7 +70,7 @@ BUILDINGS = {
 				building = "building_furniture_manufactory"
 				activate_production_methods = { "pm_handcrafted_furniture" "pm_no_luxuries" "pm_automation_disabled" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:HITO" levels = 2 region = "STATE_NEW_SOUTH_WALES" }
+					building = { type = "building_financial_district" country = "c:HITO" levels = 3 region = "STATE_NEW_SOUTH_WALES" }
 				}
 				reserves = 1
 			}
@@ -108,9 +108,9 @@ BUILDINGS = {
 			}
 			create_building = {
 				building = "building_tooling_workshop"
-				activate_production_methods = { "pm_steel" "pm_automation_disabled" }
+				activate_production_methods = { "pm_pig_iron" "pm_automation_disabled" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:HITO" levels = 2 region = "STATE_NEW_SOUTH_WALES" }
+					building = { type = "building_financial_district" country = "c:HITO" levels = 1 region = "STATE_NEW_SOUTH_WALES" }
 				}
 				reserves = 1
 			}
@@ -132,9 +132,9 @@ BUILDINGS = {
 			}
 			create_building = {
 				building = "building_construction_sector"
-				activate_production_methods = { "pm_wooden_buildings" }
+				activate_production_methods = { "pm_iron_frame_buildings" }
 				add_ownership = {
-					country = { country = "c:HITO" levels = 2 }
+					country = { country = "c:HITO" levels = 3 }
 				}
 				reserves = 1
 			}
@@ -144,7 +144,7 @@ BUILDINGS = {
 				building = "building_wheat_farm"
 				activate_production_methods = { "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:SHRM" levels = 2 region = "STATE_NEW_SOUTH_WALES" }
+					building = { type = "building_manor_house" country = "c:SHRM" levels = 5 region = "STATE_NEW_SOUTH_WALES" }
 				}
 				reserves = 1
 			}
@@ -152,7 +152,7 @@ BUILDINGS = {
 				building = "building_vineyard"
 				activate_production_methods = { "default_building_vineyard" "pm_road_carts" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:SHRM" levels = 1 region = "STATE_NEW_SOUTH_WALES" }
+					building = { type = "building_manor_house" country = "c:SHRM" levels = 2 region = "STATE_NEW_SOUTH_WALES" }
 				}
 				reserves = 1
 			}
@@ -166,7 +166,7 @@ BUILDINGS = {
 			}
 			create_building = {
 				building = "building_glassworks"
-				activate_production_methods = { "pm_forest_glass" "pm_disabled_ceramics" "pm_manual_glassblowing" }
+				activate_production_methods = { "pm_forest_glass" "pm_ceramics" "pm_manual_glassblowing" }
 				add_ownership = {
 					building = { type = "building_financial_district" country = "c:SHRM" levels = 2 region = "STATE_NEW_SOUTH_WALES" }
 				}
@@ -176,7 +176,7 @@ BUILDINGS = {
 				building = "building_furniture_manufactory"
 				activate_production_methods = { "pm_handcrafted_furniture" "pm_no_luxuries" "pm_automation_disabled" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:SHRM" levels = 1 region = "STATE_NEW_SOUTH_WALES" }
+					building = { type = "building_financial_district" country = "c:SHRM" levels = 3 region = "STATE_NEW_SOUTH_WALES" }
 				}
 				reserves = 1
 			}
@@ -184,7 +184,7 @@ BUILDINGS = {
 				building = "building_paper_mill"
 				activate_production_methods = { "pm_pulp_pressing" "pm_automation_disabled" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:SHRM" levels = 1 region = "STATE_NEW_SOUTH_WALES" }
+					building = { type = "building_financial_district" country = "c:SHRM" levels = 3 region = "STATE_NEW_SOUTH_WALES" }
 				}
 				reserves = 1
 			}
@@ -227,9 +227,9 @@ BUILDINGS = {
 			}
 			create_building = {
 				building = "building_food_industry"
-				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
+				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_pot_stills" "pm_manual_dough_processing" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:HITO" levels = 2 region = "STATE_VICTORIA" }
+					building = { type = "building_financial_district" country = "c:HITO" levels = 7 region = "STATE_VICTORIA" }
 				}
 				reserves = 1
 			}
@@ -254,10 +254,18 @@ BUILDINGS = {
 	s:STATE_QUEENSLAND = {
 		region_state:YKYM = {
 			create_building = {
+				building = "building_dye_plantation"
+				activate_production_methods = { "default_building_dye_plantation" "pm_road_carts" }
+				add_ownership = {
+					building = { type = "building_manor_house" country = "c:YKYM" levels = 2 region = "STATE_QUEENSLAND" }
+				}
+				reserves = 1
+			}
+			create_building = {
 				building = "building_coal_mine"
 				activate_production_methods = { "pm_atmospheric_engine_pump_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:YKYM" levels = 6 region = "STATE_QUEENSLAND" }
+					building = { type = "building_financial_district" country = "c:YKYM" levels = 7 region = "STATE_QUEENSLAND" }
 				}
 				reserves = 1
 			}
@@ -265,7 +273,7 @@ BUILDINGS = {
 				building = "building_iron_mine"
 				activate_production_methods = { "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:YKYM" levels = 6 region = "STATE_QUEENSLAND" }
+					building = { type = "building_financial_district" country = "c:YKYM" levels = 7 region = "STATE_QUEENSLAND" }
 				}
 				reserves = 1
 			}
@@ -281,7 +289,7 @@ BUILDINGS = {
 				building = "building_tooling_workshop"
 				activate_production_methods = { "pm_steel" "pm_automation_disabled" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:YKYM" levels = 3 region = "STATE_QUEENSLAND" }
+					building = { type = "building_financial_district" country = "c:YKYM" levels = 2 region = "STATE_QUEENSLAND" }
 				}
 				reserves = 1
 			}
@@ -289,7 +297,7 @@ BUILDINGS = {
 				building = "building_steel_mill"
 				activate_production_methods = { "pm_blister_steel_process" "pm_automation_disabled" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:YKYM" levels = 3 region = "STATE_QUEENSLAND" }
+					building = { type = "building_financial_district" country = "c:YKYM" levels = 4 region = "STATE_QUEENSLAND" }
 				}
 				reserves = 1
 			}
@@ -351,9 +359,9 @@ BUILDINGS = {
 			}
 			create_building = {
 				building = "building_construction_sector"
-				activate_production_methods = { "pm_wooden_buildings" }
+				activate_production_methods = { "pm_iron_frame_buildings" }
 				add_ownership = {
-					country = { country = "c:YKYM" levels = 1 }
+					country = { country = "c:YKYM" levels = 2 }
 				}
 				reserves = 1
 			}
@@ -421,7 +429,7 @@ BUILDINGS = {
 				building = "building_food_industry"
 				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:YKYM" levels = 1 region = "STATE_NEW_SOUTH_WALES" }
+					building = { type = "building_financial_district" country = "c:YKYM" levels = 2 region = "STATE_NEW_SOUTH_WALES" }
 				}
 				reserves = 1
 			}
@@ -455,7 +463,7 @@ BUILDINGS = {
 		region_state:MFSR = {
 			create_building = {
 				building = "building_logging_camp"
-				activate_production_methods = { "pm_saw_mills" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
+				activate_production_methods = { "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 				add_ownership = {
 					building = { type = "building_financial_district" country = "c:MFSR" levels = 3 region = "STATE_QUEENSLAND" }
 				}
@@ -471,7 +479,7 @@ BUILDINGS = {
 			}
 			create_building = {
 				building = "building_furniture_manufactory"
-				activate_production_methods = { "pm_handcrafted_furniture" "pm_no_luxuries" "pm_automation_disabled" }
+				activate_production_methods = { "pm_handcrafted_furniture" "pm_luxury_furniture" "pm_automation_disabled" }
 				add_ownership = {
 					building = { type = "building_financial_district" country = "c:MFSR" levels = 1 region = "STATE_QUEENSLAND" }
 				}
@@ -562,14 +570,6 @@ BUILDINGS = {
 				reserves = 1
 			}
 			create_building = {
-				building = "building_tooling_workshop"
-				activate_production_methods = { "pm_steel" "pm_automation_disabled" }
-				add_ownership = {
-					building = { type = "building_financial_district" country = "c:MFSR" levels = 1 region = "STATE_NEW_SOUTH_WALES" }
-				}
-				reserves = 1
-			}
-			create_building = {
 				building = "building_government_administration"
 				activate_production_methods = { "pm_horizontal_drawer_cabinets" "pm_hereditary_bureaucrats" "pm_religious_bureaucrats" }
 				add_ownership = {
@@ -617,7 +617,7 @@ BUILDINGS = {
 				building = "building_sugar_plantation"
 				activate_production_methods = { "default_building_sugar_plantation" "ox_driven_rollers_sugar" "slave_exploitation_sugar" "pm_road_carts" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:MRYA" levels = 2 region = "STATE_QUEENSLAND" }
+					building = { type = "building_manor_house" country = "c:MRYA" levels = 5 region = "STATE_QUEENSLAND" }
 				}
 				reserves = 1
 			}
@@ -633,7 +633,7 @@ BUILDINGS = {
 				building = "building_tea_plantation"
 				activate_production_methods = { "default_building_tea_plantation" "default_labour" "pm_road_carts" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:MRYA" levels = 1 region = "STATE_QUEENSLAND" }
+					building = { type = "building_manor_house" country = "c:MRYA" levels = 3 region = "STATE_QUEENSLAND" }
 				}
 				reserves = 1
 			}
@@ -725,13 +725,13 @@ BUILDINGS = {
 				building = "building_food_industry"
 				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:HAKR" levels = 3 region = "STATE_NEW_SOUTH_WALES" }
+					building = { type = "building_financial_district" country = "c:HAKR" levels = 5 region = "STATE_NEW_SOUTH_WALES" }
 				}
 				reserves = 1
 			}
 			create_building = {
 				building = "building_glassworks"
-				activate_production_methods = { "pm_forest_glass" "pm_disabled_ceramics" "pm_manual_glassblowing" }
+				activate_production_methods = { "pm_forest_glass" "pm_ceramics" "pm_manual_glassblowing" }
 				add_ownership = {
 					building = { type = "building_financial_district" country = "c:HAKR" levels = 1 region = "STATE_NEW_SOUTH_WALES" }
 				}
@@ -741,7 +741,7 @@ BUILDINGS = {
 				building = "building_shipyard"
 				activate_production_methods = { "pm_basic_shipbuilding" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:HAKR" levels = 2 region = "STATE_NEW_SOUTH_WALES" }
+					building = { type = "building_financial_district" country = "c:HAKR" levels = 4 region = "STATE_NEW_SOUTH_WALES" }
 				}
 				reserves = 1
 			}
@@ -749,7 +749,7 @@ BUILDINGS = {
 				building = "building_tooling_workshop"
 				activate_production_methods = { "pm_steel" "pm_automation_disabled" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:HAKR" levels = 2 region = "STATE_NEW_SOUTH_WALES" }
+					building = { type = "building_financial_district" country = "c:HAKR" levels = 1 region = "STATE_NEW_SOUTH_WALES" }
 				}
 				reserves = 1
 			}
@@ -757,7 +757,7 @@ BUILDINGS = {
 				building = "building_logging_camp"
 				activate_production_methods = { "pm_saw_mills" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:HAKR" levels = 2 region = "STATE_NEW_SOUTH_WALES" }
+					building = { type = "building_financial_district" country = "c:HAKR" levels = 3 region = "STATE_NEW_SOUTH_WALES" }
 				}
 				reserves = 1
 			}
@@ -773,7 +773,7 @@ BUILDINGS = {
 				building = "building_wheat_farm"
 				activate_production_methods = { "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:HAKR" levels = 2 region = "STATE_NEW_SOUTH_WALES" }
+					building = { type = "building_manor_house" country = "c:HAKR" levels = 4 region = "STATE_NEW_SOUTH_WALES" }
 				}
 				reserves = 1
 			}
@@ -789,7 +789,7 @@ BUILDINGS = {
 				building = "building_textile_mill"
 				activate_production_methods = { "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:HAKR" levels = 3 region = "STATE_NEW_SOUTH_WALES" }
+					building = { type = "building_financial_district" country = "c:HAKR" levels = 7 region = "STATE_NEW_SOUTH_WALES" }
 				}
 				reserves = 1
 			}
@@ -803,9 +803,9 @@ BUILDINGS = {
 			}
 			create_building = {
 				building = "building_construction_sector"
-				activate_production_methods = { "pm_wooden_buildings" }
+				activate_production_methods = { "pm_iron_frame_buildings" }
 				add_ownership = {
-					country = { country = "c:HAKR" levels = 1 }
+					country = { country = "c:HAKR" levels = 2 }
 				}
 				reserves = 1
 			}
@@ -821,7 +821,7 @@ BUILDINGS = {
 				building = "building_furniture_manufactory"
 				activate_production_methods = { "pm_handcrafted_furniture" "pm_no_luxuries" "pm_automation_disabled" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:HAKR" levels = 2 region = "STATE_NEW_SOUTH_WALES" }
+					building = { type = "building_financial_district" country = "c:HAKR" levels = 6 region = "STATE_NEW_SOUTH_WALES" }
 				}
 				reserves = 1
 			}
@@ -841,7 +841,7 @@ BUILDINGS = {
 				building = "building_wheat_farm"
 				activate_production_methods = { "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:MYRN" levels = 3 region = "STATE_NEW_SOUTH_WALES" }
+					building = { type = "building_manor_house" country = "c:MYRN" levels = 6 region = "STATE_NEW_SOUTH_WALES" }
 				}
 				reserves = 1
 			}
@@ -849,7 +849,7 @@ BUILDINGS = {
 				building = "building_livestock_ranch"
 				activate_production_methods = { "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:MYRN" levels = 2 region = "STATE_NEW_SOUTH_WALES" }
+					building = { type = "building_manor_house" country = "c:MYRN" levels = 3 region = "STATE_NEW_SOUTH_WALES" }
 				}
 				reserves = 1
 			}
@@ -865,7 +865,7 @@ BUILDINGS = {
 				building = "building_food_industry"
 				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:MYRN" levels = 1 region = "STATE_NEW_SOUTH_WALES" }
+					building = { type = "building_financial_district" country = "c:MYRN" levels = 2 region = "STATE_NEW_SOUTH_WALES" }
 				}
 				reserves = 1
 			}
@@ -881,7 +881,7 @@ BUILDINGS = {
 				building = "building_botanical_garden"
 				activate_production_methods = { "pm_botanical_garden_nursery" "pm_botanical_garden_fruit_trees_none" }
 				add_ownership = {
-					country = { country = "c:MYRN" levels = 1 }
+					country = { country = "c:MYRN" levels = 2 }
 				}
 				reserves = 1
 			}
@@ -925,7 +925,7 @@ BUILDINGS = {
 				building = "building_wheat_farm"
 				activate_production_methods = { "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:EITR" levels = 2 region = "STATE_VICTORIA" }
+					building = { type = "building_manor_house" country = "c:EITR" levels = 5 region = "STATE_VICTORIA" }
 				}
 				reserves = 1
 			}
@@ -933,7 +933,7 @@ BUILDINGS = {
 				building = "building_tea_plantation"
 				activate_production_methods = { "default_building_tea_plantation" "default_labour" "pm_road_carts" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:EITR" levels = 1 region = "STATE_VICTORIA" }
+					building = { type = "building_manor_house" country = "c:EITR" levels = 5 region = "STATE_VICTORIA" }
 				}
 				reserves = 1
 			}
@@ -977,6 +977,25 @@ BUILDINGS = {
 				}
 				reserves = 1
 			}
+
+			create_building = {
+				building = "building_sugar_plantation"
+				activate_production_methods = { "default_building_sugar_plantation" "ox_driven_rollers_sugar" "slave_exploitation_sugar" "pm_road_carts" }
+				add_ownership = { building = { type = "building_manor_house" country = "c:EITR" levels = 3 region = "STATE_VICTORIA" } }
+				reserves = 1
+			}
+			create_building = {
+				building = "building_food_industry"
+				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
+				add_ownership = { building = { type = "building_financial_district" country = "c:EITR" levels = 5 region = "STATE_VICTORIA" } }
+				reserves = 1
+			}
+			create_building = {
+				building = "building_silk_plantation"
+				activate_production_methods = { "default_building_silk_plantation" "pm_road_carts" }
+				add_ownership = { building = { type = "building_manor_house" country = "c:EITR" levels = 3 region = "STATE_VICTORIA" } }
+				reserves = 1
+			}
 		}
 	}
 	s:STATE_NEW_SOUTH_WALES = {
@@ -993,7 +1012,7 @@ BUILDINGS = {
 				building = "building_tea_plantation"
 				activate_production_methods = { "default_building_tea_plantation" "default_labour" "pm_road_carts" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:EITR" levels = 1 region = "STATE_NEW_SOUTH_WALES" }
+					building = { type = "building_manor_house" country = "c:EITR" levels = 3 region = "STATE_NEW_SOUTH_WALES" }
 				}
 				reserves = 1
 			}
@@ -1005,6 +1024,19 @@ BUILDINGS = {
 				}
 				reserves = 1
 			}
+
+			create_building = {
+				building = "building_sugar_plantation"
+				activate_production_methods = { "default_building_sugar_plantation" "ox_driven_rollers_sugar" "slave_exploitation_sugar" "pm_road_carts" }
+				add_ownership = { building = { type = "building_manor_house" country = "c:EITR" levels = 2 region = "STATE_NEW_SOUTH_WALES" } }
+				reserves = 1
+			}
+			create_building = {
+				building = "building_food_industry"
+				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
+				add_ownership = { building = { type = "building_financial_district" country = "c:EITR" levels = 2 region = "STATE_NEW_SOUTH_WALES" } }
+				reserves = 1
+			}
 		}
 	}
 	s:STATE_TASMANIA = {
@@ -1013,7 +1045,7 @@ BUILDINGS = {
 				building = "building_logging_camp"
 				activate_production_methods = { "pm_saw_mills" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:RDMK" levels = 3 region = "STATE_TASMANIA" }
+					building = { type = "building_financial_district" country = "c:RDMK" levels = 5 region = "STATE_TASMANIA" }
 				}
 				reserves = 1
 			}
@@ -1045,7 +1077,7 @@ BUILDINGS = {
 				building = "building_wheat_farm"
 				activate_production_methods = { "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:RDMK" levels = 1 region = "STATE_TASMANIA" }
+					building = { type = "building_manor_house" country = "c:RDMK" levels = 2 region = "STATE_TASMANIA" }
 				}
 				reserves = 1
 			}
@@ -1061,15 +1093,15 @@ BUILDINGS = {
 				building = "building_food_industry"
 				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_pot_stills" "pm_manual_dough_processing" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:RDMK" levels = 1 region = "STATE_TASMANIA" }
+					building = { type = "building_financial_district" country = "c:RDMK" levels = 2 region = "STATE_TASMANIA" }
 				}
 				reserves = 1
 			}
 			create_building = {
 				building = "building_glassworks"
-				activate_production_methods = { "pm_forest_glass" "pm_disabled_ceramics" "pm_manual_glassblowing" }
+				activate_production_methods = { "pm_forest_glass" "pm_ceramics" "pm_manual_glassblowing" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:RDMK" levels = 1 region = "STATE_TASMANIA" }
+					building = { type = "building_financial_district" country = "c:RDMK" levels = 2 region = "STATE_TASMANIA" }
 				}
 				reserves = 1
 			}
@@ -1077,7 +1109,7 @@ BUILDINGS = {
 				building = "building_shipyard"
 				activate_production_methods = { "pm_basic_shipbuilding" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:RDMK" levels = 1 region = "STATE_TASMANIA" }
+					building = { type = "building_financial_district" country = "c:RDMK" levels = 3 region = "STATE_TASMANIA" }
 				}
 				reserves = 1
 			}
@@ -1097,6 +1129,12 @@ BUILDINGS = {
 				}
 				reserves = 1
 			}
+			create_building = {
+				building = "building_construction_sector"
+				activate_production_methods = { "pm_iron_frame_buildings" }
+				add_ownership = { country = { country = "c:RDMK" levels = 1 } }
+				reserves = 1
+			}
 		}
 	}
 	s:STATE_VICTORIA = {
@@ -1105,7 +1143,7 @@ BUILDINGS = {
 				building = "building_vineyard"
 				activate_production_methods = { "default_building_vineyard" "pm_road_carts" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:RDMK" levels = 2 region = "STATE_VICTORIA" }
+					building = { type = "building_manor_house" country = "c:RDMK" levels = 4 region = "STATE_VICTORIA" }
 				}
 				reserves = 1
 			}
@@ -1113,7 +1151,7 @@ BUILDINGS = {
 				building = "building_food_industry"
 				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_pot_stills" "pm_manual_dough_processing" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:RDMK" levels = 1 region = "STATE_VICTORIA" }
+					building = { type = "building_financial_district" country = "c:RDMK" levels = 2 region = "STATE_VICTORIA" }
 				}
 				reserves = 1
 			}
@@ -1137,15 +1175,15 @@ BUILDINGS = {
 				building = "building_livestock_ranch"
 				activate_production_methods = { "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:RDMK" levels = 2 region = "STATE_VICTORIA" }
+					building = { type = "building_manor_house" country = "c:RDMK" levels = 3 region = "STATE_VICTORIA" }
 				}
 				reserves = 1
 			}
 			create_building = {
 				building = "building_textile_mill"
-				activate_production_methods = { "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
+				activate_production_methods = { "pm_handsewn_clothes" "pm_craftsman_sewing" "pm_traditional_looms" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:RDMK" levels = 1 region = "STATE_VICTORIA" }
+					building = { type = "building_financial_district" country = "c:RDMK" levels = 3 region = "STATE_VICTORIA" }
 				}
 				reserves = 1
 			}
@@ -1269,7 +1307,7 @@ BUILDINGS = {
 				building = "building_wheat_farm"
 				activate_production_methods = { "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:KZNH" levels = 2 region = "STATE_SOUTH_AUSTRALIA" }
+					building = { type = "building_manor_house" country = "c:KZNH" levels = 3 region = "STATE_SOUTH_AUSTRALIA" }
 				}
 				reserves = 1
 			}
@@ -1277,7 +1315,7 @@ BUILDINGS = {
 				building = "building_vineyard"
 				activate_production_methods = { "default_building_vineyard" "pm_road_carts" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:KZNH" levels = 2 region = "STATE_SOUTH_AUSTRALIA" }
+					building = { type = "building_manor_house" country = "c:KZNH" levels = 4 region = "STATE_SOUTH_AUSTRALIA" }
 				}
 				reserves = 1
 			}
@@ -1293,7 +1331,7 @@ BUILDINGS = {
 				building = "building_botanical_garden"
 				activate_production_methods = { "pm_botanical_garden_nursery" "pm_botanical_garden_fruit_trees_none" }
 				add_ownership = {
-					country = { country = "c:KZNH" levels = 3 }
+					country = { country = "c:KZNH" levels = 5 }
 				}
 				reserves = 1
 			}
@@ -1301,7 +1339,7 @@ BUILDINGS = {
 				building = "building_chemical_plant"
 				activate_production_methods = { "pm_artificial_fertilizers" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:KZNH" levels = 1 region = "STATE_SOUTH_AUSTRALIA" }
+					building = { type = "building_financial_district" country = "c:KZNH" levels = 3 region = "STATE_SOUTH_AUSTRALIA" }
 				}
 				reserves = 1
 			}
@@ -1317,7 +1355,7 @@ BUILDINGS = {
 				building = "building_food_industry"
 				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:KZNH" levels = 1 region = "STATE_SOUTH_AUSTRALIA" }
+					building = { type = "building_financial_district" country = "c:KZNH" levels = 2 region = "STATE_SOUTH_AUSTRALIA" }
 				}
 				reserves = 1
 			}
@@ -1375,7 +1413,7 @@ BUILDINGS = {
 				building = "building_tooling_workshop"
 				activate_production_methods = { "pm_steel" "pm_automation_disabled" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:KYTO" levels = 2 region = "STATE_SOUTH_AUSTRALIA" }
+					building = { type = "building_financial_district" country = "c:KYTO" levels = 1 region = "STATE_SOUTH_AUSTRALIA" }
 				}
 				reserves = 1
 			}
@@ -1383,7 +1421,7 @@ BUILDINGS = {
 				building = "building_food_industry"
 				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:KYTO" levels = 1 region = "STATE_SOUTH_AUSTRALIA" }
+					building = { type = "building_financial_district" country = "c:KYTO" levels = 2 region = "STATE_SOUTH_AUSTRALIA" }
 				}
 				reserves = 1
 			}
@@ -1437,7 +1475,7 @@ BUILDINGS = {
 			}
 			create_building = {
 				building = "building_construction_sector"
-				activate_production_methods = { "pm_wooden_buildings" }
+				activate_production_methods = { "pm_iron_frame_buildings" }
 				add_ownership = {
 					country = { country = "c:KYTO" levels = 1 }
 				}
@@ -1510,7 +1548,7 @@ BUILDINGS = {
 				building = "building_tooling_workshop"
 				activate_production_methods = { "pm_steel" "pm_automation_disabled" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:CHRD" levels = 2 region = "STATE_SOUTH_AUSTRALIA" }
+					building = { type = "building_financial_district" country = "c:CHRD" levels = 1 region = "STATE_SOUTH_AUSTRALIA" }
 				}
 				reserves = 1
 			}
@@ -1526,7 +1564,7 @@ BUILDINGS = {
 				building = "building_food_industry"
 				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:CHRD" levels = 2 region = "STATE_SOUTH_AUSTRALIA" }
+					building = { type = "building_financial_district" country = "c:CHRD" levels = 3 region = "STATE_SOUTH_AUSTRALIA" }
 				}
 				reserves = 1
 			}
@@ -1552,6 +1590,12 @@ BUILDINGS = {
 				add_ownership = {
 					country = { country = "c:CHRD" levels = 1 }
 				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_construction_sector"
+				activate_production_methods = { "pm_iron_frame_buildings" }
+				add_ownership = { country = { country = "c:CHRD" levels = 1 } }
 				reserves = 1
 			}
 		}
@@ -1628,7 +1672,7 @@ BUILDINGS = {
 			}
 			create_building = {
 				building = "building_logging_camp"
-				activate_production_methods = { "pm_saw_mills" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
+				activate_production_methods = { "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 				add_ownership = {
 					building = { type = "building_financial_district" country = "c:BYKR" levels = 4 region = "STATE_WESTERN_AUSTRALIA" }
 				}
@@ -1644,7 +1688,7 @@ BUILDINGS = {
 			}
 			create_building = {
 				building = "building_food_industry"
-				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
+				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_pot_stills" "pm_manual_dough_processing" }
 				add_ownership = {
 					building = { type = "building_financial_district" country = "c:BYKR" levels = 4 region = "STATE_WESTERN_AUSTRALIA" }
 				}
@@ -1654,15 +1698,15 @@ BUILDINGS = {
 				building = "building_textile_mill"
 				activate_production_methods = { "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:BYKR" levels = 2 region = "STATE_WESTERN_AUSTRALIA" }
+					building = { type = "building_financial_district" country = "c:BYKR" levels = 3 region = "STATE_WESTERN_AUSTRALIA" }
 				}
 				reserves = 1
 			}
 			create_building = {
 				building = "building_furniture_manufactory"
-				activate_production_methods = { "pm_handcrafted_furniture" "pm_no_luxuries" "pm_automation_disabled" }
+				activate_production_methods = { "pm_handcrafted_furniture" "pm_luxury_furniture" "pm_automation_disabled" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:BYKR" levels = 1 region = "STATE_WESTERN_AUSTRALIA" }
+					building = { type = "building_financial_district" country = "c:BYKR" levels = 2 region = "STATE_WESTERN_AUSTRALIA" }
 				}
 				reserves = 1
 			}
@@ -1676,7 +1720,7 @@ BUILDINGS = {
 			}
 			create_building = {
 				building = "building_tooling_workshop"
-				activate_production_methods = { "pm_steel" "pm_automation_disabled" }
+				activate_production_methods = { "pm_pig_iron" "pm_automation_disabled" }
 				add_ownership = {
 					building = { type = "building_financial_district" country = "c:BYKR" levels = 1 region = "STATE_WESTERN_AUSTRALIA" }
 				}
@@ -1708,9 +1752,9 @@ BUILDINGS = {
 			}
 			create_building = {
 				building = "building_construction_sector"
-				activate_production_methods = { "pm_wooden_buildings" }
+				activate_production_methods = { "pm_iron_frame_buildings" }
 				add_ownership = {
-					country = { country = "c:BYKR" levels = 1 }
+					country = { country = "c:BYKR" levels = 2 }
 				}
 				reserves = 1
 			}
@@ -1722,7 +1766,7 @@ BUILDINGS = {
 				building = "building_wheat_farm"
 				activate_production_methods = { "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:HIGN" levels = 2 region = "STATE_WESTERN_AUSTRALIA" }
+					building = { type = "building_manor_house" country = "c:HIGN" levels = 4 region = "STATE_WESTERN_AUSTRALIA" }
 				}
 				reserves = 1
 			}
@@ -1738,7 +1782,7 @@ BUILDINGS = {
 				building = "building_fishing_wharf"
 				activate_production_methods = { "pm_simple_fishing" "pm_unrefrigerated" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:HIGN" levels = 1 region = "STATE_WESTERN_AUSTRALIA" }
+					building = { type = "building_financial_district" country = "c:HIGN" levels = 2 region = "STATE_WESTERN_AUSTRALIA" }
 				}
 				reserves = 1
 			}
@@ -1767,18 +1811,10 @@ BUILDINGS = {
 				reserves = 1
 			}
 			create_building = {
-				building = "building_tooling_workshop"
-				activate_production_methods = { "pm_steel" "pm_automation_disabled" }
-				add_ownership = {
-					building = { type = "building_financial_district" country = "c:HIGN" levels = 1 region = "STATE_WESTERN_AUSTRALIA" }
-				}
-				reserves = 1
-			}
-			create_building = {
 				building = "building_food_industry"
 				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:HIGN" levels = 1 region = "STATE_WESTERN_AUSTRALIA" }
+					building = { type = "building_financial_district" country = "c:HIGN" levels = 4 region = "STATE_WESTERN_AUSTRALIA" }
 				}
 				reserves = 1
 			}
@@ -1806,6 +1842,19 @@ BUILDINGS = {
 				}
 				reserves = 1
 			}
+
+			create_building = {
+				building = "building_vineyard"
+				activate_production_methods = { "default_building_vineyard" "pm_road_carts" }
+				add_ownership = { building = { type = "building_manor_house" country = "c:HIGN" levels = 2 region = "STATE_WESTERN_AUSTRALIA" } }
+				reserves = 1
+			}
+			create_building = {
+				building = "building_textile_mill"
+				activate_production_methods = { "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
+				add_ownership = { building = { type = "building_financial_district" country = "c:HIGN" levels = 2 region = "STATE_WESTERN_AUSTRALIA" } }
+				reserves = 1
+			}
 		}
 	}
 	s:STATE_WESTERN_AUSTRALIA = {
@@ -1814,7 +1863,7 @@ BUILDINGS = {
 				building = "building_wheat_farm"
 				activate_production_methods = { "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:YKMF" levels = 2 region = "STATE_WESTERN_AUSTRALIA" }
+					building = { type = "building_manor_house" country = "c:YKMF" levels = 3 region = "STATE_WESTERN_AUSTRALIA" }
 				}
 				reserves = 1
 			}
@@ -1854,7 +1903,7 @@ BUILDINGS = {
 				building = "building_glassworks"
 				activate_production_methods = { "pm_forest_glass" "pm_disabled_ceramics" "pm_manual_glassblowing" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:YKMF" levels = 1 region = "STATE_WESTERN_AUSTRALIA" }
+					building = { type = "building_financial_district" country = "c:YKMF" levels = 3 region = "STATE_WESTERN_AUSTRALIA" }
 				}
 				reserves = 1
 			}
@@ -1868,9 +1917,9 @@ BUILDINGS = {
 			}
 			create_building = {
 				building = "building_textile_mill"
-				activate_production_methods = { "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
+				activate_production_methods = { "pm_handsewn_clothes" "pm_craftsman_sewing" "pm_traditional_looms" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:YKMF" levels = 1 region = "STATE_WESTERN_AUSTRALIA" }
+					building = { type = "building_financial_district" country = "c:YKMF" levels = 3 region = "STATE_WESTERN_AUSTRALIA" }
 				}
 				reserves = 1
 			}
@@ -1878,7 +1927,7 @@ BUILDINGS = {
 				building = "building_food_industry"
 				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:YKMF" levels = 1 region = "STATE_WESTERN_AUSTRALIA" }
+					building = { type = "building_financial_district" country = "c:YKMF" levels = 3 region = "STATE_WESTERN_AUSTRALIA" }
 				}
 				reserves = 1
 			}
@@ -1896,6 +1945,13 @@ BUILDINGS = {
 				add_ownership = {
 					country = { country = "c:YKMF" levels = 1 }
 				}
+				reserves = 1
+			}
+
+			create_building = {
+				building = "building_silk_plantation"
+				activate_production_methods = { "default_building_silk_plantation" "pm_road_carts" }
+				add_ownership = { building = { type = "building_manor_house" country = "c:YKMF" levels = 1 region = "STATE_WESTERN_AUSTRALIA" } }
 				reserves = 1
 			}
 		}
@@ -1965,7 +2021,7 @@ BUILDINGS = {
 				building = "building_tooling_workshop"
 				activate_production_methods = { "pm_steel" "pm_automation_disabled" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:RNGN" levels = 2 region = "STATE_WESTERN_AUSTRALIA" }
+					building = { type = "building_financial_district" country = "c:RNGN" levels = 1 region = "STATE_WESTERN_AUSTRALIA" }
 				}
 				reserves = 1
 			}
@@ -1973,13 +2029,13 @@ BUILDINGS = {
 				building = "building_furniture_manufactory"
 				activate_production_methods = { "pm_handcrafted_furniture" "pm_no_luxuries" "pm_automation_disabled" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:RNGN" levels = 2 region = "STATE_WESTERN_AUSTRALIA" }
+					building = { type = "building_financial_district" country = "c:RNGN" levels = 3 region = "STATE_WESTERN_AUSTRALIA" }
 				}
 				reserves = 1
 			}
 			create_building = {
 				building = "building_glassworks"
-				activate_production_methods = { "pm_forest_glass" "pm_disabled_ceramics" "pm_manual_glassblowing" }
+				activate_production_methods = { "pm_forest_glass" "pm_ceramics" "pm_manual_glassblowing" }
 				add_ownership = {
 					building = { type = "building_financial_district" country = "c:RNGN" levels = 2 region = "STATE_WESTERN_AUSTRALIA" }
 				}
@@ -2055,7 +2111,7 @@ BUILDINGS = {
 			}
 			create_building = {
 				building = "building_glassworks"
-				activate_production_methods = { "pm_forest_glass" "pm_disabled_ceramics" "pm_manual_glassblowing" }
+				activate_production_methods = { "pm_forest_glass" "pm_ceramics" "pm_manual_glassblowing" }
 				add_ownership = {
 					building = { type = "building_financial_district" country = "c:UKDO" levels = 1 region = "STATE_WESTERN_AUSTRALIA" }
 				}
@@ -2181,7 +2237,7 @@ BUILDINGS = {
 				building = "building_sugar_plantation"
 				activate_production_methods = { "default_building_sugar_plantation" "ox_driven_rollers_sugar" "slave_exploitation_sugar" "pm_road_carts" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:MKAI" levels = 4 region = "STATE_NORTHERN_TERRITORY" }
+					building = { type = "building_manor_house" country = "c:MKAI" levels = 6 region = "STATE_NORTHERN_TERRITORY" }
 				}
 				reserves = 1
 			}
@@ -2197,7 +2253,7 @@ BUILDINGS = {
 				building = "building_tooling_workshop"
 				activate_production_methods = { "pm_steel" "pm_automation_disabled" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:MKAI" levels = 2 region = "STATE_NORTHERN_TERRITORY" }
+					building = { type = "building_financial_district" country = "c:MKAI" levels = 1 region = "STATE_NORTHERN_TERRITORY" }
 				}
 				reserves = 1
 			}
@@ -2205,7 +2261,7 @@ BUILDINGS = {
 				building = "building_textile_mill"
 				activate_production_methods = { "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:MKAI" levels = 3 region = "STATE_NORTHERN_TERRITORY" }
+					building = { type = "building_financial_district" country = "c:MKAI" levels = 4 region = "STATE_NORTHERN_TERRITORY" }
 				}
 				reserves = 1
 			}
@@ -2221,7 +2277,7 @@ BUILDINGS = {
 				building = "building_food_industry"
 				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:MKAI" levels = 2 region = "STATE_NORTHERN_TERRITORY" }
+					building = { type = "building_financial_district" country = "c:MKAI" levels = 3 region = "STATE_NORTHERN_TERRITORY" }
 				}
 				reserves = 1
 			}
@@ -2267,9 +2323,9 @@ BUILDINGS = {
 			}
 			create_building = {
 				building = "building_construction_sector"
-				activate_production_methods = { "pm_wooden_buildings" }
+				activate_production_methods = { "pm_iron_frame_buildings" }
 				add_ownership = {
-					country = { country = "c:MKAI" levels = 1 }
+					country = { country = "c:MKAI" levels = 2 }
 				}
 				reserves = 1
 			}
@@ -2309,7 +2365,7 @@ BUILDINGS = {
 				building = "building_wheat_farm"
 				activate_production_methods = { "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:MTOU" levels = 1 region = "STATE_NORTH_ISLAND" }
+					building = { type = "building_manor_house" country = "c:MTOU" levels = 2 region = "STATE_NORTH_ISLAND" }
 				}
 				reserves = 1
 			}
@@ -2317,7 +2373,7 @@ BUILDINGS = {
 				building = "building_livestock_ranch"
 				activate_production_methods = { "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:MTOU" levels = 1 region = "STATE_NORTH_ISLAND" }
+					building = { type = "building_manor_house" country = "c:MTOU" levels = 2 region = "STATE_NORTH_ISLAND" }
 				}
 				reserves = 1
 			}
@@ -2325,7 +2381,7 @@ BUILDINGS = {
 				building = "building_logging_camp"
 				activate_production_methods = { "pm_saw_mills" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:MTOU" levels = 2 region = "STATE_NORTH_ISLAND" }
+					building = { type = "building_financial_district" country = "c:MTOU" levels = 3 region = "STATE_NORTH_ISLAND" }
 				}
 				reserves = 1
 			}
@@ -2357,7 +2413,7 @@ BUILDINGS = {
 				building = "building_paper_mill"
 				activate_production_methods = { "pm_pulp_pressing" "pm_automation_disabled" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:MTOU" levels = 1 region = "STATE_NORTH_ISLAND" }
+					building = { type = "building_financial_district" country = "c:MTOU" levels = 2 region = "STATE_NORTH_ISLAND" }
 				}
 				reserves = 1
 			}
@@ -2398,10 +2454,26 @@ BUILDINGS = {
 	s:STATE_NORTH_ISLAND = {
 		region_state:JNKF = {
 			create_building = {
+				building = "building_food_industry"
+				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
+				add_ownership = {
+					building = { type = "building_financial_district" country = "c:JNKF" levels = 1 region = "STATE_NORTH_ISLAND" }
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_paper_mill"
+				activate_production_methods = { "pm_pulp_pressing" "pm_automation_disabled" }
+				add_ownership = {
+					building = { type = "building_financial_district" country = "c:JNKF" levels = 1 region = "STATE_NORTH_ISLAND" }
+				}
+				reserves = 1
+			}
+			create_building = {
 				building = "building_wheat_farm"
 				activate_production_methods = { "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:JNKF" levels = 1 region = "STATE_NORTH_ISLAND" }
+					building = { type = "building_manor_house" country = "c:JNKF" levels = 3 region = "STATE_NORTH_ISLAND" }
 				}
 				reserves = 1
 			}
@@ -2409,7 +2481,7 @@ BUILDINGS = {
 				building = "building_livestock_ranch"
 				activate_production_methods = { "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 				add_ownership = {
-					building = { type = "building_manor_house" country = "c:JNKF" levels = 1 region = "STATE_NORTH_ISLAND" }
+					building = { type = "building_manor_house" country = "c:JNKF" levels = 2 region = "STATE_NORTH_ISLAND" }
 				}
 				reserves = 1
 			}
@@ -2417,7 +2489,7 @@ BUILDINGS = {
 				building = "building_logging_camp"
 				activate_production_methods = { "pm_saw_mills" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:JNKF" levels = 1 region = "STATE_NORTH_ISLAND" }
+					building = { type = "building_financial_district" country = "c:JNKF" levels = 2 region = "STATE_NORTH_ISLAND" }
 				}
 				reserves = 1
 			}
@@ -2509,7 +2581,7 @@ BUILDINGS = {
 				building = "building_food_industry"
 				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
 				add_ownership = {
-					building = { type = "building_financial_district" country = "c:HCTI" levels = 1 region = "STATE_SOUTH_ISLAND" }
+					building = { type = "building_financial_district" country = "c:HCTI" levels = 2 region = "STATE_SOUTH_ISLAND" }
 				}
 				reserves = 1
 			}
@@ -2535,6 +2607,127 @@ BUILDINGS = {
 				add_ownership = {
 					country = { country = "c:HCTI" levels = 1 }
 				}
+				reserves = 1
+			}
+		}
+	}
+
+	s:STATE_SOLOMON_ISLANDS = {
+		region_state:TENG = {
+			create_building = {
+				building = "building_rice_farm"
+				activate_production_methods = { "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled" }
+				add_ownership = { building = { type = "building_manor_house" country = "c:TENG" levels = 2 region = "STATE_SOLOMON_ISLANDS" } }
+				reserves = 1
+			}
+			create_building = {
+				building = "building_fishing_wharf"
+				activate_production_methods = { "pm_simple_fishing" "pm_unrefrigerated" }
+				add_ownership = { building = { type = "building_financial_district" country = "c:TENG" levels = 2 region = "STATE_SOLOMON_ISLANDS" } }
+				reserves = 1
+			}
+			create_building = {
+				building = "building_food_industry"
+				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
+				add_ownership = { building = { type = "building_financial_district" country = "c:TENG" levels = 2 region = "STATE_SOLOMON_ISLANDS" } }
+				reserves = 1
+			}
+			create_building = {
+				building = "building_port"
+				activate_production_methods = { "pm_basic_port" }
+				add_ownership = { country = { country = "c:TENG" levels = 1 } }
+				reserves = 1
+			}
+		}
+	}
+
+	s:STATE_TONGA = {
+		region_state:TENG = {
+			create_building = {
+				building = "building_rice_farm"
+				activate_production_methods = { "pm_simple_farming_building_rice_farm" "pm_no_secondary" "pm_tools_disabled" }
+				add_ownership = { building = { type = "building_manor_house" country = "c:TENG" levels = 2 region = "STATE_TONGA" } }
+				reserves = 1
+			}
+			create_building = {
+				building = "building_fishing_wharf"
+				activate_production_methods = { "pm_simple_fishing" "pm_unrefrigerated" }
+				add_ownership = { building = { type = "building_financial_district" country = "c:TENG" levels = 2 region = "STATE_TONGA" } }
+				reserves = 1
+			}
+			create_building = {
+				building = "building_food_industry"
+				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
+				add_ownership = { building = { type = "building_financial_district" country = "c:TENG" levels = 2 region = "STATE_TONGA" } }
+				reserves = 1
+			}
+			create_building = {
+				building = "building_port"
+				activate_production_methods = { "pm_basic_port" }
+				add_ownership = { country = { country = "c:TENG" levels = 1 } }
+				reserves = 1
+			}
+		}
+	}
+
+	s:STATE_FIJI = {
+		region_state:TENG = {
+			create_building = {
+				building = "building_coffee_plantation"
+				activate_production_methods = { "default_building_coffee_plantation" "pm_road_carts" }
+				add_ownership = { building = { type = "building_manor_house" country = "c:TENG" levels = 2 region = "STATE_FIJI" } }
+				reserves = 1
+			}
+			create_building = {
+				building = "building_fishing_wharf"
+				activate_production_methods = { "pm_simple_fishing" "pm_unrefrigerated" }
+				add_ownership = { building = { type = "building_financial_district" country = "c:TENG" levels = 2 region = "STATE_FIJI" } }
+				reserves = 1
+			}
+			create_building = {
+				building = "building_food_industry"
+				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
+				add_ownership = { building = { type = "building_financial_district" country = "c:TENG" levels = 2 region = "STATE_FIJI" } }
+				reserves = 1
+			}
+		}
+	}
+
+	s:STATE_VANUATU = {
+		region_state:TENG = {
+			create_building = {
+				building = "building_coffee_plantation"
+				activate_production_methods = { "default_building_coffee_plantation" "pm_road_carts" }
+				add_ownership = { building = { type = "building_manor_house" country = "c:TENG" levels = 2 region = "STATE_VANUATU" } }
+				reserves = 1
+			}
+			create_building = {
+				building = "building_fishing_wharf"
+				activate_production_methods = { "pm_simple_fishing" "pm_unrefrigerated" }
+				add_ownership = { building = { type = "building_financial_district" country = "c:TENG" levels = 2 region = "STATE_VANUATU" } }
+				reserves = 1
+			}
+			create_building = {
+				building = "building_food_industry"
+				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
+				add_ownership = { building = { type = "building_financial_district" country = "c:TENG" levels = 2 region = "STATE_VANUATU" } }
+				reserves = 1
+			}
+		}
+	}
+
+	s:STATE_KANAK = {
+		region_state:TENG = {
+			create_building = {
+				building = "building_lead_mine"
+				activate_production_methods = { "pm_atmospheric_engine_pump_building_lead_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+				add_ownership = { building = { type = "building_financial_district" country = "c:TENG" levels = 2 region = "STATE_KANAK" } }
+				reserves = 1
+			}
+			create_building = {
+				building = "building_food_industry"
+				activate_production_methods = { "pm_bakery" "pm_disabled_canning" "pm_disabled_distillery" "pm_manual_dough_processing" }
+				add_ownership = { building = { type = "building_financial_district" country = "c:TENG" levels = 2 region = "STATE_KANAK" } }
 				reserves = 1
 			}
 		}

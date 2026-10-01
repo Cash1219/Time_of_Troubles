@@ -275,6 +275,16 @@ def check():
     newest = json.loads(newest_path.read_text(encoding='utf-8')) if newest_path.exists() else None
     def stage_bytes(rel):
         current = (ROOT / rel).read_bytes()
+        supply_backup = ROOT / 'docs/backups/supply_phase3_before_20261001' / rel
+        if supply_backup.exists():
+            # The supply pass subsequently changed islands, western borders,
+            # arable resources and building levels. Check this older migration
+            # against the preserved state immediately before that pass.
+            current = supply_backup.read_bytes()
+        if rel == BUILDINGS:
+            # The later industry pass changed levels and production methods;
+            # validate this relocation against the preserved pre-pass snapshot.
+            current = (ROOT / 'docs/backups/industry_phase2_before_20261001' / rel).read_bytes()
         if newest and rel in newest['hashes']:
             assert digest(current) == newest['hashes'][rel]['after'], rel
             current = (Path(newest['backup']) / rel).read_bytes()

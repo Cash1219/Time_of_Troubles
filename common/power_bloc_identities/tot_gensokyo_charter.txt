@@ -5,7 +5,10 @@ identity_tot_gensokyo_charter = {
     # Offset the native 500 influence cost of hosting; no prestige or output bonus.
     leader_modifier = { country_influence_add = 500 }
     non_leader_modifier = {}
-    can_join = { tot_gensokyo_country_trigger = yes }
+    can_join = {
+        tot_gensokyo_country_trigger = yes
+        has_law = law_type:law_tot_danmaku_warfare
+    }
     can_leave = {
         custom_tooltip = {
             text = tot_gensokyo_exit_years_tt

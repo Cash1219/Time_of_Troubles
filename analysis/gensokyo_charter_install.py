@@ -330,9 +330,17 @@ def check():
     report = json.loads(REPORT.read_text(encoding='utf-8'))
     chars = archived_characters()
     assert chars == report['characters']
+    # Later Spell Card Rules work extends the charter principle and its names.
+    extended = {
+        'common/power_bloc_identities/tot_gensokyo_charter.txt',
+        'common/power_bloc_principles/tot_gensokyo_charter.txt',
+        'localization/english/tot_gensokyo_charter_l_english.yml',
+        'localization/replace/simp_chinese/common/diplomacy/tot_gensokyo_charter_l_simp_chinese.yml',
+    }
     for rel, expected in files(chars).items():
         source = (ROOT / rel).read_text(encoding='utf-8-sig')
-        assert source == expected, ('snapshot differs', rel)
+        if rel not in extended:
+            assert source == expected, ('snapshot differs', rel)
         assert clean(source).count('{') == clean(source).count('}'), rel
     records = list(spans((ROOT / CHAR_PATH).read_text(encoding='utf-8'), r'create_character\s*=\s*\{'))
     assert len(records) == 35
@@ -384,9 +392,16 @@ def check():
     assert groups.count('unlocking_identity') == 3
     assert 'country_tech_spread_mult = 0.1' in gods_source
     assert 'state_infrastructure_mult = 0.1' in gods_source
+    assert 'country_can_impose_same_lawgroup_army_model_in_power_bloc_bool = yes' in gods_source
+    identity = (ROOT / 'common/power_bloc_identities/tot_gensokyo_charter.txt').read_text(encoding='utf-8')
+    assert 'has_law = law_type:law_tot_danmaku_warfare' in identity
+    zh = (ROOT / 'localization/replace/simp_chinese/common/diplomacy/tot_gensokyo_charter_l_simp_chinese.yml').read_text(encoding='utf-8-sig')
+    en = (ROOT / 'localization/english/tot_gensokyo_charter_l_english.yml').read_text(encoding='utf-8-sig')
+    assert 'principle_group_tot_gensokyo_autonomy: "符卡规则"' in zh
+    assert 'principle_group_tot_gensokyo_autonomy: "Spell Card Rules"' in en
     modifier_definitions = '\n'.join(p.read_text(encoding='utf-8-sig')
         for p in (GAME / 'common/modifier_type_definitions').glob('*.txt'))
-    for _, body, _ in spans(gods_source, r'(?:member|power_bloc)_modifier\s*=\s*\{'):
+    for _, body, _ in spans(gods_source, r'(?:member|power_bloc|leader)_modifier\s*=\s*\{'):
         for key in re.findall(r'\b(\w+)\s*=', clean(body)):
             assert re.search(r'\b' + key + r'\s*=\s*\{', modifier_definitions), key
     print('PASS: 37 Gensokyo group traits, Flandre landowner heir, 34 unique IG leaders, 24 independent members, 3 principles; references and icons valid.')

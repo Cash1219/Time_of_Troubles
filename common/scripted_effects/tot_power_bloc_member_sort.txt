@@ -43,3 +43,25 @@ tot_power_bloc_refresh_population_member_list = {
         }
     }
 }
+
+tot_power_bloc_refresh_sol_member_list = {
+    if = {
+        limit = { has_variable_list = tot_power_bloc_sol_members }
+        clear_variable_list = tot_power_bloc_sol_members
+    }
+    scope:tot_member_sort_host.power_bloc = {
+        ordered_power_bloc_member = {
+            order_by = {
+                value = average_sol
+                multiply = root.var:tot_power_bloc_sol_direction
+            }
+            save_temporary_scope_as = tot_member_sort_entry
+            root = {
+                add_to_variable_list = {
+                    name = tot_power_bloc_sol_members
+                    target = scope:tot_member_sort_entry
+                }
+            }
+        }
+    }
+}
