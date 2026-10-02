@@ -53,3 +53,25 @@ tot_special_units_recruit_knight_to_capacity_effect = {
 	}
 	remove_variable = tot_special_units_knight_batch
 }
+
+tot_special_units_recruit_player_effect = {
+	if = {
+		limit = {
+			has_law = law_type:law_tot_danmaku_warfare
+			tot_player_unit_free_capacity >= 1
+			gold_reserves >= 10000
+		}
+		add_treasury = -10000
+		create_military_formation = {
+			type = army
+			hq_region = root.capital.region
+			name = tot_player_formation
+			combat_unit = {
+				type = unit_type:combat_unit_type_tot_player
+				service_type = regular
+				state_region = root.capital.state_region
+				count = 1
+			}
+		}
+	}
+}

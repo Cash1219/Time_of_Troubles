@@ -1,0 +1,19 @@
+﻿combat_unit_type_tot_player = {
+	group = combat_unit_group_infantry
+	max_manpower = 100
+	supply_capacity = 1
+
+	can_build = { always = no }
+	conscript_peasant_levies = no
+
+	battle_modifier = {
+		unit_offense_add = 300
+		unit_defense_add = 300
+	}
+
+	combat_unit_image = {
+		texture = "gfx/unit_illustrations/combat_unit_type_sprirt_guard.dds"
+	}
+
+	upgrades = { }
+}

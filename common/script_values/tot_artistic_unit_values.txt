@@ -50,6 +50,32 @@ tot_idol_knight_unit_free_capacity = {
 	min = 0
 }
 
+tot_player_unit_capacity = {
+	value = modifier:country_tot_player_unit_capacity_add
+	min = 0
+}
+
+tot_player_unit_free_capacity = {
+	value = tot_player_unit_capacity
+	subtract = tot_player_unit_deployed
+	min = 0
+}
+
+tot_player_unit_deployed = {
+	value = {
+		every_military_formation = {
+			limit = { is_army = yes }
+			every_combat_unit = {
+				limit = { has_unit_type = unit_type:combat_unit_type_tot_player }
+				add = 1
+			}
+		}
+	}
+}
+
+tot_player_unit_offense_value = { value = 300 }
+tot_player_unit_defense_value = { value = 300 }
+
 tot_special_unit_deployed = {
 	value = {
 		every_military_formation = {
