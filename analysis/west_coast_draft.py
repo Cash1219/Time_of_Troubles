@@ -80,12 +80,14 @@ COLORS = {'WAS':(217,137,145),'BYKR':(205,224,232),'YKMF':(151,107,188),
           'RDMK':(204,91,115),'MIST':(166,202,205),'HITO':(228,212,137),
           'HAKR':(225,130,144),'EITR':(211,188,214),'MYRN':(154,167,192),
           'MTOU':(231,233,235),'KZNH':(226,200,107),'YSSK':(130,114,151),
-          'SHRM':(105,157,188),'TENG':(235,219,165)}
+          'SHRM':(105,157,188),'TENG':(235,219,165),
+          'JNKF':(179,103,55),'HCTI':(110,72,112)}
 NAMES = dict(WAS='西澳大利亚',BYKR='白玉楼',YKMF='八云府',HIGN='彼岸',
              UKDO='后户之国',RNGN='灵长园',KYTO='旧都',CHRD='地灵殿',MKAI='魔界',
              MRYA='守矢',YKYM='妖怪之山',MFSR='魔法森林',RDMK='红魔馆',MIST='雾之湖',
              HITO='人间之里',HAKR='博丽',EITR='永远亭',MYRN='命莲寺',MTOU='月都',
-             KZNH='太阳花田',YSSK='夜雀食堂',SHRM='神灵庙',TENG='天界')
+             KZNH='太阳花田',YSSK='夜雀食堂',SHRM='神灵庙',TENG='天界',
+             JNKF='纯狐',HCTI='赫卡提亚')
 
 def render(ctx,a,owners,name,grid=False):
     b=list(ctx['bounds'])

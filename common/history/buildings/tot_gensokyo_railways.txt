@@ -155,7 +155,32 @@ BUILDINGS = {
 				activate_production_methods = { "pm_early_trains" "pm_wooden_passenger_carriages" }
 			}
 		}
+		region_state:CHRD = {
+			create_building = {
+				building = "building_railway"
+				add_ownership = { country = { country = "c:CHRD" levels = 1 } }
+				reserves = 1
+				activate_production_methods = { "pm_early_trains" "pm_wooden_passenger_carriages" }
+			}
+		}
+		region_state:MRYA = {
+			create_building = {
+				building = "building_railway"
+				add_ownership = { country = { country = "c:MRYA" levels = 1 } }
+				reserves = 1
+				activate_production_methods = { "pm_early_trains" "pm_wooden_passenger_carriages" }
+			}
+		}
+		region_state:UKDO = {
+			create_building = {
+				building = "building_railway"
+				add_ownership = { country = { country = "c:UKDO" levels = 1 } }
+				reserves = 1
+				activate_production_methods = { "pm_early_trains" "pm_wooden_passenger_carriages" }
+			}
+		}
 	}
+
 	s:STATE_NORTH_ISLAND = {
 		region_state:JNKF = {
 			create_building = {
@@ -207,7 +232,24 @@ BUILDINGS = {
 				activate_production_methods = { "pm_early_trains" "pm_wooden_passenger_carriages" }
 			}
 		}
+		region_state:HITO = {
+			create_building = {
+				building = "building_railway"
+				add_ownership = { country = { country = "c:HITO" levels = 1 } }
+				reserves = 1
+				activate_production_methods = { "pm_early_trains" "pm_wooden_passenger_carriages" }
+			}
+		}
+		region_state:MKAI = {
+			create_building = {
+				building = "building_railway"
+				add_ownership = { country = { country = "c:MKAI" levels = 1 } }
+				reserves = 1
+				activate_production_methods = { "pm_early_trains" "pm_wooden_passenger_carriages" }
+			}
+		}
 	}
+
 	s:STATE_SOLOMON_ISLANDS = {
 		region_state:TENG = {
 			create_building = {
@@ -317,6 +359,14 @@ BUILDINGS = {
 				activate_production_methods = { "pm_early_trains" "pm_wooden_passenger_carriages" }
 			}
 		}
+		region_state:KZNH = {
+			create_building = {
+				building = "building_railway"
+				add_ownership = { country = { country = "c:KZNH" levels = 1 } }
+				reserves = 1
+				activate_production_methods = { "pm_early_trains" "pm_wooden_passenger_carriages" }
+			}
+		}
 	}
 	s:STATE_WESTERN_AUSTRALIA = {
 		region_state:BYKR = {
@@ -367,5 +417,14 @@ BUILDINGS = {
 				activate_production_methods = { "pm_early_trains" "pm_wooden_passenger_carriages" }
 			}
 		}
+		region_state:CHRD = {
+			create_building = {
+				building = "building_railway"
+				add_ownership = { country = { country = "c:CHRD" levels = 1 } }
+				reserves = 1
+				activate_production_methods = { "pm_early_trains" "pm_wooden_passenger_carriages" }
+			}
+		}
 	}
+
 }
