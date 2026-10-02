@@ -2,37 +2,37 @@
 
 统计当前模组历史配置中的全部幻想乡国家。数量按**建筑等级**计算；同一种建筑在不同国家地区的创建记录分别统计，不把等级当成独立工厂数量。
 
-共**24国、784级、359条建筑创建记录**。
+共**24国、828级、400条建筑创建记录**。
 
 自动生成的城市中心、自给农场、金融区/庄园、征兵中心，以及事件后续创建的建筑未计入。所有权里的等级是已有建筑的持有份额，不重复计成另一批金融区/庄园建筑。这是配置统计，实际游戏内全部建筑需要读开局存档确认。
 
 | 国家 | 农牧 | 采矿林渔 | 制造业 | 公共及基建 | 特色 | 军事 | 总等级 |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| 人间之里 | 63 | 6 | 24 | 7 | 0 | 3 | 103 |
-| 妖怪之山 | 6 | 23 | 15 | 8 | 1 | 5 | 58 |
-| 白玉楼 | 28 | 6 | 11 | 7 | 0 | 4 | 56 |
-| 魔界 | 16 | 9 | 14 | 8 | 0 | 4 | 51 |
-| 博丽 | 6 | 4 | 25 | 7 | 1 | 5 | 48 |
-| 永远亭 | 25 | 3 | 8 | 3 | 2 | 4 | 45 |
-| 红魔馆 | 10 | 10 | 13 | 5 | 0 | 5 | 43 |
-| 地灵殿 | 8 | 9 | 10 | 5 | 1 | 4 | 37 |
-| 天界 | 8 | 10 | 10 | 5 | 0 | 2 | 35 |
-| 守矢 | 19 | 5 | 3 | 2 | 1 | 4 | 34 |
-| 灵长园 | 9 | 7 | 9 | 3 | 1 | 3 | 32 |
-| 旧都 | 5 | 7 | 8 | 3 | 0 | 3 | 26 |
-| 彼岸 | 7 | 4 | 9 | 2 | 1 | 2 | 25 |
-| 太阳花田 | 8 | 0 | 6 | 3 | 5 | 1 | 23 |
-| 八云府 | 6 | 1 | 11 | 2 | 0 | 2 | 22 |
-| 魔法森林 | 3 | 5 | 7 | 2 | 2 | 2 | 21 |
-| 神灵庙 | 8 | 0 | 8 | 1 | 1 | 2 | 20 |
-| 后户之国 | 6 | 3 | 6 | 2 | 1 | 2 | 20 |
-| 赫卡提亚地狱 | 5 | 4 | 5 | 2 | 0 | 3 | 19 |
-| 月都 | 4 | 5 | 4 | 3 | 0 | 3 | 19 |
-| 命莲寺 | 10 | 1 | 2 | 1 | 3 | 2 | 19 |
-| 纯狐阵营 | 5 | 2 | 4 | 2 | 0 | 2 | 15 |
-| 冰之领地 | 1 | 1 | 1 | 2 | 1 | 1 | 7 |
-| 夜雀食堂 | 2 | 0 | 1 | 1 | 1 | 1 | 6 |
-| **总计** | 268 | 125 | 214 | 86 | 22 | 69 | **784** |
+| 人间之里 | 63 | 6 | 24 | 9 | 0 | 3 | 105 |
+| 妖怪之山 | 6 | 23 | 17 | 10 | 1 | 5 | 62 |
+| 白玉楼 | 28 | 6 | 11 | 8 | 0 | 4 | 57 |
+| 魔界 | 16 | 9 | 15 | 10 | 0 | 4 | 54 |
+| 博丽 | 6 | 4 | 25 | 8 | 1 | 5 | 49 |
+| 永远亭 | 25 | 3 | 8 | 5 | 2 | 4 | 47 |
+| 地灵殿 | 8 | 9 | 10 | 13 | 1 | 4 | 45 |
+| 红魔馆 | 10 | 10 | 13 | 7 | 0 | 5 | 45 |
+| 天界 | 8 | 10 | 10 | 10 | 0 | 2 | 40 |
+| 守矢 | 19 | 5 | 3 | 3 | 1 | 4 | 35 |
+| 灵长园 | 9 | 7 | 9 | 4 | 1 | 3 | 33 |
+| 旧都 | 5 | 7 | 8 | 4 | 0 | 3 | 27 |
+| 彼岸 | 7 | 4 | 9 | 3 | 1 | 2 | 26 |
+| 太阳花田 | 8 | 0 | 6 | 4 | 5 | 1 | 24 |
+| 魔法森林 | 3 | 5 | 7 | 4 | 2 | 2 | 23 |
+| 八云府 | 6 | 1 | 11 | 3 | 0 | 2 | 23 |
+| 神灵庙 | 8 | 0 | 8 | 2 | 1 | 2 | 21 |
+| 后户之国 | 6 | 3 | 6 | 3 | 1 | 2 | 21 |
+| 赫卡提亚地狱 | 5 | 4 | 5 | 3 | 0 | 3 | 20 |
+| 月都 | 4 | 5 | 4 | 4 | 0 | 3 | 20 |
+| 命莲寺 | 10 | 1 | 2 | 2 | 3 | 2 | 20 |
+| 纯狐阵营 | 5 | 2 | 4 | 3 | 0 | 2 | 16 |
+| 冰之领地 | 1 | 1 | 1 | 3 | 1 | 1 | 8 |
+| 夜雀食堂 | 2 | 0 | 1 | 2 | 1 | 1 | 7 |
+| **总计** | 268 | 125 | 217 | 127 | 22 | 69 | **828** |
 
 公共及基建包括行政、大学、建设部门、港口、铁路。特色包括植物园、宗教设施、居酒屋和两种特色电站。自动生成建筑仍未计入。
 
@@ -53,6 +53,7 @@
 | building_livestock_ranch | 13 |
 | building_logging_camp | 3 |
 | building_paper_mill | 1 |
+| building_railway | 2 |
 | building_sugar_plantation | 5 |
 | building_tea_plantation | 5 |
 | building_textile_mill | 6 |
@@ -75,9 +76,10 @@
 | building_iron_mine | 8 |
 | building_livestock_ranch | 4 |
 | building_logging_camp | 6 |
-| building_motor_industry | 1 |
+| building_motor_industry | 3 |
 | building_paper_mill | 1 |
 | building_port | 2 |
+| building_railway | 2 |
 | building_steel_mill | 5 |
 | building_textile_mill | 2 |
 | building_tooling_workshop | 3 |
@@ -99,6 +101,7 @@
 | building_logging_camp | 4 |
 | building_paper_mill | 1 |
 | building_port | 2 |
+| building_railway | 1 |
 | building_textile_mill | 3 |
 | building_tooling_workshop | 1 |
 | building_university | 1 |
@@ -119,9 +122,10 @@
 | building_livestock_ranch | 4 |
 | building_logging_camp | 6 |
 | building_maize_farm | 3 |
-| building_motor_industry | 1 |
+| building_motor_industry | 2 |
 | building_paper_mill | 3 |
 | building_port | 2 |
+| building_railway | 2 |
 | building_shipyard | 1 |
 | building_sugar_plantation | 6 |
 | building_textile_mill | 4 |
@@ -143,6 +147,7 @@
 | building_logging_camp | 3 |
 | building_paper_mill | 1 |
 | building_port | 2 |
+| building_railway | 1 |
 | building_religious_center | 1 |
 | building_shipyard | 4 |
 | building_textile_mill | 7 |
@@ -163,10 +168,34 @@
 | building_logging_camp | 3 |
 | building_opium_plantation | 2 |
 | building_port | 1 |
+| building_railway | 2 |
 | building_silk_plantation | 3 |
 | building_sugar_plantation | 5 |
 | building_tea_plantation | 8 |
 | building_textile_mill | 1 |
+| building_wheat_farm | 5 |
+
+### 地灵殿（CHRD）
+
+| 建筑代码 | 总等级 |
+|---|---:|
+| building_barrack | 4 |
+| building_chemical_plant | 1 |
+| building_construction_sector | 1 |
+| building_food_industry | 3 |
+| building_government_administration | 3 |
+| building_iron_mine | 3 |
+| building_lead_mine | 1 |
+| building_livestock_ranch | 3 |
+| building_logging_camp | 3 |
+| building_motor_industry | 1 |
+| building_paper_mill | 1 |
+| building_port | 1 |
+| building_railway | 8 |
+| building_steel_mill | 2 |
+| building_sulfur_mine | 2 |
+| building_tooling_workshop | 2 |
+| building_tot_chireiden_fusion | 1 |
 | building_wheat_farm | 5 |
 
 ### 红魔馆（RDMK）
@@ -186,32 +215,11 @@
 | building_logging_camp | 6 |
 | building_opium_plantation | 1 |
 | building_port | 2 |
+| building_railway | 2 |
 | building_shipyard | 3 |
 | building_textile_mill | 3 |
 | building_vineyard | 4 |
 | building_wheat_farm | 2 |
-
-### 地灵殿（CHRD）
-
-| 建筑代码 | 总等级 |
-|---|---:|
-| building_barrack | 4 |
-| building_chemical_plant | 1 |
-| building_construction_sector | 1 |
-| building_food_industry | 3 |
-| building_government_administration | 3 |
-| building_iron_mine | 3 |
-| building_lead_mine | 1 |
-| building_livestock_ranch | 3 |
-| building_logging_camp | 3 |
-| building_motor_industry | 1 |
-| building_paper_mill | 1 |
-| building_port | 1 |
-| building_steel_mill | 2 |
-| building_sulfur_mine | 2 |
-| building_tooling_workshop | 2 |
-| building_tot_chireiden_fusion | 1 |
-| building_wheat_farm | 5 |
 
 ### 天界（TENG）
 
@@ -223,6 +231,7 @@
 | building_food_industry | 10 |
 | building_lead_mine | 2 |
 | building_port | 5 |
+| building_railway | 5 |
 | building_rice_farm | 4 |
 
 ### 守矢（MRYA）
@@ -239,6 +248,7 @@
 | building_logging_camp | 2 |
 | building_paper_mill | 1 |
 | building_port | 1 |
+| building_railway | 1 |
 | building_religious_center | 1 |
 | building_sugar_plantation | 5 |
 | building_tea_plantation | 3 |
@@ -261,6 +271,7 @@
 | building_livestock_ranch | 2 |
 | building_logging_camp | 3 |
 | building_port | 1 |
+| building_railway | 1 |
 | building_steel_mill | 2 |
 | building_tooling_workshop | 1 |
 | building_university | 1 |
@@ -279,6 +290,7 @@
 | building_livestock_ranch | 1 |
 | building_logging_camp | 2 |
 | building_port | 1 |
+| building_railway | 1 |
 | building_steel_mill | 3 |
 | building_sulfur_mine | 3 |
 | building_textile_mill | 1 |
@@ -299,6 +311,7 @@
 | building_logging_camp | 2 |
 | building_paper_mill | 2 |
 | building_port | 1 |
+| building_railway | 1 |
 | building_religious_center | 1 |
 | building_textile_mill | 2 |
 | building_vineyard | 2 |
@@ -316,25 +329,8 @@
 | building_government_administration | 1 |
 | building_livestock_ranch | 1 |
 | building_port | 2 |
+| building_railway | 1 |
 | building_vineyard | 4 |
-| building_wheat_farm | 3 |
-
-### 八云府（YKMF）
-
-| 建筑代码 | 总等级 |
-|---|---:|
-| building_barrack | 2 |
-| building_food_industry | 3 |
-| building_glassworks | 3 |
-| building_government_administration | 1 |
-| building_livestock_ranch | 1 |
-| building_logging_camp | 1 |
-| building_paper_mill | 1 |
-| building_port | 1 |
-| building_silk_plantation | 1 |
-| building_textile_mill | 3 |
-| building_tooling_workshop | 1 |
-| building_vineyard | 1 |
 | building_wheat_farm | 3 |
 
 ### 魔法森林（MFSR）
@@ -348,8 +344,28 @@
 | building_livestock_ranch | 1 |
 | building_logging_camp | 5 |
 | building_paper_mill | 4 |
+| building_railway | 2 |
 | building_tooling_workshop | 1 |
 | building_wheat_farm | 2 |
+
+### 八云府（YKMF）
+
+| 建筑代码 | 总等级 |
+|---|---:|
+| building_barrack | 2 |
+| building_food_industry | 3 |
+| building_glassworks | 3 |
+| building_government_administration | 1 |
+| building_livestock_ranch | 1 |
+| building_logging_camp | 1 |
+| building_paper_mill | 1 |
+| building_port | 1 |
+| building_railway | 1 |
+| building_silk_plantation | 1 |
+| building_textile_mill | 3 |
+| building_tooling_workshop | 1 |
+| building_vineyard | 1 |
+| building_wheat_farm | 3 |
 
 ### 神灵庙（SHRM）
 
@@ -361,6 +377,7 @@
 | building_government_administration | 1 |
 | building_livestock_ranch | 1 |
 | building_paper_mill | 3 |
+| building_railway | 1 |
 | building_religious_center | 1 |
 | building_vineyard | 2 |
 | building_wheat_farm | 5 |
@@ -379,6 +396,7 @@
 | building_logging_camp | 3 |
 | building_paper_mill | 2 |
 | building_port | 1 |
+| building_railway | 1 |
 | building_textile_mill | 1 |
 | building_tooling_workshop | 1 |
 | building_vineyard | 1 |
@@ -396,6 +414,7 @@
 | building_logging_camp | 3 |
 | building_paper_mill | 1 |
 | building_port | 1 |
+| building_railway | 1 |
 | building_textile_mill | 1 |
 | building_tooling_workshop | 1 |
 | building_wheat_farm | 3 |
@@ -413,6 +432,7 @@
 | building_logging_camp | 3 |
 | building_paper_mill | 2 |
 | building_port | 1 |
+| building_railway | 1 |
 | building_tooling_workshop | 1 |
 | building_university | 1 |
 | building_wheat_farm | 2 |
@@ -428,6 +448,7 @@
 | building_government_administration | 1 |
 | building_livestock_ranch | 3 |
 | building_logging_camp | 1 |
+| building_railway | 1 |
 | building_religious_center | 1 |
 | building_wheat_farm | 6 |
 
@@ -443,6 +464,7 @@
 | building_logging_camp | 2 |
 | building_paper_mill | 1 |
 | building_port | 1 |
+| building_railway | 1 |
 | building_tooling_workshop | 1 |
 | building_wheat_farm | 3 |
 
@@ -457,6 +479,7 @@
 | building_government_administration | 1 |
 | building_livestock_ranch | 1 |
 | building_port | 1 |
+| building_railway | 1 |
 
 ### 夜雀食堂（YSSK）
 
@@ -466,5 +489,6 @@
 | building_food_industry | 1 |
 | building_government_administration | 1 |
 | building_izakaya | 1 |
+| building_railway | 1 |
 | building_vineyard | 1 |
 | building_wheat_farm | 1 |
