@@ -1,4 +1,4 @@
-﻿BUILDINGS={
+BUILDINGS={
 	s:STATE_LOMBARDY={
 		region_state:GBDP={
 			create_building={
@@ -242,17 +242,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_bakery" "pm_disabled_canning"  "pm_manual_dough_processing" "pm_pot_stills" }
-			}
-			create_building={
-				building="building_stage"
-				add_ownership={
-					country={
-						country="c:STLI"
-						levels=3
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_stage_operation_public" "pm_stage_scale_small" "pm_stage_merchandising_none" "pm_stage_media_none" }
 			}
 			create_building={
 				building="building_university"
@@ -791,16 +780,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts"  }
-			}
-			create_building={
-				building="building_stage"
-				add_ownership={
-					country={
-						country="c:HTT"
-						levels=2
-					}
-				}
-				reserves=1
 			}
 			create_building={
 				building="building_wheat_farm"
@@ -1842,17 +1821,6 @@
 				activate_production_methods={ "pm_steam_engines" "pm_automation_disabled" }
 			}
 			create_building={
-				building="building_stage"
-				add_ownership={
-					country={
-						country="c:GBDP"
-						levels=2
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_stage_operation_public" "pm_stage_scale_small" "pm_stage_merchandising_none" "pm_stage_media_none" }
-			}
-			create_building={
 				building="building_textile_mill"
 				add_ownership={
 					building={
@@ -1964,32 +1932,6 @@
 				activate_production_methods={ "pm_simple_sailor_recruitment" }
 			}
 			create_building={
-				building="building_musical_instrument"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:GBDP"
-						levels=5
-						region="STATE_VENETIA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_musical_instrument_main_wood" "pm_automation_disabled" }
-			}
-			create_building={
-				building="building_publisher"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:GBDP"
-						levels=3
-						region="STATE_VENETIA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_publisher_main_general_wood" "pm_publisher_comprehensive_publishing" }
-			}
-			create_building={
 				building="building_sulfur_mine"
 				add_ownership={
 					building={
@@ -2027,45 +1969,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_bakery" "pm_disabled_canning" "pm_manual_dough_processing" }
-			}
-			create_building={
-				building="building_entertainment_press"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:GBDP"
-						levels=2
-						region="STATE_VENETIA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_ent_press_main_manga" "pm_ent_press_distribution_local" "pm_automation_disabled" }
-			}
-			create_building={
-				building="building_game"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:GBDP"
-						levels=2
-						region="STATE_VENETIA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_game_traditional_tabletop" "pm_game_modern_null" "pm_game_business_null" "pm_game_operation_base" }
-			}
-			create_building={
-				building="building_goods"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:GBDP"
-						levels=2
-						region="STATE_VENETIA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_goods_doll_doll" "pm_goods_jewelry_badge" "pm_goods_garage_lego" "pm_goods_print_seal" "pm_goods_ip_home" "pm_goods_selling_large" }
 			}
 			create_building={
 				building="building_logging_camp"
@@ -4750,16 +4653,6 @@
 				activate_production_methods={ "pm_bakery" "pm_disabled_canning" "pm_manual_dough_processing" "pm_pot_stills" }
 			}
 			create_building={
-				building="building_stage"
-				add_ownership={
-					country={
-						country="c:HTT"
-						levels=5
-					}
-				}
-				reserves=1
-			}
-			create_building={
 				building="building_logging_camp"
 				add_ownership={
 					country={
@@ -5319,19 +5212,6 @@
 				activate_production_methods={ "pm_forest_glass" "pm_manual_glassblowing" "pm_ceramics" }
 			}
 			create_building={
-				building="building_publisher"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:AQO"
-						levels=3
-						region="STATE_DALMATIA"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_publisher_main_general_wood" "pm_publisher_comprehensive_publishing" }
-			}
-			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
@@ -5378,28 +5258,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding" }
-			}
-			create_building={
-				building="building_stage"
-				add_ownership={
-					country={
-						country="c:AQO"
-						levels=1
-					}
-				}
-				reserves=1
-			}
-			create_building={
-				building="building_aquarium"
-				add_ownership={
-					company={
-						type=tot_company_aqours_uranohoshi
-						country="c:AQO"
-						levels=5
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_aquarium_ground_tank" "pm_aquarium_type_freshwater" "pm_aquarium_program_feeding" "pm_aquarium_program_guide" }
 			}
 		}
 	}

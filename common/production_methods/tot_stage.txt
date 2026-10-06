@@ -8,7 +8,7 @@ pm_stage_operation_public = {
 		}
 		workforce_scaled = {
 			goods_input_paper_add = 15
-			goods_output_performance_add = 5
+			goods_output_performance_add = 10
 		}
 	}
 }
@@ -24,7 +24,7 @@ pm_stage_operation_ticketed = {
 		workforce_scaled = {
 			goods_input_paper_add = 20
 			goods_input_services_add = 5
-			goods_output_performance_add = 10
+			goods_output_performance_add = 15
 		}
 	}
 }
@@ -32,7 +32,7 @@ pm_stage_operation_ticketed = {
 pm_stage_operation_hospitality = {
 	texture = "gfx/interface/icons/production_method_icons/pm_stage_operation_hospitality.dds"
 	unlocking_technologies = {
-		modern_sewerage
+		tot_modern_services
 	}
 	building_modifiers = {
 		level_scaled = {
@@ -46,7 +46,7 @@ pm_stage_operation_hospitality = {
 			goods_input_services_add = 10
 			goods_input_luxury_foods_add = 5
 			goods_input_luxury_drinks_add = 5
-			goods_output_performance_add = 20
+			goods_output_performance_add = 25
 		}
 	}
 }
@@ -54,7 +54,7 @@ pm_stage_operation_hospitality = {
 pm_stage_operation_festival = {
 	texture = "gfx/interface/icons/production_method_icons/pm_stage_operation_festival.dds"
 	unlocking_technologies = {
-		steel_frame_buildings
+		tot_organized_leisure
 	}
 	building_modifiers = {
 		level_scaled = {
@@ -70,7 +70,7 @@ pm_stage_operation_festival = {
 			goods_input_luxury_foods_add = 10
 			goods_input_luxury_drinks_add = 10
 			goods_input_luxury_furniture_add = 5
-			goods_output_performance_add = 35
+			goods_output_performance_add = 45
 		}
 	}
 }
@@ -149,7 +149,7 @@ pm_stage_scale_large = {
 			goods_input_furniture_add = 15
 			goods_input_musical_instrument_add = 15
 			goods_input_electricity_add = 20
-			goods_output_performance_add = 45
+			goods_output_performance_add = 50
 		}
 	}
 }

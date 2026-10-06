@@ -43,6 +43,8 @@ fra.1 = { #女皇对决
 			name = modifier_fra_tearmoon_compromise
 			years = 20
 		}
+		# 法国新日志暂时禁用；保留事件本身与日志定义供日后恢复。
+		if = { limit = { always = no }
 		add_journal_entry = {
 			type = je_fra_queen_pk
 		}
@@ -63,6 +65,7 @@ fra.1 = { #女皇对决
 		#}
 		add_journal_entry = {
 			type = je_fra_queen_pk_court
+		}
 		}
 		#add_journal_entry = {
 		#	type = je_fra_queen_pk_military

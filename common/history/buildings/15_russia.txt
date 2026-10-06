@@ -1,4 +1,4 @@
-﻿BUILDINGS={
+BUILDINGS={
 	s:STATE_TALINN={
 		region_state:HSXY={
 			create_building={
@@ -942,16 +942,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled"  }
-			}
-			create_building={
-				building="building_stage"
-				add_ownership={
-					country={
-						country="c:UKR"
-						levels=1
-					}
-				}
-				reserves=1
 			}
 			create_building={
 				building="building_textile_mill"

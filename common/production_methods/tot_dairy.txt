@@ -1,0 +1,43 @@
+pm_tot_dairy_traditional = {
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tea_milk.dds"
+	is_default = yes
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_grain_add = 2
+			goods_output_milk_add = 4
+		}
+	}
+}
+
+pm_tot_dairy_mechanized = {
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tea_milk.dds"
+	unlocking_technologies = { mechanized_workshops }
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_grain_add = 3
+			goods_output_milk_add = 8
+		}
+	}
+}
+
+pm_tot_dairy_fresh = {
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tea_milk.dds"
+	unlocking_technologies = { pasteurization }
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_grain_add = 7
+			goods_output_milk_add = 15
+		}
+	}
+}
+
+pm_tot_dairy_refrigerated = {
+	texture = "gfx/interface/icons/production_method_icons/pm_kissaten_tea_milk.dds"
+	unlocking_technologies = { flash_freezing }
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_grain_add = 9
+			goods_output_milk_add = 20
+		}
+	}
+}

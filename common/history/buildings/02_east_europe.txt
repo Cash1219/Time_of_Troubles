@@ -1,4 +1,4 @@
-﻿BUILDINGS={
+BUILDINGS={
 	s:STATE_MAZOVIA={
 		region_state:POL={
 			create_building={
@@ -813,26 +813,6 @@
 				activate_production_methods={ "pm_scholastic_education" "pm_religious_academia" }
 			}
 			create_building={
-				building="building_zoo"
-				add_ownership={
-					country={
-						country="c:MUS"
-						levels=2
-					}
-				}
-				reserves=1
-			}
-			create_building={
-				building="building_kissaten"
-				add_ownership={
-					country={
-						country="c:MUS"
-						levels=2
-					}
-				}
-				reserves=1
-			}
-			create_building={
 				building="building_food_industry"
 				add_ownership={
 					country={
@@ -988,16 +968,6 @@
 					country={
 						country="c:MUS"
 						levels=60
-					}
-				}
-				reserves=1
-			}
-			create_building={
-				building="building_stage"
-				add_ownership={
-					country={
-						country="c:MUS"
-						levels=1
 					}
 				}
 				reserves=1
@@ -1375,29 +1345,6 @@
 				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" }
 			}
 			create_building={
-				building="building_club"
-				add_ownership={
-					country={
-						country="c:NJS"
-						levels=5
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_club_activity_community" "pm_club_operation_member_run" }
-			}
-			create_building={
-				building="building_musical_instrument"
-				add_ownership={
-					company={
-						type=tot_company_njs_club
-						country="c:NJS"
-						levels=5
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_musical_instrument_main_wood" "pm_automation_disabled" }
-			}
-			create_building={
 				building="building_logging_camp"
 				add_ownership={
 					country={
@@ -1407,17 +1354,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
-			}
-			create_building={
-				building="building_publisher"
-				add_ownership={
-					country={
-						country="c:NJS"
-						levels=3
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_publisher_main_general_wood" "pm_publisher_comprehensive_publishing" }
 			}
 			create_building={
 				building="building_livestock_ranch"
@@ -1851,17 +1787,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_picks_and_shovels_building_sulfur_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts"  }
-			}
-			create_building={
-				building="building_stage"
-				add_ownership={
-					company={
-						type=tot_company_rom_togenashi_togeari
-						country="c:ROM"
-						levels=5
-					}
-				}
-				reserves=1
 			}
 			create_building={
 				building="building_livestock_ranch"

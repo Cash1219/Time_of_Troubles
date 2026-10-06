@@ -7,6 +7,7 @@
 	group = je_group_fra
 	
 	possible = {
+		always = no # temporarily disable the France journal line
 		has_law = law_type:law_monarchy 
 	}
 	
@@ -49,6 +50,7 @@ je_fra_queen_pk_food = { #粮食对决
 		modifier_fra_high_grain_prices
 	}
 	possible = {
+		always = no # temporarily disable the France journal line
 		has_journal_entry = je_fra_queen_pk
 	}
 	complete = {
@@ -71,6 +73,7 @@ je_fra_queen_pk_finance = { #财政对决
 		modifier_fra_extravagant_lifestyle
 	}
 	possible = {
+		always = no # temporarily disable the France journal line
 		has_journal_entry = je_fra_queen_pk
 	}
 	complete = {
@@ -110,6 +113,7 @@ je_fra_queen_pk_education = { #教育对决
 		}
 	}
 	possible = {
+		always = no # temporarily disable the France journal line
 		has_journal_entry = je_fra_queen_pk
 	}
 	status_desc = {
@@ -188,6 +192,7 @@ je_fra_queen_pk_medical = { #医疗对决
 		modifier_fra_cholera_pandemic
 	}
 	possible = {
+		always = no # temporarily disable the France journal line
 		has_journal_entry = je_fra_queen_pk
 	}
 	complete = {
@@ -210,6 +215,7 @@ je_fra_queen_pk_distribution = { #分配对决
 		modifier_fra_les_miserables
 	}
 	possible = {
+		always = no # temporarily disable the France journal line
 		has_journal_entry = je_fra_queen_pk
 	}
 	complete = {
@@ -232,6 +238,7 @@ je_fra_queen_pk_court = { #宫廷革新
 		modifier_fra_les_miserables
 	}
 	possible = {
+		always = no # temporarily disable the France journal line
 		has_journal_entry = je_fra_queen_pk
 	}
 	complete = {
@@ -246,6 +253,7 @@ je_fra_godess_election = { #圣女大选
 	icon = "gfx/interface/progressbar/queen_pk_icon.dds"
 	
 	possible = {
+		always = no # temporarily disable the France journal line
 		
 	}
 	complete = {
@@ -260,6 +268,7 @@ je_fra_coffee_politics = { #咖啡政治
 	icon = "gfx/interface/progressbar/queen_pk_icon.dds"
 	
 	possible = {
+		always = no # temporarily disable the France journal line
 		
 	}
 	complete = {
@@ -272,6 +281,7 @@ je_fra_coffee_politics = { #咖啡政治
 je_fra_shadow_guillotine = { #断头台的阴影
 	icon = "gfx/interface/progressbar/queen_pk_icon.dds"
 	group = je_group_fra
+	possible = { always = no } # 暂时禁用法国新日志
 	immediate = {
 		set_variable = { name = je_fra_queen_pk_republican_discontent value = 0 }
 	}

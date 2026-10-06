@@ -1,0 +1,768 @@
+# Generated from config/building_start_config.csv. Edit the CSV, then run:
+# python tools/building_history_config.py generate
+BUILDINGS = {
+	s:STATE_AUSTRIA = {
+		region_state:IDMS = {
+			create_building = {
+				building = "building_stage"
+				add_ownership = {
+					country = {
+						country = "c:IDMS"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_food_basic" "pm_band_entertainment_daily" "pm_band_equipment_standard" }
+				add_ownership = {
+					country = {
+						country = "c:IDMS"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_PIEDMONT = {
+		region_state:STLI = {
+			create_building = {
+				building = "building_stage"
+				activate_production_methods = { "pm_stage_operation_public" "pm_stage_scale_small" "pm_stage_merchandising_none" "pm_stage_media_none" }
+				add_ownership = {
+					country = {
+						country = "c:STLI"
+						levels = 3
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_CAMPANIA = {
+		region_state:RITA = {
+			create_building = {
+				building = "building_stage"
+				add_ownership = {
+					country = {
+						country = "c:HTT"
+						levels = 2
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_VENETIA = {
+		region_state:GBDP = {
+			create_building = {
+				building = "building_stage"
+				activate_production_methods = { "pm_stage_operation_public" "pm_stage_scale_small" "pm_stage_merchandising_none" "pm_stage_media_none" }
+				add_ownership = {
+					country = {
+						country = "c:GBDP"
+						levels = 2
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_musical_instrument"
+				activate_production_methods = { "pm_musical_instrument_main_wood" "pm_automation_disabled" }
+				add_ownership = {
+					building = {
+						type = "building_financial_district"
+						country = "c:GBDP"
+						levels = 5
+						region = "STATE_VENETIA"
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_publisher"
+				activate_production_methods = { "pm_publisher_main_general_wood" "pm_publisher_comprehensive_publishing" }
+				add_ownership = {
+					building = {
+						type = "building_financial_district"
+						country = "c:GBDP"
+						levels = 3
+						region = "STATE_VENETIA"
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_entertainment_press"
+				activate_production_methods = { "pm_ent_press_main_manga" "pm_ent_press_distribution_local" "pm_automation_disabled" }
+				add_ownership = {
+					building = {
+						type = "building_financial_district"
+						country = "c:GBDP"
+						levels = 2
+						region = "STATE_VENETIA"
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_game"
+				activate_production_methods = { "pm_game_traditional_tabletop" "pm_game_modern_null" "pm_game_business_null" "pm_game_operation_base" }
+				add_ownership = {
+					building = {
+						type = "building_financial_district"
+						country = "c:GBDP"
+						levels = 2
+						region = "STATE_VENETIA"
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_goods"
+				activate_production_methods = { "pm_goods_doll_doll" "pm_goods_jewelry_badge" "pm_goods_garage_lego" "pm_goods_print_seal" "pm_goods_selling_custom" }
+				add_ownership = {
+					building = {
+						type = "building_financial_district"
+						country = "c:GBDP"
+						levels = 2
+						region = "STATE_VENETIA"
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_food_basic" "pm_band_entertainment_daily" "pm_band_equipment_standard" }
+				add_ownership = {
+					country = {
+						country = "c:GBDP"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_club"
+				activate_production_methods = { "pm_club_activity_community" "pm_club_operation_member_run" }
+				add_ownership = {
+					country = {
+						country = "c:GBDP"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_EASTERN_THRACE = {
+		region_state:HTT = {
+			create_building = {
+				building = "building_stage"
+				add_ownership = {
+					country = {
+						country = "c:HTT"
+						levels = 5
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_food_basic" "pm_band_entertainment_daily" "pm_band_equipment_standard" }
+				add_ownership = {
+					country = {
+						country = "c:HTT"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_DALMATIA = {
+		region_state:AQO = {
+			create_building = {
+				building = "building_publisher"
+				activate_production_methods = { "pm_publisher_main_general_wood" "pm_publisher_comprehensive_publishing" }
+				add_ownership = {
+					building = {
+						type = "building_financial_district"
+						country = "c:AQO"
+						levels = 3
+						region = "STATE_DALMATIA"
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_stage"
+				add_ownership = {
+					country = {
+						country = "c:AQO"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_aquarium"
+				activate_production_methods = { "pm_aquarium_ground_tank" "pm_aquarium_type_freshwater" "pm_aquarium_program_feeding" "pm_aquarium_program_guide" }
+				add_ownership = {
+					company = {
+						type = "tot_company_aqours_uranohoshi"
+						country = "c:AQO"
+						levels = 5
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_CENTRAL_HUNGARY = {
+		region_state:MUS = {
+			create_building = {
+				building = "building_zoo"
+				add_ownership = {
+					country = {
+						country = "c:MUS"
+						levels = 2
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_kissaten"
+				add_ownership = {
+					country = {
+						country = "c:MUS"
+						levels = 2
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_stage"
+				add_ownership = {
+					country = {
+						country = "c:MUS"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_SLOVAKIA = {
+		region_state:NJS = {
+			create_building = {
+				building = "building_club"
+				activate_production_methods = { "pm_club_activity_community" "pm_club_operation_member_run" }
+				add_ownership = {
+					country = {
+						country = "c:NJS"
+						levels = 5
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_musical_instrument"
+				activate_production_methods = { "pm_musical_instrument_main_wood" "pm_automation_disabled" }
+				add_ownership = {
+					company = {
+						type = "tot_company_njs_club"
+						country = "c:NJS"
+						levels = 5
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_publisher"
+				activate_production_methods = { "pm_publisher_main_general_wood" "pm_publisher_comprehensive_publishing" }
+				add_ownership = {
+					country = {
+						country = "c:NJS"
+						levels = 3
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_WALLACHIA = {
+		region_state:ROM = {
+			create_building = {
+				building = "building_stage"
+				add_ownership = {
+					company = {
+						type = "tot_company_rom_togenashi_togeari"
+						country = "c:ROM"
+						levels = 5
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_food_basic" "pm_band_entertainment_daily" "pm_band_equipment_standard" }
+				add_ownership = {
+					country = {
+						country = "c:ROM"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_OROMIA = {
+		region_state:AFTG = {
+			create_building = {
+				building = "building_stage"
+				add_ownership = {
+					country = {
+						country = "c:AFTG"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_kissaten"
+				activate_production_methods = { "pm_kissaten_coffee_coffee" "pm_kissaten_tea_null" "pm_kissaten_sweet_null" "pm_kissaten_food_null" "pm_kissaten_server_waitress" "pm_kissaten_tool_table" }
+				add_ownership = {
+					company = {
+						type = "tot_company_aftg_hazawa_cafe"
+						country = "c:AFTG"
+						levels = 5
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_DISTRICT_OF_COLUMBIA = {
+		region_state:HHWO = {
+			create_building = {
+				building = "building_stage"
+				add_ownership = {
+					country = {
+						country = "c:HHWO"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_food_basic" "pm_band_entertainment_daily" "pm_band_equipment_standard" }
+				add_ownership = {
+					country = {
+						country = "c:HHWO"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_NEW_YORK = {
+		region_state:HHWO = {
+			create_building = {
+				building = "building_stage"
+				activate_production_methods = { "pm_stage_operation_public" "pm_stage_scale_small" "pm_stage_merchandising_none" "pm_stage_media_none" }
+				add_ownership = {
+					company = {
+						type = "tot_company_hhwo_tsurumaki_group"
+						country = "c:HHWO"
+						levels = 5
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_ANKARA = {
+		region_state:AVMJ = {
+			create_building = {
+				building = "building_stage"
+				activate_production_methods = { "pm_stage_operation_public" "pm_stage_scale_small" "pm_stage_merchandising_none" "pm_stage_media_none" }
+				add_ownership = {
+					company = {
+						type = "tot_company_avemujica_agency"
+						country = "c:AVMJ"
+						levels = 5
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_entertainment_press"
+				activate_production_methods = { "pm_ent_press_main_manga" "pm_ent_press_distribution_local" "pm_automation_disabled" }
+				add_ownership = {
+					company = {
+						type = "tot_company_avemujica_agency"
+						country = "c:AVMJ"
+						levels = 5
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_musical_instrument"
+				activate_production_methods = { "pm_musical_instrument_main_wood" "pm_automation_disabled" }
+				add_ownership = {
+					country = {
+						country = "c:HTT"
+						levels = 5
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_goods"
+				activate_production_methods = { "pm_goods_doll_doll" "pm_goods_jewelry_badge" "pm_goods_garage_lego" "pm_goods_print_seal" "pm_goods_selling_custom" }
+				add_ownership = {
+					country = {
+						country = "c:AVMJ"
+						levels = 5
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_food_basic" "pm_band_entertainment_daily" "pm_band_equipment_standard" }
+				add_ownership = {
+					country = {
+						country = "c:AVMJ"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_KIEV = {
+		region_state:UKR = {
+			create_building = {
+				building = "building_stage"
+				add_ownership = {
+					country = {
+						country = "c:UKR"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_food_basic" "pm_band_entertainment_daily" "pm_band_equipment_standard" }
+				add_ownership = {
+					country = {
+						country = "c:UKR"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_LOMBARDY = {
+		region_state:GBDP = {
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_food_basic" "pm_band_entertainment_daily" "pm_band_equipment_standard" }
+				add_ownership = {
+					country = {
+						country = "c:GBDP"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_ISTRIA = {
+		region_state:GBDP = {
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_food_basic" "pm_band_entertainment_daily" "pm_band_equipment_standard" }
+				add_ownership = {
+					country = {
+						country = "c:GBDP"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_ALEPPO = {
+		region_state:MYG = {
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_food_basic" "pm_band_entertainment_daily" "pm_band_equipment_standard" }
+				add_ownership = {
+					country = {
+						country = "c:MYG"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_SOUTHERN_TRANSYLVANIA = {
+		region_state:ROM = {
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_food_basic" "pm_band_entertainment_daily" "pm_band_equipment_standard" }
+				add_ownership = {
+					country = {
+						country = "c:ROM"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_GONDER = {
+		region_state:AFTG = {
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_food_basic" "pm_band_entertainment_daily" "pm_band_equipment_standard" }
+				add_ownership = {
+					country = {
+						country = "c:AFTG"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_PENNSYLVANIA = {
+		region_state:HHWO = {
+			create_building = {
+				building = "building_band_headquarter"
+				activate_production_methods = { "pm_band_food_basic" "pm_band_entertainment_daily" "pm_band_equipment_standard" }
+				add_ownership = {
+					country = {
+						country = "c:HHWO"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_NEW_SOUTH_WALES = {
+		region_state:SHRM = {
+			create_building = {
+				building = "building_religious_center"
+				activate_production_methods = { "pm_religious_center_daily_assembly" "pm_religious_center_common_rites" "pm_religious_center_traditional_facilities" }
+				add_ownership = {
+					country = {
+						country = "c:SHRM"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+		region_state:MFSR = {
+			create_building = {
+				building = "building_botanical_garden"
+				activate_production_methods = { "pm_botanical_garden_nursery" "pm_botanical_garden_fruit_trees_none" }
+				add_ownership = {
+					country = {
+						country = "c:MFSR"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+		region_state:HAKR = {
+			create_building = {
+				building = "building_religious_center"
+				activate_production_methods = { "pm_religious_center_daily_assembly" "pm_religious_center_common_rites" "pm_religious_center_traditional_facilities" }
+				add_ownership = {
+					country = {
+						country = "c:HAKR"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+		region_state:MYRN = {
+			create_building = {
+				building = "building_botanical_garden"
+				activate_production_methods = { "pm_botanical_garden_nursery" "pm_botanical_garden_fruit_trees_none" }
+				add_ownership = {
+					country = {
+						country = "c:MYRN"
+						levels = 2
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_religious_center"
+				activate_production_methods = { "pm_religious_center_daily_assembly" "pm_religious_center_common_rites" "pm_religious_center_traditional_facilities" }
+				add_ownership = {
+					country = {
+						country = "c:MYRN"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+		region_state:EITR = {
+			create_building = {
+				building = "building_botanical_garden"
+				activate_production_methods = { "pm_botanical_garden_nursery" "pm_botanical_garden_fruit_trees_none" }
+				add_ownership = {
+					country = {
+						country = "c:EITR"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+		region_state:YSSK = {
+			create_building = {
+				building = "building_izakaya"
+				activate_production_methods = { "pm_izakaya_hearth_drinks" "pm_izakaya_travelers_stew" "pm_izakaya_communal_tables" "pm_izakaya_brick_stoves" }
+				add_ownership = {
+					country = {
+						country = "c:YSSK"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_QUEENSLAND = {
+		region_state:MFSR = {
+			create_building = {
+				building = "building_botanical_garden"
+				activate_production_methods = { "pm_botanical_garden_nursery" "pm_botanical_garden_fruit_trees_none" }
+				add_ownership = {
+					country = {
+						country = "c:MFSR"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+		region_state:MRYA = {
+			create_building = {
+				building = "building_religious_center"
+				activate_production_methods = { "pm_religious_center_daily_assembly" "pm_religious_center_common_rites" "pm_religious_center_traditional_facilities" }
+				add_ownership = {
+					country = {
+						country = "c:MRYA"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_VICTORIA = {
+		region_state:EITR = {
+			create_building = {
+				building = "building_botanical_garden"
+				activate_production_methods = { "pm_botanical_garden_nursery" "pm_botanical_garden_fruit_trees_none" }
+				add_ownership = {
+					country = {
+						country = "c:EITR"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+		region_state:MIST = {
+			create_building = {
+				building = "building_botanical_garden"
+				activate_production_methods = { "pm_botanical_garden_nursery" "pm_botanical_garden_fruit_trees_none" }
+				add_ownership = {
+					country = {
+						country = "c:MIST"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_SOUTH_AUSTRALIA = {
+		region_state:KZNH = {
+			create_building = {
+				building = "building_botanical_garden"
+				activate_production_methods = { "pm_botanical_garden_nursery" "pm_botanical_garden_fruit_trees_none" }
+				add_ownership = {
+					country = {
+						country = "c:KZNH"
+						levels = 5
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+	s:STATE_WESTERN_AUSTRALIA = {
+		region_state:HIGN = {
+			create_building = {
+				building = "building_religious_center"
+				activate_production_methods = { "pm_religious_center_daily_assembly" "pm_religious_center_common_rites" "pm_religious_center_traditional_facilities" }
+				add_ownership = {
+					country = {
+						country = "c:HIGN"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+		region_state:RNGN = {
+			create_building = {
+				building = "building_botanical_garden"
+				activate_production_methods = { "pm_botanical_garden_nursery" "pm_botanical_garden_fruit_trees_none" }
+				add_ownership = {
+					country = {
+						country = "c:RNGN"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+		region_state:UKDO = {
+			create_building = {
+				building = "building_botanical_garden"
+				activate_production_methods = { "pm_botanical_garden_nursery" "pm_botanical_garden_fruit_trees_none" }
+				add_ownership = {
+					country = {
+						country = "c:UKDO"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+		}
+	}
+}

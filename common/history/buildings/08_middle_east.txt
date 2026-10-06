@@ -1,4 +1,4 @@
-﻿BUILDINGS={
+BUILDINGS={
 	s:STATE_NEJD={
 		region_state:NEJ={
 			create_building={
@@ -2458,52 +2458,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts"  }
-			}
-			create_building={
-				building="building_stage"
-				add_ownership={
-					company={
-						type=tot_company_avemujica_agency
-						country="c:AVMJ"
-						levels=5
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_stage_operation_public" "pm_stage_scale_small" "pm_stage_merchandising_none" "pm_stage_media_none" }
-			}
-			create_building={
-				building="building_entertainment_press"
-				add_ownership={
-					company={
-						type=tot_company_avemujica_agency
-						country="c:AVMJ"
-						levels=5
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_ent_press_main_manga" "pm_ent_press_distribution_local" "pm_automation_disabled" }
-			}
-			create_building={
-				building="building_musical_instrument"
-				add_ownership={
-					country={
-						country="c:HTT"
-						levels=5
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_musical_instrument_main_wood" "pm_automation_disabled" }
-			}
-			create_building={
-				building="building_goods"
-				add_ownership={
-					country={
-						country="c:AVMJ"
-						levels=5
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_goods_doll_doll" "pm_goods_jewelry_badge" "pm_goods_garage_lego" "pm_goods_print_seal" "pm_goods_ip_home" "pm_goods_selling_large" }
 			}
 			create_building={
 				building="building_food_industry"

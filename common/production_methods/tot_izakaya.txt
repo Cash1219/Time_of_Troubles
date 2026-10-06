@@ -16,12 +16,13 @@ pm_izakaya_hearth_drinks = {
 
 pm_izakaya_izakaya_banquet = {
 	texture = "gfx/interface/icons/production_method_icons/pm_izakaya_izakaya_banquet.dds"
+	unlocking_technologies = { distillation }
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_liquor_add = 20
 			goods_input_wine_add = 5
 			goods_input_fruit_add = 5
-			goods_output_luxury_drinks_add = 25
+			goods_output_luxury_drinks_add = 30
 		}
 		level_scaled = {
 			building_employment_laborers_add = 1200
@@ -57,10 +58,9 @@ pm_izakaya_travelers_stew = {
 	is_default = yes
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_groceries_add = 15
-			goods_input_meat_add = 10
-			goods_input_fish_add = 5
-			goods_output_luxury_foods_add = 20
+			goods_input_grain_add = 20
+			goods_input_meat_add = 15
+			goods_output_luxury_foods_add = 25
 		}
 		level_scaled = {
 			building_employment_laborers_add = 2200
@@ -72,12 +72,13 @@ pm_izakaya_travelers_stew = {
 
 pm_izakaya_izakaya_delicacies = {
 	texture = "gfx/interface/icons/production_method_icons/pm_izakaya_izakaya_delicacies.dds"
+	unlocking_technologies = { mechanized_workshops }
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_groceries_add = 15
-			goods_input_meat_add = 10
+			goods_input_grain_add = 30
+			goods_input_meat_add = 20
 			goods_input_fish_add = 10
-			goods_output_luxury_foods_add = 25
+			goods_output_luxury_foods_add = 40
 		}
 		level_scaled = {
 			building_employment_laborers_add = 2100
@@ -89,17 +90,13 @@ pm_izakaya_izakaya_delicacies = {
 
 pm_izakaya_hearth_banquet = {
 	texture = "gfx/interface/icons/production_method_icons/pm_izakaya_hearth_banquet.dds"
-	unlocking_technologies = {
-		urban_planning
-	}
+	unlocking_technologies = { tot_commercial_kitchens }
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_groceries_add = 20
-			goods_input_meat_add = 25
-			goods_input_fish_add = 15
-			goods_input_wood_add = 5
-			goods_input_coal_add = 5
-			goods_output_luxury_foods_add = 50
+			goods_input_grain_add = 45
+			goods_input_meat_add = 30
+			goods_input_fish_add = 20
+			goods_output_luxury_foods_add = 60
 		}
 		level_scaled = {
 			building_employment_laborers_add = 2000
@@ -123,10 +120,12 @@ pm_izakaya_communal_tables = {
 
 pm_izakaya_counter_longtables = {
 	texture = "gfx/interface/icons/production_method_icons/pm_izakaya_counter_longtables.dds"
+	unlocking_technologies = { urbanization }
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_furniture_add = 5
 			goods_input_clothes_add = 5
+			goods_output_experience_add = 15
 		}
 		unscaled = {
 			building_throughput_add = 0.05
@@ -141,14 +140,13 @@ pm_izakaya_counter_longtables = {
 
 pm_izakaya_patron_rooms = {
 	texture = "gfx/interface/icons/production_method_icons/pm_izakaya_patron_rooms.dds"
-	unlocking_technologies = {
-		urban_planning
-	}
+	unlocking_technologies = { tot_modern_services }
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_furniture_add = 5
 			goods_input_porcelain_add = 5
 			goods_input_luxury_furniture_add = 5
+			goods_output_experience_add = 30
 		}
 		unscaled = {
 			building_throughput_add = 0.15
@@ -164,17 +162,22 @@ pm_izakaya_patron_rooms = {
 pm_izakaya_brick_stoves = {
 	texture = "gfx/interface/icons/production_method_icons/pm_izakaya_brick_stoves.dds"
 	is_default = yes
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_wood_add = 5
+		}
+	}
 }
 
 pm_izakaya_iron_stoves_icehouse = {
 	texture = "gfx/interface/icons/production_method_icons/pm_izakaya_iron_stoves_icehouse.dds"
-	unlocking_technologies = {
-		atmospheric_engine
-	}
+	unlocking_technologies = { mechanical_tools }
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_tools_add = 5
 			goods_input_iron_add = 5
+			goods_input_coal_add = 5
+			goods_output_experience_add = 10
 		}
 		unscaled = {
 			building_goods_input_mult = -0.05
@@ -184,18 +187,17 @@ pm_izakaya_iron_stoves_icehouse = {
 
 pm_izakaya_electric_cold_kitchen = {
 	texture = "gfx/interface/icons/production_method_icons/pm_izakaya_electric_cold_kitchen.dds"
-	unlocking_technologies = {
-		electrical_generation
-	}
+	unlocking_technologies = { tot_commercial_kitchens }
 	required_input_goods = electricity
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_tools_add = 5
 			goods_input_steel_add = 5
 			goods_input_electricity_add = 5
+			goods_output_experience_add = 15
 		}
 		unscaled = {
-			building_goods_input_mult = -0.15
+			building_goods_input_mult = -0.20
 		}
 	}
 }

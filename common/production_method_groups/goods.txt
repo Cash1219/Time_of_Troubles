@@ -3,7 +3,6 @@ pmg_goods_doll = { #玩偶
 	texture = "gfx/interface/icons/production_method_icons/pmg_goods_doll.dds"	ai_selection = most_profitable
 
 	production_methods = {
-		pm_goods_doll_null #无
 		pm_goods_doll_doll #手工玩偶 +布料 +棉花
 		pm_goods_doll_custom #定制玩偶 +布料 +棉花
 		pm_goods_doll_pillow #抱枕 +布料 +棉花
@@ -14,7 +13,6 @@ pmg_goods_jewelry = { #饰品
 	texture = "gfx/interface/icons/production_method_icons/pmg_goods_jewelry.dds"	ai_selection = most_profitable
 
 	production_methods = {
-		pm_goods_jewelry_null #无
 		pm_goods_jewelry_badge #徽章
 		pm_goods_jewelry_pendant #挂件
 		pm_goods_jewelry_stand #立牌
@@ -25,7 +23,6 @@ pmg_goods_print = { #印染类
 	texture = "gfx/interface/icons/production_method_icons/pmg_goods_print.dds"	ai_selection = most_profitable
 
 	production_methods = {
-		pm_goods_print_null #无
 		pm_goods_print_seal #色纸 +纸 +染料
 		pm_goods_print_card #卡牌 +纸 +染料
 		pm_goods_print_post #海报 +纸 +染料
@@ -36,31 +33,20 @@ pmg_goods_garage = { #模型
 	texture = "gfx/interface/icons/production_method_icons/pmg_goods_garage.dds"	ai_selection = most_profitable
 
 	production_methods = {
-		pm_goods_garage_null #无
 		pm_goods_garage_lego #木制玩具
 		pm_goods_garage_military_model #军用模型
 		pm_goods_garage_gundam #高达
 		pm_goods_garage_motor #电动玩具
 	}
 }
-pmg_goods_ip = { #ip管理 都要额外雇人，buff不同
-	texture = "gfx/interface/icons/production_method_icons/pmg_goods_ip.dds"	ai_selection = most_profitable
-
-	production_methods = {
-		pm_goods_ip_null #无
-		pm_goods_ip_home #本国优先 +同化+皈依+本国工资？
-		pm_goods_ip_hot #热门优先 +商品竞争力
-		pm_goods_ip_random #无差别上架 +产出
-	}
-}
-pmg_goods_selling = { #销售方式 
+pmg_goods_selling = { #经营方式
 	texture = "gfx/interface/icons/production_method_icons/pmg_goods_selling.dds"	ai_selection = most_profitable
 
 	production_methods = {
-		pm_goods_selling_null #无
-		pm_goods_selling_lotto #抽奖模式 -产出 +商品竞争力
-		pm_goods_selling_large #大量销售 +产出 -商品竞争力
-		pm_goods_selling_hunger_marketing #饥饿营销 -产出 +商品竞争力
+		pm_goods_selling_custom #小众定制
+		pm_goods_selling_exhibition #展会摊位
+		pm_goods_selling_specialty #专卖店铺
+		pm_goods_selling_chain #连锁店铺
 	}
 }
 

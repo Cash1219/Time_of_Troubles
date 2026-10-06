@@ -1,5 +1,10 @@
 ﻿l_simp_chinese:
 #咖啡厅
+ pmg_tot_dairy_livestock_ranch: "牛奶生产"
+ pm_tot_dairy_traditional: "传统挤奶"
+ pm_tot_dairy_mechanized: "机械化挤奶"
+ pm_tot_dairy_fresh: "鲜奶"
+ pm_tot_dairy_refrigerated: "冷藏鲜奶"
  building_kissaten: "咖啡厅"
 
  #酒馆
@@ -29,28 +34,29 @@
  pmg_kissaten_coffee: "咖啡菜单"
  pm_kissaten_coffee_null: "无"
  pm_kissaten_coffee_coffee: "标准咖啡"	
- pm_kissaten_coffee_mocha: "摩卡咖啡"
- pm_kissaten_coffee_latte: "拿铁咖啡"
+ pm_kissaten_coffee_milk_coffee: "牛奶咖啡"
+ pm_kissaten_coffee_latte: "拿铁"
  
- pmg_kissaten_tea: "饮料菜单"
+ pmg_kissaten_tea: "其他饮品菜单"
  pm_kissaten_tea_null: "无"
- pm_kissaten_tea_milk: "牛奶"
- pm_kissaten_tea_cocoa: "可可"
  pm_kissaten_tea_black_tea: "红茶"
+ pm_kissaten_tea_milk: "奶茶"
+ pm_kissaten_tea_cream_soda: "奶油苏打"
+ pm_kissaten_tea_mixed_juice: "混合果汁"
  
  pmg_kissaten_sweet: "甜点菜单"
  pm_kissaten_sweet_null: "无"
  pm_kissaten_sweet_biscuit: "饼干"
- pm_kissaten_sweet_pancake: "可丽饼"
- pm_kissaten_sweet_cake: "蛋糕"
  pm_kissaten_sweet_pie: "苹果派"
+ pm_kissaten_sweet_custard_pudding: "焦糖布丁"
+ pm_kissaten_sweet_fruit_parfait: "水果圣代"
  
  pmg_kissaten_food: "主食菜单"
  pm_kissaten_food_null: "无"
  pm_kissaten_food_sandwich: "三明治"
- pm_kissaten_food_pasta: "意大利面"
+ pm_kissaten_food_curry_rice: "咖喱饭"
  pm_kissaten_food_omuraisu: "蛋包饭"
- pm_kissaten_food_takoyaki: "章鱼烧"
+ pm_kissaten_food_seafood_doria: "海鲜焗饭"
  
  pmg_kissaten_server: "服务水准"
  pm_kissaten_server_null: "普通营业"
@@ -59,7 +65,6 @@
  pm_kissaten_server_fuwafuwa: "主题公演"
  
  pmg_kissaten_tool: "工具设备"
- pm_kissaten_tool_null: "无"
  pm_kissaten_tool_table: "基本桌椅"
  pm_kissaten_tool_porcelain: "餐具套装"
  pm_kissaten_tool_watertube_boiler: "水管锅炉"
@@ -139,46 +144,34 @@
  pm_musical_instrument_main_electric: "电气化乐器"
 
  pmg_goods_doll: "毛绒产品"
- pm_goods_doll_null: "无"
  pm_goods_doll_doll: "手工玩偶"
  pm_goods_doll_custom: "定制玩偶"
  pm_goods_doll_pillow: "抱枕"
  pm_goods_doll_iron: "等身抱枕"
  
  pmg_goods_jewelry: "小饰品"
- pm_goods_jewelry_null: "无"
  pm_goods_jewelry_badge: "徽章"
  pm_goods_jewelry_pendant: "挂件"
  pm_goods_jewelry_stand: "立牌"
  pm_goods_jewelry_premium: "手办"
  
  pmg_goods_garage: "模型"
- pm_goods_garage_null: "无"
  pm_goods_garage_lego: "木制玩具"
  pm_goods_garage_gundam: "高达" #塑造核心 +
  pm_goods_garage_military_model: "军用模型" #
  pm_goods_garage_motor: "电动玩具"
  
  pmg_goods_print: "印刷品"
- pm_goods_print_null: "无"
  pm_goods_print_seal: "色纸"
  pm_goods_print_card: "卡牌" #纸张
  pm_goods_print_post: "海报" #纸张+染料
  pm_goods_print_art: "挂画" #纸张+染料+木材
  
- pmg_goods_ip: "ip管理"
- pm_goods_ip_null: "无"
- pm_goods_ip_home: "本国优先" #少量增加皈依和同化
- pm_goods_ip_hot: "热门优先" #少量增加产量
- pm_goods_ip_random: "随机上架"
- 
- pmg_goods_selling: "销售方式"
- 
- 
- pm_goods_selling_null: "无"
- pm_goods_selling_lotto: "抽奖模式" #少量增加贸易优势
- pm_goods_selling_large: "大量贩售" #少量加产量
- pm_goods_selling_hunger_marketing: "饥饿营销" #少量增加
+ pmg_goods_selling: "经营方式"
+ pm_goods_selling_custom: "小众定制"
+ pm_goods_selling_exhibition: "展会摊位"
+ pm_goods_selling_specialty: "专卖店铺"
+ pm_goods_selling_chain: "连锁店铺"
  
  pmg_publisher_main: "编辑流程"
  pm_publisher_main_null: "无"
@@ -203,6 +196,12 @@
  pm_ent_press_distribution_local: "本地发行"
  pm_ent_press_distribution_national: "全国发行"
  pm_ent_press_distribution_export: "海外发行"
+
+ pmg_automation_building_entertainment_press: "娱乐传媒自动化"
+ pm_tot_ent_press_automation_disabled: "手工装订"
+ pm_tot_ent_press_automation_watertube: "水管锅炉自动化"
+ pm_tot_ent_press_automation_rotary: "旋转阀引擎自动化"
+ pm_tot_ent_press_automation_assembly: "流水线自动化"
 
  pmg_game_traditional_dev: "桌游开发"
  pm_game_traditional_tabletop: "古典棋牌"

@@ -1,4 +1,4 @@
-﻿BUILDINGS={
+BUILDINGS={
 	s:STATE_SVEALAND={
 		region_state:OOAR={
 			create_building={
@@ -5903,16 +5903,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled"  }
-			}
-			create_building={
-				building="building_stage"
-				add_ownership={
-					country={
-						country="c:IDMS"
-						levels=1
-					}
-				}
-				reserves=1
 			}
 			create_building={
 				building="building_wheat_farm"
