@@ -17,18 +17,18 @@
 | 乐队总部 (`building_band_headquarter`) | 是 | 125 | 300→0 | — | 4,500→2,040 | -120.6% | -462.5%～-78.6% | 123 / 0 / 0（另有 2 组无商品产出） |
 | 粮仓 (`building_barn`) | 否 | 27 | 0→1,600 | 100.0% | 0→4,000 | 100.0% | 100.0%～100.0% | 0 / 0 / 27 |
 | 蓝晶矿井 (`building_blue_crystal_mine`) | 否 | 48 | 200→1,200 | 83.3% | 1,630→5,400 | 69.8% | 55.8%～83.3% | 0 / 31 / 17 |
-| 私家庭园 (`building_botanical_garden`) | 是 | 16 | 550→750 | 26.7% | 1,700→2,500 | 32.0% | 15.4%～36.0% | 5 / 11 / 0 |
+| 私家庭园 (`building_botanical_garden`) | 是 | 16 | 200→1,000 | 80.0% | 2,400→5,550 | 56.8% | 53.3%～84.6% | 0 / 11 / 5 |
 | 社团 (`building_club`) | 是 | 12 | 450→600 | 25.0% | 750→200 | -275.0% | -275.0%～43.8% | 10 / 2 / 0 |
-| 娱乐出版社 (`building_entertainment_press`) | 是 | 60 | 500→600 | 16.7% | 5,050→6,900 | 26.8% | -133.3%～37.5% | 46 / 14 / 0 |
-| 游戏工坊 (`building_game`) | 是 | 192 | 450→600 | 25.0% | 7,800→10,310 | 24.3% | 7.1%～43.8% | 67 / 125 / 0 |
-| 谷子工坊 (`building_goods`) | 是 | 1,024 | 2,650→4,200 | 36.9% | 8,700→13,200 | 34.1% | 30.3%～42.5% | 0 / 1,024 / 0 |
+| 娱乐出版社 (`building_entertainment_press`) | 是 | 12 | 1,500→2,400 | 37.5% | 3,900→5,700 | 31.6% | 18.8%～43.9% | 1 / 11 / 0 |
+| 游戏工坊 (`building_game`) | 是 | 192 | 1,150→1,800 | 36.1% | 7,800→11,300 | 31.0% | -64.3%～50.0% | 54 / 138 / 0 |
+| 谷子工坊 (`building_goods`) | 是 | 1,024 | 2,800→4,200 | 33.3% | 8,850→13,200 | 33.0% | 28.0%～40.2% | 9 / 1,015 / 0 |
 | 酒馆 (`building_izakaya`) | 是 | 81 | 1,500→2,400 | 37.5% | 4,320→8,400 | 48.6% | 33.8%～51.1% | 0 / 81 / 0 |
 | 要石矿井 (`building_keystone_mine`) | 否 | 48 | 200→1,300 | 84.6% | 1,630→5,850 | 72.1% | 59.2%～84.6% | 0 / 25 / 23 |
-| 咖啡厅 (`building_kissaten`) | 是 | 6,000 | 1,050→1,500 | 30.0% | 12,200→21,000 | 41.9% | 16.7%～44.6% | 14 / 5,986 / 0 |
+| 咖啡厅 (`building_kissaten`) | 是 | 6,000 | 1,050→1,500 | 30.0% | 12,200→19,800 | 38.4% | 16.7%～44.6% | 14 / 5,986 / 0 |
 | 畜牧场 (`building_livestock_ranch`) | 是 | 432 | 40→480 | 91.7% | 960→2,100 | 54.3% | 50.3%～91.7% | 0 / 390 / 42 |
-| 乐器工坊 (`building_musical_instrument`) | 是 | 20 | 0→0 | — | 3,150→4,800 | 34.4% | -12.5%～45.8% | 7 / 9 / 0（另有 4 组无商品产出） |
+| 乐器工坊 (`building_musical_instrument`) | 是 | 16 | 800→1,800 | 55.6% | 3,150→5,100 | 38.2% | 25.0%～63.0% | 1 / 15 / 0 |
 | 源石矿井 (`building_originium_mine`) | 否 | 48 | 200→1,500 | 86.7% | 1,630→6,750 | 75.9% | 64.7%～86.7% | 0 / 11 / 37 |
-| 综合出版社 (`building_publisher`) | 是 | 15 | 0→0 | — | 3,900→5,460 | 28.6% | 20.0%～37.5% | 6 / 8 / 0（另有 1 组无商品产出） |
+| 综合出版社 (`building_publisher`) | 是 | 12 | 1,045→2,000 | 47.8% | 3,900→9,200 | 57.6% | 43.3%～62.8% | 0 / 12 / 0 |
 | 宗教中心 (`building_religious_center`) | 是 | 36 | 750→1,250 | 40.0% | 3,850→6,250 | 38.4% | 33.8%～40.0% | 0 / 36 / 0 |
 | 樱石矿井 (`building_sakura_stone_mine`) | 否 | 48 | 200→1,400 | 85.7% | 1,630→6,300 | 74.1% | 62.1%～85.7% | 0 / 19 / 29 |
 | 舞台 (`building_stage`) | 是 | 400 | 650→2,000 | 67.5% | 10,500→15,500 | 32.3% | 29.9%～67.5% | 2 / 398 / 0 |
@@ -47,21 +47,21 @@
 
 - **乐队总部**：-462.5%，投入 900，产出 160；`pm_band_food_none`、`pm_band_entertainment_daily`、`pm_band_equipment_standard`。
 - **社团**：-275.0%，投入 750，产出 200；`pm_club_activity_network`、`pm_club_operation_integrated`。
-- **娱乐出版社**：-133.3%，投入 1,400，产出 600；`pm_ent_press_main_null`、`pm_ent_press_distribution_local`、`pm_tot_ent_press_automation_rotary`。
-- **乐器工坊**：-12.5%，投入 1,350，产出 1,200；`pm_musical_instrument_main_wood`、`pm_assembly_lines_building_tooling_workshop`。
-- **游戏工坊**：7.1%，投入 1,300，产出 1,400；`pm_game_traditional_null`、`pm_game_modern_null`、`pm_game_business_null`、`pm_game_operation_ip`。
-- **私家庭园**：15.4%，投入 550，产出 650；`pm_botanical_garden_nursery`、`pm_botanical_garden_courtyard_fruit_trees`。
+- **游戏工坊**：-64.3%，投入 2,300，产出 1,400；`pm_game_traditional_null`、`pm_game_modern_null`、`pm_game_business_null`、`pm_game_operation_ip`。
 - **咖啡厅**：16.7%，投入 1,250，产出 1,500；`pm_kissaten_coffee_coffee`、`pm_kissaten_tea_null`、`pm_kissaten_sweet_null`、`pm_kissaten_food_null`、`pm_kissaten_server_null`、`pm_kissaten_tool_porcelain`。
-- **综合出版社**：20.0%，投入 600，产出 750；`pm_publisher_main_null`、`pm_publisher_professional_journal`。
+- **娱乐出版社**：18.8%，投入 1,950，产出 2,400；`pm_ent_press_main_manga`、`pm_ent_press_distribution_export`。
+- **乐器工坊**：25.0%，投入 1,350，产出 1,800；`pm_musical_instrument_main_wood`、`pm_assembly_lines_building_tooling_workshop`。
 - **水族馆**：25.6%，投入 3,350，产出 4,500；`pm_aquarium_ground_tunnel`、`pm_aquarium_type_reef`、`pm_aquarium_program_concert`、`pm_aquarium_program_research`。
 - **动物园**：26.5%，投入 3,750，产出 5,100；`pm_zoo_ground_stadium`、`pm_zoo_type_small`、`pm_zoo_interaction_show`、`pm_zoo_education_conservation`。
+- **谷子工坊**：28.0%，投入 4,750，产出 6,600；`pm_goods_doll_iron`、`pm_goods_jewelry_badge`、`pm_goods_garage_military_model`、`pm_goods_print_seal`、`pm_goods_selling_chain`。
 - **游乐场**：28.4%，投入 3,150，产出 4,400；`pm_amusement_ground_electric`、`pm_amusement_ride_coaster`、`pm_amusement_shop_souvenir`。
 - **舞台**：29.9%，投入 5,400，产出 7,700；`pm_stage_operation_public`、`pm_stage_scale_medium`、`pm_stage_merchandising_premium`、`pm_stage_media_magazines`。
-- **谷子工坊**：30.3%，投入 4,600，产出 6,600；`pm_goods_doll_iron`、`pm_goods_jewelry_badge`、`pm_goods_garage_military_model`、`pm_goods_print_seal`、`pm_goods_selling_exhibition`。
 - **宗教中心**：33.8%，投入 2,650，产出 4,000；`pm_religious_center_public_instruction`、`pm_religious_center_trinity_rite`、`pm_religious_center_printed_liturgy`。
 - **酒馆**：33.8%，投入 1,852.5，产出 2,800；`pm_izakaya_hearth_drinks`、`pm_izakaya_travelers_stew`、`pm_izakaya_communal_tables`、`pm_izakaya_iron_stoves_icehouse`。
+- **综合出版社**：43.3%，投入 1,700，产出 3,000；`pm_publisher_main_general_wood`、`pm_publisher_professional_journal`。
 - **河童精密发电站**：46.7%，投入 400，产出 750；`pm_tot_kappa_precision_generation`。
 - **畜牧场**：50.3%，投入 450，产出 905；`pm_butchering_tools`、`pm_sheep_farms`、`pm_electric_fencing`、`pm_refrigerated_rail_cars_building_livestock_ranch`、`pm_tot_dairy_traditional`。
+- **私家庭园**：53.3%，投入 1,400，产出 3,000；`pm_botanical_garden_glasshouse_flowers`、`pm_botanical_garden_fruit_trees_none`。
 - **蓝晶矿井**：55.8%，投入 530，产出 1,200；`pm_picks_and_shovels_building_blue_crystal_mine`、`pm_no_explosives`、`pm_steam_donkey_mine`、`pm_rail_transport_mine`。
 - **要石矿井**：59.2%，投入 530，产出 1,300；`pm_picks_and_shovels_building_keystone_mine`、`pm_no_explosives`、`pm_steam_donkey_mine`、`pm_rail_transport_mine`。
 - **樱石矿井**：62.1%，投入 530，产出 1,400；`pm_picks_and_shovels_building_sakura_stone_mine`、`pm_no_explosives`、`pm_steam_donkey_mine`、`pm_rail_transport_mine`。
@@ -81,7 +81,6 @@
 
 按 PM 自身的基准价商品产出比较相邻档；负产出用于转产时也会列出。
 
-- 私家庭园 / `pmg_botanical_garden_fruit_trees`：`pm_botanical_garden_fruit_trees_none` 0 → `pm_botanical_garden_courtyard_fruit_trees` -100。
 - 社团 / `pmg_club_activity`：`pm_club_activity_exchange` 800 → `pm_club_activity_network` 200。
 - 社团 / `pmg_club_operation`：`pm_club_operation_certified` 400 → `pm_club_operation_integrated` 0。
 

@@ -1,9 +1,8 @@
-﻿pmg_building_musical_instrument_main = { #主乐器线
+pmg_building_musical_instrument_main = { #主乐器线
 	texture = "gfx/interface/icons/production_method_icons/pmg_building_musical_instrument_main.dds"
 	ai_selection = most_profitable
 
 	production_methods = {
-		pm_musical_instrument_main_null
 		pm_musical_instrument_main_wood
 		pm_musical_instrument_main_iron
 		pm_musical_instrument_main_steel
@@ -16,7 +15,6 @@ pmg_publisher_main = { #主要刊物
 	ai_selection = most_profitable
 
 	production_methods = {
-		pm_publisher_main_null
 		pm_publisher_main_general_wood
 		pm_publisher_main_general_iron
 		pm_publisher_main_general_steel
@@ -40,7 +38,6 @@ pmg_ent_press_main = { #娱乐刊物
 	ai_selection = most_profitable
 
 	production_methods = {
-		pm_ent_press_main_null
 		pm_ent_press_main_manga
 		pm_ent_press_main_serial
 		pm_ent_press_main_novel
@@ -48,7 +45,7 @@ pmg_ent_press_main = { #娱乐刊物
 	}
 }
 
-pmg_ent_press_distribution = { #发行渠道
+pmg_ent_press_distribution = { #发行组织
 	texture = "gfx/interface/icons/production_method_icons/pmg_ent_press_distribution.dds"
 	ai_selection = most_profitable
 

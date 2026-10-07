@@ -1,6 +1,6 @@
 # 模组建筑生产方式：基准价投入、产出与收益率
 
-覆盖 **28 栋模组建筑、283 个建筑 × 生产方式选择**。同一个 PM 若供多栋建筑使用，会按建筑重复列出。
+覆盖 **28 栋模组建筑、276 个建筑 × 生产方式选择**。同一个 PM 若供多栋建筑使用，会按建筑重复列出。
 
 ## 计算口径
 
@@ -13,15 +13,15 @@
 
 | 类别 | 数量 |
 |---|---:|
-| 低于30% | 47 |
+| 低于30% | 43 |
 | 30%–70% | 128 |
-| 高于70% | 21 |
-| 无投入/仅产出 | 5 |
-| 仅投入/辅助 | 29 |
-| 负产出/转产 | 2 |
-| 无商品流 | 51 |
+| 高于70% | 22 |
+| 无投入/仅产出 | 8 |
+| 仅投入/辅助 | 30 |
+| 负产出/转产 | 0 |
+| 无商品流 | 45 |
 
-可计算毛利率的 196 项中，若改用投入收益率筛选，则低于 30% 有 21 项，区间内 108 项，高于 70% 有 67 项。
+可计算毛利率的 193 项中，若改用投入收益率筛选，则低于 30% 有 21 项，区间内 89 项，高于 70% 有 83 项。
 
 ## 需要优先核查的地方
 
@@ -31,15 +31,13 @@
 - `building_aquarium`：低于下限 6 项；最低 23.3%，高于上限 0 项。
 - `building_band_headquarter`：低于下限 11 项；最低 -237.5%，高于上限 0 项。
 - `building_blue_crystal_mine`：低于下限 0 项，高于上限 4 项；最高 83.3%。
-- `building_botanical_garden`：低于下限 1 项；最低 26.7%，高于上限 0 项。
+- `building_botanical_garden`：低于下限 0 项，高于上限 1 项；最高 80.0%。
 - `building_club`：低于下限 4 项；最低 -50.0%，高于上限 0 项。
-- `building_entertainment_press`：低于下限 1 项；最低 16.7%，高于上限 0 项。
-- `building_game`：低于下限 2 项；最低 7.1%，高于上限 0 项。
+- `building_game`：低于下限 3 项；最低 -64.3%，高于上限 0 项。
 - `building_izakaya`：低于下限 2 项；最低 -37.5%，高于上限 0 项。
 - `building_keystone_mine`：低于下限 0 项，高于上限 4 项；最高 84.6%。
 - `building_livestock_ranch`：低于下限 0 项，高于上限 2 项；最高 82.2%。
 - `building_originium_mine`：低于下限 0 项，高于上限 5 项；最高 86.7%。
-- `building_publisher`：低于下限 3 项；最低 20.0%，高于上限 0 项。
 - `building_sakura_stone_mine`：低于下限 0 项，高于上限 5 项；最高 85.7%。
 - `building_stage`：低于下限 8 项；最低 16.7%，高于上限 1 项；最高 80.0%。
 - `building_zoo`：低于下限 6 项；最低 23.3%，高于上限 0 项。
@@ -140,14 +138,14 @@
 
 | 生产方式组 | 生产方式 | 投入总价 | 产出总价 | 商品差额 | 投入收益率 | 商品毛利率 | 毛利率判定 | 倍率修正 |
 |---|---|---:|---:|---:|---:|---:|---|---|
-| `pmg_botanical_garden_cultivation` | `pm_botanical_garden_nursery` | 550 | 750 | 200 | 36.4% | 26.7% | 低于30% | — |
-| `pmg_botanical_garden_cultivation` | `pm_botanical_garden_fine_flowerbeds` | 800 | 1,250 | 450 | 56.2% | 36.0% | 30%–70% | — |
-| `pmg_botanical_garden_cultivation` | `pm_botanical_garden_glasshouse_flowers` | 1,150 | 1,750 | 600 | 52.2% | 34.3% | 30%–70% | — |
-| `pmg_botanical_garden_cultivation` | `pm_botanical_garden_rare_greenhouse` | 1,700 | 2,500 | 800 | 47.1% | 32.0% | 30%–70% | — |
+| `pmg_botanical_garden_cultivation` | `pm_botanical_garden_nursery` | 200 | 1,000 | 800 | 400.0% | 80.0% | 高于70% | — |
+| `pmg_botanical_garden_cultivation` | `pm_botanical_garden_fine_flowerbeds` | 500 | 1,500 | 1,000 | 200.0% | 66.7% | 30%–70% | — |
+| `pmg_botanical_garden_cultivation` | `pm_botanical_garden_glasshouse_flowers` | 1,400 | 3,000 | 1,600 | 114.3% | 53.3% | 30%–70% | — |
+| `pmg_botanical_garden_cultivation` | `pm_botanical_garden_rare_greenhouse` | 2,400 | 5,250 | 2,850 | 118.8% | 54.3% | 30%–70% | — |
 | `pmg_botanical_garden_fruit_trees` | `pm_botanical_garden_fruit_trees_none` | 0 | 0 | 0 | — | — | 无商品流 | — |
-| `pmg_botanical_garden_fruit_trees` | `pm_botanical_garden_courtyard_fruit_trees` | 0 | -100 | -100 | — | — | 负产出/转产 | — |
-| `pmg_botanical_garden_fruit_trees` | `pm_botanical_garden_grafted_fruit_trees` | 0 | -50 | -50 | — | — | 负产出/转产 | — |
-| `pmg_botanical_garden_fruit_trees` | `pm_botanical_garden_greenhouse_fruit_trees` | 0 | 0 | 0 | — | — | 无商品流 | — |
+| `pmg_botanical_garden_fruit_trees` | `pm_botanical_garden_courtyard_fruit_trees` | 0 | 50 | 50 | — | — | 无投入/仅产出 | — |
+| `pmg_botanical_garden_fruit_trees` | `pm_botanical_garden_grafted_fruit_trees` | 0 | 100 | 100 | — | — | 无投入/仅产出 | — |
+| `pmg_botanical_garden_fruit_trees` | `pm_botanical_garden_greenhouse_fruit_trees` | 0 | 300 | 300 | — | — | 无投入/仅产出 | — |
 
 ### `building_club`
 
@@ -165,38 +163,33 @@
 
 | 生产方式组 | 生产方式 | 投入总价 | 产出总价 | 商品差额 | 投入收益率 | 商品毛利率 | 毛利率判定 | 倍率修正 |
 |---|---|---:|---:|---:|---:|---:|---|---|
-| `pmg_ent_press_main` | `pm_ent_press_main_null` | 0 | 0 | 0 | — | — | 无商品流 | — |
-| `pmg_ent_press_main` | `pm_ent_press_main_manga` | 1,350 | 2,100 | 750 | 55.6% | 35.7% | 30%–70% | — |
-| `pmg_ent_press_main` | `pm_ent_press_main_serial` | 1,700 | 2,700 | 1,000 | 58.8% | 37.0% | 30%–70% | — |
-| `pmg_ent_press_main` | `pm_ent_press_main_novel` | 2,650 | 4,200 | 1,550 | 58.5% | 36.9% | 30%–70% | — |
-| `pmg_ent_press_main` | `pm_ent_press_main_multimedia` | 3,300 | 5,100 | 1,800 | 54.5% | 35.3% | 30%–70% | — |
-| `pmg_ent_press_distribution` | `pm_ent_press_distribution_local` | 500 | 600 | 100 | 20.0% | 16.7% | 低于30% | — |
-| `pmg_ent_press_distribution` | `pm_ent_press_distribution_national` | 750 | 1,200 | 450 | 60.0% | 37.5% | 30%–70% | — |
-| `pmg_ent_press_distribution` | `pm_ent_press_distribution_export` | 1,200 | 1,800 | 600 | 50.0% | 33.3% | 30%–70% | — |
-| `pmg_automation_building_entertainment_press` | `pm_tot_ent_press_automation_disabled` | 0 | 0 | 0 | — | — | 无商品流 | — |
-| `pmg_automation_building_entertainment_press` | `pm_tot_ent_press_automation_watertube` | 450 | 0 | -450 | — | — | 仅投入/辅助 | — |
-| `pmg_automation_building_entertainment_press` | `pm_tot_ent_press_automation_rotary` | 900 | 0 | -900 | — | — | 仅投入/辅助 | — |
-| `pmg_automation_building_entertainment_press` | `pm_tot_ent_press_automation_assembly` | 550 | 0 | -550 | — | — | 仅投入/辅助 | — |
+| `pmg_ent_press_main` | `pm_ent_press_main_manga` | 1,350 | 2,400 | 1,050 | 77.8% | 43.8% | 30%–70% | — |
+| `pmg_ent_press_main` | `pm_ent_press_main_serial` | 1,700 | 3,300 | 1,600 | 94.1% | 48.5% | 30%–70% | — |
+| `pmg_ent_press_main` | `pm_ent_press_main_novel` | 2,650 | 4,800 | 2,150 | 81.1% | 44.8% | 30%–70% | — |
+| `pmg_ent_press_main` | `pm_ent_press_main_multimedia` | 3,300 | 5,700 | 2,400 | 72.7% | 42.1% | 30%–70% | — |
+| `pmg_ent_press_distribution` | `pm_ent_press_distribution_local` | 150 | 0 | -150 | — | — | 仅投入/辅助 | — |
+| `pmg_ent_press_distribution` | `pm_ent_press_distribution_national` | 300 | 0 | -300 | — | — | 仅投入/辅助 | — |
+| `pmg_ent_press_distribution` | `pm_ent_press_distribution_export` | 600 | 0 | -600 | — | — | 仅投入/辅助 | — |
 
 ### `building_game`
 
 | 生产方式组 | 生产方式 | 投入总价 | 产出总价 | 商品差额 | 投入收益率 | 商品毛利率 | 毛利率判定 | 倍率修正 |
 |---|---|---:|---:|---:|---:|---:|---|---|
 | `pmg_game_traditional_dev` | `pm_game_traditional_null` | 0 | 0 | 0 | — | — | 无商品流 | — |
-| `pmg_game_traditional_dev` | `pm_game_traditional_tabletop` | 550 | 900 | 350 | 63.6% | 38.9% | 30%–70% | — |
+| `pmg_game_traditional_dev` | `pm_game_traditional_tabletop` | 550 | 1,200 | 650 | 118.2% | 54.2% | 30%–70% | — |
 | `pmg_game_traditional_dev` | `pm_game_traditional_mechanical` | 1,100 | 1,800 | 700 | 63.6% | 38.9% | 30%–70% | — |
-| `pmg_game_traditional_dev` | `pm_game_traditional_craft` | 1,800 | 2,700 | 900 | 50.0% | 33.3% | 30%–70% | — |
+| `pmg_game_traditional_dev` | `pm_game_traditional_craft` | 1,750 | 2,700 | 950 | 54.3% | 35.2% | 30%–70% | — |
 | `pmg_game_modern_dev` | `pm_game_modern_null` | 0 | 0 | 0 | — | — | 无商品流 | — |
-| `pmg_game_modern_dev` | `pm_game_modern_pinball` | 600 | 900 | 300 | 50.0% | 33.3% | 30%–70% | — |
-| `pmg_game_modern_dev` | `pm_game_modern_arcade` | 1,150 | 1,800 | 650 | 56.5% | 36.1% | 30%–70% | — |
-| `pmg_game_modern_dev` | `pm_game_modern_video` | 1,600 | 2,700 | 1,100 | 68.8% | 40.7% | 30%–70% | — |
+| `pmg_game_modern_dev` | `pm_game_modern_pinball` | 800 | 1,500 | 700 | 87.5% | 46.7% | 30%–70% | — |
+| `pmg_game_modern_dev` | `pm_game_modern_arcade` | 1,650 | 3,000 | 1,350 | 81.8% | 45.0% | 30%–70% | — |
+| `pmg_game_modern_dev` | `pm_game_modern_video` | 2,150 | 3,600 | 1,450 | 67.4% | 40.3% | 30%–70% | — |
 | `pmg_game_business` | `pm_game_business_null` | 0 | 0 | 0 | — | — | 无商品流 | — |
-| `pmg_game_business` | `pm_game_cartridge_era` | 1,300 | 2,100 | 800 | 61.5% | 38.1% | 30%–70% | — |
-| `pmg_game_business` | `pm_game_disc_era` | 1,600 | 2,700 | 1,100 | 68.8% | 40.7% | 30%–70% | — |
-| `pmg_game_business` | `pm_game_mobile_era` | 3,100 | 4,500 | 1,400 | 45.2% | 31.1% | 30%–70% | — |
-| `pmg_game_operation` | `pm_game_operation_base` | 450 | 600 | 150 | 33.3% | 25.0% | 低于30% | — |
-| `pmg_game_operation` | `pm_game_operation_expansion` | 450 | 800 | 350 | 77.8% | 43.8% | 30%–70% | goods_output_games_mult = -0.05 |
-| `pmg_game_operation` | `pm_game_operation_ip` | 1,300 | 1,400 | 100 | 7.7% | 7.1% | 低于30% | goods_output_games_mult = -0.10 |
+| `pmg_game_business` | `pm_game_cartridge_era` | 1,050 | 2,100 | 1,050 | 100.0% | 50.0% | 30%–70% | — |
+| `pmg_game_business` | `pm_game_disc_era` | 1,400 | 3,300 | 1,900 | 135.7% | 57.6% | 30%–70% | — |
+| `pmg_game_business` | `pm_game_mobile_era` | 1,600 | 3,600 | 2,000 | 125.0% | 55.6% | 30%–70% | — |
+| `pmg_game_operation` | `pm_game_operation_base` | 600 | 600 | 0 | 0.0% | 0.0% | 低于30% | — |
+| `pmg_game_operation` | `pm_game_operation_expansion` | 900 | 800 | -100 | -11.1% | -12.5% | 低于30% | — |
+| `pmg_game_operation` | `pm_game_operation_ip` | 2,300 | 1,400 | -900 | -39.1% | -64.3% | 低于30% | — |
 
 ### `building_goods`
 
@@ -218,10 +211,10 @@
 | `pmg_goods_print` | `pm_goods_print_card` | 1,400 | 2,100 | 700 | 50.0% | 33.3% | 30%–70% | — |
 | `pmg_goods_print` | `pm_goods_print_post` | 1,950 | 3,000 | 1,050 | 53.8% | 35.0% | 30%–70% | — |
 | `pmg_goods_print` | `pm_goods_print_art` | 2,600 | 3,900 | 1,300 | 50.0% | 33.3% | 30%–70% | — |
-| `pmg_goods_selling` | `pm_goods_selling_custom` | 0 | 0 | 0 | — | — | 无商品流 | — |
+| `pmg_goods_selling` | `pm_goods_selling_custom` | 150 | 0 | -150 | — | — | 仅投入/辅助 | — |
 | `pmg_goods_selling` | `pm_goods_selling_exhibition` | 150 | 0 | -150 | — | — | 仅投入/辅助 | — |
 | `pmg_goods_selling` | `pm_goods_selling_specialty` | 150 | 0 | -150 | — | — | 仅投入/辅助 | — |
-| `pmg_goods_selling` | `pm_goods_selling_chain` | 150 | 0 | -150 | — | — | 仅投入/辅助 | — |
+| `pmg_goods_selling` | `pm_goods_selling_chain` | 300 | 0 | -300 | — | — | 仅投入/辅助 | — |
 
 ### `building_izakaya`
 
@@ -262,22 +255,22 @@
 |---|---|---:|---:|---:|---:|---:|---|---|
 | `pmg_kissaten_coffee` | `pm_kissaten_coffee_coffee` | 900 | 1,500 | 600 | 66.7% | 40.0% | 30%–70% | — |
 | `pmg_kissaten_coffee` | `pm_kissaten_coffee_milk_coffee` | 1,650 | 3,000 | 1,350 | 81.8% | 45.0% | 30%–70% | — |
-| `pmg_kissaten_coffee` | `pm_kissaten_coffee_latte` | 2,500 | 4,500 | 2,000 | 80.0% | 44.4% | 30%–70% | — |
+| `pmg_kissaten_coffee` | `pm_kissaten_coffee_latte` | 2,500 | 4,200 | 1,700 | 68.0% | 40.5% | 30%–70% | — |
 | `pmg_kissaten_tea` | `pm_kissaten_tea_null` | 0 | 0 | 0 | — | — | 无商品流 | — |
 | `pmg_kissaten_tea` | `pm_kissaten_tea_black_tea` | 650 | 1,200 | 550 | 84.6% | 45.8% | 30%–70% | — |
 | `pmg_kissaten_tea` | `pm_kissaten_tea_milk` | 1,150 | 2,100 | 950 | 82.6% | 45.2% | 30%–70% | — |
 | `pmg_kissaten_tea` | `pm_kissaten_tea_cream_soda` | 1,700 | 3,000 | 1,300 | 76.5% | 43.3% | 30%–70% | — |
-| `pmg_kissaten_tea` | `pm_kissaten_tea_mixed_juice` | 2,350 | 4,200 | 1,850 | 78.7% | 44.0% | 30%–70% | — |
+| `pmg_kissaten_tea` | `pm_kissaten_tea_mixed_juice` | 2,350 | 3,900 | 1,550 | 66.0% | 39.7% | 30%–70% | — |
 | `pmg_kissaten_sweet` | `pm_kissaten_sweet_null` | 0 | 0 | 0 | — | — | 无商品流 | — |
 | `pmg_kissaten_sweet` | `pm_kissaten_sweet_biscuit` | 850 | 1,500 | 650 | 76.5% | 43.3% | 30%–70% | — |
 | `pmg_kissaten_sweet` | `pm_kissaten_sweet_pie` | 1,750 | 3,000 | 1,250 | 71.4% | 41.7% | 30%–70% | — |
 | `pmg_kissaten_sweet` | `pm_kissaten_sweet_custard_pudding` | 2,150 | 3,900 | 1,750 | 81.4% | 44.9% | 30%–70% | — |
-| `pmg_kissaten_sweet` | `pm_kissaten_sweet_fruit_parfait` | 2,700 | 4,800 | 2,100 | 77.8% | 43.8% | 30%–70% | — |
+| `pmg_kissaten_sweet` | `pm_kissaten_sweet_fruit_parfait` | 2,700 | 4,500 | 1,800 | 66.7% | 40.0% | 30%–70% | — |
 | `pmg_kissaten_food` | `pm_kissaten_food_null` | 0 | 0 | 0 | — | — | 无商品流 | — |
 | `pmg_kissaten_food` | `pm_kissaten_food_sandwich` | 1,050 | 1,800 | 750 | 71.4% | 41.7% | 30%–70% | — |
 | `pmg_kissaten_food` | `pm_kissaten_food_curry_rice` | 1,650 | 3,000 | 1,350 | 81.8% | 45.0% | 30%–70% | — |
 | `pmg_kissaten_food` | `pm_kissaten_food_omuraisu` | 2,450 | 4,500 | 2,050 | 83.7% | 45.6% | 30%–70% | — |
-| `pmg_kissaten_food` | `pm_kissaten_food_seafood_doria` | 3,150 | 5,700 | 2,550 | 81.0% | 44.7% | 30%–70% | — |
+| `pmg_kissaten_food` | `pm_kissaten_food_seafood_doria` | 3,150 | 5,400 | 2,250 | 71.4% | 41.7% | 30%–70% | — |
 | `pmg_kissaten_server` | `pm_kissaten_server_null` | 0 | 0 | 0 | — | — | 无商品流 | — |
 | `pmg_kissaten_server` | `pm_kissaten_server_waitress` | 150 | 400 | 250 | 166.7% | 62.5% | 30%–70% | — |
 | `pmg_kissaten_server` | `pm_kissaten_server_maid` | 600 | 1,000 | 400 | 66.7% | 40.0% | 30%–70% | — |
@@ -313,11 +306,10 @@
 
 | 生产方式组 | 生产方式 | 投入总价 | 产出总价 | 商品差额 | 投入收益率 | 商品毛利率 | 毛利率判定 | 倍率修正 |
 |---|---|---:|---:|---:|---:|---:|---|---|
-| `pmg_building_musical_instrument_main` | `pm_musical_instrument_main_null` | 0 | 0 | 0 | — | — | 无商品流 | — |
-| `pmg_building_musical_instrument_main` | `pm_musical_instrument_main_wood` | 800 | 1,200 | 400 | 50.0% | 33.3% | 30%–70% | — |
-| `pmg_building_musical_instrument_main` | `pm_musical_instrument_main_iron` | 1,000 | 1,800 | 800 | 80.0% | 44.4% | 30%–70% | — |
-| `pmg_building_musical_instrument_main` | `pm_musical_instrument_main_steel` | 2,000 | 3,600 | 1,600 | 80.0% | 44.4% | 30%–70% | — |
-| `pmg_building_musical_instrument_main` | `pm_musical_instrument_main_electric` | 2,600 | 4,800 | 2,200 | 84.6% | 45.8% | 30%–70% | — |
+| `pmg_building_musical_instrument_main` | `pm_musical_instrument_main_wood` | 800 | 1,800 | 1,000 | 125.0% | 55.6% | 30%–70% | — |
+| `pmg_building_musical_instrument_main` | `pm_musical_instrument_main_iron` | 1,000 | 2,700 | 1,700 | 170.0% | 63.0% | 30%–70% | — |
+| `pmg_building_musical_instrument_main` | `pm_musical_instrument_main_steel` | 2,000 | 3,900 | 1,900 | 95.0% | 48.7% | 30%–70% | — |
+| `pmg_building_musical_instrument_main` | `pm_musical_instrument_main_electric` | 2,600 | 5,100 | 2,500 | 96.2% | 49.0% | 30%–70% | — |
 | `pmg_automation_building_tooling_workshop` | `pm_automation_disabled` | 0 | 0 | 0 | — | — | 无商品流 | — |
 | `pmg_automation_building_tooling_workshop` | `pm_watertube_boiler_building_tooling_workshop` | 300 | 0 | -300 | — | — | 仅投入/辅助 | — |
 | `pmg_automation_building_tooling_workshop` | `pm_rotary_valve_engine_building_tooling_workshop` | 450 | 0 | -450 | — | — | 仅投入/辅助 | — |
@@ -343,14 +335,13 @@
 
 | 生产方式组 | 生产方式 | 投入总价 | 产出总价 | 商品差额 | 投入收益率 | 商品毛利率 | 毛利率判定 | 倍率修正 |
 |---|---|---:|---:|---:|---:|---:|---|---|
-| `pmg_publisher_main` | `pm_publisher_main_null` | 0 | 0 | 0 | — | — | 无商品流 | — |
-| `pmg_publisher_main` | `pm_publisher_main_general_wood` | 1,100 | 1,500 | 400 | 36.4% | 26.7% | 低于30% | — |
-| `pmg_publisher_main` | `pm_publisher_main_general_iron` | 1,750 | 2,500 | 750 | 42.9% | 30.0% | 30%–70% | — |
-| `pmg_publisher_main` | `pm_publisher_main_general_steel` | 2,250 | 3,250 | 1,000 | 44.4% | 30.8% | 30%–70% | — |
-| `pmg_publisher_main` | `pm_publisher_main_general_electric` | 3,300 | 4,500 | 1,200 | 36.4% | 26.7% | 低于30% | — |
+| `pmg_publisher_main` | `pm_publisher_main_general_wood` | 1,100 | 2,000 | 900 | 81.8% | 45.0% | 30%–70% | — |
+| `pmg_publisher_main` | `pm_publisher_main_general_iron` | 1,750 | 3,750 | 2,000 | 114.3% | 53.3% | 30%–70% | — |
+| `pmg_publisher_main` | `pm_publisher_main_general_steel` | 2,250 | 5,750 | 3,500 | 155.6% | 60.9% | 30%–70% | — |
+| `pmg_publisher_main` | `pm_publisher_main_general_electric` | 3,300 | 8,000 | 4,700 | 142.4% | 58.8% | 30%–70% | — |
 | `pmg_publisher_business` | `pm_publisher_comprehensive_publishing` | 0 | 0 | 0 | — | — | 无商品流 | building_goods_input_mult = -0.05 |
-| `pmg_publisher_business` | `pm_publisher_professional_journal` | 600 | 750 | 150 | 25.0% | 20.0% | 低于30% | — |
-| `pmg_publisher_business` | `pm_publisher_mass_magazine` | 600 | 960 | 360 | 60.0% | 37.5% | 30%–70% | — |
+| `pmg_publisher_business` | `pm_publisher_professional_journal` | 600 | 1,000 | 400 | 66.7% | 40.0% | 30%–70% | — |
+| `pmg_publisher_business` | `pm_publisher_mass_magazine` | 600 | 1,200 | 600 | 100.0% | 50.0% | 30%–70% | — |
 
 ### `building_religious_center`
 

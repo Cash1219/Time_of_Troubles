@@ -4,9 +4,8 @@ pm_botanical_garden_nursery = {
 	is_default = yes
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_wood_add = 5
-			goods_input_fertilizer_add = 15
-			goods_output_ornamental_plants_add = 15
+			goods_input_tools_add = 5
+			goods_output_ornamental_plants_add = 20
 		}
 		level_scaled = {
 			building_employment_laborers_add = 3000
@@ -20,9 +19,9 @@ pm_botanical_garden_fine_flowerbeds = {
 	unlocking_technologies = { intensive_agriculture }
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_wood_add = 10
-			goods_input_fertilizer_add = 20
-			goods_output_ornamental_plants_add = 25
+			goods_input_fertilizer_add = 10
+			goods_input_tools_add = 5
+			goods_output_ornamental_plants_add = 30
 		}
 		level_scaled = {
 			building_employment_laborers_add = 2750
@@ -33,13 +32,13 @@ pm_botanical_garden_fine_flowerbeds = {
 
 pm_botanical_garden_glasshouse_flowers = {
 	texture = "gfx/interface/icons/production_method_icons/pm_botanical_garden_glasshouse_flowers.dds"
-	unlocking_technologies = { steel_frame_buildings }
+	unlocking_technologies = { improved_fertilizer }
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_wood_add = 10
-			goods_input_fertilizer_add = 25
-			goods_input_glass_add = 5
-			goods_output_ornamental_plants_add = 35
+			goods_input_fertilizer_add = 20
+			goods_input_tools_add = 10
+			goods_input_glass_add = 10
+			goods_output_ornamental_plants_add = 60
 		}
 		level_scaled = {
 			building_employment_laborers_add = 2500
@@ -51,15 +50,14 @@ pm_botanical_garden_glasshouse_flowers = {
 
 pm_botanical_garden_rare_greenhouse = {
 	texture = "gfx/interface/icons/production_method_icons/pm_botanical_garden_rare_greenhouse.dds"
-	unlocking_technologies = { electrical_generation }
+	unlocking_technologies = { nitrogen_fixation }
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_wood_add = 10
-			goods_input_fertilizer_add = 25
-			goods_input_glass_add = 10
-			goods_input_tools_add = 5
-			goods_input_electricity_add = 5
-			goods_output_ornamental_plants_add = 50
+			goods_input_fertilizer_add = 30
+			goods_input_tools_add = 15
+			goods_input_glass_add = 15
+			goods_input_electricity_add = 10
+			goods_output_ornamental_plants_add = 105
 		}
 		level_scaled = {
 			building_employment_laborers_add = 1750
@@ -82,7 +80,7 @@ pm_botanical_garden_courtyard_fruit_trees = {
 	texture = "gfx/interface/icons/production_method_icons/pm_botanical_garden_courtyard_fruit_trees.dds"
 	building_modifiers = {
 		workforce_scaled = {
-			goods_output_fruit_add = 5
+			goods_output_fruit_add = 10
 			goods_output_ornamental_plants_add = -5
 		}
 	}
@@ -93,7 +91,7 @@ pm_botanical_garden_grafted_fruit_trees = {
 	unlocking_technologies = { intensive_agriculture }
 	building_modifiers = {
 		workforce_scaled = {
-			goods_output_fruit_add = 15
+			goods_output_fruit_add = 20
 			goods_output_ornamental_plants_add = -10
 		}
 	}
@@ -101,10 +99,10 @@ pm_botanical_garden_grafted_fruit_trees = {
 
 pm_botanical_garden_greenhouse_fruit_trees = {
 	texture = "gfx/interface/icons/production_method_icons/pm_botanical_garden_greenhouse_fruit_trees.dds"
-	unlocking_technologies = { steel_frame_buildings }
+	unlocking_technologies = { improved_fertilizer }
 	building_modifiers = {
 		workforce_scaled = {
-			goods_output_fruit_add = 25
+			goods_output_fruit_add = 35
 			goods_output_ornamental_plants_add = -15
 		}
 	}

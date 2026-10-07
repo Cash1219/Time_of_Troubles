@@ -8,7 +8,7 @@
 			}
 		level_scaled = {
 			building_employment_shopkeepers_add = 150
-			building_employment_laborers_add = 1350
+			building_employment_laborers_add = 1850
 		}
 	}
 }
@@ -26,7 +26,7 @@ pm_goods_doll_pillow = { #抱枕
 			}
 		level_scaled = {
 			building_employment_shopkeepers_add = 150
-			building_employment_laborers_add = 1050
+			building_employment_laborers_add = 1550
 			building_employment_machinists_add = 300
 		}
 	}
@@ -45,7 +45,7 @@ pm_goods_doll_custom = { #定制玩偶
 			}
 		level_scaled = {
 			building_employment_shopkeepers_add = 150
-			building_employment_laborers_add = 1200
+			building_employment_laborers_add = 1700
 			building_employment_machinists_add = 150
 		}
 	}
@@ -59,7 +59,7 @@ pm_goods_jewelry_badge = { #角色徽章
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 150
-			building_employment_laborers_add = 1350
+			building_employment_laborers_add = 1850
 		}
 	}
 }
@@ -77,7 +77,7 @@ pm_goods_doll_iron = { #等身抱枕
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 150
-			building_employment_laborers_add = 900
+			building_employment_laborers_add = 1400
 			building_employment_machinists_add = 450
 		}
 	}
@@ -95,7 +95,7 @@ pm_goods_jewelry_pendant = { #挂件
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 150
-			building_employment_laborers_add = 1200
+			building_employment_laborers_add = 1700
 			building_employment_machinists_add = 150
 		}
 	}
@@ -113,7 +113,7 @@ pm_goods_jewelry_stand = { #立牌
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 150
-			building_employment_laborers_add = 1050
+			building_employment_laborers_add = 1550
 			building_employment_machinists_add = 300
 		}
 	}
@@ -131,7 +131,7 @@ pm_goods_jewelry_premium = { #高端收藏手办
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 150
-			building_employment_laborers_add = 900
+			building_employment_laborers_add = 1400
 			building_employment_machinists_add = 450
 		}
 	}
@@ -147,7 +147,7 @@ pm_goods_print_seal = { #色纸
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 150
-			building_employment_laborers_add = 1350
+			building_employment_laborers_add = 1850
 		}
 	}
 }
@@ -165,7 +165,7 @@ pm_goods_print_card = { #卡牌
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 150
-			building_employment_laborers_add = 1200
+			building_employment_laborers_add = 1700
 			building_employment_machinists_add = 150
 		}
 	}
@@ -184,7 +184,7 @@ pm_goods_print_post = { #海报
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 150
-			building_employment_laborers_add = 1050
+			building_employment_laborers_add = 1550
 			building_employment_machinists_add = 300
 		}
 	}
@@ -204,7 +204,7 @@ pm_goods_print_art = { #画作
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 150
-			building_employment_laborers_add = 900
+			building_employment_laborers_add = 1400
 			building_employment_machinists_add = 450
 		}
 	}
@@ -218,7 +218,7 @@ pm_goods_garage_lego = { #木制积木
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 150
-			building_employment_laborers_add = 1350
+			building_employment_laborers_add = 1850
 		}
 	}
 }
@@ -236,7 +236,7 @@ pm_goods_garage_gundam = { #拼装模型
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 150
-			building_employment_laborers_add = 1050
+			building_employment_laborers_add = 1550
 			building_employment_machinists_add = 300
 		}
 	}
@@ -254,7 +254,7 @@ pm_goods_garage_military_model = { #手办
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 150
-			building_employment_laborers_add = 1200
+			building_employment_laborers_add = 1700
 			building_employment_machinists_add = 150
 		}
 	}
@@ -273,7 +273,7 @@ pm_goods_garage_motor = { #电动玩具
 		}
 		level_scaled = {
 			building_employment_shopkeepers_add = 150
-			building_employment_laborers_add = 900
+			building_employment_laborers_add = 1400
 			building_employment_machinists_add = 450
 		}
 	}
@@ -281,6 +281,9 @@ pm_goods_garage_motor = { #电动玩具
 
 pm_goods_selling_custom = { #小众定制
     texture = "gfx/interface/icons/production_method_icons/pm_goods_ip_home.dds"
+    building_modifiers = {
+        workforce_scaled = { goods_input_services_add = 5 }
+    }
 }
 
 pm_goods_selling_exhibition = { #展会摊位
@@ -308,6 +311,7 @@ pm_goods_selling_chain = { #连锁店铺
     unlocking_technologies = { tot_modern_services }
     building_modifiers = {
         workforce_scaled = {
+            goods_input_services_add = 5
             goods_input_transportation_add = 5
         }
 		level_scaled = { building_employment_laborers_add = -3000 }

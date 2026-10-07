@@ -9,11 +9,11 @@ Each figure is per building level at full employment and base goods prices. One 
 | Measure | Input | Output | Goods surplus | Building | PM selection |
 |---|---:|---:|---:|---|---|
 | minimum input | 0 | 0 | 0 | `building_angkor_wat` | `pm_default_building_angkor_wat` |
-| maximum input | 12,250 | 21,000 | 8,750 | `building_kissaten` | `pm_kissaten_coffee_latte`; `pm_kissaten_tea_mixed_juice`; `pm_kissaten_sweet_fruit_parfait`; `pm_kissaten_food_seafood_doria`; `pm_kissaten_server_fuwafuwa`; `pm_kissaten_tool_porcelain` |
+| maximum input | 12,250 | 19,800 | 7,550 | `building_kissaten` | `pm_kissaten_coffee_latte`; `pm_kissaten_tea_mixed_juice`; `pm_kissaten_sweet_fruit_parfait`; `pm_kissaten_food_seafood_doria`; `pm_kissaten_server_fuwafuwa`; `pm_kissaten_tool_porcelain` |
 | minimum output | 0 | 0 | 0 | `building_angkor_wat` | `pm_default_building_angkor_wat` |
-| maximum output | 12,050 | 21,000 | 8,950 | `building_kissaten` | `pm_kissaten_coffee_latte`; `pm_kissaten_tea_mixed_juice`; `pm_kissaten_sweet_fruit_parfait`; `pm_kissaten_food_seafood_doria`; `pm_kissaten_server_fuwafuwa`; `pm_kissaten_tool_table` |
+| maximum output | 12,050 | 19,800 | 7,750 | `building_kissaten` | `pm_kissaten_coffee_latte`; `pm_kissaten_tea_mixed_juice`; `pm_kissaten_sweet_fruit_parfait`; `pm_kissaten_food_seafood_doria`; `pm_kissaten_server_fuwafuwa`; `pm_kissaten_tool_table` |
 | minimum surplus | 7,900 | 0 | -7,900 | `building_construction_sector` | `pm_arc_welded_buildings` |
-| maximum surplus | 12,050 | 21,000 | 8,950 | `building_kissaten` | `pm_kissaten_coffee_latte`; `pm_kissaten_tea_mixed_juice`; `pm_kissaten_sweet_fruit_parfait`; `pm_kissaten_food_seafood_doria`; `pm_kissaten_server_fuwafuwa`; `pm_kissaten_tool_table` |
+| maximum surplus | 12,050 | 19,800 | 7,750 | `building_kissaten` | `pm_kissaten_coffee_latte`; `pm_kissaten_tea_mixed_juice`; `pm_kissaten_sweet_fruit_parfait`; `pm_kissaten_food_seafood_doria`; `pm_kissaten_server_fuwafuwa`; `pm_kissaten_tool_table` |
 
 ## Vanilla buildings
 
@@ -31,11 +31,11 @@ Each figure is per building level at full employment and base goods prices. One 
 | Measure | Input | Output | Goods surplus | Building | PM selection |
 |---|---:|---:|---:|---|---|
 | minimum input | 0 | 1,600 | 1,600 | `building_barn` | `pm_wooden_barn`; `pm_market_barn`; `pm_shopkeeper_barn` |
-| maximum input | 12,250 | 21,000 | 8,750 | `building_kissaten` | `pm_kissaten_coffee_latte`; `pm_kissaten_tea_mixed_juice`; `pm_kissaten_sweet_fruit_parfait`; `pm_kissaten_food_seafood_doria`; `pm_kissaten_server_fuwafuwa`; `pm_kissaten_tool_porcelain` |
+| maximum input | 12,250 | 19,800 | 7,550 | `building_kissaten` | `pm_kissaten_coffee_latte`; `pm_kissaten_tea_mixed_juice`; `pm_kissaten_sweet_fruit_parfait`; `pm_kissaten_food_seafood_doria`; `pm_kissaten_server_fuwafuwa`; `pm_kissaten_tool_porcelain` |
 | minimum output | 300 | 0 | -300 | `building_band_headquarter` | `pm_band_food_none`; `pm_band_entertainment_none`; `pm_band_equipment_none` |
-| maximum output | 12,050 | 21,000 | 8,950 | `building_kissaten` | `pm_kissaten_coffee_latte`; `pm_kissaten_tea_mixed_juice`; `pm_kissaten_sweet_fruit_parfait`; `pm_kissaten_food_seafood_doria`; `pm_kissaten_server_fuwafuwa`; `pm_kissaten_tool_table` |
+| maximum output | 12,050 | 19,800 | 7,750 | `building_kissaten` | `pm_kissaten_coffee_latte`; `pm_kissaten_tea_mixed_juice`; `pm_kissaten_sweet_fruit_parfait`; `pm_kissaten_food_seafood_doria`; `pm_kissaten_server_fuwafuwa`; `pm_kissaten_tool_table` |
 | minimum surplus | 4,380 | 1,920 | -2,460 | `building_band_headquarter` | `pm_band_food_lavish`; `pm_band_entertainment_active`; `pm_band_equipment_professional` |
-| maximum surplus | 12,050 | 21,000 | 8,950 | `building_kissaten` | `pm_kissaten_coffee_latte`; `pm_kissaten_tea_mixed_juice`; `pm_kissaten_sweet_fruit_parfait`; `pm_kissaten_food_seafood_doria`; `pm_kissaten_server_fuwafuwa`; `pm_kissaten_tool_table` |
+| maximum surplus | 12,050 | 19,800 | 7,750 | `building_kissaten` | `pm_kissaten_coffee_latte`; `pm_kissaten_tea_mixed_juice`; `pm_kissaten_sweet_fruit_parfait`; `pm_kissaten_food_seafood_doria`; `pm_kissaten_server_fuwafuwa`; `pm_kissaten_tool_table` |
 
 ## Smallest positive values
 
@@ -68,7 +68,7 @@ Each figure is per building level at full employment and base goods prices. One 
 | `building_barrack` | vanilla | `bg_army` | unspecified | 7 | 0 | 0 | 0 | 0 | 0 | 0 |
 | `building_big_ben` | vanilla | `bg_monuments` | unspecified | 3 | 0 | 0 | 0 | 0 | 0 | 0 |
 | `building_blue_crystal_mine` | mod | `bg_mining` | no | 48 | 200 | 1,880 | 1,200 | 5,400 | 670 | 4,100 |
-| `building_botanical_garden` | mod | `bg_entertainment` | yes | 16 | 550 | 1,700 | 650 | 2,500 | 100 | 800 |
+| `building_botanical_garden` | mod | `bg_entertainment` | yes | 16 | 200 | 2,400 | 1,000 | 5,550 | 800 | 3,150 |
 | `building_capitol_hill` | vanilla | `bg_monuments_hidden` | no | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
 | `building_central_park` | vanilla | `bg_monuments_hidden` | no | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
 | `building_chemical_plant` | vanilla | `bg_heavy_industry` | unspecified | 3 | 1,900 | 4,000 | 2,700 | 6,000 | 800 | 2,000 |
@@ -86,7 +86,7 @@ Each figure is per building level at full employment and base goods prices. One 
 | `building_easter_island_heads` | vanilla | `bg_monuments_hidden` | no | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
 | `building_eiffel_tower` | vanilla | `bg_monuments` | unspecified | 3 | 0 | 0 | 0 | 0 | 0 | 0 |
 | `building_electrics_industry` | vanilla | `bg_heavy_industry` | unspecified | 2 | 2,800 | 4,300 | 4,200 | 6,000 | 1,400 | 1,700 |
-| `building_entertainment_press` | mod | `bg_entertainment` | unspecified | 60 | 500 | 5,400 | 600 | 6,900 | -800 | 2,400 |
+| `building_entertainment_press` | mod | `bg_entertainment` | unspecified | 12 | 1,500 | 3,900 | 2,400 | 5,700 | 450 | 2,250 |
 | `building_estacion_de_madrid_atocha` | vanilla | `bg_monuments` | unspecified | 3 | 0 | 0 | 0 | 0 | 0 | 0 |
 | `building_explosives_factory` | vanilla | `bg_heavy_industry` | unspecified | 4 | 1,600 | 5,000 | 2,500 | 7,500 | 900 | 2,500 |
 | `building_eye_of_sahara` | vanilla | `bg_monuments_hidden` | no | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
@@ -95,12 +95,12 @@ Each figure is per building level at full employment and base goods prices. One 
 | `building_food_industry` | vanilla | `bg_light_industry` | unspecified | 90 | 800 | 5,250 | 1,350 | 7,500 | 150 | 2,650 |
 | `building_forbidden_city` | vanilla | `bg_monuments` | no | 3 | 0 | 0 | 0 | 0 | 0 | 0 |
 | `building_furniture_manufactory` | vanilla | `bg_light_industry` | unspecified | 36 | 800 | 3,050 | 1,350 | 4,950 | 0 | 2,450 |
-| `building_game` | mod | `bg_entertainment` | unspecified | 192 | 450 | 7,800 | 600 | 10,500 | 100 | 3,550 |
+| `building_game` | mod | `bg_entertainment` | unspecified | 192 | 600 | 7,800 | 600 | 11,300 | -900 | 4,400 |
 | `building_giza_necropolis` | vanilla | `bg_monuments_hidden` | no | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
 | `building_glassworks` | vanilla | `bg_light_industry` | unspecified | 24 | 600 | 2,800 | 1,200 | 5,300 | 200 | 2,900 |
 | `building_gold_field` | vanilla | `bg_gold_fields` | no | 1 | 0 | 0 | 1,000 | 1,000 | 1,000 | 1,000 |
 | `building_gold_mine` | vanilla | `bg_mining` | unspecified | 48 | 200 | 1,880 | 800 | 4,000 | 270 | 2,700 |
-| `building_goods` | mod | `bg_entertainment` | unspecified | 1,024 | 2,650 | 8,700 | 4,200 | 13,200 | 1,400 | 4,650 |
+| `building_goods` | mod | `bg_entertainment` | unspecified | 1,024 | 2,800 | 8,850 | 4,200 | 13,200 | 1,250 | 4,500 |
 | `building_government_administration` | vanilla | `bg_bureaucracy` | unspecified | 16 | 0 | 950 | 0 | 0 | -950 | 0 |
 | `building_gran_teatro_de_la_habana` | vanilla | `bg_monuments` | unspecified | 3 | 0 | 300 | 0 | 1,000 | 0 | 700 |
 | `building_hagia_sophia` | vanilla | `bg_monuments` | no | 3 | 0 | 0 | 0 | 0 | 0 | 0 |
@@ -114,7 +114,7 @@ Each figure is per building level at full employment and base goods prices. One 
 | `building_keystone_mine` | mod | `bg_mining` | no | 48 | 200 | 1,880 | 1,300 | 5,850 | 770 | 4,550 |
 | `building_khaju_bridge` | vanilla | `bg_monuments_hidden` | no | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
 | `building_kiel_canal` | vanilla | `bg_canals` | unspecified | 1 | 850 | 850 | 0 | 0 | -850 | -850 |
-| `building_kissaten` | mod | `bg_light_industry` | unspecified | 6,000 | 1,050 | 12,250 | 1,500 | 21,000 | 250 | 8,950 |
+| `building_kissaten` | mod | `bg_light_industry` | unspecified | 6,000 | 1,050 | 12,250 | 1,500 | 19,800 | 250 | 7,750 |
 | `building_lead_mine` | vanilla | `bg_mining` | unspecified | 48 | 200 | 1,880 | 800 | 3,600 | 270 | 2,300 |
 | `building_livestock_ranch` | mod | `bg_ranching` | unspecified | 432 | 40 | 960 | 480 | 2,100 | 310 | 1,270 |
 | `building_logging_camp` | vanilla | `bg_logging` | unspecified | 81 | 0 | 1,010 | 500 | 2,000 | 40 | 1,450 |
@@ -129,7 +129,7 @@ Each figure is per building level at full employment and base goods prices. One 
 | `building_mosque_of_djenne` | vanilla | `bg_monuments` | unspecified | 3 | 0 | 0 | 0 | 0 | 0 | 0 |
 | `building_motor_industry` | vanilla | `bg_heavy_industry` | unspecified | 12 | 1,500 | 5,050 | 2,400 | 7,200 | 350 | 2,700 |
 | `building_munition_plant` | vanilla | `bg_military_industry` | unspecified | 6 | 1,800 | 3,750 | 2,500 | 4,500 | 150 | 1,300 |
-| `building_musical_instrument` | mod | `bg_light_industry` | unspecified | 20 | 0 | 3,150 | 0 | 4,800 | -550 | 2,200 |
+| `building_musical_instrument` | mod | `bg_light_industry` | unspecified | 16 | 800 | 3,150 | 1,800 | 5,100 | 450 | 2,500 |
 | `building_naval_administration` | vanilla | `bg_naval_administration` | unspecified | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
 | `building_naval_fortification` | vanilla | `bg_naval_fortification` | unspecified | 3 | 500 | 1,400 | 0 | 0 | -1,400 | -500 |
 | `building_naval_logistics_center` | vanilla | `bg_naval_logistics_center` | no | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
@@ -145,7 +145,7 @@ Each figure is per building level at full employment and base goods prices. One 
 | `building_port` | vanilla | `bg_private_infrastructure` | unspecified | 4 | 0 | 750 | 0 | 1,500 | 0 | 750 |
 | `building_power_bloc_statue` | vanilla | `bg_monuments` | unspecified | 7 | 0 | 0 | 0 | 0 | 0 | 0 |
 | `building_power_plant` | vanilla | `bg_power` | unspecified | 3 | 490 | 1,600 | 750 | 2,400 | 260 | 800 |
-| `building_publisher` | mod | `bg_light_industry` | unspecified | 15 | 0 | 3,900 | 0 | 5,460 | 0 | 1,560 |
+| `building_publisher` | mod | `bg_light_industry` | unspecified | 12 | 1,045 | 3,900 | 2,000 | 9,200 | 955 | 5,300 |
 | `building_railway` | vanilla | `bg_private_infrastructure` | unspecified | 21 | 360 | 930 | 600 | 1,950 | 240 | 1,020 |
 | `building_religious_center` | mod | `bg_entertainment` | yes | 36 | 750 | 3,950 | 1,250 | 6,250 | 500 | 2,400 |
 | `building_rice_farm` | vanilla | `bg_staple_crops` | unspecified | 30 | 0 | 1,120 | 700 | 2,110 | 480 | 1,210 |

@@ -11,6 +11,7 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+VANILLA = Path(r'D:\Steam\steamapps\common\Victoria 3\game')
 CONFIG = ROOT / 'config/building_start_config.csv'
 CATALOG = ROOT / 'config/building_catalog.csv'
 OUTPUT = ROOT / 'common/history/buildings/tot_configured_mod_buildings.txt'
@@ -103,7 +104,14 @@ def defined_buildings():
         for item in parse_items(s)[0]:
             if item[0].startswith('building_'):
                 found.add(item[0])
-    return found
+    # Vanilla building overrides (such as the milk-producing ranch) retain
+    # their regional history and are not custom placements managed by this CSV.
+    vanilla_found = set()
+    for p in (VANILLA / 'common/buildings').glob('*.txt'):
+        for item in parse_items(p.read_text(encoding='utf-8-sig'))[0]:
+            if item[0].startswith('building_'):
+                vanilla_found.add(item[0])
+    return found - vanilla_found
 
 
 def inventory():
