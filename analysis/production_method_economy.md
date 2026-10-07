@@ -1,6 +1,6 @@
 # 模组建筑生产方式：基准价投入、产出与收益率
 
-覆盖 **28 栋模组建筑、276 个建筑 × 生产方式选择**。同一个 PM 若供多栋建筑使用，会按建筑重复列出。
+覆盖 **28 栋模组建筑、272 个建筑 × 生产方式选择**。同一个 PM 若供多栋建筑使用，会按建筑重复列出。
 
 ## 计算口径
 
@@ -13,21 +13,21 @@
 
 | 类别 | 数量 |
 |---|---:|
-| 低于30% | 43 |
-| 30%–70% | 128 |
+| 低于30% | 41 |
+| 30%–70% | 126 |
 | 高于70% | 22 |
 | 无投入/仅产出 | 8 |
 | 仅投入/辅助 | 30 |
 | 负产出/转产 | 0 |
 | 无商品流 | 45 |
 
-可计算毛利率的 193 项中，若改用投入收益率筛选，则低于 30% 有 21 项，区间内 89 项，高于 70% 有 83 项。
+可计算毛利率的 189 项中，若改用投入收益率筛选，则低于 30% 有 21 项，区间内 79 项，高于 70% 有 89 项。
 
 ## 需要优先核查的地方
 
 以下先列单项数值线索。具体低毛利改进方案见 [低毛利改进清单](low_margin_improvements.md)。只有完整建筑组合与游戏内工资、市场价格核对后，才适合修改 PM 数量。
 
-- `building_amusement_park`：低于下限 3 项；最低 25.0%，高于上限 0 项。
+- `building_amusement_park`：低于下限 1 项；最低 25.0%，高于上限 0 项。
 - `building_aquarium`：低于下限 6 项；最低 23.3%，高于上限 0 项。
 - `building_band_headquarter`：低于下限 11 项；最低 -237.5%，高于上限 0 项。
 - `building_blue_crystal_mine`：低于下限 0 项，高于上限 4 项；最高 83.3%。
@@ -50,18 +50,14 @@
 
 | 生产方式组 | 生产方式 | 投入总价 | 产出总价 | 商品差额 | 投入收益率 | 商品毛利率 | 毛利率判定 | 倍率修正 |
 |---|---|---:|---:|---:|---:|---:|---|---|
-| `pmg_amusement_ground` | `pm_amusement_ground_fair` | 600 | 1,000 | 400 | 66.7% | 40.0% | 30%–70% | — |
-| `pmg_amusement_ground` | `pm_amusement_ground_garden` | 800 | 1,200 | 400 | 50.0% | 33.3% | 30%–70% | — |
-| `pmg_amusement_ground` | `pm_amusement_ground_electric` | 1,250 | 1,800 | 550 | 44.0% | 30.6% | 30%–70% | — |
-| `pmg_amusement_ground` | `pm_amusement_ground_dream` | 1,650 | 2,400 | 750 | 45.5% | 31.2% | 30%–70% | — |
-| `pmg_amusement_ride` | `pm_amusement_ride_carousel` | 700 | 1,000 | 300 | 42.9% | 30.0% | 30%–70% | — |
-| `pmg_amusement_ride` | `pm_amusement_ride_coaster` | 1,000 | 1,400 | 400 | 40.0% | 28.6% | 低于30% | — |
-| `pmg_amusement_ride` | `pm_amusement_ride_neon` | 1,600 | 2,400 | 800 | 50.0% | 33.3% | 30%–70% | — |
-| `pmg_amusement_ride` | `pm_amusement_ride_ferris` | 2,350 | 3,400 | 1,050 | 44.7% | 30.9% | 30%–70% | — |
+| `pmg_amusement_ride` | `pm_amusement_ride_carousel` | 1,250 | 2,000 | 750 | 60.0% | 37.5% | 30%–70% | — |
+| `pmg_amusement_ride` | `pm_amusement_ride_ferris` | 1,700 | 3,200 | 1,500 | 88.2% | 46.9% | 30%–70% | — |
+| `pmg_amusement_ride` | `pm_amusement_ride_neon` | 2,350 | 4,400 | 2,050 | 87.2% | 46.6% | 30%–70% | — |
+| `pmg_amusement_ride` | `pm_amusement_ride_coaster` | 2,750 | 5,600 | 2,850 | 103.6% | 50.9% | 30%–70% | — |
 | `pmg_amusement_shop` | `pm_amusement_shop_stall` | 600 | 800 | 200 | 33.3% | 25.0% | 低于30% | — |
-| `pmg_amusement_shop` | `pm_amusement_shop_souvenir` | 900 | 1,200 | 300 | 33.3% | 25.0% | 低于30% | — |
-| `pmg_amusement_shop` | `pm_amusement_shop_limited` | 1,500 | 2,200 | 700 | 46.7% | 31.8% | 30%–70% | — |
-| `pmg_amusement_shop` | `pm_amusement_shop_collab` | 2,100 | 3,000 | 900 | 42.9% | 30.0% | 30%–70% | — |
+| `pmg_amusement_shop` | `pm_amusement_shop_souvenir` | 600 | 1,200 | 600 | 100.0% | 50.0% | 30%–70% | — |
+| `pmg_amusement_shop` | `pm_amusement_shop_limited` | 900 | 1,800 | 900 | 100.0% | 50.0% | 30%–70% | — |
+| `pmg_amusement_shop` | `pm_amusement_shop_collab` | 1,200 | 2,400 | 1,200 | 100.0% | 50.0% | 30%–70% | — |
 
 ### `building_aquarium`
 

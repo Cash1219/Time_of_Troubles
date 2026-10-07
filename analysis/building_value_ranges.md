@@ -53,7 +53,7 @@ Each figure is per building level at full employment and base goods prices. One 
 
 | Building | Source | Group | Buildable | Combinations | Input min | Input max | Output min | Output max | Surplus min | Surplus max |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|---:|
-| `building_amusement_park` | mod | `bg_entertainment` | yes | 64 | 1,900 | 6,100 | 2,800 | 8,800 | 900 | 2,700 |
+| `building_amusement_park` | mod | `bg_entertainment` | yes | 16 | 1,850 | 3,950 | 2,800 | 8,000 | 950 | 4,050 |
 | `building_angkor_wat` | vanilla | `bg_monuments` | no | 3 | 0 | 0 | 0 | 0 | 0 | 0 |
 | `building_aquarium` | mod | `bg_entertainment` | yes | 256 | 1,950 | 4,600 | 3,000 | 6,600 | 1,000 | 2,000 |
 | `building_argebam` | vanilla | `bg_monuments_hidden` | no | 1 | 0 | 0 | 0 | 0 | 0 | 0 |

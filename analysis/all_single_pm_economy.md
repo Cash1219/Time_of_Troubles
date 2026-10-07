@@ -1,22 +1,18 @@
 # 全部单项 PM 的商品投入、产出和毛利率
 
-共 **299 个独立 PM**：275 个模组定义、24 个被模组建筑复用的原版 PM；其中 38 个模组 PM 当前未被建筑引用。
+共 **299 个独立 PM**：275 个模组定义、24 个被模组建筑复用的原版 PM；其中 42 个模组 PM 当前未被建筑引用。
 
 每行只计算该 PM 在 `workforce_scaled` 中直接添加的商品数量 × 商品基础价。毛利率＝（产出总价－投入总价）÷产出总价。无正产出的 PM 毛利率记为“—”。建筑整体投入折扣、产出倍率、吞吐量、工资和市场价均未计入，因为它们需要完整建筑组合才能核算。
 
 | 建筑中文名 | 建筑 ID | PM 中文名 | PM ID | 来源 | 投入总价 | 产出总价 | 毛利率 |
 |---|---|---|---|---|---:|---:|---:|
-| 游乐场 | `building_amusement_park` | 综合主题乐园 | `pm_amusement_ground_dream` | 模组 | 1,650 | 2,400 | 31.2% |
-| 游乐场 | `building_amusement_park` | 电气主题乐园 | `pm_amusement_ground_electric` | 模组 | 1,250 | 1,800 | 30.6% |
-| 游乐场 | `building_amusement_park` | 露天游乐场 | `pm_amusement_ground_fair` | 模组 | 600 | 1,000 | 40.0% |
-| 游乐场 | `building_amusement_park` | 景观游乐园 | `pm_amusement_ground_garden` | 模组 | 800 | 1,200 | 33.3% |
-| 游乐场 | `building_amusement_park` | 旋转木马 | `pm_amusement_ride_carousel` | 模组 | 700 | 1,000 | 30.0% |
-| 游乐场 | `building_amusement_park` | 蒸汽过山车 | `pm_amusement_ride_coaster` | 模组 | 1,000 | 1,400 | 28.6% |
-| 游乐场 | `building_amusement_park` | 摩天轮 | `pm_amusement_ride_ferris` | 模组 | 2,350 | 3,400 | 30.9% |
-| 游乐场 | `building_amusement_park` | 霓虹飞车 | `pm_amusement_ride_neon` | 模组 | 1,600 | 2,400 | 33.3% |
-| 游乐场 | `building_amusement_park` | 角色联名商店 | `pm_amusement_shop_collab` | 模组 | 2,100 | 3,000 | 30.0% |
-| 游乐场 | `building_amusement_park` | 主题商品店 | `pm_amusement_shop_limited` | 模组 | 1,500 | 2,200 | 31.8% |
-| 游乐场 | `building_amusement_park` | 纪念品商店 | `pm_amusement_shop_souvenir` | 模组 | 900 | 1,200 | 25.0% |
+| 游乐场 | `building_amusement_park` | 旋转木马 | `pm_amusement_ride_carousel` | 模组 | 1,250 | 2,000 | 37.5% |
+| 游乐场 | `building_amusement_park` | 现代过山车 | `pm_amusement_ride_coaster` | 模组 | 2,750 | 5,600 | 50.9% |
+| 游乐场 | `building_amusement_park` | 摩天轮 | `pm_amusement_ride_ferris` | 模组 | 1,700 | 3,200 | 46.9% |
+| 游乐场 | `building_amusement_park` | 碰碰车 | `pm_amusement_ride_neon` | 模组 | 2,350 | 4,400 | 46.6% |
+| 游乐场 | `building_amusement_park` | 角色联名商店 | `pm_amusement_shop_collab` | 模组 | 1,200 | 2,400 | 50.0% |
+| 游乐场 | `building_amusement_park` | 主题商品店 | `pm_amusement_shop_limited` | 模组 | 900 | 1,800 | 50.0% |
+| 游乐场 | `building_amusement_park` | 纪念品商店 | `pm_amusement_shop_souvenir` | 模组 | 600 | 1,200 | 50.0% |
 | 游乐场 | `building_amusement_park` | 园区周边摊位 | `pm_amusement_shop_stall` | 模组 | 600 | 800 | 25.0% |
 | 水族馆 | `building_aquarium` | 海洋生物馆 | `pm_aquarium_ground_marine` | 模组 | 600 | 900 | 33.3% |
 | 水族馆 | `building_aquarium` | 巨型综合馆 | `pm_aquarium_ground_mega` | 模组 | 1,100 | 1,800 | 38.9% |
@@ -267,6 +263,10 @@
 | 动物园 | `building_zoo` | 猛兽 | `pm_zoo_type_predator` | 模组 | 650 | 900 | 27.8% |
 | 动物园 | `building_zoo` | 小型动物 | `pm_zoo_type_small` | 模组 | 650 | 900 | 27.8% |
 | 动物园 | `building_zoo` | 明星动物 | `pm_zoo_type_star` | 模组 | 1,050 | 1,500 | 30.0% |
+| 未引用 | — | 综合主题乐园 | `pm_amusement_ground_dream` | 模组 | 1,650 | 2,400 | 31.2% |
+| 未引用 | — | 电气主题乐园 | `pm_amusement_ground_electric` | 模组 | 1,250 | 1,800 | 30.6% |
+| 未引用 | — | 露天游乐场 | `pm_amusement_ground_fair` | 模组 | 600 | 1,000 | 40.0% |
+| 未引用 | — | 景观游乐园 | `pm_amusement_ground_garden` | 模组 | 800 | 1,200 | 33.3% |
 | 未引用 | — | 偏社团路线 | `pm_band_axis_club_1` | 模组 | 0 | 200 | 100.0% |
 | 未引用 | — | 重社团氛围 | `pm_band_axis_club_2` | 模组 | 0 | 200 | 100.0% |
 | 未引用 | — | 纯社团运作 | `pm_band_axis_club_3` | 模组 | 0 | 200 | 100.0% |

@@ -12,7 +12,7 @@
 
 | 建筑 | 可建 | 组合数 | 默认投入→产出 | 默认毛利 | 全高档投入→产出 | 全高档毛利 | 毛利范围 | <30% / 30–70% / >70% |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| 游乐场 (`building_amusement_park`) | 是 | 64 | 1,900→2,800 | 32.1% | 6,100→8,800 | 30.7% | 28.4%～33.9% | 13 / 51 / 0 |
+| 游乐场 (`building_amusement_park`) | 是 | 16 | 1,850→2,800 | 33.9% | 3,950→8,000 | 50.6% | 33.9%～50.7% | 0 / 16 / 0 |
 | 水族馆 (`building_aquarium`) | 是 | 256 | 1,950→3,000 | 35.0% | 4,600→6,600 | 30.3% | 25.6%～37.8% | 88 / 168 / 0 |
 | 乐队总部 (`building_band_headquarter`) | 是 | 125 | 300→0 | — | 4,500→2,040 | -120.6% | -462.5%～-78.6% | 123 / 0 / 0（另有 2 组无商品产出） |
 | 粮仓 (`building_barn`) | 否 | 27 | 0→1,600 | 100.0% | 0→4,000 | 100.0% | 100.0%～100.0% | 0 / 0 / 27 |
@@ -54,10 +54,10 @@
 - **水族馆**：25.6%，投入 3,350，产出 4,500；`pm_aquarium_ground_tunnel`、`pm_aquarium_type_reef`、`pm_aquarium_program_concert`、`pm_aquarium_program_research`。
 - **动物园**：26.5%，投入 3,750，产出 5,100；`pm_zoo_ground_stadium`、`pm_zoo_type_small`、`pm_zoo_interaction_show`、`pm_zoo_education_conservation`。
 - **谷子工坊**：28.0%，投入 4,750，产出 6,600；`pm_goods_doll_iron`、`pm_goods_jewelry_badge`、`pm_goods_garage_military_model`、`pm_goods_print_seal`、`pm_goods_selling_chain`。
-- **游乐场**：28.4%，投入 3,150，产出 4,400；`pm_amusement_ground_electric`、`pm_amusement_ride_coaster`、`pm_amusement_shop_souvenir`。
 - **舞台**：29.9%，投入 5,400，产出 7,700；`pm_stage_operation_public`、`pm_stage_scale_medium`、`pm_stage_merchandising_premium`、`pm_stage_media_magazines`。
 - **宗教中心**：33.8%，投入 2,650，产出 4,000；`pm_religious_center_public_instruction`、`pm_religious_center_trinity_rite`、`pm_religious_center_printed_liturgy`。
 - **酒馆**：33.8%，投入 1,852.5，产出 2,800；`pm_izakaya_hearth_drinks`、`pm_izakaya_travelers_stew`、`pm_izakaya_communal_tables`、`pm_izakaya_iron_stoves_icehouse`。
+- **游乐场**：33.9%，投入 1,850，产出 2,800；`pm_amusement_ride_carousel`、`pm_amusement_shop_stall`。
 - **综合出版社**：43.3%，投入 1,700，产出 3,000；`pm_publisher_main_general_wood`、`pm_publisher_professional_journal`。
 - **河童精密发电站**：46.7%，投入 400，产出 750；`pm_tot_kappa_precision_generation`。
 - **畜牧场**：50.3%，投入 450，产出 905；`pm_butchering_tools`、`pm_sheep_farms`、`pm_electric_fencing`、`pm_refrigerated_rail_cars_building_livestock_ranch`、`pm_tot_dairy_traditional`。
