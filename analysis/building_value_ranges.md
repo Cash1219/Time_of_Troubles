@@ -147,7 +147,7 @@ Each figure is per building level at full employment and base goods prices. One 
 | `building_power_plant` | vanilla | `bg_power` | unspecified | 3 | 490 | 1,600 | 750 | 2,400 | 260 | 800 |
 | `building_publisher` | mod | `bg_light_industry` | unspecified | 12 | 1,045 | 3,900 | 2,000 | 9,200 | 955 | 5,300 |
 | `building_railway` | vanilla | `bg_private_infrastructure` | unspecified | 21 | 360 | 930 | 600 | 1,950 | 240 | 1,020 |
-| `building_religious_center` | mod | `bg_entertainment` | yes | 36 | 750 | 3,950 | 1,250 | 6,250 | 500 | 2,400 |
+| `building_religious_center` | mod | `bg_entertainment` | yes | 9 | 750 | 3,250 | 1,250 | 5,250 | 500 | 2,000 |
 | `building_rice_farm` | vanilla | `bg_staple_crops` | unspecified | 30 | 0 | 1,120 | 700 | 2,110 | 480 | 1,210 |
 | `building_rubber_plantation` | vanilla | `bg_rubber` | unspecified | 12 | 0 | 450 | 800 | 2,600 | 650 | 2,300 |
 | `building_rye_farm` | vanilla | `bg_staple_crops` | unspecified | 80 | 0 | 590 | 400 | 1,300 | 260 | 850 |

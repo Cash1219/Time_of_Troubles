@@ -8,15 +8,12 @@ pmg_religious_center_assembly = {
 	}
 }
 
-# These are mutually exclusive expressions of a country's faith, not technology tiers.
+# Special religion-specific rites are temporarily disabled; definitions retained for redesign.
 pmg_religious_center_rites = {
 	texture = "gfx/interface/icons/generic_icons/mixed_icon_ownership.dds"
 	ai_selection = most_profitable
 	production_methods = {
 		pm_religious_center_common_rites
-		pm_religious_center_trinity_rite
-		pm_religious_center_starbeat_rite
-		pm_religious_center_kiseki_rite
 	}
 }
 

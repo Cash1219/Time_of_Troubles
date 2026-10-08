@@ -1,6 +1,6 @@
 # 模组建筑生产方式：基准价投入、产出与收益率
 
-覆盖 **30 栋模组建筑、276 个建筑 × 生产方式选择**。同一个 PM 若供多栋建筑使用，会按建筑重复列出。
+覆盖 **30 栋模组建筑、273 个建筑 × 生产方式选择**。同一个 PM 若供多栋建筑使用，会按建筑重复列出。
 
 ## 计算口径
 
@@ -14,14 +14,14 @@
 | 类别 | 数量 |
 |---|---:|
 | 低于30% | 29 |
-| 30%–70% | 130 |
+| 30%–70% | 127 |
 | 高于70% | 22 |
 | 无投入/仅产出 | 8 |
 | 仅投入/辅助 | 41 |
 | 负产出/转产 | 0 |
 | 无商品流 | 46 |
 
-可计算毛利率的 181 项中，若改用投入收益率筛选，则低于 30% 有 21 项，区间内 51 项，高于 70% 有 109 项。
+可计算毛利率的 178 项中，若改用投入收益率筛选，则低于 30% 有 21 项，区间内 48 项，高于 70% 有 109 项。
 
 ## 需要优先核查的地方
 
@@ -340,9 +340,6 @@
 | `pmg_religious_center_assembly` | `pm_religious_center_public_instruction` | 1,450 | 2,250 | 800 | 55.2% | 35.6% | 30%–70% | — |
 | `pmg_religious_center_assembly` | `pm_religious_center_city_celebration` | 2,300 | 3,750 | 1,450 | 63.0% | 38.7% | 30%–70% | — |
 | `pmg_religious_center_rites` | `pm_religious_center_common_rites` | 0 | 0 | 0 | — | — | 无商品流 | — |
-| `pmg_religious_center_rites` | `pm_religious_center_trinity_rite` | 700 | 1,000 | 300 | 42.9% | 30.0% | 30%–70% | — |
-| `pmg_religious_center_rites` | `pm_religious_center_starbeat_rite` | 600 | 1,000 | 400 | 66.7% | 40.0% | 30%–70% | — |
-| `pmg_religious_center_rites` | `pm_religious_center_kiseki_rite` | 600 | 1,000 | 400 | 66.7% | 40.0% | 30%–70% | — |
 | `pmg_religious_center_facilities` | `pm_religious_center_traditional_facilities` | 0 | 0 | 0 | — | — | 无商品流 | — |
 | `pmg_religious_center_facilities` | `pm_religious_center_printed_liturgy` | 500 | 750 | 250 | 50.0% | 33.3% | 30%–70% | — |
 | `pmg_religious_center_facilities` | `pm_religious_center_electric_facilities` | 950 | 1,500 | 550 | 57.9% | 36.7% | 30%–70% | — |
