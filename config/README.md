@@ -1,6 +1,6 @@
 # 模组建筑开局配置
 
-`building_start_config.csv` 是模组自定义建筑**开局放置**的唯一配置源。每行是一条建筑记录，填州、地区持有者、建筑、等级、所有权和启用 PM。当前有 58 条启用记录、合计 126 级；另有 13 条 `enabled=no` 的零开局模板，所以 27 种建筑都出现在配置表中。
+`building_start_config.csv` 是模组自定义建筑**开局放置**的唯一配置源。每行是一条建筑记录，填州、地区持有者、建筑、等级、所有权和启用 PM。当前有60条启用记录、合计128级；另有14条 `enabled=no` 的零开局模板，所以29种建筑都出现在配置表中。中央匈牙利的MUS和达尔马提亚的AQO各有1级动物培育园，分别供应2级动物园需求10、5级水族馆需求25，每座产25；两国已补药学，新建培育园仍需药学。宠物店开局为0级。
 
 原来的放置记录已从各区域历史文件迁至由此表生成的 `common/history/buildings/tot_configured_mod_buildings.txt`。**以后请修改 CSV，再运行：**
 
@@ -30,6 +30,6 @@ python tools/building_history_config.py generate
 | `source_file`, `source_line` | 迁移前来源，供核对；生成器不使用这两列 |
 | `notes` | 人工备注，生成器不使用 |
 
-`building_catalog.csv` 汇总全部 27 种建筑的开局处数与等级。`outputs/01a0fcb6-a3d0-7ee2-8c95-222977a33847/building_start_config.xlsx` 是先前导出的审核副本，可能滞后于当前 CSV；**游戏配置以 CSV 为准**。
+`building_catalog.csv` 汇总全部 29 种建筑的开局处数与等级。`outputs/01a0fcb6-a3d0-7ee2-8c95-222977a33847/building_start_config.xlsx` 是先前导出的审核副本，可能滞后于当前 CSV；**游戏配置以 CSV 为准**。
 
 两条既有记录的 `owner_country` 与 `region_owner` 不同，保留了原历史写法，并在 Excel 审核副本中标记待核对。四座魔法矿井当前没有开局放置，且建筑定义仍为 `buildable = no`；将来启用矿井时，还要同步检查建筑定义及地图资源上限。

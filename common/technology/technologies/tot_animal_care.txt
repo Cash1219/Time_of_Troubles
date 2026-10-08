@@ -1,0 +1,18 @@
+tot_scientific_animal_husbandry = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/pharmaceuticals.dds"
+	category = society
+	unlocking_technologies = {
+		pharmaceuticals
+		modern_sewerage
+	}
+	ai_weight = { value = 1 }
+}
+
+tot_animal_behavior_research = {
+	era = era_4
+	texture = "gfx/interface/icons/production_method_icons/pm_zoo_interaction_show.dds"
+	category = society
+	unlocking_technologies = { tot_scientific_animal_husbandry }
+	ai_weight = { value = 1 }
+}

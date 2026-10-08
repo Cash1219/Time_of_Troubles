@@ -1,6 +1,6 @@
 # 模组建筑生产方式：基准价投入、产出与收益率
 
-覆盖 **28 栋模组建筑、272 个建筑 × 生产方式选择**。同一个 PM 若供多栋建筑使用，会按建筑重复列出。
+覆盖 **30 栋模组建筑、276 个建筑 × 生产方式选择**。同一个 PM 若供多栋建筑使用，会按建筑重复列出。
 
 ## 计算口径
 
@@ -13,22 +13,21 @@
 
 | 类别 | 数量 |
 |---|---:|
-| 低于30% | 41 |
-| 30%–70% | 126 |
+| 低于30% | 29 |
+| 30%–70% | 130 |
 | 高于70% | 22 |
 | 无投入/仅产出 | 8 |
-| 仅投入/辅助 | 30 |
+| 仅投入/辅助 | 41 |
 | 负产出/转产 | 0 |
-| 无商品流 | 45 |
+| 无商品流 | 46 |
 
-可计算毛利率的 189 项中，若改用投入收益率筛选，则低于 30% 有 21 项，区间内 79 项，高于 70% 有 89 项。
+可计算毛利率的 181 项中，若改用投入收益率筛选，则低于 30% 有 21 项，区间内 51 项，高于 70% 有 109 项。
 
 ## 需要优先核查的地方
 
 以下先列单项数值线索。具体低毛利改进方案见 [低毛利改进清单](low_margin_improvements.md)。只有完整建筑组合与游戏内工资、市场价格核对后，才适合修改 PM 数量。
 
 - `building_amusement_park`：低于下限 1 项；最低 25.0%，高于上限 0 项。
-- `building_aquarium`：低于下限 6 项；最低 23.3%，高于上限 0 项。
 - `building_band_headquarter`：低于下限 11 项；最低 -237.5%，高于上限 0 项。
 - `building_blue_crystal_mine`：低于下限 0 项，高于上限 4 项；最高 83.3%。
 - `building_botanical_garden`：低于下限 0 项，高于上限 1 项；最高 80.0%。
@@ -40,7 +39,6 @@
 - `building_originium_mine`：低于下限 0 项，高于上限 5 项；最高 86.7%。
 - `building_sakura_stone_mine`：低于下限 0 项，高于上限 5 项；最高 85.7%。
 - `building_stage`：低于下限 8 项；最低 16.7%，高于上限 1 项；最高 80.0%。
-- `building_zoo`：低于下限 6 项；最低 23.3%，高于上限 0 项。
 
 **调整量参考**：若投入固定为 I，毛利率 30%～70% 对应的产出范围是 `I÷0.7～I÷0.3`；若只要求至少 30%，产出必须不低于 `I÷0.7`。辅助 PM 不适用。
 
@@ -63,22 +61,17 @@
 
 | 生产方式组 | 生产方式 | 投入总价 | 产出总价 | 商品差额 | 投入收益率 | 商品毛利率 | 毛利率判定 | 倍率修正 |
 |---|---|---:|---:|---:|---:|---:|---|---|
-| `pmg_aquarium_ground` | `pm_aquarium_ground_tank` | 600 | 900 | 300 | 50.0% | 33.3% | 30%–70% | — |
-| `pmg_aquarium_ground` | `pm_aquarium_ground_marine` | 600 | 900 | 300 | 50.0% | 33.3% | 30%–70% | — |
-| `pmg_aquarium_ground` | `pm_aquarium_ground_tunnel` | 900 | 1,200 | 300 | 33.3% | 25.0% | 低于30% | — |
-| `pmg_aquarium_ground` | `pm_aquarium_ground_mega` | 1,100 | 1,800 | 700 | 63.6% | 38.9% | 30%–70% | — |
-| `pmg_aquarium_animal_type` | `pm_aquarium_type_freshwater` | 400 | 600 | 200 | 50.0% | 33.3% | 30%–70% | — |
-| `pmg_aquarium_animal_type` | `pm_aquarium_type_marine` | 600 | 900 | 300 | 50.0% | 33.3% | 30%–70% | — |
-| `pmg_aquarium_animal_type` | `pm_aquarium_type_reef` | 850 | 1,200 | 350 | 41.2% | 29.2% | 低于30% | — |
-| `pmg_aquarium_animal_type` | `pm_aquarium_type_mammal` | 1,050 | 1,500 | 450 | 42.9% | 30.0% | 30%–70% | — |
-| `pmg_aquarium_interaction` | `pm_aquarium_program_feeding` | 400 | 600 | 200 | 50.0% | 33.3% | 30%–70% | — |
-| `pmg_aquarium_interaction` | `pm_aquarium_program_concert` | 450 | 600 | 150 | 33.3% | 25.0% | 低于30% | — |
-| `pmg_aquarium_interaction` | `pm_aquarium_program_show` | 750 | 1,200 | 450 | 60.0% | 37.5% | 30%–70% | — |
-| `pmg_aquarium_interaction` | `pm_aquarium_program_theater` | 1,300 | 1,800 | 500 | 38.5% | 27.8% | 低于30% | — |
-| `pmg_aquarium_education` | `pm_aquarium_program_guide` | 550 | 900 | 350 | 63.6% | 38.9% | 30%–70% | — |
-| `pmg_aquarium_education` | `pm_aquarium_program_night` | 550 | 900 | 350 | 63.6% | 38.9% | 30%–70% | — |
-| `pmg_aquarium_education` | `pm_aquarium_program_research` | 1,150 | 1,500 | 350 | 30.4% | 23.3% | 低于30% | — |
-| `pmg_aquarium_education` | `pm_aquarium_program_documentary` | 1,150 | 1,500 | 350 | 30.4% | 23.3% | 低于30% | — |
+| `pmg_aquarium_animal_type` | `pm_aquarium_type_freshwater` | 750 | 1,600 | 850 | 113.3% | 53.1% | 30%–70% | — |
+| `pmg_aquarium_animal_type` | `pm_aquarium_type_marine` | 1,500 | 2,600 | 1,100 | 73.3% | 42.3% | 30%–70% | — |
+| `pmg_aquarium_animal_type` | `pm_aquarium_type_reef` | 2,550 | 4,000 | 1,450 | 56.9% | 36.2% | 30%–70% | — |
+| `pmg_aquarium_animal_type` | `pm_aquarium_type_mammal` | 3,750 | 5,400 | 1,650 | 44.0% | 30.6% | 30%–70% | — |
+| `pmg_aquarium_interaction` | `pm_aquarium_program_feeding` | 400 | 900 | 500 | 125.0% | 55.6% | 30%–70% | — |
+| `pmg_aquarium_interaction` | `pm_aquarium_program_concert` | 650 | 1,500 | 850 | 130.8% | 56.7% | 30%–70% | — |
+| `pmg_aquarium_interaction` | `pm_aquarium_program_show` | 1,300 | 3,000 | 1,700 | 130.8% | 56.7% | 30%–70% | — |
+| `pmg_aquarium_interaction` | `pm_aquarium_program_theater` | 2,100 | 4,200 | 2,100 | 100.0% | 50.0% | 30%–70% | — |
+| `pmg_aquarium_circulation` | `pm_aquarium_circulation_manual` | 200 | 0 | -200 | — | — | 仅投入/辅助 | — |
+| `pmg_aquarium_circulation` | `pm_aquarium_circulation_mechanized` | 700 | 0 | -700 | — | — | 仅投入/辅助 | — |
+| `pmg_aquarium_circulation` | `pm_aquarium_circulation_electric` | 1,150 | 0 | -1,150 | — | — | 仅投入/辅助 | — |
 
 ### `building_band_headquarter`
 
@@ -393,6 +386,18 @@
 | `pmg_stage_media` | `pm_stage_media_radio` | 1,550 | 2,200 | 650 | 41.9% | 29.5% | 低于30% | — |
 | `pmg_stage_media` | `pm_stage_media_ip_collab` | 2,300 | 3,200 | 900 | 39.1% | 28.1% | 低于30% | — |
 
+### `building_tot_animal_breeding_center`
+
+| 生产方式组 | 生产方式 | 投入总价 | 产出总价 | 商品差额 | 投入收益率 | 商品毛利率 | 毛利率判定 | 倍率修正 |
+|---|---|---:|---:|---:|---:|---:|---|---|
+| `pmg_tot_animal_breeding` | `pm_tot_animal_breeding_standard` | 600 | 1,500 | 900 | 150.0% | 60.0% | 30%–70% | — |
+| `pmg_tot_animal_breeding` | `pm_tot_animal_breeding_scientific` | 900 | 2,400 | 1,500 | 166.7% | 62.5% | 30%–70% | — |
+| `pmg_tot_animal_breeding` | `pm_tot_animal_breeding_training` | 1,350 | 3,600 | 2,250 | 166.7% | 62.5% | 30%–70% | — |
+| `pmg_tot_animal_breeding` | `pm_tot_animal_breeding_modern` | 1,800 | 5,400 | 3,600 | 200.0% | 66.7% | 30%–70% | — |
+| `pmg_tot_animal_feeding_equipment` | `pm_tot_animal_feeding_manual` | 0 | 0 | 0 | — | — | 无商品流 | — |
+| `pmg_tot_animal_feeding_equipment` | `pm_tot_animal_feeding_mechanized` | 400 | 0 | -400 | — | — | 仅投入/辅助 | — |
+| `pmg_tot_animal_feeding_equipment` | `pm_tot_animal_feeding_electric` | 700 | 0 | -700 | — | — | 仅投入/辅助 | — |
+
 ### `building_tot_chireiden_fusion`
 
 | 生产方式组 | 生产方式 | 投入总价 | 产出总价 | 商品差额 | 投入收益率 | 商品毛利率 | 毛利率判定 | 倍率修正 |
@@ -437,23 +442,30 @@
 |---|---|---:|---:|---:|---:|---:|---|---|
 | `pmg_tot_kappa_power` | `pm_tot_kappa_precision_generation` | 400 | 750 | 350 | 87.5% | 46.7% | 30%–70% | — |
 
+### `building_tot_pet_shop`
+
+| 生产方式组 | 生产方式 | 投入总价 | 产出总价 | 商品差额 | 投入收益率 | 商品毛利率 | 毛利率判定 | 倍率修正 |
+|---|---|---:|---:|---:|---:|---:|---|---|
+| `pmg_tot_pet_services` | `pm_tot_pet_services_traditional` | 650 | 1,800 | 1,150 | 176.9% | 63.9% | 30%–70% | — |
+| `pmg_tot_pet_services` | `pm_tot_pet_services_companion` | 950 | 2,800 | 1,850 | 194.7% | 66.1% | 30%–70% | — |
+| `pmg_tot_pet_services` | `pm_tot_pet_services_care` | 1,450 | 4,400 | 2,950 | 203.4% | 67.0% | 30%–70% | — |
+| `pmg_tot_pet_services` | `pm_tot_pet_services_comprehensive` | 1,900 | 5,600 | 3,700 | 194.7% | 66.1% | 30%–70% | — |
+| `pmg_tot_pet_operation` | `pm_tot_pet_operation_small` | 150 | 0 | -150 | — | — | 仅投入/辅助 | — |
+| `pmg_tot_pet_operation` | `pm_tot_pet_operation_professional` | 450 | 0 | -450 | — | — | 仅投入/辅助 | — |
+| `pmg_tot_pet_operation` | `pm_tot_pet_operation_centralized` | 800 | 0 | -800 | — | — | 仅投入/辅助 | — |
+
 ### `building_zoo`
 
 | 生产方式组 | 生产方式 | 投入总价 | 产出总价 | 商品差额 | 投入收益率 | 商品毛利率 | 毛利率判定 | 倍率修正 |
 |---|---|---:|---:|---:|---:|---:|---|---|
-| `pmg_zoo_ground` | `pm_zoo_ground_pen` | 600 | 900 | 300 | 50.0% | 33.3% | 30%–70% | — |
-| `pmg_zoo_ground` | `pm_zoo_ground_park` | 600 | 900 | 300 | 50.0% | 33.3% | 30%–70% | — |
-| `pmg_zoo_ground` | `pm_zoo_ground_stadium` | 1,050 | 1,500 | 450 | 42.9% | 30.0% | 30%–70% | — |
-| `pmg_zoo_ground` | `pm_zoo_ground_eco` | 1,250 | 1,800 | 550 | 44.0% | 30.6% | 30%–70% | — |
-| `pmg_zoo_animal_type` | `pm_zoo_type_small` | 650 | 900 | 250 | 38.5% | 27.8% | 低于30% | — |
-| `pmg_zoo_animal_type` | `pm_zoo_type_predator` | 650 | 900 | 250 | 38.5% | 27.8% | 低于30% | — |
-| `pmg_zoo_animal_type` | `pm_zoo_type_large` | 600 | 900 | 300 | 50.0% | 33.3% | 30%–70% | — |
-| `pmg_zoo_animal_type` | `pm_zoo_type_star` | 1,050 | 1,500 | 450 | 42.9% | 30.0% | 30%–70% | — |
-| `pmg_zoo_interaction` | `pm_zoo_interaction_basic` | 400 | 600 | 200 | 50.0% | 33.3% | 30%–70% | — |
-| `pmg_zoo_interaction` | `pm_zoo_interaction_feeding` | 450 | 600 | 150 | 33.3% | 25.0% | 低于30% | — |
-| `pmg_zoo_interaction` | `pm_zoo_interaction_show` | 900 | 1,200 | 300 | 33.3% | 25.0% | 低于30% | — |
-| `pmg_zoo_interaction` | `pm_zoo_interaction_grand` | 1,200 | 1,800 | 600 | 50.0% | 33.3% | 30%–70% | — |
-| `pmg_zoo_education` | `pm_zoo_education_guide` | 550 | 900 | 350 | 63.6% | 38.9% | 30%–70% | — |
-| `pmg_zoo_education` | `pm_zoo_education_natural_history` | 550 | 900 | 350 | 63.6% | 38.9% | 30%–70% | — |
-| `pmg_zoo_education` | `pm_zoo_education_conservation` | 1,150 | 1,500 | 350 | 30.4% | 23.3% | 低于30% | — |
-| `pmg_zoo_education` | `pm_zoo_education_documentary` | 1,150 | 1,500 | 350 | 30.4% | 23.3% | 低于30% | — |
+| `pmg_zoo_animal_type` | `pm_zoo_type_small` | 750 | 1,600 | 850 | 113.3% | 53.1% | 30%–70% | — |
+| `pmg_zoo_animal_type` | `pm_zoo_type_predator` | 1,200 | 2,400 | 1,200 | 100.0% | 50.0% | 30%–70% | — |
+| `pmg_zoo_animal_type` | `pm_zoo_type_large` | 2,100 | 3,400 | 1,300 | 61.9% | 38.2% | 30%–70% | — |
+| `pmg_zoo_animal_type` | `pm_zoo_type_star` | 2,850 | 4,400 | 1,550 | 54.4% | 35.2% | 30%–70% | — |
+| `pmg_zoo_interaction` | `pm_zoo_interaction_basic` | 450 | 900 | 450 | 100.0% | 50.0% | 30%–70% | — |
+| `pmg_zoo_interaction` | `pm_zoo_interaction_feeding` | 600 | 1,500 | 900 | 150.0% | 60.0% | 30%–70% | — |
+| `pmg_zoo_interaction` | `pm_zoo_interaction_show` | 1,500 | 3,300 | 1,800 | 120.0% | 54.5% | 30%–70% | — |
+| `pmg_zoo_interaction` | `pm_zoo_interaction_grand` | 2,100 | 4,500 | 2,400 | 114.3% | 53.3% | 30%–70% | — |
+| `pmg_zoo_feeding_equipment` | `pm_zoo_feeding_manual` | 200 | 0 | -200 | — | — | 仅投入/辅助 | — |
+| `pmg_zoo_feeding_equipment` | `pm_zoo_feeding_mechanized` | 700 | 0 | -700 | — | — | 仅投入/辅助 | — |
+| `pmg_zoo_feeding_equipment` | `pm_zoo_feeding_electric` | 1,150 | 0 | -1,150 | — | — | 仅投入/辅助 | — |

@@ -11,8 +11,8 @@ B0009,yes,STATE_VENETIA,GBDP,building_goods,2,building,c:GBDP,building_financial
 B0010,yes,STATE_EASTERN_THRACE,HTT,building_stage,5,country,c:HTT,,,1,,common/history/buildings/01_south_europe.txt,4752,
 B0011,yes,STATE_DALMATIA,AQO,building_publisher,3,building,c:AQO,building_financial_district,STATE_DALMATIA,1,pm_publisher_main_general_wood;pm_publisher_comprehensive_publishing,common/history/buildings/01_south_europe.txt,5321,
 B0012,yes,STATE_DALMATIA,AQO,building_stage,1,country,c:AQO,,,1,,common/history/buildings/01_south_europe.txt,5382,
-B0013,yes,STATE_DALMATIA,AQO,building_aquarium,5,company,c:AQO,tot_company_aqours_uranohoshi,,1,pm_aquarium_ground_tank;pm_aquarium_type_freshwater;pm_aquarium_program_feeding;pm_aquarium_program_guide,common/history/buildings/01_south_europe.txt,5392,
-B0014,yes,STATE_CENTRAL_HUNGARY,MUS,building_zoo,2,country,c:MUS,,,1,,common/history/buildings/02_east_europe.txt,815,
+B0013,yes,STATE_DALMATIA,AQO,building_aquarium,5,company,c:AQO,tot_company_aqours_uranohoshi,,1,pm_aquarium_type_freshwater;pm_aquarium_program_feeding;pm_aquarium_circulation_manual,common/history/buildings/01_south_europe.txt,5392,
+B0014,yes,STATE_CENTRAL_HUNGARY,MUS,building_zoo,2,country,c:MUS,,,1,pm_zoo_type_small;pm_zoo_interaction_basic;pm_zoo_feeding_manual,common/history/buildings/02_east_europe.txt,815,
 B0015,yes,STATE_CENTRAL_HUNGARY,MUS,building_kissaten,2,country,c:MUS,,,1,,common/history/buildings/02_east_europe.txt,825,
 B0016,yes,STATE_CENTRAL_HUNGARY,MUS,building_stage,1,country,c:MUS,,,1,,common/history/buildings/02_east_europe.txt,995,
 B0017,yes,STATE_SLOVAKIA,NJS,building_club,5,country,c:NJS,,,1,pm_club_activity_community;pm_club_operation_member_run,common/history/buildings/02_east_europe.txt,1377,
@@ -70,3 +70,6 @@ B0068,no,,,building_tot_golden_hall_large_contract,0,,,,,1,,,,开局无建筑；
 B0069,no,,,building_tot_golden_hall_monument,0,,,,,1,,,,开局无建筑；填写州、地区持有者、所有权和等级后再启用
 B0070,no,,,building_tot_golden_hall_naming_contract,0,,,,,1,,,,开局无建筑；填写州、地区持有者、所有权和等级后再启用
 B0071,no,,,building_tot_golden_hall_small_contract,0,,,,,1,,,,开局无建筑；填写州、地区持有者、所有权和等级后再启用
+B0072,yes,STATE_CENTRAL_HUNGARY,MUS,building_tot_animal_breeding_center,1,country,c:MUS,,,1,pm_tot_animal_breeding_standard;pm_tot_animal_feeding_manual,,,"Opening animal supply for 2 zoo levels; output 25, demand 10"
+B0073,no,,,building_tot_pet_shop,0,,,,,1,,,,开局无建筑；填写州、地区持有者、所有权和等级后再启用
+B0074,yes,STATE_DALMATIA,AQO,building_tot_animal_breeding_center,1,country,c:AQO,,,1,pm_tot_animal_breeding_standard;pm_tot_animal_feeding_manual,,,"Opening supply for 5 aquarium levels: output 25, demand 25"

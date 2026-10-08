@@ -1,0 +1,20 @@
+pmg_tot_animal_breeding = {
+	texture = "gfx/interface/icons/production_method_icons/pm_zoo_type_small.dds"
+	ai_selection = most_profitable
+	production_methods = {
+		pm_tot_animal_breeding_standard
+		pm_tot_animal_breeding_scientific
+		pm_tot_animal_breeding_training
+		pm_tot_animal_breeding_modern
+	}
+}
+
+pmg_tot_animal_feeding_equipment = {
+	texture = "gfx/interface/icons/production_method_icons/pm_zoo_interaction_feeding.dds"
+	ai_selection = most_profitable
+	production_methods = {
+		pm_tot_animal_feeding_manual
+		pm_tot_animal_feeding_mechanized
+		pm_tot_animal_feeding_electric
+	}
+}

@@ -1,4 +1,4 @@
-﻿# 游乐场 / 水族馆 / 动物园
+# 游乐场 / 水族馆 / 动物园
 
 building_amusement_park = {
 	buildable = yes
@@ -40,10 +40,9 @@ building_aquarium = {
 	}
 
 	production_method_groups = {
-		pmg_aquarium_ground
 		pmg_aquarium_animal_type
 		pmg_aquarium_interaction
-		pmg_aquarium_education
+		pmg_aquarium_circulation
 	}
 
 	required_construction = construction_cost_medium
@@ -67,10 +66,9 @@ building_zoo = {
 	}
 
 	production_method_groups = {
-		pmg_zoo_ground
 		pmg_zoo_animal_type
 		pmg_zoo_interaction
-		pmg_zoo_education
+		pmg_zoo_feeding_equipment
 	}
 
 	required_construction = construction_cost_medium

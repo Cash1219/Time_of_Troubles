@@ -1,0 +1,19 @@
+building_tot_animal_breeding_center = {
+	buildable = yes
+	expandable = yes
+	downsizeable = yes
+	building_group = bg_light_industry
+	icon = "gfx/interface/icons/building_icons/building_zoo.dds"
+	city_type = city
+	levels_per_mesh = 5
+	ai_nationalization_desire = -0.25
+	unlocking_technologies = { pharmaceuticals }
+	production_method_groups = {
+		pmg_tot_animal_breeding
+		pmg_tot_animal_feeding_equipment
+	}
+	required_construction = construction_cost_medium
+	ownership_type = self
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_monuments.dds"
+	ai_value = { value = 200 }
+}

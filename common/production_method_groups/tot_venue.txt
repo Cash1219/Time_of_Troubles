@@ -1,4 +1,4 @@
-﻿# 游乐场
+# 游乐场
 
 pmg_amusement_ground = {
 	texture = "gfx/interface/icons/production_method_icons/pmg_amusement_ground.dds"
@@ -51,7 +51,7 @@ pmg_aquarium_ground = {
 }
 
 pmg_aquarium_animal_type = {
-	texture = "gfx/interface/icons/production_method_icons/pmg_aquarium_animal_type.dds"
+	texture = "gfx/interface/icons/production_method_icons/pm_aquarium_type_freshwater.dds"
 	ai_selection = most_profitable
 
 	production_methods = {
@@ -63,7 +63,7 @@ pmg_aquarium_animal_type = {
 }
 
 pmg_aquarium_interaction = {
-	texture = "gfx/interface/icons/production_method_icons/pmg_aquarium_program.dds"
+	texture = "gfx/interface/icons/production_method_icons/pm_aquarium_program_feeding.dds"
 	ai_selection = most_profitable
 
 	production_methods = {
@@ -101,7 +101,7 @@ pmg_zoo_ground = {
 }
 
 pmg_zoo_animal_type = {
-	texture = "gfx/interface/icons/production_method_icons/pmg_zoo_animal_type.dds"
+	texture = "gfx/interface/icons/production_method_icons/pm_zoo_type_small.dds"
 	ai_selection = most_profitable
 
 	production_methods = {
@@ -113,7 +113,7 @@ pmg_zoo_animal_type = {
 }
 
 pmg_zoo_interaction = {
-	texture = "gfx/interface/icons/production_method_icons/pmg_zoo_interaction.dds"
+	texture = "gfx/interface/icons/production_method_icons/pm_zoo_interaction_basic.dds"
 	ai_selection = most_profitable
 
 	production_methods = {
@@ -133,5 +133,27 @@ pmg_zoo_education = {
 		pm_zoo_education_natural_history
 		pm_zoo_education_conservation
 		pm_zoo_education_documentary
+	}
+}
+
+
+pmg_zoo_feeding_equipment = {
+	texture = "gfx/interface/icons/production_method_icons/pm_zoo_interaction_feeding.dds"
+	ai_selection = most_profitable
+	production_methods = {
+		pm_zoo_feeding_manual
+		pm_zoo_feeding_mechanized
+		pm_zoo_feeding_electric
+	}
+}
+
+
+pmg_aquarium_circulation = {
+	texture = "gfx/interface/icons/production_method_icons/pm_aquarium_program_feeding.dds"
+	ai_selection = most_profitable
+	production_methods = {
+		pm_aquarium_circulation_manual
+		pm_aquarium_circulation_mechanized
+		pm_aquarium_circulation_electric
 	}
 }

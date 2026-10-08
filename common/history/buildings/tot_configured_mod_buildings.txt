@@ -209,12 +209,23 @@ BUILDINGS = {
 			}
 			create_building = {
 				building = "building_aquarium"
-				activate_production_methods = { "pm_aquarium_ground_tank" "pm_aquarium_type_freshwater" "pm_aquarium_program_feeding" "pm_aquarium_program_guide" }
+				activate_production_methods = { "pm_aquarium_type_freshwater" "pm_aquarium_program_feeding" "pm_aquarium_circulation_manual" }
 				add_ownership = {
 					company = {
 						type = "tot_company_aqours_uranohoshi"
 						country = "c:AQO"
 						levels = 5
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_tot_animal_breeding_center"
+				activate_production_methods = { "pm_tot_animal_breeding_standard" "pm_tot_animal_feeding_manual" }
+				add_ownership = {
+					country = {
+						country = "c:AQO"
+						levels = 1
 					}
 				}
 				reserves = 1
@@ -225,6 +236,7 @@ BUILDINGS = {
 		region_state:MUS = {
 			create_building = {
 				building = "building_zoo"
+				activate_production_methods = { "pm_zoo_type_small" "pm_zoo_interaction_basic" "pm_zoo_feeding_manual" }
 				add_ownership = {
 					country = {
 						country = "c:MUS"
@@ -245,6 +257,17 @@ BUILDINGS = {
 			}
 			create_building = {
 				building = "building_stage"
+				add_ownership = {
+					country = {
+						country = "c:MUS"
+						levels = 1
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_tot_animal_breeding_center"
+				activate_production_methods = { "pm_tot_animal_breeding_standard" "pm_tot_animal_feeding_manual" }
 				add_ownership = {
 					country = {
 						country = "c:MUS"

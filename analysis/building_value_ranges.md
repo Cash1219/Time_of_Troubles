@@ -1,6 +1,6 @@
 # Base-price goods value ranges for all buildings
 
-Effective vanilla and mod definitions: 142 buildings (114 vanilla, 28 mod).
+Effective vanilla and mod definitions: 144 buildings (114 vanilla, 30 mod).
 
 Each figure is per building level at full employment and base goods prices. One PM is selected from each PM group. The six extrema in a row may come from six different selections. Goods-input and goods-output multipliers in selected PMs are applied to the entire building. Wages, market prices, throughput, ownership and legal/technology availability are excluded. Explicitly unbuildable buildings remain in scope.
 
@@ -55,7 +55,7 @@ Each figure is per building level at full employment and base goods prices. One 
 |---|---|---|---|---:|---:|---:|---:|---:|---:|---:|
 | `building_amusement_park` | mod | `bg_entertainment` | yes | 16 | 1,850 | 3,950 | 2,800 | 8,000 | 950 | 4,050 |
 | `building_angkor_wat` | vanilla | `bg_monuments` | no | 3 | 0 | 0 | 0 | 0 | 0 | 0 |
-| `building_aquarium` | mod | `bg_entertainment` | yes | 256 | 1,950 | 4,600 | 3,000 | 6,600 | 1,000 | 2,000 |
+| `building_aquarium` | mod | `bg_entertainment` | yes | 48 | 1,350 | 7,000 | 2,500 | 9,600 | 200 | 3,550 |
 | `building_argebam` | vanilla | `bg_monuments_hidden` | no | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
 | `building_arms_industry` | vanilla | `bg_military_industry` | unspecified | 12 | 800 | 3,150 | 1,800 | 6,000 | 450 | 3,400 |
 | `building_army_logistics_center` | vanilla | `bg_army_logistics_center` | no | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
@@ -177,6 +177,7 @@ Each figure is per building level at full employment and base goods prices. One 
 | `building_textile_mill` | vanilla | `bg_light_industry` | unspecified | 36 | 800 | 4,300 | 1,350 | 6,300 | 50 | 2,500 |
 | `building_tobacco_plantation` | vanilla | `bg_plantations` | unspecified | 48 | 0 | 670 | 1,200 | 2,800 | 1,050 | 2,360 |
 | `building_tooling_workshop` | vanilla | `bg_light_industry` | unspecified | 16 | 600 | 2,450 | 1,200 | 4,400 | 50 | 2,500 |
+| `building_tot_animal_breeding_center` | mod | `bg_light_industry` | yes | 12 | 600 | 2,500 | 1,500 | 5,400 | 200 | 3,600 |
 | `building_tot_chireiden_fusion` | mod | `bg_power` | no | 1 | 250 | 250 | 750 | 750 | 500 | 500 |
 | `building_tot_golden_hall_construction_site` | mod | `bg_monuments` | no | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
 | `building_tot_golden_hall_large_contract` | mod | `bg_monuments` | yes | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
@@ -184,6 +185,7 @@ Each figure is per building level at full employment and base goods prices. One 
 | `building_tot_golden_hall_naming_contract` | mod | `bg_monuments` | yes | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
 | `building_tot_golden_hall_small_contract` | mod | `bg_monuments` | yes | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
 | `building_tot_kappa_power` | mod | `bg_power` | no | 1 | 400 | 400 | 750 | 750 | 350 | 350 |
+| `building_tot_pet_shop` | mod | `bg_entertainment` | yes | 12 | 800 | 2,700 | 1,800 | 5,600 | 350 | 3,550 |
 | `building_trade_center` | vanilla | `bg_trade` | unspecified | 8 | 150 | 300 | 0 | 0 | -300 | -150 |
 | `building_university` | vanilla | `bg_technology` | unspecified | 12 | 150 | 450 | 0 | 0 | -450 | -150 |
 | `building_urban_center` | vanilla | `bg_service` | no | 108 | 0 | 400 | 510 | 1,440 | 510 | 1,040 |
@@ -194,7 +196,7 @@ Each figure is per building level at full employment and base goods prices. One 
 | `building_whaling_station` | vanilla | `bg_whaling` | unspecified | 12 | 0 | 1,370 | 550 | 2,200 | 130 | 1,250 |
 | `building_wheat_farm` | vanilla | `bg_staple_crops` | unspecified | 75 | 0 | 590 | 400 | 1,280 | 260 | 830 |
 | `building_white_house` | vanilla | `bg_monuments` | no | 3 | 0 | 0 | 0 | 0 | 0 | 0 |
-| `building_zoo` | mod | `bg_entertainment` | yes | 256 | 2,150 | 4,650 | 3,300 | 6,600 | 1,050 | 1,950 |
+| `building_zoo` | mod | `bg_entertainment` | yes | 48 | 1,400 | 6,100 | 2,500 | 8,900 | 150 | 3,750 |
 
 ## How to read the table
 
