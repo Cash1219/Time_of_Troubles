@@ -29,9 +29,9 @@
 | 乐器工坊 (`building_musical_instrument`) | 是 | 16 | 800→1,800 | 55.6% | 3,150→5,100 | 38.2% | 25.0%～63.0% | 1 / 15 / 0 |
 | 源石矿井 (`building_originium_mine`) | 否 | 48 | 200→1,500 | 86.7% | 1,630→6,750 | 75.9% | 64.7%～86.7% | 0 / 11 / 37 |
 | 综合出版社 (`building_publisher`) | 是 | 12 | 1,045→2,000 | 47.8% | 3,900→9,200 | 57.6% | 43.3%～62.8% | 0 / 12 / 0 |
-| 宗教中心 (`building_religious_center`) | 是 | 9 | 750→1,250 | 40.0% | 3,250→5,250 | 38.1% | 35.0%～40.0% | 0 / 9 / 0 |
+| 宗教中心 (`building_religious_center`) | 是 | 9 | 600→1,000 | 40.0% | 2,850→4,200 | 32.1% | 31.2%～40.0% | 0 / 9 / 0 |
 | 樱石矿井 (`building_sakura_stone_mine`) | 否 | 48 | 200→1,400 | 85.7% | 1,630→6,300 | 74.1% | 62.1%～85.7% | 0 / 19 / 29 |
-| 舞台 (`building_stage`) | 是 | 400 | 650→2,000 | 67.5% | 10,500→15,500 | 32.3% | 29.9%～67.5% | 2 / 398 / 0 |
+| 舞台 (`building_stage`) | 是 | 400 | 600→1,500 | 60.0% | 6,350→9,200 | 31.0% | -26.7%～60.0% | 137 / 263 / 0 |
 | 动物培育园 (`building_tot_animal_breeding_center`) | 是 | 12 | 600→1,500 | 60.0% | 2,500→5,400 | 53.7% | 13.3%～66.7% | 1 / 11 / 0 |
 | 地灵殿核聚变设施 (`building_tot_chireiden_fusion`) | 否 | 1 | 250→750 | 66.7% | 250→750 | 66.7% | 66.7%～66.7% | 0 / 1 / 0 |
 | 维也纳金色大厅施工现场 (`building_tot_golden_hall_construction_site`) | 否 | 1 | 0→0 | — | 0→0 | — | —～— | 0 / 0 / 0（另有 1 组无商品产出） |
@@ -50,6 +50,7 @@
 - **乐队总部**：-462.5%，投入 900，产出 160；`pm_band_food_none`、`pm_band_entertainment_daily`、`pm_band_equipment_standard`。
 - **社团**：-275.0%，投入 750，产出 200；`pm_club_activity_network`、`pm_club_operation_integrated`。
 - **游戏工坊**：-64.3%，投入 2,300，产出 1,400；`pm_game_traditional_null`、`pm_game_modern_null`、`pm_game_business_null`、`pm_game_operation_ip`。
+- **舞台**：-26.7%，投入 1,900，产出 1,500；`pm_stage_scale_small`、`pm_stage_staff_linked`、`pm_stage_merchandising_none`、`pm_stage_service_none`。
 - **动物园**：6.0%，投入 2,350，产出 2,500；`pm_zoo_type_small`、`pm_zoo_interaction_basic`、`pm_zoo_feeding_electric`。
 - **水族馆**：8.0%，投入 2,300，产出 2,500；`pm_aquarium_type_freshwater`、`pm_aquarium_program_feeding`、`pm_aquarium_circulation_electric`。
 - **动物培育园**：13.3%，投入 1,300，产出 1,500；`pm_tot_animal_breeding_standard`、`pm_tot_animal_feeding_electric`。
@@ -58,10 +59,9 @@
 - **宠物店**：19.4%，投入 1,450，产出 1,800；`pm_tot_pet_services_traditional`、`pm_tot_pet_operation_centralized`。
 - **乐器工坊**：25.0%，投入 1,350，产出 1,800；`pm_musical_instrument_main_wood`、`pm_assembly_lines_building_tooling_workshop`。
 - **谷子工坊**：28.0%，投入 4,750，产出 6,600；`pm_goods_doll_iron`、`pm_goods_jewelry_badge`、`pm_goods_garage_military_model`、`pm_goods_print_seal`、`pm_goods_selling_chain`。
-- **舞台**：29.9%，投入 5,400，产出 7,700；`pm_stage_operation_public`、`pm_stage_scale_medium`、`pm_stage_merchandising_premium`、`pm_stage_media_magazines`。
+- **宗教中心**：31.2%，投入 1,100，产出 1,600；`pm_religious_center_daily_assembly`、`pm_religious_center_common_rites`、`pm_religious_center_printed_liturgy`。
 - **酒馆**：33.8%，投入 1,852.5，产出 2,800；`pm_izakaya_hearth_drinks`、`pm_izakaya_travelers_stew`、`pm_izakaya_communal_tables`、`pm_izakaya_iron_stoves_icehouse`。
 - **游乐场**：33.9%，投入 1,850，产出 2,800；`pm_amusement_ride_carousel`、`pm_amusement_shop_stall`。
-- **宗教中心**：35.0%，投入 1,950，产出 3,000；`pm_religious_center_public_instruction`、`pm_religious_center_common_rites`、`pm_religious_center_printed_liturgy`。
 - **综合出版社**：43.3%，投入 1,700，产出 3,000；`pm_publisher_main_general_wood`、`pm_publisher_professional_journal`。
 - **河童精密发电站**：46.7%，投入 400，产出 750；`pm_tot_kappa_precision_generation`。
 - **畜牧场**：50.3%，投入 450，产出 905；`pm_butchering_tools`、`pm_sheep_farms`、`pm_electric_fencing`、`pm_refrigerated_rail_cars_building_livestock_ranch`、`pm_tot_dairy_traditional`。

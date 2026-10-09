@@ -147,7 +147,7 @@ Each figure is per building level at full employment and base goods prices. One 
 | `building_power_plant` | vanilla | `bg_power` | unspecified | 3 | 490 | 1,600 | 750 | 2,400 | 260 | 800 |
 | `building_publisher` | mod | `bg_light_industry` | unspecified | 12 | 1,045 | 3,900 | 2,000 | 9,200 | 955 | 5,300 |
 | `building_railway` | vanilla | `bg_private_infrastructure` | unspecified | 21 | 360 | 930 | 600 | 1,950 | 240 | 1,020 |
-| `building_religious_center` | mod | `bg_entertainment` | yes | 9 | 750 | 3,250 | 1,250 | 5,250 | 500 | 2,000 |
+| `building_religious_center` | mod | `bg_entertainment` | yes | 9 | 600 | 2,850 | 1,000 | 4,200 | 400 | 1,350 |
 | `building_rice_farm` | vanilla | `bg_staple_crops` | unspecified | 30 | 0 | 1,120 | 700 | 2,110 | 480 | 1,210 |
 | `building_rubber_plantation` | vanilla | `bg_rubber` | unspecified | 12 | 0 | 450 | 800 | 2,600 | 650 | 2,300 |
 | `building_rye_farm` | vanilla | `bg_staple_crops` | unspecified | 80 | 0 | 590 | 400 | 1,300 | 260 | 850 |
@@ -159,7 +159,7 @@ Each figure is per building level at full employment and base goods prices. One 
 | `building_shipyard` | vanilla | `bg_ship_construction` | unspecified | 4 | 1,200 | 3,000 | 2,400 | 5,600 | 1,200 | 2,600 |
 | `building_silk_plantation` | vanilla | `bg_plantations` | unspecified | 4 | 0 | 450 | 600 | 1,600 | 450 | 1,300 |
 | `building_skyscraper` | vanilla | `bg_skyscraper` | unspecified | 4 | 750 | 750 | 0 | 0 | -750 | -750 |
-| `building_stage` | mod | `bg_entertainment` | yes | 400 | 650 | 10,500 | 2,000 | 15,500 | 1,350 | 5,000 |
+| `building_stage` | mod | `bg_entertainment` | yes | 400 | 600 | 6,350 | 1,500 | 9,200 | -400 | 4,150 |
 | `building_statue_of_liberty` | vanilla | `bg_monuments` | unspecified | 3 | 0 | 0 | 0 | 0 | 0 | 0 |
 | `building_steel_mill` | vanilla | `bg_heavy_industry` | unspecified | 12 | 2,500 | 6,300 | 3,250 | 7,500 | 250 | 1,700 |
 | `building_subsistence_farm` | vanilla | `bg_subsistence_agriculture` | no | 10 | 0 | 0 | 75 | 87.5 | 75 | 87.5 |

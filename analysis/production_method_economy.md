@@ -13,15 +13,15 @@
 
 | 类别 | 数量 |
 |---|---:|
-| 低于30% | 29 |
+| 低于30% | 26 |
 | 30%–70% | 127 |
-| 高于70% | 22 |
+| 高于70% | 21 |
 | 无投入/仅产出 | 8 |
-| 仅投入/辅助 | 41 |
+| 仅投入/辅助 | 44 |
 | 负产出/转产 | 0 |
-| 无商品流 | 46 |
+| 无商品流 | 47 |
 
-可计算毛利率的 178 项中，若改用投入收益率筛选，则低于 30% 有 21 项，区间内 48 项，高于 70% 有 109 项。
+可计算毛利率的 174 项中，若改用投入收益率筛选，则低于 30% 有 19 项，区间内 46 项，高于 70% 有 109 项。
 
 ## 需要优先核查的地方
 
@@ -37,8 +37,9 @@
 - `building_keystone_mine`：低于下限 0 项，高于上限 4 项；最高 84.6%。
 - `building_livestock_ranch`：低于下限 0 项，高于上限 2 项；最高 82.2%。
 - `building_originium_mine`：低于下限 0 项，高于上限 5 项；最高 86.7%。
+- `building_religious_center`：低于下限 2 项；最低 16.7%，高于上限 0 项。
 - `building_sakura_stone_mine`：低于下限 0 项，高于上限 5 项；最高 85.7%。
-- `building_stage`：低于下限 8 项；最低 16.7%，高于上限 1 项；最高 80.0%。
+- `building_stage`：低于下限 3 项；最低 25.0%，高于上限 0 项。
 
 **调整量参考**：若投入固定为 I，毛利率 30%～70% 对应的产出范围是 `I÷0.7～I÷0.3`；若只要求至少 30%，产出必须不低于 `I÷0.7`。辅助 PM 不适用。
 
@@ -336,13 +337,13 @@
 
 | 生产方式组 | 生产方式 | 投入总价 | 产出总价 | 商品差额 | 投入收益率 | 商品毛利率 | 毛利率判定 | 倍率修正 |
 |---|---|---:|---:|---:|---:|---:|---|---|
-| `pmg_religious_center_assembly` | `pm_religious_center_daily_assembly` | 750 | 1,250 | 500 | 66.7% | 40.0% | 30%–70% | — |
-| `pmg_religious_center_assembly` | `pm_religious_center_public_instruction` | 1,450 | 2,250 | 800 | 55.2% | 35.6% | 30%–70% | — |
-| `pmg_religious_center_assembly` | `pm_religious_center_city_celebration` | 2,300 | 3,750 | 1,450 | 63.0% | 38.7% | 30%–70% | — |
+| `pmg_religious_center_assembly` | `pm_religious_center_daily_assembly` | 600 | 1,000 | 400 | 66.7% | 40.0% | 30%–70% | — |
+| `pmg_religious_center_assembly` | `pm_religious_center_public_instruction` | 1,150 | 1,800 | 650 | 56.5% | 36.1% | 30%–70% | — |
+| `pmg_religious_center_assembly` | `pm_religious_center_city_celebration` | 1,950 | 3,000 | 1,050 | 53.8% | 35.0% | 30%–70% | — |
 | `pmg_religious_center_rites` | `pm_religious_center_common_rites` | 0 | 0 | 0 | — | — | 无商品流 | — |
 | `pmg_religious_center_facilities` | `pm_religious_center_traditional_facilities` | 0 | 0 | 0 | — | — | 无商品流 | — |
-| `pmg_religious_center_facilities` | `pm_religious_center_printed_liturgy` | 500 | 750 | 250 | 50.0% | 33.3% | 30%–70% | — |
-| `pmg_religious_center_facilities` | `pm_religious_center_electric_facilities` | 950 | 1,500 | 550 | 57.9% | 36.7% | 30%–70% | — |
+| `pmg_religious_center_facilities` | `pm_religious_center_printed_liturgy` | 500 | 600 | 100 | 20.0% | 16.7% | 低于30% | — |
+| `pmg_religious_center_facilities` | `pm_religious_center_electric_facilities` | 900 | 1,200 | 300 | 33.3% | 25.0% | 低于30% | — |
 
 ### `building_sakura_stone_mine`
 
@@ -364,24 +365,24 @@
 
 | 生产方式组 | 生产方式 | 投入总价 | 产出总价 | 商品差额 | 投入收益率 | 商品毛利率 | 毛利率判定 | 倍率修正 |
 |---|---|---:|---:|---:|---:|---:|---|---|
-| `pmg_stage_operation` | `pm_stage_operation_public` | 450 | 1,000 | 550 | 122.2% | 55.0% | 30%–70% | — |
-| `pmg_stage_operation` | `pm_stage_operation_ticketed` | 750 | 1,500 | 750 | 100.0% | 50.0% | 30%–70% | — |
-| `pmg_stage_operation` | `pm_stage_operation_hospitality` | 1,500 | 2,500 | 1,000 | 66.7% | 40.0% | 30%–70% | — |
-| `pmg_stage_operation` | `pm_stage_operation_festival` | 2,700 | 4,500 | 1,800 | 66.7% | 40.0% | 30%–70% | — |
-| `pmg_stage_scale` | `pm_stage_scale_small` | 200 | 1,000 | 800 | 400.0% | 80.0% | 高于70% | — |
-| `pmg_stage_scale` | `pm_stage_scale_compact` | 600 | 1,500 | 900 | 150.0% | 60.0% | 30%–70% | — |
-| `pmg_stage_scale` | `pm_stage_scale_medium` | 1,600 | 2,500 | 900 | 56.2% | 36.0% | 30%–70% | — |
-| `pmg_stage_scale` | `pm_stage_scale_large` | 3,250 | 5,000 | 1,750 | 53.8% | 35.0% | 30%–70% | — |
+| `pmg_stage_scale` | `pm_stage_scale_small` | 600 | 1,500 | 900 | 150.0% | 60.0% | 30%–70% | — |
+| `pmg_stage_scale` | `pm_stage_scale_compact` | 1,100 | 2,500 | 1,400 | 127.3% | 56.0% | 30%–70% | — |
+| `pmg_stage_scale` | `pm_stage_scale_medium` | 1,950 | 4,000 | 2,050 | 105.1% | 51.2% | 30%–70% | — |
+| `pmg_stage_scale` | `pm_stage_scale_large` | 2,950 | 6,000 | 3,050 | 103.4% | 50.8% | 30%–70% | — |
+| `pmg_stage_staff` | `pm_stage_staff_manual` | 0 | 0 | 0 | — | — | 无商品流 | — |
+| `pmg_stage_staff` | `pm_stage_staff_mechanical` | 500 | 0 | -500 | — | — | 仅投入/辅助 | — |
+| `pmg_stage_staff` | `pm_stage_staff_console` | 800 | 0 | -800 | — | — | 仅投入/辅助 | — |
+| `pmg_stage_staff` | `pm_stage_staff_linked` | 1,300 | 0 | -1,300 | — | — | 仅投入/辅助 | — |
 | `pmg_stage_merchandising` | `pm_stage_merchandising_none` | 0 | 0 | 0 | — | — | 无商品流 | — |
 | `pmg_stage_merchandising` | `pm_stage_merchandising_basic` | 450 | 600 | 150 | 33.3% | 25.0% | 低于30% | — |
-| `pmg_stage_merchandising` | `pm_stage_merchandising_standard` | 750 | 1,000 | 250 | 33.3% | 25.0% | 低于30% | — |
-| `pmg_stage_merchandising` | `pm_stage_merchandising_full` | 1,500 | 1,800 | 300 | 20.0% | 16.7% | 低于30% | — |
-| `pmg_stage_merchandising` | `pm_stage_merchandising_premium` | 2,250 | 2,800 | 550 | 24.4% | 19.6% | 低于30% | — |
-| `pmg_stage_media` | `pm_stage_media_none` | 0 | 0 | 0 | — | — | 无商品流 | — |
-| `pmg_stage_media` | `pm_stage_media_flyers` | 450 | 600 | 150 | 33.3% | 25.0% | 低于30% | — |
-| `pmg_stage_media` | `pm_stage_media_magazines` | 1,100 | 1,400 | 300 | 27.3% | 21.4% | 低于30% | — |
-| `pmg_stage_media` | `pm_stage_media_radio` | 1,550 | 2,200 | 650 | 41.9% | 29.5% | 低于30% | — |
-| `pmg_stage_media` | `pm_stage_media_ip_collab` | 2,300 | 3,200 | 900 | 39.1% | 28.1% | 低于30% | — |
+| `pmg_stage_merchandising` | `pm_stage_merchandising_standard` | 600 | 1,000 | 400 | 66.7% | 40.0% | 30%–70% | — |
+| `pmg_stage_merchandising` | `pm_stage_merchandising_full` | 750 | 1,200 | 450 | 60.0% | 37.5% | 30%–70% | — |
+| `pmg_stage_merchandising` | `pm_stage_merchandising_premium` | 1,050 | 1,600 | 550 | 52.4% | 34.4% | 30%–70% | — |
+| `pmg_stage_service` | `pm_stage_service_none` | 0 | 0 | 0 | — | — | 无商品流 | — |
+| `pmg_stage_service` | `pm_stage_service_basic` | 300 | 400 | 100 | 33.3% | 25.0% | 低于30% | — |
+| `pmg_stage_service` | `pm_stage_service_rest` | 600 | 800 | 200 | 33.3% | 25.0% | 低于30% | — |
+| `pmg_stage_service` | `pm_stage_service_catering` | 750 | 1,200 | 450 | 60.0% | 37.5% | 30%–70% | — |
+| `pmg_stage_service` | `pm_stage_service_full` | 1,050 | 1,600 | 550 | 52.4% | 34.4% | 30%–70% | — |
 
 ### `building_tot_animal_breeding_center`
 

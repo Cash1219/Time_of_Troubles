@@ -47,3 +47,26 @@ pmg_stage_media = {
 		pm_stage_media_ip_collab
 	}
 }
+
+pmg_stage_staff = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	ai_selection = most_profitable
+	production_methods = {
+		pm_stage_staff_manual
+		pm_stage_staff_mechanical
+		pm_stage_staff_console
+		pm_stage_staff_linked
+	}
+}
+
+pmg_stage_service = {
+	texture = "gfx/interface/icons/generic_icons/sales_icon.dds"
+	ai_selection = most_profitable
+	production_methods = {
+		pm_stage_service_none
+		pm_stage_service_basic
+		pm_stage_service_rest
+		pm_stage_service_catering
+		pm_stage_service_full
+	}
+}
