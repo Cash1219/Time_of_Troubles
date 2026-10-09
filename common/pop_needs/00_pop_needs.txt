@@ -142,6 +142,13 @@ popneed_household_items = {
 	default = furniture
 
 	entry = {
+		goods = publications
+		weight = 0.5
+		max_supply_share = 0.35
+		min_supply_share = 0.0
+	}
+
+	entry = {
 		goods = furniture
 
 		weight = 1
@@ -184,15 +191,15 @@ popneed_services = {
 	entry = {
 		goods = experience
 
-		weight = 0.9
-		max_supply_share = 0.5
+		weight = 0.3
+		max_supply_share = 0.25
 		min_supply_share = 0.0
 	}
 
 	entry = {
 		goods = faith
 
-		weight = 0.8
+		weight = tot_faith_need_weight
 		max_supply_share = 0.4
 		min_supply_share = 0.0
 	}
@@ -369,6 +376,13 @@ popneed_luxury_food = {
 popneed_luxury_items = {
 	default = silk
 
+	entry = {
+		goods = omocha
+		weight = 0.75
+		max_supply_share = 0.35
+		min_supply_share = 0.0
+	}
+
 	obsession_demand_min = 0.75
 	obsession_demand_mult = 1.75
 	prestige_goods_demand_increase = 0.75
@@ -424,6 +438,13 @@ popneed_luxury_items = {
 
 popneed_leisure = {
 	default = services
+
+	entry = {
+		goods = omocha
+		weight = 1.25
+		max_supply_share = 0.4
+		min_supply_share = 0.0
+	}
 	
 	obsession_demand_min = 0.5
 	obsession_demand_mult = 2.0

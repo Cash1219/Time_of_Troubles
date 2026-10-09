@@ -1,7 +1,7 @@
 # Main PMs each employ 5,000. Higher tiers include earlier animals and services.
 pm_tot_pet_services_traditional = {
-	texture = "gfx/interface/icons/production_method_icons/pm_zoo_type_small.dds"
-	default = yes
+	texture = "gfx/interface/icons/production_method_icons/pm_tot_pet_services_traditional.dds"
+	is_default = yes
 	unlocking_technologies = { pharmaceuticals }
 	building_modifiers = {
 		level_scaled = {
@@ -19,7 +19,7 @@ pm_tot_pet_services_traditional = {
 }
 
 pm_tot_pet_services_companion = {
-	texture = "gfx/interface/icons/production_method_icons/pm_zoo_interaction_basic.dds"
+	texture = "gfx/interface/icons/production_method_icons/pm_tot_pet_services_companion.dds"
 	unlocking_technologies = { tot_scientific_animal_husbandry }
 	building_modifiers = {
 		level_scaled = {
@@ -37,7 +37,7 @@ pm_tot_pet_services_companion = {
 }
 
 pm_tot_pet_services_care = {
-	texture = "gfx/interface/icons/production_method_icons/pm_zoo_interaction_feeding.dds"
+	texture = "gfx/interface/icons/production_method_icons/pm_tot_pet_services_care.dds"
 	unlocking_technologies = { tot_animal_behavior_research }
 	building_modifiers = {
 		level_scaled = {
@@ -56,7 +56,7 @@ pm_tot_pet_services_care = {
 }
 
 pm_tot_pet_services_comprehensive = {
-	texture = "gfx/interface/icons/production_method_icons/pm_zoo_education_conservation.dds"
+	texture = "gfx/interface/icons/production_method_icons/pm_tot_pet_services_comprehensive.dds"
 	unlocking_technologies = { antibiotics }
 	building_modifiers = {
 		level_scaled = {
@@ -75,15 +75,15 @@ pm_tot_pet_services_comprehensive = {
 }
 
 pm_tot_pet_operation_small = {
-	texture = "gfx/interface/icons/production_method_icons/pm_amusement_shop_stall.dds"
-	default = yes
+	texture = "gfx/interface/icons/production_method_icons/pm_tot_pet_operation_small.dds"
+	is_default = yes
 	building_modifiers = {
 		workforce_scaled = { goods_input_services_add = 5 }
 	}
 }
 
 pm_tot_pet_operation_professional = {
-	texture = "gfx/interface/icons/production_method_icons/pm_amusement_shop_souvenir.dds"
+	texture = "gfx/interface/icons/production_method_icons/pm_tot_pet_operation_professional.dds"
 	unlocking_technologies = { tot_modern_services }
 	building_modifiers = {
 		level_scaled = { building_employment_laborers_add = -1000 }
@@ -95,7 +95,7 @@ pm_tot_pet_operation_professional = {
 }
 
 pm_tot_pet_operation_centralized = {
-	texture = "gfx/interface/icons/production_method_icons/pm_amusement_shop_collab.dds"
+	texture = "gfx/interface/icons/production_method_icons/pm_tot_pet_operation_centralized.dds"
 	unlocking_technologies = { corporate_management }
 	building_modifiers = {
 		level_scaled = { building_employment_laborers_add = -2000 }

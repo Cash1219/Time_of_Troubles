@@ -1,24 +1,2 @@
-# Vanilla livestock ranch with an additional optional dairy production line.
-building_livestock_ranch = {
-	building_group = bg_ranching
-	icon = "gfx/interface/icons/building_icons/cattle_ranch.dds"
-	city_type = farm
-	levels_per_mesh = 50
-
-	unlocking_technologies = {
-		enclosure
-	}
-
-	production_method_groups = {
-		pmg_base_building_livestock_ranch
-		pmg_sheep_ranch
-		pmg_fencing
-		pmg_refrigeration_building_livestock_ranch
-		pmg_tot_dairy_livestock_ranch
-	}
-
-	required_construction = construction_cost_low
-	terrain_manipulator = pasture
-	ownership_type = self
-	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_farming.dds"
-}
+# Livestock dairy extension is now integrated into 02_agro.txt.
+# Do not redefine building_livestock_ranch here: keep one effective definition.

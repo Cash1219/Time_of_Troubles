@@ -1,0 +1,21 @@
+{
+  "method": "built-in image_gen.imagegen",
+  "status": "installed",
+  "prompt": "Use case: precise-object-edit. Image 1 is the EDIT TARGET, a framed animal rearing garden building icon. Image 2 is the exact approved rabbit commodity icon, INSERT reference. Change ONLY the large cat-and-blue-bird commodity emblem in the LOWER-RIGHT foreground of image 1: remove BOTH the cat and blue bird, and replace with ONE ivory-white rabbit head/upper chest matching image 2's face, pink ears, ruby-brown eyes, style and colors. Scale the rabbit to fit the same compact lower-right emblem space, around 30 percent of canvas width and 40 percent height including upright ears; fully visible ears and bust entirely INSIDE the existing bronze frame. The rabbit must not dominate or obscure the building or aviary. Restore any tiny background gaps left by removal using the existing wood fence and foliage. Keep every other part of image 1 unchanged: main cream-and-timber lodge, slate roof, attached aviary and its small birds, rabbits in the pen, fences, greenery, daylight, camera angle, original continuous bronze rounded-square border, dimensions and overall composition. Do not add flowers, extra commodity animals, text or a medallion. Preserve genuine transparency ONLY outside the rounded frame; the scene inside remains opaque. One finished square building icon.",
+  "source": "building_animal_garden_rabbit.png",
+  "references": [
+    {
+      "path": "sources_framed_v2/building_tot_animal_breeding_center.png",
+      "role": "edit target"
+    },
+    {
+      "path": "ornamental_animals_rabbit.png",
+      "role": "approved commodity insert"
+    }
+  ],
+  "texture": "gfx/interface/icons/building_icons/building_tot_animal_breeding_center_framed_rabbit.dds",
+  "size": [
+    256,
+    256
+  ]
+}

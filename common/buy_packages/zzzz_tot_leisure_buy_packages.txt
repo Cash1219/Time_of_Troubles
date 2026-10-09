@@ -126,3 +126,11 @@ INJECT:wealth_30 = {
 		popneed_leisure = 120
 	}
 }
+
+# Keep the curve non-decreasing: vanilla wealth_31 is 113, below our wealth_30.
+# Wealth_32 resumes the vanilla curve at 124.
+INJECT:wealth_31 = {
+	goods = {
+		popneed_leisure = 120
+	}
+}

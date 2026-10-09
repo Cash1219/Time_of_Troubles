@@ -1,7 +1,7 @@
 # Each main PM employs 5,000; equipment only removes laborers.
 pm_tot_animal_breeding_standard = {
-	texture = "gfx/interface/icons/production_method_icons/pm_zoo_type_small.dds"
-	default = yes
+	texture = "gfx/interface/icons/production_method_icons/pm_tot_animal_breeding_standard.dds"
+	is_default = yes
 	unlocking_technologies = { pharmaceuticals }
 	building_modifiers = {
 		level_scaled = {
@@ -16,7 +16,7 @@ pm_tot_animal_breeding_standard = {
 }
 
 pm_tot_animal_breeding_scientific = {
-	texture = "gfx/interface/icons/production_method_icons/pm_zoo_type_large.dds"
+	texture = "gfx/interface/icons/production_method_icons/pm_tot_animal_breeding_scientific.dds"
 	unlocking_technologies = { tot_scientific_animal_husbandry }
 	building_modifiers = {
 		level_scaled = {
@@ -31,7 +31,7 @@ pm_tot_animal_breeding_scientific = {
 }
 
 pm_tot_animal_breeding_training = {
-	texture = "gfx/interface/icons/production_method_icons/pm_zoo_interaction_show.dds"
+	texture = "gfx/interface/icons/production_method_icons/pm_tot_animal_breeding_training.dds"
 	unlocking_technologies = { tot_animal_behavior_research }
 	building_modifiers = {
 		level_scaled = {
@@ -47,7 +47,7 @@ pm_tot_animal_breeding_training = {
 }
 
 pm_tot_animal_breeding_modern = {
-	texture = "gfx/interface/icons/production_method_icons/pm_zoo_education_conservation.dds"
+	texture = "gfx/interface/icons/production_method_icons/pm_tot_animal_breeding_modern.dds"
 	unlocking_technologies = { antibiotics }
 	building_modifiers = {
 		level_scaled = {
@@ -63,15 +63,15 @@ pm_tot_animal_breeding_modern = {
 }
 
 pm_tot_animal_feeding_manual = {
-	texture = "gfx/interface/icons/production_method_icons/pm_zoo_interaction_feeding.dds"
-	default = yes
+	texture = "gfx/interface/icons/production_method_icons/pm_tot_animal_feeding_manual.dds"
+	is_default = yes
 	building_modifiers = {
 		level_scaled = { building_employment_laborers_add = 0 }
 	}
 }
 
 pm_tot_animal_feeding_mechanized = {
-	texture = "gfx/interface/icons/invention_icons/mechanical_tools.dds"
+	texture = "gfx/interface/icons/production_method_icons/pm_tot_animal_feeding_mechanized.dds"
 	unlocking_technologies = { mechanical_tools }
 	building_modifiers = {
 		level_scaled = { building_employment_laborers_add = -1000 }
@@ -80,7 +80,7 @@ pm_tot_animal_feeding_mechanized = {
 }
 
 pm_tot_animal_feeding_electric = {
-	texture = "gfx/interface/icons/invention_icons/electrical_generation.dds"
+	texture = "gfx/interface/icons/production_method_icons/pm_tot_animal_feeding_electric.dds"
 	unlocking_technologies = { electrical_generation }
 	required_input_goods = { electricity }
 	building_modifiers = {

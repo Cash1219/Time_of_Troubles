@@ -1,0 +1,115 @@
+# Reallocate exactly 25% of luxury-drink budget to luxury food at wealth 15-29.
+# Total budget stays unchanged. Wealth 30 bridges the transition; wealth 31+ is vanilla.
+
+INJECT:wealth_15 = {
+	goods = {
+		popneed_luxury_drinks = 13.5
+		popneed_luxury_food = 4.5
+	}
+}
+
+INJECT:wealth_16 = {
+	goods = {
+		popneed_luxury_drinks = 19.5
+		popneed_luxury_food = 6.5
+	}
+}
+
+INJECT:wealth_17 = {
+	goods = {
+		popneed_luxury_drinks = 31.5
+		popneed_luxury_food = 10.5
+	}
+}
+
+INJECT:wealth_18 = {
+	goods = {
+		popneed_luxury_drinks = 45.75
+		popneed_luxury_food = 15.25
+	}
+}
+
+INJECT:wealth_19 = {
+	goods = {
+		popneed_luxury_drinks = 58.5
+		popneed_luxury_food = 19.5
+	}
+}
+
+INJECT:wealth_20 = {
+	goods = {
+		popneed_luxury_drinks = 68.25
+		popneed_luxury_food = 30.75
+	}
+}
+
+INJECT:wealth_21 = {
+	goods = {
+		popneed_luxury_drinks = 81.75
+		popneed_luxury_food = 45.25
+	}
+}
+
+INJECT:wealth_22 = {
+	goods = {
+		popneed_luxury_drinks = 96.75
+		popneed_luxury_food = 60.25
+	}
+}
+
+INJECT:wealth_23 = {
+	goods = {
+		popneed_luxury_drinks = 112.5
+		popneed_luxury_food = 76.5
+	}
+}
+
+INJECT:wealth_24 = {
+	goods = {
+		popneed_luxury_drinks = 126.75
+		popneed_luxury_food = 99.25
+	}
+}
+
+INJECT:wealth_25 = {
+	goods = {
+		popneed_luxury_drinks = 138
+		popneed_luxury_food = 120
+	}
+}
+
+INJECT:wealth_26 = {
+	goods = {
+		popneed_luxury_drinks = 151.5
+		popneed_luxury_food = 134.5
+	}
+}
+
+INJECT:wealth_27 = {
+	goods = {
+		popneed_luxury_drinks = 169.5
+		popneed_luxury_food = 159.5
+	}
+}
+
+INJECT:wealth_28 = {
+	goods = {
+		popneed_luxury_drinks = 183.75
+		popneed_luxury_food = 208.25
+	}
+}
+
+INJECT:wealth_29 = {
+	goods = {
+		popneed_luxury_drinks = 202.5
+		popneed_luxury_food = 266.5
+	}
+}
+
+# Keep the food budget from falling at the transition to the vanilla curve.
+INJECT:wealth_30 = {
+	goods = {
+		popneed_luxury_drinks = 287.5
+		popneed_luxury_food = 266.5
+	}
+}
