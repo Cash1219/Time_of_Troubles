@@ -1,0 +1,3489 @@
+﻿{
+  "needs": {
+    "popneed_simple_clothing": {
+      "settings": {
+        "default": "fabric"
+      },
+      "entries": {
+        "fabric": {
+          "goods": "fabric",
+          "weight": "1",
+          "max_supply_share": "0.5",
+          "min_supply_share": "0.0"
+        },
+        "clothes": {
+          "goods": "clothes",
+          "weight": "2",
+          "max_supply_share": "1.0",
+          "min_supply_share": "0.0"
+        }
+      }
+    },
+    "popneed_crude_items": {
+      "settings": {
+        "default": "wood"
+      },
+      "entries": {
+        "wood": {
+          "goods": "wood",
+          "weight": "1",
+          "max_supply_share": "0.5",
+          "min_supply_share": "0.0"
+        },
+        "furniture": {
+          "goods": "furniture",
+          "weight": "2",
+          "max_supply_share": "1.0",
+          "min_supply_share": "0.0"
+        }
+      }
+    },
+    "popneed_basic_food": {
+      "settings": {
+        "default": "grain"
+      },
+      "entries": {
+        "milk": {
+          "goods": "milk",
+          "weight": "0.4",
+          "max_supply_share": "0.25",
+          "min_supply_share": "0.0"
+        },
+        "grain": {
+          "goods": "grain",
+          "weight": "0.85",
+          "max_supply_share": "0.9",
+          "min_supply_share": "0.0"
+        },
+        "fish": {
+          "goods": "fish",
+          "weight": "1",
+          "max_supply_share": "0.9",
+          "min_supply_share": "0.0"
+        },
+        "meat": {
+          "goods": "meat",
+          "weight": "1",
+          "max_supply_share": "0.9",
+          "min_supply_share": "0.0"
+        },
+        "fruit": {
+          "goods": "fruit",
+          "weight": "1",
+          "max_supply_share": "0.9",
+          "min_supply_share": "0.0"
+        },
+        "groceries": {
+          "goods": "groceries",
+          "weight": "1.15",
+          "max_supply_share": "0.9",
+          "min_supply_share": "0.0"
+        }
+      }
+    },
+    "popneed_heating": {
+      "settings": {
+        "default": "wood"
+      },
+      "entries": {
+        "wood": {
+          "goods": "wood",
+          "weight": "0.75",
+          "max_supply_share": "0.5",
+          "min_supply_share": "0.0"
+        },
+        "fabric": {
+          "goods": "fabric",
+          "weight": "0.25",
+          "max_supply_share": "0.25",
+          "min_supply_share": "0.0"
+        },
+        "coal": {
+          "goods": "coal",
+          "weight": "2",
+          "max_supply_share": "0.8",
+          "min_supply_share": "0.0"
+        },
+        "oil": {
+          "goods": "oil",
+          "weight": "3",
+          "max_supply_share": "1.0",
+          "min_supply_share": "0.0"
+        },
+        "electricity": {
+          "goods": "electricity",
+          "weight": "3",
+          "max_supply_share": "1.0",
+          "min_supply_share": "0.0"
+        }
+      }
+    },
+    "popneed_household_items": {
+      "settings": {
+        "default": "furniture"
+      },
+      "entries": {
+        "publications": {
+          "goods": "publications",
+          "weight": "0.5",
+          "max_supply_share": "0.35",
+          "min_supply_share": "0.0"
+        },
+        "furniture": {
+          "goods": "furniture",
+          "weight": "1",
+          "max_supply_share": "0.75",
+          "min_supply_share": "0.10"
+        },
+        "glass": {
+          "goods": "glass",
+          "weight": "1",
+          "max_supply_share": "0.5",
+          "min_supply_share": "0.0"
+        },
+        "paper": {
+          "goods": "paper",
+          "weight": "0.5",
+          "max_supply_share": "0.5",
+          "min_supply_share": "0.0"
+        }
+      }
+    },
+    "popneed_standard_clothing": {
+      "settings": {
+        "default": "clothes"
+      },
+      "entries": {
+        "clothes": {
+          "goods": "clothes"
+        }
+      }
+    },
+    "popneed_services": {
+      "settings": {
+        "default": "services"
+      },
+      "entries": {
+        "services": {
+          "goods": "services"
+        },
+        "experience": {
+          "goods": "experience",
+          "weight": "0.3",
+          "max_supply_share": "0.25",
+          "min_supply_share": "0.0"
+        },
+        "faith": {
+          "goods": "faith",
+          "weight": "tot_faith_need_weight",
+          "max_supply_share": "0.4",
+          "min_supply_share": "0.0"
+        }
+      }
+    },
+    "popneed_intoxicants": {
+      "settings": {
+        "default": "liquor",
+        "obsession_demand_min": "0.75",
+        "obsession_demand_mult": "1.75",
+        "prestige_goods_demand_increase": "0.75"
+      },
+      "entries": {
+        "liquor": {
+          "goods": "liquor",
+          "weight": "1",
+          "max_supply_share": "0.75",
+          "min_supply_share": "0.0"
+        },
+        "tobacco": {
+          "goods": "tobacco",
+          "weight": "0.9",
+          "max_supply_share": "0.75",
+          "min_supply_share": "0.0"
+        },
+        "opium": {
+          "goods": "opium",
+          "weight": "0.75",
+          "max_supply_share": "0.75",
+          "min_supply_share": "0.0"
+        },
+        "wine": {
+          "goods": "wine",
+          "weight": "0.25",
+          "max_supply_share": "0.25",
+          "min_supply_share": "0.0"
+        }
+      }
+    },
+    "popneed_luxury_drinks": {
+      "settings": {
+        "default": "tea",
+        "obsession_demand_min": "0.75",
+        "obsession_demand_mult": "1.75",
+        "prestige_goods_demand_increase": "0.75"
+      },
+      "entries": {
+        "tea": {
+          "goods": "tea",
+          "weight": "1",
+          "max_supply_share": "0.75",
+          "min_supply_share": "0.0"
+        },
+        "coffee": {
+          "goods": "coffee",
+          "weight": "1",
+          "max_supply_share": "0.75",
+          "min_supply_share": "0.0"
+        },
+        "wine": {
+          "goods": "wine",
+          "weight": "0.33",
+          "max_supply_share": "0.33",
+          "min_supply_share": "0.0"
+        },
+        "luxury_drinks": {
+          "goods": "luxury_drinks",
+          "weight": "2",
+          "max_supply_share": "1.0",
+          "min_supply_share": "0.0"
+        }
+      }
+    },
+    "popneed_free_movement": {
+      "settings": {
+        "default": "transportation"
+      },
+      "entries": {
+        "transportation": {
+          "goods": "transportation",
+          "weight": "1",
+          "max_supply_share": "0.75",
+          "min_supply_share": "0.0"
+        },
+        "automobiles": {
+          "goods": "automobiles",
+          "weight": "1.25",
+          "max_supply_share": "1.0",
+          "min_supply_share": "0.0"
+        }
+      }
+    },
+    "popneed_communication": {
+      "settings": {
+        "default": "transportation"
+      },
+      "entries": {
+        "transportation": {
+          "goods": "transportation",
+          "weight": "1",
+          "max_supply_share": "0.75",
+          "min_supply_share": "0.0"
+        },
+        "telephones": {
+          "goods": "telephones",
+          "weight": "2",
+          "max_supply_share": "1.0",
+          "min_supply_share": "0.0"
+        },
+        "publications": {
+          "goods": "publications",
+          "weight": "0.75",
+          "max_supply_share": "0.5",
+          "min_supply_share": "0.0"
+        }
+      }
+    },
+    "popneed_luxury_food": {
+      "settings": {
+        "default": "meat"
+      },
+      "entries": {
+        "meat": {
+          "goods": "meat",
+          "weight": "1.25",
+          "max_supply_share": "0.75",
+          "min_supply_share": "0.1"
+        },
+        "fruit": {
+          "goods": "fruit",
+          "weight": "0.75",
+          "max_supply_share": "0.75",
+          "min_supply_share": "0.1"
+        },
+        "groceries": {
+          "goods": "groceries",
+          "weight": "1.5",
+          "max_supply_share": "1.0",
+          "min_supply_share": "0.0"
+        },
+        "sugar": {
+          "goods": "sugar",
+          "weight": "0.5",
+          "max_supply_share": "0.5",
+          "min_supply_share": "0.0"
+        },
+        "luxury_foods": {
+          "goods": "luxury_foods",
+          "weight": "1.75",
+          "max_supply_share": "1.0",
+          "min_supply_share": "0.0"
+        }
+      }
+    },
+    "popneed_luxury_items": {
+      "settings": {
+        "default": "silk",
+        "obsession_demand_min": "0.75",
+        "obsession_demand_mult": "1.75",
+        "prestige_goods_demand_increase": "0.75"
+      },
+      "entries": {
+        "omocha": {
+          "goods": "omocha",
+          "weight": "0.75",
+          "max_supply_share": "0.35",
+          "min_supply_share": "0.0"
+        },
+        "silk": {
+          "goods": "silk",
+          "weight": "0.5",
+          "max_supply_share": "0.25",
+          "min_supply_share": "0.1"
+        },
+        "luxury_clothes": {
+          "goods": "luxury_clothes",
+          "weight": "1",
+          "max_supply_share": "0.5",
+          "min_supply_share": "0.1"
+        },
+        "luxury_furniture": {
+          "goods": "luxury_furniture",
+          "weight": "1",
+          "max_supply_share": "0.5",
+          "min_supply_share": "0.1"
+        },
+        "porcelain": {
+          "goods": "porcelain",
+          "weight": "1",
+          "max_supply_share": "0.5",
+          "min_supply_share": "0.1"
+        },
+        "ornamental_plants": {
+          "goods": "ornamental_plants",
+          "weight": "0.5",
+          "max_supply_share": "0.25",
+          "min_supply_share": "0.05"
+        },
+        "radios": {
+          "goods": "radios",
+          "weight": "1",
+          "max_supply_share": "0.5",
+          "min_supply_share": "0.0"
+        }
+      }
+    },
+    "popneed_leisure": {
+      "settings": {
+        "default": "services",
+        "obsession_demand_min": "0.5",
+        "obsession_demand_mult": "2.0",
+        "prestige_goods_demand_increase": "1.0"
+      },
+      "entries": {
+        "omocha": {
+          "goods": "omocha",
+          "weight": "1.25",
+          "max_supply_share": "0.4",
+          "min_supply_share": "0.0"
+        },
+        "services": {
+          "goods": "services",
+          "weight": "0.1",
+          "max_supply_share": "1.0",
+          "min_supply_share": "0.0"
+        },
+        "fine_art": {
+          "goods": "fine_art",
+          "weight": "4",
+          "max_supply_share": "1.0",
+          "min_supply_share": "0.0"
+        },
+        "small_arms": {
+          "goods": "small_arms",
+          "weight": "0.75",
+          "max_supply_share": "0.25",
+          "min_supply_share": "0.0"
+        },
+        "aeroplanes": {
+          "goods": "aeroplanes",
+          "weight": "1",
+          "max_supply_share": "0.2",
+          "min_supply_share": "0.0"
+        },
+        "automobiles": {
+          "goods": "automobiles",
+          "weight": "1",
+          "max_supply_share": "0.25",
+          "min_supply_share": "0.0"
+        },
+        "radios": {
+          "goods": "radios",
+          "weight": "1",
+          "max_supply_share": "0.2",
+          "min_supply_share": "0.0"
+        },
+        "musical_instrument": {
+          "goods": "musical_instrument",
+          "weight": "3",
+          "max_supply_share": "0.5",
+          "min_supply_share": "0.1"
+        },
+        "entertainment_publications": {
+          "goods": "entertainment_publications",
+          "weight": "1.25",
+          "max_supply_share": "0.5",
+          "min_supply_share": "0.1"
+        },
+        "games": {
+          "goods": "games",
+          "weight": "1.25",
+          "max_supply_share": "0.4",
+          "min_supply_share": "0.1"
+        },
+        "performance": {
+          "goods": "performance",
+          "weight": "2.5",
+          "max_supply_share": "0.5",
+          "min_supply_share": "0.1"
+        },
+        "exhibition": {
+          "goods": "exhibition",
+          "weight": "2",
+          "max_supply_share": "0.5",
+          "min_supply_share": "0.1"
+        },
+        "animal_performance": {
+          "goods": "animal_performance",
+          "weight": "2",
+          "max_supply_share": "0.5",
+          "min_supply_share": "0.1"
+        },
+        "opium": {
+          "goods": "opium",
+          "weight": "0.5",
+          "max_supply_share": "0.5",
+          "min_supply_share": "0.0"
+        },
+        "clippers": {
+          "goods": "clippers",
+          "weight": "1",
+          "max_supply_share": "0.25",
+          "min_supply_share": "0.0"
+        },
+        "steamers": {
+          "goods": "steamers",
+          "weight": "0.75",
+          "max_supply_share": "0.25",
+          "min_supply_share": "0.0"
+        }
+      }
+    },
+    "popneed_stimulants": {
+      "settings": {
+        "default": "sugar"
+      },
+      "entries": {
+        "sugar": {
+          "goods": "sugar",
+          "weight": "1",
+          "max_supply_share": "0.75",
+          "min_supply_share": "0.0"
+        },
+        "tea": {
+          "goods": "tea",
+          "weight": "0.95",
+          "max_supply_share": "0.75",
+          "min_supply_share": "0.0"
+        },
+        "coffee": {
+          "goods": "coffee",
+          "weight": "0.95",
+          "max_supply_share": "0.75",
+          "min_supply_share": "0.0"
+        },
+        "tobacco": {
+          "goods": "tobacco",
+          "weight": "0.8",
+          "max_supply_share": "0.75",
+          "min_supply_share": "0.0"
+        }
+      }
+    }
+  },
+  "need_diffs": [
+    {
+      "need": "popneed_basic_food",
+      "good": "milk",
+      "vanilla": null,
+      "mod": {
+        "goods": "milk",
+        "weight": "0.4",
+        "max_supply_share": "0.25",
+        "min_supply_share": "0.0"
+      }
+    },
+    {
+      "need": "popneed_household_items",
+      "good": "publications",
+      "vanilla": null,
+      "mod": {
+        "goods": "publications",
+        "weight": "0.5",
+        "max_supply_share": "0.35",
+        "min_supply_share": "0.0"
+      }
+    },
+    {
+      "need": "popneed_services",
+      "good": "faith",
+      "vanilla": null,
+      "mod": {
+        "goods": "faith",
+        "weight": "tot_faith_need_weight",
+        "max_supply_share": "0.4",
+        "min_supply_share": "0.0"
+      }
+    },
+    {
+      "need": "popneed_services",
+      "good": "experience",
+      "vanilla": null,
+      "mod": {
+        "goods": "experience",
+        "weight": "0.3",
+        "max_supply_share": "0.25",
+        "min_supply_share": "0.0"
+      }
+    },
+    {
+      "need": "popneed_luxury_drinks",
+      "good": "wine",
+      "vanilla": {
+        "goods": "wine",
+        "weight": "0.45",
+        "max_supply_share": "0.33",
+        "min_supply_share": "0.0"
+      },
+      "mod": {
+        "goods": "wine",
+        "weight": "0.33",
+        "max_supply_share": "0.33",
+        "min_supply_share": "0.0"
+      }
+    },
+    {
+      "need": "popneed_luxury_drinks",
+      "good": "luxury_drinks",
+      "vanilla": null,
+      "mod": {
+        "goods": "luxury_drinks",
+        "weight": "2",
+        "max_supply_share": "1.0",
+        "min_supply_share": "0.0"
+      }
+    },
+    {
+      "need": "popneed_communication",
+      "good": "publications",
+      "vanilla": null,
+      "mod": {
+        "goods": "publications",
+        "weight": "0.75",
+        "max_supply_share": "0.5",
+        "min_supply_share": "0.0"
+      }
+    },
+    {
+      "need": "popneed_luxury_food",
+      "good": "luxury_foods",
+      "vanilla": null,
+      "mod": {
+        "goods": "luxury_foods",
+        "weight": "1.75",
+        "max_supply_share": "1.0",
+        "min_supply_share": "0.0"
+      }
+    },
+    {
+      "need": "popneed_luxury_items",
+      "good": "ornamental_plants",
+      "vanilla": null,
+      "mod": {
+        "goods": "ornamental_plants",
+        "weight": "0.5",
+        "max_supply_share": "0.25",
+        "min_supply_share": "0.05"
+      }
+    },
+    {
+      "need": "popneed_luxury_items",
+      "good": "omocha",
+      "vanilla": null,
+      "mod": {
+        "goods": "omocha",
+        "weight": "0.75",
+        "max_supply_share": "0.35",
+        "min_supply_share": "0.0"
+      }
+    },
+    {
+      "need": "popneed_leisure",
+      "good": "animal_performance",
+      "vanilla": null,
+      "mod": {
+        "goods": "animal_performance",
+        "weight": "2",
+        "max_supply_share": "0.5",
+        "min_supply_share": "0.1"
+      }
+    },
+    {
+      "need": "popneed_leisure",
+      "good": "performance",
+      "vanilla": null,
+      "mod": {
+        "goods": "performance",
+        "weight": "2.5",
+        "max_supply_share": "0.5",
+        "min_supply_share": "0.1"
+      }
+    },
+    {
+      "need": "popneed_leisure",
+      "good": "musical_instrument",
+      "vanilla": null,
+      "mod": {
+        "goods": "musical_instrument",
+        "weight": "3",
+        "max_supply_share": "0.5",
+        "min_supply_share": "0.1"
+      }
+    },
+    {
+      "need": "popneed_leisure",
+      "good": "entertainment_publications",
+      "vanilla": null,
+      "mod": {
+        "goods": "entertainment_publications",
+        "weight": "1.25",
+        "max_supply_share": "0.5",
+        "min_supply_share": "0.1"
+      }
+    },
+    {
+      "need": "popneed_leisure",
+      "good": "exhibition",
+      "vanilla": null,
+      "mod": {
+        "goods": "exhibition",
+        "weight": "2",
+        "max_supply_share": "0.5",
+        "min_supply_share": "0.1"
+      }
+    },
+    {
+      "need": "popneed_leisure",
+      "good": "omocha",
+      "vanilla": null,
+      "mod": {
+        "goods": "omocha",
+        "weight": "1.25",
+        "max_supply_share": "0.4",
+        "min_supply_share": "0.0"
+      }
+    },
+    {
+      "need": "popneed_leisure",
+      "good": "games",
+      "vanilla": null,
+      "mod": {
+        "goods": "games",
+        "weight": "1.25",
+        "max_supply_share": "0.4",
+        "min_supply_share": "0.1"
+      }
+    }
+  ],
+  "budgets": [
+    {
+      "wealth": 1,
+      "vanilla": {
+        "popneed_simple_clothing": 23.0,
+        "popneed_basic_food": 90.0,
+        "popneed_heating": 15.0,
+        "popneed_intoxicants": 23.0
+      },
+      "mod": {
+        "popneed_simple_clothing": 23.0,
+        "popneed_basic_food": 90.0,
+        "popneed_heating": 15.0,
+        "popneed_intoxicants": 23.0
+      },
+      "vanilla_total": 151.0,
+      "mod_total": 151.0
+    },
+    {
+      "wealth": 2,
+      "vanilla": {
+        "popneed_simple_clothing": 27.0,
+        "popneed_basic_food": 94.0,
+        "popneed_heating": 17.0,
+        "popneed_intoxicants": 27.0
+      },
+      "mod": {
+        "popneed_simple_clothing": 27.0,
+        "popneed_basic_food": 94.0,
+        "popneed_heating": 17.0,
+        "popneed_intoxicants": 27.0
+      },
+      "vanilla_total": 165.0,
+      "mod_total": 165.0
+    },
+    {
+      "wealth": 3,
+      "vanilla": {
+        "popneed_simple_clothing": 33.0,
+        "popneed_basic_food": 98.0,
+        "popneed_heating": 19.0,
+        "popneed_intoxicants": 31.0
+      },
+      "mod": {
+        "popneed_simple_clothing": 33.0,
+        "popneed_basic_food": 98.0,
+        "popneed_heating": 19.0,
+        "popneed_intoxicants": 31.0
+      },
+      "vanilla_total": 181.0,
+      "mod_total": 181.0
+    },
+    {
+      "wealth": 4,
+      "vanilla": {
+        "popneed_simple_clothing": 37.0,
+        "popneed_basic_food": 105.0,
+        "popneed_heating": 21.0,
+        "popneed_intoxicants": 37.0
+      },
+      "mod": {
+        "popneed_simple_clothing": 37.0,
+        "popneed_basic_food": 105.0,
+        "popneed_heating": 21.0,
+        "popneed_intoxicants": 37.0
+      },
+      "vanilla_total": 200.0,
+      "mod_total": 200.0
+    },
+    {
+      "wealth": 5,
+      "vanilla": {
+        "popneed_simple_clothing": 39.0,
+        "popneed_crude_items": 13.0,
+        "popneed_basic_food": 106.0,
+        "popneed_heating": 22.0,
+        "popneed_intoxicants": 41.0
+      },
+      "mod": {
+        "popneed_simple_clothing": 39.0,
+        "popneed_crude_items": 13.0,
+        "popneed_basic_food": 106.0,
+        "popneed_heating": 22.0,
+        "popneed_intoxicants": 41.0
+      },
+      "vanilla_total": 221.0,
+      "mod_total": 221.0
+    },
+    {
+      "wealth": 6,
+      "vanilla": {
+        "popneed_simple_clothing": 41.0,
+        "popneed_crude_items": 19.0,
+        "popneed_basic_food": 110.0,
+        "popneed_heating": 23.0,
+        "popneed_intoxicants": 41.0,
+        "popneed_stimulants": 7.0
+      },
+      "mod": {
+        "popneed_simple_clothing": 41.0,
+        "popneed_crude_items": 19.0,
+        "popneed_basic_food": 110.0,
+        "popneed_heating": 23.0,
+        "popneed_intoxicants": 41.0,
+        "popneed_stimulants": 7.0
+      },
+      "vanilla_total": 241.0,
+      "mod_total": 241.0
+    },
+    {
+      "wealth": 7,
+      "vanilla": {
+        "popneed_simple_clothing": 42.0,
+        "popneed_crude_items": 27.0,
+        "popneed_basic_food": 115.0,
+        "popneed_heating": 26.0,
+        "popneed_intoxicants": 41.0,
+        "popneed_stimulants": 14.0
+      },
+      "mod": {
+        "popneed_simple_clothing": 42.0,
+        "popneed_crude_items": 27.0,
+        "popneed_basic_food": 115.0,
+        "popneed_heating": 26.0,
+        "popneed_intoxicants": 41.0,
+        "popneed_stimulants": 14.0
+      },
+      "vanilla_total": 265.0,
+      "mod_total": 265.0
+    },
+    {
+      "wealth": 8,
+      "vanilla": {
+        "popneed_simple_clothing": 42.0,
+        "popneed_crude_items": 38.0,
+        "popneed_basic_food": 119.0,
+        "popneed_heating": 27.0,
+        "popneed_intoxicants": 45.0,
+        "popneed_stimulants": 19.0
+      },
+      "mod": {
+        "popneed_simple_clothing": 42.0,
+        "popneed_crude_items": 38.0,
+        "popneed_basic_food": 119.0,
+        "popneed_heating": 27.0,
+        "popneed_intoxicants": 45.0,
+        "popneed_stimulants": 19.0
+      },
+      "vanilla_total": 290.0,
+      "mod_total": 290.0
+    },
+    {
+      "wealth": 9,
+      "vanilla": {
+        "popneed_simple_clothing": 43.0,
+        "popneed_crude_items": 43.0,
+        "popneed_basic_food": 128.0,
+        "popneed_heating": 29.0,
+        "popneed_intoxicants": 48.0,
+        "popneed_stimulants": 23.0
+      },
+      "mod": {
+        "popneed_simple_clothing": 43.0,
+        "popneed_crude_items": 43.0,
+        "popneed_basic_food": 128.0,
+        "popneed_heating": 29.0,
+        "popneed_intoxicants": 48.0,
+        "popneed_stimulants": 23.0
+      },
+      "vanilla_total": 314.0,
+      "mod_total": 314.0
+    },
+    {
+      "wealth": 10,
+      "vanilla": {
+        "popneed_simple_clothing": 41.0,
+        "popneed_crude_items": 41.0,
+        "popneed_basic_food": 131.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 7.0,
+        "popneed_standard_clothing": 7.0,
+        "popneed_services": 23.0,
+        "popneed_intoxicants": 50.0,
+        "popneed_free_movement": 3.0,
+        "popneed_stimulants": 26.0
+      },
+      "mod": {
+        "popneed_simple_clothing": 41.0,
+        "popneed_crude_items": 41.0,
+        "popneed_basic_food": 131.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 7.0,
+        "popneed_standard_clothing": 7.0,
+        "popneed_services": 23.0,
+        "popneed_intoxicants": 50.0,
+        "popneed_free_movement": 3.0,
+        "popneed_stimulants": 26.0,
+        "popneed_leisure": 6.0
+      },
+      "vanilla_total": 355.0,
+      "mod_total": 361.0
+    },
+    {
+      "wealth": 11,
+      "vanilla": {
+        "popneed_simple_clothing": 36.0,
+        "popneed_crude_items": 36.0,
+        "popneed_basic_food": 138.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 19.0,
+        "popneed_standard_clothing": 19.0,
+        "popneed_services": 28.0,
+        "popneed_intoxicants": 52.0,
+        "popneed_free_movement": 8.0,
+        "popneed_stimulants": 30.0
+      },
+      "mod": {
+        "popneed_simple_clothing": 36.0,
+        "popneed_crude_items": 36.0,
+        "popneed_basic_food": 138.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 19.0,
+        "popneed_standard_clothing": 19.0,
+        "popneed_services": 28.0,
+        "popneed_intoxicants": 52.0,
+        "popneed_free_movement": 8.0,
+        "popneed_stimulants": 30.0,
+        "popneed_leisure": 8.0
+      },
+      "vanilla_total": 392.0,
+      "mod_total": 400.0
+    },
+    {
+      "wealth": 12,
+      "vanilla": {
+        "popneed_simple_clothing": 30.0,
+        "popneed_crude_items": 25.0,
+        "popneed_basic_food": 148.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 34.0,
+        "popneed_standard_clothing": 30.0,
+        "popneed_services": 37.0,
+        "popneed_intoxicants": 53.0,
+        "popneed_free_movement": 13.0,
+        "popneed_stimulants": 33.0
+      },
+      "mod": {
+        "popneed_simple_clothing": 30.0,
+        "popneed_crude_items": 25.0,
+        "popneed_basic_food": 148.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 34.0,
+        "popneed_standard_clothing": 30.0,
+        "popneed_services": 37.0,
+        "popneed_intoxicants": 53.0,
+        "popneed_free_movement": 13.0,
+        "popneed_stimulants": 33.0,
+        "popneed_leisure": 10.0
+      },
+      "vanilla_total": 429.0,
+      "mod_total": 439.0
+    },
+    {
+      "wealth": 13,
+      "vanilla": {
+        "popneed_simple_clothing": 13.0,
+        "popneed_crude_items": 15.0,
+        "popneed_basic_food": 153.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 55.0,
+        "popneed_standard_clothing": 62.0,
+        "popneed_services": 44.0,
+        "popneed_intoxicants": 56.0,
+        "popneed_free_movement": 14.0,
+        "popneed_stimulants": 35.0
+      },
+      "mod": {
+        "popneed_simple_clothing": 13.0,
+        "popneed_crude_items": 15.0,
+        "popneed_basic_food": 153.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 55.0,
+        "popneed_standard_clothing": 62.0,
+        "popneed_services": 44.0,
+        "popneed_intoxicants": 56.0,
+        "popneed_free_movement": 14.0,
+        "popneed_stimulants": 35.0,
+        "popneed_leisure": 12.0
+      },
+      "vanilla_total": 473.0,
+      "mod_total": 485.0
+    },
+    {
+      "wealth": 14,
+      "vanilla": {
+        "popneed_simple_clothing": 7.0,
+        "popneed_crude_items": 8.0,
+        "popneed_basic_food": 157.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 71.0,
+        "popneed_standard_clothing": 81.0,
+        "popneed_services": 54.0,
+        "popneed_intoxicants": 60.0,
+        "popneed_free_movement": 16.0,
+        "popneed_stimulants": 39.0
+      },
+      "mod": {
+        "popneed_simple_clothing": 7.0,
+        "popneed_crude_items": 8.0,
+        "popneed_basic_food": 157.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 71.0,
+        "popneed_standard_clothing": 81.0,
+        "popneed_services": 54.0,
+        "popneed_intoxicants": 60.0,
+        "popneed_free_movement": 16.0,
+        "popneed_stimulants": 39.0,
+        "popneed_leisure": 14.0
+      },
+      "vanilla_total": 519.0,
+      "mod_total": 533.0
+    },
+    {
+      "wealth": 15,
+      "vanilla": {
+        "popneed_basic_food": 159.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 81.0,
+        "popneed_standard_clothing": 95.0,
+        "popneed_services": 61.0,
+        "popneed_intoxicants": 61.0,
+        "popneed_luxury_drinks": 18.0,
+        "popneed_free_movement": 20.0,
+        "popneed_luxury_items": 11.0,
+        "popneed_stimulants": 40.0
+      },
+      "mod": {
+        "popneed_basic_food": 159.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 81.0,
+        "popneed_standard_clothing": 95.0,
+        "popneed_services": 61.0,
+        "popneed_intoxicants": 61.0,
+        "popneed_luxury_drinks": 13.5,
+        "popneed_free_movement": 20.0,
+        "popneed_luxury_items": 11.0,
+        "popneed_stimulants": 40.0,
+        "popneed_leisure": 16.0,
+        "popneed_luxury_food": 4.5
+      },
+      "vanilla_total": 572.0,
+      "mod_total": 588.0
+    },
+    {
+      "wealth": 16,
+      "vanilla": {
+        "popneed_basic_food": 161.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 90.0,
+        "popneed_standard_clothing": 102.0,
+        "popneed_services": 71.0,
+        "popneed_intoxicants": 65.0,
+        "popneed_luxury_drinks": 26.0,
+        "popneed_free_movement": 24.0,
+        "popneed_luxury_items": 22.0,
+        "popneed_stimulants": 42.0
+      },
+      "mod": {
+        "popneed_basic_food": 161.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 90.0,
+        "popneed_standard_clothing": 102.0,
+        "popneed_services": 71.0,
+        "popneed_intoxicants": 65.0,
+        "popneed_luxury_drinks": 19.5,
+        "popneed_free_movement": 24.0,
+        "popneed_luxury_items": 22.0,
+        "popneed_stimulants": 42.0,
+        "popneed_leisure": 18.0,
+        "popneed_luxury_food": 6.5
+      },
+      "vanilla_total": 629.0,
+      "mod_total": 647.0
+    },
+    {
+      "wealth": 17,
+      "vanilla": {
+        "popneed_basic_food": 164.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 99.0,
+        "popneed_standard_clothing": 105.0,
+        "popneed_services": 82.0,
+        "popneed_intoxicants": 70.0,
+        "popneed_luxury_drinks": 42.0,
+        "popneed_free_movement": 26.0,
+        "popneed_luxury_items": 36.0,
+        "popneed_stimulants": 44.0
+      },
+      "mod": {
+        "popneed_basic_food": 164.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 99.0,
+        "popneed_standard_clothing": 105.0,
+        "popneed_services": 82.0,
+        "popneed_intoxicants": 70.0,
+        "popneed_luxury_drinks": 31.5,
+        "popneed_free_movement": 26.0,
+        "popneed_luxury_items": 36.0,
+        "popneed_stimulants": 44.0,
+        "popneed_leisure": 20.0,
+        "popneed_luxury_food": 10.5
+      },
+      "vanilla_total": 694.0,
+      "mod_total": 714.0
+    },
+    {
+      "wealth": 18,
+      "vanilla": {
+        "popneed_basic_food": 166.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 108.0,
+        "popneed_standard_clothing": 108.0,
+        "popneed_services": 93.0,
+        "popneed_intoxicants": 71.0,
+        "popneed_luxury_drinks": 61.0,
+        "popneed_free_movement": 29.0,
+        "popneed_luxury_items": 53.0,
+        "popneed_stimulants": 46.0
+      },
+      "mod": {
+        "popneed_basic_food": 166.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 108.0,
+        "popneed_standard_clothing": 108.0,
+        "popneed_services": 93.0,
+        "popneed_intoxicants": 71.0,
+        "popneed_luxury_drinks": 45.75,
+        "popneed_free_movement": 29.0,
+        "popneed_luxury_items": 53.0,
+        "popneed_stimulants": 46.0,
+        "popneed_leisure": 22.0,
+        "popneed_luxury_food": 15.25
+      },
+      "vanilla_total": 761.0,
+      "mod_total": 783.0
+    },
+    {
+      "wealth": 19,
+      "vanilla": {
+        "popneed_basic_food": 168.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 116.0,
+        "popneed_standard_clothing": 112.0,
+        "popneed_services": 105.0,
+        "popneed_intoxicants": 73.0,
+        "popneed_luxury_drinks": 78.0,
+        "popneed_free_movement": 37.0,
+        "popneed_luxury_items": 74.0,
+        "popneed_stimulants": 47.0
+      },
+      "mod": {
+        "popneed_basic_food": 168.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 116.0,
+        "popneed_standard_clothing": 112.0,
+        "popneed_services": 105.0,
+        "popneed_intoxicants": 73.0,
+        "popneed_luxury_drinks": 58.5,
+        "popneed_free_movement": 37.0,
+        "popneed_luxury_items": 74.0,
+        "popneed_stimulants": 47.0,
+        "popneed_leisure": 24.0,
+        "popneed_luxury_food": 19.5
+      },
+      "vanilla_total": 836.0,
+      "mod_total": 860.0
+    },
+    {
+      "wealth": 20,
+      "vanilla": {
+        "popneed_basic_food": 158.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 118.0,
+        "popneed_standard_clothing": 115.0,
+        "popneed_services": 114.0,
+        "popneed_intoxicants": 75.0,
+        "popneed_luxury_drinks": 91.0,
+        "popneed_free_movement": 40.0,
+        "popneed_communication": 16.0,
+        "popneed_luxury_food": 8.0,
+        "popneed_luxury_items": 95.0,
+        "popneed_leisure": 16.0,
+        "popneed_stimulants": 49.0
+      },
+      "mod": {
+        "popneed_basic_food": 158.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 118.0,
+        "popneed_standard_clothing": 115.0,
+        "popneed_services": 114.0,
+        "popneed_intoxicants": 75.0,
+        "popneed_luxury_drinks": 68.25,
+        "popneed_free_movement": 40.0,
+        "popneed_communication": 16.0,
+        "popneed_luxury_food": 30.75,
+        "popneed_luxury_items": 95.0,
+        "popneed_leisure": 28.0,
+        "popneed_stimulants": 49.0
+      },
+      "vanilla_total": 921.0,
+      "mod_total": 933.0
+    },
+    {
+      "wealth": 21,
+      "vanilla": {
+        "popneed_basic_food": 154.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 121.0,
+        "popneed_standard_clothing": 126.0,
+        "popneed_services": 126.0,
+        "popneed_intoxicants": 83.0,
+        "popneed_luxury_drinks": 109.0,
+        "popneed_free_movement": 45.0,
+        "popneed_communication": 18.0,
+        "popneed_luxury_food": 18.0,
+        "popneed_luxury_items": 117.0,
+        "popneed_leisure": 18.0,
+        "popneed_stimulants": 52.0
+      },
+      "mod": {
+        "popneed_basic_food": 154.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 121.0,
+        "popneed_standard_clothing": 126.0,
+        "popneed_services": 126.0,
+        "popneed_intoxicants": 83.0,
+        "popneed_luxury_drinks": 81.75,
+        "popneed_free_movement": 45.0,
+        "popneed_communication": 18.0,
+        "popneed_luxury_food": 45.25,
+        "popneed_luxury_items": 117.0,
+        "popneed_leisure": 32.0,
+        "popneed_stimulants": 52.0
+      },
+      "vanilla_total": 1013.0,
+      "mod_total": 1027.0
+    },
+    {
+      "wealth": 22,
+      "vanilla": {
+        "popneed_basic_food": 151.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 125.0,
+        "popneed_standard_clothing": 129.0,
+        "popneed_services": 144.0,
+        "popneed_intoxicants": 92.0,
+        "popneed_luxury_drinks": 129.0,
+        "popneed_free_movement": 48.0,
+        "popneed_communication": 20.0,
+        "popneed_luxury_food": 28.0,
+        "popneed_luxury_items": 148.0,
+        "popneed_leisure": 20.0,
+        "popneed_stimulants": 54.0
+      },
+      "mod": {
+        "popneed_basic_food": 151.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 125.0,
+        "popneed_standard_clothing": 129.0,
+        "popneed_services": 144.0,
+        "popneed_intoxicants": 92.0,
+        "popneed_luxury_drinks": 96.75,
+        "popneed_free_movement": 48.0,
+        "popneed_communication": 20.0,
+        "popneed_luxury_food": 60.25,
+        "popneed_luxury_items": 148.0,
+        "popneed_leisure": 36.0,
+        "popneed_stimulants": 54.0
+      },
+      "vanilla_total": 1114.0,
+      "mod_total": 1130.0
+    },
+    {
+      "wealth": 23,
+      "vanilla": {
+        "popneed_basic_food": 154.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 126.0,
+        "popneed_standard_clothing": 132.0,
+        "popneed_services": 161.0,
+        "popneed_intoxicants": 98.0,
+        "popneed_luxury_drinks": 150.0,
+        "popneed_free_movement": 51.0,
+        "popneed_communication": 21.0,
+        "popneed_luxury_food": 39.0,
+        "popneed_luxury_items": 179.0,
+        "popneed_leisure": 31.0,
+        "popneed_stimulants": 56.0
+      },
+      "mod": {
+        "popneed_basic_food": 154.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 126.0,
+        "popneed_standard_clothing": 132.0,
+        "popneed_services": 161.0,
+        "popneed_intoxicants": 98.0,
+        "popneed_luxury_drinks": 112.5,
+        "popneed_free_movement": 51.0,
+        "popneed_communication": 21.0,
+        "popneed_luxury_food": 76.5,
+        "popneed_luxury_items": 179.0,
+        "popneed_leisure": 41.0,
+        "popneed_stimulants": 56.0
+      },
+      "vanilla_total": 1224.0,
+      "mod_total": 1234.0
+    },
+    {
+      "wealth": 24,
+      "vanilla": {
+        "popneed_basic_food": 157.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 134.0,
+        "popneed_standard_clothing": 134.0,
+        "popneed_services": 179.0,
+        "popneed_intoxicants": 108.0,
+        "popneed_luxury_drinks": 169.0,
+        "popneed_free_movement": 67.0,
+        "popneed_communication": 23.0,
+        "popneed_luxury_food": 57.0,
+        "popneed_luxury_items": 210.0,
+        "popneed_leisure": 34.0,
+        "popneed_stimulants": 50.0
+      },
+      "mod": {
+        "popneed_basic_food": 157.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 134.0,
+        "popneed_standard_clothing": 134.0,
+        "popneed_services": 179.0,
+        "popneed_intoxicants": 108.0,
+        "popneed_luxury_drinks": 126.75,
+        "popneed_free_movement": 67.0,
+        "popneed_communication": 23.0,
+        "popneed_luxury_food": 99.25,
+        "popneed_luxury_items": 210.0,
+        "popneed_leisure": 45.0,
+        "popneed_stimulants": 50.0
+      },
+      "vanilla_total": 1348.0,
+      "mod_total": 1359.0
+    },
+    {
+      "wealth": 25,
+      "vanilla": {
+        "popneed_basic_food": 162.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 147.0,
+        "popneed_standard_clothing": 153.0,
+        "popneed_services": 207.0,
+        "popneed_intoxicants": 120.0,
+        "popneed_luxury_drinks": 184.0,
+        "popneed_free_movement": 74.0,
+        "popneed_communication": 25.0,
+        "popneed_luxury_food": 74.0,
+        "popneed_luxury_items": 247.0,
+        "popneed_leisure": 38.0,
+        "popneed_stimulants": 45.0
+      },
+      "mod": {
+        "popneed_basic_food": 162.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 147.0,
+        "popneed_standard_clothing": 153.0,
+        "popneed_services": 207.0,
+        "popneed_intoxicants": 120.0,
+        "popneed_luxury_drinks": 138.0,
+        "popneed_free_movement": 74.0,
+        "popneed_communication": 25.0,
+        "popneed_luxury_food": 120.0,
+        "popneed_luxury_items": 247.0,
+        "popneed_leisure": 50.0,
+        "popneed_stimulants": 45.0
+      },
+      "vanilla_total": 1502.0,
+      "mod_total": 1514.0
+    },
+    {
+      "wealth": 26,
+      "vanilla": {
+        "popneed_basic_food": 164.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 161.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 235.0,
+        "popneed_intoxicants": 134.0,
+        "popneed_luxury_drinks": 202.0,
+        "popneed_free_movement": 82.0,
+        "popneed_communication": 28.0,
+        "popneed_luxury_food": 84.0,
+        "popneed_luxury_items": 281.0,
+        "popneed_leisure": 55.0,
+        "popneed_stimulants": 40.0
+      },
+      "mod": {
+        "popneed_basic_food": 164.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 161.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 235.0,
+        "popneed_intoxicants": 134.0,
+        "popneed_luxury_drinks": 151.5,
+        "popneed_free_movement": 82.0,
+        "popneed_communication": 28.0,
+        "popneed_luxury_food": 134.5,
+        "popneed_luxury_items": 281.0,
+        "popneed_leisure": 60.0,
+        "popneed_stimulants": 40.0
+      },
+      "vanilla_total": 1653.0,
+      "mod_total": 1658.0
+    },
+    {
+      "wealth": 27,
+      "vanilla": {
+        "popneed_basic_food": 152.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 183.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 268.0,
+        "popneed_intoxicants": 148.0,
+        "popneed_luxury_drinks": 226.0,
+        "popneed_free_movement": 91.0,
+        "popneed_communication": 31.0,
+        "popneed_luxury_food": 103.0,
+        "popneed_luxury_items": 330.0,
+        "popneed_leisure": 60.0,
+        "popneed_stimulants": 35.0
+      },
+      "mod": {
+        "popneed_basic_food": 152.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 183.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 268.0,
+        "popneed_intoxicants": 148.0,
+        "popneed_luxury_drinks": 169.5,
+        "popneed_free_movement": 91.0,
+        "popneed_communication": 31.0,
+        "popneed_luxury_food": 159.5,
+        "popneed_luxury_items": 330.0,
+        "popneed_leisure": 72.0,
+        "popneed_stimulants": 35.0
+      },
+      "vanilla_total": 1814.0,
+      "mod_total": 1826.0
+    },
+    {
+      "wealth": 28,
+      "vanilla": {
+        "popneed_basic_food": 127.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 196.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 290.0,
+        "popneed_intoxicants": 164.0,
+        "popneed_luxury_drinks": 245.0,
+        "popneed_free_movement": 115.0,
+        "popneed_communication": 33.0,
+        "popneed_luxury_food": 147.0,
+        "popneed_luxury_items": 379.0,
+        "popneed_leisure": 83.0,
+        "popneed_stimulants": 30.0
+      },
+      "mod": {
+        "popneed_basic_food": 127.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 196.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 290.0,
+        "popneed_intoxicants": 164.0,
+        "popneed_luxury_drinks": 183.75,
+        "popneed_free_movement": 115.0,
+        "popneed_communication": 33.0,
+        "popneed_luxury_food": 208.25,
+        "popneed_luxury_items": 379.0,
+        "popneed_leisure": 87.0,
+        "popneed_stimulants": 30.0
+      },
+      "vanilla_total": 1996.0,
+      "mod_total": 2000.0
+    },
+    {
+      "wealth": 29,
+      "vanilla": {
+        "popneed_basic_food": 102.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 209.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 344.0,
+        "popneed_intoxicants": 181.0,
+        "popneed_luxury_drinks": 270.0,
+        "popneed_free_movement": 127.0,
+        "popneed_communication": 36.0,
+        "popneed_luxury_food": 199.0,
+        "popneed_luxury_items": 425.0,
+        "popneed_leisure": 89.0,
+        "popneed_stimulants": 25.0
+      },
+      "mod": {
+        "popneed_basic_food": 102.0,
+        "popneed_heating": 26.0,
+        "popneed_household_items": 209.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 344.0,
+        "popneed_intoxicants": 181.0,
+        "popneed_luxury_drinks": 202.5,
+        "popneed_free_movement": 127.0,
+        "popneed_communication": 36.0,
+        "popneed_luxury_food": 266.5,
+        "popneed_luxury_items": 425.0,
+        "popneed_leisure": 103.0,
+        "popneed_stimulants": 25.0
+      },
+      "vanilla_total": 2194.0,
+      "mod_total": 2208.0
+    },
+    {
+      "wealth": 30,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 209.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 397.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 289.0,
+        "popneed_free_movement": 165.0,
+        "popneed_communication": 63.0,
+        "popneed_luxury_food": 265.0,
+        "popneed_luxury_items": 515.0,
+        "popneed_leisure": 102.0,
+        "popneed_stimulants": 20.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 209.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 397.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 287.5,
+        "popneed_free_movement": 165.0,
+        "popneed_communication": 63.0,
+        "popneed_luxury_food": 266.5,
+        "popneed_luxury_items": 515.0,
+        "popneed_leisure": 120.0,
+        "popneed_stimulants": 20.0
+      },
+      "vanilla_total": 2428.0,
+      "mod_total": 2446.0
+    },
+    {
+      "wealth": 31,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 453.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 317.0,
+        "popneed_free_movement": 181.0,
+        "popneed_communication": 91.0,
+        "popneed_luxury_food": 317.0,
+        "popneed_luxury_items": 589.0,
+        "popneed_leisure": 113.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 453.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 317.0,
+        "popneed_free_movement": 181.0,
+        "popneed_communication": 91.0,
+        "popneed_luxury_food": 317.0,
+        "popneed_luxury_items": 589.0,
+        "popneed_leisure": 120.0
+      },
+      "vanilla_total": 2702.0,
+      "mod_total": 2709.0
+    },
+    {
+      "wealth": 32,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 495.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 347.0,
+        "popneed_free_movement": 223.0,
+        "popneed_communication": 124.0,
+        "popneed_luxury_food": 347.0,
+        "popneed_luxury_items": 669.0,
+        "popneed_leisure": 124.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 495.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 347.0,
+        "popneed_free_movement": 223.0,
+        "popneed_communication": 124.0,
+        "popneed_luxury_food": 347.0,
+        "popneed_luxury_items": 669.0,
+        "popneed_leisure": 124.0
+      },
+      "vanilla_total": 2970.0,
+      "mod_total": 2970.0
+    },
+    {
+      "wealth": 33,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 550.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 385.0,
+        "popneed_free_movement": 247.0,
+        "popneed_communication": 137.0,
+        "popneed_luxury_food": 385.0,
+        "popneed_luxury_items": 769.0,
+        "popneed_leisure": 137.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 550.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 385.0,
+        "popneed_free_movement": 247.0,
+        "popneed_communication": 137.0,
+        "popneed_luxury_food": 385.0,
+        "popneed_luxury_items": 769.0,
+        "popneed_leisure": 137.0
+      },
+      "vanilla_total": 3251.0,
+      "mod_total": 3251.0
+    },
+    {
+      "wealth": 34,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 609.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 426.0,
+        "popneed_free_movement": 274.0,
+        "popneed_communication": 152.0,
+        "popneed_luxury_food": 426.0,
+        "popneed_luxury_items": 883.0,
+        "popneed_leisure": 152.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 609.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 426.0,
+        "popneed_free_movement": 274.0,
+        "popneed_communication": 152.0,
+        "popneed_luxury_food": 426.0,
+        "popneed_luxury_items": 883.0,
+        "popneed_leisure": 152.0
+      },
+      "vanilla_total": 3563.0,
+      "mod_total": 3563.0
+    },
+    {
+      "wealth": 35,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 662.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 430.0,
+        "popneed_free_movement": 331.0,
+        "popneed_communication": 199.0,
+        "popneed_luxury_food": 464.0,
+        "popneed_luxury_items": 993.0,
+        "popneed_leisure": 199.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 662.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 430.0,
+        "popneed_free_movement": 331.0,
+        "popneed_communication": 199.0,
+        "popneed_luxury_food": 464.0,
+        "popneed_luxury_items": 993.0,
+        "popneed_leisure": 199.0
+      },
+      "vanilla_total": 3919.0,
+      "mod_total": 3919.0
+    },
+    {
+      "wealth": 36,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 732.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 476.0,
+        "popneed_free_movement": 366.0,
+        "popneed_communication": 220.0,
+        "popneed_luxury_food": 549.0,
+        "popneed_luxury_items": 1098.0,
+        "popneed_leisure": 220.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 732.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 476.0,
+        "popneed_free_movement": 366.0,
+        "popneed_communication": 220.0,
+        "popneed_luxury_food": 549.0,
+        "popneed_luxury_items": 1098.0,
+        "popneed_leisure": 220.0
+      },
+      "vanilla_total": 4302.0,
+      "mod_total": 4302.0
+    },
+    {
+      "wealth": 37,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 815.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 530.0,
+        "popneed_free_movement": 407.0,
+        "popneed_communication": 244.0,
+        "popneed_luxury_food": 611.0,
+        "popneed_luxury_items": 1222.0,
+        "popneed_leisure": 244.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 815.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 530.0,
+        "popneed_free_movement": 407.0,
+        "popneed_communication": 244.0,
+        "popneed_luxury_food": 611.0,
+        "popneed_luxury_items": 1222.0,
+        "popneed_leisure": 244.0
+      },
+      "vanilla_total": 4714.0,
+      "mod_total": 4714.0
+    },
+    {
+      "wealth": 38,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 906.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 589.0,
+        "popneed_free_movement": 453.0,
+        "popneed_communication": 272.0,
+        "popneed_luxury_food": 680.0,
+        "popneed_luxury_items": 1359.0,
+        "popneed_leisure": 272.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 906.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 589.0,
+        "popneed_free_movement": 453.0,
+        "popneed_communication": 272.0,
+        "popneed_luxury_food": 680.0,
+        "popneed_luxury_items": 1359.0,
+        "popneed_leisure": 272.0
+      },
+      "vanilla_total": 5172.0,
+      "mod_total": 5172.0
+    },
+    {
+      "wealth": 39,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 998.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 649.0,
+        "popneed_free_movement": 499.0,
+        "popneed_communication": 349.0,
+        "popneed_luxury_food": 749.0,
+        "popneed_luxury_items": 1497.0,
+        "popneed_leisure": 299.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_standard_clothing": 161.0,
+        "popneed_services": 998.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 649.0,
+        "popneed_free_movement": 499.0,
+        "popneed_communication": 349.0,
+        "popneed_luxury_food": 749.0,
+        "popneed_luxury_items": 1497.0,
+        "popneed_leisure": 299.0
+      },
+      "vanilla_total": 5681.0,
+      "mod_total": 5681.0
+    },
+    {
+      "wealth": 40,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_services": 1124.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 675.0,
+        "popneed_free_movement": 562.0,
+        "popneed_communication": 450.0,
+        "popneed_luxury_food": 843.0,
+        "popneed_luxury_items": 1687.0,
+        "popneed_leisure": 394.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_services": 1124.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 675.0,
+        "popneed_free_movement": 562.0,
+        "popneed_communication": 450.0,
+        "popneed_luxury_food": 843.0,
+        "popneed_luxury_items": 1687.0,
+        "popneed_leisure": 394.0
+      },
+      "vanilla_total": 6215.0,
+      "mod_total": 6215.0
+    },
+    {
+      "wealth": 41,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_services": 1256.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 754.0,
+        "popneed_free_movement": 628.0,
+        "popneed_communication": 565.0,
+        "popneed_luxury_food": 879.0,
+        "popneed_luxury_items": 1822.0,
+        "popneed_leisure": 440.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_services": 1256.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 754.0,
+        "popneed_free_movement": 628.0,
+        "popneed_communication": 565.0,
+        "popneed_luxury_food": 879.0,
+        "popneed_luxury_items": 1822.0,
+        "popneed_leisure": 440.0
+      },
+      "vanilla_total": 6824.0,
+      "mod_total": 6824.0
+    },
+    {
+      "wealth": 42,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_services": 1377.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 826.0,
+        "popneed_free_movement": 689.0,
+        "popneed_communication": 689.0,
+        "popneed_luxury_food": 964.0,
+        "popneed_luxury_items": 1997.0,
+        "popneed_leisure": 482.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_services": 1377.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 826.0,
+        "popneed_free_movement": 689.0,
+        "popneed_communication": 689.0,
+        "popneed_luxury_food": 964.0,
+        "popneed_luxury_items": 1997.0,
+        "popneed_leisure": 482.0
+      },
+      "vanilla_total": 7504.0,
+      "mod_total": 7504.0
+    },
+    {
+      "wealth": 43,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_services": 1552.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 931.0,
+        "popneed_free_movement": 776.0,
+        "popneed_communication": 776.0,
+        "popneed_luxury_food": 1009.0,
+        "popneed_luxury_items": 2173.0,
+        "popneed_leisure": 543.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_services": 1552.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 931.0,
+        "popneed_free_movement": 776.0,
+        "popneed_communication": 776.0,
+        "popneed_luxury_food": 1009.0,
+        "popneed_luxury_items": 2173.0,
+        "popneed_leisure": 543.0
+      },
+      "vanilla_total": 8240.0,
+      "mod_total": 8240.0
+    },
+    {
+      "wealth": 44,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_services": 1700.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 1020.0,
+        "popneed_free_movement": 850.0,
+        "popneed_communication": 850.0,
+        "popneed_luxury_food": 1105.0,
+        "popneed_luxury_items": 2380.0,
+        "popneed_leisure": 680.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_household_items": 238.0,
+        "popneed_services": 1700.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 1020.0,
+        "popneed_free_movement": 850.0,
+        "popneed_communication": 850.0,
+        "popneed_luxury_food": 1105.0,
+        "popneed_luxury_items": 2380.0,
+        "popneed_leisure": 680.0
+      },
+      "vanilla_total": 9065.0,
+      "mod_total": 9065.0
+    },
+    {
+      "wealth": 45,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 1960.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 1078.0,
+        "popneed_free_movement": 980.0,
+        "popneed_communication": 980.0,
+        "popneed_luxury_food": 1274.0,
+        "popneed_luxury_items": 2646.0,
+        "popneed_leisure": 784.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 1960.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 1078.0,
+        "popneed_free_movement": 980.0,
+        "popneed_communication": 980.0,
+        "popneed_luxury_food": 1274.0,
+        "popneed_luxury_items": 2646.0,
+        "popneed_leisure": 784.0
+      },
+      "vanilla_total": 9944.0,
+      "mod_total": 9944.0
+    },
+    {
+      "wealth": 46,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 2139.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 1177.0,
+        "popneed_free_movement": 1070.0,
+        "popneed_communication": 1070.0,
+        "popneed_luxury_food": 1391.0,
+        "popneed_luxury_items": 2888.0,
+        "popneed_leisure": 963.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 2139.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 1177.0,
+        "popneed_free_movement": 1070.0,
+        "popneed_communication": 1070.0,
+        "popneed_luxury_food": 1391.0,
+        "popneed_luxury_items": 2888.0,
+        "popneed_leisure": 963.0
+      },
+      "vanilla_total": 10940.0,
+      "mod_total": 10940.0
+    },
+    {
+      "wealth": 47,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 2358.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 1297.0,
+        "popneed_free_movement": 1179.0,
+        "popneed_communication": 1179.0,
+        "popneed_luxury_food": 1533.0,
+        "popneed_luxury_items": 3065.0,
+        "popneed_leisure": 1179.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 2358.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 1297.0,
+        "popneed_free_movement": 1179.0,
+        "popneed_communication": 1179.0,
+        "popneed_luxury_food": 1533.0,
+        "popneed_luxury_items": 3065.0,
+        "popneed_leisure": 1179.0
+      },
+      "vanilla_total": 12032.0,
+      "mod_total": 12032.0
+    },
+    {
+      "wealth": 48,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 2598.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 1429.0,
+        "popneed_free_movement": 1299.0,
+        "popneed_communication": 1299.0,
+        "popneed_luxury_food": 1689.0,
+        "popneed_luxury_items": 3378.0,
+        "popneed_leisure": 1299.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 2598.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 1429.0,
+        "popneed_free_movement": 1299.0,
+        "popneed_communication": 1299.0,
+        "popneed_luxury_food": 1689.0,
+        "popneed_luxury_items": 3378.0,
+        "popneed_leisure": 1299.0
+      },
+      "vanilla_total": 13233.0,
+      "mod_total": 13233.0
+    },
+    {
+      "wealth": 49,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 2891.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 1590.0,
+        "popneed_free_movement": 1446.0,
+        "popneed_communication": 1446.0,
+        "popneed_luxury_food": 1879.0,
+        "popneed_luxury_items": 3614.0,
+        "popneed_leisure": 1446.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 2891.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 1590.0,
+        "popneed_free_movement": 1446.0,
+        "popneed_communication": 1446.0,
+        "popneed_luxury_food": 1879.0,
+        "popneed_luxury_items": 3614.0,
+        "popneed_leisure": 1446.0
+      },
+      "vanilla_total": 14554.0,
+      "mod_total": 14554.0
+    },
+    {
+      "wealth": 50,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 3185.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 1752.0,
+        "popneed_free_movement": 1593.0,
+        "popneed_communication": 1593.0,
+        "popneed_luxury_food": 2070.0,
+        "popneed_luxury_items": 3982.0,
+        "popneed_leisure": 1593.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 3185.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 1752.0,
+        "popneed_free_movement": 1593.0,
+        "popneed_communication": 1593.0,
+        "popneed_luxury_food": 2070.0,
+        "popneed_luxury_items": 3982.0,
+        "popneed_leisure": 1593.0
+      },
+      "vanilla_total": 16010.0,
+      "mod_total": 16010.0
+    },
+    {
+      "wealth": 51,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 3544.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 1772.0,
+        "popneed_free_movement": 1772.0,
+        "popneed_communication": 1772.0,
+        "popneed_luxury_food": 2126.0,
+        "popneed_luxury_items": 4430.0,
+        "popneed_leisure": 1949.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 3544.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 1772.0,
+        "popneed_free_movement": 1772.0,
+        "popneed_communication": 1772.0,
+        "popneed_luxury_food": 2126.0,
+        "popneed_luxury_items": 4430.0,
+        "popneed_leisure": 1949.0
+      },
+      "vanilla_total": 17607.0,
+      "mod_total": 17607.0
+    },
+    {
+      "wealth": 52,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 3864.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 1932.0,
+        "popneed_free_movement": 1932.0,
+        "popneed_communication": 1932.0,
+        "popneed_luxury_food": 2319.0,
+        "popneed_luxury_items": 4830.0,
+        "popneed_leisure": 2319.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 3864.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 1932.0,
+        "popneed_free_movement": 1932.0,
+        "popneed_communication": 1932.0,
+        "popneed_luxury_food": 2319.0,
+        "popneed_luxury_items": 4830.0,
+        "popneed_leisure": 2319.0
+      },
+      "vanilla_total": 19370.0,
+      "mod_total": 19370.0
+    },
+    {
+      "wealth": 53,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 4213.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 2107.0,
+        "popneed_free_movement": 2107.0,
+        "popneed_communication": 2107.0,
+        "popneed_luxury_food": 2528.0,
+        "popneed_luxury_items": 5267.0,
+        "popneed_leisure": 2739.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 4213.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 2107.0,
+        "popneed_free_movement": 2107.0,
+        "popneed_communication": 2107.0,
+        "popneed_luxury_food": 2528.0,
+        "popneed_luxury_items": 5267.0,
+        "popneed_leisure": 2739.0
+      },
+      "vanilla_total": 21310.0,
+      "mod_total": 21310.0
+    },
+    {
+      "wealth": 54,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 4549.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 2275.0,
+        "popneed_free_movement": 2275.0,
+        "popneed_communication": 2275.0,
+        "popneed_luxury_food": 2730.0,
+        "popneed_luxury_items": 5687.0,
+        "popneed_leisure": 3412.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 4549.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 2275.0,
+        "popneed_free_movement": 2275.0,
+        "popneed_communication": 2275.0,
+        "popneed_luxury_food": 2730.0,
+        "popneed_luxury_items": 5687.0,
+        "popneed_leisure": 3412.0
+      },
+      "vanilla_total": 23445.0,
+      "mod_total": 23445.0
+    },
+    {
+      "wealth": 55,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 4759.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 2504.0,
+        "popneed_free_movement": 2504.0,
+        "popneed_communication": 2504.0,
+        "popneed_luxury_food": 2755.0,
+        "popneed_luxury_items": 6261.0,
+        "popneed_leisure": 4258.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 4759.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 2504.0,
+        "popneed_free_movement": 2504.0,
+        "popneed_communication": 2504.0,
+        "popneed_luxury_food": 2755.0,
+        "popneed_luxury_items": 6261.0,
+        "popneed_leisure": 4258.0
+      },
+      "vanilla_total": 25787.0,
+      "mod_total": 25787.0
+    },
+    {
+      "wealth": 56,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 5139.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 2705.0,
+        "popneed_free_movement": 2705.0,
+        "popneed_communication": 2705.0,
+        "popneed_luxury_food": 2975.0,
+        "popneed_luxury_items": 6762.0,
+        "popneed_leisure": 5139.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 5139.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 2705.0,
+        "popneed_free_movement": 2705.0,
+        "popneed_communication": 2705.0,
+        "popneed_luxury_food": 2975.0,
+        "popneed_luxury_items": 6762.0,
+        "popneed_leisure": 5139.0
+      },
+      "vanilla_total": 28372.0,
+      "mod_total": 28372.0
+    },
+    {
+      "wealth": 57,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 5308.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 2949.0,
+        "popneed_free_movement": 2949.0,
+        "popneed_communication": 2949.0,
+        "popneed_luxury_food": 3244.0,
+        "popneed_luxury_items": 7373.0,
+        "popneed_leisure": 6193.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 5308.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 2949.0,
+        "popneed_free_movement": 2949.0,
+        "popneed_communication": 2949.0,
+        "popneed_luxury_food": 3244.0,
+        "popneed_luxury_items": 7373.0,
+        "popneed_leisure": 6193.0
+      },
+      "vanilla_total": 31207.0,
+      "mod_total": 31207.0
+    },
+    {
+      "wealth": 58,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 5735.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 3186.0,
+        "popneed_free_movement": 3186.0,
+        "popneed_communication": 3186.0,
+        "popneed_luxury_food": 3505.0,
+        "popneed_luxury_items": 7965.0,
+        "popneed_leisure": 7328.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 5735.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 3186.0,
+        "popneed_free_movement": 3186.0,
+        "popneed_communication": 3186.0,
+        "popneed_luxury_food": 3505.0,
+        "popneed_luxury_items": 7965.0,
+        "popneed_leisure": 7328.0
+      },
+      "vanilla_total": 34333.0,
+      "mod_total": 34333.0
+    },
+    {
+      "wealth": 59,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 5961.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 3507.0,
+        "popneed_free_movement": 3507.0,
+        "popneed_communication": 3507.0,
+        "popneed_luxury_food": 3857.0,
+        "popneed_luxury_items": 8767.0,
+        "popneed_leisure": 8416.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 5961.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 3507.0,
+        "popneed_free_movement": 3507.0,
+        "popneed_communication": 3507.0,
+        "popneed_luxury_food": 3857.0,
+        "popneed_luxury_items": 8767.0,
+        "popneed_leisure": 8416.0
+      },
+      "vanilla_total": 37764.0,
+      "mod_total": 37764.0
+    },
+    {
+      "wealth": 60,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 6561.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 3859.0,
+        "popneed_free_movement": 3859.0,
+        "popneed_communication": 3859.0,
+        "popneed_luxury_food": 3859.0,
+        "popneed_luxury_items": 9648.0,
+        "popneed_leisure": 9648.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 6561.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 3859.0,
+        "popneed_free_movement": 3859.0,
+        "popneed_communication": 3859.0,
+        "popneed_luxury_food": 3859.0,
+        "popneed_luxury_items": 9648.0,
+        "popneed_leisure": 9648.0
+      },
+      "vanilla_total": 41535.0,
+      "mod_total": 41535.0
+    },
+    {
+      "wealth": 61,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 6860.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 4287.0,
+        "popneed_free_movement": 4287.0,
+        "popneed_communication": 4287.0,
+        "popneed_luxury_food": 4287.0,
+        "popneed_luxury_items": 10718.0,
+        "popneed_leisure": 10718.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 6860.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 4287.0,
+        "popneed_free_movement": 4287.0,
+        "popneed_communication": 4287.0,
+        "popneed_luxury_food": 4287.0,
+        "popneed_luxury_items": 10718.0,
+        "popneed_leisure": 10718.0
+      },
+      "vanilla_total": 45686.0,
+      "mod_total": 45686.0
+    },
+    {
+      "wealth": 62,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 7549.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 4718.0,
+        "popneed_free_movement": 4718.0,
+        "popneed_communication": 4718.0,
+        "popneed_luxury_food": 4718.0,
+        "popneed_luxury_items": 11795.0,
+        "popneed_leisure": 11795.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 7549.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 4718.0,
+        "popneed_free_movement": 4718.0,
+        "popneed_communication": 4718.0,
+        "popneed_luxury_food": 4718.0,
+        "popneed_luxury_items": 11795.0,
+        "popneed_leisure": 11795.0
+      },
+      "vanilla_total": 50253.0,
+      "mod_total": 50253.0
+    },
+    {
+      "wealth": 63,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 7862.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 5241.0,
+        "popneed_free_movement": 5241.0,
+        "popneed_communication": 5241.0,
+        "popneed_luxury_food": 5241.0,
+        "popneed_luxury_items": 13103.0,
+        "popneed_leisure": 13103.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 7862.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 5241.0,
+        "popneed_free_movement": 5241.0,
+        "popneed_communication": 5241.0,
+        "popneed_luxury_food": 5241.0,
+        "popneed_luxury_items": 13103.0,
+        "popneed_leisure": 13103.0
+      },
+      "vanilla_total": 55274.0,
+      "mod_total": 55274.0
+    },
+    {
+      "wealth": 64,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 8651.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 5768.0,
+        "popneed_free_movement": 5768.0,
+        "popneed_communication": 5768.0,
+        "popneed_luxury_food": 5768.0,
+        "popneed_luxury_items": 14419.0,
+        "popneed_leisure": 14419.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 8651.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 5768.0,
+        "popneed_free_movement": 5768.0,
+        "popneed_communication": 5768.0,
+        "popneed_luxury_food": 5768.0,
+        "popneed_luxury_items": 14419.0,
+        "popneed_leisure": 14419.0
+      },
+      "vanilla_total": 60803.0,
+      "mod_total": 60803.0
+    },
+    {
+      "wealth": 65,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 9520.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 6347.0,
+        "popneed_free_movement": 6347.0,
+        "popneed_communication": 6347.0,
+        "popneed_luxury_food": 6347.0,
+        "popneed_luxury_items": 15866.0,
+        "popneed_leisure": 15866.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 9520.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 6347.0,
+        "popneed_free_movement": 6347.0,
+        "popneed_communication": 6347.0,
+        "popneed_luxury_food": 6347.0,
+        "popneed_luxury_items": 15866.0,
+        "popneed_leisure": 15866.0
+      },
+      "vanilla_total": 66882.0,
+      "mod_total": 66882.0
+    },
+    {
+      "wealth": 66,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 10475.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 6983.0,
+        "popneed_free_movement": 6983.0,
+        "popneed_communication": 6983.0,
+        "popneed_luxury_food": 6983.0,
+        "popneed_luxury_items": 17459.0,
+        "popneed_leisure": 17459.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 10475.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 6983.0,
+        "popneed_free_movement": 6983.0,
+        "popneed_communication": 6983.0,
+        "popneed_luxury_food": 6983.0,
+        "popneed_luxury_items": 17459.0,
+        "popneed_leisure": 17459.0
+      },
+      "vanilla_total": 73567.0,
+      "mod_total": 73567.0
+    },
+    {
+      "wealth": 67,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 11526.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 7684.0,
+        "popneed_free_movement": 7684.0,
+        "popneed_communication": 7684.0,
+        "popneed_luxury_food": 7684.0,
+        "popneed_luxury_items": 19210.0,
+        "popneed_leisure": 19210.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 11526.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 7684.0,
+        "popneed_free_movement": 7684.0,
+        "popneed_communication": 7684.0,
+        "popneed_luxury_food": 7684.0,
+        "popneed_luxury_items": 19210.0,
+        "popneed_leisure": 19210.0
+      },
+      "vanilla_total": 80924.0,
+      "mod_total": 80924.0
+    },
+    {
+      "wealth": 68,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 12682.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 8455.0,
+        "popneed_free_movement": 8455.0,
+        "popneed_communication": 8455.0,
+        "popneed_luxury_food": 8455.0,
+        "popneed_luxury_items": 21136.0,
+        "popneed_leisure": 21136.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 12682.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 8455.0,
+        "popneed_free_movement": 8455.0,
+        "popneed_communication": 8455.0,
+        "popneed_luxury_food": 8455.0,
+        "popneed_luxury_items": 21136.0,
+        "popneed_leisure": 21136.0
+      },
+      "vanilla_total": 89016.0,
+      "mod_total": 89016.0
+    },
+    {
+      "wealth": 69,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 13953.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 9302.0,
+        "popneed_free_movement": 9302.0,
+        "popneed_communication": 9302.0,
+        "popneed_luxury_food": 9302.0,
+        "popneed_luxury_items": 23255.0,
+        "popneed_leisure": 23255.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 13953.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 9302.0,
+        "popneed_free_movement": 9302.0,
+        "popneed_communication": 9302.0,
+        "popneed_luxury_food": 9302.0,
+        "popneed_luxury_items": 23255.0,
+        "popneed_leisure": 23255.0
+      },
+      "vanilla_total": 97913.0,
+      "mod_total": 97913.0
+    },
+    {
+      "wealth": 70,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 15352.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 10235.0,
+        "popneed_free_movement": 10235.0,
+        "popneed_communication": 10235.0,
+        "popneed_luxury_food": 10235.0,
+        "popneed_luxury_items": 25586.0,
+        "popneed_leisure": 25586.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 15352.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 10235.0,
+        "popneed_free_movement": 10235.0,
+        "popneed_communication": 10235.0,
+        "popneed_luxury_food": 10235.0,
+        "popneed_luxury_items": 25586.0,
+        "popneed_leisure": 25586.0
+      },
+      "vanilla_total": 107706.0,
+      "mod_total": 107706.0
+    },
+    {
+      "wealth": 71,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 16890.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 11260.0,
+        "popneed_free_movement": 11260.0,
+        "popneed_communication": 11260.0,
+        "popneed_luxury_food": 11260.0,
+        "popneed_luxury_items": 28150.0,
+        "popneed_leisure": 28150.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 16890.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 11260.0,
+        "popneed_free_movement": 11260.0,
+        "popneed_communication": 11260.0,
+        "popneed_luxury_food": 11260.0,
+        "popneed_luxury_items": 28150.0,
+        "popneed_leisure": 28150.0
+      },
+      "vanilla_total": 118472.0,
+      "mod_total": 118472.0
+    },
+    {
+      "wealth": 72,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 18583.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 12388.0,
+        "popneed_free_movement": 12388.0,
+        "popneed_communication": 12388.0,
+        "popneed_luxury_food": 12388.0,
+        "popneed_luxury_items": 30971.0,
+        "popneed_leisure": 30971.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 18583.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 12388.0,
+        "popneed_free_movement": 12388.0,
+        "popneed_communication": 12388.0,
+        "popneed_luxury_food": 12388.0,
+        "popneed_luxury_items": 30971.0,
+        "popneed_leisure": 30971.0
+      },
+      "vanilla_total": 130319.0,
+      "mod_total": 130319.0
+    },
+    {
+      "wealth": 73,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 20444.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 13629.0,
+        "popneed_free_movement": 13629.0,
+        "popneed_communication": 13629.0,
+        "popneed_luxury_food": 13629.0,
+        "popneed_luxury_items": 34074.0,
+        "popneed_leisure": 34074.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 20444.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 13629.0,
+        "popneed_free_movement": 13629.0,
+        "popneed_communication": 13629.0,
+        "popneed_luxury_food": 13629.0,
+        "popneed_luxury_items": 34074.0,
+        "popneed_leisure": 34074.0
+      },
+      "vanilla_total": 143350.0,
+      "mod_total": 143350.0
+    },
+    {
+      "wealth": 74,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 22492.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 14995.0,
+        "popneed_free_movement": 14995.0,
+        "popneed_communication": 14995.0,
+        "popneed_luxury_food": 14995.0,
+        "popneed_luxury_items": 37486.0,
+        "popneed_leisure": 37486.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 22492.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 14995.0,
+        "popneed_free_movement": 14995.0,
+        "popneed_communication": 14995.0,
+        "popneed_luxury_food": 14995.0,
+        "popneed_luxury_items": 37486.0,
+        "popneed_leisure": 37486.0
+      },
+      "vanilla_total": 157686.0,
+      "mod_total": 157686.0
+    },
+    {
+      "wealth": 75,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 24744.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 16496.0,
+        "popneed_free_movement": 16496.0,
+        "popneed_communication": 16496.0,
+        "popneed_luxury_food": 16496.0,
+        "popneed_luxury_items": 41240.0,
+        "popneed_leisure": 41240.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 24744.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 16496.0,
+        "popneed_free_movement": 16496.0,
+        "popneed_communication": 16496.0,
+        "popneed_luxury_food": 16496.0,
+        "popneed_luxury_items": 41240.0,
+        "popneed_leisure": 41240.0
+      },
+      "vanilla_total": 173450.0,
+      "mod_total": 173450.0
+    },
+    {
+      "wealth": 76,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 27222.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 18148.0,
+        "popneed_free_movement": 18148.0,
+        "popneed_communication": 18148.0,
+        "popneed_luxury_food": 18148.0,
+        "popneed_luxury_items": 45370.0,
+        "popneed_leisure": 45370.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 27222.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 18148.0,
+        "popneed_free_movement": 18148.0,
+        "popneed_communication": 18148.0,
+        "popneed_luxury_food": 18148.0,
+        "popneed_luxury_items": 45370.0,
+        "popneed_leisure": 45370.0
+      },
+      "vanilla_total": 190796.0,
+      "mod_total": 190796.0
+    },
+    {
+      "wealth": 77,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 29947.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 19965.0,
+        "popneed_free_movement": 19965.0,
+        "popneed_communication": 19965.0,
+        "popneed_luxury_food": 19965.0,
+        "popneed_luxury_items": 49912.0,
+        "popneed_leisure": 49912.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 29947.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 19965.0,
+        "popneed_free_movement": 19965.0,
+        "popneed_communication": 19965.0,
+        "popneed_luxury_food": 19965.0,
+        "popneed_luxury_items": 49912.0,
+        "popneed_leisure": 49912.0
+      },
+      "vanilla_total": 209873.0,
+      "mod_total": 209873.0
+    },
+    {
+      "wealth": 78,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 32946.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 21964.0,
+        "popneed_free_movement": 21964.0,
+        "popneed_communication": 21964.0,
+        "popneed_luxury_food": 21964.0,
+        "popneed_luxury_items": 54909.0,
+        "popneed_leisure": 54909.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 32946.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 21964.0,
+        "popneed_free_movement": 21964.0,
+        "popneed_communication": 21964.0,
+        "popneed_luxury_food": 21964.0,
+        "popneed_luxury_items": 54909.0,
+        "popneed_leisure": 54909.0
+      },
+      "vanilla_total": 230862.0,
+      "mod_total": 230862.0
+    },
+    {
+      "wealth": 79,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 36243.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 24162.0,
+        "popneed_free_movement": 24162.0,
+        "popneed_communication": 24162.0,
+        "popneed_luxury_food": 24162.0,
+        "popneed_luxury_items": 60406.0,
+        "popneed_leisure": 60406.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 36243.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 24162.0,
+        "popneed_free_movement": 24162.0,
+        "popneed_communication": 24162.0,
+        "popneed_luxury_food": 24162.0,
+        "popneed_luxury_items": 60406.0,
+        "popneed_leisure": 60406.0
+      },
+      "vanilla_total": 253945.0,
+      "mod_total": 253945.0
+    },
+    {
+      "wealth": 80,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 39871.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 26581.0,
+        "popneed_free_movement": 26581.0,
+        "popneed_communication": 26581.0,
+        "popneed_luxury_food": 26581.0,
+        "popneed_luxury_items": 66452.0,
+        "popneed_leisure": 66452.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 39871.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 26581.0,
+        "popneed_free_movement": 26581.0,
+        "popneed_communication": 26581.0,
+        "popneed_luxury_food": 26581.0,
+        "popneed_luxury_items": 66452.0,
+        "popneed_leisure": 66452.0
+      },
+      "vanilla_total": 279341.0,
+      "mod_total": 279341.0
+    },
+    {
+      "wealth": 81,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 43861.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 29241.0,
+        "popneed_free_movement": 29241.0,
+        "popneed_communication": 29241.0,
+        "popneed_luxury_food": 29241.0,
+        "popneed_luxury_items": 73102.0,
+        "popneed_leisure": 73102.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 43861.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 29241.0,
+        "popneed_free_movement": 29241.0,
+        "popneed_communication": 29241.0,
+        "popneed_luxury_food": 29241.0,
+        "popneed_luxury_items": 73102.0,
+        "popneed_leisure": 73102.0
+      },
+      "vanilla_total": 307271.0,
+      "mod_total": 307271.0
+    },
+    {
+      "wealth": 82,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 48251.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 32167.0,
+        "popneed_free_movement": 32167.0,
+        "popneed_communication": 32167.0,
+        "popneed_luxury_food": 32167.0,
+        "popneed_luxury_items": 80418.0,
+        "popneed_leisure": 80418.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 48251.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 32167.0,
+        "popneed_free_movement": 32167.0,
+        "popneed_communication": 32167.0,
+        "popneed_luxury_food": 32167.0,
+        "popneed_luxury_items": 80418.0,
+        "popneed_leisure": 80418.0
+      },
+      "vanilla_total": 337997.0,
+      "mod_total": 337997.0
+    },
+    {
+      "wealth": 83,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 53079.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 35386.0,
+        "popneed_free_movement": 35386.0,
+        "popneed_communication": 35386.0,
+        "popneed_luxury_food": 35386.0,
+        "popneed_luxury_items": 88465.0,
+        "popneed_leisure": 88465.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 53079.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 35386.0,
+        "popneed_free_movement": 35386.0,
+        "popneed_communication": 35386.0,
+        "popneed_luxury_food": 35386.0,
+        "popneed_luxury_items": 88465.0,
+        "popneed_leisure": 88465.0
+      },
+      "vanilla_total": 371795.0,
+      "mod_total": 371795.0
+    },
+    {
+      "wealth": 84,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 58390.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 38927.0,
+        "popneed_free_movement": 38927.0,
+        "popneed_communication": 38927.0,
+        "popneed_luxury_food": 38927.0,
+        "popneed_luxury_items": 97317.0,
+        "popneed_leisure": 97317.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 58390.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 38927.0,
+        "popneed_free_movement": 38927.0,
+        "popneed_communication": 38927.0,
+        "popneed_luxury_food": 38927.0,
+        "popneed_luxury_items": 97317.0,
+        "popneed_leisure": 97317.0
+      },
+      "vanilla_total": 408974.0,
+      "mod_total": 408974.0
+    },
+    {
+      "wealth": 85,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 64233.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 42822.0,
+        "popneed_free_movement": 42822.0,
+        "popneed_communication": 42822.0,
+        "popneed_luxury_food": 42822.0,
+        "popneed_luxury_items": 107055.0,
+        "popneed_leisure": 107055.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 64233.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 42822.0,
+        "popneed_free_movement": 42822.0,
+        "popneed_communication": 42822.0,
+        "popneed_luxury_food": 42822.0,
+        "popneed_luxury_items": 107055.0,
+        "popneed_leisure": 107055.0
+      },
+      "vanilla_total": 449873.0,
+      "mod_total": 449873.0
+    },
+    {
+      "wealth": 86,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 70659.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 47106.0,
+        "popneed_free_movement": 47106.0,
+        "popneed_communication": 47106.0,
+        "popneed_luxury_food": 47106.0,
+        "popneed_luxury_items": 117765.0,
+        "popneed_leisure": 117765.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 70659.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 47106.0,
+        "popneed_free_movement": 47106.0,
+        "popneed_communication": 47106.0,
+        "popneed_luxury_food": 47106.0,
+        "popneed_luxury_items": 117765.0,
+        "popneed_leisure": 117765.0
+      },
+      "vanilla_total": 494855.0,
+      "mod_total": 494855.0
+    },
+    {
+      "wealth": 87,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 77728.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 51819.0,
+        "popneed_free_movement": 51819.0,
+        "popneed_communication": 51819.0,
+        "popneed_luxury_food": 51819.0,
+        "popneed_luxury_items": 129547.0,
+        "popneed_leisure": 129547.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 77728.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 51819.0,
+        "popneed_free_movement": 51819.0,
+        "popneed_communication": 51819.0,
+        "popneed_luxury_food": 51819.0,
+        "popneed_luxury_items": 129547.0,
+        "popneed_leisure": 129547.0
+      },
+      "vanilla_total": 544340.0,
+      "mod_total": 544340.0
+    },
+    {
+      "wealth": 88,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 85505.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 57003.0,
+        "popneed_free_movement": 57003.0,
+        "popneed_communication": 57003.0,
+        "popneed_luxury_food": 57003.0,
+        "popneed_luxury_items": 142508.0,
+        "popneed_leisure": 142508.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 85505.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 57003.0,
+        "popneed_free_movement": 57003.0,
+        "popneed_communication": 57003.0,
+        "popneed_luxury_food": 57003.0,
+        "popneed_luxury_items": 142508.0,
+        "popneed_leisure": 142508.0
+      },
+      "vanilla_total": 598775.0,
+      "mod_total": 598775.0
+    },
+    {
+      "wealth": 89,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 94058.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 62706.0,
+        "popneed_free_movement": 62706.0,
+        "popneed_communication": 62706.0,
+        "popneed_luxury_food": 62706.0,
+        "popneed_luxury_items": 156764.0,
+        "popneed_leisure": 156764.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 94058.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 62706.0,
+        "popneed_free_movement": 62706.0,
+        "popneed_communication": 62706.0,
+        "popneed_luxury_food": 62706.0,
+        "popneed_luxury_items": 156764.0,
+        "popneed_leisure": 156764.0
+      },
+      "vanilla_total": 658652.0,
+      "mod_total": 658652.0
+    },
+    {
+      "wealth": 90,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 103468.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 68978.0,
+        "popneed_free_movement": 68978.0,
+        "popneed_communication": 68978.0,
+        "popneed_luxury_food": 68978.0,
+        "popneed_luxury_items": 172446.0,
+        "popneed_leisure": 172446.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 103468.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 68978.0,
+        "popneed_free_movement": 68978.0,
+        "popneed_communication": 68978.0,
+        "popneed_luxury_food": 68978.0,
+        "popneed_luxury_items": 172446.0,
+        "popneed_leisure": 172446.0
+      },
+      "vanilla_total": 724514.0,
+      "mod_total": 724514.0
+    },
+    {
+      "wealth": 91,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 113818.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 75878.0,
+        "popneed_free_movement": 75878.0,
+        "popneed_communication": 75878.0,
+        "popneed_luxury_food": 75878.0,
+        "popneed_luxury_items": 189696.0,
+        "popneed_leisure": 189696.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 113818.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 75878.0,
+        "popneed_free_movement": 75878.0,
+        "popneed_communication": 75878.0,
+        "popneed_luxury_food": 75878.0,
+        "popneed_luxury_items": 189696.0,
+        "popneed_leisure": 189696.0
+      },
+      "vanilla_total": 796964.0,
+      "mod_total": 796964.0
+    },
+    {
+      "wealth": 92,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 125203.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 83468.0,
+        "popneed_free_movement": 83468.0,
+        "popneed_communication": 83468.0,
+        "popneed_luxury_food": 83468.0,
+        "popneed_luxury_items": 208671.0,
+        "popneed_leisure": 208671.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 125203.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 83468.0,
+        "popneed_free_movement": 83468.0,
+        "popneed_communication": 83468.0,
+        "popneed_luxury_food": 83468.0,
+        "popneed_luxury_items": 208671.0,
+        "popneed_leisure": 208671.0
+      },
+      "vanilla_total": 876659.0,
+      "mod_total": 876659.0
+    },
+    {
+      "wealth": 93,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 137726.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 91817.0,
+        "popneed_free_movement": 91817.0,
+        "popneed_communication": 91817.0,
+        "popneed_luxury_food": 91817.0,
+        "popneed_luxury_items": 229544.0,
+        "popneed_leisure": 229544.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 137726.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 91817.0,
+        "popneed_free_movement": 91817.0,
+        "popneed_communication": 91817.0,
+        "popneed_luxury_food": 91817.0,
+        "popneed_luxury_items": 229544.0,
+        "popneed_leisure": 229544.0
+      },
+      "vanilla_total": 964324.0,
+      "mod_total": 964324.0
+    },
+    {
+      "wealth": 94,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 151502.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 101001.0,
+        "popneed_free_movement": 101001.0,
+        "popneed_communication": 101001.0,
+        "popneed_luxury_food": 101001.0,
+        "popneed_luxury_items": 252503.0,
+        "popneed_leisure": 252503.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 151502.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 101001.0,
+        "popneed_free_movement": 101001.0,
+        "popneed_communication": 101001.0,
+        "popneed_luxury_food": 101001.0,
+        "popneed_luxury_items": 252503.0,
+        "popneed_leisure": 252503.0
+      },
+      "vanilla_total": 1060754.0,
+      "mod_total": 1060754.0
+    },
+    {
+      "wealth": 95,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 166656.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 111104.0,
+        "popneed_free_movement": 111104.0,
+        "popneed_communication": 111104.0,
+        "popneed_luxury_food": 111104.0,
+        "popneed_luxury_items": 277759.0,
+        "popneed_leisure": 277759.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 166656.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 111104.0,
+        "popneed_free_movement": 111104.0,
+        "popneed_communication": 111104.0,
+        "popneed_luxury_food": 111104.0,
+        "popneed_luxury_items": 277759.0,
+        "popneed_leisure": 277759.0
+      },
+      "vanilla_total": 1166832.0,
+      "mod_total": 1166832.0
+    },
+    {
+      "wealth": 96,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 183324.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 122216.0,
+        "popneed_free_movement": 122216.0,
+        "popneed_communication": 122216.0,
+        "popneed_luxury_food": 122216.0,
+        "popneed_luxury_items": 305541.0,
+        "popneed_leisure": 305541.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 183324.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 122216.0,
+        "popneed_free_movement": 122216.0,
+        "popneed_communication": 122216.0,
+        "popneed_luxury_food": 122216.0,
+        "popneed_luxury_items": 305541.0,
+        "popneed_leisure": 305541.0
+      },
+      "vanilla_total": 1283512.0,
+      "mod_total": 1283512.0
+    },
+    {
+      "wealth": 97,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 201660.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 134440.0,
+        "popneed_free_movement": 134440.0,
+        "popneed_communication": 134440.0,
+        "popneed_luxury_food": 134440.0,
+        "popneed_luxury_items": 336100.0,
+        "popneed_leisure": 336100.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 201660.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 134440.0,
+        "popneed_free_movement": 134440.0,
+        "popneed_communication": 134440.0,
+        "popneed_luxury_food": 134440.0,
+        "popneed_luxury_items": 336100.0,
+        "popneed_leisure": 336100.0
+      },
+      "vanilla_total": 1411862.0,
+      "mod_total": 1411862.0
+    },
+    {
+      "wealth": 98,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 221829.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 147886.0,
+        "popneed_free_movement": 147886.0,
+        "popneed_communication": 147886.0,
+        "popneed_luxury_food": 147886.0,
+        "popneed_luxury_items": 369716.0,
+        "popneed_leisure": 369716.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 221829.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 147886.0,
+        "popneed_free_movement": 147886.0,
+        "popneed_communication": 147886.0,
+        "popneed_luxury_food": 147886.0,
+        "popneed_luxury_items": 369716.0,
+        "popneed_leisure": 369716.0
+      },
+      "vanilla_total": 1553047.0,
+      "mod_total": 1553047.0
+    },
+    {
+      "wealth": 99,
+      "vanilla": {
+        "popneed_heating": 26.0,
+        "popneed_services": 244016.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 162677.0,
+        "popneed_free_movement": 162677.0,
+        "popneed_communication": 162677.0,
+        "popneed_luxury_food": 162677.0,
+        "popneed_luxury_items": 406693.0,
+        "popneed_leisure": 406693.0
+      },
+      "mod": {
+        "popneed_heating": 26.0,
+        "popneed_services": 244016.0,
+        "popneed_intoxicants": 216.0,
+        "popneed_luxury_drinks": 162677.0,
+        "popneed_free_movement": 162677.0,
+        "popneed_communication": 162677.0,
+        "popneed_luxury_food": 162677.0,
+        "popneed_luxury_items": 406693.0,
+        "popneed_leisure": 406693.0
+      },
+      "vanilla_total": 1708352.0,
+      "mod_total": 1708352.0
+    }
+  ],
+  "faith_status": "constant script-value 0.8; law consumption modifiers display-only; runtime script-value support not verified",
+  "method": "Merge each INJECT fragment field by field, including repeated wealth IDs across files. Static intended configuration, not game runtime."
+}

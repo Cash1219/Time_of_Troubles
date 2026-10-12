@@ -49,8 +49,17 @@ def needs(root):
 
 
 def packages(root):
-    return {k: {n: float(v) for n, v in scalars(dict(blocks(b))['goods']).items()}
-            for k, b in definitions(root, 'common/buy_packages').items()}
+    result = {}
+    # Multiple INJECT fragments can target the same wealth package. Preserve
+    # their distinct goods fields instead of discarding the earlier fragment.
+    for path in sorted((root / 'common/buy_packages').glob('*.txt')):
+        for key, body in blocks(path.read_text(encoding='utf-8-sig')):
+            values = {n: float(v) for n, v in scalars(dict(blocks(body))['goods']).items()}
+            if key.startswith('INJECT:'):
+                result.setdefault(key, {}).update(values)
+            else:
+                result[key] = values
+    return result
 
 
 def main():

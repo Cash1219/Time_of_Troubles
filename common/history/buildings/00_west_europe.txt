@@ -1062,6 +1062,10 @@ BUILDINGS={
 					}
 				}
 				reserves=1
+				# Approved British overseas asset compensation (2026-10-10)
+				add_ownership = {
+					building = { type = "building_financial_district" country = "c:GBR" levels = 1 region = "STATE_HOME_COUNTIES" }
+				}
 			}
 			create_building={
 				building="building_art_academy"
@@ -1120,6 +1124,10 @@ BUILDINGS={
 				}
 				reserves=1
 				activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled"  }
+				# Approved British overseas asset compensation (2026-10-10)
+				add_ownership = {
+					building = { type = "building_financial_district" country = "c:GBR" levels = 4 region = "STATE_HOME_COUNTIES" }
+				}
 			}
 			create_building={
 				building="building_textile_mill"
@@ -1163,6 +1171,10 @@ BUILDINGS={
 				}
 				reserves=1
 				activate_production_methods={ "pm_lathe"  "pm_automation_disabled" "pm_luxury_furniture" }
+				# Approved British overseas asset compensation (2026-10-10)
+				add_ownership = {
+					building = { type = "building_financial_district" country = "c:GBR" levels = 1 region = "STATE_HOME_COUNTIES" }
+				}
 			}
 			create_building={
 				building="building_rye_farm"
@@ -1230,6 +1242,10 @@ BUILDINGS={
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
+				# Approved British overseas asset compensation (2026-10-10)
+				add_ownership = {
+					country = { country = "c:GBR" levels = 1 }
+				}
 			}
 			create_building={
 				building="building_naval_administration"
@@ -1251,6 +1267,26 @@ BUILDINGS={
 					}
 				}
 				activate_production_methods={ "pm_naval_fortification_basic"  }
+			}
+
+			create_building = {
+				building = "building_food_industry"
+				# Approved British overseas asset compensation (2026-10-10)
+				add_ownership = {
+					building = { type = "building_financial_district" country = "c:GBR" levels = 3 region = "STATE_HOME_COUNTIES" }
+				}
+				reserves = 1
+				activate_production_methods = { "pm_pot_stills" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" }
+			}
+
+			create_building = {
+				building = "building_glassworks"
+				# Approved British overseas asset compensation (2026-10-10)
+				add_ownership = {
+					building = { type = "building_financial_district" country = "c:GBR" levels = 2 region = "STATE_HOME_COUNTIES" }
+				}
+				reserves = 1
+				activate_production_methods = { "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
 		}
 	}
@@ -1321,6 +1357,10 @@ BUILDINGS={
 				}
 				reserves=1
 				activate_production_methods={ "pm_dye_workshops" "pm_no_luxury_clothes" "pm_traditional_looms"  }
+				# Approved British overseas asset compensation (2026-10-10)
+				add_ownership = {
+					building = { type = "building_financial_district" country = "c:GBR" levels = 6 region = "STATE_HOME_COUNTIES" }
+				}
 			}
 			create_building={
 				building="building_construction_sector"
@@ -1613,6 +1653,10 @@ BUILDINGS={
 				}
 				reserves=1
 				activate_production_methods={ "pm_steel" "pm_automation_disabled"  }
+				# Approved British overseas asset compensation (2026-10-10)
+				add_ownership = {
+					building = { type = "building_financial_district" country = "c:GBR" levels = 2 region = "STATE_HOME_COUNTIES" }
+				}
 			}
 			create_building={
 				building="building_construction_sector"
@@ -1643,6 +1687,10 @@ BUILDINGS={
 				}
 				reserves=1
 				activate_production_methods={ "pm_dye_workshops"  "pm_traditional_looms" "pm_no_luxury_clothes" }
+				# Approved British overseas asset compensation (2026-10-10)
+				add_ownership = {
+					building = { type = "building_financial_district" country = "c:GBR" levels = 2 region = "STATE_HOME_COUNTIES" }
+				}
 			}
 			create_building={
 				building="building_steel_mill"
@@ -1662,6 +1710,10 @@ BUILDINGS={
 				}
 				reserves=1
 				activate_production_methods={ "pm_blister_steel_process" "pm_automation_disabled"  }
+				# Approved British overseas asset compensation (2026-10-10)
+				add_ownership = {
+					building = { type = "building_financial_district" country = "c:GBR" levels = 3 region = "STATE_HOME_COUNTIES" }
+				}
 			}
 			create_building={
 				building="building_motor_industry"
@@ -1681,6 +1733,10 @@ BUILDINGS={
 				}
 				reserves=1
 				activate_production_methods={ "pm_steam_engines" "pm_automation_disabled"  }
+				# Approved British overseas asset compensation (2026-10-10)
+				add_ownership = {
+					building = { type = "building_financial_district" country = "c:GBR" levels = 1 region = "STATE_HOME_COUNTIES" }
+				}
 			}
 			create_building={
 				building="building_coal_mine"
@@ -1717,6 +1773,10 @@ BUILDINGS={
 				}
 				reserves=1
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts"  }
+				# Approved British overseas asset compensation (2026-10-10)
+				add_ownership = {
+					building = { type = "building_financial_district" country = "c:GBR" levels = 2 region = "STATE_HOME_COUNTIES" }
+				}
 			}
 			create_building={
 				building="building_rye_farm"
@@ -1784,6 +1844,10 @@ BUILDINGS={
 				}
 				reserves=1
 				activate_production_methods={ "pm_saw_mills"  "pm_no_equipment" "pm_road_carts" "pm_hardwood" }
+				# Approved British overseas asset compensation (2026-10-10)
+				add_ownership = {
+					building = { type = "building_financial_district" country = "c:GBR" levels = 3 region = "STATE_HOME_COUNTIES" }
+				}
 			}
 			create_building={
 				building="building_whaling_station"
@@ -1797,6 +1861,10 @@ BUILDINGS={
 				}
 				reserves=1
 				activate_production_methods={  "pm_unrefrigerated" "pm_wooden_whaling_ships" }
+				# Approved British overseas asset compensation (2026-10-10)
+				add_ownership = {
+					building = { type = "building_financial_district" country = "c:GBR" levels = 1 region = "STATE_HOME_COUNTIES" }
+				}
 			}
 			create_building={
 				building="building_fishing_wharf"
@@ -1927,6 +1995,10 @@ BUILDINGS={
 				}
 				reserves=1
 				activate_production_methods={ "pm_lathe" "pm_luxury_furniture" "pm_automation_disabled"  }
+				# Approved British overseas asset compensation (2026-10-10)
+				add_ownership = {
+					building = { type = "building_financial_district" country = "c:GBR" levels = 4 region = "STATE_HOME_COUNTIES" }
+				}
 			}
 			create_building={
 				building="building_chemical_plant"
@@ -1991,6 +2063,10 @@ BUILDINGS={
 				}
 				reserves=1
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts"  }
+				# Approved British overseas asset compensation (2026-10-10)
+				add_ownership = {
+					building = { type = "building_financial_district" country = "c:GBR" levels = 2 region = "STATE_HOME_COUNTIES" }
+				}
 			}
 			create_building={
 				building="building_rye_farm"
@@ -2045,6 +2121,26 @@ BUILDINGS={
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
+			}
+
+			create_building = {
+				building = "building_motor_industry"
+				# Approved British overseas asset compensation (2026-10-10)
+				add_ownership = {
+					building = { type = "building_financial_district" country = "c:GBR" levels = 3 region = "STATE_HOME_COUNTIES" }
+				}
+				reserves = 1
+				activate_production_methods = { "pm_steam_engines" "pm_automation_disabled" }
+			}
+
+			create_building = {
+				building = "building_steel_mill"
+				# Approved British overseas asset compensation (2026-10-10)
+				add_ownership = {
+					building = { type = "building_financial_district" country = "c:GBR" levels = 3 region = "STATE_HOME_COUNTIES" }
+				}
+				reserves = 1
+				activate_production_methods = { "pm_blister_steel_process" "pm_automation_disabled" }
 			}
 		}
 	}
@@ -2114,6 +2210,10 @@ BUILDINGS={
 				}
 				reserves=1
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing"  }
+				# Approved British overseas asset compensation (2026-10-10)
+				add_ownership = {
+					building = { type = "building_financial_district" country = "c:GBR" levels = 2 region = "STATE_HOME_COUNTIES" }
+				}
 			}
 			create_building={
 				building="building_food_industry"
@@ -2307,6 +2407,10 @@ BUILDINGS={
 				}
 				reserves=1
 				activate_production_methods={ "pm_steel" "pm_automation_disabled"  }
+				# Approved British overseas asset compensation (2026-10-10)
+				add_ownership = {
+					building = { type = "building_financial_district" country = "c:GBR" levels = 3 region = "STATE_HOME_COUNTIES" }
+				}
 			}
 			create_building={
 				building="building_textile_mill"
@@ -2402,6 +2506,10 @@ BUILDINGS={
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
+				# Approved British overseas asset compensation (2026-10-10)
+				add_ownership = {
+					country = { country = "c:GBR" levels = 1 }
+				}
 			}
 			create_building={
 				building="building_naval_fortification"
@@ -2412,6 +2520,16 @@ BUILDINGS={
 					}
 				}
 				activate_production_methods={ "pm_naval_fortification_basic"  }
+			}
+
+			create_building = {
+				building = "building_food_industry"
+				# Approved British overseas asset compensation (2026-10-10)
+				add_ownership = {
+					building = { type = "building_financial_district" country = "c:GBR" levels = 3 region = "STATE_HOME_COUNTIES" }
+				}
+				reserves = 1
+				activate_production_methods = { "pm_pot_stills" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" }
 			}
 		}
 	}
